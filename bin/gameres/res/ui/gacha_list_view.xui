@@ -1,0 +1,88 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=88
+Rect=0 0 700 130
+
+[CTRL_9SLICES_27]
+Type=22
+Tag=27
+Rect=0 0 700 130
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_TEXT_GACHANAME]
+Type=4
+Tag=89
+Rect=52 6 120 30
+Text=普通扭蛋
+TextTradition=普通扭蛋
+TextSize=25
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_PIC]
+Type=1
+Tag=90
+Rect=67 35 90 90
+
+[CTRL_TEXT_TICKET_TITLE]
+Type=4
+Tag=107
+Rect=191 14 170 30
+Text=当前拥有中级扭蛋卷：
+TextTradition=當前擁有中級扭蛋卷：
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TICKET_NUM]
+Type=4
+Tag=108
+Rect=341 14 40 30
+Text=0
+TextTradition=0
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ONE]
+Type=2
+Tag=109
+Rect=408 25 120 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_TEN]
+Type=2
+Tag=110
+Rect=544 25 120 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXPLAIN]
+Type=4
+Tag=111
+Rect=191 50 193 65
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FREE_TIME]
+Type=4
+Tag=112
+Rect=416 91 240 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

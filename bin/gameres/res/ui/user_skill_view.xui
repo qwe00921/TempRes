@@ -1,0 +1,77 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=26
+Rect=-1 0 697 272
+
+[CTRL_BUTTON_38]
+Type=2
+Tag=38
+Rect=22 19 145 196
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_39]
+Type=2
+Tag=39
+Rect=191 19 145 196
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_40]
+Type=2
+Tag=40
+Rect=361 19 145 196
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_41]
+Type=2
+Tag=41
+Rect=530 19 145 196
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=23
+Rect=15 229 153 29
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=186 229 153 29
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=358 229 153 29
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_18]
+Type=4
+Tag=18
+Rect=529 229 153 29
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -1,0 +1,165 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=83 44 800 550
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=2
+Rect=128 74 60 30
+Text=返回
+TextTradition=返回
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=3
+Rect=354 71 251 53
+Text=强化结果
+TextTradition=強化結果
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ANGSTER]
+Type=4
+Tag=4
+Rect=621 102 200 30
+Text=本次强化消耗:XX铜币
+TextTradition=本次強化消耗:XX銅幣
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=5
+Rect=127 142 713 413
+
+[CTRL_PICTURE_ICON]
+Type=1
+Tag=6
+Rect=209 176 100 130
+Text=ICON
+TextTradition=ICON
+
+[CTRL_PICTURE_7]
+Type=1
+Tag=7
+Rect=333 176 427 130
+NormalFile=.\res\image\ui\card_get\bk2.png
+NormalFileUV=0 0 446 149
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=8
+Rect=369 203 100 30
+Text=技能名称
+TextTradition=技能名稱
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RATE]
+Type=4
+Tag=9
+Rect=491 203 100 30
+Text=稀有度:RR
+TextTradition=稀有度:RR
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=10
+Rect=612 203 100 30
+Text=LV:59/80
+TextTradition=LV:59/80
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=11
+Rect=464 247 150 30
+Text=经验值:600/1200
+TextTradition=經驗值:600/1200
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_INTENSIFY_START]
+Type=1
+Tag=18
+Rect=311 320 100 130
+Text=强化前
+TextTradition=強化前
+
+[CTRL_PICTURE_INTENSIFY_END]
+Type=1
+Tag=19
+Rect=579 320 100 130
+Text=强化后
+TextTradition=強化后
+
+[CTRL_BUTTON_CONTINUE]
+Type=2
+Tag=20
+Rect=435 483 120 40
+Text=继续强化
+TextTradition=繼續強化
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159
+
+[CTRL_PICTURE_ARROW]
+Type=1
+Tag=21
+Rect=454 359 75 46
+NormalFile=.\res\image\ui\common\arrow.png
+NormalFileUV=0 0 71 44
+
+[CTRL_TEXT_RESULT_LEVEL_START]
+Type=4
+Tag=22
+Rect=311 449 100 30
+Text=LV:50
+TextTradition=LV:50
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RESULT_LEVEL_END]
+Type=4
+Tag=23
+Rect=579 449 100 30
+Text=LV:55
+TextTradition=LV:55
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RESULT_EXP_ADD]
+Type=4
+Tag=24
+Rect=439 448 100 30
+Text=Exp+1500
+TextTradition=Exp+1500
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

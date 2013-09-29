@@ -1,0 +1,172 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_360]
+Type=22
+Tag=360
+Rect=83 71 795 498
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_361]
+Type=22
+Tag=361
+Rect=413 164 451 372
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_118]
+Type=22
+Tag=118
+Rect=429 177 419 346
+Stretch=1
+NormalFile=.\res\image\ui\common\input_bg.9.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_5]
+Type=2
+Tag=5
+Rect=133 199 233 291
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=305 65 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=543 231 189 43
+Text=LV50--->51
+TextTradition=LV50--->51
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=460 290 154 36
+Text=HP:999999
+TextTradition=HP:999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=460 346 154 36
+Text=攻击力：999999
+TextTradition=攻擊力：999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=9
+Rect=460 403 154 36
+Text=防御力：999999
+TextTradition=防御力：999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=603 351 70 26
+Text=---->
+TextTradition=---->
+NormalFile=.\res\image\ui\common\arrow.png
+NormalFileUV=0 0 71 44
+
+[CTRL_TEXT_14]
+Type=4
+Tag=14
+Rect=682 290 154 36
+Text=HP:9999999
+TextTradition=HP:9999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=682 346 154 36
+Text=攻击力：999999
+TextTradition=攻擊力：999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=682 403 154 36
+Text=防御力：999999
+TextTradition=防御力：999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_17]
+Type=2
+Tag=17
+Rect=777 71 74 74
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_BUTTON_18]
+Type=2
+Tag=18
+Rect=706 459 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_PICTURE_220]
+Type=1
+Tag=220
+Rect=381 87 206 49
+NormalFile=.\res.cn\image\ui\font\q_h_c_g.png
+NormalFileUV=0 0 206 49
+
+[CTRL_PICTURE_356]
+Type=1
+Tag=356
+Rect=746 472 56 30
+Parent=CTRL_BUTTON_18
+NormalFile=.\res.cn\image\ui\font\j_x.png
+NormalFileUV=0 0 56 30

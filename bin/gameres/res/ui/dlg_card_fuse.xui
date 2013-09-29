@@ -1,0 +1,126 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_339]
+Type=22
+Tag=339
+Rect=74 63 812 497
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_341]
+Type=22
+Tag=341
+Rect=87 141 786 405
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_1]
+Type=2
+Tag=1
+Rect=785 63 74 74
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_9SLICES_343]
+Type=22
+Tag=343
+Rect=567 204 191 250
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_342]
+Type=22
+Tag=342
+Rect=212 208 191 250
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_PICTURE_340]
+Type=1
+Tag=340
+Rect=305 57 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=405 231 158 165
+NormalFile=.\res\image\ui\main_ui\forge.png
+NormalFileUV=0 0 158 165
+
+[CTRL_TEXT_2]
+Type=4
+Tag=2
+Rect=346 69 269 58
+Text=融合确认
+TextTradition=融合確認
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=302 151 356 30
+Text=卡片选择好之后，确定融合
+TextTradition=卡片選擇好之后，確定融合
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CARD1]
+Type=2
+Tag=4
+Rect=218 210 180 240
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CARD2]
+Type=2
+Tag=5
+Rect=572 208 180 240
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM_NUM]
+Type=4
+Tag=7
+Rect=426 407 120 30
+Text=0/99
+TextTradition=0/99
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=9
+Rect=691 473 136 60
+Text=融合开始
+TextTradition=融合開始
+TextSize=25
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60

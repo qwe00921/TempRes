@@ -1,0 +1,309 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_261]
+Type=22
+Tag=261
+Rect=58 47 848 553
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_PICTURE_262]
+Type=1
+Tag=262
+Rect=305 38 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_9SLICES_263]
+Type=22
+Tag=263
+Rect=72 126 820 381
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=2
+Rect=427 49 107 60
+Text=确认界面
+TextTradition=確認界面
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TIP]
+Type=4
+Tag=3
+Rect=281 133 377 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_CARDPIC1]
+Type=1
+Tag=4
+Rect=155 158 122 137
+
+[CTRL_TEXT_CARDRARE1]
+Type=4
+Tag=5
+Rect=162 263 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV1]
+Type=4
+Tag=6
+Rect=155 294 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_CARDPIC2]
+Type=1
+Tag=8
+Rect=286 158 122 137
+
+[CTRL_PICTURE_CARDPIC3]
+Type=1
+Tag=9
+Rect=417 158 122 137
+
+[CTRL_PICTURE_CARDPIC4]
+Type=1
+Tag=10
+Rect=548 158 122 137
+
+[CTRL_PICTURE_CARDPIC5]
+Type=1
+Tag=11
+Rect=679 158 122 137
+
+[CTRL_PICTURE_CARDPIC6]
+Type=1
+Tag=12
+Rect=155 337 122 137
+
+[CTRL_PICTURE_CARDPIC7]
+Type=1
+Tag=13
+Rect=286 337 122 137
+
+[CTRL_PICTURE_CARDPIC8]
+Type=1
+Tag=14
+Rect=417 337 122 137
+
+[CTRL_PICTURE_CARDPIC9]
+Type=1
+Tag=15
+Rect=548 337 122 137
+
+[CTRL_PICTURE_CARDPIC10]
+Type=1
+Tag=16
+Rect=679 337 122 137
+
+[CTRL_TEXT_CARDLV2]
+Type=4
+Tag=17
+Rect=286 294 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV3]
+Type=4
+Tag=18
+Rect=417 294 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV4]
+Type=4
+Tag=19
+Rect=548 294 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV5]
+Type=4
+Tag=20
+Rect=679 294 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV6]
+Type=4
+Tag=21
+Rect=155 473 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV7]
+Type=4
+Tag=22
+Rect=286 473 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV8]
+Type=4
+Tag=23
+Rect=417 473 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV9]
+Type=4
+Tag=24
+Rect=548 473 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV10]
+Type=4
+Tag=25
+Rect=679 473 122 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE2]
+Type=4
+Tag=26
+Rect=293 263 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE3]
+Type=4
+Tag=27
+Rect=424 263 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE4]
+Type=4
+Tag=28
+Rect=555 263 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE5]
+Type=4
+Tag=29
+Rect=686 263 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE6]
+Type=4
+Tag=30
+Rect=162 442 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE7]
+Type=4
+Tag=31
+Rect=293 442 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE8]
+Type=4
+Tag=32
+Rect=424 442 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE9]
+Type=4
+Tag=33
+Rect=555 442 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDRARE10]
+Type=4
+Tag=34
+Rect=686 442 43 22
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CONFIRM]
+Type=2
+Tag=35
+Rect=323 523 136 60
+Text=确定
+TextTradition=確定
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_CANCEL]
+Type=2
+Tag=36
+Rect=486 523 136 60
+Text=取消
+TextTradition=取消
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60

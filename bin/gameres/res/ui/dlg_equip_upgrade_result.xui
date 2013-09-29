@@ -1,0 +1,320 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=39
+Rect=80 70 800 500
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=38
+Rect=123 97 107 60
+Text=返回
+TextTradition=返回
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_TEXT_40]
+Type=4
+Tag=40
+Rect=309 87 343 60
+Text=装备强化确认界面
+TextTradition=裝備強化確認界面
+TextSize=35
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_44]
+Type=1
+Tag=44
+Rect=178 167 604 132
+NormalFile=.\res\image\ui\card_get\bk2.png
+NormalFileUV=0 0 446 149
+
+[CTRL_PICTURE_41]
+Type=1
+Tag=41
+Rect=233 177 90 90
+NormalFile=.\res\image\ui\equip\weapon.png
+NormalFileUV=0 0 64 64
+
+[CTRL_TEXT_EQUIP_NAME]
+Type=4
+Tag=42
+Rect=340 177 180 30
+Text=轩辕剑
+TextTradition=軒轅劍
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_STAR]
+Type=1
+Tag=43
+Rect=532 174 160 30
+NormalFile=.\res\image\ui\equip\startlvl.png
+NormalFileUV=0 0 141 24
+
+[CTRL_TEXT_45]
+Type=4
+Tag=45
+Rect=340 213 60 20
+Text=攻击力+
+TextTradition=攻擊力+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_19]
+Type=4
+Tag=46
+Rect=462 213 60 20
+Text=防御力+
+TextTradition=防御力+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_47]
+Type=4
+Tag=47
+Rect=571 213 60 20
+Text=HP+
+TextTradition=HP+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATK]
+Type=4
+Tag=48
+Rect=402 213 60 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEF]
+Type=4
+Tag=49
+Rect=522 213 60 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP]
+Type=4
+Tag=50
+Rect=618 213 60 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_51]
+Type=4
+Tag=51
+Rect=340 236 60 20
+Text=经验值
+TextTradition=經驗值
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=52
+Rect=407 236 120 20
+Text=9999/9999
+TextTradition=9999/9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_EXPBAR]
+Type=9
+Tag=53
+Rect=340 260 318 25
+
+[CTRL_TEXT_COST]
+Type=4
+Tag=56
+Rect=705 146 80 20
+Text=999999
+TextTradition=999999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_54]
+Type=4
+Tag=54
+Rect=614 146 107 20
+Text=本次强化花费：
+TextTradition=本次強化花費：
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_55]
+Type=4
+Tag=55
+Rect=777 146 40 20
+Text=铜币
+TextTradition=銅幣
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_57]
+Type=4
+Tag=57
+Rect=242 271 40 20
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=58
+Rect=275 271 40 20
+Text=99
+TextTradition=99
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_EQUIP_OLD]
+Type=1
+Tag=59
+Rect=303 311 80 80
+NormalFile=.\res\image\ui\equip\weapon.png
+NormalFileUV=0 0 64 64
+
+[CTRL_PICTURE_EQUIP_NEW]
+Type=1
+Tag=60
+Rect=579 311 80 80
+NormalFile=.\res\image\ui\equip\weapon.png
+NormalFileUV=0 0 64 64
+
+[CTRL_TEXT_NAME_OLD]
+Type=4
+Tag=61
+Rect=273 395 140 25
+Text=轩辕剑
+TextTradition=軒轅劍
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME_NEW]
+Type=4
+Tag=62
+Rect=548 396 140 25
+Text=轩辕剑
+TextTradition=軒轅劍
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_67]
+Type=4
+Tag=67
+Rect=301 426 40 25
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_68]
+Type=4
+Tag=68
+Rect=575 426 40 25
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV_OLD]
+Type=4
+Tag=69
+Rect=339 426 50 25
+Text=99
+TextTradition=99
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV_NEW]
+Type=4
+Tag=70
+Rect=614 426 50 25
+Text=99
+TextTradition=99
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_71]
+Type=1
+Tag=71
+Rect=428 377 107 60
+NormalFile=.\res\image\ui\common\arrow.png
+NormalFileUV=0 0 71 44
+
+[CTRL_TEXT_72]
+Type=4
+Tag=72
+Rect=410 430 60 20
+Text=Exp+
+TextTradition=Exp+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXP_ADD]
+Type=4
+Tag=73
+Rect=463 430 80 20
+Text=1500
+TextTradition=1500
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CONTINUE]
+Type=2
+Tag=74
+Rect=407 482 140 60
+Text=继续强化
+TextTradition=繼續強化
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\player\common_ui_create_normal.png
+NormalFileUV=0 0 245 71
+SelectFile=.\res\image\ui\player\common_ui_create_select.png
+SelectedFileUV=0 0 245 71

@@ -1,0 +1,66 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_BG]
+Type=22
+Tag=21
+Rect=0 0 300 120
+Stretch=1
+NormalFile=.\res\image\ui\main_ui\btn_bk.png
+NormalFileUV=0 0 89 83
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Z_Order=1
+Rect=37 6 100 100
+
+[CTRL_TEXT_NUM]
+Type=4
+Tag=3
+Z_Order=1
+Rect=76 75 60 30
+Text=51
+TextTradition=51
+TextSize=18
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Z_Order=1
+Rect=155 11 119 32
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_5]
+Type=2
+Tag=5
+Z_Order=1
+Rect=147 50 136 60
+Text=放入碎片
+TextTradition=放入碎片
+TextSize=20
+TextColor=0x800080
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+
+[CTRL_BUTTON_6]
+Type=2
+Tag=6
+Z_Order=2
+Rect=29 6 255 103
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\mask.png
+NormalFileUV=0 0 2 2

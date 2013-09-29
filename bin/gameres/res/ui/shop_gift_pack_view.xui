@@ -1,0 +1,197 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 700 190
+
+[CTRL_9SLICES_BG_R]
+Type=22
+Tag=40
+Rect=355 5 350 180
+Stretch=1
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_9SLICES_39]
+Type=22
+Tag=39
+Rect=0 5 350 180
+Stretch=1
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_PICTURE_ICON_L]
+Type=1
+Tag=3
+Rect=20 20 80 68
+NormalFile=.\res\image\map_base\box.png
+NormalFileUV=0 0 78 66
+
+[CTRL_TEXT_NAME_L]
+Type=4
+Tag=4
+Rect=113 13 150 30
+Text=我是礼包名
+TextTradition=我是禮包名
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LIMIT_L]
+Type=4
+Tag=5
+Rect=113 43 160 25
+Text=15级以上可以购买
+TextTradition=15級以上可以購買
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_PRICE_L]
+Type=4
+Tag=6
+Rect=113 68 100 25
+Text=原价：50000
+TextTradition=原價：50000
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_REBATE_PRICE_L]
+Type=4
+Tag=7
+Rect=113 93 100 25
+Text=现价：20000
+TextTradition=現價：20000
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DESCRIPTION_L]
+Type=4
+Tag=8
+Rect=15 123 200 50
+Text=礼包说明
+TextTradition=禮包說明
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BUY_L]
+Type=2
+Tag=9
+Rect=197 113 136 60
+Text=购买
+TextTradition=購買
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_LOOK_L]
+Type=2
+Tag=10
+Rect=267 13 70 35
+Text=查看
+TextTradition=查看
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_PICTURE_ICON_R]
+Type=1
+Tag=12
+Rect=380 20 80 68
+
+[CTRL_TEXT_NAME_R]
+Type=4
+Tag=13
+Rect=475 13 150 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LIMIT_R]
+Type=4
+Tag=14
+Rect=475 43 160 25
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_PRICE_R]
+Type=4
+Tag=15
+Rect=475 68 100 25
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_REBATE_PRICE_R]
+Type=4
+Tag=16
+Rect=475 93 100 25
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DESCRIPTION_R]
+Type=4
+Tag=17
+Rect=375 122 200 50
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BUY_R]
+Type=2
+Tag=18
+Rect=552 113 136 60
+Text=购买
+TextTradition=購買
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_LOOK_R]
+Type=2
+Tag=19
+Rect=627 13 70 35
+Text=查看
+TextTradition=查看
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34

@@ -1,0 +1,540 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_BG]
+Type=22
+Tag=55
+Rect=30 45 900 550
+Stretch=1
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=2
+Rect=352 50 257 60
+Text=个人信息界面
+TextTradition=個人信息界面
+TextSize=35
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_57]
+Type=22
+Tag=57
+Rect=45 123 870 460
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_58]
+Type=22
+Tag=58
+Rect=257 141 620 230
+Stretch=1
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_PICTURE_ICON]
+Type=1
+Tag=4
+Rect=114 133 80 80
+NormalFile=.\res\mt\chara\big\data.dat_000196.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=5
+Rect=83 212 140 30
+Text=这是玩家名称
+TextTradition=這是玩家名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=122 239 40 30
+Text=LV
+TextTradition=LV
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=7
+Rect=162 239 40 30
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=290 165 65 30
+Text=年龄
+TextTradition=年齡
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_AGE]
+Type=4
+Tag=9
+Rect=340 165 60 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_11]
+Type=4
+Tag=11
+Rect=410 165 65 30
+Text=生日
+TextTradition=生日
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_BIRTHDAY]
+Type=4
+Tag=12
+Rect=470 165 120 30
+Text=--月--日
+TextTradition=--月--日
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=620 165 130 30
+Text=最后上线时间
+TextTradition=最后上線時間
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAST_LOGIN_TIME]
+Type=4
+Tag=14
+Rect=750 165 120 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=290 205 65 30
+Text=性别
+TextTradition=性別
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SEX]
+Type=4
+Tag=16
+Rect=340 205 60 30
+Text=--
+TextTradition=--
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=410 205 65 30
+Text=城市
+TextTradition=城市
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CITY]
+Type=4
+Tag=18
+Rect=470 205 120 30
+Text=--
+TextTradition=--
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=620 205 65 30
+Text=爱好
+TextTradition=愛好
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_INTEREST]
+Type=4
+Tag=20
+Rect=685 205 120 30
+Text=--
+TextTradition=--
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_21]
+Type=4
+Tag=21
+Rect=290 245 100 30
+Text=个性签名
+TextTradition=個性簽名
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SIGN]
+Type=4
+Tag=22
+Rect=290 280 550 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_TEXT_23]
+Type=4
+Tag=23
+Rect=620 245 100 30
+Text=好友人数
+TextTradition=好友人數
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FIREND_NUM]
+Type=4
+Tag=24
+Rect=715 245 100 30
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_EDIT_INFO]
+Type=2
+Tag=25
+Rect=88 272 136 60
+Text=编辑个人信息
+TextTradition=編輯個人信息
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=102 396 100 30
+Text=出战卡组
+TextTradition=出戰卡組
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CHAT]
+Type=2
+Tag=27
+Rect=100 337 112 44
+Text=好友聊天
+TextTradition=好友聊天
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_PICTURE_CARD1]
+Type=1
+Tag=28
+Rect=231 392 120 160
+NormalFile=.\res\image\card\10100301.png
+NormalFileUV=0 0 450 600
+
+[CTRL_PICTURE_CARD2]
+Type=1
+Tag=29
+Rect=363 392 120 160
+NormalFile=.\res\image\card\10100301.png
+NormalFileUV=0 0 450 600
+
+[CTRL_PICTURE_CARD3]
+Type=1
+Tag=30
+Rect=495 392 120 160
+NormalFile=.\res\image\card\10100301.png
+NormalFileUV=0 0 450 600
+
+[CTRL_PICTURE_CARD4]
+Type=1
+Tag=31
+Rect=627 392 120 160
+NormalFile=.\res\image\card\10100301.png
+NormalFileUV=0 0 450 600
+
+[CTRL_PICTURE_CARD5]
+Type=1
+Tag=32
+Rect=759 392 120 160
+NormalFile=.\res\image\card\10100301.png
+NormalFileUV=0 0 450 600
+
+[CTRL_TEXT_101]
+Type=4
+Tag=101
+Rect=265 550 30 30
+Text=LV
+TextTradition=LV
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_102]
+Type=4
+Tag=102
+Rect=388 550 30 30
+Text=LV
+TextTradition=LV
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_103]
+Type=4
+Tag=103
+Rect=534 550 30 30
+Text=LV
+TextTradition=LV
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_104]
+Type=4
+Tag=104
+Rect=661 550 30 30
+Text=LV
+TextTradition=LV
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_105]
+Type=4
+Tag=105
+Rect=793 550 30 30
+Text=LV
+TextTradition=LV
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD1_LV]
+Type=4
+Tag=106
+Rect=294 550 30 30
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD2_LV]
+Type=4
+Tag=107
+Rect=417 550 30 30
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD3_LV]
+Type=4
+Tag=108
+Rect=563 550 30 30
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD4_LV]
+Type=4
+Tag=109
+Rect=690 550 30 30
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD5_LV]
+Type=4
+Tag=110
+Rect=822 550 30 30
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_INPUT_BUTTON_AGE]
+Type=18
+Tag=43
+Rect=340 165 60 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\edit_bg.png
+NormalFileUV=0 0 514 83
+
+[CTRL_INPUT_BUTTON_MONTH]
+Type=18
+Tag=44
+Rect=470 165 60 30
+Text=12
+TextTradition=12
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\edit_bg.png
+NormalFileUV=0 0 514 83
+
+[CTRL_INPUT_BUTTON_DAY]
+Type=18
+Tag=45
+Rect=530 165 60 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\edit_bg.png
+NormalFileUV=0 0 514 83
+
+[CTRL_INPUT_BUTTON_CITY]
+Type=18
+Tag=47
+Rect=470 205 120 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\edit_bg.png
+NormalFileUV=0 0 514 83
+
+[CTRL_INPUT_BUTTON_INTEREST]
+Type=18
+Tag=48
+Rect=685 205 120 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\edit_bg.png
+NormalFileUV=0 0 514 83
+
+[CTRL_INPUT_BUTTON_SIGN]
+Type=18
+Tag=49
+Rect=290 281 550 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\edit_bg.png
+NormalFileUV=0 0 514 83
+
+[CTRL_BUTTON_APPLY]
+Type=2
+Tag=50
+Rect=100 279 112 44
+Text=申请好友
+TextTradition=申請好友
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_VERTICAL_LIST_AGE]
+Type=14
+Tag=51
+Rect=340 195 60 150
+
+[CTRL_VERTICAL_LIST_MON]
+Type=14
+Tag=52
+Rect=470 195 60 150
+
+[CTRL_VERTICAL_LIST_DAY]
+Type=14
+Tag=53
+Rect=530 195 60 150
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=223
+Rect=845 41 74 74
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74

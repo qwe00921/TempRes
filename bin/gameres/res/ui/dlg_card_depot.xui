@@ -1,0 +1,405 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_23]
+Type=22
+Tag=23
+Rect=0 10 960 630
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=2
+Z_Order=1
+Rect=836 142 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=305 0 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=861 10 74 74
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=836 102 93 17
+Text=卡牌：99/99
+TextTradition=卡牌：99/99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_14]
+Type=2
+Tag=14
+Rect=14 88 112 44
+Text=更换排序
+TextTradition=更換排序
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_9SLICES_24]
+Type=22
+Tag=28
+Rect=14 139 820 486
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_15]
+Type=2
+Tag=15
+Z_Order=1
+Rect=836 202 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_16]
+Type=2
+Tag=16
+Z_Order=1
+Rect=836 319 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_17]
+Type=2
+Tag=17
+Z_Order=1
+Rect=836 378 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_18]
+Type=2
+Tag=18
+Z_Order=1
+Rect=836 437 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_19]
+Type=2
+Tag=19
+Z_Order=1
+Rect=836 496 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_20]
+Type=2
+Tag=20
+Z_Order=1
+Rect=836 555 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_disable.png
+SelectedFileUV=0 0 112 56
+
+[CTRL_BUTTON_21]
+Type=2
+Tag=21
+Z_Order=1
+Rect=836 260 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_VERTICAL_LIST_15]
+Type=14
+Tag=22
+Z_Order=1
+Rect=19 148 765 470
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=38
+Rect=385 16 174 60
+Text=卡牌仓库
+TextTradition=卡牌倉庫
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_37]
+Type=2
+Tag=37
+Rect=769 27 85 44
+Text=取出
+TextTradition=取出
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_38]
+Type=2
+Tag=39
+Rect=662 27 85 44
+Text=放入
+TextTradition=放入
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_22]
+Type=2
+Tag=24
+Rect=137 88 112 44
+Text=扩充
+TextTradition=擴充
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_23]
+Type=2
+Tag=25
+Rect=662 27 85 44
+Text=重置
+TextTradition=重置
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_24]
+Type=2
+Tag=26
+Rect=769 27 85 44
+Text=确认
+TextTradition=確認
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_TEXT_TIP]
+Type=4
+Tag=27
+Rect=579 107 224 15
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=29
+Rect=795 140 32 28
+NormalFile=.\res\image\ui\common\direction_up_icon.png
+NormalFileUV=0 0 32 28
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=30
+Rect=795 595 32 28
+NormalFile=.\res\image\ui\common\direction_down_icon.png
+NormalFileUV=0 0 32 28
+
+[CTRL_9SLICES_28]
+Type=22
+Tag=31
+Rect=802 169 17 427
+NormalFile=.\res\image\ui\common\scrollbar_bg.png
+NormalFileUV=0 0 21 30
+
+[CTRL_PICTURE_29]
+Type=1
+Tag=32
+Rect=799 170 24 24
+NormalFile=.\res\image\ui\common\scrollbar_btn_2.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_30]
+Type=1
+Tag=33
+Z_Order=2
+Rect=838 154 64 32
+Parent=CTRL_BUTTON_2
+NormalFile=.\res.cn\image\ui\font\all.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_31]
+Type=1
+Tag=34
+Z_Order=2
+Rect=838 214 64 32
+Parent=CTRL_BUTTON_15
+NormalFile=.\res.cn\image\ui\font\long.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_32]
+Type=1
+Tag=35
+Z_Order=2
+Rect=838 272 64 32
+Parent=CTRL_BUTTON_21
+NormalFile=.\res.cn\image\ui\font\e_m.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_33]
+Type=1
+Tag=36
+Z_Order=2
+Rect=838 331 64 32
+Parent=CTRL_BUTTON_16
+NormalFile=.\res.cn\image\ui\font\z_l.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_34]
+Type=1
+Tag=40
+Z_Order=2
+Rect=838 390 64 32
+Parent=CTRL_BUTTON_17
+NormalFile=.\res.cn\image\ui\font\d_w.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_35]
+Type=1
+Tag=41
+Z_Order=2
+Rect=838 449 64 32
+Parent=CTRL_BUTTON_18
+NormalFile=.\res.cn\image\ui\font\f_x.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_36]
+Type=1
+Tag=42
+Z_Order=2
+Rect=838 508 64 32
+Parent=CTRL_BUTTON_19
+NormalFile=.\res.cn\image\ui\font\z_w.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_37]
+Type=1
+Tag=43
+Z_Order=2
+Rect=838 567 64 32
+Parent=CTRL_BUTTON_20
+NormalFile=.\res.cn\image\ui\font\w_z.png
+NormalFileUV=0 0 64 32

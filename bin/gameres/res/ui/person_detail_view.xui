@@ -1,0 +1,55 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=13
+Rect=0 0 660 160
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=14
+Rect=30 15 200 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SENDER_NAME]
+Type=4
+Tag=15
+Rect=256 15 120 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TIME]
+Type=4
+Tag=16
+Rect=432 15 200 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CONTENT]
+Type=4
+Tag=17
+Rect=30 50 580 75
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_TEXT_18]
+Type=4
+Tag=18
+Rect=30 131 600 20
+Text=-------------------------------------------------------------------------------------------------------------------------------------
+TextTradition=-------------------------------------------------------------------------------------------------------------------------------------
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

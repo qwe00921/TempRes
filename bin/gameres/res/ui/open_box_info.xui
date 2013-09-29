@@ -1,0 +1,82 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=188 434 518 138
+NormalFile=.\res\image\ui\open_box\bottom.png
+NormalFileUV=0 0 892 298
+
+[CTRL_TEXT_2]
+Type=4
+Tag=2
+Rect=366 436 214 60
+Text=宝箱奖励
+TextTradition=寶箱獎勵
+TextSize=48
+TextColor=0xffd900
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=290 492 130 24
+Text=获得经验:
+TextTradition=獲得經驗:
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=290 514 132 30
+Text=获得金钱:
+TextTradition=獲得金錢:
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=308 534 332 30
+Text=额外获得：4星卡牌一张
+TextTradition=額外獲得：4星卡牌一張
+TextSize=24
+TextColor=0x1fb8ff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=400 494 68 24
+Text=999
+TextTradition=999
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=400 514 66 24
+Text=2013
+TextTradition=2013
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=578 392 142 102

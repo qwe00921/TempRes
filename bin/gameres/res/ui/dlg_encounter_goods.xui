@@ -1,0 +1,140 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=370 91 200 250
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=345 342 250 50
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=378 348 185 38
+Text=【三星】【金箍棒】获得
+TextTradition=【三星】【金箍棒】獲得
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=4
+Rect=345 394 250 140
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=467 402 50 20
+Text=999999
+TextTradition=999999
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=467 425 50 20
+Text=999999
+TextTradition=999999
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=467 450 50 20
+Text=999999
+TextTradition=999999
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=467 474 50 20
+Text=筋斗云
+TextTradition=筋斗云
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=9
+Rect=467 498 50 20
+Text=100%
+TextTradition=100%
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_10]
+Type=4
+Tag=10
+Rect=437 402 30 20
+Text=HP:
+TextTradition=HP:
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_11]
+Type=4
+Tag=11
+Rect=426 425 40 20
+Text=攻击:
+TextTradition=攻擊:
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=425 450 40 20
+Text=防御:
+TextTradition=防御:
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=397 474 70 20
+Text=携带技能:
+TextTradition=攜帶技能:
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_14]
+Type=4
+Tag=14
+Rect=406 498 70 20
+Text=攻击力提升
+TextTradition=攻擊力提升
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter

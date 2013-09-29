@@ -1,0 +1,135 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_99]
+Type=22
+Tag=99
+Rect=181 146 598 348
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_9SLICES_100]
+Type=22
+Tag=100
+Rect=194 201 572 280
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_101]
+Type=22
+Tag=101
+Rect=220 207 150 183
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_PICTURE_SKILL_ICON]
+Type=1
+Tag=2
+Rect=225 213 140 170
+Text=技能
+TextTradition=技能
+
+[CTRL_TEXT_SKILL_NAME]
+Type=4
+Tag=3
+Rect=225 397 140 30
+Text=技能名称
+TextTradition=技能名稱
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_RATE]
+Type=4
+Tag=4
+Rect=393 228 100 30
+Text=稀有度:1
+TextTradition=稀有度:1
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_LEVEL]
+Type=4
+Tag=5
+Rect=498 228 100 30
+Text=LV:59/80
+TextTradition=LV:59/80
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_EXP]
+Type=4
+Tag=6
+Rect=603 228 130 30
+Text=经验值:600/1000
+TextTradition=經驗值:600/1000
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DESCRIBE]
+Type=4
+Tag=8
+Rect=394 267 340 95
+Text=卡片说明
+TextTradition=卡片說明
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_EQUIP]
+Type=2
+Tag=9
+Rect=401 392 136 60
+Text=装备
+TextTradition=裝備
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_INTENSIFY]
+Type=2
+Tag=10
+Rect=572 392 136 60
+Text=强化
+TextTradition=強化
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=11
+Rect=711 130 74 74
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\close_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\close_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\close_disable.png
+DisableFileUV=0 0 74 74

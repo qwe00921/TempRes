@@ -1,0 +1,257 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_64]
+Type=22
+Tag=67
+Rect=0 10 960 630
+Stretch=1
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_69]
+Type=22
+Tag=71
+Rect=439 92 503 500
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=2
+Rect=875 9 74 74
+TextSize=8
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+
+[CTRL_9SLICES_70]
+Type=22
+Tag=72
+Rect=465 101 450 100
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_EQUIP_NAME]
+Type=4
+Tag=56
+Rect=489 116 160 25
+Text=装备名称
+TextTradition=裝備名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_65]
+Type=22
+Tag=68
+Rect=305 0 350 82
+Stretch=1
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_PICTURE_66]
+Type=1
+Tag=69
+Rect=377 20 206 49
+NormalFile=.\res.cn\image\ui\font\k_p_x_q.png
+NormalFileUV=0 0 206 49
+
+[CTRL_PICTURE_RARE1]
+Type=1
+Tag=47
+Rect=487 155 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE2]
+Type=1
+Tag=48
+Rect=522 155 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE3]
+Type=1
+Tag=49
+Rect=557 155 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE4]
+Type=1
+Tag=50
+Rect=592 155 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE5]
+Type=1
+Tag=51
+Rect=627 155 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE6]
+Type=1
+Tag=52
+Rect=661 155 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE7]
+Type=1
+Tag=53
+Rect=697 155 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_9SLICES_56]
+Type=22
+Tag=58
+Rect=465 224 450 150
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_59]
+Type=4
+Tag=63
+Rect=485 234 100 30
+Text=技能名称：
+TextTradition=技能名稱：
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_NAME]
+Type=4
+Tag=79
+Rect=585 234 160 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_DESCRIPTION]
+Type=4
+Tag=80
+Rect=485 279 400 80
+Text=技能说明：
+TextTradition=技能說明：
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_PICTURE_EQUIP_NAME]
+Type=1
+Tag=70
+Rect=26 97 390 378
+NormalFile=.\res\image\ui\skillpiece_combo\skillcomboback.png
+NormalFileUV=0 0 164 159
+
+[CTRL_9SLICES_52]
+Type=22
+Tag=54
+Rect=465 395 450 150
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_53]
+Type=4
+Tag=55
+Rect=485 405 100 30
+Text=武器介绍
+TextTradition=武器介紹
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EQUIP_DESCRIPT]
+Type=4
+Tag=73
+Rect=485 450 400 80
+Text=武器描述
+TextTradition=武器描述
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_31]
+Type=4
+Tag=31
+Rect=66 487 50 30
+Text=HP
+TextTradition=HP
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP]
+Type=4
+Tag=32
+Rect=274 487 80 30
+Text=+50000
+TextTradition=+50000
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_33]
+Type=4
+Tag=33
+Rect=66 527 50 30
+Text=攻击
+TextTradition=攻擊
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATK]
+Type=4
+Tag=34
+Rect=274 527 80 30
+Text=+60000
+TextTradition=+60000
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_35]
+Type=4
+Tag=35
+Rect=66 568 50 30
+Text=防御
+TextTradition=防御
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEF]
+Type=4
+Tag=36
+Rect=274 568 80 30
+Text=+60000
+TextTradition=+60000
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

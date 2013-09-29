@@ -1,0 +1,19 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=143
+Rect=0 0 160 40
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=144
+Rect=0 0 160 40
+Text=小伙伴
+TextTradition=小伙伴
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -1,0 +1,32 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=232 224 500 240
+NormalFile=.\res\image\ui\pve\battle_result\bg.png
+NormalFileUV=0 0 564 310
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=416 270 120 120
+NormalFile=.\res\image\ui\pve\battle_result\boss.png
+NormalFileUV=0 0 160 160
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=4
+Rect=338 398 310 14
+NormalFile=.\res\image\ui\pve\battle_result\hpbar_bk.png
+NormalFileUV=0 0 306 12
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=6
+Rect=340 400 300 8
+NormalFile=.\res\image\ui\pve\battle_result\hpbar.png
+NormalFileUV=0 0 296 8

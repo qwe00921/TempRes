@@ -1,0 +1,72 @@
+﻿
+[UI_INFO]
+Width=1024
+Height=768
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 1024 768
+NormalFile=.\res\image\map\forest_1136_720.png
+NormalFileUV=88 0 960 720
+
+[CTRL_SPRITE_10]
+Type=19
+Tag=11
+Rect=625 292 113 72
+
+[CTRL_SPRITE_9]
+Type=19
+Tag=10
+Rect=625 484 113 72
+
+[CTRL_SPRITE_6]
+Type=19
+Tag=7
+Rect=787 193 113 72
+
+[CTRL_SPRITE_7]
+Type=19
+Tag=8
+Rect=787 382 113 72
+
+[CTRL_SPRITE_8]
+Type=19
+Tag=9
+Rect=787 573 113 72
+
+[CTRL_SPRITE_5]
+Type=19
+Tag=6
+Rect=276 292 113 72
+
+[CTRL_SPRITE_4]
+Type=19
+Tag=5
+Rect=276 484 113 72
+
+[CTRL_SPRITE_1]
+Type=19
+Tag=2
+Rect=112 193 113 72
+
+[CTRL_SPRITE_2]
+Type=19
+Tag=3
+Rect=112 382 113 72
+
+[CTRL_SPRITE_3]
+Type=19
+Tag=4
+Rect=112 573 113 72
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=455 418 114 72
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Z_Order=200
+Rect=0 122 1024 72

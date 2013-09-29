@@ -1,0 +1,80 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=198 164 566 312
+NormalFile=.\res\image\ui\pve\battle_result\bg.png
+NormalFileUV=0 0 564 310
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=390 208 160 160
+NormalFile=.\res\image\ui\pve\battle_result\boss.png
+NormalFileUV=0 0 160 160
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=332 382 60 16
+Text=经验值
+TextTradition=經驗值
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=332 408 60 16
+Text=扭蛋P
+TextTradition=扭蛋P
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=332 434 60 16
+Text=金钱
+TextTradition=金錢
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_8]
+Type=1
+Tag=8
+Rect=330 364 306 12
+NormalFile=.\res\image\ui\pve\battle_result\hpbar_bk.png
+NormalFileUV=0 0 306 12
+
+[CTRL_EXP_9]
+Type=9
+Tag=9
+Rect=334 366 296 8
+BackFile=.\res\image\ui\pve\battle_result\hpbar.png
+BackFileUV=0 0 296 8
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=530 400 40 40
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=582 400 40 40
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=634 400 40 40

@@ -1,0 +1,52 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 400 150
+
+[CTRL_TEXT_2]
+Type=4
+Tag=2
+Rect=10 0 150 30
+Text=我是名字
+TextTradition=我是名字
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=190 0 200 30
+Text=0000-00-10 00:00:00
+TextTradition=0000-00-10 00:00:00
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=10 35 380 100
+Text=我是问题内容！我是问题内容！
+TextTradition=我是問題內容！我是問題內容！
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=21 132 365 22
+Text=------------------------------------
+TextTradition=------------------------------------
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

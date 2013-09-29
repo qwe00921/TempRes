@@ -1,0 +1,149 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=71
+Rect=-1 -1 750 360
+Stretch=1
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 630 160
+NormalFile=.\res\mt\ui\data.dat_000052.png
+NormalFileUV=0 0 256 140
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=203 23 76 30
+Text=999999
+TextTradition=999999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=361 23 78 30
+Text=999999
+TextTradition=999999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=521 23 80 30
+Text=999999
+TextTradition=999999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=6
+Rect=164 66 400 80
+Text=队伍技能
+TextTradition=隊伍技能
+NormalFile=.\res\sk\battle\event_guild_battle_result_vs.png
+NormalFileUV=0 0 532 319
+
+[CTRL_BUTTON_7]
+Type=2
+Tag=7
+Rect=46 31 100 100
+Text=队伍一
+TextTradition=隊伍一
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\mt\ui\data.dat_000455.png
+NormalFileUV=0 0 150 130
+SelectFile=.\res\mt\ui\data.dat_000454.png
+SelectedFileUV=0 0 150 130
+
+[CTRL_TEXT_18]
+Type=4
+Tag=18
+Rect=444 23 87 30
+Text=防御力：
+TextTradition=防御力：
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=285 23 84 30
+Text=攻击力：
+TextTradition=攻擊力：
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_20]
+Type=4
+Tag=20
+Rect=151 23 50 30
+Text=HP:
+TextTradition=HP:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_29]
+Type=2
+Tag=29
+Rect=14 12 600 140
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\team\add_team_btn.png
+NormalFileUV=0 0 650 160
+SelectFile=.\res\image\ui\team\add_team_btn.png
+SelectedFileUV=0 0 650 160
+
+[CTRL_PICTURE_CARD1]
+Type=1
+Tag=72
+Rect=28 174 120 160
+NormalFile=.\res\image\ui\card_get\card1.png
+NormalFileUV=0 0 244 307
+
+[CTRL_PICTURE_CARD2]
+Type=1
+Tag=73
+Rect=171 174 120 160
+NormalFile=.\res\image\ui\card_get\card1.png
+NormalFileUV=0 0 244 307
+
+[CTRL_PICTURE_CARD3]
+Type=1
+Tag=74
+Rect=314 174 120 160
+NormalFile=.\res\image\ui\card_get\card1.png
+NormalFileUV=0 0 244 307
+
+[CTRL_PICTURE_CARD4]
+Type=1
+Tag=75
+Rect=457 174 120 160
+NormalFile=.\res\image\ui\card_get\card1.png
+NormalFileUV=0 0 244 307
+
+[CTRL_PICTURE_CARD5]
+Type=1
+Tag=76
+Rect=600 174 120 160
+NormalFile=.\res\image\ui\card_get\card1.png
+NormalFileUV=0 0 244 307

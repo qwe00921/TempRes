@@ -1,0 +1,38 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_1]
+Type=22
+Tag=1
+Rect=40 30 880 580
+Stretch=1
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=267 39 426 36
+NormalFile=.\res.cn\image\ui\font\x_z_z_b.png
+NormalFileUV=0 0 426 36
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=3
+Rect=849 14 74 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\close_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\close_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\close_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_VERTICAL_LIST_EQUIP_SELECT]
+Type=14
+Tag=4
+Rect=80 101 800 500

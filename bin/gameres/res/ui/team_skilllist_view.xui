@@ -1,0 +1,143 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=0 0 680 200
+NormalFile=.\res\mt\ui\data.dat_000030.png
+NormalFileUV=0 0 453 148
+
+[CTRL_TEXT_SKILL_RARE]
+Type=4
+Tag=25
+Rect=177 19 95 38
+Text=星级4
+TextTradition=星級4
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_NAME]
+Type=4
+Tag=26
+Rect=280 19 127 38
+Text=技能名称
+TextTradition=技能名稱
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_POWER]
+Type=4
+Tag=27
+Rect=239 82 106 35
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_28]
+Type=4
+Tag=28
+Rect=393 82 95 35
+Text=无
+TextTradition=無
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_LEVEL]
+Type=4
+Tag=29
+Rect=563 82 64 35
+Text=99/99
+TextTradition=99/99
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_31]
+Type=4
+Tag=31
+Rect=458 131 100 35
+Text=成长度
+TextTradition=成長度
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_28]
+Type=2
+Tag=33
+Rect=32 16 120 160
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\card\bai_gu_jing_02.png
+NormalFileUV=0 0 1300 1610
+SelectFile=.\res\image\card\bai_gu_jing.png
+SelectedFileUV=0 0 1300 1610
+
+[CTRL_TEXT_41]
+Type=4
+Tag=41
+Rect=179 82 88 35
+Text=威力：
+TextTradition=威力：
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_42]
+Type=4
+Tag=42
+Rect=347 82 82 35
+Text=攻击力：
+TextTradition=攻擊力：
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_43]
+Type=4
+Tag=43
+Rect=509 82 52 35
+Text=LV：
+TextTradition=LV：
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=574 131 50 35
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_DESCRIPTION]
+Type=4
+Tag=30
+Rect=177 123 258 56
+Text=技能描述
+TextTradition=技能描述
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ADD]
+Type=2
+Tag=14
+Rect=0 0 680 200
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\team\add_team_btn.png
+NormalFileUV=0 0 650 160
+SelectFile=.\res\image\ui\team\add_team_btn.png
+SelectedFileUV=0 0 650 160

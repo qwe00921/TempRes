@@ -1,0 +1,50 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=134 143 600 350
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_PICTURE_ICON]
+Type=1
+Tag=2
+Rect=175 206 140 170
+Text=经验卡
+TextTradition=經驗卡
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=3
+Rect=175 375 140 30
+Text=高级经验卡
+TextTradition=高級經驗卡
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DESCRIPT]
+Type=4
+Tag=4
+Rect=342 208 340 167
+Text=卡片说明
+TextTradition=卡片說明
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=5
+Rect=169 166 60 30
+Text=返回
+TextTradition=返回
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159

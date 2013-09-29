@@ -1,0 +1,70 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=12
+Rect=70 70 820 500
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_BUTTON_1]
+Type=2
+Tag=1
+Z_Order=5
+Rect=82 85 107 60
+Text=首页
+TextTradition=首頁
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=2
+Z_Order=5
+Rect=747 85 107 60
+Text=继续任务
+TextTradition=繼續任務
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159
+
+[CTRL_LIST_3]
+Type=8
+Tag=3
+Rect=105 172 750 360
+
+[CTRL_BUTTON_5]
+Type=2
+Tag=5
+Z_Order=5
+Rect=758 161 120 65
+Text=出战按钮
+TextTradition=出戰按鈕
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159
+DisableFile=.\res\image\ui\boss_out\continue_task2.png
+DisableFileUV=0 0 211 80
+
+[CTRL_BUTTON_6]
+Type=2
+Tag=6
+Z_Order=5
+Rect=758 235 120 65
+Text=删除队伍
+TextTradition=刪除隊伍
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159

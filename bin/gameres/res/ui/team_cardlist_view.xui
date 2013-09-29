@@ -1,0 +1,203 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 680 200
+NormalFile=.\res\mt\effect\data.dat_000066.png
+NormalFileUV=0 0 520 272
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=159 20 150 40
+Text=卡片名称
+TextTradition=卡片名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=383 20 65 40
+Text=RP
+TextTradition=RP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=489 20 56 40
+Text=59
+TextTradition=59
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=186 67 180 35
+Text=9999999
+TextTradition=9999999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=186 103 180 35
+Text=9999999
+TextTradition=9999999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=186 140 180 35
+Text=9999999
+TextTradition=9999999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=9
+Rect=384 63 91 35
+Text=经验值
+TextTradition=經驗值
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_10]
+Type=4
+Tag=10
+Rect=385 98 90 35
+Text=宠物类型
+TextTradition=寵物類型
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=456 134 117 47
+Text=队伍一
+TextTradition=隊伍一
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_12]
+Type=2
+Tag=13
+Rect=24 18 120 160
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_get\card1.png
+NormalFileUV=0 0 244 307
+SelectFile=.\res\image\ui\card_get\card2.png
+SelectedFileUV=0 0 280 332
+
+[CTRL_TEXT_21]
+Type=4
+Tag=21
+Rect=309 20 87 40
+Text=稀有度：
+TextTradition=稀有度：
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_22]
+Type=4
+Tag=22
+Rect=455 20 44 40
+Text=LV：
+TextTradition=LV：
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=23
+Rect=154 140 80 35
+Text=防御力：
+TextTradition=防御力：
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_24]
+Type=4
+Tag=24
+Rect=154 103 80 35
+Text=攻击力：
+TextTradition=攻擊力：
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=162 67 65 35
+Text=HP:
+TextTradition=HP:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=476 98 107 35
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_27]
+Type=4
+Tag=27
+Rect=477 63 100 35
+Text=999999
+TextTradition=999999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_28]
+Type=4
+Tag=28
+Rect=375 140 111 35
+Text=所属部队：
+TextTradition=所屬部隊：
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_34]
+Type=2
+Tag=34
+Rect=0 0 680 200
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\team\add_team_btn.png
+NormalFileUV=0 0 650 160
+SelectFile=.\res\image\ui\team\add_team_btn.png
+SelectedFileUV=0 0 650 160

@@ -1,0 +1,18 @@
+﻿
+[UI_INFO]
+Width=1024
+Height=768
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=1
+Rect=943 7 74 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74

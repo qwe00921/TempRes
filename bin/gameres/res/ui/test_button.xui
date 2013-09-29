@@ -1,0 +1,124 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_BUTTON_1]
+Type=2
+Tag=1
+Rect=0 50 60 60
+Text=mi.on
+TextTradition=mi.on
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=2
+Rect=0 120 60 60
+Text=PVP
+TextTradition=PVP
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_3]
+Type=2
+Tag=3
+Rect=0 190 60 60
+Text=PVE
+TextTradition=PVE
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_4]
+Type=2
+Tag=4
+Rect=0 260 60 60
+Text=4
+TextTradition=4
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_5]
+Type=2
+Tag=5
+Rect=0 328 60 60
+Text=5
+TextTradition=5
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_6]
+Type=2
+Tag=6
+Rect=0 400 60 60
+Text=6
+TextTradition=6
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_8]
+Type=2
+Tag=8
+Rect=0 540 60 60
+Text=8
+TextTradition=8
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_7]
+Type=2
+Tag=7
+Rect=0 470 60 60
+Text=7
+TextTradition=7
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43

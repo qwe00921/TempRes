@@ -1,0 +1,171 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 700 190
+
+[CTRL_9SLICES_BG_R]
+Type=22
+Tag=22
+Rect=356 5 350 180
+Stretch=1
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_9SLICES_18]
+Type=22
+Tag=21
+Rect=0 5 350 180
+Stretch=1
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_TEXT_DESCRIPTION_L]
+Type=4
+Tag=5
+Rect=15 122 200 50
+Text=道具说明
+TextTradition=道具說明
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME_L]
+Type=4
+Tag=6
+Rect=113 13 150 30
+Text=超级体力石
+TextTradition=超級體力石
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BUY_L]
+Type=2
+Tag=10
+Rect=197 113 136 60
+Text=购买
+TextTradition=購買
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=20 20 80 80
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_TEXT_REBATE_PRICE_L]
+Type=4
+Tag=12
+Rect=113 94 100 25
+Text=现价：20000
+TextTradition=現價：20000
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=380 20 80 80
+
+[CTRL_TEXT_NAME_R]
+Type=4
+Tag=15
+Rect=475 13 150 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_REBATE_PRICE_R]
+Type=4
+Tag=18
+Rect=475 94 100 25
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DECRIPTION_R]
+Type=4
+Tag=19
+Rect=375 122 200 50
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BUY_R]
+Type=2
+Tag=20
+Rect=560 114 136 60
+Text=购买
+TextTradition=購買
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_LIMIT_L]
+Type=4
+Tag=35
+Rect=113 43 160 25
+Text=15级以上可以购买
+TextTradition=15級以上可以購買
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_PRICE_L]
+Type=4
+Tag=37
+Rect=113 68 100 25
+Text=原价：50000
+TextTradition=原價：50000
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LIMIT_R]
+Type=4
+Tag=38
+Rect=475 43 160 25
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_PRICE_R]
+Type=4
+Tag=39
+Rect=475 68 100 25
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

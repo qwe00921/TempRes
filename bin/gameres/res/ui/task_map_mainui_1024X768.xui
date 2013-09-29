@@ -1,0 +1,559 @@
+﻿
+[UI_INFO]
+Width=1024
+Height=768
+
+[CTRL_BUTTON_3]
+Type=2
+Tag=3
+Rect=765 552 106 60
+Text=冒险
+TextTradition=冒險
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_4]
+Type=2
+Tag=4
+Rect=898 110 106 60
+Text=战斗
+TextTradition=戰斗
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_5]
+Type=2
+Tag=5
+Rect=900 330 106 60
+Text=卡牌背包
+TextTradition=卡牌背包
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_6]
+Type=2
+Tag=6
+Rect=899 183 106 60
+Text=扭蛋
+TextTradition=扭蛋
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_7]
+Type=2
+Tag=7
+Rect=899 261 106 60
+Text=公会
+TextTradition=公會
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_8]
+Type=2
+Tag=8
+Rect=898 404 106 60
+Text=道具背包
+TextTradition=道具背包
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=9
+Rect=899 481 106 60
+Text=其他
+TextTradition=其他
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_67]
+Type=2
+Tag=67
+Rect=766 182 106 60
+Text=卡牌进化
+TextTradition=卡牌進化
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_68]
+Type=2
+Tag=68
+Rect=766 258 106 60
+Text=卡牌队伍
+TextTradition=卡牌隊伍
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_69]
+Type=2
+Tag=69
+Rect=766 331 106 60
+Text=技能碎片
+TextTradition=技能碎片
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_70]
+Type=2
+Tag=70
+Rect=766 404 106 60
+Text=卡牌融合
+TextTradition=卡牌融合
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_71]
+Type=2
+Tag=71
+Rect=766 110 106 60
+Text=卡牌强化
+TextTradition=卡牌強化
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_FRIEND]
+Type=2
+Tag=27
+Rect=635 183 106 60
+Text=好友界面
+TextTradition=好友界面
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_28]
+Type=2
+Tag=28
+Rect=635 110 106 60
+Text=技能卡牌
+TextTradition=技能卡牌
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_29]
+Type=2
+Tag=29
+Rect=766 483 106 60
+Text=卡牌仓库
+TextTradition=卡牌倉庫
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_PLAYER_INFO]
+Type=2
+Tag=33
+Rect=635 256 106 60
+Text=玩家信息
+TextTradition=玩家信息
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_SHOP]
+Type=2
+Tag=34
+Rect=635 330 106 60
+Text=商店
+TextTradition=商店
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_34]
+Type=2
+Tag=35
+Rect=635 403 106 60
+Text=备用4
+TextTradition=備用4
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_35]
+Type=2
+Tag=36
+Rect=635 696 106 60
+Text=备用8
+TextTradition=備用8
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_36]
+Type=2
+Tag=37
+Rect=635 476 106 60
+Text=备用5
+TextTradition=備用5
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_37]
+Type=2
+Tag=38
+Rect=635 549 106 60
+Text=备用6
+TextTradition=備用6
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_BUTTON_38]
+Type=2
+Tag=39
+Rect=635 622 106 60
+Text=备用7
+TextTradition=備用7
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\ui\buttonnormal.png
+NormalFileUV=0 0 20 43
+SelectFile=.\res\sk\ui\buttonhover.png
+SelectedFileUV=0 0 20 43
+
+[CTRL_9SLICES_48]
+Type=22
+Tag=48
+Rect=0 0 935 66
+NormalFile=.\res\image\ui\task_main_ui\user_info_bg.png
+NormalFileUV=0 0 82 55
+
+[CTRL_PICTURE_37]
+Type=1
+Tag=40
+Rect=35 22 27 16
+NormalFile=.\res\image\ui\task_main_ui\lv.png
+NormalFileUV=0 0 27 16
+
+[CTRL_PICTURE_38]
+Type=1
+Tag=41
+Rect=66 18 42 34
+NormalFile=.\res\image\ui\task_main_ui\text_bg.png
+NormalFileUV=0 0 40 28
+
+[CTRL_TEXT_10]
+Type=4
+Tag=10
+Rect=71 22 33 20
+Text=0
+TextTradition=0
+TextSize=20
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_39]
+Type=1
+Tag=42
+Rect=113 20 41 21
+NormalFile=.\res.cn\image\ui\task_main_ui\exp.png
+NormalFileUV=0 0 41 21
+
+[CTRL_PICTURE_41]
+Type=1
+Tag=44
+Rect=155 25 114 17
+NormalFile=.\res\image\ui\task_main_ui\exp_bg.png
+NormalFileUV=0 0 112 15
+
+[CTRL_EXP_50]
+Type=9
+Tag=59
+Rect=160 26 13 11
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+BackFile=.\res\image\ui\task_main_ui\cur_exp_green.png
+BackFileUV=0 0 12 9
+
+[CTRL_TEXT_11]
+Type=4
+Tag=11
+Rect=182 18 72 30
+Text=0/0
+TextTradition=0/0
+TextSize=20
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_42]
+Type=1
+Tag=45
+Rect=275 8 34 40
+NormalFile=.\res\image\ui\task_main_ui\card_icon.png
+NormalFileUV=0 0 34 40
+
+[CTRL_9SLICES_43]
+Type=22
+Tag=46
+Rect=311 16 87 34
+NormalFile=.\res\image\ui\task_main_ui\text_bg.png
+NormalFileUV=0 0 40 28
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=310 18 97 30
+Text=0/0
+TextTradition=0/0
+TextSize=15
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_44]
+Type=1
+Tag=47
+Rect=403 6 34 40
+NormalFile=.\res\image\ui\task_main_ui\gold_coin.png
+NormalFileUV=0 0 34 40
+
+[CTRL_9SLICES_45]
+Type=22
+Tag=49
+Rect=440 16 109 34
+NormalFile=.\res\image\ui\task_main_ui\text_bg.png
+NormalFileUV=0 0 40 28
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=445 18 100 30
+Text=0
+TextTradition=0
+TextSize=20
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=560 18 115 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_46]
+Type=22
+Tag=50
+Rect=676 16 70 34
+NormalFile=.\res\image\ui\task_main_ui\text_bg.png
+NormalFileUV=0 0 40 28
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=682 18 63 30
+Text=99/99
+TextTradition=99/99
+TextSize=15
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ROLL_BTN_BG]
+Type=1
+Tag=51
+Rect=849 623 172 152
+NormalFile=.\res\image\ui\task_main_ui\dice_info_bg.png
+NormalFileUV=0 0 172 152
+
+[CTRL_BUTTON_20]
+Type=2
+Tag=20
+Rect=893 632 112 112
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\task_main_ui\dice_btn_normal.png
+NormalFileUV=0 0 112 112
+SelectFile=.\res\image\ui\task_main_ui\dice_btn_click.png
+SelectedFileUV=0 0 112 112
+DisableFile=.\res\image\ui\task_main_ui\dice_btn_disable.png
+DisableFileUV=0 0 112 112
+FocusFile=.\res\image\ui\task_main_ui\dice_btn_click.png
+FocusFileUV=0 0 112 112
+
+[CTRL_TEXT_ACTION_POINT]
+Type=4
+Tag=30
+Z_Order=1
+Rect=841 716 107 60
+Text=0/0
+TextTradition=0/0
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_49]
+Type=22
+Tag=55
+Rect=835 16 70 34
+NormalFile=.\res\image\ui\task_main_ui\text_bg.png
+NormalFileUV=0 0 40 28
+
+[CTRL_TEXT_NEED_MISSION_POINT]
+Type=4
+Tag=53
+Z_Order=1
+Rect=930 716 107 60
+Text=0
+TextTradition=0
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_50]
+Type=4
+Tag=56
+Rect=840 18 63 30
+Text=99/99
+TextTradition=99/99
+TextSize=15
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_52]
+Type=1
+Tag=58
+Rect=927 8 89 83
+NormalFile=.\res\image\ui\task_main_ui\close_btn_bg.png
+NormalFileUV=0 0 89 83
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=57
+Rect=933 3 80 92
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\task_main_ui\close_btn_normal.png
+NormalFileUV=0 0 80 92
+SelectFile=.\res\image\ui\task_main_ui\close_btn_click.png
+SelectedFileUV=0 0 80 92
+DisableFile=.\res\image\ui\task_main_ui\close_btn_disable.png
+DisableFileUV=0 0 80 92
+
+[CTRL_PICTURE_53]
+Type=1
+Tag=54
+Rect=750 24 79 20
+NormalFile=.\res.cn\image\ui\task_main_ui\dungeon_progress.png
+NormalFileUV=0 0 79 20
+
+[CTRL_EXP_ACTION_POINT]
+Type=9
+Tag=60
+Rect=849 624 172 152
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\task_main_ui\action_value.png
+NormalFileUV=0 0 172 152

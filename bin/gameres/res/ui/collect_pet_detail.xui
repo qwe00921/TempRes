@@ -1,0 +1,279 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_64]
+Type=22
+Tag=67
+Rect=0 10 960 630
+Stretch=1
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_69]
+Type=22
+Tag=71
+Rect=439 92 503 530
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=2
+Rect=875 9 74 74
+TextSize=8
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+
+[CTRL_9SLICES_70]
+Type=22
+Tag=72
+Rect=465 101 450 180
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_CARDNAME]
+Type=4
+Tag=56
+Rect=489 111 160 25
+Text=卡片名称
+TextTradition=卡片名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_54]
+Type=4
+Tag=57
+Rect=624 187 50 30
+Text=暴击：
+TextTradition=暴擊：
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_56]
+Type=4
+Tag=59
+Rect=490 187 50 30
+Text=生命：
+TextTradition=生命：
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_57]
+Type=4
+Tag=60
+Rect=490 225 50 30
+Text=攻击：
+TextTradition=攻擊：
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CRITICAL]
+Type=4
+Tag=62
+Rect=675 187 80 30
+Text=9999
+TextTradition=9999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP]
+Type=4
+Tag=64
+Rect=535 187 80 30
+Text=9999
+TextTradition=9999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATK]
+Type=4
+Tag=65
+Rect=535 225 80 30
+Text=9999
+TextTradition=9999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEF]
+Type=4
+Tag=66
+Rect=675 226 80 30
+Text=9999
+TextTradition=9999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_65]
+Type=22
+Tag=68
+Rect=305 0 350 82
+Stretch=1
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_PICTURE_66]
+Type=1
+Tag=69
+Rect=377 20 206 49
+NormalFile=.\res.cn\image\ui\font\k_p_x_q.png
+NormalFileUV=0 0 206 49
+
+[CTRL_PICTURE_RARE1]
+Type=1
+Tag=47
+Rect=487 146 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE2]
+Type=1
+Tag=48
+Rect=522 146 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE3]
+Type=1
+Tag=49
+Rect=557 146 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE4]
+Type=1
+Tag=50
+Rect=592 146 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE5]
+Type=1
+Tag=51
+Rect=627 146 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE6]
+Type=1
+Tag=52
+Rect=661 146 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE7]
+Type=1
+Tag=53
+Rect=697 146 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_9SLICES_56]
+Type=22
+Tag=58
+Rect=465 290 450 150
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_59]
+Type=4
+Tag=63
+Rect=485 300 100 30
+Text=技能名称：
+TextTradition=技能名稱：
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_NAME]
+Type=4
+Tag=79
+Rect=585 300 160 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_DESCRIPTION]
+Type=4
+Tag=80
+Rect=485 345 400 80
+Text=技能说明：
+TextTradition=技能說明：
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_TEXT_58]
+Type=4
+Tag=61
+Rect=624 226 50 30
+Text=防御：
+TextTradition=防御：
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_CARD]
+Type=1
+Tag=70
+Rect=26 97 390 520
+NormalFile=.\res\image\card\10100301.png
+NormalFileUV=0 0 450 600
+
+[CTRL_9SLICES_52]
+Type=22
+Tag=54
+Rect=465 450 450 150
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_53]
+Type=4
+Tag=55
+Rect=485 460 100 30
+Text=人物介绍
+TextTradition=人物介紹
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CHARACTER]
+Type=4
+Tag=73
+Rect=485 505 400 80
+Text=人物描述
+TextTradition=人物描述
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

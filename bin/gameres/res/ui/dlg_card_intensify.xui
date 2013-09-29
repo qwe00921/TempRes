@@ -1,0 +1,444 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_33]
+Type=22
+Tag=46
+Rect=81 21 797 597
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_34]
+Type=22
+Tag=47
+Rect=95 100 768 504
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=2
+Z_Order=1
+Rect=725 362 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=305 14 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=777 21 74 74
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_BUTTON_12]
+Type=2
+Tag=12
+Rect=725 440 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_14]
+Type=4
+Tag=15
+Rect=289 110 150 28
+Text=卡牌名称
+TextTradition=卡牌名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=289 148 120 28
+Text=稀有度：高
+TextTradition=稀有度：高
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=289 187 80 30
+Text=LV:59
+TextTradition=LV:59
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_21]
+Type=4
+Tag=21
+Rect=289 222 120 30
+Text=HP:999999
+TextTradition=HP:999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_22]
+Type=4
+Tag=22
+Rect=573 222 120 30
+Text=攻击:999999
+TextTradition=攻擊:999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=24
+Rect=715 222 120 30
+Text=防御:999999
+TextTradition=防御:999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_24]
+Type=4
+Tag=25
+Rect=549 149 135 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=26
+Rect=689 149 135 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_26]
+Type=4
+Tag=27
+Rect=535 187 180 30
+Text=所属部队：队伍一
+TextTradition=所屬部隊：隊伍一
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_87]
+Type=22
+Tag=87
+Rect=143 313 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_40]
+Type=4
+Tag=41
+Rect=142 281 60 20
+Text=拥有
+TextTradition=擁有
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_35]
+Type=22
+Tag=48
+Rect=148 114 127 152
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_41]
+Type=4
+Tag=42
+Rect=627 281 107 20
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_42]
+Type=4
+Tag=43
+Rect=471 281 100 20
+Text=本次消耗
+TextTradition=本次消耗
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_43]
+Type=4
+Tag=44
+Rect=260 281 120 20
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_40]
+Type=2
+Tag=45
+Rect=155 118 115 143
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_83]
+Type=1
+Tag=83
+Rect=219 271 34 40
+NormalFile=.\res\image\ui\main_ui\money.png
+NormalFileUV=0 0 34 40
+
+[CTRL_PICTURE_84]
+Type=1
+Tag=84
+Rect=585 271 34 40
+NormalFile=.\res\image\ui\main_ui\money.png
+NormalFileUV=0 0 34 40
+
+[CTRL_TEXT_85]
+Type=4
+Tag=85
+Rect=431 222 120 30
+Text=暴击:30.30%
+TextTradition=暴擊:30.30%
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_86]
+Type=4
+Tag=86
+Rect=392 187 120 30
+Text=种族：自然
+TextTradition=種族：自然
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_88]
+Type=22
+Tag=88
+Rect=257 313 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_89]
+Type=22
+Tag=89
+Rect=376 313 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_91]
+Type=22
+Tag=91
+Rect=496 314 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_92]
+Type=22
+Tag=92
+Rect=143 458 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_93]
+Type=22
+Tag=93
+Rect=613 313 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_94]
+Type=22
+Tag=94
+Rect=256 458 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_95]
+Type=22
+Tag=95
+Rect=376 458 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_96]
+Type=22
+Tag=96
+Rect=613 458 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_97]
+Type=22
+Tag=97
+Rect=496 458 106 139
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_BUTTON_32]
+Type=2
+Tag=32
+Rect=381 318 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_33]
+Type=2
+Tag=33
+Rect=501 319 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_34]
+Type=2
+Tag=34
+Rect=618 317 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_35]
+Type=2
+Tag=35
+Rect=148 463 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_36]
+Type=2
+Tag=36
+Rect=262 463 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_37]
+Type=2
+Tag=37
+Rect=381 463 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_38]
+Type=2
+Tag=39
+Rect=501 463 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_31]
+Type=2
+Tag=31
+Rect=262 318 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_39]
+Type=2
+Tag=40
+Rect=618 463 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_30]
+Type=2
+Tag=30
+Rect=148 318 96 128
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_200]
+Type=1
+Tag=200
+Rect=377 37 206 49
+NormalFile=.\res.cn\image\ui\font\q_h_2.png
+NormalFileUV=0 0 206 49
+
+[CTRL_PICTURE_201]
+Type=1
+Tag=201
+Rect=764 379 56 30
+Parent=CTRL_BUTTON_2
+NormalFile=.\res.cn\image\ui\font\x_z.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_202]
+Type=1
+Tag=202
+Rect=765 452 56 30
+Parent=CTRL_BUTTON_12
+NormalFile=.\res.cn\image\ui\font\q_h.png
+NormalFileUV=0 0 56 30

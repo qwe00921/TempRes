@@ -1,0 +1,9 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_30]
+Type=1
+Tag=30
+Rect=336 120 304 324

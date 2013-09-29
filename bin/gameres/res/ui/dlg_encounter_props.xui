@@ -1,0 +1,47 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=378 139 200 250
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=353 393 250 60
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=508 408 50 30
+Text=获得
+TextTradition=獲得
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=396 408 70 30
+Text=【999999】
+TextTradition=【999999】
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=459 408 60 30
+Text=【金币】
+TextTradition=【金幣】
+TextSize=14
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -1,0 +1,217 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_383]
+Type=22
+Tag=383
+Rect=79 65 802 510
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_385]
+Type=22
+Tag=385
+Rect=92 144 776 416
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_386]
+Type=22
+Tag=386
+Rect=204 175 222 227
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_PICTURE_LOGO]
+Type=1
+Tag=3
+Rect=211 182 208 213
+
+[CTRL_TEXT_DESCREPTION]
+Type=4
+Tag=4
+Rect=211 412 208 112
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_BOSS]
+Type=4
+Tag=5
+Rect=445 184 124 29
+Text=守护BOSS：
+TextTradition=守護BOSS：
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_BOSS]
+Type=4
+Tag=7
+Rect=578 184 124 29
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_DIFFICULTY]
+Type=4
+Tag=8
+Rect=445 233 124 29
+Text=难度：
+TextTradition=難度：
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_VAL_DIFFICULTY1]
+Type=2
+Tag=10
+Rect=578 233 52 31
+Text=简单
+TextTradition=簡單
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_VAL_DIFFICULTY2]
+Type=2
+Tag=11
+Rect=646 233 52 31
+Text=普通
+TextTradition=普通
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_VAL_DIFFICULTY3]
+Type=2
+Tag=12
+Rect=714 233 52 31
+Text=困难
+TextTradition=困難
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_SCORE]
+Type=4
+Tag=13
+Rect=445 282 124 29
+Text=通关评价：
+TextTradition=通關評價：
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_STAR1]
+Type=1
+Tag=14
+Rect=578 276 45 40
+
+[CTRL_PICTURE_STAR2]
+Type=1
+Tag=15
+Rect=645 276 45 40
+
+[CTRL_PICTURE_STAR3]
+Type=1
+Tag=16
+Rect=712 276 45 40
+
+[CTRL_TEXT_LAB_CHALLENGE]
+Type=4
+Tag=17
+Rect=445 331 124 29
+Text=挑战次数：
+TextTradition=挑戰次數：
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_CHALLENGE]
+Type=4
+Tag=18
+Rect=578 331 124 29
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_POINT]
+Type=4
+Tag=19
+Rect=446 380 124 29
+Text=消耗体力：
+TextTradition=消耗體力：
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_384]
+Type=1
+Tag=384
+Rect=305 56 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_TEXT_VAL_POINT]
+Type=4
+Tag=20
+Rect=578 380 124 29
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ENTER]
+Type=2
+Tag=21
+Rect=480 442 136 60
+Text=进入
+TextTradition=進入
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=22
+Rect=778 66 74 74
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=23
+Rect=355 72 250 51
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

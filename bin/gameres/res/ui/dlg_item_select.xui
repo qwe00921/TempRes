@@ -1,0 +1,98 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=75
+Rect=80 70 800 500
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=76
+Rect=113 92 107 60
+Text=返回
+TextTradition=返回
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_TEXT_77]
+Type=4
+Tag=77
+Rect=250 84 384 60
+Text=道具选择界面
+TextTradition=道具選擇界面
+TextSize=35
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_78]
+Type=2
+Tag=78
+Rect=627 85 107 60
+Text=重置
+TextTradition=重置
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_BUTTON_OK]
+Type=2
+Tag=79
+Rect=747 85 107 60
+Text=确认
+TextTradition=確認
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_VERTICAL_LIST_ITEMS]
+Type=14
+Tag=33
+Rect=219 182 600 330
+
+[CTRL_BUTTON_CHECK1]
+Type=2
+Tag=195
+Rect=131 223 50 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\equip\uncheckbtn.png
+NormalFileUV=0 0 50 50
+
+[CTRL_BUTTON_CHECK2]
+Type=2
+Tag=196
+Rect=131 322 50 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\equip\uncheckbtn.png
+NormalFileUV=0 0 50 50
+
+[CTRL_BUTTON_CHECK3]
+Type=2
+Tag=197
+Rect=131 426 50 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\equip\uncheckbtn.png
+NormalFileUV=0 0 50 50

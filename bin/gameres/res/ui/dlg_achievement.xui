@@ -1,0 +1,150 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_1]
+Type=22
+Tag=1
+Rect=0 10 960 630
+Stretch=1
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_TEXT_2]
+Type=4
+Tag=2
+Rect=380 22 200 60
+Text=成就界面
+TextTradition=成就界面
+TextSize=40
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_PLAYER]
+Type=2
+Tag=3
+Rect=30 93 112 44
+Text=角色
+TextTradition=角色
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_BUTTON_PET]
+Type=2
+Tag=4
+Rect=160 94 107 42
+Text=宠物
+TextTradition=寵物
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_BUTTON_MISSION]
+Type=2
+Tag=5
+Rect=285 95 107 42
+Text=关卡
+TextTradition=關卡
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_BUTTON_ELSE]
+Type=2
+Tag=6
+Rect=410 94 107 42
+Text=其他
+TextTradition=其他
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=596 88 120 30
+Text=成就记录
+TextTradition=成就記錄
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ACHIEVEMENT_NUM]
+Type=4
+Tag=8
+Rect=596 113 120 30
+Text=0/0
+TextTradition=0/0
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=11
+Rect=874 5 74 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+
+[CTRL_PICTURE_PLAYER_NUM]
+Type=1
+Tag=12
+Rect=115 85 25 25
+
+[CTRL_PICTURE_PET_NUM]
+Type=1
+Tag=13
+Rect=240 84 25 25
+
+[CTRL_PICTURE_MISSION_NUM]
+Type=1
+Tag=14
+Rect=365 85 25 25
+
+[CTRL_PICTURE_ELSE_NUM]
+Type=1
+Tag=15
+Rect=490 85 25 25
+
+[CTRL_9SLICES_16]
+Type=22
+Tag=16
+Rect=20 145 920 480
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_VERTICAL_LIST_ACHIEVEMENT]
+Type=14
+Tag=17
+Rect=20 145 920 480

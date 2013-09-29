@@ -1,0 +1,202 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_BUTTON_BG]
+Type=2
+Tag=1
+Rect=0 0 650 110
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_get\bk2.png
+NormalFileUV=0 0 446 149
+
+[CTRL_PICTURE_EQUIP]
+Type=1
+Tag=2
+Rect=16 7 75 75
+NormalFile=.\res\image\ui\equip\ornament.png
+NormalFileUV=0 0 64 64
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=20 86 30 20
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=4
+Rect=49 86 40 20
+Text=50
+TextTradition=50
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=5
+Rect=104 8 130 25
+Text=鸳鸯刀
+TextTradition=鴛鴦刀
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_START]
+Type=1
+Tag=6
+Rect=242 8 140 25
+NormalFile=.\res\image\ui\equip\startlvl.png
+NormalFileUV=0 0 141 24
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=95 35 60 20
+Text=攻击力+
+TextTradition=攻擊力+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATK]
+Type=4
+Tag=8
+Rect=154 35 50 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=9
+Rect=201 35 60 20
+Text=防御力+
+TextTradition=防御力+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEF]
+Type=4
+Tag=10
+Rect=257 35 50 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_11]
+Type=4
+Tag=11
+Rect=299 35 50 20
+Text=HP+
+TextTradition=HP+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP]
+Type=4
+Tag=12
+Rect=336 35 60 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=437 14 120 25
+Text=当前装备于卡片：
+TextTradition=當前裝備于卡片：
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDNAME]
+Type=4
+Tag=14
+Rect=436 41 140 25
+Text=小火龙
+TextTradition=小火龍
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=436 68 30 25
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLV]
+Type=4
+Tag=16
+Rect=462 68 30 25
+Text=99
+TextTradition=99
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=490 68 30 25
+Text=ID:
+TextTradition=ID:
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDID]
+Type=4
+Tag=18
+Rect=517 68 60 25
+Text=1350006
+TextTradition=1350006
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL]
+Type=4
+Tag=19
+Rect=97 60 296 43
+Text=万剑诀
+TextTradition=萬劍訣
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_NOEQUIP]
+Type=1
+Tag=20
+Rect=420 9 170 90
+NormalFile=.\res\image\ui\equip\noequip.png
+NormalFileUV=0 0 351 88
+
+[CTRL_PICTURE_CHECK]
+Type=1
+Tag=77
+Rect=614 26 50 50
+NormalFile=.\res\image\ui\equip\checkbtn.png
+NormalFileUV=0 0 50 50

@@ -1,0 +1,96 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=0 0 962 642
+NormalFile=.\res\image\map\battle_bg_pvp.png
+NormalFileUV=0 0 2100 1400
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 510 160 130
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=800 510 160 130
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=800 0 160 130
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=4
+Rect=84 198 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=5
+Rect=166 116 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=6
+Rect=300 70 130 162
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_7]
+Type=1
+Tag=7
+Rect=462 54 130 162
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_8]
+Type=1
+Tag=8
+Rect=606 82 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=188 388 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=328 422 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=486 410 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=626 378 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Rect=732 320 130 160
+NormalFile=.\res\image\card\bai_gu_jing_no_foot.png
+NormalFileUV=0 0 364 394

@@ -1,0 +1,166 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_16]
+Type=22
+Tag=16
+Rect=75 60 810 520
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_BUTTON_FIREND]
+Type=2
+Tag=2
+Rect=103 83 100 34
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\h_y_l_b.png
+NormalFileUV=0 0 130 44
+SelectFile=.\res\image\ui\common\h_y_l_b.png
+SelectedFileUV=0 0 130 44
+
+[CTRL_9SLICES_17]
+Type=22
+Tag=17
+Rect=90 180 781 386
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_FRIEND_APPLY]
+Type=2
+Tag=3
+Rect=217 83 100 34
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\h_y_s_q.png
+NormalFileUV=0 0 130 44
+SelectFile=.\res\image\ui\common\h_y_s_q.png
+SelectedFileUV=0 0 130 44
+
+[CTRL_BUTTON_FRIEND_RECOMMEND]
+Type=2
+Tag=4
+Rect=331 83 100 34
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\h_y_t_j.png
+NormalFileUV=0 0 130 44
+SelectFile=.\res\image\ui\common\h_y_t_j.png
+SelectedFileUV=0 0 130 44
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=545 95 120 30
+Text=我的好友：
+TextTradition=我的好友：
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FRIEND_NUM]
+Type=4
+Tag=6
+Rect=648 95 60 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=7
+Rect=795 60 74 74
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_TEXT_PK_NUM]
+Type=4
+Tag=9
+Rect=126 140 210 30
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_VERTICAL_LIST_FRIEND]
+Type=14
+Tag=10
+Rect=102 188 760 370
+
+[CTRL_INPUT_BUTTON_SEARCH_NAME]
+Type=18
+Tag=91
+Rect=113 135 300 40
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\modal\modal_text_area_black.png
+NormalFileUV=0 0 514 83
+
+[CTRL_VERTICAL_LIST_FRIEND_APPLY]
+Type=14
+Tag=56
+Rect=102 188 760 370
+
+[CTRL_BUTTON_SEARCH_PLAYER]
+Type=2
+Tag=92
+Rect=422 135 107 42
+Text=搜索玩家
+TextTradition=搜索玩家
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_BUTTON_RECOMMEND_AGAIN]
+Type=2
+Tag=93
+Rect=754 136 107 42
+Text=重新推荐
+TextTradition=重新推薦
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_VERTICAL_LIST_RECOMMEND]
+Type=14
+Tag=94
+Rect=102 188 760 370
+
+[CTRL_TEXT_APPLY_NUM]
+Type=4
+Tag=28
+Rect=536 141 215 30
+Text=已经发起申请：20/30
+TextTradition=已經發起申請：20/30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

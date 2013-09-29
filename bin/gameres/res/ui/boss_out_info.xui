@@ -1,0 +1,155 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=208 362 518 145
+NormalFile=.\res\image\ui\open_box\bottom.png
+NormalFileUV=0 0 892 298
+
+[CTRL_BUTTON_5]
+Type=2
+Tag=5
+Rect=243 375 40 20
+Text=HP:
+TextTradition=HP:
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=279 375 100 20
+Text=999999/99999
+TextTradition=999999/99999
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_7]
+Type=2
+Tag=7
+Rect=380 375 60 20
+Text=攻击力:
+TextTradition=攻擊力:
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=441 375 100 20
+Text=999999/99999
+TextTradition=999999/99999
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=9
+Rect=542 375 60 20
+Text=防御力:
+TextTradition=防御力:
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_10]
+Type=4
+Tag=10
+Rect=602 375 100 20
+Text=999999/99999
+TextTradition=999999/99999
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=345 402 50 20
+Text=技能:
+TextTradition=技能:
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=397 402 50 20
+Text=火焰掌
+TextTradition=火焰掌
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_13]
+Type=2
+Tag=13
+Rect=256 434 128 52
+Text=避开
+TextTradition=避開
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 421 159
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 421 159
+
+[CTRL_BUTTON_14]
+Type=2
+Tag=14
+Rect=412 434 128 52
+Text=选择队伍
+TextTradition=選擇隊伍
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 421 159
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 421 159
+
+[CTRL_BUTTON_15]
+Type=2
+Tag=15
+Rect=568 434 128 52
+Text=攻击
+TextTradition=攻擊
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 421 159
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 421 159
+
+[CTRL_TEXT_20]
+Type=4
+Tag=20
+Rect=456 402 130 20
+Text=增加攻击力100%
+TextTradition=增加攻擊力100%
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

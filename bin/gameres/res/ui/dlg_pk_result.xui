@@ -1,0 +1,32 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=37
+Rect=280 220 400 200
+NormalFile=.\res\image\ui\pve\battle_result\bg.png
+NormalFileUV=0 0 564 310
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=38
+Rect=424 260 120 60
+Text=胜利！
+TextTradition=勝利！
+TextSize=40
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RESULT]
+Type=4
+Tag=39
+Rect=349 339 263 40
+Text=获得pt值 30 点
+TextTradition=獲得pt值 30 點
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

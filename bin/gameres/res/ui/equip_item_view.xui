@@ -1,0 +1,73 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 600 110
+NormalFile=.\res\image\ui\card_get\bk2.png
+NormalFileUV=0 0 446 149
+
+[CTRL_PICTURE_ITEM]
+Type=1
+Tag=2
+Rect=19 5 100 100
+
+[CTRL_TEXT_ITEM_NUM]
+Type=4
+Tag=3
+Rect=88 72 30 30
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM_NAME]
+Type=4
+Tag=4
+Rect=155 11 150 30
+Text=初级强化道具
+TextTradition=初級強化道具
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ADD]
+Type=2
+Tag=5
+Rect=168 50 50 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\equip\add.png
+NormalFileUV=0 0 52 51
+
+[CTRL_BUTTON_MINUS]
+Type=2
+Tag=6
+Rect=250 50 50 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\equip\minus.png
+NormalFileUV=0 0 58 58
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=337 42 90 50
+Text=使用数量：
+TextTradition=使用數量：
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_USE_NUM]
+Type=4
+Tag=8
+Rect=417 42 50 50
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -1,0 +1,101 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_8]
+Type=22
+Tag=10
+Rect=81 68 797 498
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=305 63 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_9SLICES_10]
+Type=22
+Tag=11
+Rect=167 192 215 254
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_BUTTON_4]
+Type=2
+Tag=4
+Rect=172 201 204 238
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=437 242 107 60
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_7]
+Type=2
+Tag=7
+Rect=780 69 74 74
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_BUTTON_8]
+Type=2
+Tag=8
+Rect=678 471 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_PICTURE_307]
+Type=1
+Tag=307
+Rect=377 87 206 49
+NormalFile=.\res.cn\image\ui\font\j_h_c_g.png
+NormalFileUV=0 0 206 49
+
+[CTRL_9SLICES_308]
+Type=22
+Tag=308
+Rect=579 195 215 254
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_PICTURE_309]
+Type=1
+Tag=309
+Rect=452 319 71 44
+NormalFile=.\res\image\ui\common\arrow.png
+NormalFileUV=0 0 71 44
+
+[CTRL_PICTURE_310]
+Type=1
+Tag=310
+Rect=718 484 56 30
+Parent=CTRL_BUTTON_8
+NormalFile=.\res.cn\image\ui\font\j_x.png
+NormalFileUV=0 0 56 30

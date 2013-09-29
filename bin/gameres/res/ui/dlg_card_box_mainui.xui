@@ -1,0 +1,446 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_20]
+Type=22
+Tag=23
+Rect=0 10 960 630
+Stretch=1
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_37]
+Type=22
+Tag=43
+Rect=12 133 822 495
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=2
+Z_Order=1
+Rect=836 143 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=305 0 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=861 9 74 74
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=881 103 54 17
+Text=99/99
+TextTradition=99/99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_14]
+Type=2
+Tag=14
+Rect=16 86 112 44
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_click.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_15]
+Type=2
+Tag=15
+Z_Order=1
+Rect=836 203 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_16]
+Type=2
+Tag=16
+Z_Order=1
+Rect=836 323 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_17]
+Type=2
+Tag=17
+Z_Order=1
+Rect=836 383 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_18]
+Type=2
+Tag=18
+Z_Order=1
+Rect=836 443 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_19]
+Type=2
+Tag=19
+Z_Order=1
+Rect=836 503 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_20]
+Type=2
+Tag=20
+Z_Order=1
+Rect=836 563 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_BUTTON_21]
+Type=2
+Tag=21
+Z_Order=1
+Rect=836 263 112 56
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\radio_btn_normal.png
+NormalFileUV=0 0 112 56
+SelectFile=.\res\image\ui\common\radio_btn_select.png
+SelectedFileUV=0 0 112 56
+DisableFile=.\res\image\ui\common\radio_btn_disable.png
+DisableFileUV=0 0 112 56
+
+[CTRL_VERTICAL_LIST_15]
+Type=14
+Tag=22
+Z_Order=1
+Rect=17 140 769 480
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=38
+Rect=393 15 174 52
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_37]
+Type=2
+Tag=37
+Rect=742 27 112 44
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_38]
+Type=2
+Tag=39
+Rect=653 27 78 44
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_TEXT_TIP]
+Type=4
+Tag=24
+Rect=506 102 268 15
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_21]
+Type=1
+Tag=25
+Z_Order=2
+Rect=838 155 64 32
+Parent=CTRL_BUTTON_2
+NormalFile=.\res.cn\image\ui\font\all.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=26
+Z_Order=2
+Rect=838 215 64 32
+Parent=CTRL_BUTTON_15
+NormalFile=.\res.cn\image\ui\font\long.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=27
+Z_Order=2
+Rect=838 275 64 32
+Parent=CTRL_BUTTON_21
+NormalFile=.\res.cn\image\ui\font\e_m.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=28
+Z_Order=2
+Rect=838 335 64 32
+Parent=CTRL_BUTTON_16
+NormalFile=.\res.cn\image\ui\font\z_l.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=29
+Z_Order=2
+Rect=838 395 64 32
+Parent=CTRL_BUTTON_17
+NormalFile=.\res.cn\image\ui\font\d_w.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=30
+Z_Order=2
+Rect=838 455 64 32
+Parent=CTRL_BUTTON_18
+NormalFile=.\res.cn\image\ui\font\f_x.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=31
+Z_Order=2
+Rect=838 515 64 32
+Parent=CTRL_BUTTON_19
+NormalFile=.\res.cn\image\ui\font\z_w.png
+NormalFileUV=0 0 64 32
+
+[CTRL_PICTURE_28]
+Type=1
+Tag=32
+Z_Order=2
+Rect=838 575 64 32
+Parent=CTRL_BUTTON_20
+NormalFile=.\res.cn\image\ui\font\w_z.png
+NormalFileUV=0 0 64 32
+
+[CTRL_BUTTON_SORTLEVEL]
+Type=2
+Tag=33
+Rect=132 87 107 42
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_31]
+Type=2
+Tag=34
+Rect=243 87 107 42
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_BUTTON_SORTRARE]
+Type=2
+Tag=35
+Rect=355 87 107 42
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\common\btn_1_disable.png
+DisableFileUV=0 0 112 44
+
+[CTRL_PICTURE_33]
+Type=1
+Tag=36
+Rect=27 92 90 32
+Parent=CTRL_BUTTON_14
+NormalFile=.\res.cn\image\ui\font\p_x.png
+NormalFileUV=0 0 90 32
+
+[CTRL_PICTURE_34]
+Type=1
+Tag=40
+Rect=140 92 90 32
+Parent=CTRL_BUTTON_SORTLEVEL
+NormalFile=.\res.cn\image\ui\font\lv.png
+NormalFileUV=0 0 90 32
+
+[CTRL_PICTURE_35]
+Type=1
+Tag=41
+Rect=251 92 90 32
+Parent=CTRL_BUTTON_31
+NormalFile=.\res.cn\image\ui\font\x_y_d.png
+NormalFileUV=0 0 90 32
+
+[CTRL_PICTURE_SORTRARE]
+Type=1
+Tag=42
+Rect=363 92 90 32
+Parent=CTRL_BUTTON_SORTRARE
+NormalFile=.\res.cn\image\ui\font\x_j.png
+NormalFileUV=0 0 90 32
+
+[CTRL_PICTURE_39]
+Type=1
+Tag=44
+Rect=377 17 206 49
+NormalFile=.\res.cn\image\ui\font\k_b.png
+NormalFileUV=0 0 206 49
+
+[CTRL_9SLICES_40]
+Type=22
+Tag=45
+Rect=803 168 17 426
+NormalFile=.\res\image\ui\common\scrollbar_bg.png
+NormalFileUV=0 0 21 30
+
+[CTRL_PICTURE_41]
+Type=1
+Tag=46
+Rect=796 139 32 28
+NormalFile=.\res\image\ui\common\direction_up_icon.png
+NormalFileUV=0 0 32 28
+
+[CTRL_PICTURE_42]
+Type=1
+Tag=47
+Rect=796 595 32 28
+NormalFile=.\res\image\ui\common\direction_down_icon.png
+NormalFileUV=0 0 32 28
+
+[CTRL_PICTURE_40]
+Type=1
+Tag=48
+Rect=799 170 24 24
+NormalFile=.\res\image\ui\common\scrollbar_btn_2.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_478]
+Type=1
+Tag=478
+Rect=664 36 56 30
+Parent=CTRL_BUTTON_38
+NormalFile=.\res.cn\image\ui\font\c_z.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_479]
+Type=1
+Tag=479
+Rect=770 35 56 30
+Parent=CTRL_BUTTON_37
+NormalFile=.\res.cn\image\ui\font\q_r.png
+NormalFileUV=0 0 56 30

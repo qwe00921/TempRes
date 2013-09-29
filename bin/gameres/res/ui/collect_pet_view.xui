@@ -1,0 +1,73 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=26
+Rect=-1 0 697 215
+
+[CTRL_9SLICES_31]
+Type=22
+Tag=45
+Rect=6 2 158 203
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_32]
+Type=22
+Tag=46
+Rect=178 2 158 203
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_34]
+Type=22
+Tag=47
+Rect=351 2 158 203
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_9SLICES_35]
+Type=22
+Tag=48
+Rect=526 2 158 203
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_BUTTON_38]
+Type=2
+Tag=38
+Rect=13 8 145 190
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_39]
+Type=2
+Tag=39
+Rect=186 8 145 190
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_40]
+Type=2
+Tag=40
+Rect=359 8 145 190
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_41]
+Type=2
+Tag=41
+Rect=534 8 145 190
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

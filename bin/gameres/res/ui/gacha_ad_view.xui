@@ -1,0 +1,9 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_AD]
+Type=1
+Tag=1
+Rect=0 0 400 60

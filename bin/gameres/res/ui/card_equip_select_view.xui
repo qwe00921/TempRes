@@ -1,0 +1,339 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 800 160
+
+[CTRL_9SLICES_2]
+Type=22
+Tag=2
+Rect=10 5 390 150
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_BG_R]
+Type=22
+Tag=3
+Rect=407 5 390 150
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_4]
+Type=22
+Tag=4
+Rect=25 20 100 100
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_BUTTON_ICON_L]
+Type=2
+Tag=37
+Rect=31 26 90 90
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_PICTURE_CARD_NAME_BG_L]
+Type=1
+Tag=5
+Rect=23 13 104 30
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_CARD_NAME_L]
+Type=4
+Tag=7
+Rect=23 13 104 30
+Text=卡牌名称
+TextTradition=卡牌名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_8]
+Type=1
+Tag=8
+Rect=58 93 69 30
+NormalFile=.\res\image\ui\common\sub_info_bg.png
+NormalFileUV=0 0 69 30
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=67 96 32 21
+NormalFile=.\res\image\ui\common\lv.png
+NormalFileUV=0 0 32 21
+
+[CTRL_TEXT_LV_L]
+Type=4
+Tag=10
+Rect=96 92 30 30
+Text=99
+TextTradition=99
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME_L]
+Type=4
+Tag=11
+Rect=13 123 120 30
+Text=道具名称
+TextTradition=道具名稱
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_12]
+Type=22
+Tag=12
+Rect=135 12 260 140
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_TYPE_L]
+Type=4
+Tag=13
+Rect=150 20 50 30
+Text=武器
+TextTradition=武器
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_START_L]
+Type=4
+Tag=14
+Rect=190 20 80 30
+Text=（星级）
+TextTradition=（星級）
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=150 45 85 30
+Text=攻击力+
+TextTradition=攻擊力+
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATK_L]
+Type=4
+Tag=16
+Rect=220 45 80 30
+Text=99999
+TextTradition=99999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=150 70 85 30
+Text=防御力+
+TextTradition=防御力+
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEF_L]
+Type=4
+Tag=19
+Rect=220 70 80 30
+Text=99999
+TextTradition=99999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_20]
+Type=22
+Tag=20
+Rect=420 20 100 100
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_BUTTON_ICON_R]
+Type=2
+Tag=38
+Rect=425 26 90 90
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_PICTURE_CARD_NAME_BG_R]
+Type=1
+Tag=22
+Rect=420 13 104 30
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_CARD_NAME_R]
+Type=4
+Tag=23
+Rect=420 13 104 30
+Text=卡牌名称
+TextTradition=卡牌名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=24
+Rect=454 92 69 30
+NormalFile=.\res\image\ui\common\sub_info_bg.png
+NormalFileUV=0 0 69 30
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=461 96 32 21
+NormalFile=.\res\image\ui\common\lv.png
+NormalFileUV=0 0 32 21
+
+[CTRL_TEXT_LV_R]
+Type=4
+Tag=26
+Rect=490 92 30 30
+Text=99
+TextTradition=99
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME_R]
+Type=4
+Tag=27
+Rect=411 122 120 30
+Text=道具名称
+TextTradition=道具名稱
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_28]
+Type=22
+Tag=28
+Rect=532 10 260 140
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_TYPE_R]
+Type=4
+Tag=29
+Rect=552 20 50 30
+Text=武器
+TextTradition=武器
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_START_R]
+Type=4
+Tag=30
+Rect=591 20 80 30
+Text=（星级）
+TextTradition=（星級）
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_31]
+Type=4
+Tag=31
+Rect=552 45 85 30
+Text=攻击力+
+TextTradition=攻擊力+
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATK_R]
+Type=4
+Tag=32
+Rect=622 45 80 30
+Text=99999
+TextTradition=99999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_33]
+Type=4
+Tag=33
+Rect=552 70 85 30
+Text=防御力+
+TextTradition=防御力+
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEF_R]
+Type=4
+Tag=34
+Rect=622 70 80 30
+Text=99999
+TextTradition=99999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SKILL_L]
+Type=4
+Tag=35
+Rect=150 98 220 20
+Text=我是技能说明
+TextTradition=我是技能說明
+TextSize=18
+TextColor=0xff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_TEXT_SKILL_R]
+Type=4
+Tag=36
+Rect=552 100 220 20
+Text=我是技能说明
+TextTradition=我是技能說明
+TextSize=18
+TextColor=0xff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

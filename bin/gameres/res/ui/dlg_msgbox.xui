@@ -1,0 +1,99 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_BG]
+Type=22
+Tag=7
+Rect=199 187 563 266
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_TEXT_2]
+Type=4
+Tag=2
+Rect=388 194 184 36
+Text=标题
+TextTradition=標題
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=280 257 400 97
+Text=提示内容
+TextTradition=提示內容
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_OK]
+Type=2
+Tag=4
+Rect=419 379 136 60
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_YES]
+Type=2
+Tag=5
+Rect=278 379 136 60
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_NO]
+Type=2
+Tag=6
+Rect=560 379 136 60
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_PICTURE_OK]
+Type=1
+Tag=9
+Rect=459 394 56 30
+Parent=CTRL_BUTTON_OK
+NormalFile=.\res.cn\image\ui\font\q_r.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_NO]
+Type=1
+Tag=10
+Rect=600 394 56 30
+Parent=CTRL_BUTTON_NO
+NormalFile=.\res.cn\image\ui\font\q_x.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_YES]
+Type=1
+Tag=12
+Rect=318 394 56 30
+Parent=CTRL_BUTTON_YES
+NormalFile=.\res.cn\image\ui\font\q_r.png
+NormalFileUV=0 0 56 30

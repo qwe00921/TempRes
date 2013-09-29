@@ -1,0 +1,118 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_BG]
+Type=22
+Tag=31
+Rect=0 0 720 126
+Stretch=1
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_PICTURE_PIC]
+Type=1
+Tag=70
+Rect=35 6 80 80
+NormalFile=.\res\mt\chara\big\data.dat_000233.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_71]
+Type=4
+Tag=71
+Rect=38 88 44 25
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=72
+Rect=72 88 40 25
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=73
+Rect=130 15 120 30
+Text=好友名称
+TextTradition=好友名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_74]
+Type=4
+Tag=74
+Rect=127 70 107 30
+Text=好友人数
+TextTradition=好友人數
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FRIEND_NUM]
+Type=4
+Tag=75
+Rect=224 70 107 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_76]
+Type=4
+Tag=76
+Rect=363 70 107 30
+Text=申请日期
+TextTradition=申請日期
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_APPLY_DATE]
+Type=4
+Tag=77
+Rect=457 70 107 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ACCEPT]
+Type=2
+Tag=78
+Rect=570 5 136 60
+Text=接受申请
+TextTradition=接受申請
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+
+[CTRL_BUTTON_REFUSE]
+Type=2
+Tag=79
+Rect=570 64 136 60
+Text=拒绝申请
+TextTradition=拒絕申請
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60

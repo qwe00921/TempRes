@@ -1,0 +1,256 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=136 76 689 489
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=2
+Rect=330 107 207 48
+Text=迷雾之森通关
+TextTradition=迷霧之森通關
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SUBTITLE]
+Type=4
+Tag=3
+Rect=540 122 138 32
+Text=新记录
+TextTradition=新記錄
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=4
+Rect=238 166 506 109
+
+[CTRL_TEXT_LAB_DIFFICULTY]
+Type=4
+Tag=5
+Rect=282 174 140 33
+Text=通关难度
+TextTradition=通關難度
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_DIFFICULTY]
+Type=4
+Tag=6
+Rect=481 174 140 33
+Text=普通
+TextTradition=普通
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_SCORE]
+Type=4
+Tag=7
+Rect=283 227 140 33
+Text=通关评价
+TextTradition=通關評價
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_STAR1]
+Type=1
+Tag=8
+Rect=471 222 43 42
+
+[CTRL_PICTURE_STAR2]
+Type=1
+Tag=9
+Rect=530 222 43 42
+
+[CTRL_PICTURE_STAR3]
+Type=1
+Tag=10
+Rect=589 222 43 42
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=238 276 506 188
+
+[CTRL_PICTURE_ITEM]
+Type=1
+Tag=12
+Rect=258 324 122 107
+
+[CTRL_TEXT_REWARD_TITLE]
+Type=4
+Tag=14
+Rect=386 285 140 33
+Text=通关奖励
+TextTradition=通關獎勵
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_EXP]
+Type=4
+Tag=15
+Rect=386 324 65 33
+Text=经验值
+TextTradition=經驗值
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_COIN]
+Type=4
+Tag=16
+Rect=386 363 65 33
+Text=金币
+TextTradition=金幣
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_PT]
+Type=4
+Tag=17
+Rect=386 402 65 33
+Text=PT值
+TextTradition=PT值
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_ITEM1]
+Type=4
+Tag=18
+Rect=539 324 118 33
+Text=xx道具
+TextTradition=xx道具
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_ITEM2]
+Type=4
+Tag=19
+Rect=539 363 118 33
+Text=xx道具
+TextTradition=xx道具
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAB_ITEM3]
+Type=4
+Tag=20
+Rect=539 402 118 33
+Text=xx道具
+TextTradition=xx道具
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_EXP]
+Type=4
+Tag=21
+Rect=460 324 65 33
+Text=+500
+TextTradition=+500
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_COIN]
+Type=4
+Tag=22
+Rect=460 363 65 33
+Text=+500
+TextTradition=+500
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_PT]
+Type=4
+Tag=23
+Rect=460 402 65 33
+Text=+500
+TextTradition=+500
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_ITEM1]
+Type=4
+Tag=24
+Rect=662 324 65 33
+Text=+500
+TextTradition=+500
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_ITEM2]
+Type=4
+Tag=25
+Rect=662 363 65 33
+Text=+500
+TextTradition=+500
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_VAL_ITEM3]
+Type=4
+Tag=26
+Rect=662 402 65 33
+Text=+500
+TextTradition=+500
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CONFIRM]
+Type=2
+Tag=27
+Rect=427 469 107 60
+Text=确定
+TextTradition=確定
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task.png
+SelectedFileUV=0 0 211 80
+DisableFile=.\res\image\ui\boss_out\continue_task2.png
+DisableFileUV=0 0 211 80

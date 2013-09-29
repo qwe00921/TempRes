@@ -1,0 +1,110 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 880 140
+
+[CTRL_CHECK_BUTTON_SELECT_ONE]
+Type=3
+Tag=2
+Rect=20 50 36 35
+NormalFile=.\res\image\ui\common\sub_open.png
+NormalFileUV=0 0 36 35
+
+[CTRL_9SLICES_3]
+Type=22
+Tag=3
+Rect=70 0 810 140
+Stretch=1
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_TEXT_SYSMAIL_TITLE]
+Type=4
+Tag=4
+Rect=90 10 250 30
+Text=我是系统邮件名称
+TextTradition=我是系統郵件名稱
+TextSize=25
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SYSMAIL_CONTENT]
+Type=4
+Tag=5
+Rect=90 46 500 30
+Text=我是邮件内容缩写，是缩写，是缩写。。。
+TextTradition=我是郵件內容縮寫，是縮寫，是縮寫。。。
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ITEM1]
+Type=1
+Tag=6
+Rect=94 79 50 50
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_PICTURE_ITEM2]
+Type=1
+Tag=7
+Rect=159 79 50 50
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_PICTURE_ITEM3]
+Type=1
+Tag=8
+Rect=224 79 50 50
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_PICTURE_ITEM4]
+Type=1
+Tag=9
+Rect=289 79 50 50
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_PICTURE_ITEM5]
+Type=1
+Tag=10
+Rect=354 79 50 50
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_PICTURE_ITEM6]
+Type=1
+Tag=11
+Rect=419 79 50 50
+NormalFile=.\res\image\item\item.png
+NormalFileUV=0 0 120 120
+
+[CTRL_TEXT_SYSMAIL_TIME]
+Type=4
+Tag=12
+Rect=610 10 250 30
+Text=我是游戏时间
+TextTradition=我是游戲時間
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SYSMAIL_STATE]
+Type=4
+Tag=13
+Rect=670 85 200 40
+Text=我是邮件状态
+TextTradition=我是郵件狀態
+TextSize=25
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

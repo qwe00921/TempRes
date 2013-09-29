@@ -1,0 +1,373 @@
+﻿
+[UI_INFO]
+Width=1136
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=1 -1 1136 640
+NormalFile=.\res\image\ui\main_ui\main_ui_1136_720.png
+NormalFileUV=0 40 1136 640
+
+[CTRL_BUTTON_ACHIVEMENT]
+Type=2
+Tag=3
+Rect=209 160 103 114
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\achivement.png
+NormalFileUV=0 0 105 119
+
+[CTRL_BUTTON_FORGE]
+Type=2
+Tag=4
+Rect=112 328 155 164
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\forge.png
+NormalFileUV=0 0 158 165
+
+[CTRL_BUTTON_TUJIAN]
+Type=2
+Tag=5
+Rect=261 274 113 84
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\tu_jian.png
+NormalFileUV=0 0 158 100
+
+[CTRL_BUTTON_BACK_PACK]
+Type=2
+Tag=6
+Rect=330 482 235 156
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\back_pack.png
+NormalFileUV=0 0 237 158
+
+[CTRL_BUTTON_GACHA]
+Type=2
+Tag=7
+Rect=480 234 108 119
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\gacha.png
+NormalFileUV=0 0 113 123
+
+[CTRL_BUTTON_CARD_GROUP]
+Type=2
+Tag=8
+Rect=331 157 179 105
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\card_group.png
+NormalFileUV=0 0 183 107
+
+[CTRL_BUTTON_ADVENTURE]
+Type=2
+Tag=9
+Rect=508 79 147 160
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\adventure_jjc.png
+NormalFileUV=0 0 163 160
+
+[CTRL_BUTTON_MENU]
+Type=2
+Tag=10
+Rect=778 201 130 88
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\menu.png
+NormalFileUV=0 0 134 90
+
+[CTRL_BUTTON_FRIEND]
+Type=2
+Tag=11
+Rect=793 341 104 87
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\friend.png
+NormalFileUV=0 0 108 88
+
+[CTRL_BUTTON_SYNDICATE]
+Type=2
+Tag=12
+Rect=892 89 98 172
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\syndicate.png
+NormalFileUV=0 0 97 173
+
+[CTRL_BUTTON_ACTIVITY]
+Type=2
+Tag=13
+Rect=878 445 164 177
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\activity.png
+NormalFileUV=0 0 167 177
+
+[CTRL_9SLICES_BG_UPPER]
+Type=22
+Tag=14
+Rect=0 0 887 54
+Stretch=1
+NormalFile=.\res\image\ui\main_ui\upper_bk.png
+NormalFileUV=0 0 81 54
+
+[CTRL_PICTURE_CHARGE_BG]
+Type=1
+Tag=16
+Rect=895 0 105 83
+NormalFile=.\res\image\ui\main_ui\btn_bk.png
+NormalFileUV=0 0 89 83
+
+[CTRL_PICTURE_SHOP_BG]
+Type=1
+Tag=17
+Rect=1015 0 105 83
+NormalFile=.\res\image\ui\main_ui\btn_bk.png
+NormalFileUV=0 0 89 83
+
+[CTRL_BUTTON_CHARGE]
+Type=2
+Tag=18
+Rect=911 -4 80 92
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\charge_normal.png
+NormalFileUV=0 0 80 92
+SelectFile=.\res\image\ui\main_ui\charge_click.png
+SelectedFileUV=0 0 80 92
+DisableFile=.\res\image\ui\main_ui\charge_disable.png
+DisableFileUV=0 0 80 92
+
+[CTRL_BUTTON_SHOP]
+Type=2
+Tag=19
+Rect=1027 -8 80 92
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\shop_normal.png
+NormalFileUV=0 0 80 92
+SelectFile=.\res\image\ui\main_ui\shop_click.png
+SelectedFileUV=0 0 80 92
+DisableFile=.\res\image\ui\main_ui\shop_gray.png
+DisableFileUV=0 0 80 92
+
+[CTRL_BUTTON_USERICON]
+Type=2
+Tag=33
+Rect=11 5 102 86
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\x_battle_main_ui\skill1.png
+NormalFileUV=0 0 86 86
+SelectFile=.\res\image\ui\x_battle_main_ui\skill1_gray.png
+SelectedFileUV=0 0 86 86
+
+[CTRL_PICTURE_HEAD_BG]
+Type=1
+Tag=20
+Rect=0 0 400 113
+NormalFile=.\res\image\ui\main_ui\head_bk.png
+NormalFileUV=0 0 338 113
+
+[CTRL_9SLICES_NAME_BG]
+Type=22
+Tag=21
+Rect=153 16 174 27
+Stretch=1
+NormalFile=.\res\image\ui\main_ui\edit_bk.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_HEALTH]
+Type=1
+Tag=22
+Rect=153 46 41 20
+NormalFile=.\res\image\ui\main_ui\health.png
+NormalFileUV=0 0 35 20
+
+[CTRL_PICTURE_ENERGE]
+Type=1
+Tag=23
+Rect=153 68 41 20
+NormalFile=.\res\image\ui\main_ui\energe.png
+NormalFileUV=0 0 35 20
+
+[CTRL_PICTURE_CARD]
+Type=1
+Tag=26
+Rect=396 7 40 40
+NormalFile=.\res\image\ui\main_ui\card.png
+NormalFileUV=0 0 34 40
+
+[CTRL_PICTURE_MONEY]
+Type=1
+Tag=27
+Rect=543 5 40 40
+NormalFile=.\res\image\ui\main_ui\money.png
+NormalFileUV=0 0 34 40
+
+[CTRL_PICTURE_CRYSTAL]
+Type=1
+Tag=28
+Rect=727 6 40 40
+NormalFile=.\res\image\ui\main_ui\crystal.png
+NormalFileUV=0 0 34 40
+
+[CTRL_9SLICES_CARD_BG]
+Type=22
+Tag=30
+Rect=441 14 83 27
+Stretch=1
+NormalFile=.\res\image\ui\main_ui\edit_bk.png
+NormalFileUV=0 0 27 27
+
+[CTRL_9SLICES_CRYSTAL_BG]
+Type=22
+Tag=31
+Rect=771 13 83 27
+Stretch=1
+NormalFile=.\res\image\ui\main_ui\edit_bk.png
+NormalFileUV=0 0 27 27
+
+[CTRL_9SLICES_MONEY_BG]
+Type=22
+Tag=32
+Rect=585 14 129 27
+Stretch=1
+NormalFile=.\res\image\ui\main_ui\edit_bk.png
+NormalFileUV=0 0 27 27
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=34
+Rect=156 18 172 25
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD]
+Type=4
+Tag=35
+Rect=443 15 80 25
+TextSize=20
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_MONEY]
+Type=4
+Tag=36
+Rect=588 15 127 25
+TextSize=20
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CRYSTAL]
+Type=4
+Tag=37
+Rect=773 14 80 25
+TextSize=20
+TextColor=0xf8d6aa
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEVEL]
+Type=4
+Tag=38
+Rect=7 77 35 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ENERGE_BG]
+Type=1
+Tag=40
+Rect=198 65 133 15
+NormalFile=.\res\image\ui\main_ui\progress_bk.png
+NormalFileUV=0 0 112 15
+
+[CTRL_PICTURE_HEALTH_BG]
+Type=1
+Tag=39
+Rect=198 47 133 15
+NormalFile=.\res\image\ui\main_ui\progress_bk.png
+NormalFileUV=0 0 112 15
+
+[CTRL_EXP_HEALTH]
+Type=9
+Tag=43
+Rect=203 49 123 11
+TextSize=0
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\red_point.png
+NormalFileUV=0 0 12 9
+
+[CTRL_EXP_ENERGE]
+Type=9
+Tag=44
+Rect=203 67 123 11
+TextSize=0
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\green_point.png
+NormalFileUV=0 0 12 9
+
+[CTRL_BUTTON_MAIL_HINT]
+Type=2
+Tag=45
+Rect=23 111 106 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\mail_box_hint.png
+NormalFileUV=0 0 90 74
+SelectFile=.\res\image\ui\main_ui\mail_box_hint2.png
+SelectedFileUV=0 0 90 74
+
+[CTRL_BUTTON_MAIL]
+Type=2
+Tag=46
+Rect=130 107 90 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_ui\mail_box.png
+NormalFileUV=0 0 90 74
+SelectFile=.\res\image\ui\main_ui\mail_box_open.png
+SelectedFileUV=0 0 90 74
+
+[CTRL_TEXT_MAIL_NUM]
+Type=4
+Tag=47
+Rect=87 148 30 25
+Text=99
+TextTradition=99
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -1,0 +1,134 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=11
+Rect=0 0 720 120
+
+[CTRL_9SLICES_30]
+Type=22
+Tag=30
+Rect=1 1 720 117
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_PICTURE_PIC]
+Type=1
+Tag=12
+Rect=35 6 80 80
+NormalFile=.\res\mt\chara\big\data.dat_000183.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=38 88 44 25
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=14
+Rect=72 88 40 25
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=15
+Rect=130 15 120 30
+Text=好友名称
+TextTradition=好友名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=127 70 107 30
+Text=好友人数
+TextTradition=好友人數
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=363 70 107 30
+Text=最后上线
+TextTradition=最后上線
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FRIEND_NUM]
+Type=4
+Tag=18
+Rect=225 70 107 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAST_LOGIN_TIME]
+Type=4
+Tag=19
+Rect=457 70 107 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CHAT]
+Type=2
+Tag=20
+Rect=494 13 50 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\battle\common_battle_style_02.png
+NormalFileUV=0 0 40 40
+
+[CTRL_BUTTON_FRIEND_PK]
+Type=2
+Tag=21
+Rect=587 14 100 40
+Text=切磋
+TextTradition=切磋
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\player\common_ui_create_normal.png
+NormalFileUV=0 0 245 71
+SelectFile=.\res\image\ui\player\common_ui_create_select.png
+SelectedFileUV=0 0 245 71
+
+[CTRL_BUTTON_DEL_FRIEND]
+Type=2
+Tag=22
+Rect=587 65 100 40
+Text=删除好友
+TextTradition=刪除好友
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\player\common_ui_input_bg.png
+NormalFileUV=0 0 453 148

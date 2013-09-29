@@ -1,0 +1,48 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=129
+Rect=0 0 550 80
+NormalFile=.\res\mt\effect\data.dat_000063.png
+NormalFileUV=0 0 543 141
+
+[CTRL_PICTURE_ICON]
+Type=1
+Tag=130
+Rect=23 2 50 50
+NormalFile=.\res\mt\chara\big\data.dat_000179.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=131
+Rect=22 54 100 20
+Text=我是玩家名称
+TextTradition=我是玩家名稱
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CHAT_TIME]
+Type=4
+Tag=132
+Rect=410 4 140 25
+Text=我是说话时间
+TextTradition=我是說話時間
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CHATTEXT]
+Type=4
+Tag=133
+Rect=135 34 400 40
+Text=我爱Lancer！！！！！
+TextTradition=我愛Lancer！！！！！
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

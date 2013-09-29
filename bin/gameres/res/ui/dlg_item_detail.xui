@@ -1,0 +1,120 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_8]
+Type=22
+Tag=8
+Rect=226 152 509 336
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_9SLICES_10]
+Type=22
+Tag=11
+Rect=242 208 479 199
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_14]
+Type=22
+Tag=15
+Rect=250 216 136 136
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=257 222 120 120
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=256 348 123 35
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_9]
+Type=22
+Tag=10
+Rect=394 221 313 176
+NormalFile=.\res\image\ui\common\input_bg.9.png
+NormalFileUV=0 0 33 33
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=402 230 293 155
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_6]
+Type=2
+Tag=6
+Rect=296 415 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=9
+Rect=525 415 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_7]
+Type=2
+Tag=7
+Rect=672 142 74 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\close_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\close_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\close_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=12
+Rect=336 430 56 30
+NormalFile=.\res.cn\image\ui\font\m_c.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=13
+Rect=565 430 56 30
+NormalFile=.\res.cn\image\ui\font\h_c.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=14
+Rect=423 162 141 36
+NormalFile=.\res.cn\image\ui\font\j_z_c_k.png
+NormalFileUV=0 0 141 36

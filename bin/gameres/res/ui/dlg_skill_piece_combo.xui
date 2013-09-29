@@ -1,0 +1,128 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_13]
+Type=22
+Tag=13
+Rect=55 41 850 559
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_15]
+Type=22
+Tag=15
+Rect=69 120 823 464
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=305 34 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_TEXT_1]
+Type=4
+Tag=1
+Rect=360 45 241 60
+Text=技能碎片合成
+TextTradition=技能碎片合成
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_VERTICAL_LIST_2]
+Type=14
+Tag=2
+Rect=112 172 260 389
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=481 173 300 300
+NormalFile=.\res\image\ui\main_ui\forge.png
+NormalFileUV=0 0 158 165
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=399 131 461 71
+Text=消耗5个技能碎片可以随机获得1个同等星级的技能
+TextTradition=消耗5個技能碎片可以隨機獲得1個同等星級的技能
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=5
+Rect=588 305 100 100
+
+[CTRL_TEXT_NUM]
+Type=4
+Tag=6
+Rect=656 372 31 33
+Text=0
+TextTradition=0
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_7]
+Type=2
+Tag=7
+Rect=567 507 136 60
+Text=开始合成
+TextTradition=開始合成
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=459 448 277 60
+Text=当前已放入技能碎片：
+TextTradition=當前已放入技能碎片：
+TextSize=25
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TIP]
+Type=4
+Tag=9
+Rect=707 448 107 60
+Text=未放入
+TextTradition=未放入
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_10]
+Type=2
+Tag=10
+Rect=804 41 74 74
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74

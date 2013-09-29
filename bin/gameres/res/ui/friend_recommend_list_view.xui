@@ -1,0 +1,105 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_BG]
+Type=22
+Tag=42
+Rect=0 0 720 120
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_PICTURE_PIC]
+Type=1
+Tag=96
+Rect=35 6 80 80
+NormalFile=.\res\mt\chara\big\data.dat_000202.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_97]
+Type=4
+Tag=97
+Rect=38 88 44 25
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=98
+Rect=72 88 40 25
+Text=99
+TextTradition=99
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=99
+Rect=130 15 120 30
+Text=好友名称
+TextTradition=好友名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_100]
+Type=4
+Tag=100
+Rect=127 70 107 30
+Text=好友人数
+TextTradition=好友人數
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FRIEND_NUM]
+Type=4
+Tag=101
+Rect=225 70 107 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_102]
+Type=4
+Tag=102
+Rect=363 70 107 30
+Text=最后上线
+TextTradition=最后上線
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LAST_LOGIN_DATE]
+Type=4
+Tag=103
+Rect=458 70 107 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_APPLY]
+Type=2
+Tag=104
+Rect=576 30 136 60
+Text=申请好友
+TextTradition=申請好友
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60

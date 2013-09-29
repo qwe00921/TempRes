@@ -1,0 +1,72 @@
+﻿
+[UI_INFO]
+Width=1024
+Height=768
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 1024 768
+NormalFile=.\res\image\map\green_wild_1136x720.png
+NormalFileUV=88 0 960 720
+
+[CTRL_SPRITE_10]
+Type=19
+Tag=11
+Rect=619 343 113 72
+
+[CTRL_SPRITE_9]
+Type=19
+Tag=10
+Rect=619 481 113 72
+
+[CTRL_SPRITE_6]
+Type=19
+Tag=7
+Rect=768 288 113 72
+
+[CTRL_SPRITE_7]
+Type=19
+Tag=8
+Rect=769 418 113 72
+
+[CTRL_SPRITE_8]
+Type=19
+Tag=9
+Rect=772 549 113 72
+
+[CTRL_SPRITE_5]
+Type=19
+Tag=6
+Rect=281 343 113 72
+
+[CTRL_SPRITE_4]
+Type=19
+Tag=5
+Rect=281 481 113 72
+
+[CTRL_SPRITE_1]
+Type=19
+Tag=2
+Rect=139 288 113 72
+
+[CTRL_SPRITE_2]
+Type=19
+Tag=3
+Rect=140 418 113 72
+
+[CTRL_SPRITE_3]
+Type=19
+Tag=4
+Rect=140 549 113 72
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=455 418 114 72
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Z_Order=200
+Rect=0 148 1024 72

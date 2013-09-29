@@ -1,0 +1,97 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=162 -24 562 116
+NormalFile=.\res\image\ui\pve\boss_hpbar_bk.png
+NormalFileUV=0 0 563 117
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=0 2 160 156
+NormalFile=.\res\image\ui\pve\toux_2.png
+NormalFileUV=0 0 161 157
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=4
+Rect=26 22 104 104
+NormalFile=.\res\image\ui\pve\guangquan1.png
+NormalFileUV=0 0 104 104
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=2
+Rect=38 36 78 78
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\pve\toux_1.png
+NormalFileUV=0 0 79 79
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=5
+Rect=802 2 160 156
+NormalFile=.\res\image\ui\pve\toux_2.png
+NormalFileUV=0 0 161 157
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=6
+Rect=828 22 104 104
+NormalFile=.\res\image\ui\pve\guangquan1.png
+NormalFileUV=0 0 104 104
+
+[CTRL_BUTTON_8]
+Type=2
+Tag=8
+Rect=842 36 78 78
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\pve\toux_1.png
+NormalFileUV=0 0 79 79
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=726 436 234 206
+NormalFile=.\res\image\ui\pve\bk.png
+NormalFileUV=0 0 235 206
+
+[CTRL_BUTTON_10]
+Type=2
+Tag=10
+Rect=804 540 80 78
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\pve\battle_normal.png
+NormalFileUV=0 0 80 79
+DisableFile=.\res\image\ui\pve\battle_gray.png
+DisableFileUV=0 0 80 79
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=876 486 56 52
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\pve\tuo02.png
+NormalFileUV=0 0 56 52
+DisableFile=.\res\image\ui\pve\tuo.png
+DisableFileUV=0 0 56 52
+
+[CTRL_EXP_13]
+Type=9
+Tag=13
+Rect=270 38 426 20
+NormalFile=.\res\image\ui\pve\boss_hpbar.png
+NormalFileUV=0 0 427 20

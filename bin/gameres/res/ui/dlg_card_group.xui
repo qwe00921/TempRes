@@ -1,0 +1,50 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_1]
+Type=22
+Tag=1
+Rect=0 10 960 630
+Stretch=1
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_2]
+Type=22
+Tag=2
+Rect=305 0 350 82
+Stretch=1
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=377 20 206 49
+NormalFile=.\res.cn\image\ui\font\k_z.png
+NormalFileUV=0 0 206 49
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=4
+Rect=875 10 74 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+
+[CTRL_9SLICES_5]
+Type=22
+Tag=5
+Rect=20 105 920 520
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_VERTICAL_LIST_GRUOP]
+Type=14
+Tag=6
+Rect=20 105 920 520

@@ -1,0 +1,53 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=10
+Rect=0 0 960 640
+NormalFile=.\res\image\map\battle_bg_pve.png
+NormalFileUV=0 0 2100 1400
+
+[CTRL_PICTURE_BOSS]
+Type=1
+Tag=11
+Rect=160 -14 368 338
+NormalFile=.\res\image\fx\pve\boss_fx.png
+NormalFileUV=0 0 461 419
+
+[CTRL_PICTURE_HERO1]
+Type=1
+Tag=1
+Rect=180 380 130 160
+NormalFile=.\res\image\card\bai_gu_jing_130_161.png
+NormalFileUV=0 0 130 161
+
+[CTRL_PICTURE_HERO2]
+Type=1
+Tag=2
+Rect=320 422 128 158
+NormalFile=.\res\image\card\bai_gu_jing_130_161.png
+NormalFileUV=0 0 130 161
+
+[CTRL_PICTURE_HERO3]
+Type=1
+Tag=3
+Rect=474 416 130 158
+NormalFile=.\res\image\card\bai_gu_jing_130_161.png
+NormalFileUV=0 0 130 161
+
+[CTRL_PICTURE_HERO4]
+Type=1
+Tag=4
+Rect=616 382 130 158
+NormalFile=.\res\image\card\bai_gu_jing_130_161.png
+NormalFileUV=0 0 130 161
+
+[CTRL_PICTURE_HERO5]
+Type=1
+Tag=5
+Rect=722 318 128 160
+NormalFile=.\res\image\card\bai_gu_jing_130_161.png
+NormalFileUV=0 0 130 161

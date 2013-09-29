@@ -1,0 +1,201 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_8]
+Type=22
+Tag=8
+Rect=226 152 509 336
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_9SLICES_10]
+Type=22
+Tag=11
+Rect=242 208 479 199
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_14]
+Type=22
+Tag=15
+Rect=250 216 136 136
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_PICTURE_ITEM]
+Type=1
+Tag=3
+Rect=257 222 120 120
+
+[CTRL_TEXT_ITEM_NAME]
+Type=4
+Tag=4
+Rect=256 348 123 35
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_9]
+Type=22
+Tag=10
+Rect=394 221 313 176
+NormalFile=.\res\image\ui\common\input_bg.9.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_CONFIRM]
+Type=2
+Tag=6
+Rect=296 415 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_CANCEL]
+Type=2
+Tag=9
+Rect=525 415 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_CLOSEUI]
+Type=2
+Tag=7
+Rect=672 142 74 74
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\close_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\close_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\close_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=12
+Rect=336 430 56 30
+NormalFile=.\res.cn\image\ui\font\q_r.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=13
+Rect=565 430 56 30
+NormalFile=.\res.cn\image\ui\font\q_x.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=14
+Rect=423 162 141 36
+NormalFile=.\res.cn\image\ui\font\w_p_c_s.png
+NormalFileUV=0 0 141 36
+
+[CTRL_TEXT_14]
+Type=4
+Tag=16
+Rect=438 242 233 30
+Text=确认出售此物品？
+TextTradition=確認出售此物品？
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=17
+Rect=489 300 53 30
+Text=数量：
+TextTradition=數量：
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SELLNUMBER]
+Type=4
+Tag=18
+Rect=548 300 64 30
+Text=0/0
+TextTradition=0/0
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ADDNUMBER]
+Type=2
+Tag=19
+Rect=639 298 36 35
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\add_open.png
+NormalFileUV=0 0 36 35
+DisableFile=.\res\image\ui\common\add_disable.png
+DisableFileUV=0 0 36 35
+
+[CTRL_BUTTON_SUBNUMBER]
+Type=2
+Tag=20
+Rect=430 298 36 35
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_open.png
+NormalFileUV=0 0 36 35
+DisableFile=.\res\image\ui\common\sub_disable.png
+DisableFileUV=0 0 36 35
+
+[CTRL_TEXT_20]
+Type=4
+Tag=21
+Rect=464 351 53 30
+Text=价格：
+TextTradition=價格：
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM_SELLPRICE]
+Type=4
+Tag=22
+Rect=523 351 64 30
+Text=0
+TextTradition=0
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=23
+Rect=593 351 51 30
+Text=金币
+TextTradition=金幣
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

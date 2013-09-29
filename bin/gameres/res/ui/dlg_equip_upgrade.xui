@@ -1,0 +1,369 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=3
+Rect=80 74 800 500
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 1 480 290
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=1
+Rect=101 93 107 60
+Text=返回
+TextTradition=返回
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_TEXT_2]
+Type=4
+Tag=2
+Rect=254 90 453 60
+Text=装备强化界面
+TextTradition=裝備強化界面
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_EQUIP]
+Type=1
+Tag=4
+Rect=223 203 90 90
+NormalFile=.\res\image\ui\equip\weapon.png
+NormalFileUV=0 0 64 64
+
+[CTRL_TEXT_EQUIP_NAME]
+Type=4
+Tag=5
+Rect=329 191 168 30
+Text=轩辕剑
+TextTradition=軒轅劍
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_EQUIP_STAR]
+Type=1
+Tag=6
+Rect=505 191 160 30
+NormalFile=.\res\image\ui\equip\startlvl.png
+NormalFileUV=0 0 141 24
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=329 225 60 20
+Text=攻击力+
+TextTradition=攻擊力+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=459 225 60 20
+Text=防御力+
+TextTradition=防御力+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=9
+Rect=589 225 60 20
+Text=HP+
+TextTradition=HP+
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EQUIP_ATK]
+Type=4
+Tag=10
+Rect=387 225 60 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EQUIP_DEF]
+Type=4
+Tag=11
+Rect=518 225 60 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EQUIP_HP]
+Type=4
+Tag=12
+Rect=648 225 60 20
+Text=9999
+TextTradition=9999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=565 155 150 20
+Text=本次强化需要花费：
+TextTradition=本次強化需要花費：
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_MONEY]
+Type=4
+Tag=14
+Rect=694 155 70 20
+Text=99999
+TextTradition=99999
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=762 155 50 20
+Text=铜币
+TextTradition=銅幣
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=329 249 60 20
+Text=经验值
+TextTradition=經驗值
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EQUIP_EXP]
+Type=4
+Tag=17
+Rect=393 249 120 20
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_18]
+Type=9
+Tag=18
+Rect=327 274 350 30
+
+[CTRL_TEXT_NAME1]
+Type=4
+Tag=23
+Rect=197 406 100 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME2]
+Type=4
+Tag=24
+Rect=347 406 100 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME3]
+Type=4
+Tag=25
+Rect=497 406 100 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME4]
+Type=4
+Tag=26
+Rect=646 406 100 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_STAR1]
+Type=4
+Tag=27
+Rect=207 434 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV1]
+Type=4
+Tag=28
+Rect=207 462 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_STAR2]
+Type=4
+Tag=29
+Rect=355 434 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV2]
+Type=4
+Tag=30
+Rect=355 462 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_STAR3]
+Type=4
+Tag=31
+Rect=505 434 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV3]
+Type=4
+Tag=32
+Rect=505 462 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_STAR4]
+Type=4
+Tag=33
+Rect=654 434 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV4]
+Type=4
+Tag=34
+Rect=654 462 80 25
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_EQUIPSELECT]
+Type=2
+Tag=35
+Rect=242 503 120 35
+Text=装备素材
+TextTradition=裝備素材
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\player\common_ui_create_normal.png
+NormalFileUV=0 0 245 71
+SelectFile=.\res\image\ui\player\common_ui_create_select.png
+SelectedFileUV=0 0 245 71
+
+[CTRL_BUTTON_ITEMSELECT]
+Type=2
+Tag=36
+Rect=420 503 120 35
+Text=道具素材
+TextTradition=道具素材
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\player\common_ui_create_normal.png
+NormalFileUV=0 0 245 71
+SelectFile=.\res\image\ui\player\common_ui_create_select.png
+SelectedFileUV=0 0 245 71
+
+[CTRL_BUTTON_START]
+Type=2
+Tag=37
+Rect=598 503 120 35
+Text=强化开始
+TextTradition=強化開始
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\player\common_ui_create_normal.png
+NormalFileUV=0 0 245 71
+SelectFile=.\res\image\ui\player\common_ui_create_select.png
+SelectedFileUV=0 0 245 71
+DisableFile=.\res\image\ui\player\common_ui_create_disable.png
+DisableFileUV=0 0 245 71
+
+[CTRL_PICTURE_ITEM2]
+Type=1
+Tag=54
+Rect=357 320 80 80
+
+[CTRL_PICTURE_ITEM1]
+Type=1
+Tag=53
+Rect=208 320 80 80
+
+[CTRL_TEXT_ITEMNUM1]
+Type=4
+Tag=49
+Rect=258 369 30 30
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEMNUM2]
+Type=4
+Tag=50
+Rect=407 369 30 30
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ITEM4]
+Type=1
+Tag=56
+Rect=654 319 80 80
+
+[CTRL_PICTURE_ITEM3]
+Type=1
+Tag=55
+Rect=506 319 80 80
+
+[CTRL_TEXT_ITEMNUM3]
+Type=4
+Tag=51
+Rect=556 368 30 30
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEMNUM4]
+Type=4
+Tag=52
+Rect=705 368 30 30
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -1,0 +1,103 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_92]
+Type=22
+Tag=92
+Rect=80 70 800 500
+Stretch=1
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_TEXT_93]
+Type=4
+Tag=93
+Rect=429 75 107 40
+Text=写信
+TextTradition=寫信
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_94]
+Type=4
+Tag=94
+Rect=135 150 107 30
+Text=收件人
+TextTradition=收件人
+TextSize=25
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_95]
+Type=4
+Tag=95
+Rect=135 195 107 30
+Text=主题
+TextTradition=主題
+TextSize=25
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_INPUT_TEXT_96]
+Type=18
+Tag=96
+Rect=260 150 160 30
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\bottom.png
+NormalFileUV=0 0 446 149
+
+[CTRL_INPUT_TEXT_98]
+Type=18
+Tag=98
+Rect=135 240 680 227
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\bottom.png
+NormalFileUV=0 0 446 149
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=99
+Rect=311 493 136 60
+Text=取消
+TextTradition=取消
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+
+[CTRL_BUTTON_SEND]
+Type=2
+Tag=100
+Rect=513 493 136 60
+Text=发送
+TextTradition=發送
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+
+[CTRL_INPUT_TEXT_125]
+Type=18
+Tag=125
+Rect=260 195 300 30
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\bottom.png
+NormalFileUV=0 0 446 149

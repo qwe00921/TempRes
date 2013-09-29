@@ -1,0 +1,154 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=83 44 800 550
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=2
+Rect=128 74 60 30
+Text=返回
+TextTradition=返回
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=3
+Rect=354 71 251 53
+Text=强化确认
+TextTradition=強化確認
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ANGSTER]
+Type=4
+Tag=4
+Rect=621 102 200 30
+Text=本次强化需要:XX铜币
+TextTradition=本次強化需要:XX銅幣
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=5
+Rect=127 142 713 413
+
+[CTRL_PICTURE_ICON]
+Type=1
+Tag=6
+Rect=209 176 100 130
+Text=ICON
+TextTradition=ICON
+
+[CTRL_PICTURE_7]
+Type=1
+Tag=7
+Rect=333 176 427 130
+NormalFile=.\res\image\ui\card_get\bk2.png
+NormalFileUV=0 0 446 149
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=8
+Rect=369 203 100 30
+Text=技能名称
+TextTradition=技能名稱
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RATE]
+Type=4
+Tag=9
+Rect=491 203 100 30
+Text=稀有度:RR
+TextTradition=稀有度:RR
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV]
+Type=4
+Tag=10
+Rect=612 203 100 30
+Text=LV:59/80
+TextTradition=LV:59/80
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=11
+Rect=464 247 150 30
+Text=经验值:600/1200
+TextTradition=經驗值:600/1200
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_MATERIAL1]
+Type=1
+Tag=12
+Rect=228 320 100 130
+Text=素材1
+TextTradition=素材1
+
+[CTRL_PICTURE_MATERIAL2]
+Type=1
+Tag=13
+Rect=363 320 100 130
+Text=素材2
+TextTradition=素材2
+
+[CTRL_PICTURE_MATERIAL3]
+Type=1
+Tag=14
+Rect=497 320 100 130
+Text=素材3
+TextTradition=素材3
+
+[CTRL_PICTURE_MATERIAL4]
+Type=1
+Tag=15
+Rect=628 320 100 130
+Text=素材4
+TextTradition=素材4
+
+[CTRL_BUTTON_SELECT]
+Type=2
+Tag=16
+Rect=352 483 120 40
+Text=选择素材
+TextTradition=選擇素材
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159
+
+[CTRL_BUTTON_INTENSIFY]
+Type=2
+Tag=17
+Rect=509 483 120 40
+Text=强化开始
+TextTradition=強化開始
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mission_exit\bk3.png
+NormalFileUV=0 0 421 159

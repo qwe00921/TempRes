@@ -1,0 +1,111 @@
+﻿
+[UI_INFO]
+Width=1024
+Height=768
+
+[CTRL_BUTTON_10]
+Type=2
+Tag=10
+Rect=887 612 132 149
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
+NormalFileUV=0 0 124 124
+SelectFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
+SelectedFileUV=0 0 124 124
+DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk_down.png
+DisableFileUV=0 0 124 124
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=5 612 132 149
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan.png
+NormalFileUV=0 0 124 124
+SelectFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan.png
+SelectedFileUV=0 0 124 124
+DisableFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan_down.png
+DisableFileUV=0 0 124 124
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=12
+Rect=918 14 92 103
+NormalFile=.\res\image\ui\x_battle_main_ui\skill2.png
+NormalFileUV=0 0 86 86
+DisableFile=.\res\image\ui\x_battle_main_ui\skill2_gray.png
+DisableFileUV=0 0 133 127
+
+[CTRL_PICTURE_8]
+Type=1
+Tag=8
+Rect=13 13 92 103
+NormalFile=.\res\image\ui\x_battle_main_ui\skill1.png
+NormalFileUV=0 0 86 86
+DisableFile=.\res\image\ui\x_battle_main_ui\skill1_gray.png
+DisableFileUV=0 0 133 127
+
+[CTRL_PICTURE_7]
+Type=1
+Tag=7
+Rect=0 0 1024 132
+NormalFile=.\res\image\ui\x_battle_main_ui\bar_up.png
+NormalFileUV=0 0 960 127
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=13
+Rect=858 4 29 106
+NormalFile=.\res\image\ui\x_battle_main_ui\skill_slot_100.png
+NormalFileUV=0 0 27 88
+DisableFile=.\res\image\ui\x_battle_main_ui\skill_slot.png
+DisableFileUV=0 0 83 101
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=14
+Rect=136 4 29 106
+NormalFile=.\res\image\ui\x_battle_main_ui\skill_slot_100.png
+NormalFileUV=0 0 27 88
+DisableFile=.\res\image\ui\x_battle_main_ui\skill_slot_left.png
+DisableFileUV=0 0 83 101
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=16
+Rect=237 15 155 49
+NormalFile=.\res\image\ui\x_battle_main_ui\bar_down.png
+NormalFileUV=0 0 145 41
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=17
+Rect=641 15 155 49
+NormalFile=.\res\image\ui\x_battle_main_ui\bar_down.png
+NormalFileUV=0 0 145 41
+
+[CTRL_TEXT_15]
+Type=4
+Tag=18
+Rect=252 21 114 32
+Text=一号宝宝
+TextTradition=一號寶寶
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_16]
+Type=4
+Tag=19
+Rect=661 21 114 32
+Text=二号宝宝
+TextTradition=二號寶寶
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

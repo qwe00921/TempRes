@@ -1,0 +1,91 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=120
+Rect=80 70 800 500
+NormalFile=.\res\image\ui\common\bg.png
+NormalFileUV=0 0 480 291
+
+[CTRL_TEXT_121]
+Type=4
+Tag=121
+Rect=405 90 150 60
+Text=好友聊天
+TextTradition=好友聊天
+TextSize=35
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_REFRESH]
+Type=2
+Tag=122
+Rect=102 86 107 60
+Text=刷新
+TextTradition=刷新
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=123
+Rect=758 86 107 60
+Text=返回
+TextTradition=返回
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\boss_out\continue_task.png
+NormalFileUV=0 0 211 80
+SelectFile=.\res\image\ui\boss_out\continue_task2.png
+SelectedFileUV=0 0 211 80
+
+[CTRL_VERTICAL_LIST_CHAT]
+Type=14
+Tag=124
+Rect=110 160 550 320
+
+[CTRL_TEXT_125]
+Type=4
+Tag=125
+Rect=690 160 160 40
+Text=好友列表
+TextTradition=好友列表
+TextSize=25
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_VERTICAL_LIST_FRIEND]
+Type=14
+Tag=126
+Rect=690 207 160 320
+
+[CTRL_INPUT_BUTTON_CHATTEXT]
+Type=18
+Tag=127
+Rect=110 495 440 40
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\sk\modal\modal_text_area_black.png
+NormalFileUV=0 0 514 83
+
+[CTRL_BUTTON_SEND]
+Type=2
+Tag=128
+Rect=569 489 107 50
+Text=发送
+TextTradition=發送
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\player\common_ui_create_normal.png
+NormalFileUV=0 0 245 71

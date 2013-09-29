@@ -1,0 +1,327 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_24]
+Type=22
+Tag=33
+Rect=77 66 801 502
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Rect=179 171 584 194
+
+[CTRL_9SLICES_25]
+Type=22
+Tag=34
+Rect=92 146 768 403
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=2
+Z_Order=1
+Rect=470 409 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=305 59 350 82
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=779 66 74 74
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\back_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=155 151 650 30
+Text=使用两张相同的卡牌进行净化，可以将主卡牌提升一阶级
+TextTradition=使用兩張相同的卡牌進行凈化，可以將主卡牌提升一階級
+TextSize=25
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_12]
+Type=2
+Tag=12
+Rect=714 482 136 60
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_14]
+Type=4
+Tag=15
+Rect=275 193 150 28
+Text=卡牌名称
+TextTradition=卡牌名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=275 238 120 28
+Text=稀有度：高
+TextTradition=稀有度：高
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=275 283 93 28
+Text=LV:59
+TextTradition=LV:59
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_21]
+Type=4
+Tag=21
+Rect=400 221 93 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_22]
+Type=4
+Tag=22
+Rect=400 254 93 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=24
+Rect=400 287 93 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_26]
+Type=22
+Tag=35
+Rect=161 193 100 130
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_24]
+Type=4
+Tag=25
+Rect=500 221 135 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=26
+Rect=500 254 135 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_26]
+Type=4
+Tag=27
+Rect=500 287 135 28
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_20]
+Type=2
+Tag=20
+Rect=166 197 90 120
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_144]
+Type=22
+Tag=144
+Rect=160 337 100 130
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_BUTTON_21]
+Type=2
+Tag=28
+Rect=165 341 90 120
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_27]
+Type=4
+Tag=29
+Rect=457 499 100 20
+Text=消耗金钱
+TextTradition=消耗金錢
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_28]
+Type=4
+Tag=30
+Rect=595 499 100 20
+Text=9999
+TextTradition=9999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_29]
+Type=4
+Tag=31
+Rect=203 499 100 20
+Text=拥有金钱
+TextTradition=擁有金錢
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_30]
+Type=4
+Tag=32
+Rect=340 499 100 20
+Text=9999
+TextTradition=9999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_145]
+Type=1
+Tag=145
+Rect=306 485 34 40
+NormalFile=.\res\image\ui\main_ui\money.png
+NormalFileUV=0 0 34 40
+
+[CTRL_PICTURE_147]
+Type=1
+Tag=147
+Rect=562 485 34 40
+NormalFile=.\res\image\ui\main_ui\money.png
+NormalFileUV=0 0 34 40
+
+[CTRL_9SLICES_148]
+Type=22
+Tag=148
+Rect=626 185 210 280
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_149]
+Type=4
+Tag=149
+Rect=275 342 150 28
+Text=卡牌名称
+TextTradition=卡牌名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_150]
+Type=4
+Tag=150
+Rect=275 387 120 28
+Text=稀有度：高
+TextTradition=稀有度：高
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_151]
+Type=4
+Tag=151
+Rect=275 432 93 28
+Text=LV:59
+TextTradition=LV:59
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_152]
+Type=1
+Tag=152
+Rect=377 83 206 49
+NormalFile=.\res.cn\image\ui\font\j_h_2.png
+NormalFileUV=0 0 206 49
+
+[CTRL_PICTURE_153]
+Type=1
+Tag=153
+Rect=510 423 56 30
+Parent=CTRL_BUTTON_2
+NormalFile=.\res.cn\image\ui\font\x_z.png
+NormalFileUV=0 0 56 30
+
+[CTRL_PICTURE_254]
+Type=1
+Tag=254
+Rect=757 495 56 30
+Parent=CTRL_BUTTON_12
+NormalFile=.\res.cn\image\ui\font\j_h.png
+NormalFileUV=0 0 56 30

@@ -1,0 +1,146 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=213 352 520 215
+NormalFile=.\res\image\ui\card_get\bk2.png
+NormalFileUV=0 0 892 298
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=304 369 305 30
+Text=【三星】【孙悟空】恶魔
+TextTradition=【三星】【孫悟空】惡魔
+TextSize=21
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_21]
+Type=2
+Tag=21
+Rect=424 407 50 20
+Text=HP:
+TextTradition=HP:
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_22]
+Type=2
+Tag=22
+Rect=414 435 50 20
+Text=攻击:
+TextTradition=攻擊:
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_23]
+Type=2
+Tag=23
+Rect=414 465 50 20
+Text=防御:
+TextTradition=防御:
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_24]
+Type=2
+Tag=24
+Rect=369 493 100 20
+Text=携带技能:
+TextTradition=攜帶技能:
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=465 407 70 20
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=465 435 70 20
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_27]
+Type=4
+Tag=27
+Rect=465 465 70 20
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_28]
+Type=4
+Tag=28
+Rect=465 493 70 20
+Text=筋斗云
+TextTradition=筋斗云
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_29]
+Type=1
+Tag=29
+Rect=635 314 0 0
+Stretch=1
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=0 0 107 60
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_14]
+Type=4
+Tag=14
+Rect=379 523 100 20
+Text=攻击力提升
+TextTradition=攻擊力提升
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=465 523 70 20
+Text=100%
+TextTradition=100%
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

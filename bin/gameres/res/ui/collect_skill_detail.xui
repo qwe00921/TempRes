@@ -1,0 +1,141 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_64]
+Type=22
+Tag=67
+Rect=0 10 960 630
+Stretch=1
+NormalFile=.\res\image\ui\common\main_ui_bg.png
+NormalFileUV=0 0 225 225
+
+[CTRL_9SLICES_69]
+Type=22
+Tag=71
+Rect=439 92 503 500
+Stretch=1
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=2
+Rect=875 9 74 74
+TextSize=8
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\back_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\back_click.png
+SelectedFileUV=0 0 74 74
+
+[CTRL_9SLICES_70]
+Type=22
+Tag=72
+Rect=465 139 450 100
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_SKILL_NAME]
+Type=4
+Tag=56
+Rect=489 154 160 25
+Text=技能名称
+TextTradition=技能名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_65]
+Type=22
+Tag=68
+Rect=305 0 350 82
+Stretch=1
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_PICTURE_66]
+Type=1
+Tag=69
+Rect=377 20 206 49
+NormalFile=.\res.cn\image\ui\font\k_p_x_q.png
+NormalFileUV=0 0 206 49
+
+[CTRL_PICTURE_RARE1]
+Type=1
+Tag=47
+Rect=487 193 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE2]
+Type=1
+Tag=48
+Rect=522 193 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE3]
+Type=1
+Tag=49
+Rect=557 193 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE4]
+Type=1
+Tag=50
+Rect=592 193 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE5]
+Type=1
+Tag=51
+Rect=627 193 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE6]
+Type=1
+Tag=52
+Rect=661 193 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_RARE7]
+Type=1
+Tag=53
+Rect=697 193 27 27
+NormalFile=.\res\image\card\star.png
+NormalFileUV=0 0 27 27
+
+[CTRL_PICTURE_SKILL_ICON]
+Type=1
+Tag=70
+Rect=26 149 390 378
+NormalFile=.\res\image\ui\skillpiece_combo\skillcomboback.png
+NormalFileUV=0 0 164 159
+
+[CTRL_9SLICES_52]
+Type=22
+Tag=54
+Rect=465 268 450 277
+Stretch=1
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_SKILL_DESCRIPT]
+Type=4
+Tag=73
+Rect=485 282 400 248
+Text=技能描述
+TextTradition=技能描述
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

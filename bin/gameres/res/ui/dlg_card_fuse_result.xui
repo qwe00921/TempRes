@@ -1,0 +1,268 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_426]
+Type=22
+Tag=426
+Rect=154 132 653 377
+Stretch=1
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_9SLICES_427]
+Type=22
+Tag=427
+Rect=167 188 625 307
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_428]
+Type=22
+Tag=428
+Rect=179 199 190 242
+NormalFile=.\res\image\ui\common\card_bg.png
+NormalFileUV=0 0 112 147
+
+[CTRL_TEXT_1]
+Type=4
+Tag=1
+Rect=400 139 160 35
+Text=融合成功
+TextTradition=融合成功
+TextSize=30
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=184 201 180 240
+NormalFile=.\res\image\ui\card_get\card1.png
+NormalFileUV=0 0 244 307
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=377 218 120 40
+Text=卡片名称
+TextTradition=卡片名稱
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=565 218 53 40
+Text=RR
+TextTradition=RR
+TextSize=20
+TextColor=0x800080
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=648 218 61 40
+Text=99
+TextTradition=99
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=447 261 100 30
+Text=9999999
+TextTradition=9999999
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=447 291 100 30
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=9
+Rect=447 321 100 30
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_10]
+Type=4
+Tag=10
+Rect=463 351 129 30
+Text=技能名称
+TextTradition=技能名稱
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_11]
+Type=4
+Tag=11
+Rect=378 385 366 40
+Text=技能说明技能说明技能说明
+TextTradition=技能說明技能說明技能說明
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=557 265 80 40
+Text=经验值
+TextTradition=經驗值
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=664 315 85 40
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_14]
+Type=2
+Tag=14
+Rect=738 119 74 74
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\close_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\close_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\close_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_BUTTON_15]
+Type=2
+Tag=15
+Rect=460 432 136 60
+Text=确认
+TextTradition=確認
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_20]
+Type=4
+Tag=20
+Rect=497 218 82 40
+Text=稀有度：
+TextTradition=稀有度：
+TextSize=20
+TextColor=0x800080
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_21]
+Type=4
+Tag=21
+Rect=630 218 37 40
+Text=LV:
+TextTradition=LV:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_22]
+Type=4
+Tag=22
+Rect=390 351 72 30
+Text=技能：
+TextTradition=技能：
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=23
+Rect=380 321 80 30
+Text=防御力：
+TextTradition=防御力：
+TextSize=20
+TextColor=0xff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_24]
+Type=4
+Tag=24
+Rect=381 291 80 30
+Text=攻击力：
+TextTradition=攻擊力：
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=397 261 48 30
+Text=HP:
+TextTradition=HP:
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=641 265 107 40
+Text=999/999
+TextTradition=999/999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_27]
+Type=4
+Tag=27
+Rect=553 314 107 40
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
