@@ -1,0 +1,1 @@
+---------------------------------------------------------------- FileName: 	ui_get_card.lua-- author:		guohao, 2013/05/16-- purpose:		»ñµÃ¿¨Æ¬--------------------------------------------------------------ui_get_card_sub = {}local p = ui_get_card_sub;p.ID_CTRL_PICTURE_CARD = 1;

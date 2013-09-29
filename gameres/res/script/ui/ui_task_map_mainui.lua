@@ -1,0 +1,55 @@
+--------------------------------------------------------------
+-- FileName:  task_map_mainui.lua
+-- author: 此文件為自動生成，沒有作者。有問題請 @郭浩
+--------------------------------------------------------------
+ui_task_map_mainui = {};
+local p =  ui_task_map_mainui;
+p.ID_CTRL_TEXT_ACTION_POINT			= 30;
+p.ID_CTRL_EXP_ACTION_POINT			 = 60;
+p.ID_CTRL_PICTURE_53					     = 54;
+p.ID_CTRL_BUTTON_BACK					    = 57;
+p.ID_CTRL_PICTURE_52					     = 58;
+p.ID_CTRL_TEXT_50						       = 56;
+p.ID_CTRL_9SLICES_49					     = 55;
+p.ID_CTRL_TEXT_NEED_MISSION_POINT		= 53;
+p.ID_CTRL_BUTTON_20					      = 20;
+p.ID_CTRL_PICTURE_ROLL_BTN_BG			= 51;
+p.ID_CTRL_TEXT_13						       = 13;
+p.ID_CTRL_9SLICES_46					     = 50;
+p.ID_CTRL_TEXT_12						       = 12;
+p.ID_CTRL_TEXT_16						       = 16;
+p.ID_CTRL_9SLICES_45					     = 49;
+p.ID_CTRL_PICTURE_44					     = 47;
+p.ID_CTRL_TEXT_15						       = 15;
+p.ID_CTRL_9SLICES_43					     = 46;
+p.ID_CTRL_PICTURE_42					     = 45;
+p.ID_CTRL_TEXT_11						       = 11;
+p.ID_CTRL_EXP_50						        = 59;
+p.ID_CTRL_PICTURE_41					     = 44;
+p.ID_CTRL_PICTURE_39					     = 42;
+p.ID_CTRL_TEXT_10						       = 10;
+p.ID_CTRL_PICTURE_38					     = 41;
+p.ID_CTRL_PICTURE_37					     = 40;
+p.ID_CTRL_9SLICES_48					     = 48;
+p.ID_CTRL_BUTTON_38					      = 39;
+p.ID_CTRL_BUTTON_37					      = 38;
+p.ID_CTRL_BUTTON_36					      = 37;
+p.ID_CTRL_BUTTON_35					      = 36;
+p.ID_CTRL_BUTTON_34					      = 35;
+p.ID_CTRL_BUTTON_SHOP					    = 34;
+p.ID_CTRL_BUTTON_PLAYER_INFO			= 33;
+p.ID_CTRL_BUTTON_29					      = 29;
+p.ID_CTRL_BUTTON_28					      = 28;
+p.ID_CTRL_BUTTON_FRIEND				   = 27;
+p.ID_CTRL_BUTTON_71					      = 71;
+p.ID_CTRL_BUTTON_70					      = 70;
+p.ID_CTRL_BUTTON_69					      = 69;
+p.ID_CTRL_BUTTON_68					      = 68;
+p.ID_CTRL_BUTTON_67					      = 67;
+p.ID_CTRL_BUTTON_9					       = 9;
+p.ID_CTRL_BUTTON_8					       = 8;
+p.ID_CTRL_BUTTON_7					       = 7;
+p.ID_CTRL_BUTTON_6					       = 6;
+p.ID_CTRL_BUTTON_5					       = 5;
+p.ID_CTRL_BUTTON_4					       = 4;
+p.ID_CTRL_BUTTON_3					       = 3;

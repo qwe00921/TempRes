@@ -1,0 +1,54 @@
+--------------------------------------------------------------
+-- FileName:  dlg_card_intensify.lua
+-- author: 此文件為自動生成，沒有作者。有問題請 @郭浩
+--------------------------------------------------------------
+ui_dlg_card_intensify = {};
+local p =  ui_dlg_card_intensify;
+p.ID_CTRL_PICTURE_202					    = 202;
+p.ID_CTRL_PICTURE_201					    = 201;
+p.ID_CTRL_PICTURE_200					    = 200;
+p.ID_CTRL_BUTTON_30					      = 30;
+p.ID_CTRL_BUTTON_39					      = 40;
+p.ID_CTRL_BUTTON_31					      = 31;
+p.ID_CTRL_BUTTON_38					      = 39;
+p.ID_CTRL_BUTTON_37					      = 37;
+p.ID_CTRL_BUTTON_36					      = 36;
+p.ID_CTRL_BUTTON_35					      = 35;
+p.ID_CTRL_BUTTON_34					      = 34;
+p.ID_CTRL_BUTTON_33					      = 33;
+p.ID_CTRL_BUTTON_32					      = 32;
+p.ID_CTRL_9SLICES_97					     = 97;
+p.ID_CTRL_9SLICES_96					     = 96;
+p.ID_CTRL_9SLICES_95					     = 95;
+p.ID_CTRL_9SLICES_94					     = 94;
+p.ID_CTRL_9SLICES_93					     = 93;
+p.ID_CTRL_9SLICES_92					     = 92;
+p.ID_CTRL_9SLICES_91					     = 91;
+p.ID_CTRL_9SLICES_89					     = 89;
+p.ID_CTRL_9SLICES_88					     = 88;
+p.ID_CTRL_TEXT_86						       = 86;
+p.ID_CTRL_TEXT_85						       = 85;
+p.ID_CTRL_PICTURE_84					     = 84;
+p.ID_CTRL_PICTURE_83					     = 83;
+p.ID_CTRL_BUTTON_40					      = 45;
+p.ID_CTRL_TEXT_43						       = 44;
+p.ID_CTRL_TEXT_42						       = 43;
+p.ID_CTRL_TEXT_41						       = 42;
+p.ID_CTRL_9SLICES_35					     = 48;
+p.ID_CTRL_TEXT_40						       = 41;
+p.ID_CTRL_9SLICES_87					     = 87;
+p.ID_CTRL_TEXT_26						       = 27;
+p.ID_CTRL_TEXT_25						       = 26;
+p.ID_CTRL_TEXT_24						       = 25;
+p.ID_CTRL_TEXT_23						       = 24;
+p.ID_CTRL_TEXT_22						       = 22;
+p.ID_CTRL_TEXT_21						       = 21;
+p.ID_CTRL_TEXT_19						       = 19;
+p.ID_CTRL_TEXT_16						       = 16;
+p.ID_CTRL_TEXT_14						       = 15;
+p.ID_CTRL_BUTTON_12					      = 12;
+p.ID_CTRL_BUTTON_11					      = 11;
+p.ID_CTRL_PICTURE_10					     = 10;
+p.ID_CTRL_BUTTON_2					       = 2;
+p.ID_CTRL_9SLICES_34					     = 47;
+p.ID_CTRL_9SLICES_33					     = 46;
