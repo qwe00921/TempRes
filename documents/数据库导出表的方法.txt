@@ -1,0 +1,5 @@
+1）打开HeidiSQL，连接上数据库
+2）设置选项：tools->perferrences，点选【csv-options】页面，其中的【fields enclosed by】设置为双引号"
+3）选择要导出的表，右边界面选项卡点选【Data】页
+4）点菜单export->exportData，保存为任意文件皆可.
+5）用记事本打开（notepad.exe），另存为utf8格式.

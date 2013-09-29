@@ -1,0 +1,19 @@
+;-------------------------------------------------------------
+;@standby	name=standby ani=x.warriorfemale_battle_stand action=action keyframe(0,2)
+;@atk 		name=atk ani=x.warriorfemale_attack
+;@run
+;@sing
+;@skill
+;@defence	name=defence ani=x.warriorfemale_defence
+;@hurt		name=hurt ani=x.warriorfemale_hurt
+;@dead		name=dead ani=
+;
+;说明：
+;	name				动画名称
+;	ani					对应已配置的ani特效
+;	action				对应已配置的action特效（暂不实用）
+;	keyframe(atk,hurt)	动作的关键帧，序号从0开始.
+;						atk表示攻击关键帧，可用于播放攻击特效
+;						hurt表示受击关键帧，用于播放对方受击动作
+;---------------------------------------------------------------------
+
