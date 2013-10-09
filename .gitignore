@@ -6,7 +6,6 @@
 *.db
 *.suo
 *.lib
-*.pdb
 log.txt
 e2e
 /des
