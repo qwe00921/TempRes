@@ -1,0 +1,48 @@
+;------------------------------------------------
+; demo 2.0 组合特效配置
+;------------------------------------------------
+
+;{宠物死亡-----------------------------
+
+[mining_death]
+@type=1
+x.mining_death
+x.pet_fx_death @delay=1.2 @offset(-50,0)	
+
+[fly_dragon_death]
+@type=1
+x.fly_dragon_death
+x.pet_fx_death @delay=1.2 @scale=1.3	
+
+[blue_devil_death]
+@type=1
+x.blue_devil_death
+x.pet_fx_death @delay=1.2	@offset(50,0)
+
+;}------------------------------------------
+
+[skill_name_fx_old]
+@type=1 @offset(0,30)
+x.skill_name_bar
+x.skill_name_fx @offset(30,0)
+
+[skill_name_fx]
+@type=1
+x.fx_skill_bar_border
+x.fx_skill_bar_bg @delay=0.1
+x.fx_skill_bar_lightning @delay=0.3
+x.fx_skill_bar_pet @delay=0.4
+x.fx_skill_bar_title @delay=1
+
+[skill_name_fx_reverse]
+@type=1
+x.fx_skill_bar_border_reverse
+x.fx_skill_bar_bg_reverse @delay=0.1
+x.fx_skill_bar_lightning_reverse @delay=0.2
+x.fx_skill_bar_pet_reverse @delay=0.4
+x.fx_skill_bar_title_reverse @delay=1
+
+[blue_devil_sing]
+@type=1
+x.pet_fx_ultimate_skill
+x.blue_devil_sing

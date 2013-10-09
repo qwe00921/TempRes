@@ -1,0 +1,15 @@
+;----------------------------------------
+; Ani组合特效（UI专用）
+;----------------------------------------
+
+[test]
+@type=0
+ui.test
+
+;星级评价效果
+[star_fx]
+@type=0 @delay=0.5 @scale=0.2
+ui.star_fx_1 @scale=1.5    
+ui.star_fx_1 @scale=1.36
+ui.star_fx_1 @scale=1.08
+ui.star_fx_2 @scale=0.5

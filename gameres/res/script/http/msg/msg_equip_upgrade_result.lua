@@ -1,0 +1,34 @@
+--------------------------------------------------------------
+-- FileName: 	msg_equip_upgrade_result.lua
+-- author:		Zjj, 2013/08/08
+-- purpose:		装备升级结果消息
+--------------------------------------------------------------
+
+msg_equip_upgrade_result = msg_base:new();
+local p = msg_equip_upgrade_result;
+local super = msg_base;
+
+--创建新实例
+function p:new()	
+	o = {}
+	setmetatable( o, self );
+	self.__index = self;
+	o:ctor(); return o;
+end
+
+--构造函数
+function p:ctor()
+	super.ctor(self);
+    self.idMsg = MSG_EQUIP_UPGRADE_RESULT; --消息号
+end
+
+--初始化
+function p:Init()
+end
+
+--处理消息
+function p:Process()
+	msg_cache.msg_equip_upgrade_result = self;
+	WriteConWarning( "** msg_equip_upgrade_result:Process() called" );
+	dlg_equip_upgrade_result.ShowUI(self);
+end

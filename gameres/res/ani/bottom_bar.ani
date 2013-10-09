@@ -1,0 +1,94 @@
+;-------------------------------------------------------------------------------
+;测试特效配置（LJ）
+;-------------------------------------------------------------------------------
+
+;武将
+[button_func_generals]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;背包
+[button_func_backpack]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;强化
+[button_func_enhance]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;阵法
+[button_func_formation]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;将星
+[button_func_star]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;军团
+[button_func_corp]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;坐骑
+[button_func_horse]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;奖励
+[button_func_award]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;助手
+[button_func_assist]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;任务
+[button_func_task]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;设置
+[button_func_setting]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;好友
+[button_func_friend]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;活动
+[button_func_activity]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;邮件
+[button_func_mail]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;竞技
+[button_func_tournament]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;征收
+[button_func_levy]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;祭祀
+[button_func_worship]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+
+;占星
+[button_func_astrology]
+image00\Res00\button_function.png (0,0,80,80)
+(0,240,80,80)
+

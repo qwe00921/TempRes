@@ -1,0 +1,29 @@
+;----------------------------------------
+; Action组合特效（UI专用）
+;----------------------------------------
+
+[test]
+@type=0
+ui.test
+
+;评星级效果，星星的缩放特效
+[star_scale]
+@type=0 @loop
+ui.star_scale
+
+[common_scale]
+@type=0 @loop
+ui.common_scale
+
+[common_move]
+@type=0 @loop
+ui.common_move
+
+[mainui_btn_scale]
+@type=0 @loop
+ui.mainui_btn_scale
+
+--行动力点数不足
+[action_point_lack]
+@type=0 @loop
+ui.action_point_lack_scale

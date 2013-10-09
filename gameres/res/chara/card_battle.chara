@@ -1,0 +1,2525 @@
+;----------------------------------------------------
+; ½ÇÉ«ÅäÖÃ£¨¿¨ÅÆÕ½¶·×¨ÓÃ£©
+;----------------------------------------------------
+
+[10100101]
+@standby name=standby ani=card.battle_10100101
+@atk name=atk ani=card.battle_10100101
+@run
+@sing name=sing ani=card.battle_10100101
+@skill name=skill ani=card.battle_10100101
+@defence name=defence ani=card.battle_10100101
+@hurt name=hurt ani=card.battle_10100101
+@dead name=dead ani=card.battle_10100101
+[10100102]
+@standby name=standby ani=card.battle_10100102
+@atk name=atk ani=card.battle_10100102
+@run
+@sing name=sing ani=card.battle_10100102
+@skill name=skill ani=card.battle_10100102
+@defence name=defence ani=card.battle_10100102
+@hurt name=hurt ani=card.battle_10100102
+@dead name=dead ani=card.battle_10100102
+[10100103]
+@standby name=standby ani=card.battle_10100103
+@atk name=atk ani=card.battle_10100103
+@run
+@sing name=sing ani=card.battle_10100103
+@skill name=skill ani=card.battle_10100103
+@defence name=defence ani=card.battle_10100103
+@hurt name=hurt ani=card.battle_10100103
+@dead name=dead ani=card.battle_10100103
+[10100104]
+@standby name=standby ani=card.battle_10100104
+@atk name=atk ani=card.battle_10100104
+@run
+@sing name=sing ani=card.battle_10100104
+@skill name=skill ani=card.battle_10100104
+@defence name=defence ani=card.battle_10100104
+@hurt name=hurt ani=card.battle_10100104
+@dead name=dead ani=card.battle_10100104
+[10100201]
+@standby name=standby ani=card.battle_10100201
+@atk name=atk ani=card.battle_10100201
+@run
+@sing name=sing ani=card.battle_10100201
+@skill name=skill ani=card.battle_10100201
+@defence name=defence ani=card.battle_10100201
+@hurt name=hurt ani=card.battle_10100201
+@dead name=dead ani=card.battle_10100201
+[10100202]
+@standby name=standby ani=card.battle_10100202
+@atk name=atk ani=card.battle_10100202
+@run
+@sing name=sing ani=card.battle_10100202
+@skill name=skill ani=card.battle_10100202
+@defence name=defence ani=card.battle_10100202
+@hurt name=hurt ani=card.battle_10100202
+@dead name=dead ani=card.battle_10100202
+[10100203]
+@standby name=standby ani=card.battle_10100203
+@atk name=atk ani=card.battle_10100203
+@run
+@sing name=sing ani=card.battle_10100203
+@skill name=skill ani=card.battle_10100203
+@defence name=defence ani=card.battle_10100203
+@hurt name=hurt ani=card.battle_10100203
+@dead name=dead ani=card.battle_10100203
+[10100204]
+@standby name=standby ani=card.battle_10100204
+@atk name=atk ani=card.battle_10100204
+@run
+@sing name=sing ani=card.battle_10100204
+@skill name=skill ani=card.battle_10100204
+@defence name=defence ani=card.battle_10100204
+@hurt name=hurt ani=card.battle_10100204
+@dead name=dead ani=card.battle_10100204
+[10100301]
+@standby name=standby ani=card.battle_10100301
+@atk name=atk ani=card.battle_10100301
+@run
+@sing name=sing ani=card.battle_10100301
+@skill name=skill ani=card.battle_10100301
+@defence name=defence ani=card.battle_10100301
+@hurt name=hurt ani=card.battle_10100301
+@dead name=dead ani=card.battle_10100301
+[10100302]
+@standby name=standby ani=card.battle_10100302
+@atk name=atk ani=card.battle_10100302
+@run
+@sing name=sing ani=card.battle_10100302
+@skill name=skill ani=card.battle_10100302
+@defence name=defence ani=card.battle_10100302
+@hurt name=hurt ani=card.battle_10100302
+@dead name=dead ani=card.battle_10100302
+[10100303]
+@standby name=standby ani=card.battle_10100303
+@atk name=atk ani=card.battle_10100303
+@run
+@sing name=sing ani=card.battle_10100303
+@skill name=skill ani=card.battle_10100303
+@defence name=defence ani=card.battle_10100303
+@hurt name=hurt ani=card.battle_10100303
+@dead name=dead ani=card.battle_10100303
+[10100304]
+@standby name=standby ani=card.battle_10100304
+@atk name=atk ani=card.battle_10100304
+@run
+@sing name=sing ani=card.battle_10100304
+@skill name=skill ani=card.battle_10100304
+@defence name=defence ani=card.battle_10100304
+@hurt name=hurt ani=card.battle_10100304
+@dead name=dead ani=card.battle_10100304
+[10100401]
+@standby name=standby ani=card.battle_10100401
+@atk name=atk ani=card.battle_10100401
+@run
+@sing name=sing ani=card.battle_10100401
+@skill name=skill ani=card.battle_10100401
+@defence name=defence ani=card.battle_10100401
+@hurt name=hurt ani=card.battle_10100401
+@dead name=dead ani=card.battle_10100401
+[10100402]
+@standby name=standby ani=card.battle_10100402
+@atk name=atk ani=card.battle_10100402
+@run
+@sing name=sing ani=card.battle_10100402
+@skill name=skill ani=card.battle_10100402
+@defence name=defence ani=card.battle_10100402
+@hurt name=hurt ani=card.battle_10100402
+@dead name=dead ani=card.battle_10100402
+[10100403]
+@standby name=standby ani=card.battle_10100403
+@atk name=atk ani=card.battle_10100403
+@run
+@sing name=sing ani=card.battle_10100403
+@skill name=skill ani=card.battle_10100403
+@defence name=defence ani=card.battle_10100403
+@hurt name=hurt ani=card.battle_10100403
+@dead name=dead ani=card.battle_10100403
+[10100404]
+@standby name=standby ani=card.battle_10100404
+@atk name=atk ani=card.battle_10100404
+@run
+@sing name=sing ani=card.battle_10100404
+@skill name=skill ani=card.battle_10100404
+@defence name=defence ani=card.battle_10100404
+@hurt name=hurt ani=card.battle_10100404
+@dead name=dead ani=card.battle_10100404
+[10100501]
+@standby name=standby ani=card.battle_10100501
+@atk name=atk ani=card.battle_10100501
+@run
+@sing name=sing ani=card.battle_10100501
+@skill name=skill ani=card.battle_10100501
+@defence name=defence ani=card.battle_10100501
+@hurt name=hurt ani=card.battle_10100501
+@dead name=dead ani=card.battle_10100501
+[10100502]
+@standby name=standby ani=card.battle_10100502
+@atk name=atk ani=card.battle_10100502
+@run
+@sing name=sing ani=card.battle_10100502
+@skill name=skill ani=card.battle_10100502
+@defence name=defence ani=card.battle_10100502
+@hurt name=hurt ani=card.battle_10100502
+@dead name=dead ani=card.battle_10100502
+[10100503]
+@standby name=standby ani=card.battle_10100503
+@atk name=atk ani=card.battle_10100503
+@run
+@sing name=sing ani=card.battle_10100503
+@skill name=skill ani=card.battle_10100503
+@defence name=defence ani=card.battle_10100503
+@hurt name=hurt ani=card.battle_10100503
+@dead name=dead ani=card.battle_10100503
+[10100504]
+@standby name=standby ani=card.battle_10100504
+@atk name=atk ani=card.battle_10100504
+@run
+@sing name=sing ani=card.battle_10100504
+@skill name=skill ani=card.battle_10100504
+@defence name=defence ani=card.battle_10100504
+@hurt name=hurt ani=card.battle_10100504
+@dead name=dead ani=card.battle_10100504
+[10100601]
+@standby name=standby ani=card.battle_10100601
+@atk name=atk ani=card.battle_10100601
+@run
+@sing name=sing ani=card.battle_10100601
+@skill name=skill ani=card.battle_10100601
+@defence name=defence ani=card.battle_10100601
+@hurt name=hurt ani=card.battle_10100601
+@dead name=dead ani=card.battle_10100601
+[10100602]
+@standby name=standby ani=card.battle_10100602
+@atk name=atk ani=card.battle_10100602
+@run
+@sing name=sing ani=card.battle_10100602
+@skill name=skill ani=card.battle_10100602
+@defence name=defence ani=card.battle_10100602
+@hurt name=hurt ani=card.battle_10100602
+@dead name=dead ani=card.battle_10100602
+[10100603]
+@standby name=standby ani=card.battle_10100603
+@atk name=atk ani=card.battle_10100603
+@run
+@sing name=sing ani=card.battle_10100603
+@skill name=skill ani=card.battle_10100603
+@defence name=defence ani=card.battle_10100603
+@hurt name=hurt ani=card.battle_10100603
+@dead name=dead ani=card.battle_10100603
+[10100604]
+@standby name=standby ani=card.battle_10100604
+@atk name=atk ani=card.battle_10100604
+@run
+@sing name=sing ani=card.battle_10100604
+@skill name=skill ani=card.battle_10100604
+@defence name=defence ani=card.battle_10100604
+@hurt name=hurt ani=card.battle_10100604
+@dead name=dead ani=card.battle_10100604
+[10100701]
+@standby name=standby ani=card.battle_10100701
+@atk name=atk ani=card.battle_10100701
+@run
+@sing name=sing ani=card.battle_10100701
+@skill name=skill ani=card.battle_10100701
+@defence name=defence ani=card.battle_10100701
+@hurt name=hurt ani=card.battle_10100701
+@dead name=dead ani=card.battle_10100701
+[10100702]
+@standby name=standby ani=card.battle_10100702
+@atk name=atk ani=card.battle_10100702
+@run
+@sing name=sing ani=card.battle_10100702
+@skill name=skill ani=card.battle_10100702
+@defence name=defence ani=card.battle_10100702
+@hurt name=hurt ani=card.battle_10100702
+@dead name=dead ani=card.battle_10100702
+[10100703]
+@standby name=standby ani=card.battle_10100703
+@atk name=atk ani=card.battle_10100703
+@run
+@sing name=sing ani=card.battle_10100703
+@skill name=skill ani=card.battle_10100703
+@defence name=defence ani=card.battle_10100703
+@hurt name=hurt ani=card.battle_10100703
+@dead name=dead ani=card.battle_10100703
+[10100704]
+@standby name=standby ani=card.battle_10100704
+@atk name=atk ani=card.battle_10100704
+@run
+@sing name=sing ani=card.battle_10100704
+@skill name=skill ani=card.battle_10100704
+@defence name=defence ani=card.battle_10100704
+@hurt name=hurt ani=card.battle_10100704
+@dead name=dead ani=card.battle_10100704
+[10100801]
+@standby name=standby ani=card.battle_10100801
+@atk name=atk ani=card.battle_10100801
+@run
+@sing name=sing ani=card.battle_10100801
+@skill name=skill ani=card.battle_10100801
+@defence name=defence ani=card.battle_10100801
+@hurt name=hurt ani=card.battle_10100801
+@dead name=dead ani=card.battle_10100801
+[10100802]
+@standby name=standby ani=card.battle_10100802
+@atk name=atk ani=card.battle_10100802
+@run
+@sing name=sing ani=card.battle_10100802
+@skill name=skill ani=card.battle_10100802
+@defence name=defence ani=card.battle_10100802
+@hurt name=hurt ani=card.battle_10100802
+@dead name=dead ani=card.battle_10100802
+[10100803]
+@standby name=standby ani=card.battle_10100803
+@atk name=atk ani=card.battle_10100803
+@run
+@sing name=sing ani=card.battle_10100803
+@skill name=skill ani=card.battle_10100803
+@defence name=defence ani=card.battle_10100803
+@hurt name=hurt ani=card.battle_10100803
+@dead name=dead ani=card.battle_10100803
+[10100804]
+@standby name=standby ani=card.battle_10100804
+@atk name=atk ani=card.battle_10100804
+@run
+@sing name=sing ani=card.battle_10100804
+@skill name=skill ani=card.battle_10100804
+@defence name=defence ani=card.battle_10100804
+@hurt name=hurt ani=card.battle_10100804
+@dead name=dead ani=card.battle_10100804
+[10100901]
+@standby name=standby ani=card.battle_10100901
+@atk name=atk ani=card.battle_10100901
+@run
+@sing name=sing ani=card.battle_10100901
+@skill name=skill ani=card.battle_10100901
+@defence name=defence ani=card.battle_10100901
+@hurt name=hurt ani=card.battle_10100901
+@dead name=dead ani=card.battle_10100901
+[10100902]
+@standby name=standby ani=card.battle_10100902
+@atk name=atk ani=card.battle_10100902
+@run
+@sing name=sing ani=card.battle_10100902
+@skill name=skill ani=card.battle_10100902
+@defence name=defence ani=card.battle_10100902
+@hurt name=hurt ani=card.battle_10100902
+@dead name=dead ani=card.battle_10100902
+[10100903]
+@standby name=standby ani=card.battle_10100903
+@atk name=atk ani=card.battle_10100903
+@run
+@sing name=sing ani=card.battle_10100903
+@skill name=skill ani=card.battle_10100903
+@defence name=defence ani=card.battle_10100903
+@hurt name=hurt ani=card.battle_10100903
+@dead name=dead ani=card.battle_10100903
+[10100904]
+@standby name=standby ani=card.battle_10100904
+@atk name=atk ani=card.battle_10100904
+@run
+@sing name=sing ani=card.battle_10100904
+@skill name=skill ani=card.battle_10100904
+@defence name=defence ani=card.battle_10100904
+@hurt name=hurt ani=card.battle_10100904
+@dead name=dead ani=card.battle_10100904
+[10101001]
+@standby name=standby ani=card.battle_10101001
+@atk name=atk ani=card.battle_10101001
+@run
+@sing name=sing ani=card.battle_10101001
+@skill name=skill ani=card.battle_10101001
+@defence name=defence ani=card.battle_10101001
+@hurt name=hurt ani=card.battle_10101001
+@dead name=dead ani=card.battle_10101001
+[10101002]
+@standby name=standby ani=card.battle_10101002
+@atk name=atk ani=card.battle_10101002
+@run
+@sing name=sing ani=card.battle_10101002
+@skill name=skill ani=card.battle_10101002
+@defence name=defence ani=card.battle_10101002
+@hurt name=hurt ani=card.battle_10101002
+@dead name=dead ani=card.battle_10101002
+[10101003]
+@standby name=standby ani=card.battle_10101003
+@atk name=atk ani=card.battle_10101003
+@run
+@sing name=sing ani=card.battle_10101003
+@skill name=skill ani=card.battle_10101003
+@defence name=defence ani=card.battle_10101003
+@hurt name=hurt ani=card.battle_10101003
+@dead name=dead ani=card.battle_10101003
+[10101004]
+@standby name=standby ani=card.battle_10101004
+@atk name=atk ani=card.battle_10101004
+@run
+@sing name=sing ani=card.battle_10101004
+@skill name=skill ani=card.battle_10101004
+@defence name=defence ani=card.battle_10101004
+@hurt name=hurt ani=card.battle_10101004
+@dead name=dead ani=card.battle_10101004
+[10200101]
+@standby name=standby ani=card.battle_10200101
+@atk name=atk ani=card.battle_10200101
+@run
+@sing name=sing ani=card.battle_10200101
+@skill name=skill ani=card.battle_10200101
+@defence name=defence ani=card.battle_10200101
+@hurt name=hurt ani=card.battle_10200101
+@dead name=dead ani=card.battle_10200101
+[10200102]
+@standby name=standby ani=card.battle_10200102
+@atk name=atk ani=card.battle_10200102
+@run
+@sing name=sing ani=card.battle_10200102
+@skill name=skill ani=card.battle_10200102
+@defence name=defence ani=card.battle_10200102
+@hurt name=hurt ani=card.battle_10200102
+@dead name=dead ani=card.battle_10200102
+[10200103]
+@standby name=standby ani=card.battle_10200103
+@atk name=atk ani=card.battle_10200103
+@run
+@sing name=sing ani=card.battle_10200103
+@skill name=skill ani=card.battle_10200103
+@defence name=defence ani=card.battle_10200103
+@hurt name=hurt ani=card.battle_10200103
+@dead name=dead ani=card.battle_10200103
+[10200104]
+@standby name=standby ani=card.battle_10200104
+@atk name=atk ani=card.battle_10200104
+@run
+@sing name=sing ani=card.battle_10200104
+@skill name=skill ani=card.battle_10200104
+@defence name=defence ani=card.battle_10200104
+@hurt name=hurt ani=card.battle_10200104
+@dead name=dead ani=card.battle_10200104
+[10200201]
+@standby name=standby ani=card.battle_10200201
+@atk name=atk ani=card.battle_10200201
+@run
+@sing name=sing ani=card.battle_10200201
+@skill name=skill ani=card.battle_10200201
+@defence name=defence ani=card.battle_10200201
+@hurt name=hurt ani=card.battle_10200201
+@dead name=dead ani=card.battle_10200201
+[10200202]
+@standby name=standby ani=card.battle_10200202
+@atk name=atk ani=card.battle_10200202
+@run
+@sing name=sing ani=card.battle_10200202
+@skill name=skill ani=card.battle_10200202
+@defence name=defence ani=card.battle_10200202
+@hurt name=hurt ani=card.battle_10200202
+@dead name=dead ani=card.battle_10200202
+[10200203]
+@standby name=standby ani=card.battle_10200203
+@atk name=atk ani=card.battle_10200203
+@run
+@sing name=sing ani=card.battle_10200203
+@skill name=skill ani=card.battle_10200203
+@defence name=defence ani=card.battle_10200203
+@hurt name=hurt ani=card.battle_10200203
+@dead name=dead ani=card.battle_10200203
+[10200204]
+@standby name=standby ani=card.battle_10200204
+@atk name=atk ani=card.battle_10200204
+@run
+@sing name=sing ani=card.battle_10200204
+@skill name=skill ani=card.battle_10200204
+@defence name=defence ani=card.battle_10200204
+@hurt name=hurt ani=card.battle_10200204
+@dead name=dead ani=card.battle_10200204
+[10200301]
+@standby name=standby ani=card.battle_10200301
+@atk name=atk ani=card.battle_10200301
+@run
+@sing name=sing ani=card.battle_10200301
+@skill name=skill ani=card.battle_10200301
+@defence name=defence ani=card.battle_10200301
+@hurt name=hurt ani=card.battle_10200301
+@dead name=dead ani=card.battle_10200301
+[10200302]
+@standby name=standby ani=card.battle_10200302
+@atk name=atk ani=card.battle_10200302
+@run
+@sing name=sing ani=card.battle_10200302
+@skill name=skill ani=card.battle_10200302
+@defence name=defence ani=card.battle_10200302
+@hurt name=hurt ani=card.battle_10200302
+@dead name=dead ani=card.battle_10200302
+[10200303]
+@standby name=standby ani=card.battle_10200303
+@atk name=atk ani=card.battle_10200303
+@run
+@sing name=sing ani=card.battle_10200303
+@skill name=skill ani=card.battle_10200303
+@defence name=defence ani=card.battle_10200303
+@hurt name=hurt ani=card.battle_10200303
+@dead name=dead ani=card.battle_10200303
+[10200304]
+@standby name=standby ani=card.battle_10200304
+@atk name=atk ani=card.battle_10200304
+@run
+@sing name=sing ani=card.battle_10200304
+@skill name=skill ani=card.battle_10200304
+@defence name=defence ani=card.battle_10200304
+@hurt name=hurt ani=card.battle_10200304
+@dead name=dead ani=card.battle_10200304
+[10200401]
+@standby name=standby ani=card.battle_10200401
+@atk name=atk ani=card.battle_10200401
+@run
+@sing name=sing ani=card.battle_10200401
+@skill name=skill ani=card.battle_10200401
+@defence name=defence ani=card.battle_10200401
+@hurt name=hurt ani=card.battle_10200401
+@dead name=dead ani=card.battle_10200401
+[10200402]
+@standby name=standby ani=card.battle_10200402
+@atk name=atk ani=card.battle_10200402
+@run
+@sing name=sing ani=card.battle_10200402
+@skill name=skill ani=card.battle_10200402
+@defence name=defence ani=card.battle_10200402
+@hurt name=hurt ani=card.battle_10200402
+@dead name=dead ani=card.battle_10200402
+[10200403]
+@standby name=standby ani=card.battle_10200403
+@atk name=atk ani=card.battle_10200403
+@run
+@sing name=sing ani=card.battle_10200403
+@skill name=skill ani=card.battle_10200403
+@defence name=defence ani=card.battle_10200403
+@hurt name=hurt ani=card.battle_10200403
+@dead name=dead ani=card.battle_10200403
+[10200404]
+@standby name=standby ani=card.battle_10200404
+@atk name=atk ani=card.battle_10200404
+@run
+@sing name=sing ani=card.battle_10200404
+@skill name=skill ani=card.battle_10200404
+@defence name=defence ani=card.battle_10200404
+@hurt name=hurt ani=card.battle_10200404
+@dead name=dead ani=card.battle_10200404
+[10200501]
+@standby name=standby ani=card.battle_10200501
+@atk name=atk ani=card.battle_10200501
+@run
+@sing name=sing ani=card.battle_10200501
+@skill name=skill ani=card.battle_10200501
+@defence name=defence ani=card.battle_10200501
+@hurt name=hurt ani=card.battle_10200501
+@dead name=dead ani=card.battle_10200501
+[10200502]
+@standby name=standby ani=card.battle_10200502
+@atk name=atk ani=card.battle_10200502
+@run
+@sing name=sing ani=card.battle_10200502
+@skill name=skill ani=card.battle_10200502
+@defence name=defence ani=card.battle_10200502
+@hurt name=hurt ani=card.battle_10200502
+@dead name=dead ani=card.battle_10200502
+[10200503]
+@standby name=standby ani=card.battle_10200503
+@atk name=atk ani=card.battle_10200503
+@run
+@sing name=sing ani=card.battle_10200503
+@skill name=skill ani=card.battle_10200503
+@defence name=defence ani=card.battle_10200503
+@hurt name=hurt ani=card.battle_10200503
+@dead name=dead ani=card.battle_10200503
+[10200504]
+@standby name=standby ani=card.battle_10200504
+@atk name=atk ani=card.battle_10200504
+@run
+@sing name=sing ani=card.battle_10200504
+@skill name=skill ani=card.battle_10200504
+@defence name=defence ani=card.battle_10200504
+@hurt name=hurt ani=card.battle_10200504
+@dead name=dead ani=card.battle_10200504
+[10200601]
+@standby name=standby ani=card.battle_10200601
+@atk name=atk ani=card.battle_10200601
+@run
+@sing name=sing ani=card.battle_10200601
+@skill name=skill ani=card.battle_10200601
+@defence name=defence ani=card.battle_10200601
+@hurt name=hurt ani=card.battle_10200601
+@dead name=dead ani=card.battle_10200601
+[10200602]
+@standby name=standby ani=card.battle_10200602
+@atk name=atk ani=card.battle_10200602
+@run
+@sing name=sing ani=card.battle_10200602
+@skill name=skill ani=card.battle_10200602
+@defence name=defence ani=card.battle_10200602
+@hurt name=hurt ani=card.battle_10200602
+@dead name=dead ani=card.battle_10200602
+[10200603]
+@standby name=standby ani=card.battle_10200603
+@atk name=atk ani=card.battle_10200603
+@run
+@sing name=sing ani=card.battle_10200603
+@skill name=skill ani=card.battle_10200603
+@defence name=defence ani=card.battle_10200603
+@hurt name=hurt ani=card.battle_10200603
+@dead name=dead ani=card.battle_10200603
+[10200604]
+@standby name=standby ani=card.battle_10200604
+@atk name=atk ani=card.battle_10200604
+@run
+@sing name=sing ani=card.battle_10200604
+@skill name=skill ani=card.battle_10200604
+@defence name=defence ani=card.battle_10200604
+@hurt name=hurt ani=card.battle_10200604
+@dead name=dead ani=card.battle_10200604
+[10200701]
+@standby name=standby ani=card.battle_10200701
+@atk name=atk ani=card.battle_10200701
+@run
+@sing name=sing ani=card.battle_10200701
+@skill name=skill ani=card.battle_10200701
+@defence name=defence ani=card.battle_10200701
+@hurt name=hurt ani=card.battle_10200701
+@dead name=dead ani=card.battle_10200701
+[10200702]
+@standby name=standby ani=card.battle_10200702
+@atk name=atk ani=card.battle_10200702
+@run
+@sing name=sing ani=card.battle_10200702
+@skill name=skill ani=card.battle_10200702
+@defence name=defence ani=card.battle_10200702
+@hurt name=hurt ani=card.battle_10200702
+@dead name=dead ani=card.battle_10200702
+[10200703]
+@standby name=standby ani=card.battle_10200703
+@atk name=atk ani=card.battle_10200703
+@run
+@sing name=sing ani=card.battle_10200703
+@skill name=skill ani=card.battle_10200703
+@defence name=defence ani=card.battle_10200703
+@hurt name=hurt ani=card.battle_10200703
+@dead name=dead ani=card.battle_10200703
+[10200704]
+@standby name=standby ani=card.battle_10200704
+@atk name=atk ani=card.battle_10200704
+@run
+@sing name=sing ani=card.battle_10200704
+@skill name=skill ani=card.battle_10200704
+@defence name=defence ani=card.battle_10200704
+@hurt name=hurt ani=card.battle_10200704
+@dead name=dead ani=card.battle_10200704
+[10200801]
+@standby name=standby ani=card.battle_10200801
+@atk name=atk ani=card.battle_10200801
+@run
+@sing name=sing ani=card.battle_10200801
+@skill name=skill ani=card.battle_10200801
+@defence name=defence ani=card.battle_10200801
+@hurt name=hurt ani=card.battle_10200801
+@dead name=dead ani=card.battle_10200801
+[10200802]
+@standby name=standby ani=card.battle_10200802
+@atk name=atk ani=card.battle_10200802
+@run
+@sing name=sing ani=card.battle_10200802
+@skill name=skill ani=card.battle_10200802
+@defence name=defence ani=card.battle_10200802
+@hurt name=hurt ani=card.battle_10200802
+@dead name=dead ani=card.battle_10200802
+[10200803]
+@standby name=standby ani=card.battle_10200803
+@atk name=atk ani=card.battle_10200803
+@run
+@sing name=sing ani=card.battle_10200803
+@skill name=skill ani=card.battle_10200803
+@defence name=defence ani=card.battle_10200803
+@hurt name=hurt ani=card.battle_10200803
+@dead name=dead ani=card.battle_10200803
+[10200804]
+@standby name=standby ani=card.battle_10200804
+@atk name=atk ani=card.battle_10200804
+@run
+@sing name=sing ani=card.battle_10200804
+@skill name=skill ani=card.battle_10200804
+@defence name=defence ani=card.battle_10200804
+@hurt name=hurt ani=card.battle_10200804
+@dead name=dead ani=card.battle_10200804
+[10200901]
+@standby name=standby ani=card.battle_10200901
+@atk name=atk ani=card.battle_10200901
+@run
+@sing name=sing ani=card.battle_10200901
+@skill name=skill ani=card.battle_10200901
+@defence name=defence ani=card.battle_10200901
+@hurt name=hurt ani=card.battle_10200901
+@dead name=dead ani=card.battle_10200901
+[10200902]
+@standby name=standby ani=card.battle_10200902
+@atk name=atk ani=card.battle_10200902
+@run
+@sing name=sing ani=card.battle_10200902
+@skill name=skill ani=card.battle_10200902
+@defence name=defence ani=card.battle_10200902
+@hurt name=hurt ani=card.battle_10200902
+@dead name=dead ani=card.battle_10200902
+[10200903]
+@standby name=standby ani=card.battle_10200903
+@atk name=atk ani=card.battle_10200903
+@run
+@sing name=sing ani=card.battle_10200903
+@skill name=skill ani=card.battle_10200903
+@defence name=defence ani=card.battle_10200903
+@hurt name=hurt ani=card.battle_10200903
+@dead name=dead ani=card.battle_10200903
+[10200904]
+@standby name=standby ani=card.battle_10200904
+@atk name=atk ani=card.battle_10200904
+@run
+@sing name=sing ani=card.battle_10200904
+@skill name=skill ani=card.battle_10200904
+@defence name=defence ani=card.battle_10200904
+@hurt name=hurt ani=card.battle_10200904
+@dead name=dead ani=card.battle_10200904
+[10201001]
+@standby name=standby ani=card.battle_10201001
+@atk name=atk ani=card.battle_10201001
+@run
+@sing name=sing ani=card.battle_10201001
+@skill name=skill ani=card.battle_10201001
+@defence name=defence ani=card.battle_10201001
+@hurt name=hurt ani=card.battle_10201001
+@dead name=dead ani=card.battle_10201001
+[10201002]
+@standby name=standby ani=card.battle_10201002
+@atk name=atk ani=card.battle_10201002
+@run
+@sing name=sing ani=card.battle_10201002
+@skill name=skill ani=card.battle_10201002
+@defence name=defence ani=card.battle_10201002
+@hurt name=hurt ani=card.battle_10201002
+@dead name=dead ani=card.battle_10201002
+[10201003]
+@standby name=standby ani=card.battle_10201003
+@atk name=atk ani=card.battle_10201003
+@run
+@sing name=sing ani=card.battle_10201003
+@skill name=skill ani=card.battle_10201003
+@defence name=defence ani=card.battle_10201003
+@hurt name=hurt ani=card.battle_10201003
+@dead name=dead ani=card.battle_10201003
+[10201004]
+@standby name=standby ani=card.battle_10201004
+@atk name=atk ani=card.battle_10201004
+@run
+@sing name=sing ani=card.battle_10201004
+@skill name=skill ani=card.battle_10201004
+@defence name=defence ani=card.battle_10201004
+@hurt name=hurt ani=card.battle_10201004
+@dead name=dead ani=card.battle_10201004
+[20300101]
+@standby name=standby ani=card.battle_20300101
+@atk name=atk ani=card.battle_20300101
+@run
+@sing name=sing ani=card.battle_20300101
+@skill name=skill ani=card.battle_20300101
+@defence name=defence ani=card.battle_20300101
+@hurt name=hurt ani=card.battle_20300101
+@dead name=dead ani=card.battle_20300101
+[20300102]
+@standby name=standby ani=card.battle_20300102
+@atk name=atk ani=card.battle_20300102
+@run
+@sing name=sing ani=card.battle_20300102
+@skill name=skill ani=card.battle_20300102
+@defence name=defence ani=card.battle_20300102
+@hurt name=hurt ani=card.battle_20300102
+@dead name=dead ani=card.battle_20300102
+[20300103]
+@standby name=standby ani=card.battle_20300103
+@atk name=atk ani=card.battle_20300103
+@run
+@sing name=sing ani=card.battle_20300103
+@skill name=skill ani=card.battle_20300103
+@defence name=defence ani=card.battle_20300103
+@hurt name=hurt ani=card.battle_20300103
+@dead name=dead ani=card.battle_20300103
+[20300104]
+@standby name=standby ani=card.battle_20300104
+@atk name=atk ani=card.battle_20300104
+@run
+@sing name=sing ani=card.battle_20300104
+@skill name=skill ani=card.battle_20300104
+@defence name=defence ani=card.battle_20300104
+@hurt name=hurt ani=card.battle_20300104
+@dead name=dead ani=card.battle_20300104
+[20300201]
+@standby name=standby ani=card.battle_20300201
+@atk name=atk ani=card.battle_20300201
+@run
+@sing name=sing ani=card.battle_20300201
+@skill name=skill ani=card.battle_20300201
+@defence name=defence ani=card.battle_20300201
+@hurt name=hurt ani=card.battle_20300201
+@dead name=dead ani=card.battle_20300201
+[20300202]
+@standby name=standby ani=card.battle_20300202
+@atk name=atk ani=card.battle_20300202
+@run
+@sing name=sing ani=card.battle_20300202
+@skill name=skill ani=card.battle_20300202
+@defence name=defence ani=card.battle_20300202
+@hurt name=hurt ani=card.battle_20300202
+@dead name=dead ani=card.battle_20300202
+[20300203]
+@standby name=standby ani=card.battle_20300203
+@atk name=atk ani=card.battle_20300203
+@run
+@sing name=sing ani=card.battle_20300203
+@skill name=skill ani=card.battle_20300203
+@defence name=defence ani=card.battle_20300203
+@hurt name=hurt ani=card.battle_20300203
+@dead name=dead ani=card.battle_20300203
+[20300204]
+@standby name=standby ani=card.battle_20300204
+@atk name=atk ani=card.battle_20300204
+@run
+@sing name=sing ani=card.battle_20300204
+@skill name=skill ani=card.battle_20300204
+@defence name=defence ani=card.battle_20300204
+@hurt name=hurt ani=card.battle_20300204
+@dead name=dead ani=card.battle_20300204
+[20300301]
+@standby name=standby ani=card.battle_20300301
+@atk name=atk ani=card.battle_20300301
+@run
+@sing name=sing ani=card.battle_20300301
+@skill name=skill ani=card.battle_20300301
+@defence name=defence ani=card.battle_20300301
+@hurt name=hurt ani=card.battle_20300301
+@dead name=dead ani=card.battle_20300301
+[20300302]
+@standby name=standby ani=card.battle_20300302
+@atk name=atk ani=card.battle_20300302
+@run
+@sing name=sing ani=card.battle_20300302
+@skill name=skill ani=card.battle_20300302
+@defence name=defence ani=card.battle_20300302
+@hurt name=hurt ani=card.battle_20300302
+@dead name=dead ani=card.battle_20300302
+[20300303]
+@standby name=standby ani=card.battle_20300303
+@atk name=atk ani=card.battle_20300303
+@run
+@sing name=sing ani=card.battle_20300303
+@skill name=skill ani=card.battle_20300303
+@defence name=defence ani=card.battle_20300303
+@hurt name=hurt ani=card.battle_20300303
+@dead name=dead ani=card.battle_20300303
+[20300304]
+@standby name=standby ani=card.battle_20300304
+@atk name=atk ani=card.battle_20300304
+@run
+@sing name=sing ani=card.battle_20300304
+@skill name=skill ani=card.battle_20300304
+@defence name=defence ani=card.battle_20300304
+@hurt name=hurt ani=card.battle_20300304
+@dead name=dead ani=card.battle_20300304
+[20300401]
+@standby name=standby ani=card.battle_20300401
+@atk name=atk ani=card.battle_20300401
+@run
+@sing name=sing ani=card.battle_20300401
+@skill name=skill ani=card.battle_20300401
+@defence name=defence ani=card.battle_20300401
+@hurt name=hurt ani=card.battle_20300401
+@dead name=dead ani=card.battle_20300401
+[20300402]
+@standby name=standby ani=card.battle_20300402
+@atk name=atk ani=card.battle_20300402
+@run
+@sing name=sing ani=card.battle_20300402
+@skill name=skill ani=card.battle_20300402
+@defence name=defence ani=card.battle_20300402
+@hurt name=hurt ani=card.battle_20300402
+@dead name=dead ani=card.battle_20300402
+[20300403]
+@standby name=standby ani=card.battle_20300403
+@atk name=atk ani=card.battle_20300403
+@run
+@sing name=sing ani=card.battle_20300403
+@skill name=skill ani=card.battle_20300403
+@defence name=defence ani=card.battle_20300403
+@hurt name=hurt ani=card.battle_20300403
+@dead name=dead ani=card.battle_20300403
+[20300404]
+@standby name=standby ani=card.battle_20300404
+@atk name=atk ani=card.battle_20300404
+@run
+@sing name=sing ani=card.battle_20300404
+@skill name=skill ani=card.battle_20300404
+@defence name=defence ani=card.battle_20300404
+@hurt name=hurt ani=card.battle_20300404
+@dead name=dead ani=card.battle_20300404
+[20300501]
+@standby name=standby ani=card.battle_20300501
+@atk name=atk ani=card.battle_20300501
+@run
+@sing name=sing ani=card.battle_20300501
+@skill name=skill ani=card.battle_20300501
+@defence name=defence ani=card.battle_20300501
+@hurt name=hurt ani=card.battle_20300501
+@dead name=dead ani=card.battle_20300501
+[20300502]
+@standby name=standby ani=card.battle_20300502
+@atk name=atk ani=card.battle_20300502
+@run
+@sing name=sing ani=card.battle_20300502
+@skill name=skill ani=card.battle_20300502
+@defence name=defence ani=card.battle_20300502
+@hurt name=hurt ani=card.battle_20300502
+@dead name=dead ani=card.battle_20300502
+[20300503]
+@standby name=standby ani=card.battle_20300503
+@atk name=atk ani=card.battle_20300503
+@run
+@sing name=sing ani=card.battle_20300503
+@skill name=skill ani=card.battle_20300503
+@defence name=defence ani=card.battle_20300503
+@hurt name=hurt ani=card.battle_20300503
+@dead name=dead ani=card.battle_20300503
+[20300504]
+@standby name=standby ani=card.battle_20300504
+@atk name=atk ani=card.battle_20300504
+@run
+@sing name=sing ani=card.battle_20300504
+@skill name=skill ani=card.battle_20300504
+@defence name=defence ani=card.battle_20300504
+@hurt name=hurt ani=card.battle_20300504
+@dead name=dead ani=card.battle_20300504
+[20300601]
+@standby name=standby ani=card.battle_20300601
+@atk name=atk ani=card.battle_20300601
+@run
+@sing name=sing ani=card.battle_20300601
+@skill name=skill ani=card.battle_20300601
+@defence name=defence ani=card.battle_20300601
+@hurt name=hurt ani=card.battle_20300601
+@dead name=dead ani=card.battle_20300601
+[20300602]
+@standby name=standby ani=card.battle_20300602
+@atk name=atk ani=card.battle_20300602
+@run
+@sing name=sing ani=card.battle_20300602
+@skill name=skill ani=card.battle_20300602
+@defence name=defence ani=card.battle_20300602
+@hurt name=hurt ani=card.battle_20300602
+@dead name=dead ani=card.battle_20300602
+[20300603]
+@standby name=standby ani=card.battle_20300603
+@atk name=atk ani=card.battle_20300603
+@run
+@sing name=sing ani=card.battle_20300603
+@skill name=skill ani=card.battle_20300603
+@defence name=defence ani=card.battle_20300603
+@hurt name=hurt ani=card.battle_20300603
+@dead name=dead ani=card.battle_20300603
+[20300604]
+@standby name=standby ani=card.battle_20300604
+@atk name=atk ani=card.battle_20300604
+@run
+@sing name=sing ani=card.battle_20300604
+@skill name=skill ani=card.battle_20300604
+@defence name=defence ani=card.battle_20300604
+@hurt name=hurt ani=card.battle_20300604
+@dead name=dead ani=card.battle_20300604
+[20300701]
+@standby name=standby ani=card.battle_20300701
+@atk name=atk ani=card.battle_20300701
+@run
+@sing name=sing ani=card.battle_20300701
+@skill name=skill ani=card.battle_20300701
+@defence name=defence ani=card.battle_20300701
+@hurt name=hurt ani=card.battle_20300701
+@dead name=dead ani=card.battle_20300701
+[20300702]
+@standby name=standby ani=card.battle_20300702
+@atk name=atk ani=card.battle_20300702
+@run
+@sing name=sing ani=card.battle_20300702
+@skill name=skill ani=card.battle_20300702
+@defence name=defence ani=card.battle_20300702
+@hurt name=hurt ani=card.battle_20300702
+@dead name=dead ani=card.battle_20300702
+[20300703]
+@standby name=standby ani=card.battle_20300703
+@atk name=atk ani=card.battle_20300703
+@run
+@sing name=sing ani=card.battle_20300703
+@skill name=skill ani=card.battle_20300703
+@defence name=defence ani=card.battle_20300703
+@hurt name=hurt ani=card.battle_20300703
+@dead name=dead ani=card.battle_20300703
+[20300704]
+@standby name=standby ani=card.battle_20300704
+@atk name=atk ani=card.battle_20300704
+@run
+@sing name=sing ani=card.battle_20300704
+@skill name=skill ani=card.battle_20300704
+@defence name=defence ani=card.battle_20300704
+@hurt name=hurt ani=card.battle_20300704
+@dead name=dead ani=card.battle_20300704
+[20300801]
+@standby name=standby ani=card.battle_20300801
+@atk name=atk ani=card.battle_20300801
+@run
+@sing name=sing ani=card.battle_20300801
+@skill name=skill ani=card.battle_20300801
+@defence name=defence ani=card.battle_20300801
+@hurt name=hurt ani=card.battle_20300801
+@dead name=dead ani=card.battle_20300801
+[20300802]
+@standby name=standby ani=card.battle_20300802
+@atk name=atk ani=card.battle_20300802
+@run
+@sing name=sing ani=card.battle_20300802
+@skill name=skill ani=card.battle_20300802
+@defence name=defence ani=card.battle_20300802
+@hurt name=hurt ani=card.battle_20300802
+@dead name=dead ani=card.battle_20300802
+[20300803]
+@standby name=standby ani=card.battle_20300803
+@atk name=atk ani=card.battle_20300803
+@run
+@sing name=sing ani=card.battle_20300803
+@skill name=skill ani=card.battle_20300803
+@defence name=defence ani=card.battle_20300803
+@hurt name=hurt ani=card.battle_20300803
+@dead name=dead ani=card.battle_20300803
+[20300804]
+@standby name=standby ani=card.battle_20300804
+@atk name=atk ani=card.battle_20300804
+@run
+@sing name=sing ani=card.battle_20300804
+@skill name=skill ani=card.battle_20300804
+@defence name=defence ani=card.battle_20300804
+@hurt name=hurt ani=card.battle_20300804
+@dead name=dead ani=card.battle_20300804
+[20300901]
+@standby name=standby ani=card.battle_20300901
+@atk name=atk ani=card.battle_20300901
+@run
+@sing name=sing ani=card.battle_20300901
+@skill name=skill ani=card.battle_20300901
+@defence name=defence ani=card.battle_20300901
+@hurt name=hurt ani=card.battle_20300901
+@dead name=dead ani=card.battle_20300901
+[20300902]
+@standby name=standby ani=card.battle_20300902
+@atk name=atk ani=card.battle_20300902
+@run
+@sing name=sing ani=card.battle_20300902
+@skill name=skill ani=card.battle_20300902
+@defence name=defence ani=card.battle_20300902
+@hurt name=hurt ani=card.battle_20300902
+@dead name=dead ani=card.battle_20300902
+[20300903]
+@standby name=standby ani=card.battle_20300903
+@atk name=atk ani=card.battle_20300903
+@run
+@sing name=sing ani=card.battle_20300903
+@skill name=skill ani=card.battle_20300903
+@defence name=defence ani=card.battle_20300903
+@hurt name=hurt ani=card.battle_20300903
+@dead name=dead ani=card.battle_20300903
+[20300904]
+@standby name=standby ani=card.battle_20300904
+@atk name=atk ani=card.battle_20300904
+@run
+@sing name=sing ani=card.battle_20300904
+@skill name=skill ani=card.battle_20300904
+@defence name=defence ani=card.battle_20300904
+@hurt name=hurt ani=card.battle_20300904
+@dead name=dead ani=card.battle_20300904
+[20301001]
+@standby name=standby ani=card.battle_20301001
+@atk name=atk ani=card.battle_20301001
+@run
+@sing name=sing ani=card.battle_20301001
+@skill name=skill ani=card.battle_20301001
+@defence name=defence ani=card.battle_20301001
+@hurt name=hurt ani=card.battle_20301001
+@dead name=dead ani=card.battle_20301001
+[20301002]
+@standby name=standby ani=card.battle_20301002
+@atk name=atk ani=card.battle_20301002
+@run
+@sing name=sing ani=card.battle_20301002
+@skill name=skill ani=card.battle_20301002
+@defence name=defence ani=card.battle_20301002
+@hurt name=hurt ani=card.battle_20301002
+@dead name=dead ani=card.battle_20301002
+[20301003]
+@standby name=standby ani=card.battle_20301003
+@atk name=atk ani=card.battle_20301003
+@run
+@sing name=sing ani=card.battle_20301003
+@skill name=skill ani=card.battle_20301003
+@defence name=defence ani=card.battle_20301003
+@hurt name=hurt ani=card.battle_20301003
+@dead name=dead ani=card.battle_20301003
+[20301004]
+@standby name=standby ani=card.battle_20301004
+@atk name=atk ani=card.battle_20301004
+@run
+@sing name=sing ani=card.battle_20301004
+@skill name=skill ani=card.battle_20301004
+@defence name=defence ani=card.battle_20301004
+@hurt name=hurt ani=card.battle_20301004
+@dead name=dead ani=card.battle_20301004
+[20400101]
+@standby name=standby ani=card.battle_20400101
+@atk name=atk ani=card.battle_20400101
+@run
+@sing name=sing ani=card.battle_20400101
+@skill name=skill ani=card.battle_20400101
+@defence name=defence ani=card.battle_20400101
+@hurt name=hurt ani=card.battle_20400101
+@dead name=dead ani=card.battle_20400101
+[20400102]
+@standby name=standby ani=card.battle_20400102
+@atk name=atk ani=card.battle_20400102
+@run
+@sing name=sing ani=card.battle_20400102
+@skill name=skill ani=card.battle_20400102
+@defence name=defence ani=card.battle_20400102
+@hurt name=hurt ani=card.battle_20400102
+@dead name=dead ani=card.battle_20400102
+[20400103]
+@standby name=standby ani=card.battle_20400103
+@atk name=atk ani=card.battle_20400103
+@run
+@sing name=sing ani=card.battle_20400103
+@skill name=skill ani=card.battle_20400103
+@defence name=defence ani=card.battle_20400103
+@hurt name=hurt ani=card.battle_20400103
+@dead name=dead ani=card.battle_20400103
+[20400104]
+@standby name=standby ani=card.battle_20400104
+@atk name=atk ani=card.battle_20400104
+@run
+@sing name=sing ani=card.battle_20400104
+@skill name=skill ani=card.battle_20400104
+@defence name=defence ani=card.battle_20400104
+@hurt name=hurt ani=card.battle_20400104
+@dead name=dead ani=card.battle_20400104
+[20400201]
+@standby name=standby ani=card.battle_20400201
+@atk name=atk ani=card.battle_20400201
+@run
+@sing name=sing ani=card.battle_20400201
+@skill name=skill ani=card.battle_20400201
+@defence name=defence ani=card.battle_20400201
+@hurt name=hurt ani=card.battle_20400201
+@dead name=dead ani=card.battle_20400201
+[20400202]
+@standby name=standby ani=card.battle_20400202
+@atk name=atk ani=card.battle_20400202
+@run
+@sing name=sing ani=card.battle_20400202
+@skill name=skill ani=card.battle_20400202
+@defence name=defence ani=card.battle_20400202
+@hurt name=hurt ani=card.battle_20400202
+@dead name=dead ani=card.battle_20400202
+[20400203]
+@standby name=standby ani=card.battle_20400203
+@atk name=atk ani=card.battle_20400203
+@run
+@sing name=sing ani=card.battle_20400203
+@skill name=skill ani=card.battle_20400203
+@defence name=defence ani=card.battle_20400203
+@hurt name=hurt ani=card.battle_20400203
+@dead name=dead ani=card.battle_20400203
+[20400204]
+@standby name=standby ani=card.battle_20400204
+@atk name=atk ani=card.battle_20400204
+@run
+@sing name=sing ani=card.battle_20400204
+@skill name=skill ani=card.battle_20400204
+@defence name=defence ani=card.battle_20400204
+@hurt name=hurt ani=card.battle_20400204
+@dead name=dead ani=card.battle_20400204
+[20400301]
+@standby name=standby ani=card.battle_20400301
+@atk name=atk ani=card.battle_20400301
+@run
+@sing name=sing ani=card.battle_20400301
+@skill name=skill ani=card.battle_20400301
+@defence name=defence ani=card.battle_20400301
+@hurt name=hurt ani=card.battle_20400301
+@dead name=dead ani=card.battle_20400301
+[20400302]
+@standby name=standby ani=card.battle_20400302
+@atk name=atk ani=card.battle_20400302
+@run
+@sing name=sing ani=card.battle_20400302
+@skill name=skill ani=card.battle_20400302
+@defence name=defence ani=card.battle_20400302
+@hurt name=hurt ani=card.battle_20400302
+@dead name=dead ani=card.battle_20400302
+[20400303]
+@standby name=standby ani=card.battle_20400303
+@atk name=atk ani=card.battle_20400303
+@run
+@sing name=sing ani=card.battle_20400303
+@skill name=skill ani=card.battle_20400303
+@defence name=defence ani=card.battle_20400303
+@hurt name=hurt ani=card.battle_20400303
+@dead name=dead ani=card.battle_20400303
+[20400304]
+@standby name=standby ani=card.battle_20400304
+@atk name=atk ani=card.battle_20400304
+@run
+@sing name=sing ani=card.battle_20400304
+@skill name=skill ani=card.battle_20400304
+@defence name=defence ani=card.battle_20400304
+@hurt name=hurt ani=card.battle_20400304
+@dead name=dead ani=card.battle_20400304
+[20400401]
+@standby name=standby ani=card.battle_20400401
+@atk name=atk ani=card.battle_20400401
+@run
+@sing name=sing ani=card.battle_20400401
+@skill name=skill ani=card.battle_20400401
+@defence name=defence ani=card.battle_20400401
+@hurt name=hurt ani=card.battle_20400401
+@dead name=dead ani=card.battle_20400401
+[20400402]
+@standby name=standby ani=card.battle_20400402
+@atk name=atk ani=card.battle_20400402
+@run
+@sing name=sing ani=card.battle_20400402
+@skill name=skill ani=card.battle_20400402
+@defence name=defence ani=card.battle_20400402
+@hurt name=hurt ani=card.battle_20400402
+@dead name=dead ani=card.battle_20400402
+[20400403]
+@standby name=standby ani=card.battle_20400403
+@atk name=atk ani=card.battle_20400403
+@run
+@sing name=sing ani=card.battle_20400403
+@skill name=skill ani=card.battle_20400403
+@defence name=defence ani=card.battle_20400403
+@hurt name=hurt ani=card.battle_20400403
+@dead name=dead ani=card.battle_20400403
+[20400404]
+@standby name=standby ani=card.battle_20400404
+@atk name=atk ani=card.battle_20400404
+@run
+@sing name=sing ani=card.battle_20400404
+@skill name=skill ani=card.battle_20400404
+@defence name=defence ani=card.battle_20400404
+@hurt name=hurt ani=card.battle_20400404
+@dead name=dead ani=card.battle_20400404
+[20400501]
+@standby name=standby ani=card.battle_20400501
+@atk name=atk ani=card.battle_20400501
+@run
+@sing name=sing ani=card.battle_20400501
+@skill name=skill ani=card.battle_20400501
+@defence name=defence ani=card.battle_20400501
+@hurt name=hurt ani=card.battle_20400501
+@dead name=dead ani=card.battle_20400501
+[20400502]
+@standby name=standby ani=card.battle_20400502
+@atk name=atk ani=card.battle_20400502
+@run
+@sing name=sing ani=card.battle_20400502
+@skill name=skill ani=card.battle_20400502
+@defence name=defence ani=card.battle_20400502
+@hurt name=hurt ani=card.battle_20400502
+@dead name=dead ani=card.battle_20400502
+[20400503]
+@standby name=standby ani=card.battle_20400503
+@atk name=atk ani=card.battle_20400503
+@run
+@sing name=sing ani=card.battle_20400503
+@skill name=skill ani=card.battle_20400503
+@defence name=defence ani=card.battle_20400503
+@hurt name=hurt ani=card.battle_20400503
+@dead name=dead ani=card.battle_20400503
+[20400504]
+@standby name=standby ani=card.battle_20400504
+@atk name=atk ani=card.battle_20400504
+@run
+@sing name=sing ani=card.battle_20400504
+@skill name=skill ani=card.battle_20400504
+@defence name=defence ani=card.battle_20400504
+@hurt name=hurt ani=card.battle_20400504
+@dead name=dead ani=card.battle_20400504
+[20400601]
+@standby name=standby ani=card.battle_20400601
+@atk name=atk ani=card.battle_20400601
+@run
+@sing name=sing ani=card.battle_20400601
+@skill name=skill ani=card.battle_20400601
+@defence name=defence ani=card.battle_20400601
+@hurt name=hurt ani=card.battle_20400601
+@dead name=dead ani=card.battle_20400601
+[20400602]
+@standby name=standby ani=card.battle_20400602
+@atk name=atk ani=card.battle_20400602
+@run
+@sing name=sing ani=card.battle_20400602
+@skill name=skill ani=card.battle_20400602
+@defence name=defence ani=card.battle_20400602
+@hurt name=hurt ani=card.battle_20400602
+@dead name=dead ani=card.battle_20400602
+[20400603]
+@standby name=standby ani=card.battle_20400603
+@atk name=atk ani=card.battle_20400603
+@run
+@sing name=sing ani=card.battle_20400603
+@skill name=skill ani=card.battle_20400603
+@defence name=defence ani=card.battle_20400603
+@hurt name=hurt ani=card.battle_20400603
+@dead name=dead ani=card.battle_20400603
+[20400604]
+@standby name=standby ani=card.battle_20400604
+@atk name=atk ani=card.battle_20400604
+@run
+@sing name=sing ani=card.battle_20400604
+@skill name=skill ani=card.battle_20400604
+@defence name=defence ani=card.battle_20400604
+@hurt name=hurt ani=card.battle_20400604
+@dead name=dead ani=card.battle_20400604
+[20400701]
+@standby name=standby ani=card.battle_20400701
+@atk name=atk ani=card.battle_20400701
+@run
+@sing name=sing ani=card.battle_20400701
+@skill name=skill ani=card.battle_20400701
+@defence name=defence ani=card.battle_20400701
+@hurt name=hurt ani=card.battle_20400701
+@dead name=dead ani=card.battle_20400701
+[20400702]
+@standby name=standby ani=card.battle_20400702
+@atk name=atk ani=card.battle_20400702
+@run
+@sing name=sing ani=card.battle_20400702
+@skill name=skill ani=card.battle_20400702
+@defence name=defence ani=card.battle_20400702
+@hurt name=hurt ani=card.battle_20400702
+@dead name=dead ani=card.battle_20400702
+[20400703]
+@standby name=standby ani=card.battle_20400703
+@atk name=atk ani=card.battle_20400703
+@run
+@sing name=sing ani=card.battle_20400703
+@skill name=skill ani=card.battle_20400703
+@defence name=defence ani=card.battle_20400703
+@hurt name=hurt ani=card.battle_20400703
+@dead name=dead ani=card.battle_20400703
+[20400704]
+@standby name=standby ani=card.battle_20400704
+@atk name=atk ani=card.battle_20400704
+@run
+@sing name=sing ani=card.battle_20400704
+@skill name=skill ani=card.battle_20400704
+@defence name=defence ani=card.battle_20400704
+@hurt name=hurt ani=card.battle_20400704
+@dead name=dead ani=card.battle_20400704
+[20400801]
+@standby name=standby ani=card.battle_20400801
+@atk name=atk ani=card.battle_20400801
+@run
+@sing name=sing ani=card.battle_20400801
+@skill name=skill ani=card.battle_20400801
+@defence name=defence ani=card.battle_20400801
+@hurt name=hurt ani=card.battle_20400801
+@dead name=dead ani=card.battle_20400801
+[20400802]
+@standby name=standby ani=card.battle_20400802
+@atk name=atk ani=card.battle_20400802
+@run
+@sing name=sing ani=card.battle_20400802
+@skill name=skill ani=card.battle_20400802
+@defence name=defence ani=card.battle_20400802
+@hurt name=hurt ani=card.battle_20400802
+@dead name=dead ani=card.battle_20400802
+[20400803]
+@standby name=standby ani=card.battle_20400803
+@atk name=atk ani=card.battle_20400803
+@run
+@sing name=sing ani=card.battle_20400803
+@skill name=skill ani=card.battle_20400803
+@defence name=defence ani=card.battle_20400803
+@hurt name=hurt ani=card.battle_20400803
+@dead name=dead ani=card.battle_20400803
+[20400804]
+@standby name=standby ani=card.battle_20400804
+@atk name=atk ani=card.battle_20400804
+@run
+@sing name=sing ani=card.battle_20400804
+@skill name=skill ani=card.battle_20400804
+@defence name=defence ani=card.battle_20400804
+@hurt name=hurt ani=card.battle_20400804
+@dead name=dead ani=card.battle_20400804
+[20400901]
+@standby name=standby ani=card.battle_20400901
+@atk name=atk ani=card.battle_20400901
+@run
+@sing name=sing ani=card.battle_20400901
+@skill name=skill ani=card.battle_20400901
+@defence name=defence ani=card.battle_20400901
+@hurt name=hurt ani=card.battle_20400901
+@dead name=dead ani=card.battle_20400901
+[20400902]
+@standby name=standby ani=card.battle_20400902
+@atk name=atk ani=card.battle_20400902
+@run
+@sing name=sing ani=card.battle_20400902
+@skill name=skill ani=card.battle_20400902
+@defence name=defence ani=card.battle_20400902
+@hurt name=hurt ani=card.battle_20400902
+@dead name=dead ani=card.battle_20400902
+[20400903]
+@standby name=standby ani=card.battle_20400903
+@atk name=atk ani=card.battle_20400903
+@run
+@sing name=sing ani=card.battle_20400903
+@skill name=skill ani=card.battle_20400903
+@defence name=defence ani=card.battle_20400903
+@hurt name=hurt ani=card.battle_20400903
+@dead name=dead ani=card.battle_20400903
+[20400904]
+@standby name=standby ani=card.battle_20400904
+@atk name=atk ani=card.battle_20400904
+@run
+@sing name=sing ani=card.battle_20400904
+@skill name=skill ani=card.battle_20400904
+@defence name=defence ani=card.battle_20400904
+@hurt name=hurt ani=card.battle_20400904
+@dead name=dead ani=card.battle_20400904
+[20401001]
+@standby name=standby ani=card.battle_20401001
+@atk name=atk ani=card.battle_20401001
+@run
+@sing name=sing ani=card.battle_20401001
+@skill name=skill ani=card.battle_20401001
+@defence name=defence ani=card.battle_20401001
+@hurt name=hurt ani=card.battle_20401001
+@dead name=dead ani=card.battle_20401001
+[20401002]
+@standby name=standby ani=card.battle_20401002
+@atk name=atk ani=card.battle_20401002
+@run
+@sing name=sing ani=card.battle_20401002
+@skill name=skill ani=card.battle_20401002
+@defence name=defence ani=card.battle_20401002
+@hurt name=hurt ani=card.battle_20401002
+@dead name=dead ani=card.battle_20401002
+[20401003]
+@standby name=standby ani=card.battle_20401003
+@atk name=atk ani=card.battle_20401003
+@run
+@sing name=sing ani=card.battle_20401003
+@skill name=skill ani=card.battle_20401003
+@defence name=defence ani=card.battle_20401003
+@hurt name=hurt ani=card.battle_20401003
+@dead name=dead ani=card.battle_20401003
+[20401004]
+@standby name=standby ani=card.battle_20401004
+@atk name=atk ani=card.battle_20401004
+@run
+@sing name=sing ani=card.battle_20401004
+@skill name=skill ani=card.battle_20401004
+@defence name=defence ani=card.battle_20401004
+@hurt name=hurt ani=card.battle_20401004
+@dead name=dead ani=card.battle_20401004
+[30500101]
+@standby name=standby ani=card.battle_30500101
+@atk name=atk ani=card.battle_30500101
+@run
+@sing name=sing ani=card.battle_30500101
+@skill name=skill ani=card.battle_30500101
+@defence name=defence ani=card.battle_30500101
+@hurt name=hurt ani=card.battle_30500101
+@dead name=dead ani=card.battle_30500101
+[30500102]
+@standby name=standby ani=card.battle_30500102
+@atk name=atk ani=card.battle_30500102
+@run
+@sing name=sing ani=card.battle_30500102
+@skill name=skill ani=card.battle_30500102
+@defence name=defence ani=card.battle_30500102
+@hurt name=hurt ani=card.battle_30500102
+@dead name=dead ani=card.battle_30500102
+[30500103]
+@standby name=standby ani=card.battle_30500103
+@atk name=atk ani=card.battle_30500103
+@run
+@sing name=sing ani=card.battle_30500103
+@skill name=skill ani=card.battle_30500103
+@defence name=defence ani=card.battle_30500103
+@hurt name=hurt ani=card.battle_30500103
+@dead name=dead ani=card.battle_30500103
+[30500104]
+@standby name=standby ani=card.battle_30500104
+@atk name=atk ani=card.battle_30500104
+@run
+@sing name=sing ani=card.battle_30500104
+@skill name=skill ani=card.battle_30500104
+@defence name=defence ani=card.battle_30500104
+@hurt name=hurt ani=card.battle_30500104
+@dead name=dead ani=card.battle_30500104
+[30500201]
+@standby name=standby ani=card.battle_30500201
+@atk name=atk ani=card.battle_30500201
+@run
+@sing name=sing ani=card.battle_30500201
+@skill name=skill ani=card.battle_30500201
+@defence name=defence ani=card.battle_30500201
+@hurt name=hurt ani=card.battle_30500201
+@dead name=dead ani=card.battle_30500201
+[30500202]
+@standby name=standby ani=card.battle_30500202
+@atk name=atk ani=card.battle_30500202
+@run
+@sing name=sing ani=card.battle_30500202
+@skill name=skill ani=card.battle_30500202
+@defence name=defence ani=card.battle_30500202
+@hurt name=hurt ani=card.battle_30500202
+@dead name=dead ani=card.battle_30500202
+[30500203]
+@standby name=standby ani=card.battle_30500203
+@atk name=atk ani=card.battle_30500203
+@run
+@sing name=sing ani=card.battle_30500203
+@skill name=skill ani=card.battle_30500203
+@defence name=defence ani=card.battle_30500203
+@hurt name=hurt ani=card.battle_30500203
+@dead name=dead ani=card.battle_30500203
+[30500204]
+@standby name=standby ani=card.battle_30500204
+@atk name=atk ani=card.battle_30500204
+@run
+@sing name=sing ani=card.battle_30500204
+@skill name=skill ani=card.battle_30500204
+@defence name=defence ani=card.battle_30500204
+@hurt name=hurt ani=card.battle_30500204
+@dead name=dead ani=card.battle_30500204
+[30500301]
+@standby name=standby ani=card.battle_30500301
+@atk name=atk ani=card.battle_30500301
+@run
+@sing name=sing ani=card.battle_30500301
+@skill name=skill ani=card.battle_30500301
+@defence name=defence ani=card.battle_30500301
+@hurt name=hurt ani=card.battle_30500301
+@dead name=dead ani=card.battle_30500301
+[30500302]
+@standby name=standby ani=card.battle_30500302
+@atk name=atk ani=card.battle_30500302
+@run
+@sing name=sing ani=card.battle_30500302
+@skill name=skill ani=card.battle_30500302
+@defence name=defence ani=card.battle_30500302
+@hurt name=hurt ani=card.battle_30500302
+@dead name=dead ani=card.battle_30500302
+[30500303]
+@standby name=standby ani=card.battle_30500303
+@atk name=atk ani=card.battle_30500303
+@run
+@sing name=sing ani=card.battle_30500303
+@skill name=skill ani=card.battle_30500303
+@defence name=defence ani=card.battle_30500303
+@hurt name=hurt ani=card.battle_30500303
+@dead name=dead ani=card.battle_30500303
+[30500304]
+@standby name=standby ani=card.battle_30500304
+@atk name=atk ani=card.battle_30500304
+@run
+@sing name=sing ani=card.battle_30500304
+@skill name=skill ani=card.battle_30500304
+@defence name=defence ani=card.battle_30500304
+@hurt name=hurt ani=card.battle_30500304
+@dead name=dead ani=card.battle_30500304
+[30500401]
+@standby name=standby ani=card.battle_30500401
+@atk name=atk ani=card.battle_30500401
+@run
+@sing name=sing ani=card.battle_30500401
+@skill name=skill ani=card.battle_30500401
+@defence name=defence ani=card.battle_30500401
+@hurt name=hurt ani=card.battle_30500401
+@dead name=dead ani=card.battle_30500401
+[30500402]
+@standby name=standby ani=card.battle_30500402
+@atk name=atk ani=card.battle_30500402
+@run
+@sing name=sing ani=card.battle_30500402
+@skill name=skill ani=card.battle_30500402
+@defence name=defence ani=card.battle_30500402
+@hurt name=hurt ani=card.battle_30500402
+@dead name=dead ani=card.battle_30500402
+[30500403]
+@standby name=standby ani=card.battle_30500403
+@atk name=atk ani=card.battle_30500403
+@run
+@sing name=sing ani=card.battle_30500403
+@skill name=skill ani=card.battle_30500403
+@defence name=defence ani=card.battle_30500403
+@hurt name=hurt ani=card.battle_30500403
+@dead name=dead ani=card.battle_30500403
+[30500404]
+@standby name=standby ani=card.battle_30500404
+@atk name=atk ani=card.battle_30500404
+@run
+@sing name=sing ani=card.battle_30500404
+@skill name=skill ani=card.battle_30500404
+@defence name=defence ani=card.battle_30500404
+@hurt name=hurt ani=card.battle_30500404
+@dead name=dead ani=card.battle_30500404
+[30500501]
+@standby name=standby ani=card.battle_30500501
+@atk name=atk ani=card.battle_30500501
+@run
+@sing name=sing ani=card.battle_30500501
+@skill name=skill ani=card.battle_30500501
+@defence name=defence ani=card.battle_30500501
+@hurt name=hurt ani=card.battle_30500501
+@dead name=dead ani=card.battle_30500501
+[30500502]
+@standby name=standby ani=card.battle_30500502
+@atk name=atk ani=card.battle_30500502
+@run
+@sing name=sing ani=card.battle_30500502
+@skill name=skill ani=card.battle_30500502
+@defence name=defence ani=card.battle_30500502
+@hurt name=hurt ani=card.battle_30500502
+@dead name=dead ani=card.battle_30500502
+[30500503]
+@standby name=standby ani=card.battle_30500503
+@atk name=atk ani=card.battle_30500503
+@run
+@sing name=sing ani=card.battle_30500503
+@skill name=skill ani=card.battle_30500503
+@defence name=defence ani=card.battle_30500503
+@hurt name=hurt ani=card.battle_30500503
+@dead name=dead ani=card.battle_30500503
+[30500504]
+@standby name=standby ani=card.battle_30500504
+@atk name=atk ani=card.battle_30500504
+@run
+@sing name=sing ani=card.battle_30500504
+@skill name=skill ani=card.battle_30500504
+@defence name=defence ani=card.battle_30500504
+@hurt name=hurt ani=card.battle_30500504
+@dead name=dead ani=card.battle_30500504
+[30500601]
+@standby name=standby ani=card.battle_30500601
+@atk name=atk ani=card.battle_30500601
+@run
+@sing name=sing ani=card.battle_30500601
+@skill name=skill ani=card.battle_30500601
+@defence name=defence ani=card.battle_30500601
+@hurt name=hurt ani=card.battle_30500601
+@dead name=dead ani=card.battle_30500601
+[30500602]
+@standby name=standby ani=card.battle_30500602
+@atk name=atk ani=card.battle_30500602
+@run
+@sing name=sing ani=card.battle_30500602
+@skill name=skill ani=card.battle_30500602
+@defence name=defence ani=card.battle_30500602
+@hurt name=hurt ani=card.battle_30500602
+@dead name=dead ani=card.battle_30500602
+[30500603]
+@standby name=standby ani=card.battle_30500603
+@atk name=atk ani=card.battle_30500603
+@run
+@sing name=sing ani=card.battle_30500603
+@skill name=skill ani=card.battle_30500603
+@defence name=defence ani=card.battle_30500603
+@hurt name=hurt ani=card.battle_30500603
+@dead name=dead ani=card.battle_30500603
+[30500604]
+@standby name=standby ani=card.battle_30500604
+@atk name=atk ani=card.battle_30500604
+@run
+@sing name=sing ani=card.battle_30500604
+@skill name=skill ani=card.battle_30500604
+@defence name=defence ani=card.battle_30500604
+@hurt name=hurt ani=card.battle_30500604
+@dead name=dead ani=card.battle_30500604
+[30500701]
+@standby name=standby ani=card.battle_30500701
+@atk name=atk ani=card.battle_30500701
+@run
+@sing name=sing ani=card.battle_30500701
+@skill name=skill ani=card.battle_30500701
+@defence name=defence ani=card.battle_30500701
+@hurt name=hurt ani=card.battle_30500701
+@dead name=dead ani=card.battle_30500701
+[30500702]
+@standby name=standby ani=card.battle_30500702
+@atk name=atk ani=card.battle_30500702
+@run
+@sing name=sing ani=card.battle_30500702
+@skill name=skill ani=card.battle_30500702
+@defence name=defence ani=card.battle_30500702
+@hurt name=hurt ani=card.battle_30500702
+@dead name=dead ani=card.battle_30500702
+[30500703]
+@standby name=standby ani=card.battle_30500703
+@atk name=atk ani=card.battle_30500703
+@run
+@sing name=sing ani=card.battle_30500703
+@skill name=skill ani=card.battle_30500703
+@defence name=defence ani=card.battle_30500703
+@hurt name=hurt ani=card.battle_30500703
+@dead name=dead ani=card.battle_30500703
+[30500704]
+@standby name=standby ani=card.battle_30500704
+@atk name=atk ani=card.battle_30500704
+@run
+@sing name=sing ani=card.battle_30500704
+@skill name=skill ani=card.battle_30500704
+@defence name=defence ani=card.battle_30500704
+@hurt name=hurt ani=card.battle_30500704
+@dead name=dead ani=card.battle_30500704
+[30500801]
+@standby name=standby ani=card.battle_30500801
+@atk name=atk ani=card.battle_30500801
+@run
+@sing name=sing ani=card.battle_30500801
+@skill name=skill ani=card.battle_30500801
+@defence name=defence ani=card.battle_30500801
+@hurt name=hurt ani=card.battle_30500801
+@dead name=dead ani=card.battle_30500801
+[30500802]
+@standby name=standby ani=card.battle_30500802
+@atk name=atk ani=card.battle_30500802
+@run
+@sing name=sing ani=card.battle_30500802
+@skill name=skill ani=card.battle_30500802
+@defence name=defence ani=card.battle_30500802
+@hurt name=hurt ani=card.battle_30500802
+@dead name=dead ani=card.battle_30500802
+[30500803]
+@standby name=standby ani=card.battle_30500803
+@atk name=atk ani=card.battle_30500803
+@run
+@sing name=sing ani=card.battle_30500803
+@skill name=skill ani=card.battle_30500803
+@defence name=defence ani=card.battle_30500803
+@hurt name=hurt ani=card.battle_30500803
+@dead name=dead ani=card.battle_30500803
+[30500804]
+@standby name=standby ani=card.battle_30500804
+@atk name=atk ani=card.battle_30500804
+@run
+@sing name=sing ani=card.battle_30500804
+@skill name=skill ani=card.battle_30500804
+@defence name=defence ani=card.battle_30500804
+@hurt name=hurt ani=card.battle_30500804
+@dead name=dead ani=card.battle_30500804
+[30500901]
+@standby name=standby ani=card.battle_30500901
+@atk name=atk ani=card.battle_30500901
+@run
+@sing name=sing ani=card.battle_30500901
+@skill name=skill ani=card.battle_30500901
+@defence name=defence ani=card.battle_30500901
+@hurt name=hurt ani=card.battle_30500901
+@dead name=dead ani=card.battle_30500901
+[30500902]
+@standby name=standby ani=card.battle_30500902
+@atk name=atk ani=card.battle_30500902
+@run
+@sing name=sing ani=card.battle_30500902
+@skill name=skill ani=card.battle_30500902
+@defence name=defence ani=card.battle_30500902
+@hurt name=hurt ani=card.battle_30500902
+@dead name=dead ani=card.battle_30500902
+[30500903]
+@standby name=standby ani=card.battle_30500903
+@atk name=atk ani=card.battle_30500903
+@run
+@sing name=sing ani=card.battle_30500903
+@skill name=skill ani=card.battle_30500903
+@defence name=defence ani=card.battle_30500903
+@hurt name=hurt ani=card.battle_30500903
+@dead name=dead ani=card.battle_30500903
+[30500904]
+@standby name=standby ani=card.battle_30500904
+@atk name=atk ani=card.battle_30500904
+@run
+@sing name=sing ani=card.battle_30500904
+@skill name=skill ani=card.battle_30500904
+@defence name=defence ani=card.battle_30500904
+@hurt name=hurt ani=card.battle_30500904
+@dead name=dead ani=card.battle_30500904
+[30501001]
+@standby name=standby ani=card.battle_30501001
+@atk name=atk ani=card.battle_30501001
+@run
+@sing name=sing ani=card.battle_30501001
+@skill name=skill ani=card.battle_30501001
+@defence name=defence ani=card.battle_30501001
+@hurt name=hurt ani=card.battle_30501001
+@dead name=dead ani=card.battle_30501001
+[30501002]
+@standby name=standby ani=card.battle_30501002
+@atk name=atk ani=card.battle_30501002
+@run
+@sing name=sing ani=card.battle_30501002
+@skill name=skill ani=card.battle_30501002
+@defence name=defence ani=card.battle_30501002
+@hurt name=hurt ani=card.battle_30501002
+@dead name=dead ani=card.battle_30501002
+[30501003]
+@standby name=standby ani=card.battle_30501003
+@atk name=atk ani=card.battle_30501003
+@run
+@sing name=sing ani=card.battle_30501003
+@skill name=skill ani=card.battle_30501003
+@defence name=defence ani=card.battle_30501003
+@hurt name=hurt ani=card.battle_30501003
+@dead name=dead ani=card.battle_30501003
+[30501004]
+@standby name=standby ani=card.battle_30501004
+@atk name=atk ani=card.battle_30501004
+@run
+@sing name=sing ani=card.battle_30501004
+@skill name=skill ani=card.battle_30501004
+@defence name=defence ani=card.battle_30501004
+@hurt name=hurt ani=card.battle_30501004
+@dead name=dead ani=card.battle_30501004
+[30600101]
+@standby name=standby ani=card.battle_30600101
+@atk name=atk ani=card.battle_30600101
+@run
+@sing name=sing ani=card.battle_30600101
+@skill name=skill ani=card.battle_30600101
+@defence name=defence ani=card.battle_30600101
+@hurt name=hurt ani=card.battle_30600101
+@dead name=dead ani=card.battle_30600101
+[30600102]
+@standby name=standby ani=card.battle_30600102
+@atk name=atk ani=card.battle_30600102
+@run
+@sing name=sing ani=card.battle_30600102
+@skill name=skill ani=card.battle_30600102
+@defence name=defence ani=card.battle_30600102
+@hurt name=hurt ani=card.battle_30600102
+@dead name=dead ani=card.battle_30600102
+[30600103]
+@standby name=standby ani=card.battle_30600103
+@atk name=atk ani=card.battle_30600103
+@run
+@sing name=sing ani=card.battle_30600103
+@skill name=skill ani=card.battle_30600103
+@defence name=defence ani=card.battle_30600103
+@hurt name=hurt ani=card.battle_30600103
+@dead name=dead ani=card.battle_30600103
+[30600104]
+@standby name=standby ani=card.battle_30600104
+@atk name=atk ani=card.battle_30600104
+@run
+@sing name=sing ani=card.battle_30600104
+@skill name=skill ani=card.battle_30600104
+@defence name=defence ani=card.battle_30600104
+@hurt name=hurt ani=card.battle_30600104
+@dead name=dead ani=card.battle_30600104
+[30600201]
+@standby name=standby ani=card.battle_30600201
+@atk name=atk ani=card.battle_30600201
+@run
+@sing name=sing ani=card.battle_30600201
+@skill name=skill ani=card.battle_30600201
+@defence name=defence ani=card.battle_30600201
+@hurt name=hurt ani=card.battle_30600201
+@dead name=dead ani=card.battle_30600201
+[30600202]
+@standby name=standby ani=card.battle_30600202
+@atk name=atk ani=card.battle_30600202
+@run
+@sing name=sing ani=card.battle_30600202
+@skill name=skill ani=card.battle_30600202
+@defence name=defence ani=card.battle_30600202
+@hurt name=hurt ani=card.battle_30600202
+@dead name=dead ani=card.battle_30600202
+[30600203]
+@standby name=standby ani=card.battle_30600203
+@atk name=atk ani=card.battle_30600203
+@run
+@sing name=sing ani=card.battle_30600203
+@skill name=skill ani=card.battle_30600203
+@defence name=defence ani=card.battle_30600203
+@hurt name=hurt ani=card.battle_30600203
+@dead name=dead ani=card.battle_30600203
+[30600204]
+@standby name=standby ani=card.battle_30600204
+@atk name=atk ani=card.battle_30600204
+@run
+@sing name=sing ani=card.battle_30600204
+@skill name=skill ani=card.battle_30600204
+@defence name=defence ani=card.battle_30600204
+@hurt name=hurt ani=card.battle_30600204
+@dead name=dead ani=card.battle_30600204
+[30600301]
+@standby name=standby ani=card.battle_30600301
+@atk name=atk ani=card.battle_30600301
+@run
+@sing name=sing ani=card.battle_30600301
+@skill name=skill ani=card.battle_30600301
+@defence name=defence ani=card.battle_30600301
+@hurt name=hurt ani=card.battle_30600301
+@dead name=dead ani=card.battle_30600301
+[30600302]
+@standby name=standby ani=card.battle_30600302
+@atk name=atk ani=card.battle_30600302
+@run
+@sing name=sing ani=card.battle_30600302
+@skill name=skill ani=card.battle_30600302
+@defence name=defence ani=card.battle_30600302
+@hurt name=hurt ani=card.battle_30600302
+@dead name=dead ani=card.battle_30600302
+[30600303]
+@standby name=standby ani=card.battle_30600303
+@atk name=atk ani=card.battle_30600303
+@run
+@sing name=sing ani=card.battle_30600303
+@skill name=skill ani=card.battle_30600303
+@defence name=defence ani=card.battle_30600303
+@hurt name=hurt ani=card.battle_30600303
+@dead name=dead ani=card.battle_30600303
+[30600304]
+@standby name=standby ani=card.battle_30600304
+@atk name=atk ani=card.battle_30600304
+@run
+@sing name=sing ani=card.battle_30600304
+@skill name=skill ani=card.battle_30600304
+@defence name=defence ani=card.battle_30600304
+@hurt name=hurt ani=card.battle_30600304
+@dead name=dead ani=card.battle_30600304
+[30600401]
+@standby name=standby ani=card.battle_30600401
+@atk name=atk ani=card.battle_30600401
+@run
+@sing name=sing ani=card.battle_30600401
+@skill name=skill ani=card.battle_30600401
+@defence name=defence ani=card.battle_30600401
+@hurt name=hurt ani=card.battle_30600401
+@dead name=dead ani=card.battle_30600401
+[30600402]
+@standby name=standby ani=card.battle_30600402
+@atk name=atk ani=card.battle_30600402
+@run
+@sing name=sing ani=card.battle_30600402
+@skill name=skill ani=card.battle_30600402
+@defence name=defence ani=card.battle_30600402
+@hurt name=hurt ani=card.battle_30600402
+@dead name=dead ani=card.battle_30600402
+[30600403]
+@standby name=standby ani=card.battle_30600403
+@atk name=atk ani=card.battle_30600403
+@run
+@sing name=sing ani=card.battle_30600403
+@skill name=skill ani=card.battle_30600403
+@defence name=defence ani=card.battle_30600403
+@hurt name=hurt ani=card.battle_30600403
+@dead name=dead ani=card.battle_30600403
+[30600404]
+@standby name=standby ani=card.battle_30600404
+@atk name=atk ani=card.battle_30600404
+@run
+@sing name=sing ani=card.battle_30600404
+@skill name=skill ani=card.battle_30600404
+@defence name=defence ani=card.battle_30600404
+@hurt name=hurt ani=card.battle_30600404
+@dead name=dead ani=card.battle_30600404
+[30600501]
+@standby name=standby ani=card.battle_30600501
+@atk name=atk ani=card.battle_30600501
+@run
+@sing name=sing ani=card.battle_30600501
+@skill name=skill ani=card.battle_30600501
+@defence name=defence ani=card.battle_30600501
+@hurt name=hurt ani=card.battle_30600501
+@dead name=dead ani=card.battle_30600501
+[30600502]
+@standby name=standby ani=card.battle_30600502
+@atk name=atk ani=card.battle_30600502
+@run
+@sing name=sing ani=card.battle_30600502
+@skill name=skill ani=card.battle_30600502
+@defence name=defence ani=card.battle_30600502
+@hurt name=hurt ani=card.battle_30600502
+@dead name=dead ani=card.battle_30600502
+[30600503]
+@standby name=standby ani=card.battle_30600503
+@atk name=atk ani=card.battle_30600503
+@run
+@sing name=sing ani=card.battle_30600503
+@skill name=skill ani=card.battle_30600503
+@defence name=defence ani=card.battle_30600503
+@hurt name=hurt ani=card.battle_30600503
+@dead name=dead ani=card.battle_30600503
+[30600504]
+@standby name=standby ani=card.battle_30600504
+@atk name=atk ani=card.battle_30600504
+@run
+@sing name=sing ani=card.battle_30600504
+@skill name=skill ani=card.battle_30600504
+@defence name=defence ani=card.battle_30600504
+@hurt name=hurt ani=card.battle_30600504
+@dead name=dead ani=card.battle_30600504
+[30600601]
+@standby name=standby ani=card.battle_30600601
+@atk name=atk ani=card.battle_30600601
+@run
+@sing name=sing ani=card.battle_30600601
+@skill name=skill ani=card.battle_30600601
+@defence name=defence ani=card.battle_30600601
+@hurt name=hurt ani=card.battle_30600601
+@dead name=dead ani=card.battle_30600601
+[30600602]
+@standby name=standby ani=card.battle_30600602
+@atk name=atk ani=card.battle_30600602
+@run
+@sing name=sing ani=card.battle_30600602
+@skill name=skill ani=card.battle_30600602
+@defence name=defence ani=card.battle_30600602
+@hurt name=hurt ani=card.battle_30600602
+@dead name=dead ani=card.battle_30600602
+[30600603]
+@standby name=standby ani=card.battle_30600603
+@atk name=atk ani=card.battle_30600603
+@run
+@sing name=sing ani=card.battle_30600603
+@skill name=skill ani=card.battle_30600603
+@defence name=defence ani=card.battle_30600603
+@hurt name=hurt ani=card.battle_30600603
+@dead name=dead ani=card.battle_30600603
+[30600604]
+@standby name=standby ani=card.battle_30600604
+@atk name=atk ani=card.battle_30600604
+@run
+@sing name=sing ani=card.battle_30600604
+@skill name=skill ani=card.battle_30600604
+@defence name=defence ani=card.battle_30600604
+@hurt name=hurt ani=card.battle_30600604
+@dead name=dead ani=card.battle_30600604
+[30600701]
+@standby name=standby ani=card.battle_30600701
+@atk name=atk ani=card.battle_30600701
+@run
+@sing name=sing ani=card.battle_30600701
+@skill name=skill ani=card.battle_30600701
+@defence name=defence ani=card.battle_30600701
+@hurt name=hurt ani=card.battle_30600701
+@dead name=dead ani=card.battle_30600701
+[30600702]
+@standby name=standby ani=card.battle_30600702
+@atk name=atk ani=card.battle_30600702
+@run
+@sing name=sing ani=card.battle_30600702
+@skill name=skill ani=card.battle_30600702
+@defence name=defence ani=card.battle_30600702
+@hurt name=hurt ani=card.battle_30600702
+@dead name=dead ani=card.battle_30600702
+[30600703]
+@standby name=standby ani=card.battle_30600703
+@atk name=atk ani=card.battle_30600703
+@run
+@sing name=sing ani=card.battle_30600703
+@skill name=skill ani=card.battle_30600703
+@defence name=defence ani=card.battle_30600703
+@hurt name=hurt ani=card.battle_30600703
+@dead name=dead ani=card.battle_30600703
+[30600704]
+@standby name=standby ani=card.battle_30600704
+@atk name=atk ani=card.battle_30600704
+@run
+@sing name=sing ani=card.battle_30600704
+@skill name=skill ani=card.battle_30600704
+@defence name=defence ani=card.battle_30600704
+@hurt name=hurt ani=card.battle_30600704
+@dead name=dead ani=card.battle_30600704
+[30600801]
+@standby name=standby ani=card.battle_30600801
+@atk name=atk ani=card.battle_30600801
+@run
+@sing name=sing ani=card.battle_30600801
+@skill name=skill ani=card.battle_30600801
+@defence name=defence ani=card.battle_30600801
+@hurt name=hurt ani=card.battle_30600801
+@dead name=dead ani=card.battle_30600801
+[30600802]
+@standby name=standby ani=card.battle_30600802
+@atk name=atk ani=card.battle_30600802
+@run
+@sing name=sing ani=card.battle_30600802
+@skill name=skill ani=card.battle_30600802
+@defence name=defence ani=card.battle_30600802
+@hurt name=hurt ani=card.battle_30600802
+@dead name=dead ani=card.battle_30600802
+[30600803]
+@standby name=standby ani=card.battle_30600803
+@atk name=atk ani=card.battle_30600803
+@run
+@sing name=sing ani=card.battle_30600803
+@skill name=skill ani=card.battle_30600803
+@defence name=defence ani=card.battle_30600803
+@hurt name=hurt ani=card.battle_30600803
+@dead name=dead ani=card.battle_30600803
+[30600804]
+@standby name=standby ani=card.battle_30600804
+@atk name=atk ani=card.battle_30600804
+@run
+@sing name=sing ani=card.battle_30600804
+@skill name=skill ani=card.battle_30600804
+@defence name=defence ani=card.battle_30600804
+@hurt name=hurt ani=card.battle_30600804
+@dead name=dead ani=card.battle_30600804
+[30600901]
+@standby name=standby ani=card.battle_30600901
+@atk name=atk ani=card.battle_30600901
+@run
+@sing name=sing ani=card.battle_30600901
+@skill name=skill ani=card.battle_30600901
+@defence name=defence ani=card.battle_30600901
+@hurt name=hurt ani=card.battle_30600901
+@dead name=dead ani=card.battle_30600901
+[30600902]
+@standby name=standby ani=card.battle_30600902
+@atk name=atk ani=card.battle_30600902
+@run
+@sing name=sing ani=card.battle_30600902
+@skill name=skill ani=card.battle_30600902
+@defence name=defence ani=card.battle_30600902
+@hurt name=hurt ani=card.battle_30600902
+@dead name=dead ani=card.battle_30600902
+[30600903]
+@standby name=standby ani=card.battle_30600903
+@atk name=atk ani=card.battle_30600903
+@run
+@sing name=sing ani=card.battle_30600903
+@skill name=skill ani=card.battle_30600903
+@defence name=defence ani=card.battle_30600903
+@hurt name=hurt ani=card.battle_30600903
+@dead name=dead ani=card.battle_30600903
+[30600904]
+@standby name=standby ani=card.battle_30600904
+@atk name=atk ani=card.battle_30600904
+@run
+@sing name=sing ani=card.battle_30600904
+@skill name=skill ani=card.battle_30600904
+@defence name=defence ani=card.battle_30600904
+@hurt name=hurt ani=card.battle_30600904
+@dead name=dead ani=card.battle_30600904
+[30601001]
+@standby name=standby ani=card.battle_30601001
+@atk name=atk ani=card.battle_30601001
+@run
+@sing name=sing ani=card.battle_30601001
+@skill name=skill ani=card.battle_30601001
+@defence name=defence ani=card.battle_30601001
+@hurt name=hurt ani=card.battle_30601001
+@dead name=dead ani=card.battle_30601001
+[30601002]
+@standby name=standby ani=card.battle_30601002
+@atk name=atk ani=card.battle_30601002
+@run
+@sing name=sing ani=card.battle_30601002
+@skill name=skill ani=card.battle_30601002
+@defence name=defence ani=card.battle_30601002
+@hurt name=hurt ani=card.battle_30601002
+@dead name=dead ani=card.battle_30601002
+[30601003]
+@standby name=standby ani=card.battle_30601003
+@atk name=atk ani=card.battle_30601003
+@run
+@sing name=sing ani=card.battle_30601003
+@skill name=skill ani=card.battle_30601003
+@defence name=defence ani=card.battle_30601003
+@hurt name=hurt ani=card.battle_30601003
+@dead name=dead ani=card.battle_30601003
+[30601004]
+@standby name=standby ani=card.battle_30601004
+@atk name=atk ani=card.battle_30601004
+@run
+@sing name=sing ani=card.battle_30601004
+@skill name=skill ani=card.battle_30601004
+@defence name=defence ani=card.battle_30601004
+@hurt name=hurt ani=card.battle_30601004
+@dead name=dead ani=card.battle_30601004
+[30700101]
+@standby name=standby ani=card.battle_30700101
+@atk name=atk ani=card.battle_30700101
+@run
+@sing name=sing ani=card.battle_30700101
+@skill name=skill ani=card.battle_30700101
+@defence name=defence ani=card.battle_30700101
+@hurt name=hurt ani=card.battle_30700101
+@dead name=dead ani=card.battle_30700101
+[30700102]
+@standby name=standby ani=card.battle_30700102
+@atk name=atk ani=card.battle_30700102
+@run
+@sing name=sing ani=card.battle_30700102
+@skill name=skill ani=card.battle_30700102
+@defence name=defence ani=card.battle_30700102
+@hurt name=hurt ani=card.battle_30700102
+@dead name=dead ani=card.battle_30700102
+[30700103]
+@standby name=standby ani=card.battle_30700103
+@atk name=atk ani=card.battle_30700103
+@run
+@sing name=sing ani=card.battle_30700103
+@skill name=skill ani=card.battle_30700103
+@defence name=defence ani=card.battle_30700103
+@hurt name=hurt ani=card.battle_30700103
+@dead name=dead ani=card.battle_30700103
+[30700104]
+@standby name=standby ani=card.battle_30700104
+@atk name=atk ani=card.battle_30700104
+@run
+@sing name=sing ani=card.battle_30700104
+@skill name=skill ani=card.battle_30700104
+@defence name=defence ani=card.battle_30700104
+@hurt name=hurt ani=card.battle_30700104
+@dead name=dead ani=card.battle_30700104
+[30700201]
+@standby name=standby ani=card.battle_30700201
+@atk name=atk ani=card.battle_30700201
+@run
+@sing name=sing ani=card.battle_30700201
+@skill name=skill ani=card.battle_30700201
+@defence name=defence ani=card.battle_30700201
+@hurt name=hurt ani=card.battle_30700201
+@dead name=dead ani=card.battle_30700201
+[30700202]
+@standby name=standby ani=card.battle_30700202
+@atk name=atk ani=card.battle_30700202
+@run
+@sing name=sing ani=card.battle_30700202
+@skill name=skill ani=card.battle_30700202
+@defence name=defence ani=card.battle_30700202
+@hurt name=hurt ani=card.battle_30700202
+@dead name=dead ani=card.battle_30700202
+[30700203]
+@standby name=standby ani=card.battle_30700203
+@atk name=atk ani=card.battle_30700203
+@run
+@sing name=sing ani=card.battle_30700203
+@skill name=skill ani=card.battle_30700203
+@defence name=defence ani=card.battle_30700203
+@hurt name=hurt ani=card.battle_30700203
+@dead name=dead ani=card.battle_30700203
+[30700204]
+@standby name=standby ani=card.battle_30700204
+@atk name=atk ani=card.battle_30700204
+@run
+@sing name=sing ani=card.battle_30700204
+@skill name=skill ani=card.battle_30700204
+@defence name=defence ani=card.battle_30700204
+@hurt name=hurt ani=card.battle_30700204
+@dead name=dead ani=card.battle_30700204
+[30700301]
+@standby name=standby ani=card.battle_30700301
+@atk name=atk ani=card.battle_30700301
+@run
+@sing name=sing ani=card.battle_30700301
+@skill name=skill ani=card.battle_30700301
+@defence name=defence ani=card.battle_30700301
+@hurt name=hurt ani=card.battle_30700301
+@dead name=dead ani=card.battle_30700301
+[30700302]
+@standby name=standby ani=card.battle_30700302
+@atk name=atk ani=card.battle_30700302
+@run
+@sing name=sing ani=card.battle_30700302
+@skill name=skill ani=card.battle_30700302
+@defence name=defence ani=card.battle_30700302
+@hurt name=hurt ani=card.battle_30700302
+@dead name=dead ani=card.battle_30700302
+[30700303]
+@standby name=standby ani=card.battle_30700303
+@atk name=atk ani=card.battle_30700303
+@run
+@sing name=sing ani=card.battle_30700303
+@skill name=skill ani=card.battle_30700303
+@defence name=defence ani=card.battle_30700303
+@hurt name=hurt ani=card.battle_30700303
+@dead name=dead ani=card.battle_30700303
+[30700304]
+@standby name=standby ani=card.battle_30700304
+@atk name=atk ani=card.battle_30700304
+@run
+@sing name=sing ani=card.battle_30700304
+@skill name=skill ani=card.battle_30700304
+@defence name=defence ani=card.battle_30700304
+@hurt name=hurt ani=card.battle_30700304
+@dead name=dead ani=card.battle_30700304
+[30700401]
+@standby name=standby ani=card.battle_30700401
+@atk name=atk ani=card.battle_30700401
+@run
+@sing name=sing ani=card.battle_30700401
+@skill name=skill ani=card.battle_30700401
+@defence name=defence ani=card.battle_30700401
+@hurt name=hurt ani=card.battle_30700401
+@dead name=dead ani=card.battle_30700401
+[30700402]
+@standby name=standby ani=card.battle_30700402
+@atk name=atk ani=card.battle_30700402
+@run
+@sing name=sing ani=card.battle_30700402
+@skill name=skill ani=card.battle_30700402
+@defence name=defence ani=card.battle_30700402
+@hurt name=hurt ani=card.battle_30700402
+@dead name=dead ani=card.battle_30700402
+[30700403]
+@standby name=standby ani=card.battle_30700403
+@atk name=atk ani=card.battle_30700403
+@run
+@sing name=sing ani=card.battle_30700403
+@skill name=skill ani=card.battle_30700403
+@defence name=defence ani=card.battle_30700403
+@hurt name=hurt ani=card.battle_30700403
+@dead name=dead ani=card.battle_30700403
+[30700404]
+@standby name=standby ani=card.battle_30700404
+@atk name=atk ani=card.battle_30700404
+@run
+@sing name=sing ani=card.battle_30700404
+@skill name=skill ani=card.battle_30700404
+@defence name=defence ani=card.battle_30700404
+@hurt name=hurt ani=card.battle_30700404
+@dead name=dead ani=card.battle_30700404
+[30700501]
+@standby name=standby ani=card.battle_30700501
+@atk name=atk ani=card.battle_30700501
+@run
+@sing name=sing ani=card.battle_30700501
+@skill name=skill ani=card.battle_30700501
+@defence name=defence ani=card.battle_30700501
+@hurt name=hurt ani=card.battle_30700501
+@dead name=dead ani=card.battle_30700501
+[30700502]
+@standby name=standby ani=card.battle_30700502
+@atk name=atk ani=card.battle_30700502
+@run
+@sing name=sing ani=card.battle_30700502
+@skill name=skill ani=card.battle_30700502
+@defence name=defence ani=card.battle_30700502
+@hurt name=hurt ani=card.battle_30700502
+@dead name=dead ani=card.battle_30700502
+[30700503]
+@standby name=standby ani=card.battle_30700503
+@atk name=atk ani=card.battle_30700503
+@run
+@sing name=sing ani=card.battle_30700503
+@skill name=skill ani=card.battle_30700503
+@defence name=defence ani=card.battle_30700503
+@hurt name=hurt ani=card.battle_30700503
+@dead name=dead ani=card.battle_30700503
+[30700504]
+@standby name=standby ani=card.battle_30700504
+@atk name=atk ani=card.battle_30700504
+@run
+@sing name=sing ani=card.battle_30700504
+@skill name=skill ani=card.battle_30700504
+@defence name=defence ani=card.battle_30700504
+@hurt name=hurt ani=card.battle_30700504
+@dead name=dead ani=card.battle_30700504
+[30700601]
+@standby name=standby ani=card.battle_30700601
+@atk name=atk ani=card.battle_30700601
+@run
+@sing name=sing ani=card.battle_30700601
+@skill name=skill ani=card.battle_30700601
+@defence name=defence ani=card.battle_30700601
+@hurt name=hurt ani=card.battle_30700601
+@dead name=dead ani=card.battle_30700601
+[30700602]
+@standby name=standby ani=card.battle_30700602
+@atk name=atk ani=card.battle_30700602
+@run
+@sing name=sing ani=card.battle_30700602
+@skill name=skill ani=card.battle_30700602
+@defence name=defence ani=card.battle_30700602
+@hurt name=hurt ani=card.battle_30700602
+@dead name=dead ani=card.battle_30700602
+[30700603]
+@standby name=standby ani=card.battle_30700603
+@atk name=atk ani=card.battle_30700603
+@run
+@sing name=sing ani=card.battle_30700603
+@skill name=skill ani=card.battle_30700603
+@defence name=defence ani=card.battle_30700603
+@hurt name=hurt ani=card.battle_30700603
+@dead name=dead ani=card.battle_30700603
+[30700604]
+@standby name=standby ani=card.battle_30700604
+@atk name=atk ani=card.battle_30700604
+@run
+@sing name=sing ani=card.battle_30700604
+@skill name=skill ani=card.battle_30700604
+@defence name=defence ani=card.battle_30700604
+@hurt name=hurt ani=card.battle_30700604
+@dead name=dead ani=card.battle_30700604
+[30700701]
+@standby name=standby ani=card.battle_30700701
+@atk name=atk ani=card.battle_30700701
+@run
+@sing name=sing ani=card.battle_30700701
+@skill name=skill ani=card.battle_30700701
+@defence name=defence ani=card.battle_30700701
+@hurt name=hurt ani=card.battle_30700701
+@dead name=dead ani=card.battle_30700701
+[30700702]
+@standby name=standby ani=card.battle_30700702
+@atk name=atk ani=card.battle_30700702
+@run
+@sing name=sing ani=card.battle_30700702
+@skill name=skill ani=card.battle_30700702
+@defence name=defence ani=card.battle_30700702
+@hurt name=hurt ani=card.battle_30700702
+@dead name=dead ani=card.battle_30700702
+[30700703]
+@standby name=standby ani=card.battle_30700703
+@atk name=atk ani=card.battle_30700703
+@run
+@sing name=sing ani=card.battle_30700703
+@skill name=skill ani=card.battle_30700703
+@defence name=defence ani=card.battle_30700703
+@hurt name=hurt ani=card.battle_30700703
+@dead name=dead ani=card.battle_30700703
+[30700704]
+@standby name=standby ani=card.battle_30700704
+@atk name=atk ani=card.battle_30700704
+@run
+@sing name=sing ani=card.battle_30700704
+@skill name=skill ani=card.battle_30700704
+@defence name=defence ani=card.battle_30700704
+@hurt name=hurt ani=card.battle_30700704
+@dead name=dead ani=card.battle_30700704
+[30700801]
+@standby name=standby ani=card.battle_30700801
+@atk name=atk ani=card.battle_30700801
+@run
+@sing name=sing ani=card.battle_30700801
+@skill name=skill ani=card.battle_30700801
+@defence name=defence ani=card.battle_30700801
+@hurt name=hurt ani=card.battle_30700801
+@dead name=dead ani=card.battle_30700801
+[30700802]
+@standby name=standby ani=card.battle_30700802
+@atk name=atk ani=card.battle_30700802
+@run
+@sing name=sing ani=card.battle_30700802
+@skill name=skill ani=card.battle_30700802
+@defence name=defence ani=card.battle_30700802
+@hurt name=hurt ani=card.battle_30700802
+@dead name=dead ani=card.battle_30700802
+[30700803]
+@standby name=standby ani=card.battle_30700803
+@atk name=atk ani=card.battle_30700803
+@run
+@sing name=sing ani=card.battle_30700803
+@skill name=skill ani=card.battle_30700803
+@defence name=defence ani=card.battle_30700803
+@hurt name=hurt ani=card.battle_30700803
+@dead name=dead ani=card.battle_30700803
+[30700804]
+@standby name=standby ani=card.battle_30700804
+@atk name=atk ani=card.battle_30700804
+@run
+@sing name=sing ani=card.battle_30700804
+@skill name=skill ani=card.battle_30700804
+@defence name=defence ani=card.battle_30700804
+@hurt name=hurt ani=card.battle_30700804
+@dead name=dead ani=card.battle_30700804
+[30700901]
+@standby name=standby ani=card.battle_30700901
+@atk name=atk ani=card.battle_30700901
+@run
+@sing name=sing ani=card.battle_30700901
+@skill name=skill ani=card.battle_30700901
+@defence name=defence ani=card.battle_30700901
+@hurt name=hurt ani=card.battle_30700901
+@dead name=dead ani=card.battle_30700901
+[30700902]
+@standby name=standby ani=card.battle_30700902
+@atk name=atk ani=card.battle_30700902
+@run
+@sing name=sing ani=card.battle_30700902
+@skill name=skill ani=card.battle_30700902
+@defence name=defence ani=card.battle_30700902
+@hurt name=hurt ani=card.battle_30700902
+@dead name=dead ani=card.battle_30700902
+[30700903]
+@standby name=standby ani=card.battle_30700903
+@atk name=atk ani=card.battle_30700903
+@run
+@sing name=sing ani=card.battle_30700903
+@skill name=skill ani=card.battle_30700903
+@defence name=defence ani=card.battle_30700903
+@hurt name=hurt ani=card.battle_30700903
+@dead name=dead ani=card.battle_30700903
+[30700904]
+@standby name=standby ani=card.battle_30700904
+@atk name=atk ani=card.battle_30700904
+@run
+@sing name=sing ani=card.battle_30700904
+@skill name=skill ani=card.battle_30700904
+@defence name=defence ani=card.battle_30700904
+@hurt name=hurt ani=card.battle_30700904
+@dead name=dead ani=card.battle_30700904
+[30701001]
+@standby name=standby ani=card.battle_30701001
+@atk name=atk ani=card.battle_30701001
+@run
+@sing name=sing ani=card.battle_30701001
+@skill name=skill ani=card.battle_30701001
+@defence name=defence ani=card.battle_30701001
+@hurt name=hurt ani=card.battle_30701001
+@dead name=dead ani=card.battle_30701001
+[30701002]
+@standby name=standby ani=card.battle_30701002
+@atk name=atk ani=card.battle_30701002
+@run
+@sing name=sing ani=card.battle_30701002
+@skill name=skill ani=card.battle_30701002
+@defence name=defence ani=card.battle_30701002
+@hurt name=hurt ani=card.battle_30701002
+@dead name=dead ani=card.battle_30701002
+[30701003]
+@standby name=standby ani=card.battle_30701003
+@atk name=atk ani=card.battle_30701003
+@run
+@sing name=sing ani=card.battle_30701003
+@skill name=skill ani=card.battle_30701003
+@defence name=defence ani=card.battle_30701003
+@hurt name=hurt ani=card.battle_30701003
+@dead name=dead ani=card.battle_30701003
+[30701004]
+@standby name=standby ani=card.battle_30701004
+@atk name=atk ani=card.battle_30701004
+@run
+@sing name=sing ani=card.battle_30701004
+@skill name=skill ani=card.battle_30701004
+@defence name=defence ani=card.battle_30701004
+@hurt name=hurt ani=card.battle_30701004
+@dead name=dead ani=card.battle_30701004
+

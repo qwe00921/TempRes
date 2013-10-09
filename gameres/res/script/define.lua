@@ -23,7 +23,6 @@ DoFile("common/http_func.lua");
 DoFile("common/dlg_loading.lua");
 DoFile("common/music_func.lua");
 DoFile("common/card_func.lua");
-DoFile("common/tip.lua");
 
 --初始化
 DoFile("init/load_ani.lua");            --加载Ani
@@ -39,9 +38,6 @@ DoFile("login/dlg_create_player.lua");
 DoFile("mainui/mainui.lua");
 DoFile("mainui/hud.lua");
 DoFile("mainui/billboard.lua"); --跑马灯
---主界面按钮子菜单
-DoFile("mainui/dlg_card_panel.lua");
-DoFile("mainui/dlg_card_forge_panel.lua");
 
 --地图
 DoFile("map/world_map.lua");
@@ -110,6 +106,10 @@ DoFile("friend/friend_chat_log_mgr.lua");
 --玩家信息
 DoFile("watcher_player/dlg_watch_player.lua");
 
+--主界面按钮子菜单
+DoFile("dlg_card_panel.lua");
+DoFile("dlg_card_forge_panel.lua");
+
 --图鉴
 DoFile("collect/collect_inc.lua");
 DoFile("collect/collect_mgr.lua");
@@ -117,7 +117,6 @@ DoFile("collect/dlg_collect_mainui.lua");
 DoFile("collect/dlg_collect_pet_detail.lua");
 DoFile("collect/dlg_collect_item_detail.lua");
 DoFile("collect/dlg_collect_skill_detail.lua");
-DoFile("collect/collect_star_menu.lua");
 
 --成就
 DoFile("achievement/dlg_achievement.lua");
@@ -126,11 +125,3 @@ DoFile("achievement/dlg_achievement.lua");
 DoFile("drama/dlg_drama.lua");
 DoFile("drama/drama_mgr.lua");
 DoFile("drama/drama_page.lua");
-
---邮箱
-DoFile("mailbox/dlg_mailbox_mainui.lua");
-DoFile("mailbox/dlg_mailbox_kf.lua"); 
-DoFile("mailbox/dlg_mailbox_person_write.lua"); 
-DoFile("mailbox/dlg_mailbox_sys_detail.lua"); 
-DoFile("mailbox/dlg_mailbox_person_detail.lua"); 
-DoFile("mailbox/mailbox_mgr.lua"); 

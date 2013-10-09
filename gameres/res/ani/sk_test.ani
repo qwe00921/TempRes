@@ -1,0 +1,193 @@
+;-------------------------------------------------------------------------------
+;试特效配置（双刻资源）
+;-------------------------------------------------------------------------------
+
+;战斗结果——获得
+[getsomething]
+sk\effect\mission\get_effect.png @cut(1,1) @time=0.004
+
+;获取卡片文字
+[getcardfont]
+sk\effect\mission\summon_drop0006.png @cut(29,1) @time=0.1
+
+;任务提示
+[hint]
+sk\effect\mission\randam_event.png @cut(1,3) @time=0.2
+
+;开箱子
+[openbox01]
+sk\effect\mission\treasure_box0012.png @cut(1,12) @time=0.1
+
+;开箱子2
+[openbox02]
+sk\effect\mission\treasure_box0014.png @cut(1,12) @time=0.1
+
+;箱子弹出物品
+[boxitem]
+sk\item\item_0003.png @cut(1,1) @time=1
+
+;箱子弹出物品
+[boxitem2]
+sk\item\item_0003.png @cut(1,1) @time=0.1
+
+;箱子星星效果
+[boxtreasure]
+sk\effect\sugoroku\treasure_box0011.png @cut(1,12) @time=0.1
+
+;攻击
+[atk01]
+sk\effect\battle\attack\0004-2.png @cut(1,4) @time=0.1
+
+;攻击
+[atk02]
+sk\effect\battle\attack\0014-2.png @cut(1,5) @time=0.1
+
+;攻击
+[atk03]
+sk\effect\battle\attack\1005.png @cut(1,6) @time=0.1
+
+;攻击
+[atk04]
+sk\effect\battle\attack\1010.png @cut(1,11) @time=0.1
+
+;自动
+[auto01]
+sk\effect\battle\auto\0001-2.png @cut(1,10) @time=0.1
+
+;自动
+[auto02]
+sk\effect\battle\auto\0003-2.png @cut(1,10) @time=0.1
+
+;自动
+[auto03]
+sk\effect\battle\auto\0005-2.png @cut(1,10) @time=0.1
+
+;命令
+[cmd01]
+sk\effect\battle\command\0_0002_L.png @cut(2,13) @time=0.1
+
+;命令
+[cmd02]
+sk\effect\battle\command\0_0002_S.png @cut(1,15) @time=0.1
+
+;命令
+[cmd03]
+sk\effect\battle\command\2007.png @cut(1,12) @time=0.1
+
+;vs
+[vs]
+sk\effect\battle\etc\intro0002-2.png @cut(1,18) @time=0.1
+
+;召唤
+[sm01]
+sk\effect\battle\summon\front_01.png @cut(1,15) @time=0.1
+
+;召唤
+[sm02]
+sk\effect\battle\summon\front_cure.png @cut(1,15) @time=0.1
+
+;touch
+[touch]
+sk\effect\gacha\common\2002.png @cut(1,11) @time=0.1
+
+;扭蛋
+[gacha]
+sk\effect\gacha\free\0015.png @cut(1,14) @time=0.15
+
+;登陆提示
+[login]
+sk\effect\home\login_stamp.png @cut(1,24) @time=0.15
+
+;下个地图
+[nextmap]
+image\fx\check_point.png @cut(4,8) @time=0.1
+
+
+;骰子all
+[diceall]
+sk\effect\sugoroku\dice_all.png @cut(1,16) @time=0.1
+
+;骰子0
+[dice0]
+;image\fx\dice\dice0.png @cut(4,3,10) @time=0.1 @scale=0.6
+image\fx\dice\dice_rolling.png @cut(3,3) @time=0.1 @scale=0.6
+
+;骰子1
+[dice1]
+image\fx\dice\dice1.png  @time=1 @scale=0.6
+
+;骰子2
+[dice2]
+image\fx\dice\dice2.png @time=1 @scale=0.6
+
+;骰子3
+[dice3]
+image\fx\dice\dice3.png @time=1 @scale=0.6
+
+;骰子4
+[dice4]
+image\fx\dice\dice4.png @time=1 @scale=0.6
+
+;骰子5
+[dice5]
+image\fx\dice\dice5.png @time=1 @scale=0.6
+
+;骰子6
+[dice6]
+image\fx\dice\dice6.png @time=1 @scale=0.6
+
+;骰子ALL
+[dice7]
+image\fx\dice\all.png @time=1 @scale=0.6
+
+;获取卡牌
+[cardget]
+sk\effect\card_drop\card_drop0004.png @cut(1,15) @time=0.1
+
+;卡片闪烁
+[cardflash]
+sk\effect\card_drop\card_drop0009.png @cut(1,4) @time=0.1
+
+;卡片星星效果
+[cardstar]
+sk\effect\card_drop\card_drop0006.png @cut(1,9) @time=0.15 @scale=0.5
+
+;卡片框
+[cardborder]
+sk\effect\card_drop\flm_image_1.png @cut(1,1) @time=2 @scale=2
+
+;妹子卡片
+[cardgirl]
+sk\effect\card_drop\chara_card_0602_M.png @cut(1,1) @time=2 @scale=1
+
+;妹子卡片
+[cardgirl2]
+sk\effect\card_drop\chara_card_0602_M.png @cut(1,1) @time=0.025 @scale=1
+
+;妹子卡片
+[cardgirl3]
+sk\effect\card_drop\chara_card_0602_M.png @cut(1,1) @time=0.0832
+
+;测试拉伸
+[testsize]
+sk\effect\card_drop\card_drop0009.png @cut(1,4) @time=0.1 @size(400,600)
+
+;头顶光标测试
+[testtoken_arrow]
+sk\effect\sugoroku\token_arrow.png @cut(1,10) @time=0.075 @loop=10
+
+;测试指定帧范围
+[testuse]
+sk\effect\battle\etc\intro0002-2.png @cut(1,18) @use(0,3) @time=0.1
+
+[small_card]
+sk\chara_card\chara_card_0604_S.png
+sk\chara_card\chara_card_0745_S.png
+
+;等级提升
+[levelup]
+sk\effect\succession\0007.png @cut(1,16) @time=0.1 @offset(0,-100)
+
+;测试停留时间
+[test_stay_time]
+sk\effect\battle\attack\0004-2.png @cut(1,4) @time=0.1 @stay(5.5)

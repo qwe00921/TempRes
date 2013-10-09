@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="16" height="11" tilewidth="60" tileheight="60">
+ <tileset firstgid="1" name="mission_sugoroku_road_sprite" tilewidth="60" tileheight="60">
+  <image source="../sk/map/base/mission_sugoroku_road_sprite.png" width="300" height="180"/>
+ </tileset>
+ <tileset firstgid="16" name="base" tilewidth="72" tileheight="84">
+  <image source="../sk/map/base/base.png" width="432" height="84"/>
+ </tileset>
+ <tileset firstgid="22" name="mission_sugoroku_bg_result0001" tilewidth="480" tileheight="690">
+  <image source="../sk/map/mission_sugoroku_bg_result0001.png" width="480" height="690"/>
+ </tileset>
+ <tileset firstgid="23" name="mission_sugoroku_bg_result0002" tilewidth="480" tileheight="690">
+  <image source="../sk/map/mission_sugoroku_bg_result0002.png" width="480" height="690"/>
+ </tileset>
+ <layer name="bg" width="16" height="11">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+22,0,0,0,0,0,0,0,23,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer name="path" width="16" height="11">
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,9,10,10,15,10,10,15,10,10,10,11,0,
+0,9,10,10,14,0,0,7,0,0,7,0,0,0,7,0,
+0,7,0,0,7,0,0,7,0,0,7,0,0,0,7,0,
+0,7,0,0,7,0,0,7,0,0,7,0,0,0,14,0,
+0,12,10,10,5,10,10,5,10,10,5,10,10,10,14,0,
+0,7,0,0,7,0,0,7,0,0,7,0,0,0,7,0,
+0,7,0,0,7,0,0,7,0,0,7,0,0,0,14,0,
+0,7,0,0,7,0,0,7,0,0,7,0,0,0,7,0,
+0,6,10,10,13,10,10,13,10,10,13,10,10,10,8,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <layer name="fg" width="16" height="11">
+  <data encoding="csv">
+21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,18,0,0,0,0,0,
+0,0,0,0,0,0,0,18,0,0,0,0,0,0,20,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,21,0,0,18,0,0,0,20,0,0,0,0,19,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,21,0,0,0,20,0,0,0,0,0,0,0,16,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,18
+</data>
+ </layer>
+</map>

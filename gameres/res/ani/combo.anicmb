@@ -1,0 +1,171 @@
+;------------------------------------------------------------------------------------------------------------------
+;组合特效配置
+;------------------------------------------------------------------------------------------------------------------
+
+;获得
+[getsome]
+@type=0
+sk_test.getsomething @scale=2.4
+sk_test.getsomething @scale=2.35
+sk_test.getsomething @scale=2.27
+sk_test.getsomething @scale=2.13
+sk_test.getsomething @scale=1.92
+sk_test.getsomething @scale=1.6
+sk_test.getsomething @scale=1.12
+sk_test.getsomething @scale=0.4
+sk_test.getsomething @scale=0.4
+sk_test.getsomething @scale=0.4
+sk_test.getsomething @scale=0.4
+sk_test.getsomething @scale=0.4
+
+;开箱子
+[openbox]
+@type=1
+sk_test.openbox01
+sk_test.openbox02 @delay=1.2
+sk_test.boxtreasure @delay=1.3 
+sk_test.boxitem  @delay=1.3 @offset(0,-50) @scale=0.5
+
+;摇出骰子1
+[playdice1]
+@type=0
+sk_test.dice0
+sk_test.dice1
+
+;摇出骰子2
+[playdice2]
+@type=0
+sk_test.dice0
+sk_test.dice2
+
+;摇出骰子3
+[playdice3]
+@type=0
+sk_test.dice0
+sk_test.dice3
+
+;摇出骰子4
+[playdice4]
+@type=0
+sk_test.dice0
+sk_test.dice4
+
+;摇出骰子5
+[playdice5]
+@type=0
+sk_test.dice0
+sk_test.dice5
+
+;摇出骰子6
+[playdice6]
+@type=0
+sk_test.dice0
+sk_test.dice6
+
+;摇出骰子7
+[playdice7]
+@type=0
+sk_test.dice0
+sk_test.dice7
+
+;测试各种mod修改
+[test]
+@type=0 @scale=2 @offset(200,0) @delay=2
+sk_test.dice0 @scale=1.5 @offset(100,200)
+sk_test.dice6 @scale=1.5 @offset(100,200)
+
+;测试同时播放
+[testall]
+@type=1
+sk_test.atk04
+sk_test.vs
+
+;测试卡片组合特效（同时播放）
+[cardtest]
+@type=1
+sk_test.cardget 	@offset(0,-170)		;获取卡片提示文字
+sk_test.cardborder 	@scale=1			;卡片蓝色边框
+sk_test.cardgirl	@scale=0.5			;妹子
+sk_test.cardflash 	@scale=1			;流光效果（闪烁）
+sk_test.cardstar 	@scale=0.5			;星星效果
+
+;测试特效组合：卡片移动效果
+[cardmove]
+@type=0 @scale=0.5 @loop
+sk_test.cardgirl2 @offset(0,-300)
+sk_test.cardgirl2 @offset(0,-250)
+sk_test.cardgirl2 @offset(0,-150)
+sk_test.cardgirl2 @offset(0,0)
+sk_test.cardgirl2 @offset(0,-12)
+sk_test.cardgirl2 @offset(0,-18)
+sk_test.cardgirl2 @offset(0,-21)
+sk_test.cardgirl2 @offset(0,-22)
+sk_test.cardgirl2 @offset(0,-21)
+sk_test.cardgirl2 @offset(0,-18)
+sk_test.cardgirl2 @offset(0,-12)
+sk_test.cardgirl2 @offset(0,0) @scale=1.05
+sk_test.cardgirl2 @offset(0,0) @scale=1.1
+sk_test.cardgirl2 @offset(0,0) @scale=1.15
+sk_test.cardgirl2 @offset(0,0) @scale=1.2
+sk_test.cardgirl  @offset(0,0) @scale=1.2
+
+;测试alpha(0~100)，直接设置
+[testalpha]
+@type=0
+sk_test.cardgirl3 @alpha=0.0
+sk_test.cardgirl3 @alpha=0.1
+sk_test.cardgirl3 @alpha=0.2
+sk_test.cardgirl3 @alpha=0.3
+sk_test.cardgirl3 @alpha=0.4
+sk_test.cardgirl3 @alpha=0.5
+sk_test.cardgirl3 @alpha=0.6
+sk_test.cardgirl3 @alpha=0.7
+sk_test.cardgirl3 @alpha=0.8
+sk_test.cardgirl3 @alpha=0.9
+sk_test.cardgirl3 @alpha=1.0
+
+
+;测试HSL（修改亮度，直接设置效果突兀，会有闪烁）
+[testlum]
+@type=0
+sk_test.cardgirl3 @hsl(0,0,90)
+sk_test.cardgirl3 @hsl(0,0,80)
+sk_test.cardgirl3 @hsl(0,0,70)
+sk_test.cardgirl3 @hsl(0,0,60)
+sk_test.cardgirl3 @hsl(0,0,50)
+sk_test.cardgirl3 @hsl(0,0,40)
+sk_test.cardgirl3 @hsl(0,0,30)
+sk_test.cardgirl3 @hsl(0,0,20)
+
+;测试HSL（修改亮度，增量）
+[testlum2]
+@type=0
+sk_test.cardgirl @hsl+(0,0,-1) ;每一帧亮度减少1
+
+
+;测试HSL（修改饱和度，增量设置）
+;有问题，尚未支持！
+[testsat]
+@type=0
+sk_test.cardgirl @hsl+(0,-1,0) ;每一帧减少饱和度1
+
+
+;子弹
+[bullet]
+@type=0 @loop
+effect.bullet @scale=1
+effect.bullet @scale=1.025
+effect.bullet @scale=1.055
+effect.bullet @scale=1.075
+effect.bullet @scale=1.100
+effect.bullet @scale=1.075
+effect.bullet @scale=1.055
+effect.bullet @scale=1.025
+
+;支持图片组合
+[piccmb]
+@type=0 @loop
+effect.piccmb @offset(0,0)   @scale=1
+effect.piccmb @offset(0,-10) @scale=1.1
+effect.piccmb @offset(0,-20) @scale=1.2
+effect.piccmb @offset(0,-30) @scale=1.3

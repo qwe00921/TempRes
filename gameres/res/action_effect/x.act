@@ -1,0 +1,46 @@
+;----------------------
+; demo 2.0 action
+;----------------------
+
+;英雄普通攻击
+[hero_atk]
+@move+(0.2, $1, $2, 100)
+
+
+;飞行模糊
+[gsblur]
+@gsblur(0.25)
+
+[gsblur5]
+@gsblur(0.5)
+
+[gsblur_zero]
+@gsblur(0)
+
+;技能名称移动特效
+[skill_name_move_left_in]
+@move+(0.1, 960, 0,50) @stretch
+
+[skill_name_move_right_out]
+@move+(0.1, 960, 0,50) @stretch
+
+[skill_name_move_right_in]
+@move+(0.1, -960, 0,50) @stretch
+
+[skill_name_move_left_out]
+@move+(0.1, -960, 0,50) @stretch
+
+;淡出
+[imageMask_fadeout]
+@fadeto(0.2,1)
+@hide
+
+;淡入
+[imageMask_fadein]
+@show
+@fadeto(0.2,0)
+
+
+;宠物膨胀
+;[blow_up]
+;@scale(1,1.5,1.5)

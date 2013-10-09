@@ -1,0 +1,132 @@
+;----------------------------------------
+; Ani特效（卡牌战斗专用）
+;----------------------------------------
+
+[test]
+image\effect\baoj01.png @cut(2,5)
+
+[attack_down]
+;sk\battle\battle_icon_attack_down.png @cut(1,1) @time=2
+sk\effect\battle\auto\0003-2.png @cut(1,10) @time=0.2
+
+[attack_up]
+;sk\battle\battle_icon_attack_up.png @cut(1,1) @time=2
+sk\effect\battle\auto\0002-3.png @cut(1,10) @time=0.2
+
+[defense_down]
+;sk\battle\battle_icon_defense_down.png @cut(1,1) @time=2
+sk\effect\battle\auto\0006-2.png @cut(1,10) @time=0.2
+
+[defense_up]
+;sk\battle\battle_icon_defense_up.png @cut(1,1) @time=2
+sk\effect\battle\auto\0005-2.png @cut(1,10) @time=0.2
+
+[life_down]
+sk\battle\battle_icon_life_down.png @cut(1,1) @time=2
+
+[life_up]
+;sk\battle\battle_icon_life_up.png @cut(1,1) @time=2
+sk\effect\battle\auto\0001-2.png @cut(1,10) @time=0.2
+
+[test_effect]
+sk\effect\battle\gauge\0001-2.png @cut(1,5) @scale=3 @time=0.1
+
+[hpbar_v3]
+image\ui\card_battle_main_ui\hp_bar_bg.png
+image\ui\card_battle_main_ui\hp_bar.png
+
+
+
+;对战回合数
+[turn_num]
+image\ui\card_battle_main_ui\num_yellow.png @cut(4,3) @use(0,9)
+
+;对战箭头
+[select_card_icon]
+;image\ui\card_battle_main_ui\arrows_normal.png @cut(1,1) @stay
+sk\battle\battle_select_target_single.png @cut(1,1) @stay @offset(0,-80)
+
+
+[skill_num]
+image\ui\card_battle_main_ui\num_white.png @cut(4,3) @use(0,9)
+
+[card_border_fx]
+image\fx\battle\card_border_fx.png @cut(1,8) @loop
+
+[fighter_out]
+image\fx\battle\fighter.png @cut(1,2)
+
+[fighter_end]
+image\fx\battle\fighter.png @cut(1,2) @use(1,2) @time=0.5
+
+[x_w_1]
+image\fx\battle\x_w_1.png @cut(1,3) @time=0.12
+
+[x_w_2]
+image\fx\battle\x_w_2.png @cut(1,2) @time=0.12
+
+[b_z]
+image\fx\battle\b_z_fx.png @cut(1,5) @time=0.12
+
+[10100301] 
+image\card_skill_fx\10100301.png @cut(1,2) @stay(0.5) @time=0.12
+
+[10100302] 
+image\card_skill_fx\10100302.png @cut(1,2) @stay(0.5) @time=0.12
+
+[10100303] 
+image\card_skill_fx\10100303.png @cut(1,2) @stay(0.5) @time=0.12
+
+[10100304] 
+image\card_skill_fx\10100304.png @cut(1,2) @stay(0.5) @time=0.12
+
+[10100401]  
+image\card_skill_fx\10100401.png @cut(1,2) @stay(0.5) @time=0.12
+
+[10100402] 
+image\card_skill_fx\10100402.png @cut(1,2) @stay(0.5) @time=0.12
+
+[10100403] 
+image\card_skill_fx\10100403.png @cut(1,2) @stay(0.5) @time=0.12
+
+[10100404] 
+image\card_skill_fx\10100404.png @cut(1,2) @stay(0.5) @time=0.12
+
+[20400101] 
+image\card_skill_fx\20400101.png @cut(1,2) @stay(0.5) @time=0.12
+
+[20400102] 
+image\card_skill_fx\20400102.png @cut(1,2) @stay(0.5) @time=0.12
+
+[20400103] 
+image\card_skill_fx\20400103.png @cut(1,2) @stay(0.5) @time=0.12
+
+[20400104] 
+image\card_skill_fx\20400104.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700701] 
+image\card_skill_fx\30700701.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700702] 
+image\card_skill_fx\30700702.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700703] 
+image\card_skill_fx\30700703.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700704] 
+image\card_skill_fx\30700704.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700801] 
+image\card_skill_fx\30700801.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700802] 
+image\card_skill_fx\30700802.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700803] 
+image\card_skill_fx\30700803.png @cut(1,2) @stay(0.5) @time=0.12
+
+[30700804] 
+image\card_skill_fx\30700804.png @cut(1,2) @stay(0.5) @time=0.12
+
+
+

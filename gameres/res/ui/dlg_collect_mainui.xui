@@ -22,6 +22,8 @@ NormalFileUV=0 0 33 33
 Type=1
 Tag=3
 Rect=305 0 350 82
+Text=图鉴
+TextTradition=圖鑒
 NormalFile=.\res\image\ui\common\title_bg.png
 NormalFileUV=0 0 350 82
 
@@ -299,7 +301,7 @@ TextTradition=角色技能
 [CTRL_VERTICAL_LIST_CONTENT]
 Type=14
 Tag=29
-Rect=30 167 769 425
+Rect=17 167 769 453
 
 [CTRL_PICTURE_32]
 Type=1
@@ -453,79 +455,6 @@ Tag=44
 Rect=456 137 80 25
 Text=22.5%
 TextTradition=22.5%
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_STAR]
-Type=2
-Tag=45
-Rect=707 86 112 44
-Text=星级
-TextTradition=星級
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_1_normal.png
-NormalFileUV=0 0 112 44
-SelectFile=.\res\image\ui\common\btn_1_click.png
-SelectedFileUV=0 0 112 44
-DisableFile=.\res\image\ui\common\btn_1_disable.png
-DisableFileUV=0 0 112 44
-
-[CTRL_TEXT_43]
-Type=4
-Tag=46
-Rect=375 22 206 50
-Text=图鉴
-TextTradition=圖鑒
-TextSize=40
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_PAGE_BACK]
-Type=2
-Tag=47
-Rect=522 594 78 30
-Text=上一页
-TextTradition=上一頁
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_1_normal.png
-NormalFileUV=0 0 112 44
-SelectFile=.\res\image\ui\common\btn_1_click.png
-SelectedFileUV=0 0 112 44
-DisableFile=.\res\image\ui\common\btn_1_disable.png
-DisableFileUV=0 0 112 44
-
-[CTRL_BUTTON_PAGE_NEXT]
-Type=2
-Tag=48
-Rect=672 594 78 30
-Text=下一页
-TextTradition=下一頁
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_1_normal.png
-NormalFileUV=0 0 112 44
-SelectFile=.\res\image\ui\common\btn_1_click.png
-SelectedFileUV=0 0 112 44
-DisableFile=.\res\image\ui\common\btn_1_disable.png
-DisableFileUV=0 0 112 44
-
-[CTRL_TEXT_PAGE]
-Type=4
-Tag=49
-Rect=608 597 60 25
-Text=1/5
-TextTradition=1/5
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter

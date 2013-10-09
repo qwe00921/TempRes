@@ -1,0 +1,11 @@
+;----------------------------------------
+; Action组合特效（卡牌战斗专用）
+;----------------------------------------
+
+[test]
+@type=0
+card_battle.test
+
+[card_scale]
+@type=0 @loop
+card_battle.card_scale

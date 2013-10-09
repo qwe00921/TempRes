@@ -1,0 +1,19 @@
+;-------------------------------------------------------------------------------
+; 任务地图角色配置
+;-------------------------------------------------------------------------------
+
+
+;玩家自己（4帧：左上右下）
+
+;[self]
+;sk\token_self\mission_sugoroku_token_self_l.png
+;sk\token_self\mission_sugoroku_token_self_u.png
+;sk\token_self\mission_sugoroku_token_self_r.png
+;sk\token_self\mission_sugoroku_token_self_d.png
+
+[self]
+image\map_base\play.png @cut(1,4)
+
+;头顶光标
+[token_arrow]
+sk\effect\sugoroku\token_arrow.png @cut(1,10) @time=0.08 @loop @offset(0,-85)

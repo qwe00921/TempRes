@@ -1,0 +1,81 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[BATTLE_BG]
+Type=1
+Tag=2
+Rect=0 0 960 640
+NormalFile=.\res\image\test-res\Battle_Bg.png
+NormalFileUV=0 0 960 640
+
+[BATTLE_EM1]
+Type=1
+Tag=3
+Rect=433 22 77 146
+NormalFile=.\res\image\test-res\battle_front.png
+NormalFileUV=0 0 135 256
+
+[BATTLE_EM2]
+Type=1
+Tag=4
+Rect=343 66 77 146
+NormalFile=.\res\image\test-res\battle_front.png
+NormalFileUV=0 0 135 256
+
+[BATTLE_EM3]
+Type=1
+Tag=5
+Rect=252 114 77 146
+NormalFile=.\res\image\test-res\battle_front.png
+NormalFileUV=0 0 135 256
+
+[BATTLE_EM4]
+Type=1
+Tag=6
+Rect=153 172 77 146
+NormalFile=.\res\image\test-res\battle_front.png
+NormalFileUV=0 0 135 256
+
+[BATTLE_EM5]
+Type=1
+Tag=7
+Rect=56 223 77 146
+NormalFile=.\res\image\test-res\battle_front.png
+NormalFileUV=0 0 135 256
+
+[BATTLE_SOL1]
+Type=1
+Tag=8
+Rect=869 279 77 129
+NormalFile=.\res\image\test-res\battle_back.png
+NormalFileUV=0 0 135 226
+
+[BATTLE_SOL2]
+Type=1
+Tag=9
+Rect=773 327 77 129
+NormalFile=.\res\image\test-res\battle_back.png
+NormalFileUV=0 0 135 226
+
+[BATTLE_SOL3]
+Type=1
+Tag=10
+Rect=667 374 77 129
+NormalFile=.\res\image\test-res\battle_back.png
+NormalFileUV=0 0 135 226
+
+[BATTLE_SOL4]
+Type=1
+Tag=11
+Rect=559 429 77 129
+NormalFile=.\res\image\test-res\battle_back.png
+NormalFileUV=0 0 135 226
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=435 480 77 129
+NormalFile=.\res\image\test-res\battle_back.png
+NormalFileUV=0 0 135 226

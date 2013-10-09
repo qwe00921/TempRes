@@ -1,0 +1,22 @@
+;----------------------------------------
+; Ani特效（引擎专用）
+;----------------------------------------
+
+[test]
+image\effect\baoj01.png @cut(2,5)
+
+;对话框底层蒙版
+[dlg_mask]
+image\ui\common\mask.png @alpha=0.5
+
+;View蒙版
+[view_mask]
+image\ui\common\mask.png @alpha=0.3
+
+;View选择边框
+[view_select]
+image\ui\common\border.png @stretch
+
+;地图蒙版
+[tile_map_mask]
+image\ui\common\map_mask.png

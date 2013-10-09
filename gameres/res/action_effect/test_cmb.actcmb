@@ -1,0 +1,67 @@
+;---------------------------------------------------------------
+; Action特效组合配置
+;---------------------------------------------------------------
+
+[move-scale]
+@type=0
+test.move
+test.scale
+
+[move-scale-all]
+@type=1
+test.move
+test.scale
+
+[scale-rotate]
+@type=0
+test.scale
+test.rotate
+
+[scale-rotate-all]
+@type=1
+test.scale
+test.rotate
+
+[move-scale-rotate-all]
+@type=1
+test.move
+test.scale
+test.rotate
+
+[loop]
+@type=0 @loop=2
+test.jumpleft
+test.jumpright
+
+[move+var]
+@type=0
+test.move+var
+test.move+var @reverse
+
+[open-box]
+@type=1 @delay=3
+test.open_box_fx_1
+test.open_box_fx_2
+
+;箱子缩放特效
+[mission_box_fx]
+@type=1 @loop
+test.mission_box_fx
+
+;卡牌移动特效
+[mission_card_fx]
+@type=1 @loop
+test.mission_card_fx
+
+;测试卡牌翻转
+[card_rotate_x]
+@type=0 @loop
+test.card_rotate_x
+
+[card_rotate_y]
+@type=0 @loop
+test.card_rotate_y
+
+[card_rotate]
+@type=0 @loop
+test.card_rotate

@@ -6,7 +6,7 @@ Height=640
 [CTRL_PICTURE_34]
 Type=1
 Tag=34
-Rect=6 541 88 87
+Rect=866 430 88 87
 NormalFile=.\res\image\ui\card_battle_main_ui\btn_bg.png
 NormalFileUV=0 0 88 87
 
@@ -46,7 +46,7 @@ DisableFileUV=0 0 86 86
 [CTRL_BUTTON_11]
 Type=2
 Tag=11
-Rect=5 539 90 90
+Rect=865 428 90 90
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

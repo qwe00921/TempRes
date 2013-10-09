@@ -1,0 +1,134 @@
+;----------------------------------------
+; Lancer项目Demo资源配置
+; 组合特效
+;----------------------------------------
+
+[foot_fx]
+@type=0 @loop
+lancer.foot_fx @scale=1
+lancer.foot_fx @scale=1.0125
+lancer.foot_fx @scale=1.025
+;lancer.foot_fx_03
+
+[boss_card_fx]
+@type=1
+lancer.boss_card @scale=0.5
+lancer.card_border_fx @scale=1
+
+[bar_fx]
+@type=0
+lancer.bar_fx_1 @scale=2 	@offset(0,80) @delay=0.6
+lancer.bar_fx_1 @scale=1.5 	@offset(0,80) 
+lancer.bar_fx_1 @scale=1 	@offset(0,80) 
+
+lancer.bar_fx_2 @scale=1 	@offset(0,80)
+
+;遇到BOSS动画效果
+[boss_fx]
+@type=0
+lancer.boss_fx      @scale=1 @offset(-25,-40) @delay=1.0
+lancer.boss_fx_loop @scale=1 @offset(-25,-40)
+
+;箱子效果
+[open_box_fx]
+@type=0 @delay=0.8
+lancer.open_box_fx_2
+lancer.open_box_fx_3
+
+;箱子出卡牌效果
+[open_box_card_fx]
+@type=1 @delay=1.3
+lancer.boss_card @scale=0.4
+lancer.card_border_fx @scale=0.8
+
+;出卡牌光效
+[open_box_glow_fx]
+@type=1 @delay=1.3
+lancer.open_box_glow_fx @scale=1 @offset(-18,4)
+
+;盖章效果
+[stamp_fx]
+@type=0
+lancer.stamp_fx_1 @scale=1.5 @delay=1.8 	 
+lancer.stamp_fx_1 @scale=1.36
+lancer.stamp_fx_1 @scale=1.08
+lancer.stamp_fx_2 @scale=0.5
+
+;白骨精卡牌特效
+[BGJ_card_fx]
+@type=1
+lancer.BGJ_card @scale=1
+;lancer.cardflash 	      
+lancer.BGJ_card_border_fx @scale=1
+
+
+;盖章效果-白骨精
+[BGJ_stamp_fx]
+@type=0
+lancer.stamp_fx_1 @scale=1.5 @delay=0.6
+lancer.stamp_fx_1 @scale=1.36
+lancer.stamp_fx_1 @scale=1.08
+lancer.stamp_fx_2 @scale=0.5
+
+;boss技能后果:1+2
+[boss_skill_result]
+@type=0
+lancer.boss_skill_result01
+lancer.boss_skill_result02
+
+;boss技能后果:
+[boss_skill_result_2]
+@type=1
+lancer.boss_skill_result03
+lancer.boss_skill_result04
+
+;龙卷风技能
+[hero_skill_tornado]
+@type=1
+lancer.hero_bullet6
+lancer.hero_bullet7
+
+;战斗开始
+[enter_battle]
+@type=0 @delay=0.1
+lancer.enter_battle
+
+;{------------新开箱子动画--------------------------------
+;箱子效果
+[open_box_fx_new]
+@type=0 @delay=0.8
+lancer.open_box_fx_n2
+lancer.open_box_fx_n3
+
+;星星闪闪光效
+[open_box_star_fx]
+@type=1 @delay=1.3
+lancer.open_box_star_fx @scale=1 @offset(-18,4)
+
+[open_box_emerald]
+@type=1 @delay=1.3
+lancer.open_box_emerald
+;}--------------------------------------------------------
+;{--------------------------------------------------------
+;任务主界面相关特效
+
+;箱子光效
+[mission_box_fx]
+@type=1 @delay=5.0 @loop
+lancer.mission_box_fx 
+
+;}--------------------------------------------------------
+
+
+;角色选择动画
+[player_bg_eft]
+@type=0 @loop
+lancer.player_bg_aperture @scale=1
+lancer.player_bg_aperture @scale=1.01
+lancer.player_bg_aperture @scale=1.02
+lancer.player_bg_aperture @scale=1.03
+lancer.player_bg_aperture @scale=1.03
+lancer.player_bg_aperture @scale=1.02
+lancer.player_bg_aperture @scale=1.01
+lancer.player_bg_aperture @scale=1
+

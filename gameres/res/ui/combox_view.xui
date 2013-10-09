@@ -7,14 +7,13 @@ Height=640
 Type=1
 Tag=55
 Rect=0 0 60 30
-NormalFile=.\res\image\ui\common\btn_2_disable.png
-NormalFileUV=0 0 136 60
+NormalFile=.\res\sk\ui\mission_sugoroku_01.png
+NormalFileUV=0 0 640 71
 
 [CTRL_TEXT_OPTION]
 Type=4
 Tag=56
 Rect=0 0 60 30
 TextSize=20
-TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

@@ -1,0 +1,160 @@
+;----------------------
+; lancer action
+;----------------------
+
+[bullet_shoot]
+@move+(0.4, $1, $2, 100)
+
+[bullet_tornado]
+@move(1, $1, $2)
+
+[bullet_shoot_jump]
+@jump(0.4, $1, $2, $3, 1) @sinin
+
+[bullet_rotate]
+@rotate(1,360)
+
+;震屏
+[shake02]
+@move(0.01, 2, 0)
+@move(0.01, -4, 0)
+@move(0.01, 0, 2)
+@move(0.01, 2, 0)
+@move(0.01, 0, 2)
+@move(0.01, 0, -4)
+
+;震屏
+[shake]
+@move(0.01, 0, 3)
+@move(0.01, 0, 0)
+@move(0.01, 0, -3)
+@move(0.01, 0, -1)
+@move(0.01, 0, 0)
+
+[idle_0_7]
+@idle(0.7)
+
+;淡入
+[fadein]
+@fadein(1)
+
+;淡出
+[fadeout]
+@fadeout(1)
+
+;淡出
+[fadeout3]
+@fadeout(3)
+
+;显示
+[show]
+@show
+
+;隐藏
+[hide]
+@hide
+
+
+[scale_s1]
+@scale(0.001,0.333,0.333)
+
+[scale_s2]
+@scale(0.25, 3.0, 3.0) @elastic
+
+;飘血
+[flynum]
+@move+(2.0, 0, -200, 50) @sinin
+
+;缩放
+[scale_for_flynum]
+@scale(2.0,1.2,1.2)
+
+;淡出
+[fadeout_for_flynum]
+@idle(2)
+@fadeout(0.5)
+@hide
+
+;简单缩放
+[fighter_scale]
+@scaleto(0.6,1.0125,1.0125)
+@scaleto(0.6,1,1)
+
+[card_info_scale]
+@idle(0.75)
+@scaleto(0.05,0.95,0.95)
+@scaleto(0.3,1.0,1.0) @back
+
+[cardget_stamp]
+@gsblur(2)
+@idle(0.7)
+@gsblur(1)
+@idle(0.2)
+@gsblur(0.5)
+@idle(0.1)
+@gsblur(0)
+
+[openbox_stamp]
+@idle(1.2)
+@gsblur(2)
+@idle(0.7)
+@gsblur(1)
+@idle(0.15)
+@gsblur(0.5)
+@idle(0.3)
+@gsblur(0)
+
+[open_box_scale]
+@idle(2)
+@scaleto(0.05,0.95,0.95)
+@scaleto(0.3,1.0,1.0) @back
+
+;击退效果
+[target_hurt_back]
+@gsblur(0.25)
+@move(0.4, -20, 0) @easeout
+
+;击退后返回
+[target_hurt_back_reset]
+@move(0.2, 20, 0,) @easeout
+@gsblur(0)
+
+;{-------最新飘血动画---------
+
+[fly_num_fadein]
+@gsblur(0.1)
+@fadein(0.15)
+
+[fly_num_up_1]
+@move+(0.15, 0, -60, 20)
+
+[fly_num_up_2]
+@idle(1)
+@gsblur(0.1)
+@move+(0.15, 0, -20, 10)
+
+;缩放
+[fly_num_scale]
+@scaleto(0.15,1.5,1.5)
+@scaleto(0.01,0.9,0.9)
+@scaleto(0.01,1,1)
+@gsblur(0)
+
+;淡出
+[fly_num_fadeout]
+@idle(1)
+@fadeout(0.2)
+@hide
+;}----------------------------
+
+
+;任务地图小怪缩放效果
+[task_map_monster_fx]
+@scaleto(0.6,1.05,1.05)
+@scaleto(0.6,1,1)
+
+;世界地图章节缩放效果
+[world_map_chapter_fx]
+@scaleto(0.6,1.05,1.05)
+@scaleto(0.6,1,1)
+

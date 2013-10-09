@@ -1,0 +1,12 @@
+;----------------------------------------
+; Action组合特效（引擎专用）
+;----------------------------------------
+
+[test]
+@type=0
+engine.test
+
+;View选择边框缩放
+[view_select]
+@type=0 @loop
+engine.view_select

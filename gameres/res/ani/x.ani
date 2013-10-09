@@ -1,0 +1,301 @@
+;------------------------------------------------
+; demo 2.0 Ãÿ–ß≈‰÷√
+;------------------------------------------------
+
+;’Ω≥°±≥æ∞
+[battle_bg]
+lj\map\map01.png	;for pve
+lj\map\map01.png	;for pvp
+
+;{----------”Œœ∑Ω«…´∂Øª≠≈‰÷√---------------
+;warriorfemale
+[warriorfemale_attack]
+lj\chara\2warriorfemale\attack.png @cut(1,4) @reverse
+
+[warriorfemale_battle_stand]
+lj\chara\2warriorfemale\battle_stand.png @cut(1,4) @reverse @loop @time=0.20 @offset(15,0)
+
+[warriorfemale_defence]
+lj\chara\2warriorfemale\defence.png @cut(1,2)
+
+[warriorfemale_hurt]
+lj\chara\2warriorfemale\hurt.png @cut(1,2) @reverse @time=0.40
+
+[warriorfemale_leisure]
+lj\chara\2warriorfemale\leisure.png @cut(1,8)
+
+[warriorfemale_stand]
+lj\chara\2warriorfemale\stand.png @cut(1,4)
+
+[warriorfemale_walk]
+lj\chara\2warriorfemale\walk.png @cut(1,12) @time=0.20 @reverse @loop
+
+
+
+;≈Æπ≠º˝ ÷
+[archerfemale_attack]
+lj\chara\4archerfemale\attack.png @cut(1,4) @reverse
+
+[archerfemale_battle_stand]
+lj\chara\4archerfemale\battle_stand.png @cut(1,4) @reverse @loop @time=0.20
+
+[archerfemale_defence]
+lj\chara\4archerfemale\defence.png @cut(1,2)
+
+[archerfemale_hurt]
+lj\chara\4archerfemale\hurt.png @cut(1,2) @reverse @time=0.40
+
+[archerfemale_leisure]
+lj\chara\4archerfemale\leisure.png @cut(1,8)
+
+[archerfemale_stand]
+lj\chara\4archerfemale\stand.png @cut(1,4)
+
+[archerfemale_walk]
+lj\chara\4archerfemale\walk.png @cut(1,12) @time=0.20 @reverse @loop
+
+
+
+;zhurong
+[zhurong_attack]
+lj\chara\20zhurong\attack.png @cut(1,4) @reverse
+
+[zhurong_battle_stand]
+lj\chara\20zhurong\battle_stand.png @cut(1,4) @reverse @loop @time=0.20 @offset(15,0)
+
+[zhurong_defence]
+lj\chara\20zhurong\defence.png @cut(1,2)
+
+[zhurong_hurt]
+lj\chara\20zhurong\hurt.png @cut(1,2) @reverse @time=0.40
+
+[zhurong_leisure]
+lj\chara\20zhurong\leisure.png @cut(1,9)
+
+[zhurong_stand]
+lj\chara\20zhurong\stand.png @cut(1,4)
+
+[zhurong_walk]
+lj\chara\20zhurong\walk.png @cut(1,4) @time=0.20 @reverse @loop
+
+
+
+;diaochan
+[diaochan_attack]
+lj\chara\26diaochan\attack.png @cut(1,4) @reverse
+
+[diaochan_battle_stand]
+lj\chara\26diaochan\battle_stand.png @cut(1,4) @reverse @loop @time=0.20 @offset(-45,0)
+
+[diaochan_defence]
+lj\chara\26diaochan\defence.png @cut(1,2)
+
+[diaochan_hurt]
+lj\chara\26diaochan\hurt.png @cut(1,2) @reverse @time=0.40
+
+[diaochan_leisure]
+lj\chara\26diaochan\leisure.png @cut(1,8)
+
+[diaochan_stand]
+lj\chara\26diaochan\stand.png @cut(1,4)
+
+[diaochan_walk]
+lj\chara\26diaochan\walk.png @cut(1,4) @time=0.20 @reverse @loop
+
+
+
+;daqiao
+[daqiao_attack]
+lj\chara\57daqiao\attack.png @cut(1,4) @reverse
+
+[daqiao_battle_stand]
+lj\chara\57daqiao\battle_stand.png @cut(1,4) @reverse @loop @time=0.20
+
+[daqiao_defence]
+lj\chara\57daqiao\defence.png @cut(1,2)
+
+[daqiao_hurt]
+lj\chara\57daqiao\hurt.png @cut(1,2) @reverse @time=0.40
+
+[daqiao_leisure]
+lj\chara\57daqiao\leisure.png @cut(1,8)
+
+[daqiao_stand]
+lj\chara\57daqiao\stand.png @cut(1,4)
+
+[daqiao_walk]
+lj\chara\57daqiao\walk.png @cut(1,4) @time=0.20 @reverse @loop
+
+;}------------------------------------------
+
+;{----------∑…¡˙∂Øª≠≈‰÷√---------------
+[fly_dragon_attack_l]
+image\pet\fly_dragon\atk_left.png    @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+
+[fly_dragon_cast_l]
+image\pet\fly_dragon\cast_left.png   @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+
+[fly_dragon_death_l]
+image\pet\fly_dragon\death_left.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay @scale=0.8
+
+[fly_dragon_death_end_l]
+image\pet\fly_dragon\death_left.png  @cut(1,2)  @use(7,1)    @offset(0,-0)  @time=2 @scale=0.8
+
+[fly_dragon_hurt_l]
+image\pet\fly_dragon\hurt_left.png   @cut(1,11)  @time=0.15   @offset(0,0) @stay @scale=0.8
+
+[fly_dragon_standby_l]
+image\pet\fly_dragon\standby_left.png @cut(1,2) @time=0.15   @loop @scale=0.9
+
+[fly_dragon_attack_r]
+image\pet\fly_dragon\atk_right.png    @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+
+[fly_dragon_cast_r]
+image\pet\fly_dragon\cast_right.png   @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+
+[fly_dragon_death_r]
+image\pet\fly_dragon\death_right.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+
+[fly_dragon_death_end_r]
+image\pet\fly_dragon\death_right.png  @cut(1,2)  @use(7,1)    @offset(0,-0)  @time=2 @scale=0.9
+
+[fly_dragon_hurt_r]
+image\pet\fly_dragon\hurt_right.png   @cut(1,11)  @time=0.15   @offset(0,0) @stay @scale=0.7
+
+[fly_dragon_standby_r]
+image\pet\fly_dragon\standby_right.png @cut(1,2) @time=0.15   @loop	@scale=0.8
+;}-------------------------------------
+
+;{----------ººƒ‹≈‰÷√---------------
+[feilong]
+lj\effect\skill\feilong.png @cut(1,9) @time=0.12  @offset(0,-50)
+
+[xingong]
+lj\effect\skill\xingong.png @cut(2,6) @time=0.12
+
+[tuc]
+lj\effect\skill\tuc.png @cut(1,8) @use(0,4) @reverse @time=0.12
+
+[tuc_result]
+lj\effect\skill\tuc.png @cut(1,8) @use(4,4) @time=0.12
+
+[dings]
+lj\effect\skill\dings.png @cut(2,5) @time=0.12 
+
+[blue_devil_fx_atk]
+image\fx\pet_blue_devil\fx_atk.png @cut(1,5) @time=0.1 @offset(30,-25)
+
+[blue_devil_fx_cast]
+image\fx\pet_blue_devil\fx_cast.png @cut(1,6) @time=0.15 @offset(180,-5) @realsize(350,220)
+
+[blue_devil_fx_target_hurt]
+image\fx\pet_blue_devil\fx_target_hurt.png @cut(1,3) 
+
+[dragon_fx_atk]
+image\fx\pet_dragon\fx_atk.png @cut(1,7) @use(0,6) @time=0.05 @offset(100,-10)
+
+[dragon_fx_cast]
+image\fx\pet_dragon\fx_cast.png @cut(2,5) @time=0.07 @offset(240,20) @realsize(320,300)
+
+[dragon_fx_target_hurt]
+image\fx\pet_dragon\fx_target_hurt.png @cut(1,6) @time=0.15 
+
+[mining_fx_atk]
+image\fx\pet_mining\fx_atk.png @cut(1,3) @offset(10,-60)
+
+[mining_fx_cast]
+image\fx\pet_mining\fx_cast.png @cut(1,6) @offset(0,-60)
+
+[mining_fx_target_hurt]
+image\fx\pet_mining\fx_target_hurt.png @cut(1,6) 
+
+[pet_fx_death]
+image\fx\pet_common\pet_fx_death.png @cut(1,4) @offset(0,-80) @time=0.125
+
+[pet_fx_ultimate_skill]
+image\fx\pet_blue_devil\fx_ultimate_skill.png @cut(1,5) @time=0.15 @offset(0,-60)
+
+;}-------------------------------------
+
+;{----------Õ⁄øÛ≥Ë∂Øª≠≈‰÷√---------------
+[mining_attack]
+image\pet\mining\atk.png @cut(1,5)    @time=0.15   @offset(0,-30) @stay
+
+[mining_cast]
+image\pet\mining\cast.png @cut(1,8)    @time=0.15  @offset(10,-30) @stay
+
+[mining_death]
+image\pet\mining\death.png @cut(1,8)   @time=0.15  @offset(-30,-20) @stay
+
+[mining_death_end]
+image\pet\mining\death.png @cut(1,8)   @use(7,1)   @offset(-30,-20) @time=2
+
+[mining_hurt]
+image\pet\mining\hurt.png @cut(1,3)    @time=0.15  @offset(-5,-2) @stay
+
+[mining_standby]
+image\pet\mining\standby.png @cut(1,8) @time=0.15  @loop
+;}-------------------------------------
+
+;{----------¿∂ƒßπÌ∂Øª≠≈‰÷√---------------
+[blue_devil_attack]
+image\pet\blue_devil\atk.png @cut(1,5)     @time=0.15    @offset(0,-14) @stay
+
+[blue_devil_cast]
+image\pet\blue_devil\cast.png @cut(1,8)    @time=0.15    @offset(0,-4) @stay
+
+[blue_devil_death]
+image\pet\blue_devil\death.png @cut(1,8)   @time=0.15    @offset(16,-39) @stay
+
+[blue_devil_sing]
+image\pet\blue_devil\sing.png @cut(1,7)   @time=0.15    @offset(16,-39) @stay
+
+[blue_devil_death_end]
+image\pet\blue_devil\death.png @cut(1,8)   @use(7,1)     @offset(16,-39)  @time=2
+
+[blue_devil_hurt]
+image\pet\blue_devil\hurt.png @cut(1,3)    @time=0.15    @offset(-10,-2) @stay
+
+[blue_devil_standby]
+image\pet\blue_devil\standby.png @cut(1,6) @time=0.15    @loop
+;}-------------------------------------
+
+;{--------ººƒ‹√˚≥∆¡Ÿ ±Ãÿ–ß--------------
+
+[skill_name_fx]
+sk\effect\card_drop\card_drop0004.png @cut(1,15) @time=0.1 @stay
+
+[skill_name_bar]
+image\fx\pet_common\skill_name_bar.png @cut(1,1) @stay
+
+[fx_skill_bar_border]
+image\fx\pet_blue_devil\fx_skill_bar_border.png @cut(1,1)  @time=0.15 @stay @stretch
+
+[fx_skill_bar_bg]
+image\fx\pet_blue_devil\fx_skill_bar_bg.png @cut(2,1) @time=0.1 @stay @stretch
+
+[fx_skill_bar_lightning]
+image\fx\pet_blue_devil\fx_skill_bar_lightning.png @cut(7,1) @time=0.15 @loop @stretch
+
+[fx_skill_bar_pet]
+image\fx\pet_blue_devil\fx_skill_bar_pet.png @cut(3,1) @time=0.1 @offset(-200,0) @stay
+
+[fx_skill_bar_title]
+image\fx\pet_blue_devil\fx_skill_bar_title.png @cut(1,1) @time=0.15 @offset(250,0) @stay
+;-----
+[fx_skill_bar_border_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_border.png @cut(1,1)  @reverse  @time=0.15 @stay @stretch
+
+[fx_skill_bar_bg_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_bg.png @cut(2,1) @reverse @time=0.1 @stay @stretch
+
+[fx_skill_bar_lightning_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_lightning.png @cut(7,1) @reverse @time=0.15 @loop @stretch
+
+[fx_skill_bar_pet_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_pet.png @cut(3,1) @reverse @time=0.1 @offset(200,0) @stay
+
+[fx_skill_bar_title_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_title.png @cut(1,1) @time=0.15 @offset(-250,0) @stay
+;}---------------------------------
+

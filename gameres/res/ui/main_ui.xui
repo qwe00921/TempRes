@@ -8,12 +8,12 @@ Type=1
 Tag=1
 Rect=0 0 960 640
 NormalFile=.\res\image\ui\main_ui\main_ui_1136_720.png
-NormalFileUV=88 40 960 640
+NormalFileUV=88 0 960 720
 
 [CTRL_BUTTON_ACHIVEMENT]
 Type=2
 Tag=3
-Rect=120 161 103 114
+Rect=114 174 112 109
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -23,7 +23,7 @@ NormalFileUV=0 0 105 119
 [CTRL_BUTTON_FORGE]
 Type=2
 Tag=4
-Rect=23 330 155 164
+Rect=22 329 156 146
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -33,7 +33,7 @@ NormalFileUV=0 0 158 165
 [CTRL_BUTTON_TUJIAN]
 Type=2
 Tag=5
-Rect=173 276 113 84
+Rect=172 280 119 78
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -43,7 +43,7 @@ NormalFileUV=0 0 158 100
 [CTRL_BUTTON_BACK_PACK]
 Type=2
 Tag=6
-Rect=241 481 235 156
+Rect=240 463 238 140
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -53,7 +53,7 @@ NormalFileUV=0 0 237 158
 [CTRL_BUTTON_GACHA]
 Type=2
 Tag=7
-Rect=391 235 108 119
+Rect=390 244 109 106
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -63,7 +63,7 @@ NormalFileUV=0 0 113 123
 [CTRL_BUTTON_CARD_GROUP]
 Type=2
 Tag=8
-Rect=243 157 179 105
+Rect=242 176 180 93
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -73,7 +73,7 @@ NormalFileUV=0 0 183 107
 [CTRL_BUTTON_ADVENTURE]
 Type=2
 Tag=9
-Rect=419 79 147 160
+Rect=417 105 150 145
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -83,7 +83,7 @@ NormalFileUV=0 0 163 160
 [CTRL_BUTTON_MENU]
 Type=2
 Tag=10
-Rect=689 202 130 88
+Rect=689 215 130 78
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -93,7 +93,7 @@ NormalFileUV=0 0 134 90
 [CTRL_BUTTON_FRIEND]
 Type=2
 Tag=11
-Rect=705 341 104 87
+Rect=704 340 103 77
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -103,7 +103,7 @@ NormalFileUV=0 0 108 88
 [CTRL_BUTTON_SYNDICATE]
 Type=2
 Tag=12
-Rect=804 91 98 172
+Rect=802 115 100 156
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -113,7 +113,7 @@ NormalFileUV=0 0 97 173
 [CTRL_BUTTON_ACTIVITY]
 Type=2
 Tag=13
-Rect=789 446 164 177
+Rect=787 429 170 162
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -131,21 +131,21 @@ NormalFileUV=0 0 81 54
 [CTRL_PICTURE_CHARGE_BG]
 Type=1
 Tag=16
-Rect=757 0 89 83
+Rect=750 0 95 78
 NormalFile=.\res\image\ui\main_ui\btn_bk.png
 NormalFileUV=0 0 89 83
 
 [CTRL_PICTURE_SHOP_BG]
 Type=1
 Tag=17
-Rect=858 0 89 83
+Rect=857 0 97 80
 NormalFile=.\res\image\ui\main_ui\btn_bk.png
 NormalFileUV=0 0 89 83
 
 [CTRL_BUTTON_CHARGE]
 Type=2
 Tag=18
-Rect=762 -1 80 92
+Rect=764 1 75 77
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -159,7 +159,7 @@ DisableFileUV=0 0 80 92
 [CTRL_BUTTON_SHOP]
 Type=2
 Tag=19
-Rect=862 -1 80 92
+Rect=865 5 75 77
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -173,7 +173,7 @@ DisableFileUV=0 0 80 92
 [CTRL_BUTTON_USERICON]
 Type=2
 Tag=33
-Rect=10 5 86 86
+Rect=9 5 86 86
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -192,7 +192,7 @@ NormalFileUV=0 0 338 113
 [CTRL_9SLICES_NAME_BG]
 Type=22
 Tag=21
-Rect=130 16 147 27
+Rect=129 15 147 27
 Stretch=1
 NormalFile=.\res\image\ui\main_ui\edit_bk.png
 NormalFileUV=0 0 27 27
@@ -200,42 +200,42 @@ NormalFileUV=0 0 27 27
 [CTRL_PICTURE_HEALTH]
 Type=1
 Tag=22
-Rect=130 46 35 20
+Rect=129 45 33 17
 NormalFile=.\res\image\ui\main_ui\health.png
 NormalFileUV=0 0 35 20
 
 [CTRL_PICTURE_ENERGE]
 Type=1
 Tag=23
-Rect=130 68 35 20
+Rect=129 67 33 17
 NormalFile=.\res\image\ui\main_ui\energe.png
 NormalFileUV=0 0 35 20
 
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=26
-Rect=335 7 34 40
+Rect=334 6 32 33
 NormalFile=.\res\image\ui\main_ui\card.png
 NormalFileUV=0 0 34 40
 
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=27
-Rect=459 5 34 40
+Rect=458 5 32 33
 NormalFile=.\res\image\ui\main_ui\money.png
 NormalFileUV=0 0 34 40
 
 [CTRL_PICTURE_CRYSTAL]
 Type=1
 Tag=28
-Rect=615 6 34 40
+Rect=614 5 32 33
 NormalFile=.\res\image\ui\main_ui\crystal.png
 NormalFileUV=0 0 34 40
 
 [CTRL_9SLICES_CARD_BG]
 Type=22
 Tag=30
-Rect=373 14 70 27
+Rect=372 13 70 27
 Stretch=1
 NormalFile=.\res\image\ui\main_ui\edit_bk.png
 NormalFileUV=0 0 27 27
@@ -243,7 +243,7 @@ NormalFileUV=0 0 27 27
 [CTRL_9SLICES_CRYSTAL_BG]
 Type=22
 Tag=31
-Rect=652 13 70 27
+Rect=651 12 70 27
 Stretch=1
 NormalFile=.\res\image\ui\main_ui\edit_bk.png
 NormalFileUV=0 0 27 27
@@ -251,7 +251,7 @@ NormalFileUV=0 0 27 27
 [CTRL_9SLICES_MONEY_BG]
 Type=22
 Tag=32
-Rect=495 14 109 27
+Rect=495 13 109 27
 Stretch=1
 NormalFile=.\res\image\ui\main_ui\edit_bk.png
 NormalFileUV=0 0 27 27
@@ -259,7 +259,7 @@ NormalFileUV=0 0 27 27
 [CTRL_TEXT_NAME]
 Type=4
 Tag=34
-Rect=132 18 145 25
+Rect=131 17 145 25
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -268,7 +268,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CARD]
 Type=4
 Tag=35
-Rect=375 15 68 25
+Rect=374 15 68 25
 TextSize=20
 TextColor=0xf8d6aa
 TextHorAlign=AlignHorCenter
@@ -277,7 +277,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_MONEY]
 Type=4
 Tag=36
-Rect=497 15 107 25
+Rect=496 15 107 25
 TextSize=20
 TextColor=0xf8d6aa
 TextHorAlign=AlignHorCenter
@@ -286,7 +286,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CRYSTAL]
 Type=4
 Tag=37
-Rect=654 14 68 25
+Rect=653 13 68 25
 TextSize=20
 TextColor=0xf8d6aa
 TextHorAlign=AlignHorCenter
@@ -295,7 +295,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=38
-Rect=6 77 30 30
+Rect=5 76 30 30
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -304,21 +304,21 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_ENERGE_BG]
 Type=1
 Tag=40
-Rect=168 65 112 15
+Rect=167 65 112 15
 NormalFile=.\res\image\ui\main_ui\progress_bk.png
 NormalFileUV=0 0 112 15
 
 [CTRL_PICTURE_HEALTH_BG]
 Type=1
 Tag=39
-Rect=168 47 112 15
+Rect=167 46 112 15
 NormalFile=.\res\image\ui\main_ui\progress_bk.png
 NormalFileUV=0 0 112 15
 
 [CTRL_EXP_HEALTH]
 Type=9
 Tag=43
-Rect=172 49 104 11
+Rect=171 48 104 11
 TextSize=0
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -329,7 +329,7 @@ NormalFileUV=0 0 12 9
 [CTRL_EXP_ENERGE]
 Type=9
 Tag=44
-Rect=172 67 104 11
+Rect=171 66 104 11
 TextSize=0
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -340,7 +340,7 @@ NormalFileUV=0 0 12 9
 [CTRL_BUTTON_MAIL_HINT]
 Type=2
 Tag=45
-Rect=20 111 90 74
+Rect=19 106 90 74
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -352,7 +352,7 @@ SelectedFileUV=0 0 90 74
 [CTRL_BUTTON_MAIL]
 Type=2
 Tag=46
-Rect=110 107 90 74
+Rect=109 106 76 74
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -364,7 +364,7 @@ SelectedFileUV=0 0 90 74
 [CTRL_TEXT_MAIL_NUM]
 Type=4
 Tag=47
-Rect=74 148 25 25
+Rect=73 147 25 25
 Text=99
 TextTradition=99
 TextSize=20

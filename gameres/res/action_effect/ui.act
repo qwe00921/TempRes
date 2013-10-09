@@ -1,0 +1,45 @@
+;----------------------------------------
+; Action特效（UI专用）
+;----------------------------------------
+
+[test]
+@move(1, 100, 0)
+
+;{---------------星级评价效果
+[star_bg_scale]
+@idle(0.6)
+@scaleto(0.05,0.97,0.97)
+@scaleto(0.3,1.0,1.0) @back
+
+[star_blur]
+@idle(0.3)
+@gsblur(2)
+@idle(0.225)
+@gsblur(1)
+@idle(0.025)
+@gsblur(0.5)
+@idle(0.2)
+@gsblur(0)
+
+
+[star_scale]
+@scaleto(0.3,1.2,1.2)
+@scaleto(0.3,1.0,1.0)
+
+[common_scale]
+@scaleto(0.3,1.1,1.1)
+@scaleto(0.3,1.0,1.0)
+
+[common_move]
+@move(1,0,7)
+@move(1,0,-7)
+
+;}-----------------
+
+[mainui_btn_scale]
+@scaleto(0.5,1.02,1.02)
+@scaleto(0.5,1.0,1.0)
+
+[action_point_lack_scale]
+@scaleto(0.5,1.03,1.03)
+@scaleto(0.5,1.0,1.0)

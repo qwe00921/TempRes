@@ -1,0 +1,10 @@
+;----------------------
+; demo v2.0 combo action
+;----------------------
+
+;Ó¢ÐÛÆÕÍ¨¹¥»÷
+[hero_atk]
+@type=0
+x.gsblur
+x.hero_atk
+x.gsblur_zero

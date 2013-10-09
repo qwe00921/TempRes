@@ -1,0 +1,208 @@
+;---------------------------------------------------------------
+;简单Action特效配置
+;---------------------------------------------------------------
+
+[move]
+@move(1, 100, 0)
+@move(1, 0, 50)
+@move(1, -100, 0)
+@move(1, 0, -50)
+
+[move2]
+@move(1, 60, 0)
+
+[get_card_move_up]
+@move+(0.2,0,-80,100)
+
+[get_card_move_down]
+@move(0.2,0,80) @bounce
+
+[move+]
+@move+(0.9, 800, 0, 100)
+@move+(0.9, -800, 0, 100)
+@move+(0.9, 800, 0, 100)
+@move+(0.9, -800, 0, 100)
+@move+(0.9, 800, 0, 100)
+@move+(0.9, -800, 0, 100)
+@move+(0.9, 800, 0, 100)
+@move+(0.9, -800, 0, 100)
+
+
+[move+var]
+@move+(1, $1, $2, 100)
+
+[scale]
+@scale(1, 3, 3)
+@scale(1, 0.333, 0.333)
+
+[scale+]
+@scale+(0.25, 2, 2, 0.1, 0.1)
+
+[rotate]
+@rotate(1, 360)
+@rotate(1, -360)
+
+[rotate+]
+@rotate+(0.5, 90, 5)
+
+[full]
+@full(1)
+
+[full+]
+@full+(1, 0.1, 0.1)
+
+[lum]
+@lum(0.5, 0)
+
+[idle]
+@idle(1)
+@move(0.5,100,0)
+@idle(1)
+@move(0.5,-100,0)
+
+[jumpleft]
+@idle(1)
+@jump(1.0, 100, 0, 50, 3)
+
+[jumpright]
+@idle(1)
+@jump(1.0, -100, 0, 50, 3)
+
+[fade]
+@idle(1)
+@fadeout(2)
+@idle(1)
+@fadein(2)
+
+[fadeto]
+@idle(1)
+@fadeto(2, 0.5)	;半透明
+
+@idle(1)
+@fadeto(2, 1) ;全透明
+
+@idle(1)
+@fadeto(2, 0) ;不透明
+
+[test]
+@test(1)	;仅测试用
+
+[ease]
+@move(2,100,0) @easein(0.5)
+@move(0.5,-100,0)
+
+@move(2,100,0) @sinin()
+@move(0.5,-100,0)
+
+@move(2,100,0) @expin()
+@move(0.5,-100,0)
+
+
+[ease2]
+@move(2,100,0) @bounce
+@move(0.5,-100,0)
+
+@move(2,100,0) @elastic
+@move(0.5,-100,0)
+
+@move(2,100,0) @back
+@move(0.5,-100,0)
+
+[out_boss_info_up]
+@move+(0.3,0,-230,100)
+
+[out_boss_down]
+@move+(0.3,0,545,100)
+
+;开箱子底部信息上移
+[open_box_info_up]
+@move+(0.3,0,-240,100)
+
+;箱子掉下来效果
+[open_box_down]
+@move+(0.3,0,540,100)
+
+;卡牌从箱子中上移
+[open_box_card_up]
+@idle(1)
+@move+(0.3,0,-220,50)
+
+[card_fadein]
+@idle(1.2)
+@fadein(1)
+;@fadeout(1)
+;@idle(1)
+;@fadein(1)
+
+;箱子的旋转效果
+[open_box_fx_1]
+@rotate(0.02,14)
+@rotate(0.02,-14)	
+@rotate(0.02,-14)	
+@rotate(0.02,14)
+@rotate(0.02,14)
+@rotate(0.02,-14)
+@rotate(0.02,-14)
+@rotate(0.02,14)			
+
+;箱子的移动效果配合旋转
+[open_box_fx_2]
+@move(0.02,0,-17)
+@move(0.02,0,17)
+@move(0.02,0,-17)
+@move(0.02,0,17)
+@move(0.02,0,-17)
+@move(0.02,0,17)
+@move(0.02,0,-17)
+@move(0.02,0,17)
+
+;获得卡牌底部信息上移
+[get_card_info_up]
+@move+(0.3,0,-260,100)
+
+;白骨精卡牌掉下来效果
+[get_card_down]
+@move+(0.3,0,420,100)
+
+;显示
+[show]
+@show
+
+;隐藏
+[hide]
+@hide
+
+;缩放到
+[scaleto]
+@scaleto(1,2,2)
+
+
+;箱子缩放特效
+[mission_box_fx]
+@move(1,0,-7)
+@move(1,0,7)
+@move(1,0,-7)
+@move(1,0,7)
+
+;卡牌移动特效
+[mission_card_fx]
+@move(1,0,-7)
+@move(1,0,7)
+@move(1,0,-7)
+@move(1,0,7)
+
+;测试高斯模糊
+[gsblur]
+@gsblur(0.25)
+@idle(2)
+@gsblur(0)
+
+;测试卡牌翻转
+[card_rotate_x]
+@rotate_x(1,360)
+
+[card_rotate_y]
+@rotate_y(1,360)
+
+[card_rotate]
+@rotate(1,360)

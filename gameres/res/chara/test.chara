@@ -1,0 +1,97 @@
+;----------------------------------------------------
+; 角色配置
+;----------------------------------------------------
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;	***	龙将测试资源	***
+
+;女性战士
+[warriorfemale]
+@standby	name=standby ani=x.warriorfemale_battle_stand
+@atk		name=atk ani=x.warriorfemale_attack
+@run		name=run ani=x.warriorfemale_walk
+@skill
+@defence	name=defence ani=x.warriorfemale_defence
+@hurt		name=hurt ani=x.warriorfemale_hurt
+@dead
+
+;女弓箭手
+[archerfemale]
+@standby	name=standby ani=x.archerfemale_battle_stand
+@atk		name=atk ani=x.archerfemale_attack
+@run		name=run ani=x.archerfemale_walk
+@skill
+@defence	name=defence ani=x.archerfemale_defence
+@hurt		name=hurt ani=x.archerfemale_hurt
+@dead
+
+;女性大长刀战士【zhu rong】
+[zhurong]
+@standby	name=standby ani=x.zhurong_battle_stand
+@atk		name=atk ani=x.zhurong_attack
+@run		name=run ani=x.zhurong_walk
+@skill
+@defence	name=defence ani=x.zhurong_defence
+@hurt		name=hurt ani=x.zhurong_hurt
+@dead
+
+;貂蝉
+[diaochan]
+@standby	name=standby ani=x.diaochan_battle_stand
+@atk		name=atk ani=x.diaochan_attack
+@run		name=run ani=x.diaochan_walk
+@skill
+@defence	name=defence ani=x.diaochan_defence
+@hurt		name=hurt ani=x.diaochan_hurt
+@dead
+
+;大乔
+[daqiao]
+@standby	name=standby ani=x.daqiao_battle_stand
+@atk		name=atk ani=x.daqiao_attack
+@run		name=run ani=x.daqiao_walk
+@skill
+@defence	name=defence ani=x.daqiao_defence
+@hurt		name=hurt ani=x.daqiao_hurt
+@dead
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;飞龙
+[fly_dragon]
+@standby_l	name=standby ani=x.fly_dragon_standby_l
+@atk_l 		name=atk ani=x.fly_dragon_attack_l keyframe(2,2)
+@run_l		
+@skill_l		name=skill ani=x.fly_dragon_cast_l keyframe(2,2)
+@defence_l	
+@hurt_l		name=hurt ani=x.fly_dragon_hurt_l
+@dead_l		name=dead ani=x_cmb.fly_dragon_death_l
+
+@standby_r	name=standby ani=x.fly_dragon_standby_r
+@atk_r		name=atk ani=x.fly_dragon_attack_l keyframe(2,2)
+@run_r		
+@skill_r		name=skill ani=x.fly_dragon_cast_r keyframe(2,2)
+@defence_r	
+@hurt_r	name=hurt ani=x.fly_dragon_hurt_r
+@dead_r		name=dead ani=x_cmb.fly_dragon_death_r
+
+;挖矿宠
+[mining]
+@standby	name=standby ani=x.mining_standby
+@atk		name=atk ani=x.mining_attack keyframe(1,2)
+@run		
+@skill		name=skill ani=x.mining_cast keyframe(0,5)
+@defence	name=defence ani=x.mining_defence
+@hurt		name=hurt ani=x.mining_hurt
+@dead		name=dead ani=x_cmb.mining_death
+
+;蓝魔鬼
+[blue_devil]
+@standby	name=standby ani=x.blue_devil_standby
+@atk		name=atk ani=x.blue_devil_attack keyframe(2,3)
+@run		
+@sing		name=sing ani=x.blue_devil_sing
+@skill		name=skill ani=x.blue_devil_cast keyframe(2,4)
+@defence	name=defence ani=x.blue_devil_defence
+@hurt		name=hurt ani=x.blue_devil_hurt
+@dead		name=dead ani=x_cmb.blue_devil_death

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="8" height="9" tilewidth="60" tileheight="60">
+ <tileset firstgid="1" name="mission_sugoroku_icon_boss" tilewidth="72" tileheight="84">
+  <image source="../sk/map/base/mission_sugoroku_icon_boss.png" width="72" height="84"/>
+ </tileset>
+ <tileset firstgid="2" name="mission_sugoroku_icon_boss_middle" tilewidth="72" tileheight="84">
+  <image source="../sk/map/base/mission_sugoroku_icon_boss_middle.png" width="72" height="84"/>
+ </tileset>
+ <tileset firstgid="3" name="mission_sugoroku_road_sprite" tilewidth="60" tileheight="60">
+  <image source="../sk/map/base/mission_sugoroku_road_sprite.png" width="300" height="180"/>
+ </tileset>
+ <tileset firstgid="18" name="mission_sugoroku_bg0001" tilewidth="480" tileheight="585">
+  <image source="../sk/map/mission_sugoroku_bg0001.png" width="480" height="585"/>
+ </tileset>
+ <tileset firstgid="19" name="mission_sugoroku_icon_card" tilewidth="72" tileheight="84">
+  <image source="../sk/map/base/mission_sugoroku_icon_card.png" width="72" height="84"/>
+ </tileset>
+ <tileset firstgid="20" name="mission_sugoroku_icon_treasure_00" tilewidth="72" tileheight="84">
+  <image source="../sk/map/base/mission_sugoroku_icon_treasure_00.png" width="72" height="84"/>
+ </tileset>
+ <tileset firstgid="21" name="mission_sugoroku_icon_monster" tilewidth="72" tileheight="84">
+  <image source="../sk/map/base/mission_sugoroku_icon_monster.png" width="72" height="84"/>
+ </tileset>
+ <layer name="bg" width="8" height="9">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAABgAAAAwAAAAGAAAAAAAAAAwAAAAAAAAABgAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  </data>
+ </layer>
+ <layer name="road" width="8" height="9">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALAAAADAAAAAwAAAARAAAADAAAAA0AAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAkAAAAAAAAACQAAAAAAAAAAAAAADgAAAAwAAAARAAAADwAAAAwAAAAQAAAAAAAAAAAAAAAJAAAAAAAAAAkAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA4AAAAMAAAADwAAAAwAAAARAAAAEAAAAAAAAAAAAAAACAAAAAwAAAAMAAAADAAAAA8AAAAKAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  </data>
+ </layer>
+ <layer name="dyn" width="8" height="9">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEwAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,1408 @@
+;----------------------------------------
+; card
+;----------------------------------------
+
+;卡牌列表，卡箱临时使用
+[card_box_db]
+image\card\10100301.png
+image\card\10100402.png
+
+[card_box_db_new]
+image\card\10100301.png
+image\card\10100402.png
+
+[card_box_add_card]
+image\ui\font\z_j_k_p.png
+
+;-----------------------------卡牌对战图片240*240---------------------------------------
+[battle_10100101] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100103] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100201] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100203] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100301] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100303] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100401] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10100403] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100501] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100503] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100601] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100603] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100701] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100703] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100801] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100803] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100901] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100903] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10101001] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10101003] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200101] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200103] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200201] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200203] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200301] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200303] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200401] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200403] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200501] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200503] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200601] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200603] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200701] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200703] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200801] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200803] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200901] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200903] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10201001] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10201003] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300101] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300103] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300201] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300203] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300301] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300303] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300401] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300403] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300501] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300503] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300601] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300603] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300701] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300703] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300801] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300803] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300901] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300903] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20301001] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20301003] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20400101] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400103] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400201] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400203] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400301] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400303] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400401] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400403] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400501] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400503] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400601] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400603] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400701] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400703] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400801] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400803] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400901] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400903] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20401001] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20401003] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500101] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500103] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500201] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500203] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500301] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500303] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500401] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500403] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500501] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500503] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500601] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500603] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500701] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500703] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500801] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500803] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500901] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500903] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30501001] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30501003] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600101] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600103] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600201] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600203] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600301] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600303] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600401] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600403] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600501] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600503] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600601] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600603] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600701] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600703] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600801] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600803] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600901] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600903] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30601001] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30601003] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700101] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700103] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700201] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700203] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700301] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700303] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700401] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700403] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700501] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700503] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700601] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700603] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700701] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700703] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700801] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_30700803] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700901] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700903] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30701001] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30701003] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000100] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000300] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000500] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000700] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000900] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001100] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001300] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001500] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001700] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001900] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002100] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002300] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002500] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002700] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002900] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003100] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003300] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003500] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003700] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003900] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004100] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004300] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004500] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004700] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004900] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005100] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005300] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005500] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005700] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005900] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60006100] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60006300] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_10100102] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100104] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100202] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100204] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100302] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100304] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100402] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100404] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100502] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100504] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100602] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100604] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100702] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100704] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100802] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100804] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100902] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10100904] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10101002] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10101004] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200102] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200104] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200202] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200204] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200302] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200304] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200402] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200404] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200502] 
+image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5
+[battle_10200504] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200602] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200604] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200702] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200704] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200802] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200804] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200902] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10200904] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10201002] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_10201004] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300102] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300104] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300202] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300204] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300302] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300304] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300402] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300404] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300502] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300504] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300602] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300604] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300702] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300704] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300802] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300804] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300902] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20300904] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20301002] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20301004] 
+image\card_battle\10100401.png @cut(1,1) @stay @scale=0.5
+[battle_20400102] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400104] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400202] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400204] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400302] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400304] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400402] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400404] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400502] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400504] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400602] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400604] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400702] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400704] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400802] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400804] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400902] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20400904] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20401002] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_20401004] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500102] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500104] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500202] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500204] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500302] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500304] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500402] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500404] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500502] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500504] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500602] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500604] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500702] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500704] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500802] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500804] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500902] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30500904] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30501002] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30501004] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600102] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600104] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600202] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600204] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600302] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600304] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600402] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600404] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600502] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600504] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600602] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600604] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600702] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600704] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600802] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600804] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600902] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30600904] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30601002] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30601004] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700102] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700104] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700202] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700204] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700302] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700304] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700402] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700404] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700502] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700504] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700602] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700604] 
+image\card_battle\20400101.png @cut(1,1) @stay @scale=0.5
+[battle_30700702] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700704] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700802] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700804] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700902] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30700904] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30701002] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_30701004] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000200] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000400] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000600] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60000800] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001000] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001200] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001400] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001600] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60001800] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002000] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002200] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002400] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002600] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60002800] 
+image\card_battle\30700701.png @cut(1,1) @stay @scale=0.5
+[battle_60003000] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003200] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003400] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003600] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60003800] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004000] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004200] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004400] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004600] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60004800] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005000] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005200] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005400] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005600] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60005800] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60006000] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+[battle_60006200] 
+image\card_battle\30700801.png @cut(1,1) @stay @scale=0.5
+
+;-----------卡牌资源450*600------------
+[10100101]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100103]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100201]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100203]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100301]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100303]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100401]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10100403]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100501]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100503]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100601]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100603]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100701]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100703]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100801]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100803]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100901]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100903]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10101001]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10101003]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200101]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200103]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200201]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200203]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200301]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200303]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200401]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200403]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200501]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200503]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200601]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200603]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200701]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200703]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200801]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200803]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200901]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200903]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10201001]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10201003]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300101]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300103]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300201]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300203]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300301]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300303]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300401]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300403]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300501]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300503]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300601]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300603]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300701]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300703]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300801]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300803]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300901]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300903]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20301001]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20301003]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20400101]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400103]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400201]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400203]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400301]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400303]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400401]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400403]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400501]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400503]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400601]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400603]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400701]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400703]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400801]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400803]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400901]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400903]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20401001]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20401003]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500101]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500103]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500201]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500203]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500301]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500303]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500401]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500403]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500501]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500503]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500601]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500603]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500701]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500703]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500801]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500803]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500901]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500903]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30501001]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30501003]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600101]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600103]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600201]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600203]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600301]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600303]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600401]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600403]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600501]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600503]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600601]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600603]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600701]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600703]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600801]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600803]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600901]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600903]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30601001]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30601003]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700101]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700103]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700201]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700203]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700301]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700303]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700401]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700403]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700501]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700503]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700601]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700603]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700701]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700703]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700801]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[30700803]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700901]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700903]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30701001]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30701003]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000100]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000300]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000500]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000700]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000900]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001100]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001300]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001500]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001700]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001900]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002100]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002300]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002500]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002700]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002900]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003100]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003300]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003500]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003700]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003900]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004100]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004300]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004500]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004700]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004900]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005100]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005300]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005500]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005700]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005900]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60006100]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60006300]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[10100102]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100104]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100202]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100204]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100302]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100304]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100402]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100404]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100502]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100504]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100602]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100604]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100702]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100704]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100802]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100804]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100902]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10100904]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10101002]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10101004]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200102]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200104]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200202]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200204]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200302]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200304]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200402]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200404]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200502]
+image\card\10100301.png @cut(1,1) @stay @scale=0.5
+[10200504]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200602]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200604]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200702]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200704]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200802]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200804]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200902]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10200904]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10201002]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[10201004]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300102]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300104]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300202]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300204]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300302]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300304]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300402]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300404]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300502]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300504]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300602]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300604]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300702]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300704]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300802]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300804]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300902]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20300904]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20301002]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20301004]
+image\card\10100401.png @cut(1,1) @stay @scale=0.5
+[20400102]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400104]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400202]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400204]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400302]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400304]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400402]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400404]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400502]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400504]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400602]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400604]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400702]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400704]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400802]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400804]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400902]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20400904]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20401002]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[20401004]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500102]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500104]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500202]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500204]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500302]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500304]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500402]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500404]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500502]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500504]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500602]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500604]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500702]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500704]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500802]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500804]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500902]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30500904]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30501002]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30501004]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600102]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600104]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600202]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600204]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600302]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600304]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600402]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600404]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600502]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600504]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600602]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600604]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600702]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600704]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600802]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600804]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600902]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30600904]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30601002]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30601004]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700102]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700104]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700202]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700204]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700302]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700304]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700402]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700404]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700502]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700504]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700602]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700604]
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[30700702]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700704]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700802]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700804]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700902]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30700904]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30701002]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[30701004]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000200]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000400]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000600]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60000800]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001000]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001200]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001400]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001600]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60001800]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002000]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002200]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002400]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002600]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60002800]
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[60003000]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003200]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003400]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003600]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60003800]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004000]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004200]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004400]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004600]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60004800]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005000]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005200]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005400]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005600]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60005800]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60006000]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+[60006200]
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+
+;-----------技能卡牌资源450*600------------
+[skill_1] 
+image\card\10100301.png @cut(1,1) @stay @scale=0.5	 
+[skill_2] 
+image\card\10100401.png @cut(1,1) @stay @scale=0.5	 
+[skill_3] 
+image\card\20400101.png @cut(1,1) @stay @scale=0.5
+[skill_4] 
+image\card\30700701.png @cut(1,1) @stay @scale=0.5
+[skill_5] 
+image\card\30700801.png @cut(1,1) @stay @scale=0.5
+
+
+
+
+

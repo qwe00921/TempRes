@@ -167,7 +167,6 @@ DoFile("ui/ui_collect_skill_view.lua")
 DoFile("ui/ui_collect_pet_detail.lua")
 DoFile("ui/ui_collect_item_detail.lua")
 DoFile("ui/ui_collect_skill_detail.lua")
-DoFile("ui/ui_collect_star_menu.lua")
 
 --成就
 DoFile("ui/ui_dlg_achievement.lua")
@@ -175,19 +174,3 @@ DoFile("ui/ui_achievement_view.lua")
 
 --剧情
 DoFile("ui/ui_dlg_drama.lua")
-
---Tip
-DoFile("ui/ui_tip.lua")
-
---邮箱
-DoFile("ui/ui_dlg_mailbox_mainui.lua")
-DoFile("ui/ui_mailbox_sys_view.lua")
-DoFile("ui/ui_dlg_mailbox_kf.lua")
-DoFile("ui/ui_dlg_mailbox_person_write.lua")
-DoFile("ui/ui_mailbox_sys_reward_view.lua") 
-DoFile("ui/ui_dlg_mailbox_sys_detail.lua")
-DoFile("ui/ui_mailbox_person_view.lua") 
-DoFile("ui/ui_dlg_mailbox_person_detail.lua")
-DoFile("ui/ui_person_detail_view.lua")
-DoFile("ui/ui_kf_question_view.lua")
-DoFile("ui/ui_kf_content_view.lua")

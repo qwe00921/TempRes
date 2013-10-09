@@ -4,11 +4,6 @@
 --------------------------------------------------------------
 ui_dlg_collect_mainui = {};
 local p =  ui_dlg_collect_mainui;
-p.ID_CTRL_TEXT_PAGE					      = 49;
-p.ID_CTRL_BUTTON_PAGE_NEXT			 = 48;
-p.ID_CTRL_BUTTON_PAGE_BACK			 = 47;
-p.ID_CTRL_TEXT_43						       = 46;
-p.ID_CTRL_BUTTON_STAR					    = 45;
 p.ID_CTRL_TEXT_EFFICIENCY				 = 44;
 p.ID_CTRL_TEXT_40						       = 43;
 p.ID_CTRL_TEXT_COLLECT_NUM			 = 42;
