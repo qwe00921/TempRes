@@ -68,7 +68,7 @@
 @dead_l		name=dead ani=x_cmb.fly_dragon_death_l
 
 @standby_r	name=standby ani=x.fly_dragon_standby_r
-@atk_r		name=atk ani=x.fly_dragon_attack_l keyframe(2,2)
+@atk_r		name=atk ani=x.fly_dragon_attack_r keyframe(2,2)
 @run_r		
 @skill_r		name=skill ani=x.fly_dragon_cast_r keyframe(2,2)
 @defence_r	
