@@ -129,41 +129,23 @@ lj\chara\57daqiao\walk.png @cut(1,4) @time=0.20 @reverse @loop
 ;}------------------------------------------
 
 ;{----------∑…¡˙∂Øª≠≈‰÷√---------------
-[fly_dragon_attack_l]
-image\pet\fly_dragon\atk_left.png    @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+[fly_dragon_attack]
+image\pet\fly_dragon\atk.png    @cut(1,4)  @time=0.15   @offset(10,-20) @stay
 
-[fly_dragon_cast_l]
-image\pet\fly_dragon\cast_left.png   @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+[fly_dragon_cast]
+image\pet\fly_dragon\cast.png   @cut(1,7)  @time=0.15   @offset(0,-20) @stay
 
-[fly_dragon_death_l]
-image\pet\fly_dragon\death_left.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay @scale=0.8
+[fly_dragon_death]
+image\pet\fly_dragon\death.png  @cut(1,8)  @time=0.15   @offset(0,-15) @stay
 
-[fly_dragon_death_end_l]
-image\pet\fly_dragon\death_left.png  @cut(1,2)  @use(7,1)    @offset(0,-0)  @time=2 @scale=0.8
+[fly_dragon_death_end]
+image\pet\fly_dragon\death.png  @cut(1,8)  @use(7,1)    @offset(0,-15)  @time=2
 
-[fly_dragon_hurt_l]
-image\pet\fly_dragon\hurt_left.png   @cut(1,11)  @time=0.15   @offset(0,0) @stay @scale=0.8
+[fly_dragon_hurt]
+image\pet\fly_dragon\hurt.png   @cut(1,3)  @time=0.15   @offset(10,5) @stay
 
-[fly_dragon_standby_l]
-image\pet\fly_dragon\standby_left.png @cut(1,2) @time=0.15   @loop @scale=0.9
-
-[fly_dragon_attack_r]
-image\pet\fly_dragon\atk_right.png    @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
-
-[fly_dragon_cast_r]
-image\pet\fly_dragon\cast_right.png   @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
-
-[fly_dragon_death_r]
-image\pet\fly_dragon\death_right.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay @scale=0.9
-
-[fly_dragon_death_end_r]
-image\pet\fly_dragon\death_right.png  @cut(1,2)  @use(7,1)    @offset(0,-0)  @time=2 @scale=0.9
-
-[fly_dragon_hurt_r]
-image\pet\fly_dragon\hurt_right.png   @cut(1,11)  @time=0.15   @offset(0,0) @stay @scale=0.7
-
-[fly_dragon_standby_r]
-image\pet\fly_dragon\standby_right.png @cut(1,2) @time=0.15   @loop	@scale=0.8
+[fly_dragon_standby]
+image\pet\fly_dragon\standby.png @cut(1,6) @time=0.15   @loop
 ;}-------------------------------------
 
 ;{----------ººƒ‹≈‰÷√---------------

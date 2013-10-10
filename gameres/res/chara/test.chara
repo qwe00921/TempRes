@@ -59,21 +59,13 @@
 
 ;·ÉÁú
 [fly_dragon]
-@standby_l	name=standby ani=x.fly_dragon_standby_l
-@atk_l 		name=atk ani=x.fly_dragon_attack_l keyframe(2,2)
-@run_l		
-@skill_l		name=skill ani=x.fly_dragon_cast_l keyframe(2,2)
-@defence_l	
-@hurt_l		name=hurt ani=x.fly_dragon_hurt_l
-@dead_l		name=dead ani=x_cmb.fly_dragon_death_l
-
-@standby_r	name=standby ani=x.fly_dragon_standby_r
-@atk_r		name=atk ani=x.fly_dragon_attack_r keyframe(2,2)
-@run_r		
-@skill_r		name=skill ani=x.fly_dragon_cast_r keyframe(2,2)
-@defence_r	
-@hurt_r	name=hurt ani=x.fly_dragon_hurt_r
-@dead_r		name=dead ani=x_cmb.fly_dragon_death_r
+@standby	name=standby ani=x.fly_dragon_standby
+@atk 		name=atk ani=x.fly_dragon_attack keyframe(2,2)
+@run		
+@skill		name=skill ani=x.fly_dragon_cast keyframe(2,2)
+@defence	
+@hurt		name=hurt ani=x.fly_dragon_hurt
+@dead		name=dead ani=x_cmb.fly_dragon_death
 
 ;ÍÚ¿ó³è
 [mining]
