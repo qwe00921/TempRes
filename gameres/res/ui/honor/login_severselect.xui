@@ -1,0 +1,29 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[LOGIN_SEVERSELECT_CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=165 307 635 325
+Remark=服务器选择背景
+NormalFile=.\res\image\ui_honor\login\login_bg2.png
+NormalFileUV=0 0 629 322
+
+[LOGIN_SEVERSELECT_CTRL_TEXT]
+Type=4
+Tag=2
+Rect=365 326 238 43
+Text=请选择服务器
+TextTradition=請選擇服務器
+TextSize=36
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=提示玩家选择服务器
+
+[CTRL_LIST_3]
+Type=8
+Tag=3
+Rect=305 414 360 216
+Remark=服务器选择区域
