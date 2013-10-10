@@ -1,0 +1,32 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[LOGIN_CTRL_BUTTON_SEVEROPTION]
+Type=2
+Tag=2
+Rect=300 416 360 55
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=服务器按钮
+
+[LOGIN_CTRL_PICTURE_SEVEROPTION]
+Type=1
+Tag=22
+Rect=306 418 357 49
+Remark=服务器选项底背景
+NormalFile=.\res\image\ui_honor\login\login_severoption.png
+NormalFileUV=0 0 349 48
+
+[LOGIN_CTRL_TEXT_SEVEROPTION]
+Type=4
+Tag=24
+Rect=307 420 350 50
+Text=xxx区（xxxxxxxx）
+TextTradition=xxx區（xxxxxxxx）
+TextSize=36
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=服务器名称

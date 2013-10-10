@@ -1,0 +1,11 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[LOGIN_BG]
+Type=1
+Tag=1
+Rect=0 0 960 640
+NormalFile=.\res\image\ui_honor\login\login_bg.png
+NormalFileUV=0 0 956 637
