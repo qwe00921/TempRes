@@ -133,7 +133,7 @@ lj\chara\57daqiao\walk.png @cut(1,4) @time=0.20 @reverse @loop
 image\pet\fly_dragon\atk_left.png    @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
 
 [fly_dragon_cast_l]
-image\pet\fly_dragon\cast_left.png   @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+image\pet\fly_dragon\cast_left.png   @cut(2,13,15)  @time=0.08   @offset(0,-0) @stay @scale=0.9
 
 [fly_dragon_death_l]
 image\pet\fly_dragon\death_left.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay @scale=0.8
@@ -151,7 +151,7 @@ image\pet\fly_dragon\standby_left.png @cut(1,2) @time=0.15   @loop @scale=0.9
 image\pet\fly_dragon\atk_right.png    @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
 
 [fly_dragon_cast_r]
-image\pet\fly_dragon\cast_right.png   @cut(1,10)  @time=0.15   @offset(0,-0) @stay @scale=0.9
+image\pet\fly_dragon\cast_right.png   @cut(2,13,15)  @time=0.08   @offset(0,-0) @stay @scale=0.9
 
 [fly_dragon_death_r]
 image\pet\fly_dragon\death_right.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay @scale=0.9
