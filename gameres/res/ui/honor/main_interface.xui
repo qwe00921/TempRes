@@ -1,0 +1,101 @@
+
+[UI_INFO]
+Width=960
+Height=640
+
+[MAIN_CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=-1 0 960 640
+Remark=背景
+NormalFile=.\res\image\ui_honor\main_interface\main_bg.png
+NormalFileUV=0 0 960 640
+
+[MAIN_CTRL_BUTTON_GIFT]
+Type=2
+Tag=24
+Rect=240 508 113 114
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼包图片
+NormalFile=.\res\image\ui_honor\main_interface\main_gift.png
+NormalFileUV=0 0 112 113
+
+[MAIN_CTRL_BUTTON_USERINFO]
+Type=2
+Tag=25
+Rect=2 477 224 163
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\main_interface\main_userinfo_s.png
+NormalFileUV=0 0 224 163
+
+[MAIN_CTRL_CUSTOMIZE_LEVEL]
+Type=25
+Tag=27
+Rect=401 60 522 430
+
+[MAIN_CTRL_BUTTON_MEMU]
+Type=2
+Tag=28
+Rect=517 557 160 73
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=功能弹出按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_menu.png
+NormalFileUV=0 0 150 68
+
+[MAIN_CTRL_PICTURE_SHOP]
+Type=1
+Tag=26
+Rect=860 10 90 89
+Remark=商城按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_shop.png
+NormalFileUV=0 0 90 89
+
+[MAIN_TEXT_LEVEL]
+Type=4
+Tag=7
+Rect=99 523 87 27
+Text=999
+TextTradition=999
+TextSize=25
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+Remark=玩家等级
+
+[MAIN_EXP_EXP]
+Type=9
+Tag=8
+Rect=25 554 180 20
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=玩家经验值
+NormalFile=.\res\image\ui_honor\main_interface\main_exp.png
+NormalFileUV=0 0 160 15
+
+[MAIN_EXP_ACT]
+Type=9
+Tag=9
+Rect=24 607 180 20
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=玩家活力
+Stretch=1
+NormalFile=.\res\image\ui_honor\main_interface\main_act.png
+NormalFileUV=0 0 54 16
+
+[CTRL_TEXT_11]
+Type=4
+Tag=11
+Rect=71 604 80 25
+Text=333/333
+TextTradition=333/333
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
