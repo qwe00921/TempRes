@@ -1,0 +1,501 @@
+		简易脚本接口列表
+		
+		@郭浩
+
+	简易说明：
+	
+			REG_FUNC_LUA的代表是全局方法（函数），而REG_CLASS_BEGIN(XXX)或者REG_SUBCLASS_BEGIN(XXX,YYY)是必须使用类的形式才能调用。
+		
+			比如，LuaLogInfo是REG_FUNC_LUA类型，则可以在脚本直接 LuaLogInfo("xxx")调用，而getShootAni()这个接口是REG_MEMBER_FUNC类型，此接口是
+		BulletConfig类的成员方法（函数），所以必须先得到BulletConfig类型的变量才可以调用getShootAni()，如下：
+		
+		local pBulletConf = BulletConfigMgr:getBullet(); --通过子弹管理器获得BulletConfig类型的变量。
+		pBulletConf.getShootAni();						 --通过BulletConfig类型变量调用getShootAni();
+		
+			一般来说，大部分类都会有对应的“管理器”，比如BulletConfig是通过BulletConfigMgr管理器类获得，这种是需要通过类似BulletConfigMgr:getBullet()这种
+		方式的调用才能使用，而具有REG_CONSTRUCT和REG_DESTRUCT类型的则直接可以用 local a = A:createA(xxx,yyy);去获得变量，记住，使用完a后，必须调用a.Free();
+		否则内存泄露。
+		
+		具体看某一种类是否能够直接createXXX，请看对应类声明的下方是否具有REG_CONSTRUCT构造函数，比如NDUIXContainer就有，而VarEnv就没有。
+		
+	//输出Log
+	REG_FUNC_LUA("LuaLogInfo",		LuaLogInfo);
+	REG_FUNC_LUA("LuaLogError",		LuaLogError);
+	REG_FUNC_LUA("WriteCon",		LuaWriteCon);
+	REG_FUNC_LUA("WriteConWarning", LuaWriteConWarning);
+	REG_FUNC_LUA("WriteConErr",		LuaWriteConErr);
+
+	//运行Load文件
+	REG_FUNC_LUA("DoFile", DoFile);
+	
+	//位操作
+	REG_FUNC("LeftShift", LeftShift);
+	REG_FUNC("RightShift", RightShift);
+	REG_FUNC("BitwiseAnd", BitwiseAnd);
+
+	//字符串类型转换
+	REG_FUNC("FromUtf8", fromUtf8);
+	REG_FUNC("ToUtf8", toUtf8);
+	
+	//变量环境
+	REG_CLASS_BEGIN(VarEnv)
+	REG_MEMBER_FUNC("GetFloat",						&VarEnv::getFloat)
+	REG_MEMBER_FUNC("SetFloat",						&VarEnv::setFloat)
+	REG_MEMBER_FUNC("GetStr",						&VarEnv::getStr)
+	REG_MEMBER_FUNC("SetStr",						&VarEnv::setStr)
+	REG_MEMBER_FUNC("GetPtr",						&VarEnv::getPtr)
+	REG_MEMBER_FUNC("SetPtr",						&VarEnv::setPtr)
+	REG_CLASS_END(VarEnv)
+	
+	//战场UI
+	REG_SUBCLASS_BEGIN(CardBattleUILayer,NDUILayer)
+	REG_CONSTRUCT("createCardBattleUILayer")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("SortZOrder",			&CardBattleUILayer::sortZOrder)
+	REG_MEMBER_FUNC("ResetZOrder",			&CardBattleUILayer::resetZOrder)
+	REG_MEMBER_FUNC("SetSortZOrderByFlag",	&CardBattleUILayer::setSortByFlag)
+	REG_CLASS_END(CardBattleUILayer)
+
+//角色
+	REG_SUBCLASS_BEGIN(NDPlayer,NDUIButton)
+	REG_CONSTRUCT("createNDPlayer")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("UseConfig",			&NDPlayer::useConfig)
+	REG_MEMBER_FUNC("SetLookAt",			&NDPlayer::setLookAt)
+	REG_MEMBER_FUNC("GetLookAt",			&NDPlayer::getLookAt)
+	REG_MEMBER_FUNC("SetZTop",				&NDPlayer::setZTop)
+	REG_MEMBER_FUNC("GetZTop",				&NDPlayer::getZTop)
+
+	REG_MEMBER_FUNC("Standby",				&NDPlayer::standby)
+	REG_MEMBER_FUNC("Run",					&NDPlayer::run)
+	REG_MEMBER_FUNC("Atk",					&NDPlayer::atk)
+	REG_MEMBER_FUNC("Sing"	,				&NDPlayer::sing)
+	REG_MEMBER_FUNC("Skill",				&NDPlayer::skill)
+	REG_MEMBER_FUNC("Defence",				&NDPlayer::defence)
+	REG_MEMBER_FUNC("Hurt",					&NDPlayer::hurt)
+	REG_MEMBER_FUNC("Dead",					&NDPlayer::dead)
+	REG_MEMBER_FUNC("Play",					&NDPlayer::play)
+	
+	REG_MEMBER_FUNC("GetAtkKeyTime_Atk",	&NDPlayer::getAtkKeyTime_Atk)
+	REG_MEMBER_FUNC("GetAtkKeyTime_Hurt",	&NDPlayer::getAtkKeyTime_Hurt)
+	REG_MEMBER_FUNC("GetSkillKeyTime_Atk",	&NDPlayer::getSkillKeyTime_Atk)
+	REG_MEMBER_FUNC("GetSkillKeyTime_Hurt",	&NDPlayer::getSkillKeyTime_Hurt)
+	REG_MEMBER_FUNC("GetCurAnimSize",		&NDPlayer::getCurAnimSize)
+	REG_MEMBER_FUNC("GetCurAnimRealSize",	&NDPlayer::getCurAnimRealSize)
+	REG_CLASS_END(NDPlayer)
+
+//子弹类
+	REG_SUBCLASS_BEGIN(NDBullet,NDNode)
+	REG_CONSTRUCT("createNDBullet")
+	REG_DESTRUCT("Free")
+	REG_CLASS_END(NDBullet)
+
+//Ani特效
+	REG_CLASS_BEGIN(CAni)
+	REG_MEMBER_FUNC("GetFrameCount",				&CAni::getFrameCount)
+ 	REG_MEMBER_FUNC("GetPicture",					&CAni::getPicture)
+ 	REG_MEMBER_FUNC("GetPlayOnceTime",				&CAni::getPlayOnceTime)
+ 	REG_MEMBER_FUNC("GetTotalTime",					&CAni::getTotalTimeLua)
+ 	REG_MEMBER_FUNC("GetTimeInterval",				&CAni::getTimeInterval)
+	REG_MEMBER_FUNC("GetSize",						&CAni::getSizeLua)
+	REG_MEMBER_FUNC("GetRealSize",					&CAni::getRealSizeLua)
+	REG_MEMBER_FUNC("GetRealWidth",					&CAni::getRealWidthLua)
+	REG_MEMBER_FUNC("GetRealHeight",				&CAni::getRealHeightLua)
+	REG_CLASS_END(CAni)
+
+
+//Ani特效管理器
+	REG_CLASS_BEGIN(CAniMgr)
+	REG_FUNC("GetAni",								&CAniMgr::getAniLua)
+	REG_CLASS_END(CAniMgr)
+
+
+//Ani组合特效
+	REG_CLASS_BEGIN(CAniCombo)
+	REG_MEMBER_FUNC("GetFrameCount",				&CAniCombo::getFrameCountLua)
+	REG_MEMBER_FUNC("GetTotalTime",					&CAniCombo::getTotalTimeLua)
+	REG_MEMBER_FUNC("GetPlayOnceTime",				&CAniCombo::getPlayOnceTimeLua)
+	REG_CLASS_END(CAniCombo)
+
+//Ani特效组合管理器
+	REG_CLASS_BEGIN(CAniComboMgr)
+	REG_FUNC("GetAniCombo",							&CAniComboMgr::getAniComboLua)
+	REG_CLASS_END(CAniComboMgr)
+
+
+//Action特效
+	REG_CLASS_BEGIN(CActionEffect)
+	REG_MEMBER_FUNC("GetFrameCount",				&CActionEffect::getFrameCountLua)
+	REG_MEMBER_FUNC("GetTotalTime",					&CActionEffect::getTotalTime)
+	REG_CLASS_END(CActionEffect)
+
+
+//Action特效管理器
+	REG_CLASS_BEGIN(CActionEffectMgr)
+	REG_FUNC("GetActionEffect",						&CActionEffectMgr::getActionEffectLua)
+	REG_CLASS_END(CActionEffectMgr)
+
+//Action组合特效
+	REG_CLASS_BEGIN(CActionEffectCombo)
+	REG_MEMBER_FUNC("GetFrameCount",				&CActionEffectCombo::getFrameCount)
+	REG_MEMBER_FUNC("GetTotalTime",					&CActionEffectCombo::getTotalTimeLua)
+	REG_CLASS_END(CActionEffectCombo)
+
+//Action组合特效管理器
+	REG_CLASS_BEGIN(CActionEffectComboMgr)
+	REG_FUNC("getActionEffectCombo",				&CActionEffectComboMgr::getActionEffectComboLua)
+	REG_CLASS_END(CActionEffectComboMgr)
+
+//注册数据库接口
+
+	REG_CLASS_BEGIN(DBRow)
+	REG_MEMBER_FUNC("GetCount",						&DBRow::getCount)
+	REG_MEMBER_FUNC("GetStr",						&DBRow::getAt_S)
+	REG_MEMBER_FUNC("GetNum",						&DBRow::getAt_F)
+	REG_MEMBER_FUNC("GetStrByName",					&DBRow::getByName_S)
+	REG_MEMBER_FUNC("GetNumByName",					&DBRow::getByName_F)
+	REG_CLASS_END(DBRow)
+
+
+	REG_CLASS_BEGIN(DBTable)
+	REG_MEMBER_FUNC("GetId",						&DBTable::getId)
+	REG_MEMBER_FUNC("GetName",						&DBTable::getName)
+	REG_MEMBER_FUNC("GetRowCount",					&DBTable::getRowCount)
+	REG_MEMBER_FUNC("GetColCount",					&DBTable::getColCount)
+	REG_MEMBER_FUNC("GetRow",						&DBTable::getRow)
+	REG_MEMBER_FUNC("FindRow",						&DBTable::findRow)
+	REG_MEMBER_FUNC("FindField",					&DBTable::findField)
+	REG_MEMBER_FUNC("GetFieldName",					&DBTable::getFieldName)
+
+//	REG_MEMBER_FUNC("GetCol_S",						&DBTable::getCol_S)
+//	REG_MEMBER_FUNC("GetCol_F",						&DBTable::getCol_F)
+//	REG_MEMBER_FUNC("GetIdList",					&DBTable::getIdList)
+
+	REG_MEMBER_FUNC("GetCell",						&DBTable::getCell)
+	REG_MEMBER_FUNC("GetCellStr",					&DBTable::getCell_S)
+	REG_MEMBER_FUNC("GetCellNum",					&DBTable::getCell_F)
+	REG_CLASS_END(DBTable)
+
+//注册新UI接口
+
+	//容器类
+	REG_SUBCLASS_BEGIN(NDUIXContainer,NDUILayer)
+//	REG_CONSTRUCT("createNDUIXContainer")
+//	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("GetViewCount",					&NDUIXContainer::getViewCount)
+	REG_MEMBER_FUNC("GetViewAt",					&NDUIXContainer::getViewAt)
+	REG_MEMBER_FUNC("FindView",						&NDUIXContainer::findView)
+	REG_MEMBER_FUNC("AddView",						&NDUIXContainer::addView)
+	REG_MEMBER_FUNC("RemoveView",					&NDUIXContainer::removeView)
+	REG_MEMBER_FUNC("ClearView",					&NDUIXContainer::clearView)
+	REG_MEMBER_FUNC("IsHorz",						&NDUIXContainer::isHorz)
+	REG_MEMBER_FUNC("IsVert",						&NDUIXContainer::isVert)
+	REG_MEMBER_FUNC("SetMarginX",					&NDUIXContainer::setMarginX)
+	REG_MEMBER_FUNC("SetMarginY",					&NDUIXContainer::setMarginY)
+	REG_MEMBER_FUNC("SetSpacing",					&NDUIXContainer::setSpacing)
+	REG_MEMBER_FUNC("SetSelectMode",				&NDUIXContainer::setSelectMode)
+	REG_MEMBER_FUNC("GetSelectMode",				&NDUIXContainer::getSelectMode)
+	REG_MEMBER_FUNC("SelectView",					&NDUIXContainer::selectView)
+	REG_MEMBER_FUNC("ClearSelection",				&NDUIXContainer::clearSelection)
+	REG_MEMBER_FUNC("SetSingleMode",				&NDUIXContainer::setSingleMode)
+	REG_MEMBER_FUNC("MoveToPrevView",				&NDUIXContainer::moveToPrevView)
+	REG_MEMBER_FUNC("MoveToNextView",				&NDUIXContainer::moveToNextView)
+	REG_MEMBER_FUNC("SetActiveView",				&NDUIXContainer::setActiveView)
+	REG_MEMBER_FUNC("SetFirstVisibleIndex",			&NDUIXContainer::setFirstVisibleIndex)
+	REG_MEMBER_FUNC("SetLastVisibleIndex",			&NDUIXContainer::setLastVisibleIndex)
+	REG_MEMBER_FUNC("MoveToFirst",					&NDUIXContainer::moveToFirst)
+	REG_MEMBER_FUNC("MoveToLast",					&NDUIXContainer::moveToLast)
+	REG_MEMBER_FUNC("SetBgPic",						&NDUIXContainer::setBgPic)
+	REG_CLASS_END(NDUIXContainer)
+
+	//横向列表
+	REG_SUBCLASS_BEGIN(NDUIXListBoxHorz,NDUIXContainer)
+	REG_CONSTRUCT("createNDUIXListBoxHorz")
+	REG_DESTRUCT("Free")
+	REG_CLASS_END(NDUIXListBoxHorz)
+
+	//纵向列表
+	REG_SUBCLASS_BEGIN(NDUIXListBoxVert,NDUIXContainer)
+	REG_CONSTRUCT("createNDUIXListBoxVert")
+	REG_DESTRUCT("Free")
+	REG_CLASS_END(NDUIXListBoxVert)
+
+	//表格
+	REG_SUBCLASS_BEGIN(NDUIXTable,NDUIXContainer)
+	REG_CONSTRUCT("createNDUIXTable")
+	REG_DESTRUCT("Free")
+	REG_CLASS_END(NDUIXTable)
+
+	//视图（容器子项）
+	REG_SUBCLASS_BEGIN(NDUIXView,NDUILayer)
+	REG_CONSTRUCT("createNDUIXView")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("SetViewSize",					&NDUIXView::setViewSize)
+	REG_MEMBER_FUNC("SetViewSizeWH",				&NDUIXView::setViewSizeWH)
+	REG_MEMBER_FUNC("GetViewSize",					&NDUIXView::getViewSize)
+	REG_MEMBER_FUNC("SetSelected",					&NDUIXView::setSelectedWrapper)
+	REG_MEMBER_FUNC("IsSelected",					&NDUIXView::isSelected)
+	REG_MEMBER_FUNC("SetMaskImage",					&NDUIXView::setMaskImage)
+	REG_MEMBER_FUNC("EnableSelImage",				&NDUIXView::enableSelImage)
+
+//注册杂类
+
+//玩家信息保存
+	REG_CLASS_BEGIN(UserConfig)
+	REG_FUNC("GetUserConfig",						&UserConfig::getUserConfig)
+	REG_FUNC("GetUID",								&UserConfig::getUID)
+	REG_FUNC("SetUID",								&UserConfig::setUID)
+	REG_MEMBER_FUNC("Get",							&UserConfig::get)
+	REG_MEMBER_FUNC("GetInt",						&UserConfig::getInt)
+	REG_MEMBER_FUNC("GetFloat",						&UserConfig::getFloat)
+	REG_MEMBER_FUNC("Set",							&UserConfig::set)
+	REG_MEMBER_FUNC("SetInt",						&UserConfig::setInt)
+	REG_MEMBER_FUNC("SetFloat",						&UserConfig::setFloat)
+	REG_MEMBER_FUNC("Save",							&UserConfig::save)
+	REG_CLASS_END(UserConfig)
+
+//游戏配置
+	REG_CLASS_BEGIN(GameConfig)
+	REG_FUNC("GetGameConfig",						&GameConfig::getGameConfig)
+	REG_MEMBER_FUNC("GetServer",					&GameConfig::getServer)
+	REG_MEMBER_FUNC("GetPort",						&GameConfig::getPort)
+	REG_MEMBER_FUNC("GetUrl",						&GameConfig::getUrl)
+	REG_MEMBER_FUNC("GetLocale",					&GameConfig::getLocale)
+	REG_MEMBER_FUNC("GetStr",						&GameConfig::get)
+	REG_MEMBER_FUNC("GetNum",						&GameConfig::getInt)
+	REG_MEMBER_FUNC("GetBool",						&GameConfig::getBool)
+	REG_CLASS_END(GameConfig)
+
+//姓名配置
+	REG_CLASS_BEGIN(NameConfig)
+	REG_FUNC("GetRandomMaleName",					&NameConfig::GetRandomMaleName)
+	REG_FUNC("GetRandomFemaleName",					&NameConfig::GetRandomFemaleName)
+	REG_FUNC("GetNameID",							&NameConfig::GetNameID)
+	REG_CLASS_END(NameConfig)
+
+//子弹配置
+	REG_CLASS_BEGIN(BulletConfig)
+//	REG_CONSTRUCT("createBulletConfig")
+//	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("GetAni",						&BulletConfig::getAni)
+	REG_MEMBER_FUNC("GetShootAni",					&BulletConfig::getShootAni)
+	REG_MEMBER_FUNC("GetSoundSound",				&BulletConfig::getSoundSound)
+	REG_MEMBER_FUNC("GetFlySound",					&BulletConfig::getFlySound)
+	REG_MEMBER_FUNC("GetFlyAction",					&BulletConfig::getFlyAction)
+	REG_MEMBER_FUNC("GetExplodeAni",				&BulletConfig::getExplodeAni)
+	REG_MEMBER_FUNC("GetExplodeSound",				&BulletConfig::getExplodeSound)
+	REG_MEMBER_FUNC("GetWidth",						&BulletConfig::getWidth)
+	REG_MEMBER_FUNC("GetStartOffset",				&BulletConfig::getStartOffset)
+	REG_MEMBER_FUNC("GetSubDistance",				&BulletConfig::getSubDistance)
+	REG_CLASS_END(BulletConfig)
+
+//子弹配置管理器
+	REG_CLASS_BEGIN(BulletConfigMgr)
+	REG_FUNC("GetBullet",							&BulletConfigMgr::getBullet)
+	REG_CLASS_END(BulletConfigMgr)
+
+	REG_CLASS_BEGIN(NDHttpManager)
+	REG_FUNC("SendRequest",							&NDHttpManager::SendRequest)
+	REG_CLASS_END(NDHttpManager)
+	
+	//IWait
+	REG_CLASS_BEGIN(IWait)
+//	REG_CONSTRUCT("createIWait")
+//	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("SetWaitBegin",					&IWait::setWaitBegin)
+	REG_MEMBER_FUNC("SetWaitEnd",					&IWait::setWaitEnd)
+	REG_CLASS_END(IWait)
+
+
+//CommandX
+	REG_SUBCLASS_BEGIN(CommandX,IWait)
+	REG_CONSTRUCT("createCommandX")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("GetVarEnv",					&CommandX::getVarEnv)
+	REG_MEMBER_FUNC("SetDelay",						&CommandX::setDelay)
+	REG_MEMBER_FUNC("SetSpecialFlag",				&CommandX::setSpecialFlag)
+	REG_MEMBER_FUNC("GetSpecialFlag",				&CommandX::getSpecialFlag)
+	REG_CLASS_END(CommandX)
+
+
+//CommandInstant
+	REG_SUBCLASS_BEGIN(CommandInstant,CommandX)
+	REG_CONSTRUCT("createCommandInstant")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("Dumb",							&CommandInstant::dumb)
+	REG_CLASS_END(CommandInstant)
+
+
+//CommandInterval
+	REG_SUBCLASS_BEGIN(CommandInterval,CommandX)
+	REG_CONSTRUCT("createCommandInterval")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("Idle",							&CommandInterval::idle)
+	REG_CLASS_END(CommandInterval)
+
+
+//CommandInstant_Misc
+	REG_SUBCLASS_BEGIN(CommandInstant_Misc,CommandInstant)
+	REG_CONSTRUCT("createCommandInstant_Misc")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("SetVisible",					&CommandInstant_Misc::setVisible)
+	REG_MEMBER_FUNC("BattleSortZ",					&CommandInstant_Misc::battleSortZ)
+	REG_MEMBER_FUNC("SetZOrderAtTop",				&CommandInstant_Misc::setZOrderAtTop)
+	REG_CLASS_END(CommandInstant_Misc)
+
+//CommandInterval_Misc
+	REG_SUBCLASS_BEGIN(CommandInterval_Misc,CommandInterval)
+	REG_CONSTRUCT("createCommandInterval_Misc")
+	REG_DESTRUCT("Free")
+//	REG_MEMBER_FUNC("SetVisible",					&CommandInterval_Misc::setVisible)
+	REG_CLASS_END(CommandInterval_Misc)
+
+//CommandPlayerJump
+	REG_SUBCLASS_BEGIN(CommandPlayerJump,CommandInterval)
+	REG_CONSTRUCT("createCommandPlayerJump")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("TurnLeft",						&CommandPlayerJump::turnLeft)
+ 	REG_MEMBER_FUNC("TurnRight",					&CommandPlayerJump::turnRight)
+ 	REG_MEMBER_FUNC("TurnUp",						&CommandPlayerJump::turnUp)
+ 	REG_MEMBER_FUNC("TurnDown",						&CommandPlayerJump::turnDown)
+	REG_MEMBER_FUNC("Jump",							&CommandPlayerJump::jumpLua)
+	REG_CLASS_END(CommandPlayerJump)
+	
+
+//特效命令
+	REG_SUBCLASS_BEGIN(CommandEffect,CommandInterval)
+	REG_CONSTRUCT("createCommandEffect")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("AddBgEffect",					&CommandEffect::addBgEffect)
+	REG_MEMBER_FUNC("AddFgEffect",					&CommandEffect::addFgEffect)
+	REG_MEMBER_FUNC("DelEffect",					&CommandEffect::delEffect)
+	REG_MEMBER_FUNC("ClrEffect",					&CommandEffect::clrEffect)
+
+	REG_MEMBER_FUNC("AddHudEffect",					&CommandEffect::addHudEffect)
+	REG_MEMBER_FUNC("DelHudEffect",					&CommandEffect::delHudEffect)
+	REG_MEMBER_FUNC("ClrHudEffect",					&CommandEffect::clrHudEffect)
+
+	REG_MEMBER_FUNC("AddGroundEffect",				&CommandEffect::addGroundEffect)
+	REG_MEMBER_FUNC("DelGroundEffect",				&CommandEffect::delGroundEffect)
+	REG_MEMBER_FUNC("ClrGroundEffect",				&CommandEffect::clrGroundEffect)
+
+	REG_MEMBER_FUNC("AddActionEffect",				&CommandEffect::addActionEffect)
+	REG_MEMBER_FUNC("DelActionEffect",				&CommandEffect::delActionEffect)
+	REG_MEMBER_FUNC("ClrActionEffect",				&CommandEffect::clrActionEffect)
+	REG_CLASS_END(CommandEffect)
+
+//CommandPlayer
+	REG_SUBCLASS_BEGIN(CommandPlayer,CommandInterval)
+	REG_CONSTRUCT("createCommandPlayer")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("Standby",						&CommandPlayer::standby)
+	REG_MEMBER_FUNC("Run",							&CommandPlayer::run)
+	REG_MEMBER_FUNC("Atk",							&CommandPlayer::atk)
+	REG_MEMBER_FUNC("Sing"	,						&CommandPlayer::sing)
+	REG_MEMBER_FUNC("Skill",						&CommandPlayer::skill)
+	REG_MEMBER_FUNC("Defence",						&CommandPlayer::defence)
+	REG_MEMBER_FUNC("Hurt",							&CommandPlayer::hurt)
+	REG_MEMBER_FUNC("Dead",							&CommandPlayer::dead)
+	REG_MEMBER_FUNC("PlayAnim",						&CommandPlayer::playAnim)
+	REG_CLASS_END(CommandPlayer)
+
+//命令
+	REG_SUBCLASS_BEGIN(CommandLua,CommandInstant)
+	REG_CONSTRUCT("createCommandLua")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("SetCmd",						&CommandLua::setCmd)
+	REG_CLASS_END(CommandLua)
+
+
+//声音
+	REG_SUBCLASS_BEGIN(CommandSoundMusicVideo,CommandInstant)
+	REG_CONSTRUCT("createCommandSoundMusicVideo")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("PlaySound",					&CommandSoundMusicVideo::playSound)
+	REG_MEMBER_FUNC("PlaySoundByName",				&CommandSoundMusicVideo::playSoundByName)
+	REG_MEMBER_FUNC("PauseSound",					&CommandSoundMusicVideo::pauseSound)
+	REG_MEMBER_FUNC("ResumeSound",					&CommandSoundMusicVideo::resumeSound)
+	REG_MEMBER_FUNC("StopSound",					&CommandSoundMusicVideo::stopSound)
+
+	REG_MEMBER_FUNC("PauseAllSound",				&CommandSoundMusicVideo::pauseAllSound)
+	REG_MEMBER_FUNC("ResumeAllSound",				&CommandSoundMusicVideo::resumeAllSound)
+	REG_MEMBER_FUNC("StopAllSound",					&CommandSoundMusicVideo::stopAllSound)
+
+	REG_MEMBER_FUNC("PlayMusic",					&CommandSoundMusicVideo::playMusic)
+	REG_MEMBER_FUNC("PauseMusic",					&CommandSoundMusicVideo::pauseMusic)
+	REG_MEMBER_FUNC("ResumeMusic",					&CommandSoundMusicVideo::resumeMusic)
+	REG_MEMBER_FUNC("StopMusic",					&CommandSoundMusicVideo::stopMusic)
+
+	REG_MEMBER_FUNC("PlayVideo",					&CommandSoundMusicVideo::playVideo)
+	REG_MEMBER_FUNC("SetSoundVolume",				&CommandSoundMusicVideo::SetSoundVolume)
+	REG_MEMBER_FUNC("SetMusicVolume",				&CommandSoundMusicVideo::SetMusicVolume)
+	REG_CLASS_END(CommandSoundMusicVideo)
+
+
+//CommandSequenceBase
+	REG_SUBCLASS_BEGIN(CommandSequenceBase,IWait)
+//	REG_CONSTRUCT("createCommandSequenceBase")
+//	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("IsSerial",						&CommandSequenceBase::isSerial)
+	REG_MEMBER_FUNC("IsParallel",					&CommandSequenceBase::isParallel)
+	REG_MEMBER_FUNC("HasCommand",					&CommandSequenceBase::hasCommand)
+	REG_MEMBER_FUNC("AddCommand",					&CommandSequenceBase::addCommand)
+	REG_MEMBER_FUNC("ClrCommand",					&CommandSequenceBase::clrCommand)
+	REG_MEMBER_FUNC("GetCommandCount",				&CommandSequenceBase::getCommandCount)
+	REG_MEMBER_FUNC("GetCommand",					&CommandSequenceBase::getCommand)
+	REG_MEMBER_FUNC("GetSpecialCmd",				&CommandSequenceBase::getSpecialCmd)
+	REG_CLASS_END(CommandSequenceBase)
+
+
+//CommandSequenceSerial
+	REG_SUBCLASS_BEGIN(CommandSequenceSerial,CommandSequenceBase)
+//	REG_CONSTRUCT("createCommandSequenceSerial")
+//	REG_DESTRUCT("Free")
+	REG_CLASS_END(CommandSequenceSerial)
+
+
+//CommandSequenceParallel
+	REG_SUBCLASS_BEGIN(CommandSequenceParallel,CommandSequenceBase)
+//	REG_CONSTRUCT("createCommandSequenceParallel")
+//	REG_DESTRUCT("Free")
+	REG_CLASS_END(CommandSequenceParallel)
+
+
+//SequenceBatch
+	REG_SUBCLASS_BEGIN(SequenceBatch,IWait)
+//	REG_CONSTRUCT("createSequenceBatch")
+//	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("AddSerialSequence",			&SequenceBatch::addSerialSequence)
+	REG_MEMBER_FUNC("AddParallelSequence",			&SequenceBatch::addParallelSequence)
+	REG_MEMBER_FUNC("GetSequence",					&SequenceBatch::getSequence)
+	REG_MEMBER_FUNC("GetSequenceCount",				&SequenceBatch::getSequenceCount)
+	REG_MEMBER_FUNC("ClrSequence",					&SequenceBatch::clrSequence)
+	REG_MEMBER_FUNC("GetDefaultSequenceSerial",		&SequenceBatch::getDefaultSequenceSerial)
+	REG_MEMBER_FUNC("GetDefaultSequenceParallel",	&SequenceBatch::getDefaultSequenceParallel)
+	REG_MEMBER_FUNC("GetSpecialCmd",				&SequenceBatch::getSpecialCmd)
+	REG_CLASS_END(SequenceBatch)
+
+
+//ShowBase
+	REG_CLASS_BEGIN(ShowBase)
+	REG_CONSTRUCT("createShowBase")
+	REG_DESTRUCT("Free")
+	REG_MEMBER_FUNC("GetSequenceBatchCount",		&ShowBase::getSequenceBatchCount)
+	REG_MEMBER_FUNC("AddSequenceBatch",				&ShowBase::addSequenceBatch)
+	REG_MEMBER_FUNC("GetSequenceBatch",				&ShowBase::getSequenceBatch)
+	REG_MEMBER_FUNC("GetDefaultSequenceBatch",		&ShowBase::getDefaultSequenceBatch)
+	REG_MEMBER_FUNC("GetDefaultSequenceSerial",		&ShowBase::getDefaultSequenceSerial)
+	REG_MEMBER_FUNC("GetDefaultSequenceParallel",	&ShowBase::getDefaultSequenceParallel)
+	REG_MEMBER_FUNC("Stop",							&ShowBase::stop)
+	REG_MEMBER_FUNC("EnableTick",					&ShowBase::enableTick)
+	REG_CLASS_END(ShowBase)
+
+//ShowBattle
+	REG_SUBCLASS_BEGIN(ShowBattle,ShowBase)
+	REG_FUNC("GetBattleShow",						&ShowBattle::instancePtr)
+	REG_CLASS_END(ShowBattle)
+
+
+//ShowPlayerJump
+	REG_SUBCLASS_BEGIN(ShowPlayerJump,ShowBase)
+	REG_CLASS_END(ShowPlayerJump)
