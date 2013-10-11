@@ -47,7 +47,7 @@ function p:AddFighters( uiArray )
 		end
 		
 		local f = x_fighter:new();
-		self.fighters[#self.fighters+1] = f;
+		self.fighters[#self.fighters + 1] = f;
 		
 		f:Init( uiTag, node, self.idCamp );
 		self:SetFighterConfig( f, i );
@@ -55,10 +55,10 @@ function p:AddFighters( uiArray )
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
-			f:SetLookAt( E_LOOKAT_RIGHT );
+			f:SetLookAt( E_LOOKAT_LEFT );
 		else
 			node:SetZOrder( E_BATTLE_Z_ENEMY_FIGHTER );
-			f:SetLookAt( E_LOOKAT_LEFT );
+			f:SetLookAt( E_LOOKAT_RIGHT );
 		end
 	end
 end
@@ -75,7 +75,7 @@ function p:SetFighterConfig( f, idx )
 	end
 	
 	if idx==1 then
-		f:UseConfig( "blue_devil" );
+		f:UseConfig( "fly_dragon" );
 		f.petTag = PET_BLUE_DEVIL_TAG;
 	elseif idx==2 then
 		f:UseConfig( "fly_dragon" );
@@ -85,11 +85,11 @@ function p:SetFighterConfig( f, idx )
 		--f.petTag = PET_BLUE_DEVIL_TAG;
 		
 	elseif idx==3 then
-		f:UseConfig( "blue_devil" );
-		f.petTag = PET_BLUE_DEVIL_TAG;
+		f:UseConfig( "fly_dragon" );
+		f.petTag = PET_FLY_DRAGON_TAG;
 	elseif idx==4 then
-		f:UseConfig( "mining" );
-		f.petTag = PET_MINING_TAG;
+		f:UseConfig( "fly_dragon" );
+		f.petTag = PET_FLY_DRAGON_TAG;
 		
 		--f:UseConfig( "blue_devil" );
 		--f.petTag = PET_BLUE_DEVIL_TAG;
