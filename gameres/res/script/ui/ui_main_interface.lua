@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
+p.ID_CTRL_TEMP_BUTTON_MAP				 = 13;	--临时地图按钮
 p.ID_CTRL_MAIN_LIST_ACT				   = 12;	--活动&广告框
 p.ID_CTRL_TEXT_11						       = 11;
 p.ID_CTRL_MAIN_EXP_ACT				    = 9;	--玩家活力
