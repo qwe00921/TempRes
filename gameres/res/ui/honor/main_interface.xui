@@ -3,7 +3,7 @@
 Width=960
 Height=640
 
-[MAIN_CTRL_PICTURE_BG]
+[CTRL_MAIN_PICTURE_BG]
 Type=1
 Tag=1
 Rect=-1 0 960 640
@@ -11,7 +11,7 @@ Remark=背景
 NormalFile=.\res\image\ui_honor\main_interface\main_bg.png
 NormalFileUV=0 0 960 640
 
-[MAIN_CTRL_BUTTON_GIFT]
+[CTRL_MAIN_BUTTON_GIFT]
 Type=2
 Tag=24
 Rect=240 508 113 114
@@ -22,7 +22,7 @@ Remark=礼包图片
 NormalFile=.\res\image\ui_honor\main_interface\main_gift.png
 NormalFileUV=0 0 112 113
 
-[MAIN_CTRL_BUTTON_USERINFO]
+[CTRL_MAIN_BUTTON_USERINFO]
 Type=2
 Tag=25
 Rect=2 477 224 163
@@ -32,12 +32,12 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui_honor\main_interface\main_userinfo_s.png
 NormalFileUV=0 0 224 163
 
-[MAIN_CTRL_CUSTOMIZE_LEVEL]
+[CTRL_MAIN_CUSTOMIZE_LEVEL]
 Type=25
 Tag=27
 Rect=401 60 522 430
 
-[MAIN_CTRL_BUTTON_MEMU]
+[CTRL_MAIN_BUTTON_MEMU]
 Type=2
 Tag=28
 Rect=517 557 160 73
@@ -48,7 +48,7 @@ Remark=功能弹出按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_menu.png
 NormalFileUV=0 0 150 68
 
-[MAIN_CTRL_PICTURE_SHOP]
+[CTRL_MAIN_PICTURE_SHOP]
 Type=1
 Tag=26
 Rect=860 10 90 89
@@ -56,7 +56,7 @@ Remark=商城按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_shop.png
 NormalFileUV=0 0 90 89
 
-[MAIN_TEXT_LEVEL]
+[CTRL_MAIN_TEXT_LEVEL]
 Type=4
 Tag=7
 Rect=99 523 87 27
@@ -67,7 +67,7 @@ TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=玩家等级
 
-[MAIN_EXP_EXP]
+[CTRL_MAIN_EXP_EXP]
 Type=9
 Tag=8
 Rect=25 554 180 20
@@ -78,7 +78,7 @@ Remark=玩家经验值
 NormalFile=.\res\image\ui_honor\main_interface\main_exp.png
 NormalFileUV=0 0 160 15
 
-[MAIN_EXP_ACT]
+[CTRL_MAIN_EXP_ACT]
 Type=9
 Tag=9
 Rect=24 607 180 20
@@ -100,7 +100,7 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[MAIN_LIST_ACT]
+[CTRL_MAIN_LIST_ACT]
 Type=8
 Tag=12
 Rect=20 59 366 417
