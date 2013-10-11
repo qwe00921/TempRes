@@ -67,7 +67,7 @@ Rect=265 540 200 65
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\login\logyin_button.png
+NormalFile=.\res\image\ui_honor\login\logyin_button.png
 NormalFileUV=0 0 201 65
 
 [CTRL_LOGIN_CTRL_BUTTON_CREATEID]
@@ -77,13 +77,13 @@ Rect=492 540 200 65
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\login\logyin_button.png
+NormalFile=.\res\image\ui_honor\login\logyin_button.png
 NormalFileUV=0 0 201 65
 
 [CTRL_LOGIN_CTRL_PICTURE_LOGIN]
 Type=1
 Tag=9
-Rect=266 540 200 65
+Rect=265 540 200 65
 Text=登陆游戏
 TextTradition=登陸游戲
 Remark=登陆按钮
