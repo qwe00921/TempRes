@@ -142,7 +142,7 @@ image\pet\fly_dragon\death_left.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay
 image\pet\fly_dragon\death_left.png  @cut(1,2)  @use(7,1)    @offset(0,-0)  @time=2 @scale=0.8
 
 [fly_dragon_hurt_l]
-image\pet\fly_dragon\hurt_left.png   @cut(1,11)  @time=0.15   @offset(0,0) @stay @scale=0.8
+image\pet\fly_dragon\hurt_left.png   @cut(1,10)  @time=0.08   @offset(0,0) @stay @scale=0.8
 
 [fly_dragon_standby_l]
 image\pet\fly_dragon\standby_left.png @cut(1,2) @time=0.15   @loop @scale=0.9
@@ -160,7 +160,7 @@ image\pet\fly_dragon\death_right.png  @cut(1,2)  @time=0.15   @offset(0,-0) @sta
 image\pet\fly_dragon\death_right.png  @cut(1,2)  @use(7,1)    @offset(0,-0)  @time=2 @scale=0.9
 
 [fly_dragon_hurt_r]
-image\pet\fly_dragon\hurt_right.png   @cut(1,11)  @time=0.15   @offset(0,0) @stay @scale=0.7
+image\pet\fly_dragon\hurt_right.png   @cut(1,10)  @time=0.08   @offset(0,0) @stay @scale=0.7
 
 [fly_dragon_standby_r]
 image\pet\fly_dragon\standby_right.png @cut(1,2) @time=0.15   @loop	@scale=0.8

@@ -34,9 +34,9 @@ function p:Init( parentNode, in_life, in_lifeMax )
 	local parentSize = parentNode:GetFrameSize();
 	local picBgSize = picBg:GetSize();
 	
-	local w = picBgSize.w;
+	local w = picBgSize.w - 20;
 	local h = picBgSize.h;
-	local x = (parentSize.w - w)/2;
+	local x = (parentSize.w - w) / 2;
 	local y = -h * 0.8;
 	--local x = (1.0 - rate) * 0.5 * w;
 	--local y = -h * 0.8;
@@ -46,7 +46,7 @@ function p:Init( parentNode, in_life, in_lifeMax )
 	self.node:SetFgTransform( 1, 1, 0, 0 );
 	
 	local pos=self.node:GetFramePos();
-	pos.y=pos.y-40;
+	pos.y = pos.y + 20;
 	self.node:SetFramePosXY(pos.x, pos.y);
 	
 	--Ãı Ù–‘
