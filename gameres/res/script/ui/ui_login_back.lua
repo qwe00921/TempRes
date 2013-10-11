@@ -4,4 +4,4 @@
 --------------------------------------------------------------
 ui_login_back = {};
 local p =  ui_login_back;
-p.ID_LOGIN_BG							          = 1;
+p.ID_CTRL_LOGIN_BG					       = 1;

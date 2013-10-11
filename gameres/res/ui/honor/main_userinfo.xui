@@ -3,14 +3,14 @@
 Width=960
 Height=640
 
-[MAIN_PICTURE_UERINFO_M]
+[CTRL_MAIN_PICTURE_UERINFO_M]
 Type=1
 Tag=16
 Rect=288 109 471 280
 NormalFile=.\res\image\ui_honor\main_interface\main_userinfo_m.png
 NormalFileUV=0 0 470 333
 
-[MAIN_TEXT_COIN]
+[CTRL_MAIN_TEXT_COIN]
 Type=4
 Tag=17
 Rect=560 141 155 34
@@ -21,7 +21,7 @@ TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=代币数量
 
-[MAIN_TEXT_MONEY]
+[CTRL_MAIN_TEXT_MONEY]
 Type=4
 Tag=18
 Rect=561 195 154 34
@@ -32,7 +32,7 @@ TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=金币数量
 
-[MAIN_TEXT_NAME2]
+[CTRL_MAIN_TEXT_NAME2]
 Type=4
 Tag=4
 Rect=549 247 192 33
@@ -43,7 +43,7 @@ TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=玩家称号
 
-[MAIN_TEXT_CARDNUM]
+[CTRL_MAIN_TEXT_CARDNUM]
 Type=4
 Tag=5
 Rect=567 292 146 32
@@ -54,7 +54,7 @@ TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=玩家持有卡牌数量及上限
 
-[MAIN_TEXT_ITEMNUM]
+[CTRL_MAIN_TEXT_ITEMNUM]
 Type=4
 Tag=7
 Rect=567 340 146 32
