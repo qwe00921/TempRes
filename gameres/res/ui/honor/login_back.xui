@@ -3,7 +3,7 @@
 Width=960
 Height=640
 
-[LOGIN_BG]
+[CTRL_LOGIN_BG]
 Type=1
 Tag=1
 Rect=0 0 960 640

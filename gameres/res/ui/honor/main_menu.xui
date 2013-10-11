@@ -1,9 +1,9 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
 
-[MAIN_PICTURE_MENUBG]
+[CTRL_MAIN_PICTURE_MENUBG]
 Type=1
 Tag=8
 Rect=221 494 740 148
@@ -11,7 +11,7 @@ Remark=目录背景
 NormalFile=.\res\image\ui_honor\main_interface\main_menu_m.png
 NormalFileUV=0 0 741 148
 
-[MAIN_BUTTON_TEAM]
+[CTRL_MAIN_BUTTON_TEAM]
 Type=2
 Tag=10
 Rect=240 527 110 108
@@ -22,7 +22,7 @@ Remark=队伍按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_button_team.png
 NormalFileUV=0 0 111 109
 
-[MAIN_BUTTON_FORMATION]
+[CTRL_MAIN_BUTTON_FORMATION]
 Type=2
 Tag=11
 Rect=360 527 110 106
@@ -33,7 +33,7 @@ Remark=阵型按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_button_formation.png
 NormalFileUV=0 0 111 107
 
-[MAIN_BUTTON_ITEM]
+[CTRL_MAIN_BUTTON_ITEM]
 Type=2
 Tag=12
 Rect=479 527 110 109
@@ -44,7 +44,7 @@ Remark=物品按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_button_item.png
 NormalFileUV=0 0 111 110
 
-[MAIN_BUTTON_PVP]
+[CTRL_MAIN_BUTTON_PVP]
 Type=2
 Tag=13
 Rect=597 527 110 111
@@ -55,7 +55,7 @@ Remark=pvp按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_button_pvp.png
 NormalFileUV=0 0 111 112
 
-[MAIN_BUTTON_FRIENDS]
+[CTRL_MAIN_BUTTON_FRIENDS]
 Type=2
 Tag=14
 Rect=714 527 110 110
@@ -66,7 +66,7 @@ Remark=好友按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_button_friend.png
 NormalFileUV=0 0 113 113
 
-[MAIN_BUTTON_OTHER]
+[CTRL_MAIN_BUTTON_OTHER]
 Type=2
 Tag=15
 Rect=834 527 110 108

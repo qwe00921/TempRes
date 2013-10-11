@@ -1,16 +1,16 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
 
-[LOGIN_MAIN_BG]
+[CTRL_LOGIN_MAIN_BG]
 Type=1
 Tag=1
 Rect=165 306 630 323
 NormalFile=.\res\image\ui_honor\login\login_bg2.png
 NormalFileUV=0 0 629 322
 
-[LOGIN_TEXT_ID]
+[CTRL_LOGIN_TEXT_ID]
 Type=4
 Tag=2
 Rect=282 351 108 61
@@ -21,7 +21,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=提示文字（输入账号）
 
-[LOGIN__BUTTON_ID]
+[CTRL_LOGIN__BUTTON_ID]
 Type=2
 Tag=7
 Rect=412 352 320 60
@@ -30,7 +30,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=玩家选择账号按钮
 
-[LOGIN_TXTSEVER]
+[CTRL_LOGIN_TXTSEVER]
 Type=4
 Tag=9
 Rect=237 445 153 60
@@ -41,7 +41,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=提示文字（选择服务器）
 
-[LOGIN_TEXT_IDINPUT]
+[CTRL_LOGIN_TEXT_IDINPUT]
 Type=4
 Tag=11
 Rect=410 351 320 60
@@ -50,7 +50,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=玩家账号选择信息
 
-[LOGIN_BUTTON_SEVERSELECT]
+[CTRL_LOGIN_BUTTON_SEVERSELECT]
 Type=2
 Tag=13
 Rect=410 445 360 60
@@ -59,7 +59,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=玩家选择服务器按钮
 
-[LOGIN_TEXT_SEVERSELECT]
+[CTRL_LOGIN_TEXT_SEVERSELECT]
 Type=4
 Tag=14
 Rect=410 445 360 60
@@ -68,7 +68,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=玩家服务器选择信息
 
-[LOGIN_BUTTON_STARTGAME]
+[CTRL_LOGIN_BUTTON_STARTGAME]
 Type=2
 Tag=15
 Rect=380 540 200 65

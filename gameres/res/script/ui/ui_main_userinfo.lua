@@ -4,9 +4,9 @@
 --------------------------------------------------------------
 ui_main_userinfo = {};
 local p =  ui_main_userinfo;
-p.ID_MAIN_TEXT_ITEMNUM				    = 7;	--玩家持有物品数量及上限
-p.ID_MAIN_TEXT_CARDNUM				    = 5;	--玩家持有卡牌数量及上限
-p.ID_MAIN_TEXT_NAME2					     = 4;	--玩家称号
-p.ID_MAIN_TEXT_MONEY					     = 18;	--金币数量
-p.ID_MAIN_TEXT_COIN					      = 17;	--代币数量
-p.ID_MAIN_PICTURE_UERINFO_M			= 16;
+p.ID_CTRL_MAIN_TEXT_ITEMNUM			= 7;	--玩家持有物品数量及上限
+p.ID_CTRL_MAIN_TEXT_CARDNUM			= 5;	--玩家持有卡牌数量及上限
+p.ID_CTRL_MAIN_TEXT_NAME2				 = 4;	--玩家称号
+p.ID_CTRL_MAIN_TEXT_MONEY				 = 18;	--金币数量
+p.ID_CTRL_MAIN_TEXT_COIN				  = 17;	--代币数量
+p.ID_CTRL_MAIN_PICTURE_UERINFO_M		= 16;

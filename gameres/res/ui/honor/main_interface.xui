@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
@@ -99,3 +99,9 @@ TextTradition=333/333
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[MAIN_LIST_ACT]
+Type=8
+Tag=12
+Rect=20 59 366 417
+Remark=活动&广告框

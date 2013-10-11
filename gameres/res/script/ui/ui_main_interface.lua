@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
+p.ID_MAIN_LIST_ACT					       = 12;	--活动&广告框
 p.ID_CTRL_TEXT_11						       = 11;
 p.ID_MAIN_EXP_ACT						       = 9;	--玩家活力
 p.ID_MAIN_EXP_EXP						       = 8;	--玩家经验值
