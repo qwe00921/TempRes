@@ -38,6 +38,7 @@ DoFile("login/dlg_create_player.lua");
 DoFile("mainui/mainui.lua");
 DoFile("mainui/hud.lua");
 DoFile("mainui/billboard.lua"); --跑马灯
+DoFile("mainui/maininterface.lua")
 
 --地图
 DoFile("map/world_map.lua");
@@ -125,3 +126,12 @@ DoFile("achievement/dlg_achievement.lua");
 DoFile("drama/dlg_drama.lua");
 DoFile("drama/drama_mgr.lua");
 DoFile("drama/drama_page.lua");
+
+--玩家信息界面
+DoFile("userinfo/define.lua");
+
+--功能菜单界面
+DoFile("menu/dlg_menu.lua");
+
+--广告
+DoFile("actAndad/define.lua");

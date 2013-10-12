@@ -6,6 +6,11 @@
 
 --主界面
 DoFile("ui/ui_main_ui.lua")
+DoFile("ui/ui_main_interface.lua")
+DoFile("ui/ui_main_menu.lua")
+DoFile("ui/ui_main_userinfo.lua")
+DoFile("ui/ui_main_userinfo2.lua")
+DoFile("ui/ui_main_actandad.lua")
 
 --加载所有UI
 DoFile("ui/ui_battle_boss.lua")

@@ -67,7 +67,8 @@ end
 --延时返回主界面
 function p.OnTimer_BackMainUI()
 	world_map.CloseMap();
-	mainui.ShowUI();
+	--mainui.ShowUI();
+	maininterface.ShowUI();
 end
 
 --隐藏UI
