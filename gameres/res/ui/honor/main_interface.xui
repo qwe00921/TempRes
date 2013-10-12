@@ -27,17 +27,6 @@ Type=25
 Tag=27
 Rect=401 60 522 430
 
-[CTRL_MAIN_BUTTON_MEMU]
-Type=2
-Tag=28
-Rect=517 557 160 73
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=菜单弹出按钮
-NormalFile=.\res\image\ui_honor\main_interface\main_menu.png
-NormalFileUV=0 0 150 68
-
 [CTRL_MAIN_LIST_ACT]
 Type=8
 Tag=12
@@ -47,7 +36,7 @@ Remark=活动列表
 [CTRL_TEMP_BUTTON_MAP]
 Type=2
 Tag=13
-Rect=579 175 200 228
+Rect=579 174 200 228
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

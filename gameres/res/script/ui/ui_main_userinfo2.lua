@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_main_userinfo2 = {};
 local p =  ui_main_userinfo2;
+p.ID_CTRL_MAIN_BUTTON_MENUUP			= 6;	--菜单界面弹出按钮
 p.ID_CTRL_TEXT_5						        = 5;	--文本（玩家活力值）
 p.ID_CTRL_MAIN_EXP_ACT				    = 4;	--活力条
 p.ID_CTRL_MAIN_EXP_EXP				    = 3;	--经验条

@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
@@ -59,3 +59,14 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=文本（玩家活力值）
+
+[CTRL_MAIN_BUTTON_MENUUP]
+Type=2
+Tag=6
+Rect=517 558 160 73
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=菜单界面弹出按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_menu.png
+NormalFileUV=0 0 150 68
