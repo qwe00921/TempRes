@@ -1,7 +1,16 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
+
+[CTRL_MIAN_BUTTON_DOWN]
+Type=2
+Tag=7
+Rect=0 0 960 640
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=按钮（控制目录隐藏）
 
 [CTRL_MAIN_PICTURE_BG]
 Type=1
