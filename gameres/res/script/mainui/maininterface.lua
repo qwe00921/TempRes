@@ -47,7 +47,7 @@ end
 
 --设置广告内容
 function p.ShowAchievementList()
-	local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_7);	
+	local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);	
 	for i=1, 4 do
 		local view = createNDUIXView();
 		view:Init();
@@ -75,9 +75,12 @@ function p.SetDelegate(layer)
 	local gift = GetButton(layer, ui.ID_CTRL_MAIN_BUTTON_GIFT);
 	p.SetBtn(gift);
 	
-	--进入世界地图
+	--进入世界地
 	local enterMap = GetButton(layer, ui.ID_CTRL_TEMP_BUTTON_MAP);
 	p.SetBtn(enterMap);
+	
+	local bgBtn = GetButton(layer, ui.ID_CTRL_MIAN_BUTTON_DOWN);
+	p.SetBtn(bgBtn);
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
@@ -92,6 +95,9 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			p.CloseAllPanel();
 
 			game_main.EnterWorldMap();
+		elseif ui.ID_CTRL_MIAN_BUTTON_DOWN == tag then
+			p.CloseAllPanel();
+			dlg_menu.CloseUI();
 		end
 	end
 end
@@ -107,7 +113,7 @@ function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 		if #p.adList ~= 0 then
-			local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_7);
+			local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);
 			for i, view in pairs(p.adList) do
 				if view then
 					--礼包

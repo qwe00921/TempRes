@@ -3,6 +3,15 @@
 Width=960
 Height=640
 
+[CTRL_MIAN_BUTTON_DOWN]
+Type=2
+Tag=7
+Rect=0 0 960 640
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=按钮（控制目录隐藏）
+
 [CTRL_MAIN_PICTURE_BG]
 Type=1
 Tag=1
@@ -49,7 +58,7 @@ Remark=商城按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_shop.png
 NormalFileUV=0 0 90 89
 
-[CTRL_VERTICAL_LIST_7]
+[CTRL_VERTICAL_LIST_8]
 Type=14
-Tag=7
-Rect=22 66 362 406
+Tag=9
+Rect=20 59 366 417

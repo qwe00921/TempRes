@@ -62,7 +62,6 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			maininterface.CloseAllPanel();
 			
 			dlg_menu.ShowUI();
-			uiNode:SetVisible(false);
 		end
 	end
 end
