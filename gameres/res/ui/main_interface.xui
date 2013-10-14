@@ -27,12 +27,6 @@ Type=25
 Tag=27
 Rect=401 60 522 430
 
-[CTRL_MAIN_LIST_ACT]
-Type=8
-Tag=12
-Rect=20 59 366 417
-Remark=活动列表
-
 [CTRL_TEMP_BUTTON_MAP]
 Type=2
 Tag=13
@@ -54,3 +48,8 @@ TextVerAlign=AlignVerCenter
 Remark=商城按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_shop.png
 NormalFileUV=0 0 90 89
+
+[CTRL_VERTICAL_LIST_7]
+Type=14
+Tag=7
+Rect=22 66 362 406

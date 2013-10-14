@@ -3,6 +3,7 @@ maininterface = {}
 local p = maininterface;
 
 p.layer = nil;
+p.adList = {}
 
 local ui = ui_main_interface
 
@@ -10,7 +11,18 @@ function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		dlg_userinfo2.ShowUI();
-		dlg_actAndad.ShowUI();
+		
+		if #p.adList ~= 0 then
+			local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_7);
+			for i, view in pairs(p.adList) do
+				if view then
+					--礼包
+					local btn = GetButton(view, ui_main_actandad.ID_CTRL_CTRL_BUTTON_24);
+					btn:SetLuaDelegate(p.OnClickAD);
+				end
+			end
+		end
+		
 		return;
 	end
 	
@@ -30,7 +42,26 @@ function p.ShowUI()
 	p.SetDelegate(layer);
 	
 	dlg_userinfo2.ShowUI();
-	dlg_actAndad.ShowUI();
+	p.ShowAchievementList();
+end
+
+--设置广告内容
+function p.ShowAchievementList()
+	local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_7);	
+	for i=1, 4 do
+		local view = createNDUIXView();
+		view:Init();
+		LoadUI("main_actANDad.xui", view, nil);
+		local bg = GetUiNode(view, ui_main_actandad.ID_CTRL_CTRL_BUTTON_24);
+		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h+5.0));
+		
+		--礼包
+		local btn = GetButton(view, ui_main_actandad.ID_CTRL_CTRL_BUTTON_24);
+		btn:SetLuaDelegate(p.OnClickAD);
+
+		achievementList:AddView( view );
+		table.insert(p.adList, view);
+	end
 end
 
 --设置按钮
@@ -75,7 +106,16 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
-		dlg_actAndad.HideUI();
+		if #p.adList ~= 0 then
+			local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_7);
+			for i, view in pairs(p.adList) do
+				if view then
+					--礼包
+					local btn = GetButton(view, ui_main_actandad.ID_CTRL_CTRL_BUTTON_24);
+					btn:SetLuaDelegate(nil);
+				end
+			end
+		end
 	end
 end
 
@@ -84,6 +124,7 @@ function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
         p.layer = nil;
+		--p.adList = nil;
     end
 end
 
@@ -93,4 +134,8 @@ function p.ShowMenuBtn()
 	if menu then
 		menu:SetVisible(true);
 	end
+end
+
+function p.OnClickAD()
+	WriteCon("**=======AD=======**");
 end
