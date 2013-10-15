@@ -102,7 +102,7 @@ function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 		local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);
-		achievementList:SetVisible( false );
+		achievementList:SetVisible( false ); 
 	end
 end
 
