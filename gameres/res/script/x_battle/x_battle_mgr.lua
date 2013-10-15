@@ -341,11 +341,14 @@ function p.QuitBattle()
 	x_battle_mainui.CloseUI();
 	
 	--显示主界面和地图
-	GetTileMap():SetVisible( true );
-	task_map_mainui.ShowUI();
-	
-	dlg_userinfo2.ShowUI();
-	
+	--GetTileMap():SetVisible( true );
+	--task_map_mainui.ShowUI();
+
+	--dlg_userinfo2.ShowUI();
+
+	WriteCon( "========111111111111" );
+	game_main.EnterWorldMap();
+		
 	hud.FadeIn();
 	
 	--音乐

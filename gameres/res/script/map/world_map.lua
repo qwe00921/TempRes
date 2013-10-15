@@ -49,6 +49,9 @@ function p.OnClickEmpty()
 	dlg_stage_map.CloseUI();
 	p.AddEffect( p.stopActionObj );
 	p.stopActionObj = nil;
+	
+	maininterface.CloseAllPanel();
+	dlg_menu.CloseUI();
 end
 
 --µãÎï¼þ
