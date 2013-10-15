@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
+p.ID_CTRL_VERTICAL_LIST_8				 = 9;
 p.ID_CTRL_MAIN_BUTTON_SHOP			 = 8;	--商城按钮
 p.ID_CTRL_TEMP_BUTTON_MAP				 = 13;	--关卡地图进入按钮
 p.ID_CTRL_MAIN_LIST_ACT				   = 12;	--活动列表

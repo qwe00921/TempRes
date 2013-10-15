@@ -11,18 +11,8 @@ function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		dlg_userinfo2.ShowUI();
-		--[[
-		if #p.adList ~= 0 then
-			local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);
-			for i, view in pairs(p.adList) do
-				if view then
-					--礼包
-					local btn = GetButton(view, ui_main_actandad.ID_CTRL_CTRL_BUTTON_24);
-					btn:SetLuaDelegate(p.OnClickAD);
-				end
-			end
-		end
-		--]]
+		local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);
+		achievementList:SetVisible(true);
 		return;
 	end
 	
@@ -42,10 +32,9 @@ function p.ShowUI()
 	p.SetDelegate(layer);
 	
 	dlg_userinfo2.ShowUI();
-	--p.ShowAchievementList();
+	p.ShowAchievementList();
 end
 
---[[
 --设置广告内容
 function p.ShowAchievementList()
 	local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);	
@@ -61,10 +50,8 @@ function p.ShowAchievementList()
 		btn:SetLuaDelegate(p.OnClickAD);
 
 		achievementList:AddView( view );
-		table.insert(p.adList, view);
 	end
 end
---]]
 
 --设置按钮
 function p.SetBtn(btn)
@@ -114,16 +101,8 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
-		--[[if #p.adList ~= 0 then
-			local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);
-			for i, view in pairs(p.adList) do
-				if view then
-					--礼包
-					local btn = GetButton(view, ui_main_actandad.ID_CTRL_CTRL_BUTTON_24);
-					btn:SetLuaDelegate(nil);
-				end
-			end
-		end--]]
+		local achievementList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_8);
+		achievementList:SetVisible( false ); 
 	end
 end
 

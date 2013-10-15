@@ -114,9 +114,10 @@ end
 
 --¼ÓÔØÌØĞ§
 function ShowLoading( flag )
+	--[[
 	if flag then
 		dlg_loading.Show();
 	else
 		dlg_loading.CloseUI();
-	end
+	end--]]
 end
