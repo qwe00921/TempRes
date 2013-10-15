@@ -3,18 +3,25 @@
 Width=960
 Height=640
 
-[CTRL_QUEST_PICTURE_BG]
-Type=1
-Tag=5
-Rect=411 137 519 151
-Remark=任务选择图
+[CTRL_BUTTON_31]
+Type=2
+Tag=31
+Rect=410 139 530 154
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=选择背景框
 NormalFile=.\res\image\ui_honor\level_quest\quest_questlist_bg.png
 NormalFileUV=0 0 529 154
+SelectFile=.\res\image\ui_honor\level_quest\quest_questlist_bg1.png
+SelectedFileUV=0 0 529 154
+DisableFile=.\res\image\ui_honor\level_quest\quest_questlist_bg_disable.png
+DisableFileUV=0 0 529 154
 
 [CTRL_QUEST_PICTURE_2]
 Type=1
 Tag=2
-Rect=430 150 130 132
+Rect=430 147 130 132
 Remark=关卡介绍图片
 NormalFile=.\res\image\ui_honor\level_quest\quest_pic.png
 NormalFileUV=0 0 121 123
@@ -29,27 +36,49 @@ TextSize=30
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=任务名称
 
-[CTRL_QUEST_PICTURE_EASY]
-Type=1
-Tag=6
-Rect=573 206 100 57
+[CTRL_BUTTON_32]
+Type=2
+Tag=32
+Rect=572 206 100 57
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 Remark=简单选项
 NormalFile=.\res\image\ui_honor\level_quest\quest_easy.png
 NormalFileUV=0 0 98 56
+SelectFile=.\res\image\ui_honor\level_quest\quest_easy1.png
+SelectedFileUV=0 0 100 56
+DisableFile=.\res\image\ui_honor\level_quest\quest_easy_disable.png
+DisableFileUV=0 0 98 56
 
-[CTRL_QUEST_PICTURE_NOMAL]
-Type=1
-Tag=7
-Rect=690 207 100 56
+[CTRL_BUTTON_33]
+Type=2
+Tag=33
+Rect=690 205 100 56
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 Remark=一般选项
 NormalFile=.\res\image\ui_honor\level_quest\quest_normal.png
 NormalFileUV=0 0 98 55
+SelectFile=.\res\image\ui_honor\level_quest\quest_normal1.png
+SelectedFileUV=0 0 98 58
+DisableFile=.\res\image\ui_honor\level_quest\quest_normal_disable.png
+DisableFileUV=0 0 98 55
 
-[CTRL_QUEST_PICTURE_HARD]
-Type=1
-Tag=8
-Rect=809 206 100 55
+[CTRL_BUTTON_34]
+Type=2
+Tag=34
+Rect=809 205 100 55
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 Remark=困难选项
 NormalFile=.\res\image\ui_honor\level_quest\quest_hard.png
 NormalFileUV=0 0 98 54
+SelectFile=.\res\image\ui_honor\level_quest\quest_hard1.png
+SelectedFileUV=0 0 98 54
+DisableFile=.\res\image\ui_honor\level_quest\quest_hard_disable.png
+DisableFileUV=0 0 98 54
