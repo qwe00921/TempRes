@@ -6,7 +6,7 @@ Height=640
 [CTRL_BUTTON_10]
 Type=2
 Tag=10
-Rect=-8 514 124 124
+Rect=850 605 124 124
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -20,7 +20,7 @@ DisableFileUV=0 0 124 124
 [CTRL_BUTTON_11]
 Type=2
 Tag=11
-Rect=-3 506 124 124
+Rect=858 605 124 124
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -34,64 +34,64 @@ DisableFileUV=0 0 124 124
 [CTRL_PICTURE_10]
 Type=1
 Tag=12
-Rect=22 521 86 86
-NormalFile=.\res\image\ui\x_battle_main_ui\skill2.png
-NormalFileUV=0 0 86 86
+Rect=671 43 200 143
+NormalFile=.\res\image\ui\x_battle_main_ui\skill1.png
+NormalFileUV=0 0 200 143
 DisableFile=.\res\image\ui\x_battle_main_ui\skill2_gray.png
 DisableFileUV=0 0 133 127
 
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=37 518 86 86
-NormalFile=.\res\image\ui\x_battle_main_ui\skill1.png
-NormalFileUV=0 0 86 86
+Rect=92 450 200 143
+NormalFile=.\res\image\ui\x_battle_main_ui\skill2.png
+NormalFileUV=0 0 200 143
 DisableFile=.\res\image\ui\x_battle_main_ui\skill1_gray.png
 DisableFileUV=0 0 133 127
 
 [CTRL_PICTURE_7]
 Type=1
 Tag=7
-Rect=-838 551 960 110
+Rect=4 -11 489 56
 NormalFile=.\res\image\ui\x_battle_main_ui\bar_up.png
 NormalFileUV=0 0 960 127
 
 [CTRL_PICTURE_11]
 Type=1
 Tag=13
-Rect=85 506 27 88
-NormalFile=.\res\image\ui\x_battle_main_ui\skill_slot_100.png
-NormalFileUV=0 0 27 88
+Rect=15 572 225 56
+NormalFile=.\res\image\ui\x_battle_main_ui\skill2111.png
+NormalFileUV=0 0 225 56
 DisableFile=.\res\image\ui\x_battle_main_ui\skill_slot.png
 DisableFileUV=0 0 83 101
 
 [CTRL_PICTURE_12]
 Type=1
 Tag=14
-Rect=67 483 27 88
-NormalFile=.\res\image\ui\x_battle_main_ui\skill_slot_100.png
-NormalFileUV=0 0 27 88
+Rect=724 13 225 56
+NormalFile=.\res\image\ui\x_battle_main_ui\skill211122.png
+NormalFileUV=0 0 225 56
 DisableFile=.\res\image\ui\x_battle_main_ui\skill_slot_left.png
 DisableFileUV=0 0 83 101
 
 [CTRL_PICTURE_14]
 Type=1
 Tag=16
-Rect=12 514 145 41
-NormalFile=.\res\image\ui\x_battle_main_ui\bar_down.png
-NormalFileUV=0 0 145 41
+Rect=879 83 66 97
+NormalFile=.\res\image\ui\x_battle_main_ui\skillxxxx.png
+NormalFileUV=0 0 66 97
 
 [CTRL_PICTURE_15]
 Type=1
 Tag=17
-Rect=0 535 145 41
-NormalFile=.\res\image\ui\x_battle_main_ui\bar_down.png
-NormalFileUV=0 0 145 41
+Rect=15 466 66 97
+NormalFile=.\res\image\ui\x_battle_main_ui\skillxxxx.png
+NormalFileUV=0 0 66 97
 
 [CTRL_TEXT_15]
 Type=4
 Tag=18
-Rect=7 514 107 27
+Rect=768 640 107 27
 Text=一号宝宝
 TextTradition=一號寶寶
 TextSize=20
@@ -102,7 +102,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_16]
 Type=4
 Tag=19
-Rect=26 526 107 27
+Rect=694 640 107 27
 Text=二号宝宝
 TextTradition=二號寶寶
 TextSize=20

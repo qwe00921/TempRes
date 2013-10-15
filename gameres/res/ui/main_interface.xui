@@ -39,7 +39,7 @@ Rect=401 60 522 430
 [CTRL_TEMP_BUTTON_MAP]
 Type=2
 Tag=13
-Rect=579 174 200 228
+Rect=571 262 200 228
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
