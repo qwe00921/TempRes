@@ -801,7 +801,7 @@ function p:GetFrontPos(targetNode)
 		frontPos.y = frontPos.y + 25;
 	else
 		frontPos.x = frontPos.x - halfWidthSum;
-		frontPos.y = frontPos.y - 25;
+		frontPos.y = frontPos.y - 28;
 	end
 	return frontPos;
 end
