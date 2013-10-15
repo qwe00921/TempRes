@@ -57,8 +57,3 @@ TextVerAlign=AlignVerCenter
 Remark=商城按钮
 NormalFile=.\res\image\ui_honor\main_interface\main_shop.png
 NormalFileUV=0 0 90 89
-
-[CTRL_VERTICAL_LIST_8]
-Type=14
-Tag=9
-Rect=20 59 366 417

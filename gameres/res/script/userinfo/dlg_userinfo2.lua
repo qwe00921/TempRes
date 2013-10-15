@@ -4,7 +4,6 @@ local p = dlg_userinfo2;
 
 local ui = ui_main_userinfo2;
 p.layer = nil;
-p.showUserinfo = false;
 
 function p.ShowUI()
 	if p.layer ~= nil then
@@ -49,14 +48,9 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_MAIN_BUTTON_USERINFO == tag then
-				WriteCon("**玩家信息**");
-			if p.showUserinfo then
-				p.showUserinfo = false;
-				dlg_userinfo.CloseUI();
-			else
-				dlg_userinfo.ShowUI();
-				p.showUserinfo = true;
-			end
+			WriteCon("**玩家信息**");
+			dlg_userinfo.ShowUI();
+			p.showUserinfo = true;
 		elseif ui.ID_CTRL_MAIN_BUTTON_MENUUP == tag then
 			WriteCon("**菜单按钮**");
 			maininterface.CloseAllPanel();
