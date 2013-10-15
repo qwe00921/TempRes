@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
@@ -45,7 +45,7 @@ Remark=活动列表
 [CTRL_TEMP_BUTTON_MAP]
 Type=2
 Tag=13
-Rect=579 174 200 228
+Rect=571 262 200 228
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
