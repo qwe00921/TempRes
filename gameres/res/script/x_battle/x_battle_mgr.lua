@@ -317,6 +317,10 @@ function p.EnterBattle()
 	GetTileMap():SetVisible( false );
 	task_map_mainui.HideUI();
 	
+	--隐藏按钮
+	dlg_userinfo2.HideUI();
+	dlg_menu.CloseUI();
+	
 	--enter PVP
 	x_battle_pvp.ShowUI();	
 	x_battle_mainui.ShowUI();
@@ -339,6 +343,9 @@ function p.QuitBattle()
 	--显示主界面和地图
 	GetTileMap():SetVisible( true );
 	task_map_mainui.ShowUI();
+	
+	dlg_userinfo2.ShowUI();
+	
 	hud.FadeIn();
 	
 	--音乐
