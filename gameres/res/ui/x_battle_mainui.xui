@@ -6,7 +6,7 @@ Height=640
 [CTRL_BUTTON_10]
 Type=2
 Tag=10
-Rect=822 12 124 124
+Rect=902 12 44 44
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -20,13 +20,27 @@ DisableFileUV=0 0 124 124
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=-9 31 319 79
-NormalFile=.\res\image\ui\x_battle_main_ui\back_frame.png
-NormalFileUV=0 0 225 56
+Rect=603 451 345 192
+NormalFile=.\res\image\ui\fant_2\frame_01.png
+NormalFileUV=0 0 450 250
 
-[CTRL_PICTURE_13]
+[CTRL_PICTURE_36]
 Type=1
-Tag=13
-Rect=97 3 99 70
-NormalFile=.\res\image\ui\x_battle_main_ui\head_01.png
-NormalFileUV=0 0 200 143
+Tag=36
+Rect=9 471 345 192
+NormalFile=.\res\image\ui\fant_2\button_02.png
+NormalFileUV=0 0 450 250
+
+[CTRL_PICTURE_38]
+Type=1
+Tag=38
+Rect=234 -66 448 248
+NormalFile=.\res\image\ui\fant_2\button_01.png
+NormalFileUV=0 0 450 250
+
+[CTRL_PICTURE_39]
+Type=1
+Tag=39
+Rect=386 392 461 256
+NormalFile=.\res\image\ui\fant_2\vs.png
+NormalFileUV=0 0 450 250

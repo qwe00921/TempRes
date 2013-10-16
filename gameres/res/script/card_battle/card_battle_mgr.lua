@@ -406,11 +406,11 @@ end
 
 --≤È’“fighter
 function p.FindFighter(id)
-	local f = p.heroCamp:FindFighter(id);
+--[[	local f = p.heroCamp:FindFighter(id);
 	if f == nil then
 		f = p.enemyCamp:FindFighter(id);
 	end
-	return f;
+	return f;--]]
 end
 
 --’Ω∂∑ §¿˚

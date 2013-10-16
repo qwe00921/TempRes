@@ -417,7 +417,7 @@ function p:AtkSkillOneToCamp( camp, batch )
 	end
 	
 	--取中间目标作为参考方向
-	local refTarget = camp:GetFighterAt(3);
+--	local refTarget = camp:GetFighterAt(3);
 	
 	--创建序列给攻击者
 	local seqAtk = batch:AddSerialSequence();
@@ -551,7 +551,7 @@ function p:UltimateSkill( camp, batch )
 	local originalPos = self:GetNode():GetCenterPos();
 	
 	--取阵营中心点位置
-	local campCenterPos = GetImage( x_battle_pvp.battleLayer ,ui_x_battle_pvp.ID_CTRL_PICTURE_12 ):GetCenterPos();
+	local campCenterPos = originalPos;--GetImage( x_battle_pvp.battleLayer ,ui_x_battle_pvp.ID_CTRL_PICTURE_12 ):GetCenterPos();
 	
 	--吟唱动作
 	local cmd1 = createCommandPlayer():Sing( 0, self:GetPlayerNode(), "" );
