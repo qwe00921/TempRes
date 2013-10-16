@@ -55,10 +55,10 @@ function p:AddFighters( uiArray )
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
-			f:SetLookAt( E_LOOKAT_LEFT );
+			f:SetLookAt( E_LOOKAT_RIGHT );
 		else
 			node:SetZOrder( E_BATTLE_Z_ENEMY_FIGHTER );
-			f:SetLookAt( E_LOOKAT_RIGHT );
+			f:SetLookAt( E_LOOKAT_LEFT );
 		end
 	end
 end
