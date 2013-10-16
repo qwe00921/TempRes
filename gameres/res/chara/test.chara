@@ -67,6 +67,15 @@
 @hurt		name=hurt ani=x.fly_dragon_hurt
 @dead		name=dead ani=x_cmb.fly_dragon_death
 
+[boss]
+@standby	name=standby ani=x.boss_standby
+@atk 		name=atk ani=x.boss_standby
+@run		
+@skill		name=skill ani=x.boss_standby
+@defence	
+@hurt		name=hurt ani=x.boss_standby
+@dead		name=dead ani=x.boss_standby
+
 ;ÍÚ¿ó³è
 [mining]
 @standby	name=standby ani=x.mining_standby

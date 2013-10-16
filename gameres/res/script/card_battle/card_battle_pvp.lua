@@ -21,6 +21,7 @@ local enemyUIArray = {
     ui.ID_CTRL_SPRITE_8,
     ui.ID_CTRL_SPRITE_9,
     ui.ID_CTRL_SPRITE_10,
+	ui.ID_CTRL_SPRITE_boss
 }    
 
 -----

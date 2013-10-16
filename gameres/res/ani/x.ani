@@ -145,12 +145,20 @@ image\pet\fly_dragon\standby.png  @cut(1,2)  @use(7,1)    @offset(0,-15)  @time=
 image\pet\fly_dragon\hurt.png   @cut(1,2)  @time=0.20  @offset(10,0)
 
 [fly_dragon_standby]
-image\pet\fly_dragon\standby.png @cut(1,2) @time=0.15   @loop
+image\pet\fly_dragon\standby.png @cut(1,2) @time=0.3   @loop
+;}-------------------------------------
+
+;{----------boss∂Øª≠≈‰÷√---------------
+[boss_standby]
+image\pet\boss\standby.png @cut(1,3) @time=0.3   @loop
 ;}-------------------------------------
 
 ;{----------ººƒ‹≈‰÷√---------------
 [feilong]
 lj\effect\skill\feilong.png @cut(1,9) @time=0.12  @offset(0,-50)
+
+[boss_cast_buff]
+lj\effect\skill\zuos01.png @cut(4,4) @time=0.12  @offset(0,-50)
 
 [xingong]
 lj\effect\skill\xingong.png @cut(2,6) @time=0.12
@@ -174,10 +182,10 @@ image\fx\pet_blue_devil\fx_cast.png @cut(4,4) @time=0.25 @offset(00,-100) @scale
 image\fx\pet_blue_devil\fx_target_hurt.png @cut(1,3) 
 
 [dragon_fx_atk]
-image\fx\pet_dragon\fx_atk.png @cut(4,4) @time=0.05 @offset(56,-10) @scale=0.5
+image\fx\pet_dragon\fx_atk.png @cut(4,4) @time=0.05 @offset(156,-10) @scale=1.0f
 
 [dragon_fx_cast]
-image\fx\pet_dragon\fx_cast.png @cut(4,4) @time=0.07 @offset(56,-30) @realsize(100,100) @scale=0.6
+image\fx\pet_dragon\fx_cast.png @cut(4,4) @time=0.07 @offset(156,-30) @realsize(100,100) @scale=1.6
 
 [dragon_fx_target_hurt]
 image\fx\pet_dragon\fx_target_hurt.png @cut(1,6) @time=0.15
@@ -204,19 +212,19 @@ image\fx\pet_blue_devil\fx_ultimate_skill.png @cut(1,5) @time=0.15 @offset(0,-60
 image\pet\mining\atk.png @cut(1,5)    @time=0.15   @offset(0,-30) @stay
 
 [mining_cast]
-image\pet\mining\cast.png @cut(1,8)    @time=0.15  @offset(10,-30) @stay
+image\pet\mining\atk.png @cut(1,5)    @time=0.15  @offset(10,-30) @stay
 
 [mining_death]
-image\pet\mining\death.png @cut(1,8)   @time=0.15  @offset(-30,-20) @stay
+image\pet\mining\standby.png @cut(1,2)   @time=0.15  @offset(-30,-20) @stay
 
 [mining_death_end]
-image\pet\mining\death.png @cut(1,8)   @use(7,1)   @offset(-30,-20) @time=2
+image\pet\mining\standby.png @cut(1,2)  @offset(-30,-20) @time=2
 
 [mining_hurt]
-image\pet\mining\hurt.png @cut(1,3)    @time=0.15  @offset(-5,-2) @stay
+image\pet\mining\hurt.png @cut(1,2)    @time=0.15  @offset(-5,-2) @stay
 
 [mining_standby]
-image\pet\mining\standby.png @cut(1,8) @time=0.15  @loop
+image\pet\mining\standby.png @cut(1,2) @time=0.15  @loop
 ;}-------------------------------------
 
 ;{----------¿∂ƒßπÌ∂Øª≠≈‰÷√---------------

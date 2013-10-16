@@ -8,4 +8,5 @@ p.ID_CTRL_PICTURE_39					     = 39;
 p.ID_CTRL_PICTURE_38					     = 38;
 p.ID_CTRL_PICTURE_36					     = 36;
 p.ID_CTRL_PICTURE_12					     = 12;
+p.ID_CTRL_BUTTON_11					      = 11;
 p.ID_CTRL_BUTTON_10					      = 10;
