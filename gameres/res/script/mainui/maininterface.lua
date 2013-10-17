@@ -56,20 +56,28 @@ end
 --设置按钮
 function p.SetBtn(btn)
 	btn:SetLuaDelegate(p.OnBtnClick);
-	--btn:AddActionEffect( "ui_cmb.mainui_btn_scale" );
+	btn:AddActionEffect( "ui_cmb.mainui_btn_scale" );
 end
 
 function p.SetDelegate(layer)
 	--礼包
 	local gift = GetButton(layer, ui.ID_CTRL_MAIN_BUTTON_GIFT);
-	p.SetBtn(gift);
+	gift:SetLuaDelegate(p.OnBtnClick);
 	
 	--进入世界地
-	local enterMap = GetButton(layer, ui.ID_CTRL_TEMP_BUTTON_MAP);
-	p.SetBtn(enterMap);
+	local map1 = GetButton(layer, ui.ID_CTRL_TEMP_BUTTON_MAP);
+	p.SetBtn(map1);
+	
+	--进入世界地
+	local map2 = GetButton(layer, ui.ID_CTRL_BUTTON_9);
+	p.SetBtn(map2);
+	
+	--进入世界地
+	local map3 = GetButton(layer, ui.ID_CTRL_BUTTON_8);
+	p.SetBtn(map3);
 	
 	local bgBtn = GetButton(layer, ui.ID_CTRL_MIAN_BUTTON_DOWN);
-	p.SetBtn(bgBtn);
+	bgBtn:SetLuaDelegate(p.OnBtnClick);
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)

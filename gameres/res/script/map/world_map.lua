@@ -17,7 +17,7 @@ local useMoveEffect = false; --是否使用移动特效，否则用缩放特效
 --打开地图
 function p.OpenMap()
 	p.RegEvent();
-	GetTileMapMgr():OpenMapWorld( "world_map.tmx", true ); --true to fade in.
+	GetTileMapMgr():OpenMapWorld( "test_world_map.tmx", true ); --true to fade in.
 	world_map_mainui.ShowUI();
 end	
 
@@ -93,7 +93,7 @@ function p.OnLoadMapEnd(idMap, bWorldMap)
 	--GetTileMap():SetLuaDelegate( p.OnMapEvent );
 	
 	--设置允许拖动的方向
-	GetTileMap():SetMoveDir( true, false ); --horz,vert
+	GetTileMap():SetMoveDir( true, true ); --horz,vert
 	
 	-- 获取世界地图数据
 	p.getWordMapData();
@@ -128,15 +128,15 @@ function p.AddAllChapters()
 	local chapters = SelectRowList( T_CHAPTER_MAP );
 	local position = 
 	{
-	   {x=4,  y=4, offsetX=-14, offsetY=-6},
-	   {x=8,  y=2, offsetX=-5,  offsetY=-25}, 
-	   {x=2,  y=6, offsetX=-3,  offsetY=-18}, 
-	   {x=13, y=1, offsetX=-5,  offsetY=25}, 
-	   {x=6,  y=5, offsetX=5,   offsetY=-27}, 
-	   {x=12, y=4, offsetX=1,   offsetY=-12},
+	   {x=26,  y=9, offsetX=-14, offsetY=-6},
+	   {x=34,  y=10, offsetX=-5,  offsetY=-25}, 
+	   {x=20,  y=23, offsetX=-3,  offsetY=-18}, 
+	   {x=35, y=24, offsetX=-5,  offsetY=25}, 
+	   {x=30,  y=17, offsetX=5,   offsetY=-27}, 
+	   {x=48, y=27, offsetX=1,   offsetY=-12},
 	   
-	   {x=14,  y=9, offsetX=-30, offsetY=-50},
-	   {x=17, y=7, offsetX=15,  offsetY=-10}, 
+	   {x=46,  y=13, offsetX=-30, offsetY=-50},
+	   {x=31, y=18, offsetX=15,  offsetY=-10}, 
 	};
 	
 	for i=1, #chapters do

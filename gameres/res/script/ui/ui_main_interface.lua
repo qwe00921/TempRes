@@ -4,10 +4,11 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
+p.ID_CTRL_BUTTON_9					       = 11;
+p.ID_CTRL_BUTTON_8					       = 10;
 p.ID_CTRL_VERTICAL_LIST_8				 = 9;
 p.ID_CTRL_MAIN_BUTTON_SHOP			 = 8;	--商城按钮
 p.ID_CTRL_TEMP_BUTTON_MAP				 = 13;	--关卡地图进入按钮
-p.ID_CTRL_MAIN_LIST_ACT				   = 12;	--活动列表
 p.ID_CTRL_MAIN_CUSTOMIZE_LEVEL		= 27;
 p.ID_CTRL_MAIN_BUTTON_GIFT			 = 24;	--礼物按钮
 p.ID_CTRL_MAIN_PICTURE_BG				 = 1;	--背景
