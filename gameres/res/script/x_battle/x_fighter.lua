@@ -141,7 +141,17 @@ function p:Atk( targetFighter, batch)
 
 	--攻击目标的位置
 	--local enemyPos = targetNode:GetCenterPos();
-	local enemyPos = targetFighter:GetFrontPos(self:GetNode());
+
+	local enemyPos = nil;
+
+	if self.idCamp == E_CARD_CAMP_ENEMY then
+
+		enemyPos = originalPos;
+		
+	else
+		enemyPos = targetFighter:GetFrontPos(self:GetNode());
+	end
+
 	
 	--if self.atkType==RANGED_ATTACK then
 	--	enemyPos.x=enemyPos.x -200;
@@ -306,7 +316,17 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	local originalPos = self:GetNode():GetCenterPos();
 
 	--攻击目标的位置
-	local enemyPos = targetFighter:GetFrontPos(self:GetNode());
+	local enemyPos = nil;
+	
+	if self.idCamp == E_CARD_CAMP_ENEMY then
+
+		enemyPos = originalPos;	
+		
+	else
+
+		enemyPos = targetFighter:GetFrontPos(self:GetNode());	
+	
+	end
 	
 	--此段代码废弃，通过改善GetFrontPos解决了
 	--[[	
@@ -350,6 +370,12 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	--设置音乐特效
 	self:setAtkSkillMusic( seqMusic )
 	seqMusic:SetWaitBegin( cmd2 );
+
+	if self.idCamp == E_CARD_CAMP_ENEMY then
+		local myNode = self:GetPlayerNode();
+		local cmd_buff = createCommandEffect():AddFgEffect( 0.5, myNode, "x.boss_cast_buff" );
+		seqAtk:AddCommand( cmd_buff );	
+	end
 	
 	--最初站立动画
 	local cmd3 = createCommandPlayer():Standby( 0, playerNode, "" );
@@ -417,7 +443,7 @@ function p:AtkSkillOneToCamp( camp, batch )
 	end
 	
 	--取中间目标作为参考方向
-	local refTarget = camp:GetFighterAt(3);
+--	local refTarget = camp:GetFighterAt(3);
 	
 	--创建序列给攻击者
 	local seqAtk = batch:AddSerialSequence();
@@ -551,7 +577,7 @@ function p:UltimateSkill( camp, batch )
 	local originalPos = self:GetNode():GetCenterPos();
 	
 	--取阵营中心点位置
-	local campCenterPos = GetImage( x_battle_pvp.battleLayer ,ui_x_battle_pvp.ID_CTRL_PICTURE_12 ):GetCenterPos();
+	local campCenterPos = originalPos;--GetImage( x_battle_pvp.battleLayer ,ui_x_battle_pvp.ID_CTRL_PICTURE_12 ):GetCenterPos();
 	
 	--吟唱动作
 	local cmd1 = createCommandPlayer():Sing( 0, self:GetPlayerNode(), "" );
@@ -720,8 +746,13 @@ function p:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighte
 	local playerNode = self:GetPlayerNode();
 	
 	--技能攻击动画
-	local cmdA1 = createCommandPlayer():Skill( 0, playerNode, "" );
-	seqAtk:AddCommand( cmdA1 );
+
+	if p.idCamp == E_CARD_CAMP_ENEMY then
+		
+	else
+		local cmdA1 = createCommandPlayer():Skill( 0, playerNode, "" );
+		seqAtk:AddCommand( cmdA1 );
+	end
 	
 	--子弹
 	local bullet = bullet:new();
@@ -765,12 +796,14 @@ function p:AtkSkill(targetFighter, batch, bulletType, fighterIndex, skillType)
 	
 	if self.camp == E_CARD_CAMP_ENEMY then
 		bulletRotation = bulletRotation - 180;
-	end	
-	 
+	else
+
 	if skillType==1 then
 		self:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighterIndex );
 	elseif skillType==2 then
 		self:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fighterIndex );
+	end	
+	
 	end
 end
 

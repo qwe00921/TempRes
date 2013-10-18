@@ -16,11 +16,7 @@ local heroUIArray = {
     ui.ID_CTRL_SPRITE_5, 
 }
 local enemyUIArray = { 
-    ui.ID_CTRL_SPRITE_6,
-    ui.ID_CTRL_SPRITE_7,
-    ui.ID_CTRL_SPRITE_8,
-    ui.ID_CTRL_SPRITE_9,
-    ui.ID_CTRL_SPRITE_10,
+	ui.ID_CTRL_SPRITE_BOSS,
 }    
 
 -----

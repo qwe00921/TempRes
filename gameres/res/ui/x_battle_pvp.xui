@@ -6,67 +6,73 @@ Height=640
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 960 640
+Rect=-3 0 960 640
+Stretch=1
 NormalFile=.\res\image\map\green_wild_1136x720.png
-NormalFileUV=88 40 960 640
+NormalFileUV=0 0 960 640
 
 [CTRL_SPRITE_10]
 Type=19
 Tag=11
-Rect=439 489 77 146
+Rect=648 225 106 60
 
 [CTRL_SPRITE_9]
 Type=19
 Tag=10
-Rect=563 437 77 146
+Rect=654 221 106 60
 
 [CTRL_SPRITE_6]
 Type=19
 Tag=7
-Rect=873 287 77 146
+Rect=639 213 106 60
 
 [CTRL_SPRITE_7]
 Type=19
 Tag=8
-Rect=776 331 77 146
+Rect=645 234 106 60
 
 [CTRL_SPRITE_8]
 Type=19
 Tag=9
-Rect=673 379 77 146
+Rect=647 219 106 60
 
 [CTRL_SPRITE_5]
 Type=19
 Tag=6
-Rect=54 224 77 146
+Rect=164 190 106 60
 
 [CTRL_SPRITE_4]
 Type=19
 Tag=5
-Rect=153 172 77 146
+Rect=296 279 106 60
 
 [CTRL_SPRITE_1]
 Type=19
 Tag=2
-Rect=433 22 77 146
+Rect=31 281 106 60
 
 [CTRL_SPRITE_2]
 Type=19
 Tag=3
-Rect=343 66 77 146
+Rect=163 280 106 60
 
 [CTRL_SPRITE_3]
 Type=19
 Tag=4
-Rect=252 114 77 146
+Rect=161 372 106 60
 
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=-57 502 107 60
+Rect=417 148 107 60
 
 [CTRL_PICTURE_13]
 Type=1
 Tag=13
 Z_Order=200
-Rect=-900 565 960 60
+Rect=-20 -35 960 60
+
+[CTRL_SPRITE_BOSS]
+Type=19
+Tag=14
+Rect=652 209 107 60

@@ -106,7 +106,8 @@ end
 function p.createEnemyCamp()
 	p.enemyCamp = x_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
-	p.enemyCamp:AddFighters( p.enemyUIArray );
+	--p.enemyCamp:AddFighters( p.enemyUIArray );
+	p.enemyCamp:AddBoss( );
 end
 
 --≤‚ ‘PVP
@@ -418,7 +419,13 @@ function p.CampBattle(campType)
 				if attacker.petTag == PET_BLUE_DEVIL_TAG  then
 					attacker:UltimateSkill(defenseCamp, batch);
 				else
-					attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[defenderId], batch, 2, i ,skillType);
+					if attacker.idCamp == E_CARD_CAMP_ENEMY then
+						for d = 1, #defenseCampAliveFighter do
+							attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[d], batch, 2, i ,skillType);
+						end
+					else
+						attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[defenderId], batch, 2, i ,skillType);
+					end		
 				end
 			else
 				attacker:AtkSkillOneToCamp(defenseCamp, batch);
