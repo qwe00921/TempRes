@@ -352,7 +352,7 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 		end
 	end
 	--]]
-	
+
 	--攻击者跑位
 	local cmd1;
 	if self.petTag ~= PET_MINING_TAG then
@@ -364,8 +364,8 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	seqAtk:AddCommand( cmd2 );
 	
 	--设置技能攻击特效
-	self:setAtkSkillFx( seqMisc );
-	seqMisc:SetWaitBegin( cmd2 );
+	--self:setAtkSkillFx( seqMisc );  --此处是喷火的特效
+	--seqMisc:SetWaitBegin( cmd2 );
 	
 	--设置音乐特效
 	self:setAtkSkillMusic( seqMusic )
@@ -831,8 +831,10 @@ function p:GetFrontPos(targetNode)
 	
 	if self.camp == E_CARD_CAMP_HERO then
 		frontPos.x = frontPos.x + halfWidthSum;
+		frontPos.y = frontPos.y + 25;
 	else
 		frontPos.x = frontPos.x - halfWidthSum;
+		frontPos.y = frontPos.y - 28;
 	end
 	return frontPos;
 end

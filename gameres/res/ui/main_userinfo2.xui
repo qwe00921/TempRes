@@ -1,0 +1,72 @@
+
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_MAIN_BUTTON_USERINFO]
+Type=2
+Tag=1
+Rect=2 477 224 163
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=用户信息框
+NormalFile=.\res\image\ui_honor\main_interface\main_userinfo_s.png
+NormalFileUV=0 0 224 163
+
+[CTRL_MAIN_TEXT_LEVEL]
+Type=4
+Tag=2
+Rect=99 523 87 27
+Text=999
+TextTradition=999
+TextSize=25
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+Remark=用户信息文本
+
+[CTRL_MAIN_EXP_EXP]
+Type=9
+Tag=3
+Rect=25 554 180 17
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=经验条
+Stretch=1
+NormalFile=.\res\image\ui_honor\main_interface\main_exp.png
+NormalFileUV=0 0 160 15
+
+[CTRL_MAIN_EXP_ACT]
+Type=9
+Tag=4
+Rect=24 607 180 20
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=活力条
+Stretch=1
+NormalFile=.\res\image\ui_honor\main_interface\main_act.png
+NormalFileUV=0 0 54 16
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=71 604 80 25
+Text=333/333
+TextTradition=333/333
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=文本（玩家活力值）
+
+[CTRL_MAIN_BUTTON_MENUUP]
+Type=2
+Tag=6
+Rect=517 558 160 73
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=菜单界面弹出按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_menu.png
+NormalFileUV=0 0 150 68

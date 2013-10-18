@@ -1,0 +1,78 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_MAIN_PICTURE_MENUBG]
+Type=1
+Tag=8
+Rect=221 494 740 148
+Remark=目录背景
+NormalFile=.\res\image\ui_honor\main_interface\main_menu_m.png
+NormalFileUV=0 0 741 148
+
+[CTRL_MAIN_BUTTON_TEAM]
+Type=2
+Tag=10
+Rect=240 527 110 108
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=队伍按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_button_team.png
+NormalFileUV=0 0 111 109
+
+[CTRL_MAIN_BUTTON_FORMATION]
+Type=2
+Tag=11
+Rect=360 527 110 106
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=阵型按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_button_formation.png
+NormalFileUV=0 0 111 107
+
+[CTRL_MAIN_BUTTON_ITEM]
+Type=2
+Tag=12
+Rect=479 527 110 109
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_button_item.png
+NormalFileUV=0 0 111 110
+
+[CTRL_MAIN_BUTTON_PVP]
+Type=2
+Tag=13
+Rect=597 527 110 111
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=pvp按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_button_pvp.png
+NormalFileUV=0 0 111 112
+
+[CTRL_MAIN_BUTTON_FRIENDS]
+Type=2
+Tag=14
+Rect=714 527 110 110
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=好友按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_button_friend.png
+NormalFileUV=0 0 113 113
+
+[CTRL_MAIN_BUTTON_OTHER]
+Type=2
+Tag=15
+Rect=834 527 110 108
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=其他按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_button_other.png
+NormalFileUV=0 0 113 111

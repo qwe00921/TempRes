@@ -1,0 +1,66 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_MAIN_PICTURE_UERINFO_M]
+Type=1
+Tag=16
+Rect=288 109 471 280
+NormalFile=.\res\image\ui_honor\main_interface\main_userinfo_m.png
+NormalFileUV=0 0 470 333
+
+[CTRL_MAIN_TEXT_COIN]
+Type=4
+Tag=17
+Rect=560 141 155 34
+Text=000000000
+TextTradition=000000000
+TextSize=30
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+Remark=代币数量
+
+[CTRL_MAIN_TEXT_MONEY]
+Type=4
+Tag=18
+Rect=561 195 154 34
+Text=000000000
+TextTradition=000000000
+TextSize=30
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+Remark=金币数量
+
+[CTRL_MAIN_TEXT_NAME2]
+Type=4
+Tag=4
+Rect=549 247 192 33
+Text=玩家称号一二三
+TextTradition=玩家稱號一二三
+TextSize=27
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+Remark=玩家称号
+
+[CTRL_MAIN_TEXT_CARDNUM]
+Type=4
+Tag=5
+Rect=567 292 146 32
+Text=000/000
+TextTradition=000/000
+TextSize=30
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+Remark=玩家持有卡牌数量及上限
+
+[CTRL_MAIN_TEXT_ITEMNUM]
+Type=4
+Tag=7
+Rect=567 340 146 32
+Text=000/000
+TextTradition=000/000
+TextSize=30
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+Remark=玩家持有物品数量及上限

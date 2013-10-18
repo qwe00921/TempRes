@@ -1,0 +1,96 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_MIAN_BUTTON_DOWN]
+Type=2
+Tag=7
+Rect=0 0 960 640
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=按钮（控制目录隐藏）
+
+[CTRL_MAIN_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 959 640
+Remark=背景
+NormalFile=.\res\image\ui_honor\main_interface\main_bg.png
+NormalFileUV=0 0 960 640
+
+[CTRL_MAIN_BUTTON_GIFT]
+Type=2
+Tag=24
+Rect=240 508 113 114
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼物按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_gift.png
+NormalFileUV=0 0 112 113
+
+[CTRL_MAIN_CUSTOMIZE_LEVEL]
+Type=25
+Tag=27
+Rect=-174 -340 522 430
+
+[CTRL_TEMP_BUTTON_MAP]
+Type=2
+Tag=13
+Rect=559 384 100 100
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=关卡地图进入按钮
+NormalFile=.\res\image\ui_honor\main_interface\temp_button_map1.png
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui_honor\main_interface\temp_button_map1.png
+SelectedFileUV=0 0 100 100
+DisableFile=.\res\image\ui_honor\main_interface\temp_button_map1.png
+DisableFileUV=0 0 100 100
+
+[CTRL_MAIN_BUTTON_SHOP]
+Type=2
+Tag=8
+Rect=860 9 90 89
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=商城按钮
+NormalFile=.\res\image\ui_honor\main_interface\main_shop.png
+NormalFileUV=0 0 90 89
+
+[CTRL_VERTICAL_LIST_8]
+Type=14
+Tag=9
+Rect=20 59 366 417
+
+[CTRL_BUTTON_8]
+Type=2
+Tag=10
+Rect=694 372 100 100
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\main_interface\temp_button_map2.png
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui_honor\main_interface\temp_button_map2.png
+SelectedFileUV=0 0 100 100
+DisableFile=.\res\image\ui_honor\main_interface\temp_button_map2.png
+DisableFileUV=0 0 100 100
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=11
+Rect=529 255 100 100
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\main_interface\temp_button_map3.png
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui_honor\main_interface\temp_button_map3.png
+SelectedFileUV=0 0 100 100
+DisableFile=.\res\image\ui_honor\main_interface\temp_button_map3.png
+DisableFileUV=0 0 100 100

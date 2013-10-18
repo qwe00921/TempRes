@@ -4,14 +4,12 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
-p.ID_MAIN_LIST_ACT					       = 12;	--活动&广告框
-p.ID_CTRL_TEXT_11						       = 11;
-p.ID_MAIN_EXP_ACT						       = 9;	--玩家活力
-p.ID_MAIN_EXP_EXP						       = 8;	--玩家经验值
-p.ID_MAIN_TEXT_LEVEL					     = 7;	--玩家等级
-p.ID_MAIN_CTRL_PICTURE_SHOP			= 26;	--商城按钮
-p.ID_MAIN_CTRL_BUTTON_MEMU			 = 28;	--功能弹出按钮
-p.ID_MAIN_CTRL_CUSTOMIZE_LEVEL		= 27;
-p.ID_MAIN_CTRL_BUTTON_USERINFO		= 25;
-p.ID_MAIN_CTRL_BUTTON_GIFT			 = 24;	--礼包图片
-p.ID_MAIN_CTRL_PICTURE_BG				 = 1;	--背景
+p.ID_CTRL_BUTTON_9					       = 11;
+p.ID_CTRL_BUTTON_8					       = 10;
+p.ID_CTRL_VERTICAL_LIST_8				 = 9;
+p.ID_CTRL_MAIN_BUTTON_SHOP			 = 8;	--商城按钮
+p.ID_CTRL_TEMP_BUTTON_MAP				 = 13;	--关卡地图进入按钮
+p.ID_CTRL_MAIN_CUSTOMIZE_LEVEL		= 27;
+p.ID_CTRL_MAIN_BUTTON_GIFT			 = 24;	--礼物按钮
+p.ID_CTRL_MAIN_PICTURE_BG				 = 1;	--背景
+p.ID_CTRL_MIAN_BUTTON_DOWN			 = 7;	--按钮（控制目录隐藏）
