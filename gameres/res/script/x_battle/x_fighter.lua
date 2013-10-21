@@ -201,6 +201,7 @@ function p:Atk( targetFighter, batch)
 	
 	--飘血
 	local cmd11 = targetFighter:cmdLua( "fighter_damage", 30, "", seqTarget );
+	--local cmd22 = targetFighter:cmdLua( "AddMaskImage", 0, "", seqTarget );
 	
 	--受攻击的后续动画【死亡 OR 站立】
 	self:HurtResultAni( targetFighter, seqTarget );

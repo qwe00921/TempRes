@@ -51,7 +51,8 @@ function p.AddMaskImage()
 		
 		local pic = GetPictureByAni("lancer.mask", 0); 
 		p.imageMask:SetPicture( pic );
-		p.uiLayer:AddChildZ( p.imageMask, 99 );
+		p.uiLayer:AddChildZ( p.imageMask, 10 );
+		p.imageMask:AddActionEffect("x.imageMask_fadein");
 	else
 		p.ShowMaskImage();
 	end
@@ -415,6 +416,7 @@ function p.CampBattle(campType)
 		--@override
 		if true and math.random(1,2)==2 then
 			local target = defenseCampAliveFighter[defenderId];
+			p.AddMaskImage();
 			attacker:Atk( target, batch );
 		else
 			--if math.random(1,2)==2 then
