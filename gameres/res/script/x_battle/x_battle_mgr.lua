@@ -51,7 +51,7 @@ function p.AddMaskImage()
 		
 		local pic = GetPictureByAni("lancer.mask", 0); 
 		p.imageMask:SetPicture( pic );
-		p.uiLayer:AddChildZ( p.imageMask, 10 );
+		p.uiLayer:AddChildZ( p.imageMask, 7 );
 		p.imageMask:AddActionEffect("x.imageMask_fadein");
 	else
 		p.ShowMaskImage();
@@ -139,127 +139,6 @@ function p.FightOnce_PVP( flag )
 		f2:AtkSkill( f1, batch );
 	end
 end
-
---[[
---玩家技能攻击
-function p.HeroAtkSkill()
-	WriteCon( "HeroAtkSkill()");
-	
-	local boss = p.enemyCamp:GetFirstFighter();
-	
-	--子弹旋转
-	local bulletRotation = { -50+180, -30+180, 0+180, 20+180, 25+180 };
-	
-	--hero攻击
-	local heroCount = p.heroCamp:GetFighterCount();
-	local enemyCount = p.enemyCamp:GetFighterCount();
-	
-	for i = 1, heroCount do
-		local batch = battle_show.GetNewBatch();
-		local hero = p.heroCamp:GetFighterAt(i);
-		
-		--随机攻击对象
-		local enemyId= math.random(1,enemyCount);
-		local enemy = p.enemyCamp:GetFighterAt(enemyId);
-		
-		local skillId= math.random(1,3);
-		if skillId==1 then
-			hero:AtkSkillTuc( enemy, batch, 2, bulletRotation[i], i );
-		elseif skillId==2 then
-			hero:AtkSkillFeilong( enemy, batch, 2, bulletRotation[i], i );
-		elseif skillId==3 then	
-			hero:AtkAOE(p.enemyCamp, batch);
-		end
-		
-	end	
-end
---]]
---[[
---双方阵营的普通攻击
-function p.Atk(campType)
-	WriteCon( "-------Atk-------");
-	
-	--攻击阵营
-	local atkCamp;
-	
-	--防守阵营
-	local defenseCamp;
-	
-	if campType==E_CARD_CAMP_HERO then
-		WriteCon( "-------E_CARD_CAMP_HERO Atk-------");
-		atkCamp = p.heroCamp:GetAliveFighters();
-		defenseCamp = p.enemyCamp:GetAliveFighters();
-	else
-		WriteCon( "-------E_CARD_CAMP_ENEMY Atk-------");
-		atkCamp = p.enemyCamp:GetAliveFighters();
-		defenseCamp = p.heroCamp:GetAliveFighters();
-	end
-		
-	if #atkCamp==0 or #defenseCamp==0 then
-		WriteCon( "-------Atk():not Alive fighter-------");
-		return ;
-	end
-	
-	for i = 1, #atkCamp do
-		local batch = battle_show.GetNewBatch();
-		local attacker = atkCamp[i];	
-		local defender = defenseCamp[math.random(1,#defenseCamp)];
-		attacker:Atk( defender, batch );
-	end	
-end
---]]
---[[
---敌方技能攻击
-function p:EnemyAtkSkill()
-	WriteCon( "EnemyAtkSkill()");
-
-	--子弹旋转
-	local bulletRotation = { -50+180, -30+180, 0+180, 20+180, 25+180 };
-	
-	
-	local enemyCount = p.enemyCamp:GetFighterCount();
-	local heroCount = p.heroCamp:GetFighterCount();
-	for i = 1, enemyCount do
-		local batch = battle_show.GetNewBatch();
-		local enemy = p.enemyCamp:GetFighterAt(i);
-		
-		--随机取攻击对象
-		local heroId= math.random(1,heroCount);
-		local hero = p.heroCamp:GetFighterAt(heroId);
-		
-		local skillId= math.random(1,3);
-		if skillId==1 then
-			enemy:AtkSkillTuc( hero, batch, 2, bulletRotation[i], i );
-		elseif skillId==2 then
-			enemy:AtkSkillFeilong( hero, batch, 2, bulletRotation[i], i );
-		elseif skillId==3 then	
-			enemy:AtkAOE(p.heroCamp, batch);
-		end
-	end	
-end
---]]
---[[
---boss普通攻击（群攻）
-function p.BossAtk()
-	WriteCon( "BossAtk()");
-	
-	local boss = p.enemyCamp:GetFirstFighter();
-	local batch = battle_show.GetNewBatch();
-	boss:BossAtkCamp( p.heroCamp, batch );
-end
-
---boss技能攻击（群攻）
-function p.BossAtkSkill()
-	WriteCon( "BossAtkSkill()");
-	
-	local boss = p.enemyCamp:GetFirstFighter();
-	local batch = battle_show.GetNewBatch();
-	--随机技能
-	--local skillType = math.random(1,2);
-	local skillType = 1;
-	boss:BossAtkCamp_BySkill( p.heroCamp, batch ,skillType);
-end
---]]
 
 --查找fighter
 function p.FindFighter(id)
@@ -417,15 +296,9 @@ function p.CampBattle(campType)
 		if true and math.random(1,2)==2 then
 			local target = defenseCampAliveFighter[defenderId];
 			p.AddMaskImage();
+			attacker.node:SetZOrder(E_BATTLE_Z_ULT_SKILL_FIGHTER);
 			attacker:Atk( target, batch );
 		else
-			--if math.random(1,2)==2 then
-			--	local skillType = math.random(1,2);
-			--	attacker:AtkSkill(defenseCampAliveFighter[defenderId], batch, 2, i ,skillType);
-			--else
-			--	attacker:AtkSkillAOE(defenseCamp, batch);
-			--end
-			--local atkSkill = math.random(1,2);
 			local atkSkill = 1;
 			if atkSkill == 1 then
 				if attacker.petTag == PET_BLUE_DEVIL_TAG  then

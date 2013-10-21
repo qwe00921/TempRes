@@ -25,6 +25,8 @@ E_BATTLE_Z_NORMAL			= 0;	--普通
 E_BATTLE_Z_ENEMY_FIGHTER	= 1;	--Enemy战士
 E_BATTLE_Z_BULLET			= 2;	--子弹
 E_BATTLE_Z_HERO_FIGHTER		= 3;	--Hero战士
+E_BATTLE_Z_BLACK_MASK		= 7;	--放大招的遮挡
+E_BATTLE_Z_ULT_SKILL_FIGHTER = 10;  --放大招的时候战士
 
 --战斗阶段
 E_BATTLE_STAGE_NONE             = 0;

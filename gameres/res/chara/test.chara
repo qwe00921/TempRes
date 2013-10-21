@@ -60,9 +60,9 @@
 ;·ÉÁú
 [fly_dragon]
 @standby	name=standby ani=x.fly_dragon_standby
-@atk 		name=atk ani=x.fly_dragon_attack keyframe(2,2)
+@atk 		name=atk ani=x.fly_dragon_attack
 @run		
-@skill		name=skill ani=x.fly_dragon_cast keyframe(2,2)
+@skill		name=skill ani=x.fly_dragon_cast
 @defence	
 @hurt		name=hurt ani=x.fly_dragon_hurt
 @dead		name=dead ani=x_cmb.fly_dragon_death
