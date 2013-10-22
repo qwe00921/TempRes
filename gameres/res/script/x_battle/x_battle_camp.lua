@@ -56,10 +56,10 @@ function p:AddBoss()
 		f.idCamp = E_CARD_CAMP_ENEMY;
 		
 		if self:IsHeroCamp() then
-			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
+			node:SetZOrder( 3 );
 			f:SetLookAt( E_LOOKAT_RIGHT );
 		else
-			node:SetZOrder( E_BATTLE_Z_ENEMY_FIGHTER );
+			node:SetZOrder( 3 );
 			f:SetLookAt( E_LOOKAT_LEFT );
 		end
 end

@@ -51,7 +51,7 @@ function p.AddMaskImage()
 		
 		local pic = GetPictureByAni("lancer.mask", 0); 
 		p.imageMask:SetPicture( pic );
-		p.uiLayer:AddChildZ( p.imageMask, 7 );
+		p.uiLayer:AddChildZ( p.imageMask,3);
 		p.imageMask:AddActionEffect("x.imageMask_fadein");
 	else
 		p.ShowMaskImage();
@@ -271,7 +271,7 @@ function p.CampBattle(campType)
 	
 	--先记录临时血量
 	local defenceFighters = defenseCamp:GetAliveFighters();
-	for i=1, #defenceFighters do
+	for i = 1, #defenceFighters do
 		defenceFighters[i]:SetTmpLife();
 	end
 	
@@ -295,8 +295,6 @@ function p.CampBattle(campType)
 		--@override
 		if true and math.random(1,2)==2 then
 			local target = defenseCampAliveFighter[defenderId];
-			p.AddMaskImage();
-			attacker.node:SetZOrder(E_BATTLE_Z_ULT_SKILL_FIGHTER);
 			attacker:Atk( target, batch );
 		else
 			local atkSkill = 1;
@@ -309,6 +307,7 @@ function p.CampBattle(campType)
 							attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[d], batch, 2, i ,skillType);
 						end
 					else
+						--p.AddMaskImage(); --黑屏处理
 						attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[defenderId], batch, 2, i ,skillType);
 					end		
 				end

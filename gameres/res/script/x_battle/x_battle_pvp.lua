@@ -59,6 +59,10 @@ function p.ShowUI()
 	skillNameBar:SetFramePosXY(0,skillNameBar:GetFramePos().y);
 	p.skillNameBarOldPos = skillNameBar:GetFramePos();
 	
+	local pBgIamge = GetImage(p.battleLayer,ui_x_battle_pvp.ID_CTRL_PICTURE_BG);
+	
+	pBgIamge:SetFramePosXY(-100,pBgIamge:GetFramePos().y);
+	
 	--ÃÌº”’Ω∂∑±≥æ∞Õº∆¨
 	--p.AddBattleBg();
 	
