@@ -1,26 +1,19 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
-[CTRL_BUTTON_10]
-Type=2
-Tag=10
-Rect=98 549 102 65
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
-NormalFileUV=0 0 124 124
-SelectFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
-SelectedFileUV=0 0 124 124
-DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk_down.png
-DisableFileUV=0 0 124 124
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=0 0 639 960
+NormalFile=.\res\image\map\temp_x_battle_ui.png
+NormalFileUV=0 0 320 479
 
 [CTRL_BUTTON_11]
 Type=2
 Tag=11
-Rect=836 12 124 79
+Rect=277 575 119 76
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -30,31 +23,3 @@ SelectFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan.png
 SelectedFileUV=0 0 124 124
 DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
 DisableFileUV=0 0 114 73
-
-[CTRL_PICTURE_12]
-Type=1
-Tag=12
-Rect=603 451 345 192
-NormalFile=.\res\image\ui\fant_2\frame_01.png
-NormalFileUV=0 0 450 250
-
-[CTRL_PICTURE_36]
-Type=1
-Tag=36
-Rect=9 468 345 192
-NormalFile=.\res\image\ui\fant_2\button_02.png
-NormalFileUV=0 0 450 250
-
-[CTRL_PICTURE_38]
-Type=1
-Tag=38
-Rect=234 -66 448 248
-NormalFile=.\res\image\ui\fant_2\button_01.png
-NormalFileUV=0 0 450 250
-
-[CTRL_PICTURE_39]
-Type=1
-Tag=39
-Rect=386 392 461 256
-NormalFile=.\res\image\ui\fant_2\vs.png
-NormalFileUV=0 0 450 250

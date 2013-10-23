@@ -1,12 +1,12 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=-3 0 960 640
+Rect=-5 154 640 508
 Stretch=1
 NormalFile=.\res\image\map\green_wild_1136x720.png
 NormalFileUV=0 0 960 640
@@ -14,65 +14,66 @@ NormalFileUV=0 0 960 640
 [CTRL_SPRITE_10]
 Type=19
 Tag=11
-Rect=648 225 106 60
+Rect=432 337 71 90
 
 [CTRL_SPRITE_9]
 Type=19
 Tag=10
-Rect=654 221 106 60
+Rect=436 331 71 90
 
 [CTRL_SPRITE_6]
 Type=19
 Tag=7
-Rect=639 213 106 60
+Rect=437 332 71 90
 
 [CTRL_SPRITE_7]
 Type=19
 Tag=8
-Rect=645 234 106 60
+Rect=457 328 71 90
 
 [CTRL_SPRITE_8]
 Type=19
 Tag=9
-Rect=647 219 106 60
+Rect=491 331 71 90
 
 [CTRL_SPRITE_5]
 Type=19
 Tag=6
-Rect=164 190 106 60
+Rect=51 263 71 90
 
 [CTRL_SPRITE_4]
 Type=19
 Tag=5
-Rect=296 279 106 60
+Rect=143 295 71 90
+Stretch=1
 
 [CTRL_SPRITE_1]
 Type=19
 Tag=2
-Rect=31 281 106 60
+Rect=33 372 71 90
 
 [CTRL_SPRITE_2]
 Type=19
 Tag=3
-Rect=163 280 106 60
+Rect=145 424 71 90
 
 [CTRL_SPRITE_3]
 Type=19
 Tag=4
-Rect=161 372 106 60
+Rect=61 484 71 90
 
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=417 148 107 60
+Rect=286 333 71 90
 
 [CTRL_PICTURE_13]
 Type=1
 Tag=13
 Z_Order=200
-Rect=-20 -35 960 60
+Rect=-13 -52 640 90
 
 [CTRL_SPRITE_BOSS]
 Type=19
 Tag=14
-Rect=652 209 107 60
+Rect=453 329 71 90
