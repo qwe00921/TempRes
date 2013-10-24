@@ -22,6 +22,7 @@ local enemyUIArray = {
 -----
 p.battleLayer = nil;
 p.TestHeroFighter1 = nil;
+p.pBgImage = nil;
 -----
 
 --设置可见
@@ -59,9 +60,26 @@ function p.ShowUI()
 	skillNameBar:SetFramePosXY(0,skillNameBar:GetFramePos().y);
 	p.skillNameBarOldPos = skillNameBar:GetFramePos();
 	
-	local pBgIamge = GetImage(p.battleLayer,ui_x_battle_pvp.ID_CTRL_PICTURE_BG);
+	p.pBgImage = GetImage(p.battleLayer,ui_x_battle_pvp.ID_CTRL_PICTURE_BG);
 	
-	pBgIamge:SetFramePosXY(-100,pBgIamge:GetFramePos().y);
+	if nil == p.pBgImage then
+		WriteCon("pBgImage is null");
+	end
+	
+	p.pBgImage:SetFramePosXY(0,p . pBgImage:GetFramePos().y);
+	
+	local batch = battle_show.GetNewBatch();
+	local seqMove = batch:AddSerialSequence();
+	local pos = p.pBgImage:GetCenterPos();
+	local pTar = p.pBgImage:GetCenterPos();
+
+	local x = pTar.x;
+	local xx = pos.x;
+	
+	pos.x = xx + 500;
+	
+	local cmd = CommandMoveTo(pos,pTar,seqMove,p.pBgImage);
+	
 	
 	--添加战斗背景图片
 	--p.AddBattleBg();
@@ -69,6 +87,27 @@ function p.ShowUI()
 	--战斗
 	p.InitBattle();
 	return true;
+end
+
+function CommandMoveTo( playerNodePos, targetPos, seq,node)
+	
+	local duration = 0;
+	local cmd = nil;
+	--local fx = "x.hero_atk";
+	local fx = "x_cmb.hero_atk";
+	
+	local selfPos = playerNodePos;
+	
+	local x = targetPos.x - playerNodePos.x;
+	local y = targetPos.y - playerNodePos.y;
+		
+	-- cmd with var
+	cmd = battle_show.AddActionEffect_ToSequence( duration, node, fx, seq );
+	local varEnv = cmd:GetVarEnv();
+	varEnv:SetFloat( "$1", x );
+	varEnv:SetFloat( "$2", y );
+	
+	return cmd;
 end
 
 --关闭

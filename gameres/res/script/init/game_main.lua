@@ -64,13 +64,13 @@ function p.EnterTaskMap( mapName, chapterId, stageId, stageType, difficulty )
 	world_map.CloseMap();
 	
 	--打开任务地图
-	task_map.OpenMap( mapName, chapterId, stageId, stageType, difficulty );
+	--task_map.OpenMap( mapName, chapterId, stageId, stageType, difficulty );
 	
 	--播放任务音乐
 	PlayMusic_Task();
 	
 	--显示主菜单
-	task_map_mainui.ShowUI();
+	--task_map_mainui.ShowUI();
 	
 	--显示左侧菜单
 	--test_button.ShowUI();

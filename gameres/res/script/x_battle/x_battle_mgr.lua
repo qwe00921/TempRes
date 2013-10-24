@@ -195,7 +195,7 @@ function p.EnterBattle()
 	WriteCon( "x_battle_mgr.EnterBattle()" );
 	
 	--hide 
-	GetTileMap():SetVisible( false );
+	--GetTileMap():SetVisible( false );
 	task_map_mainui.HideUI();
 	
 	--Òþ²Ø°´Å¥
@@ -309,7 +309,7 @@ function p.CampBattle(campType)
 					else
 						--p.AddMaskImage(); --ºÚÆÁ´¦Àí
 						attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[defenderId], batch, 2, i ,skillType);
-					end		
+					end
 				end
 			else
 				attacker:AtkSkillOneToCamp(defenseCamp, batch);
