@@ -3,6 +3,14 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_17]
+Type=2
+Tag=17
+Rect=462 54 107 60
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
@@ -13,7 +21,7 @@ NormalFileUV=0 0 320 479
 [CTRL_BUTTON_11]
 Type=2
 Tag=11
-Rect=277 575 119 76
+Rect=277 575 110 70
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

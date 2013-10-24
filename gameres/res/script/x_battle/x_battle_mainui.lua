@@ -83,11 +83,11 @@ end
 --设置事件处理
 function p.SetDelegate(layer)
 	--攻击按钮
-	atkBtn = GetButton( layer, ui_battle_mainui.ID_CTRL_BUTTON_10 );
+	atkBtn = GetButton( layer, ui_x_battle_mainui.ID_CTRL_BUTTON_17 );
     atkBtn:SetLuaDelegate( p.OnBtnClicked_Atk );
 	
 	--托管按钮
-	autoBtn = GetButton( layer, ui_battle_mainui.ID_CTRL_BUTTON_11 );
+	autoBtn = GetButton( layer, ui_x_battle_mainui.ID_CTRL_BUTTON_11 );
 	autoBtn:SetLuaDelegate( p.OnBtnClicked_Auto );
 end
 
