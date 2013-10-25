@@ -126,6 +126,7 @@ DoFile("achievement/dlg_achievement.lua");
 DoFile("drama/dlg_drama.lua");
 DoFile("drama/drama_mgr.lua");
 DoFile("drama/drama_page.lua");
+DoFile("drama/after_drama.lua");
 
 --玩家信息界面
 DoFile("userinfo/define.lua");

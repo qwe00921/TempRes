@@ -81,12 +81,20 @@ function p.test()
 --	p.Test9Slices();
 	
 	--直接进战斗
---	p.EnterBattle();
+	--p.EnterBattle();
+
+--	--测试utf8子串
+--	p.TestUtf8String();
+    
+    --测试剧情
+--    dlg_drama.ShowUI(1);
 end
 
 function p.EnterBattle()
-    card_battle_mgr.EnterBattle();
-    --x_battle_mgr.EnterBattle();
+    local battleType = BATTLE_PVE;
+    local userTeamId = 23;
+    local targetId = 1;
+    card_battle_mgr.EnterBattle( battleType, userTeamId, targetId );
 	mainui.HideUI();
 end
 	
@@ -721,4 +729,22 @@ function p.Test9Slices()
 	widget:SetFrameRect( CCRectMake( 10,10,300,120));
 	widget:SetPicture( GetPictureByAni("effect.9slices", 0));
 	GetUIRoot():AddChild(widget);
+end
+
+--测试utf8子串
+function p.TestUtf8String()
+	g_str = GetStr("s3"); --global
+	g_str_index = 1;
+	g_str_count = GetCharCountUtf8( g_str );
+	
+	SetTimer( p.OnTimer_UpdateSubString, 0.1f );
+end
+
+--定时更新子串
+function p.OnTimer_UpdateSubString( idTimer )
+	WriteCon( GetSubStringUtf8( g_str, g_str_index ));
+	g_str_index = g_str_index + 1;
+	if g_str_index  > g_str_count then
+		KillTimer( idTimer );
+	end
 end

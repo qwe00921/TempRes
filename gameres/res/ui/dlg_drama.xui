@@ -18,46 +18,67 @@ Tag=1
 Z_Order=-1
 Rect=-1 -1 960 640
 
+[CTRL_PICTURE_MASK]
+Type=1
+Tag=12
+Rect=0 0 960 640
+
 [CTRL_PICTURE_L]
 Type=1
 Tag=2
-Rect=23 22 300 331
+Rect=57 43 300 450
 
 [CTRL_PICTURE_M]
 Type=1
 Tag=3
-Rect=329 22 300 330
+Rect=331 43 300 450
 
 [CTRL_PICTURE_R]
 Type=1
 Tag=4
-Rect=636 22 300 332
+Rect=605 43 300 450
 
-[CTRL_TEXT_NPC_NAME]
-Type=4
-Tag=5
-Rect=29 364 107 28
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+[CTRL_PICTURE_CONTENT_BG]
+Type=1
+Tag=11
+Rect=-35 388 993 188
+NormalFile=.\res\image\drama_bg\content_bg.png
+NormalFileUV=0 0 565 97
 
 [CTRL_COLOR_LABEL_TEXT]
 Type=7
 Tag=6
-Rect=33 406 894 202
-
-[CTRL_BUTTON_CLICK]
-Type=2
-Tag=9
-Rect=827 545 70 50
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+Rect=51 398 858 163
 
 [CTRL_BUTTON_SKIP]
 Type=2
 Tag=10
 Rect=856 19 70 50
-TextSize=10
+Text=跳过
+TextTradition=跳過
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NPC_NAME]
+Type=4
+Tag=5
+Rect=32 354 107 34
+Text=说话者
+TextTradition=說話者
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CLICK]
+Type=2
+Tag=9
+Rect=827 517 70 50
+Text=下一个
+TextTradition=下一個
+TextSize=16
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
