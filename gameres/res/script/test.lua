@@ -87,7 +87,7 @@ function p.test()
 --	p.TestUtf8String();
     
     --≤‚ ‘æÁ«È
---    dlg_drama.ShowUI(1);
+    dlg_drama.ShowUI(1);
 end
 
 function p.EnterBattle()

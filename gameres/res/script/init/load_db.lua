@@ -49,3 +49,6 @@ T_SHOP        = LoadTable( "shop.ini");
 
 -- ÀñÎï±í
 T_GIFT        = LoadTable( "gift.ini");
+
+--¾çÇé
+T_STORY_INFO  = LoadTable( "story_info.ini");
