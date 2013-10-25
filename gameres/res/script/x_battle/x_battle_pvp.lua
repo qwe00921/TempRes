@@ -79,7 +79,7 @@ function p.ShowUI()
 	
 	pos.x = xx + 320;
 	
-	local cmd = CommandMoveTo(pos,pTar,seqMove,p.pBgImage);
+--	local cmd = CommandMoveTo(pos,pTar,seqMove,p.pBgImage); --战斗背景移动取消
 	
 	
 	--添加战斗背景图片

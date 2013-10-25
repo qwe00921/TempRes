@@ -32,13 +32,13 @@
 
 ;µ­³ö
 [imageMask_fadeout]
-@fadeto(0.2,1)
+@fadeto(0,1)
 @hide
 
 ;µ­Èë
 [imageMask_fadein]
 @show
-@fadeto(0.2,0)
+@fadeto(0,0)
 
 
 ;³èÎïÅòÕÍ

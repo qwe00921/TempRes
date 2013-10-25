@@ -21,6 +21,7 @@ p.npdIdMid = nil;	--中间npcid
 p.npcIdRight = nil;	--右边npcid
 
 p.npcIdTalk = nil;	--当前说话的npcid
+p.npcName = nil;    --当前说话的NPC名称
 p.talkText = nil;	--说话内容
 
 
@@ -41,9 +42,20 @@ function p:Init()
 end
 
 --加载页面（将ini中的行记录加载到对象中）
-function p:LoadPage()
+function p:LoadPage( oDrama )
+    self.talkText = oDrama.speak_text;
+    self.npcName = oDrama.npc_name;
+    
+    self.picBg = oDrama.bg_pic;      
+    self.picLeft = oDrama.npc_left_id;    
+    self.picMid = oDrama.npc_middle_id;    
+    self.picRight = oDrama.npc_right_id;
+    
+    self.npcIdTalk = oDrama.speak_id;
+    
 end
 
 --显示页面（根据页面属性加载图片等进行显示）
 function p:ShowPage()
+    dlg_drama.ResetUI( self );
 end
