@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=-5 154 640 508
+Rect=-0 113 960 640
 Stretch=1
 NormalFile=.\res\image\map\green_wild_1136x720.png
 NormalFileUV=0 0 960 640

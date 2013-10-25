@@ -66,17 +66,18 @@ function p.ShowUI()
 		WriteCon("pBgImage is null");
 	end
 	
-	p.pBgImage:SetFramePosXY(0,p . pBgImage:GetFramePos().y);
+	p.pBgImage:SetFrameSize(960,640);
+	p.pBgImage:SetFramePosXY(-320,p.pBgImage:GetFramePos().y);
 	
 	local batch = battle_show.GetNewBatch();
 	local seqMove = batch:AddSerialSequence();
-	local pos = p.pBgImage:GetCenterPos();
-	local pTar = p.pBgImage:GetCenterPos();
+	local pos = p.pBgImage:GetFramePos();
+	local pTar = p.pBgImage:GetFramePos();
 
 	local x = pTar.x;
 	local xx = pos.x;
 	
-	pos.x = xx + 500;
+	pos.x = xx + 320;
 	
 	local cmd = CommandMoveTo(pos,pTar,seqMove,p.pBgImage);
 	
