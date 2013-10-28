@@ -92,7 +92,9 @@ end
 function p:AddAllRandomTimeJumpEffect()
 	g_fighters = self.fighters;
 	for k,v in ipairs(self.fighters) do
-		local fTime = math.random(1,10) / 10.0f;
+		local fTime = math.random(1,10) / 8.0 + 1.0;
+		local str = string.format("time is %8.6f",fTime);
+		WriteCon(str);
 		SetTimerOnce( p.AddFithersJumpEffect, fTime );
 	end
 end
