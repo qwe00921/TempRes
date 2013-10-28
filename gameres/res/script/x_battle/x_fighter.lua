@@ -40,9 +40,17 @@ function p:CreateHpBar()
 end
 
 --临时生命值
-function p:SetTmpLife()         self.tmplife = self.life; end
-function p:CheckTmpLife() 		return self.tmplife > 0; end
-function p:SubTmpLife( val ) 	self.tmplife = self.tmplife - val; end
+function p:SetTmpLife()
+	self.tmplife = self.life;
+end
+
+function p:CheckTmpLife()
+	return self.tmplife > 0;
+end
+
+function p:SubTmpLife( val )
+	self.tmplife = self.tmplife - val;
+end
 
 --加载配置
 function p:UseConfig( config )
@@ -112,8 +120,9 @@ end
 function p:HurtResultAni( targetFighter, seqTarget )
 	--死亡动作或站立动画
 	if targetFighter:CheckTmpLife() then
-		local cmdA = createCommandPlayer():Standby( 0, targetFighter:GetNode(), "" );
-		seqTarget:AddCommand( cmdA );
+		self:standby();
+		--local cmdA = createCommandPlayer():Standby( 0, targetFighter:GetNode(), "" );
+		--seqTarget:AddCommand( cmdA );
 	else
 		local cmdB = createCommandPlayer():Dead( 0, targetFighter:GetNode(), "" );
 		seqTarget:AddCommand( cmdB );	
@@ -162,7 +171,6 @@ function p:Atk( targetFighter, batch)
 		return;
 	end
 	
-	
 	local playerNode = self:GetPlayerNode();
 	
 	--奔跑动画
@@ -170,7 +178,8 @@ function p:Atk( targetFighter, batch)
 	seqAtk:AddCommand( cmd1 );
 	
 	--向攻击目标移动
-	local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
+	--self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
+	local cmd2 = self:JumpToPosition(batch,enemyPos,false);
 	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );
@@ -729,7 +738,7 @@ function p:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fi
 	seqTarget:SetWaitEnd( cmd1 );
 end
 
-function p:JumpToPosition(batch,pTargetPos)
+function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	local pJumpSeq = batch:AddParallelSequence();
 	local fx = "lancer_cmb.begin_battle_jump";
 	
@@ -745,8 +754,14 @@ function p:JumpToPosition(batch,pTargetPos)
 	local offsetX = x * startOffset / distance;
 	local offsetY = y * startOffset / distance;
 	self:GetPlayerNode():SetFramePosXY( atkPos.x + offsetX, atkPos.y + offsetY );
+
+	local pCmd = nil;
 	
-	local pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, self:GetPlayerNode(), fx);
+	if false == bParallelSequence then
+		pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx);
+	else
+		pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, self:GetPlayerNode(), fx);
+	end
 	
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );

@@ -84,7 +84,7 @@ function p.AddFithersJumpEffect()
 	local pOldPos = node:GetFramePos();
 	local batch = battle_show.GetNewBatch();
 	local pNewPos = CCPointMake(pOldPos.x + 400,pOldPos.y);
-	local cmd = pFighter:JumpToPosition(batch,pNewPos);
+	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
 	g_index = g_index + 1;
 end
