@@ -7,6 +7,10 @@
 @type=0
 lancer.bullet_shoot_jump
 
+[begin_battle_jump]
+@type=0
+lancer.begin_battle_jump
+
 ;ΥπΖΑ
 [shake]
 @type=0

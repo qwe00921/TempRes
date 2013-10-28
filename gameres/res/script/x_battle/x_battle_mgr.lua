@@ -101,6 +101,7 @@ function p.createHeroCamp()
 	p.heroCamp = x_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray );
+	p.heroCamp:AddAllRandomTimeJumpEffect();
 end
 
 --创建敌对阵营
@@ -113,14 +114,11 @@ end
 
 --测试PVP
 function p.TestPVP()
-	for i=1,100 do
-		p.FightOnce_PVP( true );
-		p.FightOnce_PVP( false );
-	end
+
 end
 
 --测试随机打一次(PVP)
-function p.FightOnce_PVP( flag )
+function p.JumpToPoint( pSeq,Pos )
 	local batch = battle_show.GetNewBatch();
 	local f1 = p.heroCamp:GetRandomFighter();
 	local f2 = p.enemyCamp:GetRandomFighter();
@@ -128,16 +126,7 @@ function p.FightOnce_PVP( flag )
 	
 --	f1:AtkSkillMul( f3, f4, batch );
 --	do return end
-	
-	if flag then
-		if math.random(1,3) == 2 then
-			f1:AtkSkillMul( f3, f4, batch );
-		else
-			f1:AtkSkill( f2, batch );
-		end
-	else
-		f2:AtkSkill( f1, batch );
-	end
+
 end
 
 --查找fighter
@@ -296,6 +285,7 @@ function p.CampBattle(campType)
 		if true and math.random(1,2)==2 then
 			local target = defenseCampAliveFighter[defenderId];
 			attacker:Atk( target, batch );
+			--attacker:JumpToPosition(batch,target:GetNode():GetCenterPos());
 		else
 			local atkSkill = 1;
 			if atkSkill == 1 then

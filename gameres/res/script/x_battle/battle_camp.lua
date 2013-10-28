@@ -29,6 +29,9 @@ function p:IsHeroCamp()
 	return self.idCamp == E_CARD_CAMP_HERO;
 end
 
+function p:AddFithersJumpEffect()
+end
+
 --È¡fighter¸öÊý
 function p:GetFighterCount()
 	return #self.fighters;
@@ -54,7 +57,7 @@ function p:AddFighters( uiArray )
 		f:Init( uiTag, node, self.idCamp );
 		f:SetFighterPic();
 		
-		self.fighters[#self.fighters+1] = f;
+		self.fighters[#self.fighters + 1] = f;
 		
 		if self.idCamp == E_CARD_CAMP_HERO then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
@@ -108,6 +111,8 @@ function p:IsAllFighterDead()
 	return true;
 end
 
+function p.AddAllRandomTimeJumpEffect()
+end
 
 function p:GetAliveFighters()
 	local t = {}

@@ -729,6 +729,33 @@ function p:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fi
 	seqTarget:SetWaitEnd( cmd1 );
 end
 
+function p:JumpToPosition(batch,pTargetPos)
+	local pJumpSeq = batch:AddParallelSequence();
+	local fx = "lancer_cmb.begin_battle_jump";
+	
+	local atkPos = self:GetPlayerNode():GetCenterPos();
+	local targetPos = pTargetPos;
+	
+	local x = targetPos.x - atkPos.x;
+	local y = targetPos.y - atkPos.y;
+	local distance = (x ^ 2 + y ^ 2) ^ 0.5;
+	
+	-- calc start offset
+	local startOffset = 0;
+	local offsetX = x * startOffset / distance;
+	local offsetY = y * startOffset / distance;
+	self:GetPlayerNode():SetFramePosXY( atkPos.x + offsetX, atkPos.y + offsetY );
+	
+	local pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, self:GetPlayerNode(), fx);
+	
+	local varEnv = pCmd:GetVarEnv();
+	varEnv:SetFloat( "$1", x );
+	varEnv:SetFloat( "$2", y );
+	varEnv:SetFloat( "$3", distance * 0.4 );
+	
+	return pCmd;
+end
+
 --¼¼ÄÜ¹¥»÷£¨µ¥¹¥£©
 function p:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighterIndex )
 	if batch == nil then return end

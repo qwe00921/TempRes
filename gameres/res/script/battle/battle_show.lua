@@ -18,6 +18,17 @@ function p.AddActionEffect_ToSequence( duration, node, title, sequence )
 	return cmd;
 end
 
+--用默认的串行序列播放Action特效
+function p.AddActionEffect_ToParallelSequence( duration, node, title, sequence )
+	local cmd = createCommandEffect():AddActionEffect( duration, node, title );
+	if cmd ~= nil then
+		sequence = sequence or p.GetDefaultParallelSequence();
+		sequence:AddCommand( cmd );
+	end	
+	return cmd;
+end
+
+
 --获取一个新的batch
 function p.GetNewBatch()
 	local battleShow = GetBattleShow();

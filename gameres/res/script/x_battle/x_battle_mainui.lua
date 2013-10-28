@@ -53,7 +53,7 @@ function p.ShowUI()
 	--p.InitBossHpBar();
 	
 	--添加蒙版图片
-	p.AddMaskImage();
+--	p.AddMaskImage();
 	
 	--添加战斗开启光效
 	local id = AddHudEffect( "lancer.enter_battle" );

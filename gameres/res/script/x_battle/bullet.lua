@@ -121,12 +121,12 @@ function p:cmdShoot( atkFighter, targetFighter, seq, byJump )
 	local targetPos = targetFighter:GetNode():GetCenterPos();
 	local x = targetPos.x - atkPos.x;
 	local y = targetPos.y - atkPos.y;
-	local distance = (x^2 + y^2)^0.5;
+	local distance = (x ^ 2 + y ^ 2) ^ 0.5;
 	
 	-- calc start offset
 	local startOffset = self:GetStartOffset();
-	local offsetX = x * startOffset/distance;
-	local offsetY = y * startOffset/distance;
+	local offsetX = x * startOffset / distance;
+	local offsetY = y * startOffset / distance;
 	node:SetFramePosXY( atkPos.x + offsetX, atkPos.y + offsetY );
 	
 	-- sub distance
