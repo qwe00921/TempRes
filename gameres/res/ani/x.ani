@@ -130,10 +130,10 @@ lj\chara\57daqiao\walk.png @cut(1,4) @time=0.20 @reverse @loop
 
 ;{----------·ÉÁú¶¯»­ÅäÖÃ---------------
 [fly_dragon_attack]
-image\pet\fly_dragon\atk.png    @cut(1,5)  @time=0.20   @offset(20,0) @stay
+image\pet\fly_dragon\atk.png    @cut(2,6)  @time=0.10   @offset(20,0) @stay
 
 [fly_dragon_cast]
-image\pet\fly_dragon\atk.png   @cut(1,5)  @time=0.15   @offset(10,-00) @stay
+image\pet\fly_dragon\atk.png   @cut(2,6)  @time=0.10   @offset(20,0) @stay
 
 [fly_dragon_death]
 image\pet\fly_dragon\standby.png  @cut(1,2)  @time=0.15   @offset(0,-15) @stay
