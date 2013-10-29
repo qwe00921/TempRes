@@ -422,9 +422,9 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	
 	--击退效果
 	if self.petTag == PET_BLUE_DEVIL_TAG then
-		local cmdBack = createCommandEffect():AddActionEffect( 0, targetFighter:GetNode(), "lancer.target_hurt_back" );
-		seqMiscHurt:AddCommand( cmdBack );
-		cmdBack:SetDelay(playerNode:GetSkillKeyTime_Atk(""));
+		--local cmdBack = createCommandEffect():AddActionEffect( 0, targetFighter:GetNode(), "lancer.target_hurt_back" );
+		--seqMiscHurt:AddCommand( cmdBack );
+	--	cmdBack:SetDelay(playerNode:GetSkillKeyTime_Atk(""));
 	end
 	seqMiscHurt:SetWaitBegin( cmd2 );
 	
@@ -650,9 +650,9 @@ function p:UltimateSkill( camp, batch )
 				--]]
 				
 				--击退效果
-				local cmdBack = createCommandEffect():AddActionEffect( 0, target:GetNode(), "lancer.target_hurt_back" );
-				seq1:AddCommand( cmdBack );
-				cmdBack:SetDelay(self:GetPlayerNode():GetSkillKeyTime_Atk(""));
+				--local cmdBack = createCommandEffect():AddActionEffect( 0, target:GetNode(), "lancer.target_hurt_back" );
+				--seq1:AddCommand( cmdBack );
+			--	cmdBack:SetDelay(self:GetPlayerNode():GetSkillKeyTime_Atk(""));
 				
 				--受击动画
 				local cmd12 = createCommandPlayer():Hurt( 0, target:GetNode(), "" );
@@ -753,7 +753,8 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	local startOffset = 0;
 	local offsetX = x * startOffset / distance;
 	local offsetY = y * startOffset / distance;
-	self:GetPlayerNode():SetFramePosXY( atkPos.x + offsetX, atkPos.y + offsetY );
+	local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
+	self:GetPlayerNode():SetCenterPos( pPos);
 
 	local pCmd = nil;
 	
