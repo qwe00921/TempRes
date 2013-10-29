@@ -83,7 +83,7 @@ function p.AddFithersJumpEffect()
 		
 	local pOldPos = node:GetFramePos();
 	local batch = battle_show.GetNewBatch();
-	local pNewPos = CCPointMake(pOldPos.x + 210,pOldPos.y);
+	local pNewPos = CCPointMake(pOldPos.x + 220,pOldPos.y);
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
 	g_index = g_index + 1;
@@ -112,7 +112,7 @@ function p:AddFighters( uiArray )
 		self.fighters[#self.fighters + 1] = f;
 		
 		local pOldPos = node:GetFramePos();
-		pOldPos.x = pOldPos.x - 210;
+		pOldPos.x = pOldPos.x - 220;
 		node:SetFramePos(pOldPos);
 		
 		f:Init( uiTag, node, self.idCamp );

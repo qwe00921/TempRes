@@ -66,9 +66,6 @@ function p.ShowUI()
 		WriteCon("pBgImage is null");
 	end
 	
-	p.pBgImage:SetFrameSize(960,640);
-	p.pBgImage:SetFramePosXY(-280,p.pBgImage:GetFramePos().y);
-	
 	local batch = battle_show.GetNewBatch();
 	local seqMove = batch:AddSerialSequence();
 	local pos = p.pBgImage:GetFramePos();

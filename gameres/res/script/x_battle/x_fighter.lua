@@ -216,7 +216,7 @@ function p:Atk( targetFighter, batch)
 	self:HurtResultAni( targetFighter, seqTarget );
 	
 	--Κά»χµΘ΄ύΉ¥»χ¶―»­
-	seqTarget:SetWaitBegin( cmd3 );
+	seqTarget:SetWaitBegin( cmd5 );
 	
 end
 
