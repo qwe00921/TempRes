@@ -3,25 +3,25 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_36]
+Type=1
+Tag=36
+Rect=0 789 640 152
+NormalFile=.\res\image\xbattleui\bg2.png
+NormalFileUV=0 0 639 152
+
 [CTRL_BUTTON_17]
 Type=2
 Tag=17
-Rect=462 54 107 60
+Rect=509 158 107 60
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_12]
-Type=1
-Tag=12
-Rect=0 0 639 960
-NormalFile=.\res\image\map\temp_x_battle_ui.png
-NormalFileUV=0 0 320 479
-
 [CTRL_BUTTON_11]
 Type=2
 Tag=11
-Rect=277 575 110 70
+Rect=515 76 110 70
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -31,3 +31,89 @@ SelectFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan.png
 SelectedFileUV=0 0 124 124
 DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
 DisableFileUV=0 0 114 73
+
+[CTRL_PICTURE_POWER_BG]
+Type=1
+Tag=5
+Rect=13 898 450 62
+NormalFile=.\res\image\xbattleui\power.png
+NormalFileUV=0 0 362 50
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=316 70 107 60
+Text='min
+TextTradition='min
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_37]
+Type=1
+Tag=37
+Rect=234 64 200 75
+NormalFile=.\res\image\xbattleui\time.png
+NormalFileUV=0 0 326 122
+
+[CTRL_TEXT_TIME]
+Type=4
+Tag=7
+Rect=274 70 100 60
+Text=99
+TextTradition=99
+TextSize=34
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_SKILL1]
+Type=2
+Tag=10
+Rect=1 800 110 99
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\skill1.png
+NormalFileUV=0 0 73 66
+
+[CTRL_PICTURE_SKILL2]
+Type=1
+Tag=12
+Rect=116 799 110 99
+NormalFile=.\res\image\xbattleui\skill2.png
+NormalFileUV=0 0 73 66
+
+[CTRL_BUTTON_SKILL3]
+Type=2
+Tag=13
+Rect=230 800 110 99
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\skill3.png
+NormalFileUV=0 0 73 66
+
+[CTRL_BUTTON_SKILL4]
+Type=2
+Tag=14
+Rect=344 800 110 99
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\skill4.png
+NormalFileUV=0 0 71 64
+
+[CTRL_EXP_POWER]
+Type=9
+Tag=15
+Rect=30 920 417 40
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_38]
+Type=1
+Tag=38
+Rect=0 0 640 70
+NormalFile=.\res\image\xbattleui\bg3.png
+NormalFileUV=0 0 640 70

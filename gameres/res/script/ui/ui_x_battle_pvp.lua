@@ -4,6 +4,12 @@
 --------------------------------------------------------------
 ui_x_battle_pvp = {};
 local p =  ui_x_battle_pvp;
+p.ID_CTRL_SPRITE_20					      = 20;
+p.ID_CTRL_SPRITE_NEW5					    = 19;
+p.ID_CTRL_SPRITE_NEW4					    = 18;
+p.ID_CTRL_SPRITE_NEW3					    = 17;
+p.ID_CTRL_SPRITE_NEW2					    = 16;
+p.ID_CTRL_SPRITE_NEW1					    = 15;
 p.ID_CTRL_SPRITE_BOSS					    = 14;
 p.ID_CTRL_PICTURE_13					     = 13;
 p.ID_CTRL_PICTURE_12					     = 12;
