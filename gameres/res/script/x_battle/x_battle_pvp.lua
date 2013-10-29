@@ -67,7 +67,7 @@ function p.ShowUI()
 	end
 	
 	p.pBgImage:SetFrameSize(960,640);
-	p.pBgImage:SetFramePosXY(-320,p.pBgImage:GetFramePos().y);
+	p.pBgImage:SetFramePosXY(-280,p.pBgImage:GetFramePos().y);
 	
 	local batch = battle_show.GetNewBatch();
 	local seqMove = batch:AddSerialSequence();
@@ -77,7 +77,7 @@ function p.ShowUI()
 	local x = pTar.x;
 	local xx = pos.x;
 	
-	pos.x = xx + 320;
+	pos.x = xx + 280;
 	
 --	local cmd = CommandMoveTo(pos,pTar,seqMove,p.pBgImage); --战斗背景移动取消
 	
