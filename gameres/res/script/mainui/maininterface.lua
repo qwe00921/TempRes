@@ -87,6 +87,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**Àñ°ü**");
 
 			p.CloseAllPanel();
+			
+			dlg_drama_new.ShowUI();
 		elseif ui.ID_CTRL_TEMP_BUTTON_MAP == tag then
 			p.HideUI();	
 			p.CloseAllPanel();

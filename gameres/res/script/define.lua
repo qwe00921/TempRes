@@ -136,3 +136,6 @@ DoFile("menu/dlg_menu.lua");
 
 --广告
 DoFile("actAndad/define.lua");
+
+--剧情 临时
+DoFile("drama/dlg_drama_new.lua");

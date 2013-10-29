@@ -1,0 +1,69 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BACKGROUND]
+Type=1
+Tag=1
+Rect=0 0 640 960
+NormalFile=.\res\image\ui_honor\drama\drama_bg.PNG
+NormalFileUV=0 0 640 960
+
+[CTRL_PICTURE_ROLE_1]
+Type=1
+Tag=2
+Rect=6 158 208 306
+NormalFile=.\res\image\ui_honor\drama\man.png
+NormalFileUV=0 0 169 249
+
+[CTRL_PICTURE_ROLE_2]
+Type=1
+Tag=3
+Rect=427 157 204 301
+NormalFile=.\res\image\ui_honor\drama\women.PNG
+NormalFileUV=0 0 169 249
+
+[CTRL_TEXT_18]
+Type=4
+Tag=18
+Rect=10 490 115 42
+Text=中文
+TextTradition=中文
+TextSize=30
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_19]
+Type=2
+Tag=19
+Rect=525 737 93 42
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\drama\next.PNG
+NormalFileUV=0 0 96 43
+SelectFile=.\res\image\ui_honor\drama\next.PNG
+SelectedFileUV=0 0 96 43
+
+[CTRL_BUTTON_20]
+Type=2
+Tag=20
+Rect=538 25 96 59
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\drama\end.PNG
+NormalFileUV=0 0 78 48
+SelectFile=.\res\image\ui_honor\drama\end.PNG
+SelectedFileUV=0 0 78 48
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=15 544 613 179
+Text=中文
+TextTradition=中文
+TextSize=48
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop

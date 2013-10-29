@@ -179,3 +179,10 @@ DoFile("ui/ui_achievement_view.lua")
 
 --剧情
 DoFile("ui/ui_dlg_drama.lua")
+
+--任务界面
+--DoFile("ui/ui_quest_main.lua")
+--DoFile("ui/ui_quest_questlist.lua")
+
+--剧情界面
+DoFile("ui/ui_dlg_drama_new.lua");
