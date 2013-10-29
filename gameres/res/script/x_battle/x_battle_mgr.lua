@@ -285,7 +285,7 @@ function p.CampBattle(campType)
 		if true and math.random(1,2)==2 then
 			local target = defenseCampAliveFighter[defenderId];
 			attacker:Atk( target, batch );
-			attacker:Atk( target, batch );
+			--attacker:Atk( target, batch );
 			--attacker:JumpToPosition(batch,target:GetNode():GetCenterPos());
 		else
 			local atkSkill = 1;

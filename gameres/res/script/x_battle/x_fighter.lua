@@ -178,8 +178,8 @@ function p:Atk( targetFighter, batch)
 	seqAtk:AddCommand( cmd1 );
 	
 	--向攻击目标移动
-	--self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
-	local cmd2 = self:JumpToPosition(batch,enemyPos,false);
+	
+	local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );--self:JumpToPosition(batch,enemyPos,false);
 	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );
