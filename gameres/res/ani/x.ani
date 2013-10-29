@@ -130,22 +130,22 @@ lj\chara\57daqiao\walk.png @cut(1,4) @time=0.20 @reverse @loop
 
 ;{----------∑…¡˙∂Øª≠≈‰÷√---------------
 [fly_dragon_attack]
-image\pet\fly_dragon\atk.png    @cut(2,6)  @time=0.10   @offset(20,0) @stay
+image\pet\fly_dragon\atk.png    @cut(1,3)  @time=0.15   @offset(20,0) @stay @scale=1.8
 
 [fly_dragon_cast]
-image\pet\fly_dragon\atk.png   @cut(2,6)  @time=0.10   @offset(20,0) @stay
+image\pet\fly_dragon\atk.png   @cut(1,3)  @time=0.15   @offset(20,0) @stay @scale=1.8
 
 [fly_dragon_death]
-image\pet\fly_dragon\standby.png  @cut(1,2)  @time=0.15   @offset(0,-15) @stay
+image\pet\fly_dragon\standby.png  @cut(1,2)  @time=0.15   @offset(0,-0) @stay @scale=1.8
 
 [fly_dragon_death_end]
-image\pet\fly_dragon\standby.png  @cut(1,2)  @use(7,1)    @offset(0,-15)  @time=2
+image\pet\fly_dragon\standby.png  @cut(1,2)  @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 [fly_dragon_hurt]
-image\pet\fly_dragon\hurt.png   @cut(1,2)  @time=0.20  @offset(10,0)
+image\pet\fly_dragon\standby.png  @cut(1,2)  @time=0.3   @offset(0,-0) @stay @scale=1.8
 
 [fly_dragon_standby]
-image\pet\fly_dragon\standby.png @cut(1,2) @time=0.3   @loop
+image\pet\fly_dragon\standby.png @cut(1,2) @time=0.3   @loop @scale=1.8
 ;}-------------------------------------
 
 ;{----------boss∂Øª≠≈‰÷√---------------
