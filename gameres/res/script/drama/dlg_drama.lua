@@ -122,7 +122,10 @@ function p.DoEffectContent()
     if p.contentNode == nil then
     	return ;
     end
-	p.contentNode:SetText( GetSubStringUtf8( p.contentStr, p.contentIndex ) );
+	
+	local strText = GetSubStringUtf8( p.contentStr, p.contentIndex );
+	WriteCon(contentStr);
+	p.contentNode:SetText(strText);
 	p.contentIndex = p.contentIndex + 1;
 	if p.contentIndex > p.contentStrLn and p.timerId ~= nil then
 		KillTimer( p.timerId );
