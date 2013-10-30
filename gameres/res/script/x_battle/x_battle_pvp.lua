@@ -9,14 +9,24 @@ local p = x_battle_pvp;
 
 local ui = ui_x_battle_pvp;
 local heroUIArray = { 
-    ui.ID_CTRL_SPRITE_1, 
-    ui.ID_CTRL_SPRITE_2, 
-    ui.ID_CTRL_SPRITE_3, 
-    ui.ID_CTRL_SPRITE_4, 
-    ui.ID_CTRL_SPRITE_5, 
+    ui.ID_CTRL_LEFT_SPRITE_1,
+    ui.ID_CTRL_LEFT_SPRITE_2,
+    ui.ID_CTRL_LEFT_SPRITE_3,
+    ui.ID_CTRL_LEFT_SPRITE_4,
+    ui.ID_CTRL_LEFT_SPRITE_5,
+	ui.ID_CTRL_LEFT_SPRITE_6,
+	ui.ID_CTRL_LEFT_SPRITE_7,
+	ui.ID_CTRL_LEFT_SPRITE_8
 }
 local enemyUIArray = { 
-	ui.ID_CTRL_SPRITE_BOSS,
+	ui.ID_CTRL_RIGHT_SPRITE_1,
+	ui.ID_CTRL_RIGHT_SPRITE_2,
+	ui.ID_CTRL_RIGHT_SPRITE_3,
+	ui.ID_CTRL_RIGHT_SPRITE_4,
+	ui.ID_CTRL_RIGHT_SPRITE_5,
+	ui.ID_CTRL_RIGHT_SPRITE_6,
+	ui.ID_CTRL_RIGHT_SPRITE_7,
+	ui.ID_CTRL_RIGHT_SPRITE_8
 }    
 
 -----

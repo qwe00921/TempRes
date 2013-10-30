@@ -14,7 +14,8 @@ function p:new()
 	o = {}
 	setmetatable( o, self );
 	self.__index = self;
-	o:ctor(); return o;
+	o:ctor();
+	return o;
 end
 
 --构造函数
@@ -89,6 +90,32 @@ end
 --取player节点
 function p:GetPlayerNode()
     return ConverToPlayer(self:GetNode());
+end
+
+function p:JumpMoveTo(targetPos, pJumpSeq, isEnemyCamp)
+	local fx = "lancer_cmb.begin_battle_jump";
+	
+	local atkPos = self:GetPlayerNode():GetCenterPos();
+	
+	local x = targetPos.x - atkPos.x;
+	local y = targetPos.y - atkPos.y;
+	local distance = (x ^ 2 + y ^ 2) ^ 0.5;
+	
+	-- calc start offset
+	local startOffset = 0;
+	local offsetX = x * startOffset / distance;
+	local offsetY = y * startOffset / distance;
+	local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
+	self:GetPlayerNode():SetCenterPos( pPos);
+
+	local pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx,pJumpSeq);
+	
+	local varEnv = pCmd:GetVarEnv();
+	varEnv:SetFloat( "$1", x );
+	varEnv:SetFloat( "$2", y );
+	varEnv:SetFloat( "$3", distance * 0.4 );
+	
+	return pCmd;
 end
 
 --做位移
@@ -179,7 +206,7 @@ function p:Atk( targetFighter, batch)
 	
 	--向攻击目标移动
 	
-	local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );--self:JumpToPosition(batch,enemyPos,false);
+	local cmd2 = self:JumpMoveTo(enemyPos,seqAtk,false);
 	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );

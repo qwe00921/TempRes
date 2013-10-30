@@ -101,15 +101,16 @@ function p.createHeroCamp()
 	p.heroCamp = x_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray );
-	p.heroCamp:AddAllRandomTimeJumpEffect();
+	p.heroCamp:AddAllRandomTimeJumpEffect(p.heroCamp.fighters,true);
 end
 
 --创建敌对阵营
 function p.createEnemyCamp()
 	p.enemyCamp = x_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
-	--p.enemyCamp:AddFighters( p.enemyUIArray );
-	p.enemyCamp:AddBoss( );
+	p.enemyCamp:AddFighters( p.enemyUIArray );
+--	p.enemyCamp:AddAllRandomTimeJumpEffect(p.heroCamp.fighters,false);
+	--p.enemyCamp:AddBoss( );
 end
 
 --测试PVP
@@ -309,10 +310,7 @@ function p.CampBattle(campType)
 		
 		--设置批次等待
 		if useParallelBatch and (prevBatch ~= nil) then
-			local cmdSpecial = prevBatch:GetSpecialCmd( E_BATCH_STAGE_HURT_END );
-			if cmdSpecial ~= nil then
-				batch:SetWaitEnd( cmdSpecial );
-			end
+
 		end
 		prevBatch = batch;
 	end
