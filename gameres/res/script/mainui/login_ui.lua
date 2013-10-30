@@ -71,7 +71,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			local param = "&loginName="..loginName.."&loginPW="..loginPW;
 			WriteCon(param);
 			--SendReq("login","loginCheck",uid,param);
-			SendReq("ServerList","List",uid,"");
+			SendReq("ServerList","List",uid,"MachineType=Android");
 			
 			p.HideUI();
 			server_list.ShowUI();
