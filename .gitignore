@@ -6,6 +6,7 @@
 *.db
 *.suo
 *.lib
+*.ilk
 log.txt
 e2e
 /des

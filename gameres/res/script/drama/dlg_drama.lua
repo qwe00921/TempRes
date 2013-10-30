@@ -177,7 +177,7 @@ end
 --添加Npc特效
 function p.AddNpcEffect( npcNode )
     npcNode:SetScale(1.01f);
-    --npcNode:SetMaskColor(ccc4(255,255,255,255));
+    npcNode:SetMaskColor(ccc4(255,255,255,255));
 	
 	if not npcNode:FindActionEffect( act_zoom ) then
 		npcNode:AddActionEffect( act_zoom );
@@ -186,22 +186,13 @@ end
 
 --清除NPC的当前特效：即不是当前说话NPC的默认效果
 function p.AddSilentNpcEffect()
-
-	local a = p.npcPicNodeL:GetPicture();
+    p.npcPicNodeL:SetMaskColor(ccc4(160,160,160,255));
+	p.npcPicNodeM:SetMaskColor(ccc4(160,160,160,255));
+	p.npcPicNodeR:SetMaskColor(ccc4(160,160,160,255));
 	
-	if nil ~= a then
-		WriteCon("OKOKOK");
-	else
-		WriteCon("NOOKNOOKNOOK");
-	end
-	
-  --  p.npcPicNodeL:SetMaskColor(ccc4(160,160,160,255));
---	p.npcPicNodeM:SetMaskColor(ccc4(160,160,160,255));
-	--p.npcPicNodeR:SetMaskColor(ccc4(160,160,160,255));
-	
---	p.npcPicNodeL:DelActionEffect( act_zoom );
---	p.npcPicNodeM:DelActionEffect( act_zoom );
-	--p.npcPicNodeR:DelActionEffect( act_zoom );
+	p.npcPicNodeL:DelActionEffect( act_zoom );
+	p.npcPicNodeM:DelActionEffect( act_zoom );
+	p.npcPicNodeR:DelActionEffect( act_zoom );
 end
 
 --隐藏UI
