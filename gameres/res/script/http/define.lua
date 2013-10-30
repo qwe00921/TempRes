@@ -7,6 +7,9 @@
 --消息类
 DoFile("http/msg/msg_define.lua");
 DoFile("http/msg/msg_base.lua");
+
+DoFile("http/msg/msg_server_list.lua");
+
 DoFile("http/msg/msg_test.lua");
 DoFile("http/msg/msg_err.lua");
 DoFile("http/msg/msg_factory.lua");
