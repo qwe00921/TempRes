@@ -25,7 +25,8 @@ function p.main()
 		    --这是社会主义宇宙真理
 		    --显示主界面
 		    --mainui.ShowUI();
-			maininterface.ShowUI();
+			--maininterface.ShowUI();
+			login_main.ShowUI();
         end
 	end
 	

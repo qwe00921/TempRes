@@ -38,7 +38,11 @@ DoFile("login/dlg_create_player.lua");
 DoFile("mainui/mainui.lua");
 DoFile("mainui/hud.lua");
 DoFile("mainui/billboard.lua"); --跑马灯
-DoFile("mainui/maininterface.lua")
+DoFile("mainui/maininterface.lua");
+
+DoFile("mainui/login_main.lua");
+DoFile("mainui/login_ui.lua");
+DoFile("mainui/server_list.lua");
 
 --地图
 DoFile("map/world_map.lua");

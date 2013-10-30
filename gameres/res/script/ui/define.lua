@@ -12,6 +12,13 @@ DoFile("ui/ui_main_userinfo.lua")
 DoFile("ui/ui_main_userinfo2.lua")
 DoFile("ui/ui_main_actandad.lua")
 
+--登录界面
+DoFile("ui/ui_login_back.lua")
+DoFile("ui/ui_login_createid.lua")
+DoFile("ui/ui_login_main.lua")
+DoFile("ui/ui_login_severselect.lua")
+DoFile("ui/ui_login_severselect_option.lua")
+
 --加载所有UI
 DoFile("ui/ui_battle_boss.lua")
 DoFile("ui/ui_battle_vs.lua")
