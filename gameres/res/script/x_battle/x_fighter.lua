@@ -14,8 +14,7 @@ function p:new()
 	o = {}
 	setmetatable( o, self );
 	self.__index = self;
-	o:ctor();
-	return o;
+	o:ctor(); return o;
 end
 
 --构造函数
@@ -87,11 +86,6 @@ function p:GetLookAt()
     end
 end
 
---取player节点
-function p:GetPlayerNode()
-    return ConverToPlayer(self:GetNode());
-end
-
 function p:JumpMoveTo(targetPos, pJumpSeq, isEnemyCamp)
 	local fx = "lancer_cmb.begin_battle_jump";
 	
@@ -116,6 +110,11 @@ function p:JumpMoveTo(targetPos, pJumpSeq, isEnemyCamp)
 	varEnv:SetFloat( "$3", distance * 0.4 );
 	
 	return pCmd;
+end
+
+--取player节点
+function p:GetPlayerNode()
+    return ConverToPlayer(self:GetNode());
 end
 
 --做位移
@@ -205,8 +204,8 @@ function p:Atk( targetFighter, batch)
 	seqAtk:AddCommand( cmd1 );
 	
 	--向攻击目标移动
-	
 	local cmd2 = self:JumpMoveTo(enemyPos,seqAtk,false);
+	--local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
 	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );

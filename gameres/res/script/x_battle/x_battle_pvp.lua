@@ -8,7 +8,7 @@ x_battle_pvp = {}
 local p = x_battle_pvp;
 
 local ui = ui_x_battle_pvp;
-local heroUIArray = { 
+local heroUIArray = {
     ui.ID_CTRL_LEFT_SPRITE_1,
     ui.ID_CTRL_LEFT_SPRITE_2,
     ui.ID_CTRL_LEFT_SPRITE_3,
@@ -18,7 +18,7 @@ local heroUIArray = {
 	ui.ID_CTRL_LEFT_SPRITE_7,
 	ui.ID_CTRL_LEFT_SPRITE_8
 }
-local enemyUIArray = { 
+local enemyUIArray = {
 	ui.ID_CTRL_RIGHT_SPRITE_1,
 	ui.ID_CTRL_RIGHT_SPRITE_2,
 	ui.ID_CTRL_RIGHT_SPRITE_3,
@@ -27,7 +27,7 @@ local enemyUIArray = {
 	ui.ID_CTRL_RIGHT_SPRITE_6,
 	ui.ID_CTRL_RIGHT_SPRITE_7,
 	ui.ID_CTRL_RIGHT_SPRITE_8
-}    
+}
 
 -----
 p.battleLayer = nil;
@@ -78,13 +78,6 @@ function p.ShowUI()
 	
 	local batch = battle_show.GetNewBatch();
 	local seqMove = batch:AddSerialSequence();
-	local pos = p.pBgImage:GetFramePos();
-	local pTar = p.pBgImage:GetFramePos();
-
-	local x = pTar.x;
-	local xx = pos.x;
-	
-	pos.x = xx + 280;
 	
 --	local cmd = CommandMoveTo(pos,pTar,seqMove,p.pBgImage); --战斗背景移动取消
 	

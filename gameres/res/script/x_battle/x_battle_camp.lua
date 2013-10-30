@@ -8,9 +8,9 @@
 x_battle_camp = battle_camp:new();
 local p = x_battle_camp;
 local super = battle_camp;
-local g_HeroFighters = nil;
+local g_Herofighters = nil;
 local g_HeroIndex = 1;
-local g_EnemyFighters = nil;
+local g_Enemyfighters = nil;
 local g_EnemyIndex = 1;
 
 PET_FLY_DRAGON_TAG = 1;
@@ -23,6 +23,7 @@ function p:new()
 	setmetatable( o, self );
 	self.__index = self;
 	o:ctor();
+	p.jumpIndex = 1;
 	return o;
 end
 
@@ -69,40 +70,10 @@ function p:AddBoss()
 	end
 end
 
-function p.AddHeroFithersJumpEffect()
-	local pFighter = g_HeroFighters[3];
+function p.AddHeroFightersJumpEffect()
+	local pFighter = g_Herofighters[g_HeroIndex];
 
 	if pFighter == nil then
-		g_HeroIndex = 1;
-		g_HeroFighters = {};
-		return nil;
-	end
-	
-	local node = pFighter:GetPlayerNode();
-	if node == nil then
-		WriteCon( "get player node failed" );
-		return nil;
-	end
-		
-	local pOldPos = node:GetCenterPos();
-	local batch = battle_show.GetNewBatch();
-
-	local x = pOldPos.x + 220;
-	local y = pOldPos.y;
-
-	local pNewPos = CCPointMake(x,y);
-	
-	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
-	
-	g_HeroIndex = g_HeroIndex + 1;
-end
-
-function p.AddEnemyFithersJumpEffect()
-	local pFighter = g_EnemyFighters[1];
-
-	if pFighter == nil then
-		g_EnemyIndex = 1;
-		g_EnemyFighters = {};
 		return nil;
 	end
 	
@@ -113,34 +84,65 @@ function p.AddEnemyFithersJumpEffect()
 	end
 		
 	local pOldPos = node:GetFramePos();
+	
+	local x = pOldPos.x + 220;
+	local y = pOldPos.y;
+
+	local pNewPos = CCPointMake(x,y);	
+	
 	local batch = battle_show.GetNewBatch();
+	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
+	
+	g_HeroIndex = g_HeroIndex + 1;
+end
 
-	local pNewPos = nil;
+function p.AddEnemyFightersJumpEffect()
+	local pFighter = g_Enemyfighters[g_EnemyIndex];
 
-	if pFighter.camp == E_CARD_CAMP_HERO then
-		pNewPos = CCPointMake(pOldPos.x + 220,pOldPos.y);
-	elseif pFighter.camp == E_CARD_CAMP_ENEMY then
-		pNewPos = CCPointMake(pOldPos.x - 220,pOldPos.y);
+	if pFighter == nil then
+		return nil;
 	end
 	
+	local node = pFighter:GetPlayerNode();
+	if node == nil then
+		WriteCon( "get player node failed" );
+		return;
+	end
+		
+	local pOldPos = node:GetFramePos();
+	
+	local x = pOldPos.x - 220;
+	local y = pOldPos.y;
+
+	local pNewPos = CCPointMake(x,y);	
+	
+	local batch = battle_show.GetNewBatch();
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
 	g_EnemyIndex = g_EnemyIndex + 1;
 end
 
-function p:AddAllRandomTimeJumpEffect(fighters,bHero)
-	if true == bHero then
-		g_HeroFighters = self.fighters;
-		for k,v in ipairs(g_HeroFighters) do
-			local fTime = k / 5.0 + 0.3;
-			--WriteCon(str);
-			SetTimerOnce( p.AddHeroFithersJumpEffect, fTime );
+function p:AddAllRandomTimeJumpEffect(bHero)
+	if bHero == true then
+		g_Herofighters = self.fighters;
+		for k,v in ipairs(self.fighters) do
+			local fTime = k / 10.0 + 0.3;
+			local str = string.format("Hero jump time is %8.6f",fTime);
+			WriteCon(str);
+			SetTimerOnce( p.AddHeroFightersJumpEffect, fTime );
 		end
-
+	else
+		g_Enemyfighters = self.fighters;
+		for k,v in ipairs(self.fighters) do
+			local fTime = k / 10.0 + 0.3;
+			local str = string.format("Enemy jump time is %8.6f",fTime);
+			WriteCon(str);
+			SetTimerOnce( p.AddEnemyFightersJumpEffect, fTime );
+		end
 	end
 end
 
-function p:AddFighters( uiArray)
+function p:AddFighters( uiArray )
 	for i=1,#uiArray do
 		local uiTag = uiArray[i];
 		local node = GetPlayer( x_battle_mgr.uiLayer, uiTag );
@@ -151,7 +153,6 @@ function p:AddFighters( uiArray)
 		
 		local f = x_fighter:new();
 		self.fighters[#self.fighters + 1] = f;
-		
 		local pOldPos = node:GetFramePos();
 
 		if self.idCamp == E_CARD_CAMP_HERO then
@@ -222,16 +223,13 @@ function p:SetFighterConfig( f, idx )
 	elseif idx==5 then
 		f:UseConfig( "fly_dragon" );
 		f.petTag = PET_FLY_DRAGON_TAG;
-	elseif idx==6 then
-		f:UseConfig( "fly_dragon" );
-		f.petTag = PET_FLY_DRAGON_TAG;
-	elseif idx==7 then
-		f:UseConfig( "fly_dragon" );
-		f.petTag = PET_FLY_DRAGON_TAG;
-	elseif idx==8 then
-		f:UseConfig( "fly_dragon" );
-		f.petTag = PET_FLY_DRAGON_TAG;
 		
+	elseif idx==6 then
+		f:UseConfig( "mining" );
+		f.petTag = PET_MINING_TAG;
+	else
+		f:UseConfig( "fly_dragon" );
+		f.petTag = PET_FLY_DRAGON_TAG;
 		--f:UseConfig( "blue_devil" );
 		--f.petTag = PET_BLUE_DEVIL_TAG;
 	end	

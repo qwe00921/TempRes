@@ -130,7 +130,7 @@ lj\chara\57daqiao\walk.png @cut(1,4) @time=0.20 @reverse @loop
 
 ;{----------∑…¡˙∂Øª≠≈‰÷√---------------
 [fly_dragon_attack]
-image\pet\fly_dragon\atk.png    @cut(1,3) @use(1,3)  @time=0.15   @offset(20,0) @stay @scale=1.8
+image\pet\fly_dragon\atk.png    @cut(1,3)  @time=0.15   @offset(20,0) @stay @scale=1.8
 
 [fly_dragon_cast]
 image\pet\fly_dragon\atk.png   @cut(1,3)  @time=0.15   @offset(20,0) @stay @scale=1.8
