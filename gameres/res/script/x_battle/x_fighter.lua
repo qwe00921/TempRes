@@ -107,7 +107,7 @@ function p:JumpMoveTo(targetPos, pJumpSeq, isEnemyCamp)
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
 	varEnv:SetFloat( "$2", y );
-	varEnv:SetFloat( "$3", distance * 0.4 );
+	varEnv:SetFloat( "$3", 50 );
 	
 	return pCmd;
 end
@@ -224,7 +224,7 @@ function p:Atk( targetFighter, batch)
 	seqAtk:AddCommand( cmd4 );
 	
 	--返回原来的位置
-	local cmd5 = self:cmdMoveTo( enemyPos, originalPos, seqAtk, isEnemyCamp );
+	local cmd5 = self:JumpMoveTo(originalPos, seqAtk, false );
 	
 	------------受击者-----------------------
 	
@@ -793,7 +793,7 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
 	varEnv:SetFloat( "$2", y );
-	varEnv:SetFloat( "$3", distance * 0.4 );
+	varEnv:SetFloat( "$3", 50 );
 	
 	return pCmd;
 end

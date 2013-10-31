@@ -51,7 +51,7 @@ function p.AddMaskImage()
 		
 		local pic = GetPictureByAni("lancer.mask", 0); 
 		p.imageMask:SetPicture( pic );
-		p.uiLayer:AddChildZ( p.imageMask,3);
+		p.uiLayer:AddChildZ( p.imageMask,1);
 		p.imageMask:AddActionEffect("x.imageMask_fadein");
 	else
 		p.ShowMaskImage();
@@ -282,29 +282,11 @@ function p.CampBattle(campType)
 		end
 
 		--@override
-		if true and math.random(1,2)==2 then
+		if true then
 			local target = defenseCampAliveFighter[defenderId];
 			attacker:Atk( target, batch );
 			--attacker:Atk( target, batch );
 			--attacker:JumpToPosition(batch,target:GetNode():GetCenterPos());
-		else
-			local atkSkill = 1;
-			if atkSkill == 1 then
-				if attacker.petTag == PET_BLUE_DEVIL_TAG  then
-					attacker:UltimateSkill(defenseCamp, batch);
-				else
-					if attacker.idCamp == E_CARD_CAMP_ENEMY then
-						for d = 1, #defenseCampAliveFighter do
-							attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[d], batch, 2, i ,skillType);
-						end
-					else
-						--p.AddMaskImage(); --黑屏处理
-						attacker:AtkSkillNearOneToOne(defenseCampAliveFighter[defenderId], batch, 2, i ,skillType);
-					end
-				end
-			else
-				attacker:AtkSkillOneToCamp(defenseCamp, batch);
-			end
 		end
 		
 		--设置批次等待
