@@ -13,3 +13,4 @@ DoFile("x_battle/x_bullet.lua");
 DoFile("x_battle/x_hp_bar.lua");
 DoFile("x_battle/x_fly_num.lua");
 DoFile("x_battle/x_battle_mainui.lua");
+DoFile("x_battle/shadow.lua");
