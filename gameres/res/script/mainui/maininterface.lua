@@ -93,7 +93,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			p.HideUI();	
 			p.CloseAllPanel();
 
-			--game_main.EnterWorldMap();
+			game_main.EnterWorldMap();
 		elseif ui.ID_CTRL_MIAN_BUTTON_DOWN == tag then
 			p.CloseAllPanel();
 			dlg_menu.CloseUI();
