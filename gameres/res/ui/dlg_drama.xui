@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -26,17 +26,17 @@ Rect=0 0 640 960
 [CTRL_PICTURE_L]
 Type=1
 Tag=2
-Rect=-4 59 431 675
+Rect=-46 89 501 500
 
 [CTRL_PICTURE_M]
 Type=1
 Tag=3
-Rect=292 58 430 675
+Rect=300 86 500 500
 
 [CTRL_PICTURE_R]
 Type=1
 Tag=4
-Rect=294 60 430 675
+Rect=296 92 500 500
 
 [CTRL_PICTURE_CONTENT_BG]
 Type=1
@@ -53,13 +53,17 @@ Rect=34 597 572 244
 [CTRL_BUTTON_SKIP]
 Type=2
 Tag=10
-Rect=570 28 47 75
-Text=跳过
-TextTradition=跳過
+Rect=531 24 92 49
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\drama\pass.png
+NormalFileUV=0 0 43 23
+SelectFile=.\res\image\ui\drama\pass.png
+SelectedFileUV=0 0 43 23
+DisableFile=.\res\image\ui\drama\pass.png
+DisableFileUV=0 0 43 23
 
 [CTRL_TEXT_NPC_NAME]
 Type=4
