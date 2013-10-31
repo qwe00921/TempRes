@@ -219,30 +219,7 @@ function p:Atk( targetFighter, batch)
 	self:setAtkMusic( seqMusic )
 	seqMusic:SetWaitBegin( cmd3 );
 	
-	--最初站立动画
-	local cmd4 = createCommandPlayer():Standby( 0.01, playerNode, "" );
-	seqAtk:AddCommand( cmd4 );
-	
-	--返回原来的位置
-	local cmd5 = self:JumpMoveTo(originalPos, seqAtk, false );
-	
-	------------受击者-----------------------
-	
-	--受击动画
-	local cmd10 = createCommandPlayer():Hurt( 0, targetNode, "" );
-	seqTarget:AddCommand( cmd10 );
-	cmd10:SetDelay( playerNode:GetAtkKeyTime_Hurt(""));
-	cmd10:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
-	
-	--飘血
-	local cmd11 = targetFighter:cmdLua( "fighter_damage", 30, "", seqTarget );
-	--local cmd22 = targetFighter:cmdLua( "AddMaskImage", 0, "", seqTarget );
-	
-	--受攻击的后续动画【死亡 OR 站立】
-	self:HurtResultAni( targetFighter, seqTarget );
-	
-	--受击等待攻击动画
-	seqTarget:SetWaitBegin( cmd5 );
+
 	
 end
 
