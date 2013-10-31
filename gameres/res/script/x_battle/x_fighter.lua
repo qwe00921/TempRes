@@ -14,13 +14,16 @@ function p:new()
 	o = {}
 	setmetatable( o, self );
 	self.__index = self;
-	o:ctor(); return o;
+	o:ctor();
+	return o;
 end
 
 --构造函数
 function p:ctor()
     super.ctor(self);
 	self.tmplife = self.life;
+	self.pPrePos = nil;
+	self.pOriginPos = nil;
 end
 
 --初始化（重载）
@@ -86,10 +89,10 @@ function p:GetLookAt()
     end
 end
 
-function p:JumpMoveTo(targetPos, pJumpSeq, isEnemyCamp)
+function p:JumpMoveTo(targetPos, pJumpSeq, isFallback)
 	local fx = "lancer_cmb.begin_battle_jump";
 	
-	local atkPos = self:GetPlayerNode():GetCenterPos();
+	local atkPos = self.pOriginPos;
 	
 	local x = targetPos.x - atkPos.x;
 	local y = targetPos.y - atkPos.y;
@@ -99,8 +102,9 @@ function p:JumpMoveTo(targetPos, pJumpSeq, isEnemyCamp)
 	local startOffset = 0;
 	local offsetX = x * startOffset / distance;
 	local offsetY = y * startOffset / distance;
-	local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
-	self:GetPlayerNode():SetCenterPos( pPos);
+	--local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
+
+	self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
 
 	local pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx,pJumpSeq);
 	
@@ -173,6 +177,10 @@ function p:Atk( targetFighter, batch)
 	
 	--攻击者最初的位置
 	local originalPos = self:GetNode():GetCenterPos();
+	local ox = originalPos.x;
+	local oy = originalPos.y
+	
+	self.pOriginPos = CCPointMake(ox,oy);
 
 	--攻击目标的位置
 	--local enemyPos = targetNode:GetCenterPos();
@@ -180,9 +188,7 @@ function p:Atk( targetFighter, batch)
 	local enemyPos = nil;
 
 	if self.idCamp == E_CARD_CAMP_ENEMY then
-
 		enemyPos = originalPos;
-		
 	else
 		enemyPos = targetFighter:GetFrontPos(self:GetNode());
 	end
@@ -207,6 +213,16 @@ function p:Atk( targetFighter, batch)
 	local cmd2 = self:JumpMoveTo(enemyPos,seqAtk,false);
 	--local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
 	
+	originalPos = self:GetNode():GetCenterPos();
+
+	if self.idCamp == E_CARD_CAMP_ENEMY then
+		ox = originalPos.x + 230;
+		oy = originalPos.y;
+	else
+		ox = originalPos.x - 230;
+		oy = originalPos.y;
+	end	
+	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );
 	seqAtk:AddCommand( cmd3 );
@@ -219,7 +235,30 @@ function p:Atk( targetFighter, batch)
 	self:setAtkMusic( seqMusic )
 	seqMusic:SetWaitBegin( cmd3 );
 	
-
+	--最初站立动画
+	local cmd4 = createCommandPlayer():Standby( 0.01, playerNode, "" );
+	seqAtk:AddCommand( cmd4 );
+	
+	--返回原来的位置
+	local cmd5 = self:JumpMoveTo(originalPos, seqAtk, true );
+	
+	------------受击者-----------------------
+	
+	--受击动画
+	local cmd10 = createCommandPlayer():Hurt( 0, targetNode, "" );
+	seqTarget:AddCommand( cmd10 );
+	cmd10:SetDelay( playerNode:GetAtkKeyTime_Hurt(""));
+	cmd10:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
+	
+	--飘血
+	local cmd11 = targetFighter:cmdLua( "fighter_damage", 30, "", seqTarget );
+	--local cmd22 = targetFighter:cmdLua( "AddMaskImage", 0, "", seqTarget );
+	
+	--受攻击的后续动画【死亡 OR 站立】
+	self:HurtResultAni( targetFighter, seqTarget );
+	
+	--受击等待攻击动画
+	seqTarget:SetWaitBegin( cmd5 );
 	
 end
 
@@ -757,7 +796,7 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	local offsetX = x * startOffset / distance;
 	local offsetY = y * startOffset / distance;
 	local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
-	self:GetPlayerNode():SetCenterPos( pPos);
+	self:GetNode():SetCenterPos( pPos);
 
 	local pCmd = nil;
 	
