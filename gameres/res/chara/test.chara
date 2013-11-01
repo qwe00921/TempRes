@@ -96,3 +96,158 @@
 @defence	name=defence ani=x.blue_devil_defence
 @hurt		name=hurt ani=x.blue_devil_hurt
 @dead		name=dead ani=x_cmb.blue_devil_death
+
+
+
+
+
+
+;;;;-------------------------------------------------
+
+[test10392]
+@standby        name=standby  ani=x.test10392_standby
+@atk               name=standby  ani=x.test10392_attack
+@run
+@skill             name=skill  ani=x.test10392_standby
+@defence        name=defence  ani=x.test10392_defence
+@hurt             name=hurt  ani=x.test10392_hurt
+@dead            name=dead  ani=x.test10392_death
+
+[test10684]
+@standby        name=standby  ani=x.test10684_standby
+@atk               name=standby  ani=x.test10684_attack
+@run
+@skill             name=skill  ani=x.test10684_standby
+@defence        name=defence  ani=x.test10684_defence
+@hurt             name=hurt  ani=x.test10684_hurt
+@dead            name=dead  ani=x.test10684_death
+
+[test10706]
+@standby        name=standby  ani=x.test10706_standby
+@atk               name=standby  ani=x.test10706_attack
+@run
+@skill             name=skill  ani=x.test10706_standby
+@defence        name=defence  ani=x.test10706_defence
+@hurt             name=hurt  ani=x.test10706_hurt
+@dead            name=dead  ani=x.test10706_death
+
+[test10745]
+@standby        name=standby  ani=x.test10745_standby
+@atk               name=standby  ani=x.test10745_attack
+@run
+@skill             name=skill  ani=x.test10745_standby
+@defence        name=defence  ani=x.test10745_defence
+@hurt             name=hurt  ani=x.test10745_hurt
+@dead            name=dead  ani=x.test10745_death
+
+[test10774]
+@standby        name=standby  ani=x.test10774_standby
+@atk               name=standby  ani=x.test10774_attack
+@run
+@skill             name=skill  ani=x.test10774_standby
+@defence        name=defence  ani=x.test10774_defence
+@hurt             name=hurt  ani=x.test10774_hurt
+@dead            name=dead  ani=x.test10774_death
+
+[test10835]
+@standby        name=standby  ani=x.test10835_standby
+@atk               name=standby  ani=x.test10835_attack
+@run
+@skill             name=skill  ani=x.test10835_standby
+@defence        name=defence  ani=x.test10835_defence
+@hurt             name=hurt  ani=x.test10835_hurt
+@dead            name=dead  ani=x.test10835_death
+
+[test10836]
+@standby        name=standby  ani=x.test10836_standby
+@atk               name=standby  ani=x.test10836_attack
+@run
+@skill             name=skill  ani=x.test10836_standby
+@defence        name=defence  ani=x.test10836_defence
+@hurt             name=hurt  ani=x.test10836_hurt
+@dead            name=dead  ani=x.test10836_death
+
+[test10838]
+@standby        name=standby  ani=x.test10838_standby
+@atk               name=standby  ani=x.test10838_attack
+@run
+@skill             name=skill  ani=x.test10838_standby
+@defence        name=defence  ani=x.test10838_defence
+@hurt             name=hurt  ani=x.test10838_hurt
+@dead            name=dead  ani=x.test10838_death
+
+[test10884]
+@standby        name=standby  ani=x.test10884_standby
+@atk               name=standby  ani=x.test10884_attack
+@run
+@skill             name=skill  ani=x.test10884_standby
+@defence        name=defence  ani=x.test10884_defence
+@hurt             name=hurt  ani=x.test10884_hurt
+@dead            name=dead  ani=x.test10884_death
+
+[test10953]
+@standby        name=standby  ani=x.test10953_standby
+@atk               name=standby  ani=x.test10953_attack
+@run
+@skill             name=skill  ani=x.test10953_standby
+@defence        name=defence  ani=x.test10953_defence
+@hurt             name=hurt  ani=x.test10953_hurt
+@dead            name=dead  ani=x.test10953_death
+
+[test10999]
+@standby        name=standby  ani=x.test10999_standby
+@atk               name=standby  ani=x.test10999_attack
+@run
+@skill             name=skill  ani=x.test10999_standby
+@defence        name=defence  ani=x.test10999_defence
+@hurt             name=hurt  ani=x.test10999_hurt
+@dead            name=dead  ani=x.test10999_death
+
+[test11000]
+@standby        name=standby  ani=x.test11000_standby
+@atk               name=standby  ani=x.test11000_attack
+@run
+@skill             name=skill  ani=x.test11000_standby
+@defence        name=defence  ani=x.test11000_defence
+@hurt             name=hurt  ani=x.test11000_hurt
+@dead            name=dead  ani=x.test11000_death
+
+[test11007]
+@standby        name=standby  ani=x.test11007_standby
+@atk               name=standby  ani=x.test11007_attack
+@run
+@skill             name=skill  ani=x.test11007_standby
+@defence        name=defence  ani=x.test11007_defence
+@hurt             name=hurt  ani=x.test11007_hurt
+@dead            name=dead  ani=x.test11007_death
+
+[test11008]
+@standby        name=standby  ani=x.test11008_standby
+@atk               name=standby  ani=x.test11008_attack
+@run
+@skill             name=skill  ani=x.test11008_standby
+@defence        name=defence  ani=x.test11008_defence
+@hurt             name=hurt  ani=x.test11008_hurt
+@dead            name=dead  ani=x.test11008_death
+
+[test11024]
+@standby        name=standby  ani=x.test11024_standby
+@atk               name=standby  ani=x.test11024_attack
+@run
+@skill             name=skill  ani=x.test11024_standby
+@defence        name=defence  ani=x.test11024_defence
+@hurt             name=hurt  ani=x.test11024_hurt
+@dead            name=dead  ani=x.test11024_death
+
+[test11027]
+@standby        name=standby  ani=x.test11027_standby
+@atk               name=standby  ani=x.test11027_attack
+@run
+@skill             name=skill  ani=x.test11027_standby
+@defence        name=defence  ani=x.test11027_defence
+@hurt             name=hurt  ani=x.test11027_hurt
+@dead            name=dead  ani=x.test11027_death
+;;;;--------------------------------
+
+
+

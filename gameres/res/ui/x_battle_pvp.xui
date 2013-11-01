@@ -6,10 +6,10 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 70 640 720
+Rect=0 68 640 720
 Stretch=1
-NormalFile=.\res\image\xbattleui\pvpbg.png
-NormalFileUV=0 0 240 240
+NormalFile=.\res\image\xbattleui\pvpbg1.png
+NormalFileUV=0 0 480 580
 
 [CTRL_RIGHT_SPRITE_5]
 Type=19

@@ -74,7 +74,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			SendReq("ServerList","List",uid,"MachineType=Android");
 			
 			p.HideUI();
-			server_list.ShowUI();
+			--server_list.ShowUI();
 			--game_main.EnterWorldMap();
 			
 		elseif (ui.ID_CTRL_LOGIN_CTRL_BUTTON_CREATEID == tag) then

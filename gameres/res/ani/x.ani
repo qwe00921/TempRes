@@ -170,7 +170,7 @@ lj\effect\skill\tuc.png @cut(1,8) @use(0,4) @reverse @time=0.12
 lj\effect\skill\tuc.png @cut(1,8) @use(4,4) @time=0.12
 
 [dings]
-lj\effect\skill\dings.png @cut(2,5) @time=0.12 
+lj\effect\skill\dings.png @cut(2,5) @time=0.12
 
 [blue_devil_fx_atk]
 image\fx\pet_blue_devil\fx_atk.png @cut(1,5) @time=0.1 @offset(30,-25) @scale=0.1
@@ -179,7 +179,7 @@ image\fx\pet_blue_devil\fx_atk.png @cut(1,5) @time=0.1 @offset(30,-25) @scale=0.
 image\fx\pet_blue_devil\fx_cast.png @cut(4,4) @time=0.25 @offset(00,-100) @scale=0.3
 
 [blue_devil_fx_target_hurt]
-image\fx\pet_blue_devil\fx_target_hurt.png @cut(1,3) 
+image\fx\pet_blue_devil\fx_target_hurt.png @cut(1,3)
 
 [dragon_fx_atk]
 image\fx\pet_dragon\fx_atk.png @cut(4,4) @time=0.05 @offset(156,-10) @scale=1.0f
@@ -197,7 +197,7 @@ image\fx\pet_mining\fx_atk.png @cut(1,3) @offset(10,-60)
 image\fx\pet_mining\fx_cast.png @cut(1,6) @offset(0,-60)
 
 [mining_fx_target_hurt]
-image\fx\pet_mining\fx_target_hurt.png @cut(1,6) 
+image\fx\pet_mining\fx_target_hurt.png @cut(1,6)
 
 [pet_fx_death]
 image\fx\pet_common\pet_fx_death.png @cut(1,4) @offset(0,-80) @time=0.125
@@ -288,3 +288,359 @@ image\fx\pet_blue_devil\fx_skill_bar_pet.png @cut(3,1) @reverse @time=0.1 @offse
 [fx_skill_bar_title_reverse]
 image\fx\pet_blue_devil\fx_skill_bar_title.png @cut(1,1) @time=0.15 @offset(-250,0) @stay
 ;}---------------------------------
+
+
+
+
+
+
+;;;;---------------------------------------------------------------------------------------
+[test10392_attack]
+image\testbattle\10392_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10392_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10392_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10392_standby]
+image\testbattle\10392_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10392_defence]
+image\testbattle\10392_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10392_hurt]
+image\testbattle\10392_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10392_death]
+image\testbattle\10392_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10392_death_end]
+image\testbattle\10392_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10684_attack]
+image\testbattle\10684_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10684_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10684_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10684_standby]
+image\testbattle\10684_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10684_defence]
+image\testbattle\10684_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10684_hurt]
+image\testbattle\10684_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10684_death]
+image\testbattle\10684_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10684_death_end]
+image\testbattle\10684_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10706_attack]
+image\testbattle\10706_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10706_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10706_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10706_standby]
+image\testbattle\10706_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10706_defence]
+image\testbattle\10706_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10706_hurt]
+image\testbattle\10706_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10706_death]
+image\testbattle\10706_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10706_death_end]
+image\testbattle\10706_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10745_attack]
+image\testbattle\10745_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10745_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10745_1\atk.png @cut(1,3) @use(0,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10745_standby]
+image\testbattle\10745_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10745_defence]
+image\testbattle\10745_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10745_hurt]
+image\testbattle\10745_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10745_death]
+image\testbattle\10745_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10745_death_end]
+image\testbattle\10745_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10774_attack]
+image\testbattle\10774_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10774_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10774_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10774_standby]
+image\testbattle\10774_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10774_defence]
+image\testbattle\10774_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10774_hurt]
+image\testbattle\10774_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10774_death]
+image\testbattle\10774_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10774_death_end]
+image\testbattle\10774_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10835_attack]
+image\testbattle\10835_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10835_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10835_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10835_standby]
+image\testbattle\10835_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10835_defence]
+image\testbattle\10835_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10835_hurt]
+image\testbattle\10835_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10835_death]
+image\testbattle\10835_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10835_death_end]
+image\testbattle\10835_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10836_attack]
+image\testbattle\10836_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10836_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10836_1\atk.png @cut(1,3) @use(0,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10836_standby]
+image\testbattle\10836_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10836_defence]
+image\testbattle\10836_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10836_hurt]
+image\testbattle\10836_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10836_death]
+image\testbattle\10836_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10836_death_end]
+image\testbattle\10836_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10838_attack]
+image\testbattle\10838_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10838_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10838_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10838_standby]
+image\testbattle\10838_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10838_defence]
+image\testbattle\10838_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10838_hurt]
+image\testbattle\10838_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10838_death]
+image\testbattle\10838_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10838_death_end]
+image\testbattle\10838_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10884_attack]
+image\testbattle\10884_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10884_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10884_1\atk.png @cut(1,3) @use(0,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10884_standby]
+image\testbattle\10884_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10884_defence]
+image\testbattle\10884_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10884_hurt]
+image\testbattle\10884_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10884_death]
+image\testbattle\10884_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10884_death_end]
+image\testbattle\10884_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10953_attack]
+image\testbattle\10953_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10953_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10953_1\atk.png @cut(1,3) @use(0,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10953_standby]
+image\testbattle\10953_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10953_defence]
+image\testbattle\10953_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10953_hurt]
+image\testbattle\10953_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10953_death]
+image\testbattle\10953_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10953_death_end]
+image\testbattle\10953_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test10999_attack]
+image\testbattle\10999_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10999_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\10999_1\atk.png @cut(1,3) @use(0,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test10999_standby]
+image\testbattle\10999_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10999_defence]
+image\testbattle\10999_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10999_hurt]
+image\testbattle\10999_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10999_death]
+image\testbattle\10999_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test10999_death_end]
+image\testbattle\10999_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test11000_attack]
+image\testbattle\11000_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11000_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11000_1\atk.png @cut(1,3) @use(0,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test11000_standby]
+image\testbattle\11000_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11000_defence]
+image\testbattle\11000_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11000_hurt]
+image\testbattle\11000_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11000_death]
+image\testbattle\11000_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11000_death_end]
+image\testbattle\11000_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test11007_attack]
+image\testbattle\11007_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11007_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11007_1\atk.png @cut(1,3) @use(0,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test11007_standby]
+image\testbattle\11007_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11007_defence]
+image\testbattle\11007_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11007_hurt]
+image\testbattle\11007_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11007_death]
+image\testbattle\11007_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11007_death_end]
+image\testbattle\11007_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test11008_attack]
+image\testbattle\11008_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11008_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11008_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test11008_standby]
+image\testbattle\11008_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11008_defence]
+image\testbattle\11008_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11008_hurt]
+image\testbattle\11008_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11008_death]
+image\testbattle\11008_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11008_death_end]
+image\testbattle\11008_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test11024_attack]
+image\testbattle\11024_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11024_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11024_1\atk.png @cut(1,3) @use(0,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test11024_standby]
+image\testbattle\11024_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11024_defence]
+image\testbattle\11024_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11024_hurt]
+image\testbattle\11024_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11024_death]
+image\testbattle\11024_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11024_death_end]
+image\testbattle\11024_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
+
+
+
+[test11027_attack]
+image\testbattle\11027_1\atk.png @cut(1,3)  @use(2, 1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11027_1\atk.png @cut(1,3)  @use(1, 1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+image\testbattle\11027_1\atk.png @cut(1,3)  @use(0, 1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
+
+[test11027_standby]
+image\testbattle\11027_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11027_defence]
+image\testbattle\11027_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11027_hurt]
+image\testbattle\11027_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11027_death]
+image\testbattle\11027_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
+
+[test11027_death_end]
+image\testbattle\11027_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8

@@ -175,6 +175,9 @@ function CreateMsg( idmsg )
         
     elseif idmsg == MSG_ACHIEVEMENT then
         msg = msg_achievement:new();    
+		
+	elseif idmsg == MSG_SERVER_LIST then
+		msg = msg_server_list:new();
     end
 	
 	if msg ~= nil then
