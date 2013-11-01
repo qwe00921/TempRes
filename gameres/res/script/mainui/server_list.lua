@@ -2,13 +2,16 @@
 server_list = {}
 local p = server_list;
 
-p.layer = nil;
 local ui = ui_login_severselect;
-
+p.layer = nil;
+p.btn_Id = 101;
+p.btn_Id_list = {};
+p.url = nil;
+p.ServerList = {};
 --显示UI
 function p.ShowUI(list)
 
-	local ServerList = list;
+	p.ServerList = list;
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
@@ -31,13 +34,13 @@ function p.ShowUI(list)
 	p.layer = layer;
 	p.SetDelegate(layer);
 	
-	p.ShowServerList(ServerList);
+	p.ShowServerList();
 end
 
 --服务器列表
-function p.ShowServerList(ServerList)
+function p.ShowServerList()
 	
-	local ServerList = ServerList;
+	local ServerList = p.ServerList;
 	local serverListTable = GetListBoxVert(p.layer, ui.ID_CTRL_LIST_3);
 	
 	--计算服务器列表长度
@@ -48,8 +51,7 @@ function p.ShowServerList(ServerList)
 	-- WriteCon("**TableLength = "..TableLength); 
 	
 	--取得服务器列表对应数据
-	--local list = {};
-	--local count = 0;
+
 	for k,v in pairs(ServerList) do
 		
 		local view = createNDUIXView();
@@ -58,58 +60,56 @@ function p.ShowServerList(ServerList)
 		
 		local bg = GetUiNode(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
 		view:SetViewSize(CCSizeMake(bg:GetFrameSize().w,bg:GetFrameSize().h));
+
 		
 		local btn = GetButton(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
-		local serverName = GetLabel(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_TEXT_SEVEROPTION);
+		btn:SetId(p.btn_Id);
+		btn:SetLuaDelegate(p.OnListBtnClick);
 		
+		local serverName = GetLabel(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_TEXT_SEVEROPTION);
 		WriteCon(k); 
+		p.btn_Id_list[p.btn_Id] = ServerList[k];
+		WriteCon(tostring(p.btn_Id_list[101]));
+
 		for j,m in pairs(ServerList[k]) do
-			WriteCon(m);
-			if j == "url" then
+			WriteCon(tostring(m));
+			if j == "name" then
 				serverName:SetText(ToUtf8( ServerList[k][j] ));
 			end
-			-- list.[j].url = ServerList[k][j];
-			-- list.[j].state = ServerList
-			-- list.[j].serverid = 
 		end
-		
-		btn:SetLuaDelegate(p.ToGameMain); 
-		--btn:SetLuaDelegate(p.OnBtnClick); 
-
 	
 		serverListTable:AddView(view);
+		p.btn_Id = p.btn_Id + 1;
+
 	end
-	
-	
-	
-	-- for i = 1, TableLength do
-	
-		-- local view = createNDUIXView();
-		-- view:Init();
-		-- LoadUI("login_severselect_option.xui",view, nil);
-		-- local bg = GetUiNode(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
-		-- view:SetViewSize(CCSizeMake(bg:GetFrameSize().w,bg:GetFrameSize().h));
-		
-		-- local btn = GetButton(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
-		
-		-- btn:SetLuaDelegate(p.ToGameMain); 
-	
-		-- serverListTable:AddView(view);
-	-- end
 end
 
 --设置按钮
 function p.SetBtn(btn)
-	btn:SetLuaDelegate(p.OnBtnClick);
+	--btn:SetLuaDelegate(p.OnBtnClick);
 end
 
 function p.SetDelegate(layer)
-	WriteCon("**=======123=======**"); 
+	--local btn = GetButton()
+	WriteCon("**==**"); 
 end	
 	
-function p.ToGameMain()
+function p.OnBtnClick()
+	if IsClickEvent(uiEventType) then
+		local event_list = 100;
+		p.ToGameMain(event_list)
+	end
+end
 	
-	WriteCon("**====ToGameMain====**");
+function p.OnListBtnClick(uiNode, uiEventType, param)
+	if IsClickEvent(uiEventType) then
+		WriteCon("**====OnListBtnClick====**");
+		local btnID = uiNode:GetId();
+		WriteCon(tostring(btnID));
+		p.url = p.btn_Id_list[btnID].url;
+		WriteCon(tostring(p.url));
+	end
+	
 	login_main.CloseUI();
 	login_ui.CloseUI();
 	p.CloseUI();
