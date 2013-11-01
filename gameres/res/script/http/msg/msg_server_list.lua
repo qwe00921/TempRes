@@ -15,6 +15,7 @@ end
 function p:ctor()
 	super.ctor(self);
 	self.idMsg = MSG_SERVER_LIST;
+	
 end
 
 --初始化
@@ -24,8 +25,9 @@ end
 --处理消息
 function p:Process()
 	msg_cache.msg_server_list = self;
-
+	
 	WriteConWarning( "** msg_server_list:Process() called" );
+	server_list.ShowUI(self.list);
 end
 
 

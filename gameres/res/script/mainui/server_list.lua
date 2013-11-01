@@ -5,8 +5,11 @@ local p = server_list;
 p.layer = nil;
 local ui = ui_login_severselect;
 
---��ʾUI
-function p.ShowUI()
+--显示UI
+function p.ShowUI(list)
+
+	local ServerList = list;
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		
@@ -28,29 +31,74 @@ function p.ShowUI()
 	p.layer = layer;
 	p.SetDelegate(layer);
 	
-	p.ShowServerList();
+	p.ShowServerList(ServerList);
 end
 
---�������б�
-function p.ShowServerList()
-	local serverList = GetListBoxVert(p.layer, ui.ID_CTRL_LIST_3);
-
-	for i = 1, 4 do
+--服务器列表
+function p.ShowServerList(ServerList)
+	
+	local ServerList = ServerList;
+	local serverListTable = GetListBoxVert(p.layer, ui.ID_CTRL_LIST_3);
+	
+	--计算服务器列表长度
+	-- local TableLength = 0;
+	-- for k,v in pairs(ServerList) do
+		-- TableLength = TableLength+1;
+	-- end
+	-- WriteCon("**TableLength = "..TableLength); 
+	
+	--取得服务器列表对应数据
+	--local list = {};
+	--local count = 0;
+	for k,v in pairs(ServerList) do
+		
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("login_severselect_option.xui",view, nil);
+		
 		local bg = GetUiNode(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
 		view:SetViewSize(CCSizeMake(bg:GetFrameSize().w,bg:GetFrameSize().h));
 		
 		local btn = GetButton(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
+		local serverName = GetLabel(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_TEXT_SEVEROPTION);
+		
+		WriteCon(k); 
+		for j,m in pairs(ServerList[k]) do
+			WriteCon(m);
+			if j == "url" then
+				serverName:SetText(ToUtf8( ServerList[k][j] ));
+			end
+			-- list.[j].url = ServerList[k][j];
+			-- list.[j].state = ServerList
+			-- list.[j].serverid = 
+		end
 		
 		btn:SetLuaDelegate(p.ToGameMain); 
+		--btn:SetLuaDelegate(p.OnBtnClick); 
+
 	
-		serverList:AddView(view);
+		serverListTable:AddView(view);
 	end
+	
+	
+	
+	-- for i = 1, TableLength do
+	
+		-- local view = createNDUIXView();
+		-- view:Init();
+		-- LoadUI("login_severselect_option.xui",view, nil);
+		-- local bg = GetUiNode(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
+		-- view:SetViewSize(CCSizeMake(bg:GetFrameSize().w,bg:GetFrameSize().h));
+		
+		-- local btn = GetButton(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION);
+		
+		-- btn:SetLuaDelegate(p.ToGameMain); 
+	
+		-- serverListTable:AddView(view);
+	-- end
 end
 
---���ð�ť
+--设置按钮
 function p.SetBtn(btn)
 	btn:SetLuaDelegate(p.OnBtnClick);
 end
@@ -61,7 +109,7 @@ end
 	
 function p.ToGameMain()
 	
-	WriteCon("**=======AD=======**");
+	WriteCon("**====ToGameMain====**");
 	login_main.CloseUI();
 	login_ui.CloseUI();
 	p.CloseUI();
@@ -69,7 +117,7 @@ function p.ToGameMain()
 end
 
 
---����UI
+--隐藏UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
@@ -77,7 +125,7 @@ function p.HideUI()
 	end
 end
 
---�ر�UI
+--关闭UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
