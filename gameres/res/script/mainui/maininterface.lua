@@ -65,19 +65,19 @@ function p.SetDelegate(layer)
 	gift:SetLuaDelegate(p.OnBtnClick);
 	
 	--进入世界地
-	local map1 = GetButton(layer, ui.ID_CTRL_TEMP_BUTTON_MAP);
+	local map1 = GetButton(layer, ui.ID_CTRL_TEMP_BUTTON_QUEST);
 	p.SetBtn(map1);
 	
 	--进入世界地
-	local map2 = GetButton(layer, ui.ID_CTRL_BUTTON_9);
+--[[	local map2 = GetButton(layer, ui.ID_CTRL_BUTTON_9);
 	p.SetBtn(map2);
 	
 	--进入世界地
 	local map3 = GetButton(layer, ui.ID_CTRL_BUTTON_8);
-	p.SetBtn(map3);
+	p.SetBtn(map3);--]]
 	
-	local bgBtn = GetButton(layer, ui.ID_CTRL_MIAN_BUTTON_DOWN);
-	bgBtn:SetLuaDelegate(p.OnBtnClick);
+--[[	local bgBtn = GetButton(layer, ui.ID_CTRL_MIAN_BUTTON_DOWN);
+	bgBtn:SetLuaDelegate(p.OnBtnClick);--]]
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
@@ -89,7 +89,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			p.CloseAllPanel();
 			
 			dlg_drama.ShowUI(1);
-		elseif ui.ID_CTRL_TEMP_BUTTON_MAP == tag then
+		elseif ui.ID_CTRL_TEMP_BUTTON_QUEST == tag then
 			p.HideUI();	
 			p.CloseAllPanel();
 
