@@ -39,8 +39,9 @@ function p:CreateHpBar()
 		self.m_kShadow = shadow:new();
 		self.hpbar:CreateExpNode();
 		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
-		--self.node:AddChildZ(fNode,200);
+		--self.node:AddChildZ(self.m_kShadow.GetNode,200);
 		self.hpbar:Init( self.node, self.life, self.lifeMax );
+		self.node:SetShadowImage(self.m_kShadow:GetNode());
 	end	
 end
 
@@ -915,13 +916,13 @@ end
 --获取战士前方坐标
 function p:GetFrontPos(targetNode)
 	local frontPos = self:GetNode():GetCenterPos();
-	local halfWidthSum = self:GetNode():GetCurAnimRealSize().w/2 + targetNode:GetCurAnimRealSize().w/2;
+	--local halfWidthSum = self:GetNode():GetCurAnimRealSize().w / 2 + targetNode:GetCurAnimRealSize().w / 2;
 	
 	if self.camp == E_CARD_CAMP_HERO then
-		frontPos.x = frontPos.x + halfWidthSum;
+		frontPos.x = frontPos.x;
 		frontPos.y = frontPos.y + 25;
 	else
-		frontPos.x = frontPos.x - halfWidthSum;
+		frontPos.x = frontPos.x;
 		frontPos.y = frontPos.y - 28;
 	end
 	return frontPos;
