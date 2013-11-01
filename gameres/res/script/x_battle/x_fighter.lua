@@ -96,7 +96,7 @@ function p:JumpMoveTo(targetPos, pJumpSeq, isFallback)
 	
 	local x = targetPos.x - atkPos.x;
 	local y = targetPos.y - atkPos.y;
-	local distance = (x ^ 2 + y ^ 2) ^ 0.5;
+	local distance = (x ^ 2 + y ^ 2) ^ 0.75;
 	
 	-- calc start offset
 	local startOffset = 0;
@@ -111,7 +111,7 @@ function p:JumpMoveTo(targetPos, pJumpSeq, isFallback)
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
 	varEnv:SetFloat( "$2", y );
-	varEnv:SetFloat( "$3", 50 );
+	varEnv:SetFloat( "$3", 75 );
 	
 	return pCmd;
 end

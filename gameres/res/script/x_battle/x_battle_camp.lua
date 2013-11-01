@@ -18,6 +18,8 @@ PET_MINING_TAG  = 2;
 PET_BLUE_DEVIL_TAG = 3;
 BOSS_TAG = 4;
 
+local tobjId = {"10392","10684","10706","10745","10774","10835","10836","10838","10884","10953","10999","11000","11007","11008","11024","11027"}
+
 function p:new()
 	o = {}
 	setmetatable( o, self );
@@ -201,6 +203,7 @@ function p:SetFighterConfig( f, idx )
 		return;
 	end
 	
+	--[[
 	if idx==1 then
 		f:UseConfig( "fly_dragon" );
 		f.petTag = PET_BLUE_DEVIL_TAG;
@@ -233,4 +236,9 @@ function p:SetFighterConfig( f, idx )
 		--f:UseConfig( "blue_devil" );
 		--f.petTag = PET_BLUE_DEVIL_TAG;
 	end	
+	--]]
+	
+	--WriteCon(tostring(self.idCamp == E_CARD_CAMP_HERO and idx or idx +8));
+	f:UseConfig( string.format("test%s", tobjId[self.idCamp == E_CARD_CAMP_HERO and idx or idx +8]) );
+	f.petTag = idx%2==0 and PET_FLY_DRAGON_TAG or PET_BLUE_DEVIL_TAG;
 end
