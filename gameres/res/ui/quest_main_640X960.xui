@@ -1,0 +1,65 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=0 297 640 565
+NormalFile=.\res\image\ui\quest\quest_bg2.png
+NormalFileUV=0 0 602 346
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=2 111 640 170
+Remark=关卡背景图片
+NormalFile=.\res\image\ui\quest\quest_bg1.png
+NormalFileUV=0 0 264 108
+
+[CTRL_PICTURE_TITLE]
+Type=1
+Tag=2
+Rect=0 266 640 53
+Remark=任务栏标题
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 640 53
+
+[CTRL_VERTICAL_LIST_QUEST]
+Type=14
+Tag=4
+Rect=0 320 640 542
+Remark=任务列表
+
+[CTRL_BUTTON_SHOP]
+Type=2
+Tag=5
+Rect=9 130 100 105
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=商店/酒馆按钮
+NormalFile=.\res\image\ui\main_interface\button_back.png
+NormalFileUV=0 0 76 80
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=192 269 267 42
+Text=任务列表
+TextTradition=任務列表
+TextSize=40
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=11
+Rect=553 161 87 68
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_back.png
+NormalFileUV=0 0 69 54

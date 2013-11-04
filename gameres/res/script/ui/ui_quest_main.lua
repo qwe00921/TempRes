@@ -4,12 +4,10 @@
 --------------------------------------------------------------
 ui_quest_main = {};
 local p =  ui_quest_main;
-p.ID_CTRL_QUEST_BUTTON_STARTGAME		= 12;
-p.ID_CTRL_QUEST_LIST_QUESTLIST		= 11;	--任务列表
-p.ID_CTRL_QUEST_BUTTON_BACK			= 10;	--返回按钮
-p.ID_CTRL_QUEST_PICTURE_HEAD			= 9;
-p.ID_CTRL_QUEST_TEXT_LEVELNAME		= 8;	--文字（关卡名称）
-p.ID_CTRL_QUEST_PICTURE_LEVELNAME		= 5;	--关卡名字
-p.ID_CTRL_QUEST_BUTTON_GASHAPON		= 4;	--扭蛋商店按钮
-p.ID_CTRL_QUEST_PICTURE_BG2			= 2;	--关卡详细背景
-p.ID_CTRL_QUEST_PICTURE_BG			 = 1;	--80%透明度背景
+p.ID_CTRL_BUTTON_BACK					    = 11;
+p.ID_CTRL_TEXT_6						        = 6;
+p.ID_CTRL_BUTTON_SHOP					    = 5;	--商店/酒馆按钮
+p.ID_CTRL_VERTICAL_LIST_QUEST			= 4;	--任务列表
+p.ID_CTRL_PICTURE_TITLE				   = 2;	--任务栏标题
+p.ID_CTRL_PICTURE_BG					     = 1;	--关卡背景图片
+p.ID_CTRL_PICTURE_3					      = 3;
