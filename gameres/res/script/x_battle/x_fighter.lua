@@ -34,10 +34,12 @@ end
 
 --´´½¨ÑªÌõ
 function p:CreateHpBar()
-	if self.hpbar == nil then
+	if self.hpbar == nil or self.m_kShadow == nil then
 		self.hpbar = x_hp_bar:new();
+		self.m_kShadow = shadow:new();
 		self.hpbar:CreateExpNode();
 		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
+		--self.node:AddChildZ(fNode,200);
 		self.hpbar:Init( self.node, self.life, self.lifeMax );
 	end	
 end

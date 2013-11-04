@@ -58,10 +58,7 @@ end
 --´´½¨ÑªÌõ
 function p:CreateHpBar()
 	if self.hpbar == nil then
-		self.hpbar = hp_bar:new();
-		self.hpbar:CreateExpNode();
-		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
-		self.hpbar:Init( self.node, self.life, self.lifeMax );
+
 	end
 end
 

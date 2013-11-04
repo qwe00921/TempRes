@@ -209,19 +209,19 @@ image\fx\pet_blue_devil\fx_ultimate_skill.png @cut(1,5) @time=0.15 @offset(0,-60
 
 ;{----------ÍÚ¿ó³è¶¯»­ÅäÖÃ---------------
 [mining_attack]
-image\pet\mining\atk.png @cut(1,5)    @time=0.15   @offset(0,-30) @stay
+image\pet\mining\atk.png @cut(1,5)    @time=0.15   @offset(0,-0) @stay
 
 [mining_cast]
-image\pet\mining\atk.png @cut(1,5)    @time=0.15  @offset(10,-30) @stay
+image\pet\mining\atk.png @cut(1,5)    @time=0.15  @offset(10,-0) @stay
 
 [mining_death]
-image\pet\mining\standby.png @cut(1,2)   @time=0.15  @offset(-30,-20) @stay
+image\pet\mining\standby.png @cut(1,2)   @time=0.15  @offset(-30,-0) @stay
 
 [mining_death_end]
-image\pet\mining\standby.png @cut(1,2)  @offset(-30,-20) @time=2
+image\pet\mining\standby.png @cut(1,2)  @offset(-30,-0) @time=2
 
 [mining_hurt]
-image\pet\mining\hurt.png @cut(1,2)    @time=0.15  @offset(-5,-2) @stay
+image\pet\mining\hurt.png @cut(1,2)    @time=0.15  @offset(-5,-0) @stay
 
 [mining_standby]
 image\pet\mining\standby.png @cut(1,2) @time=0.3  @loop

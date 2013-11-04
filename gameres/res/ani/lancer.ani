@@ -195,6 +195,10 @@ image\ui\pve\hpbar.png
 lj\hpbar_bk_v2.png
 lj\hpbar_v2.png
 
+x_fighter½Åµ×ÒõÓ°
+[shadow]
+image\fx\battle\shadow_01.png
+
 ;fighter½Åµ×¹âÐ§
 [fighter_foot_fx]
 image\fx\pve\fighter_foot_fx.png @cut(6,5) @time=0.25
