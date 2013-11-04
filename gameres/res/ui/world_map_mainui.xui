@@ -1,12 +1,12 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=1
-Rect=880 6 74 74
+Rect=553 9 74 74
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

@@ -4,10 +4,11 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
+p.ID_CTRL_TEXT_33						       = 38;	--跑马灯
 p.ID_CTRL_BUTTON_BACK					    = 37;	--返回主页按钮
-p.ID_CTRL_BUTTON_32					      = 36;
+p.ID_CTRL_BUTTON_32					      = 36;	--其他
 p.ID_CTRL_BUTTON_CON					     = 35;	--社交按钮
-p.ID_CTRL_BUTTON_30					      = 34;
+p.ID_CTRL_BUTTON_30					      = 34;	--物品
 p.ID_CTRL_BUTTON_IN					      = 33;	--强化按钮
 p.ID_CTRL_BUTTON_TEAM					    = 32;	--队伍按钮
 p.ID_CTRL_PICTURE_26					     = 31;
@@ -30,7 +31,6 @@ p.ID_CTRL_BUTTON_UNION				    = 11;	--工会按钮
 p.ID_CTRL_BUTTON_PVP					     = 10;	--pvp按钮
 p.ID_CTRL_VERTICAL_LIST_8				 = 9;
 p.ID_CTRL_MAIN_BUTTON_SHOP			 = 8;	--商城按钮
-p.ID_CTRL_TEMP_BUTTON_QUEST			= 13;	--关卡地图进入按钮
 p.ID_CTRL_MAIN_CUSTOMIZE_LEVEL		= 27;
 p.ID_CTRL_PICTURE_CHA					    = 12;	--助手形象
 p.ID_CTRL_MAIN_BUTTON_GIFT			 = 24;	--任务按钮
