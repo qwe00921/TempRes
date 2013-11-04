@@ -178,7 +178,9 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_SERVER_LIST then
 		msg = msg_server_list:new();
-    end
+    elseif idmsg == MSG_PLAYER_USERINFO then
+		msg = msg_maininterface:new();
+	end
 	
 	if msg ~= nil then
 		WriteConWarning( string.format("CreateMsg() ok, idmsg=%d", idmsg));

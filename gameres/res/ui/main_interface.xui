@@ -44,21 +44,6 @@ Type=25
 Tag=27
 Rect=0 960 347 643
 
-[CTRL_TEMP_BUTTON_QUEST]
-Type=2
-Tag=13
-Rect=458 279 67 150
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=关卡地图进入按钮
-NormalFile=.\res\image\ui_honor\main_interface\temp_button_map1.png
-NormalFileUV=0 0 100 100
-SelectFile=.\res\image\ui_honor\main_interface\temp_button_map1.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui_honor\main_interface\temp_button_map1.png
-DisableFileUV=0 0 100 100
-
 [CTRL_MAIN_BUTTON_SHOP]
 Type=2
 Tag=8
@@ -267,6 +252,7 @@ Rect=349 872 68 78
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=物品
 NormalFile=.\res\image\ui\main_interface\button_item2.png
 NormalFileUV=0 0 74 85
 
@@ -288,6 +274,7 @@ Rect=553 872 68 78
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=其他
 NormalFile=.\res\image\ui\main_interface\button_other2.png
 NormalFileUV=0 0 74 85
 
@@ -301,3 +288,14 @@ TextVerAlign=AlignVerCenter
 Remark=返回主页按钮
 NormalFile=.\res\image\ui\main_interface\button_back.png
 NormalFileUV=0 0 76 80
+
+[CTRL_TEXT_33]
+Type=4
+Tag=38
+Rect=147 821 492 36
+Text=跑马跑马马灯本跑马灯文本跑马灯文本
+TextTradition=跑馬跑馬馬燈本跑馬燈文本跑馬燈文本
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=跑马灯
