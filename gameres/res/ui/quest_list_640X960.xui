@@ -1,0 +1,191 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_QUESTLIST_BG]
+Type=1
+Tag=1
+Rect=10 318 620 248
+NormalFile=.\res\image\ui\quest\quest_list_bg.png
+NormalFileUV=0 0 598 239
+
+[CTRL_TEXT_EVALUATION]
+Type=4
+Tag=2
+Rect=192 394 118 26
+Text=通关评价
+TextTradition=通關評價
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=文本_通关评价
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=192 443 118 26
+Text=通关奖励
+TextTradition=通關獎勵
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=文本_通关奖励
+
+[CTRL_PICTURE_BOSS]
+Type=1
+Tag=15
+Rect=38 339 132 198
+Remark=boss图片
+NormalFile=.\res\image\ui\quest\boss1.png
+NormalFileUV=0 0 84 126
+
+[CTRL_PICTURE_MONEY]
+Type=1
+Tag=16
+Rect=324 440 29 36
+Remark=金币按钮
+NormalFile=.\res\image\ui\quest\money.png
+NormalFileUV=0 0 41 51
+
+[CTRL_TEXT_MONEY]
+Type=4
+Tag=17
+Rect=360 440 97 32
+Text=x2000
+TextTradition=x2000
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_18]
+Type=1
+Tag=18
+Rect=455 440 40 38
+NormalFile=.\res\image\ui\quest\exp.png
+NormalFileUV=0 0 63 61
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=19
+Rect=497 438 100 38
+Text=x2000
+TextTradition=x2000
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_STAR1]
+Type=1
+Tag=20
+Rect=327 364 60 70
+Remark=评价星1
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 72 84
+
+[CTRL_PICTURE_STAR2]
+Type=1
+Tag=21
+Rect=348 363 60 70
+Remark=评价星2
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 72 84
+
+[CTRL_PICTURE_STAR3]
+Type=1
+Tag=22
+Rect=370 363 60 70
+Remark=评价星3
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 72 84
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=465 390 40 40
+NormalFile=.\res\image\ui\quest\battle.png
+NormalFileUV=0 0 40 40
+
+[CTRL_TEXT_MISSION_TIMES]
+Type=4
+Tag=24
+Rect=515 397 72 26
+Text=4/5
+TextTradition=4/5
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=347 312 255 53
+Text=1-1 世界树的任务名
+TextTradition=1-1 世界樹的任務名
+TextSize=26
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_EASY]
+Type=2
+Tag=26
+Rect=178 324 43 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\difficulty.png
+NormalFileUV=0 0 72 84
+
+[CTRL_BUTTON_NORMAL]
+Type=2
+Tag=27
+Rect=230 325 43 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\difficulty.png
+NormalFileUV=0 0 72 84
+
+[CTRL_BUTTON_DIFFICULT]
+Type=2
+Tag=28
+Rect=284 325 43 50
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\difficulty.png
+NormalFileUV=0 0 72 84
+
+[CTRL_PICTURE_ITEM1]
+Type=1
+Tag=29
+Rect=192 487 60 70
+NormalFile=.\res\image\ui\quest\getitem.png
+NormalFileUV=0 0 72 84
+
+[CTRL_PICTURE_ITEM2]
+Type=1
+Tag=30
+Rect=270 487 60 70
+NormalFile=.\res\image\ui\quest\getitem.png
+NormalFileUV=0 0 72 84
+
+[CTRL_PICTURE_ITEM3]
+Type=1
+Tag=31
+Rect=349 487 60 70
+NormalFile=.\res\image\ui\quest\getitem.png
+NormalFileUV=0 0 72 84
+
+[CTRL_BUTTON_MISSION_START]
+Type=2
+Tag=33
+Rect=429 493 186 51
+Text=挑战任务
+TextTradition=挑戰任務
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\mission_start.png
+NormalFileUV=0 0 279 77
