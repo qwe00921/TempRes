@@ -101,6 +101,7 @@ function p.createHeroCamp()
 	p.heroCamp = x_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray );
+	p.heroCamp:AddShadows( p.heroUIArray );
 	p.heroCamp:AddAllRandomTimeJumpEffect(true);
 end
 
@@ -109,6 +110,7 @@ function p.createEnemyCamp()
 	p.enemyCamp = x_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray );
+	p.enemyCamp:AddShadows( p.enemyUIArray );
 	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 end
 

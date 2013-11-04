@@ -9,7 +9,7 @@ shadow = {}
 local p = shadow;
 
 --创建新实例
-function p:new()	
+function p:new()
 	o = {}
 	setmetatable( o, self );
 	self.__index = self;
@@ -33,21 +33,50 @@ function p:GetNode()
 	return self.m_kNode;
 end
 
-function p:Init(strFx,pParentNode)
+function p:MoveTo( playerNodePos, targetPos)
+	if self.m_kNode == nil then
+		WriteCon( "fighter node nil" );
+		return nil;
+	end
+	
+	local duration = 0;
+	local cmd = nil;
+	--local fx = "x.hero_atk";
+	local fx = "x_cmb.hero_atk";
+	
+	local nOX = playerNodePos.x;
+	local nOY = playerNodePos.y;
+	local nTX = targetPos.x;
+	local nTY = targetPos.y;
+	
+	local x = nTX;
+	local y = nTY;
+		
+	-- cmd with var
+	cmd = battle_show.AddActionEffect_ToParallelSequence( 0.2, self.m_kNode, fx);
+	local varEnv = cmd:GetVarEnv();
+	varEnv:SetFloat( "$1", x );
+	varEnv:SetFloat( "$2", y );
+	
+	return cmd;
+end
+
+function p:Init(strFx,kParentNode)
 	local pic = GetPictureByAni(strFx, 0 );
 	local pNode = createNDUIImage();
 	pNode:Init();
 	pNode:SetPicture(pic);
 	
-	m_kTargetRoleNode = pParentNode;
+	m_kTargetRoleNode = kParentNode;
 	
-	local parentSize = pParentNode:GetFrameSize();
+	local kParentPos = kParentNode:GetFramePos();
+	local kParentSize = kParentNode:GetFrameSize();
 	local kShadowPicSize = pic:GetSize();
 	
-	local w = parentSize.w * 0.4;
-	local h = parentSize.h * 0.15;
-	local x = (parentSize.w - w) / 2;
-	local y = parentSize.h * 0.8;
+	local w = kParentSize.w * 0.4;
+	local h = kParentSize.h * 0.15;
+	local x = kParentPos.x + (kParentSize.w - w) / 2 - 5;
+	local y = kParentPos.y + kParentSize.h * 0.8 + 10;
 
 	pNode:SetFramePosXY(x,y);
 	pNode:SetFrameSize(w,h);
@@ -55,5 +84,5 @@ function p:Init(strFx,pParentNode)
 	self.m_kNode = pNode;
 	self.m_kLocalPicture = pic;
 	
-	return true;
+	return pNode;
 end

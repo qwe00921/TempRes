@@ -15,6 +15,7 @@ function p:new()
 	setmetatable( o, self );
 	self.__index = self;
 	o:ctor();
+	o.m_kShadow = {};
 	return o;
 end
 
@@ -24,6 +25,7 @@ function p:ctor()
 	self.tmplife = self.life;
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
+	self.m_kShadow = nil;
 end
 
 --初始化（重载）
@@ -36,12 +38,14 @@ end
 function p:CreateHpBar()
 	if self.hpbar == nil or self.m_kShadow == nil then
 		self.hpbar = x_hp_bar:new();
-		self.m_kShadow = shadow:new();
+		--self.m_kShadow = shadow:new();
 		self.hpbar:CreateExpNode();
 		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
-		--self.node:AddChildZ(self.m_kShadow.GetNode,200);
-		self.hpbar:Init( self.node, self.life, self.lifeMax );
-		self.node:SetShadowImage(self.m_kShadow:GetNode());
+		--self.node:AddChildZ(self.m_kShadow:GetNode(),200);
+		--self.hpbar:Init( self.node, self.life, self.lifeMax );
+	--	local pShadow = self.m_kShadow:Init("lancer.shadow",self.node);
+		--self.node:AddChildZ(pShadow,-1);
+		--self.node:SetShadowImage(self.m_kShadow:GetNode());
 	end	
 end
 
@@ -800,7 +804,7 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	local offsetY = y * startOffset / distance;
 	local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
 	self:GetNode():SetCenterPos( pPos);
-
+	
 	local pCmd = nil;
 	
 	if false == bParallelSequence then
@@ -808,6 +812,9 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	else
 		pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, self:GetPlayerNode(), fx);
 	end
+	
+	local kShadow = self.m_kShadow;
+	self.m_kShadow:MoveTo(pPos,CCPointMake(x,y));
 	
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
@@ -926,6 +933,10 @@ function p:GetFrontPos(targetNode)
 		frontPos.y = frontPos.y - 28;
 	end
 	return frontPos;
+end
+
+function p:SetShadow(kShadow)
+	self.m_kShadow = kShadow;
 end
 
 --获取战士前方坐标
