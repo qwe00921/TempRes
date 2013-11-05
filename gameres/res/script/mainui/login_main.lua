@@ -7,7 +7,7 @@
 login_main = {}
 local p = login_main;
 
-p.layer = nul;
+p.layer = nil;
 
 local ui = ui_login_back;
 
