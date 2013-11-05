@@ -114,6 +114,7 @@ function p:JumpMoveTo(targetPos, pJumpSeq, isFallback)
 	self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
 
 	local pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx,pJumpSeq);
+	local pShadowAc = self.m_kShadow:MoveToEx(CCPointMake(x,y));
 	
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
@@ -220,15 +221,9 @@ function p:Atk( targetFighter, batch)
 	local cmd2 = self:JumpMoveTo(enemyPos,seqAtk,false);
 	--local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
 	
+--	self.m_kShadow:MoveTo(originalPos,enemyPos);
+	
 	originalPos = self:GetNode():GetCenterPos();
-
-	if self.idCamp == E_CARD_CAMP_ENEMY then
-		ox = originalPos.x + 230;
-		oy = originalPos.y;
-	else
-		ox = originalPos.x - 230;
-		oy = originalPos.y;
-	end	
 	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );
@@ -247,7 +242,7 @@ function p:Atk( targetFighter, batch)
 	seqAtk:AddCommand( cmd4 );
 	
 	--返回原来的位置
-	local cmd5 = self:JumpMoveTo(originalPos, seqAtk, true );
+	--local cmd5 = self:JumpMoveTo(originalPos, seqAtk, true );
 	
 	------------受击者-----------------------
 	
@@ -806,15 +801,12 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	self:GetNode():SetCenterPos( pPos);
 	
 	local pCmd = nil;
-	
+	self.m_kShadow:MoveTo(pPos,targetPos);
 	if false == bParallelSequence then
 		pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx);
 	else
 		pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, self:GetPlayerNode(), fx);
 	end
-	
-	local kShadow = self.m_kShadow;
-	self.m_kShadow:MoveTo(pPos,CCPointMake(x,y));
 	
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
