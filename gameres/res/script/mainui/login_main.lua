@@ -30,12 +30,10 @@ function p.ShowUI()
 	
 	GetUIRoot():AddChild(layer);
 	--LoadUI("login_back.xui", layer, nil);
-
-	x_battle_mgr.EnterBattle();
 	
 	p.layer = layer;
 
-	--login_ui.ShowUI();
+	login_ui.ShowUI(); --²âÊÔÕ½¶·Òª¹Øµô @¹ùºÆ
 	--p.InitExp();
 	--p.SetDelegate(layer);
 	

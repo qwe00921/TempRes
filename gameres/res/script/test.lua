@@ -82,7 +82,7 @@ function p.test()
 	
 	--直接进战斗
 	--p.EnterBattle();
-
+--	x_battle_mgr.EnterBattle();
 --	--测试utf8子串
 --	p.TestUtf8String();
     

@@ -74,7 +74,7 @@ function p.ShowServerList()
 		for j,m in pairs(ServerList[k]) do
 			WriteCon(tostring(m));
 			if j == "name" then
-				serverName:SetText(ToUtf8( ServerList[k][j] ));
+				serverName:SetText(ServerList[k][j]);
 			end
 		end
 	

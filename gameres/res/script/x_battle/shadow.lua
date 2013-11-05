@@ -102,7 +102,7 @@ function p:Init(strFx,kParentNode)
 	local w = kParentSize.w * 0.4;
 	local h = kParentSize.h * 0.15;
 	local x = kParentPos.x + (kParentSize.w - w) / 2 - 5;
-	local y = kParentPos.y + kParentSize.h + 30;
+	local y = kParentPos.y + kParentSize.h * 0.7;
 
 	pNode:SetFramePosXY(x,y);
 	pNode:SetFrameSize(w,h);

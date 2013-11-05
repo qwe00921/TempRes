@@ -241,7 +241,7 @@ function p:Atk( targetFighter, batch)
 	seqAtk:AddCommand( cmd4 );
 	
 	--返回原来的位置
-	--local cmd5 = self:JumpMoveTo(originalPos, seqAtk, true );
+	local cmd5 = self:JumpMoveTo(originalPos, seqAtk, true );
 	
 	------------受击者-----------------------
 	
@@ -407,10 +407,10 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	--]]
 
 	--攻击者跑位
-	local cmd1;
-	if self.petTag ~= PET_MINING_TAG then
-		cmd1 = self:cmdMoveTo( originalPos, enemyPos, seqAtk );
-	end
+	local cmd1 = nil;
+	--if self.petTag ~= PET_MINING_TAG then
+		--cmd1 = self:cmdMoveTo( originalPos, enemyPos, seqAtk );
+	--end
 	--技能攻击动画
 	local playerNode = self:GetPlayerNode();
 	local cmd2 = createCommandPlayer():Skill( 0, playerNode, "" );
@@ -435,10 +435,10 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	seqAtk:AddCommand( cmd3 );
 	
 	--返回原来的位置
-	local cmd4;
-	if self.petTag ~= PET_MINING_TAG then
-		cmd4= self:cmdMoveTo( enemyPos, originalPos, seqAtk );
-	end
+	--local cmd4;
+	--if self.petTag ~= PET_MINING_TAG then
+	--	cmd4= self:cmdMoveTo( enemyPos, originalPos, seqAtk );
+	--end
 	
 	--攻击敌人动画
 	local cmd9 = createCommandPlayer():Hurt( 0, targetFighter:GetNode(), "" );
@@ -447,16 +447,16 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	seqMiscHurt:AddCommand( cmd9 );
 	
 	--受击特效
-	local cmd10;
-	if self.petTag == PET_BLUE_DEVIL_TAG then
+	local cmd10 = nil;
+	--if self.petTag == PET_BLUE_DEVIL_TAG then
 		--cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.blue_devil_fx_target_hurt" );
-	elseif self.petTag == PET_FLY_DRAGON_TAG then
+	--elseif self.petTag == PET_FLY_DRAGON_TAG then
 		--cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.dragon_fx_target_hurt" );
-	elseif self.petTag == PET_MINING_TAG then
-		cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.mining_fx_target_hurt" );	
-	else
-		cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.feilong" );
-	end
+	--elseif self.petTag == PET_MINING_TAG then
+	--	cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.mining_fx_target_hurt" );	
+	--else
+	--	cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.feilong" );
+	--end
 				
 	if cmd10 ~= nil then
 		seqMiscHurt:AddCommand( cmd10 );
@@ -885,9 +885,9 @@ function p:AtkSkill(targetFighter, batch, bulletType, fighterIndex, skillType)
 		bulletRotation = bulletRotation - 180;
 	else
 
-	if skillType==1 then
+	if skillType == 1 then
 		self:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighterIndex );
-	elseif skillType==2 then
+	elseif skillType == 2 then
 		self:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fighterIndex );
 	end	
 	

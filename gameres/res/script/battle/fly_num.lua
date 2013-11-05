@@ -40,7 +40,7 @@ function p:Init()
 		self:CreateImageNode();
 	end
 	self.offsetX = 0;
-	self.offsetY = 0;
+	self.offsetY = -20;
 	self.isInited = true;
 end
 
@@ -152,7 +152,7 @@ function p:PlayNum( num )
 	--²¥·Å¶¯»­
 	self.imageNode:SetVisible( true );
 	self.imageNode:SetOpacity( 0 );
-	self.imageNode:SetFramePosXY( self.offsetX+ UIOffsetX(25), self.offsetY + UIOffsetY(20));
+	self.imageNode:SetFramePosXY( self.offsetX, self.offsetY + UIOffsetY(20));
 	self:AddAction();
 end
 

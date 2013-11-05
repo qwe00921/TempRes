@@ -282,13 +282,18 @@ function p.CampBattle(campType)
 		if #defenseCampAliveFighter > 1 then
 			defenderId = math.random(1,#defenseCampAliveFighter);
 		end
+		
+		local nAttakType = math.random(1,2);
 
 		--@override
-		if true then
+		if 1 == nAttakType then
 			local target = defenseCampAliveFighter[defenderId];
 			attacker:Atk( target, batch );
 			--attacker:Atk( target, batch );
 			--attacker:JumpToPosition(batch,target:GetNode():GetCenterPos());
+		else
+			local target = defenseCampAliveFighter[defenderId];
+			attacker:AtkSkill( target, batch,1,1,1);
 		end
 		
 		--设置批次等待
