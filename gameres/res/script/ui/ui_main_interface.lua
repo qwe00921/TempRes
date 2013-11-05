@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
+p.ID_CTRL_TEXT_34						       = 39;	--体力
 p.ID_CTRL_TEXT_33						       = 38;	--跑马灯
 p.ID_CTRL_BUTTON_BACK					    = 37;	--返回主页按钮
 p.ID_CTRL_BUTTON_32					      = 36;	--其他

@@ -76,6 +76,12 @@ function p.RefreshUI(userinfo)
 	
 	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_16);
 	money:SetText( userinfo.Money );
+	
+	local emoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_18);
+	emoney:SetText( userinfo.Emoney );
+	
+	local tili = GetLabel( p.layer, ui.ID_CTRL_TEXT_34);
+	tili:SetText( string.format("%d/%d", userinfo.Move, userinfo.MaxMove ) );
 end
 
 --设置按钮
@@ -121,8 +127,11 @@ function p.SetDelegate()
 	local shop = GetButton( p.layer, ui.ID_CTRL_MAIN_BUTTON_SHOP);
 	shop:SetLuaDelegate(p.OnBtnClick);
 	
+	--返回主ui，用于直接关闭子界面
 	local backmainui = GetButton( p.layer, ui.ID_CTRL_BUTTON_BACK );
-
+	backmainui:SetLuaDelegate(p.OnBtnClick);
+	
+	
 --[[	--进入世界地
 	local map2 = GetButton(layer, ui.ID_CTRL_BUTTON_9);
 	p.SetBtn(map2);
@@ -142,6 +151,9 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**======================任务======================**");
 			
 			game_main.EnterWorldMap();
+			
+			--进入世界地图，隐藏子界面，隐藏主UI
+			p.CloseAllPanel();			
 			p.HideUI();
 		elseif ui.ID_CTRL_BUTTON_PVP == tag then
 			WriteCon("**=====================竞技场=====================**");
