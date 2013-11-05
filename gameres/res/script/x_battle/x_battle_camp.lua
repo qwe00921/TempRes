@@ -160,7 +160,6 @@ function p:AddShadows(uiArray)
 		local kShadow = shadow:new();
 		local nIndex = #self.shadows + 1;
 		self.shadows[nIndex] = kShadow;
-		self.fighters[nIndex]:SetShadow(kShadow);
 		local pOldPos = node:GetFramePos();
 
 		if self.idCamp == E_CARD_CAMP_HERO then
@@ -172,6 +171,7 @@ function p:AddShadows(uiArray)
 		node:SetFramePos(pOldPos);
 		
 		local kShadowNode = kShadow:Init("lancer.shadow",node);
+		self.fighters[nIndex]:SetShadow(kShadow.m_kNode);
 		x_battle_mgr.uiLayer:AddChildZ(kShadowNode,0);
 		--self:SetFighterConfig( kShadow, i );
 		--kShadow:standby();

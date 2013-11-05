@@ -106,6 +106,8 @@ function p:Init(strFx,kParentNode)
 
 	pNode:SetFramePosXY(x,y);
 	pNode:SetFrameSize(w,h);
+
+	pNode:SetIsShadow(true);
 	
 	self.m_kNode = pNode;
 	self.m_kLocalPicture = pic;

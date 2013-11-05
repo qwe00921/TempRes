@@ -114,7 +114,6 @@ function p:JumpMoveTo(targetPos, pJumpSeq, isFallback)
 	self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
 
 	local pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx,pJumpSeq);
-	local pShadowAc = self.m_kShadow:MoveToEx(CCPointMake(x,y));
 	
 	local varEnv = pCmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
@@ -801,7 +800,7 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	self:GetNode():SetCenterPos( pPos);
 	
 	local pCmd = nil;
-	self.m_kShadow:MoveTo(pPos,targetPos);
+	--self.m_kShadow:MoveTo(pPos,targetPos);
 	if false == bParallelSequence then
 		pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx);
 	else
@@ -928,7 +927,7 @@ function p:GetFrontPos(targetNode)
 end
 
 function p:SetShadow(kShadow)
-	self.m_kShadow = kShadow;
+	self.node:SetShadow(kShadow);
 end
 
 --获取战士前方坐标
