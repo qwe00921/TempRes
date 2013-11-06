@@ -29,7 +29,7 @@ function p.ShowUI()
 	layer:SetFrameRectFull();
 	
 	GetUIRoot():AddChild(layer);
-	--LoadUI("login_back.xui", layer, nil);
+	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
 

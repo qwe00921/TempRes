@@ -8,7 +8,6 @@ p.StageId = nil;
 
 p.questList = {};
 p.data = {};
-p.viewId = 10001;
 
 function p.ShowUI(Stage_id)
 	p.StageId  = Stage_id;
@@ -72,6 +71,7 @@ end
 	
 function p.ShowQuestList(quest_list)
 	p.questList = quest_list;
+	local viewId = 10001;
 
 	local Stage_Id = p.StageId;
 	local stageName = "Stage_"..Stage_Id
@@ -89,11 +89,12 @@ function p.ShowQuestList(quest_list)
 
 		local bg = GetUiNode(view, ui_quest_list.ID_CTRL_PICTURE_QUESTLIST_BG);
 		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
-		view:SetId(p.viewId);
+		view:SetId(viewId);
 		
-		local questId = p.viewId;
+		local questId = viewId;
 		local questName = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_25);
 		local quest_Id = "quest_"..questId
+
 		local name = p.data[quest_Id]["name"]
 		questName:SetText(ToUtf8(name));
 		
@@ -107,7 +108,7 @@ function p.ShowQuestList(quest_list)
 		p.ShowItem(view,1);
 		
 		QuestListTable:AddView(view);
-		p.viewId = p.viewId + 1;
+		viewId = viewId + 1;
 	end
 	--for k,v in pairs() do
 end

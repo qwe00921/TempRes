@@ -17,15 +17,15 @@ local useMoveEffect = false; --是否使用移动特效，否则用缩放特效
 --打开地图
 function p.OpenMap()
 	p.RegEvent();
-	GetTileMapMgr():OpenMapWorld( "test_world_map.tmx", true ); --true to fade in.
-	world_map_mainui.ShowUI();
+	GetTileMapMgr():OpenMapWorld( "test_world_map1.tmx", true ); --true to fade in.
+	--world_map_mainui.ShowUI();
 end	
 
 --关闭地图
 function p.CloseMap()
 	--顺序:先关闭UI，再关闭地图！
 	dlg_stage_map.CloseUI();
-	world_map_mainui.CloseUI();
+	--world_map_mainui.CloseUI();
 	GetTileMapMgr():CloseMap();
 	
 	p.userStatus =  nil;
