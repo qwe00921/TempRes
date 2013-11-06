@@ -33,10 +33,10 @@ function p.ShowUI()
 	
 	p.layer = layer;
 
-	login_ui.ShowUI(); --测试战斗要关掉 @郭浩
+	--login_ui.ShowUI(); --测试战斗要关掉 @郭浩
 	--login_ui.ShowUI();
 	--p.InitExp();
-	--p.SetDelegate();
+	p.SetDelegate();
 	
 end
 
