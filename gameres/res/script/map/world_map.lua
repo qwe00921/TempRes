@@ -1,31 +1,31 @@
 --------------------------------------------------------------
 -- FileName: 	world_map.lua
 -- author:		zhangwq, 2013/07/16
--- purpose:		ÊÀ½çµØÍ¼
+-- purpose:		ä¸–ç•Œåœ°å›¾
 --------------------------------------------------------------
 
 world_map = {}
 local p = world_map;
 
-p.userStatus =  nil;        --ÓÃ»§×´Ì¬ĞÅÏ¢
-p.userCoin = nil;           --ÓÃ»§½ğÇ®ĞÅÏ¢
-p.userFinishMissions = nil; --ÓÃ»§Íê³ÉÈÎÎñÇé¿ö
-p.stopActionObj = nil;      --ÓÃÓÚÕÂ½ÚÌØĞ§
+p.userStatus =  nil;        --ç”¨æˆ·çŠ¶æ€ä¿¡æ¯
+p.userCoin = nil;           --ç”¨æˆ·é‡‘é’±ä¿¡æ¯
+p.userFinishMissions = nil; --ç”¨æˆ·å®Œæˆä»»åŠ¡æƒ…å†µ
+p.stopActionObj = nil;      --ç”¨äºç« èŠ‚ç‰¹æ•ˆ
 
-local useMoveEffect = false; --ÊÇ·ñÊ¹ÓÃÒÆ¶¯ÌØĞ§£¬·ñÔòÓÃËõ·ÅÌØĞ§
+local useMoveEffect = false; --æ˜¯å¦ä½¿ç”¨ç§»åŠ¨ç‰¹æ•ˆï¼Œå¦åˆ™ç”¨ç¼©æ”¾ç‰¹æ•ˆ
 
---´ò¿ªµØÍ¼
+--æ‰“å¼€åœ°å›¾
 function p.OpenMap()
 	p.RegEvent();
 	GetTileMapMgr():OpenMapWorld( "test_world_map.tmx", true ); --true to fade in.
-	--world_map_mainui.ShowUI();
+	world_map_mainui.ShowUI();
 end	
 
---¹Ø±ÕµØÍ¼
+--å…³é—­åœ°å›¾
 function p.CloseMap()
-	--Ë³Ğò:ÏÈ¹Ø±ÕUI£¬ÔÙ¹Ø±ÕµØÍ¼£¡
+	--é¡ºåº:å…ˆå…³é—­UIï¼Œå†å…³é—­åœ°å›¾ï¼
 	dlg_stage_map.CloseUI();
-	--world_map_mainui.CloseUI();
+	world_map_mainui.CloseUI();
 	GetTileMapMgr():CloseMap();
 	
 	p.userStatus =  nil;
@@ -34,7 +34,7 @@ function p.CloseMap()
     p.stopActionObj = nil;
 end
 
---×¢²áµØÍ¼ÊÂ¼ş
+--æ³¨å†Œåœ°å›¾äº‹ä»¶
 function p.RegEvent()
 	RegTileMapCallBack( "click_empty", 	    p.OnClickEmpty );
 	RegTileMapCallBack( "click_obj", 	    p.OnClickObj );
@@ -43,7 +43,7 @@ function p.RegEvent()
 	RegTileMapCallBack( "player_jump_done", nil );
 end
 
---µã¿ÕµØ
+--ç‚¹ç©ºåœ°
 function p.OnClickEmpty()
     WriteCon("OnClickEmpty");
 	dlg_stage_map.CloseUI();
@@ -54,53 +54,58 @@ function p.OnClickEmpty()
 	dlg_menu.CloseUI();
 end
 
---µãÎï¼ş
+--ç‚¹ç‰©ä»¶
 function p.OnClickObj( tileObj, isTouchDown, objType, tileX, tileY )
-	--Ö»´¦ÀídownÊÂ¼ş£¬²»´¦ÀíupÊÂ¼ş
+	--åªå¤„ç†downäº‹ä»¶ï¼Œä¸å¤„ç†upäº‹ä»¶
 	if isTouchDown then
-		WriteCon("OnClickObj: objType="..objType..", tileX="..tileX..", tileY="..tileY..",tag="..tileObj:GetTag())
-		--local posobj = GetTileMap():FindPathLayer():GetObjAtTilePos(tileX,tileY);	
-		dlg_stage_map.CloseUI();
-		p.AddEffect( p.stopActionObj );
+		WriteCon("OnClickObj: objType="..objType..", tileX="..tileX..", tileY="..tileY..",tag="..tileObj:GetTag());
+		local Stage_id = "101";
+		quest_main.ShowUI(Stage_id);
 		
-		--µ±¸±±¾Ö»ÓĞÒ»¸öµØÍ¼Ê±£¬Ö±½Ó½øÈë
-		local chapterId = tileObj:GetId();
-		local stageMaps = SelectRowList( T_STAGE_MAP, "chapter_id", chapterId );
-		local chapterType = SelectCell( T_CHAPTER_MAP, chapterId, "chapter_type" );
-		if #stageMaps == 1 and tonumber( chapterType ) == ENTER_MAP_DUNGEON then
-            p.stopActionObj = nil;
-            local travelId = GetTravelId( chapterId, stageMaps[1].id );
-            local mapName = GetMapName( travelId );
-		    dlg_dungeon_enter.ShowUI( mapName, chapterId, stageMaps[1].id, chapterType );
-		else
-            dlg_stage_map.ShowUI( tileObj, stageMaps );
-            p.DelEffect( tileObj );
-            p.stopActionObj = tileObj;
-		end
+		
+		--quest_main.ShowUI();
+		--local posobj = GetTileMap():FindPathLayer():GetObjAtTilePos(tileX,tileY);	
+		-- dlg_stage_map.CloseUI();
+		-- p.AddEffect( p.stopActionObj );
+		
+		--å¤‡åŒ—å±€æŒ¥å¹¸æ¡“é¾…èµé™…ä¿îƒ±è‹¯å’î‰›?		
+		-- local chapterId = tileObj:GetId();
+		-- local stageMaps = SelectRowList( T_STAGE_MAP, "chapter_id", chapterId );
+		-- local chapterType = SelectCell( T_CHAPTER_MAP, chapterId, "chapter_type" );
+		-- if #stageMaps == 1 and tonumber( chapterType ) == ENTER_MAP_DUNGEON then
+            -- p.stopActionObj = nil;
+            -- local travelId = GetTravelId( chapterId, stageMaps[1].id );
+            -- local mapName = GetMapName( travelId );
+		    -- dlg_dungeon_enter.ShowUI( mapName, chapterId, stageMaps[1].id, chapterType );
+		-- else
+            -- dlg_stage_map.ShowUI( tileObj, stageMaps );
+            -- p.DelEffect( tileObj );
+            -- p.stopActionObj = tileObj;
+		-- end
 	end
 end
 
---¿ªÊ¼¼ÓÔØµØÍ¼
+--å¼€å§‹åŠ è½½åœ°å›¾
 function p.OnLoadMapBegin(idMap, bWorldMap)
     WriteCon("OnLoadMapBegin: idMap="..idMap..",bWorldMap="..tostring(bWorldMap));
 end
 
---½áÊø¼ÓÔØµØÍ¼
+--ç»“æŸåŠ è½½åœ°å›¾
 function p.OnLoadMapEnd(idMap, bWorldMap)
     WriteCon("OnLoadMapEnd: idMap="..idMap..",bWorldMap="..tostring(bWorldMap));
 	
-	--×¢²áµØÍ¼ÊÂ¼ş
+	--æ³¨å†Œåœ°å›¾äº‹ä»¶
 	--GetTileMap():SetLuaDelegate( p.OnMapEvent );
 	
-	--ÉèÖÃÔÊĞíÍÏ¶¯µÄ·½Ïò
+	--è®¾ç½®å…è®¸æ‹–åŠ¨çš„æ–¹å‘
 	GetTileMap():SetMoveDir( true, true ); --horz,vert
 	
-	-- »ñÈ¡ÊÀ½çµØÍ¼Êı¾İ
-	p.getWordMapData();
-
+	-- è·å–ä¸–ç•Œåœ°å›¾æ•°æ®
+	--p.getWordMapData();
+	p.AddAllChapters()
 end
 
--- »ñÈ¡ÊÀ½çµØÍ¼Êı¾İ
+-- è·å–ä¸–ç•Œåœ°å›¾æ•°æ®
 function p.getWordMapData()
     ShowLoading( true );
 	local user_id = GetUID();
@@ -113,15 +118,15 @@ function p.RefreshUI(msg)
     p.userCoin = msg.user_coin;
     p.userFinishMissions = msg.user_finish_missions;
     
-    --Ìí¼ÓËùÓĞÕÂ½Ú
+    --æ·»åŠ æ‰€æœ‰ç« èŠ‚
     p.AddAllChapters();
     ShowLoading( false );
 end
 
---Ìí¼ÓËùÓĞÕÂ½Ú
+--æ·»åŠ æ‰€æœ‰ç« èŠ‚
 function p.AddAllChapters()
 
-	--»ñÈ¡Ç°¾°²ã
+	--è·å–å‰æ™¯å±‚
 	local fgLayer = GetTileMap():FindFgLayer();
 	if fgLayer == nil then return end;
 	
@@ -155,21 +160,21 @@ function p.AddAllChapters()
 	end
 end
 
---Ìí¼ÓÕÂ½ÚÎï¼ş
+--æ·»åŠ ç« èŠ‚ç‰©ä»¶
 function p.AddChapterObj( fgLayer, tileX, tileY, offsetX, offsetY, 
 							pic, titleText, chapterId, chapterName )
 
-	--Ìí¼ÓÎï¼ş
+	--æ·»åŠ ç‰©ä»¶
 	local obj = fgLayer:AddTileObj( E_TILE_OBJ_CHAPTER, tileX, tileY );
 	
 	if obj ~= nil then
-		--ÉèÖÃÍ¼Æ¬ºÍ»æÖÆÆ«ÒÆ
+		--è®¾ç½®å›¾ç‰‡å’Œç»˜åˆ¶åç§»
 		obj:SetPicture( pic );
 		obj:SetDrawingOffset( offsetX, offsetY );
 		obj:SetId( chapterId );
 		obj:SetName( chapterName );
 		
-		--ÉèÖÃÎï¼şËùÔÚÇøÓò
+		--è®¾ç½®ç‰©ä»¶æ‰€åœ¨åŒºåŸŸ
 		local objPos = obj:GetFramePos();
         local picSize = UISize( pic:GetSize());
 		picSize.w = picSize.w * 1.1f;
@@ -180,7 +185,7 @@ function p.AddChapterObj( fgLayer, tileX, tileY, offsetX, offsetY,
             picSize.w, picSize.h );
         obj:SetFrameRect( rect );
 		
-		--ÅĞ¶ÏÊÇ·ñ½âËø
+		--åˆ¤æ–­æ˜¯å¦è§£é”
 		local isUnlock = true;
 		local needTravelId = SelectCellMatch( T_CHAPTER_OPEN_CHECK, "chapter_id", chapterId, "need_travel_id" );
 		if needTravelId ~= nil then
@@ -189,7 +194,7 @@ function p.AddChapterObj( fgLayer, tileX, tileY, offsetX, offsetY,
 		obj:SetEnabled( isUnlock );
 		
 		if not isUnlock then
-			--Èç¹ûÎ´½âËøÔò£¬²¥·Å±íÏÖĞ§¹û£ºËøÌØĞ§¡¢»ÒÉ«ÃÉ°æ
+			--å¦‚æœæœªè§£é”åˆ™ï¼Œæ’­æ”¾è¡¨ç°æ•ˆæœï¼šé”ç‰¹æ•ˆã€ç°è‰²è’™ç‰ˆ
             obj:SetMaskColor( ccc4(80,80,80,255) );
             
             local imageNode = createNDUIImage();
@@ -199,11 +204,11 @@ function p.AddChapterObj( fgLayer, tileX, tileY, offsetX, offsetY,
             imageNode:SetFramePosXY(pos.x + picSize.w * 0.5f, pos.y + picSize.h * 0.5f);
             imageNode:AddFgEffect("ui.map_lock");
         else
-			--Èç¹ûÒÑ¾­½âËø£¬²¥·Å±íÏÖĞ§¹û
+			--å¦‚æœå·²ç»è§£é”ï¼Œæ’­æ”¾è¡¨ç°æ•ˆæœ
             p.AddEffect( obj );
 		end
 		
-		--Ôö¼ÓÕÂ½Ú±êÌâ
+		--å¢åŠ ç« èŠ‚æ ‡é¢˜
 		local title = createNDUILabel();
 		if title ~= nil then
 		  title:Init();
@@ -225,33 +230,33 @@ function p.AddChapterObj( fgLayer, tileX, tileY, offsetX, offsetY,
 	end
 end
 
---ÕÂ½ÚÌØĞ§Ôö¼Ó
+--ç« èŠ‚ç‰¹æ•ˆå¢åŠ 
 function p.AddEffect( obj )
 	if obj ~= nil then
 		obj:AddActionEffect( p.GetChapterActionTitle() ); 
 	end
 end
 
---ÕÂ½ÚÌØĞ§É¾³ı
+--ç« èŠ‚ç‰¹æ•ˆåˆ é™¤
 function p.DelEffect( obj )
     if obj ~= nil then
 		obj:DelActionEffect( p.GetChapterActionTitle() ); 
 	end
 end
 
---È¡actionÌØĞ§Ãû³Æ
+--å–actionç‰¹æ•ˆåç§°
 function p.GetChapterActionTitle()
 	if useMoveEffect then
-		--ÉÏÏÂÒÆ¶¯
+		--ä¸Šä¸‹ç§»åŠ¨
 		return "ui_cmb.common_move"; 
 	else
-		--Ëõ·Å
+		--ç¼©æ”¾
 		return "lancer_cmb.world_map_chapter_fx"; 
 	end
 end
 
 
---ÅĞ¶ÏÓÃ»§ÊÇ·ñÍê³ÉÄ³ÂÃĞĞµØÍ¼
+--åˆ¤æ–­ç”¨æˆ·æ˜¯å¦å®ŒæˆæŸæ—…è¡Œåœ°å›¾
 function p.isTravelFinish( travelId )
 	if p.userFinishMissions ~= nil then
 	   for k, v in ipairs(p.userFinishMissions) do
@@ -263,7 +268,7 @@ function p.isTravelFinish( travelId )
 	return false;
 end
 
---ÍÏ¶¯µØÍ¼Ê±Òş²ØÕÂ½ÚUI
+--æ‹–åŠ¨åœ°å›¾æ—¶éšè—ç« èŠ‚UI
 function p.OnMapEvent( mapEvent, delta, distance )
 	if mapEvent == 1 and distance > 5 then
 		--WriteConErr( "OnMapEvent()" );
@@ -272,7 +277,7 @@ function p.OnMapEvent( mapEvent, delta, distance )
 end
 
 function p.CheckToCloseMap()
-	--Èç¹ûÓĞ´ò¿ªµØÍ¼£¬Ôò¹Ø±ÕµØÍ¼£¬·µ»ØÖ÷UI
+	--É§Ú»ÔÕ²ßªÖ˜Í¼Ã¬Õ²Ú˜Ò•Ö˜Í¼Ã¬×µÜ˜×·UI
 	local mapNode = GetTileMapMgr():GetMapNode();
 	if mapNode ~= nil then
 		mapNode:FadeOut();
