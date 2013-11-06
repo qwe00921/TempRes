@@ -13,9 +13,11 @@ NormalFileUV=0 0 640 960
 [CTRL_BUTTON_102]
 Type=2
 Tag=102
-Rect=199 786 261 48
-Text=点击开始
-TextTradition=點擊開始
+Rect=180 744 280 40
 TextSize=26
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\login\Taptostart.png
+NormalFileUV=0 243 560 81
+SelectFile=.\res\image\ui_honor\login\Taptostart.png
+SelectedFileUV=0 324 560 81
