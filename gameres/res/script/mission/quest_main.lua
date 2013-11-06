@@ -5,6 +5,7 @@ p.layer = nil;
 local ui = ui_quest_main;
 
 p.StageId = nil;
+p.questId = nil;
 
 p.questList = {};
 p.data = {};
@@ -12,6 +13,9 @@ p.data = {};
 function p.ShowUI(Stage_id)
 	p.StageId  = Stage_id;
 	WriteCon(tostring(p.StageId));
+	
+	--è·å–StageIdåˆå§‹å€¼
+	GetQuestId();
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
@@ -34,17 +38,25 @@ function p.ShowUI(Stage_id)
 	p.SetDelegate(layer);
 	
 	--p.ShowQuestList();
-	WriteCon("·¢ËÍÈÎÎñÁĞ±íÇëÇó");
+	WriteCon("å‘é€ä»»åŠ¡åˆ—è¡¨è¯·æ±‚");
 	local uid = GetUID();
-	local stage_id = p.StageId;
-	local param = "MachineType=Android&stage_id="..stage_id
+	local param = "MachineType=Android&stage_id="..p.StageId;
 	WriteCon(param);
 	SendReq("Mission","GetUserMissionProgress",uid,param);
 end
 
+function GetQuestId()
+	if p.StageId == 101 then
+		p.questId = 101011
+	elseif p.StageId == 102 then
+		p.questId = 101012
+	else 
+		p.questId = 101011
+	end
+end
 
 function p.SetDelegate()
-	--·µ»Ø£¬¹Ø±Õ
+	--è¿”å›ï¼Œå…³é—­
 	local btnBack = GetButton( p.layer, ui.ID_CTRL_BUTTON_BACK );
 	p.SetBtn(btnBack);
 end
@@ -53,17 +65,17 @@ function p.SetBtn(btn)
 	btn:SetLuaDelegate(p.OnBtnClick);
 end
 
---°´Å¥ÊÂ¼ş
+--æŒ‰é’®äº‹ä»¶
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
 		
 		if (ui.ID_CTRL_BUTTON_BACK == tag) then
-			WriteCon("¹Ø±Õ");
+			WriteCon("å…³é—­");
 			p.CloseUI();
 			--game_main.EnterWorldMap();
 		--elseif () then
-		--	WriteCon("ÉÌµê");
+		--	WriteCon("å•†åº—");
 		end
 	end
 end
@@ -71,10 +83,8 @@ end
 	
 function p.ShowQuestList(quest_list)
 	p.questList = quest_list;
-	local viewId = 10001;
 
-	local Stage_Id = p.StageId;
-	local stageName = "Stage_"..Stage_Id
+	local stageName = "Stage_"..p.StageId
 	p.data = quest_data[stageName];
 	
 	
@@ -89,34 +99,64 @@ function p.ShowQuestList(quest_list)
 
 		local bg = GetUiNode(view, ui_quest_list.ID_CTRL_PICTURE_QUESTLIST_BG);
 		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
-		view:SetId(viewId);
-		
-		local questId = viewId;
-		local questName = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_25);
-		local quest_Id = "quest_"..questId
-
-		local name = p.data[quest_Id]["name"]
-		questName:SetText(ToUtf8(name));
-		
-		
-		--Òş²ØÍ¨¹ØÆÀ¼ÛºÍ½±ÀøÎïÆ·
+		view:SetId(p.questId);
+		--éšè—é»˜è®¤UI
 		p.HideStar(view);
 		p.HideItem(view);
-		--ÏÔÊ¾
-		WriteCon("===========");
-		p.ShowStar(view,2);
-		p.ShowItem(view,1);
 		
+		local fightBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_MISSION_START);
+		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
+		
+		local easyBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_EASY);
+		easyBtn:SetLuaDelegate(p.OnListBtnClick);
+		local normalBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_NORMAL);
+		normalBtn:SetLuaDelegate(p.OnListBtnClick);
+		local difficultBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_DIFFICULT);
+		difficultBtn:SetLuaDelegate(p.OnListBtnClick);
+
+		local quest_Id = "quest_"..p.questId
+		WriteCon(quest_Id);
+		local questName = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_25);
+		questName:SetText(ToUtf8(p.data[quest_Id]["name"]));
+		
+		local moneyText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_MONEY);
+		moneyText:SetText(ToUtf8(p.data[quest_Id]["easy"]["money"]));
+
+		local expText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_EXP);
+		expText:SetText(ToUtf8(p.data[quest_Id]["easy"]["exp"]));
+
+		local timesText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_MISSION_TIMES);
+		local text = "0/"..p.data[quest_Id]["easy"]["times"]
+		timesText:SetText(ToUtf8(text));
+
+		local ItemNum = p.data[quest_Id]["easy"]["item"]
+		p.ShowItem(view,ItemNum);
+		-- p.ShowStar(view,2);
+
 		QuestListTable:AddView(view);
-		viewId = viewId + 1;
+		p.questId = p.questId + 1;
 	end
-	--for k,v in pairs() do
+	local ListLength = 0
+	for k,v in pairs(p.questList) do
+		ListLength = ListLength + 1;
+	end
+	WriteCon("**ListLength = "..ListLength); 
+	
+	--for
+end
+	
+function p.OnFightBtnClick(uiNode,uiEventType,param)
+		WriteCon("æˆ˜æ–—");
+		p.CloseUI();
+		x_battle_mgr.EnterBattle();
+
 end
 
+function p.OnListBtnClick(uiNode,uiEventType,param)
+		WriteCon("éš¾åº¦");
+end
 	
-	
-	
---Òş²ØÍ¨¹ØÆÀ¼Û
+--éšè—é€šå…³è¯„ä»·
 function p.HideStar(view)
 	local star1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR1)
 	star1:SetVisible(false);
@@ -147,7 +187,7 @@ function p.ShowStar(view,num)
 	end
 end
 
---Òş²Ø½±ÀøÎïÆ·Í¼±ê
+--éšè—å¥–åŠ±ç‰©å“å›¾æ ‡
 function p.HideItem(view)
 	local Item1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM1)
 	Item1:SetVisible(false);
@@ -178,7 +218,7 @@ function p.ShowItem(view,num)
 	end
 end
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
@@ -186,7 +226,7 @@ function p.HideUI()
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
