@@ -1,0 +1,29 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_86]
+Type=1
+Tag=86
+Rect=20 338 110 165
+NormalFile=.\res\image\ui\beast\summon_card_0021_M.png
+NormalFileUV=0 0 320 480
+
+[CTRL_PICTURE_87]
+Type=1
+Tag=87
+Rect=79 476 50 26
+NormalFile=.\res\image\ui\beast\button_right.png
+NormalFileUV=0 0 193 102
+
+[CTRL_TEXT_88]
+Type=4
+Tag=88
+Rect=74 474 50 29
+Text=LV100
+TextTradition=LV100
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

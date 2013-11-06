@@ -1,0 +1,53 @@
+--------------------------------------------------------------
+-- FileName:  beast_incubate.lua
+-- author: 此文件為自動生成，沒有作者。有問題請 @郭浩
+--------------------------------------------------------------
+ui_beast_incubate = {};
+local p =  ui_beast_incubate;
+p.ID_CTRL_BUTTON_85					      = 85;
+p.ID_CTRL_TEXT_84						       = 84;
+p.ID_CTRL_TEXT_83						       = 83;
+p.ID_CTRL_TEXT_82						       = 82;
+p.ID_CTRL_TEXT_81						       = 81;
+p.ID_CTRL_TEXT_80						       = 80;
+p.ID_CTRL_TEXT_79						       = 79;
+p.ID_CTRL_LIST_77						       = 77;
+p.ID_CTRL_PICTURE_INCUBATEBG2			= 76;
+p.ID_CTRL_TEXT_75						       = 75;
+p.ID_CTRL_TEXT_74						       = 74;
+p.ID_CTRL_TEXT_73						       = 73;
+p.ID_CTRL_TEXT_72						       = 72;
+p.ID_CTRL_TEXT_71						       = 71;
+p.ID_CTRL_TEXT_70						       = 70;
+p.ID_CTRL_TEXT_69						       = 69;
+p.ID_CTRL_TEXT_68						       = 68;
+p.ID_CTRL_PICTURE_67					     = 67;
+p.ID_CTRL_PICTURE_66					     = 66;
+p.ID_CTRL_PICTURE_65					     = 65;
+p.ID_CTRL_PICTURE_64					     = 64;
+p.ID_CTRL_PICTURE_63					     = 63;
+p.ID_CTRL_TEXT_62						       = 62;
+p.ID_CTRL_TEXT_61						       = 61;
+p.ID_CTRL_TEXT_60						       = 60;
+p.ID_CTRL_TEXT_59						       = 59;
+p.ID_CTRL_TEXT_58						       = 58;
+p.ID_CTRL_TEXT_57						       = 57;
+p.ID_CTRL_TEXT_56						       = 56;
+p.ID_CTRL_TEXT_55						       = 55;
+p.ID_CTRL_TEXT_54						       = 54;
+p.ID_CTRL_TEXT_53						       = 53;
+p.ID_CTRL_TEXT_52						       = 52;
+p.ID_CTRL_TEXT_51						       = 51;
+p.ID_CTRL_TEXT_50						       = 50;
+p.ID_CTRL_TEXT_49						       = 49;
+p.ID_CTRL_PICTURE_48					     = 48;
+p.ID_CTRL_TEXT_47						       = 47;
+p.ID_CTRL_TEXT_46						       = 46;
+p.ID_CTRL_PICTURE_BEAST				   = 45;
+p.ID_CTRL_PICTURE_INFOBG				  = 44;
+p.ID_CTRL_BUTTON_5					       = 5;
+p.ID_CTRL_TEXT_TITLE					     = 4;
+p.ID_CTRL_PICTURE_TITLE				   = 3;
+p.ID_CTRL_TEXT_NUM					       = 2;
+p.ID_CTRL_PICTURE_NUM					    = 1;
+p.ID_CTRL_PICTURE_6					      = 6;
