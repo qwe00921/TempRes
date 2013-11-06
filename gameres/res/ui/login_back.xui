@@ -1,11 +1,21 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_LOGIN_BG]
 Type=1
 Tag=1
-Rect=0 0 960 640
-NormalFile=.\res\image\ui_honor\login\login_bg.png
-NormalFileUV=0 0 956 637
+Rect=0 0 640 960
+NormalFile=.\res\image\ui_honor\login\login_bg1.png
+NormalFileUV=0 0 640 960
+
+[CTRL_BUTTON_102]
+Type=2
+Tag=102
+Rect=199 786 261 48
+Text=点击开始
+TextTradition=點擊開始
+TextSize=26
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

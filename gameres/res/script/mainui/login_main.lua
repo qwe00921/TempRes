@@ -7,7 +7,7 @@
 login_main = {}
 local p = login_main;
 
-p.layer = nul;
+p.layer = nil;
 
 local ui = ui_login_back;
 
@@ -34,8 +34,9 @@ function p.ShowUI()
 	p.layer = layer;
 
 	login_ui.ShowUI(); --²âÊÔÕ½¶·Òª¹Øµô @¹ùºÆ
+	--login_ui.ShowUI();
 	--p.InitExp();
-	--p.SetDelegate(layer);
+	p.SetDelegate();
 	
 end
 
@@ -46,3 +47,22 @@ function p.CloseUI()
 		p.layer = nil;
 	end
 end
+
+function p.SetDelegate()
+	local start = GetButton(p.layer, ui.ID_CTRL_BUTTON_102);
+	start:SetLuaDelegate(p.OnBtnClick);
+	start:AddActionEffect( "ui_cmb.mainui_btn_scale" );
+end
+
+function p.OnBtnClick(uiNode, uiEventType, param)
+	if IsClickEvent( uiEventType ) then
+	    local tag = uiNode:GetTag();
+		if ui.ID_CTRL_BUTTON_102 == tag then
+			uiNode:SetVisible(false);
+			login_ui.ShowUI();
+		end
+	end
+end
+
+
+
