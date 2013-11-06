@@ -193,3 +193,5 @@ DoFile("ui/ui_dlg_drama.lua")
 
 --剧情界面
 DoFile("ui/ui_dlg_drama_new.lua");
+
+DoFile("ui/ui_userinfo.lua");

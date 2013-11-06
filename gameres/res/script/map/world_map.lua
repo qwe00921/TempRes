@@ -18,14 +18,14 @@ local useMoveEffect = false; --是否使用移动特效，否则用缩放特效
 function p.OpenMap()
 	p.RegEvent();
 	GetTileMapMgr():OpenMapWorld( "test_world_map.tmx", true ); --true to fade in.
-	world_map_mainui.ShowUI();
+	--world_map_mainui.ShowUI();
 end	
 
 --关闭地图
 function p.CloseMap()
 	--顺序:先关闭UI，再关闭地图！
 	dlg_stage_map.CloseUI();
-	world_map_mainui.CloseUI();
+	--world_map_mainui.CloseUI();
 	GetTileMapMgr():CloseMap();
 	
 	p.userStatus =  nil;
@@ -270,3 +270,19 @@ function p.OnMapEvent( mapEvent, delta, distance )
 		--dlg_stage_map.CloseUI();
 	end
 end
+
+function p.CheckToCloseMap()
+	--如果有打开地图，则关闭地图，返回主UI
+	local mapNode = GetTileMapMgr():GetMapNode();
+	if mapNode ~= nil then
+		mapNode:FadeOut();
+		SetTimerOnce( p.OnTimer_BackMainUI, 0.5f );
+	end
+end
+
+function p.OnTimer_BackMainUI()
+	p.CloseMap();
+	--mainui.ShowUI();
+	maininterface.ShowUI();
+end
+
