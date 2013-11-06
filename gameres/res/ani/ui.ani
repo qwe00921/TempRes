@@ -7,7 +7,7 @@ image\effect\baoj01.png @cut(2,5)
 
 ;{-------星级评价效果
 [star_fx_1]
-image\fx\star\star05.png @cut(1,1) @time=0.025 
+image\fx\star\star05.png @cut(1,1) @time=0.025
 
 [star_fx_2]
 image\fx\star\star05.png @cut(1,1) @stay
@@ -81,3 +81,9 @@ image\ui\font\d_4_k_z.png
 image\ui\font\d_5_k_z.png
 image\ui\font\d_6_k_z.png
 image\ui\font\d_7_k_z.png
+
+
+;登陆界面点击开始按钮动画
+[TapToStart]
+image\ui_honor\login\Taptostart.png @cut(8, 1) @time=0.3 @loop @scale=0.5
+
