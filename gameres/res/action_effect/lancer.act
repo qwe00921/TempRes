@@ -12,7 +12,7 @@
 @jump(0.4, $1, $2, $3, 1) @sinin
 
 [begin_battle_jump]
-@jump(1, $1, $2, $3, 1) @sinin
+@jump(0.2, $1, $2, $3, 1) @sinin
 
 [bullet_rotate]
 @rotate(1,360)
