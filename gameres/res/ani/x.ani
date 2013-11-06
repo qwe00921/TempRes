@@ -164,10 +164,10 @@ lj\effect\skill\zuos01.png @cut(4,4) @time=0.12  @offset(0,-50)
 lj\effect\skill\xingong.png @cut(2,6) @time=0.12
 
 [white]
-lj\effect\skill\bullet.png @cut(0,2) @use(0,1) @reverse @time=0.3 @loop
+image\fx\battle\fire.png @cut(1,5) @time=0.2 @scale=0.4
 
 [white_result]
-lj\effect\skill\bullet.png @cut(1,2) @use(1,1) @time=0.3
+image\fx\pve\hero_skill_result.png @cut(3,4) @time=0.1 @scale=0.7
 
 [dings]
 lj\effect\skill\dings.png @cut(2,5) @time=0.12
