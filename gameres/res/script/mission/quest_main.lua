@@ -61,6 +61,8 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		if (ui.ID_CTRL_BUTTON_BACK == tag) then
 			WriteCon("关闭");
 			p.CloseUI();
+			x_battle_mgr.EnterBattle();
+			--CTRL_BUTTON_MISSION_START
 			--game_main.EnterWorldMap();
 		--elseif () then
 		--	WriteCon("商店");
@@ -112,9 +114,6 @@ function p.ShowQuestList(quest_list)
 	end
 	--for k,v in pairs() do
 end
-
-	
-	
 	
 --隐藏通关评价
 function p.HideStar(view)
