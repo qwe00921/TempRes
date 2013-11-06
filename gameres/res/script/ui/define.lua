@@ -19,6 +19,10 @@ DoFile("ui/ui_login_main.lua")
 DoFile("ui/ui_login_severselect.lua")
 DoFile("ui/ui_login_severselect_option.lua")
 
+--任务
+DoFile("ui/ui_quest_main.lua")
+DoFile("ui/ui_quest_list.lua")
+
 --加载所有UI
 DoFile("ui/ui_battle_boss.lua")
 DoFile("ui/ui_battle_vs.lua")
@@ -187,9 +191,7 @@ DoFile("ui/ui_achievement_view.lua")
 --剧情
 DoFile("ui/ui_dlg_drama.lua")
 
---任务界面
---DoFile("ui/ui_quest_main.lua")
---DoFile("ui/ui_quest_questlist.lua")
-
 --剧情界面
 DoFile("ui/ui_dlg_drama_new.lua");
+
+DoFile("ui/ui_userinfo.lua");

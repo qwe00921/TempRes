@@ -69,12 +69,12 @@ function p.ShowServerList()
 		local serverName = GetLabel(view, ui_login_severselect_option.ID_CTRL_LOGIN_CTRL_TEXT_SEVEROPTION);
 		WriteCon(k); 
 		p.btn_Id_list[p.btn_Id] = ServerList[k];
-		WriteCon(tostring(p.btn_Id_list[101]));
+		--WriteCon(tostring(p.btn_Id_list[101]));
 
 		for j,m in pairs(ServerList[k]) do
 			WriteCon(tostring(m));
 			if j == "name" then
-				serverName:SetText(ToUtf8( ServerList[k][j] ));
+				serverName:SetText(ServerList[k][j]);
 			end
 		end
 	
@@ -113,11 +113,12 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 	login_main.CloseUI();
 	login_ui.CloseUI();
 	p.CloseUI();
+	
 	maininterface.ShowUI();
 end
 
 
---隐藏UI
+--关闭UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();

@@ -101,6 +101,7 @@ function p.createHeroCamp()
 	p.heroCamp = x_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray );
+	p.heroCamp:AddShadows( p.heroUIArray );
 	p.heroCamp:AddAllRandomTimeJumpEffect(true);
 end
 
@@ -109,6 +110,7 @@ function p.createEnemyCamp()
 	p.enemyCamp = x_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray );
+	p.enemyCamp:AddShadows( p.enemyUIArray );
 	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 end
 
@@ -280,13 +282,18 @@ function p.CampBattle(campType)
 		if #defenseCampAliveFighter > 1 then
 			defenderId = math.random(1,#defenseCampAliveFighter);
 		end
+		
+		local nAttakType = math.random(1,2);
 
 		--@override
-		if true then
+		if 1 == nAttakType then
 			local target = defenseCampAliveFighter[defenderId];
 			attacker:Atk( target, batch );
 			--attacker:Atk( target, batch );
 			--attacker:JumpToPosition(batch,target:GetNode():GetCenterPos());
+		else
+			local target = defenseCampAliveFighter[defenderId];
+			attacker:AtkSkill( target, batch,1,1,1);
 		end
 		
 		--设置批次等待

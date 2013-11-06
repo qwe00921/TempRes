@@ -24,7 +24,7 @@ end
 --≥ı ºªØ
 function p:Init( parentNode, in_life, in_lifeMax )
 	--…Ë÷√Õº∆¨
-	local picBg = GetPictureByAni( "lancer.hpbar_v2", 0 );
+--[[	local picBg = GetPictureByAni( "lancer.hpbar_v2", 0 );
 	local picFg = GetPictureByAni( "lancer.hpbar_v2", 1 );
 
 	self.node:SetPicture( picBg, picFg );
@@ -55,5 +55,5 @@ function p:Init( parentNode, in_life, in_lifeMax )
 	self.node:SetStart(0);
 	self.node:SetTextStyle(2);
 	self.node:SetTotal( in_lifeMax );
-	self.node:SetProcess( in_life );
+	self.node:SetProcess( in_life );--]]
 end

@@ -14,14 +14,16 @@ function p:new()
 	
 	o:ctor();
 	o.idCamp = 0;
-	o.fighters = {}
+	o.fighters = {};
+	o.shadows = {};
 	return o;
 end
 
 --构造函数
 function p:ctor()
     self.idCamp = 0;
-    self.fighters = {}
+    self.fighters = {};
+	self.shadows = {};
 end
 
 --是否hero阵营
@@ -46,7 +48,7 @@ end
 
 --添加战士
 function p:AddFighters( uiArray )
-	for i=1,#uiArray do
+	for i = 1,#uiArray do
 		local uiTag = uiArray[i];
 		local node = GetImage( battle_mgr.uiLayer, uiTag );
 		
@@ -54,7 +56,7 @@ function p:AddFighters( uiArray )
 		f:Init( uiTag, node, self.idCamp );
 		f:SetFighterPic();
 		
-		self.fighters[#self.fighters+1] = f;
+		self.fighters[#self.fighters + 1] = f;
 		
 		if self.idCamp == E_CARD_CAMP_HERO then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );

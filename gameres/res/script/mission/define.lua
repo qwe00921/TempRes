@@ -16,3 +16,7 @@ DoFile("mission/fly_num_exp.lua");
 --副本
 DoFile("mission/dlg_dungeon_enter.lua");
 DoFile("mission/dlg_dungeon_result.lua");
+
+--任务
+DoFile("mission/quest_main.lua");
+DoFile("mission/quest_data.lua");

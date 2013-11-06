@@ -27,7 +27,7 @@ function p:Process()
 	msg_cache.msg_server_list = self;
 	
 	WriteConWarning( "** msg_server_list:Process() called" );
-	maininterface.RefreshUI(self.user);
+	dlg_userinfo.RefreshUI(self.user);
 end
 
 

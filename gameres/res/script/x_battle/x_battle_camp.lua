@@ -12,6 +12,10 @@ local g_Herofighters = nil;
 local g_HeroIndex = 1;
 local g_Enemyfighters = nil;
 local g_EnemyIndex = 1;
+local g_HeroShadows = nil;
+local g_HeroShadowIndex = 1;
+local g_EnemyShadows = nil;
+local g_EnemyShadowsIndex = 1;
 
 PET_FLY_DRAGON_TAG = 1;
 PET_MINING_TAG  = 2;
@@ -140,6 +144,44 @@ function p:AddAllRandomTimeJumpEffect(bHero)
 			local str = string.format("Enemy jump time is %8.6f",fTime);
 			WriteCon(str);
 			SetTimerOnce( p.AddEnemyFightersJumpEffect, fTime );
+		end
+	end
+end
+
+function p:AddShadows(uiArray)
+	for i = 1,#uiArray do
+		local uiTag = uiArray[i];
+		local node = GetPlayer( x_battle_mgr.uiLayer, uiTag );
+		if node == nil then
+			WriteCon( "get player node failed" );
+			return;
+		end
+		
+		local kShadow = shadow:new();
+		local nIndex = #self.shadows + 1;
+		self.shadows[nIndex] = kShadow;
+		local pOldPos = node:GetFramePos();
+
+		if self.idCamp == E_CARD_CAMP_HERO then
+			pOldPos.x = pOldPos.x;
+		elseif self.idCamp == E_CARD_CAMP_ENEMY then
+			pOldPos.x = pOldPos.x;
+		end
+		
+		node:SetFramePos(pOldPos);
+		
+		local kShadowNode = kShadow:Init("lancer.shadow",node);
+		self.fighters[nIndex]:SetShadow(kShadow.m_kNode);
+		x_battle_mgr.uiLayer:AddChildZ(kShadowNode,0);
+		--self:SetFighterConfig( kShadow, i );
+		--kShadow:standby();
+		
+		if self:IsHeroCamp() then
+			--node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
+			--kShadow:SetLookAt( E_LOOKAT_RIGHT );
+		else
+			--node:SetZOrder( E_BATTLE_Z_ENEMY_FIGHTER );
+			--kShadow:SetLookAt( E_LOOKAT_LEFT );
 		end
 	end
 end
