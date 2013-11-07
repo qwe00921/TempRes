@@ -123,9 +123,9 @@ function p:PushNum( num )
 		
 		local n3 = math.floor( num / 10 );
 		num = num - n3 * 10;
-		
+
 		local n4 = num;
-		
+
 		self.comboPicture:ClearPicture( false );
 		if n1 > 0 						then self.comboPicture:PushPicture( self:GetPicByNum(n1)) end
 		if n2 > 0 or n1 ~= 0 			then self.comboPicture:PushPicture( self:GetPicByNum(n2)) end

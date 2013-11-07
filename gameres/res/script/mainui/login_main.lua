@@ -28,12 +28,12 @@ function p.ShowUI()
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddChild(layer);
+	--GetUIRoot():AddChild(layer); --测试战斗要关掉 @郭浩
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
 
-	--login_ui.ShowUI(); --测试战斗要关掉 @郭浩
+	--login_ui.ShowUI();
 	--login_ui.ShowUI();
 	--p.InitExp();
 	p.SetDelegate();
