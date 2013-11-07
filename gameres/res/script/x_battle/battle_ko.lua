@@ -21,6 +21,7 @@ p.m_nRightTotalMp = 0;
 p.m_kLayer = nil;
 p.m_nHpTimer = 0;
 p.m_nMpTimer = 0;
+p.m_bIsOver = false;
 
 function p.ShowUI()
 	if nil == p.m_kLayer then
