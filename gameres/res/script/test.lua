@@ -90,7 +90,7 @@ function p.test()
 	--dlg_drama.ShowUI(2);
 	
 	--≤‚ ‘ΩŸ’˘
-	--battle_ko.ShowUI();
+	battle_ko.ShowUI();
 end
 
 function p.EnterBattle()
