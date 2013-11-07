@@ -1,0 +1,143 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_LEFT_MP]
+Type=9
+Tag=1
+Rect=43 495 199 95
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\ko_mp.png
+NormalFileUV=0 0 180 95
+
+[CTRL_LEFT_HP]
+Type=9
+Tag=2
+Rect=43 383 197 95
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\ko_hp.png
+NormalFileUV=0 0 180 95
+
+[CTRL_RIGHT_HP]
+Type=9
+Tag=5
+Rect=330 383 197 95
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\ko_hp.png
+NormalFileUV=0 0 180 95
+
+[CTRL_RIGHT_MP]
+Type=9
+Tag=6
+Rect=328 496 199 95
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\ko_mp.png
+NormalFileUV=0 0 180 95
+
+[CTRL_LEFT_P_7]
+Type=1
+Tag=13
+Rect=66 98 39 64
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=522 293 30 60
+
+[CTRL_LEFT_P_8]
+Type=1
+Tag=15
+Rect=56 129 39 64
+
+[CTRL_LEFT_P_5]
+Type=1
+Tag=16
+Rect=109 97 39 64
+
+[CTRL_LEFT_P_6]
+Type=1
+Tag=17
+Rect=98 128 39 64
+
+[CTRL_LEFT_P_3]
+Type=1
+Tag=18
+Rect=153 98 39 64
+
+[CTRL_LEFT_P_4]
+Type=1
+Tag=19
+Rect=144 127 39 64
+
+[CTRL_LEFT_P_1]
+Type=1
+Tag=20
+Rect=198 96 39 64
+
+[CTRL_LEFT_P_2]
+Type=1
+Tag=21
+Rect=190 124 39 64
+
+[CTRL_RIGHT_P_1]
+Type=1
+Tag=22
+Rect=344 95 39 64
+
+[CTRL_RIGHT_P_2]
+Type=1
+Tag=23
+Rect=347 125 39 64
+
+[CTRL_RIGHT_P_3]
+Type=1
+Tag=24
+Rect=388 96 39 64
+
+[CTRL_RIGHT_P_4]
+Type=1
+Tag=25
+Rect=393 123 39 64
+
+[CTRL_RIGHT_P_5]
+Type=1
+Tag=26
+Rect=435 94 39 64
+
+[CTRL_RIGHT_P_6]
+Type=1
+Tag=27
+Rect=440 124 39 64
+
+[CTRL_RIGHT_P_7]
+Type=1
+Tag=28
+Rect=485 94 39 64
+
+[CTRL_RIGHT_P_8]
+Type=1
+Tag=29
+Rect=490 123 39 64
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=30
+Rect=59 240 107 143
+NormalFile=.\res\image\card\10100301.png
+NormalFileUV=0 0 450 600
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=31
+Rect=401 236 107 143
+NormalFile=.\res\image\card\30700704.png
+NormalFileUV=0 0 450 600
