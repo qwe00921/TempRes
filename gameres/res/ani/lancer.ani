@@ -188,8 +188,8 @@ image\fx\pve\hero_skill_tornado2.png @cut(1,7) @time=0.08 @offset(-30,200)
 [hpbar]
 ;image\ui\pve\hpbar_bk.png (1,0,81,11)
 ;image\ui\pve\hpbar.png 
-image\ui\pve\hpbar_bk.png (146,0,146,44)
-image\ui\pve\hpbar.png
+image\xbattleui\ko_hp.png (146,0,146,44)
+image\xbattleui\ko_bg.png
 
 [hpbar_v2]
 lj\hpbar_bk_v2.png

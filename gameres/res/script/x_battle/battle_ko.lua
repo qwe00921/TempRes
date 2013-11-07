@@ -10,6 +10,10 @@ p.m_kLeftHp = nil;
 p.m_kLeftMp = nil;
 p.m_kRightHp = nil;
 p.m_kRightMp = nil;
+p.m_nLeftCurrentHp = 0;
+p.m_nRightCurrentHp = 0;
+p.m_nLeftTotalHp = 0;
+p.m_nRightTotalHp = 0;
 
 function p.ShowUI()
 	if false == p.InitUI() then
@@ -32,6 +36,11 @@ function p.InitUI()
     if kLayer == nil then
         return false;
     end
+	
+	p.m_nLeftCurrentHp = 100;
+	p.m_nRightCurrentHp = 100;
+	p.m_nLeftTotalHp = 100;
+	p.m_nRightTotalHp = 100;
 
 	kLayer:Init();
 	kLayer:SetSwallowTouch(false);
@@ -54,19 +63,29 @@ function p.InitUI()
 	end
 	
 	p.m_kLeftHp:SetPicture(picBg,picFg);
-	p.m_kRightHp:SetPicture(picBg,picFg);
+	p.m_kRightHp:SetPicture(picFg,picBg);
 	
-	p.m_kLeftHp:SetTotal(1000);
-	p.m_kLeftHp:SetProcess(1000);
+	p.m_kLeftHp:SetTotal(p.m_nLeftTotalHp);
+	p.m_kLeftHp:SetProcess(p.m_nLeftTotalHp - p.m_nLeftCurrentHp);
 	
-	p.m_kRightHp:SetTotal(1000);
-	p.m_kRightHp:SetProcess(1000);
+	p.m_kRightHp:SetTotal(p.m_nRightCurrentHp);
+	p.m_kRightHp:SetProcess(p.m_nRightTotalHp);
 	
 	kLayer:AddChildZ(p.m_kLeftHp,100);
 	kLayer:AddChildZ(p.m_kRightHp,100);
 	
-	p.m_kLeftHp:SetFrameRect(CCRectMake(80,400,200,80));
-	p.m_kRightHp:SetFrameRect(CCRectMake(640 - 280,400,200,80));
+	p.m_kLeftHp:SetFrameRect(CCRectMake(640 / 2 - 200 - 10,400,200,80));
+	p.m_kRightHp:SetFrameRect(CCRectMake(640 / 2 + 10,400,200,80));
+	
+	SetTimer( p.HpAdd, 0.02f );
 	
 	return true;
+end
+
+function p.HpAdd()
+	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 0.2;
+	p.m_nRightCurrentHp = p.m_nLeftCurrentHp - 0.11;
+
+	p.m_kLeftHp:SetProcess(p.m_nLeftTotalHp - p.m_nLeftCurrentHp);
+	p.m_kRightHp:SetProcess(p.m_nLeftCurrentHp);
 end
