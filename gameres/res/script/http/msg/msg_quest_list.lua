@@ -17,7 +17,7 @@ end
 function p:Init()
 end
 
---处理消息
+--澶勭悊娑堟伅
 function p:Process()
 	msg_cache.msg_quest_list = self;
 	
