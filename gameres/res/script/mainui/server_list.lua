@@ -117,8 +117,6 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 	maininterface.ShowUI();
 end
 
-
---关闭UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
@@ -126,7 +124,6 @@ function p.HideUI()
 	end
 end
 
---关闭UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
