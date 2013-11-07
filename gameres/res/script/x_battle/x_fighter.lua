@@ -15,6 +15,7 @@ function p:new()
 	setmetatable( o, self );
 	self.__index = self;
 	o:ctor();
+	o.m_kShadow = {};
 	return o;
 end
 
@@ -24,6 +25,7 @@ function p:ctor()
 	self.tmplife = self.life;
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
+	self.m_kShadow = nil;
 end
 
 --初始化（重载）
@@ -36,11 +38,14 @@ end
 function p:CreateHpBar()
 	if self.hpbar == nil or self.m_kShadow == nil then
 		self.hpbar = x_hp_bar:new();
-		self.m_kShadow = shadow:new();
+		--self.m_kShadow = shadow:new();
 		self.hpbar:CreateExpNode();
 		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
-		--self.node:AddChildZ(fNode,200);
-		self.hpbar:Init( self.node, self.life, self.lifeMax );
+		--self.node:AddChildZ(self.m_kShadow:GetNode(),200);
+		--self.hpbar:Init( self.node, self.life, self.lifeMax );
+	--	local pShadow = self.m_kShadow:Init("lancer.shadow",self.node);
+		--self.node:AddChildZ(pShadow,-1);
+		--self.node:SetShadowImage(self.m_kShadow:GetNode());
 	end	
 end
 
@@ -215,15 +220,9 @@ function p:Atk( targetFighter, batch)
 	local cmd2 = self:JumpMoveTo(enemyPos,seqAtk,false);
 	--local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
 	
+--	self.m_kShadow:MoveTo(originalPos,enemyPos);
+	
 	originalPos = self:GetNode():GetCenterPos();
-
-	if self.idCamp == E_CARD_CAMP_ENEMY then
-		ox = originalPos.x + 230;
-		oy = originalPos.y;
-	else
-		ox = originalPos.x - 230;
-		oy = originalPos.y;
-	end	
 	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );
@@ -408,10 +407,10 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	--]]
 
 	--攻击者跑位
-	local cmd1;
-	if self.petTag ~= PET_MINING_TAG then
-		cmd1 = self:cmdMoveTo( originalPos, enemyPos, seqAtk );
-	end
+	local cmd1 = nil;
+	--if self.petTag ~= PET_MINING_TAG then
+		--cmd1 = self:cmdMoveTo( originalPos, enemyPos, seqAtk );
+	--end
 	--技能攻击动画
 	local playerNode = self:GetPlayerNode();
 	local cmd2 = createCommandPlayer():Skill( 0, playerNode, "" );
@@ -436,10 +435,10 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	seqAtk:AddCommand( cmd3 );
 	
 	--返回原来的位置
-	local cmd4;
-	if self.petTag ~= PET_MINING_TAG then
-		cmd4= self:cmdMoveTo( enemyPos, originalPos, seqAtk );
-	end
+	--local cmd4;
+	--if self.petTag ~= PET_MINING_TAG then
+	--	cmd4= self:cmdMoveTo( enemyPos, originalPos, seqAtk );
+	--end
 	
 	--攻击敌人动画
 	local cmd9 = createCommandPlayer():Hurt( 0, targetFighter:GetNode(), "" );
@@ -448,16 +447,16 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	seqMiscHurt:AddCommand( cmd9 );
 	
 	--受击特效
-	local cmd10;
-	if self.petTag == PET_BLUE_DEVIL_TAG then
+	local cmd10 = nil;
+	--if self.petTag == PET_BLUE_DEVIL_TAG then
 		--cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.blue_devil_fx_target_hurt" );
-	elseif self.petTag == PET_FLY_DRAGON_TAG then
+	--elseif self.petTag == PET_FLY_DRAGON_TAG then
 		--cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.dragon_fx_target_hurt" );
-	elseif self.petTag == PET_MINING_TAG then
-		cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.mining_fx_target_hurt" );	
-	else
-		cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.feilong" );
-	end
+	--elseif self.petTag == PET_MINING_TAG then
+	--	cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.mining_fx_target_hurt" );	
+	--else
+	--	cmd10 = createCommandEffect():AddFgEffect( 0.01, targetFighter:GetNode(), "x.feilong" );
+	--end
 				
 	if cmd10 ~= nil then
 		seqMiscHurt:AddCommand( cmd10 );
@@ -799,9 +798,9 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
 	local offsetY = y * startOffset / distance;
 	local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
 	self:GetNode():SetCenterPos( pPos);
-
-	local pCmd = nil;
 	
+	local pCmd = nil;
+	--self.m_kShadow:MoveTo(pPos,targetPos);
 	if false == bParallelSequence then
 		pCmd = battle_show.AddActionEffect_ToSequence( 0, self:GetPlayerNode(), fx);
 	else
@@ -886,9 +885,9 @@ function p:AtkSkill(targetFighter, batch, bulletType, fighterIndex, skillType)
 		bulletRotation = bulletRotation - 180;
 	else
 
-	if skillType==1 then
+	if skillType == 1 then
 		self:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighterIndex );
-	elseif skillType==2 then
+	elseif skillType == 2 then
 		self:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fighterIndex );
 	end	
 	
@@ -915,16 +914,20 @@ end
 --获取战士前方坐标
 function p:GetFrontPos(targetNode)
 	local frontPos = self:GetNode():GetCenterPos();
-	local halfWidthSum = self:GetNode():GetCurAnimRealSize().w/2 + targetNode:GetCurAnimRealSize().w/2;
+	--local halfWidthSum = self:GetNode():GetCurAnimRealSize().w / 2 + targetNode:GetCurAnimRealSize().w / 2;
 	
 	if self.camp == E_CARD_CAMP_HERO then
-		frontPos.x = frontPos.x + halfWidthSum;
+		frontPos.x = frontPos.x;
 		frontPos.y = frontPos.y + 25;
 	else
-		frontPos.x = frontPos.x - halfWidthSum;
+		frontPos.x = frontPos.x;
 		frontPos.y = frontPos.y - 28;
 	end
 	return frontPos;
+end
+
+function p:SetShadow(kShadow)
+	self.node:SetShadow(kShadow);
 end
 
 --获取战士前方坐标

@@ -366,7 +366,7 @@ function p:AtkSkillTornado( targetFighter, batch, bulletType, bulletRotation, fi
 	
 	--Áú¾í·ç±³¾°Ðý×ª
 	--local tornadoRotation = { 0, 0, 0, 0, 0 };
-		
+
 	--×Óµ¯
 	local bullet = bullet:new();
 	bullet:AddToBattleLayer();

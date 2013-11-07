@@ -14,14 +14,16 @@ function p:new()
 	
 	o:ctor();
 	o.idCamp = 0;
-	o.fighters = {}
+	o.fighters = {};
+	o.shadows = {};
 	return o;
 end
 
 --构造函数
 function p:ctor()
     self.idCamp = 0;
-    self.fighters = {}
+    self.fighters = {};
+	self.shadows = {};
 end
 
 --是否hero阵营

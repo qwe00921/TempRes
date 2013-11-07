@@ -178,8 +178,13 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_SERVER_LIST then
 		msg = msg_server_list:new();
+		
     elseif idmsg == MSG_PLAYER_USERINFO then
 		msg = msg_maininterface:new();
+		
+	elseif idmsg == MSG_QUEST_LIST then
+		msg = msg_quest_list:new();
+		
 	end
 	
 	if msg ~= nil then

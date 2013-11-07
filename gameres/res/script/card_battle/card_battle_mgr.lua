@@ -365,14 +365,14 @@ end
 function p.createHeroCamp()
 	p.heroCamp = card_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
-	p.heroCamp:AddFighters( p.heroUIArray, p.heroes );
+	p.heroCamp:AddFighters( p.heroUIArray);
 end
 
 --创建敌对阵营
 function p.createEnemyCamp()
 	p.enemyCamp = card_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
-	p.enemyCamp:AddFighters( p.enemyUIArray, p.enemies );
+	p.enemyCamp:AddFighters( p.enemyUIArray);
 end
 
 --测试PVP

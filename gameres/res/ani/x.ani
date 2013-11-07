@@ -163,11 +163,11 @@ lj\effect\skill\zuos01.png @cut(4,4) @time=0.12  @offset(0,-50)
 [xingong]
 lj\effect\skill\xingong.png @cut(2,6) @time=0.12
 
-[tuc]
-lj\effect\skill\tuc.png @cut(1,8) @use(0,4) @reverse @time=0.12
+[white]
+lj\effect\skill\tuc.png @cut(1,8) @use(0,4) @time=0.1 @scale=0.8 @reverse
 
-[tuc_result]
-lj\effect\skill\tuc.png @cut(1,8) @use(4,4) @time=0.12
+[white_result]
+lj\effect\skill\tuc.png @cut(1,8) @use(4,4) @time=0.15 @scale=0.8
 
 [dings]
 lj\effect\skill\dings.png @cut(2,5) @time=0.12
