@@ -77,15 +77,18 @@ function p.InitUI()
 	p.m_kLeftHp:SetFrameRect(CCRectMake(640 / 2 - 200 - 10,400,200,80));
 	p.m_kRightHp:SetFrameRect(CCRectMake(640 / 2 + 10,400,200,80));
 	
+	p.m_kLeftHp:SetNoText();
+	p.m_kRightHp:SetNoText();
+	
 	SetTimer( p.HpAdd, 0.02f );
 	
 	return true;
 end
 
 function p.HpAdd()
-	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 0.2;
-	p.m_nRightCurrentHp = p.m_nLeftCurrentHp - 0.11;
+	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 1.2;
+	p.m_nRightCurrentHp = p.m_nLeftCurrentHp - 20.11;
 
 	p.m_kLeftHp:SetProcess(p.m_nLeftTotalHp - p.m_nLeftCurrentHp);
-	p.m_kRightHp:SetProcess(p.m_nLeftCurrentHp);
+	p.m_kRightHp:SetProcess(p.m_nRightCurrentHp);
 end
