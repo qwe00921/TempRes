@@ -661,8 +661,8 @@ function p.TestCardRotate()
 	local x0 = 100;
 	local x = x0;
 	local y = 100;
-	for row=1,3 do
-		for col=1,8 do
+	for row = 1,3 do
+		for col = 1,8 do
 			local image = createNDUIImage();
 			image:Init();
 			image:SetPicture( GetPictureByAni("sk_test.small_card", 0));
