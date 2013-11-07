@@ -32,21 +32,11 @@ function p.ShowUI()
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
-
-	--login_ui.ShowUI();
-	--login_ui.ShowUI();
-	--p.InitExp();
 	p.SetDelegate();
 	
 end
 
---¹Ø±ÕUI
-function p.CloseUI()
-	if p.layer ~= nil then
-		p.layer:LazyClose();
-		p.layer = nil;
-	end
-end
+
 
 function p.SetDelegate()
 	local start = GetButton(p.layer, ui.ID_CTRL_BUTTON_102);
@@ -67,5 +57,17 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	end
 end
 
+function p.HideUI()
+	if p.layer ~= nil then
+		p.layer:SetVisible(false);
+		
+	end
+end
 
+function p.CloseUI()
+	if p.layer ~= nil then
+		p.layer:LazyClose();
+		p.layer = nil;
+	end
+end
 
