@@ -115,6 +115,7 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 	p.CloseUI();
 	
 	maininterface.ShowUI();
+	WriteCon("maininterface.ShowUI()");
 end
 
 function p.HideUI()

@@ -180,7 +180,6 @@ function p.ShowQuestList(quest_list)
 	local ListLength = 0;
 	for k,v in pairs(p.questList) do
 		ListLength = ListLength + 1;
-		WriteCon(k);
 	end
 	WriteCon("**ListLength = "..ListLength); 
 end
