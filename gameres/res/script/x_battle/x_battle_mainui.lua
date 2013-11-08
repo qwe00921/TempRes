@@ -9,6 +9,7 @@ local p = x_battle_mainui;
 
 p.layer = nil;
 p.imageMask = nil;
+p.m_nBattleRound = 0;
 
 local useSkill = false;  --当前回合是否用技能攻击
 local isHeroAutoAtk = false; --是否托管（自动攻击）
@@ -63,8 +64,8 @@ function p.StartBattleEffect()
 	RegAniEffectCallBack( id, p.OnAniEffectCallBack );
 	
 	--注册战斗表现结束的回调
-	--RegCallBack_BattleShowFinished( p.OnBattleShowFinished );
-	SetTimerOnce(p.OnBattleShowFinished,1.0f);
+	RegCallBack_BattleShowFinished( p.OnBattleShowFinished );
+	--SetTimerOnce(p.OnBattleShowFinished,1.0f);
 end
 
 --隐藏
@@ -169,21 +170,24 @@ end
 --自动按钮点击事件
 function p.OnBtnClicked_Auto(uiNode, uiEventType, param)
 	isHeroAutoAtk = true;
-		
-	if waitingInput then
-		p.OnBtnClicked_Atk( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
-	end
+	p.OnBtnClicked_Atk( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
 end
 
 --战斗表现结束的回调
 function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
+	if 1 < p.m_nBattleRound then
+		battle_ko.ShowUI();
+		--p.m_nBattleRound = 0;
+		return;
+	end
+	
 	isHeroAutoAtk = true;
 		
-	if waitingInput then
-		p.OnBtnClicked_Auto( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
-	end
+	p.OnBtnClicked_Auto( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
+	
+	p.m_nBattleRound = p.m_nBattleRound + 1;
 	--SetTimer( p.CheckAutoAtk, 0.5f );
 end	
 
@@ -192,7 +196,7 @@ function p.CheckAutoAtk()
 	--waitingInput = true;
 	--atkBtn:SetEnabled( not isHeroAutoAtk );
 	
-	if x_battle_mgr.IsBattleEnd() then
+	if x_battle_mgr.IsBattleEnd() or p.m_nBattleRound > 1 then
 	    p.ResetZOrder();
     else
 		if isHeroAutoAtk then
