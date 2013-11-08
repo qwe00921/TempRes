@@ -21,10 +21,28 @@ function p:ctor()
     super.ctor(self);
 end
 
+function p:ShowBarMoment()
+	if nil ~= self.node then
+		self.node:SetVisible(true);
+		self.node:AddActionEffect( "lancer_cmb.hp_bar_fadeout" );
+	end
+end
+
+function p:ShowBar()
+	if nil ~= self.node then
+		self.node:SetVisible(true);
+	end
+end
+
+function p:HideBar()
+	if nil ~= self.node then
+		self.node:SetVisible(false);
+	end
+end
 --≥ı ºªØ
 function p:Init( parentNode, in_life, in_lifeMax )
 	--…Ë÷√Õº∆¨
---[[	local picBg = GetPictureByAni( "lancer.hpbar_v2", 0 );
+	local picBg = GetPictureByAni( "lancer.hpbar_v2", 0 );
 	local picFg = GetPictureByAni( "lancer.hpbar_v2", 1 );
 
 	self.node:SetPicture( picBg, picFg );
@@ -45,7 +63,7 @@ function p:Init( parentNode, in_life, in_lifeMax )
 	self.node:SetFrameRect( CCRectMake(x, y, w, h));
 	self.node:SetFgTransform( 1, 1, 0, 0 );
 	
-	local pos=self.node:GetFramePos();
+	local pos = self.node:GetFramePos();
 	pos.y = pos.y + 20;
 	self.node:SetFramePosXY(pos.x, pos.y);
 	
@@ -55,5 +73,5 @@ function p:Init( parentNode, in_life, in_lifeMax )
 	self.node:SetStart(0);
 	self.node:SetTextStyle(2);
 	self.node:SetTotal( in_lifeMax );
-	self.node:SetProcess( in_life );--]]
+	self.node:SetProcess( in_life );
 end

@@ -132,7 +132,7 @@ function p:AddAllRandomTimeJumpEffect(bHero)
 	if bHero == true then
 		g_Herofighters = self.fighters;
 		for k,v in ipairs(self.fighters) do
-			local fTime = k / 10.0 + 0.3;
+			local fTime = k / 10.0f + 0.3f;
 			local str = string.format("Hero jump time is %8.6f",fTime);
 			WriteCon(str);
 			SetTimerOnce( p.AddHeroFightersJumpEffect, fTime );
@@ -140,7 +140,7 @@ function p:AddAllRandomTimeJumpEffect(bHero)
 	else
 		g_Enemyfighters = self.fighters;
 		for k,v in ipairs(self.fighters) do
-			local fTime = k / 10.0 + 0.3;
+			local fTime = k / 10.0f + 0.3f;
 			local str = string.format("Enemy jump time is %8.6f",fTime);
 			WriteCon(str);
 			SetTimerOnce( p.AddEnemyFightersJumpEffect, fTime );
@@ -245,42 +245,6 @@ function p:SetFighterConfig( f, idx )
 		return;
 	end
 	
-	--[[
-	if idx==1 then
-		f:UseConfig( "fly_dragon" );
-		f.petTag = PET_BLUE_DEVIL_TAG;
-	elseif idx==2 then
-		f:UseConfig( "mining" );
-		f.petTag = PET_MINING_TAG;
-		
-		--f:UseConfig( "blue_devil" );
-		--f.petTag = PET_BLUE_DEVIL_TAG;
-		
-	elseif idx==3 then
-		f:UseConfig( "fly_dragon" );
-		f.petTag = PET_FLY_DRAGON_TAG;
-	elseif idx==4 then
-		f:UseConfig( "mining" );
-		f.petTag = PET_MINING_TAG;
-		
-		--f:UseConfig( "blue_devil" );
-		--f.petTag = PET_BLUE_DEVIL_TAG;
-	elseif idx==5 then
-		f:UseConfig( "fly_dragon" );
-		f.petTag = PET_FLY_DRAGON_TAG;
-		
-	elseif idx==6 then
-		f:UseConfig( "mining" );
-		f.petTag = PET_MINING_TAG;
-	else
-		f:UseConfig( "fly_dragon" );
-		f.petTag = PET_FLY_DRAGON_TAG;
-		--f:UseConfig( "blue_devil" );
-		--f.petTag = PET_BLUE_DEVIL_TAG;
-	end	
-	--]]
-	
-	--WriteCon(tostring(self.idCamp == E_CARD_CAMP_HERO and idx or idx +8));
-	f:UseConfig( string.format("test%s", tobjId[self.idCamp == E_CARD_CAMP_HERO and idx or idx +8]) );
-	f.petTag = idx%2==0 and PET_FLY_DRAGON_TAG or PET_BLUE_DEVIL_TAG;
+	f:UseConfig( string.format("test%s", tobjId[self.idCamp == E_CARD_CAMP_HERO and idx or idx + 8]) );
+	f.petTag = idx % 2 == 0 and PET_FLY_DRAGON_TAG or PET_BLUE_DEVIL_TAG;
 end

@@ -51,7 +51,7 @@ end
 
 --ÃÌº”’Ω ø
 function p:AddFighters( uiArray )
-	for i=1,#uiArray do
+	for i = 1,#uiArray do
 		local uiTag = uiArray[i];
 		local node = GetImage( battle_mgr.uiLayer, uiTag );
 		
@@ -120,7 +120,7 @@ function p:GetAliveFighters()
 	local t = {}
 	for k,v in ipairs(self.fighters) do
 		if not v.isDead then
-			t[#t+1] = v;
+			t[#t + 1] = v;
 		end
 	end
 	return t;

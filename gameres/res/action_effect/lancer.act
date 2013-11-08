@@ -14,9 +14,6 @@
 [begin_battle_jump]
 @jump(0.2, $1, $2, $3, 1) @sinin
 
-[ko_shake]
-@ccshake(12,150);
-
 [bullet_rotate]
 @rotate(1,360)
 

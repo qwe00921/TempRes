@@ -80,7 +80,7 @@ function p.ShowUI()
 		return false;
 	end
 
-	--SetTimer(p.shake,0.01f);
+	SetTimer(p.shake,0.01f);
 	
 	--pCmd = battle_show.AddActionEffect_ToSequence( 0,p.m_kLeftHp, "lancer.ko_shake");
 	
@@ -94,11 +94,11 @@ function p.shake(kNode)
 end
 
 function p.CloseUI()
-	
+	m_kLayer.SetVisible(false);
 end
 
 function p.HideUI()
-	
+	m_kLayer.SetVisible(false);
 end
 
 function p.InitMpBar()
@@ -190,8 +190,8 @@ function p.InitHpBar()
 end
 
 function p.HpAdd()
-	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 2.2;
-	p.m_nRightCurrentHp = p.m_nRightCurrentHp - 3.11;
+	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 0.12;
+	p.m_nRightCurrentHp = p.m_nRightCurrentHp - 0.31;
 	
 	if 0 > p.m_nLeftCurrentHp then
 		p.m_nLeftCurrentHp = 0;

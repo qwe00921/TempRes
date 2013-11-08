@@ -44,6 +44,11 @@ lancer.flynum
 lancer.scale_for_flynum
 lancer.fadeout_for_flynum
 
+;ÑªÌõÖğ½¥Òş²Ø
+[hp_bar_fadeout]
+@type=1
+lancer.fly_num_fadeout
+
 ;Æ®Ñª
 [flynum_v2]
 @type=1

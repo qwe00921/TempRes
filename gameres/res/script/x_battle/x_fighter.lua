@@ -42,7 +42,8 @@ function p:CreateHpBar()
 		self.hpbar:CreateExpNode();
 		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
 		--self.node:AddChildZ(self.m_kShadow:GetNode(),200);
-		--self.hpbar:Init( self.node, self.life, self.lifeMax );
+		self.hpbar:Init( self.node, self.life, self.lifeMax );
+		self.hpbar:HideBar();
 	--	local pShadow = self.m_kShadow:Init("lancer.shadow",self.node);
 		--self.node:AddChildZ(pShadow,-1);
 		--self.node:SetShadowImage(self.m_kShadow:GetNode());
@@ -257,6 +258,7 @@ function p:Atk( targetFighter, batch)
 	
 	--飘血
 	local cmd11 = targetFighter:cmdLua( "fighter_damage", 30, "", seqTarget );
+	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 	--local cmd22 = targetFighter:cmdLua( "AddMaskImage", 0, "", seqTarget );
 	
 	--受攻击的后续动画【死亡 OR 站立】
@@ -376,39 +378,10 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	local enemyPos = nil;
 	
 	if self.idCamp == E_CARD_CAMP_ENEMY then
-
 		enemyPos = originalPos;	
-		
 	else
-
 		enemyPos = targetFighter:GetFrontPos(self:GetNode());	
-	
 	end
-	
-	--此段代码废弃，通过改善GetFrontPos解决了
-	--[[	
-	--技能特效
-	local ani;
-	if self.petTag == PET_BLUE_DEVIL_TAG then
-		ani = GetAni("x.blue_devil_fx_cast");
-	elseif self.petTag == PET_FLY_DRAGON_TAG then
-		ani = GetAni("x.dragon_fx_cast");
-	elseif self.petTag == PET_MINING_TAG then
-		ani = nil;
-	else
-		ani = nil;
-	end
-	
-	--技能特效有效宽度
-	if ani ~= nil then
-		local w = ani:GetRealWidth();
-		if self.camp == E_CARD_CAMP_HERO then
-			enemyPos.x = enemyPos.x - w/2;
-		else
-			enemyPos.x = enemyPos.x + w/2;
-		end
-	end
-	--]]
 
 	--攻击者跑位
 	local cmd1 = nil;
@@ -477,6 +450,7 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	
 	--飘血
 	local cmd12 = targetFighter:cmdLua( "fighter_damage", 80, "", seqTarget );
+	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 	
 	if self.petTag == PET_BLUE_DEVIL_TAG then
 		local cmdForward = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer.target_hurt_back_reset" );
@@ -543,6 +517,7 @@ function p:AtkSkillOneToCamp( camp, batch )
 				
 				--飘血
 				local cmd13 = target:cmdLua( "fighter_damage", 80, "", seq1 );
+				local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 				
 				--受攻击的后续动画【死亡 OR 站立】
 				self:HurtResultAni( target, seq1 );
@@ -709,6 +684,7 @@ function p:UltimateSkill( camp, batch )
 				
 				--飘血
 				local cmd13 = target:cmdLua( "fighter_damage", 80, "", seq1 );
+				local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 				cmd13:SetWaitEnd( cmd12 );
 				
 				--击退还原
@@ -777,6 +753,7 @@ function p:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fi
 	
 	--飘血
 	local cmd8 = targetFighter:cmdLua( "fighter_damage", 80, "", seqTarget );
+	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 	
 	--受攻击的后续动画【死亡 OR 站立】
 	self:HurtResultAni( targetFighter, seqTarget );
@@ -872,11 +849,13 @@ function p:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighte
 	
 	--飘血
 	local cmd9 = targetFighter:cmdLua( "fighter_damage", 80, "", seqTarget );
+	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 
 	--受攻击的后续动画【死亡 OR 站立】
 	self:HurtResultAni( targetFighter, seqTarget );
 		
 	--受击者序列等待子弹打到目标点
+	--seqTarget:SetWaitEnd(cmd_showbar);
 	seqTarget:SetWaitEnd( cmd4 );
 end
 
@@ -945,11 +924,15 @@ function p:GetFrontFarPos(targetNode)
 	return farPos;
 end
 
+function p:ShowHpBarMoment()
+	self.hpbar:ShowBarMoment();
+end
+
 --添加lua命令
 function p:cmdLua( cmdtype, num, str, seq )
 	--暂时临时扣血保存到tmplife
 	if cmdtype == "fighter_damage" then
-		self:SubTmpLife( num );	
+		self:SubTmpLife(num);
 	end
-	return super.cmdLua( self, cmdtype, num, str, seq );
+	return super.cmdLua( self, cmdtype,num, str, seq );
 end
