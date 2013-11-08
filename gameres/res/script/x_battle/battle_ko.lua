@@ -22,6 +22,9 @@ p.m_kLayer = nil;
 p.m_nHpTimer = 0;
 p.m_nMpTimer = 0;
 p.m_bIsOver = false;
+p.m_kLeftTeam = {};
+p.m_kRightTeam = {};
+p.m_kOrigin = nil;
 
 function p.ShowUI()
 	if nil == p.m_kLayer then
@@ -37,6 +40,8 @@ function p.ShowUI()
 		
 	    LoadUI("x_battle_ko.xui",kLayer, nil);
 		
+		local kImage = GetImage(kLayer,ui_x_battle_ko.ID_CTRL_PICTURE_23);
+		
 		p.m_kLayer = kLayer;
 	end
 	
@@ -48,7 +53,21 @@ function p.ShowUI()
 		return false;
 	end
 	
+	if false == p.InitFighters() then
+		return false;
+	end
+
+	--SetTimer(p.shake,0.01f);
+	
+	--pCmd = battle_show.AddActionEffect_ToSequence( 0,p.m_kLeftHp, "lancer.ko_shake");
+	
 	return true;
+end
+
+function p.shake(kNode)
+	local x = 10 - math.random(0,20);
+	local y = 10 - math.random(0,20);
+	p.m_kLayer:SetFramePosXY(x,y);
 end
 
 function p.CloseUI()
@@ -192,5 +211,12 @@ function p.MpAdd()
 end
 
 function p.InitFighters()
+	if nil == p.heroCamp or nil == p.enemyCamp then
+		return false;
+	end
 	
+	self.m_kLeftTeam = p.heroCamp:GetAliveFighters();
+	self.m_kRightTeam = p.enemyCamp:GetAliveFighters();
+	
+	return true;
 end

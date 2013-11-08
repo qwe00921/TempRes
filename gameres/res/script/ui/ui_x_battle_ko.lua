@@ -21,7 +21,6 @@ p.ID_CTRL_LEFT_P_3					       = 18;
 p.ID_CTRL_LEFT_P_6					       = 17;
 p.ID_CTRL_LEFT_P_5					       = 16;
 p.ID_CTRL_LEFT_P_8					       = 15;
-p.ID_CTRL_PICTURE_14					     = 14;
 p.ID_CTRL_LEFT_P_7					       = 13;
 p.ID_CTRL_RIGHT_MP					       = 6;
 p.ID_CTRL_RIGHT_HP					       = 5;

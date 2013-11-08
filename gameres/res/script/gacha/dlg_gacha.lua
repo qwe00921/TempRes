@@ -109,7 +109,7 @@ function p.SetDelegate()
     local adList = GetListBoxHorz( p.layer, ui_dlg_gacha.ID_CTRL_LIST_AD);
     adList:ClearView();
     adList:SetSingleMode(true);
-    for i=1,5 do
+    for i = 1,5 do
        local view = createNDUIXView();
        view:Init();
        LoadUI("gacha_ad_view.xui", view, nil);

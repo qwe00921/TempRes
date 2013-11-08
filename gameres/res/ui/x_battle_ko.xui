@@ -48,11 +48,6 @@ Type=1
 Tag=13
 Rect=66 98 39 64
 
-[CTRL_PICTURE_14]
-Type=1
-Tag=14
-Rect=522 293 30 60
-
 [CTRL_LEFT_P_8]
 Type=1
 Tag=15
@@ -131,13 +126,13 @@ Rect=490 123 39 64
 [CTRL_PICTURE_22]
 Type=1
 Tag=30
-Rect=59 240 107 143
+Rect=35 665 107 143
 NormalFile=.\res\image\card\10100301.png
 NormalFileUV=0 0 450 600
 
 [CTRL_PICTURE_23]
 Type=1
 Tag=31
-Rect=401 236 107 143
+Rect=401 653 107 143
 NormalFile=.\res\image\card\30700704.png
 NormalFileUV=0 0 450 600
