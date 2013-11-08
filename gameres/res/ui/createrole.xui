@@ -1,0 +1,137 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Rect=0 0 640 960
+NormalFile=.\res\image\ui_honor\login\login_bg1.png
+NormalFileUV=0 0 640 960
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=140 62 360 46
+NormalFile=.\res\image\ui_honor\create_role\titletext.png
+NormalFileUV=0 0 258 35
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
+Rect=140 126 360 82
+NormalFile=.\res\image\ui_honor\create_role\usernamebg.png
+NormalFileUV=0 0 264 60
+
+[CTRL_INPUT_TEXT_USER_NAME]
+Type=18
+Tag=16
+Rect=167 148 305 35
+Text=阿斯达
+TextTradition=阿斯達
+TextSize=22
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=玩家姓名
+
+[CTRL_BUTTON_RAND_NAME]
+Type=2
+Tag=17
+Rect=508 138 58 58
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=随机姓名按钮
+NormalFile=.\res\image\ui_honor\create_role\random.png
+NormalFileUV=0 0 52 52
+SelectFile=.\res\image\ui_honor\create_role\random.png
+SelectedFileUV=0 0 52 52
+DisableFile=.\res\image\ui_honor\create_role\random.png
+DisableFileUV=0 0 52 52
+
+[CTRL_PICTURE_19]
+Type=1
+Tag=19
+Rect=140 231 360 54
+NormalFile=.\res\image\ui_honor\create_role\firstpet.png
+NormalFileUV=0 0 261 39
+
+[CTRL_PICTURE_20]
+Type=1
+Tag=20
+Rect=120 802 400 49
+NormalFile=.\res\image\ui_honor\create_role\petname.png
+NormalFileUV=0 0 300 37
+
+[CTRL_BUTTON_START_GAME]
+Type=2
+Tag=22
+Rect=210 873 220 43
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=开始游戏
+NormalFile=.\res\image\ui_honor\create_role\startgame.png
+NormalFileUV=0 0 207 41
+
+[CTRL_TEXT_PET_NAME]
+Type=4
+Tag=23
+Rect=217 812 211 22
+Text=盗贼罗恩
+TextTradition=盜賊羅恩
+TextSize=16
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=星灵名字label
+
+[CTRL_BUTTON_CARD1]
+Type=2
+Tag=24
+Rect=9 379 145 215
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=1号卡牌
+NormalFile=.\res\image\ui_honor\create_role\card.PNG
+NormalFileUV=0 0 145 215
+SelectFile=.\res\image\ui_honor\create_role\card1.png
+SelectedFileUV=0 0 145 215
+
+[CTRL_BUTTON_CARD2]
+Type=2
+Tag=25
+Rect=167 379 145 215
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\create_role\card.PNG
+NormalFileUV=0 0 145 215
+SelectFile=.\res\image\ui_honor\create_role\card2.PNG
+SelectedFileUV=0 0 145 215
+
+[CTRL_BUTTON_CARD3]
+Type=2
+Tag=26
+Rect=325 379 145 215
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\create_role\card.PNG
+NormalFileUV=0 0 145 215
+SelectFile=.\res\image\ui_honor\create_role\card3.PNG
+SelectedFileUV=0 0 145 215
+
+[CTRL_BUTTON_CARD4]
+Type=2
+Tag=27
+Rect=483 379 145 215
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\create_role\card.PNG
+NormalFileUV=0 0 145 215
+SelectFile=.\res\image\ui_honor\create_role\card4.PNG
+SelectedFileUV=0 0 145 215

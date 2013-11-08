@@ -3,46 +3,49 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_36]
+[CTRL_PICTURE_POWERBG]
 Type=1
-Tag=36
-Rect=0 789 640 152
-NormalFile=.\res\image\xbattleui\bg2.png
-NormalFileUV=0 0 639 152
+Tag=21
+Rect=243 827 192 50
+Remark=召唤兽怒气背景
+NormalFile=.\res\image\ui\x_battle_main_ui\frame_power.png
+NormalFileUV=0 0 214 96
 
-[CTRL_BUTTON_17]
-Type=2
-Tag=17
-Rect=509 158 107 60
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+[CTRL_PICTURE_BEAST_BG]
+Type=1
+Tag=38
+Rect=0 820 532 164
+Remark=召唤兽背景
+NormalFile=.\res\image\ui\x_battle_main_ui\frame_down.png
+NormalFileUV=0 0 450 164
 
 [CTRL_BUTTON_11]
 Type=2
 Tag=11
-Rect=515 76 110 70
+Rect=547 108 85 65
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
-NormalFileUV=0 0 114 73
+Remark=开始按钮/跳过
+NormalFile=.\res\image\ui\x_battle_main_ui\button_skip.png
+NormalFileUV=0 0 98 74
 SelectFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan.png
 SelectedFileUV=0 0 124 124
 DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
 DisableFileUV=0 0 114 73
 
-[CTRL_PICTURE_POWER_BG]
+[CTRL_PICTURE_PETNAME_BG]
 Type=1
 Tag=5
-Rect=13 898 450 62
-NormalFile=.\res\image\xbattleui\power.png
-NormalFileUV=0 0 362 50
+Rect=-5 819 254 53
+Remark=召唤兽名称背景
+NormalFile=.\res\image\ui\x_battle_main_ui\beast_name.png
+NormalFileUV=0 0 252 36
 
 [CTRL_TEXT_8]
 Type=4
 Tag=8
-Rect=316 70 107 60
+Rect=301 101 107 60
 Text='min
 TextTradition='min
 TextSize=20
@@ -52,51 +55,79 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_37]
 Type=1
 Tag=37
-Rect=234 64 200 75
+Rect=229 93 200 75
 NormalFile=.\res\image\xbattleui\time.png
 NormalFileUV=0 0 326 122
 
 [CTRL_TEXT_TIME]
 Type=4
 Tag=7
-Rect=274 70 100 60
+Rect=258 100 100 60
 Text=99
 TextTradition=99
 TextSize=34
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=剩余回合数
+
+[CTRL_PICTURE_21]
+Type=1
+Tag=24
+Rect=76 860 107 107
+Remark=技能1背景
+NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
+NormalFileUV=0 0 160 160
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=25
+Rect=192 863 107 107
+Remark=技能2背景
+NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
+NormalFileUV=0 0 160 160
 
 [CTRL_BUTTON_SKILL1]
 Type=2
 Tag=10
-Rect=1 800 110 99
+Rect=74 856 110 110
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\xbattleui\skill1.png
-NormalFileUV=0 0 73 66
+Remark=技能按钮1
+NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
+NormalFileUV=0 0 240 240
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=26
+Rect=309 860 107 107
+Remark=技能3背景
+NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
+NormalFileUV=0 0 160 160
 
 [CTRL_PICTURE_SKILL2]
 Type=1
 Tag=12
-Rect=116 799 110 99
-NormalFile=.\res\image\xbattleui\skill2.png
-NormalFileUV=0 0 73 66
+Rect=193 860 110 110
+Remark=技能2
+NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
+NormalFileUV=0 0 240 240
 
 [CTRL_BUTTON_SKILL3]
 Type=2
 Tag=13
-Rect=230 800 110 99
+Rect=308 859 110 110
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\xbattleui\skill3.png
-NormalFileUV=0 0 73 66
+Remark=技能3
+NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
+NormalFileUV=0 0 240 240
 
 [CTRL_BUTTON_SKILL4]
 Type=2
 Tag=14
-Rect=344 800 110 99
+Rect=34 133 110 99
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -106,14 +137,70 @@ NormalFileUV=0 0 71 64
 [CTRL_EXP_POWER]
 Type=9
 Tag=15
-Rect=30 920 417 40
+Rect=45 960 417 40
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_38]
+[CTRL_PICTURE_HEAD_BIG]
 Type=1
-Tag=38
-Rect=0 0 640 70
-NormalFile=.\res\image\xbattleui\bg3.png
-NormalFileUV=0 0 640 70
+Tag=16
+Rect=0 0 110 110
+Remark=当前攻击角色
+NormalFile=.\res\image\ui\head\u10014_f.png
+NormalFileUV=0 0 64 64
+
+[CTRL_LIST_HEAD_SPEED]
+Type=8
+Tag=18
+Rect=110 0 530 100
+Remark=战斗角色速度条
+
+[CTRL_TEXT_PET_NAME]
+Type=4
+Tag=19
+Rect=58 827 129 37
+Text=熔岩巨兽
+TextTradition=熔巖巨獸
+TextSize=32
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=召唤兽名字
+
+[CTRL_TEXT_POWER]
+Type=4
+Tag=20
+Rect=298 834 96 28
+Text=SP：100
+TextTradition=SP：100
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=怒气值数值
+
+[CTRL_BUTTON_20]
+Type=2
+Tag=23
+Rect=207 960 107 60
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_HOR3SLICES_POWER]
+Type=23
+Tag=22
+Rect=188 870 303 85
+Remark=怒气值遮罩
+Stretch=1
+NormalFile=.\res\image\ui\x_battle_main_ui\pet_skill.png
+NormalFileUV=0 0 60 90
+
+[CTRL_PICTURE_PET]
+Type=1
+Tag=36
+Rect=414 764 227 197
+Remark=召唤兽形象
+NormalFile=.\res\image\pet\head\pet_head2.png
+NormalFileUV=0 0 230 200

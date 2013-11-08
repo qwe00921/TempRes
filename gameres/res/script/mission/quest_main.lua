@@ -27,9 +27,10 @@ function p.ShowUI(Stage_id)
 		return false;
 	end
 	
+	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(true);
-	layer:SetFrameRectFull();
+	layer:SetSwallowTouch(false);
+	--layer:SetFrameRectFull();
 	
 	GetUIRoot():AddChild(layer);
 	LoadUI("quest_main_640X960.xui",layer,nil);
@@ -179,7 +180,6 @@ function p.ShowQuestList(quest_list)
 	local ListLength = 0;
 	for k,v in pairs(p.questList) do
 		ListLength = ListLength + 1;
-		WriteCon(k);
 	end
 	WriteCon("**ListLength = "..ListLength); 
 end

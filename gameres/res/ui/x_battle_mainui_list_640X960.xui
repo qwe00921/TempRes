@@ -1,0 +1,49 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_HEAD]
+Type=1
+Tag=1
+Rect=110 0 80 80
+NormalFile=.\res\image\ui\head\u10397_f.png
+NormalFileUV=0 0 64 64
+
+[CTRL_PICTURE_US]
+Type=1
+Tag=2
+Rect=110 80 80 30
+Remark=我方头像标志
+NormalFile=.\res\image\ui\x_battle_main_ui\speed_head_us.png
+NormalFileUV=0 0 108 40
+
+[CTRL_PICTURE_ENEMY]
+Type=1
+Tag=3
+Rect=110 80 80 34
+Remark=地方头像标志
+NormalFile=.\res\image\ui\x_battle_main_ui\speed_head_enemy.png
+NormalFileUV=0 0 104 44
+
+[CTRL_TEXT_US]
+Type=4
+Tag=4
+Rect=122 83 61 21
+Text=1回合
+TextTradition=1回合
+TextSize=18
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+Remark=我方角色出手回合数
+
+[CTRL_TEXT_ENEMY]
+Type=4
+Tag=5
+Rect=116 83 61 21
+Text=1回合
+TextTradition=1回合
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=敌方攻击回合数
