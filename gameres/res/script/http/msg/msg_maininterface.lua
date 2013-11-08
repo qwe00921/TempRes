@@ -24,10 +24,15 @@ end
 
 --处理消息
 function p:Process()
-	msg_cache.msg_server_list = self;
+	msg_cache.msg_maininterface = self;
 	
-	WriteConWarning( "** msg_server_list:Process() called" );
-	dlg_userinfo.RefreshUI(self.user);
+	WriteConWarning( "** msg_maininterface:Process() called" );
+	if self.result then
+		dlg_userinfo.RefreshUI(self.user);
+	else
+		--没有人物，则进入创建人物界面
+		--dlg_createrole.ShowUI();
+	end
 end
 
 

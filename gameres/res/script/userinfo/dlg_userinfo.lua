@@ -6,10 +6,14 @@ p.layer = nil;
 
 local ui = ui_userinfo
 
-function p.ShowUI()
+function p.ShowUI(userinfo)
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		p.SendReqUserInfo();
+		if userinfo ~= nil then
+			p.RefreshUI(userinfo)
+		else
+			p.SendReqUserInfo();
+		end
 		return;
 	end
 	
@@ -27,7 +31,13 @@ function p.ShowUI()
 	layer:SetZOrder(9);
     
 	p.layer = layer;
-	p.SendReqUserInfo();
+	
+	if userinfo ~= nil then
+		p.RefreshUI(userinfo)
+	else
+		p.SendReqUserInfo();
+	end
+
 	p.SetDelegate();
 end
 
@@ -42,11 +52,16 @@ function p.SendReqUserInfo()
 	WriteCon("**请求玩家状态数据**");
     local uid = GetUID();
     if uid ~= nil and uid > 0 then
-        SendReq("Login","HandShake",uid,"");
+        SendReq("User","Update",uid,"");
 	end
 end
 
 function p.RefreshUI(userinfo)
+--[[	--登陆结束会直接请求一次数据，可能存在layer未创建就刷新的情况
+	if p.layer == nil then
+		return;
+	end
+--]]	
 	local username = GetLabel( p.layer, ui.ID_CTRL_TEXT_USERNAME);
 	username:SetText( userinfo.Name );
 	

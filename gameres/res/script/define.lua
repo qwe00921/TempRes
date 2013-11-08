@@ -34,6 +34,8 @@ DoFile("init/game_main.lua");           --加载card_main
 --加载角色创建界面
 DoFile("login/dlg_create_player.lua");
 
+DoFile("login/dlg_createrole.lua");
+
 --加载主界面
 DoFile("mainui/mainui.lua");
 DoFile("mainui/hud.lua");

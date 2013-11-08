@@ -179,11 +179,17 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_SERVER_LIST then
 		msg = msg_server_list:new();
 		
-    elseif idmsg == MSG_PLAYER_USERINFO then
-		msg = msg_maininterface:new();
+    elseif idmsg == MSG_PLAYER_HANDSHAKE then
+		msg = msg_check_exist_role:new();
 		
 	elseif idmsg == MSG_QUEST_LIST then
 		msg = msg_quest_list:new();
+		
+	elseif idmsg == MSG_PLAYER_CREATEROLE then
+		msg = msg_createrole:new();
+		
+	elseif idmsg == MSG_PLAYER_USERINFO then
+		msg = msg_maininterface:new();
 		
 	end
 	

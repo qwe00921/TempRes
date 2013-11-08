@@ -6,7 +6,7 @@ p.layer = nil;
 
 local ui = ui_main_interface
 
-function p.ShowUI()
+function p.ShowUI(userinfo)
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		--[[dlg_userinfo2.ShowUI();
@@ -30,7 +30,7 @@ function p.ShowUI()
 	p.layer = layer;
 	p.SetDelegate();
 	
-	dlg_userinfo.ShowUI();
+	dlg_userinfo.ShowUI(userinfo);
 	--p.SendReqUserInfo();
 end
 
