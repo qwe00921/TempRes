@@ -27,9 +27,10 @@ function p.ShowUI(Stage_id)
 		return false;
 	end
 	
+	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(true);
-	layer:SetFrameRectFull();
+	layer:SetSwallowTouch(false);
+	--layer:SetFrameRectFull();
 	
 	GetUIRoot():AddChild(layer);
 	LoadUI("quest_main_640X960.xui",layer,nil);

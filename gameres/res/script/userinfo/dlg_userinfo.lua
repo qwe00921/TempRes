@@ -24,6 +24,7 @@ function p.ShowUI()
     
 	GetUIRoot():AddChild(layer);
 	LoadUI("userinfo.xui", layer, nil);
+	layer:SetZOrder(9);
     
 	p.layer = layer;
 	p.SendReqUserInfo();
