@@ -28,25 +28,15 @@ function p.ShowUI()
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddChild(layer);
+	GetUIRoot():AddChild(layer); --测试战斗要关掉 @郭浩
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
-
-	--login_ui.ShowUI(); --测试战斗要关掉 @郭浩
-	--login_ui.ShowUI();
-	--p.InitExp();
 	p.SetDelegate();
 	
 end
 
---关闭UI
-function p.CloseUI()
-	if p.layer ~= nil then
-		p.layer:LazyClose();
-		p.layer = nil;
-	end
-end
+
 
 function p.SetDelegate()
 	local start = GetButton(p.layer, ui.ID_CTRL_BUTTON_102);
@@ -62,10 +52,25 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_102 == tag then
 			uiNode:SetVisible(false);
-			login_ui.ShowUI();
+			--login_ui.ShowUI();
+			--暂时去除登录界面
+			p.CloseUI()
+			maininterface.ShowUI();
 		end
 	end
 end
 
+function p.HideUI()
+	if p.layer ~= nil then
+		p.layer:SetVisible(false);
+		
+	end
+end
 
+function p.CloseUI()
+	if p.layer ~= nil then
+		p.layer:LazyClose();
+		p.layer = nil;
+	end
+end
 

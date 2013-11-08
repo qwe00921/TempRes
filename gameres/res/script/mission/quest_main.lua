@@ -4,11 +4,11 @@ local p = quest_main;
 p.layer = nil;
 local ui = ui_quest_main;
 
-p.StageId = nil;
-p.questId = nil;
+p.StageId = nil;	--关卡ID
+p.questId = nil; 	--任务ID
 
-p.questList = {};
-p.data = {};
+p.questList = {};	--服务端下发列表
+p.data = {};		--数据
 
 function p.ShowUI(Stage_id)
 	p.StageId  = Stage_id;
@@ -27,9 +27,10 @@ function p.ShowUI(Stage_id)
 		return false;
 	end
 	
+	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(true);
-	layer:SetFrameRectFull();
+	layer:SetSwallowTouch(false);
+	--layer:SetFrameRectFull();
 	
 	GetUIRoot():AddChild(layer);
 	LoadUI("quest_main_640X960.xui",layer,nil);
@@ -46,12 +47,9 @@ function p.ShowUI(Stage_id)
 end
 
 function GetQuestId()
-	if p.StageId == 101 then
-		p.questId = 101011
-	elseif p.StageId == 102 then
-		p.questId = 101012
-	else 
-		p.questId = 101011
+	if p.StageId then
+		p.questId = tonumber(p.StageId.."011");
+		WriteCon(tostring(p.questId));
 	end
 end
 
@@ -83,80 +81,177 @@ end
 	
 function p.ShowQuestList(quest_list)
 	p.questList = quest_list;
-
-	local stageName = "Stage_"..p.StageId
-	p.data = quest_data[stageName];
-	
+	--WriteCon(tostring(p.StageId));
+	local SId = tonumber(p.StageId)
+	p.data = quest_data[SId];
 	
 	local QuestListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST_QUEST);
 	local num = p.data["questBattleNum"]
 	WriteCon("====="..num.."======");
 	
+	local QId = p.questId;
+	
 	for i = 1, num do
+		WriteCon("QID ========"..QId);
+
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("quest_list_640X960.xui",view, nil);
-
-		local bg = GetUiNode(view, ui_quest_list.ID_CTRL_PICTURE_QUESTLIST_BG);
-		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
-		view:SetId(p.questId);
 		--隐藏默认UI
 		p.HideStar(view);
 		p.HideItem(view);
 		
-		local fightBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_MISSION_START);
-		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
+		local bg = GetUiNode(view, ui_quest_list.ID_CTRL_PICTURE_QUESTLIST_BG);
+		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
+		view:SetId(QId);
 		
-		local easyBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_EASY);
-		easyBtn:SetLuaDelegate(p.OnListBtnClick);
-		local normalBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_NORMAL);
-		normalBtn:SetLuaDelegate(p.OnListBtnClick);
-		local difficultBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_DIFFICULT);
-		difficultBtn:SetLuaDelegate(p.OnListBtnClick);
+		--信息初始化
+		p.InitText(QId, view);
+				
+		for k = QId, QId+2 do
+			if k == QId then
+				if p.questList["B"..k] then
+					local easyBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_EASY);
+					easyBtn:SetLuaDelegate(p.OnListBtnClick);
+					easyBtn:SetEnabled(true);
+					--easyBtn:SetChecked(true);
+					easyBtn:SetId(k);
+					WriteCon("k"..k);
+					
+				--设置挑战按钮ID
+					local fightBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_MISSION_START);
+					fightBtn:SetLuaDelegate(p.OnFightBtnClick);
+					fightBtn:SetId(k);
+					
+				--显示通关评价和挑战次数
+					local QKey = "B"..k;
+					local StarNum = p.questList[QKey]["High_score"]
+					p.ShowStar(view,StarNum)
 
-		local quest_Id = "quest_"..p.questId
-		WriteCon(quest_Id);
-		local questName = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_25);
-		questName:SetText(ToUtf8(p.data[quest_Id]["name"]));
-		
-		local moneyText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_MONEY);
-		moneyText:SetText(ToUtf8(p.data[quest_Id]["easy"]["money"]));
-
-		local expText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_EXP);
-		expText:SetText(ToUtf8(p.data[quest_Id]["easy"]["exp"]));
-
-		local timesText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_MISSION_TIMES);
-		local text = "0/"..p.data[quest_Id]["easy"]["times"]
-		timesText:SetText(ToUtf8(text));
-
-		local ItemNum = p.data[quest_Id]["easy"]["item"]
-		p.ShowItem(view,ItemNum);
-		-- p.ShowStar(view,2);
+					local times = p.questList[QKey]["Fight_num"]
+					local text = times.."/"..p.data[k]["times"]
+					local timesText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_MISSION_TIMES);
+					timesText:SetText(ToUtf8(text));
+				else
+					local easyBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_EASY);
+					easyBtn:SetLuaDelegate(p.OnListBtnClick);
+					easyBtn:SetEnabled(false);
+					--easyBtn:SetChecked(false);
+					
+					local fightBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_MISSION_START);
+					fightBtn:SetLuaDelegate(p.OnFightBtnClick);
+					fightBtn:SetEnabled(false);
+				end
+			elseif k == QId + 1 then
+				if p.questList["B"..k] then
+					local normalBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_NORMAL);
+					normalBtn:SetLuaDelegate(p.OnListBtnClick);
+					normalBtn:SetEnabled(true);
+					--normalBtn:SetChecked(false);
+					normalBtn:SetId(k);
+					WriteCon("k"..k);
+				else
+					local normalBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_NORMAL);
+					normalBtn:SetLuaDelegate(p.OnListBtnClick);
+					normalBtn:SetEnabled(false);
+					--normalBtn:SetChecked(false);
+				end
+			elseif k == QId + 2 then
+				if p.questList["B"..k] then
+					local difficultBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_DIFFICULT);
+					difficultBtn:SetLuaDelegate(p.OnListBtnClick);
+					difficultBtn:SetEnabled(true);
+					--difficultBtn:SetChecked(false);
+					difficultBtn:SetId(k);
+					WriteCon("k"..k);
+				else
+					local difficultBtn = GetButton(view, ui_quest_list.ID_CTRL_BUTTON_DIFFICULT);
+					difficultBtn:SetLuaDelegate(p.OnListBtnClick);
+					difficultBtn:SetEnabled(false);
+					--difficultBtn:SetChecked(false);
+				end
+			end
+		end
 
 		QuestListTable:AddView(view);
-		p.questId = p.questId + 1;
+		QId = QId + 10;
 	end
-	local ListLength = 0
+	
+	local ListLength = 0;
 	for k,v in pairs(p.questList) do
 		ListLength = ListLength + 1;
 	end
 	WriteCon("**ListLength = "..ListLength); 
-	
-	--for
 end
 	
-function p.OnFightBtnClick(uiNode,uiEventType,param)
-		WriteCon("战斗");
-		p.CloseUI();
-		x_battle_mgr.EnterBattle();
 
+--战斗按钮
+function p.OnFightBtnClick(uiNode,uiEventType,param)
+	if IsClickEvent(uiEventType) then
+		WriteCon("=========OnFightBtnClick==========");
+		p.CloseUI();
+		world_map.CloseMap();
+		local btnId = uiNode:GetId();
+		WriteCon("btnID======"..btnId);
+		dlg_drama.ShowUI(1);
+		--x_battle_mgr.EnterBattle();
+	end
 end
 
 function p.OnListBtnClick(uiNode,uiEventType,param)
-		WriteCon("难度");
+	if IsClickEvent(uiEventType) then
+		WriteCon("=========OnListBtnClick==========");
+		local parentNode = uiNode:GetParent();
+		local viewId = parentNode:GetId();
+		local btnID = uiNode:GetId();
+		WriteCon("viewId====="..viewId);
+		WriteCon("btnID======"..btnID);
+		local moneyText = GetLabel(parentNode, ui_quest_list.ID_CTRL_TEXT_MONEY);
+		moneyText:SetText(ToUtf8(p.data[btnID]["money"]));
+		
+		local expText = GetLabel(parentNode, ui_quest_list.ID_CTRL_TEXT_EXP);
+		expText:SetText(ToUtf8(p.data[btnID]["exp"]));
+		
+		local ItemNum = p.data[btnID]["item"]
+		p.ShowItem(parentNode,ItemNum);
+		
+		local QKey = "B"..btnID;
+		
+		local StarNum = p.questList[QKey]["High_score"]
+		p.ShowStar(parentNode,StarNum)
+
+		local times = p.questList[QKey]["Fight_num"]
+		local text = times.."/"..p.data[btnID]["times"]
+		local timesText = GetLabel(parentNode, ui_quest_list.ID_CTRL_TEXT_MISSION_TIMES);
+		timesText:SetText(ToUtf8(text));
+		
+		local fightBtn = GetButton(parentNode, ui_quest_list.ID_CTRL_BUTTON_MISSION_START);
+		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
+		fightBtn:SetId(btnID);
+	end
 end
 	
---隐藏通关评价
+--信息初始化
+function p.InitText(QId, view)
+	local quest_Id = QId;
+	local questName = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_25);
+	questName:SetText(ToUtf8(p.data[quest_Id]["name"]));
+	
+	local moneyText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_MONEY);
+	moneyText:SetText(ToUtf8(p.data[quest_Id]["money"]));
+
+	local expText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_EXP);
+	expText:SetText(ToUtf8(p.data[quest_Id]["exp"]));
+
+	local timesText = GetLabel(view, ui_quest_list.ID_CTRL_TEXT_MISSION_TIMES);
+	local text = "0/"..p.data[quest_Id]["times"]
+	timesText:SetText(ToUtf8(text));
+
+	local ItemNum = p.data[quest_Id]["item"]
+	p.ShowItem(view,ItemNum);
+end
+
+--通关评价
 function p.HideStar(view)
 	local star1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR1)
 	star1:SetVisible(false);
@@ -167,15 +262,21 @@ function p.HideStar(view)
 end
 	
 function p.ShowStar(view,num)
-	if num == 1 then
+	if num == 1 or num == "1" then
 		local star1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR1)
 		star1:SetVisible(true);
-	elseif num == 2 then
+		local star2 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR2)
+		star2:SetVisible(false);
+		local star3 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR3)
+		star3:SetVisible(false);
+	elseif num == 2 or num == "2" then
 		local star1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR1)
 		star1:SetVisible(true);
 		local star2 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR2)
 		star2:SetVisible(true);
-	elseif num == 3 then
+		local star3 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR3)
+		star3:SetVisible(false);
+	elseif num == 3 or num == "3" then
 		local star1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR1)
 		star1:SetVisible(true);
 		local star2 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_STAR2)
@@ -187,7 +288,7 @@ function p.ShowStar(view,num)
 	end
 end
 
---隐藏奖励物品图标
+--奖励物品图标
 function p.HideItem(view)
 	local Item1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM1)
 	Item1:SetVisible(false);
@@ -201,11 +302,17 @@ function p.ShowItem(view,num)
 	if num == 1 then
 		local Item1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM1)
 		Item1:SetVisible(true);
+		local Item2 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM2)
+		Item2:SetVisible(false);
+		local item3 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM3)
+		item3:SetVisible(false);
 	elseif num == 2 then
 		local Item1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM1)
 		Item1:SetVisible(true);
 		local Item2 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM2)
 		Item2:SetVisible(true);
+		local item3 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM3)
+		item3:SetVisible(false);
 	elseif num == 3 then
 		local Item1 = GetImage(view, ui_quest_list.ID_CTRL_PICTURE_ITEM1)
 		Item1:SetVisible(true);

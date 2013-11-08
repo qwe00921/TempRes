@@ -195,3 +195,6 @@ DoFile("ui/ui_dlg_drama.lua")
 DoFile("ui/ui_dlg_drama_new.lua");
 
 DoFile("ui/ui_userinfo.lua");
+--创建角色界面
+DoFile("ui/ui_createrole.lua");
+DoFile("ui/ui_x_battle_ko.lua");

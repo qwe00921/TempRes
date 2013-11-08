@@ -114,7 +114,10 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 	login_ui.CloseUI();
 	p.CloseUI();
 	
-	maininterface.ShowUI();
+	--dlg_createrole.ShowUI();
+	--maininterface.ShowUI();
+	
+	p.SendCheckRole();
 end
 
 
@@ -131,5 +134,14 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+	end
+end
+
+--是否已创建人物
+function p.SendCheckRole()
+	WriteCon("**==================检测是否有人物=================**");
+	local uid = GetUID();
+    if uid ~= nil and uid > 0 then
+        SendReq("Login","HandShake",uid,"");
 	end
 end
