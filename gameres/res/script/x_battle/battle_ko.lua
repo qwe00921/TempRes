@@ -25,6 +25,29 @@ p.m_bIsOver = false;
 p.m_kLeftTeam = {};
 p.m_kRightTeam = {};
 p.m_kOrigin = nil;
+p.m_kUI = ui_x_battle_ko;
+
+p.m_kLeftUIArray = {
+    p.m_kUI.ID_CTRL_LEFT_P_1,
+    p.m_kUI.ID_CTRL_LEFT_P_2,
+    p.m_kUI.ID_CTRL_LEFT_P_3,
+    p.m_kUI.ID_CTRL_LEFT_P_4,
+    p.m_kUI.ID_CTRL_LEFT_P_5,
+	p.m_kUI.ID_CTRL_LEFT_P_6,
+	p.m_kUI.ID_CTRL_LEFT_P_7,
+	p.m_kUI.ID_CTRL_LEFT_P_8
+};
+
+p.m_kRightUIArray = {
+    p.m_kUI.ID_CTRL_RIGHT_P_1,
+    p.m_kUI.ID_CTRL_RIGHT_P_2,
+    p.m_kUI.ID_CTRL_RIGHT_P_3,
+    p.m_kUI.ID_CTRL_RIGHT_P_4,
+    p.m_kUI.ID_CTRL_RIGHT_P_5,
+	p.m_kUI.ID_CTRL_RIGHT_P_6,
+	p.m_kUI.ID_CTRL_RIGHT_P_7,
+	p.m_kUI.ID_CTRL_RIGHT_P_8
+};
 
 function p.ShowUI()
 	if nil == p.m_kLayer then
