@@ -257,8 +257,9 @@ function p:Atk( targetFighter, batch)
 	cmd10:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
 	
 	--飘血
-	local cmd11 = targetFighter:cmdLua( "fighter_damage", 30, "", seqTarget );
-	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
+	local fDamage = battle_compute.DamageFromNormalAttack(self,targetFighter);
+	local cmd11 = targetFighter:cmdLua( "fighter_damage", fDamage, "", seqTarget );
+	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", fDamage, "", seqTarget );
 	--local cmd22 = targetFighter:cmdLua( "AddMaskImage", 0, "", seqTarget );
 	
 	--受攻击的后续动画【死亡 OR 站立】
@@ -848,7 +849,8 @@ function p:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighte
 	cmd8:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
 	
 	--飘血
-	local cmd9 = targetFighter:cmdLua( "fighter_damage", 80, "", seqTarget );
+	local fDamage = battle_compute.DamageFromNormalAttack(self,targetFighter) * 0.8f;
+	local cmd9 = targetFighter:cmdLua( "fighter_damage", fDamage, "", seqTarget );
 	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 
 	--受攻击的后续动画【死亡 OR 站立】
@@ -932,6 +934,8 @@ end
 function p:cmdLua( cmdtype, num, str, seq )
 	--暂时临时扣血保存到tmplife
 	if cmdtype == "fighter_damage" then
+		local strDamage = string.format("XXX attack XXX,damage:%d",num);
+		WriteCon(strDamage);
 		self:SubTmpLife(num);
 	end
 	return super.cmdLua( self, cmdtype,num, str, seq );

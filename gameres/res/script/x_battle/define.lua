@@ -15,3 +15,4 @@ DoFile("x_battle/x_fly_num.lua");
 DoFile("x_battle/x_battle_mainui.lua");
 DoFile("x_battle/shadow.lua");
 DoFile("x_battle/battle_ko.lua");
+DoFile("x_battle/battle_compute.lua");

@@ -35,8 +35,11 @@ function p:ctor()
     self.idFighter = 0;
     self.name = "";
     self.camp = 0;	--ÕóÓª
-    self.life = 500;
-    self.lifeMax = 500;
+    self.life = 100;
+    self.lifeMax = 100;
+	self.defence = 5;
+	self.attack_min = 0;
+	self.attack_max = 100;
     self.isDead = false;
     self.isVisible = true;
     self.isBoss = false;
