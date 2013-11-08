@@ -95,8 +95,8 @@ image\ui\card_get\card1.png @cut(1,1) @loop
 
 ;战斗开启光效果
 [enter_battle]
-;image\fx\pve\thunder_0.5.png @cut(4,2) @scale=2.0 @time=0.125
-image\fx\pve\battle_begin.png @cut(7,1,7) @scale=0.5 @time=0.18
+image\fx\pve\thunder_0.5.png @cut(4,2) @scale=2.0 @time=0.125
+;image\fx\pve\battle_begin.png @cut(7,1,7) @scale=0.5 @time=0.18
 
 ;-----------------------------------------------------
 ;boss普通攻击后果

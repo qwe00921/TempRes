@@ -54,14 +54,17 @@ function p.ShowUI()
 	
 	--添加蒙版图片
 --	p.AddMaskImage();
-	
-	--添加战斗开启光效
+end
+
+function p.StartBattleEffect()
+		--添加战斗开启光效
 	local id = AddHudEffect( "lancer.enter_battle" );
 	--local id = AddHudEffect( "lancer_cmb.enter_battle" );
 	RegAniEffectCallBack( id, p.OnAniEffectCallBack );
 	
 	--注册战斗表现结束的回调
-	RegCallBack_BattleShowFinished( p.OnBattleShowFinished );
+	--RegCallBack_BattleShowFinished( p.OnBattleShowFinished );
+	SetTimerOnce(p.OnBattleShowFinished,1.0f);
 end
 
 --隐藏
@@ -83,8 +86,8 @@ end
 --设置事件处理
 function p.SetDelegate(layer)
 	--攻击按钮
-	atkBtn = GetButton( layer, ui_x_battle_mainui.ID_CTRL_BUTTON_17 );
-    atkBtn:SetLuaDelegate( p.OnBtnClicked_Atk );
+	--atkBtn = GetButton( layer, ui_x_battle_mainui.ID_CTRL_BUTTON_17 );
+   -- atkBtn:SetLuaDelegate( p.OnBtnClicked_Atk );
 	
 	--托管按钮
 	autoBtn = GetButton( layer, ui_x_battle_mainui.ID_CTRL_BUTTON_11 );
@@ -150,44 +153,44 @@ end
 
 --攻击按钮点击事件
 function p.OnBtnClicked_Atk(uiNode, uiEventType, param)
-	if IsClickEvent( uiEventType ) then
-
 		--屏蔽按钮
-		atkBtn:SetEnabled( false );
+		--atkBtn:SetEnabled( false );
+	x_battle_mgr.HeroTurn();
+	x_battle_mgr.EnemyTurn();
 		
-		x_battle_mgr.HeroTurn();
-		x_battle_mgr.EnemyTurn();
-		
-		waitingInput = false;
+	waitingInput = false;
 		
 		--定时更新Z序 (every tick)
-		if idTimer_SortZOrder == 0 then
-		    idTimer_SortZOrder = SetTimer( p.OnTimer_SortZOrder, 0.04f );
-        end
+	if idTimer_SortZOrder == 0 then
+		idTimer_SortZOrder = SetTimer( p.OnTimer_SortZOrder, 0.04f );
 	end
 end
 
 --自动按钮点击事件
 function p.OnBtnClicked_Auto(uiNode, uiEventType, param)
-	if IsClickEvent( uiEventType ) then
-		isHeroAutoAtk = not isHeroAutoAtk;
+	isHeroAutoAtk = true;
 		
-		if waitingInput then
-			p.OnBtnClicked_Atk( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
-		end
+	if waitingInput then
+		p.OnBtnClicked_Atk( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
 	end
 end
 
 --战斗表现结束的回调
 function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
-	SetTimerOnce( p.CheckAutoAtk, 0.1f );
+	
+	isHeroAutoAtk = true;
+		
+	if waitingInput then
+		p.OnBtnClicked_Auto( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
+	end
+	--SetTimer( p.CheckAutoAtk, 0.5f );
 end	
 
 --自动攻击
 function p.CheckAutoAtk()
-	waitingInput = true;
-	atkBtn:SetEnabled( not isHeroAutoAtk );
+	--waitingInput = true;
+	--atkBtn:SetEnabled( not isHeroAutoAtk );
 	
 	if x_battle_mgr.IsBattleEnd() then
 	    p.ResetZOrder();

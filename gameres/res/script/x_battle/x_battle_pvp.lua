@@ -168,4 +168,10 @@ function p.InitBattle()
 	x_battle_mgr.heroUIArray = heroUIArray;
 	x_battle_mgr.enemyUIArray = enemyUIArray;
 	x_battle_mgr.play_pvp();
+	
+	SetTimerOnce(p.ReadyGo,1.5f);
+end
+
+function p.ReadyGo()
+	x_battle_mainui.StartBattleEffect();
 end

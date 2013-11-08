@@ -233,13 +233,42 @@ function p.MpAdd()
 	p.m_kRightMp:SetProcess(p.m_nRightCurrentMp);
 end
 
+function p.AddKoFighters(kUIArray,bLeft)
+	if nil == kUIArray then
+		return false;
+	end
+	
+	local uiArray = nil;
+	
+	if true == bLeft then
+		uiArray = p.m_kLeftTeam;
+	else
+		uiArray = p.m_kRightTeam;
+	end
+	
+	for i = 1,#uiArray do
+		local kImage = GetImage(p.m_kLayer,kUIArray[i]);
+		local kPosition = kImage.GetFramePos();
+		local kFighter = uiArray[i];
+		
+		kFighter:SetFramePosXY(kPosition.x,kPosition.y);
+		p.m_kLayer:AddChildZ(kFighter,3);
+	end
+	
+	return true;
+end
+
 function p.InitFighters()
 	if nil == p.heroCamp or nil == p.enemyCamp then
+		WriteCon("No init battle!");
 		return false;
 	end
 	
 	self.m_kLeftTeam = p.heroCamp:GetAliveFighters();
 	self.m_kRightTeam = p.enemyCamp:GetAliveFighters();
+	
+	p.AddKoFighters(p.m_kLeftUIArray,true);
+	p.AddKoFighters(p.m_kRightUIArray,false);
 	
 	return true;
 end

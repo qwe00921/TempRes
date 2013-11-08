@@ -187,7 +187,7 @@ function p:AddShadows(uiArray)
 end
 
 function p:AddFighters( uiArray )
-	for i=1,#uiArray do
+	for i = 1,#uiArray do
 		local uiTag = uiArray[i];
 		local node = GetPlayer( x_battle_mgr.uiLayer, uiTag );
 		if node == nil then

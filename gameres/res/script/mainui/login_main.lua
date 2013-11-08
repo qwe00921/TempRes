@@ -28,7 +28,7 @@ function p.ShowUI()
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddChild(layer); --测试战斗要关掉 @郭浩
+	--GetUIRoot():AddChild(layer); --测试战斗要关掉 @郭浩
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
@@ -52,7 +52,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			uiNode:SetVisible(false);
 			--login_ui.ShowUI();
 			--暂时去除登录界面
-			p.CloseUI()
+			p.CloseUI();
 			maininterface.ShowUI();
 		end
 	end
