@@ -58,6 +58,10 @@ function p:CheckTmpLife()
 	return self.tmplife > 0;
 end
 
+function p:SetPosition(x,y)
+	self.node:SetFramePosXY(x,y)
+end
+
 function p:SubTmpLife( val )
 	self.tmplife = self.tmplife - val;
 end

@@ -178,6 +178,7 @@ function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
 	if 1 < p.m_nBattleRound then
+		p.HideUI();
 		battle_ko.ShowUI();
 		--p.m_nBattleRound = 0;
 		return;

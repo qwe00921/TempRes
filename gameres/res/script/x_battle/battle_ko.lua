@@ -248,24 +248,25 @@ function p.AddKoFighters(kUIArray,bLeft)
 	
 	for i = 1,#uiArray do
 		local kImage = GetImage(p.m_kLayer,kUIArray[i]);
-		local kPosition = kImage.GetFramePos();
+		local kPosition = kImage:GetFramePos();
 		local kFighter = uiArray[i];
 		
-		kFighter:SetFramePosXY(kPosition.x,kPosition.y);
-		p.m_kLayer:AddChildZ(kFighter,3);
+		kFighter:SetPosition(kPosition.x,kPosition.y);
+		kFighter:GetPlayerNode():RemoveFromParent(false);
+		p.m_kLayer:AddChildZ(kFighter:GetPlayerNode(),333);
 	end
 	
 	return true;
 end
 
 function p.InitFighters()
-	if nil == p.heroCamp or nil == p.enemyCamp then
+	if nil == x_battle_mgr.heroCamp or nil == x_battle_mgr.enemyCamp then
 		WriteCon("No init battle!");
 		return false;
 	end
 	
-	self.m_kLeftTeam = p.heroCamp:GetAliveFighters();
-	self.m_kRightTeam = p.enemyCamp:GetAliveFighters();
+	p.m_kLeftTeam = x_battle_mgr.heroCamp:GetAliveFighters();
+	p.m_kRightTeam = x_battle_mgr.enemyCamp:GetAliveFighters();
 	
 	p.AddKoFighters(p.m_kLeftUIArray,true);
 	p.AddKoFighters(p.m_kRightUIArray,false);

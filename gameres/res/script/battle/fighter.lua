@@ -70,7 +70,7 @@ function p:CreateFlyNum()
 	flynum:SetOffset(30,-50);
 	
 	self.node:AddChildZ( flynum:GetNode(), 2 );
-	self.flynum_mgr[#self.flynum_mgr+1] = flynum;
+	self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
 	
 	if #self.flynum_mgr > 3 then
 		WriteConErr( string.format("too many flynum: %s", #self.flynum_mgr));
@@ -300,7 +300,9 @@ end
 
 --技能攻击（单攻）
 function p:AtkSkill( targetFighter, batch, bulletType, bulletRotation, fighterIndex )
-	if batch == nil then return end
+	if batch == nil then		
+		return;
+	end
 	
 	--创建三个序列给攻击者、受击者、子弹
 	local seqAtk 	= batch:AddSerialSequence();
