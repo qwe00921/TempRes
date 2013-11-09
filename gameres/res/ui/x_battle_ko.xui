@@ -3,10 +3,24 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_BG]
+Type=1
+Tag=46
+Rect=1 0 640 960
+NormalFile=.\res\image\pet\pic\back_yuryou.png
+NormalFileUV=0 0 320 222
+
+[CTRL_PICTURE_34]
+Type=1
+Tag=34
+Rect=-3 271 640 104
+NormalFile=.\res\image\ui\pet\event_guild_battle_history_vs.png
+NormalFileUV=0 0 640 104
+
 [CTRL_LEFT_MP]
 Type=9
 Tag=1
-Rect=43 495 199 95
+Rect=13 319 199 95
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -16,17 +30,7 @@ NormalFileUV=0 0 180 95
 [CTRL_LEFT_HP]
 Type=9
 Tag=2
-Rect=43 383 197 95
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\xbattleui\ko_hp.png
-NormalFileUV=0 0 180 95
-
-[CTRL_RIGHT_HP]
-Type=9
-Tag=5
-Rect=330 383 197 95
+Rect=13 282 197 95
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -36,7 +40,7 @@ NormalFileUV=0 0 180 95
 [CTRL_RIGHT_MP]
 Type=9
 Tag=6
-Rect=328 496 199 95
+Rect=393 319 199 95
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -46,93 +50,131 @@ NormalFileUV=0 0 180 95
 [CTRL_LEFT_P_7]
 Type=1
 Tag=13
-Rect=66 98 39 64
+Rect=48 98 39 64
 
 [CTRL_LEFT_P_8]
 Type=1
 Tag=15
-Rect=56 129 39 64
+Rect=38 129 39 64
 
 [CTRL_LEFT_P_5]
 Type=1
 Tag=16
-Rect=109 97 39 64
+Rect=91 97 39 64
 
 [CTRL_LEFT_P_6]
 Type=1
 Tag=17
-Rect=98 128 39 64
+Rect=80 128 39 64
 
 [CTRL_LEFT_P_3]
 Type=1
 Tag=18
-Rect=153 98 39 64
+Rect=135 98 39 64
 
 [CTRL_LEFT_P_4]
 Type=1
 Tag=19
-Rect=144 127 39 64
+Rect=126 127 39 64
 
 [CTRL_LEFT_P_1]
 Type=1
 Tag=20
-Rect=198 96 39 64
+Rect=180 96 39 64
 
 [CTRL_LEFT_P_2]
 Type=1
 Tag=21
-Rect=190 124 39 64
+Rect=172 128 39 64
 
 [CTRL_RIGHT_P_1]
 Type=1
 Tag=22
-Rect=344 95 39 64
-
-[CTRL_RIGHT_P_2]
-Type=1
-Tag=23
-Rect=347 125 39 64
+Rect=394 95 39 64
 
 [CTRL_RIGHT_P_3]
 Type=1
 Tag=24
-Rect=388 96 39 64
-
-[CTRL_RIGHT_P_4]
-Type=1
-Tag=25
-Rect=393 123 39 64
+Rect=438 96 39 64
 
 [CTRL_RIGHT_P_5]
 Type=1
 Tag=26
-Rect=435 94 39 64
-
-[CTRL_RIGHT_P_6]
-Type=1
-Tag=27
-Rect=440 124 39 64
+Rect=485 94 39 64
 
 [CTRL_RIGHT_P_7]
 Type=1
 Tag=28
-Rect=485 94 39 64
-
-[CTRL_RIGHT_P_8]
-Type=1
-Tag=29
-Rect=490 123 39 64
-
-[CTRL_PICTURE_22]
-Type=1
-Tag=30
-Rect=35 665 107 143
-NormalFile=.\res\image\card\10100301.png
-NormalFileUV=0 0 450 600
+Rect=535 94 39 64
 
 [CTRL_PICTURE_23]
 Type=1
 Tag=31
-Rect=401 653 107 143
-NormalFile=.\res\image\card\30700704.png
-NormalFileUV=0 0 450 600
+Rect=236 390 497 653
+NormalFile=.\res\image\pet\pic\召唤兽.png
+NormalFileUV=0 0 700 900
+
+[CTRL_RIGHT_P_2]
+Type=1
+Tag=23
+Rect=402 125 39 64
+
+[CTRL_RIGHT_P_4]
+Type=1
+Tag=25
+Rect=448 123 39 64
+
+[CTRL_RIGHT_P_6]
+Type=1
+Tag=27
+Rect=495 124 39 64
+
+[CTRL_RIGHT_P_8]
+Type=1
+Tag=29
+Rect=545 123 39 64
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=30
+Rect=-86 390 497 639
+NormalFile=.\res\image\pet\pic\召唤兽2.png
+NormalFileUV=0 0 700 900
+
+[CTRL_RIGHT_HP]
+Type=9
+Tag=5
+Rect=394 279 197 95
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\xbattleui\ko_hp.png
+NormalFileUV=0 0 180 95
+
+[CTRL_PICTURE_35]
+Type=1
+Tag=35
+Rect=0 288 264 36
+NormalFile=.\res\image\ui\pet\summon_hobitat_gauge_seal_pt.png
+NormalFileUV=0 0 184 36
+
+[CTRL_PICTURE_36]
+Type=1
+Tag=36
+Rect=0 325 264 36
+NormalFile=.\res\image\ui\pet\summon_hobitat_gauge_seal_pt.png
+NormalFileUV=0 0 184 36
+
+[CTRL_PICTURE_37]
+Type=1
+Tag=37
+Rect=379 288 264 36
+NormalFile=.\res\image\ui\pet\summon_hobitat_gauge_seal_pt.png
+NormalFileUV=0 0 184 36
+
+[CTRL_PICTURE_38]
+Type=1
+Tag=38
+Rect=378 324 264 36
+NormalFile=.\res\image\ui\pet\summon_hobitat_gauge_seal_pt.png
+NormalFileUV=0 0 184 36
