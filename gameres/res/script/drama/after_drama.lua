@@ -15,15 +15,16 @@ STAGE_CLEAR = 2;    --Í¨¹Ø
 
 function p.DoAfterDrama()
 	if p.action == nil then
+		x_battle_mgr.EnterBattle();
 		return;
 	end
 	
 	if p.action == BOSS_OUT then
-		boss_out.ShowUI( p.parameters[1], p.parameters[2], p.parameters[3]);
-	
+		--boss_out.ShowUI( p.parameters[1], p.parameters[2], p.parameters[3]);
+		x_battle_mgr.EnterBattle();
 	elseif p.action == STAGE_CLEAR then
-		task_map.BattleRefresh( p.parameters )
-		
+		--task_map.BattleRefresh( p.parameters )
+		x_battle_mgr.EnterBattle();
 	end
 	p.Clear();
 end

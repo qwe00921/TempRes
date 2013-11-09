@@ -221,6 +221,7 @@ function p.HpAdd()
 		KillTimer(p.m_nHpTimer);
 		p.LeftTeamDead(200);
 		p.LeftTeamDead(200);
+		x_battle_mgr.OnBattleWin();
 		return;
 	end
 	
@@ -228,8 +229,9 @@ function p.HpAdd()
 		p.m_nRightCurrentHp = 0;
 		p.m_kRightHp:SetProcess(0);
 		KillTimer(p.m_nHpTimer);	
-		p.RightTeamDead(200);	
-		p.RightTeamDead(200);		
+		p.RightTeamDead(200);
+		p.RightTeamDead(200);
+		x_battle_mgr.OnBattleWin();
 		return;
 	end
 	
@@ -281,8 +283,8 @@ function p.RightTeamDead(nDamage)
 end
 
 function p.MpAdd()
-	p.m_nLeftCurrentMp = p.m_nLeftCurrentMp - 0.9;
-	p.m_nRightCurrentMp = p.m_nRightCurrentMp - 0.9;
+	p.m_nLeftCurrentMp = p.m_nLeftCurrentMp - 2;
+	p.m_nRightCurrentMp = p.m_nRightCurrentMp - 2;
 	
 	if 0 > p.m_nLeftCurrentMp then
 		p.m_nLeftCurrentMp = 0;

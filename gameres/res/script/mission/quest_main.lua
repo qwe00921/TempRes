@@ -193,6 +193,7 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 		world_map.CloseMap();
 		local btnId = uiNode:GetId();
 		WriteCon("btnID======"..btnId);
+		dlg_userinfo.HideUI();
 		dlg_drama.ShowUI(1);
 		--x_battle_mgr.EnterBattle();
 	end

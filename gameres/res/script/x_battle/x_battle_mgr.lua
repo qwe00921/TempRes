@@ -143,7 +143,7 @@ end
 --战斗胜利
 function p.OnBattleWin()
 	--GetBattleShow():Stop();
-	SetTimerOnce( p.OpenBattleWin, 2.0f );
+	SetTimerOnce( p.OpenBattleWin, 1.0f );
 end
 
 --打开战斗胜利界面

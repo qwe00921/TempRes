@@ -48,6 +48,12 @@ function p.CloseUI()
     end
 end
 
+function p.HideUI()
+	if p.layer ~= nil then
+        p.layer:SetVisible(false);
+	end
+end
+
 function p.SendReqUserInfo()
 	WriteCon("**请求玩家状态数据**");
     local uid = GetUID();
@@ -125,7 +131,3 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		end
 	end
 end
-
-
-
-

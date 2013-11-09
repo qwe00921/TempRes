@@ -209,6 +209,7 @@ end
 --¹Ø±ÕUI
 function p.CloseUI()
     if p.layer ~= nil then
+		p.layer:SetVisible(false);
         p.layer:LazyClose();
     	p.layer = nil;
     	p.storyId = nil;
