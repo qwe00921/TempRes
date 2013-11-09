@@ -171,6 +171,8 @@ lj\effect\skill\tuc.png @cut(1,8) @use(4,4) @time=0.15 @scale=0.8
 
 [dings]
 lj\effect\skill\dings.png @cut(2,5) @time=0.12
+[heal_skill]
+lj\effect\skill\heal_skill.png @cut(3,8,20) @time=0.09
 
 [blue_devil_fx_atk]
 image\fx\pet_blue_devil\fx_atk.png @cut(1,5) @time=0.1 @offset(30,-25) @scale=0.1

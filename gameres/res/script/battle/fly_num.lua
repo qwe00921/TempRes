@@ -25,20 +25,34 @@ function p:ctor()
     self.ownerNode = nil;
     self.imageNode = nil;
     self.comboPicture = nil;
+	self.m_nType = 0;
     
     self.picNum = {};
     self.isInited = false;
     self.offsetX = 0;
     self.offsetY = 0;
+	self.m_strNumberPath = "effect.num";
 end
 
+function p:GetType()
+	return self.m_nType;
+end
 --初始化
-function p:Init()
+function p:Init(nType)
+	if 1 == nType then
+		self.m_nType = nType
+		self.m_strNumberPath = "effect.num_stike";
+	elseif 2 == nType then
+		self.m_strNumberPath = "effect.num_buff";
+		self.m_nType = nType;
+	end
+	
 	if not self.isInited then
 		self:InitPicNum();
 		self:CreateComboPicture();
 		self:CreateImageNode();
 	end
+	
 	self.offsetX = 0;
 	self.offsetY = -20;
 	self.isInited = true;
@@ -73,17 +87,16 @@ end
 
 --初始化数字图片
 function p:InitPicNum()
-	self.picNum["0"] = GetPictureByAni("effect.num", 0);
-	self.picNum["1"] = GetPictureByAni("effect.num", 1);
-	self.picNum["2"] = GetPictureByAni("effect.num", 2);
-	self.picNum["3"] = GetPictureByAni("effect.num", 3);
-	self.picNum["4"] = GetPictureByAni("effect.num", 4);
-	
-	self.picNum["5"] = GetPictureByAni("effect.num", 5);
-	self.picNum["6"] = GetPictureByAni("effect.num", 6);
-	self.picNum["7"] = GetPictureByAni("effect.num", 7);
-	self.picNum["8"] = GetPictureByAni("effect.num", 8);
-	self.picNum["9"] = GetPictureByAni("effect.num", 9);	
+	self.picNum["0"] = GetPictureByAni(self.m_strNumberPath, 0);
+	self.picNum["1"] = GetPictureByAni(self.m_strNumberPath, 1);
+	self.picNum["2"] = GetPictureByAni(self.m_strNumberPath, 2);
+	self.picNum["3"] = GetPictureByAni(self.m_strNumberPath, 3);
+	self.picNum["4"] = GetPictureByAni(self.m_strNumberPath, 4);
+	self.picNum["5"] = GetPictureByAni(self.m_strNumberPath, 5);
+	self.picNum["6"] = GetPictureByAni(self.m_strNumberPath, 6);
+	self.picNum["7"] = GetPictureByAni(self.m_strNumberPath, 7);
+	self.picNum["8"] = GetPictureByAni(self.m_strNumberPath, 8);
+	self.picNum["9"] = GetPictureByAni(self.m_strNumberPath, 9);	
 end
 
 --根据数值获取图片(num=[0,9])
@@ -136,12 +149,14 @@ end
 
 --飘个数值
 function p:PlayNum( num )
+	local nIntNumber = math.floor(num)
+	
 	if not self.isInited then return end
 	if self.ownerNode == nil then return end
 	
 	--push数字图片
-	self:PushNum( num );
-	self:AdjustOffset( num );
+	self:PushNum( nIntNumber );
+	self:AdjustOffset( nIntNumber );
 	
 	--设置图片
 	self.imageNode:SetScale(1.0f);

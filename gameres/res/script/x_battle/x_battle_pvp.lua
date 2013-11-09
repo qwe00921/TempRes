@@ -79,36 +79,9 @@ function p.ShowUI()
 	local batch = battle_show.GetNewBatch();
 	local seqMove = batch:AddSerialSequence();
 	
---	local cmd = CommandMoveTo(pos,pTar,seqMove,p.pBgImage); --战斗背景移动取消
-	
-	
-	--添加战斗背景图片
-	--p.AddBattleBg();
-	
 	--战斗
 	p.InitBattle();
 	return true;
-end
-
-function CommandMoveTo( playerNodePos, targetPos, seq,node)
-	
-	local duration = 0;
-	local cmd = nil;
-	--local fx = "x.hero_atk";
-	local fx = "x_cmb.hero_atk";
-	
-	local selfPos = playerNodePos;
-	
-	local x = targetPos.x - playerNodePos.x;
-	local y = targetPos.y - playerNodePos.y;
-		
-	-- cmd with var
-	cmd = battle_show.AddActionEffect_ToSequence( duration, node, fx, seq );
-	local varEnv = cmd:GetVarEnv();
-	varEnv:SetFloat( "$1", x );
-	varEnv:SetFloat( "$2", y );
-	
-	return cmd;
 end
 
 --关闭

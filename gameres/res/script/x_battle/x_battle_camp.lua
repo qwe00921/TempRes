@@ -209,6 +209,10 @@ function p:AddFighters( uiArray )
 		f:Init( uiTag, node, self.idCamp );
 		self:SetFighterConfig( f, i );
 		f:standby();
+		f.defence = i;
+		f.attack_min = 90 - i * 3;
+		f.attack_max = 110 - i * 3;
+		f.strike_level = i * 200;
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
