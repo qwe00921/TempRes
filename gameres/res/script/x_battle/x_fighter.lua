@@ -26,6 +26,7 @@ function p:ctor()
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
 	self.m_kShadow = nil;
+	self.m_kCurrentBatch = nil;
 end
 
 --初始化（重载）
@@ -172,6 +173,8 @@ function p:HurtResultAni( targetFighter, seqTarget )
 		local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
 		seqTarget:AddCommand( cmdC );
 		
+		--local kPlayerNode = targetFighter:GetPlayerNode();
+		--kPlayerNode:SetShadowVisible(false);
 	end
 end
 
@@ -184,6 +187,8 @@ function p:Atk( targetFighter, batch)
 	local seqTarget = batch:AddSerialSequence();
 	local seqMisc =   batch:AddSerialSequence();
 	local seqMusic =   batch:AddSerialSequence();
+	
+	self.m_kCurrentBatch = batch;
 	
 	local targetNode = targetFighter:GetNode();
 	
@@ -864,6 +869,7 @@ end
 --技能单攻
 function p:AtkSkill(targetFighter, batch, bulletType, fighterIndex, skillType)
 	local bulletRotation;
+	self.m_kCurrentBatch = batch;
 	bulletRotation = self:GetAngleByFighter( targetFighter );
 	
 	if self.camp == E_CARD_CAMP_ENEMY then
@@ -912,6 +918,7 @@ function p:GetFrontPos(targetNode)
 end
 
 function p:SetShadow(kShadow)
+	self.m_kShadow = kShadow;
 	self.node:SetShadow(kShadow);
 end
 

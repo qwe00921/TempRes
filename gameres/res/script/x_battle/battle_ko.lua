@@ -21,11 +21,26 @@ p.m_nRightTotalMp = 0;
 p.m_kLayer = nil;
 p.m_nHpTimer = 0;
 p.m_nMpTimer = 0;
+p.m_nLeftTeamCount = 0;
+p.m_nRightTeamCount = 0;
+p.m_nLeftAccumulatedDamage = 0;
+p.m_nRightAccumulatedDamage = 0;
+p.m_nLeftAveDamage = 0;
+p.m_nRightAveDamage = 0;
 p.m_bIsOver = false;
 p.m_kLeftTeam = {};
 p.m_kRightTeam = {};
 p.m_kOrigin = nil;
 p.m_kUI = ui_x_battle_ko;
+p.m_kLeftBatch = nil;
+p.m_kRightBatch = nil;
+p.m_kLeftSeq = nil;
+p.m_kRightSeq = nil;
+p.m_nLeftIndex = 1;
+p.m_nRightIndex = 1;
+
+local g_nShakeCount = 0;
+local g_nShakeHandle = 0;
 
 p.m_kLeftUIArray = {
     p.m_kUI.ID_CTRL_LEFT_P_1,
@@ -67,6 +82,11 @@ function p.ShowUI()
 		
 		p.m_kLayer = kLayer;
 	end
+	
+	p.m_kLeftBatch = battle_show.GetNewBatch();
+	--p.m_kRightBatch = battle_show.GetNewBatch();
+	p.m_kLeftSeq = p.m_kLeftBatch:AddSerialSequence();
+	--p.m_kRightSeq = p.m_kLeftBatch:AddSerialSequence();
 
 	if false == p.InitFighters() then
 		return false;
@@ -80,17 +100,26 @@ function p.ShowUI()
 		return false;
 	end
 
-	SetTimer(p.shake,0.01f);
+	--SetTimer(p.shake,0.01f);
 	
 	--pCmd = battle_show.AddActionEffect_ToSequence( 0,p.m_kLeftHp, "lancer.ko_shake");
 	
 	return true;
 end
 
-function p.shake(kNode)
+function p.shake()
+	if g_nShakeCount > 10 then
+		if g_nShakeHandle ~= 0 then
+			KillTimer(g_nShakeHandle);
+			g_nShakeCount = 0;
+		end
+		return;
+	end
+	
 	local x = 5 - math.random(0,10);
 	local y = 5 - math.random(0,10);
 	p.m_kLayer:SetFramePosXY(x,y);
+	g_nShakeCount = g_nShakeCount + 1;
 end
 
 function p.CloseUI()
@@ -183,36 +212,83 @@ function p.InitHpBar()
 end
 
 function p.HpAdd()
-	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 5;
-	p.m_nRightCurrentHp = p.m_nRightCurrentHp - 5;
+	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 50;
+	p.m_nRightCurrentHp = p.m_nRightCurrentHp - 50;
 	
 	if 0 > p.m_nLeftCurrentHp then
 		p.m_nLeftCurrentHp = 0;
 		p.m_kLeftHp:SetProcess(p.m_nLeftTotalHp);
 		KillTimer(p.m_nHpTimer);
+		p.LeftTeamDead(200);
+		p.LeftTeamDead(200);
 		return;
 	end
 	
 	if 0 > p.m_nRightCurrentHp then
 		p.m_nRightCurrentHp = 0;
 		p.m_kRightHp:SetProcess(0);
-		KillTimer(p.m_nHpTimer);
+		KillTimer(p.m_nHpTimer);	
+		p.RightTeamDead(200);	
+		p.RightTeamDead(200);		
 		return;
 	end
 	
+	AddHudEffect("lancer.hero_atk_result_fire");
+	g_nShakeHandle = SetTimer(p.shake,0.01f);
+	
 	p.m_kLeftHp:SetProcess(p.m_nLeftTotalHp - p.m_nLeftCurrentHp);
 	p.m_kRightHp:SetProcess(p.m_nRightCurrentHp);
+	
+	p.LeftTeamDead(50);
+	p.RightTeamDead(50);
+end
+
+function p.LeftTeamDead(nDamage)	
+	if 0 ~= #p.m_kLeftTeam then
+		local kFighter = p.m_kLeftTeam[p.m_nLeftIndex];
+		
+		if nil == kFighter then
+			return;
+		end
+		
+		--local seq = p.m_kLeftBatch:AddSerialSequence();
+		
+		kFighter:SubTmpLife(nDamage);
+		
+		if false == kFighter:CheckTmpLife() then
+		--	kFighter:HurtResultAni(kFighter,seq);
+			battle_show.AddActionEffect_ToParallelSequence(0.1f,kFighter:GetPlayerNode(),"lancer_cmb.role_fadeout");
+			p.m_nLeftIndex = p.m_nLeftIndex + 1;
+		end
+	end
+end
+
+function p.RightTeamDead(nDamage)
+	if 0 ~= #p.m_kRightTeam then
+		local kFighter = p.m_kRightTeam[p.m_nRightIndex];
+		
+		if nil == kFighter then
+			return;
+		end
+		
+		kFighter:SubTmpLife(nDamage);
+		
+		if false == kFighter:CheckTmpLife() then
+			battle_show.AddActionEffect_ToParallelSequence(0.1f,kFighter:GetPlayerNode(),"lancer_cmb.role_fadeout");
+			p.m_nRightIndex = p.m_nRightIndex + 1;
+		end
+	end
 end
 
 function p.MpAdd()
-	p.m_nLeftCurrentMp = p.m_nLeftCurrentMp - 0.6;
+	p.m_nLeftCurrentMp = p.m_nLeftCurrentMp - 0.9;
 	p.m_nRightCurrentMp = p.m_nRightCurrentMp - 0.9;
 	
 	if 0 > p.m_nLeftCurrentMp then
 		p.m_nLeftCurrentMp = 0;
 		p.m_kLeftMp:SetProcess(p.m_nLeftTotalMp);
 		KillTimer(p.m_nMpTimer);
-		p.m_nHpTimer = SetTimer( p.HpAdd, 0.02f );
+		p.m_nHpTimer = SetTimer( p.HpAdd, 1.1f );
 		return;
 	end
 	
@@ -220,7 +296,7 @@ function p.MpAdd()
 		p.m_nRightCurrentMp = 0;
 		p.m_kRightMp:SetProcess(0);
 		KillTimer(p.m_nMpTimer);
-		p.m_nHpTimer = SetTimer( p.HpAdd, 0.02f );
+		p.m_nHpTimer = SetTimer( p.HpAdd, 0.05f );
 		return;
 	end
 	
@@ -237,8 +313,10 @@ function p.AddKoFighters(kUIArray,bLeft)
 	
 	if true == bLeft then
 		uiArray = p.m_kLeftTeam;
+		p.m_nLeftTeamCount = #uiArray;
 	else
 		uiArray = p.m_kRightTeam;
+		p.m_nRightTeamCount = #uiArray;
 	end
 	
 	for i = 1,#uiArray do
@@ -280,6 +358,15 @@ function p.InitFighters()
 	
 	WriteCon(strLeft);
 	WriteCon(strRight);
+	
+	p.m_nLeftAveDamage = p.m_nLeftTotalHp / p.m_nLeftTeamCount;
+	p.m_nRightAveDamage = p.m_nRightTotalHp / p.m_nRightTeamCount;
+	
+	local strLeftAve = string.format("Left team average HP is %d",p.m_nLeftAveDamage);
+	local strRightAve = string.format("Right team average HP is %d",p.m_nRightAveDamage);
+	
+	WriteCon(strLeftAve);
+	WriteCon(strRightAve);
 
 	return true;
 end

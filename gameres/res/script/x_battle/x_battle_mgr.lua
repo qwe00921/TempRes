@@ -231,8 +231,14 @@ end
 
 --ºÏ≤È’Ω∂∑Ω· ¯
 function p.IsBattleEnd()
-	if p.heroCamp:IsAllFighterDead() then return true end
-	if p.enemyCamp:IsAllFighterDead() then return true end
+	if p.heroCamp:IsAllFighterDead() then
+		return true;
+	end
+	
+	if p.enemyCamp:IsAllFighterDead() then
+		return true;
+	end
+
 	return false;
 end
 

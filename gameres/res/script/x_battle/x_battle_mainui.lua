@@ -12,7 +12,7 @@ p.imageMask = nil;
 p.m_nBattleRound = 0;
 
 local useSkill = false;  --当前回合是否用技能攻击
-local isHeroAutoAtk = false; --是否托管（自动攻击）
+local isHeroAutoAtk = true; --是否托管（自动攻击）
 local waitingInput = true;
 
 local atkBtn = nil;
@@ -23,7 +23,7 @@ local idTimer_SortZOrder = 0; --定时更新ZOrder
 --重置
 function p.Reset()
 	useSkill = false;
-	isHeroAutoAtk = false;
+	isHeroAutoAtk = true;
 	waitingInput = true;
 end
 
@@ -168,27 +168,39 @@ function p.OnBtnClicked_Atk(uiNode, uiEventType, param)
 end
 
 --自动按钮点击事件
-function p.OnBtnClicked_Auto(uiNode, uiEventType, param)
-	isHeroAutoAtk = true;
-	p.OnBtnClicked_Atk( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
+function p.OnBtnClicked_Auto(uiNode, uiEventType, param)	
+	if isHeroAutoAtk == true then
+		p.OnBtnClicked_Atk( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
+	end
+end
+
+function p.OnKoRound()
+	battle_ko.ShowUI();
 end
 
 --战斗表现结束的回调
 function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
-	if 1 < p.m_nBattleRound then
+	if 1 < p.m_nBattleRound and isHeroAutoAtk == true then
 		p.HideUI();
-		battle_ko.ShowUI();
+		local id = AddHudEffect( "lancer.enter_battle" );
+	--local id = AddHudEffect( "lancer_cmb.enter_battle" );
+		RegAniEffectCallBack( id, p.OnKoRound );
+		isHeroAutoAtk = false;
 		--p.m_nBattleRound = 0;
 		return;
 	end
 	
-	isHeroAutoAtk = true;
-		
-	p.OnBtnClicked_Auto( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
-	
-	p.m_nBattleRound = p.m_nBattleRound + 1;
+	if isHeroAutoAtk == true then
+		p.OnBtnClicked_Auto( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
+		p.m_nBattleRound = p.m_nBattleRound + 1;
+	else
+		if idTimer_SortZOrder ~= 0 then
+			KillTimer(idTimer_SortZOrder);
+			idTimer_SortZOrder = 0;
+		end
+	end
 	--SetTimer( p.CheckAutoAtk, 0.5f );
 end	
 

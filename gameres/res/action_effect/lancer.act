@@ -148,6 +148,11 @@
 @idle(1)
 @fadeout(0.2)
 @hide
+
+;µ­³ö
+[role_fadeout]
+@fadeout(0.1)
+@hide
 ;}----------------------------
 
 

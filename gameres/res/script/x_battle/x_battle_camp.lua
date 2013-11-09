@@ -220,9 +220,6 @@ function p:AddFighters( uiArray )
 	end
 end
 
-function p.OnTimer_BackJump()
-end
-
 --…Ë÷√fighter≈‰÷√
 
 function p:SetBossConfig( f )
