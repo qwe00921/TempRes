@@ -23,5 +23,5 @@ function p.DamageFromNormalAttack(kFighter_A,kFighter_B)
 		fDamage = 0.0f;
 	end
 	
-	return fDamage;
+	return math.floor(fDamage);
 end

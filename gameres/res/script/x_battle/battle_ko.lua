@@ -67,16 +67,16 @@ function p.ShowUI()
 		
 		p.m_kLayer = kLayer;
 	end
+
+	if false == p.InitFighters() then
+		return false;
+	end
 	
 	if false == p.InitHpBar() then
 		return false;
 	end
 	
 	if false == p.InitMpBar() then
-		return false;
-	end
-	
-	if false == p.InitFighters() then
 		return false;
 	end
 
@@ -88,8 +88,8 @@ function p.ShowUI()
 end
 
 function p.shake(kNode)
-	local x = 10 - math.random(0,20);
-	local y = 10 - math.random(0,20);
+	local x = 5 - math.random(0,10);
+	local y = 5 - math.random(0,10);
 	p.m_kLayer:SetFramePosXY(x,y);
 end
 
@@ -148,11 +148,6 @@ function p.InitHpBar()
         return false;
     end
 	
-	p.m_nLeftCurrentHp = 100;
-	p.m_nRightCurrentHp = 100;
-	p.m_nLeftTotalHp = 100;
-	p.m_nRightTotalHp = 100;
-	
 	p.m_kLeftHp = createNDUIExp();
 	p.m_kRightHp = createNDUIExp();
 	
@@ -184,14 +179,12 @@ function p.InitHpBar()
 	p.m_kLeftHp:SetNoText();
 	p.m_kRightHp:SetNoText();
 	
-	p.m_nHpTimer = SetTimer( p.HpAdd, 0.02f );
-	
 	return true;
 end
 
 function p.HpAdd()
-	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 0.12;
-	p.m_nRightCurrentHp = p.m_nRightCurrentHp - 0.31;
+	p.m_nLeftCurrentHp = p.m_nLeftCurrentHp - 5;
+	p.m_nRightCurrentHp = p.m_nRightCurrentHp - 5;
 	
 	if 0 > p.m_nLeftCurrentHp then
 		p.m_nLeftCurrentHp = 0;
@@ -212,13 +205,14 @@ function p.HpAdd()
 end
 
 function p.MpAdd()
-	p.m_nLeftCurrentMp = p.m_nLeftCurrentMp - 4.52;
-	p.m_nRightCurrentMp = p.m_nRightCurrentMp - 0.51;
+	p.m_nLeftCurrentMp = p.m_nLeftCurrentMp - 0.6;
+	p.m_nRightCurrentMp = p.m_nRightCurrentMp - 0.9;
 	
 	if 0 > p.m_nLeftCurrentMp then
 		p.m_nLeftCurrentMp = 0;
 		p.m_kLeftMp:SetProcess(p.m_nLeftTotalMp);
 		KillTimer(p.m_nMpTimer);
+		p.m_nHpTimer = SetTimer( p.HpAdd, 0.02f );
 		return;
 	end
 	
@@ -226,6 +220,7 @@ function p.MpAdd()
 		p.m_nRightCurrentMp = 0;
 		p.m_kRightMp:SetProcess(0);
 		KillTimer(p.m_nMpTimer);
+		p.m_nHpTimer = SetTimer( p.HpAdd, 0.02f );
 		return;
 	end
 	
@@ -251,6 +246,12 @@ function p.AddKoFighters(kUIArray,bLeft)
 		local kPosition = kImage:GetFramePos();
 		local kFighter = uiArray[i];
 		
+		if true == bLeft then
+			p.m_nLeftTotalHp = p.m_nLeftTotalHp + kFighter.tmplife;
+		else
+			p.m_nRightTotalHp = p.m_nRightTotalHp + kFighter.tmplife;
+		end
+		
 		kFighter:SetPosition(kPosition.x,kPosition.y);
 		kFighter:GetPlayerNode():RemoveFromParent(false);
 		p.m_kLayer:AddChildZ(kFighter:GetPlayerNode(),333);
@@ -271,5 +272,14 @@ function p.InitFighters()
 	p.AddKoFighters(p.m_kLeftUIArray,true);
 	p.AddKoFighters(p.m_kRightUIArray,false);
 	
+	p.m_nLeftCurrentHp = p.m_nLeftTotalHp;
+	p.m_nRightCurrentHp = p.m_nRightTotalHp;
+	
+	local strLeft = string.format("Left team total HP is %d",p.m_nLeftCurrentHp);
+	local strRight = string.format("Right team total HP is %d",p.m_nRightCurrentHp);
+	
+	WriteCon(strLeft);
+	WriteCon(strRight);
+
 	return true;
 end
