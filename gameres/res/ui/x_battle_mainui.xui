@@ -127,7 +127,7 @@ NormalFileUV=0 0 240 240
 [CTRL_BUTTON_SKILL4]
 Type=2
 Tag=14
-Rect=34 133 110 99
+Rect=34 960 110 99
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
