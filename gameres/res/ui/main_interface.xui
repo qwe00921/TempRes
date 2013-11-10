@@ -47,13 +47,13 @@ Rect=0 960 347 643
 [CTRL_MAIN_BUTTON_SHOP]
 Type=2
 Tag=8
-Rect=535 343 72 71
+Rect=395 317 245 104
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=商城按钮
-NormalFile=.\res\image\ui_honor\main_interface\main_shop.png
-NormalFileUV=0 0 90 89
+NormalFile=.\res\image\ui\main_interface\button_shop.png
+NormalFileUV=0 0 240 100
 
 [CTRL_VERTICAL_LIST_8]
 Type=14

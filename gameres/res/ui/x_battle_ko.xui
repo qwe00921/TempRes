@@ -110,8 +110,8 @@ Rect=535 94 39 64
 [CTRL_PICTURE_23]
 Type=1
 Tag=31
-Rect=236 390 497 653
-NormalFile=.\res\image\pet\pic\召唤兽.png
+Rect=236 390 497 639
+NormalFile=.\res\image\pet\pic\pet.png
 NormalFileUV=0 0 700 900
 
 [CTRL_RIGHT_P_2]
@@ -138,7 +138,7 @@ Rect=545 123 39 64
 Type=1
 Tag=30
 Rect=-86 390 497 639
-NormalFile=.\res\image\pet\pic\召唤兽2.png
+NormalFile=.\res\image\pet\pic\pet2.png
 NormalFileUV=0 0 700 900
 
 [CTRL_RIGHT_HP]
