@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_QUESTLIST_BG]
 Type=1
 Tag=1
-Rect=0 0 620 248
+Rect=0 0 618 244
 NormalFile=.\res\image\ui\quest\quest_list_bg.png
 NormalFileUV=0 0 598 239
 
@@ -78,7 +78,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=20
-Rect=317 54 60 70
+Rect=318 76 45 45
 Remark=评价星1
 NormalFile=.\res\image\ui\quest\star.png
 NormalFileUV=0 0 72 84
@@ -86,7 +86,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=21
-Rect=338 53 60 70
+Rect=339 76 45 45
 Remark=评价星2
 NormalFile=.\res\image\ui\quest\star.png
 NormalFileUV=0 0 72 84
@@ -94,7 +94,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=22
-Rect=360 53 60 70
+Rect=359 76 45 45
 Remark=评价星3
 NormalFile=.\res\image\ui\quest\star.png
 NormalFileUV=0 0 72 84
@@ -130,32 +130,44 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_EASY]
 Type=2
 Tag=26
-Rect=168 14 43 50
+Rect=169 14 43 51
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\quest\difficulty.png
-NormalFileUV=0 0 72 84
+NormalFile=.\res\image\ui\quest\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\easy_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\easy_un.png
+DisableFileUV=0 0 44 52
 
 [CTRL_BUTTON_NORMAL]
 Type=2
 Tag=27
-Rect=220 15 43 50
+Rect=220 14 43 51
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\quest\difficulty.png
-NormalFileUV=0 0 72 84
+NormalFile=.\res\image\ui\quest\normal.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\normal_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\normal_un.png
+DisableFileUV=0 0 44 52
 
 [CTRL_BUTTON_DIFFICULT]
 Type=2
 Tag=28
-Rect=274 15 43 50
+Rect=274 14 43 51
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\quest\difficulty.png
-NormalFileUV=0 0 72 84
+NormalFile=.\res\image\ui\quest\hard.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\hard_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\hard_un.png
+DisableFileUV=0 0 44 52
 
 [CTRL_PICTURE_ITEM1]
 Type=1

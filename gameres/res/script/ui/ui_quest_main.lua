@@ -10,4 +10,3 @@ p.ID_CTRL_BUTTON_SHOP					    = 5;	--商店/酒馆按钮
 p.ID_CTRL_VERTICAL_LIST_QUEST			= 4;	--任务列表
 p.ID_CTRL_PICTURE_TITLE				   = 2;	--任务栏标题
 p.ID_CTRL_PICTURE_BG					     = 1;	--关卡背景图片
-p.ID_CTRL_PICTURE_3					      = 3;
