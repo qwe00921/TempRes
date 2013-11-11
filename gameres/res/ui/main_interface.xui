@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -34,7 +34,7 @@ NormalFileUV=0 0 245 104
 [CTRL_PICTURE_CHA]
 Type=1
 Tag=12
-Rect=0 215 448 643
+Rect=-61 321 461 460
 Remark=助手形象
 NormalFile=.\res\image\ui\main_interface\pic_cha.png
 NormalFileUV=0 0 449 643
