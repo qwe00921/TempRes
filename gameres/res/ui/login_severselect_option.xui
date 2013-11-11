@@ -6,22 +6,24 @@ Height=640
 [CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION]
 Type=2
 Tag=2
-Rect=0 0 360 55
+Rect=0 0 360 79
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui_honor\login\login_severoption.png
+NormalFileUV=0 0 245 87
 
 [CTRL_LOGIN_CTRL_PICTURE_SEVEROPTION]
 Type=1
 Tag=22
-Rect=0 0 357 49
-NormalFile=.\res\image\ui_honor\login\login_severoption.png
-NormalFileUV=0 0 349 48
+Rect=145 640 357 66
+NormalFile=.\res\image\ui_honor\login\logyin_button.png
+NormalFileUV=0 0 245 87
 
 [CTRL_LOGIN_CTRL_TEXT_SEVEROPTION]
 Type=4
 Tag=24
-Rect=7 3 350 50
+Rect=14 11 350 50
 Text=xxx区（xxxxxxxx）
 TextTradition=xxx區（xxxxxxxx）
 TextSize=36

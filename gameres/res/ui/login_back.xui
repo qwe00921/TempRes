@@ -7,7 +7,7 @@ Height=960
 Type=1
 Tag=1
 Rect=0 0 640 960
-NormalFile=.\res\image\ui_honor\login\login_bg1.png
+NormalFile=.\res\image\ui_honor\login\login_bg3.png
 NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_102]

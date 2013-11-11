@@ -90,7 +90,7 @@ Remark=星灵名字label
 [CTRL_BUTTON_CARD1]
 Type=2
 Tag=24
-Rect=9 379 145 215
+Rect=-584 931 145 215
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -103,7 +103,7 @@ SelectedFileUV=0 0 145 215
 [CTRL_BUTTON_CARD2]
 Type=2
 Tag=25
-Rect=167 379 145 215
+Rect=-426 931 145 215
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -115,7 +115,7 @@ SelectedFileUV=0 0 145 215
 [CTRL_BUTTON_CARD3]
 Type=2
 Tag=26
-Rect=325 379 145 215
+Rect=-267 929 145 215
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -127,7 +127,7 @@ SelectedFileUV=0 0 145 215
 [CTRL_BUTTON_CARD4]
 Type=2
 Tag=27
-Rect=483 379 145 215
+Rect=-109 929 145 215
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

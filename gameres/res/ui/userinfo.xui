@@ -16,15 +16,15 @@ Rect=0 960 244 625
 [CTRL_PICTURE_TITLE]
 Type=1
 Tag=14
-Rect=0 0 640 117
+Rect=0 0 640 120
 Remark=人物信息框底背景
 NormalFile=.\res\image\ui\main_interface\info_title.png
-NormalFileUV=0 0 640 117
+NormalFileUV=0 0 640 120
 
 [CTRL_TEXT_USERNAME]
 Type=4
 Tag=15
-Rect=30 7 233 37
+Rect=30 16 233 37
 TextSize=32
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -33,21 +33,21 @@ Remark=角色名字
 [CTRL_PICTURE_13]
 Type=1
 Tag=16
-Rect=20 54 171 31
+Rect=20 66 171 31
 NormalFile=.\res\image\ui\main_interface\user_money_frame.png
 NormalFileUV=0 0 402 74
 
 [CTRL_PICTURE_14]
 Type=1
 Tag=17
-Rect=196 54 123 31
+Rect=196 66 123 31
 NormalFile=.\res\image\ui\main_interface\user_money_frame.png
 NormalFileUV=0 0 402 74
 
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=18
-Rect=25 59 20 20
+Rect=29 72 20 20
 Remark=金币标识
 NormalFile=.\res\image\ui\main_interface\money.png
 NormalFileUV=0 0 41 51
@@ -55,7 +55,7 @@ NormalFileUV=0 0 41 51
 [CTRL_TEXT_16]
 Type=4
 Tag=19
-Rect=53 58 131 21
+Rect=53 71 131 21
 TextSize=24
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
@@ -63,14 +63,14 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_17]
 Type=1
 Tag=20
-Rect=193 55 30 30
+Rect=202 68 26 26
 NormalFile=.\res\image\ui\main_interface\coin.png
 NormalFileUV=0 0 63 61
 
 [CTRL_TEXT_18]
 Type=4
 Tag=21
-Rect=229 56 79 28
+Rect=229 67 84 28
 TextSize=24
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
@@ -78,14 +78,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_19]
 Type=1
 Tag=22
-Rect=313 10 40 37
+Rect=330 19 40 27
 Text=LV
 TextTradition=LV
+NormalFile=.\res\image\ui\main_interface\info_level.png
+NormalFileUV=0 0 50 34
 
 [CTRL_TEXT_20]
 Type=4
 Tag=23
-Rect=353 10 60 37
+Rect=372 13 60 37
 TextSize=32
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -94,25 +96,25 @@ Remark=玩家等级文本
 [CTRL_PICTURE_21]
 Type=1
 Tag=25
-Rect=330 52 65 37
-Text=体力
-TextTradition=體力
+Rect=330 60 65 37
+NormalFile=.\res\image\ui\main_interface\info_act.png
+NormalFileUV=0 0 60 34
 
 [CTRL_PICTURE_EXP]
 Type=1
 Tag=26
-Rect=430 13 203 31
+Rect=430 13 203 35
 Remark=经验跳底图
 NormalFile=.\res\image\ui\main_interface\exp.png
-NormalFileUV=0 0 156 24
+NormalFileUV=0 0 188 32
 
 [CTRL_PICTURE_ACT]
 Type=1
 Tag=28
-Rect=395 56 235 36
+Rect=395 58 235 40
 Remark=体力条内底图
 NormalFile=.\res\image\ui\main_interface\exp.png
-NormalFileUV=0 0 156 24
+NormalFileUV=0 0 188 32
 
 [CTRL_PICTURE_26]
 Type=1
@@ -179,13 +181,13 @@ NormalFileUV=0 0 74 85
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=37
-Rect=0 820 121 127
+Rect=0 820 121 149
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=返回主页按钮
 NormalFile=.\res\image\ui\main_interface\button_back.png
-NormalFileUV=0 0 76 80
+NormalFileUV=0 0 120 148
 
 [CTRL_TEXT_33]
 Type=4
@@ -201,7 +203,7 @@ Remark=跑马灯
 [CTRL_TEXT_34]
 Type=4
 Tag=39
-Rect=434 62 159 23
+Rect=434 65 159 23
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
