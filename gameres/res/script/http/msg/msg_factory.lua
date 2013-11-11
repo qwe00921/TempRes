@@ -13,10 +13,8 @@ function CreateMsg( idmsg )
 	
 	if idmsg == 1 then
 		msg = msg_test:new();
-		
 	elseif idmsg == MSG_PLAYER then
 	    msg = msg_player:new();
-
 	elseif idmsg == MSG_CREATE_PLAYER then
 		msg = msg_create_player:new();
 		
@@ -154,7 +152,7 @@ function CreateMsg( idmsg )
     
     elseif idmsg == MSG_BATTLE_TURN_END then       
         msg = msg_battle_turn_end:new();
-                                
+
     elseif idmsg == MSG_WATCH_PLAYER then       
         msg = msg_watch_player:new(); 
 

@@ -6,7 +6,8 @@ function p:new()
 	o = {}
 	setmetatable(o, self);
 	self.__index = self;
-	o:ctor();return o;
+	o:ctor();
+	return o;
 end
 
 function p:ctor()

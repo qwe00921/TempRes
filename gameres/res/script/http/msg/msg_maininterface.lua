@@ -1,4 +1,3 @@
-
 msg_maininterface = msg_base:new();
 local p = msg_maininterface;
 local super = msg_base;
@@ -34,8 +33,3 @@ function p:Process()
 		--dlg_createrole.ShowUI();
 	end
 end
-
-
-
-
-

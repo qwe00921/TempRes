@@ -80,4 +80,3 @@ DoFile("http/response/resp_base.lua");
 DoFile("http/response/resp_test.lua");
 DoFile("http/response/resp_factory.lua");
 DoFile("http/response/json2lua_helper.lua");
-
