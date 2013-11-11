@@ -33,7 +33,6 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate();
-	
 end
 
 function p.SetDelegate()
