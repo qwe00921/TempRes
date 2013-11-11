@@ -183,6 +183,10 @@ image\fx\pve\hero_skill_tornado1.png @cut(2,5) @time=0.08 @offset(-10,-10)
 image\fx\pve\hero_skill_tornado2.png @cut(1,7) @time=0.08 @offset(-30,200)
 
 ;-----------------------------------------------------
+;Í¸Ã÷ÌùÍ¼
+[power_process]
+image\xbattleui\ko_alpha.png
+image\ui\x_battle_main_ui\pet_skill.png
 
 ;heroÑªÌõ
 [hpbar]
@@ -191,6 +195,7 @@ image\fx\pve\hero_skill_tornado2.png @cut(1,7) @time=0.08 @offset(-30,200)
 image\xbattleui\ko_hp.png (146,0,146,44)
 image\xbattleui\ko_bg.png
 image\xbattleui\ko_mp.png
+image\xbattleui\ko_alpha.png
 
 [hpbar_v2]
 lj\hpbar_bk_v2.png

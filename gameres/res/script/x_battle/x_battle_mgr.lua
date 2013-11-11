@@ -206,17 +206,9 @@ end
 --退出战斗
 function p.QuitBattle()
 	WriteCon( "x_battle_mgr.QuitBattle()" );
-	
-	--关闭战斗部分
-	--x_battle_pve.CloseUI();
+
 	x_battle_pvp.CloseUI();
 	x_battle_mainui.CloseUI();
-	
-	--显示主界面和地图
-	--GetTileMap():SetVisible( true );
-	--task_map_mainui.ShowUI();
-
-	--dlg_userinfo2.ShowUI();
 
 	WriteCon( "========111111111111" );
 	game_main.EnterWorldMap();
@@ -295,8 +287,6 @@ function p.CampBattle(campType)
 		if 30 > nAttakType then
 			local target = defenseCampAliveFighter[defenderId];
 			attacker:Atk( target, batch );
-			--attacker:Atk( target, batch );
-			--attacker:JumpToPosition(batch,target:GetNode():GetCenterPos());
 		elseif 50 > nAttakType then
 			local target = defenseCampAliveFighter[defenderId];
 			attacker:AtkSkill( target, batch,1,1,1);
@@ -311,10 +301,10 @@ function p.CampBattle(campType)
 		
 		--设置批次等待
 		if useParallelBatch and (prevBatch ~= nil) then
---[[			local cmdSpecial = prevBatch:GetSpecialCmd( E_BATCH_STAGE_HURT_END );
+			local cmdSpecial = prevBatch:GetSpecialCmd( E_BATCH_STAGE_HURT_END );
 			if cmdSpecial ~= nil then
 				batch:SetWaitEnd( cmdSpecial );
-			end--]]
+			end
 		end
 		prevBatch = batch;
 	end

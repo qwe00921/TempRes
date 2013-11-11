@@ -101,10 +101,6 @@ function p.ShowUI()
 	if false == p.InitMpBar() then
 		return false;
 	end
-
-	--SetTimer(p.shake,0.01f);
-	
-	--pCmd = battle_show.AddActionEffect_ToSequence( 0,p.m_kLeftHp, "lancer.ko_shake");
 	
 	return true;
 end
@@ -153,7 +149,7 @@ function p.InitMpBar()
 	p.m_kRightMp:Init("","");
 	
 	local picBg = GetPictureByAni( "lancer.hpbar", 2 );
-	local picFg = GetPictureByAni( "lancer.hpbar", 1 );
+	local picFg = GetPictureByAni( "lancer.hpbar", 3 );
 	
 	if nil == picBg or nil == picFg then
 		WriteCon("Can't found hp bar picture!");
@@ -208,7 +204,7 @@ function p.InitHpBar()
 	kHpRightImage:SetZOrder(2);
 	
 	local picBg = GetPictureByAni( "lancer.hpbar", 0 );
-	local picFg = GetPictureByAni( "lancer.hpbar", 1 );
+	local picFg = GetPictureByAni( "lancer.hpbar", 3 );
 	
 	if nil == picBg or nil == picFg then
 		WriteCon("Can't found hp bar picture!");

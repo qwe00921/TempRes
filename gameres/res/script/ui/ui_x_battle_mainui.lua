@@ -4,8 +4,8 @@
 --------------------------------------------------------------
 ui_x_battle_mainui = {};
 local p =  ui_x_battle_mainui;
+p.ID_CTRL_HOR3SLICES_POWER			 = 43;
 p.ID_CTRL_PICTURE_PET					    = 36;	--召唤兽形象
-p.ID_CTRL_HOR3SLICES_POWER			 = 22;	--怒气值遮罩
 p.ID_CTRL_BUTTON_20					      = 23;
 p.ID_CTRL_TEXT_POWER					     = 20;	--怒气值数值
 p.ID_CTRL_TEXT_PET_NAME				   = 19;	--召唤兽名字

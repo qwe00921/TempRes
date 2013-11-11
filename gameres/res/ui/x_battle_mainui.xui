@@ -188,15 +188,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_HOR3SLICES_POWER]
-Type=23
-Tag=22
-Rect=188 870 303 85
-Remark=怒气值遮罩
-Stretch=1
-NormalFile=.\res\image\ui\x_battle_main_ui\pet_skill.png
-NormalFileUV=0 0 60 90
-
 [CTRL_PICTURE_PET]
 Type=1
 Tag=36
@@ -204,3 +195,11 @@ Rect=414 764 227 197
 Remark=召唤兽形象
 NormalFile=.\res\image\pet\head\pet_head2.png
 NormalFileUV=0 0 230 200
+
+[CTRL_HOR3SLICES_POWER]
+Type=10
+Tag=43
+Rect=46 872 365 84
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

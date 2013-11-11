@@ -10,6 +10,9 @@ local p = x_battle_mainui;
 p.layer = nil;
 p.imageMask = nil;
 p.m_nBattleRound = 0;
+p.m_kPower = nil;
+p.m_nPowerTimer = 0;
+p.m_fPowerPercent = 0.0f;
 
 local useSkill = false;  --当前回合是否用技能攻击
 local isHeroAutoAtk = true; --是否托管（自动攻击）
@@ -51,10 +54,46 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate(layer);
+	p.m_kPower = GetExp(p.layer,ui_x_battle_mainui.ID_CTRL_HOR3SLICES_POWER);
+
+	if nil == p.m_kPower then
+		WriteCon("Power process bar is nil");
+		return false;
+	end
+	
+	if false == p.InitialisePowerProcessBar() then
+		WriteCon("InitialisePowerProcessBar failed");
+		return false;
+	end
+	
 	--p.InitBossHpBar();
 	
 	--添加蒙版图片
 --	p.AddMaskImage();
+
+	return true;
+end
+
+function p.InitialisePowerProcessBar()
+	if nil == p.m_kPower then
+		return false;
+	end
+	
+	local kFgImage = GetPictureByAni("lancer.power_process",0);
+	local kBgImage = GetPictureByAni("lancer.power_process",1);
+	
+	if nil == kFgImage or nil == kBgImage then
+		WriteCon("Can't find lancer.power_process images!");
+		return false;
+	end
+	
+	p.m_kPower:SetPicture(kBgImage,kFgImage);
+	p.m_kPower:SetUse3Slices(true,false);
+	p.m_kPower:SetTotal(100);
+	p.m_kPower:SetProcess(0.0f);
+	p.m_kPower:SetFramePosXY(200,200);
+	
+	return true;
 end
 
 function p.StartBattleEffect()
@@ -195,14 +234,28 @@ function p.OnBattleShowFinished()
 	if isHeroAutoAtk == true then
 		p.OnBtnClicked_Auto( nil, NUIEventType.TE_TOUCH_CLICK, 0 );
 		p.m_nBattleRound = p.m_nBattleRound + 1;
+		
+		if 0 == p.m_nPowerTimer then
+			p.m_nPowerTimer = SetTimer(p.OnPowerProcessBarTimer,0.1f);
+		end
 	else
 		if idTimer_SortZOrder ~= 0 then
 			KillTimer(idTimer_SortZOrder);
 			idTimer_SortZOrder = 0;
 		end
+		
+		if p.m_nPowerTimer ~= 0 then
+			KillTimer(p.m_nPowerTimer);
+			p.m_nPowerTimer = 0;
+		end
 	end
 	--SetTimer( p.CheckAutoAtk, 0.5f );
-end	
+end
+
+function p.OnPowerProcessBarTimer()
+	p.m_fPowerPercent = p.m_fPowerPercent + 0.1f;
+	p.m_kPower:SetProcess(p.m_fPowerPercent);
+end
 
 --自动攻击
 function p.CheckAutoAtk()

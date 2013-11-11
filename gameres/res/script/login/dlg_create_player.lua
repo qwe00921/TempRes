@@ -27,7 +27,6 @@ p.create_user_id = 0;
 
 --œ‘ æUI
 function p.ShowUI()
-
 	p.curPlayerChoose = 1;
 
 	if p.layer ~= nil then

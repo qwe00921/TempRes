@@ -39,18 +39,8 @@ end
 
 --服务器列表
 function p.ShowServerList()
-	
 	local ServerList = p.ServerList;
 	local serverListTable = GetListBoxVert(p.layer, ui.ID_CTRL_LIST_3);
-	
-	--计算服务器列表长度
-	-- local TableLength = 0;
-	-- for k,v in pairs(ServerList) do
-		-- TableLength = TableLength+1;
-	-- end
-	-- WriteCon("**TableLength = "..TableLength); 
-	
-	--取得服务器列表对应数据
 
 	for k,v in pairs(ServerList) do
 		

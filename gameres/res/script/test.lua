@@ -82,12 +82,16 @@ function p.test()
 	
 	--直接进战斗
 	--p.EnterBattle();
-	--x_battle_mgr.EnterBattle();
+	x_battle_mgr.EnterBattle();
 --	--测试utf8子串
 --	p.TestUtf8String();
     
     --测试剧情
 	--dlg_drama.ShowUI(2);
+	
+	--测试创建角色
+	--dlg_createrole.ShowUI();
+	--dlg_create_player.ShowUI();
 	
 	--测试劫争
 	--battle_ko.ShowUI();

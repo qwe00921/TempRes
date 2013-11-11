@@ -134,7 +134,6 @@ function p.ReSetSkillNameBarPos()
 	skillNameBar:DelAniEffect("x_cmb.skill_name_fx_reverse");
 end
 
-
 --≥ı ºªØ’Ω∂∑
 function p.InitBattle()
 	x_battle_mgr.uiLayer = p.battleLayer;
