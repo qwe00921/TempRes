@@ -91,8 +91,8 @@ function p.InitialisePowerProcessBar()
 	p.m_kPower:SetUse3Slices(true,false);
 	p.m_kPower:SetTotal(100);
 	p.m_kPower:SetProcess(0.0f);
-	p.m_kPower:SetFramePosXY(200,200);
-	p.m_kPower:SetReserverExp(true);
+--	p.m_kPower:SetFramePosXY(200,200);
+	p.m_kPower:SetReverseExp(true);
 	
 	return true;
 end
@@ -254,7 +254,7 @@ function p.OnBattleShowFinished()
 end
 
 function p.OnPowerProcessBarTimer()
-	p.m_fPowerPercent = p.m_fPowerPercent + 0.1f;
+	p.m_fPowerPercent = p.m_fPowerPercent + 1.1f;
 	p.m_kPower:SetProcess(p.m_fPowerPercent);
 end
 
