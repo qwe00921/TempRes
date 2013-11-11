@@ -92,6 +92,7 @@ function p.InitialisePowerProcessBar()
 	p.m_kPower:SetTotal(100);
 	p.m_kPower:SetProcess(0.0f);
 	p.m_kPower:SetFramePosXY(200,200);
+	p.m_kPower:SetReserverExp(true);
 	
 	return true;
 end
