@@ -77,8 +77,10 @@ function p.ShowUI()
 		GetRunningScene():AddChild(kLayer);
 		
 	    LoadUI("x_battle_ko.xui",kLayer, nil);
-		
-		local kImage = GetImage(kLayer,ui_x_battle_ko.ID_CTRL_PICTURE_23);
+		local kBgImage = GetImage(kLayer,p.m_kUI.ID_CTRL_PICTURE_BG);
+		kBgImage:SetZOrder(0);
+		local kVSImage = GetImage(kLayer,p.m_kUI.ID_CTRL_PICTURE_34);
+		kVSImage:SetZOrder(0);
 		
 		p.m_kLayer = kLayer;
 	end
@@ -135,6 +137,14 @@ function p.InitMpBar()
 	p.m_nRightCurrentMp = 100;
 	p.m_nLeftTotalMp = 100;
 	p.m_nRightTotalMp = 100;
+	local kMpLeftImage = GetImage(p.m_kLayer,p.m_kUI.ID_CTRL_PICTURE_36);
+	local kMpRightImage = GetImage(p.m_kLayer,p.m_kUI.ID_CTRL_PICTURE_38);
+	kMpLeftImage:SetZOrder(2);
+	kMpRightImage:SetZOrder(2);
+	local kLeftMpPos = kMpLeftImage:GetFramePos();
+	local kLeftMpSize = kMpLeftImage:GetFrameSize();
+	local kRightMpPos = kMpRightImage:GetFramePos();
+	local kRightMpSize = kMpRightImage:GetFrameSize();
 	
 	p.m_kLeftMp = createNDUIExp();
 	p.m_kRightMp = createNDUIExp();
@@ -155,14 +165,16 @@ function p.InitMpBar()
 	p.m_kLeftMp:SetTotal(p.m_nLeftTotalMp);
 	p.m_kLeftMp:SetProcess(p.m_nLeftTotalMp - p.m_nLeftCurrentMp);
 	
-	p.m_kRightMp:SetTotal(p.m_nRightCurrentMp);
+	p.m_kRightMp:SetTotal(p.m_nRightTotalMp);
 	p.m_kRightMp:SetProcess(p.m_nRightTotalMp);
 	
-	p.m_kLayer:AddChildZ(p.m_kLeftMp,100);
-	p.m_kLayer:AddChildZ(p.m_kRightMp,100);
+	p.m_kLayer:AddChildZ(p.m_kLeftMp,1);
+	p.m_kLayer:AddChildZ(p.m_kRightMp,1);
 	
-	p.m_kLeftMp:SetFrameRect(CCRectMake(640 / 2 - 200 - 10,480,200,80));
-	p.m_kRightMp:SetFrameRect(CCRectMake(640 / 2 + 10,480,200,80));
+	local kSize = CCSizeMake(238,33);
+	
+	p.m_kLeftMp:SetFrameRect(CCRectMake(kLeftMpPos.x + 10,kLeftMpPos.y + 10,kLeftMpSize.w - 20,kLeftMpSize.h - 10));
+	p.m_kRightMp:SetFrameRect(CCRectMake(kRightMpPos.x + 10,kRightMpPos.y + 10,kRightMpSize.w - 20,kRightMpSize.h - 10));
 	
 	p.m_kLeftMp:SetNoText();
 	p.m_kRightMp:SetNoText();
@@ -180,8 +192,20 @@ function p.InitHpBar()
 	p.m_kLeftHp = createNDUIExp();
 	p.m_kRightHp = createNDUIExp();
 	
+	local kSize = CCSizeMake(238,33);
+	
+	local kHpLeftImage = GetImage(p.m_kLayer,p.m_kUI.ID_CTRL_PICTURE_35);
+	local kHpRightImage = GetImage(p.m_kLayer,p.m_kUI.ID_CTRL_PICTURE_37);
+	local kLeftHpPos = kHpLeftImage:GetFramePos();
+	local kLeftHpSize = kHpLeftImage:GetFrameSize();
+	local kRightHpPos = kHpRightImage:GetFramePos();
+	local kRightHpSize = kHpRightImage:GetFrameSize();
+	
 	p.m_kLeftHp:Init("","");
 	p.m_kRightHp:Init("","");
+	
+	kHpLeftImage:SetZOrder(2);
+	kHpRightImage:SetZOrder(2);
 	
 	local picBg = GetPictureByAni( "lancer.hpbar", 0 );
 	local picFg = GetPictureByAni( "lancer.hpbar", 1 );
@@ -199,11 +223,11 @@ function p.InitHpBar()
 	p.m_kRightHp:SetTotal(p.m_nRightCurrentHp);
 	p.m_kRightHp:SetProcess(p.m_nRightTotalHp);
 	
-	p.m_kLayer:AddChildZ(p.m_kLeftHp,100);
-	p.m_kLayer:AddChildZ(p.m_kRightHp,100);
+	p.m_kLayer:AddChildZ(p.m_kLeftHp,1);
+	p.m_kLayer:AddChildZ(p.m_kRightHp,1);
 	
-	p.m_kLeftHp:SetFrameRect(CCRectMake(640 / 2 - 200 - 10,400,200,80));
-	p.m_kRightHp:SetFrameRect(CCRectMake(640 / 2 + 10,400,200,80));
+	p.m_kLeftHp:SetFrameRect(CCRectMake(kLeftHpPos.x + 10,kLeftHpPos.y + 5,kLeftHpSize.w - 25,kLeftHpSize.h - 10));
+	p.m_kRightHp:SetFrameRect(CCRectMake(kRightHpPos.x + 10,kRightHpPos.y + 5,kRightHpSize.w - 25,kRightHpSize.h - 10));
 	
 	p.m_kLeftHp:SetNoText();
 	p.m_kRightHp:SetNoText();
@@ -217,7 +241,7 @@ function p.HpAdd()
 	
 	if 0 > p.m_nLeftCurrentHp then
 		p.m_nLeftCurrentHp = 0;
-		p.m_kLeftHp:SetProcess(p.m_nLeftTotalHp);
+		p.m_kLeftHp:SetProcess(0);
 		KillTimer(p.m_nHpTimer);
 		p.LeftTeamDead(200);
 		p.LeftTeamDead(200);

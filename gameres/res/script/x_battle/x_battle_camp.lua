@@ -213,6 +213,9 @@ function p:AddFighters( uiArray )
 		f.attack_min = 90 - i * 3;
 		f.attack_max = 110 - i * 3;
 		f.strike_level = i * 200;
+
+		local ft = self.fighters[1];
+		ft.defence = 100;
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
