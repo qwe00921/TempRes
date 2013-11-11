@@ -39,15 +39,10 @@ end
 function p:CreateHpBar()
 	if self.hpbar == nil or self.m_kShadow == nil then
 		self.hpbar = x_hp_bar:new();
-		--self.m_kShadow = shadow:new();
 		self.hpbar:CreateExpNode();
 		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
-		--self.node:AddChildZ(self.m_kShadow:GetNode(),200);
 		self.hpbar:Init( self.node, self.life, self.lifeMax );
 		self.hpbar:HideBar();
-	--	local pShadow = self.m_kShadow:Init("lancer.shadow",self.node);
-		--self.node:AddChildZ(pShadow,-1);
-		--self.node:SetShadowImage(self.m_kShadow:GetNode());
 	end	
 end
 
@@ -66,6 +61,14 @@ end
 
 function p:SubTmpLife( val )
 	self.tmplife = self.tmplife - val;
+end
+
+function p:SubTmpLifeHeal( val )
+	self.tmplife = self.tmplife + val;
+	
+	if self.tmplife > self.lifeMax then
+		self.tmplife = self.lifeMax;
+	end
 end
 
 --加载配置
@@ -160,7 +163,7 @@ function p:cmdMoveTo( playerNodePos, targetPos, seq, isEnemyCamp )
 	return cmd;
 end
 
-function p:HurtResultAni( targetFighter, seqTarget )
+function p:HurtResultAni( targetFighter, seqTarget,seqShadow)
 	--死亡动作或站立动画
 	if targetFighter:CheckTmpLife() then
 		self:standby();
@@ -172,6 +175,12 @@ function p:HurtResultAni( targetFighter, seqTarget )
 		
 		local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
 		seqTarget:AddCommand( cmdC );
+		
+		if nil ~= seqShadow then
+			local cmdD = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die_v2" );
+			seqShadow:AddCommand(cmdD);
+			cmdD:SetWaitBegin(cmdC);
+		end
 		
 		--local kPlayerNode = targetFighter:GetPlayerNode();
 		--kPlayerNode:SetShadowVisible(false);
@@ -185,6 +194,7 @@ function p:Atk( targetFighter, batch)
 	--创建序列给攻击者、受击者
 	local seqAtk 	= batch:AddSerialSequence();
 	local seqTarget = batch:AddSerialSequence();
+	local seqShadow = batch:AddSerialSequence();
 	local seqMisc =   batch:AddSerialSequence();
 	local seqMusic =   batch:AddSerialSequence();
 	
@@ -209,11 +219,6 @@ function p:Atk( targetFighter, batch)
 	else
 		enemyPos = targetFighter:GetFrontPos(self:GetNode());
 	end
-
-	
-	--if self.atkType==RANGED_ATTACK then
-	--	enemyPos.x=enemyPos.x -200;
-	--end
 	
 	if (seqAtk == nil) or (seqTarget == nil) then
 		WriteCon( "create 2 seq failed");
@@ -228,19 +233,24 @@ function p:Atk( targetFighter, batch)
 	
 	--向攻击目标移动
 	local cmd2 = self:JumpMoveTo(enemyPos,seqAtk,false);
-	--local cmd2 = self:cmdMoveTo( originalPos, enemyPos, seqAtk, isEnemyCamp );
-	
---	self.m_kShadow:MoveTo(originalPos,enemyPos);
 	
 	originalPos = self:GetNode():GetCenterPos();
 	
 	--攻击敌人动画
 	local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );
 	seqAtk:AddCommand( cmd3 );
+	cmd3:SetDelay(0.2f); --设置攻击延迟
+	
+	local cmdBack = createCommandEffect():AddActionEffect( 0, targetFighter:GetNode(), "lancer.target_hurt_back" );
+	cmdBack:SetDelay(playerNode:GetSkillKeyTime_Atk(""));
+	seqTarget:AddCommand( cmdBack );
 	
 	--设置攻击特效
 	self:setAtkFx( seqMisc );
-	seqMisc:SetWaitBegin( cmd3 );
+	seqMisc:SetWaitBegin(cmd3);
+	
+	local cmdForward = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer.target_hurt_back_reset" );
+	seqTarget:AddCommand( cmdForward );	
 	
 	--设置音乐特效
 	self:setAtkMusic( seqMusic )
@@ -252,26 +262,33 @@ function p:Atk( targetFighter, batch)
 	
 	--返回原来的位置
 	local cmd5 = self:JumpMoveTo(originalPos, seqAtk, true );
+	cmd5:SetDelay(0.5f);
 	
 	------------受击者-----------------------
 	
 	--受击动画
 	local cmd10 = createCommandPlayer():Hurt( 0, targetNode, "" );
 	seqTarget:AddCommand( cmd10 );
-	cmd10:SetDelay( playerNode:GetAtkKeyTime_Hurt(""));
+	--cmd10:SetDelay(0.5f);
 	cmd10:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
 	
 	--飘血
-	local fDamage = battle_compute.DamageFromNormalAttack(self,targetFighter);
-	local cmd11 = targetFighter:cmdLua( "fighter_damage", fDamage, "", seqTarget );
+	local bStrike = battle_compute.IsFighterStrike(self);
+	local fDamage = battle_compute.DamageFromNormalAttack(self,targetFighter,bStrike);
+	local cmd11 = nil;
+	if bStrike then
+		cmd11 = targetFighter:cmdLua( "fighter_strike_damage", fDamage, "", seqTarget );
+	else
+		cmd11 = targetFighter:cmdLua( "fighter_damage", fDamage, "", seqTarget );
+	end
 	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", fDamage, "", seqTarget );
 	--local cmd22 = targetFighter:cmdLua( "AddMaskImage", 0, "", seqTarget );
 	
 	--受攻击的后续动画【死亡 OR 站立】
-	self:HurtResultAni( targetFighter, seqTarget );
+	self:HurtResultAni( targetFighter, seqTarget,seqShadow);
 	
 	--受击等待攻击动画
-	seqTarget:SetWaitBegin( cmd5 );
+	seqTarget:SetWaitEnd(cmd2 );
 	
 end
 
@@ -371,6 +388,7 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	local seqMisc =   batch:AddSerialSequence();
 	local seqMiscHurt =   batch:AddParallelSequence();
 	local seqMusic =   batch:AddSerialSequence();
+	local seqShadow =   batch:AddSerialSequence();
 	
 	if (seqAtk == nil) or (seqTarget == nil) or (seqBullet == nil) or (seqGround == nil) then
 		WriteCon( "create 3 seq failed");
@@ -452,7 +470,7 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 		--seqMiscHurt:AddCommand( cmdBack );
 	--	cmdBack:SetDelay(playerNode:GetSkillKeyTime_Atk(""));
 	end
-	seqMiscHurt:SetWaitBegin( cmd2 );
+	seqMiscHurt:SetWaitBegin(cmd2);
 	
 	--飘血
 	local cmd12 = targetFighter:cmdLua( "fighter_damage", 80, "", seqTarget );
@@ -464,14 +482,14 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	end
 	
 	--受攻击的后续动画【死亡 OR 站立】
-	self:HurtResultAni( targetFighter, seqTarget );
+	self:HurtResultAni( targetFighter, seqTarget,seqShadow);
 		
 	--受击者序列等待子弹打到目标点
 	seqTarget:SetWaitEnd( cmd2 );
 end
 
 --群攻
-function p:AtkSkillOneToCamp( camp, batch )
+function p:AtkSkillOneToCamp( camp, batch,bHeal)
 	WriteCon( ".............AtkAOE.............");
 	
 	if camp == nil or batch == nil then 
@@ -484,6 +502,7 @@ function p:AtkSkillOneToCamp( camp, batch )
 	
 	--创建序列给攻击者
 	local seqAtk = batch:AddSerialSequence();
+	local seqShadow = batch:AddSerialSequence();
 	if seqAtk == nil then return end;
 	
 	local playerNode = self:GetPlayerNode();
@@ -497,6 +516,7 @@ function p:AtkSkillOneToCamp( camp, batch )
 	seqAtk:AddCommand( cmd3 );
 	
 	--受
+	local bStrike = battle_compute.IsFighterStrike(self);	
 	local targetAlive = camp:GetAliveFighters();
 	for i = 1, #targetAlive do
 		local target = targetAlive[i];
@@ -505,13 +525,17 @@ function p:AtkSkillOneToCamp( camp, batch )
 			local seq1 = batch:AddSerialSequence();
 			if seq1 ~= nil then
 				--受击特效
-				local cmd11;
+				local cmd11 = nil;
 				--if self.petTag == PET_BLUE_DEVIL_TAG then
 				--	cmd11 = createCommandEffect():AddFgEffect( 0.01, target:GetNode(), "x.blue_devil_fx_target_hurt" );
 				--elseif self.petTag == PET_FLY_DRAGON_TAG then
 					--cmd11 = createCommandEffect():AddFgEffect( 0.01, target:GetNode(), "x.dragon_fx_target_hurt" );
 				--else
+				if bHeal then
+					cmd11 = createCommandEffect():AddFgEffect( 0.01, target:GetNode(), "x.heal_skill" );
+				else
 					cmd11 = createCommandEffect():AddFgEffect( 0.01, target:GetNode(), "x.dings" );
+				end
 				--end
 				seq1:AddCommand( cmd11 );
 				
@@ -520,13 +544,21 @@ function p:AtkSkillOneToCamp( camp, batch )
 				seq1:AddCommand( cmd12 );
 				cmd12:SetDelay( playerNode:GetSkillKeyTime_Hurt(""));
 				cmd12:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
+				local fValue = battle_compute.DamageFromNormalAttack(self,target,bStrike) * 0.5f;
 				
 				--飘血
-				local cmd13 = target:cmdLua( "fighter_damage", 80, "", seq1 );
-				local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
+				if bHeal then
+					local cmd13 = target:cmdLua( "fighter_heal", fValue, "", seq1 );
+				elseif bStrike then
+					local cmd13 = target:cmdLua( "fighter_strike_damage", fValue, "", seq1 );
+				else
+					local cmd13 = target:cmdLua( "fighter_damage", fValue, "", seq1 );
+				end
+				
+				local cmd_showbar = target:cmdLua( "fighter_showbar", 80, "", seq1 );
 				
 				--受攻击的后续动画【死亡 OR 站立】
-				self:HurtResultAni( target, seq1 );
+				self:HurtResultAni( target, seq1,seqShadow);
 				
 				--target:cmdIdle( 1, seq1 );
 				
@@ -730,6 +762,7 @@ function p:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fi
 	local seqBullet = batch:AddSerialSequence();
 	local seqTarget = batch:AddSerialSequence();
 	local seqGround = batch:AddSerialSequence();
+	local seqShadow = batch:AddSerialSequence();
 	
 	if (seqAtk == nil) or (seqTarget == nil) or (seqBullet == nil) or (seqGround == nil) then
 		WriteCon( "create 3 seq failed");
@@ -757,12 +790,22 @@ function p:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fi
 	cmd7:SetDelay( playerNode:GetSkillKeyTime_Hurt(""));
 	cmd7:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
 	
+	local bStrike = battle_compute.IsFighterStrike(self);
+	local fDamage = battle_compute.DamageFromNormalAttack(self,targetFighter,bStrike);
+	
 	--飘血
-	local cmd8 = targetFighter:cmdLua( "fighter_damage", 80, "", seqTarget );
+	local cmd8 = nil;
+
+	if false == bStrike then
+		targetFighter:cmdLua( "fighter_damage", fDamage, "", seqTarget );
+	else
+		targetFighter:cmdLua( "fighter_strike_damage", fDamage, "", seqTarget );
+	end
+
 	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 	
 	--受攻击的后续动画【死亡 OR 站立】
-	self:HurtResultAni( targetFighter, seqTarget );
+	self:HurtResultAni( targetFighter, seqTarget,seqShadow);
 		
 	--受击者序列等待子弹打到目标点
 	seqTarget:SetWaitEnd( cmd1 );
@@ -811,6 +854,7 @@ function p:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighte
 	local seqBullet = batch:AddSerialSequence();
 	local seqTarget = batch:AddSerialSequence();
 	local seqGround = batch:AddSerialSequence();
+	local seqShadow = batch:AddSerialSequence();
 	
 	if (seqAtk == nil) or (seqTarget == nil) or (seqBullet == nil) or (seqGround == nil) then
 		WriteCon( "create 3 seq failed");
@@ -854,12 +898,20 @@ function p:AtkSkillTuc( targetFighter, batch, bulletType, bulletRotation, fighte
 	cmd8:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
 	
 	--飘血
-	local fDamage = battle_compute.DamageFromNormalAttack(self,targetFighter) * 0.8f;
-	local cmd9 = targetFighter:cmdLua( "fighter_damage", fDamage, "", seqTarget );
-	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
+	local bStrike = battle_compute.IsFighterStrike(self);
+	local fDamage = battle_compute.DamageFromNormalAttack(self,targetFighter,bStrike);
+	local cmd9 = nil;
+	
+	if false == bStrike then
+		cmd9 = targetFighter:cmdLua( "fighter_damage", fDamage, "", seqTarget );
+	else
+		cmd9 = targetFighter:cmdLua( "fighter_strike_damage", fDamage, "", seqTarget );
+	end
+	
+	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", fDamage, "", seqTarget );
 
 	--受攻击的后续动画【死亡 OR 站立】
-	self:HurtResultAni( targetFighter, seqTarget );
+	self:HurtResultAni( targetFighter, seqTarget,seqShadow);
 		
 	--受击者序列等待子弹打到目标点
 	--seqTarget:SetWaitEnd(cmd_showbar);
@@ -940,10 +992,12 @@ end
 --添加lua命令
 function p:cmdLua( cmdtype, num, str, seq )
 	--暂时临时扣血保存到tmplife
-	if cmdtype == "fighter_damage" then
-		local strDamage = string.format("XXX attack XXX,damage:%d",num);
-		WriteCon(strDamage);
+	if cmdtype == "fighter_damage" or cmdtype == "fighter_strike_damage" then
+--		local strDamage = string.format("XXX attack XXX,damage:%d",num);
+--		WriteCon(strDamage);
 		self:SubTmpLife(num);
+	elseif cmdtype == "fighter_heal" then
+		self:SubTmpLifeHeal(num);
 	end
 	return super.cmdLua( self, cmdtype,num, str, seq );
 end

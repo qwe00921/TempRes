@@ -35,8 +35,9 @@ function p:ctor()
     self.idFighter = 0;
     self.name = "";
     self.camp = 0;	--阵营
-    self.life = 100;
-    self.lifeMax = 100;
+    self.life = 200;
+    self.lifeMax = 200;
+	self.strike_level = 100;
 	self.defence = 5;
 	self.attack_min = 0;
 	self.attack_max = 100;
@@ -61,15 +62,14 @@ end
 --创建血条
 function p:CreateHpBar()
 	if self.hpbar == nil then
-
 	end
 end
 
 --创建飘血数字
-function p:CreateFlyNum()
+function p:CreateFlyNum(nType)
 	local flynum = fly_num:new();
 	flynum:SetOwnerNode( self.node );
-	flynum:Init();
+	flynum:Init(nType);
 	flynum:SetOffset(30,-50);
 	
 	self.node:AddChildZ( flynum:GetNode(), 2 );
@@ -82,13 +82,13 @@ function p:CreateFlyNum()
 end
 
 --获取可用的飘血对象
-function p:GetFreeFlyNum()
-	for _,v in ipairs(self.flynum_mgr) do
-		if not v:GetNode():IsVisible() then
+function p:GetFreeFlyNum(nType)
+--[[	for _,v in ipairs(self.flynum_mgr) do
+		if not v:GetNode():IsVisible() and v:GetType() == nType then
 			return v;
 		end
-	end
-	return self:CreateFlyNum();
+	end--]]
+	return self:CreateFlyNum(nType);
 end
 
 --创建脚底节点
@@ -708,7 +708,7 @@ function p:SetLifeMax( num )
 end
 
 --去血
-function p:SetLifeDamage( num )
+function p:SetLifeDamage(num)	
 	self.life = self.life - num;
 	--WriteCon( string.format("%f", self.life ));
 	if self.life <= 0 then
@@ -735,11 +735,90 @@ function p:SetLifeDamage( num )
 			end		
 		end
 	else
-		self:SetLife( self.life );
+		self:SetLife(self.life);
 	end
 	
 	--表现飘血
-	local flynum = self:GetFreeFlyNum();
+	local flynum = self:GetFreeFlyNum(0);
+	if flynum ~= nil then
+		flynum:PlayNum( num );
+	end
+end
+
+function p:SetLifeStrikeDamage(num)
+	self.life = self.life - num;
+	--WriteCon( string.format("%f", self.life ));
+	if self.life <= 0 then
+		self.life = 0;
+		self:SetLife( 0 );
+		self:Die();
+		
+		--死亡不显示血条
+		self.hpbar:GetNode():SetVisible( false );
+		
+		if E_DEMO_VER == 2 then
+			if not x_battle_mgr.CheckBattleWin() then
+				x_battle_mgr.CheckBattleLose();
+			end	
+		elseif E_DEMO_VER == 3 then	
+			if not card_battle_mgr.CheckBattleWin() then
+				card_battle_mgr.CheckBattleLose();
+			end			
+		elseif E_DEMO_VER == 1 then	
+			if self:IsBoss() then
+				battle_mgr.OnBattleWin();
+			else
+				battle_mgr.CheckBattleLose();
+			end		
+		end
+	else
+		self:SetLife(self.life);
+	end
+	
+	--表现飘血
+	local flynum = self:GetFreeFlyNum(1);
+	if flynum ~= nil then
+		flynum:PlayNum( num );
+	end
+end
+
+function p:SetLifeHeal(num)
+	self.life = self.life + num;
+
+	if self.life > self.lifeMax then
+		self.life = self.lifeMax
+	end
+	
+	--WriteCon( string.format("%f", self.life ));
+	if self.life <= 0 then
+		self.life = 0;
+		self:SetLife( 0 );
+		self:Die();
+		
+		--死亡不显示血条
+		self.hpbar:GetNode():SetVisible( false );
+		
+		if E_DEMO_VER == 2 then
+			if not x_battle_mgr.CheckBattleWin() then
+				x_battle_mgr.CheckBattleLose();
+			end	
+		elseif E_DEMO_VER == 3 then	
+			if not card_battle_mgr.CheckBattleWin() then
+				card_battle_mgr.CheckBattleLose();
+			end			
+		elseif E_DEMO_VER == 1 then	
+			if self:IsBoss() then
+				battle_mgr.OnBattleWin();
+			else
+				battle_mgr.CheckBattleLose();
+			end		
+		end
+	else
+		self:SetLife(self.life);
+	end
+	
+	--表现飘血
+	local flynum = self:GetFreeFlyNum(2);
 	if flynum ~= nil then
 		flynum:PlayNum( num );
 	end
