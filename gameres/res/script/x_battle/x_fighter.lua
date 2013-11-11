@@ -388,6 +388,7 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	local seqMisc =   batch:AddSerialSequence();
 	local seqMiscHurt =   batch:AddParallelSequence();
 	local seqMusic =   batch:AddSerialSequence();
+	local seqShadow =   batch:AddSerialSequence();
 	
 	if (seqAtk == nil) or (seqTarget == nil) or (seqBullet == nil) or (seqGround == nil) then
 		WriteCon( "create 3 seq failed");
@@ -481,7 +482,7 @@ function p:AtkSkillNearOneToOne( targetFighter, batch, bulletType, bulletRotatio
 	end
 	
 	--受攻击的后续动画【死亡 OR 站立】
-	self:HurtResultAni( targetFighter, seqTarget );
+	self:HurtResultAni( targetFighter, seqTarget,seqShadow);
 		
 	--受击者序列等待子弹打到目标点
 	seqTarget:SetWaitEnd( cmd2 );
@@ -501,6 +502,7 @@ function p:AtkSkillOneToCamp( camp, batch,bHeal)
 	
 	--创建序列给攻击者
 	local seqAtk = batch:AddSerialSequence();
+	local seqShadow = batch:AddSerialSequence();
 	if seqAtk == nil then return end;
 	
 	local playerNode = self:GetPlayerNode();
@@ -556,7 +558,7 @@ function p:AtkSkillOneToCamp( camp, batch,bHeal)
 				local cmd_showbar = target:cmdLua( "fighter_showbar", 80, "", seq1 );
 				
 				--受攻击的后续动画【死亡 OR 站立】
-				self:HurtResultAni( target, seq1 );
+				self:HurtResultAni( target, seq1,seqShadow);
 				
 				--target:cmdIdle( 1, seq1 );
 				
@@ -760,6 +762,7 @@ function p:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fi
 	local seqBullet = batch:AddSerialSequence();
 	local seqTarget = batch:AddSerialSequence();
 	local seqGround = batch:AddSerialSequence();
+	local seqShadow = batch:AddSerialSequence();
 	
 	if (seqAtk == nil) or (seqTarget == nil) or (seqBullet == nil) or (seqGround == nil) then
 		WriteCon( "create 3 seq failed");
@@ -802,7 +805,7 @@ function p:AtkSkillFeilong( targetFighter, batch, bulletType, bulletRotation, fi
 	local cmd_showbar = targetFighter:cmdLua( "fighter_showbar", 80, "", seqTarget );
 	
 	--受攻击的后续动画【死亡 OR 站立】
-	self:HurtResultAni( targetFighter, seqTarget );
+	self:HurtResultAni( targetFighter, seqTarget,seqShadow);
 		
 	--受击者序列等待子弹打到目标点
 	seqTarget:SetWaitEnd( cmd1 );
