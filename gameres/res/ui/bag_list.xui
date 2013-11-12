@@ -1,0 +1,35 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_BUTTON_ITEMBG]
+Type=2
+Tag=1
+Z_Order=142
+Rect=10 224 150 182
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具列表背景
+NormalFile=.\res\image\ui\bag\bag_itembg.png
+NormalFileUV=0 0 151 177
+
+[CTRL_PICTURE_PICITEM]
+Type=1
+Tag=2
+Rect=10 226 149 141
+Remark=物品图片
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_TEXT_ITEMNAME]
+Type=4
+Tag=3
+Rect=21 371 130 27
+Text=道具名称名称
+TextTradition=道具名稱名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
