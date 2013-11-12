@@ -4,6 +4,6 @@
 --------------------------------------------------------------
 ui_bag_list = {};
 local p =  ui_bag_list;
-p.ID_CTRL_TEXT_ITEMNAME				   = 3;
-p.ID_CTRL_PICTURE_PICITEM				 = 2;
-p.ID_CTRL_BUTTON_ITEMBG				   = 1;
+p.ID_CTRL_TEXT_ITEMNAME				   = 3;	--道具名称
+p.ID_CTRL_PICTURE_PICITEM				 = 2;	--物品图片
+p.ID_CTRL_BUTTON_ITEMBG				   = 1;	--道具列表背景

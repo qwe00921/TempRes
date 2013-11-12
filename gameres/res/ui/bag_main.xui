@@ -7,6 +7,7 @@ Height=960
 Type=1
 Tag=4
 Rect=0 0 640 198
+Remark=背景1
 NormalFile=.\res\image\ui\bag\bag_bg.png
 NormalFileUV=0 0 641 198
 
@@ -17,6 +18,7 @@ Rect=490 0 150 100
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=返回按钮
 NormalFile=.\res\image\ui\bag\bag_back.png
 NormalFileUV=0 0 151 101
 
@@ -24,6 +26,7 @@ NormalFileUV=0 0 151 101
 Type=1
 Tag=2
 Rect=140 0 360 100
+Remark=背包界面title
 NormalFile=.\res\image\ui\bag\bag_title.png
 NormalFileUV=0 0 361 100
 
@@ -31,16 +34,18 @@ NormalFileUV=0 0 361 100
 Type=1
 Tag=1
 Rect=0 0 150 100
+Remark=物品数量及上线的背景
 NormalFile=.\res\image\ui\bag\bag_num_bg.png
 NormalFileUV=0 0 148 100
 
 [CTRL_BUTTON_CLEAR]
 Type=2
 Tag=8
-Rect=512 117 111 72
+Rect=512 114 111 72
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=背包整理按钮
 NormalFile=.\res\image\ui\bag\bag_button_clear.png
 NormalFileUV=0 0 110 71
 
@@ -55,11 +60,13 @@ NormalFileUV=0 0 641 476
 Type=14
 Tag=10
 Rect=0 194 640 476
+Remark=物品列表
 
 [CTRL_PICTURE_INFOBG]
 Type=1
 Tag=11
 Rect=0 666 640 142
+Remark=物品简介背景
 NormalFile=.\res\image\ui\bag\bag_infobg.png
 NormalFileUV=0 0 640 142
 
@@ -67,6 +74,7 @@ NormalFileUV=0 0 640 142
 Type=1
 Tag=12
 Rect=12 680 130 40
+Remark=物品名称
 NormalFile=.\res\image\ui\bag\bag_itemname.png
 NormalFileUV=0 0 131 40
 
@@ -79,6 +87,7 @@ TextTradition=55/55
 TextSize=36
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=物品数量及上限
 
 [CTRL_TEXT_ITEMINFO]
 Type=4
@@ -89,6 +98,7 @@ TextTradition=神奇的物品介紹神奇的物品介紹神奇的物品介紹神
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=物品简介
 
 [CTRL_BUTTON_15]
 Type=2
@@ -97,5 +107,6 @@ Rect=489 710 140 68
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=物品使用按钮
 NormalFile=.\res\image\ui\bag\bag_button_use.png
 NormalFileUV=0 0 141 68

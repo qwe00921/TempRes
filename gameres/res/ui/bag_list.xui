@@ -11,6 +11,7 @@ Rect=10 224 150 182
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=道具列表背景
 NormalFile=.\res\image\ui\bag\bag_itembg.png
 NormalFileUV=0 0 151 177
 
@@ -18,6 +19,7 @@ NormalFileUV=0 0 151 177
 Type=1
 Tag=2
 Rect=10 226 149 141
+Remark=物品图片
 NormalFile=.\res\image\ui\bag\pic_item.png
 NormalFileUV=0 0 151 143
 
@@ -30,3 +32,4 @@ TextTradition=道具名稱名稱
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=道具名称
