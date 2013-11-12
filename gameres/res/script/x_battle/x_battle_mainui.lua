@@ -12,7 +12,7 @@ p.imageMask = nil;
 p.m_nBattleRound = 0;
 p.m_kPower = nil;
 p.m_nPowerTimer = 0;
-p.m_fPowerPercent = 0.0f;
+p.m_fPowerPercent = 100.0f;
 
 local useSkill = false;  --当前回合是否用技能攻击
 local isHeroAutoAtk = true; --是否托管（自动攻击）
@@ -90,7 +90,7 @@ function p.InitialisePowerProcessBar()
 	p.m_kPower:SetPicture(kBgImage,kFgImage);
 	p.m_kPower:SetUse3Slices(true,false);
 	p.m_kPower:SetTotal(100);
-	p.m_kPower:SetProcess(0.0f);
+	p.m_kPower:SetProcess(1000.0f);
 --	p.m_kPower:SetFramePosXY(200,200);
 	p.m_kPower:SetReverseExp(true);
 	
@@ -254,7 +254,7 @@ function p.OnBattleShowFinished()
 end
 
 function p.OnPowerProcessBarTimer()
-	p.m_fPowerPercent = p.m_fPowerPercent + 1.1f;
+	p.m_fPowerPercent = p.m_fPowerPercent - 1.5f;
 	p.m_kPower:SetProcess(p.m_fPowerPercent);
 end
 

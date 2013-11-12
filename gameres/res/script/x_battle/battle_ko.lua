@@ -121,7 +121,8 @@ function p.shake()
 end
 
 function p.CloseUI()
-	m_kLayer.SetVisible(false);
+	p.m_kLayer:SetVisible(false);
+	--p.m_kLayer:RemoveAllChildren(true);
 end
 
 function p.HideUI()

@@ -149,6 +149,7 @@ end
 --打开战斗胜利界面
 function p.OpenBattleWin()
 	PlayEffectSoundByName( "battle_win.mp3" );
+	battle_ko.CloseUI();
 	dlg_battle_win.ShowUI();
 end
 
