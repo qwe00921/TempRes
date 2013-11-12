@@ -17,6 +17,7 @@ armeabi/
 debug/
 Debug/
 Release/
+Editor/UiEditorDebug/
 
 Debug.win32/
 assets/
