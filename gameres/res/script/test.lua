@@ -9,6 +9,10 @@ local p = test;
 
 function p.test()
 --	SetDebugDraw(true);
+
+--[[	WriteFile("your output text","YourFileName.log");
+	WriteFile("your output text","YourFileName");
+	WriteFile("your output text");   --默认为"ClientLua.log"--]]
 	
 	--这里调用需要测试的函数
 --	p.TestDB();
