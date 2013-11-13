@@ -93,6 +93,10 @@ function p.test()
 	--dlg_createrole.ShowUI();
 	--dlg_create_player.ShowUI();
 	
+	--测试剧情后的请求战斗
+	local strParam = string.format("&target=%d",10002);
+	SendReq( "Fight","StartPvP",10001,strParam );
+	
 	--测试劫争
 	--battle_ko.ShowUI();
 end
