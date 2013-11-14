@@ -55,7 +55,7 @@ function p.HideUI()
 end
 
 function p.SendReqUserInfo()
-	WriteCon("**ÇëÇóÍæ¼Ò×´Ì¬Êı¾İ**");
+	WriteCon("**è¯·æ±‚ç©å®¶çŠ¶æ€æ•°æ®**");
     local uid = GetUID();
     if uid ~= nil and uid > 0 then
         SendReq("User","Update",uid,"");
@@ -63,7 +63,7 @@ function p.SendReqUserInfo()
 end
 
 function p.RefreshUI(userinfo)
---[[	--µÇÂ½½áÊø»áÖ±½ÓÇëÇóÒ»´ÎÊı¾İ£¬¿ÉÄÜ´æÔÚlayerÎ´´´½¨¾ÍË¢ĞÂµÄÇé¿ö
+--[[	--ç™»é™†ç»“æŸä¼šç›´æ¥è¯·æ±‚ä¸€æ¬¡æ•°æ®ï¼Œå¯èƒ½å­˜åœ¨layeræœªåˆ›å»ºå°±åˆ·æ–°çš„æƒ…å†µ
 	if p.layer == nil then
 		return;
 	end
@@ -85,27 +85,27 @@ function p.RefreshUI(userinfo)
 end
 
 function p.SetDelegate()
-	--¶ÓÎé
+	--é˜Ÿä¼
 	local team = GetButton( p.layer, ui.ID_CTRL_BUTTON_TEAM );
 	team:SetLuaDelegate(p.OnBtnClick);
 
-	--Ç¿»¯
+	--å¼ºåŒ–
 	local strengthen = GetButton( p.layer, ui.ID_CTRL_BUTTON_IN );
 	strengthen:SetLuaDelegate(p.OnBtnClick);
 	
-	--ÎïÆ·
+	--ç‰©å“
 	local item = GetButton( p.layer, ui.ID_CTRL_BUTTON_30 );
 	item:SetLuaDelegate(p.OnBtnClick);
 	
-	--Éç½»
+	--ç¤¾äº¤
 	local social = GetButton( p.layer, ui.ID_CTRL_BUTTON_CON );
 	social:SetLuaDelegate(p.OnBtnClick);
 	
-	--ÆäËû
+	--å…¶ä»–
 	local other = GetButton( p.layer, ui.ID_CTRL_BUTTON_32 );
 	other:SetLuaDelegate(p.OnBtnClick);
 
-	--·µ»ØÖ÷ui£¬ÓÃÓÚÖ±½Ó¹Ø±Õ×Ó½çÃæ
+	--è¿”å›ä¸»uiï¼Œç”¨äºç›´æ¥å…³é—­å­ç•Œé¢
 	local backmainui = GetButton( p.layer, ui.ID_CTRL_BUTTON_BACK );
 	backmainui:SetLuaDelegate(p.OnBtnClick);
 end
@@ -114,17 +114,19 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_TEAM == tag then
-			WriteCon("**======================¶ÓÎé======================**");
+			WriteCon("**======================é˜Ÿä¼======================**");
 		elseif ui.ID_CTRL_BUTTON_IN == tag then
-			WriteCon("**======================Ç¿»¯======================**");
+			WriteCon("**======================å¼ºåŒ–======================**");
 		elseif ui.ID_CTRL_BUTTON_30 == tag then
-			WriteCon("**======================ÎïÆ·======================**");
+			WriteCon("**======================ç‰©å“======================**");
+			pack_box.ShowUI();
+			--dlg_back_pack.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_CON == tag then
-			WriteCon("**======================Éç½»======================**");
+			WriteCon("**======================ç¤¾äº¤======================**");
 		elseif ui.ID_CTRL_BUTTON_32 == tag then
-			WriteCon("**======================ÆäËû======================**");
+			WriteCon("**======================å…¶ä»–======================**");
 		elseif ui.ID_CTRL_BUTTON_BACK == tag then
-			WriteCon("**===================¹Ø±Õ×Ó½çÃæ===================**");
+			WriteCon("**===================å…³é—­å­ç•Œé¢===================**");
 
 			world_map.CheckToCloseMap();
 			maininterface.CloseAllPanel();

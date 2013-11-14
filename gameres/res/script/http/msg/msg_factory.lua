@@ -1,13 +1,13 @@
 --------------------------------------------------------------
 -- FileName: 	msg_factory.lua
 -- author:		zhangwq, 2013/07/05
--- purpose:		ÏûÏ¢¹¤³§£¨µ¥Àı£©
+-- purpose:		æ¶ˆæ¯å·¥å‚ï¼ˆå•ä¾‹ï¼‰
 --------------------------------------------------------------
 
 msg_factory = {}
 local p = msg_factory;
 
---¸ù¾İÏûÏ¢ºÅ´´½¨ÏûÏ¢
+--æ ¹æ®æ¶ˆæ¯å·åˆ›å»ºæ¶ˆæ¯
 function CreateMsg( idmsg )
 	local msg = nil;
 	
@@ -44,9 +44,6 @@ function CreateMsg( idmsg )
 	
 	elseif idmsg == MSG_TEAM_UPDATE then	
 		msg = msg_team_update:new();
-
-	elseif idmsg == MSG_EQUIP_BACK_PACK then 	
-		msg = msg_back_pack:new();
 		
 	elseif idmsg == MSG_EQUIP_SELL_ITEM then   	
 		msg = msg_sell_user_item:new();
@@ -189,6 +186,8 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_PLAYER_USERINFO then
 		msg = msg_maininterface:new();
 		
+	elseif idmsg == MSG_EQUIP_BACK_PACK then 	
+		msg = msg_pack_box:new();
 	end
 	
 	if msg ~= nil then

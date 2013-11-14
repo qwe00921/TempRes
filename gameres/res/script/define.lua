@@ -80,8 +80,11 @@ DoFile("team/dlg_team_list.lua");
 DoFile("team/dlg_team_member.lua");
 
 --【物品相关】
-DoFile("item/define.lua");
+--DoFile("item/define.lua");
 
+
+--【背包系统】
+DoFile("pack/define.lua");
 
 --技能强化、碎片合成
 DoFile("skill/dlg_skill_piece_combo.lua");

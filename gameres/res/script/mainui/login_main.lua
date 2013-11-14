@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	login_mainui.lua
 -- author:		mk, 2013/10/12
--- purpose:		µÇÂ¼½çÃæ
+-- purpose:		ç™»å½•ç•Œé¢
 --------------------------------------------------------------
 
 login_main = {}
@@ -11,7 +11,7 @@ p.layer = nil;
 
 local ui = ui_login_back;
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
@@ -28,7 +28,7 @@ function p.ShowUI()
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddChild(layer); --²âÊÔÕ½¶·Òª¹Øµô @¹ùºÆ
+	GetUIRoot():AddChild(layer); --æµ‹è¯•æˆ˜æ–—è¦å…³æ‰ @éƒ­æµ©
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
@@ -49,10 +49,10 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_102 == tag then
 			uiNode:SetVisible(false);
-			--login_ui.ShowUI();
-			--ÔİÊ±È¥³ıµÇÂ¼½çÃæ
-			p.CloseUI();
-			maininterface.ShowUI();
+			login_ui.ShowUI();
+			--æš‚æ—¶å»é™¤ç™»å½•ç•Œé¢
+			--p.CloseUI();
+			--maininterface.ShowUI();
 		end
 	end
 end
