@@ -198,3 +198,12 @@ DoFile("ui/ui_userinfo.lua");
 --创建角色界面
 DoFile("ui/ui_createrole.lua");
 DoFile("ui/ui_x_battle_ko.lua");
+
+
+--召唤兽系统
+DoFile("ui/ui_beast_mainui.lua");
+DoFile("ui/ui_beast_main_list.lua");
+DoFile("ui/ui_beast_incubate_list.lua");
+DoFile("ui/ui_beast_incubate.lua");--培养
+
+
