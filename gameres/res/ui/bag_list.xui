@@ -3,11 +3,15 @@
 Width=960
 Height=640
 
-[CTRL_BUTTON_ITEMBG]
+[CTRL_PICTURE_13]
+Type=1
+Tag=15
+Rect=-2 3 640 208
+
+[CTRL_BUTTON_6]
 Type=2
-Tag=1
-Z_Order=142
-Rect=10 224 150 182
+Tag=6
+Rect=169 16 150 182
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -15,21 +19,152 @@ Remark=道具列表背景
 NormalFile=.\res\image\ui\bag\bag_itembg.png
 NormalFileUV=0 0 151 177
 
-[CTRL_PICTURE_PICITEM]
+[CTRL_BUTTON_ITEMBG]
+Type=2
+Tag=1
+Z_Order=142
+Rect=17 15 150 182
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具列表背景
+NormalFile=.\res\image\ui\bag\bag_itembg.png
+NormalFileUV=0 0 151 177
+
+[CTRL_PICTURE_PICITEM1]
 Type=1
 Tag=2
-Rect=10 226 149 141
+Rect=17 17 149 141
 Remark=物品图片
 NormalFile=.\res\image\ui\bag\pic_item.png
 NormalFileUV=0 0 151 143
 
-[CTRL_TEXT_ITEMNAME]
+[CTRL_TEXT_ITEMNAME2]
 Type=4
 Tag=3
-Rect=21 371 130 27
+Rect=179 163 130 27
 Text=道具名称名称
 TextTradition=道具名稱名稱
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=道具名称
+
+[CTRL_PICTURE_PICITEM2]
+Type=1
+Tag=4
+Rect=169 16 149 141
+Remark=物品图片
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_TEXT_ITEMNAME1]
+Type=4
+Tag=5
+Rect=28 163 130 27
+Text=道具名称名称
+TextTradition=道具名稱名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=9
+Rect=469 16 150 182
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具列表背景
+NormalFile=.\res\image\ui\bag\bag_itembg.png
+NormalFileUV=0 0 151 177
+
+[CTRL_BUTTON_10]
+Type=2
+Tag=10
+Rect=319 16 150 182
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具列表背景
+NormalFile=.\res\image\ui\bag\bag_itembg.png
+NormalFileUV=0 0 151 177
+
+[CTRL_PICTURE_PICITEM4]
+Type=1
+Tag=11
+Rect=469 16 149 141
+Remark=物品图片
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_PICTURE_PICITEM3]
+Type=1
+Tag=12
+Rect=319 16 149 141
+Remark=物品图片
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_TEXT_ITEMNAME4]
+Type=4
+Tag=13
+Rect=480 163 130 27
+Text=道具名称名称
+TextTradition=道具名稱名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_TEXT_ITEMNAME3]
+Type=4
+Tag=14
+Rect=329 163 130 27
+Text=道具名称名称
+TextTradition=道具名稱名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_TEXT_ITEMNUM1]
+Type=4
+Tag=16
+Rect=133 124 28 28
+Text=99
+TextTradition=99
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEMNUM2]
+Type=4
+Tag=17
+Rect=285 123 28 28
+Text=99
+TextTradition=99
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEMNUM3]
+Type=4
+Tag=18
+Rect=435 123 28 28
+Text=99
+TextTradition=99
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEMNUM4]
+Type=4
+Tag=19
+Rect=585 123 28 28
+Text=99
+TextTradition=99
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
