@@ -4,10 +4,11 @@
 --------------------------------------------------------------
 ui_bag_main = {};
 local p =  ui_bag_main;
+p.ID_CTRL_TEXT_ITEMNAME				   = 16;
 p.ID_CTRL_BUTTON_15					      = 15;	--物品使用按钮
 p.ID_CTRL_TEXT_ITEMINFO				   = 14;	--物品简介
 p.ID_CTRL_TEXT_ITEMNUM				    = 13;	--物品数量及上限
-p.ID_CTRL_PICTURE_ITEMNAME			 = 12;	--物品名称
+p.ID_CTRL_PICTURE_ITEMNAME			 = 12;
 p.ID_CTRL_PICTURE_INFOBG				  = 11;	--物品简介背景
 p.ID_CTRL_VERTICAL_LIST_10			 = 10;	--物品列表
 p.ID_CTRL_PICTURE_LISTBG				  = 9;
