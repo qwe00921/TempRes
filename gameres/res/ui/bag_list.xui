@@ -14,7 +14,7 @@ Notes=
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=474 17 145 137
+Rect=472 17 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -27,7 +27,7 @@ NormalFileUV=0 0 151 143
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=19 15 145 137
+Rect=17 15 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -52,7 +52,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=323 17 145 137
+Rect=321 17 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -65,7 +65,7 @@ NormalFileUV=0 0 151 143
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=170 17 145 137
+Rect=168 17 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -111,29 +111,20 @@ TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_ITEM2NAMEBG]
+[CTRL_PICTURE_25]
 Type=1
-Tag=66
-Rect=168 161 149 41
-AnchorPos=5767 0
+Tag=25
+Rect=470 158 150 41
+AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_itemnamebg.png
 NormalFileUV=0 0 147 40
 
-[CTRL_PICTURE_ITEM4NAMEBG]
+[CTRL_PICTURE_24]
 Type=1
-Tag=68
-Rect=471 160 149 41
-AnchorPos=5767 0
-Notes=
-NormalFile=.\res\image\ui\bag\bag_itemnamebg.png
-NormalFileUV=0 0 147 40
-
-[CTRL_PICTURE_ITEM3NAMEBG]
-Type=1
-Tag=67
-Rect=319 161 149 41
-AnchorPos=5767 0
+Tag=24
+Rect=318 159 150 41
+AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_itemnamebg.png
 NormalFileUV=0 0 147 40
@@ -141,7 +132,7 @@ NormalFileUV=0 0 147 40
 [CTRL_TEXT_ITEMNAME4]
 Type=4
 Tag=13
-Rect=480 168 130 27
+Rect=481 165 130 27
 AnchorPos=0 0
 Notes=
 Text=道具名称名称
@@ -151,45 +142,54 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=道具名称
 
-[CTRL_TEXT_ITEMNAME3]
-Type=4
-Tag=14
-Rect=329 168 130 27
-AnchorPos=0 0
-Notes=
-Text=道具名称名称
-TextTradition=道具名稱名稱
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_TEXT_ITEMNAME2]
-Type=4
-Tag=3
-Rect=179 168 130 27
-AnchorPos=0 0
-Notes=
-Text=道具名称名称
-TextTradition=道具名稱名稱
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_PICTURE_ITEM1NAMEBG]
+[CTRL_PICTURE_23]
 Type=1
-Tag=65
-Rect=18 160 149 41
-AnchorPos=5767 0
+Tag=23
+Rect=165 159 150 41
+AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_itemnamebg.png
 NormalFileUV=0 0 147 40
 
+[CTRL_TEXT_ITEMNAME3]
+Type=4
+Tag=14
+Rect=329 166 130 27
+AnchorPos=0 0
+Notes=
+Text=道具名称名称
+TextTradition=道具名稱名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=22
+Rect=16 158 150 41
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\bag_itemnamebg.png
+NormalFileUV=0 0 147 40
+
+[CTRL_TEXT_ITEMNAME2]
+Type=4
+Tag=3
+Rect=177 166 130 27
+AnchorPos=0 0
+Notes=
+Text=道具名称名称
+TextTradition=道具名稱名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
 [CTRL_TEXT_ITEMNAME1]
 Type=4
 Tag=5
-Rect=28 168 130 27
+Rect=27 164 130 27
 AnchorPos=0 0
 Notes=
 Text=道具名称名称
@@ -202,7 +202,7 @@ Remark=道具名称
 [CTRL_PICTURE_EQUIP1]
 Type=1
 Tag=64
-Rect=21 117 30 32
+Rect=-172989 117 30 32
 AnchorPos=5767 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_equip.png
@@ -211,7 +211,7 @@ NormalFileUV=0 0 28 30
 [CTRL_PICTURE_EQUIP2]
 Type=1
 Tag=69
-Rect=175 117 30 32
+Rect=-172835 117 30 32
 AnchorPos=5767 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_equip.png
@@ -220,7 +220,7 @@ NormalFileUV=0 0 28 30
 [CTRL_PICTURE_EQUIP3]
 Type=1
 Tag=70
-Rect=328 117 30 32
+Rect=-172682 117 30 32
 AnchorPos=5767 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_equip.png
@@ -229,7 +229,7 @@ NormalFileUV=0 0 28 30
 [CTRL_PICTURE_EQUIP4]
 Type=1
 Tag=71
-Rect=477 117 30 32
+Rect=-172533 117 30 32
 AnchorPos=5767 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_equip.png
