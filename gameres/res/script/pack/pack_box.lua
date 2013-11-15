@@ -109,48 +109,75 @@ end
 
 --单个道具显示
 function p.ShowItemInfo( view, item, itemIndex )
-    --local isUse;
-    --local subTitleBg;
     local itemBtn;
     local itemNumber;
     local itemName;
+	local subTitleBg;
+    local isUse;
 	if itemIndex == 3 then
-        --isUse = ui_bag_list.ID_CTRL_TEXT_29;
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEMBG;
+        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM1;
         itemNumber = ui_bag_list.ID_CTRL_TEXT_ITEMNUM1;
-        itemName = ui_bag_list.ID_CTRL_PICTURE_PICITEM1;
+        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME1;
+		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_22;
+        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP1;
     elseif itemIndex == 2 then
-       -- isUse = ui_bag_list.ID_CTRL_TEXT_30;
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_6;
+        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM2;
         itemNumber = ui_bag_list.ID_CTRL_TEXT_ITEMNUM2;
-        itemName = ui_bag_list.ID_CTRL_PICTURE_PICITEM2;
+        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME2;
+		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_23;
+        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP2;
     elseif itemIndex == 1 then
-       -- isUse = ui_bag_list.ID_CTRL_TEXT_31;
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_10;
+        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM3;
         itemNumber = ui_bag_list.ID_CTRL_TEXT_ITEMNUM3;
-        itemName = ui_bag_list.ID_CTRL_PICTURE_PICITEM3;
+        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME3;
+		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_24;
+        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP3;
     elseif itemIndex == 0 then
-       -- isUse = ui_bag_list.ID_CTRL_TEXT_32;
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_9;
+        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM4;
         itemNumber = ui_bag_list.ID_CTRL_TEXT_ITEMNUM4;
-        itemName = ui_bag_list.ID_CTRL_PICTURE_PICITEM4;
+        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME4;
+		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_25;
+        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP4;
     end
 	
 	local itemType = tonumber(item.Type)
-				WriteCon("itemType = "..itemType);
 	--判断  type不同 对应不同的处理
 	if itemType == 9 then
 		WriteCon("itemType = 9====对应");
 	end
 	
 	--道具图片
-	local itemPicNode = GetButton(view, itemPic);
-	--local pic = 9;
+	local itemPicNode = GetButton(view, itemBtn);
+	local pic = 9;
+    itemPicNode:SetImage( GetPictureByAni("item.item_db", pic) );
+    itemPicNode:SetId( tonumber(item.id));
+	--道具数量
+    local itemNumberNode = GetLabel( view, itemNumber );
+    itemNumberNode:SetText( string.format("%d", item.Num) );
+
+	--道具名称
+    local itemNameNode = GetLabel( view, itemName );
+    itemNameNode:SetText( item.Name );
 	
-	--itemPicNode:SetImage(GetPictureByAni(""))
-	--itemPicNode:SetId(tonumber(item.id))
+	--增加事件
+	itemPicNode:SetLuaDelegate(p.OnBtnClicked);
 end
 
+--点选道具事件
+function p.OnBtnClicked(uiNode, uiEventType, param)
+	local itemId = uiNode:GetId();
+	WriteCon("itemId = "..itemId);
+	WriteCon(tostring(T_ITEM));
+
+	local itemTable = SelectRowList(T_ITEM,"id",itemId);
+	WriteCon("text = "..itemTable);
+	local text = itemTable.name;
+	WriteCon("text = "..text);
+	--local itemNamePic = GetImage(p.layer,ui_bag_main.ID_CTRL_PICTURE_ITEMNAME);
+	--local itemNameText = GetLabel(p.layer, ui_bag_main.ID_CTRL_TEXT_ITEMNAME);
+	--itemNameText:SetText( "131232" );
+
+end 
 
 function p.HideUI()
     if p.layer ~= nil then
