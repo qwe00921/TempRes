@@ -117,8 +117,8 @@ Notes=
 Text=神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍
 TextTradition=神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹
 TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
 Remark=物品简介
 
 [CTRL_BUTTON_15]

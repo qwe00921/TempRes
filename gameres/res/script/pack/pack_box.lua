@@ -25,7 +25,7 @@ function p.ShowUI()
     p.layer = layer;
     p.SetDelegate(layer);
 	
-	--¼ÓÔØ±³°üÊı¾İ
+	--åŠ è½½èƒŒåŒ…æ•°æ®
     pack_box_mgr.LoadAllItem( p.layer );
 end
 
@@ -33,20 +33,20 @@ function p.GetLayer()
 	return p.layer();
 end
 
---ÉèÖÃÊÂ¼ş´¦Àí
+--è®¾ç½®äº‹ä»¶å¤„ç†
 function p.SetDelegate(layer)
-	--·µ»Ø
+	--è¿”å›
 	local retBtn = GetButton(layer, ui_bag_main.ID_CTRL_BUTTON_BACK);
 	retBtn:SetLuaDelegate(p.OnUIEvent);
-	--ÕûÀí
+	--æ•´ç†
 	local clearBtn = GetButton(layer, ui_bag_main.ID_CTRL_BUTTON_CLEAR);
 	clearBtn:SetLuaDelegate(p.OnUIEvent);
-	--Ê¹ÓÃ
+	--ä½¿ç”¨
 	local useBtn = GetButton(layer, ui_bag_main.ID_CTRL_BUTTON_15);
 	useBtn:SetLuaDelegate(p.OnUIEvent);
 end
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.OnUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
@@ -54,14 +54,14 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif (ui_bag_main.ID_CTRL_BUTTON_CLEAR == tag) then
 			p.SetBtnCheckedFX( uiNode )
-			WriteCon("ÕûÀí");
+			WriteCon("æ•´ç†");
 		elseif (ui_bag_main.ID_CTRL_BUTTON_15 == tag) then
 			p.SetBtnCheckedFX( uiNode )
-			WriteCon("Ê¹ÓÃ");
+			WriteCon("ä½¿ç”¨");
 		end
 	end
 end
---ÉèÖÃÑ¡ÖĞ°´Å¥
+--è®¾ç½®é€‰ä¸­æŒ‰é’®
 function p.SetBtnCheckedFX( node )
 	local btnNode = ConverToButton( node );
 	if p.curBtnNode ~= nil then
@@ -71,7 +71,7 @@ function p.SetBtnCheckedFX( node )
 	p.curbtnNode = btnNode;
 end
 
---ÏÔÊ¾µÀ¾ßÁĞ±í
+--æ˜¾ç¤ºé“å…·åˆ—è¡¨
 function p.ShowItemList( itemList )
 	local list = GetListBoxVert(p.layer ,ui_bag_main.ID_CTRL_VERTICAL_LIST_10);
 	list:ClearView();
@@ -95,7 +95,7 @@ function p.ShowItemList( itemList )
         local start_index = (row_index-1)*4+1;
         local end_index = start_index + 3;
 
-		--ÉèÖÃÁĞ±íÏîĞÅÏ¢£¬Ò»ĞĞ4¸öµÀ¾ß
+		--è®¾ç½®åˆ—è¡¨é¡¹ä¿¡æ¯ï¼Œä¸€è¡Œ4ä¸ªé“å…·
         for j = start_index,end_index do
             if j <= listLenght then
                 local item = itemList[j];
@@ -107,7 +107,7 @@ function p.ShowItemList( itemList )
 	end
 end
 
---µ¥¸öµÀ¾ßÏÔÊ¾
+--å•ä¸ªé“å…·æ˜¾ç¤º
 function p.ShowItemInfo( view, item, itemIndex )
     local itemBtn;
     local itemNumber;
@@ -141,43 +141,83 @@ function p.ShowItemInfo( view, item, itemIndex )
     end
 	
 	local itemType = tonumber(item.Type)
-	--ÅĞ¶Ï  type²»Í¬ ¶ÔÓ¦²»Í¬µÄ´¦Àí
+	--åˆ¤æ–­  typeä¸åŒ å¯¹åº”ä¸åŒçš„å¤„ç†
 	if itemType == 9 then
-		WriteCon("itemType = 9====¶ÔÓ¦");
+		WriteCon("itemType = 9====å¯¹åº”");
 	end
 	
-	--µÀ¾ßÍ¼Æ¬
+	--é“å…·å›¾ç‰‡
 	local itemPicNode = GetButton(view, itemBtn);
 	local pic = 9;
     itemPicNode:SetImage( GetPictureByAni("item.item_db", pic) );
     itemPicNode:SetId( tonumber(item.id));
-	--µÀ¾ßÊıÁ¿
+	--é“å…·æ•°é‡
     local itemNumberNode = GetLabel( view, itemNumber );
     itemNumberNode:SetText( string.format("%d", item.Num) );
 
-	--µÀ¾ßÃû³Æ
+	--é“å…·åç§°
     local itemNameNode = GetLabel( view, itemName );
     itemNameNode:SetText( item.Name );
 	
-	--Ôö¼ÓÊÂ¼ş
+	--å¢åŠ äº‹ä»¶
 	itemPicNode:SetLuaDelegate(p.OnBtnClicked);
 end
 
---µãÑ¡µÀ¾ßÊÂ¼ş
+--ç‚¹é€‰é“å…·äº‹ä»¶
 function p.OnBtnClicked(uiNode, uiEventType, param)
 	local itemId = uiNode:GetId();
 	WriteCon("itemId = "..itemId);
-	WriteCon(tostring(T_ITEM));
 
 	local itemTable = SelectRowList(T_ITEM,"id",itemId);
-	WriteCon("text = "..itemTable);
-	local text = itemTable.name;
-	WriteCon("text = "..text);
-	--local itemNamePic = GetImage(p.layer,ui_bag_main.ID_CTRL_PICTURE_ITEMNAME);
-	--local itemNameText = GetLabel(p.layer, ui_bag_main.ID_CTRL_TEXT_ITEMNAME);
-	--itemNameText:SetText( "131232" );
+	if itemTable == nil or #itemTable == 0 then 
+		WriteCon("itemTable is nil!");
+	end
+	
+	local nameText = nil;
+	local describeText = nil;
+	local itemType = nil;
+	if #itemTable == 1 then 
+		nameText = itemTable[1].name;
+		describeText = itemTable[1].describe;
+		itemType = tostring(itemTable[1].type);
+	end
+	local itemNameText = GetLabel(p.layer, ui_bag_main.ID_CTRL_TEXT_ITEMNAME);
+	itemNameText:SetText(ToUtf8(nameText));
+	local itemDescribe = GetLabel(p.layer, ui_bag_main.ID_CTRL_TEXT_ITEMINFO);
+	itemDescribe:SetText(ToUtf8(describeText));
+	
+	local picId = nil;
+	if itemType == "1" then
+		picId = 9;
+	elseif itemType == "2" or itemType == "3" then
+		picId = 9;
+	elseif itemType == "4" then
+		picId = 9;
+	elseif itemType == "5" then
+		picId = 9;
+	end
+	WriteCon("picId = "..picId);
+	local useBtn = GetButton(p.layer, ui_bag_main.ID_CTRL_BUTTON_15);
+    useBtn:SetImage( GetPictureByAni("item.item_db", picId) );
+    useBtn:SetId( tonumber(itemId));
+	--è®¾ç½®ä½¿ç”¨ç‰©å“æŒ‰é’®äº‹ä»¶
+	useBtn:SetLuaDelegate(p.OnUseBtnClicked);
 
+	-- for k, v in ipairs(itemTable) do
+		-- nameText = itemTable[k].name
+		-- WriteCon("k = "..k);
+		-- WriteCon("text = "..text);
+	-- end
+	--local itemNamePic = GetImage(p.layer,ui_bag_main.ID_CTRL_PICTURE_ITEMNAME);
 end 
+
+--ä½¿ç”¨ç‰©å“è§¦å‘äº‹ä»¶
+function p.OnUseBtnClicked(uiNode, uiEventType, param)
+	local itemId = uiNode:GetId();
+	WriteCon("Use itemId = "..itemId);
+end
+
+
 
 function p.HideUI()
     if p.layer ~= nil then
