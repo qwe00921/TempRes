@@ -14,7 +14,7 @@ Notes=
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=472 17 145 137
+Rect=462 17 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -27,7 +27,7 @@ NormalFileUV=0 0 151 143
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=17 15 145 137
+Rect=7 15 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -40,11 +40,11 @@ NormalFileUV=0 0 151 143
 [CTRL_TEXT_ITEMNUM4]
 Type=4
 Tag=19
-Rect=585 123 28 28
+Rect=564 123 46 28
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
+Text=999
+TextTradition=999
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -52,7 +52,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=321 17 145 137
+Rect=311 17 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -65,7 +65,7 @@ NormalFileUV=0 0 151 143
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=168 17 145 137
+Rect=158 17 145 137
 AnchorPos=0.012 0
 Notes=
 TextSize=10
@@ -78,11 +78,11 @@ NormalFileUV=0 0 151 143
 [CTRL_TEXT_ITEMNUM3]
 Type=4
 Tag=18
-Rect=435 123 28 28
+Rect=413 123 45 28
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
+Text=999
+TextTradition=999
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -90,11 +90,11 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM2]
 Type=4
 Tag=17
-Rect=285 123 28 28
+Rect=260 123 45 28
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
+Text=999
+TextTradition=999
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -102,11 +102,11 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM1]
 Type=4
 Tag=16
-Rect=133 124 28 28
+Rect=106 124 55 28
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
+Text=999
+TextTradition=999
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -199,38 +199,41 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=道具名称
 
-[CTRL_PICTURE_EQUIP1]
-Type=1
-Tag=64
-Rect=-172989 117 30 32
-AnchorPos=5767 0
-Notes=
-NormalFile=.\res\image\ui\bag\bag_equip.png
-NormalFileUV=0 0 28 30
-
 [CTRL_PICTURE_EQUIP2]
 Type=1
-Tag=69
-Rect=-172835 117 30 32
-AnchorPos=5767 0
+Tag=27
+Rect=165 117 30 32
+AnchorPos=0 0
 Notes=
+Remark=装备标志2
 NormalFile=.\res\image\ui\bag\bag_equip.png
 NormalFileUV=0 0 28 30
 
 [CTRL_PICTURE_EQUIP3]
 Type=1
-Tag=70
-Rect=-172682 117 30 32
-AnchorPos=5767 0
+Tag=28
+Rect=319 117 30 32
+AnchorPos=0 0
 Notes=
+Remark=装备标志3
 NormalFile=.\res\image\ui\bag\bag_equip.png
 NormalFileUV=0 0 28 30
 
 [CTRL_PICTURE_EQUIP4]
 Type=1
-Tag=71
-Rect=-172533 117 30 32
-AnchorPos=5767 0
+Tag=29
+Rect=471 117 30 32
+AnchorPos=0 0
+Notes=
+Remark=装备标志4
+NormalFile=.\res\image\ui\bag\bag_equip.png
+NormalFileUV=0 0 28 30
+
+[CTRL_PICTURE_EQUIP1]
+Type=1
+Tag=26
+Rect=13 114 30 32
+AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_equip.png
 NormalFileUV=0 0 28 30
