@@ -51,7 +51,7 @@ function p.OnClickEmpty()
 	p.stopActionObj = nil;
 	
 	maininterface.CloseAllPanel();
-	dlg_menu.CloseUI();
+--	dlg_menu.CloseUI();
 end
 
 --点物件

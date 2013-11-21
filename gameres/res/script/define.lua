@@ -140,6 +140,7 @@ DoFile("drama/after_drama.lua");
 --玩家信息界面
 DoFile("userinfo/define.lua");
 
+--[[
 --功能菜单界面
 DoFile("menu/dlg_menu.lua");
 
@@ -148,6 +149,7 @@ DoFile("actAndad/define.lua");
 
 --剧情 临时
 DoFile("drama/dlg_drama_new.lua");
+--]]
 
 --召唤兽系统
 DoFile("beast/define.lua");
