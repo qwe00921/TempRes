@@ -55,7 +55,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**²Ëµ¥°´Å¥**");
 			maininterface.CloseAllPanel();
 			
-			dlg_menu.ShowUI();
+--			dlg_menu.ShowUI();
 		end
 	end
 end

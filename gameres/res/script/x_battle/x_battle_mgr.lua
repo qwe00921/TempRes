@@ -192,7 +192,7 @@ function p.EnterBattle()
 	
 	--Òþ²Ø°´Å¥
 	dlg_userinfo2.HideUI();
-	dlg_menu.CloseUI();
+--	dlg_menu.CloseUI();
 	
 	--enter PVP
 	x_battle_pvp.ShowUI();	
