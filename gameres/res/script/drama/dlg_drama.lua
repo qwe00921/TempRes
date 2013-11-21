@@ -157,15 +157,7 @@ function p.ResetUI( dramaInfo )
 			p.AddNpcEffect( p.npcPicNodeL );
     	end
     end
-    
-    --NPC图片以特效更新：中间NPC
-    if tonumber( dramaInfo.picMid ) ~= nil and tonumber( dramaInfo.picMid ) ~= 0 then
-        bgPic = GetPictureByAni( "drama.npc_"..dramaInfo.picMid, 0);
-        p.npcPicNodeM:SetPicture( bgPic );
-        if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picMid ) then
-			p.AddNpcEffect( p.npcPicNodeM );
-        end
-    end
+  
     
      --NPC图片以特效更新：右边NPC
     if tonumber( dramaInfo.picRight ) ~= nil and tonumber( dramaInfo.picRight ) ~= 0 then

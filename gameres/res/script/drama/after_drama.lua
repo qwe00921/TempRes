@@ -14,10 +14,10 @@ STAGE_CLEAR = 2;    --Í¨¹Ø
 BATTLE_BEGIN = 3;
 
 function p.DoAfterDrama()
---[[	if p.action == nil then
+	if p.action == nil then
 		x_battle_mgr.EnterBattle();
 		return;
-	end--]]
+	end
 	
 	local strParam = string.format("&target=%d",10002);
 	SendReq( "Fight","StartPvP",10001,strParam );

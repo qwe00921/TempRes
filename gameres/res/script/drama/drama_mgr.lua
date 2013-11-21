@@ -22,7 +22,7 @@ function p.LoadDramaInfo( dramaId )
     for k, v in ipairs(dramaList) do
     	local dramaInfo = drama_page:new();
     	dramaInfo:LoadPage(v);
-    	p.dramaList[#p.dramaList+1] = dramaInfo;
+    	p.dramaList[#p.dramaList + 1] = dramaInfo;
     end
     --dump_obj( p.dramaList[1] );
     if #p.dramaList > 0 then
