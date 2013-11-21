@@ -13,11 +13,9 @@ p.playIndex = 0;	--播放序号
 p.ani = nil;		--动画
 p.picBg = nil;		--背景图片
 p.picLeft = nil;	--左图
-p.picMid = nil;		--中图
 p.picRight = nil;	--右图
 
 p.npcIdLeft = nil;	--左边npcid
-p.npdIdMid = nil;	--中间npcid
 p.npcIdRight = nil;	--右边npcid
 
 p.npcIdTalk = nil;	--当前说话的npcid
@@ -47,8 +45,7 @@ function p:LoadPage( oDrama )
     self.npcName = oDrama.npc_name;
     
     self.picBg = oDrama.bg_pic;      
-    self.picLeft = oDrama.npc_left_id;    
-    self.picMid = oDrama.npc_middle_id;    
+    self.picLeft = oDrama.npc_left_id;       
     self.picRight = oDrama.npc_right_id;
     
     self.npcIdTalk = oDrama.speak_id;
