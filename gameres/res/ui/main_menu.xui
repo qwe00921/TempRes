@@ -1,0 +1,116 @@
+
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 850 640 110
+AnchorPos=0 0
+Notes=
+Remark=背景图片
+NormalFile=.\res\image\ui\main_interface\menu_bg.PNG
+NormalFileUV=0 0 640 110
+
+[CTRL_BUTTON_HOME_PAGE]
+Type=2
+Tag=2
+Rect=10 860 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=主页按钮
+NormalFile=.\res\image\ui\main_interface\home_page.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\home_page.PNG
+SelectedFileUV=0 0 100 90
+DisableFile=.\res\image\ui\main_interface\home_page.PNG
+DisableFileUV=0 0 100 90
+
+[CTRL_BUTTON_QUEST]
+Type=2
+Tag=3
+Rect=115 860 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=任务按钮
+NormalFile=.\res\image\ui\main_interface\quest_btn.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\quest_btn.PNG
+SelectedFileUV=0 0 100 90
+DisableFile=.\res\image\ui\main_interface\quest_btn.PNG
+DisableFileUV=0 0 100 90
+
+[CTRL_BUTTON_CARD_GROUP]
+Type=2
+Tag=4
+Rect=220 860 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=卡组按钮
+NormalFile=.\res\image\ui\main_interface\card_group.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\card_group.PNG
+SelectedFileUV=0 0 100 90
+DisableFile=.\res\image\ui\main_interface\card_group.PNG
+DisableFileUV=0 0 100 90
+
+[CTRL_BUTTON_BAG]
+Type=2
+Tag=5
+Rect=325 860 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=背包按钮
+NormalFile=.\res\image\ui\main_interface\bag.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\bag.PNG
+SelectedFileUV=0 0 100 90
+DisableFile=.\res\image\ui\main_interface\bag.PNG
+DisableFileUV=0 0 100 90
+
+[CTRL_BUTTON_PVP]
+Type=2
+Tag=6
+Rect=430 860 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=竞技场按钮
+NormalFile=.\res\image\ui\main_interface\pvp_btn.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\pvp_btn.PNG
+SelectedFileUV=0 0 100 90
+DisableFile=.\res\image\ui\main_interface\pvp_btn.PNG
+DisableFileUV=0 0 100 90
+
+[CTRL_BUTTON_GASHAPON]
+Type=2
+Tag=7
+Rect=535 860 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=扭蛋按钮
+NormalFile=.\res\image\ui\main_interface\gashapon.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\gashapon.PNG
+SelectedFileUV=0 0 100 90
+DisableFile=.\res\image\ui\main_interface\gashapon.PNG
+DisableFileUV=0 0 100 90
