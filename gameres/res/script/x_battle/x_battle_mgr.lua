@@ -191,7 +191,7 @@ function p.EnterBattle()
 	task_map_mainui.HideUI();
 	
 	--Òþ²Ø°´Å¥
-	dlg_userinfo2.HideUI();
+--	dlg_userinfo2.HideUI();
 --	dlg_menu.CloseUI();
 	
 	--enter PVP

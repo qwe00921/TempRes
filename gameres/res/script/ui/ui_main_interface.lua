@@ -4,14 +4,14 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
-p.ID_CTRL_TEXT_NPC					       = 30;	--副官名称
-p.ID_CTRL_PICTURE_24					     = 29;
-p.ID_CTRL_BUTTON_UNION				    = 11;	--工会按钮
-p.ID_CTRL_BUTTON_PVP					     = 10;	--pvp按钮
-p.ID_CTRL_VERTICAL_LIST_8				 = 9;
-p.ID_CTRL_MAIN_BUTTON_SHOP			 = 8;	--商城按钮
-p.ID_CTRL_MAIN_CUSTOMIZE_LEVEL		= 27;
-p.ID_CTRL_PICTURE_CHA					    = 12;	--助手形象
-p.ID_CTRL_MAIN_BUTTON_GIFT			 = 24;	--任务按钮
+p.ID_CTRL_BUTTON_BG_BTN				   = 11;	--隐藏子界面按钮
+p.ID_CTRL_TEXT_MAIL_TIPS_NUM			= 10;	--邮件数量
+p.ID_CTRL_TEXT_ACTIVITY_TIPS_NUM		= 9;	--活动数量
+p.ID_CTRL_PICTURE_MAIL_TIPS_BG		= 8;	--邮件数量通知背景
+p.ID_CTRL_PICTURE_ACTIVITY_TIPS_BG	= 7;	--活动数量通知背景
+p.ID_CTRL_BUTTON_SHOP					    = 6;	--商城按钮
+p.ID_CTRL_BUTTON_MAIL					    = 5;	--邮件按钮
+p.ID_CTRL_BUTTON_ACTIVITY				 = 4;	--活动按钮
+p.ID_CTRL_BUTTON_MORE					    = 3;	--弹出按钮
+p.ID_CTRL_PICTURE_CHA					    = 12;	--首领星灵
 p.ID_CTRL_MAIN_PICTURE_BG				 = 1;	--背景
-p.ID_CTRL_MIAN_BUTTON_DOWN			 = 7;	--按钮（控制目录隐藏）
