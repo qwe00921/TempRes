@@ -16,6 +16,7 @@ p.EVENT_MESSAGE_TYPE_PET_EQUIP                        = 4;        -- ¿¨ÅÆ×°±¸Ç¿»
 p.EVENT_MESSAGE_TYPE_GACHA                            = 5;        -- Íæ¼ÒÅ¤µ°ÊÂ¼ş
 p.EVENT_MESSAGE_TYPE_TIPS                             = 6;        -- ÓÎÏ·TIPSĞÅÏ¢
 p.EVENT_MESSAGE_TYPE_SYSTEM                           = 7;        -- ÏµÍ³ÏûÏ¢
+p.EVENT_MESSAGE_TYPE_PET_SKILL                        = 8;        -- ³èÎï¼¼ÄÜÏûÏ¢
 
 
 p.layer = nil;
@@ -27,32 +28,52 @@ p.message_tips = {};                    -- ÌáÊ¾ÏûÏ¢
 
 p.timer = nil;
 
-p.billboardHeight = 50;
+p.billboardHeight = 300;
 p.billboardRatio = 0.7;					-- ÅÜÂíµÆ¿í¶È±ÈÀıÏµÊı
-p.billboard_y = 0;
+p.billboard_y = nil;
+p.billboard_x = nil;
+
 
 function p.ShowUI()
 
-    if p.layer == nil then
+   if p.layer == nil then
         p.layer = GetHudLayer();
     end
    
-    if p.title == nil then
+   if p.title == nil then
         p.title = createNDUIScrollText();
         p.title:Init();
         
 		--ÉèÖÃ¾ØĞÎÇøÓò
-		local x = 0.5f * (1.0f - p.billboardRatio) * GetScreenWidth();
+		local x = p.billboard_x or 0.5f * (1.0f - p.billboardRatio) * GetScreenWidth();
+		local y = p.billboard_y or UIOffsetX(90);
 		local w = GetScreenWidth() * p.billboardRatio;
-		local rect = CCRectMake( x, UIOffsetX(p.billboard_y), w, UIOffsetY(p.billboardHeight) );
+		local rect = CCRectMake( x, y, w, UIOffsetY(p.billboardHeight) );
         p.title:SetFrameRect( rect );
 		
         p.title:SetScrollSpeed(tonumber( GetStr( "message_speed" )));
         p.layer:AddChild(p.title);
         
-    end
-    p.LoadMessage();
+   end
+   p.LoadMessage();
     p.StartTimer();
+end
+
+function p.ShowUIWithInit(parentLayer,posX,posY)
+
+	if p.layer == nil then
+        p.layer = parentLayer;
+    end
+	
+	if p.billboard_x == nil then
+		p.billboard_x = posX;
+	end
+	
+	if p.billboard_y == nil then
+		p.billboard_y = posY;
+	end
+	
+	p.ShowUI();
 end
 
 -- ¼ÓÔØÏûÏ¢
@@ -72,7 +93,7 @@ function p.RefreshMessage(msg)
     if p.message ~= nil and #p.message > 0 then
         p.SplitMessage();
         p.ShowMessage();
-    end  
+   end  
 end
 
 -- ²ğ·ÖÏûÏ¢
@@ -119,7 +140,8 @@ end
 -- ÏÔÊ¾ÏµÍ³ÏûÏ¢
 function p.ShowSysMessage()
 	
-    p.title:RunText(string.format("%s%s","<#ff0000ff>",p.message_sys[1].Message));
+   -- p.title:RunText(string.format("%s%s","<#ff0000ff>","my my my msg"));--p.message_sys[1].Message));
+	p.title:RunText(string.format("%s%s","<#ff0000ff>",p.message_sys[1].Message));
     table.remove(p.message_sys,1);
 end
 
@@ -151,6 +173,9 @@ function p.ShowUserMessage()
     elseif p.EVENT_MESSAGE_TYPE_GACHA == type then
     	-- Å¤µ°
         text = string.format(GetStr("bill_board_message_gacha"),user_id,rare,card_id);
+	elseif p.EVENT_MESSAGE_TYPE_PET_SKILL == type then
+		-- ³èÎï¼¼ÄÜÇ¿»¯
+		 text = string.format(GetStr("bill_board_message_pet_skill"),user_id,card_id,level);
     end
 
     if text ~= nil then
