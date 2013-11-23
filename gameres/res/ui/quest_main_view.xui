@@ -64,6 +64,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\quest\easy.png
 NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\easy_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\easy_un.png
+DisableFileUV=0 0 44 52
 
 [CTRL_BTN_NORMAL_8]
 Type=2
@@ -76,6 +80,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\quest\normal.png
 NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\normal_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\normal_un.png
+DisableFileUV=0 0 44 52
 
 [CTRL_BTN_HARD_9]
 Type=2
@@ -88,3 +96,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\quest\hard.png
 NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\hard_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\hard_un.png
+DisableFileUV=0 0 44 52

@@ -4,29 +4,30 @@ local p = quest_main;
 p.layer = nil;
 local ui = ui_quest_main_view;
 local uiList = ui_quest_list_view;
+local missionIdGap = 10;
+local num_easy = nil;
+local num_normal = nil;
+local num_difficult = nil;
 
 p.stageId = nil;	--关卡ID
 p.missionId = nil; 	--任务ID
 
-p.stageTable = nil;		--静态数据
+p.stageTable = nil;		--关卡静态数据
 --p.missionTable = nil;
 
 p.missionList = {};	--服务端下发列表
-p.data = {};		--数据
-
-p.power = nil; 		--体力
-
-
+p.curBtnNode = nil;		--选中标记
+p.power = nil; 		--获取玩家体力值
 
 function p.ShowUI(stageId)
 	p.stageId  = stageId;
 	WriteCon(tostring(p.stageId));
 	
 	--获取missionId初始值
-	GetMissionId();
+	p.GetMissionId();
 	--获取章节静态数据
-	GetStageTable();
-	
+	p.GetStageTable();
+
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -54,24 +55,25 @@ function p.ShowUI(stageId)
 	
 	WriteCon("send mission request");
 	local uid = GetUID();
-	local param = "MachineType=Android&stage_id="..p.stageId;
-	WriteCon(param);
+	local param = "MachineType=Android&Stage_id="..p.stageId;
 	SendReq("Mission","MissionList",uid,param);
 	--p.ShowQuestList();
 end
 
-
-function GetMissionId()
+function p.GetMissionId()
 	if p.stageId then
 		p.missionId = tonumber(p.stageId.."011");
 		WriteCon(tostring(p.missionId));
 	end
 end
 
-function GetStageTable()
+function p.GetStageTable()
 	local Table = SelectRowList(T_STAGE,"stage_id",p.stageId);
 	if #Table == 1 then 
 		p.stageTable = Table;
+		num_easy = tonumber(p.stageTable[1].easy_count);
+		num_normal = tonumber(p.stageTable[1].normal_count);
+		num_difficult = tonumber(p.stageTable[1].difficult_count);
 	else
 		WriteCon("stageTable error");
 	end
@@ -80,64 +82,129 @@ end
 function p.SetDelegate()
 	--返回
 	local btnBack = GetButton( p.layer, ui.ID_CTRL_BTN_TETURN_2 );
-	p.SetBtn(btnBack);
+	btnBack:SetLuaDelegate(p.OnBtnClick);
 	--简单
 	local btnEasy =  GetButton(p.layer, ui.ID_CTRL_BTN_EAYE_7);
-	p.SetBtn(btnEasy);
+	btnEasy:SetLuaDelegate(p.OnBtnClick);
+	p.SetBtnCheckedFX( btnEasy );--设置初始状态
 	--普通
 	local BtnNormal =  GetButton(p.layer, ui.ID_CTRL_BTN_NORMAL_8);
-	p.SetBtn(BtnNormal);
+	BtnNormal:SetLuaDelegate(p.OnBtnClick);
 	--困难
 	local BtnDifficult =  GetButton(p.layer, ui.ID_CTRL_BTN_HARD_9);
-	p.SetBtn(BtnDifficult);
-end
-
-function p.SetBtn(btn)
-	btn:SetLuaDelegate(p.OnBtnClick);
+	BtnDifficult:SetLuaDelegate(p.OnBtnClick);
 end
 
 --按钮事件
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
-		
 		if (ui.ID_CTRL_BTN_TETURN_2 == tag) then
 			WriteCon("return");
 			p.CloseUI();
 			--game_main.EnterWorldMap();
 		elseif (ui.ID_CTRL_BTN_EAYE_7 == tag) then
 			WriteCon("easy");
+            p.SetBtnCheckedFX( uiNode );
+			local missionStartId = p.missionId;
+			p.loadMissionList(missionStartId,num_easy);
 		elseif (ui.ID_CTRL_BTN_NORMAL_8 == tag) then
 			WriteCon("normal");
+            p.SetBtnCheckedFX( uiNode );
+			local missionStartId = p.missionId + 1;
+			p.loadMissionList(missionStartId,num_normal);
 		elseif (ui.ID_CTRL_BTN_HARD_9 == tag) then
 			WriteCon("hard");
-		--	WriteCon("商店");
+            p.SetBtnCheckedFX( uiNode );
+			local missionStartId = p.missionId + 2;
+			p.loadMissionList(missionStartId,num_difficult);
 		end
 	end
 end
 
+--点击战斗按钮
+function p.OnFightBtnClick(uiNode,uiEventType,param)
+	if IsClickEvent(uiEventType) then
+		WriteCon("=========OnFightBtnClick==========");
+		local btnId = uiNode:GetId();
+		local missionId = uiNode:GetId();
+		local missionTable = SelectRowList(T_MISSION,"mission_id",missionId);
+		local powerLimit = tonumber(missionTable[1]["power"]);
+		local power = p.power;
+		if power < powerLimit then
+			dlg_msgbox.ShowOK(ToUtf8( "提示" ), ToUtf8( "体力值不足" ));
+			WriteCon("power not enough");
+			return
+		else
+			WriteCon("btnID="..btnId);
+			--p.CloseUI();
+			--world_map.CloseMap();
+		end
+	end
+end
+
+function p.SetBtnCheckedFX( node )
+    local btnNode = ConverToButton( node );
+    if p.curBtnNode ~= nil then
+        p.curBtnNode:SetChecked( false );
+    end
+    btnNode:SetChecked( true );
+    p.curBtnNode = btnNode;
+end
+
 --显示列表
 function p.ShowQuestList(List)
-
-	if List["missions"] then
-		p.missionList = List["missions"]
+	for k,v in pairs(List) do
+		if k == "missions" then
+			p.missionList = List[k];
+		elseif k == "move" then
+			p.power = tonumber(List[k]);
+			WriteCon("**p.power="..p.power); 
+		end
 	end
-	
-	for k,v in pairs(p.missionList) do
-		WriteCon("missionList==sfsfd=="..tostring(k));
-
+	if p.missionList == nil then
+		WriteCon("**missionsList error**"); 
+		return
 	end
+	-- local ListLength = 0;
+	-- for k,v in pairs(p.missionList) do
+		-- ListLength = ListLength + 1;
 	-- end
-	WriteCon("missionList===="..tostring(p.missionList));
-
-	local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST_5);
-	local num = p.stageTable[1].easy_count;
-	WriteCon("====="..num.."======");
-
-	local MID = p.missionId;
+	-- WriteCon("**ListLength = "..ListLength); 
+	--设置难道按钮
+	p.setHardBtn();
 	
-	for i = 1,num do
-		WriteCon("MID ========"..MID);
+	--加载列表
+	local missionStartId = p.missionId;
+	p.loadMissionList(missionStartId,num_easy);
+end
+
+function p.setHardBtn()
+	local BtnDifficult =  GetButton(p.layer, ui.ID_CTRL_BTN_HARD_9);
+	local BtnNormal =  GetButton(p.layer, ui.ID_CTRL_BTN_NORMAL_8);
+	local normal_id = p.missionId + 1;
+	local difficult_id = normal_id + 1;
+
+	if p.missionList["M"..difficult_id] then
+		BtnDifficult:SetEnabled(true);
+		BtnNormal:SetEnabled(true);
+	elseif p.missionList["M"..normal_id] then
+		BtnDifficult:SetEnabled(false);
+		BtnNormal:SetEnabled(true);
+	else
+		BtnDifficult:SetEnabled(false);
+		BtnNormal:SetEnabled(false);
+	end
+end
+
+function p.loadMissionList(missionStartId,num)
+	local MisId = missionStartId;
+	local count = num;
+	local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST_5);
+	missionListTable:ClearView();
+	
+	for i = 1,count do
+		WriteCon("MisId =="..MisId);
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("quest_list_view.xui",view, nil);
@@ -148,43 +215,40 @@ function p.ShowQuestList(List)
 		
 		local bg = GetUiNode(view, uiList.ID_CTRL_PIC_LIST_BG);
 		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
-		view:SetId(MID);
+		view:SetId(MisId);
 		
 		--信息初始化
-		p.InitMission(MID,view);
+		p.setMissionInif(MisId,view);
 		
-		--加载数据
-		local k = MID;
+		--加载服务端下发数据
 		--战斗按钮
 		local fightBtn = GetButton(view, uiList.ID_CTRL_BUTTON_FIGHTING);
 		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
-			WriteCon("M"..k);
-
-		if p.missionList["M"..k] then
-			WriteCon("=====fsfsdfd=====");
+		local MisKey = "M"..MisId;
+		if p.missionList[MisKey] then
+			WriteCon("=====true");
 			fightBtn:SetEnabled(true);
-			fightBtn:SetId(k);
-			
+			fightBtn:SetId(MisId);
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
 			local missionTable = SelectRowList(T_MISSION,"mission_id",mis_id);
-			local text = p.missionList["M"..k]["Fight_num"].."/"..missionTable[1]["times"]
+			local text = p.missionList[MisKey]["Fight_num"].."/"..missionTable[1]["timesLimit"]
 			timesText:SetText(ToUtf8(text));
-			
+			--显示星级
+			local StarNum = p.missionList[MisKey]["High_score"]
+			p.ShowStar(view,StarNum)
 		else
 			WriteCon("=====false=====");
 			fightBtn:SetEnabled(false);
 		end
-		
+			
 		missionListTable:AddView(view);
-		MID = MID + 10;
-		
+		MisId = MisId + missionIdGap;
 	end
-
 end
 
---信息初始化
-function p.InitMission(MID, view)
-	local mis_id = MID;
+--读取静态表数据
+function p.setMissionInif(MisId, view)
+	local mis_id = MisId;
 	local misstionName = GetLabel(view, uiList.ID_CTRL_TEXT_QUEST_NAME_V);
 	local power = GetLabel(view, uiList.ID_CTRL_TEXT_POWER_V);
 	local expText = GetLabel(view, uiList.ID_CTRL_TEXT_EXP_V);
@@ -200,7 +264,7 @@ function p.InitMission(MID, view)
 		power:SetText(ToUtf8(missionTable[1]["power"]));
 		expText:SetText(ToUtf8(missionTable[1]["exp"]));
 		moneyText:SetText(ToUtf8(missionTable[1]["money"]));
-		local text = "0/"..missionTable[1]["times"]
+		local text = "0/"..missionTable[1]["timesLimit"]
 		timesText:SetText(ToUtf8(text));
 		
 		local rewardId1 = tonumber(missionTable[1]["reward_1"]);

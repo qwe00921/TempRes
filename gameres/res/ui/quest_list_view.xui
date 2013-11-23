@@ -221,7 +221,7 @@ NormalFileUV=0 0 72 84
 [CTRL_BUTTON_FIGHTING]
 Type=2
 Tag=15
-Rect=446 173 173 53
+Rect=446 173 173 48
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -229,3 +229,5 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\quest\mission_start.png
 NormalFileUV=0 0 279 77
+DisableFile=.\res\image\ui\quest\mission_start_un.png
+DisableFileUV=0 0 279 77
