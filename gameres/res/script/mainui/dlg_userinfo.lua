@@ -3,12 +3,15 @@ dlg_userinfo = {}
 local p = dlg_userinfo;
 
 p.layer = nil;
+p.userinfo = nil;
 
 local ui = ui_main_userinfo
 
 function p.ShowUI(userinfo)
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		dlg_battlearray.ShowUI();
+		
 		if userinfo ~= nil then
 			p.RefreshUI(userinfo)
 		else
@@ -31,6 +34,9 @@ function p.ShowUI(userinfo)
 	layer:SetZOrder(9);
     
 	p.layer = layer;
+	
+	dlg_battlearray.ShowUI();
+	
 	if userinfo ~= nil then
 		p.RefreshUI(userinfo)
 	else
@@ -61,6 +67,8 @@ function p.SendReqUserInfo()
 end
 
 function p.RefreshUI(userinfo)
+	p.userinfo = userinfo;
+	
 	local username = GetLabel( p.layer, ui.ID_CTRL_TEXT_NAME);
 	username:SetText( userinfo.Name );
 	
@@ -74,13 +82,17 @@ function p.RefreshUI(userinfo)
 	emoney:SetText( userinfo.Emoney );
 	
 	local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
-	strength:SetValue( 0, tonumber( userinfo.Move ), tonumber( userinfo.MaxMove ));
+	strength:SetValue( 0, tonumber( userinfo.MaxMove ), tonumber( userinfo.Move ) );
 	
 	local energy = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_ENERGY );
-	energy:SetValue( 0, 50, 100 );
+	energy:SetValue( 0, tonumber( userinfo.MaxEnergy ), tonumber( userinfo.Energy ) );
+	--energy:SetValue( 0, 100, tonumber( userinfo.Energy ) );
 	
 	local Exp = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_EXP );
-	Exp:SetValue( 0, 50, 100 );
+	Exp:SetValue( 0, tonumber( userinfo.MaxExp ), tonumber( userinfo.Exp ) );
+	--Exp:SetValue( 0, 100, tonumber( userinfo.Exp ) );
+	
+	dlg_battlearray.RefreshUI(userinfo.User_Team);
 end
 
 function p.SetDelegate()
@@ -95,4 +107,9 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========充值========**");
 		end
 	end
+end
+
+--返回玩家信息
+function p.GetUserInfo()
+	return p.userinfo;
 end

@@ -40,3 +40,21 @@ function p.HideUI()
 	end
 end
 
+function p.RefreshUI(user_team)
+	if user_team == nil then
+		return;
+	end
+	
+	for i = 1, 6 do
+		local id = user_team["Pos_card"..i]
+		if id ~= nil then
+			local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_ROLE_"..i] );
+			if btn ~= nil then
+				btn:SetImage( GetPictureByAni( "minicard.card_"..id, 0 ) );
+				btn:SetTouchDownImage( GetPictureByAni( "minicard.card_"..id, 0 ) );
+				btn:SetDisabledImage( GetPictureByAni( "minicard.card_"..id, 0 ) );
+			end
+		end
+	end
+end
+

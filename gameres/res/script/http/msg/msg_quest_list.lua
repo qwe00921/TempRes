@@ -24,5 +24,5 @@ function p:Process()
 	
 	WriteConWarning( "** msg_quest_list:Process() called" );
 	--quest_main.ShowUI(self.battles);
-	quest_main.ShowQuestList(self.battles);
+	quest_main.ShowQuestList(self.data);
 end
