@@ -10,6 +10,7 @@ function p.ShowUI(userinfo)
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		dlg_battlearray.ShowUI();
+		p.ShowBillboard();
 		return;
 	end
 	
@@ -30,7 +31,9 @@ function p.ShowUI(userinfo)
 	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
-	p.ShowBillboard();
+	dlg_battlearray.ShowUI();
+	
+	p.ShowBillboardWithInit();
 	
 end
 
@@ -66,6 +69,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========商城========**");
 		elseif ui.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========邮件========**");
+			--mail_main.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========活动========**");
 		elseif ui.ID_CTRL_BUTTON_MORE == tag then
@@ -85,6 +89,7 @@ function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 		dlg_battlearray.HideUI();
+		p.HideBillboard();
 	end
 end
 
@@ -94,6 +99,7 @@ function p.CloseUI()
 	    p.layer:LazyClose();
         p.layer = nil;
 		dlg_battlearray.CloseUI();
+		billboard.CloseUI();
     end
 end
 
@@ -106,6 +112,14 @@ function p.ShowMenuBtn()
 end
 
 --跑马灯显示
-function p.ShowBillboard()
+function p.ShowBillboardWithInit()
 	billboard.ShowUIWithInit(layer); 
+end
+
+function p.HideBillboard()
+	billboard.pauseBillBoard();
+end
+
+function p.ShowBillboard()
+	billboard.resumeBillBoard();
 end
