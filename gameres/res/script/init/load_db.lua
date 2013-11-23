@@ -17,6 +17,12 @@ T_TRAVEL_DUNGEON_INFO   = LoadTable( "travel_dungeon_info.ini" );
 --道具表
 T_ITEM          = LoadTable( "item.ini" );
 
+--任务信息表
+T_MISSION		= LoadTable( "mission.ini" );
+
+--任务章节表
+T_STAGE			= LoadTable( "Stage.ini" );
+
 --卡牌强化所需的金币以经验表
 T_CARD_GROW     = LoadTable( "card_grow.ini" );
 
