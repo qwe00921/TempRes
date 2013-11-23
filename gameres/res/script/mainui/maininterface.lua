@@ -69,7 +69,12 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========商城========**");
 		elseif ui.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========邮件========**");
-			--mail_main.ShowUI();
+			mail_main.ShowUI();
+			--隐藏主UI
+			maininterface.CloseAllPanel();
+			maininterface.HideUI();
+			--隐藏用户信息
+			dlg_userinfo.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========活动========**");
 		elseif ui.ID_CTRL_BUTTON_MORE == tag then
