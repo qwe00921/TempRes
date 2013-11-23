@@ -30,8 +30,6 @@ function p.ShowUI(userinfo)
 	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
-	dlg_battlearray.ShowUI();
-	
 	p.ShowBillboard();
 	
 end
