@@ -1,0 +1,118 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_287]
+Type=1
+Tag=287
+Rect=0 0 640 959
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\bag\bag_bg.png
+NormalFileUV=0 0 641 198
+
+[CTRL_TEXT_288]
+Type=4
+Tag=288
+Rect=251 9 107 60
+AnchorPos=0 0
+Notes=
+Text=客服
+TextTradition=客服
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_289]
+Type=4
+Tag=289
+Rect=32 173 107 60
+AnchorPos=0 0
+Notes=
+Text=主题:
+TextTradition=主題:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_INPUT_TEXT_290]
+Type=18
+Tag=290
+Rect=144 171 479 59
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_GO_BACK]
+Type=2
+Tag=292
+Rect=518 23 107 72
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_back.png
+NormalFileUV=0 0 151 101
+
+[CTRL_CHAT_TEXT_293]
+Type=5
+Tag=293
+Rect=31 240 592 299
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_294]
+Type=4
+Tag=294
+Rect=61 548 559 52
+AnchorPos=0 0
+Notes=
+Text=我们会尽快回复您提交的问题
+TextTradition=我們會盡快回復您提交的問題
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_295]
+Type=2
+Tag=295
+Rect=263 611 124 63
+AnchorPos=0 0
+Notes=
+Text=发送
+TextTradition=發送
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_296]
+Type=2
+Tag=296
+Rect=37 83 107 60
+AnchorPos=0 0
+Notes=
+Text=提交问题
+TextTradition=提交問題
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_297]
+Type=2
+Tag=297
+Rect=192 82 107 60
+AnchorPos=0 0
+Notes=
+Text=查看问题
+TextTradition=查看問題
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

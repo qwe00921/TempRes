@@ -1,0 +1,182 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_BG_BTN]
+Type=2
+Tag=11
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=隐藏子界面按钮
+
+[CTRL_MAIN_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+Remark=背景
+NormalFile=.\res\image\ui\bag\bag_bg.png
+NormalFileUV=0 0 641 198
+
+[CTRL_BUTTON_SYS]
+Type=2
+Tag=94
+Rect=13 104 97 42
+AnchorPos=0 0
+Notes=
+Text=系统
+TextTradition=系統
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_USER]
+Type=2
+Tag=95
+Rect=117 102 107 44
+AnchorPos=0 0
+Notes=
+Text=个人
+TextTradition=個人
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_GO_BACK]
+Type=2
+Tag=154
+Rect=528 5 107 72
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_back.png
+NormalFileUV=0 0 151 101
+
+[CTRL_VERTICAL_LIST_MAIN]
+Type=14
+Tag=157
+Rect=16 163 602 591
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_SELECT_ALL]
+Type=2
+Tag=158
+Rect=16 760 107 43
+AnchorPos=0 0
+Notes=
+Text=全选
+TextTradition=全選
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_DEL]
+Type=2
+Tag=159
+Rect=131 760 110 43
+AnchorPos=0 0
+Notes=
+Text=删除
+TextTradition=刪除
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_PRE_PAGE]
+Type=2
+Tag=160
+Rect=378 758 59 44
+AnchorPos=0 0
+Notes=
+Text=<<
+TextTradition=<<
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_PAGE_INFO]
+Type=4
+Tag=161
+Rect=441 760 125 43
+AnchorPos=0 0
+Notes=
+Text=1/3
+TextTradition=1/3
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_NEXT_PAGE]
+Type=2
+Tag=162
+Rect=564 758 60 43
+AnchorPos=0 0
+Notes=
+Text=>>
+TextTradition=>>
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_164]
+Type=4
+Tag=164
+Rect=255 5 133 70
+AnchorPos=0 0
+Notes=
+Text=邮箱
+TextTradition=郵箱
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_BUTTON_GM]
+Type=2
+Tag=165
+Rect=405 94 107 61
+AnchorPos=0 0
+Notes=
+Text=客服
+TextTradition=客服
+TextSize=25
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_WRITE]
+Type=2
+Tag=166
+Rect=516 94 107 59
+AnchorPos=0 0
+Notes=
+Text=写信
+TextTradition=寫信
+TextSize=25
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34

@@ -1,0 +1,123 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_245]
+Type=1
+Tag=245
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\bag_bg.png
+NormalFileUV=0 0 641 198
+
+[CTRL_BUTTON_FRIENDS]
+Type=2
+Tag=95
+Rect=351 88 66 44
+AnchorPos=0 0
+Notes=
+Text=V
+TextTradition=V
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_SEND]
+Type=2
+Tag=158
+Rect=140 747 107 43
+AnchorPos=0 0
+Notes=
+Text=发送
+TextTradition=發送
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_GO_BACK]
+Type=2
+Tag=159
+Rect=385 743 110 43
+AnchorPos=0 0
+Notes=
+Text=取消
+TextTradition=取消
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_164]
+Type=4
+Tag=164
+Rect=255 5 133 70
+AnchorPos=0 0
+Notes=
+Text=写信
+TextTradition=寫信
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_TEXT_209]
+Type=4
+Tag=209
+Rect=25 98 88 50
+AnchorPos=0 0
+Notes=
+Text=收件人:
+TextTradition=收件人:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_212]
+Type=4
+Tag=212
+Rect=25 174 89 43
+AnchorPos=0 0
+Notes=
+Text=主题:
+TextTradition=主題:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_INPUT_TEXT_270]
+Type=18
+Tag=270
+Rect=115 93 229 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_INPUT_TEXT_271]
+Type=18
+Tag=271
+Rect=115 171 468 66
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_CHAT_TEXT_272]
+Type=5
+Tag=272
+Rect=30 248 568 493
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

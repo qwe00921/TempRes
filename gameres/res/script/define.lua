@@ -158,4 +158,7 @@ DoFile("drama/dlg_drama_new.lua");
 --召唤兽系统
 DoFile("beast/define.lua");
 
+--邮件系统
+DoFile("mail/define.lua");
+
 

@@ -215,4 +215,9 @@ DoFile("ui/ui_beast_main_list.lua");
 DoFile("ui/ui_beast_incubate_list.lua");
 DoFile("ui/ui_beast_incubate.lua");--培养
 
+--邮件系统
+DoFile("ui/ui_mail_main.lua");
+DoFile("ui/ui_mail_write_mail.lua");
+DoFile("ui/ui_mail_gm_mail.lua");
+
 
