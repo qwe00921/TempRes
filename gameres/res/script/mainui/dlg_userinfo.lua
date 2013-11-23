@@ -85,7 +85,12 @@ function p.RefreshUI(userinfo)
 	strength:SetValue( 0, tonumber( userinfo.MaxMove ), tonumber( userinfo.Move ) );
 	
 	local energy = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_ENERGY );
-	energy:SetValue( 0, tonumber( userinfo.MaxEnergy ), tonumber( userinfo.Energy ) );
+	if userinfo.MaxEnergy == nil or userinfo.Energy == nil then
+		energy:SetValue( 0, tonumber( 0 ), tonumber( 0 ) );
+	else
+		energy:SetValue( 0, tonumber( userinfo.MaxEnergy ), tonumber( userinfo.Energy ) );
+	end
+
 	--energy:SetValue( 0, 100, tonumber( userinfo.Energy ) );
 	
 	local Exp = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_EXP );
