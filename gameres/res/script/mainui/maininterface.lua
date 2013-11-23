@@ -31,6 +31,9 @@ function p.ShowUI(userinfo)
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
 	dlg_battlearray.ShowUI();
+	
+	p.ShowBillboard();
+	
 end
 
 --设置按钮
@@ -102,4 +105,9 @@ function p.ShowMenuBtn()
 	if menu then
 		menu:SetVisible(true);
 	end
+end
+
+--跑马灯显示
+function p.ShowBillboard()
+	billboard.ShowUIWithInit(layer); 
 end
