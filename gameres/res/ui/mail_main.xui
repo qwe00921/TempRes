@@ -27,7 +27,7 @@ NormalFileUV=0 0 641 198
 [CTRL_BUTTON_SYS]
 Type=2
 Tag=94
-Rect=13 104 97 42
+Rect=13 104 97 45
 AnchorPos=0 0
 Notes=
 Text=系统
@@ -37,11 +37,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\common\sub_title.png
 NormalFileUV=0 0 125 34
+SelectFile=.\res\image\ui\skillpiece_combo\combobk01.png
+SelectedFileUV=0 0 453 148
 
 [CTRL_BUTTON_USER]
 Type=2
 Tag=95
-Rect=117 102 107 44
+Rect=117 102 107 47
 AnchorPos=0 0
 Notes=
 Text=个人
@@ -51,6 +53,8 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\common\sub_title.png
 NormalFileUV=0 0 125 34
+SelectFile=.\res\image\ui\skillpiece_combo\combobk01.png
+SelectedFileUV=0 0 453 148
 
 [CTRL_BUTTON_GO_BACK]
 Type=2

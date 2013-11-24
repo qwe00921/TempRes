@@ -1,0 +1,351 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_245]
+Type=1
+Tag=245
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\bag_bg.png
+NormalFileUV=0 0 641 198
+
+[CTRL_BUTTON_SEND]
+Type=2
+Tag=158
+Rect=65 787 107 43
+AnchorPos=0 0
+Notes=
+Text=删除邮件
+TextTradition=刪除郵件
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_BUTTON_GO_BACK]
+Type=2
+Tag=159
+Rect=455 786 110 43
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_164]
+Type=4
+Tag=164
+Rect=241 6 148 70
+AnchorPos=0 0
+Notes=
+Text=邮箱
+TextTradition=郵箱
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_TEXT_209]
+Type=4
+Tag=209
+Rect=26 91 88 50
+AnchorPos=0 0
+Notes=
+Text=发件人:
+TextTradition=發件人:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_212]
+Type=4
+Tag=212
+Rect=28 214 89 43
+AnchorPos=0 0
+Notes=
+Text=主题:
+TextTradition=主題:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_454]
+Type=2
+Tag=454
+Rect=229 786 107 43
+AnchorPos=0 0
+Notes=
+Text=领取奖励
+TextTradition=領取獎勵
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=455
+Rect=129 92 202 48
+AnchorPos=0 0
+Notes=
+Text=系统消息
+TextTradition=系統消息
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=456
+Rect=128 212 440 48
+AnchorPos=0 0
+Notes=
+Text=服务器维护补偿礼包
+TextTradition=服務器維護補償禮包
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_458]
+Type=4
+Tag=458
+Rect=30 149 88 50
+AnchorPos=0 0
+Notes=
+Text=发件时间:
+TextTradition=發件時間:
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TIME]
+Type=4
+Tag=459
+Rect=128 151 443 48
+AnchorPos=0 0
+Notes=
+Text=2014-05-21 19:33:33
+TextTradition=2014-05-21 19:33:33
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CONTENT]
+Type=4
+Tag=460
+Rect=33 274 571 192
+AnchorPos=0 0
+Notes=
+Text=亲爱的玩家,由于昨天服务器
+TextTradition=親愛的玩家,由于昨天服務器
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=461
+Rect=58 519 64 64
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\item\item3_1.png
+NormalFileUV=0 0 240 240
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=462
+Rect=263 641 64 64
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\item\item3_3.png
+NormalFileUV=0 0 240 240
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=463
+Rect=60 637 64 64
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\item\item3_3.png
+NormalFileUV=0 0 240 240
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=464
+Rect=466 519 64 64
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\item\item3_2.png
+NormalFileUV=0 0 240 240
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=465
+Rect=263 519 64 64
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\item\item1_1.png
+NormalFileUV=0 0 360 210
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=466
+Rect=466 640 64 64
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\item\item3_2.png
+NormalFileUV=0 0 240 240
+
+[CTRL_TEXT_467]
+Type=4
+Tag=467
+Rect=130 525 80 64
+AnchorPos=0 0
+Notes=
+Text=X3
+TextTradition=X3
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_468]
+Type=4
+Tag=468
+Rect=340 640 80 64
+AnchorPos=0 0
+Notes=
+Text=X3
+TextTradition=X3
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_469]
+Type=4
+Tag=469
+Rect=331 522 80 64
+AnchorPos=0 0
+Notes=
+Text=X3
+TextTradition=X3
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_470]
+Type=4
+Tag=470
+Rect=534 522 80 64
+AnchorPos=0 0
+Notes=
+Text=X3
+TextTradition=X3
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_471]
+Type=4
+Tag=471
+Rect=135 642 80 64
+AnchorPos=0 0
+Notes=
+Text=X3
+TextTradition=X3
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_472]
+Type=4
+Tag=472
+Rect=536 639 80 64
+AnchorPos=0 0
+Notes=
+Text=X3
+TextTradition=X3
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_1]
+Type=4
+Tag=473
+Rect=58 592 162 39
+AnchorPos=0 0
+Notes=
+Text=宝石
+TextTradition=寶石
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_2]
+Type=4
+Tag=474
+Rect=257 592 162 39
+AnchorPos=0 0
+Notes=
+Text=宝石
+TextTradition=寶石
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_3]
+Type=4
+Tag=475
+Rect=450 591 162 39
+AnchorPos=0 0
+Notes=
+Text=宝石
+TextTradition=寶石
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_4]
+Type=4
+Tag=476
+Rect=56 710 162 39
+AnchorPos=0 0
+Notes=
+Text=宝石
+TextTradition=寶石
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_5]
+Type=4
+Tag=477
+Rect=264 708 162 39
+AnchorPos=0 0
+Notes=
+Text=宝石
+TextTradition=寶石
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=478
+Rect=453 709 162 39
+AnchorPos=0 0
+Notes=
+Text=宝石
+TextTradition=寶石
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

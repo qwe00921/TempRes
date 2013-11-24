@@ -219,5 +219,8 @@ DoFile("ui/ui_beast_incubate.lua");--培养
 DoFile("ui/ui_mail_main.lua");
 DoFile("ui/ui_mail_write_mail.lua");
 DoFile("ui/ui_mail_gm_mail.lua");
+DoFile("ui/ui_mail_list_item_sys.lua");
+DoFile("ui/ui_mail_list_item_user.lua");
+DoFile("ui/ui_mail_detail_sys.lua");
 
 
