@@ -11,6 +11,20 @@ p.layer = nil;
 p.item = nil;
 p.maxNum = nil;
 
+local PIC_INDEX = 1;
+local NAME_INDEX = 2;
+local COUNT_INDEX = 3;
+local NUM_INDEX = 4;
+
+p.nodeTag = {
+	{ui_dlg_gift_pack_preview.ID_CTRL_PICTURE_5 , ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME1, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_21, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM1},
+	{ui_dlg_gift_pack_preview.ID_CTRL_PICTURE_6 , ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME2, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_22, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM2},
+	{ui_dlg_gift_pack_preview.ID_CTRL_PICTURE_7 , ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME3, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_23, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM3},
+	{ui_dlg_gift_pack_preview.ID_CTRL_PICTURE_8 , ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME4, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_24, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM4},
+	{ui_dlg_gift_pack_preview.ID_CTRL_PICTURE_9 , ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME5, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_25, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM5},
+	{ui_dlg_gift_pack_preview.ID_CTRL_PICTURE_10, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME6, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_26, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM6},
+};
+
 --显示UI
 function p.ShowUI( item )
     
@@ -24,6 +38,7 @@ function p.ShowUI( item )
         return false;
     end
 	
+	layer:NoMask();
 	layer:Init();	
 	GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_gift_pack_preview.xui", layer, nil);
@@ -41,6 +56,54 @@ end
 
 function p.Init( item )
     local giftId = item.item_id;
+	local itemList = {};
+	for i = 1, 6 do
+		local itemid = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id" ..i) );
+		local itemnum = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num" ..i) );
+		
+		--过滤礼包中物品的数量
+		if itemid ~= 0 and itemnum ~= 0 then
+			table.insert( itemList, {itemid, itemnum} );
+		end
+	end
+	
+	if #itemList > 0 then
+		for i = 1, #itemList do
+			--local itemid = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id" ..i) );
+			--local itemnum = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num" ..i) );
+			local itemid = itemList[i][1];
+			local itemnum = itemList[i][2];
+			
+			if itemid ~= 0 and itemnum ~= 0 then
+				--显示名字
+				local itemname = SelectCell( T_ITEM, itemid, "name" );
+				local nameLab = GetLabel( p.layer, p.nodeTag[i][NAME_INDEX] );
+				nameLab:SetText( ToUtf8(tostring(itemname)) );
+				
+				--显示数量
+				local numLab = GetLabel( p.layer, p.nodeTag[i][NUM_INDEX] );
+				numLab:SetText( tostring(itemnum) );
+				
+				--图片显示
+				--[[
+				--]]
+			end
+		end
+	end
+	
+	if #itemList+1 <= 6 then
+		for i = #itemList+1, 6 do
+			--礼包中物品数量为0，隐藏对应的控件
+			for _, tag in pairs(p.nodeTag[i]) do
+				local node = GetUiNode( p.layer,  tag);
+				if node then
+					node:SetVisible( false );
+				end
+			end
+		end
+	end
+	
+	--[[
     local row_item1_num = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num1"));
     local row_item2_num = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num2"));
     local row_item3_num = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num3"));
@@ -120,6 +183,7 @@ function p.Init( item )
         local row_num =  tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num6"));
         numLab:SetText( tostring( row_item6_num ));
     end
+	--]]
 end
 
 

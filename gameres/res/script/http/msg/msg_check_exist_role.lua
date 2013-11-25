@@ -41,7 +41,7 @@ end
 
 --处理消息
 function p:Process()
-	msg_cache.msg_check_exist_role = self;
+	msg_cache.msg_player = self.user;
 	WriteConWarning( "** msg_check_exist_role:Process() called" );
 	--mainui.RefreshUI( self );
 	
