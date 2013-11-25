@@ -31,7 +31,7 @@ function p.ShowUI(userinfo)
 	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
-	dlg_battlearray.ShowUI();
+	--dlg_battlearray.ShowUI();
 	
 	p.ShowBillboardWithInit();
 	
@@ -67,6 +67,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		
 		if ui.ID_CTRL_BUTTON_SHOP == tag then
 			WriteCon("**========ÉÌ³Ç========**");
+			dlg_gacha.ShowUI( SHOP_ITEM );
+			
 		elseif ui.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========ÓÊ¼þ========**");
 			mail_main.ShowUI();

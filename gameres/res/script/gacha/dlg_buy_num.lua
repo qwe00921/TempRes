@@ -24,6 +24,7 @@ function p.ShowUI( item )
         return false;
     end
 	
+	layer:NoMask();
 	layer:Init();	
 	GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_buy_num.xui", layer, nil);
@@ -155,8 +156,8 @@ function p.OnBuyNumUIEvent(uiNode, uiEventType, param)
             p.AddNum( 10 );
         --最大
         elseif( ui_dlg_buy_num.ID_CTRL_BUTTON_MAX == tag ) then
-            GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_NUM ):SetText( tostring(p.maxNum) );
-        
+			p.AddNum( p.maxNum - tonumber(GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_NUM ):GetText()) );
+            --GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_NUM ):SetText( tostring(p.maxNum) );
 		end
 	end
 end
@@ -179,7 +180,8 @@ function p.ReqBuyItem()
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
     local num = GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_NUM ):GetText();
-    local param = "&type_id=1".."&item_id=" .. p.item.item_id .."&num=" .. num;
+	local type_id = tostring( SelectRowInner( T_SHOP, "item_id", p.item.item_id  , "type"));
+    local param = "&type_id=" .. type_id .. "&item_id=" .. p.item.item_id .."&num=" .. num;
     WriteCon( "购买参数" .. param );
     SendReq("Shop","AddUserItem",uid, param);
 end

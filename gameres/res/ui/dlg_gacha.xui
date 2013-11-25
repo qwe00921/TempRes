@@ -1,31 +1,39 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_9SLICES_BG]
 Type=22
 Tag=18
-Rect=50 45 860 550
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
 Stretch=1
-NormalFile=.\res\image\ui\common\main_ui_bg.png
-NormalFileUV=0 0 225 225
+NormalFile=.\res\image\ui\gacha_1\gacha_bg.PNG
+NormalFileUV=0 0 296 311
 
-[CTRL_9SLICES_17]
+[CTRL_9SLICES_20]
 Type=22
-Tag=17
-Rect=63 185 835 396
-NormalFile=.\res\image\ui\common\content_bg.png
-NormalFileUV=0 0 33 33
+Tag=25
+Rect=0 190 640 760
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\gacha_1\gacha_bg_1.PNG
+NormalFileUV=0 0 296 311
 
 [CTRL_BUTTON_ITEMUI]
 Type=2
 Tag=2
-Rect=209 63 112 44
+Rect=141 90 112 44
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=道具按钮
 NormalFile=.\res\image\ui\common\btn_1_normal.png
 NormalFileUV=0 0 112 44
 SelectFile=.\res\image\ui\common\btn_1_click.png
@@ -36,11 +44,14 @@ DisableFileUV=0 0 112 44
 [CTRL_BUTTON_GACHAUI]
 Type=2
 Tag=1
-Rect=88 63 112 44
+Rect=20 90 112 44
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=扭蛋按钮
 NormalFile=.\res\image\ui\common\btn_1_normal.png
 NormalFileUV=0 0 112 44
 SelectFile=.\res\image\ui\common\btn_1_click.png
@@ -51,69 +62,44 @@ DisableFileUV=0 0 112 44
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=4
-Rect=811 46 74 74
+Rect=555 7 74 74
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\back_normal.png
-NormalFileUV=0 0 74 74
-SelectFile=.\res\image\ui\common\back_click.png
-SelectedFileUV=0 0 74 74
-DisableFile=.\res\image\ui\common\back_disable.png
-DisableFileUV=0 0 74 74
-
-[CTRL_TEXT_5]
-Type=4
-Tag=5
-Rect=627 75 60 30
-Text=元宝：
-TextTradition=元寶：
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_6]
-Type=4
-Tag=6
-Rect=689 134 60 30
-Text=PT值：
-TextTradition=PT值：
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+Remark=返回按钮
+NormalFile=.\res\image\ui\quest\button_back.png
+NormalFileUV=0 0 90 90
+SelectFile=.\res\image\ui\quest\button_back.png
+SelectedFileUV=0 0 90 90
+DisableFile=.\res\image\ui\quest\button_back.png
+DisableFileUV=0 0 90 90
 
 [CTRL_TEXT_RMB]
 Type=4
 Tag=7
-Rect=678 75 100 30
+Rect=71 148 100 30
+AnchorPos=0 0
+Notes=
 Text=0
 TextTradition=0
 TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_PT]
-Type=4
-Tag=8
-Rect=739 134 100 30
-Text=0
-TextTradition=0
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+Remark=元宝数量
 
 [CTRL_BUTTON_PAY]
 Type=2
-Tag=9
-Rect=464 55 136 60
+Tag=40
+Rect=497 123 136 60
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=充值按钮
 NormalFile=.\res\image\ui\common\btn_2_normal.png
 NormalFileUV=0 0 136 60
 SelectFile=.\res\image\ui\common\btn_2_click.png
@@ -121,44 +107,25 @@ SelectedFileUV=0 0 136 60
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
-[CTRL_LIST_AD]
-Type=8
-Tag=10
-Rect=121 122 400 60
-
-[CTRL_BUTTON_AD_LAST]
-Type=2
-Tag=11
-Rect=77 137 30 26
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\direction_up_icon.png
-NormalFileUV=0 0 32 28
-
-[CTRL_BUTTON_AD_NEXT]
-Type=2
-Tag=12
-Rect=529 134 30 30
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\direction_down_icon.png
-NormalFileUV=0 0 32 28
-
 [CTRL_VERTICAL_LIST_GACHA]
 Type=14
 Tag=13
-Rect=130 190 700 390
+Rect=10 190 620 760
+AnchorPos=0 0
+Notes=
+Remark=扭蛋list
 
 [CTRL_BUTTON_GIFT_PACKUI]
 Type=2
 Tag=14
-Rect=330 63 112 44
+Rect=262 90 112 44
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=礼包按钮
 NormalFile=.\res\image\ui\common\btn_1_normal.png
 NormalFileUV=0 0 112 44
 SelectFile=.\res\image\ui\common\btn_1_click.png
@@ -169,17 +136,25 @@ DisableFileUV=0 0 112 44
 [CTRL_VERTICAL_LIST_SHOP_ITEM]
 Type=14
 Tag=15
-Rect=130 190 700 390
+Rect=10 190 620 760
+AnchorPos=0 0
+Notes=
+Remark=道具list
 
 [CTRL_VERTICAL_LIST_GIFT_PACK]
 Type=14
 Tag=35
-Rect=130 190 700 390
+Rect=10 190 620 760
+AnchorPos=0 0
+Notes=
+Remark=礼包list
 
 [CTRL_PICTURE_18]
 Type=1
 Tag=19
-Rect=99 69 90 32
+Rect=31 96 90 32
+AnchorPos=0 0
+Notes=
 Parent=CTRL_BUTTON_GACHAUI
 NormalFile=.\res.cn\image\ui\font\n_d.png
 NormalFileUV=0 0 90 32
@@ -187,15 +162,19 @@ NormalFileUV=0 0 90 32
 [CTRL_PICTURE_19]
 Type=1
 Tag=20
-Rect=220 69 90 32
+Rect=164 96 64 31
+AnchorPos=0 0
+Notes=
 Parent=CTRL_BUTTON_ITEMUI
-NormalFile=.\res.cn\image\ui\font\s_c.png
-NormalFileUV=0 0 90 32
+NormalFile=.\res.cn\image\ui\font\d_j.png
+NormalFileUV=0 0 64 32
 
 [CTRL_PICTURE_20]
 Type=1
 Tag=21
-Rect=341 69 90 32
+Rect=273 96 90 32
+AnchorPos=0 0
+Notes=
 Parent=CTRL_BUTTON_GIFT_PACKUI
 NormalFile=.\res.cn\image\ui\font\l_b.png
 NormalFileUV=0 0 90 32
@@ -203,7 +182,36 @@ NormalFileUV=0 0 90 32
 [CTRL_PICTURE_21]
 Type=1
 Tag=22
-Rect=486 68 90 32
+Rect=519 135 90 32
+AnchorPos=0 0
+Notes=
 Parent=CTRL_BUTTON_PAY
 NormalFile=.\res.cn\image\ui\font\chong_z.png
 NormalFileUV=0 0 90 32
+
+[CTRL_PICTURE_17]
+Type=1
+Tag=17
+Rect=237 10 167 65
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=23
+Rect=275 26 90 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res.cn\image\ui\font\s_c.png
+NormalFileUV=0 0 90 32
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=24
+Rect=36 148 30 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\coin.png
+NormalFileUV=0 0 30 30
