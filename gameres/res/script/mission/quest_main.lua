@@ -136,8 +136,12 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			return
 		else
 			WriteCon("btnID="..btnId);
-			dlg_drama.ShowUI(1);
-			p.CloseUI();
+			if p.missionList["M"..btnId] then
+				local storyId = p.missionList["M"..btnId].Begin_story;
+				WriteCon("storyId = "..storyId);
+				dlg_drama.ShowUI(btnId,storyId);
+				p.CloseUI();
+			end
 		end
 	end
 end
