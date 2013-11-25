@@ -4,6 +4,10 @@
 --------------------------------------------------------------
 ui_bag_list = {};
 local p =  ui_bag_list;
+p.ID_CTRL_PICTURE_STAR4				   = 33;
+p.ID_CTRL_PICTURE_STAR3				   = 32;
+p.ID_CTRL_PICTURE_STAR2				   = 31;
+p.ID_CTRL_PICTURE_STAR1				   = 30;
 p.ID_CTRL_PICTURE_EQUIP1				  = 26;
 p.ID_CTRL_PICTURE_EQUIP2				  = 27;	--装备标志2
 p.ID_CTRL_PICTURE_EQUIP3				  = 28;	--装备标志3

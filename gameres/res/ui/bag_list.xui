@@ -237,3 +237,31 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\bag_equip.png
 NormalFileUV=0 0 28 30
+
+[CTRL_PICTURE_STAR1]
+Type=1
+Tag=30
+Rect=54 114 30 30
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR2]
+Type=1
+Tag=31
+Rect=208 113 30 30
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR3]
+Type=1
+Tag=32
+Rect=362 113 30 30
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR4]
+Type=1
+Tag=33
+Rect=516 114 30 30
+AnchorPos=0 0
+Notes=

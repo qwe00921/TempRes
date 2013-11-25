@@ -3,145 +3,191 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_BGTITLE]
+[CTRL_PICTURE_BG]
 Type=1
-Tag=4
-Rect=0 0 640 198
+Tag=1
+Rect=0 0 640 850
 AnchorPos=0 0
 Notes=
-Remark=背景1
-NormalFile=.\res\image\ui\bag\bag_bg.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\bag\bag_main_bg.png
+NormalFileUV=0 0 640 960
 
-[CTRL_BUTTON_BACK]
-Type=2
-Tag=3
-Rect=490 0 150 100
+[CTRL_TEXT_COUNT]
+Type=4
+Tag=19
+Rect=24 20 100 80
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=0/0
+TextTradition=0/0
+TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Remark=返回按钮
-NormalFile=.\res\image\ui\bag\bag_back.png
-NormalFileUV=0 0 151 101
 
-[CTRL_PICTURE_TITLE]
+[CTRL_PICTURE_LIST]
 Type=1
-Tag=2
-Rect=140 0 360 100
+Tag=20
+Rect=135 19 360 100
 AnchorPos=0 0
 Notes=
-Remark=背包界面title
 NormalFile=.\res\image\ui\bag\bag_title.png
 NormalFileUV=0 0 361 100
 
-[CTRL_PICTURE_NUM]
-Type=1
-Tag=1
-Rect=0 0 150 100
-AnchorPos=0 0
-Notes=
-Remark=物品数量及上线的背景
-NormalFile=.\res\image\ui\bag\bag_num_bg.png
-NormalFileUV=0 0 148 100
-
-[CTRL_BUTTON_CLEAR]
+[CTRL_BUTTON_RETURN]
 Type=2
-Tag=8
-Rect=512 114 111 72
+Tag=21
+Rect=506 26 107 72
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Remark=背包整理按钮
+NormalFile=.\res\image\ui\bag\bag_back.png
+NormalFileUV=0 0 151 101
+
+[CTRL_BUTTON_ITEM1]
+Type=2
+Tag=22
+Rect=31 120 100 63
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_page1off.png
+NormalFileUV=0 0 119 75
+
+[CTRL_BUTTON_ITEM2]
+Type=2
+Tag=23
+Rect=132 120 100 63
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_page2off.png
+NormalFileUV=0 0 120 76
+
+[CTRL_BUTTON_TIEM3]
+Type=2
+Tag=24
+Rect=232 120 100 63
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_page3off.png
+NormalFileUV=0 0 121 76
+
+[CTRL_BUTTON_ITEM4]
+Type=2
+Tag=25
+Rect=332 120 100 62
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_page4off.png
+NormalFileUV=0 0 121 75
+
+[CTRL_BUTTON_SORT]
+Type=2
+Tag=26
+Rect=484 130 107 69
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\bag\bag_button_clear.png
 NormalFileUV=0 0 110 71
 
-[CTRL_PICTURE_LISTBG]
-Type=1
-Tag=9
-Rect=0 194 640 475
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\bag\bag_list_bg.png
-NormalFileUV=0 0 641 476
-
-[CTRL_VERTICAL_LIST_10]
-Type=14
-Tag=10
-Rect=0 194 640 476
-AnchorPos=0 0
-Notes=
-Remark=物品列表
-
-[CTRL_PICTURE_INFOBG]
-Type=1
-Tag=11
-Rect=0 666 640 142
-AnchorPos=0 0
-Notes=
-Remark=物品简介背景
-NormalFile=.\res\image\ui\bag\bag_infobg.png
-NormalFileUV=0 0 640 142
-
-[CTRL_PICTURE_ITEMNAME]
-Type=1
-Tag=12
-Rect=12 680 130 40
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\bag\bag_itemname.png
-NormalFileUV=0 0 131 40
-
-[CTRL_TEXT_ITEMNUM]
-Type=4
-Tag=13
-Rect=24 20 107 60
-AnchorPos=0 0
-Notes=
-Text=55/55
-TextTradition=55/55
-TextSize=36
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=物品数量及上限
-
-[CTRL_TEXT_ITEMINFO]
-Type=4
-Tag=14
-Rect=20 728 452 60
-AnchorPos=0 0
-Notes=
-Text=神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍神奇的物品介绍
-TextTradition=神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹神奇的物品介紹
-TextSize=24
-TextHorAlign=AlignLeft
-TextVerAlign=AlignTop
-Remark=物品简介
-
-[CTRL_BUTTON_15]
+[CTRL_BUTTON_ITEM_SUB1]
 Type=2
-Tag=15
-Rect=489 710 140 68
+Tag=27
+Rect=34 180 85 57
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Remark=物品使用按钮
-NormalFile=.\res\image\ui\bag\bag_button_use.png
-NormalFileUV=0 0 141 68
+NormalFile=.\res\image\ui\bag\sub_1.png
+NormalFileUV=0 0 148 100
 
-[CTRL_TEXT_ITEMNAME]
-Type=4
-Tag=16
-Rect=150 685 113 28
+[CTRL_BUTTON_ITEM_SUB2]
+Type=2
+Tag=28
+Rect=121 180 85 57
 AnchorPos=0 0
 Notes=
-Text=物品名称
-TextTradition=物品名稱
-TextSize=20
+TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\sub_2.png
+NormalFileUV=0 0 148 100
+
+[CTRL_BUTTON_ITEM_SUB3]
+Type=2
+Tag=29
+Rect=207 180 85 57
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\sub_3.png
+NormalFileUV=0 0 148 100
+
+[CTRL_BUTTON_ITEM_SUB4]
+Type=2
+Tag=30
+Rect=294 180 85 57
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\sub_4.png
+NormalFileUV=0 0 148 100
+
+[CTRL_VERTICAL_LIST_ITEM]
+Type=14
+Tag=32
+Rect=4 239 635 441
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_USE]
+Type=1
+Tag=33
+Rect=-5 688 640 148
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_ITEM_INFO]
+Type=4
+Tag=34
+Rect=24 709 421 103
+AnchorPos=0 0
+Notes=
+Text=物品说明
+TextTradition=物品說明
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+Remark=物品说明
+
+[CTRL_BUTTON_USE]
+Type=2
+Tag=35
+Rect=490 727 107 52
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_button_use.png
+NormalFileUV=0 0 141 68
