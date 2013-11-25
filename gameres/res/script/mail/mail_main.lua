@@ -258,7 +258,7 @@ function p.SetItemInfo4Sys( view, item )
 	--增加事件
 	--cardPicNode:SetLuaDelegate(p.OnBtnClicked);
 	
-	--view:SetLuaDelegate(p.OnItemClick);
+	view:SetLuaDelegate(p.OnItemClick);
 end
 
 -------- 个人邮件Item
