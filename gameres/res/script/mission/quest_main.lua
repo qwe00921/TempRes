@@ -136,8 +136,8 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			return
 		else
 			WriteCon("btnID="..btnId);
-			--p.CloseUI();
-			--world_map.CloseMap();
+			dlg_drama.ShowUI(1);
+			p.CloseUI();
 		end
 	end
 end
