@@ -61,8 +61,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========卡组========**");
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
 			WriteCon("**========任务========**");
-			
-			game_main.EnterWorldMap();
+			stageMap_main.OpenWorldMap();
 			
 			--隐藏主UI
 			maininterface.CloseAllPanel();

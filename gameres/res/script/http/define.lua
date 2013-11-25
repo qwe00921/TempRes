@@ -10,6 +10,7 @@ DoFile("http/msg/msg_base.lua");
 
 DoFile("http/msg/msg_server_list.lua");
 DoFile("http/msg/msg_quest_list.lua");
+DoFile("http/msg/msg_stage_list.lua");
 DoFile("http/msg/msg_pack_box.lua");
 
 DoFile("http/msg/msg_maininterface.lua");

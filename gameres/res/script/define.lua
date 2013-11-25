@@ -51,6 +51,8 @@ DoFile("mainui/dlg_battlearray.lua");
 DoFile("mainui/dlg_btn_list.lua");
 
 --地图
+DoFile("stage_map/define.lua");
+
 DoFile("map/world_map.lua");
 DoFile("map/world_map_mainui.lua");
 DoFile("map/task_map.lua");
