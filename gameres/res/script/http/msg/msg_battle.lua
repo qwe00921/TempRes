@@ -34,5 +34,5 @@ end
 
 --处理消息
 function p:Process()
-	WriteConWarning( "** msg_battle:Process() called" );
+	WriteCon( "** msg_battle:Process() called" );
 end

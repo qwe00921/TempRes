@@ -1,66 +1,209 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
-[CTRL_MAIN_PICTURE_UERINFO_M]
+[CTRL_PICTURE_USERINFO_BG]
 Type=1
-Tag=16
-Rect=288 109 471 280
-NormalFile=.\res\image\ui_honor\main_interface\main_userinfo_m.png
-NormalFileUV=0 0 470 333
+Tag=52
+Rect=0 0 639 150
+AnchorPos=0 0
+Notes=
+Remark=背景
+Stretch=1
+NormalFile=.\res\image\ui\main_interface\info_title.png
+NormalFileUV=0 0 640 120
 
-[CTRL_MAIN_TEXT_COIN]
-Type=4
-Tag=17
-Rect=560 141 155 34
-Text=000000000
-TextTradition=000000000
-TextSize=30
-TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
-Remark=代币数量
+[CTRL_PICTURE_FACE]
+Type=1
+Tag=53
+Rect=0 9 115 130
+AnchorPos=0 0
+Notes=
+Remark=头像
+NormalFile=.\res\image\ui\main_interface\user_face.PNG
+NormalFileUV=0 0 115 130
 
-[CTRL_MAIN_TEXT_MONEY]
+[CTRL_TEXT_NAME]
 Type=4
-Tag=18
-Rect=561 195 154 34
-Text=000000000
-TextTradition=000000000
-TextSize=30
-TextHorAlign=AlignRight
+Tag=54
+Rect=123 17 154 47
+AnchorPos=0 0
+Notes=
+Text=完颜阿鲁巴
+TextTradition=完顏阿魯巴
+TextSize=24
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-Remark=金币数量
 
-[CTRL_MAIN_TEXT_NAME2]
-Type=4
-Tag=4
-Rect=549 247 192 33
-Text=玩家称号一二三
-TextTradition=玩家稱號一二三
-TextSize=27
-TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
-Remark=玩家称号
+[CTRL_PICTURE_MONEY]
+Type=1
+Tag=55
+Rect=125 68 30 30
+AnchorPos=0 0
+Notes=
+Remark=金币图标
+NormalFile=.\res\image\ui\main_interface\money.png
+NormalFileUV=0 0 30 30
 
-[CTRL_MAIN_TEXT_CARDNUM]
-Type=4
-Tag=5
-Rect=567 292 146 32
-Text=000/000
-TextTradition=000/000
-TextSize=30
-TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
-Remark=玩家持有卡牌数量及上限
+[CTRL_PICTURE_EMONEY]
+Type=1
+Tag=56
+Rect=125 100 30 30
+AnchorPos=0 0
+Notes=
+Remark=代币图标
+NormalFile=.\res\image\ui\main_interface\coin.png
+NormalFileUV=0 0 30 30
 
-[CTRL_MAIN_TEXT_ITEMNUM]
+[CTRL_TEXT_MONEY_NUM]
 Type=4
-Tag=7
-Rect=567 340 146 32
-Text=000/000
-TextTradition=000/000
-TextSize=30
-TextHorAlign=AlignRight
+Tag=57
+Rect=158 66 107 30
+AnchorPos=0 0
+Notes=
+Text=1111111111
+TextTradition=1111111111
+TextSize=18
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-Remark=玩家持有物品数量及上限
+Remark=金币数值
+
+[CTRL_TEXT_EMONEY_NUM]
+Type=4
+Tag=58
+Rect=158 98 107 30
+AnchorPos=0 0
+Notes=
+Text=2222222222
+TextTradition=2222222222
+TextSize=18
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+Remark=代币数值
+
+[CTRL_BUTTON_ADD_EMONEY]
+Type=2
+Tag=59
+Rect=275 68 95 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=充值按钮
+NormalFile=.\res\image\ui\main_interface\addemoney.PNG
+NormalFileUV=0 0 95 60
+SelectFile=.\res\image\ui\main_interface\addemoney.PNG
+SelectedFileUV=0 0 95 60
+DisableFile=.\res\image\ui\main_interface\addemoney.PNG
+DisableFileUV=0 0 95 60
+
+[CTRL_PICTURE_LEVEL]
+Type=1
+Tag=60
+Rect=324 26 40 30
+AnchorPos=0 0
+Notes=
+Remark=等级图标
+NormalFile=.\res\image\ui\main_interface\info_level.png
+NormalFileUV=0 0 50 34
+
+[CTRL_TEXT_LEVEL_NUM]
+Type=4
+Tag=61
+Rect=376 26 65 30
+AnchorPos=0 0
+Notes=
+Text=350
+TextTradition=350
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=等级数值
+
+[CTRL_PICTURE_ENERGY]
+Type=1
+Tag=62
+Rect=376 60 65 35
+AnchorPos=0 0
+Notes=
+Remark=精力图标
+NormalFile=.\res\image\ui\main_interface\energy.PNG
+NormalFileUV=0 0 65 35
+
+[CTRL_PICTURE_STRENGTH]
+Type=1
+Tag=63
+Rect=376 99 65 35
+AnchorPos=0 0
+Notes=
+Remark=体力图标
+NormalFile=.\res\image\ui\main_interface\strength.PNG
+NormalFileUV=0 0 65 35
+
+[CTRL_PICTURE_PROGRESSBAR_BG]
+Type=1
+Tag=64
+Rect=444 26 190 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
+NormalFileUV=0 0 190 30
+
+[CTRL_PICTURE_PROGRESSBAR_BG1]
+Type=1
+Tag=65
+Rect=444 62 190 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
+NormalFileUV=0 0 190 30
+
+[CTRL_PICTURE_PROGRESSBAR_BG2]
+Type=1
+Tag=66
+Rect=444 101 190 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
+NormalFileUV=0 0 190 30
+
+[CTRL_PROGRESSBAR_EXP]
+Type=9
+Tag=67
+Rect=444 26 190 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=经验条
+NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
+NormalFileUV=0 0 190 30
+
+[CTRL_PROGRESSBAR_ENERGY]
+Type=9
+Tag=68
+Rect=444 62 190 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=精力条
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.PNG
+NormalFileUV=0 0 190 30
+
+[CTRL_PROGRESSBAR_STRENGTH]
+Type=9
+Tag=69
+Rect=444 101 190 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=体力条
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.PNG
+NormalFileUV=0 0 190 30

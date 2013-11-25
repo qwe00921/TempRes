@@ -24,11 +24,9 @@ end
 
 --处理消息
 function p:Process()
+	LOGD("Process 120 msg");
 	msg_cache.msg_server_list = self;
 	
 	WriteConWarning( "** msg_server_list:Process() called" );
 	server_list.ShowUI(self.list);
 end
-
-
-

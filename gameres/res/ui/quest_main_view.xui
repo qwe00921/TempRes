@@ -1,0 +1,102 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PIC_HEAD_BG_1]
+Type=1
+Tag=1
+Rect=0 0 640 262
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_bg1.png
+NormalFileUV=0 0 264 108
+
+[CTRL_PIC_LIST_BG_3]
+Type=1
+Tag=3
+Rect=0 220 640 580
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_bg2.png
+NormalFileUV=0 0 640 512
+
+[CTRL_BTN_TETURN_2]
+Type=2
+Tag=2
+Rect=500 120 90 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_back.png
+NormalFileUV=0 0 90 90
+
+[CTRL_VERTICAL_LIST_5]
+Type=14
+Tag=5
+Rect=1 300 638 500
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_QUEST_NAME_6]
+Type=4
+Tag=6
+Rect=40 240 260 40
+AnchorPos=0 0
+Notes=
+Text=章节名称
+TextTradition=章節名稱
+TextSize=24
+TextColor=0xffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BTN_EAYE_7]
+Type=2
+Tag=7
+Rect=380 240 50 59
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\easy_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\easy_un.png
+DisableFileUV=0 0 44 52
+
+[CTRL_BTN_NORMAL_8]
+Type=2
+Tag=8
+Rect=480 240 50 59
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\normal.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\normal_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\normal_un.png
+DisableFileUV=0 0 44 52
+
+[CTRL_BTN_HARD_9]
+Type=2
+Tag=9
+Rect=580 240 50 59
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\hard.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\quest\hard_onselect.png
+SelectedFileUV=0 0 44 52
+DisableFile=.\res\image\ui\quest\hard_un.png
+DisableFileUV=0 0 44 52

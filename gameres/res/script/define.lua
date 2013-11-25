@@ -41,10 +41,14 @@ DoFile("mainui/mainui.lua");
 DoFile("mainui/hud.lua");
 DoFile("mainui/billboard.lua"); --跑马灯
 DoFile("mainui/maininterface.lua");
+DoFile("mainui/dlg_userinfo.lua");
 
 DoFile("mainui/login_main.lua");
 DoFile("mainui/login_ui.lua");
 DoFile("mainui/server_list.lua");
+DoFile("mainui/dlg_menu.lua");
+DoFile("mainui/dlg_battlearray.lua");
+DoFile("mainui/dlg_btn_list.lua");
 
 --地图
 DoFile("map/world_map.lua");
@@ -138,7 +142,7 @@ DoFile("drama/drama_page.lua");
 DoFile("drama/after_drama.lua");
 
 --玩家信息界面
-DoFile("userinfo/define.lua");
+--DoFile("userinfo/define.lua");
 
 --[[
 --功能菜单界面
@@ -153,5 +157,8 @@ DoFile("drama/dlg_drama_new.lua");
 
 --召唤兽系统
 DoFile("beast/define.lua");
+
+--邮件系统
+DoFile("mail/define.lua");
 
 

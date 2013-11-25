@@ -1,0 +1,26 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 300 640 50
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\marquee_bg.PNG
+NormalFileUV=0 0 640 50
+
+[CTRL_TEXT_MARQUEE_TEXT]
+Type=4
+Tag=2
+Rect=0 300 640 50
+AnchorPos=0 0
+Notes=
+Text=跑马灯
+TextTradition=跑馬燈
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=跑马灯文本

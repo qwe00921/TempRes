@@ -15,7 +15,7 @@ function p.ShowUI(list)
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
-		
+		LOGD("Wrong layer");
 		return;
 	end
 	
@@ -39,6 +39,7 @@ end
 
 --服务器列表
 function p.ShowServerList()
+	LOGD("Entry ShowServerList");
 	local ServerList = p.ServerList;
 	local serverListTable = GetListBoxVert(p.layer, ui.ID_CTRL_LIST_3);
 
@@ -65,6 +66,8 @@ function p.ShowServerList()
 			WriteCon(tostring(m));
 			if j == "name" then
 				serverName:SetText(ServerList[k][j]);
+				local out = string.format("server is %s",ServerList[k][j]);
+				LOGD(out);
 			end
 		end
 	

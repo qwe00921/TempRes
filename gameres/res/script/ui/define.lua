@@ -8,9 +8,14 @@
 DoFile("ui/ui_main_ui.lua")
 DoFile("ui/ui_main_interface.lua")
 DoFile("ui/ui_main_menu.lua")
-DoFile("ui/ui_main_userinfo.lua")
-DoFile("ui/ui_main_userinfo2.lua")
-DoFile("ui/ui_main_actandad.lua")
+--DoFile("ui/ui_main_userinfo.lua")
+--DoFile("ui/ui_main_userinfo2.lua")
+--DoFile("ui/ui_main_actandad.lua")
+
+DoFile("ui/ui_main_btn_list.lua")
+DoFile("ui/ui_main_btn_node.lua")
+DoFile("ui/ui_main_battlearray.lua")
+DoFile("ui/ui_marquee_led.lua")
 
 --登录界面
 DoFile("ui/ui_login_back.lua")
@@ -20,8 +25,8 @@ DoFile("ui/ui_login_severselect.lua")
 DoFile("ui/ui_login_severselect_option.lua")
 
 --任务
-DoFile("ui/ui_quest_main.lua")
-DoFile("ui/ui_quest_list.lua")
+DoFile("ui/ui_quest_main_view.lua")
+DoFile("ui/ui_quest_list_view.lua")
 
 --背包
 DoFile("ui/ui_bag_main.lua")
@@ -196,9 +201,9 @@ DoFile("ui/ui_achievement_view.lua")
 DoFile("ui/ui_dlg_drama.lua")
 
 --剧情界面
-DoFile("ui/ui_dlg_drama_new.lua");
+--DoFile("ui/ui_dlg_drama_new.lua");
 
-DoFile("ui/ui_userinfo.lua");
+DoFile("ui/ui_main_userinfo.lua");
 --创建角色界面
 DoFile("ui/ui_createrole.lua");
 DoFile("ui/ui_x_battle_ko.lua");
@@ -209,5 +214,13 @@ DoFile("ui/ui_beast_mainui.lua");
 DoFile("ui/ui_beast_main_list.lua");
 DoFile("ui/ui_beast_incubate_list.lua");
 DoFile("ui/ui_beast_incubate.lua");--培养
+
+--邮件系统
+DoFile("ui/ui_mail_main.lua");
+DoFile("ui/ui_mail_write_mail.lua");
+DoFile("ui/ui_mail_gm_mail.lua");
+DoFile("ui/ui_mail_list_item_sys.lua");
+DoFile("ui/ui_mail_list_item_user.lua");
+DoFile("ui/ui_mail_detail_sys.lua");
 
 

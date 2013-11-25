@@ -87,3 +87,16 @@ image\ui\font\d_7_k_z.png
 [TapToStart]
 image\ui_honor\login\Taptostart.png @cut(8, 1) @time=0.3 @loop @scale=0.5
 
+;弹出按钮列表配置
+[more_action_list]
+image\ui\main_interface\notice.PNG
+image\ui\main_interface\setting.PNG
+image\ui\main_interface\rank.PNG
+image\ui\main_interface\gem.PNG
+image\ui\main_interface\equip_strengthen.PNG
+image\ui\main_interface\beast.PNG
+image\ui\main_interface\union.PNG
+image\ui\main_interface\friend.PNG
+image\ui\main_interface\pictorialial.PNG
+image\ui\main_interface\card.PNG
+
