@@ -12,9 +12,11 @@ p.MAIL_TYPE_SYS                    = 0;        -- 系统
 p.MAIL_TYPE_USER  				   = 1;			-- 个人
 
 p.PAGE_SIZE = 6; --每页数量
+
 p.layer = nil;
 p.curListTypeTag = nil;
 p.m_kCheckMail = nil;
+p.isShowed = true;
 
 local ui = ui_mail_main
 local ui_item_sys = ui_mail_list_item_sys
@@ -23,6 +25,7 @@ local ui_item_usr = ui_mail_list_item_user
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		p.isShowed = true
 		--dlg_battlearray.ShowUI();
 		return;
 	end
@@ -125,11 +128,15 @@ end
 
 function p.OnItemClick(uiNode, uiEventType, param)
 	local id = uiNode:GetId();
-	WriteCon("**======OnItemClick======**" .. tostring(id));
-	p.HideUI();
-	mail_detail_sys.ShowUI();
-	
-	
+	WriteCon("**======OnItemClick======** " .. tostring(id));
+	if p.isShowed == true then
+		p.HideUI();
+		if p.curListTypeTag == p.MAIL_TYPE_SYS then
+			mail_detail_sys.ShowUI();
+		else
+			mail_detail_user.ShowUI();
+		end
+	end
 end
 
 
@@ -137,6 +144,7 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
+		p.isShowed = false;
 	end
 end
 
@@ -335,6 +343,7 @@ function p.SetItemInfo4User( view, item )
 	--cardPicNode:SetId( tonumber(item.id));
 	--增加事件
 	--cardPicNode:SetLuaDelegate(p.OnBtnClicked);
+	view:SetLuaDelegate(p.OnItemClick);
 end
 
 

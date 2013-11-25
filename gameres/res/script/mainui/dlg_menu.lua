@@ -57,12 +57,15 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**=======竞技场=======**");
 		elseif ui.ID_CTRL_BUTTON_BAG == tag then
 			WriteCon("**========背包========**");
+			pack_box.ShowUI();
+			--隐藏主UI
+			maininterface.CloseAllPanel();
+			maininterface.HideUI();
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
 			WriteCon("**========卡组========**");
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
 			WriteCon("**========任务========**");
 			stageMap_main.OpenWorldMap();
-			
 			--隐藏主UI
 			maininterface.CloseAllPanel();
 			maininterface.HideUI();

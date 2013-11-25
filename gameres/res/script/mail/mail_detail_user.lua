@@ -1,17 +1,17 @@
 --------------------------------------------------------------
--- FileName: 	mail_write_mail.lua
--- author:		wjl, 2013年8月23日
--- purpose:		邮件系统--写信
+-- FileName: 	mail_detail_sys.lua
+-- author:		wjl, 2013年11月24日
+-- purpose:		系统邮箱详细信息
 --------------------------------------------------------------
 
-mail_write_mail = {}
-local p = mail_write_mail;
+mail_detail_user = {}
+local p = mail_detail_user;
 
 ------------------邮件类型类型------------------
 p.MAIL_TYPE                    = 0;        -- 系统
 p.layer = nil;
 
-local ui = ui_mail_write_mail
+local ui = ui_mail_detail_user
 
 function p.ShowUI()
 	if p.layer ~= nil then
@@ -29,7 +29,7 @@ function p.ShowUI()
 	layer:SetFrameRectFull();
     
 	GetUIRoot():AddChild(layer);
-	LoadUI("mail_write_mail.xui", layer, nil);
+	LoadUI("mail_detail_user.xui", layer, nil);
     
 	p.layer = layer;
 	p.SetDelegate();
@@ -43,14 +43,13 @@ function p.SetBtn(btn)
 end
 
 function p.SetDelegate()
-	local bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_SEND );
-	p.SetBtn( bt );
+	--local bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_SEND );
+	--p.SetBtn( bt );
 	
 	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_GO_BACK );
 	p.SetBtn( bt );
 	
-	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_FRIENDS );
-	p.SetBtn( bt );
+	
 	
 end
 

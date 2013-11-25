@@ -222,5 +222,7 @@ DoFile("ui/ui_mail_gm_mail.lua");
 DoFile("ui/ui_mail_list_item_sys.lua");
 DoFile("ui/ui_mail_list_item_user.lua");
 DoFile("ui/ui_mail_detail_sys.lua");
+DoFile("ui/ui_mail_detail_user.lua");
+DoFile("ui/ui_mail_list_item_gm.lua");
 
 

@@ -1,7 +1,7 @@
 --------------------------------------------------------------
--- FileName: 	billboard.lua
--- author:		xyd, 2013年8月12日
--- purpose:		跑马灯管理器
+-- FileName: 	mail_detail_sys.lua
+-- author:		wjl, 2013年11月24日
+-- purpose:		系统邮箱详细信息
 --------------------------------------------------------------
 
 mail_detail_sys = {}
