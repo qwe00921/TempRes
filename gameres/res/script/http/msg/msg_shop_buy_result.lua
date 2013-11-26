@@ -19,7 +19,7 @@ end
 --构造函数
 function p:ctor()
 	super.ctor(self);
-    self.idMsg = MSG_SHOP_ITEM; --消息号
+    self.idMsg = MSG_SHOP_BUY_RESULT; --消息号
 end
 
 --初始化

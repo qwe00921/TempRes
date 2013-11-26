@@ -21,7 +21,6 @@ p.power = nil; 		--获取玩家体力值
 
 function p.ShowUI(stageId)
 	p.stageId  = stageId;
-	WriteCon(tostring(p.stageId));
 	
 	--获取missionId初始值
 	p.GetMissionId();
@@ -102,7 +101,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		if (ui.ID_CTRL_BTN_TETURN_2 == tag) then
 			WriteCon("return");
 			p.CloseUI();
-			--game_main.EnterWorldMap();
+			stageMap_1.OpenStageMap();
 		elseif (ui.ID_CTRL_BTN_EAYE_7 == tag) then
 			WriteCon("easy");
             p.SetBtnCheckedFX( uiNode );
@@ -137,8 +136,12 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			return
 		else
 			WriteCon("btnID="..btnId);
-			--p.CloseUI();
-			--world_map.CloseMap();
+			if p.missionList["M"..btnId] then
+				local storyId = p.missionList["M"..btnId].Begin_story;
+				WriteCon("storyId = "..storyId);
+				dlg_drama.ShowUI(btnId,storyId);
+				p.CloseUI();
+			end
 		end
 	end
 end

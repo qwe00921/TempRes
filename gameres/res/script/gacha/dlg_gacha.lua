@@ -105,6 +105,7 @@ function p.SetDelegate()
     local payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_PAY);
     payBtn:SetLuaDelegate(p.OnGachaUIEvent);
     
+	--[[
     --广告列表
     local adList = GetListBoxHorz( p.layer, ui_dlg_gacha.ID_CTRL_LIST_AD);
     adList:ClearView();
@@ -126,9 +127,8 @@ function p.SetDelegate()
     --上一个广告
     local lastAdBtn = GetButton( p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_AD_LAST);
     lastAdBtn:SetLuaDelegate(p.OnGachaUIEvent);
-    
-    
-    
+    --]]
+
     --扭蛋列表
     p.gachaList = GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_GACHA);
     
@@ -137,23 +137,25 @@ function p.SetDelegate()
     
     --礼包列表
     p.shopPackList = GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_GIFT_PACK);
-    
 end
-function p.OnGiftUIEvent(uiNode, uiEventType, param)
+
+function p.OnGiftUIEvent( uiNode, uiEventType, param )
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
-	   if ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_L == tag or  ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_R == tag ) then  
-           local gift = p.giftData.result[uiNode:GetId()];
-           dlg_gift_pack_preview.ShowUI( gift );
-       end
+		--if ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_L == tag or  ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_R == tag ) then  
+		if ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_L == tag ) then  
+			local gift = p.giftData.list[uiNode:GetId()];
+			dlg_gift_pack_preview.ShowUI( gift );
+		end
 	end
 end
 
 function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
-	   if ( ui_dlg_gacha.ID_CTRL_BUTTON_BACK == tag ) then  
-	       p.CloseUI();
+		if ( ui_dlg_gacha.ID_CTRL_BUTTON_BACK == tag ) then  
+			p.CloseUI();
+		--[[
 	   elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_AD_NEXT == tag ) then  
 	       local adList = GetListBoxHorz( p.layer, ui_dlg_gacha.ID_CTRL_LIST_AD);
 	       adList:MoveToNextView();
@@ -161,37 +163,44 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	   elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_AD_LAST == tag ) then  
 	       local adList = GetListBoxHorz( p.layer, ui_dlg_gacha.ID_CTRL_LIST_AD);
            adList:MoveToPrevView();
-           
-       elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --扭蛋界面按钮
-           p.ReqGachaData();
-         
-       elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_ITEMUI == tag ) then  --商店界面按钮
-           p.ReqShopItem();
-       
-       elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI == tag ) then  --礼包界面按钮
-           p.ReqGitfPack();
+           --]]
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --扭蛋界面按钮
+			WriteCon( "扭蛋界面按钮" );
+			--p.ReqGachaData();
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_ITEMUI == tag ) then  --商店界面按钮
+			WriteCon( "商店界面按钮" );
+			p.ShowShopData( p.shopData );
+
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI == tag ) then  --礼包界面按钮
+			WriteCon( "礼包界面按钮" );
+			p.ShowGiftPackData( p.giftData );
+	
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_PAY == tag) then --充值按钮
+			WriteCon( "充值按钮" );
        
        --商品购买按钮    
-       elseif ( ui_shop_item_view.ID_CTRL_BUTTON_BUY_L == tag or  ui_shop_item_view.ID_CTRL_BUTTON_BUY_R == tag) then 
-           WriteCon( "商城购买" );
-           local item = p.shopData.result[uiNode:GetId()];
-           dlg_buy_num.ShowUI( item );
+       --elseif ( ui_shop_item_view.ID_CTRL_BUTTON_BUY_L == tag or  ui_shop_item_view.ID_CTRL_BUTTON_BUY_R == tag) then 
+		elseif ( ui_shop_item_view.ID_CTRL_BUTTON_BUY_L == tag ) then 
+			WriteCon( "商城购买" );
+			local item = p.shopData.list[uiNode:GetId()];
+			dlg_buy_num.ShowUI( item );
            
        --礼包购买按钮    
-       elseif ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L == tag or  ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_R == tag) then 
-           WriteCon( "礼包购买" );
-           local giftid = p.giftData.result[uiNode:GetId()].item_id;
-           p.ReqGiftPackBuy( giftid );
-           
-       
-       elseif ( ui_gacha_list_view.ID_CTRL_BUTTON_ONE == tag ) then  
-           --pt扭蛋
-           if uiNode:GetId() == 1 then
-                local coin_num = p.coin_config[1];
+       --elseif ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L == tag or  ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_R == tag) then 
+		elseif ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L == tag ) then 
+			WriteCon( "礼包购买" );
+			local gift = p.giftData.list[uiNode:GetId()];
+			dlg_buy_num.ShowUI( gift );
+			
+           --p.ReqGiftPackBuy( giftid );
+		elseif ( ui_gacha_list_view.ID_CTRL_BUTTON_ONE == tag ) then  
+			--pt扭蛋
+			if uiNode:GetId() == 1 then
+				local coin_num = p.coin_config[1];
                 p.gachaIndex = 1;
                 dlg_msgbox.ShowYesNo(GetStr("msg_title_tips"), GetStr("gacha_need") ..coin_num..GetStr("gacha_pt"), p.OnCostGacha ,layer );
           --中级扭蛋
-           elseif uiNode:GetId() == 2 then
+			elseif uiNode:GetId() == 2 then
                 local coin_num = p.coin_config[3];
                 p.gachaIndex = 3;
                 --免费中级扭蛋
@@ -208,7 +217,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
                 --中级元宝扭蛋
                 dlg_msgbox.ShowYesNo(GetStr("msg_title_tips"),GetStr("gacha_need") ..coin_num..GetStr("gacha_rmb"), p.OnCostGacha , layer );
            --高级扭蛋     
-           elseif uiNode:GetId() == 3 then
+			elseif uiNode:GetId() == 3 then
                 local coin_num = p.coin_config[5];
                 p.gachaIndex = 5;
                 --免费高级扭蛋
@@ -218,25 +227,25 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
                 end
                 --高级元宝扭蛋
                 dlg_msgbox.ShowYesNo(GetStr( "msg_title_tips" ), GetStr("gacha_need") .. coin_num ..GetStr("gacha_rmb"), p.OnCostGacha , layer );
-           end       
+			end       
       
-       elseif ( ui_gacha_list_view.ID_CTRL_BUTTON_TEN == tag ) then  
+		elseif ( ui_gacha_list_view.ID_CTRL_BUTTON_TEN == tag ) then  
            --pt十连扭
-           if uiNode:GetId() == 1 then
+			if uiNode:GetId() == 1 then
                 local coin_num = SelectCell( T_GACHA, "2",  "need_coin_num" );
                 p.gachaIndex = 2;
                 dlg_msgbox.ShowYesNo(GetStr( "msg_title_tips" ),GetStr("gacha_need") .. coin_num .. GetStr("gacha_pt"), p.OnCostGacha , layer );
            --中级十连扭
-           elseif uiNode:GetId() == 2 then
+			elseif uiNode:GetId() == 2 then
                 local coin_num = SelectCell( T_GACHA, "4",  "need_coin_num" );
                 p.gachaIndex = 4;
                 dlg_msgbox.ShowYesNo(GetStr( "msg_title_tips" ),GetStr("gacha_need") .. coin_num .. GetStr("gacha_rmb"), p.OnCostGacha , layer );
            --高级十连扭
-           elseif uiNode:GetId() == 3 then
+			elseif uiNode:GetId() == 3 then
                 local coin_num = SelectCell( T_GACHA, "6",  "need_coin_num" );
                 p.gachaIndex = 6;
                 dlg_msgbox.ShowYesNo(GetStr( "msg_title_tips" ),GetStr("gacha_need") .. coin_num .. GetStr("gacha_rmb"), p.OnCostGacha , layer );
-           end   
+			end   
 	   end       
 	end
 end
@@ -244,11 +253,11 @@ end
 --免费扭蛋对话框回调
 function p.OnFreeGacha( result )
     if result then 
-       if p.gachaIndex == 3 then  
-             p.StartGacha("3", "1", "1");
-       elseif p.gachaIndex == 5 then  
-             p.StartGacha("5", "1", "1");
-       end
+		if p.gachaIndex == 3 then  
+			p.StartGacha("3", "1", "1");
+		elseif p.gachaIndex == 5 then  
+			p.StartGacha("5", "1", "1");
+		end
     end
 end
 
@@ -351,6 +360,7 @@ function p.ReqGitfPack()
     if uid == 0 then uid = 100 end; 
     SendReq("Shop","ShopList",uid,"&type_id=2");
 end
+
 --请求礼包购买
 function p.ReqGiftPackBuy( giftid )
 	WriteCon("**请求礼包购买**");
@@ -361,8 +371,14 @@ function p.ReqGiftPackBuy( giftid )
     WriteCon( "购买参数" .. param );
     SendReq("Shop","AddUserItem",uid, param);
 end
+
 --显示商城道具列表
 function p.ShowShopData( shopdata )
+	
+	if shopdata == nil then
+		p.ReqShopItem();
+		return;
+	end
     
     p.shopItemList:SetVisible( true );
     p.gachaList:SetVisible( false ); 
@@ -381,18 +397,21 @@ function p.ShowShopData( shopdata )
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring(shopdata.user_coin));
     
-    local itemList = shopdata.result;
+    local itemList = shopdata.list;
     local listLength = #itemList;
-    local row = math.ceil( listLength / 2 ); --物品行数（一行两个）
-    WriteCon( "--" .. listLength .. "**" .. row );
+    --local row = math.ceil( listLength / 2 ); --物品行数（一行两个）
+    WriteCon( "--" .. listLength .. "**");
     
-    for i=1 ,row do
-       local view = createNDUIXView();
-       view:Init();
-       LoadUI("shop_item_view.xui", view, nil);
-       local bg = GetUiNode(view,ui_shop_item_view.ID_CTRL_PICTURE_BG);
-       view:SetViewSize( bg:GetFrameSize());
+    for i=1 ,listLength do
+		local view = createNDUIXView();
+		view:Init();
+		LoadUI("shop_item_view.xui", view, nil);
+		local bg = GetUiNode(view,ui_shop_item_view.ID_CTRL_PICTURE_BG);
+		view:SetViewSize( bg:GetFrameSize());
        
+		local itemData = itemList[i];
+		p.SetItemInfo( view, itemData, LEFT, i );
+		--[[
        local itemLeft = itemList[ 2 * i -1];
        p.SetItemInfo( view , itemLeft , LEFT , 2*i-1);
        if i*2 < listLength then
@@ -401,71 +420,81 @@ function p.ShowShopData( shopdata )
        else
             p.HideItemView( view );
        end
-       p.shopItemList:AddView( view );
+	--]]
+		p.shopItemList:AddView( view );
     end
     
 end
 
 --显示商城礼包列表
 function p.ShowGiftPackData( giftdata )
-        
-    p.shopPackList:SetVisible( true );
-    p.gachaList:SetVisible( false ); 
-    p.shopItemList:SetVisible( false );
     
-    p.gachaBtn:SetEnabled( true );
+	if giftdata == nil then
+		p.ReqGitfPack();
+		return;
+	end
+	
+	p.shopPackList:SetVisible( true );
+	p.gachaList:SetVisible( false ); 
+	p.shopItemList:SetVisible( false );
+    
+	p.gachaBtn:SetEnabled( true );
     p.shopPackBtn:SetEnabled( false );
-    p.shopItmeBtn:SetEnabled( true );
-    
-    p.shopPackList:ClearView();
+	p.shopItmeBtn:SetEnabled( true );
+	
+	p.shopPackList:ClearView();
     
     --保存商城礼包信息
-    p.giftData = giftdata;
+	p.giftData = giftdata;
     --刷新玩家元宝
-    local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
-    rmbLab:SetText( tostring(giftdata.user_coin));
+	local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
+    rmbLab:SetText( tostring( giftdata.user_coin ));
     
-    local giftList = giftdata.result;
+    local giftList = giftdata.list;
     local listLength = #giftList;
-    local row = math.ceil( listLength / 2 ); --物品行数（一行两个）
+    --local row = math.ceil( listLength / 2 ); --物品行数（一行两个）
     
-    for i=1 ,row do
-       local view = createNDUIXView();
-       view:Init();
-       LoadUI("shop_gift_pack_view.xui", view, nil);
-       local bg = GetUiNode(view,ui_shop_gift_pack_view.ID_CTRL_PICTURE_BG);
-       view:SetViewSize( bg:GetFrameSize());
+    for i=1 ,listLength do
+		local view = createNDUIXView();
+		view:Init();
+		LoadUI("shop_gift_pack_view.xui", view, nil);
+		local bg = GetUiNode(view,ui_shop_gift_pack_view.ID_CTRL_PICTURE_BG);
+		view:SetViewSize( bg:GetFrameSize());
        
-       local giftLeft = giftList[ 2 * i -1];
-       p.SetItemInfo( view , giftLeft , GIFT_LEFT , 2*i-1);
+		local giftData = giftList[i];
+		p.SetItemInfo( view , giftData , GIFT_LEFT , i);
+	--[[
        if i*2 < listLength then
             local giftRight = giftList[ 2 * i];
             p.SetItemInfo( view, giftRight , GIFT_RIGHT , 2*i );
        else
             p.HideGiftView( view );
        end
-       
-       p.shopPackList:AddView( view );
+       --]]
+		p.shopPackList:AddView( view );
     end
-    
 end
 
 --隐藏物品项
 function p.HideItemView( view )
+	--[[
 	local temp = Get9SlicesImage(view , ui_shop_item_view.ID_CTRL_9SLICES_BG_R);
 	temp:SetVisible( false );
 	temp = GetButton( view ,ui_shop_item_view.ID_CTRL_BUTTON_BUY_R);
 	temp:SetVisible( false );
+	--]]
 end
 
 --隐藏礼包项
 function p.HideGiftView( view )
+	--[[
     local temp = Get9SlicesImage(view , ui_shop_gift_pack_view.ID_CTRL_9SLICES_BG_R);
     temp:SetVisible( false );
     temp = GetButton( view ,ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_R);
     temp:SetVisible( false );
     temp = GetButton(view,ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_R);
     temp:SetVisible( false );
+	--]]
 end
 
 --显示物品信息
@@ -484,27 +513,28 @@ function p.SetItemInfo( view , item , position, index)
         price = ui_shop_item_view.ID_CTRL_TEXT_PRICE_L;
         rebateprice = ui_shop_item_view.ID_CTRL_TEXT_REBATE_PRICE_L;
         buy = ui_shop_item_view.ID_CTRL_BUTTON_BUY_L;
-        
+    --[[    
     elseif position == RIGHT then
         name = ui_shop_item_view.ID_CTRL_TEXT_NAME_R;
         limit = ui_shop_item_view.ID_CTRL_TEXT_LIMIT_R;
         price = ui_shop_item_view.ID_CTRL_TEXT_PRICE_R;
         rebateprice = ui_shop_item_view.ID_CTRL_TEXT_REBATE_PRICE_R;
         buy = ui_shop_item_view.ID_CTRL_BUTTON_BUY_R;
-    
+    --]]
     elseif position == GIFT_LEFT then
         name = ui_shop_gift_pack_view.ID_CTRL_TEXT_NAME_L;
         limit = ui_shop_gift_pack_view.ID_CTRL_TEXT_LIMIT_L;
         price = ui_shop_gift_pack_view.ID_CTRL_TEXT_PRICE_L;
         rebateprice = ui_shop_gift_pack_view.ID_CTRL_TEXT_REBATE_PRICE_L;
         buy = ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L;
-    
+    --[[
     elseif position == GIFT_RIGHT then
         name = ui_shop_gift_pack_view.ID_CTRL_TEXT_NAME_R;
         limit = ui_shop_gift_pack_view.ID_CTRL_TEXT_LIMIT_R;
         price = ui_shop_gift_pack_view.ID_CTRL_TEXT_PRICE_R;
         rebateprice = ui_shop_gift_pack_view.ID_CTRL_TEXT_REBATE_PRICE_R;
         buy = ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_R;
+		--]]
     end
 
     --名称
@@ -514,7 +544,7 @@ function p.SetItemInfo( view , item , position, index)
     
     --限制
     local limitLab = GetLabel( view, limit );
-    local lv = msg_cache.msg_player.level;
+    local lv = msg_cache.msg_player.Level;
     local row_limitLv = SelectRowInner( T_SHOP, "item_id", item.item_id , "level_limit"  );
     local num = item.num;
     local row_limitNum = SelectRowInner( T_SHOP, "item_id", item.item_id , "num_limit"  );
@@ -570,10 +600,12 @@ function p.SetItemInfo( view , item , position, index)
 	   local lookBtn = GetButton( view, ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_L);
 	   lookBtn:SetLuaDelegate( p.OnGiftUIEvent );
 	   lookBtn:SetId( index );
+	--[[
 	elseif position == GIFT_RIGHT then
 	   local lookBtn = GetButton( view, ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_R);
        lookBtn:SetLuaDelegate( p.OnGiftUIEvent );
        lookBtn:SetId( index );
+	--]]
 	end
 end
 

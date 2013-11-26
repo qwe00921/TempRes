@@ -12,8 +12,11 @@ p.MAIL_TYPE_SYS                    = 0;        -- 系统
 p.MAIL_TYPE_USER  				   = 1;			-- 个人
 
 p.PAGE_SIZE = 6; --每页数量
+
 p.layer = nil;
 p.curListTypeTag = nil;
+p.m_kCheckMail = nil;
+p.isShowed = true;
 
 local ui = ui_mail_main
 local ui_item_sys = ui_mail_list_item_sys
@@ -22,6 +25,7 @@ local ui_item_usr = ui_mail_list_item_user
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		p.isShowed = true
 		--dlg_battlearray.ShowUI();
 		return;
 	end
@@ -42,6 +46,7 @@ function p.ShowUI()
 	p.SetDelegate();
 	
 	p.ShowList4Sys();
+	
 	--p.ShowList4User();
 end
 
@@ -123,11 +128,15 @@ end
 
 function p.OnItemClick(uiNode, uiEventType, param)
 	local id = uiNode:GetId();
-	WriteCon("**======OnItemClick======**" .. tostring(id));
-	p.HideUI();
-	mail_detail_sys.ShowUI();
-	
-	
+	WriteCon("**======OnItemClick======** " .. tostring(id));
+	if p.isShowed == true then
+		p.HideUI();
+		if p.curListTypeTag == p.MAIL_TYPE_SYS then
+			mail_detail_sys.ShowUI();
+		else
+			mail_detail_user.ShowUI();
+		end
+	end
 end
 
 
@@ -135,6 +144,7 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
+		p.isShowed = false;
 	end
 end
 
@@ -195,7 +205,26 @@ function p.CreateItem4Sys()
 	view:Init();
 	LoadUI( "mail_list_item_sys.xui", view, nil );
 	view:SetViewSize( GetUiNode( view, ui_item_sys.ID_CTRL_PICTURE_BG ):GetFrameSize());
+
+	if nil == p.m_kCheckMail then
+		WriteCon("Entry Initialise Mail CheckBox\n");
+		local kCheckBox = GetButton(view,ui_mail_list_item_user.ID_CTRL_CHECK_BUTTON_SEL);
+	
+		if nil == kCheckBox then
+			WriteConErr("Get Check Box Failed\n");
+		end
+		
+		kCheckBox:SetLuaDelegate(p.OnCheckEvent);
+
+		p.m_kCheckMail = kCheckBox;
+	end	
+	
 	return view;
+end
+
+function p.OnCheckEvent(uiNode, uiEventType, param)
+	WriteCon("feawfawe\n");
+	p.m_kCheckMail:SetChecked(true);
 end
 
 function p.SetItemInfo4Sys( view, item )
@@ -215,6 +244,7 @@ function p.SetItemInfo4Sys( view, item )
 	--状态
 	local stateV = GetLabel( view, ui_item_sys.ID_CTRL_TEXT_STATE);
 	local stN = tonumber(item.state) or 0;
+	
 	if stN ==1 then
 		stateV:SetText("Readed");
 	else
@@ -313,6 +343,7 @@ function p.SetItemInfo4User( view, item )
 	--cardPicNode:SetId( tonumber(item.id));
 	--增加事件
 	--cardPicNode:SetLuaDelegate(p.OnBtnClicked);
+	view:SetLuaDelegate(p.OnItemClick);
 end
 
 
