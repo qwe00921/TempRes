@@ -16,6 +16,7 @@ function p.ShowUI()
         return false;
     end
     
+	
     layer:Init();   
     GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_achievement.xui", layer, nil);

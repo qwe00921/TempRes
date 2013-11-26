@@ -122,6 +122,10 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				bt:SetChecked (false);
 				p.ShowList4User();
 			end
+		elseif ui.ID_CTRL_BUTTON_SELECT_ALL == tag then
+			p.SelectAllItem();
+		elseif ui.ID_CTRL_BUTTON_DEL == tag then
+			dlg_msgbox.ShowOK(GetStr("mail_tip_title"), GetStr("mail_tip_del_empty"),nil);
 		end
 	end
 end
@@ -158,6 +162,26 @@ function p.CloseUI()
 end
 
 --------------------数据控制逻辑--------------------------------------
+
+--------全选
+function p.SelectAllItem()
+	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_MAIN);
+	local count = list:GetViewCount ();
+	for i = 1, count do
+		local parentV = list:GetViewAt(i-1);
+		local bt = nil;
+		if p.curListTypeTag == p.MAIL_TYPE_SYS then
+			bt = GetButton( parentV, ui_item_sys.ID_CTRL_CHECK_BUTTON_SEL)
+		else 
+			bt = GetButton( parentV, ui_item_usr.ID_CTRL_CHECK_BUTTON_SEL)
+		end 
+		if bt then
+			bt:SetChecked(true);
+		end
+	end
+	
+end
+
 
 -------- 系统邮件Item
 function p.ShowList4Sys(datas)
@@ -206,25 +230,11 @@ function p.CreateItem4Sys()
 	LoadUI( "mail_list_item_sys.xui", view, nil );
 	view:SetViewSize( GetUiNode( view, ui_item_sys.ID_CTRL_PICTURE_BG ):GetFrameSize());
 
-	if nil == p.m_kCheckMail then
-		WriteCon("Entry Initialise Mail CheckBox\n");
-		local kCheckBox = GetButton(view,ui_mail_list_item_user.ID_CTRL_CHECK_BUTTON_SEL);
 	
-		if nil == kCheckBox then
-			WriteConErr("Get Check Box Failed\n");
-		end
-		
-		kCheckBox:SetLuaDelegate(p.OnCheckEvent);
-
-		p.m_kCheckMail = kCheckBox;
-	end	
+	local kCheckBox = GetButton(view,ui_mail_list_item_user.ID_CTRL_CHECK_BUTTON_SEL);
+	kCheckBox:SetLuaDelegate(p.OnCheckEvent);
 	
 	return view;
-end
-
-function p.OnCheckEvent(uiNode, uiEventType, param)
-	WriteCon("feawfawe\n");
-	p.m_kCheckMail:SetChecked(true);
 end
 
 function p.SetItemInfo4Sys( view, item )
@@ -344,6 +354,18 @@ function p.SetItemInfo4User( view, item )
 	--增加事件
 	--cardPicNode:SetLuaDelegate(p.OnBtnClicked);
 	view:SetLuaDelegate(p.OnItemClick);
+end
+
+function p.OnCheckEvent(uiNode, uiEventType, param)
+	
+	local bt = ConverToButton(uiNode);
+	local st = bt:GetChecked();
+	if st == true then
+		bt:SetChecked(false);
+	else
+		bt:SetChecked(true);
+	end
+	--p.m_kCheckMail:SetChecked(true);
 end
 
 
