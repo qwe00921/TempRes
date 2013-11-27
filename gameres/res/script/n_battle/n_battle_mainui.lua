@@ -227,7 +227,8 @@ end
 function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
-	if N_BATTLE_MAX_ROUND < tonumber( n_battle_stage.GetRoundNum() ) then
+	if N_BATTLE_MAX_ROUND < tonumber( n_battle_stage.GetRoundNum() ) and not n_battle_stage.IsBattle_Stage_End() then
+	    n_battle_stage.EnterBattle_Stage_End();--Õ½¶·½×¶Î->½áÊø
         p.HideUI();
         local id = AddHudEffect( "lancer.enter_battle" );
         --local id = AddHudEffect( "lancer_cmb.enter_battle" );

@@ -39,6 +39,12 @@ function p.DoEffectAtk( atkData )
             local RemainHp = tonumber( var.RemainHp ); --ËùÊ£ÑªÁ¿
             local Crit = tonumber( var.Crit ); --±©»÷
             local Dead = tonumber( var.TargetDead );--ËÀÍö
+            if Dead then
+            	if Damage < enemy.life then
+            		WriteConWarning("the TargetFighter Mandatory death!");
+            		Damage = enemy.life;
+            	end
+            end
                 
             n_battle_atk.Atk( hero, enemy, batch, Damage );
                 
