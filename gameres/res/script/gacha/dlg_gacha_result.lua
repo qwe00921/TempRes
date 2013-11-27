@@ -28,6 +28,7 @@ function p.ShowUI(gacharesult)
         return false;
     end
 	
+	layer:NoMask();
 	layer:Init();	
 	GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_gacha_result.xui", layer, nil);
@@ -36,9 +37,10 @@ function p.ShowUI(gacharesult)
 	if gacharesult ~= nil then
 	   p.gacharesult = gacharesult;
 	end
-	 WriteCon("**扭蛋**1"  );
-	p.SetDelegate();
+	WriteCon("**扭蛋**1"  );
+	
 	p.GachaResult(gacharesult);
+	p.SetDelegate();
 end
 
 --设置事件处理
@@ -54,6 +56,8 @@ function p.SetDelegate()
     --下一张按钮
     local nextBtn = GetButton(p.layer,ui_dlg_gacha_result.ID_CTRL_BUTTON_NEXT);
     nextBtn:SetLuaDelegate(p.OnGachaResultUIEvent);
+	
+	--nextBtn:SetEnabled(#p.cardIdList > p.cardIndex);
 end
 
 function p.OnGachaResultUIEvent(uiNode, uiEventType, param)
@@ -126,34 +130,38 @@ function p.ShowCardInfo(card_id)
     
     if card_id ~= "0" then
         WriteCon("扭蛋id" .. card_id );
+		--[[
         --卡牌图片
         local cardPic = GetImage( p.layer,ui_dlg_gacha_result.ID_CTRL_PICTURE_CARD );
         local pic = GetCardPicById( card_id );
         if pic ~= nil then
         	cardPic:SetPicture( pic );
         end
+		--]]
         
         --星级
         local rareLab = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_RARE );
         rareLab:SetText(SelectCell( T_CARD, card_id, "rare" ));
         --名称
         local cardName = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_NAME );
-        cardName:SetText( SelectCell( T_CARD, card_id, "name" ));
+        cardName:SetText( ToUtf8( SelectCell( T_CARD, card_id, "name" )));
         --HP
         local cardHp = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_HP );
-        cardHp:SetText( tostring( p.GetHP( card_id)));
+        cardHp:SetText( SelectCell(T_CARD, card_id, "hp") );
         --攻击
         local cardAtk = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_ATK );
-        cardAtk:SetText( tostring( p.GetAttack( card_id)));
+        cardAtk:SetText( SelectCell(T_CARD, card_id, "attack") );
         --防御
         local cardDef = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DEF );
-        cardDef:SetText( tostring( p.GetDef( card_id)));
+        cardDef:SetText( SelectCell(T_CARD, card_id, "defence") );
+		--[[
         --技能
         local cardSkill = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_SKILL );
         local skill_id = SelectCell( T_CARD, card_id, "skill" );
         if skill_id ~= "0" then
             cardSkill:SetText( SelectCell( T_SKILL, skill_id, "name" ));
         end
+		--]]
         --描述
         local description = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DESCRIPTION);
         description:SetText( SelectCell( T_CARD, card_id, "description" ));
@@ -168,6 +176,7 @@ function p.ShowCardInfo(card_id)
     p.cardIndex = p.cardIndex + 1;
 end
 
+--[[
 --获取当前的生命值
 function p.GetHP( id )
     local hp_max = SelectCell( T_CARD, id, "hp_max" );
@@ -201,6 +210,7 @@ function p.GetCurrentValue( maxValue, minValue, maxLv, lv)
     local cur_value = minValue + (maxv - minv)/(maxLv - 1) * ( lv - 1)
     return math.floor( cur_value );
 end
+--]]
 
 --设置可见
 function p.HideUI()

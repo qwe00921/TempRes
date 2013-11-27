@@ -1,12 +1,14 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_9SLICES_19]
 Type=22
 Tag=32
-Rect=134 86 692 468
+Rect=-3 154 640 468
+AnchorPos=0 0
+Notes=
 Stretch=1
 NormalFile=.\res\image\ui\common\sub_ui_bg.png
 NormalFileUV=0 0 165 165
@@ -14,14 +16,18 @@ NormalFileUV=0 0 165 165
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=16
-Rect=258 147 240 320
+Rect=78 215 240 320
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\card\10100301.png
 NormalFileUV=0 0 450 600
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=17
-Rect=557 150 180 30
+Rect=377 218 180 30
+AnchorPos=0 0
+Notes=
 Text=女武神玛利亚
 TextTradition=女武神瑪利亞
 TextSize=20
@@ -32,7 +38,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_18]
 Type=4
 Tag=18
-Rect=560 185 50 30
+Rect=380 253 50 30
+AnchorPos=0 0
+Notes=
 Text=HP
 TextTradition=HP
 TextSize=20
@@ -43,7 +51,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_19]
 Type=4
 Tag=19
-Rect=560 223 50 30
+Rect=380 291 50 30
+AnchorPos=0 0
+Notes=
 Text=攻击
 TextTradition=攻擊
 TextSize=20
@@ -54,7 +64,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_20]
 Type=4
 Tag=20
-Rect=560 261 50 30
+Rect=380 329 50 30
+AnchorPos=0 0
+Notes=
 Text=防御
 TextTradition=防御
 TextSize=20
@@ -65,7 +77,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_21]
 Type=4
 Tag=21
-Rect=560 298 50 30
+Rect=380 366 50 30
+AnchorPos=0 0
+Notes=
 Text=技能
 TextTradition=技能
 TextSize=20
@@ -76,7 +90,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_HP]
 Type=4
 Tag=22
-Rect=616 185 120 30
+Rect=436 253 120 30
+AnchorPos=0 0
+Notes=
 Text=999999
 TextTradition=999999
 TextSize=20
@@ -87,7 +103,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATK]
 Type=4
 Tag=23
-Rect=616 223 120 30
+Rect=436 291 120 30
+AnchorPos=0 0
+Notes=
 Text=999999
 TextTradition=999999
 TextSize=20
@@ -98,7 +116,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DEF]
 Type=4
 Tag=24
-Rect=617 261 120 30
+Rect=437 329 120 30
+AnchorPos=0 0
+Notes=
 Text=999999
 TextTradition=999999
 TextSize=20
@@ -109,7 +129,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SKILL]
 Type=4
 Tag=25
-Rect=618 298 120 30
+Rect=438 366 120 30
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -118,7 +140,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DESCRIPTION]
 Type=4
 Tag=26
-Rect=559 335 180 143
+Rect=379 403 180 143
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -127,7 +151,9 @@ TextVerAlign=AlignTop
 [CTRL_BUTTON_AGAIN]
 Type=2
 Tag=27
-Rect=221 485 136 60
+Rect=41 553 136 60
+AnchorPos=0 0
+Notes=
 Text=再扭一次
 TextTradition=再扭一次
 TextSize=20
@@ -144,7 +170,9 @@ DisableFileUV=0 0 136 60
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=28
-Rect=633 485 136 60
+Rect=453 553 136 60
+AnchorPos=0 0
+Notes=
 Text=返回
 TextTradition=返回
 TextSize=20
@@ -161,7 +189,9 @@ DisableFileUV=0 0 136 60
 [CTRL_TEXT_29]
 Type=4
 Tag=29
-Rect=317 91 326 40
+Rect=137 159 326 40
+AnchorPos=0 0
+Notes=
 Text=获得   星卡片
 TextTradition=獲得   星卡片
 TextSize=30
@@ -172,7 +202,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RARE]
 Type=4
 Tag=30
-Rect=440 91 50 40
+Rect=260 159 50 40
+AnchorPos=0 0
+Notes=
 Text=6
 TextTradition=6
 TextSize=30
@@ -183,7 +215,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_NEXT]
 Type=2
 Tag=31
-Rect=427 485 136 60
+Rect=247 553 136 60
+AnchorPos=0 0
+Notes=
 Text=下一张
 TextTradition=下一張
 TextSize=20
