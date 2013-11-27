@@ -37,6 +37,22 @@ function p:Init( idFighter, node, camp )
 	self:CreateHpBar();
 end
 
+--创建飘血数字
+function p:CreateFlyNum(nType)
+    local flynum = n_fly_num:new();
+    flynum:SetOwnerNode( self.node );
+    flynum:Init(nType);
+    flynum:SetOffset(30,-50);
+    
+    self.node:AddChildZ( flynum:GetNode(), 2 );
+    self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
+    
+    if #self.flynum_mgr > 3 then
+        WriteConErr( string.format("too many flynum: %s", #self.flynum_mgr));
+    end
+    return flynum;
+end
+
 --创建血条
 function p:CreateHpBar()
 	if self.hpbar == nil or self.m_kShadow == nil then

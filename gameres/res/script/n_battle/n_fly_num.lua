@@ -23,3 +23,35 @@ end
 function p:ctor()
     super.ctor(self);
 end
+
+--飘个数值
+function p:PlayNum( num )
+    local nIntNumber = math.floor(num)
+    
+    if not self.isInited then return end
+    if self.ownerNode == nil then return end
+    
+    --push数字图片
+    self:PushNum( nIntNumber );
+    self:AdjustOffset( nIntNumber );
+    
+    --设置图片
+    self.imageNode:SetScale(1.0f);
+    self.imageNode:SetPicture( self.comboPicture );
+    self.imageNode:ResizeToFitPicture();
+    self.imageNode:SetScale(0.7f);
+    
+    --播放动画
+    self.imageNode:SetVisible( true );
+    self.imageNode:SetOpacity( 0 );
+    self.imageNode:SetFramePosXY( self.offsetX, self.offsetY + UIOffsetY(60));
+    self:AddAction();
+end
+
+--加action效果
+function p:AddAction()
+    --self.imageNode:AddActionEffect( "lancer_cmb.flynum" );
+    ----self.imageNode:AddActionEffect( "lancer.flynum" );
+    self.imageNode:AddActionEffect( "lancer_cmb.flynum_v2" );
+end
+

@@ -64,14 +64,14 @@ function p:Init( parentNode, in_life, in_lifeMax )
 	self.node:SetFgTransform( 1, 1, 0, 0 );
 	
 	local pos = self.node:GetFramePos();
-	pos.y = pos.y + 20;
+	pos.y = pos.y;
 	self.node:SetFramePosXY(pos.x, pos.y);
 	
 	--Ãı Ù–‘
 	self.node:SetTextFontSize(10);
 	self.node:SetTextFontColor( ccc4(255,255,255,255));
 	self.node:SetStart(0);
-	self.node:SetTextStyle(0);
+	self.node:SetTextStyle(2);
 	self.node:SetTotal( in_lifeMax );
 	self.node:SetProcess( in_life );
 end
