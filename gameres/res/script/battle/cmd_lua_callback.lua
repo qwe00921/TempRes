@@ -27,6 +27,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter = card_battle_mgr.FindFighter(id);
 	elseif E_DEMO_VER == 1 then	
 		fighter = battle_mgr.FindFighter(id);
+	elseif E_DEMO_VER == 4 then    
+        fighter = n_battle_mgr.FindFighter(id);
 	end
 	
 	if fighter == nil then
@@ -48,30 +50,40 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 			x_battle_mgr:AddMaskImage();
 		elseif E_DEMO_VER == 3 then	
 			card_battle_mgr:AddMaskImage();
+		elseif E_DEMO_VER == 4 then   
+            n_battle_mgr:AddMaskImage();
 		end
 	elseif cmdtype == "HideMaskImage" then
 		if E_DEMO_VER == 2 then
 			x_battle_mgr:HideMaskImage();
 		elseif E_DEMO_VER == 3 then	
 			card_battle_mgr:HideMaskImage();
+		elseif E_DEMO_VER == 4 then   
+            n_battle_mgr:HideMaskImage();	
 		end
 	elseif cmdtype == "ReSetSkillNameBarPos" then
 		if E_DEMO_VER == 2 then
 			x_battle_pvp:ReSetSkillNameBarPos();
 		elseif E_DEMO_VER == 3 then	
 			card_battle_pvp:ReSetSkillNameBarPos();
+		elseif E_DEMO_VER == 4 then   
+            n_battle_pvp:ReSetSkillNameBarPos();	
 		end
 	elseif cmdtype == "SetSkillNameBarToLeft" then
 		if E_DEMO_VER == 2 then
 			x_battle_pvp:SetSkillNameBarToLeft();
 		elseif E_DEMO_VER == 3 then	
 			card_battle_pvp:SetSkillNameBarToLeft();
+		elseif E_DEMO_VER == 4 then   
+            n_battle_pvp:SetSkillNameBarToLeft();
 		end
 	elseif cmdtype == "SetSkillNameBarToRight" then
 		if E_DEMO_VER == 2 then
 			x_battle_pvp:SetSkillNameBarToRight();	
 		elseif E_DEMO_VER == 3 then	
 			card_battle_pvp:SetSkillNameBarToRight();	
+		elseif E_DEMO_VER == 4 then   
+            n_battle_pvp:SetSkillNameBarToRight();  
 		end
 	elseif cmdtype == "skillbar_change" then
         fighter.skillbar.life = fighter.skillbar.life + num;
