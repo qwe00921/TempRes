@@ -14,10 +14,10 @@ end
 --构造函数
 function p:ctor()
 	super.ctor(self);
-	self.idMsg = MSG_EQUIP_BACK_PACK;
+	self.idMsg = MSG_PACK_BOX;
 	
-	self.id = nil;
-	self.type = nil;
+	--self.id = nil;
+	--self.type = nil;
 end
 
 function p:Init()
@@ -26,5 +26,9 @@ end
 function p:Process()
 	msg_cache.msg_pack_box = self;
     WriteConWarning( "** msg_pack_box:Process() called" );
-    pack_box_mgr.RefreshUI(self.user_items);
+	if self.result == true then 
+		pack_box_mgr.RefreshUI(self.user_items);
+	else
+		WriteConWarning( "** msg_pack_box error" );
+	end
 end

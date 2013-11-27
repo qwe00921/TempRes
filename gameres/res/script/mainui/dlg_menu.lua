@@ -60,7 +60,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			pack_box.ShowUI();
 			--Òþ²ØÖ÷UI
 			maininterface.CloseAllPanel();
-			maininterface.HideUI();
+			--maininterface.HideUI();
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
 			WriteCon("**========¿¨×é========**");
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then

@@ -189,7 +189,7 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_PLAYER_USERINFO then
 		msg = msg_maininterface:new();
 		
-	elseif idmsg == MSG_EQUIP_BACK_PACK then 	
+	elseif idmsg == MSG_PACK_BOX then 	
 		msg = msg_pack_box:new();
 	end
 	

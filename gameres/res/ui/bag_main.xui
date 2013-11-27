@@ -54,8 +54,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_page1off.png
-NormalFileUV=0 0 119 75
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_ITEM2]
 Type=2
@@ -66,8 +69,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_page2off.png
-NormalFileUV=0 0 120 76
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_TIEM3]
 Type=2
@@ -78,8 +84,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_page3off.png
-NormalFileUV=0 0 121 76
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_ITEM4]
 Type=2
@@ -90,8 +99,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_page4off.png
-NormalFileUV=0 0 121 75
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_SORT]
 Type=2
@@ -114,8 +126,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\sub_1.png
-NormalFileUV=0 0 148 100
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_ITEM_SUB2]
 Type=2
@@ -126,8 +141,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\sub_2.png
-NormalFileUV=0 0 148 100
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_ITEM_SUB3]
 Type=2
@@ -138,8 +156,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\sub_3.png
-NormalFileUV=0 0 148 100
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_ITEM_SUB4]
 Type=2
@@ -150,8 +171,11 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\sub_4.png
-NormalFileUV=0 0 148 100
+Stretch=1
+NormalFile=.\res\image\ui\bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_VERTICAL_LIST_ITEM]
 Type=14
@@ -163,9 +187,11 @@ Notes=
 [CTRL_PICTURE_USE]
 Type=1
 Tag=33
-Rect=-5 688 640 148
+Rect=0 688 640 148
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\bag\test_bg.png
+NormalFileUV=0 0 148 100
 
 [CTRL_TEXT_ITEM_INFO]
 Type=4
