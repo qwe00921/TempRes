@@ -52,6 +52,7 @@ function p.CreateDlg()
 			return false;
 		end
 		
+		layer:NoMask()
 		layer:Init();
 		GetUIRoot():AddDlg(layer);
 		LoadDlg("dlg_msgbox.xui", layer, nil);

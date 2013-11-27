@@ -27,7 +27,7 @@ p.isActivity = false;
 local act_zoom = "engine_cmb.zoom_in_out"; --ºôÎüĞ§¹û
 
 --ÏÔÊ¾UI
-function p.ShowUI( storyId )
+function p.ShowUI( stageId, storyId  )
     if storyId == nil then
     	return;
     else

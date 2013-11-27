@@ -1,7 +1,7 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_PICTURE_287]
 Type=1
@@ -9,7 +9,6 @@ Tag=287
 Rect=0 0 640 959
 AnchorPos=0 0
 Notes=
-Stretch=1
 NormalFile=.\res\image\ui\bag\bag_bg.png
 NormalFileUV=0 0 641 198
 
@@ -25,10 +24,10 @@ TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_289]
+[CTRL_TEXT_TITLE_LABEL]
 Type=4
 Tag=289
-Rect=32 173 107 60
+Rect=35 160 107 60
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -37,10 +36,10 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_INPUT_TEXT_290]
+[CTRL_INPUT_TEXT_TITLE]
 Type=18
 Tag=290
-Rect=144 171 479 59
+Rect=138 162 479 59
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -59,32 +58,64 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\bag\bag_back.png
 NormalFileUV=0 0 151 101
 
-[CTRL_CHAT_TEXT_293]
+[CTRL_CHAT_TEXT_QUESTION]
 Type=5
 Tag=293
-Rect=31 240 592 299
+Rect=30 239 592 384
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_294]
+[CTRL_TEXT_TIP]
 Type=4
 Tag=294
-Rect=61 548 559 52
+Rect=20 634 615 125
 AnchorPos=0 0
 Notes=
 Text=我们会尽快回复您提交的问题
 TextTradition=我們會盡快回復您提交的問題
-TextSize=10
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_BUTTON_295]
+[CTRL_BUTTON_ASK]
 Type=2
-Tag=295
-Rect=263 611 124 63
+Tag=296
+Rect=36 90 113 44
+AnchorPos=0 0
+Notes=
+Text=提交问题
+TextTradition=提交問題
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_BUTTON_ANSWER]
+Type=2
+Tag=35
+Rect=160 88 113 44
+AnchorPos=0 0
+Notes=
+Text=查看问题
+TextTradition=查看問題
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_BUTTON_SEND]
+Type=2
+Tag=36
+Rect=253 764 113 44
 AnchorPos=0 0
 Notes=
 Text=发送
@@ -92,27 +123,126 @@ TextTradition=發送
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
 
-[CTRL_BUTTON_296]
-Type=2
-Tag=296
-Rect=37 83 107 60
+[CTRL_VERTICAL_LIST]
+Type=14
+Tag=37
+Rect=17 151 613 233
 AnchorPos=0 0
 Notes=
-Text=提交问题
-TextTradition=提交問題
+
+[CTRL_BUTTON_PAGE_PRE]
+Type=2
+Tag=104
+Rect=188 391 69 44
+AnchorPos=0 0
+Notes=
+Text=<<
+TextTradition=<<
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_BUTTON_PAGE_NEXT]
+Type=2
+Tag=105
+Rect=376 391 69 44
+AnchorPos=0 0
+Notes=
+Text=>>
+TextTradition=>>
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_1_normal.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\common\btn_1_click.png
+SelectedFileUV=0 0 112 44
+
+[CTRL_TEXT_PAGE_INFO]
+Type=4
+Tag=106
+Rect=262 392 107 41
+AnchorPos=0 0
+Notes=
+Text=1/3
+TextTradition=1/3
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GM_LABEL]
+Type=4
+Tag=107
+Rect=59 446 107 49
+AnchorPos=0 0
+Notes=
+Text=客服[GM]
+TextTradition=客服[GM]
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GM_TIME]
+Type=4
+Tag=108
+Rect=358 447 230 50
+AnchorPos=0 0
+Notes=
+Text=09-10 20:39:30
+TextTradition=09-10 20:39:30
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GM_CONTENT]
+Type=4
+Tag=110
+Rect=60 507 524 148
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_BUTTON_297]
-Type=2
-Tag=297
-Rect=192 82 107 60
+[CTRL_TEXT_USER_LABEL]
+Type=4
+Tag=111
+Rect=64 669 107 49
 AnchorPos=0 0
 Notes=
-Text=查看问题
-TextTradition=查看問題
+Text=小红帽
+TextTradition=小紅帽
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_USER_TIME]
+Type=4
+Tag=113
+Rect=365 670 230 50
+AnchorPos=0 0
+Notes=
+Text=09-10 20:39:30
+TextTradition=09-10 20:39:30
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_USER_CONTENT]
+Type=4
+Tag=114
+Rect=69 728 524 148
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

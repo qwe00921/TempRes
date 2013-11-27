@@ -1,12 +1,14 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_9SLICES_1]
 Type=22
 Tag=1
-Rect=180 110 600 420
+Rect=20 203 600 420
+AnchorPos=0 0
+Notes=
 Stretch=1
 NormalFile=.\res\image\ui\common\sub_ui_bg.png
 NormalFileUV=0 0 165 165
@@ -14,7 +16,9 @@ NormalFileUV=0 0 165 165
 [CTRL_TEXT_2]
 Type=4
 Tag=2
-Rect=310 115 339 40
+Rect=150 208 339 40
+AnchorPos=0 0
+Notes=
 Text=礼包内容预览
 TextTradition=禮包內容預覽
 TextSize=35
@@ -25,7 +29,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_OK]
 Type=2
 Tag=3
-Rect=413 458 136 60
+Rect=253 551 136 60
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -37,56 +43,72 @@ SelectedFileUV=0 0 136 60
 [CTRL_PICTURE_4]
 Type=1
 Tag=4
-Rect=454 472 56 30
+Rect=292 564 56 30
+AnchorPos=0 0
+Notes=
 NormalFile=.\res.cn\image\ui\font\q_r.png
 NormalFileUV=0 0 56 30
 
 [CTRL_PICTURE_5]
 Type=1
 Tag=5
-Rect=224 180 80 80
+Rect=64 273 80 80
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\item\item.png
 NormalFileUV=0 0 120 120
 
 [CTRL_PICTURE_6]
 Type=1
 Tag=6
-Rect=515 180 80 80
+Rect=355 273 80 80
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\item\item.png
 NormalFileUV=0 0 120 120
 
 [CTRL_PICTURE_7]
 Type=1
 Tag=7
-Rect=224 273 80 80
+Rect=64 366 80 80
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\item\item.png
 NormalFileUV=0 0 120 120
 
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=515 273 80 80
+Rect=355 366 80 80
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\item\item.png
 NormalFileUV=0 0 120 120
 
 [CTRL_PICTURE_9]
 Type=1
 Tag=9
-Rect=224 365 80 80
+Rect=64 458 80 80
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\item\item.png
 NormalFileUV=0 0 120 120
 
 [CTRL_PICTURE_10]
 Type=1
 Tag=10
-Rect=515 365 80 80
+Rect=355 458 80 80
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\item\item.png
 NormalFileUV=0 0 120 120
 
 [CTRL_TEXT_NAME1]
 Type=4
 Tag=11
-Rect=315 185 160 30
+Rect=155 278 160 30
+AnchorPos=0 0
+Notes=
 Text=我是道具名称
 TextTradition=我是道具名稱
 TextSize=20
@@ -97,7 +119,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME2]
 Type=4
 Tag=16
-Rect=605 185 160 30
+Rect=445 278 160 30
+AnchorPos=0 0
+Notes=
 Text=我是道具名称
 TextTradition=我是道具名稱
 TextSize=20
@@ -108,7 +132,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME3]
 Type=4
 Tag=17
-Rect=315 280 160 30
+Rect=155 373 160 30
+AnchorPos=0 0
+Notes=
 Text=我是道具名称
 TextTradition=我是道具名稱
 TextSize=20
@@ -119,7 +145,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME4]
 Type=4
 Tag=18
-Rect=605 280 160 30
+Rect=445 373 160 30
+AnchorPos=0 0
+Notes=
 Text=我是道具名称
 TextTradition=我是道具名稱
 TextSize=20
@@ -130,7 +158,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME5]
 Type=4
 Tag=19
-Rect=315 370 160 30
+Rect=155 463 160 30
+AnchorPos=0 0
+Notes=
 Text=我是道具名称
 TextTradition=我是道具名稱
 TextSize=20
@@ -141,7 +171,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME6]
 Type=4
 Tag=20
-Rect=605 370 160 30
+Rect=445 463 160 30
+AnchorPos=0 0
+Notes=
 Text=我是道具名称
 TextTradition=我是道具名稱
 TextSize=20
@@ -152,7 +184,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_21]
 Type=4
 Tag=21
-Rect=315 225 60 30
+Rect=155 318 60 30
+AnchorPos=0 0
+Notes=
 Text=数量:
 TextTradition=數量:
 TextSize=20
@@ -163,7 +197,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_22]
 Type=4
 Tag=22
-Rect=605 225 60 30
+Rect=445 318 60 30
+AnchorPos=0 0
+Notes=
 Text=数量:
 TextTradition=數量:
 TextSize=20
@@ -174,7 +210,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_23]
 Type=4
 Tag=23
-Rect=315 320 60 30
+Rect=155 413 60 30
+AnchorPos=0 0
+Notes=
 Text=数量:
 TextTradition=數量:
 TextSize=20
@@ -185,7 +223,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_24]
 Type=4
 Tag=24
-Rect=605 320 60 30
+Rect=445 413 60 30
+AnchorPos=0 0
+Notes=
 Text=数量:
 TextTradition=數量:
 TextSize=20
@@ -196,7 +236,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_25]
 Type=4
 Tag=25
-Rect=315 410 60 30
+Rect=155 503 60 30
+AnchorPos=0 0
+Notes=
 Text=数量:
 TextTradition=數量:
 TextSize=20
@@ -207,7 +249,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_26]
 Type=4
 Tag=26
-Rect=605 410 60 30
+Rect=445 503 60 30
+AnchorPos=0 0
+Notes=
 Text=数量:
 TextTradition=數量:
 TextSize=20
@@ -218,7 +262,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NUM1]
 Type=4
 Tag=27
-Rect=370 225 50 30
+Rect=210 318 50 30
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -227,7 +273,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NUM2]
 Type=4
 Tag=28
-Rect=660 225 50 30
+Rect=500 318 50 30
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -236,7 +284,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NUM3]
 Type=4
 Tag=29
-Rect=370 320 50 30
+Rect=210 413 50 30
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -245,7 +295,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NUM4]
 Type=4
 Tag=30
-Rect=660 320 50 30
+Rect=500 413 50 30
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -254,7 +306,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NUM5]
 Type=4
 Tag=31
-Rect=370 410 50 30
+Rect=210 503 50 30
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -263,7 +317,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NUM6]
 Type=4
 Tag=32
-Rect=660 410 50 30
+Rect=500 503 50 30
+AnchorPos=0 0
+Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft

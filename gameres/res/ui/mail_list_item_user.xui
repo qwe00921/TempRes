@@ -13,7 +13,7 @@ NormalFile=.\res\image\ui\bag\bag_bg.png
 NormalFileUV=0 0 641 198
 
 [CTRL_CHECK_BUTTON_SEL]
-Type=3
+Type=2
 Tag=301
 Rect=528 88 61 34
 AnchorPos=0 0

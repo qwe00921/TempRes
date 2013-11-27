@@ -12,8 +12,11 @@ p.MAIL_TYPE_SYS                    = 0;        -- 系统
 p.MAIL_TYPE_USER  				   = 1;			-- 个人
 
 p.PAGE_SIZE = 6; --每页数量
+
 p.layer = nil;
 p.curListTypeTag = nil;
+p.m_kCheckMail = nil;
+p.isShowed = true;
 
 local ui = ui_mail_main
 local ui_item_sys = ui_mail_list_item_sys
@@ -22,6 +25,7 @@ local ui_item_usr = ui_mail_list_item_user
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		p.isShowed = true
 		--dlg_battlearray.ShowUI();
 		return;
 	end
@@ -42,6 +46,7 @@ function p.ShowUI()
 	p.SetDelegate();
 	
 	p.ShowList4Sys();
+	
 	--p.ShowList4User();
 end
 
@@ -117,17 +122,25 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				bt:SetChecked (false);
 				p.ShowList4User();
 			end
+		elseif ui.ID_CTRL_BUTTON_SELECT_ALL == tag then
+			p.SelectAllItem();
+		elseif ui.ID_CTRL_BUTTON_DEL == tag then
+			dlg_msgbox.ShowOK(GetStr("mail_tip_title"), GetStr("mail_tip_del_empty"),nil);
 		end
 	end
 end
 
 function p.OnItemClick(uiNode, uiEventType, param)
 	local id = uiNode:GetId();
-	WriteCon("**======OnItemClick======**" .. tostring(id));
-	p.HideUI();
-	mail_detail_sys.ShowUI();
-	
-	
+	WriteCon("**======OnItemClick======** " .. tostring(id));
+	if p.isShowed == true then
+		p.HideUI();
+		if p.curListTypeTag == p.MAIL_TYPE_SYS then
+			mail_detail_sys.ShowUI();
+		else
+			mail_detail_user.ShowUI();
+		end
+	end
 end
 
 
@@ -135,6 +148,7 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
+		p.isShowed = false;
 	end
 end
 
@@ -148,6 +162,26 @@ function p.CloseUI()
 end
 
 --------------------数据控制逻辑--------------------------------------
+
+--------全选
+function p.SelectAllItem()
+	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_MAIN);
+	local count = list:GetViewCount ();
+	for i = 1, count do
+		local parentV = list:GetViewAt(i-1);
+		local bt = nil;
+		if p.curListTypeTag == p.MAIL_TYPE_SYS then
+			bt = GetButton( parentV, ui_item_sys.ID_CTRL_CHECK_BUTTON_SEL)
+		else 
+			bt = GetButton( parentV, ui_item_usr.ID_CTRL_CHECK_BUTTON_SEL)
+		end 
+		if bt then
+			bt:SetChecked(true);
+		end
+	end
+	
+end
+
 
 -------- 系统邮件Item
 function p.ShowList4Sys(datas)
@@ -195,6 +229,11 @@ function p.CreateItem4Sys()
 	view:Init();
 	LoadUI( "mail_list_item_sys.xui", view, nil );
 	view:SetViewSize( GetUiNode( view, ui_item_sys.ID_CTRL_PICTURE_BG ):GetFrameSize());
+
+	
+	local kCheckBox = GetButton(view,ui_mail_list_item_user.ID_CTRL_CHECK_BUTTON_SEL);
+	kCheckBox:SetLuaDelegate(p.OnCheckEvent);
+	
 	return view;
 end
 
@@ -215,6 +254,7 @@ function p.SetItemInfo4Sys( view, item )
 	--状态
 	local stateV = GetLabel( view, ui_item_sys.ID_CTRL_TEXT_STATE);
 	local stN = tonumber(item.state) or 0;
+	
 	if stN ==1 then
 		stateV:SetText("Readed");
 	else
@@ -313,6 +353,19 @@ function p.SetItemInfo4User( view, item )
 	--cardPicNode:SetId( tonumber(item.id));
 	--增加事件
 	--cardPicNode:SetLuaDelegate(p.OnBtnClicked);
+	view:SetLuaDelegate(p.OnItemClick);
+end
+
+function p.OnCheckEvent(uiNode, uiEventType, param)
+	
+	local bt = ConverToButton(uiNode);
+	local st = bt:GetChecked();
+	if st == true then
+		bt:SetChecked(false);
+	else
+		bt:SetChecked(true);
+	end
+	--p.m_kCheckMail:SetChecked(true);
 end
 
 

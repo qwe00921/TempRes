@@ -41,7 +41,7 @@ end
 
 --处理消息
 function p:Process()
-	msg_cache.msg_createrole = self;
+	msg_cache.msg_player = self.user;
 	WriteConWarning( "** msg_createrole:Process() called" );
 	
 	if self.result then
