@@ -33,8 +33,9 @@ p.gachaBtnlist = {};
 p.useTicketSign = 0;
 
 --扭蛋参数
-p.gacha_id = gacha_id;
-p.charge_type = charge_type;
+p.gacha_id = nil;
+p.charge_type = nil;
+p.gacha_type = nil;
 
 p.gachaIndex = nil;
 
@@ -223,9 +224,10 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			if freeTime <= curTime then
 				--免费
 				local gacha_id = tonumber(p.gachadata.gacha[id].gacha_id);
-				local charge_type = 1
-				local gacha_type = 1
-				p.ReqStartGacha( gacha_id, charge_type, gacha_type);
+				p.charge_type = 1;
+				p.gacha_type = 1;
+				p.gacha_id = gacha_id;
+				p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			else
 				local gacha_id = tonumber(p.gachadata.gacha[id].gacha_id);
 				local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "single_gacha_cost"));
@@ -235,23 +237,25 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 					return;
 				end
 				--付费
-				local charge_type = 2
-				local gacha_type = 1
-				p.ReqStartGacha( gacha_id, charge_type, gacha_type);
+				p.charge_type = 2;
+				p.gacha_type = 1;
+				p.gacha_id = gacha_id;
+				p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			end
 		elseif ui_gacha_list_view.ID_CTRL_BUTTON_TEN == tag then
 			--N次扭蛋
 			local id = uiNode:GetParent():GetId();
 			local gacha_id = tonumber(p.gachadata.gacha[id].gacha_id);
-			local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "complex gacha_cost"));
+			local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "complex_gacha_cost"));
 			if p.rmb < needRmb then
 				WriteCon("**扭蛋需求代币不足**");
 				return;
 			end
 			--付费
-			local charge_type = 2
-			local gacha_type = 2
-			p.ReqStartGacha( gacha_id, charge_type, gacha_type);
+			p.charge_type = 2;
+			p.gacha_type = 2;
+			p.gacha_id = gacha_id;
+			p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			
 		--[[
 		elseif ( ui_gacha_list_view.ID_CTRL_BUTTON_ONE == tag ) then  
@@ -740,7 +744,7 @@ function p.ShowGachaData( gachadata )
 		gachaFewBtn:SetLuaDelegate(p.OnGachaUIEvent);
 		
 		gachaOneNum:SetText( SelectCell( T_GACHA, gachaid, "single_gacha_cost") );
-		gachaFewNum:SetText( SelectCell( T_GACHA, gachaid, "complex gacha_cost") );
+		gachaFewNum:SetText( SelectCell( T_GACHA, gachaid, "complex_gacha_cost") );
 
 		p.gachaList:AddView( view );
 	end
