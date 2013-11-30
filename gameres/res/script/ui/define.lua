@@ -96,6 +96,10 @@ DoFile("ui/ui_dlg_card_intensify_result.lua")
 DoFile("ui/ui_dlg_card_fuse.lua")
 DoFile("ui/ui_dlg_card_fuse_result.lua")
 
+--卡牌详细信息
+DoFile("ui/ui_dlg_card_attr.lua")
+DoFile("ui/ui_dlg_card_attr_base.lua")
+
 --队伍
 DoFile("ui/ui_team_list_view.lua")
 DoFile("ui/ui_team_cardlist_view.lua")
@@ -224,5 +228,10 @@ DoFile("ui/ui_mail_list_item_user.lua");
 DoFile("ui/ui_mail_detail_sys.lua");
 DoFile("ui/ui_mail_detail_user.lua");
 DoFile("ui/ui_mail_list_item_gm.lua");
+
+--对战正式版本
+DoFile("ui/ui_n_battle_ko.lua");
+DoFile("ui/ui_n_battle_mainui.lua");
+DoFile("ui/ui_n_battle_pvp.lua");
 
 

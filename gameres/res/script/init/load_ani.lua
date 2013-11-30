@@ -21,6 +21,7 @@ LoadAni("item.ani")
 LoadAni("dungeon.ani")
 LoadAni("card_battle.ani")
 LoadAni("minicard.ani")
+LoadAni("UserImage.ani")
 LoadAni_Done()
 
 --加载组合特效

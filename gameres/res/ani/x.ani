@@ -297,6 +297,7 @@ image\fx\pet_blue_devil\fx_skill_bar_title.png @cut(1,1) @time=0.15 @offset(-250
 
 
 ;;;;---------------------------------------------------------------------------------------
+;10392
 [test10392_attack]
 image\testbattle\10392_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10392_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -318,7 +319,7 @@ image\testbattle\10392_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10392_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10684
 [test10684_attack]
 image\testbattle\10684_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10684_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -340,7 +341,7 @@ image\testbattle\10684_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10684_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10706
 [test10706_attack]
 image\testbattle\10706_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10706_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -362,7 +363,7 @@ image\testbattle\10706_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10706_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10745
 [test10745_attack]
 image\testbattle\10745_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10745_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -384,7 +385,7 @@ image\testbattle\10745_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10745_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10774
 [test10774_attack]
 image\testbattle\10774_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10774_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -406,7 +407,7 @@ image\testbattle\10774_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10774_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10835
 [test10835_attack]
 image\testbattle\10835_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10835_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -428,7 +429,7 @@ image\testbattle\10835_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10835_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10836
 [test10836_attack]
 image\testbattle\10836_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10836_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -450,7 +451,7 @@ image\testbattle\10836_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10836_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10838
 [test10838_attack]
 image\testbattle\10838_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10838_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -472,7 +473,7 @@ image\testbattle\10838_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10838_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10884
 [test10884_attack]
 image\testbattle\10884_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10884_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -494,7 +495,7 @@ image\testbattle\10884_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10884_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10953
 [test10953_attack]
 image\testbattle\10953_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10953_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -516,7 +517,7 @@ image\testbattle\10953_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10953_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;10999
 [test10999_attack]
 image\testbattle\10999_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\10999_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -538,7 +539,7 @@ image\testbattle\10999_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\10999_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;11000
 [test11000_attack]
 image\testbattle\11000_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\11000_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -560,7 +561,7 @@ image\testbattle\11000_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\11000_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;11007
 [test11007_attack]
 image\testbattle\11007_1\atk.png @cut(1,3) @use(2,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\11007_1\atk.png @cut(1,3) @use(1,1)    @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -582,7 +583,7 @@ image\testbattle\11007_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\11007_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;11008
 [test11008_attack]
 image\testbattle\11008_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\11008_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -604,7 +605,7 @@ image\testbattle\11008_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\11008_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;11024
 [test11024_attack]
 image\testbattle\11024_1\atk.png @cut(1,3) @use(2,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\11024_1\atk.png @cut(1,3) @use(1,1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
@@ -626,7 +627,7 @@ image\testbattle\11024_1\standby.png @cut(1,2)    @time=0.3   @loop @scale=1.8
 image\testbattle\11024_1\standby.png @cut(1,2)    @time=0.3    @offset(0,-0)  @time=2 @scale=1.8
 
 
-
+;11027
 [test11027_attack]
 image\testbattle\11027_1\atk.png @cut(1,3)  @use(2, 1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
 image\testbattle\11027_1\atk.png @cut(1,3)  @use(1, 1)   @time=0.15   @offset(0,-0) @stay @scale=1.8
