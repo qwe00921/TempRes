@@ -96,6 +96,10 @@ DoFile("ui/ui_dlg_card_intensify_result.lua")
 DoFile("ui/ui_dlg_card_fuse.lua")
 DoFile("ui/ui_dlg_card_fuse_result.lua")
 
+--卡牌详细信息
+DoFile("ui/ui_dlg_card_attr.lua")
+DoFile("ui/ui_dlg_card_attr_base.lua")
+
 --队伍
 DoFile("ui/ui_team_list_view.lua")
 DoFile("ui/ui_team_cardlist_view.lua")

@@ -1,0 +1,257 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_295]
+Type=1
+Tag=295
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\gacha_1\gacha_bg.PNG
+NormalFileUV=0 0 296 311
+
+[CTRL_TEXT_297]
+Type=4
+Tag=297
+Rect=95 0 426 58
+AnchorPos=0 0
+Notes=
+Text=出阵人物
+TextTradition=出陣人物
+TextSize=40
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=299
+Rect=565 0 76 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_CARD_PICTURE]
+Type=1
+Tag=300
+Rect=30 67 379 555
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_301]
+Type=4
+Tag=301
+Rect=424 73 100 50
+AnchorPos=0 0
+Notes=
+Text=装备
+TextTradition=裝備
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_302]
+Type=4
+Tag=302
+Rect=536 73 100 50
+AnchorPos=0 0
+Notes=
+Text=宝石
+TextTradition=寶石
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EQUIP_PIC_1]
+Type=1
+Tag=303
+Rect=424 130 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_EQUIP_PIC_3]
+Type=1
+Tag=304
+Rect=424 343 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_LUCK_INTRO]
+Type=4
+Tag=320
+Rect=411 656 225 259
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EQUIP_PIC_2]
+Type=1
+Tag=305
+Rect=424 236 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_GEM_PIC_1]
+Type=1
+Tag=306
+Rect=536 130 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_GEM_PIC_2]
+Type=1
+Tag=307
+Rect=536 236 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_GEM_PIC_3]
+Type=1
+Tag=308
+Rect=536 343 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_CARD_GRADE]
+Type=4
+Tag=309
+Rect=47 629 160 50
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_CARD_HP]
+Type=4
+Tag=310
+Rect=222 629 160 50
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_CARD_ATTACK]
+Type=4
+Tag=312
+Rect=47 692 160 50
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_CARD_SPEED]
+Type=4
+Tag=313
+Rect=222 692 160 50
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_CARD_DEFENSE]
+Type=4
+Tag=314
+Rect=47 756 160 50
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_CARD_CRITICAL]
+Type=4
+Tag=315
+Rect=222 756 160 50
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_316]
+Type=4
+Tag=316
+Rect=424 456 127 43
+AnchorPos=0 0
+Notes=
+Text=天赋技能
+TextTradition=天賦技能
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_DOWER_PIC]
+Type=1
+Tag=317
+Rect=428 507 85 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_DOWER_INTRO]
+Type=4
+Tag=318
+Rect=520 507 115 90
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_319]
+Type=4
+Tag=319
+Rect=411 606 85 43
+AnchorPos=0 0
+Notes=
+Text=缘份
+TextTradition=緣份
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BTN_INTENSIFY]
+Type=2
+Tag=321
+Rect=30 831 110 60
+AnchorPos=0 0
+Notes=
+Text=强化
+TextTradition=強化
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BTN_SALE]
+Type=2
+Tag=323
+Rect=155 831 110 60
+AnchorPos=0 0
+Notes=
+Text=卖出
+TextTradition=賣出
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BTN_ARRT]
+Type=2
+Tag=324
+Rect=285 831 110 60
+AnchorPos=0 0
+Notes=
+Text=详细
+TextTradition=詳細
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
