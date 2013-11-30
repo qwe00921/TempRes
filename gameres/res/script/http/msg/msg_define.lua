@@ -135,4 +135,12 @@ MSG_COLLECT_START       = 2000;
 MSG_ACHIEVEMENT_START    = 2100;
 MSG_ACHIEVEMENT          = 2101;
 --背包基础信息
-MSG_CARD_BASE_LIST            =2300;
+--MSG_CARD_BASE_LIST            =2300;
+
+--召唤兽(2300)
+--MSG_PET_START			= 2300;
+MSG_PET_GETPETDATA		= 2300;--获取用户召唤兽信息
+MSG_PET_TRAINPET		= 2301;--召唤兽培养
+MSG_PET_SELLPET			= 2302;--召唤兽出售
+MSG_PET_CALLPET			= 2303;--召唤兽出战\收回
+--MSG_PET_END				= 2399;

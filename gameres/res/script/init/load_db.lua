@@ -58,3 +58,6 @@ T_GIFT        = LoadTable( "gift.ini");
 
 --æÁ«È
 T_STORY_INFO  = LoadTable( "story_info.ini");
+
+--’ŸªΩ ﬁ±Ì
+T_PET			= LoadTable( "Pet.ini" );
