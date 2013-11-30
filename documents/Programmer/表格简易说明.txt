@@ -1,0 +1,3 @@
+1、item.ini 添加了一个字段 item_pic ：为装备小图片
+2、char_res.ini 添加了 dower_intro_1：天赋技能1的描述 dower_intro_2：天赋技能2的描述 dower_intro_3：天赋技能3的描述 
+					   dower_pic_1：天赋技能1对应的图片 dower_pic_2：天赋技能2对应的图片dower_pic_3：天赋技能3对应的图片 luck_intro：缘份描述

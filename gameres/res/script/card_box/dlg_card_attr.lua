@@ -76,8 +76,10 @@ function p.SetDelegate(layer)
 	local pImage = GetPictureByAni(pCardInfo.card_pic,0)--卡牌图片
 	pImgCardPic:SetPicture(pImage);
 	--简介
+	T_CHAR    = LoadTable( "card.ini" );
+	local pFromCardInfo= SelectRowInner( T_CHAR, "id", p.cardID); --从表中获取卡牌详细信息	
 	local pLabCardIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_INTRO);
-	pLabCardIntro:SetText(tostring(pCardInfo.intro));
+	pLabCardIntro:SetText(ToUtf8(pFromCardInfo.description));
 	--天赋介绍
 	local pLabDowerIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_DOWER_INTRO);
 	if pCardInfo.dower_intro_1 ~= nil then 
@@ -86,7 +88,6 @@ function p.SetDelegate(layer)
 	--缘份
 	local pLabLuckIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_LUCK_INTRO);
 	pLabLuckIntro:SetText(tostring(pCardInfo.luck_intro));
-	
 	
 	
 end
