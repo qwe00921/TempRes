@@ -39,9 +39,11 @@ function p.SendReqUserInfo()
 
 	WriteCon("**请求卡包数据**");
     local uid = GetUID();
+	WriteCon("**请求卡包数据**"..uid);
+	--uid = 10002;
     if uid ~= nil and uid > 0 then
 		--模块  Action 
-        SendReq("CardList","List",10002,"");
+        SendReq("CardList","List",uid,"");
 	end
 end
 
@@ -223,12 +225,14 @@ end
 --卖出提示框回调方法
 function p.OnMsgBoxCallback(result)
 	if result then
-		WriteCon("**发送买出卡牌请求**");
+		
 		local uid = GetUID();
+		WriteCon("**发送买出卡牌请求**"..uid);
+		--uid = 10002;
 		if uid ~= nil and uid > 0 then
 			--模块  Action 
 			local param = string.format("&id=%d", p.id);
-			SendReq("CardList","Sell",10002,param);
+			SendReq("CardList","Sell",uid,param);
 		end
 	
 	end
