@@ -68,6 +68,10 @@ DoFile("http/msg/msg_shop_buy_result.lua")
 DoFile("http/msg/msg_collect.lua")
 DoFile("http/msg/msg_achievement.lua")
 
+--召唤兽消息
+DoFile("http/msg/msg_beast_main.lua");--召唤兽列表
+DoFile("http/msg/msg_beast_call.lua");--召唤兽出战
+
 --战斗消息类
 DoFile("http/msg/msg_battle.lua");				--战斗消息
 DoFile("http/msg/msg_battle_fighters.lua");		--fighter消息
