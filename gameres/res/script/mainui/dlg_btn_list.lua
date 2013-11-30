@@ -73,7 +73,10 @@ end
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId();
-		
+		WriteCon( tostring(id) );
+		if id == 6 then
+			dlg_beast_main.ShowUI();
+		end
 	end
 end
 

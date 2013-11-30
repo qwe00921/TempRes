@@ -30,5 +30,9 @@ end
 function p:Process()
 	msg_cache.msg_gacha = self;
 	WriteConWarning( "** msg_gacha:Process() called" );
-	dlg_gacha.ShowGachaData( self );
+	
+	if self.result then
+		dlg_gacha.ShowGachaData( self );
+	end
+	--dlg_gacha.ShowGachaData( self );
 end

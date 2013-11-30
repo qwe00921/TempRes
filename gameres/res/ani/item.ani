@@ -43,3 +43,13 @@ image\item\item3_1.png
 image\item\item3_2.png
 image\item\item3_3.png
 image\item\item.png
+
+;装备星级
+[equipStar]
+image\ui\bag\star1.png
+image\ui\bag\star2.png
+image\ui\bag\star3.png
+
+;是否装备图标
+[equipUse]
+image\ui\bag\bag_equip.png

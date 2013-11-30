@@ -1,0 +1,43 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=298
+Rect=0 0 575 126
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\bag_bg.png
+NormalFileUV=0 0 641 198
+
+[CTRL_TEXT_TITLE]
+Type=4
+Tag=330
+Rect=10 7 336 45
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TIME]
+Type=4
+Tag=331
+Rect=395 7 166 43
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CONTENT]
+Type=4
+Tag=457
+Rect=8 57 558 60
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop

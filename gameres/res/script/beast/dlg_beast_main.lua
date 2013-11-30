@@ -33,7 +33,6 @@ function p.ShowUI()
 	
     --加载数据
     beast_mgr.LoadData( p.layer );
-	
 end
 
 --设置委托
@@ -57,7 +56,11 @@ end
 function p.RefreshUI( source )
 	local numLabel = GetLabel( p.layer, ui.ID_CTRL_TEXT_NUM );
 	if numLabel then
-		numLabel:SetText( string.format("%d/%d", table.getn(source.pet), source.pet_bag ) );
+		local num = 0;
+		if source.pet and type(source.pet) == "table" then
+			num = table.getn( source.pet );
+		end
+		numLabel:SetText( string.format("%d/%d", num , source.pet_bag or 0 ) );
 	end
 	
 	p.ShowBeastList( source.pet );
@@ -96,32 +99,35 @@ function p.ShowBeastInfo( view, pet )
 		return;
 	end
 	
-	view:SetId( pet.pet_id );
+	view:SetId( pet.id );
 	
 	local levLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_12 );
 	if levLabel then
-		levLabel:SetText( string.format("Lv %d", pet.level) );
+		levLabel:SetText( string.format("Lv %d", pet.Level) );
 	end
 	
+	--[[
 	local hpLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_HP2 );
 	if hpLabel then
 		hpLabel:SetText( pet.hp );
 	end
+	--]]
 	
 	local spLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_22 );
 	if spLabel then
-		spLabel:SetText( pet.sp );
+		spLabel:SetText( tostring(pet.Sp));
 	end
 	
 	local atkLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_ATTACK2 );
 	if atkLabel then
-		atkLabel:SetText( pet.atk );
+		atkLabel:SetText( tostring(pet.Atk) );
 	end
 	
 	--名字显示，根据type读csv数据
-	local nameLevel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_14 );
-	if nameLevel then
-		--nameLevel:SetText( ... );
+	local pet_type = pet.Pet_type;
+	local nameLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_14 );
+	if nameLabel then
+		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", pet_type, "name" ) );
 	end
 	
 	local attrLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_ELEMENT );
@@ -131,12 +137,15 @@ function p.ShowBeastInfo( view, pet )
 	
 	--培养按钮
 	local trainBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_INCUBATE );
-	trainBtn.SetLuaDelegate( p.OnListBtnClick );
+	trainBtn:SetLuaDelegate( p.OnListBtnClick );
 	
 	--出战按钮
 	local fightBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_FIGHT );
 	fightBtn:SetLuaDelegate( p.OnListBtnClick );
-	fightBtn:SetChecked( beast_mgr.CheckIsFightPet( pet.pet_id ) );
+	local flag = beast_mgr.CheckIsFightPet( pet.id );
+	fightBtn:SetChecked( flag );
+	local str = flag and "休息" or "出战";
+	fightBtn:SetText( ToUtf8(str) );
 end
 
 --召唤兽列表中子按钮回调
@@ -147,7 +156,6 @@ function p.OnListBtnClick( uiNode, uiEventType, param )
 		if ui_beast_main_list.ID_CTRL_BUTTON_INCUBATE == tag then
 			WriteCon("**===============显示培养===============**");
 			--显示培养界面，可以通过node:GetId()来获取需要显示哪一个召唤兽的培养界面
-						
 			
 		elseif ui_beast_main_list.ID_CTRL_BUTTON_FIGHT == tag then
 			WriteCon("**===============选择出战===============**");
@@ -164,9 +172,12 @@ function p.SetFightBtnCheck( node, flag )
 	end	
 	
 	--出战按钮
-	local fightBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_FIGHT );
+	local fightBtn = GetButton( node, ui_beast_main_list.ID_CTRL_BUTTON_FIGHT );
 	if fightBtn then
 		fightBtn:SetChecked( flag );
+		
+		local str = flag and "休息" or "出战";
+		fightBtn:SetText( ToUtf8( str ) );
 	end
 end
 
@@ -180,7 +191,7 @@ end
 --关闭UI
 function p.CloseUI()
 	if p.layer ~= nil then
-		p.layer:lazyClose();
+		p.layer:LazyClose();
 		p.layer = nil;
 	end
 end

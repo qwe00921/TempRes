@@ -42,7 +42,7 @@ Tag=290
 Rect=138 162 479 59
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -59,12 +59,12 @@ NormalFile=.\res\image\ui\bag\bag_back.png
 NormalFileUV=0 0 151 101
 
 [CTRL_CHAT_TEXT_QUESTION]
-Type=5
+Type=18
 Tag=293
 Rect=30 239 592 384
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -209,7 +209,7 @@ Tag=110
 Rect=60 507 524 148
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -243,6 +243,6 @@ Tag=114
 Rect=69 728 524 148
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

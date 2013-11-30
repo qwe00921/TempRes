@@ -43,7 +43,7 @@ SelectedFileUV=0 0 453 148
 [CTRL_BUTTON_USER]
 Type=2
 Tag=95
-Rect=117 102 107 47
+Rect=148 103 107 47
 AnchorPos=0 0
 Notes=
 Text=个人
@@ -123,8 +123,6 @@ Tag=161
 Rect=441 760 125 43
 AnchorPos=0 0
 Notes=
-Text=1/3
-TextTradition=1/3
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -184,3 +182,23 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\common\sub_title.png
 NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_SYS_UNREAD]
+Type=4
+Tag=284
+Rect=90 87 45 33
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_USER_UNREAD]
+Type=4
+Tag=285
+Rect=219 83 45 33
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

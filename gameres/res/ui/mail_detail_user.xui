@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -143,7 +143,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CONTENT]
 Type=4
 Tag=460
-Rect=24 274 580 179
+Rect=24 274 577 146
 AnchorPos=0 0
 Notes=
 Text=你好,我是大灰狼,你好,你好.
@@ -152,10 +152,10 @@ TextSize=20
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 
-[CTRL_TEXT_31]
+[CTRL_TEXT_LABEL_HISTORY]
 Type=4
 Tag=31
-Rect=24 467 574 51
+Rect=24 445 574 51
 AnchorPos=0 0
 Notes=
 Text=历史记录
@@ -167,6 +167,6 @@ TextVerAlign=AlignVerCenter
 [CTRL_VERTICAL_LIST]
 Type=14
 Tag=32
-Rect=23 520 578 261
+Rect=23 501 578 280
 AnchorPos=0 0
 Notes=
