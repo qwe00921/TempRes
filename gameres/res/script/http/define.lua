@@ -77,8 +77,12 @@ DoFile("http/msg/msg_battle_turn_skill.lua");	--回合技能阶段消息
 DoFile("http/msg/msg_battle_turn_atk.lua");		--回合普通攻击阶段消息
 DoFile("http/msg/msg_battle_turn_end.lua");		--回合阶段阶段消息
 
+--邮件系统
+DoFile("http/msg/msg_mail_msg.lua");
+
 --响应类
 DoFile("http/response/resp_base.lua");
 DoFile("http/response/resp_test.lua");
 DoFile("http/response/resp_factory.lua");
 DoFile("http/response/json2lua_helper.lua");
+

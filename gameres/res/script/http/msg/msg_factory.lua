@@ -191,6 +191,12 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_EQUIP_BACK_PACK then 	
 		msg = msg_pack_box:new();
+		
+	elseif idmsg == MSG_MAIL_SEND_MSG or idmsg == MSG_MAIL_GET_MSGS 
+		or idmsg == MSG_MAIL_DEL_MSG or idmsg == MSG_MAIL_GET_MSG_DETAIL 
+		or idmsg == MSG_MAIL_GET_REWARD then 	
+		msg = msg_mail_msg:new();
+		msg:SetIdMsg(idmsg);
 	end
 	
 	if msg ~= nil then
