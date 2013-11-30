@@ -1,0 +1,140 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_158]
+Type=1
+Tag=158
+Rect=0 0 639 960
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\gacha_1\gacha_bg.PNG
+NormalFileUV=0 0 296 311
+
+[CTRL_PICTURE]
+Type=1
+Tag=790
+Rect=18 67 322 485
+AnchorPos=0 0
+Notes=
+
+[CTRL_TITLE]
+Type=4
+Tag=791
+Rect=95 0 426 58
+AnchorPos=0 0
+Notes=
+Text=人物详情
+TextTradition=人物詳情
+TextSize=40
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=792
+Rect=565 0 76 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_INTRO_TITLE]
+Type=4
+Tag=793
+Rect=341 70 79 33
+AnchorPos=0 0
+Notes=
+Text=简介
+TextTradition=簡介
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_LUCK_INTRO]
+Type=4
+Tag=795
+Rect=8 600 631 358
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_INTRO]
+Type=4
+Tag=804
+Rect=341 105 300 147
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_DOWER_TITLE]
+Type=4
+Tag=805
+Rect=341 254 122 41
+AnchorPos=0 0
+Notes=
+Text=天赋技能
+TextTradition=天賦技能
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_DOWER_INTRO]
+Type=4
+Tag=810
+Rect=343 392 298 155
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_LUCK_TITLE]
+Type=4
+Tag=811
+Rect=17 557 107 43
+AnchorPos=0 0
+Notes=
+Text=缘份
+TextTradition=緣份
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_PICTURE_1]
+Type=2
+Tag=14
+Rect=354 300 85 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_PICTURE_2]
+Type=2
+Tag=15
+Rect=450 300 85 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_PICTURE_3]
+Type=2
+Tag=17
+Rect=545 300 85 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

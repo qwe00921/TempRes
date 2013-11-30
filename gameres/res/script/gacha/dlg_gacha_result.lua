@@ -39,8 +39,13 @@ function p.ShowUI(gacharesult)
 	end
 	WriteCon("**扭蛋**1"  );
 	
-	p.GachaResult(gacharesult);
+	--
+	if dlg_gacha.rmb then
+		dlg_gacha.rmb = dlg_gacha.rmb - p.gacharesult.cost;
+	end
+	
 	p.SetDelegate();
+	p.GachaResult(gacharesult);
 end
 
 --设置事件处理
@@ -69,21 +74,37 @@ function p.OnGachaResultUIEvent(uiNode, uiEventType, param)
 		elseif ( ui_dlg_gacha_result.ID_CTRL_BUTTON_AGAIN == tag ) then -- 再扭一次
 		    WriteCon("**再次扭蛋**");
             --保存扭蛋参数
-            local gacha_id = p.gacharesult.gacha_id;
-            local charge_type = dlg_gacha.charge_type;   
+            local gacha_id = dlg_gacha.gacha_id;
+            local charge_type = dlg_gacha.charge_type;
+			local gacha_type = dlg_gacha.gacha_type;
             local uid = GetUID();
             if uid == 0 then uid = 100 end; 
-            local param = "&gacha_id=" .. gacha_id .."&charge_type=" .. charge_type;
+            local param = string.format( "&gacha_id=%d&charge_type=%d&gacha_type=%d", gacha_id, charge_type, gacha_type)
             SendReq("Gacha","Start",uid, param);
 			p.CloseUI();
 		elseif ( ui_dlg_gacha_result.ID_CTRL_BUTTON_NEXT == tag ) then --下一张
-		     p.ShowCardInfo(p.cardIdList[p.cardIndex].id);
+		    p.ShowCardInfo(p.cardIdList[p.cardIndex].id);
 		end
 	end
 end
 
 --根据上一次扭蛋类型判断时候可以继续扭蛋
 function p.CanGachaAgain()
+	--使用代币，免费扭蛋不能直接再来一次
+	if dlg_gacha.charge_type == 2 then
+		if dlg_gacha.gacha_id ~= nil then
+			if dlg_gacha.gacha_type == 1 then
+				local needRmb = tonumber(SelectCell( T_GACHA, tostring(dlg_gacha.gacha_id), "single_gacha_cost"));
+				p.againBtn:SetEnabled( dlg_gacha.rmb >= needRmb );
+			else
+				local needRmb = tonumber(SelectCell( T_GACHA, tostring(dlg_gacha.gacha_id), "complex_gacha_cost"));
+				p.againBtn:SetEnabled( dlg_gacha.rmb >= needRmb );
+			end
+		else
+			p.againBtn:SetEnabled( false );
+		end
+	end
+	--[[
     if dlg_gacha.charge_type == "3" then  --如果使用代币
         if tonumber(p.gacharesult.gacha_id) == 1 then --pt一扭
              if tonumber(p.gacharesult.gacha_point) >= tonumber(dlg_gacha.coin_config[1]) then
@@ -115,7 +136,7 @@ function p.CanGachaAgain()
                  p.againBtn:SetEnabled( true );
         end
     end
-	
+	--]]
 end
 
 --扭蛋结果回调
