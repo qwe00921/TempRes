@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_mail_main = {};
 local p =  ui_mail_main;
+p.ID_CTRL_TEXT_USER_UNREAD			 = 285;
+p.ID_CTRL_TEXT_SYS_UNREAD				 = 284;
 p.ID_CTRL_BUTTON_WRITE				    = 166;
 p.ID_CTRL_BUTTON_GM					      = 165;
 p.ID_CTRL_TEXT_164					       = 164;
