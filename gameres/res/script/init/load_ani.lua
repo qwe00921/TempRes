@@ -22,6 +22,7 @@ LoadAni("dungeon.ani")
 LoadAni("card_battle.ani")
 LoadAni("minicard.ani")
 LoadAni("UserImage.ani")
+LoadAni("n.ani")
 LoadAni_Done()
 
 --加载组合特效
@@ -31,4 +32,5 @@ LoadAniCombo("x_cmb.anicmb")
 LoadAniCombo("engine_cmb.anicmb")
 LoadAniCombo("ui_cmb.anicmb")
 LoadAniCombo("card_battle_cmb.anicmb")
+LoadAniCombo("n_cmb.anicmb")
 LoadAniCombo_Done()
