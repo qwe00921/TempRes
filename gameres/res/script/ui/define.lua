@@ -240,4 +240,6 @@ DoFile("ui/ui_n_battle_ko.lua");
 DoFile("ui/ui_n_battle_mainui.lua");
 DoFile("ui/ui_n_battle_pvp.lua");
 
-
+--卡牌
+DoFile("ui/ui_dlg_card_equip_detail.lua");
+DoFile("ui/ui_card_equip_select_list.lua");

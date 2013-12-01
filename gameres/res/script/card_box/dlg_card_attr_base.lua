@@ -32,7 +32,7 @@ function p.ShowUI(cardInfo)
 end
 
 function p.SetDelegate(layer)
-	
+	layer = layer or p.layer;
 	
 	
 	T_CHAR_RES     = LoadTable( "char_res.ini" );
@@ -78,6 +78,16 @@ function p.SetDelegate(layer)
 	--详细
 	local pBtnArrt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT);
     pBtnArrt:SetLuaDelegate(p.OnUIEventEvolution);
+	
+	--装备
+	local bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1);
+    bt:SetLuaDelegate(p.OnUIEventEvolution);
+	bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2);
+    bt:SetLuaDelegate(p.OnUIEventEvolution);
+	bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3);
+    bt:SetLuaDelegate(p.OnUIEventEvolution);
+	
+	
 	
 	T_ITEM     = LoadTable( "item.ini" );
 	local pCardInfo= nil;
@@ -145,6 +155,8 @@ function p.SetDelegate(layer)
 	local pLabCardCritical = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_CRITICAL);
 	pLabCardCritical:SetText(ToUtf8("暴击  ")..tostring(p.cardInfo.Crit));
 	
+	
+	
 end
 
 
@@ -181,6 +193,23 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT == tag then
 			--卡牌详细
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
+		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
+			card_equip_select_list.ShowUI();
+			if p.cardInfo and p.cardInfo.Item_id1 and tonumber(p.cardInfo.Item_id1) ~= 0 then
+				
+			else
+				
+			end
+		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
+			if p.cardInfo and p.cardInfo.Item_id2 and tonumber(p.cardInfo.Item_id2) ~= 0 then
+			else
+				dlg_card_equip_detail.ShowUI();
+			end
+		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
+			if p.cardInfo and p.cardInfo.Item_id3 and tonumber(p.cardInfo.Item_id3) ~= 0 then
+			else
+				
+			end
 		end
 	end
 end
@@ -245,4 +274,85 @@ function p.CloseUI()
 		
     end
     
+end
+
+---------------------------------------网络-----------------------------------------------------------
+
+function p.OnNetCallback(msg)
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	if msg == nil then
+		return;
+	end
+	
+	if msg.idMsg == MSG_CARD_ROLE_DETAIL then
+		p.OnLoadCardDetail(msg);
+	end
+	
+end
+
+--读取卡详细信息
+function p.LoadCardDetail(cardUniqueId)
+	local uid = GetUID();
+	if uid == 0 or uid == nil or cardUniqueId == nil then
+		return ;
+	end;
+	
+	local param = string.format("&card_unique_id=%s",cardUniqueId)
+	SendReq("Item","CardDetailShow",uid,param);		
+end
+--网络返回卡详细信息
+function p.OnLoadCardDetail(msg)
+	
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	if msg.result == true then
+		p.cardInfo = msg.card_info or {};
+		p.SetDelegate();
+	else
+		--local str = mail_main.GetNetResultError(msg);
+		--if str then
+			--dlg_msgbox.ShowOK(GetStr("mail_erro_title"), str,nil);
+		--else
+		--	WriteCon("**======mail_write_mail.NetCallback error ======**");
+		--end
+		--TODO...
+	end
+	--[[ 数据结构
+		card_info: {
+		UniqueID: "10000272",
+		UserID: "123456",
+		CardID: "101",
+		Race: "1",
+		Class: "2",
+		Level: "1",
+		Level_max: "60",
+		Exp: "0",
+		Damage_type: "1",
+		Bind: "0",
+		Team_marks: "0",
+		Signature: "0",
+		Rare: "2",
+		Rare_max: "6",
+		Hp: "400",
+		Attack: "200",
+		Defence: "90",
+		Speed: "5",
+		Skill: "0",
+		Crit: "10",
+		Item_id1: "33450",
+		Item_id2: "0",
+		Item_id3: "33452",
+		Gem1: "0",
+			Gem2: "0",
+		Gem3: "0",
+		Price: "0",
+		Time: "2013-11-30 13:51:45",
+		Source: "0"
+		}
+		]]--
 end
