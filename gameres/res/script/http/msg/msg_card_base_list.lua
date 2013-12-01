@@ -28,7 +28,7 @@ function p:Process()
 	msg_cache.msg_card_base_list = self;
     WriteConWarning( "** MSG_CARDBOX_START:Process() called" );
 	if self.result == true then 
-		dlg_card_attr_base.RefreshUI(self);
+		--dlg_card_attr_base.RefreshUI(self);
 	else
 		WriteConWarning( "** MSG_CARDBOX_START error" );
 	end

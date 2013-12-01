@@ -200,7 +200,7 @@ function CreateMsg( idmsg )
 		msg = msg_mail_msg:new();
 		msg:SetIdMsg(idmsg);
 	elseif idmsg == MSG_CARDBOX_START then
-		msg = msg_card_base_list:new();
+		--msg = msg_card_base_list:new();
 		
 	elseif idmsg == MSG_PET_GETPETDATA then
 		msg = msg_beast_main:new();

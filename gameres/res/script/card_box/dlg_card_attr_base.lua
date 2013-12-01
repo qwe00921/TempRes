@@ -6,17 +6,14 @@
 dlg_card_attr_base = {}
 local p = dlg_card_attr_base;
 p.layer = nil;
-p.cardID = nil;
 p.cardInfo = nil;
-p.id = nil;
 --id是UniqueId
-function p.ShowUI(cardID,id)
-	WriteCon(cardID.."************"..id);
-	  if cardID == nil or id == nil then
+function p.ShowUI(cardInfo)
+	WriteCon(cardInfo.CardID.."************");
+	  if cardInfo == nil then
     	return;
 	  end
-	p.cardID = cardID;
-	p.id = id;
+	p.cardInfo = cardInfo;
 	 if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
@@ -32,19 +29,6 @@ function p.ShowUI(cardID,id)
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
 	p.layer = layer;
     p.SetDelegate(layer);
-	p.SendReqUserInfo();
-end
-
-function p.SendReqUserInfo()
-
-	WriteCon("**请求卡包数据**");
-    local uid = GetUID();
-	WriteCon("**请求卡包数据**"..uid);
-	--uid = 10002;
-    if uid ~= nil and uid > 0 then
-		--模块  Action 
-        SendReq("CardList","List",uid,"");
-	end
 end
 
 function p.SetDelegate(layer)
@@ -52,9 +36,9 @@ function p.SetDelegate(layer)
 	
 	
 	T_CHAR_RES     = LoadTable( "char_res.ini" );
-	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardID); --从表中获取卡牌详细信息	
+	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
 	if pCardInfo ==nil then
-		WriteCon("**====pCardInfo == nil ====**"..p.cardID);
+		WriteCon("**====pCardInfo == nil ====**"..p.cardInfo.CardID);
 	end
 	--返回
     local pBtnBack = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_BACK);
@@ -76,8 +60,8 @@ function p.SetDelegate(layer)
 	
 	--卡牌图片
 	local pImgCardPic = GetImage(layer, ui_dlg_card_attr_base.ID_CTRL_CARD_PICTURE); --卡牌图片控件
-	--local pImage = GetPictureByAni(pCardInfo.card_pic,0)--卡牌图片
-	--pImgCardPic:SetPicture(pImage);
+	local pImage = GetPictureByAni(pCardInfo.card_pic,0)--卡牌图片
+	pImgCardPic:SetPicture(pImage);
 	
 	--缘份
 	local pLabLuckIntro = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_LUCK_INTRO);
@@ -94,24 +78,6 @@ function p.SetDelegate(layer)
 	--详细
 	local pBtnArrt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT);
     pBtnArrt:SetLuaDelegate(p.OnUIEventEvolution);
-	
-end
-
-function p.RefreshUI(msg)
-	WriteCon("---------RefreshUI---------------------");
-	if p.layer == nil then
-		WriteCon("p.layer == nil \n");
-		return;
-	end
-
-	for k, v in ipairs(msg.cardlist) do
-		if msg.cardlist[k].UniqueId==p.id then
-			p.cardInfo = msg.cardlist[k];
-			break
-		end
-    end	
-	
-	WriteCon("p.cardInfo.Exp = "..p.cardInfo.Exp);
 	
 	T_ITEM     = LoadTable( "item.ini" );
 	local pCardInfo= nil;
@@ -178,12 +144,15 @@ function p.RefreshUI(msg)
 	--卡牌暴击
 	local pLabCardCritical = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_CRITICAL);
 	pLabCardCritical:SetText(ToUtf8("暴击  ")..tostring(p.cardInfo.Crit));
+	
 end
+
+
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
 	T_CHAR_RES     = LoadTable( "char_res.ini" );
-	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardID); --从表中获取卡牌详细信息	
+	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.cardID); --从表中获取卡牌详细信息	
 	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
 	
 	if IsClickEvent( uiEventType ) then
@@ -211,7 +180,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT == tag then
 			--卡牌详细
-			dlg_card_attr.ShowUI(p.cardID);
+			dlg_card_attr.ShowUI(p.cardInfo.CardID);
 		end
 	end
 end
@@ -228,10 +197,10 @@ function p.OnMsgBoxCallback(result)
 		
 		local uid = GetUID();
 		WriteCon("**发送买出卡牌请求**"..uid);
-		--uid = 10002;
+		uid = 10002;
 		if uid ~= nil and uid > 0 then
 			--模块  Action 
-			local param = string.format("&id=%d", p.id);
+			local param = string.format("&id=%d", p.cardInfo.UniqueId);
 			SendReq("CardList","Sell",uid,param);
 		end
 	
@@ -244,14 +213,19 @@ function p.SaleKO(msg)
 		
 	
 	T_CARD    = LoadTable( "card.ini" );
-	local pCardbase= SelectRowInner( T_CARD, "id", p.cardID); --从表中获取卡牌详细信息
+	local pCardbase= SelectRowInner( T_CARD, "id", p.cardInfo.CardID); --从表中获取卡牌详细信息
 	
 	if pCardbase==nil then
 		WriteCon("pCardbase==nil");
 	end
-	dlg_msgbox.ShowYesNo(ToUtf8("确认提示框"),ToUtf8("您卖出了")..ToUtf8(pCardbase.name)..ToUtf8("获得了")..tostring(msg.money.Add)..ToUtf8("金币！"),p.OnMsgBoxCallback,p.layer);
+	dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("您卖出了")..ToUtf8(pCardbase.name)..ToUtf8("获得了")..tostring(msg.money.Add)..ToUtf8("金币！"),p.OnMsgCallbackCloseUI,p.layer);
 	
-	
+end
+
+function p.OnMsgCallbackCloseUI(result)
+	if result then
+		p.CloseUI();
+	end
 	
 end
 
@@ -265,9 +239,7 @@ end
 
 function p.CloseUI()
 	if p.layer ~= nil then
-		p.cardID = nil;
 		p.cardInfo = nil;
-		p.id = nil;
 	    p.layer:LazyClose();
         p.layer = nil;
 		
