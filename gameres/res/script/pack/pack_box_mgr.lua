@@ -18,6 +18,7 @@ function p.LoadAllItem(layer)
 		return;
 	end
 	SendReq("Item","List",10001,"");
+	--SendReq("Item","List",uid,"");
 end
 
 --清空数据
@@ -95,7 +96,33 @@ function p.GetItemList(sortType)
     return t;
 end
 
+function p.UseItemEvent(itemId)
+	WriteCon("pack_box_mgr.UseItemEvent();");
+	if itemId == nil or itemId == 0 then
+		WriteConErr("used item id error ");
+		return
+	end
+	local param = "MachineType=Android&item_id=".."1001";
+	if itemId == 1 then
+		SendReq("Item","UseHealItem",10001,param);
+	elseif itemId == 2 then
+		SendReq("Item","UseQuickItem",10001,param);
+	elseif itemId == 3 then
+		SendReq("Item","UseStorageItem",10001,param);
+	elseif itemId == 4 then
+		SendReq("Item","UseGiftItem",10001,param);
+	elseif itemId == 5 then
+		SendReq("Item","UseTreasureItem",10001,param);
+	elseif itemId == 6 then
+		SendReq("Item","UseHealItem ",10001,param);
+	else
+		WriteConErr("used item id error ");
+	end
+end
 
-
-
+-- UseHealItem //行动力恢复道具使用
+-- UseQuickItem //活力恢复道具使用
+-- UseStorageItem //背包扩展道具
+-- UseGiftItem//礼包
+-- UseTreasureItem//宝箱  
 

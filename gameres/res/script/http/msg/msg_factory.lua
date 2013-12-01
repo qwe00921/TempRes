@@ -207,6 +207,21 @@ function CreateMsg( idmsg )
 	
 	elseif idmsg == MSG_PET_CALLPET then
 		msg = msg_beast_call:new();
+		
+	elseif idmsg == MSG_ITEM_HEAL then 	
+		msg = msg_item_heal:new();
+		
+	elseif idmsg == MSG_ITEM_QUICK then 	
+		msg = msg_item_quick:new();
+		
+	elseif idmsg == MSG_ITEM_STORAGE then 	
+		msg = msg_item_storage:new();
+		
+	elseif idmsg == MSG_ITEM_GIFT then 	
+		msg = msg_item_gift:new();
+		
+	elseif idmsg == MSG_ITEM_TREASURE then 	
+		msg = msg_item_treasure:new();
 	end
 
 	

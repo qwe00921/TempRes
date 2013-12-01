@@ -2,10 +2,10 @@ pack_box = {}
 local p = pack_box;
 
 local ui = ui_bag_main;
-
+local packLimit = 100; --获取玩家背包格子数量
 p.layer = nil;
 p.curBtnNode = nil;
-p.allIitemListInfo = nil;
+--p.itemUsedId = nil;
 
 function p.ShowUI()
 	if p.layer ~= nil then 
@@ -39,12 +39,12 @@ function p.SetDelegate(layer)
 	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
 	--整理,暂时去掉
 	local sortBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT);
-	sortBtn:SetVisible(false)
+	sortBtn:SetVisible(false);
 	--sortBtn:SetLuaDelegate(p.OnUIClickEvent);
 
 	local useBtn = GetButton(layer, ui.ID_CTRL_BUTTON_USE);
-	useBtn:SetLuaDelegate(p.OnUIClickEvent);
-
+	useBtn:SetVisible(false);
+	
 	local allItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM1);
 	allItemBtn:SetLuaDelegate(p.OnUIClickEvent);
 
@@ -68,8 +68,6 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 			maininterface.CloseAllPanel();
 		--elseif(ui.ID_CTRL_BUTTON_SORT == tag) then --整理
-		elseif(ui.ID_CTRL_BUTTON_USE == tag) then --使用
-			WriteCon("=====useBtn");
 		elseif(ui.ID_CTRL_BUTTON_ITEM1 == tag) then --全部
 			WriteCon("=====allItemBtn");
 			p.SetBtnCheckedFX( uiNode );
@@ -152,13 +150,21 @@ end
 
 --显示物品列表
 function p.ShowItemList(itemList)
-	p.allIitemListInfo = itemList;
+	local itemCountText = GetLabel(p.layer,ui.ID_CTRL_TEXT_COUNT );
+
 	if itemList == nil or #itemList <= 0 then
+		local countText = "0/"..packLimit;
+		itemCountText:SetText(ToUtf8(countText));
+		
 		WriteCon("ShowItemList():itemList is null");
 		return
 	end
 	WriteCon("itemCount ===== "..#itemList);
 	local itemNum = #itemList;
+	
+	local countText = itemNum.."/"..packLimit;
+	itemCountText:SetText(ToUtf8(countText));
+		
 	local row = math.ceil(itemNum / 4);
 	WriteCon("row ===== "..row);
 
@@ -202,13 +208,16 @@ function p.ShowItemInfo( view, item, itemIndex )
         itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM1;
         itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME1;
 		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR1;
+		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV1
 		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_22;
         isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP1;
+		
 	elseif itemIndex == 2 then
         itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM2;
         itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM2;
         itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME2;
 		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR2;
+		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV2
 		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_23;
         isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP2;
 	elseif itemIndex == 3 then
@@ -216,6 +225,7 @@ function p.ShowItemInfo( view, item, itemIndex )
         itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM3;
         itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME3;
 		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR3;
+		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV3
 		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_24;
         isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP3;
 	elseif itemIndex == 4 then
@@ -223,15 +233,16 @@ function p.ShowItemInfo( view, item, itemIndex )
         itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM4;
         itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME4;
 		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR4;
+		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV4
 		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_25;
         isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP4;
 	end
 	--显示物品图片
-	local itemBtnPic = GetButton(view, itemBtn);
+	local itemButton = GetButton(view, itemBtn);
 	local item_id = tonumber(item.Item_id);
 	WriteCon("item_id == "..item_id);
-    itemBtnPic:SetImage( GetPictureByAni("item.item_db", item_id) );
-    itemBtnPic:SetId(item_id);
+    itemButton:SetImage( GetPictureByAni("item.item_db", item_id) );
+    itemButton:SetId(item_id);
 	
 	--显示物品名字
 	local itemNameText = GetLabel(view,itemName );
@@ -245,9 +256,11 @@ function p.ShowItemInfo( view, item, itemIndex )
 	
 	local itemNumText = GetLabel(view,itemNum );	--物品数量
 	local equipStarPic = GetImage(view,equipStarPic);	--装备星级
+	local equipLevelText = GetLabel(view,equipLevel);	--装备等级
 	local isUsePic = GetImage(view,isUse);			--是否装备
 	itemNumText:SetVisible( false );
 	equipStarPic:SetVisible( false );
+	equipLevelText:SetVisible( false );
 	isUsePic:SetVisible( false );
 
 	local itemType = tonumber(item.Item_type)
@@ -258,11 +271,15 @@ function p.ShowItemInfo( view, item, itemIndex )
 		itemNumText:SetVisible(true);
 		itemNumText:SetText(ToUtf8(item.Num));
 	elseif itemType == 5 or itemType == 6 then 
-	--装备，显示星级
+		--装备，显示星级
 		equipStarPic:SetVisible(true);
 		local starNum = tonumber(item.Rare);
 		starNum = starNum -1;
 		equipStarPic:SetPicture( GetPictureByAni("item.equipStar", starNum) );
+		--显示装备等级
+		equipLevelText:SetVisible(true);
+		equipLevelText:SetText(ToUtf8(item.Equip_level));
+		
 		--是否装备
 		if item.Is_dress == 1 or item.Is_dress == "1" then
 			isUsePic:SetVisible(true);
@@ -270,8 +287,48 @@ function p.ShowItemInfo( view, item, itemIndex )
 		end
 	end
 	
+	--设置物品按钮事件
+	itemButton:SetLuaDelegate(p.OnItemClickEvent);
+
 end
 
+--点击物品事件
+function p.OnItemClickEvent(uiNode, uiEventType, param)
+	local itemId = uiNode:GetId();
+	WriteCon("Use itemId = "..itemId);
+	--p.itemUsedId = itemId;
+	
+	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
+	local itemData = SelectRowList(T_ITEM,"item_id",itemId);
+	if #itemData == 1 then
+		local text = itemData[1].describe;
+		itemDescribeText:SetText(ToUtf8(text));
+	else
+		WriteConErr("itemTable error ");
+	end
+	
+	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
+	useBtn:SetLuaDelegate(p.OnUseItemClickEvent);
+	useBtn:SetVisible(true);
+	useBtn:SetId(itemId);
+end
+
+--点击使用物品事件
+function p.OnUseItemClickEvent(uiNode, uiEventType, param)
+	local tag = uiNode:GetTag();
+	if IsClickEvent(uiEventType) then
+		if(ui.ID_CTRL_BUTTON_USE == tag) then --使用
+			local useBtnId = uiNode:GetId();
+			if useBtnId == 0 or useBtnId == nil then
+				WriteConErr("used Button id error ");
+				return
+			end
+			WriteCon("useBtn == "..useBtnId);
+			pack_box_mgr.UseItemEvent(useBtnId);
+		end
+	end
+	
+end
 
 --设置选中按钮
 function p.SetBtnCheckedFX( node )

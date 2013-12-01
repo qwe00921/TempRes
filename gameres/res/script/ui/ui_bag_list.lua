@@ -4,6 +4,10 @@
 --------------------------------------------------------------
 ui_bag_list = {};
 local p =  ui_bag_list;
+p.ID_CTRL_TEXT_EQUIP_LEV4				 = 37;
+p.ID_CTRL_TEXT_EQUIP_LEV3				 = 36;
+p.ID_CTRL_TEXT_EQUIP_LEV2				 = 35;
+p.ID_CTRL_TEXT_EQUIP_LEV1				 = 34;
 p.ID_CTRL_PICTURE_STAR4				   = 33;
 p.ID_CTRL_PICTURE_STAR3				   = 32;
 p.ID_CTRL_PICTURE_STAR2				   = 31;
