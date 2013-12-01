@@ -19,6 +19,17 @@ function p.LoadAllCard(layer)
 	SendReq("CardList","List",10001,"");
 end
 
+function p.SendDelRequest(deleteList)
+	local uid = GetUID();
+	if uid == 0 or uid == nil then 
+		return;
+	end
+	WriteCon("====SendDeleteMsg");
+
+	--SendReq("CardList","List",10001,deleteList);
+end
+
+
 --情空数据
 function p.ClearData()
     p.cardList = nil;

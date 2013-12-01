@@ -16,14 +16,14 @@ NormalFileUV=0 0 640 960
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=20
-Rect=36 44 105 51
+Rect=37 58 105 51
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\sell.png
-NormalFileUV=0 0 141 68
+NormalFile=.\res\image\ui\card_bag\star2.png
+NormalFileUV=0 0 44 52
 
 [CTRL_PICTURE_HEAD]
 Type=1

@@ -24,7 +24,7 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate();
-	card_bag_mian.sortBtnMark = 1;
+	card_bag_mian.sortBtnMark = MARK_ON;
 end
 
 function p.SetDelegate()
