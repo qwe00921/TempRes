@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -68,7 +68,7 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\common\title_bg.png
 NormalFileUV=0 0 350 82
 
-[CTRL_TEXT_209]
+[CTRL_TEXT_LABEL_RECIEVER]
 Type=4
 Tag=209
 Rect=25 98 88 50
@@ -92,32 +92,32 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_INPUT_TEXT_270]
+[CTRL_INPUT_TEXT_RECIEVER]
 Type=18
 Tag=270
-Rect=115 93 229 60
+Rect=113 93 229 60
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_INPUT_TEXT_271]
+[CTRL_INPUT_TEXT_TITLE]
 Type=18
 Tag=271
 Rect=115 171 468 66
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_CHAT_TEXT_272]
-Type=5
-Tag=272
-Rect=30 248 568 493
+[CTRL_INPUT_CONTENT]
+Type=18
+Tag=296
+Rect=32 259 571 489
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop

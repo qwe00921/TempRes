@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -12,7 +12,7 @@ Notes=
 NormalFile=.\res\image\ui\bag\bag_bg.png
 NormalFileUV=0 0 641 198
 
-[CTRL_BUTTON_SEND]
+[CTRL_BUTTON_DEL]
 Type=2
 Tag=158
 Rect=65 787 107 43
@@ -78,7 +78,7 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_BUTTON_454]
+[CTRL_BUTTON_GAIN]
 Type=2
 Tag=454
 Rect=229 786 107 43
@@ -119,7 +119,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=30 149 88 50
+Rect=14 149 104 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
@@ -152,7 +152,7 @@ TextSize=20
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 
-[CTRL_PICTURE_1]
+[CTRL_PICTURE_ITEM_1]
 Type=1
 Tag=461
 Rect=58 519 64 64
@@ -161,7 +161,7 @@ Notes=
 NormalFile=.\res\image\item\item3_1.png
 NormalFileUV=0 0 240 240
 
-[CTRL_PICTURE_5]
+[CTRL_PICTURE_ITEM_5]
 Type=1
 Tag=462
 Rect=263 641 64 64
@@ -170,7 +170,7 @@ Notes=
 NormalFile=.\res\image\item\item3_3.png
 NormalFileUV=0 0 240 240
 
-[CTRL_PICTURE_4]
+[CTRL_PICTURE_ITEM_4]
 Type=1
 Tag=463
 Rect=60 637 64 64
@@ -179,7 +179,7 @@ Notes=
 NormalFile=.\res\image\item\item3_3.png
 NormalFileUV=0 0 240 240
 
-[CTRL_PICTURE_3]
+[CTRL_PICTURE_ITEM_3]
 Type=1
 Tag=464
 Rect=466 519 64 64
@@ -188,7 +188,7 @@ Notes=
 NormalFile=.\res\image\item\item3_2.png
 NormalFileUV=0 0 240 240
 
-[CTRL_PICTURE_2]
+[CTRL_PICTURE_ITEM_2]
 Type=1
 Tag=465
 Rect=263 519 64 64
@@ -197,7 +197,7 @@ Notes=
 NormalFile=.\res\image\item\item1_1.png
 NormalFileUV=0 0 360 210
 
-[CTRL_PICTURE_6]
+[CTRL_PICTURE_ITEM_6]
 Type=1
 Tag=466
 Rect=466 640 64 64
@@ -206,7 +206,7 @@ Notes=
 NormalFile=.\res\image\item\item3_2.png
 NormalFileUV=0 0 240 240
 
-[CTRL_TEXT_467]
+[CTRL_TEXT_ITEM_NUM_1]
 Type=4
 Tag=467
 Rect=130 525 80 64
@@ -218,7 +218,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_468]
+[CTRL_TEXT_ITEM_NUM_5]
 Type=4
 Tag=468
 Rect=340 640 80 64
@@ -230,7 +230,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_469]
+[CTRL_TEXT_ITEM_NUM_2]
 Type=4
 Tag=469
 Rect=331 522 80 64
@@ -242,7 +242,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_470]
+[CTRL_TEXT_ITEM_NUM_3]
 Type=4
 Tag=470
 Rect=534 522 80 64
@@ -254,7 +254,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_471]
+[CTRL_TEXT_ITEM_NUM_4]
 Type=4
 Tag=471
 Rect=135 642 80 64
@@ -266,7 +266,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_472]
+[CTRL_TEXT_ITEM_NUM_6]
 Type=4
 Tag=472
 Rect=536 639 80 64
@@ -278,7 +278,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_1]
+[CTRL_TEXT_ITEM_NAME_1]
 Type=4
 Tag=473
 Rect=58 592 162 39
@@ -290,7 +290,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_2]
+[CTRL_TEXT_ITEM_NAME_2]
 Type=4
 Tag=474
 Rect=257 592 162 39
@@ -302,7 +302,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_3]
+[CTRL_TEXT_ITEM_NAME_3]
 Type=4
 Tag=475
 Rect=450 591 162 39
@@ -314,7 +314,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_4]
+[CTRL_TEXT_ITEM_NAME_4]
 Type=4
 Tag=476
 Rect=56 710 162 39
@@ -326,7 +326,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_5]
+[CTRL_TEXT_ITEM_NAME_5]
 Type=4
 Tag=477
 Rect=264 708 162 39
@@ -338,7 +338,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_6]
+[CTRL_TEXT_ITEM_NAME_6]
 Type=4
 Tag=478
 Rect=453 709 162 39

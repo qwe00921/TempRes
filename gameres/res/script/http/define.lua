@@ -68,6 +68,10 @@ DoFile("http/msg/msg_shop_buy_result.lua")
 DoFile("http/msg/msg_collect.lua")
 DoFile("http/msg/msg_achievement.lua")
 
+--召唤兽消息
+DoFile("http/msg/msg_beast_main.lua");--召唤兽列表
+DoFile("http/msg/msg_beast_call.lua");--召唤兽出战
+
 --战斗消息类
 DoFile("http/msg/msg_battle.lua");				--战斗消息
 DoFile("http/msg/msg_battle_fighters.lua");		--fighter消息
@@ -77,12 +81,17 @@ DoFile("http/msg/msg_battle_turn_skill.lua");	--回合技能阶段消息
 DoFile("http/msg/msg_battle_turn_atk.lua");		--回合普通攻击阶段消息
 DoFile("http/msg/msg_battle_turn_end.lua");		--回合阶段阶段消息
 
+--邮件系统
+DoFile("http/msg/msg_mail_msg.lua");
+
 --响应类
 DoFile("http/response/resp_base.lua");
 DoFile("http/response/resp_test.lua");
 DoFile("http/response/resp_factory.lua");
 DoFile("http/response/json2lua_helper.lua");
+
 --卡牌信息
 DoFile("http/msg/msg_card_base_list.lua");
 --卡牌单张售出
 DoFile("http/msg/msg_card_sale_one.lua");
+

@@ -5,7 +5,7 @@
 ui_mail_detail_user = {};
 local p =  ui_mail_detail_user;
 p.ID_CTRL_VERTICAL_LIST				   = 32;
-p.ID_CTRL_TEXT_31						       = 31;
+p.ID_CTRL_TEXT_LABEL_HISTORY			= 31;
 p.ID_CTRL_TEXT_CONTENT				    = 460;
 p.ID_CTRL_TEXT_TIME					      = 459;
 p.ID_CTRL_TEXT_458					       = 458;

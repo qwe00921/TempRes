@@ -112,7 +112,7 @@ function p.SplitMessage()
      -- tips
      local cur_time = tonumber(os.time());
      local temp_tips = SelectRowList( T_EVENT_MESSAGE, "type", "7" );
-     if #temp_tips > 0 then
+     if temp_tips and #temp_tips > 0 then
      	for i=1,#temp_tips do
      		local start_time = tonumber(temp_tips[i].start_time);
      		local end_time = tonumber(temp_tips[i].end_time);

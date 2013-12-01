@@ -3,27 +3,209 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_86]
+[CTRL_PICTURE_BG]
+Type=1
+Tag=4
+Rect=0 0 624 165
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_PIC_1]
 Type=1
 Tag=86
-Rect=0 0 110 165
+Rect=13 0 110 165
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\ui\beast\summon_card_0021_M.png
 NormalFileUV=0 0 320 480
 
-[CTRL_PICTURE_87]
+[CTRL_PICTURE_LEVEL_BG_1]
 Type=1
 Tag=87
-Rect=59 138 50 26
+Rect=72 138 50 26
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\ui\beast\button_right.png
 NormalFileUV=0 0 193 102
 
-[CTRL_TEXT_88]
+[CTRL_TEXT_LEV_1]
 Type=4
 Tag=88
-Rect=54 136 50 29
+Rect=67 136 50 29
+AnchorPos=0 0
+Notes=
 Text=LV100
 TextTradition=LV100
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_PIC_2]
+Type=1
+Tag=5
+Rect=135 0 110 163
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\summon_card_0021_M.png
+NormalFileUV=0 0 320 480
+
+[CTRL_PICTURE_LEVEL_BG_2]
+Type=1
+Tag=7
+Rect=194 138 50 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\button_right.png
+NormalFileUV=0 0 193 102
+
+[CTRL_TEXT_LEV_2]
+Type=4
+Tag=6
+Rect=189 136 50 29
+AnchorPos=0 0
+Notes=
+Text=LV100
+TextTradition=LV100
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_PIC_3]
+Type=1
+Tag=8
+Rect=257 0 110 163
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\summon_card_0021_M.png
+NormalFileUV=0 0 320 480
+
+[CTRL_PICTURE_LEVEL_BG_3]
+Type=1
+Tag=9
+Rect=316 138 50 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\button_right.png
+NormalFileUV=0 0 193 102
+
+[CTRL_TEXT_LEV_3]
+Type=4
+Tag=10
+Rect=311 136 50 29
+AnchorPos=0 0
+Notes=
+Text=LV100
+TextTradition=LV100
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_PIC_4]
+Type=1
+Tag=11
+Rect=379 0 110 163
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\summon_card_0021_M.png
+NormalFileUV=0 0 320 480
+
+[CTRL_PICTURE_LEVEL_BG_4]
+Type=1
+Tag=12
+Rect=438 138 50 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\button_right.png
+NormalFileUV=0 0 193 102
+
+[CTRL_TEXT_LEV_4]
+Type=4
+Tag=13
+Rect=433 136 50 29
+AnchorPos=0 0
+Notes=
+Text=LV100
+TextTradition=LV100
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_PIC_5]
+Type=1
+Tag=14
+Rect=501 0 110 163
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\summon_card_0021_M.png
+NormalFileUV=0 0 320 480
+
+[CTRL_PICTURE_LEVEL_BG_5]
+Type=1
+Tag=15
+Rect=560 138 50 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\button_right.png
+NormalFileUV=0 0 193 102
+
+[CTRL_TEXT_LEV_5]
+Type=4
+Tag=16
+Rect=555 136 50 29
+AnchorPos=0 0
+Notes=
+Text=LV100
+TextTradition=LV100
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_MASK_1]
+Type=1
+Tag=17
+Rect=13 0 110 165
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\select.png
+NormalFileUV=0 0 111 164
+
+[CTRL_PICTURE_MASK_2]
+Type=1
+Tag=18
+Rect=135 0 110 165
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\select.png
+NormalFileUV=0 0 111 164
+
+[CTRL_PICTURE_MASK_3]
+Type=1
+Tag=19
+Rect=257 0 110 165
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\select.png
+NormalFileUV=0 0 111 164
+
+[CTRL_PICTURE_MASK_4]
+Type=1
+Tag=20
+Rect=379 0 110 165
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\select.png
+NormalFileUV=0 0 111 164
+
+[CTRL_PICTURE_MASK_5]
+Type=1
+Tag=21
+Rect=501 0 110 165
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\select.png
+NormalFileUV=0 0 111 164

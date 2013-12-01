@@ -194,10 +194,21 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_PACK_BOX then 	
 		msg = msg_pack_box:new();
+	elseif idmsg == MSG_MAIL_SEND_MSG or idmsg == MSG_MAIL_GET_MSGS 
+		or idmsg == MSG_MAIL_DEL_MSG or idmsg == MSG_MAIL_GET_MSG_DETAIL 
+		or idmsg == MSG_MAIL_GET_REWARD then 	
+		msg = msg_mail_msg:new();
+		msg:SetIdMsg(idmsg);
 	elseif idmsg == MSG_CARDBOX_START then
 		msg = msg_card_base_list:new();
+		
+	elseif idmsg == MSG_PET_GETPETDATA then
+		msg = msg_beast_main:new();
 	
+	elseif idmsg == MSG_PET_CALLPET then
+		msg = msg_beast_call:new();
 	end
+
 	
 	if msg ~= nil then
 		WriteConWarning( string.format("CreateMsg() ok, idmsg=%d", idmsg));
