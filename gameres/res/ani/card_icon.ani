@@ -38,4 +38,8 @@ image\card_icon\u11008_f.png @cut(1,1) @stay @scale=1.0
 image\card_icon\u11024_f.png @cut(1,1) @stay @scale=1.0
 [head_pic_130]
 image\card_icon\u11027_f.png @cut(1,1) @stay @scale=1.0
+[head_pic_10060]
+image\card_icon\u10060_f.png @cut(1,1) @stay @scale=1.0[
+head_pic_10063]
+image\card_icon\u10063_f.png @cut(1,1) @stay @scale=1.0
 
