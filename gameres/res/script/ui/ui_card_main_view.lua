@@ -4,8 +4,8 @@
 --------------------------------------------------------------
 ui_card_main_view = {};
 local p =  ui_card_main_view;
-p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
 p.ID_CTRL_BUTTON_SORT_BY				  = 30;
+p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
 p.ID_CTRL_BUTTON_PRO4					    = 29;
 p.ID_CTRL_BUTTON_PRO3					    = 28;
 p.ID_CTRL_BUTTON_PRO2					    = 26;
