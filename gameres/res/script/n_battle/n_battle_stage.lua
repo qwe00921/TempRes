@@ -21,7 +21,6 @@ end
 --进入下一个回合
 function p.NextRound()
    p.roundNum = p.roundNum + 1;
-   p.EnterBattle_RoundStage_Pet();
 end
 
 --获取回合数

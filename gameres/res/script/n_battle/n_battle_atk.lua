@@ -11,6 +11,11 @@ local p = n_battle_atk;
 function p.Atk( atkFighter, targetFighter, batch, hurt )
     if batch == nil then return end
     
+    local batch = batch;
+    local targetFighter = targetFighter;
+    local atkFighter = atkFighter;
+    local hurt = hurt;
+    
     --创建序列给攻击者、受击者
     local seqAtk    = batch:AddSerialSequence();
     local seqTarget = batch:AddParallelSequence();
@@ -68,17 +73,20 @@ function p.Atk( atkFighter, targetFighter, batch, hurt )
     --cmd10:SetDelay(0.5f);
     --cmd10:SetSpecialFlag( E_BATCH_STAGE_HURT_END );
     
-    local cmdBackward = targetFighter:cmdMoveBackward( atkFighter, seqTarget );  
-    local cmdForward = targetFighter:cmdMoveForward( atkFighter, seqTarget );
-    cmdForward:SetWaitEnd( cmdBackward );
+    local cmdBack = createCommandEffect():AddActionEffect( 0, targetFighter:GetPlayerNode(), "lancer.target_hurt_back" );
+    seqTarget:AddCommand( cmdBack );
         
     local cmd11 = targetFighter:cmdLua( "fighter_damage",  hurt, "", seqTarget );
     
+    local cmdBackRset = createCommandEffect():AddActionEffect( 0, targetFighter:GetPlayerNode(), "lancer.target_hurt_back_reset" );
+    seqTarget:AddCommand( cmdBackRset ); 
+    
+    --[[    
     local Idle = createCommandInterval():Idle( 0.001 );
     if Idle ~= nil then
         seqTarget:AddCommand( Idle );
     end 
-    
+    --]]
     seqTarget:SetWaitEnd( cmd3 );
         
     --受攻击的后续动画【死亡 OR 站立】
@@ -123,5 +131,7 @@ function p.HurtResultAni( targetFighter, seqTarget )
         --seqTarget:AddCommand( cmdB );   
         local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
         seqTarget:AddCommand( cmdC );
+        local cmdD = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die_v2" );
+        seqTarget:AddCommand( cmdD );
     end
 end

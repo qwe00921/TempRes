@@ -1,0 +1,8 @@
+
+[skill_name_fx_reverse]
+@type=1
+x.fx_skill_bar_border_reverse
+x.fx_skill_bar_bg_reverse @delay=0.1
+x.fx_skill_bar_lightning_reverse @delay=0.2
+x.fx_skill_bar_pet_reverse @delay=0.4
+x.fx_skill_bar_title_reverse @delay=1

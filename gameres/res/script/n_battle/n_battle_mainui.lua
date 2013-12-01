@@ -74,9 +74,18 @@ function p.ShowUI()
 	return true;
 end
 
+--显示回合数
 function p.ShowRoundNum( roundNum )
 	local roundNumNode = GetLabel( p.layer, ui_n_battle_mainui.ID_CTRL_TEXT_ROUNDNUM );
 	roundNumNode:SetText( roundNum.."/"..N_BATTLE_MAX_ROUND );
+end
+
+--设置对战双方玩家名称
+function p.SetName( uName, tName )
+    local uNameNode = GetLabel( p.layer, ui_n_battle_mainui.ID_CTRL_TEXT_UNAME );
+    local tNameNode = GetLabel( p.layer, ui_n_battle_mainui.ID_CTRL_TEXT_TNAME );
+    uNameNode:SetText( uName );
+    tNameNode:SetText( tName );
 end
 
 function p.InitialisePowerProcessBar()
@@ -135,8 +144,8 @@ function p.SetDelegate(layer)
 	--atkBtn = GetButton( layer, ui_n_battle_mainui.ID_CTRL_BUTTON_17 );
    -- atkBtn:SetLuaDelegate( p.OnBtnClicked_Atk );
 	
-	--托管按钮
-	autoBtn = GetButton( layer, ui_n_battle_mainui.ID_CTRL_BUTTON_11 );
+	--SKIP按钮
+	autoBtn = GetButton( layer, ui_n_battle_mainui.ID_CTRL_BUTTON_SKIP );
 	autoBtn:SetLuaDelegate( p.OnBtnClicked_Auto );
 end
 
@@ -254,21 +263,25 @@ function p.OnBattleShowFinished()
     	
     	--召唤兽表现完成
     	if n_battle_stage.IsBattle_RoundStage_Pet() then
-    		n_battle_stage.EnterBattle_RoundStage_Buff();--回合阶段->BUFF表现
-    		n_battle_mgr.EnterBattle_RoundStage_Buff();--BUFF表现效果
+    	   WriteConWarning("=============EnterBattle_RoundStage_Buff============");
+    	   n_battle_stage.EnterBattle_RoundStage_Buff();--回合阶段->BUFF表现
+    	   n_battle_mgr.EnterBattle_RoundStage_Buff();--BUFF表现效果
     	
     	--BUFF表现完成	
     	elseif n_battle_stage.IsBattle_RoundStage_Buff() then	
+    	   WriteConWarning("=============EnterBattle_RoundStage_Atk============");
     	   n_battle_stage.EnterBattle_RoundStage_Atk();--回合阶段->互殴
            n_battle_mgr.EnterBattle_RoundStage_Atk();--互殴表现效果
         
         --互殴表现完成  
         elseif n_battle_stage.IsBattle_RoundStage_Atk() then   
+           WriteConWarning("=============EnterBattle_RoundStage_Clearing============");
            n_battle_stage.EnterBattle_RoundStage_Clearing();--回合阶段->清算
            n_battle_mgr.EnterBattle_RoundStage_Clearing();--互殴表现效果
         
         --清算完成  
         elseif n_battle_stage.IsBattle_RoundStage_Clearing() then   
+           WriteConWarning("=============EnterBattle_RoundStage_Pet============");
            n_battle_stage.EnterBattle_RoundStage_Pet();--进入回合阶段->召唤兽表现 
            n_battle_mgr.EnterBattle_RoundStage_Pet();--召唤兽表现效果
                  

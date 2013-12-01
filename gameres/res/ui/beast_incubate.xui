@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -459,13 +459,6 @@ Notes=
 NormalFile=.\res\image\ui\beast\bg_down2.png
 NormalFileUV=0 0 626 120
 
-[CTRL_LIST_77]
-Type=8
-Tag=77
-Rect=9 338 624 345
-AnchorPos=0 0
-Notes=
-
 [CTRL_TEXT_79]
 Type=4
 Tag=79
@@ -558,3 +551,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\beast\button_normal.png
 NormalFileUV=0 0 245 87
+
+[CTRL_VERTICAL_LIST_48]
+Type=14
+Tag=78
+Rect=9 339 624 325
+AnchorPos=0 0
+Notes=
