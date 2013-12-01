@@ -94,7 +94,7 @@ Notes=
 Type=1
 Tag=13
 Z_Order=200
-Rect=-18 195 640 90
+Rect=0 196 640 90
 AnchorPos=0 0
 Notes=
 
@@ -119,7 +119,7 @@ Rect=1 573 234 104
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_68]
+[CTRL_TEXT_PET_NAME_1]
 Type=4
 Tag=68
 Rect=12 581 107 20
@@ -132,7 +132,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_69]
+[CTRL_PICTURE_PET_PIC_1]
 Type=1
 Tag=69
 Rect=12 601 120 60
@@ -141,7 +141,7 @@ Notes=
 NormalFile=.\res\sk\summon_card\summon_card_0000_M.png
 NormalFileUV=0 0 320 480
 
-[CTRL_PICTURE_70]
+[CTRL_PICTURE_PET_SKILL_1]
 Type=1
 Tag=70
 Rect=139 601 83 60
@@ -157,10 +157,10 @@ Rect=1 681 234 104
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_72]
+[CTRL_TEXT_PET_NAME_2]
 Type=4
 Tag=72
-Rect=11 690 107 20
+Rect=12 689 107 20
 AnchorPos=0 0
 Notes=
 Text=召唤兽名字
@@ -170,7 +170,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_73]
+[CTRL_PICTURE_PET_PIC_2]
 Type=1
 Tag=73
 Rect=11 710 120 60
@@ -179,7 +179,7 @@ Notes=
 NormalFile=.\res\sk\summon_card\summon_card_0000_M.png
 NormalFileUV=0 0 320 480
 
-[CTRL_PICTURE_74]
+[CTRL_PICTURE_PET_SKILL_2]
 Type=1
 Tag=74
 Rect=140 710 83 60
@@ -195,7 +195,7 @@ Rect=406 573 234 104
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_76]
+[CTRL_TEXT_PET_NAME_3]
 Type=4
 Tag=76
 Rect=523 581 107 20
@@ -208,7 +208,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_77]
+[CTRL_PICTURE_PET_PIC_3]
 Type=1
 Tag=77
 Rect=510 601 120 60
@@ -217,7 +217,7 @@ Notes=
 NormalFile=.\res\sk\summon_card\summon_card_0000_M.png
 NormalFileUV=0 0 320 480
 
-[CTRL_PICTURE_78]
+[CTRL_PICTURE_PET_SKILL_3]
 Type=1
 Tag=78
 Rect=419 601 83 60
@@ -233,7 +233,7 @@ Rect=406 681 234 104
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_80]
+[CTRL_TEXT_PET_NAME_4]
 Type=4
 Tag=80
 Rect=523 691 107 20
@@ -246,7 +246,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_81]
+[CTRL_PICTURE_PET_SKILL_4]
 Type=1
 Tag=81
 Rect=420 711 83 60
@@ -255,7 +255,7 @@ Notes=
 NormalFile=.\res\sk\skill_thumb\skill_thumb_auto_down_attr0.png
 NormalFileUV=0 0 48 48
 
-[CTRL_PICTURE_82]
+[CTRL_PICTURE_PET_PIC_4]
 Type=1
 Tag=82
 Rect=510 711 120 60
@@ -264,7 +264,7 @@ Notes=
 NormalFile=.\res\sk\summon_card\summon_card_0000_S.png
 NormalFileUV=0 0 84 126
 
-[CTRL_PICTURE_83]
+[CTRL_PICTURE_ATK_PIC]
 Type=1
 Tag=83
 Rect=17 96 80 73
@@ -273,7 +273,7 @@ Notes=
 NormalFile=.\res\sk\chara_thumb\chara_thumb_battle0730.png
 NormalFileUV=0 0 162 336
 
-[CTRL_PICTURE_84]
+[CTRL_PICTURE_ATKTARGET_PIC]
 Type=1
 Tag=84
 Rect=545 96 80 73
@@ -282,7 +282,7 @@ Notes=
 NormalFile=.\res\sk\chara_thumb\chara_thumb_battle0720.png
 NormalFileUV=0 0 162 336
 
-[CTRL_TEXT_85]
+[CTRL_TEXT_ATK_NAME]
 Type=4
 Tag=85
 Rect=4 171 107 20
@@ -295,7 +295,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_86]
+[CTRL_TEXT_ATKTARGET_NAME]
 Type=4
 Tag=86
 Rect=532 171 107 20
@@ -308,7 +308,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_88]
+[CTRL_TEXT_ATK_LV]
 Type=4
 Tag=88
 Rect=1 69 107 20
@@ -321,7 +321,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_89]
+[CTRL_TEXT_ATKTARGET_LV]
 Type=4
 Tag=89
 Rect=533 71 107 20
@@ -334,7 +334,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_99]
+[CTRL_TEXT_PET_LV_1]
 Type=4
 Tag=99
 Rect=74 602 57 20
@@ -347,7 +347,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_100]
+[CTRL_TEXT_PET_LV_2]
 Type=4
 Tag=100
 Rect=73 710 57 20
@@ -360,7 +360,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_101]
+[CTRL_TEXT_PET_LV_3]
 Type=4
 Tag=101
 Rect=510 602 57 20
@@ -373,7 +373,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_102]
+[CTRL_TEXT_PET_LV_4]
 Type=4
 Tag=102
 Rect=510 712 57 20

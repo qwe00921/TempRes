@@ -70,7 +70,6 @@ function p.ReceiveStartPVPRes( msg )
     
     n_battle_pvp.ReadyGo();
     p.ShowRoundNum();
-    --n_battle_mainui.OnBattleShowFinished();
 end
 
 --战斗阶段->永久BUFF表现
@@ -80,7 +79,13 @@ end
 
 --进入回合阶段->召唤兽表现
 function p.EnterBattle_RoundStage_Pet()
-    n_battle_mainui.OnBattleShowFinished();
+    local rounds = n_battle_stage.GetRoundNum();
+    local petData = n_battle_db_mgr.GetPetRoundDB( rounds );
+    if petData ~= nil and #petData > 0 and rounds <= N_BATTLE_MAX_ROUND then
+        n_battle_show.DoEffectPetSkill( petData );
+    else
+        n_battle_mainui.OnBattleShowFinished();    
+    end
 end
 
 --进入回合阶段->BUFF表现
@@ -90,8 +95,8 @@ end
 
 --进入回合阶段->互殴
 function p.EnterBattle_RoundStage_Atk()
-    local atkData = n_battle_db_mgr.GetRoundDB( n_battle_stage.GetRoundNum() );
     local rounds = n_battle_stage.GetRoundNum();
+    local atkData = n_battle_db_mgr.GetRoundDB( rounds );
     if atkData ~= nil and #atkData > 0 and rounds <= N_BATTLE_MAX_ROUND then
     	n_battle_show.DoEffectAtk( atkData );
     end
@@ -123,7 +128,7 @@ function p.AddMaskImage()
 		
 		local pic = GetPictureByAni("lancer.mask", 0); 
 		p.imageMask:SetPicture( pic );
-		p.uiLayer:AddChildZ( p.imageMask,1);
+		p.uiLayer:AddChildZ( p.imageMask,100);
 		p.imageMask:AddActionEffect("x.imageMask_fadein");
 	else
 		p.ShowMaskImage();
@@ -173,7 +178,7 @@ function p.createHeroCamp( fighters )
 	p.heroCamp = n_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
-	p.heroCamp:AddShadows( p.heroUIArray );
+	p.heroCamp:AddShadows( p.heroUIArray, fighters );
 	p.heroCamp:AddAllRandomTimeJumpEffect(true);
 end
 
@@ -182,7 +187,7 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp = n_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
-	p.enemyCamp:AddShadows( p.enemyUIArray );
+	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
 	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 end
 
@@ -283,7 +288,6 @@ function p.QuitBattle()
 	n_battle_pvp.CloseUI();
 	n_battle_mainui.CloseUI();
 
-	WriteCon( "========111111111111" );
 	game_main.EnterWorldMap();
 		
 	hud.FadeIn();

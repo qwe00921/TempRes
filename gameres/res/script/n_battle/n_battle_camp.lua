@@ -148,9 +148,10 @@ function p:AddAllRandomTimeJumpEffect(bHero)
 	end
 end
 
-function p:AddShadows(uiArray)
-	for i = 1,#uiArray do
-		local uiTag = uiArray[i];
+function p:AddShadows(uiArray, fighters)
+	for i = 1,#fighters do
+	    local fighterInfo = fighters[i];
+        local uiTag = uiArray[tonumber( fighterInfo.Position )];
 		local node = GetPlayer( n_battle_mgr.uiLayer, uiTag );
 		if node == nil then
 			WriteCon( "get player node failed" );
@@ -189,7 +190,7 @@ end
 function p:AddFighters( uiArray, fighters )
 	for i = 1,#fighters do
 	    local fighterInfo = fighters[i];
-		local uiTag = uiArray[i];
+		local uiTag = uiArray[tonumber( fighterInfo.Position )];
 		local node = GetPlayer( n_battle_mgr.uiLayer, uiTag );
 		if node == nil then
 			WriteCon( "get player node failed" );
@@ -230,7 +231,6 @@ function p:AddFighters( uiArray, fighters )
 			f:SetLookAt( E_LOOKAT_LEFT );
 		end
 		node:SetId(f.idFighter);
-		
 	end
 end
 

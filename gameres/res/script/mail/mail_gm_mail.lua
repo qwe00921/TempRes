@@ -402,7 +402,7 @@ function p.LoadMsgs(iCurPage)
 	--1是系统,2是个人,3客服
 	local param = string.format("&mail_type=3&page=%d&per_page_num=%d", iCurPage,mail_main.PAGE_SIZE);
 	--local param = "&mail_type=1&page=1&per_page_num=6"
-	uid = 123456
+	--uid = 123456
 	SendReq("Mail","ReadMail",uid,param);
 end
 
@@ -431,7 +431,7 @@ function p.LoadDetail(mailId)
 	end;
 	
 	local param = string.format("&mail_id=%d&mail_type=3", tonumber(mailId));
-	uid = 123456
+	--uid = 123456
 	SendReq("Mail","ReadDetailMail",uid,param);
 end
 

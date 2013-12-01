@@ -10,10 +10,60 @@ Rect=0 0 624 165
 AnchorPos=0 0
 Notes=
 
+[CTRL_BUTTON_1]
+Type=2
+Tag=70
+Rect=13 0 110 165
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_2]
+Type=2
+Tag=71
+Rect=135 0 110 163
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_3]
+Type=2
+Tag=72
+Rect=257 0 110 163
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_4]
+Type=2
+Tag=73
+Rect=379 0 110 163
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_5]
+Type=2
+Tag=74
+Rect=501 0 110 163
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
 [CTRL_PICTURE_PIC_1]
 Type=1
 Tag=86
-Rect=13 0 110 165
+Rect=13 0 110 163
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\summon_card_0021_M.png
@@ -209,3 +259,68 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\select.png
 NormalFileUV=0 0 111 164
+
+[CTRL_TEXT_FIGHT_FLAG_1]
+Type=4
+Tag=27
+Rect=13 46 107 60
+AnchorPos=0 0
+Notes=
+Text=出战中
+TextTradition=出戰中
+TextSize=21
+TextColor=0x80
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FIGHT_FLAG_2]
+Type=4
+Tag=28
+Rect=135 46 107 60
+AnchorPos=0 0
+Notes=
+Text=出战中
+TextTradition=出戰中
+TextSize=21
+TextColor=0x80
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FIGHT_FLAG_3]
+Type=4
+Tag=29
+Rect=257 46 107 60
+AnchorPos=0 0
+Notes=
+Text=出战中
+TextTradition=出戰中
+TextSize=21
+TextColor=0x80
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FIGHT_FLAG_4]
+Type=4
+Tag=30
+Rect=379 46 107 60
+AnchorPos=0 0
+Notes=
+Text=出战中
+TextTradition=出戰中
+TextSize=21
+TextColor=0x80
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_FIGHT_FLAG_5]
+Type=4
+Tag=31
+Rect=501 46 107 60
+AnchorPos=0 0
+Notes=
+Text=出战中
+TextTradition=出戰中
+TextSize=21
+TextColor=0x80
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

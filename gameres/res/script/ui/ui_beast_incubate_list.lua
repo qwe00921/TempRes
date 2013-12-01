@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_beast_incubate_list = {};
 local p =  ui_beast_incubate_list;
+p.ID_CTRL_TEXT_FIGHT_FLAG_5			= 31;
+p.ID_CTRL_TEXT_FIGHT_FLAG_4			= 30;
+p.ID_CTRL_TEXT_FIGHT_FLAG_3			= 29;
+p.ID_CTRL_TEXT_FIGHT_FLAG_2			= 28;
+p.ID_CTRL_TEXT_FIGHT_FLAG_1			= 27;
 p.ID_CTRL_PICTURE_MASK_5				  = 21;
 p.ID_CTRL_PICTURE_MASK_4				  = 20;
 p.ID_CTRL_PICTURE_MASK_3				  = 19;
@@ -24,4 +29,9 @@ p.ID_CTRL_PICTURE_PIC_2				   = 5;
 p.ID_CTRL_TEXT_LEV_1					     = 88;
 p.ID_CTRL_PICTURE_LEVEL_BG_1			= 87;
 p.ID_CTRL_PICTURE_PIC_1				   = 86;
+p.ID_CTRL_BUTTON_5					       = 74;
+p.ID_CTRL_BUTTON_4					       = 73;
+p.ID_CTRL_BUTTON_3					       = 72;
+p.ID_CTRL_BUTTON_2					       = 71;
+p.ID_CTRL_BUTTON_1					       = 70;
 p.ID_CTRL_PICTURE_BG					     = 4;

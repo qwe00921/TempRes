@@ -150,6 +150,9 @@ end
 
 --显示物品列表
 function p.ShowItemList(itemList)
+	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_ITEM);
+	list:ClearView();
+	
 	local itemCountText = GetLabel(p.layer,ui.ID_CTRL_TEXT_COUNT );
 
 	if itemList == nil or #itemList <= 0 then
@@ -167,9 +170,6 @@ function p.ShowItemList(itemList)
 		
 	local row = math.ceil(itemNum / 4);
 	WriteCon("row ===== "..row);
-
-	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_ITEM);
-	list:ClearView();
 	
 	for i = 1, row do
 		local view = createNDUIXView();
@@ -241,7 +241,8 @@ function p.ShowItemInfo( view, item, itemIndex )
 	local itemButton = GetButton(view, itemBtn);
 	local item_id = tonumber(item.Item_id);
 	WriteCon("item_id == "..item_id);
-    itemButton:SetImage( GetPictureByAni("item.item_db", item_id) );
+	local aniIndex = "item.itemPic_"..item_id;
+    itemButton:SetImage( GetPictureByAni(aniIndex,0) );
     itemButton:SetId(item_id);
 	
 	--显示物品名字

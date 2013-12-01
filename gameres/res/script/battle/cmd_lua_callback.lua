@@ -31,7 +31,7 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
         fighter = n_battle_mgr.FindFighter(id);
 	end
 	
-	if fighter == nil then
+	if fighter == nil and E_DEMO_VER ~= 4 then
 		WriteCon( "find fighter failed: id="..id);
 		return;
 	end

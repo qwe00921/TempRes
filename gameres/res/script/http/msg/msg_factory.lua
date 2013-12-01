@@ -204,6 +204,9 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_PET_GETPETDATA then
 		msg = msg_beast_main:new();
+		
+	elseif idmsg == MSG_PET_TRAINPET then
+		msg = msg_beast_train:new();
 	
 	elseif idmsg == MSG_PET_CALLPET then
 		msg = msg_beast_call:new();

@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_beast_incubate = {};
 local p =  ui_beast_incubate;
+p.ID_CTRL_VERTICAL_LIST_48			 = 78;
 p.ID_CTRL_BUTTON_85					      = 85;
 p.ID_CTRL_TEXT_84						       = 84;
 p.ID_CTRL_TEXT_83						       = 83;
@@ -11,7 +12,6 @@ p.ID_CTRL_TEXT_82						       = 82;
 p.ID_CTRL_TEXT_81						       = 81;
 p.ID_CTRL_TEXT_80						       = 80;
 p.ID_CTRL_TEXT_79						       = 79;
-p.ID_CTRL_LIST_77						       = 77;
 p.ID_CTRL_PICTURE_INCUBATEBG2			= 76;
 p.ID_CTRL_TEXT_75						       = 75;
 p.ID_CTRL_TEXT_74						       = 74;

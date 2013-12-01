@@ -21,5 +21,9 @@ DoFile("n_battle/n_battle_stage.lua");
 DoFile("n_battle/n_battle_inc.lua");
 DoFile("n_battle/n_battle_show.lua");
 DoFile("n_battle/n_battle_atk.lua");
+DoFile("n_battle/n_battle_skill.lua");
+DoFile("n_battle/n_battle_pet_skill.lua");
+
+
 
 

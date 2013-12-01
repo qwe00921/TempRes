@@ -9,6 +9,7 @@ Tag=27
 Rect=0 0 640 870
 AnchorPos=0 0
 Notes=
+Stretch=1
 NormalFile=.\res\image\ui\card_bag\main_bg.png
 NormalFileUV=0 0 640 960
 
@@ -55,14 +56,16 @@ Notes=
 [CTRL_BUTTON_ALL]
 Type=2
 Tag=24
-Rect=17 145 80 50
+Rect=17 145 80 51
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_all.png
-NormalFileUV=0 0 119 75
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_PRO1]
 Type=2
@@ -73,56 +76,52 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_pro1.png
-NormalFileUV=0 0 120 76
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_PRO2]
 Type=2
 Tag=26
-Rect=184 146 80 50
+Rect=184 146 80 51
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_pro2.png
-NormalFileUV=0 0 121 76
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_PRO3]
 Type=2
 Tag=28
-Rect=268 146 80 50
+Rect=268 146 80 51
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_pro3.png
-NormalFileUV=0 0 121 75
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_BUTTON_PRO4]
 Type=2
 Tag=29
-Rect=350 147 80 50
+Rect=350 145 80 51
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_pro4.png
-NormalFileUV=0 0 121 75
-
-[CTRL_BUTTON_SORT_BY]
-Type=2
-Tag=30
-Rect=507 134 107 57
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\sort_by.png
-NormalFileUV=0 0 110 71
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
 
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
@@ -130,3 +129,15 @@ Tag=31
 Rect=10 200 620 600
 AnchorPos=0 0
 Notes=
+
+[CTRL_BUTTON_SORT_BY]
+Type=2
+Tag=30
+Rect=511 142 100 57
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\star1.png
+NormalFileUV=0 0 44 52

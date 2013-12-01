@@ -61,3 +61,9 @@ T_STORY_INFO  = LoadTable( "story_info.ini");
 
 --召唤兽表
 T_PET			= LoadTable( "Pet.ini" );
+
+--召唤兽升级表
+T_PET_LEVEL		= LoadTable( "Pet_Level.ini" );
+
+--召唤兽资源表
+T_PET_RES		= LoadTable( "Pet_res.ini" );
