@@ -28,6 +28,11 @@ DoFile("card_box/dlg_card_depot_check.lua");
 
 --¿¨×é
 DoFile("card_box/dlg_card_group.lua");
+
+
+DoFile("card_box/card_bag_mian.lua");
+DoFile("card_box/card_bag_mgr.lua");
+
 --¿¨ÏêÏ¸ÐÅÏ¢
 DoFile("card_box/dlg_card_attr.lua");
 DoFile("card_box/dlg_card_attr_base.lua");

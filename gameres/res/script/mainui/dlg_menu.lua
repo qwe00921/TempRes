@@ -63,6 +63,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--maininterface.HideUI();
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
 			WriteCon("**========¿¨×é========**");
+			card_bag_mian.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
 			WriteCon("**========ÈÎÎñ========**");
 			stageMap_main.OpenWorldMap();

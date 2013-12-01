@@ -1,0 +1,148 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=15
+Z_Order=-1
+Rect=0 0 639 208
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_ITEM4]
+Type=2
+Tag=63
+Rect=477 8 145 190
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品4
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_BUTTON_ITEM3]
+Type=2
+Tag=62
+Rect=322 8 145 190
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品3
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_BUTTON_ITEM2]
+Type=2
+Tag=61
+Rect=167 8 145 190
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品2
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_BUTTON_ITEM1]
+Type=2
+Tag=59
+Rect=13 8 145 190
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_TEXT_LEVEL4]
+Type=4
+Tag=19
+Rect=557 16 60 28
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEVEL3]
+Type=4
+Tag=18
+Rect=402 16 60 28
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEVEL2]
+Type=4
+Tag=17
+Rect=247 16 60 28
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEVEL1]
+Type=4
+Tag=16
+Rect=93 16 60 28
+AnchorPos=0 0
+Notes=
+Text=LV30
+TextTradition=LV30
+TextSize=24
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TEAM1]
+Type=4
+Tag=56
+Rect=19 16 60 28
+AnchorPos=0 0
+Notes=
+Text=队伍
+TextTradition=隊伍
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TEAM2]
+Type=4
+Tag=57
+Rect=171 16 60 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TEAM3]
+Type=4
+Tag=58
+Rect=328 16 60 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TEAM4]
+Type=4
+Tag=60
+Rect=483 16 60 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

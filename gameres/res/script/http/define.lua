@@ -91,7 +91,7 @@ DoFile("http/response/resp_factory.lua");
 DoFile("http/response/json2lua_helper.lua");
 
 --卡牌信息
-DoFile("http/msg/msg_card_base_list.lua");
+DoFile("http/msg/msg_card_bag.lua");
 --卡牌单张售出
 DoFile("http/msg/msg_card_sale_one.lua");
 

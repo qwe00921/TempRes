@@ -14,6 +14,27 @@ image\card\10100402.png
 [card_box_add_card]
 image\ui\font\z_j_k_p.png
 
+;ø®≈∆±≥∞¸œ‘ æø®≈∆		¡Ÿ ±
+
+[card_101]
+image\card\10392.png
+[card_102]
+image\card\10684.png
+[card_103]
+image\card\10706.png
+[card_104]
+image\card\10745.png
+[card_105]
+image\card\10774.png
+[card_106]
+image\card\10835.png
+[card_107]
+image\card\10836.png
+[card_108]
+image\card\10838.png
+[card_109]
+image\card\10884.png
+
 ;-----------------------------ø®≈∆∂‘’ΩÕº∆¨240*240---------------------------------------
 [battle_10100101] 
 image\card_battle\10100301.png @cut(1,1) @stay @scale=0.5

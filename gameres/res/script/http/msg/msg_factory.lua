@@ -222,6 +222,8 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_ITEM_TREASURE then 	
 		msg = msg_item_treasure:new();
+	elseif idmsg == MSG_CARD_BAG then
+		msg = msg_card_bag:new();
 	end
 
 	
