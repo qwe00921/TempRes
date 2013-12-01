@@ -108,10 +108,11 @@ function p.CloseUI()
 end
 
 function p.replyMail()
-	local item = {};
-	item.recieverId = "zzz";
-	item.class_id = "xxx";
-	--mail_write_mail.ShowUI(item);
+	--ocal item = {};
+	--item.recieverId = "zzz";
+	--item.class_id = "xxx";
+	p.HideUI();
+	mail_write_mail.ShowUI(p.item);
 	
 end
 
@@ -221,7 +222,7 @@ function p.LoadDetail()
 	end;
 	
 	local param = string.format("&mail_id=%d&mail_type=%d", tonumber(p.item.mailId), mail_main.MAIL_TYPE_USER);
-	uid = 123456
+	--uid = 123456
 	SendReq("Mail","ReadDetailMail",uid,param);
 end
 
@@ -233,7 +234,7 @@ function p.RequestDel(result)
 	if result == true then
 		local param = string.format("&mail_id=%s", p.item.mailId);
 		--local param = "&mail_type=1&page=1&per_page_num=6"
-		uid = 123456
+		--uid = 123456
 		WriteCon("**======requestDel======**");
 		SendReq("Mail","DelMail",uid,param);
 	end
