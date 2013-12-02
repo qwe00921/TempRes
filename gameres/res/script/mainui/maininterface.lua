@@ -152,7 +152,6 @@ function p.BecomeFirstUI()
 	dlg_userinfo.ShowUI();
 	 p.ShowBillboard()
 end
-
 function p.BecomeBackground()
 	p.HideBillboard()
 end
