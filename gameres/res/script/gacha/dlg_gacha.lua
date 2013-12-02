@@ -694,7 +694,7 @@ function p.ShowGachaData( gachadata )
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring( p.rmb ));
 
-	local gacha = gachadata.gacha;
+	local gacha = gachadata.gacha or {};
 	local curTime = os.time();
 	
 	for i=1,#gacha do
