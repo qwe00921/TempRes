@@ -1,0 +1,20 @@
+[1]
+@sing image\skill\1_sing.png 
+@skill image\skill\1_bullet.png 
+@hurt image\skill\1_hurt.png 
+[2]
+@sing image\skill\2_sing.png 
+@skill image\skill\2_bullet.png 
+@hurt image\skill\2_hurt.png 
+[1001]
+@sing image\skill\3_sing.png 
+@skill image\skill\3_bullet.png 
+@hurt image\skill\3_hurt.png 
+[1002]
+@hurt image\skill\4_hurt.png 
+[1003]
+@hurt image\skill\4_hurt.png 
+[1004]
+@hurt image\skill\4_hurt.png 
+[1005]
+@hurt image\skill\4_hurt.png 
