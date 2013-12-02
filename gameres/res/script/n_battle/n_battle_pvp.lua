@@ -80,6 +80,45 @@ function p.ShowUI()
 	return true;
 end
 
+--当前攻击卡牌信息
+function p.SetAtkCardInfo()
+	local pic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_ATK_PIC );
+	local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATK_LV );
+	local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATK_NAME );
+end
+
+--当前受击卡牌信息
+function p.SetAtkTargetCardInfo()
+    local pic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_ATKTARGET_PIC );
+    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATKTARGET_LV );
+    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATKTARGET_NAME );
+end
+
+function p.InitHeroPet()
+	local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_1 );
+	local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_1 );
+    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_1 );
+    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_1 );
+    
+    local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_2 );
+    local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_2 );
+    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_2 );
+    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_2 );
+    
+end
+
+function p.InitEnemyPet()
+    local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_3 );
+    local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_3 );
+    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_3 );
+    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_3 );
+    
+    local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_4 );
+    local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_4 );
+    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_4 );
+    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_4 );
+end
+
 --关闭
 function p.CloseUI()
 	if p.battleLayer ~= nil then	

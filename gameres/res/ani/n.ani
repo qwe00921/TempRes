@@ -1,0 +1,28 @@
+;------------------------------------------------
+; demo 4.0 特效配置
+;------------------------------------------------
+
+
+;{----------游戏角色动画配置---------------
+[pet_test]
+image\ui\card\card_fuse_pic.png
+
+
+;{--------------技能栏--------------------
+
+[fx_skill_bar_border_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_border.png @cut(1,1)  @reverse  @time=0.15 @stay @stretch
+
+[fx_skill_bar_bg_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_bg.png @cut(2,1) @reverse @time=0.1 @stay @stretch
+
+[fx_skill_bar_lightning_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_lightning.png @cut(7,1) @reverse @time=0.15 @loop @stretch
+
+[fx_skill_bar_pet_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_pet.png @cut(3,1) @reverse @time=0.1 @offset(200,0) @stay
+
+[fx_skill_bar_title_reverse]
+image\fx\pet_blue_devil\fx_skill_bar_title.png @cut(1,1) @time=0.15 @offset(-250,0) @stay
+
+;}--------------技能栏结束--------------------

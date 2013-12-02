@@ -204,6 +204,9 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_PET_GETPETDATA then
 		msg = msg_beast_main:new();
+		
+	elseif idmsg == MSG_PET_TRAINPET then
+		msg = msg_beast_train:new();
 	
 	elseif idmsg == MSG_PET_CALLPET then
 		msg = msg_beast_call:new();
@@ -224,6 +227,16 @@ function CreateMsg( idmsg )
 		msg = msg_item_treasure:new();
 	elseif idmsg == MSG_CARD_BAG then
 		msg = msg_card_bag:new();
+		
+	elseif idmsg == MSG_CARD_ROLE_DETAIL then --卡牌角色详细
+		msg = msg_card_detail:new();
+	elseif idmsg == MSG_CARD_EQUIPMENT_DETAIL	 --卡版装备详细
+	or idmsg == MSG_CARD_EQUIPMENT_INSTALL		 --卡版装备安装
+	or idmsg == MSG_CARD_EQUIPMENT_UNINSTALL	 --卡版装备卸下
+	or idmsg == MSG_CARD_EQUIPMENT_CHANGE		 --卡版装备更换
+	or idmsg == MSG_CARD_EQUIPMENT_UPGRADE		then --卡版装备升级
+		msg = msg_mail_msg:new();
+		msg:SetIdMsg(idmsg);
 	end
 
 	

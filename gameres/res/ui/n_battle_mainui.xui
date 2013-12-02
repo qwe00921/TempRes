@@ -1,9 +1,9 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
 
-[CTRL_BUTTON_11]
+[CTRL_BUTTON_SKIP]
 Type=2
 Tag=11
 Rect=395 103 85 65
@@ -135,7 +135,7 @@ Rect=0 0 640 66
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_24]
+[CTRL_TEXT_UNAME]
 Type=4
 Tag=28
 Rect=18 16 107 25
@@ -148,7 +148,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_25]
+[CTRL_TEXT_TNAME]
 Type=4
 Tag=29
 Rect=513 16 107 25
@@ -168,7 +168,7 @@ Rect=259 0 123 74
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_28]
+[CTRL_TEXT_ROUNDTITLE]
 Type=4
 Tag=31
 Rect=267 6 107 25

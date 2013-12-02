@@ -1,0 +1,271 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_9SLICES_18]
+Type=22
+Tag=20
+Rect=76 197 509 455
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\common\sub_ui_bg.png
+NormalFileUV=0 0 165 165
+
+[CTRL_9SLICES_19]
+Type=22
+Tag=21
+Rect=250 252 326 209
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\common\content_bg.png
+NormalFileUV=0 0 33 33
+
+[CTRL_9SLICES_20]
+Type=22
+Tag=22
+Rect=106 259 136 136
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\common\item_bg.png
+NormalFileUV=0 0 126 126
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=114 266 120 120
+AnchorPos=0 0
+Notes=
+
+[CTRL_9SLICES_21]
+Type=22
+Tag=23
+Rect=98 469 464 106
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\common\input_bg.9.png
+NormalFileUV=0 0 33 33
+
+[CTRL_TEXT_4]
+Type=4
+Tag=4
+Rect=102 398 120 20
+AnchorPos=0 0
+Notes=
+Text=装备者:
+TextTradition=裝備者:
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DES]
+Type=4
+Tag=5
+Rect=106 474 450 96
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_UPGRADE]
+Type=2
+Tag=6
+Rect=105 586 136 60
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_BUTTON_UNLOAD]
+Type=2
+Tag=9
+Rect=411 586 136 60
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=8
+Rect=114 212 120 20
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=10
+Rect=271 270 102 20
+AnchorPos=0 0
+Notes=
+Text=装备等级：
+TextTradition=裝備等級：
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_17]
+Type=2
+Tag=19
+Rect=538 171 74 74
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\close_normal.png
+NormalFileUV=0 0 74 74
+SelectFile=.\res\image\ui\common\close_click.png
+SelectedFileUV=0 0 74 74
+DisableFile=.\res\image\ui\common\close_disable.png
+DisableFileUV=0 0 74 74
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=26
+Rect=134 600 56 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res.cn\image\ui\font\q_h.png
+NormalFileUV=0 0 56 30
+
+[CTRL_BUTTON_CHANGE]
+Type=2
+Tag=1327
+Rect=255 585 136 60
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\btn_2_normal.png
+NormalFileUV=0 0 136 60
+SelectFile=.\res\image\ui\common\btn_2_click.png
+SelectedFileUV=0 0 136 60
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_TYP]
+Type=4
+Tag=1328
+Rect=255 212 79 20
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATTR]
+Type=4
+Tag=1330
+Rect=368 211 155 20
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_1331]
+Type=4
+Tag=1331
+Rect=272 316 102 20
+AnchorPos=0 0
+Notes=
+Text=附加属性：
+TextTradition=附加屬性：
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEVEL]
+Type=4
+Tag=1335
+Rect=405 260 148 37
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATTR_EX_3]
+Type=4
+Tag=1336
+Rect=406 408 148 37
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATTR_EX_2]
+Type=4
+Tag=1337
+Rect=406 355 148 37
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATTR_EX_1]
+Type=4
+Tag=1338
+Rect=405 308 148 37
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD_NAME]
+Type=4
+Tag=1339
+Rect=103 391 127 37
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -149,7 +149,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_WRITE == tag then
 			WriteCon("**========写信========**");
 			p.HideUI();
-			mail_write_mail.ShowUI();
+			mail_write_mail.ShowUI({});
 		elseif ui.ID_CTRL_BUTTON_GM == tag then
 			WriteCon("**========客服========**");
 			p.HideUI();
@@ -618,7 +618,7 @@ function p.LoadMsgsByTpye(iType,iCurPage)
 	--1是系统,2是个人
 	local param = string.format("&mail_type=%d&page=%d&per_page_num=%d", iType, iCurPage,p.PAGE_SIZE);
 	--local param = "&mail_type=1&page=1&per_page_num=6"
-	uid = 123456
+	--uid = 123456
 	SendReq("Mail","ReadMail",uid,param);
 end
 
@@ -656,6 +656,7 @@ function p.ParseMsg(msg)
 		item.tm = netP.Time_start;
 		item.state = tonumber(netP.Is_read);
 		item.rewardId = tonumber(netP.Reward_id);
+		item.class_id = netP.Class_id;
 		local rewardState = tonumber(netP.Is_reward);
 		item.rewardState = rewardState;
 				
@@ -701,8 +702,8 @@ function p.OnNetDelCallback(msg)
 		if msg and msg.callback_msg and msg.callback_msg.msg_id then
 			local errCode = tonumber(msg.callback_msg.msg_id);
 			
-			if errCode == p.NET_CODE_REWARD_NOT_GOT then
-				local unDelNum = 1;
+			if errCode == p.NET_CODE_REWARD_NOT_GOT and msg.not_delete_mail then
+				local unDelNum = #msg.not_delete_mail or 1;
 				local delNum = (#p.selIds) - unDelNum;
 				str = string.format(GetStr("mail_del_part"), delNum,unDelNum);
 			end
@@ -750,7 +751,7 @@ function p.RequestDelSel()
 		idstr = idstr .. ids[i];
 	end
 	local param = string.format("&mail_id=%s", idstr);
-	uid = 123456
+	--uid = 123456
 	SendReq("Mail","DelMail",uid,param);
 	WriteCon("RequestDelSel()");
 end

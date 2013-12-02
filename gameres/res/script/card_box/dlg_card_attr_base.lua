@@ -32,10 +32,10 @@ function p.ShowUI(cardInfo)
 end
 
 function p.SetDelegate(layer)
+	layer = layer or p.layer;
 	
 	
-	
-	T_CHAR_RES     = LoadTable( "char_res.ini" );
+	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
 	if pCardInfo ==nil then
 		WriteCon("**====pCardInfo == nil ====**"..p.cardInfo.CardID);
@@ -79,27 +79,37 @@ function p.SetDelegate(layer)
 	local pBtnArrt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT);
     pBtnArrt:SetLuaDelegate(p.OnUIEventEvolution);
 	
-	T_ITEM     = LoadTable( "item.ini" );
+	--装备
+	local bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1);
+    bt:SetLuaDelegate(p.OnUIEventEvolution);
+	bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2);
+    bt:SetLuaDelegate(p.OnUIEventEvolution);
+	bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3);
+    bt:SetLuaDelegate(p.OnUIEventEvolution);
+	
+	
+	
+	local T_ITEM     = LoadTable( "item.ini" );
 	local pCardInfo= nil;
 	
 	--local cardInfo = msg.cardInfo;
 	--装备
 	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
 	if p.cardInfo.Item_Id1 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_Id1); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id1); --从表中获取卡牌详细信息	
 		pEquipPic1:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 		
 	end
 	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
 	if p.cardInfo.Item_Id2 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_Id2); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id2); --从表中获取卡牌详细信息	
 		pEquipPic2:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 	end
 	
 	
 	local pEquipPic3 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_3);
 	if p.cardInfo.Item_Id3 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_Id3); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id3); --从表中获取卡牌详细信息	
 		pEquipPic3:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 	end
 	
@@ -145,13 +155,15 @@ function p.SetDelegate(layer)
 	local pLabCardCritical = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_CRITICAL);
 	pLabCardCritical:SetText(ToUtf8("暴击  ")..tostring(p.cardInfo.Crit));
 	
+	
+	
 end
 
 
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
-	T_CHAR_RES     = LoadTable( "char_res.ini" );
+	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.cardID); --从表中获取卡牌详细信息	
 	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
 	
@@ -181,6 +193,23 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT == tag then
 			--卡牌详细
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
+		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
+			card_equip_select_list.ShowUI();
+			if p.cardInfo and p.cardInfo.Item_id1 and tonumber(p.cardInfo.Item_id1) ~= 0 then
+				
+			else
+				
+			end
+		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
+			if p.cardInfo and p.cardInfo.Item_id2 and tonumber(p.cardInfo.Item_id2) ~= 0 then
+			else
+				dlg_card_equip_detail.ShowUI();
+			end
+		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
+			if p.cardInfo and p.cardInfo.Item_id3 and tonumber(p.cardInfo.Item_id3) ~= 0 then
+			else
+				
+			end
 		end
 	end
 end
@@ -197,7 +226,7 @@ function p.OnMsgBoxCallback(result)
 		
 		local uid = GetUID();
 		WriteCon("**发送买出卡牌请求**"..uid);
-		uid = 10002;
+		--uid = 10002;
 		if uid ~= nil and uid > 0 then
 			--模块  Action 
 			local param = string.format("&id=%d", p.cardInfo.UniqueId);
@@ -210,8 +239,9 @@ end
 
 --卖出后回调的窗口
 function p.SaleKO(msg)
-		
-	
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
 	T_CARD    = LoadTable( "card.ini" );
 	local pCardbase= SelectRowInner( T_CARD, "id", p.cardInfo.CardID); --从表中获取卡牌详细信息
 	
@@ -245,4 +275,85 @@ function p.CloseUI()
 		
     end
     
+end
+
+---------------------------------------网络-----------------------------------------------------------
+
+function p.OnNetCallback(msg)
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	if msg == nil then
+		return;
+	end
+	
+	if msg.idMsg == MSG_CARD_ROLE_DETAIL then
+		p.OnLoadCardDetail(msg);
+	end
+	
+end
+
+--读取卡详细信息
+function p.LoadCardDetail(cardUniqueId)
+	local uid = GetUID();
+	if uid == 0 or uid == nil or cardUniqueId == nil then
+		return ;
+	end;
+	
+	local param = string.format("&card_unique_id=%s",cardUniqueId)
+	SendReq("Item","CardDetailShow",uid,param);		
+end
+--网络返回卡详细信息
+function p.OnLoadCardDetail(msg)
+	
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	if msg.result == true then
+		p.cardInfo = msg.card_info or {};
+		p.SetDelegate();
+	else
+		--local str = mail_main.GetNetResultError(msg);
+		--if str then
+			--dlg_msgbox.ShowOK(GetStr("mail_erro_title"), str,nil);
+		--else
+		--	WriteCon("**======mail_write_mail.NetCallback error ======**");
+		--end
+		--TODO...
+	end
+	--[[ 数据结构
+		card_info: {
+		UniqueID: "10000272",
+		UserID: "123456",
+		CardID: "101",
+		Race: "1",
+		Class: "2",
+		Level: "1",
+		Level_max: "60",
+		Exp: "0",
+		Damage_type: "1",
+		Bind: "0",
+		Team_marks: "0",
+		Signature: "0",
+		Rare: "2",
+		Rare_max: "6",
+		Hp: "400",
+		Attack: "200",
+		Defence: "90",
+		Speed: "5",
+		Skill: "0",
+		Crit: "10",
+		Item_id1: "33450",
+		Item_id2: "0",
+		Item_id3: "33452",
+		Gem1: "0",
+			Gem2: "0",
+		Gem3: "0",
+		Price: "0",
+		Time: "2013-11-30 13:51:45",
+		Source: "0"
+		}
+		]]--
 end

@@ -88,8 +88,8 @@ DoFile("card_box/define.lua");
 DoFile("team/dlg_team_list.lua");
 DoFile("team/dlg_team_member.lua");
 
---【物品相关】
---DoFile("item/define.lua");
+--【卡牌相关】
+DoFile("item/define.lua");
 
 
 --【背包系统】

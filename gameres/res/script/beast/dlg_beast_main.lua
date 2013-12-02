@@ -127,7 +127,7 @@ function p.ShowBeastInfo( view, pet )
 	local pet_type = pet.Pet_type;
 	local nameLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_14 );
 	if nameLabel then
-		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", pet_type, "name" ) );
+		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "name" ) );
 	end
 	
 	local attrLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_ELEMENT );
@@ -146,6 +146,12 @@ function p.ShowBeastInfo( view, pet )
 	fightBtn:SetChecked( flag );
 	local str = flag and "休息" or "出战";
 	fightBtn:SetText( ToUtf8(str) );
+	
+	local pic = GetImage( view, ui_beast_main_list.ID_CTRL_PICTURE_BEAST );
+	local picData = GetPictureByAni( SelectCell( T_PET_RES, SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "id" ), "card_pic" ), 0 );
+	if picData then
+		pic:SetPicture( picData );
+	end
 end
 
 --召唤兽列表中子按钮回调
@@ -156,6 +162,7 @@ function p.OnListBtnClick( uiNode, uiEventType, param )
 		if ui_beast_main_list.ID_CTRL_BUTTON_INCUBATE == tag then
 			WriteCon("**===============显示培养===============**");
 			--显示培养界面，可以通过node:GetId()来获取需要显示哪一个召唤兽的培养界面
+			dlg_beast_train.ShowUI( node:GetId() );
 			
 		elseif ui_beast_main_list.ID_CTRL_BUTTON_FIGHT == tag then
 			WriteCon("**===============选择出战===============**");

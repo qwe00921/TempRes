@@ -31,6 +31,8 @@ DoFile("ui/ui_quest_list_view.lua")
 --背包
 DoFile("ui/ui_bag_main.lua")
 DoFile("ui/ui_bag_list.lua")
+DoFile("ui/ui_card_bag_sort_view.lua")
+DoFile("ui/ui_card_bag_select.lua")
 
 --卡牌背包
 DoFile("ui/ui_card_main_view.lua")
@@ -239,4 +241,6 @@ DoFile("ui/ui_n_battle_ko.lua");
 DoFile("ui/ui_n_battle_mainui.lua");
 DoFile("ui/ui_n_battle_pvp.lua");
 
-
+--卡牌
+DoFile("ui/ui_dlg_card_equip_detail.lua");
+DoFile("ui/ui_card_equip_select_list.lua");

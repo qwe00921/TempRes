@@ -255,3 +255,33 @@ TextTradition=詳細
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_EQUIP_1]
+Type=2
+Tag=1142
+Rect=425 127 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_EQUIP_2]
+Type=2
+Tag=1143
+Rect=422 237 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_EQUIP_3]
+Type=2
+Tag=1144
+Rect=425 340 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

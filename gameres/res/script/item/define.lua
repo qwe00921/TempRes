@@ -4,6 +4,7 @@
 -- purpose:		加载脚本：物品相关
 --------------------------------------------------------------
 
+--[[
 --背包
 DoFile("item/back_pack_mgr.lua");
 DoFile("item/dlg_back_pack.lua");
@@ -21,3 +22,8 @@ DoFile("item/dlg_equip_upgrade_result.lua");
 DoFile("item/dlg_item_select.lua");
 DoFile("item/dlg_card_equip_select.lua");
 DoFile("item/dlg_item_sell.lua");
+]]--
+
+--卡牌装备
+DoFile("item/dlg_card_equip_detail.lua");
+DoFile("item/card_equip_select_list.lua");

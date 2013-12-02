@@ -45,6 +45,20 @@ function p:ctor()
     };
 end
 
+function p:Init()
+
+    --单体技能默认配置
+    self.singleConfig.action = "card_battle.blow_up";
+    self.singleConfig.targetAni = "card_battle.b_z";
+    self.singleConfig.targetAniTime = 0.01;
+    
+    --群体技能默认配置
+    self.aoeConfig.ani = "card_battle_cmb.x_w";
+    self.aoeConfig.targetAni = "card_battle.b_z";
+    self.aoeConfig.targetAniTime = 0.1;
+    self.aoeConfig.bulletConfig = "bullet.bullet1";
+end
+
 --单体技能
 function p:SkillSingle( atkFighter, targetfighter, hurt, batch )
     local seqSkill = batch:AddSerialSequence();     --攻击方特效
@@ -123,7 +137,7 @@ function p:SkillSingle( atkFighter, targetfighter, hurt, batch )
 end
 
 --群体技能
-function p:SkillAOE( atkFighter, targets, batch)
+function p:SkillAOE( atkFighter, targets, tCamp, batch)
 	if batch == nil then return end
 	local config = self.aoeConfig;--群体技能配置
     local seqAtk    = batch:AddSerialSequence();
@@ -136,6 +150,12 @@ function p:SkillAOE( atkFighter, targets, batch)
     	WriteConErr("SkillAOE no target!");
     end
     
+    --敌方的索引开始点为：当前索引+英雄方个数
+    local basePos = 0;
+    if tCamp == E_CARD_CAMP_ENEMY then
+        basePos = basePos + N_BATTLE_CAMP_CARD_NUM;
+    end  
+    
     --1:攻击方表现
     local cmdAction; 
     local cmdAni;
@@ -147,25 +167,26 @@ function p:SkillAOE( atkFighter, targets, batch)
         cmdAni = createCommandEffect():AddFgEffect( config.aniTime, atkFighter:GetPlayerNode(), config.ani );
         seqAtk:AddCommand( cmdAni );
     end
-    local cmd2 = createCommandEffect():AddFgEffect( 0.5, atkFighter:GetPlayerNode(), "card_battle."..atkFighter.UseConfig );
-    seqAtk:AddCommand( cmd2 );
+    --local cmd2 = createCommandEffect():AddFgEffect( 0.5, atkFighter:GetPlayerNode(), "card_battle."..atkFighter.UseConfig );
+    --seqAtk:AddCommand( cmd2 );
     
     --local targets = card_battle_mgr.enemyCamp:GetAliveFighters();
     for k, v in ipairs(targets) do
-        local targetFighter = card_battle_mgr.FindFighter( v.index );
+        local targetFighter = n_battle_mgr.FindFighter( tonumber( v.TPos ) + basePos );
         
-        local hurtValue = tonumber( v.hurt_value ); --伤害值
-        local targetHP = tonumber( v.hp ); --伤害值
-        local buffValue = tonumber( v.buff_value );
-        local buffWorkTime = tonumber( v.buff_work_time );
-        local buffEffect = tonumber( v.buff_effect );
+        local Damage = tonumber( v.Damage ); --伤害值
+        local Dead = v.TargetDead;--死亡
+        
+        --local buffValue = tonumber( v.buff_value );
+        --local buffWorkTime = tonumber( v.buff_work_time );
+        --local buffEffect = tonumber( v.buff_effect );
         
         local seqBullet = batch:AddSerialSequence();
         local seqTarget = batch:AddSerialSequence();
         
         --2:技能特效：子弹特效
         local deg = atkFighter:GetAngleByFighter( targetFighter );
-        local bullet = bullet:new();
+        local bullet = n_bullet:new();
         bullet:AddToBattleLayer();
         bullet:UseConfig(config.bulletConfig);
             
@@ -189,15 +210,14 @@ function p:SkillAOE( atkFighter, targets, batch)
         local cmdBack = createCommandEffect():AddActionEffect( 0, targetFighter:GetNode(), "card_battle.target_hurt_back" );
         seqTarget:AddCommand( cmdBack );
                     
-         --受击者死亡
-       if targetHP <= 0 and hurtValue ~= targetFighter.life then
-            hurtValue = targetFighter.life;
-            WriteConWarning("Mandatory death!");
-            --target:Die();
-       end
+        --受击者死亡
+        if Dead and Damage ~= targetFighter.life then
+            Damage = targetFighter.life;
+            WriteConWarning("the TargetFighter Mandatory death!");
+        end
         
         --飘血
-        local cmd12 = targetFighter:cmdLua( "fighter_damage", hurtValue, "", seqTarget );
+        local cmd12 = targetFighter:cmdLua( "fighter_damage", Damage, "", seqTarget );
         
         local cmdForward = createCommandEffect():AddActionEffect( 0, targetFighter:GetNode(), "card_battle.target_hurt_back_reset" );
         seqTarget:AddCommand( cmdForward ); 

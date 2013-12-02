@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_dlg_card_attr_base = {};
 local p =  ui_dlg_card_attr_base;
+p.ID_CTRL_BUTTON_EQUIP_3				  = 1144;
+p.ID_CTRL_BUTTON_EQUIP_2				  = 1143;
+p.ID_CTRL_BUTTON_EQUIP_1				  = 1142;
 p.ID_CTRL_BTN_ARRT					       = 324;
 p.ID_CTRL_BTN_SALE					       = 323;
 p.ID_CTRL_BTN_INTENSIFY				   = 321;

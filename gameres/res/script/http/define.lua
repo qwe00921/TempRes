@@ -71,6 +71,7 @@ DoFile("http/msg/msg_achievement.lua")
 --召唤兽消息
 DoFile("http/msg/msg_beast_main.lua");--召唤兽列表
 DoFile("http/msg/msg_beast_call.lua");--召唤兽出战
+DoFile("http/msg/msg_beast_train.lua");--召唤兽培养
 
 --战斗消息类
 DoFile("http/msg/msg_battle.lua");				--战斗消息
@@ -94,4 +95,9 @@ DoFile("http/response/json2lua_helper.lua");
 DoFile("http/msg/msg_card_bag.lua");
 --卡牌单张售出
 DoFile("http/msg/msg_card_sale_one.lua");
+
+--卡牌详细
+DoFile("http/msg/msg_card_detail.lua");
+--卡牌装备各种处理消息
+DoFile("http/msg/msg_card_equip_msg.lua");
 
