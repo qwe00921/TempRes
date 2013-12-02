@@ -50,9 +50,9 @@ function p.RefreshUI(user_team)
 		if id ~= nil then
 			local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_ROLE_"..i] );
 			if btn ~= nil then
-				btn:SetImage( GetPictureByAni( "minicard.card_"..id, 0 ) );
-				btn:SetTouchDownImage( GetPictureByAni( "minicard.card_"..id, 0 ) );
-				btn:SetDisabledImage( GetPictureByAni( "minicard.card_"..id, 0 ) );
+				btn:SetImage( GetPictureByAni( "card_icon.head_pic_"..id, 0 ) );
+				btn:SetTouchDownImage( GetPictureByAni( "card_icon.head_pic_"..id, 0 ) );
+				btn:SetDisabledImage( GetPictureByAni( "card_icon.head_pic_"..id, 0 ) );
 			end
 		end
 	end

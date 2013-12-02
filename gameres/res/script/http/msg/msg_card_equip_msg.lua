@@ -37,12 +37,11 @@ function p:Process()
 	--dump_obj(self.user_cards);
 	
 	if self.idMsg == MSG_CARD_EQUIPMENT_DETAIL then --卡版装备详细
-		
+		dlg_card_equip_detail.OnLoadEquitDetail(self);
 	elseif self.idMsg == MSG_CARD_EQUIPMENT_INSTALL then --卡版装备安装
 		
 	elseif self.idMsg == MSG_CARD_EQUIPMENT_UNINSTALL then --卡版装备卸下
 		
-	elseif self.idMsg == MSG_CARD_EQUIPMENT_CHANGE then --卡版装备更换
 		
 	end
 end
