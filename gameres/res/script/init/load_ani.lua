@@ -24,6 +24,7 @@ LoadAni("minicard.ani")
 LoadAni("UserImage.ani")
 LoadAni("n.ani")
 LoadAni("button.ani")
+LoadAni("pet_skill.ani")
 LoadAni_Done()
 
 --加载组合特效

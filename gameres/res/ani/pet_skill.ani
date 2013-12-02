@@ -1,4 +1,4 @@
 [10060]
-image\pet_skill\10060.png @cut(1,1) @stay @scale=0.15
+image\pet_skill\10060.png @cut(1,1) @stay
 [10063]
-image\pet_skill\10063.png @cut(1,1) @stay @scale=0.15
+image\pet_skill\10063.png @cut(1,1) @stay

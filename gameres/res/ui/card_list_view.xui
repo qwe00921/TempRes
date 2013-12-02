@@ -146,34 +146,3 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_SELL_SURE_1]
-Type=1
-Tag=14
-Rect=45 89 80 40
-AnchorPos=0 0
-Notes=
-Stretch=1
-
-[CTRL_PICTURE_SELL_SURE_2]
-Type=1
-Tag=20
-Rect=202 89 80 45
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_SELL_SURE_3]
-Type=1
-Tag=21
-Rect=357 88 80 40
-AnchorPos=0 0
-Notes=
-Stretch=1
-
-[CTRL_PICTURE_SELL_SURE_4]
-Type=1
-Tag=22
-Rect=513 88 80 40
-AnchorPos=0 0
-Notes=
-Stretch=1

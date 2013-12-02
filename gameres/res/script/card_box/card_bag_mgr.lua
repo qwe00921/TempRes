@@ -1,12 +1,12 @@
 card_bag_mgr = {}
 local p = card_bag_mgr;
 
-p.cardList = nil;
-p.layer = nil
-p.cardListByProf = nil;
-p.delCardList = nil;
+p.layer 		= nil;
+p.cardList	 	= nil;	--×Ü¿¨ÅÆÁĞ±í
+p.cardListByProf = nil;	--°´Ö°Òµ¿¨ÅÆÁĞ±í
+p.delCardList 	= nil;	--É¾³ı¿¨ÅÆÁĞ±í
 
---åŠ è½½ç”¨æˆ·æ‰€æœ‰é“å…·
+--¼ÓÔØÓÃ»§ËùÓĞµÀ¾ß
 function p.LoadAllCard(layer)
 	p.ClearData();
 	if layer ~= nil then
@@ -20,14 +20,22 @@ function p.LoadAllCard(layer)
 	SendReq("CardList","List",uid,"");
 end
 
---å‘é€åˆ é™¤è¯·æ±‚
+--ÇëÇó»Øµ÷£¬ÏÔÊ¾¿¨ÅÆÁĞ±í
+function p.RefreshUI(dataList)
+	card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
+	table.sort(dataList,p.sortByLevel);
+	p.cardList = dataList;
+	p.cardListByProf = dataList;
+	card_bag_mian.ShowCardList(p.cardList);
+end
+
+--·¢ËÍÉ¾³ıÇëÇó
 function p.SendDelRequest(deleteList)
 	p.delCardList = deleteList;
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
 		return;
 	end
-	WriteCon("====SendDeleteMsg");
 	local param = nil;
 	for k,v in pairs(deleteList) do
 		if param == nil then
@@ -37,57 +45,51 @@ function p.SendDelRequest(deleteList)
 		end
 	end
 	param = "id="..param;
-	WriteCon("param=="..param);
+	WriteCon("Send Delete Msg:param=="..param);
 	SendReq("CardList","Sell",uid,param);
 end
 
---åˆ é™¤è¯·æ±‚å›è°ƒ
-function p.DelCallBack(result)
-	if result == true then
+--É¾³ıÇëÇó»Øµ÷
+function p.DelCallBack(self)
+	if self.result == true then
+		p.RefreshCardList(p.delCardList)
+		
+		p.delCardList = nil;
+		card_bag_mian.sellCardList = {};
+		card_bag_mian.BatchSellMark = OFF;
+		local btn = GetButton(p.layer, ui_card_main_view.ID_CTRL_BUTTON_SELL);
+		btn:SetImage( GetPictureByAni("button.sell",1));
+		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("³öÊÛ¿¨ÅÆ»ñµÃ "..tostring(self.money.Add).."½ğ±Ò¡£"),nil,p.layer);
+	else
+		local messageText = self.message
+		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),messageText,nil,p.layer);
+		card_bag_mian.sellCardList = {};
+		p.delCardList = nil;
+	end
+end
+--Ë¢ĞÂ¿¨ÅÆÁĞ±í
+function p.RefreshCardList(delData)
+	if type(delData) ~= "table"  then
+		WriteCon("not table delete");
 		for k,v in pairs(p.cardList) do
-			for j,h in pairs(p.delCardList) do
+			if tonumber(v.UniqueId) == tonumber(delData) then 
+				table.remove(p.cardList,k)
+			end
+		end
+	elseif type(delData) == "table" then
+		WriteCon("table delete");
+		for k,v in pairs(p.cardList) do
+			for j,h in pairs(delData) do
 				if tonumber(v.UniqueId) == tonumber(h) then 
 					table.remove(p.cardList,k)
 				end
 			end
 		end
-		p.delCardList = nil;
-		card_bag_mian.ShowCardList(p.cardList)
-	else
-		p.delCardList = nil;
-		WriteCon("1313123");
 	end
-
-end
-
---æƒ…ç©ºæ•°æ®
-function p.ClearData()
-    p.cardList = nil;
-    p.layer = nil;
-end
-
---è¯·æ±‚å›è°ƒï¼Œæ˜¾ç¤ºå¡ç‰Œåˆ—è¡¨
-function p.RefreshUI(dataList)
-	p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
-	table.sort(dataList,p.sortByLevel);
-	p.cardList = dataList;
-	p.cardListByProf = dataList;
 	card_bag_mian.ShowCardList(p.cardList);
 end
 
---æ˜¾ç¤ºæ‰€æœ‰å¡ç‰Œ
-function p.ShowAllCards()
-	WriteCon("card_bag_mgr.ShowAllCards();");
-	p.cardListByProf = p.cardList
-	
-	if card_bag_mian.sortByRuleV ~= nil then
-		p.sortByRule(card_bag_mian.sortByRuleV)
-	else
-		card_bag_mian.ShowCardList(p.cardListByProf);
-	end
-end
-
---æŒ‰èŒä¸šæ˜¾ç¤ºå¡ç‰Œ
+--°´Ö°ÒµÏÔÊ¾¿¨ÅÆ
 function p.ShowCardByProfession(profType)
 	WriteCon("card_bag_mgr.ShowCardByProfession();");
 	if profType == nil then
@@ -102,34 +104,36 @@ function p.ShowCardByProfession(profType)
 		card_bag_mian.ShowCardList(p.cardListByProf);
 	end
 end
---è·å–æ˜¾ç¤ºåˆ—è¡¨
+
+--»ñÈ¡ÏÔÊ¾ÁĞ±í
 function p.GetCardList(profType)
 	local t = {};
 	if p.cardList == nil then 
 		return t;
 	end
-	
-	if profType == PROFESSION_TYPE_1 then 
+	if profType == PROFESSION_TYPE_0 then
+		t = p.cardList;
+	elseif profType == PROFESSION_TYPE_1 then 
 		for k,v in pairs(p.cardList) do
-			if tonumber(v.Damage_type) == 1 then
+			if tonumber(v.Class) == 1 then
 				t[#t + 1] = v;
 			end
 		end
 	elseif profType == PROFESSION_TYPE_2 then 
 		for k,v in pairs(p.cardList) do
-			if tonumber(v.Damage_type) == 2 then
+			if tonumber(v.Class) == 2 then
 				t[#t + 1] = v;
 			end
 		end
 	elseif profType == PROFESSION_TYPE_3 then 
 		for k,v in pairs(p.cardList) do
-			if tonumber(v.Damage_type) == 3 then
+			if tonumber(v.Class) == 3 then
 				t[#t + 1] = v;
 			end
 		end
 	elseif profType == PROFESSION_TYPE_4 then 
 		for k,v in pairs(p.cardList) do
-			if tonumber(v.Damage_type) == 4 then
+			if tonumber(v.Class) == 4 then
 				t[#t + 1] = v;
 			end
 		end
@@ -137,7 +141,7 @@ function p.GetCardList(profType)
 	return t;
 end
 
---æŒ‰è§„åˆ™æ’åº
+--°´¹æÔòÅÅĞò
 function p.sortByRule(sortType)
 	if sortType == nil or p.cardListByProf == nil then 
 		return
@@ -155,15 +159,31 @@ function p.sortByRule(sortType)
 	card_bag_mian.ShowCardList(p.cardListByProf);
 end
 
---æŒ‰ç­‰çº§æ’åº
+--°´µÈ¼¶ÅÅĞò
 function p.sortByLevel(a,b)
 	return tonumber(a.Level) < tonumber(b.Level);
 end
---æŒ‰æ˜Ÿçº§æ’åº
+--°´ĞÇ¼¶ÅÅĞò
 function p.sortByStar(a,b)
 	return tonumber(a.Rare) < tonumber(b.Rare);
 end
---æŒ‰æ—¶é—´æ’åº
+--°´Ê±¼äÅÅĞò
 function p.sortByTime(a,b)
 	return tonumber(a.Time) < tonumber(b.Time);
 end
+
+--Çé¿ÕÊı¾İ
+function p.ClearData()
+	p.layer 		= nil;
+	p.cardList	 	= nil;
+	p.cardListByProf = nil;
+	p.delCardList 	= nil;
+end
+
+
+
+
+
+
+
+

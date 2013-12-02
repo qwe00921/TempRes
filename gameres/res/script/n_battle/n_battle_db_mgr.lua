@@ -104,6 +104,16 @@ function p.GetTargetCardList()
     return p.targetCardList;
 end
 
+--获取攻方宠物列表
+function p.GetPlayerPetList()
+    return p.playerPetList;
+end
+
+--获取守方宠物列表
+function p.GetTargetPetList()
+    return p.targetPetList;
+end
+
 --获取对战结果
 function p.GetBattleResult()
     return p.battleResult;

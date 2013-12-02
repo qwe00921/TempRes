@@ -8,14 +8,36 @@
 [gsblur_zero]
 @gsblur(0)
 
-[skill_name_move_left_in]
+[left_in]
 @move+(0.1, 640, 0,50) @stretch
 
-[skill_name_move_right_out]
+[right_out]
 @move+(0.1, 640, 0,50) @stretch
 
-[skill_name_move_right_in]
+[right_in]
 @move+(0.1, -640, 0,50) @stretch
 
-[skill_name_move_left_out]
+[left_out]
 @move+(0.1, -640, 0,50) @stretch
+
+[pet_left_in]
+@move+(0.1, 400, 0,50) @stretch
+
+[pet_right_out]
+@move+(0.1, 960, 0,50) @stretch
+
+[pet_right_in]
+@move+(0.1, -400, 0,50) @stretch
+
+[pet_left_out]
+@move+(0.1, -400, 0,50) @stretch
+
+;µ­³ö
+[n_fadeout]
+@fadeto(0,1)
+@hide
+
+;µ­Èë
+[n_fadein]
+@show
+@fadeto(0,0)

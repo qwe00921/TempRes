@@ -17,7 +17,7 @@ function p.LoadAllItem(layer)
 	if uid == 0 or uid == nil then 
 		return;
 	end
-	SendReq("Item","List",10001,"");
+	SendReq("Item","List",uid,"");
 	--SendReq("Item","List",uid,"");
 end
 
