@@ -29,6 +29,8 @@ function p.ShowUI(userinfo)
 	p.layer = layer;
 	p.SetDelegate();
 	
+	p.ShowMailNum(userinfo);
+	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
 	--dlg_battlearray.ShowUI();
@@ -115,6 +117,20 @@ function p.ShowMenuBtn()
 	local menu = GetButton(p.layer, ui.ID_CTRL_MAIN_BUTTON_MEMU);
 	if menu then
 		menu:SetVisible(true);
+	end
+end
+
+--邮件数量显示
+function p.ShowMailNum(userinfo)
+	local bg = GetImage( p.layer, ui.ID_CTRL_PICTURE_MAIL_TIPS_BG );
+	local mailNum = GetLabel( p.layer, ui.ID_CTRL_TEXT_MAIL_TIPS_NUM );
+	if userinfo == nil or userinfo.Email_num == 0 then
+		mailNum:SetVisible( false );
+		bg:SetVisible( false );
+	else
+		mailNum:SetVisible( true );
+		bg:SetVisible( true );
+		mailNum:SetText( userinfo.Email_num or 0 );
 	end
 end
 
