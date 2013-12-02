@@ -9,22 +9,22 @@ local num_easy = nil;
 local num_normal = nil;
 local num_difficult = nil;
 
-p.stageId = nil;	--å…³å¡ID
-p.missionId = nil; 	--ä»»åŠ¡ID
+p.stageId = nil;	--¹Ø¿¨ID
+p.missionId = nil; 	--ÈÎÎñID
 
-p.stageTable = nil;		--å…³å¡é™æ€æ•°æ®
+p.stageTable = nil;		--¹Ø¿¨¾²Ì¬Êı¾İ
 --p.missionTable = nil;
 
-p.missionList = {};	--æœåŠ¡ç«¯ä¸‹å‘åˆ—è¡¨
-p.curBtnNode = nil;		--é€‰ä¸­æ ‡è®°
-p.power = nil; 		--è·å–ç©å®¶ä½“åŠ›å€¼
+p.missionList = {};	--·şÎñ¶ËÏÂ·¢ÁĞ±í
+p.curBtnNode = nil;		--Ñ¡ÖĞ±ê¼Ç
+p.power = nil; 		--»ñÈ¡Íæ¼ÒÌåÁ¦Öµ
 
 function p.ShowUI(stageId)
 	p.stageId  = stageId;
 	
-	--è·å–missionIdåˆå§‹å€¼
+	--»ñÈ¡missionId³õÊ¼Öµ
 	p.GetMissionId();
-	--è·å–ç« èŠ‚é™æ€æ•°æ®
+	--»ñÈ¡ÕÂ½Ú¾²Ì¬Êı¾İ
 	p.GetStageTable();
 
 	if p.layer ~= nil then 
@@ -48,7 +48,7 @@ function p.ShowUI(stageId)
 	p.layer = layer;
 	p.SetDelegate(layer);
 	
-	--è®¾ç½®ç« èŠ‚åå­—
+	--ÉèÖÃÕÂ½ÚÃû×Ö
 	local stageName = GetLabel(p.layer, ui.ID_CTRL_TEXT_QUEST_NAME_6);
 	stageName:SetText(ToUtf8(p.stageTable[1].stage_name));
 	
@@ -79,22 +79,22 @@ function p.GetStageTable()
 end
 
 function p.SetDelegate()
-	--è¿”å›
+	--·µ»Ø
 	local btnBack = GetButton( p.layer, ui.ID_CTRL_BTN_TETURN_2 );
 	btnBack:SetLuaDelegate(p.OnBtnClick);
-	--ç®€å•
+	--¼òµ¥
 	local btnEasy =  GetButton(p.layer, ui.ID_CTRL_BTN_EAYE_7);
 	btnEasy:SetLuaDelegate(p.OnBtnClick);
-	p.SetBtnCheckedFX( btnEasy );--è®¾ç½®åˆå§‹çŠ¶æ€
-	--æ™®é€š
+	p.SetBtnCheckedFX( btnEasy );--ÉèÖÃ³õÊ¼×´Ì¬
+	--ÆÕÍ¨
 	local BtnNormal =  GetButton(p.layer, ui.ID_CTRL_BTN_NORMAL_8);
 	BtnNormal:SetLuaDelegate(p.OnBtnClick);
-	--å›°éš¾
+	--À§ÄÑ
 	local BtnDifficult =  GetButton(p.layer, ui.ID_CTRL_BTN_HARD_9);
 	BtnDifficult:SetLuaDelegate(p.OnBtnClick);
 end
 
---æŒ‰é’®äº‹ä»¶
+--°´Å¥ÊÂ¼ş
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
@@ -121,7 +121,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	end
 end
 
---ç‚¹å‡»æˆ˜æ–—æŒ‰é’®
+--µã»÷Õ½¶·°´Å¥
 function p.OnFightBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		WriteCon("=========OnFightBtnClick==========");
@@ -131,7 +131,7 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 		local powerLimit = tonumber(missionTable[1]["power"]);
 		local power = p.power;
 		if power < powerLimit then
-			dlg_msgbox.ShowOK(ToUtf8( "æç¤º" ), ToUtf8( "ä½“åŠ›å€¼ä¸è¶³" ));
+			dlg_msgbox.ShowOK(ToUtf8( "ÌáÊ¾" ), ToUtf8( "ÌåÁ¦Öµ²»×ã¡£" ));
 			WriteCon("power not enough");
 			return
 		else
@@ -155,7 +155,7 @@ function p.SetBtnCheckedFX( node )
     p.curBtnNode = btnNode;
 end
 
---æ˜¾ç¤ºåˆ—è¡¨
+--ÏÔÊ¾ÁĞ±í
 function p.ShowQuestList(List)
 	for k,v in pairs(List) do
 		if k == "missions" then
@@ -174,10 +174,10 @@ function p.ShowQuestList(List)
 		-- ListLength = ListLength + 1;
 	-- end
 	-- WriteCon("**ListLength = "..ListLength); 
-	--è®¾ç½®éš¾é“æŒ‰é’®
+	--ÉèÖÃÄÑµÀ°´Å¥
 	p.setHardBtn();
 	
-	--åŠ è½½åˆ—è¡¨
+	--¼ÓÔØÁĞ±í
 	local missionStartId = p.missionId;
 	p.loadMissionList(missionStartId,num_easy);
 end
@@ -212,7 +212,7 @@ function p.loadMissionList(missionStartId,num)
 		view:Init();
 		LoadUI("quest_list_view.xui",view, nil);
 		
-		--éšè—é»˜è®¤UI
+		--Òş²ØÄ¬ÈÏUI
 		p.HideStar(view);
 		p.HideItem(view);
 		
@@ -220,11 +220,11 @@ function p.loadMissionList(missionStartId,num)
 		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
 		view:SetId(MisId);
 		
-		--ä¿¡æ¯åˆå§‹åŒ–
+		--ĞÅÏ¢³õÊ¼»¯
 		p.setMissionInif(MisId,view);
 		
-		--åŠ è½½æœåŠ¡ç«¯ä¸‹å‘æ•°æ®
-		--æˆ˜æ–—æŒ‰é’®
+		--¼ÓÔØ·şÎñ¶ËÏÂ·¢Êı¾İ
+		--Õ½¶·°´Å¥
 		local fightBtn = GetButton(view, uiList.ID_CTRL_BUTTON_FIGHTING);
 		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
 		local MisKey = "M"..MisId;
@@ -236,7 +236,7 @@ function p.loadMissionList(missionStartId,num)
 			local missionTable = SelectRowList(T_MISSION,"mission_id",mis_id);
 			local text = p.missionList[MisKey]["Fight_num"].."/"..missionTable[1]["timesLimit"]
 			timesText:SetText(ToUtf8(text));
-			--æ˜¾ç¤ºæ˜Ÿçº§
+			--ÏÔÊ¾ĞÇ¼¶
 			local StarNum = p.missionList[MisKey]["High_score"]
 			p.ShowStar(view,StarNum)
 		else
@@ -249,7 +249,7 @@ function p.loadMissionList(missionStartId,num)
 	end
 end
 
---è¯»å–é™æ€è¡¨æ•°æ®
+--¶ÁÈ¡¾²Ì¬±íÊı¾İ
 function p.setMissionInif(MisId, view)
 	local mis_id = MisId;
 	local misstionName = GetLabel(view, uiList.ID_CTRL_TEXT_QUEST_NAME_V);
@@ -291,7 +291,7 @@ function p.setMissionInif(MisId, view)
 end
 
 
---éšè—é€šå…³è¯„ä»·
+--Òş²ØÍ¨¹ØÆÀ¼Û
 function p.HideStar(view)
 	local star1 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR1)
 	star1:SetVisible(false);
@@ -328,7 +328,7 @@ function p.ShowStar(view,num)
 	end
 end
 
---éšè—å¥–åŠ±ç‰©å“å›¾æ ‡
+--Òş²Ø½±ÀøÎïÆ·Í¼±ê
 function p.HideItem(view)
 	local Item1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD1)
 	Item1:SetVisible(false);
@@ -339,7 +339,7 @@ function p.HideItem(view)
 end
 
 
---éšè—UI
+--Òş²ØUI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
@@ -347,7 +347,7 @@ function p.HideUI()
 	end
 end
 
---å…³é—­UI
+--¹Ø±ÕUI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
