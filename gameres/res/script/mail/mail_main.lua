@@ -490,6 +490,22 @@ function p.SetItemInfo4Sys( view, item )
 		--str = str.. "  non"
 	end
 	
+	local rewards = item.rewards or {};
+	for i = 1, 4 do
+		local rewrad = rewards[i] or {};
+		local picTagName = "ID_CTRL_PICTURE_ITEM_"..i;
+		local picV = GetImage(view,ui_item_sys[picTagName]);
+		
+		if picV and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
+			--rewrad.rewordId = "10002";
+			local aniIndex = "item."..rewrad.rewordId;
+			picV:SetPicture( GetPictureByAni(aniIndex,0) );
+			
+		elseif picV then
+			picV:SetVisible(false);
+		end
+	end
+	
 	--stateV:SetText(str);
 	
 	--local cardPicNode = GetButton( view, cardPic );

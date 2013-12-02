@@ -35,7 +35,6 @@ function p.SetDelegate(layer)
 	layer = layer or p.layer;
 	
 	
-	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
 	if pCardInfo ==nil then
 		WriteCon("**====pCardInfo == nil ====**"..p.cardInfo.CardID);
@@ -163,7 +162,6 @@ end
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
-	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.cardID); --从表中获取卡牌详细信息	
 	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
 	
@@ -194,21 +192,23 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			--卡牌详细
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
-			card_equip_select_list.ShowUI();
+			
 			if p.cardInfo and p.cardInfo.Item_id1 and tonumber(p.cardInfo.Item_id1) ~= 0 then
-				
+				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id1);
 			else
-				
+				card_equip_select_list.ShowUI();
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.cardInfo and p.cardInfo.Item_id2 and tonumber(p.cardInfo.Item_id2) ~= 0 then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id2);
 			else
 				dlg_card_equip_detail.ShowUI();
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
 			if p.cardInfo and p.cardInfo.Item_id3 and tonumber(p.cardInfo.Item_id3) ~= 0 then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id3);
 			else
-				
+				dlg_card_equip_detail.ShowUI();
 			end
 		end
 	end
@@ -242,7 +242,7 @@ function p.SaleKO(msg)
 	if p.layer == nil or p.layer:IsVisible() ~= true then
 		return;
 	end
-	T_CARD    = LoadTable( "card.ini" );
+	--local T_CARD    = LoadTable( "card.ini" );
 	local pCardbase= SelectRowInner( T_CARD, "id", p.cardInfo.CardID); --从表中获取卡牌详细信息
 	
 	if pCardbase==nil then
@@ -299,7 +299,13 @@ end
 
 --读取卡详细信息
 function p.LoadCardDetail(cardUniqueId)
+	
+	
 	local uid = GetUID();
+	
+	uid=123456
+	cardUniqueId="10000272";
+	
 	if uid == 0 or uid == nil or cardUniqueId == nil then
 		return ;
 	end;
