@@ -146,3 +146,9 @@ end
 function p.ShowBillboard()
 	billboard.resumeBillBoard();
 end
+
+--从子界面退出，刷新主界面
+function p.BecomeFirstUI()
+	dlg_userinfo.ShowUI();
+end
+

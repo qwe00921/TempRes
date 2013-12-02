@@ -127,7 +127,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local cardTeamText = GetLabel(view,cardTeam );
 	local teamText = tostring(card.Team_marks)
 	if teamText ~= "0" then
-		teamText:SetText(ToUtf8(teamText));
+		cardTeamText:SetText(ToUtf8(teamText));
 	end
 
 	--设置卡牌按钮事件
@@ -141,6 +141,18 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
 	if p.BatchSellMark == MARK_ON then
+		local team = nil;
+		for k,v in pairs(p.cardListInfo) do
+			if cardUniqueId == v.UniqueId then
+				team = v.Team_marks
+				break;
+			end
+		end
+		WriteCon("team ===== "..team);
+		if tonumber(team) ~= 0 then
+			dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("队伍中的卡牌无法出售。"),nil,p.layer);
+			return
+		end
 		p.ShowSelectPic(uiNode);
 	elseif p.BatchSellMark == MARK_OFF then 
 		local cardData = nil;
