@@ -3,8 +3,8 @@ local p = pack_box_mgr;
 p.itemList = nil;
 p.layer = nil;
 
-p.selectItem = nil;
-p.selectItemList = {};
+-- p.selectItem = nil;
+-- p.selectItemList = {};
 
 --加载用户所有道具列表
 function p.LoadAllItem(layer)
@@ -24,8 +24,8 @@ end
 function p.ClearData()
     p.itemList = nil;
     p.layer = nil;
-    p.selectItem = nil;
-    p.selectItemList = {};
+    --p.selectItem = nil;
+    --p.selectItemList = {};
 end
 
 --请求回调，显示道具列表
@@ -105,12 +105,12 @@ function p.UseItemEvent(itemId)
 		WriteConErr("used item id error ");
 		return
 	end
-	local param = "MachineType=Android&item_id=".."1001";
-	if itemId == 1 then
+	local param = "MachineType=Android&item_id="..itemId;
+	if itemId == 1001 then
 		SendReq("Item","UseHealItem",uid,param);
-	elseif itemId == 2 then
+	elseif itemId == 1002 then
 		SendReq("Item","UseQuickItem",uid,param);
-	elseif itemId == 3 then
+	elseif itemId == 3001 then
 		SendReq("Item","UseStorageItem",uid,param);
 	elseif itemId == 4 then
 		SendReq("Item","UseGiftItem",uid,param);

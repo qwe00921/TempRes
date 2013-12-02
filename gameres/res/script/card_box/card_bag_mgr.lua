@@ -22,6 +22,9 @@ end
 
 --请求回调，显示卡牌列表
 function p.RefreshUI(dataList)
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
 	card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	table.sort(dataList,p.sortByLevel);
 	p.cardList = dataList;
