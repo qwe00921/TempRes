@@ -175,6 +175,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		if ( ui_dlg_gacha.ID_CTRL_BUTTON_BACK == tag ) then  
 			p.CloseUI();
+			maininterface.BecomeFirstUI();
 		--[[
 	   elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_AD_NEXT == tag ) then  
 	       local adList = GetListBoxHorz( p.layer, ui_dlg_gacha.ID_CTRL_LIST_AD);
