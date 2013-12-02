@@ -52,29 +52,41 @@ end
 --删除请求回调
 function p.DelCallBack(self)
 	if self.result == true then
-		for k,v in pairs(p.cardList) do
-			for j,h in pairs(p.delCardList) do
-				if tonumber(v.UniqueId) == tonumber(h) then 
-					table.remove(p.cardList,k)
-				end
-			end
-		end
+		p.RefreshCardList(p.delCardList)
+		
 		p.delCardList = nil;
 		card_bag_mian.sellCardList = {};
 		card_bag_mian.BatchSellMark = OFF;
 		local btn = GetButton(p.layer, ui_card_main_view.ID_CTRL_BUTTON_SELL);
 		btn:SetImage( GetPictureByAni("button.sell",1));
-		
 		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("出售卡牌获得 "..tostring(self.money.Add).."金币。"),nil,p.layer);
-
-		card_bag_mian.ShowCardList(p.cardList);
 	else
 		local messageText = self.message
 		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),messageText,nil,p.layer);
 		card_bag_mian.sellCardList = {};
 		p.delCardList = nil;
 	end
-
+end
+--刷新卡牌列表
+function p.RefreshCardList(delData)
+	if type(delData) ~= "table"  then
+		WriteCon("not table delete");
+		for k,v in pairs(p.cardList) do
+			if tonumber(v.UniqueId) == tonumber(delData) then 
+				table.remove(p.cardList,k)
+			end
+		end
+	elseif type(delData) == "table" then
+		WriteCon("table delete");
+		for k,v in pairs(p.cardList) do
+			for j,h in pairs(delData) do
+				if tonumber(v.UniqueId) == tonumber(h) then 
+					table.remove(p.cardList,k)
+				end
+			end
+		end
+	end
+	card_bag_mian.ShowCardList(p.cardList);
 end
 
 --按职业显示卡牌
