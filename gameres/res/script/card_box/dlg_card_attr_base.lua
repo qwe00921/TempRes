@@ -35,7 +35,7 @@ function p.SetDelegate(layer)
 	layer = layer or p.layer;
 	
 	
-	T_CHAR_RES     = LoadTable( "char_res.ini" );
+	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
 	if pCardInfo ==nil then
 		WriteCon("**====pCardInfo == nil ====**"..p.cardInfo.CardID);
@@ -89,27 +89,27 @@ function p.SetDelegate(layer)
 	
 	
 	
-	T_ITEM     = LoadTable( "item.ini" );
+	local T_ITEM     = LoadTable( "item.ini" );
 	local pCardInfo= nil;
 	
 	--local cardInfo = msg.cardInfo;
 	--装备
 	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
 	if p.cardInfo.Item_Id1 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_Id1); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id1); --从表中获取卡牌详细信息	
 		pEquipPic1:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 		
 	end
 	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
 	if p.cardInfo.Item_Id2 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_Id2); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id2); --从表中获取卡牌详细信息	
 		pEquipPic2:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 	end
 	
 	
 	local pEquipPic3 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_3);
 	if p.cardInfo.Item_Id3 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_Id3); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id3); --从表中获取卡牌详细信息	
 		pEquipPic3:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 	end
 	
@@ -163,7 +163,7 @@ end
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
-	T_CHAR_RES     = LoadTable( "char_res.ini" );
+	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.cardID); --从表中获取卡牌详细信息	
 	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
 	
@@ -226,7 +226,7 @@ function p.OnMsgBoxCallback(result)
 		
 		local uid = GetUID();
 		WriteCon("**发送买出卡牌请求**"..uid);
-		uid = 10002;
+		--uid = 10002;
 		if uid ~= nil and uid > 0 then
 			--模块  Action 
 			local param = string.format("&id=%d", p.cardInfo.UniqueId);
