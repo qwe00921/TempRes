@@ -16,7 +16,8 @@ T_TRAVEL_DUNGEON_INFO   = LoadTable( "travel_dungeon_info.ini" );
 
 --道具表
 T_ITEM          = LoadTable( "item.ini" );
-
+--卡牌详细表
+T_CHAR_RES      = LoadTable( "char_res.ini" );
 --任务信息表
 T_MISSION		= LoadTable( "mission.ini" );
 

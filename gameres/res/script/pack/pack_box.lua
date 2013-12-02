@@ -1,3 +1,10 @@
+ITEM_TYPE_TOOL = 1000;	--0
+ITEM_TYPE_EQUIP = 1001;	--123
+ITEM_TYPE_OTHER = 1002;	--56
+ITEM_TYPE_EQUIP_1 = 1003;	--1
+ITEM_TYPE_EQUIP_2 = 1004;	--2
+ITEM_TYPE_EQUIP_3 = 1005;	--3
+
 pack_box = {}
 local p = pack_box;
 
@@ -30,7 +37,6 @@ function p.ShowUI()
 	
 	--加载背包数据
     pack_box_mgr.LoadAllItem( p.layer );
-	--p.ShowItemList( itemList )
 end
 
 --主界面设置事件处理
@@ -77,34 +83,34 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			WriteCon("=====debrisItemBtn");
 			p.SetBtnCheckedFX( uiNode );
 			p.HideEquipTypeBtn();
-			pack_box_mgr.ShowItemByType(1);
+			pack_box_mgr.ShowItemByType(ITEM_TYPE_TOOL);
 		elseif(ui.ID_CTRL_BUTTON_TIEM3 == tag) then --装备
 			WriteCon("=====equipItemBtn");
 			p.SetBtnCheckedFX( uiNode );
 			--显示所有装备  和 4个按钮
 			p.ShowEquipTypeBtn();
-			pack_box_mgr.ShowItemByType(2);
+			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP);
 		elseif(ui.ID_CTRL_BUTTON_ITEM4 == tag) then --其他
 			WriteCon("=====otherItemBtn");
 			p.SetBtnCheckedFX( uiNode );
 			p.HideEquipTypeBtn();
-			pack_box_mgr.ShowItemByType(3);
+			pack_box_mgr.ShowItemByType(ITEM_TYPE_OTHER);
 		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB1 == tag) then --装备全部
 			WriteCon("=====allEquipBtn");
 			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(2);
+			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP);
 		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB2 == tag) then --装备武器
 			WriteCon("=====armsBtn");
 			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(4);
+			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP_1);
 		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB3 == tag) then --装备防具
 			WriteCon("=====armorBtn");
 			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(5);
+			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP_2);
 		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB4 == tag) then --装备鞋子
 			WriteCon("=====shoesBtn");
 			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(6);
+			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP_3);
 		end
 	end
 end
@@ -211,7 +217,6 @@ function p.ShowItemInfo( view, item, itemIndex )
 		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV1
 		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_22;
         isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP1;
-		
 	elseif itemIndex == 2 then
         itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM2;
         itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM2;
@@ -241,15 +246,15 @@ function p.ShowItemInfo( view, item, itemIndex )
 	local itemButton = GetButton(view, itemBtn);
 	local item_id = tonumber(item.Item_id);
 	WriteCon("item_id == "..item_id);
-	local aniIndex = "item.itemPic_"..item_id;
+	local aniIndex = "item."..item_id;
     itemButton:SetImage( GetPictureByAni(aniIndex,0) );
     itemButton:SetId(item_id);
 	
 	--显示物品名字
 	local itemNameText = GetLabel(view,itemName );
-	local itemTable = SelectRowList(T_ITEM,"item_id",item_id);
+	local itemTable = SelectRowList(T_ITEM,"id",item_id);
 	if #itemTable == 1 then
-		local text = itemTable[1].item_name;
+		local text = itemTable[1].Name;
 		itemNameText:SetText(ToUtf8(text));
 	else
 		WriteConErr("itemTable error ");
@@ -300,9 +305,9 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	--p.itemUsedId = itemId;
 	
 	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
-	local itemData = SelectRowList(T_ITEM,"item_id",itemId);
+	local itemData = SelectRowList(T_ITEM,"id",itemId);
 	if #itemData == 1 then
-		local text = itemData[1].describe;
+		local text = itemData[1].Description;
 		itemDescribeText:SetText(ToUtf8(text));
 	else
 		WriteConErr("itemTable error ");
