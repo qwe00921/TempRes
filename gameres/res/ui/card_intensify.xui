@@ -1,0 +1,221 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=27
+Rect=0 0 640 870
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\card_bag\main_bg.png
+NormalFileUV=0 0 640 960
+
+[CTRL_PICTURE_HEAD]
+Type=1
+Tag=21
+Rect=172 36 313 97
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card_bag\herd.png
+NormalFileUV=0 0 641 198
+
+[CTRL_BUTTON_RETURN]
+Type=2
+Tag=22
+Rect=38 55 80 50
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\btn_return.png
+NormalFileUV=0 0 151 101
+
+[CTRL_PICTURE_LIST_BG]
+Type=1
+Tag=23
+Rect=10 200 619 600
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_ALL]
+Type=2
+Tag=24
+Rect=17 145 80 51
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
+
+[CTRL_BUTTON_PRO1]
+Type=2
+Tag=25
+Rect=101 145 80 51
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
+
+[CTRL_BUTTON_PRO2]
+Type=2
+Tag=26
+Rect=184 146 80 51
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
+
+[CTRL_BUTTON_PRO3]
+Type=2
+Tag=28
+Rect=268 146 80 51
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
+
+[CTRL_BUTTON_PRO4]
+Type=2
+Tag=29
+Rect=350 145 80 51
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\easy.png
+NormalFileUV=0 0 44 52
+SelectFile=.\res\image\ui\card_bag\easy_onselect.png
+SelectedFileUV=0 0 44 52
+
+[CTRL_VERTICAL_LIST_VIEW]
+Type=14
+Tag=31
+Rect=10 200 620 400
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_SORT_BY]
+Type=2
+Tag=30
+Rect=511 142 100 57
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_bag\star1.png
+NormalFileUV=0 0 44 52
+
+[CTRL_TEXT_25]
+Type=4
+Tag=32
+Rect=518 55 80 50
+AnchorPos=0 0
+Notes=
+Text=/
+TextTradition=/
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_26]
+Type=2
+Tag=33
+Rect=438 656 148 60
+AnchorPos=0 0
+Notes=
+Text=开始强化
+TextTradition=開始強化
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_27]
+Type=4
+Tag=34
+Rect=34 617 107 30
+AnchorPos=0 0
+Notes=
+Text=素材数
+TextTradition=素材數
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_28]
+Type=4
+Tag=35
+Rect=34 717 107 30
+AnchorPos=0 0
+Notes=
+Text=持有
+TextTradition=持有
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_30]
+Type=4
+Tag=37
+Rect=165 616 211 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_31]
+Type=4
+Tag=38
+Rect=165 717 211 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_32]
+Type=4
+Tag=39
+Rect=165 667 211 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_59]
+Type=4
+Tag=59
+Rect=34 667 107 30
+AnchorPos=0 0
+Notes=
+Text=消耗
+TextTradition=消耗
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

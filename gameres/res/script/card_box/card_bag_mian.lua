@@ -227,6 +227,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.sellBtnEvent();
 		elseif(ui.ID_CTRL_BUTTON_RETURN == tag) then --·µ»Ø
 			p.CloseUI();
+			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --È«²¿
 			WriteCon("=====allCardBtn");
