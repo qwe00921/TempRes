@@ -9,7 +9,7 @@ pack_box = {}
 local p = pack_box;
 
 local ui = ui_bag_main;
-local packLimit = 100; --è·å–ç©å®¶èƒŒåŒ…æ ¼å­æ•°é‡
+local packLimit = 100; --»ñÈ¡Íæ¼Ò±³°ü¸ñ×ÓÊıÁ¿
 p.layer = nil;
 p.curBtnNode = nil;
 --p.itemUsedId = nil;
@@ -35,15 +35,15 @@ function p.ShowUI()
     p.layer = layer;
     p.SetDelegate(layer);
 	
-	--åŠ è½½èƒŒåŒ…æ•°æ®
+	--¼ÓÔØ±³°üÊı¾İ
     pack_box_mgr.LoadAllItem( p.layer );
 end
 
---ä¸»ç•Œé¢è®¾ç½®äº‹ä»¶å¤„ç†
+--Ö÷½çÃæÉèÖÃÊÂ¼ş´¦Àí
 function p.SetDelegate(layer)
 	local returnBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
 	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
-	--æ•´ç†,æš‚æ—¶å»æ‰
+	--ÕûÀí,ÔİÊ±È¥µô
 	local sortBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT);
 	sortBtn:SetVisible(false);
 	--sortBtn:SetLuaDelegate(p.OnUIClickEvent);
@@ -62,52 +62,53 @@ function p.SetDelegate(layer)
 
 	local otherItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM4);
 	otherItemBtn:SetLuaDelegate(p.OnUIClickEvent);
-	--éšè—è£…å¤‡åˆ†ç±»æŒ‰é’®
+	--Òş²Ø×°±¸·ÖÀà°´Å¥
 	p.HideEquipTypeBtn();
 end
 
---äº‹ä»¶å¤„ç†
+--ÊÂ¼ş´¦Àí
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --è¿”å›
+		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --·µ»Ø
 			p.CloseUI();
+			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
-		--elseif(ui.ID_CTRL_BUTTON_SORT == tag) then --æ•´ç†
-		elseif(ui.ID_CTRL_BUTTON_ITEM1 == tag) then --å…¨éƒ¨
+		--elseif(ui.ID_CTRL_BUTTON_SORT == tag) then --ÕûÀí
+		elseif(ui.ID_CTRL_BUTTON_ITEM1 == tag) then --È«²¿
 			WriteCon("=====allItemBtn");
 			p.SetBtnCheckedFX( uiNode );
 			p.HideEquipTypeBtn();
 			pack_box_mgr.ShowAllItems();
-		elseif(ui.ID_CTRL_BUTTON_ITEM2 == tag) then --é“å…·
+		elseif(ui.ID_CTRL_BUTTON_ITEM2 == tag) then --µÀ¾ß
 			WriteCon("=====debrisItemBtn");
 			p.SetBtnCheckedFX( uiNode );
 			p.HideEquipTypeBtn();
 			pack_box_mgr.ShowItemByType(ITEM_TYPE_TOOL);
-		elseif(ui.ID_CTRL_BUTTON_TIEM3 == tag) then --è£…å¤‡
+		elseif(ui.ID_CTRL_BUTTON_TIEM3 == tag) then --×°±¸
 			WriteCon("=====equipItemBtn");
 			p.SetBtnCheckedFX( uiNode );
-			--æ˜¾ç¤ºæ‰€æœ‰è£…å¤‡  å’Œ 4ä¸ªæŒ‰é’®
+			--ÏÔÊ¾ËùÓĞ×°±¸  ºÍ 4¸ö°´Å¥
 			p.ShowEquipTypeBtn();
 			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP);
-		elseif(ui.ID_CTRL_BUTTON_ITEM4 == tag) then --å…¶ä»–
+		elseif(ui.ID_CTRL_BUTTON_ITEM4 == tag) then --ÆäËû
 			WriteCon("=====otherItemBtn");
 			p.SetBtnCheckedFX( uiNode );
 			p.HideEquipTypeBtn();
 			pack_box_mgr.ShowItemByType(ITEM_TYPE_OTHER);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB1 == tag) then --è£…å¤‡å…¨éƒ¨
+		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB1 == tag) then --×°±¸È«²¿
 			WriteCon("=====allEquipBtn");
 			p.SetBtnCheckedFX( uiNode );
 			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB2 == tag) then --è£…å¤‡æ­¦å™¨
+		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB2 == tag) then --×°±¸ÎäÆ÷
 			WriteCon("=====armsBtn");
 			p.SetBtnCheckedFX( uiNode );
 			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP_1);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB3 == tag) then --è£…å¤‡é˜²å…·
+		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB3 == tag) then --×°±¸·À¾ß
 			WriteCon("=====armorBtn");
 			p.SetBtnCheckedFX( uiNode );
 			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP_2);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB4 == tag) then --è£…å¤‡é‹å­
+		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB4 == tag) then --×°±¸Ğ¬×Ó
 			WriteCon("=====shoesBtn");
 			p.SetBtnCheckedFX( uiNode );
 			pack_box_mgr.ShowItemByType(ITEM_TYPE_EQUIP_3);
@@ -116,45 +117,45 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 end
 
 function p.ShowEquipTypeBtn()
-	--è£…å¤‡å…¨éƒ¨
+	--×°±¸È«²¿
 	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
 	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
 	allEquipBtn:SetVisible( true );
-	--è£…å¤‡æ­¦å™¨
+	--×°±¸ÎäÆ÷
 	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
 	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
 	armsBtn:SetVisible( true );
-	--è£…å¤‡é˜²å…·
+	--×°±¸·À¾ß
 	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
 	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
 	armorBtn:SetVisible( true );
-	--è£…å¤‡é‹å­
+	--×°±¸Ğ¬×Ó
 	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
 	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
 	shoesBtn:SetVisible( true );
 end
 
 function p.HideEquipTypeBtn()
-	--è£…å¤‡å…¨éƒ¨
+	--×°±¸È«²¿
 	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
 	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
 	allEquipBtn:SetVisible( false );
-	--è£…å¤‡æ­¦å™¨
+	--×°±¸ÎäÆ÷
 	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
 	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
 	armsBtn:SetVisible( false );
-	--è£…å¤‡é˜²å…·
+	--×°±¸·À¾ß
 	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
 	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
 	armorBtn:SetVisible( false );
-	--è£…å¤‡é‹å­
+	--×°±¸Ğ¬×Ó
 	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
 	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
 	shoesBtn:SetVisible( false );
 end
 
 
---æ˜¾ç¤ºç‰©å“åˆ—è¡¨
+--ÏÔÊ¾ÎïÆ·ÁĞ±í
 function p.ShowItemList(itemList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_ITEM);
 	list:ClearView();
@@ -188,7 +189,7 @@ function p.ShowItemList(itemList)
 		local start_index = (row_index-1)*4+1
         local end_index = start_index + 3;
 
-		--è®¾ç½®åˆ—è¡¨é¡¹ä¿¡æ¯ï¼Œä¸€è¡Œ4ä¸ªé“å…·
+		--ÉèÖÃÁĞ±íÏîĞÅÏ¢£¬Ò»ĞĞ4¸öµÀ¾ß
 		for j = start_index,end_index do
 			if j <= itemNum then
 				local item = itemList[j];
@@ -200,7 +201,7 @@ function p.ShowItemList(itemList)
 	end
 end
 
---å•ä¸ªç‰©å“æ˜¾ç¤º
+--µ¥¸öÎïÆ·ÏÔÊ¾
 function p.ShowItemInfo( view, item, itemIndex )
     local itemBtn = nil;
     local itemNum = nil;
@@ -242,15 +243,19 @@ function p.ShowItemInfo( view, item, itemIndex )
 		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_25;
         isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP4;
 	end
-	--æ˜¾ç¤ºç‰©å“å›¾ç‰‡
+	--ÏÔÊ¾ÎïÆ·Í¼Æ¬
 	local itemButton = GetButton(view, itemBtn);
 	local item_id = tonumber(item.Item_id);
 	WriteCon("item_id == "..item_id);
 	local aniIndex = "item."..item_id;
     itemButton:SetImage( GetPictureByAni(aniIndex,0) );
-    itemButton:SetId(item_id);
-	
-	--æ˜¾ç¤ºç‰©å“åå­—
+	itemButton:SetId(item_id);
+	local itemUniqueId = tonumber(item.id);
+    itemButton:SetUID(itemUniqueId);
+	local itemType = tonumber(item.Item_type);
+	itemButton:SetXID(itemType);
+
+	--ÏÔÊ¾ÎïÆ·Ãû×Ö
 	local itemNameText = GetLabel(view,itemName );
 	local itemTable = SelectRowList(T_ITEM,"id",item_id);
 	if #itemTable == 1 then
@@ -260,10 +265,10 @@ function p.ShowItemInfo( view, item, itemIndex )
 		WriteConErr("itemTable error ");
 	end
 	
-	local itemNumText = GetLabel(view,itemNum );	--ç‰©å“æ•°é‡
-	local equipStarPic = GetImage(view,equipStarPic);	--è£…å¤‡æ˜Ÿçº§
-	local equipLevelText = GetLabel(view,equipLevel);	--è£…å¤‡ç­‰çº§
-	local isUsePic = GetImage(view,isUse);			--æ˜¯å¦è£…å¤‡
+	local itemNumText = GetLabel(view,itemNum );	--ÎïÆ·ÊıÁ¿
+	local equipStarPic = GetImage(view,equipStarPic);	--×°±¸ĞÇ¼¶
+	local equipLevelText = GetLabel(view,equipLevel);	--×°±¸µÈ¼¶
+	local isUsePic = GetImage(view,isUse);			--ÊÇ·ñ×°±¸
 	itemNumText:SetVisible( false );
 	equipStarPic:SetVisible( false );
 	equipLevelText:SetVisible( false );
@@ -272,36 +277,36 @@ function p.ShowItemInfo( view, item, itemIndex )
 	local itemType = tonumber(item.Item_type)
 	WriteCon("itemType == "..itemType);
 
-	if itemType == 1 or itemType == 2 or itemType == 3 then
-	--æ™®é€šå¯å åŠ ç‰©å“ï¼Œæ˜¾ç¤ºæ•°é‡
+	if itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
+	--ÆÕÍ¨¿Éµş¼ÓÎïÆ·£¬ÏÔÊ¾ÊıÁ¿
 		itemNumText:SetVisible(true);
 		itemNumText:SetText(ToUtf8(item.Num));
-	elseif itemType == 5 or itemType == 6 then 
-		--è£…å¤‡ï¼Œæ˜¾ç¤ºæ˜Ÿçº§
+	elseif itemType == 1 or itemType == 2 or itemType == 3 then 
+		--×°±¸£¬ÏÔÊ¾ĞÇ¼¶
 		equipStarPic:SetVisible(true);
 		local starNum = tonumber(item.Rare);
 		starNum = starNum -1;
 		equipStarPic:SetPicture( GetPictureByAni("item.equipStar", starNum) );
-		--æ˜¾ç¤ºè£…å¤‡ç­‰çº§
+		--ÏÔÊ¾×°±¸µÈ¼¶
 		equipLevelText:SetVisible(true);
 		equipLevelText:SetText(ToUtf8(item.Equip_level));
 		
-		--æ˜¯å¦è£…å¤‡
+		--ÊÇ·ñ×°±¸
 		if item.Is_dress == 1 or item.Is_dress == "1" then
 			isUsePic:SetVisible(true);
 			isUsePic:SetPicture( GetPictureByAni("item.equipUse", 0) );
 		end
 	end
 	
-	--è®¾ç½®ç‰©å“æŒ‰é’®äº‹ä»¶
+	--ÉèÖÃÎïÆ·°´Å¥ÊÂ¼ş
 	itemButton:SetLuaDelegate(p.OnItemClickEvent);
 
 end
 
---ç‚¹å‡»ç‰©å“äº‹ä»¶
+--µã»÷ÎïÆ·ÊÂ¼ş
 function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local itemId = uiNode:GetId();
-	WriteCon("Use itemId = "..itemId);
+	WriteCon("Use itemUniqueId = "..itemUniqueId);
 	--p.itemUsedId = itemId;
 	
 	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
@@ -319,11 +324,11 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	useBtn:SetId(itemId);
 end
 
---ç‚¹å‡»ä½¿ç”¨ç‰©å“äº‹ä»¶
+--µã»÷Ê¹ÓÃÎïÆ·ÊÂ¼ş
 function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_USE == tag) then --ä½¿ç”¨
+		if(ui.ID_CTRL_BUTTON_USE == tag) then --Ê¹ÓÃ
 			local useBtnId = uiNode:GetId();
 			if useBtnId == 0 or useBtnId == nil then
 				WriteConErr("used Button id error ");
@@ -336,7 +341,7 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 	
 end
 
---è®¾ç½®é€‰ä¸­æŒ‰é’®
+--ÉèÖÃÑ¡ÖĞ°´Å¥
 function p.SetBtnCheckedFX( node )
     local btnNode = ConverToButton( node );
     if p.curBtnNode ~= nil then
