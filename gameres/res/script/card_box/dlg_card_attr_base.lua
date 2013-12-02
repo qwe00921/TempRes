@@ -248,7 +248,9 @@ function p.SaleKO(msg)
 	if pCardbase==nil then
 		WriteCon("pCardbase==nil");
 	end
-	card_bag_mgr.RefreshCardList(delData);
+	
+	card_bag_mgr.RefreshCardList(p.cardInfo.UniqueId);
+	
 	dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_sale")..ToUtf8(pCardbase.name)..GetStr("card_sale_get")..tostring(msg.money.Add)..GetStr("card_sale_money"),p.OnMsgCallbackCloseUI,p.layer);
 	
 end
