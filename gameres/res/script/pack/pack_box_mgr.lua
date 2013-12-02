@@ -18,7 +18,6 @@ function p.LoadAllItem(layer)
 		return;
 	end
 	SendReq("Item","List",uid,"");
-	--SendReq("Item","List",uid,"");
 end
 
 --清空数据
@@ -56,39 +55,39 @@ function p.GetItemList(sortType)
     	return nil;
     end
     local t = {};
-	if sortType == 1 then 
+	if sortType == ITEM_TYPE_TOOL then 
 		for k,v in ipairs(p.itemList) do		
 			if tonumber(v.Item_type) == 0 then
 				t[#t+1] = v;
 			end
 		end
-	elseif sortType == 2 then 
+	elseif sortType == ITEM_TYPE_EQUIP then 
 		for k,v in ipairs(p.itemList) do		
-			if tonumber(v.Item_type) == 3 or tonumber(v.Item_type) == 4 or tonumber(v.Item_type) == 5 then
+			if tonumber(v.Item_type) == 1 or tonumber(v.Item_type) == 2 or tonumber(v.Item_type) == 3 then
 				t[#t+1] = v;
 			end
 		end
-	elseif sortType == 3 then 
+	elseif sortType == ITEM_TYPE_OTHER then 
 		for k,v in ipairs(p.itemList) do		
-			if tonumber(v.Item_type) == 2 or tonumber(v.Item_type) == 6 then
+			if tonumber(v.Item_type) == 5 or tonumber(v.Item_type) == 6 then
 				t[#t+1] = v;
 			end
 		end
-	elseif sortType == 4 then 
+	elseif sortType == ITEM_TYPE_EQUIP_1 then 
+		for k,v in ipairs(p.itemList) do		
+			if tonumber(v.Item_type) == 1 then
+				t[#t+1] = v;
+			end
+		end
+	elseif sortType == ITEM_TYPE_EQUIP_2 then 
+		for k,v in ipairs(p.itemList) do		
+			if tonumber(v.Item_type) == 2 then
+				t[#t+1] = v;
+			end
+		end
+	elseif sortType == ITEM_TYPE_EQUIP_3 then 
 		for k,v in ipairs(p.itemList) do		
 			if tonumber(v.Item_type) == 3 then
-				t[#t+1] = v;
-			end
-		end
-	elseif sortType == 5 then 
-		for k,v in ipairs(p.itemList) do		
-			if tonumber(v.Item_type) == 4 then
-				t[#t+1] = v;
-			end
-		end
-	elseif sortType == 6 then 
-		for k,v in ipairs(p.itemList) do		
-			if tonumber(v.Item_type) == 5 then
 				t[#t+1] = v;
 			end
 		end
@@ -98,23 +97,27 @@ end
 
 function p.UseItemEvent(itemId)
 	WriteCon("pack_box_mgr.UseItemEvent();");
+	local uid = GetUID();
+	if uid == 0 or uid == nil then 
+		return;
+	end
 	if itemId == nil or itemId == 0 then
 		WriteConErr("used item id error ");
 		return
 	end
 	local param = "MachineType=Android&item_id=".."1001";
 	if itemId == 1 then
-		SendReq("Item","UseHealItem",10001,param);
+		SendReq("Item","UseHealItem",uid,param);
 	elseif itemId == 2 then
-		SendReq("Item","UseQuickItem",10001,param);
+		SendReq("Item","UseQuickItem",uid,param);
 	elseif itemId == 3 then
-		SendReq("Item","UseStorageItem",10001,param);
+		SendReq("Item","UseStorageItem",uid,param);
 	elseif itemId == 4 then
-		SendReq("Item","UseGiftItem",10001,param);
+		SendReq("Item","UseGiftItem",uid,param);
 	elseif itemId == 5 then
-		SendReq("Item","UseTreasureItem",10001,param);
+		SendReq("Item","UseTreasureItem",uid,param);
 	elseif itemId == 6 then
-		SendReq("Item","UseHealItem ",10001,param);
+		SendReq("Item","UseHealItem ",uid,param);
 	else
 		WriteConErr("used item id error ");
 	end
