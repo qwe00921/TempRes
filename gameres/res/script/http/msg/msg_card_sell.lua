@@ -21,21 +21,13 @@ function p:Init()
 end
 
 function p:Process()
-    WriteConWarning( "** msg_card_sale_one:Process() called" );
-	if self.result == true then 
-		dlg_card_attr_base.SaleKO(self);
-	else
-		WriteConWarning( "** msg_card_sale_one error" );
-	end
-
 	msg_cache.msg_card_sell = self;
     WriteConWarning( "** msg_card_sell:Process() called" );
+	card_bag_mgr.DelCallBack(self)
 	if self.result == true then 
 		WriteConWarning( "** msg_card_sell OK" );
 		dlg_card_attr_base.SaleKO(self);
-		card_bag_mgr.DelCallBack(self.result)
 	else
-		card_bag_mgr.DelCallBack(self.result)
 		WriteConErr( "** msg_card_sell error" );
 	end
 end

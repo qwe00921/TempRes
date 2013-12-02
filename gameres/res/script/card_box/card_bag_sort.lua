@@ -1,6 +1,5 @@
 card_bag_sort = {}
 local p = card_bag_sort;
-
 local ui = ui_card_bag_sort_view;
 
 function p.ShowUI()
@@ -20,7 +19,6 @@ function p.ShowUI()
 	
 	GetUIRoot():AddDlg(layer);
 	LoadUI("card_bag_sort_view.xui",layer, nil);
-	--layer:SetZOrder(9);
 	
 	p.layer = layer;
 	p.SetDelegate();
@@ -59,12 +57,13 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
-		card_bag_mian.sortBtnMark = nil;
+		card_bag_mian.sortBtnMark = MARK_OFF;
     end
 end
 
 function p.HideUI()
 	if p.layer ~= nil then
         p.layer:SetVisible(false);
+		card_bag_mian.sortBtnMark = MARK_OFF;
 	end
 end

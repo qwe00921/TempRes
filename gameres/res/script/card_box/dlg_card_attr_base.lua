@@ -55,7 +55,7 @@ function p.SetDelegate(layer)
 	if pCardInfo.dower_intro_1 ~= nil then 
 		pLabDowerIntro:SetText(tostring(pCardInfo.dower_intro_1));
 	else
-		pLabDowerIntro:SetText(ToUtf8("没有天赋技能"));
+		pLabDowerIntro:SetText(GetStr("card_no_dower"));
 	end
 	
 	--卡牌图片
@@ -133,27 +133,27 @@ function p.SetDelegate(layer)
 	
 	--卡牌等级
 	local pLabCardGrad = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_GRADE);
-	pLabCardGrad:SetText(ToUtf8("等级  ")..tostring(p.cardInfo.Level));
+	pLabCardGrad:SetText(GetStr("card_level")..tostring("  ")..tostring(p.cardInfo.Level));
 	
 	--卡牌HP
 	local pLabCardHP = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_HP);
-	pLabCardHP:SetText(ToUtf8("生命  ")..tostring(p.cardInfo.Hp));
+	pLabCardHP:SetText(GetStr("card_hp")..tostring("  ")..tostring(p.cardInfo.Hp));
 	
 	--卡牌攻击
 	local pLabCardAttack = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_ATTACK);
-	pLabCardAttack:SetText(ToUtf8("攻击  ")..tostring(p.cardInfo.Attack));
+	pLabCardAttack:SetText(GetStr("card_exp")..tostring("  ")..tostring(p.cardInfo.Attack));
 	
 	--卡牌速度
 	local pLabCardSpeed = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_SPEED);
-	pLabCardSpeed:SetText(ToUtf8("速度  ")..tostring(p.cardInfo.Speed));
+	pLabCardSpeed:SetText(GetStr("card_speed")..tostring("  ")..tostring(p.cardInfo.Speed));
 	
 	--卡牌防御
 	local pLabCardDefense = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_DEFENSE);
-	pLabCardDefense:SetText(ToUtf8("防御  ")..tostring(p.cardInfo.Defence));
+	pLabCardDefense:SetText(GetStr("card_defence")..tostring("  ")..tostring(p.cardInfo.Defence));
 	
 	--卡牌暴击
 	local pLabCardCritical = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_CRITICAL);
-	pLabCardCritical:SetText(ToUtf8("暴击  ")..tostring(p.cardInfo.Crit));
+	pLabCardCritical:SetText(GetStr("card_crit")..tostring("  ")..tostring(p.cardInfo.Crit));
 	
 	
 	
@@ -176,13 +176,13 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_SALE == tag then
 			--卡牌卖出
 			if p.cardInfo.Item_Id1 ~= 0 or  p.cardInfo.Gem1 ~= 0 then
-				dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("此卡牌身上穿有道具，无法卖出！"),p.OnMsgCallback,p.layer);
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_sale_isitem"),p.OnMsgCallback,p.layer);
 			elseif p.cardInfo.Team_marks== 1 then
-				dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("此卡牌当前处于一个队伍中，无法卖出！"),p.OnMsgCallback,p.layer);
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_sale_team"),p.OnMsgCallback,p.layer);
 			elseif p.cardInfo.Rare >=  5 then
-					dlg_msgbox.ShowYesNo(ToUtf8("确认提示框"),ToUtf8("这张卡片为稀有卡片，确定要卖出吗？")..tostring(p.cardInfo.Price)..ToUtf8("确定要卖出吗？"),p.OnMsgBoxCallback,p.layer);
+					dlg_msgbox.ShowYesNo(GetStr("card_caption"),GetStr("card_sale_rare")..tostring(p.cardInfo.Price)..GetStr("card_sale_sure"),p.OnMsgBoxCallback,p.layer);
 			else	
-				dlg_msgbox.ShowYesNo(ToUtf8("确认提示框"),ToUtf8("卡牌卖出价格是：")..tostring(p.cardInfo.Price)..ToUtf8("金币，确定要卖出吗？"),p.OnMsgBoxCallback,p.layer);
+				dlg_msgbox.ShowYesNo(GetStr("card_caption"),GetStr("card_sale_money_a")..tostring(p.cardInfo.Price)..GetStr("card_sale_money")..GetStr("card_sale_sure"),p.OnMsgBoxCallback,p.layer);
 				--卖出卡牌
 				
 				--卖出后回调的窗口
@@ -248,7 +248,8 @@ function p.SaleKO(msg)
 	if pCardbase==nil then
 		WriteCon("pCardbase==nil");
 	end
-	dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("您卖出了")..ToUtf8(pCardbase.name)..ToUtf8("获得了")..tostring(msg.money.Add)..ToUtf8("金币！"),p.OnMsgCallbackCloseUI,p.layer);
+	card_bag_mgr.RefreshCardList(delData);
+	dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_sale")..ToUtf8(pCardbase.name)..GetStr("card_sale_get")..tostring(msg.money.Add)..GetStr("card_sale_money"),p.OnMsgCallbackCloseUI,p.layer);
 	
 end
 

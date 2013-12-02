@@ -20,24 +20,67 @@ function p.skill( UCamp, TCamp, PetId, SkillId, Targets, batch )
         WriteConErr("Skill no target!");
     end
     
-    --local uiEffectCmd = p.doUIEffect( UCamp, seqSkill );
-    local petPic = createNDUIImage();
-    petPic:Init();
-    b_battle_mgr.uiLayer:AddChildZ( p.imageMask,101);
+    local petNode = n_battle_mgr.GetPetNode( PetId, UCamp );
     
-    local petAni = 
+    --初始化技能名称栏对应的ACTION特效
+    local petInAction = nil;
+    local petOutAction = nil;
+    local skillFx = nil;
     
-    
-    --[[
-    if self.footNode == nil then
-        self.footNode = createNDUINode();
-        self.footNode:Init();
-        self.footNode:SetFramePosXY(0,0);
-        self.footNode:SetFrameSize(10,10);
-        self.node:AddChildZ( self.footNode, 1 );
+    --宠物图片位置设置
+    local cmd1;
+    if UCamp == E_CARD_CAMP_HERO then
+        petInAction = "n.pet_left_in";
+        petOutAction = "n.pet_right_out";
+        skillFx = "";
+        p.SetToScreenLeft( petNode );
+    else
+        petInAction = "n.pet_right_in";
+        petOutAction = "n.pet_left_out";
+        skillFx = ""
+        p.SetToScreenRight( petNode );
     end
-    --]]
+    --增加蒙版
+    --local cmdAddMask = createCommandLua():SetCmd( "AddMaskImage", 0, 0, "" );
+    --seqSkill:AddCommand( cmdAddMask );
     
+    --1:设置模糊
+    --local cmdGsblur = createCommandEffect():AddActionEffect( 0.01, petNode, "n.gsblur5" );
+    --seqSkill:AddCommand( cmdGsblur );
+    
+    local cmdIn = createCommandEffect():AddActionEffect( 0, petNode, petInAction );
+    seqSkill:AddCommand( cmdIn );   
+    
+    --2:恢复清晰
+    --local cmdGsblurZero = createCommandEffect():AddActionEffect( 0, petNode, "n.gsblur_zero" );
+   -- seqSkill:AddCommand( cmdGsblurZero );
+    --cmdGsblurZero:SetDelay(0.5); 
+    
+    local Idle = createCommandInterval():Idle( 1 );
+    if Idle ~= nil then
+        seqSkill:AddCommand( Idle );
+    end 
+    
+    local cmdOut = createCommandEffect():AddActionEffect( 0, petNode, "n.n_fadeout" );
+    seqSkill:AddCommand( cmdOut );
+    
+    --隐藏蒙版
+    --local cmdHideMask = createCommandLua():SetCmd( "HideMaskImage", 0, 0, "" );
+    --seqSkill:AddCommand( cmdHideMask );
+    
+    
+end
+
+--移到屏幕左边
+function p.SetToScreenLeft( node )
+    local tempPos = node:GetFramePos();
+    node:SetFramePosXY( -256, GetScreenHeight()/2 - 128 );
+end
+
+--移到屏幕右边
+function p.SetToScreenRight( node )
+    local tempPos = node:GetFramePos();
+    node:SetFramePosXY( -640, GetScreenHeight()/2 - 128 );
 end
 
 function p.doUIEffect( UCamp, seqUI )

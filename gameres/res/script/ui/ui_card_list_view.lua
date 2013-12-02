@@ -4,10 +4,6 @@
 --------------------------------------------------------------
 ui_card_list_view = {};
 local p =  ui_card_list_view;
-p.ID_CTRL_PICTURE_SELL_SURE_4			= 22;
-p.ID_CTRL_PICTURE_SELL_SURE_3			= 21;
-p.ID_CTRL_PICTURE_SELL_SURE_2			= 20;
-p.ID_CTRL_PICTURE_SELL_SURE_1			= 14;
 p.ID_CTRL_TEXT_TEAM4					     = 60;
 p.ID_CTRL_TEXT_TEAM3					     = 58;
 p.ID_CTRL_TEXT_TEAM2					     = 57;
