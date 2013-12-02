@@ -239,8 +239,9 @@ end
 
 --卖出后回调的窗口
 function p.SaleKO(msg)
-		
-	
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
 	T_CARD    = LoadTable( "card.ini" );
 	local pCardbase= SelectRowInner( T_CARD, "id", p.cardInfo.CardID); --从表中获取卡牌详细信息
 	
