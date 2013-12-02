@@ -26,3 +26,36 @@ image\fx\pet_blue_devil\fx_skill_bar_pet.png @cut(3,1) @reverse @time=0.1 @offse
 image\fx\pet_blue_devil\fx_skill_bar_title.png @cut(1,1) @time=0.15 @offset(-250,0) @stay
 
 ;}--------------¼¼ÄÜÀ¸½áÊø--------------------
+
+;{---------------BUFF----------------
+
+[n_battel_buff_1]
+image\battle_buff\1.png
+[n_battel_buff_2]
+image\battle_buff\2.png
+[n_battel_buff_3]
+image\battle_buff\3.png
+[n_battel_buff_4]
+image\battle_buff\4.png
+[n_battel_buff_5]
+image\battle_buff\5.png
+[n_battel_buff_9]
+image\battle_buff\9.png
+[n_battel_buff_101]
+image\battle_buff\101.png
+[n_battel_buff_102]
+image\battle_buff\102.png
+[n_battel_buff_104]
+image\battle_buff\104.png
+[n_battel_buff_105]
+image\battle_buff\105.png
+[n_battel_buff_201]
+image\battle_buff\201.png
+[n_battel_buff_202]
+image\battle_buff\202.png
+[n_battel_buff_204]
+image\battle_buff\204.png
+[n_battel_buff_205]
+image\battle_buff\205.png
+
+;}-----------------END BUFF----------

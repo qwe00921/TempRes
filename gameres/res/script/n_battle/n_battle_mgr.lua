@@ -13,6 +13,8 @@ p.uiLayer = nil;			--战斗层
 p.heroUIArray = nil;		--玩家阵营站位UITag表
 p.enemyUIArray = nil;		--敌对阵营站位UITag表
 
+p.petNode={};
+
 p.imageMask = nil			--增加蒙版特效
 
 local isPVE = false;
@@ -61,12 +63,17 @@ function p.ReceiveStartPVPRes( msg )
     n_battle_db_mgr.Init( msg );
     local UCardList = n_battle_db_mgr.GetPlayerCardList();
     local TCardList = n_battle_db_mgr.GetTargetCardList();
+    local TPetList = n_battle_db_mgr.GetTargetPetList();
+    local UPetList = n_battle_db_mgr.GetPlayerPetList();
     if UCardList == nil or TCardList == nil or #UCardList == 0 or #TCardList == 0 then
     	WriteConErr(" battle data err! ");
     	return false;
     end
     p.createHeroCamp( UCardList );
     p.createEnemyCamp( TCardList );
+    
+    p.createHeroPet( UPetList );
+    p.createEnemyPet( TPetList );
     
     n_battle_pvp.ReadyGo();
     p.ShowRoundNum();
@@ -95,11 +102,14 @@ end
 
 --进入回合阶段->互殴
 function p.EnterBattle_RoundStage_Atk()
+    n_battle_mainui.OnBattleShowFinished();
+    --[[
     local rounds = n_battle_stage.GetRoundNum();
     local atkData = n_battle_db_mgr.GetRoundDB( rounds );
     if atkData ~= nil and #atkData > 0 and rounds <= N_BATTLE_MAX_ROUND then
     	n_battle_show.DoEffectAtk( atkData );
     end
+    --]]
 end
 
 --进入回合阶段->清算
@@ -118,6 +128,59 @@ function p:GetBattleLayer()
 	end
 	return nil;
 end
+
+function p.createHeroPet( UPetList )
+    if UPetList == nil or #UPetList < 0 then
+    	return false;
+    end
+    for key, var in ipairs(UPetList) do
+        local petId = tonumber( var.Pet_id );
+    	local petPic = createNDUIImage();
+        petPic:Init();
+        petPic:AddFgEffect( SelectCell( T_PET_RES, petId, "total_pic" ) );
+        
+        petPic:SetFramePosXY( -256, GetScreenHeight()/2 - 128 );
+    
+        p.uiLayer:AddChildZ( petPic,101);
+        petPic:SetId(petId);
+        p.petNode[ #p.petNode+1 ] = petPic;
+    end
+end   
+
+function p.createEnemyPet( TPetList )
+    if TPetList == nil or #TPetList < 0 then
+        return false;
+    end
+    for key, var in ipairs(TPetList) do
+        local petId = tonumber( var.Pet_id );
+        local petPic = createNDUIImage();
+        petPic:Init();
+        petPic:AddFgEffect( SelectCell( T_PET_RES, petId, "total_pic" ) );
+        
+        petPic:SetFramePosXY( -640, GetScreenHeight()/2 - 128 );
+        
+        p.uiLayer:AddChildZ( petPic,101);
+        petPic:SetId( petId + N_BATTLE_CAMP_CARD_NUM );
+        p.petNode[ #p.petNode+1 ] = petPic;
+    end
+end 
+
+function p.GetPetNode( petId, camp )
+	if petId == nil or camp == nil then
+		return false;
+	end
+	local ln = #p.petNode;
+	local id = tonumber( petId )
+	if camp == E_CARD_CAMP_ENEMY then
+		id = id + N_BATTLE_CAMP_CARD_NUM;
+	end
+	for i=1, ln do
+		local petNode = p.petNode[i];
+		if petNode ~= nil and petNode:GetId() == id then
+			return petNode;
+		end
+	end
+end 
 
 --添加蒙版图片
 function p.AddMaskImage()
