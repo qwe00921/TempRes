@@ -7,6 +7,8 @@ dlg_card_attr_base = {}
 local p = dlg_card_attr_base;
 p.layer = nil;
 p.cardInfo = nil;
+p.appends = nil;
+
 --id是UniqueId
 function p.ShowUI(cardInfo)
 	WriteCon(cardInfo.CardID.."************");
@@ -95,20 +97,20 @@ function p.SetDelegate(layer)
 	--装备
 	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
 	if p.cardInfo.Item_Id1 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id1); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.appends.Item_id1); --从表中获取卡牌详细信息	
 		pEquipPic1:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 		
 	end
 	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
 	if p.cardInfo.Item_Id2 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id2); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.appends.Item_id2); --从表中获取卡牌详细信息	
 		pEquipPic2:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 	end
 	
 	
 	local pEquipPic3 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_3);
 	if p.cardInfo.Item_Id3 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id3); --从表中获取卡牌详细信息	
+		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.appends.Item_id3); --从表中获取卡牌详细信息	
 		pEquipPic3:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
 	end
 	
@@ -193,20 +195,20 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
 			
-			if p.cardInfo and p.cardInfo.Item_id1 and tonumber(p.cardInfo.Item_id1) ~= 0 then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id1);
+			if p.appends and p.appends.Item_id1 and tonumber(p.appends.Item_id1) ~= 0 then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.appends.Item_id1);
 			else
 				card_equip_select_list.ShowUI();
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
-			if p.cardInfo and p.cardInfo.Item_id2 and tonumber(p.cardInfo.Item_id2) ~= 0 then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id2);
+			if p.appends and p.appends.Item_id2 and tonumber(p.appends.Item_id2) ~= 0 then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.appends.Item_id2);
 			else
 				dlg_card_equip_detail.ShowUI();
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
-			if p.cardInfo and p.cardInfo.Item_id3 and tonumber(p.cardInfo.Item_id3) ~= 0 then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id3);
+			if p.appends and p.appends.Item_id3 and tonumber(p.appends.Item_id3) ~= 0 then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.appends.Item_id3);
 			else
 				dlg_card_equip_detail.ShowUI();
 			end
@@ -267,6 +269,7 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
+		p.appends = nil;
 	end
 end
 
@@ -321,7 +324,7 @@ function p.OnLoadCardDetail(msg)
 	end
 	
 	if msg.result == true then
-		p.cardInfo = msg.card_info or {};
+		p.appends = msg.card_info or {};
 		p.SetDelegate();
 	else
 		--local str = mail_main.GetNetResultError(msg);

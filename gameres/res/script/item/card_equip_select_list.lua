@@ -7,6 +7,9 @@ p.layer = nil;
 p.curBtnNode = nil;
 --p.itemUsedId = nil;
 
+p.AllItems = nil;
+
+
 function p.ShowUI()
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
@@ -353,6 +356,73 @@ function p.CloseUI()
         p.layer = nil;
         pack_box_mgr.ClearData();
     end
+end
+
+-----------------------------------网络-------------------------------------------------------------
+--读取卡详细信息
+function p.LoadEquipmentList()
+	
+	
+	local uid = GetUID();
+	
+	uid=123456
+	cardUniqueId="10000272";
+	
+	if uid == 0 or uid == nil or cardUniqueId == nil then
+		return ;
+	end;
+	
+	local param = "";--string.format("&card_unique_id=%s",cardUniqueId)
+	SendReq("Item","EquipmentList",uid,param);		
+end
+--网络返回卡详细信息
+function p.OnLoadEquipmentList(msg)
+	
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	if msg.result == true then
+		p.AllItems = msg.equipment_info or {};
+		p.ShowItemList( p.AllItems )
+	else
+		
+	end
+	--[[ 数据结构
+		equipment_info: [
+			{
+			id: "33450",
+			User_id: "123456",
+			Item_id: "1",
+			Item_type: "1",
+			Num: "3",
+			Rare: "1",
+			Equip_level: "1",
+			Equip_exp: "0",
+			Atk: "0",
+			Def: "0",
+			Hp: "0",
+			Speed: "0",
+			Is_dress: "0",
+			Time: "2013-11-30 14:46:53"
+			},
+			{
+			id: "33451",
+			User_id: "123456",
+			Item_id: "10002",
+			Item_type: "2",
+			Num: "3",
+			Rare: "1",
+			Equip_level: "1",
+			Equip_exp: "0",
+			Atk: "0",
+			Def: "0",
+			Hp: "0",
+			Speed: "0",
+			Is_dress: "1",
+			Time: "2013-11-30 14:47:34"
+			},
+		]]--
 end
 
 
