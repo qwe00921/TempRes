@@ -4,6 +4,7 @@ local p = card_bag_mgr;
 p.cardList = nil;
 p.layer = nil
 p.cardListByProf = nil;
+p.delCardList = nil;
 
 --加载用户所有道具
 function p.LoadAllCard(layer)
@@ -16,19 +17,48 @@ function p.LoadAllCard(layer)
 	if uid == 0 or uid == nil then 
 		return;
 	end
-	SendReq("CardList","List",10001,"");
+	SendReq("CardList","List",uid,"");
 end
 
+--发送删除请求
 function p.SendDelRequest(deleteList)
+	p.delCardList = deleteList;
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
 		return;
 	end
 	WriteCon("====SendDeleteMsg");
-
-	--SendReq("CardList","List",10001,deleteList);
+	local param = nil;
+	for k,v in pairs(deleteList) do
+		if param == nil then
+			param = v
+		else
+			param = param..","..v
+		end
+	end
+	param = "id="..param;
+	WriteCon("param=="..param);
+	SendReq("CardList","Sell",uid,param);
 end
 
+--删除请求回调
+function p.DelCallBack(result)
+	if result == true then
+		for k,v in pairs(p.cardList) do
+			for j,h in pairs(p.delCardList) do
+				if tonumber(v.UniqueId) == tonumber(h) then 
+					table.remove(p.cardList,k)
+				end
+			end
+		end
+		p.delCardList = nil;
+		card_bag_mian.ShowCardList(p.cardList)
+	else
+		p.delCardList = nil;
+		WriteCon("1313123");
+	end
+
+end
 
 --情空数据
 function p.ClearData()

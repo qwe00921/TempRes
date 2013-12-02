@@ -95,6 +95,7 @@ DoFile("http/response/json2lua_helper.lua");
 DoFile("http/msg/msg_card_bag.lua");
 --卡牌单张售出
 DoFile("http/msg/msg_card_sale_one.lua");
+DoFile("http/msg/msg_card_sell.lua");
 
 --卡牌详细
 DoFile("http/msg/msg_card_detail.lua");

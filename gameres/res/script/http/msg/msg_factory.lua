@@ -18,12 +18,13 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_CREATE_PLAYER then
 		msg = msg_create_player:new();
 		
-	elseif idmsg == MSG_CARDBOX_USER_CARDS then
-	
-		WriteCon("MSG_CARDBOX_USER_CARDS...");
-		msg = msg_card_box:new();	
-		msg = msg_card_sale_one:new();
-
+	--elseif idmsg == MSG_CARDBOX_USER_CARDS then
+		--WriteCon("MSG_CARDBOX_USER_CARDS...");
+		--msg = msg_card_box:new();	
+		--msg = msg_card_sale_one:new();
+	elseif idmsg == MSG_CARD_SELL then
+		msg = msg_card_sell:new();
+		
 	elseif idmsg == MSG_TRAVEL_INFO then
 		msg = msg_travel_info:new();
 
