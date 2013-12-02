@@ -131,7 +131,13 @@ function p.SetViewInfo()
 		local nameV = GetLabel( parentV, idTags[nameTagName]);
 		
 		if rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
+			rewrad.rewordId = "10002"
 			numV:SetText("X"..(rewrad.num or "1"))
+			local aniIndex = "item."..rewrad.rewordId;
+			picV:SetPicture( GetPictureByAni(aniIndex,0) );
+			
+			local txt = p.SelectItemName(tonumber(rewrad.rewordId));
+			nameV:SetText(txt or "");
 		else
 			picV:SetVisible(false);
 			numV:SetVisible(false);
@@ -145,7 +151,6 @@ function p.SetViewInfo()
 	else 
 		bt:SetVisible(false);
 	end
-	
 end
 
 function p.DelMail()
@@ -165,6 +170,17 @@ function p.DelMail()
 	
 	
 end
+
+function p.SelectItemName(id)
+	local itemTable = SelectRowList(T_ITEM,"item_id",id);
+	if #itemTable == 1 then
+		local text = itemTable[1].item_name;
+		return ToUtf8(text);
+	else
+		WriteConErr("itemTable error ");
+	end
+end
+
 
 ---------------------------------------------------------ÍøÂç---------------------------------------------------------------
 

@@ -12,16 +12,19 @@ local p = dlg_card_equip_detail;
 p.layer = nil;
 p.item = nil;
 p.showType = 1; 
+p.itemId = nil;
+p.cardDetail = nil;
 
 local ui = ui_dlg_card_equip_detail
 
 
 ---------显示UI----------
-function p.ShowUI( item )
+function p.ShowUI( itemId )
    -- if item == nil then
     --	return ;
     --end
    -- p.item = item;
+	p.itemId = itemId;
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return ;
@@ -43,21 +46,26 @@ function p.ShowUI( item )
 	--p.ShowItem( item );
 end
 
-function p.ShowUI4Upgrade(item)
-	
+function p.ShowUI4CardEquip(itemId)
+	p.showType = 1
+	p.ShowUI( itemId );
 end
 
 
 --设置事件处理
 function p.SetDelegate(layer)
-	local pBtn01 = GetButton(layer,ui.ID_CTRL_BUTTON_6);
+	local pBtn01 = GetButton(layer,ui.ID_CTRL_BUTTON_UPGRADE);
     pBtn01:SetLuaDelegate(p.OnUIEvent);
     
-    local pBtn02 = GetButton(layer,ui.ID_CTRL_BUTTON_9);
+    local pBtn02 = GetButton(layer,ui.ID_CTRL_BUTTON_CHANGE);
     pBtn02:SetLuaDelegate(p.OnUIEvent);
     
-    local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_17);
+    local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
     pBtn03:SetLuaDelegate(p.OnUIEvent);
+	
+	pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_CLOSE);
+    pBtn03:SetLuaDelegate(p.OnUIEvent);
+	
     
 end
 
@@ -168,7 +176,7 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 				return;
 			end
 			dlg_equip_upgrade.ShowUI( p.item );
-        elseif ( ui.ID_CTRL_BUTTON_17 == tag ) then  
+        elseif ( ui.ID_CTRL_BUTTON_CLOSE == tag ) then  
             p.CloseUI(); 
 			
 		end		
@@ -220,8 +228,8 @@ function p.OnLoadEquitDetail(msg)
 	end
 	
 	if msg.result == true then
-		p.cardInfo = msg.card_info or {};
-		p.SetDelegate();
+		p.cardDetail = msg.item_info or {};
+		p.ShowItem(p.cardDetail);
 	else
 		--local str = mail_main.GetNetResultError(msg);
 		--if str then

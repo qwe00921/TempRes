@@ -194,21 +194,23 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			--ø®≈∆œÍœ∏
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
-			card_equip_select_list.ShowUI();
+			
 			if p.cardInfo and p.cardInfo.Item_id1 and tonumber(p.cardInfo.Item_id1) ~= 0 then
-				
+				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id1);
 			else
-				
+				card_equip_select_list.ShowUI();
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.cardInfo and p.cardInfo.Item_id2 and tonumber(p.cardInfo.Item_id2) ~= 0 then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id2);
 			else
 				dlg_card_equip_detail.ShowUI();
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
 			if p.cardInfo and p.cardInfo.Item_id3 and tonumber(p.cardInfo.Item_id3) ~= 0 then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id3);
 			else
-				
+				dlg_card_equip_detail.ShowUI();
 			end
 		end
 	end
@@ -296,7 +298,13 @@ end
 
 --∂¡»°ø®œÍœ∏–≈œ¢
 function p.LoadCardDetail(cardUniqueId)
+	
+	
 	local uid = GetUID();
+	
+	uid=123456
+	cardUniqueId="10000272";
+	
 	if uid == 0 or uid == nil or cardUniqueId == nil then
 		return ;
 	end;
