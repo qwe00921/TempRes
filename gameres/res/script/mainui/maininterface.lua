@@ -70,7 +70,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		if ui.ID_CTRL_BUTTON_SHOP == tag then
 			WriteCon("**========商城========**");
 			dlg_gacha.ShowUI( SHOP_ITEM );
-			
+			p.BecomeBackground();
 		elseif ui.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========邮件========**");
 			mail_main.ShowUI();
@@ -146,3 +146,13 @@ end
 function p.ShowBillboard()
 	billboard.resumeBillBoard();
 end
+
+--从子界面退出，刷新主界面
+function p.BecomeFirstUI()
+	dlg_userinfo.ShowUI();
+	 p.ShowBillboard()
+end
+function p.BecomeBackground()
+	p.HideBillboard()
+end
+

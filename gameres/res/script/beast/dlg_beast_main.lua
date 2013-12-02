@@ -49,6 +49,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			--ÍË³öUI
 			p.CloseUI();
 			beast_mgr.ClearData();
+			maininterface.BecomeFirstUI();
 		end
 	end
 end
