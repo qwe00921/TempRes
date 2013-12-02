@@ -35,7 +35,6 @@ function p.SetDelegate(layer)
 	layer = layer or p.layer;
 	
 	
-	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
 	if pCardInfo ==nil then
 		WriteCon("**====pCardInfo == nil ====**"..p.cardInfo.CardID);
@@ -163,7 +162,6 @@ end
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
-	local T_CHAR_RES     = LoadTable( "char_res.ini" );
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.cardID); --从表中获取卡牌详细信息	
 	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
 	
@@ -242,7 +240,7 @@ function p.SaleKO(msg)
 	if p.layer == nil or p.layer:IsVisible() ~= true then
 		return;
 	end
-	T_CARD    = LoadTable( "card.ini" );
+	--local T_CARD    = LoadTable( "card.ini" );
 	local pCardbase= SelectRowInner( T_CARD, "id", p.cardInfo.CardID); --从表中获取卡牌详细信息
 	
 	if pCardbase==nil then
