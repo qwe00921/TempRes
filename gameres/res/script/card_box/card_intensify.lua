@@ -25,6 +25,8 @@ p.sellCardList = {};
 p.baseCardId = nil;
 
 p.selectList = {};
+
+p.selectNum = 0;
 function p.ShowUI(baseCardId)
 	if baseCardId == nil then 
 		return;
@@ -254,12 +256,6 @@ function p.ShowCardInfo( view, card, cardIndex )
 	cardSelectText:SetVisible( false );
 	
 	p.selectList[cardUniqueId] = cardSelectText;
-	--local selectText = tostring(card.Level);
-	--cardLevelText:SetText(ToUtf8(selectText));
-	
-	--local cardTeamText = GetLabel(view,cardTeam );
-	
-	--sureSellPic:SetVisible( false );
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
@@ -270,17 +266,29 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
 	local cardSelectText = p.selectList[cardUniqueId] 
+	
 	if cardSelectText:IsVisible() == true then
 		cardSelectText:SetVisible(false);
+		p.selectNum = p.selectNum-1;
 	else
-		cardSelectText:SetVisible(true);
+		if p.selectNum >= 10 then 
+			dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
+		else
+			cardSelectText:SetVisible(true);
+			p.selectNum = p.selectNum+1;
+		end
 	end
+		
+end
+
+--提示框回调方法
+function p.OnMsgCallback(result)
 	
-	
-	cardSelectText:SetVisible(true);
-	--dlg_card_attr_base.ShowUI(cardData);
+	WriteCon("OnMsgCallback");
 	
 end
+
+
 function p.ShowSelectPic(uiNode)
 	local cardUniqueId = tostring(uiNode:GetId());
 	if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
@@ -328,6 +336,13 @@ function p.CloseUI()
         p.layer = nil;
 		p.ClearData()
         card_bag_mgr.ClearData();
+		p.cardListInfo = nil;
+		p.curBtnNode = nil;
+		p.sortByRuleV = nil;
+		p.allCardPrice = nil;
+		p.sellCardList = nil;
+		p.baseCardId = nil;
+		p.selectList = nil;
     end
 end
 
