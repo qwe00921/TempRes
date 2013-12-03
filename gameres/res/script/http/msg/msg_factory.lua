@@ -234,8 +234,9 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_CARD_EQUIPMENT_DETAIL	 --卡版装备详细
 	or idmsg == MSG_CARD_EQUIPMENT_INSTALL		 --卡版装备安装
 	or idmsg == MSG_CARD_EQUIPMENT_UNINSTALL	 --卡版装备卸下
-	or idmsg == MSG_CARD_EQUIPMENT_UPGRADE		then --卡版装备升级
-		msg = msg_mail_msg:new();
+	or idmsg == MSG_CARD_EQUIPMENT_UPGRADE		 --卡版装备升级
+	or idmsg ==  MSG_CARD_EQUIPMENT_LIST	then
+		msg = msg_card_equip_msg:new();
 		msg:SetIdMsg(idmsg);
 	end
 

@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
@@ -30,7 +30,7 @@ Notes=
 NormalFile=.\res\image\ui\common\item_bg.png
 NormalFileUV=0 0 126 126
 
-[CTRL_PICTURE_3]
+[CTRL_PICTURE_IMAGE]
 Type=1
 Tag=3
 Rect=114 266 120 120
@@ -257,5 +257,29 @@ AnchorPos=0 0
 Notes=
 TextSize=15
 TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_1538]
+Type=4
+Tag=1538
+Rect=264 588 122 47
+AnchorPos=0 0
+Notes=
+Text=更换
+TextTradition=更換
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_1539]
+Type=4
+Tag=1539
+Rect=420 588 113 51
+AnchorPos=0 0
+Notes=
+Text=御下
+TextTradition=御下
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

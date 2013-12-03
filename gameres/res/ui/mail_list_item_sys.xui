@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
@@ -18,6 +18,9 @@ Tag=301
 Rect=528 88 61 34
 AnchorPos=0 0
 Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\player\common_ui_select_normal.png
 NormalFileUV=0 0 49 43
 SelectFile=.\res\image\ui\player\common_ui_select_select.png

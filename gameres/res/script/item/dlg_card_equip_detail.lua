@@ -12,19 +12,24 @@ local p = dlg_card_equip_detail;
 p.layer = nil;
 p.item = nil;
 p.showType = 1; 
-p.itemId = nil;
-p.cardDetail = nil;
+p.equipId = nil;
+p.cardInfo = nil;
+p.equip = nil;
+--p.itemCommInfo = nil;
 
 local ui = ui_dlg_card_equip_detail
 
 
 ---------显示UI----------
-function p.ShowUI( itemId )
+function p.ShowUI( equip, cardInfo)
    -- if item == nil then
     --	return ;
     --end
    -- p.item = item;
-	p.itemId = itemId;
+	--p.equipId = equipId;
+	p.equip = equip;
+	p.cardInfo = cardInfo;
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return ;
@@ -40,15 +45,21 @@ function p.ShowUI( itemId )
 	GetUIRoot():AddDlg( layer );
     LoadDlg("dlg_card_equip_detail.xui", layer, nil);
 	
-	--p.SetDelegate(layer);
+	p.SetDelegate(layer);
 	p.layer = layer;
 	
-	--p.ShowItem( item );
+	--p.LoadEquipDetail(itemId);
+	
+	WriteConErr("ShowUI4CardEquip2  ");
+	
+	p.ShowItem(p.equip.itemInfo);
+	
 end
 
-function p.ShowUI4CardEquip(itemId)
+function p.ShowUI4CardEquip(equipId, item,cardInfo)
+	WriteConErr("ShowUI4CardEquip  ");
 	p.showType = 1
-	p.ShowUI( itemId );
+	p.ShowUI( equipId, item,cardInfo );
 end
 
 
@@ -73,65 +84,56 @@ function p.InitView()
 end
 
 function p.ShowItem( item )
-	--是否己装备
-	local isUse = GetLabel( p.layer, ui.ID_CTRL_TEXT_8 );
-	if tonumber( item.card_id ) == 0 then
-	   isUse:SetText( GetStr( "item_unused" ) );
-	else
-	   isUse:SetText( GetStr( "item_used" ) );
+	
+	if item == nil then 
+		return;
 	end
+
+	--武器名称
+	local labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_NAME );
+	--labelV:SetText(p.SelectItemName(item.Item_id));
+	labelV:SetText(item.Name or "");
 	
-	--道具图片
-	local pic = 9;
-	--[[
-    if tonumber( item.type ) == ITEM_TYPE_3 then
-        pic = math.random(0,2);
-    elseif tonumber( item.type ) ==ITEM_TYPE_2 then
-        pic = math.random(3,5); 
-    else
-        pic = math.random(6,8);     
-    end
-    --]]
-	local itemPic = GetImage( p.layer,ui.ID_CTRL_PICTURE_3 );
-	itemPic:SetPicture( GetPictureByAni("item.item_db", pic) );
+	--武器类型
+	labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_TYP);
+	labelV:SetText(GetStr("card_equip_type"..item.Type));
 	
-	--道具名称
-	local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_4 );
-	itemName:SetText( item.name );
+	--武器主要属性值
+	labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_TYP);
+	labelV:SetText(GetStr("card_equip_attr1"..item.Attribute_type) .. "+" .. item.Attribute_value);
 	
-	--道具说明
-	local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_5 );
-	description:SetText( item.description );
+	--图片
+	local itemPic = GetImage( p.layer,ui.ID_CTRL_PICTURE_IMAGE );
+	itemPic:SetPicture( p.SelectImage(item.id) );
+	
+	--卡牌名称
+	local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CARD_NAME );
+	itemName:SetText( item.Name or "");
+	
+	--说明
+	local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_DES );
+	description:SetText( item.Description or "");
 	
 	--生命
-	local hp_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_9 );
-	local hp_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_10 );
-	hp_value:SetText( tostring( p.GetHP( item ) ) );
+	--local hp_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_9 );
+	--local hp_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_10 );
+	--hp_value:SetText( tostring( p.GetHP( item ) ) );
 	
 	--等级
-	local lv_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_11 );
-    local lv_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_12 );
-    lv_value:SetText( item.level );
+	--local lv_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_11 );
+    local lv_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_LEVEL );
+    --lv_value:SetText( item.Equip_level );
 	
 	--攻击
-	local atk_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
-    local atk_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_14 );
-    atk_value:SetText( tostring( p.GetAttack( item ) ) );
+	--local atk_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
+    --local atk_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_14 );
+   -- atk_value:SetText( tostring( p.GetAttack( item ) ) );
     
 	--防御
-	local def_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_15 );
-    local def_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_16 );
-    def_value:SetText( tostring( p.GetDef( item ) ) );
+	--local def_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_15 );
+   -- local def_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_16 );
+   -- def_value:SetText( tostring( p.GetDef( item ) ) );
     
-	--技能名称
-	local skill = GetLabel( p.layer, ui.ID_CTRL_TEXT_17 );
-	local skillName;
-	if tonumber( item.skill ) == 0 then
-		skillName = GetStr( "item_no_skill" );
-	else
-	   	skillName = SelectCell( T_SKILL, item.skill, "name" );
-	end
-	skill:SetText( GetStr( "item_skill")..":"..skillName );
 end
 
 --获取道具当前的生命值
@@ -208,28 +210,48 @@ function p.CloseUI()
     end
 end
 
+function p.SelectImage(id)
+	local aniIndex = "item."..id;
+	return GetPictureByAni(aniIndex,0);
+end
+
+function p.SelectItemName(id)
+	local itemTable = SelectRowList(T_ITEM,"id",tonumber(id));
+	if #itemTable == 1 then
+		local text = itemTable[1].Name;
+		return ToUtf8(text);
+	else
+		WriteConErr("itemTable error ");
+	end
+end
+
 -------------------------------网络------------------------------------------------------
 --读取装备细信息
 function p.LoadEquipDetail(equidId)
 	local uid = GetUID();
+
+		
+	uid=123456
 	if uid == 0 or uid == nil or equidId == nil then
 		return ;
 	end;
 	
 	local param = string.format("&item_unique_id=%s",equidId)
+	WriteConErr("send req ");
 	SendReq("Item","EquipmentDetailShow",uid,param);		
 	
 end
 --网络返回卡详细信息
 function p.OnLoadEquitDetail(msg)
 	
-	if p.layer == nil or p.layer:IsVisible() ~= true then
+	if p.layer == nil then --or p.layer:IsVisible() ~= true then
 		return;
 	end
 	
 	if msg.result == true then
-		p.cardDetail = msg.item_info or {};
-		p.ShowItem(p.cardDetail);
+		p.itemInfo = msg.item_info or {};
+		p.itemCommInfo = msg.item_common_info or {};
+		p.ShowItem(p.itemInfo,p.itemCommInfo);
 	else
 		--local str = mail_main.GetNetResultError(msg);
 		--if str then
