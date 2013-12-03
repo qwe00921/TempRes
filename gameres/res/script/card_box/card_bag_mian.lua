@@ -17,6 +17,7 @@ local ui = ui_card_main_view;
 local ui_list = ui_card_list_view;
 
 p.layer 		= nil;
+p.cardBoxCount 	= 100;
 p.cardListInfo 	= nil;
 p.curBtnNode 	= nil;
 p.sortByRuleV 	= nil;

@@ -121,6 +121,16 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 	end
 end
 
+function p.UseItemCallBack(self)
+	WriteConErr("=======UseItemCallBack()");
+	if self.result == true then
+		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("使用物品成功。"),nil,p.layer);
+	elseif self.result == false then
+		local messageText = self.message
+		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),messageText,nil,p.layer);
+	end
+end
+
 -- UseHealItem //行动力恢复道具使用
 -- UseQuickItem //活力恢复道具使用
 -- UseStorageItem //背包扩展道具
