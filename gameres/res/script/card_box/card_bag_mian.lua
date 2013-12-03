@@ -114,9 +114,17 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
 	WriteCon("CardID ===== "..cardId);
-	local aniIndex = "card.card_"..cardId;
+	
+	local cardPicTable = SelectRowList(T_CHAR_RES,"card_id",cardId);
+	local aniIndex = nil;
+	if #cardPicTable == 1 then
+		aniIndex = cardPicTable[1].card_pic;
+		WriteCon("aniIndex == "..aniIndex);
+	else
+		WriteConErr("cardPicTable error ");
+	end
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
-	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
+
 	local cardUniqueId = tonumber(card.UniqueId);
  	WriteCon("cardUniqueId ===== "..cardUniqueId);
     cardButton:SetId(cardUniqueId);
