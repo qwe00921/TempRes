@@ -114,39 +114,39 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEAM_1]
 Type=4
 Tag=10
-Rect=94 15 60 20
+Rect=91 16 60 20
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=20
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEAM_4]
 Type=4
 Tag=11
-Rect=559 15 60 20
+Rect=555 16 60 20
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=20
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEAM_3]
 Type=4
 Tag=12
-Rect=403 15 60 20
+Rect=400 16 60 20
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=20
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEAM_2]
 Type=4
 Tag=13
-Rect=248 15 60 20
+Rect=245 16 60 20
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=20
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
