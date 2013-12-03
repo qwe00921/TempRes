@@ -41,7 +41,8 @@ function p:Process()
 	elseif self.idMsg == MSG_CARD_EQUIPMENT_INSTALL then --卡版装备安装
 		
 	elseif self.idMsg == MSG_CARD_EQUIPMENT_UNINSTALL then --卡版装备卸下
-		
-		
+	elseif self.idMsg == MSG_CARD_EQUIPMENT_LIST then
+			
+		card_equip_select_list.OnLoadList(self);
 	end
 end
