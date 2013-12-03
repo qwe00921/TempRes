@@ -73,10 +73,11 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			p.BecomeBackground();
 		elseif ui.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========邮件========**");
-			mail_main.ShowUI();
+			--mail_main.ShowUI();
+			card_equip_select_list.ShowUI();
 			--隐藏主UI
-			maininterface.CloseAllPanel();
-			maininterface.HideUI();
+			--maininterface.CloseAllPanel();
+			--maininterface.HideUI();
 			--隐藏用户信息
 			dlg_userinfo.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then

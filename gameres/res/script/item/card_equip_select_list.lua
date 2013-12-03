@@ -10,18 +10,19 @@ PROFESSION_TYPE_4 = 2004;
 MARK_ON = 100;
 MARK_OFF = nil;
 
-card_intensify  = {}
-local p = card_intensify;
+card_equip_select_list  = {}
+local p = card_equip_select_list;
 
 local ui = ui_card_equip_select_list;
 local ui_list = ui_card_equip_select_list_item;
 
 p.layer = nil;
-p.cardListInfo = nil;
+p.listInfo = nil;
 p.curBtnNode = nil;
 p.sortByRuleV = nil;
 p.allCardPrice = 0;
 p.sellCardList = {};
+
 p.baseCardId = nil;
 
 p.selectList = {};
@@ -29,7 +30,7 @@ p.selectList = {};
 p.selectNum = 0;
 function p.ShowUI(baseCardId)
 	if baseCardId == nil then 
-		return;
+	--	return;
 	end
 	p.baseCardId = baseCardId;
 	
@@ -55,32 +56,7 @@ function p.ShowUI(baseCardId)
 	
 	--加载卡牌列表数据  发请求
     p.OnSendReq();
-	--p.ShowCardList( cardList )
-end
-
---可强化卡牌List请求
-function p.OnSendReq()
 	
-	local uid = GetUID();
-	WriteCon("**可强化卡牌List请求**"..uid);
-	uid = 1234;
-	if uid ~= nil and uid > 0 then
-		--模块  Action 
-		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
-		SendReq("CardList","List",uid,"");
-	end
-	
-end
---强化卡牌请求
-function p.OnSendReqIntensify()
-	local uid = GetUID();
-	WriteCon("**可强化卡牌List请求**"..uid);
-	--uid = 10002;
-	if uid ~= nil and uid > 0 then
-		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
-		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
-		SendReq("card","e_Feedwould",p.baseCardId,param);
-	end
 end
 
 
@@ -178,21 +154,21 @@ end
 
 
 --显示卡牌列表
-function p.ShowCardList(cardList)
+function p.ShowList(lst)
 	if p.layer == nil or p.layer:IsVisible() ~= true then
 		return;
 	end
-	WriteCon("card_intensify.ShowCardList()");
+	WriteCon("ShowList()");
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 
-	p.cardListInfo = cardList;
-	if cardList == nil or #cardList <= 0 then
-		WriteCon("ShowCardList():cardList is null");
+	p.listInfo = lst;
+	if lst == nil or #lst <= 0 then
+		WriteCon("ShowList():cardList is null");
 		return;
 	end
-	WriteCon("cardCount ===== "..#cardList);
-	local cardNum = #cardList;
+	WriteCon("cardCount ===== "..#lst);
+	local cardNum = #lst;
 	local row = math.ceil(cardNum / 4);
 	WriteCon("row ===== "..row);
 	
@@ -210,7 +186,7 @@ function p.ShowCardList(cardList)
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
 			if j <= cardNum then
-				local card = cardList[j];
+				local card = lst[j];
 				local cardIndex = j - start_index + 1;
 				p.ShowCardInfo( view, card, cardIndex );
 			end
@@ -243,12 +219,13 @@ function p.ShowCardInfo( view, card, cardIndex )
 	end
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
-	local cardId = tonumber(card.CardID);
-	WriteCon("CardID ===== "..cardId);
-	local aniIndex = "card.card_"..cardId;
+	--local cardId = tonumber(card.CardID);
+	--WriteCon("CardID ===== "..cardId);
+	--local aniIndex = "card.card_"..cardId;
+	local aniIndex = "item."..card.Item_id;
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
 	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
-	local cardUniqueId = tonumber(card.UniqueId);
+	local cardUniqueId = tonumber(card.id);
  	WriteCon("cardUniqueId ===== "..cardUniqueId);
     cardButton:SetId(cardUniqueId);
 
@@ -257,7 +234,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	
 	p.selectList[cardUniqueId] = cardSelectText;
 	--设置卡牌按钮事件
-	cardButton:SetLuaDelegate(p.OnCardClickEvent);
+	--cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
 end
 
@@ -336,22 +313,108 @@ function p.CloseUI()
         p.layer = nil;
 		p.ClearData()
         card_bag_mgr.ClearData();
-		p.cardListInfo = nil;
+		p.listInfo = nil;
 		p.curBtnNode = nil;
 		p.sortByRuleV = nil;
 		p.allCardPrice = nil;
 		p.sellCardList = nil;
 		p.baseCardId = nil;
-		p.selectList = nil;
+		p.selectList = {};
     end
 end
 
 function p.ClearData()
-	p.cardListInfo = nil;
+	p.listInfo = nil;
 	p.curBtnNode = nil;
 	p.sortBtnMark = MARK_OFF;
 	p.sortByRuleV = nil;
 	p.BatchSellMark = MARK_OFF;
 	p.allCardPrice = 0;
 	p.sellCardList = {};
+end
+
+----------------------------网络--------------------------------
+--可强化卡牌List请求
+function p.OnSendReq()
+	
+	local uid = GetUID();
+	uid=123456
+	
+	if uid == 0 or uid == nil  then
+		return ;
+	end;
+	
+	local param = "";--string.format("&card_unique_id=%s",cardUniqueId)
+	SendReq("Item","EquipmentList",uid,param);		
+end
+
+
+--强化卡牌请求
+function p.OnSendReqIntensify()
+	local uid = GetUID();
+	WriteCon("**可强化卡牌List请求**"..uid);
+	--uid = 10002;
+	if uid ~= nil and uid > 0 then
+		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
+		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
+		--SendReq("card","e_Feedwould",p.baseCardId,param);
+	end
+end
+
+
+--网络返回卡详细信息
+function p.OnLoadList(msg)
+	
+	if p.layer == nil or p.layer:IsVisible() ~= true then
+		return;
+	end
+	WriteCon( "** OnLoadList" );
+	
+	if msg.result == true then
+		p.ShowList(msg.equipment_info or {})
+		
+		WriteCon( "** OnLoadList1" );
+	else
+		--local str = mail_main.GetNetResultError(msg);
+		--if str then
+			--dlg_msgbox.ShowOK(GetStr("mail_erro_title"), str,nil);
+		--else
+		--	WriteCon("**======mail_write_mail.NetCallback error ======**");
+		--end
+		--TODO...
+		WriteCon( "** OnLoadList2" );
+	end
+	--[[ 数据结构
+		card_info: {
+		UniqueID: "10000272",
+		UserID: "123456",
+		CardID: "101",
+		Race: "1",
+		Class: "2",
+		Level: "1",
+		Level_max: "60",
+		Exp: "0",
+		Damage_type: "1",
+		Bind: "0",
+		Team_marks: "0",
+		Signature: "0",
+		Rare: "2",
+		Rare_max: "6",
+		Hp: "400",
+		Attack: "200",
+		Defence: "90",
+		Speed: "5",
+		Skill: "0",
+		Crit: "10",
+		Item_id1: "33450",
+		Item_id2: "0",
+		Item_id3: "33452",
+		Gem1: "0",
+			Gem2: "0",
+		Gem3: "0",
+		Price: "0",
+		Time: "2013-11-30 13:51:45",
+		Source: "0"
+		}
+		]]--
 end

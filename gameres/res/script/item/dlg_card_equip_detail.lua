@@ -46,6 +46,8 @@ function p.ShowUI( itemId, cardInfo )
 	p.SetDelegate(layer);
 	p.layer = layer;
 	
+	p.LoadEquipDetail(itemId);
+	
 	--p.ShowItem( item );
 end
 
