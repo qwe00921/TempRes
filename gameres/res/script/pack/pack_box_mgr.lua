@@ -95,29 +95,27 @@ function p.GetItemList(sortType)
     return t;
 end
 
-function p.UseItemEvent(itemId)
+function p.UseItemEvent(itemId,itemUniqueId,itemType)
 	WriteCon("pack_box_mgr.UseItemEvent();");
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
 		return;
 	end
-	if itemId == nil or itemId == 0 then
+	if itemId == nil or itemId == 0 or itemUniqueId == nil or itemUniqueId == 0 then
 		WriteConErr("used item id error ");
 		return
 	end
-	local param = "MachineType=Android&item_id="..itemId;
+	local param = "MachineType=Android&item_id="..itemUniqueId;
 	if itemId == 1001 then
 		SendReq("Item","UseHealItem",uid,param);
 	elseif itemId == 1002 then
 		SendReq("Item","UseQuickItem",uid,param);
 	elseif itemId == 3001 then
 		SendReq("Item","UseStorageItem",uid,param);
-	elseif itemId == 4 then
+	elseif itemId == 10003 then
 		SendReq("Item","UseGiftItem",uid,param);
-	elseif itemId == 5 then
+	elseif itemId == 10004 then
 		SendReq("Item","UseTreasureItem",uid,param);
-	elseif itemId == 6 then
-		SendReq("Item","UseHealItem ",uid,param);
 	else
 		WriteConErr("used item id error ");
 	end
