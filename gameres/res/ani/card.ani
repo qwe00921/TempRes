@@ -760,14 +760,6 @@ image\card\11008.png
 image\card\11024.png
 [11027]
 image\card\11027.png
-[11007]
-image\card\11007.png
-[11008]
-image\card\11008.png
-[11024]
-image\card\11024.png
-[11027]
-image\card\11027.png
 ;-----------技能卡牌资源450*600------------
 [skill_1] 
 image\card\10100301.png @cut(1,1) @stay @scale=0.5	 
