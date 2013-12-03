@@ -15,9 +15,6 @@ end
 function p:ctor()
 	super.ctor(self);
 	self.idMsg = MSG_ITEM_QUICK;
-	
-	self.message = nil;
-	self.result = nil;
 end
 
 function p:Init()
@@ -26,9 +23,9 @@ end
 function p:Process()
 	msg_cache.msg_item_quick = self;
     WriteConWarning( "** msg_item_quick:Process() called" );
-	if self.result == true then 
-		--pack_box_mgr.RefreshUI(self.user_items);
-	else
-		WriteConWarning( "** msg_item_quick error" );
-	end
+	pack_box_mgr.UseItemCallBack(self)
+	-- if self.result == true then 
+	-- else
+		-- WriteConWarning( "** msg_item_gift error" );
+	-- end
 end

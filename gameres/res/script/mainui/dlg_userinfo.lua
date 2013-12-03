@@ -4,6 +4,13 @@ local p = dlg_userinfo;
 
 p.layer = nil;
 p.userinfo = nil;
+p.updateTimer = nil;
+
+p.move_time = 20;
+p.energy_time = 30;
+
+p.move_remain_time = 0;
+p.energy_remain_time = 0;
 
 local ui = ui_main_userinfo
 
@@ -43,12 +50,18 @@ function p.ShowUI(userinfo)
 		p.SendReqUserInfo();
 	end
 	p.SetDelegate();
+	
+	p.updateTimer = SetTimer( p.OnUpdateInfo, 1.0f);
 end
 
 function p.CloseUI()    
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
+		p.userinfo = nil;
+		if p.updateTimer then
+			KillTimer( p.updateTimer );
+		end
     end
 end
 
@@ -68,7 +81,7 @@ end
 
 function p.RefreshUI(userinfo)
 	p.userinfo = userinfo;
-	
+
 	local username = GetLabel( p.layer, ui.ID_CTRL_TEXT_NAME);
 	username:SetText( userinfo.Name );
 	
@@ -101,6 +114,19 @@ function p.RefreshUI(userinfo)
 	pic:SetPicture( GetPictureByAni("UserImage.Face"..userinfo.Face, 0) );
 	
 	dlg_battlearray.RefreshUI(userinfo.User_Team);
+	
+	--行动力、精力恢复
+	local m_time = tonumber( userinfo.MoveTime );
+	if m_time ~= nil then
+		p.move_time = m_time;
+		p.move_remain_time = m_time;
+	end
+	
+	local e_time = tonumber( userinfo.EnergyTime );
+	if e_time ~= nil then
+		p.energy_time = e_time;
+		p.energy_remain_time = e_time;
+	end
 end
 
 function p.SetDelegate()
@@ -121,3 +147,39 @@ end
 function p.GetUserInfo()
 	return p.userinfo;
 end
+
+--更新玩家体力、精力
+function p.OnUpdateInfo()
+	if p.layer == nil or msg_cache.msg_player == nil then
+		return;
+	end
+	
+	local cache = msg_cache.msg_player;
+	if tonumber(cache.Move) < tonumber(cache.MaxMove) then
+		p.move_remain_time = p.move_remain_time - 1;
+		if p.move_remain_time <= 0 then
+			p.move_remain_time = p.move_time;
+			cache.Move = cache.Move + 1;
+			
+			local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
+			strength:SetValue( 0, tonumber( cache.MaxMove ), tonumber( cache.Move ) );
+		end
+	end
+	
+	if tonumber(cache.Energy) < tonumber(cache.MaxEnergy) then
+		p.energy_remain_time = p.energy_remain_time - 1;
+		if p.energy_remain_time <= 0 then
+			p.energy_remain_time = p.energy_time;
+			cache.Energy = cache.Energy + 1;
+			
+			local energy = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_ENERGY );
+			if cache.MaxEnergy == nil or cache.Energy == nil then
+				energy:SetValue( 0, tonumber( 0 ), tonumber( 0 ) );
+			else
+				energy:SetValue( 0, tonumber( cache.MaxEnergy ), tonumber( cache.Energy ) );
+			end
+		end
+	end
+end
+
+

@@ -34,22 +34,22 @@ function p.ShowUI(baseCardId)
 	end
 	p.baseCardId = baseCardId;
 	
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
 	end
 	
-    local layer = createNDUIDialog();
+	local layer = createNDUIDialog();
     if layer == nil then
         return false;
     end
-
-	layer:NoMask();
-    layer:Init();   
-	layer:SetSwallowTouch(false);
 	
-    GetUIRoot():AddDlg(layer);
+	layer:NoMask();
+	layer:Init();	
+	GetUIRoot():AddDlg( layer );
     LoadDlg("card_equip_select_list.xui", layer, nil);
+    
 
     p.layer = layer;
     p.SetDelegate(layer);
@@ -155,9 +155,7 @@ end
 
 --显示卡牌列表
 function p.ShowList(lst)
-	if p.layer == nil or p.layer:IsVisible() ~= true then
-		return;
-	end
+	
 	WriteCon("ShowList()");
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
@@ -365,15 +363,17 @@ end
 --网络返回卡详细信息
 function p.OnLoadList(msg)
 	
-	if p.layer == nil or p.layer:IsVisible() ~= true then
+	WriteCon( "** OnLoadList21" );
+	
+	if p.layer == nil then --or p.layer:IsVisible() ~= true then
 		return;
 	end
-	WriteCon( "** OnLoadList" );
+	
 	
 	if msg.result == true then
 		p.ShowList(msg.equipment_info or {})
 		
-		WriteCon( "** OnLoadList1" );
+		WriteCon( "** OnLoadList1 " .. #msg.equipment_info);
 	else
 		--local str = mail_main.GetNetResultError(msg);
 		--if str then

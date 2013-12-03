@@ -28,7 +28,7 @@ function p:Process()
     WriteConWarning( "** msg_card_bag:Process() called" );
 	if self.result == true then 
 		card_bag_mgr.RefreshUI(self.cardlist);
-		card_intensify.ShowCardList(self.cardlist);
+		card_intensify.ShowCardList(self.cardlist,self);
 	else
 		WriteConWarning( "** msg_card_bag error" );
 	end

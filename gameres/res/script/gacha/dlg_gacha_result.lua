@@ -151,14 +151,12 @@ function p.ShowCardInfo(card_id)
     
     if card_id ~= "0" then
         WriteCon("扭蛋id" .. card_id );
-		--[[
         --卡牌图片
         local cardPic = GetImage( p.layer,ui_dlg_gacha_result.ID_CTRL_PICTURE_CARD );
-        local pic = GetCardPicById( card_id );
+        local pic = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(card_id ), "card_pic" ), 0 );
         if pic ~= nil then
         	cardPic:SetPicture( pic );
         end
-		--]]
         
         --星级
         local rareLab = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_RARE );
@@ -175,17 +173,17 @@ function p.ShowCardInfo(card_id)
         --防御
         local cardDef = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DEF );
         cardDef:SetText( SelectCell(T_CARD, card_id, "defence") );
-		--[[
+		
         --技能
         local cardSkill = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_SKILL );
         local skill_id = SelectCell( T_CARD, card_id, "skill" );
         if skill_id ~= "0" then
-            cardSkill:SetText( SelectCell( T_SKILL, skill_id, "name" ));
+            cardSkill:SetText( ToUtf8(SelectCell( T_SKILL, skill_id, "name" ) ) );
         end
-		--]]
+
         --描述
         local description = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DESCRIPTION);
-        description:SetText( SelectCell( T_CARD, card_id, "description" ));
+        description:SetText( ToUtf8( SelectCell( T_CARD, card_id, "description" ) ));
     end
     --判断没有后续卡牌 则开始再扭一次判断，并隐藏下一张按钮
     if p.cardIndex == #p.cardIdList then
