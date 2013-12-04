@@ -115,14 +115,11 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local cardId = tonumber(card.CardID);
 	WriteCon("CardID ===== "..cardId);
 	
-	local cardPicTable = SelectRowList(T_CHAR_RES,"card_id",cardId);
-	local aniIndex = nil;
-	if #cardPicTable == 1 then
-		aniIndex = cardPicTable[1].card_pic;
-		WriteCon("aniIndex == "..aniIndex);
-	else
+	local cardPicTable = SelectRowInner(T_CHAR_RES,"card_id",cardId);
+	if cardPicTable == nil then
 		WriteConErr("cardPicTable error ");
 	end
+	local aniIndex = cardPicTable.card_pic;
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
 
 	local cardUniqueId = tonumber(card.UniqueId);
@@ -349,6 +346,7 @@ function p.CloseUI()
         p.layer = nil;
 		p.ClearData()
         card_bag_mgr.ClearData();
+		card_bag_sort.CloseUI();
     end
 end
 
