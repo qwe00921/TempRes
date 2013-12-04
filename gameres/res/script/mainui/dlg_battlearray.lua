@@ -47,12 +47,12 @@ function p.RefreshUI(user_team)
 	
 	for i = 1, 6 do
 		local id = user_team["Pos_card"..i]
-		if id ~= nil then
+		if id ~= nil and tonumber(id) ~= 0 then
 			local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_ROLE_"..i] );
 			if btn ~= nil then
-				btn:SetImage( GetPictureByAni( "card_icon.head_pic_"..id, 0 ) );
-				btn:SetTouchDownImage( GetPictureByAni( "card_icon.head_pic_"..id, 0 ) );
-				btn:SetDisabledImage( GetPictureByAni( "card_icon.head_pic_"..id, 0 ) );
+				btn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
+				btn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
+				btn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
 			end
 		end
 	end
