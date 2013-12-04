@@ -2,7 +2,7 @@
 dlg_battlearray = {};
 local p = dlg_battlearray;
 
-local ui = ui_main_battlearray;
+local ui = ui_main_battlearray_bg;
 p.layer = nil;
 
 function p.ShowUI()
@@ -21,7 +21,7 @@ function p.ShowUI()
 	layer:SetSwallowTouch(false);
     
 	GetUIRoot():AddChild(layer);
-	LoadUI("main_battlearray.xui", layer, nil);
+	LoadUI("main_battlearray_bg.xui", layer, nil);
     
 	p.layer = layer;
 	--p.SetDelegate();
@@ -45,10 +45,23 @@ function p.RefreshUI(user_team)
 		return;
 	end
 	
+	local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_13 );
+	if list == nil then
+		return;
+	end
+	list:ClearView();
+	
+	local view = createNDUIXView();
+	view:Init();
+	LoadUI( "main_battlearray.xui", view, nil );
+	
+	local bg = GetUiNode( view, ui_main_battlearray.ID_CTRL_PICTURE_BG );
+    view:SetViewSize( bg:GetFrameSize());
+	
 	for i = 1, 6 do
 		local id = user_team["Pos_card"..i]
 		if id ~= nil and tonumber(id) ~= 0 then
-			local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_ROLE_"..i] );
+			local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..i] );
 			if btn ~= nil then
 				btn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
 				btn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
@@ -56,5 +69,19 @@ function p.RefreshUI(user_team)
 			end
 		end
 	end
+	
+	for i = 1, 2 do
+		local id = user_team["Pet_card"..i];
+		if id ~= nil and tonumber(id) ~= 0 then
+			local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..(i+6)] );
+			if btn ~= nil then
+				btn:SetImage( GetPictureByAni( SelectCell( T_PET_RES, tostring( id ), "face_pic" ), 0 ) );
+				btn:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, tostring( id ), "face_pic" ), 0 ) );
+				btn:SetDisabledImage( GetPictureByAni( SelectCell( T_PET_RES, tostring( id ), "face_pic" ), 0 ) );
+			end
+		end
+	end
+	
+	list:AddView( view );
 end
 

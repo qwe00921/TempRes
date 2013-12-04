@@ -1,0 +1,20 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_LISTBG]
+Type=1
+Tag=13
+Rect=0 130 640 164
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\battlearray_bg.png
+NormalFileUV=0 0 640 164
+
+[CTRL_LIST_13]
+Type=8
+Tag=14
+Rect=0 148 639 124
+AnchorPos=0 0
+Notes=
