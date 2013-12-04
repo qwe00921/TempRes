@@ -722,7 +722,7 @@ function p.ShowGachaData( gachadata )
 		view:SetViewSize( bg:GetFrameSize());
 
 		local gachaName = GetLabel( view, ui_gacha_list_view.ID_CTRL_TEXT_GACHANAME );
-		local gachaPic = GetLabel( view, ui_gacha_list_view.ID_CTRL_PICTURE_PIC );
+		local gachaPic = GetImage( view, ui_gacha_list_view.ID_CTRL_PICTURE_PIC );
 		local gachaOneBtn = GetButton( view, ui_gacha_list_view.ID_CTRL_BUTTON_ONE );
 		local gachaFewBtn = GetButton( view, ui_gacha_list_view.ID_CTRL_BUTTON_TEN );
 		local gachaFreeTime = GetLabel( view, ui_gacha_list_view.ID_CTRL_TEXT_FREE_TIME );
@@ -753,6 +753,7 @@ function p.ShowGachaData( gachadata )
 		end
 		
 		gachaName:SetText( ToUtf8( SelectCell( T_GACHA, gachaid,  "name" ) ) );
+		gachaPic:SetPicture( GetPictureByAni( "gacha_pic." .. gachaid, 0 ) );
 		
 		gachaOneBtn:SetImage( GetPictureByAni("ui.gacha_btn", 1));
 		gachaFewBtn:SetImage( GetPictureByAni("ui.gacha_btn", 2));

@@ -29,6 +29,7 @@ LoadAni("skill_icon.ani")
 LoadAni("skill_effect.ani")
 LoadAni("n_battle_buff.ani")
 LoadAni("n_bullet.ani")
+LoadAni("gacha_pic.ani")
 LoadAni_Done()
 
 --加载组合特效
