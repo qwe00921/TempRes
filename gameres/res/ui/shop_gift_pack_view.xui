@@ -58,7 +58,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=6
-Rect=175 68 193 25
+Rect=175 68 92 25
 AnchorPos=0 0
 Notes=
 Text=原价：50000
@@ -71,7 +71,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=7
-Rect=175 94 193 25
+Rect=175 94 92 25
 AnchorPos=0 0
 Notes=
 Text=现价：20000

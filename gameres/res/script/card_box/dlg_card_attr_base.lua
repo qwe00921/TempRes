@@ -40,6 +40,14 @@ function p.SetDelegate(layer)
 	
 	
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
+	local pCardInfo2= SelectRowInner( T_CARD, "id", p.cardInfo.CardID);
+	local skill_res = nil;
+	local cardSkillInfo = nil;
+	if pCardInfo2.skill ~= 0 then
+		skill_res = SelectRowInner(T_SKILL_RES,"id",pCardInfo2.skill);
+		cardSkillInfo = SelectRowInner(T_SKILL,"id",pCardInfo2.skill);	
+	end
+	
 	if pCardInfo ==nil then
 		WriteCon("**====pCardInfo == nil ====**"..p.cardInfo.CardID);
 	end
@@ -49,13 +57,11 @@ function p.SetDelegate(layer)
 	
 	--天赋技能图片
 	local pBtnDower = GetImage(layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_PIC);
-	--因为数据是错的所以先改为 ==nil 
-	if pCardInfo.dower_intro_1 == nil then 
-		pBtnDower:SetPicture(GetPictureByAni(pCardInfo.dower_pic_1,0))
-	end
 	--天赋介绍
 	local pLabDowerIntro = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
-	if pCardInfo.dower_intro_1 ~= nil then 
+	--因为数据是错的所以先改为 ==nil 
+	if skill_res ~= nil then 
+		pBtnDower:SetImage(GetPictureByAni(skill_res.icon,0))
 		pLabDowerIntro:SetText(tostring(pCardInfo.dower_intro_1));
 	else
 		pLabDowerIntro:SetText(GetStr("card_no_dower"));
@@ -181,6 +187,9 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_INTENSIFY == tag then
 			--卡牌强化
+			card_intensify.ShowUI(p.cardInfo);
+			p.CloseUI();
+			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_SALE == tag then
 			--卡牌卖出
 			if p.cardInfo.Item_Id1 ~= 0 or  p.cardInfo.Gem1 ~= 0 then

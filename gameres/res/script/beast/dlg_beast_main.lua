@@ -140,19 +140,40 @@ function p.ShowBeastInfo( view, pet )
 	local trainBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_INCUBATE );
 	trainBtn:SetLuaDelegate( p.OnListBtnClick );
 	
+	--[[
 	--出战按钮
-	local fightBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_FIGHT );
+	local fightBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_SELL );
 	fightBtn:SetLuaDelegate( p.OnListBtnClick );
 	local flag = beast_mgr.CheckIsFightPet( pet.id );
 	fightBtn:SetChecked( flag );
 	local str = flag and "休息" or "出战";
 	fightBtn:SetText( ToUtf8(str) );
+	--]]
+	local sellBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_SELL );
+	sellBtn:SetLuaDelegate( p.OnListBtnClick );
 	
 	local pic = GetImage( view, ui_beast_main_list.ID_CTRL_PICTURE_BEAST );
 	local picData = GetPictureByAni( SelectCell( T_PET_RES, SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "id" ), "card_pic" ), 0 );
 	if picData then
 		pic:SetPicture( picData );
 	end
+	
+	--技能显示
+	local skillPic = GetImage( view, ui_beast_main_list.ID_CTRL_PICTURE_SKILL );
+	local skillPicData = GetPictureByAni( SelectCell( T_SKILL_RES, pet.Skill_id, "icon" ), 0 );
+	if skillPic and skillPicData then
+		skillPic:SetPicture( skillPicData );
+	end
+	
+	local skillText = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_51 );
+	skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
+	
+	local teamText = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_TEAM );
+	teamText:SetText( ToUtf8( string.format( "队伍%d", pet.Team_id) ) );
+	teamText:SetVisible( pet.Team_id ~= 0 );
+	
+	local team9 = Get9SlicesImage( view, ui_beast_main_list.ID_CTRL_9SLICES_53 );
+	team9:SetVisible( pet.Team_id ~= 0 );
 end
 
 --召唤兽列表中子按钮回调
@@ -165,10 +186,11 @@ function p.OnListBtnClick( uiNode, uiEventType, param )
 			--显示培养界面，可以通过node:GetId()来获取需要显示哪一个召唤兽的培养界面
 			dlg_beast_train.ShowUI( node:GetId() );
 			
-		elseif ui_beast_main_list.ID_CTRL_BUTTON_FIGHT == tag then
-			WriteCon("**===============选择出战===============**");
+		elseif ui_beast_main_list.ID_CTRL_BUTTON_SELL == tag then
+			WriteCon("**=================卖出=================**");
 			
-			beast_mgr.SetFight( node );
+			--beast_mgr.SetFight( node );
+			beast_mgr.SellPet( node );
 		end
 	end
 end

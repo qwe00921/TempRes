@@ -15,6 +15,7 @@ DoFile("ui/ui_main_menu.lua")
 DoFile("ui/ui_main_btn_list.lua")
 DoFile("ui/ui_main_btn_node.lua")
 DoFile("ui/ui_main_battlearray.lua")
+DoFile("ui/ui_main_battlearray_bg.lua")
 DoFile("ui/ui_marquee_led.lua")
 
 --登录界面
@@ -31,12 +32,13 @@ DoFile("ui/ui_quest_list_view.lua")
 --背包
 DoFile("ui/ui_bag_main.lua")
 DoFile("ui/ui_bag_list.lua")
-DoFile("ui/ui_card_bag_sort_view.lua")
-DoFile("ui/ui_card_bag_select.lua")
+DoFile("ui/ui_bag_equip_view.lua")
 
 --卡牌背包
 DoFile("ui/ui_card_main_view.lua")
 DoFile("ui/ui_card_list_view.lua")
+DoFile("ui/ui_card_bag_sort_view.lua")
+DoFile("ui/ui_card_bag_select.lua")
 
 --加载所有UI
 DoFile("ui/ui_battle_boss.lua")
@@ -109,6 +111,7 @@ DoFile("ui/ui_dlg_card_attr_base.lua")
 
 --卡牌强化
 DoFile("ui/ui_card_intensify.lua")
+DoFile("ui/ui_card_intensify_succeed.lua")
 --队伍
 DoFile("ui/ui_team_list_view.lua")
 DoFile("ui/ui_team_cardlist_view.lua")

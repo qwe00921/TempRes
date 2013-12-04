@@ -77,7 +77,7 @@ NormalFileUV=0 0 120 120
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=12
-Rect=175 94 193 25
+Rect=175 94 86 25
 AnchorPos=0 0
 Notes=
 Text=现价：20000
@@ -103,7 +103,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=37
-Rect=175 68 193 25
+Rect=175 68 86 25
 AnchorPos=0 0
 Notes=
 Text=原价：50000

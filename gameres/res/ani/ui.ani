@@ -100,3 +100,13 @@ image\ui\main_interface\friend.PNG
 image\ui\main_interface\pictorialial.PNG
 image\ui\main_interface\card.PNG
 
+;’Û»›œ‘ æ»± °∞¥≈•≈‰÷√
+[default_card_btn]
+image\ui\main_interface\cha_less.png
+image\ui\main_interface\cha_less_click.png
+
+;’ŸªΩ ﬁ»± °∞¥≈•œ‘ æ
+[default_pet_btn]
+image\ui\main_interface\pet_less.png
+image\ui\main_interface\pet_less_click.png
+

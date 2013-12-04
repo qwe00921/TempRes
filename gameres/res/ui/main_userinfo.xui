@@ -3,6 +3,16 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_FACE]
+Type=1
+Tag=53
+Rect=9 3 115 130
+AnchorPos=0 0
+Notes=
+Remark=头像
+NormalFile=.\res\image\ui\main_interface\user_face.PNG
+NormalFileUV=0 0 115 130
+
 [CTRL_PICTURE_USERINFO_BG]
 Type=1
 Tag=52
@@ -11,35 +21,26 @@ AnchorPos=0 0
 Notes=
 Remark=背景
 Stretch=1
-NormalFile=.\res\image\ui\main_interface\info_title.png
-NormalFileUV=0 0 640 120
-
-[CTRL_PICTURE_FACE]
-Type=1
-Tag=53
-Rect=0 9 115 130
-AnchorPos=0 0
-Notes=
-Remark=头像
-NormalFile=.\res\image\ui\main_interface\user_face.PNG
-NormalFileUV=0 0 115 130
+NormalFile=.\res\image\ui\main_interface\top_bg.png
+NormalFileUV=0 0 640 152
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=54
-Rect=123 17 154 47
+Rect=123 4 167 47
 AnchorPos=0 0
 Notes=
-Text=完颜阿鲁巴
-TextTradition=完顏阿魯巴
+Text=完颜阿鲁两个字
+TextTradition=完顏阿魯兩個字
 TextSize=24
+TextColor=0xfdffaa
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=55
-Rect=125 68 30 30
+Rect=125 51 30 30
 AnchorPos=0 0
 Notes=
 Remark=金币图标
@@ -49,7 +50,7 @@ NormalFileUV=0 0 30 30
 [CTRL_PICTURE_EMONEY]
 Type=1
 Tag=56
-Rect=125 100 30 30
+Rect=109 85 30 30
 AnchorPos=0 0
 Notes=
 Remark=代币图标
@@ -59,7 +60,7 @@ NormalFileUV=0 0 30 30
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=158 66 107 30
+Rect=158 51 107 30
 AnchorPos=0 0
 Notes=
 Text=1111111111
@@ -72,7 +73,7 @@ Remark=金币数值
 [CTRL_TEXT_EMONEY_NUM]
 Type=4
 Tag=58
-Rect=158 98 107 30
+Rect=144 85 107 30
 AnchorPos=0 0
 Notes=
 Text=2222222222
@@ -85,7 +86,7 @@ Remark=代币数值
 [CTRL_BUTTON_ADD_EMONEY]
 Type=2
 Tag=59
-Rect=275 68 95 60
+Rect=274 57 95 62
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -93,26 +94,26 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=充值按钮
 NormalFile=.\res\image\ui\main_interface\addemoney.PNG
-NormalFileUV=0 0 95 60
-SelectFile=.\res\image\ui\main_interface\addemoney.PNG
-SelectedFileUV=0 0 95 60
+NormalFileUV=0 0 116 76
+SelectFile=.\res\image\ui\main_interface\addemoney_click.png
+SelectedFileUV=0 0 116 76
 DisableFile=.\res\image\ui\main_interface\addemoney.PNG
 DisableFileUV=0 0 95 60
 
 [CTRL_PICTURE_LEVEL]
 Type=1
 Tag=60
-Rect=324 26 40 30
+Rect=302 13 40 30
 AnchorPos=0 0
 Notes=
 Remark=等级图标
 NormalFile=.\res\image\ui\main_interface\info_level.png
-NormalFileUV=0 0 50 34
+NormalFileUV=0 0 48 26
 
 [CTRL_TEXT_LEVEL_NUM]
 Type=4
 Tag=61
-Rect=376 26 65 30
+Rect=349 13 65 30
 AnchorPos=0 0
 Notes=
 Text=350
@@ -125,54 +126,27 @@ Remark=等级数值
 [CTRL_PICTURE_ENERGY]
 Type=1
 Tag=62
-Rect=376 60 65 35
+Rect=371 51 60 35
 AnchorPos=0 0
 Notes=
 Remark=精力图标
 NormalFile=.\res\image\ui\main_interface\energy.PNG
-NormalFileUV=0 0 65 35
+NormalFileUV=0 0 60 40
 
 [CTRL_PICTURE_STRENGTH]
 Type=1
 Tag=63
-Rect=376 99 65 35
+Rect=371 85 60 35
 AnchorPos=0 0
 Notes=
 Remark=体力图标
 NormalFile=.\res\image\ui\main_interface\strength.PNG
-NormalFileUV=0 0 65 35
-
-[CTRL_PICTURE_PROGRESSBAR_BG]
-Type=1
-Tag=64
-Rect=444 26 190 30
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
-NormalFileUV=0 0 190 30
-
-[CTRL_PICTURE_PROGRESSBAR_BG1]
-Type=1
-Tag=65
-Rect=444 62 190 30
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
-NormalFileUV=0 0 190 30
-
-[CTRL_PICTURE_PROGRESSBAR_BG2]
-Type=1
-Tag=66
-Rect=444 101 190 30
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
-NormalFileUV=0 0 190 30
+NormalFileUV=0 0 60 40
 
 [CTRL_PROGRESSBAR_EXP]
 Type=9
 Tag=67
-Rect=444 26 190 30
+Rect=428 17 192 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -185,7 +159,7 @@ NormalFileUV=0 0 190 30
 [CTRL_PROGRESSBAR_ENERGY]
 Type=9
 Tag=68
-Rect=444 62 190 30
+Rect=429 54 190 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -198,7 +172,7 @@ NormalFileUV=0 0 190 30
 [CTRL_PROGRESSBAR_STRENGTH]
 Type=9
 Tag=69
-Rect=444 101 190 30
+Rect=429 88 190 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -206,4 +180,31 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=体力条
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.PNG
+NormalFileUV=0 0 190 30
+
+[CTRL_PICTURE_PROGRESSBAR_BG]
+Type=1
+Tag=64
+Rect=429 17 190 25
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
+NormalFileUV=0 0 190 30
+
+[CTRL_PICTURE_PROGRESSBAR_BG1]
+Type=1
+Tag=65
+Rect=429 54 190 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
+NormalFileUV=0 0 190 30
+
+[CTRL_PICTURE_PROGRESSBAR_BG2]
+Type=1
+Tag=66
+Rect=429 87 190 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
 NormalFileUV=0 0 190 30

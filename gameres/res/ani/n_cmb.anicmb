@@ -1,8 +1,16 @@
 
+[skill_name_fx]
+@type=1
+n.fx_skill_bar_border
+n.fx_skill_bar_bg @delay=0.1
+n.fx_skill_bar_lightning @delay=0.3
+n.fx_skill_bar_pet @delay=0.4
+n.fx_skill_bar_title @delay=1
+
 [skill_name_fx_reverse]
 @type=1
-x.fx_skill_bar_border_reverse
-x.fx_skill_bar_bg_reverse @delay=0.1
-x.fx_skill_bar_lightning_reverse @delay=0.2
-x.fx_skill_bar_pet_reverse @delay=0.4
-x.fx_skill_bar_title_reverse @delay=1
+n.fx_skill_bar_border_reverse
+n.fx_skill_bar_bg_reverse @delay=0.1
+n.fx_skill_bar_lightning_reverse @delay=0.2
+n.fx_skill_bar_pet_reverse @delay=0.4
+n.fx_skill_bar_title_reverse @delay=1

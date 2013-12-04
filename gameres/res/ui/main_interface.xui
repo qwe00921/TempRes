@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_BG_BTN]
 Type=2
 Tag=11
-Rect=0 0 640 960
+Rect=0 0 638 956
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -17,7 +17,7 @@ Remark=隐藏子界面按钮
 [CTRL_MAIN_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 640 960
+Rect=0 0 638 960
 AnchorPos=0 0
 Notes=
 Remark=背景
@@ -27,7 +27,7 @@ NormalFileUV=0 0 510 600
 [CTRL_PICTURE_CHA]
 Type=1
 Tag=12
-Rect=-61 321 461 460
+Rect=-57 397 461 460
 AnchorPos=0 0
 Notes=
 Remark=首领星灵
@@ -37,7 +37,7 @@ NormalFileUV=0 0 449 643
 [CTRL_BUTTON_MORE]
 Type=2
 Tag=3
-Rect=0 770 80 80
+Rect=-2 750 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -45,16 +45,16 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=弹出按钮
 NormalFile=.\res\image\ui\main_interface\more.PNG
-NormalFileUV=0 0 80 80
-SelectFile=.\res\image\ui\main_interface\more.PNG
-SelectedFileUV=0 0 80 80
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui\main_interface\more_click.png
+SelectedFileUV=0 0 100 100
 DisableFile=.\res\image\ui\main_interface\more.PNG
 DisableFileUV=0 0 80 80
 
 [CTRL_BUTTON_ACTIVITY]
 Type=2
 Tag=4
-Rect=497 360 100 90
+Rect=532 334 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -62,16 +62,16 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=活动按钮
 NormalFile=.\res\image\ui\main_interface\activity.PNG
-NormalFileUV=0 0 100 90
-SelectFile=.\res\image\ui\main_interface\activity.PNG
-SelectedFileUV=0 0 100 90
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui\main_interface\activity_click.PNG
+SelectedFileUV=0 0 100 100
 DisableFile=.\res\image\ui\main_interface\activity.PNG
 DisableFileUV=0 0 100 90
 
 [CTRL_BUTTON_MAIL]
 Type=2
 Tag=5
-Rect=497 460 100 90
+Rect=532 434 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -79,53 +79,36 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=邮件按钮
 NormalFile=.\res\image\ui\main_interface\mail.PNG
-NormalFileUV=0 0 100 90
-SelectFile=.\res\image\ui\main_interface\mail.PNG
-SelectedFileUV=0 0 100 90
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui\main_interface\mail_click.png
+SelectedFileUV=0 0 100 100
 DisableFile=.\res\image\ui\main_interface\mail.PNG
-DisableFileUV=0 0 100 90
-
-[CTRL_BUTTON_SHOP]
-Type=2
-Tag=6
-Rect=497 560 100 90
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=商城按钮
-NormalFile=.\res\image\ui\main_interface\shop.PNG
-NormalFileUV=0 0 100 90
-SelectFile=.\res\image\ui\main_interface\shop.PNG
-SelectedFileUV=0 0 100 90
-DisableFile=.\res\image\ui\main_interface\shop.PNG
 DisableFileUV=0 0 100 90
 
 [CTRL_PICTURE_ACTIVITY_TIPS_BG]
 Type=1
 Tag=7
-Rect=580 347 30 30
+Rect=588 334 36 36
 AnchorPos=0 0
 Notes=
 Remark=活动数量通知背景
-NormalFile=.\res\image\ui\main_interface\tips.PNG
-NormalFileUV=0 0 30 30
+NormalFile=.\res\image\ui\main_interface\num_bg.png
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_MAIL_TIPS_BG]
 Type=1
 Tag=8
-Rect=580 447 30 30
+Rect=588 438 36 36
 AnchorPos=0 0
 Notes=
 Remark=邮件数量通知背景
-NormalFile=.\res\image\ui\main_interface\tips.PNG
-NormalFileUV=0 0 30 30
+NormalFile=.\res\image\ui\main_interface\num_bg.png
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_ACTIVITY_TIPS_NUM]
 Type=4
 Tag=9
-Rect=580 347 30 30
+Rect=592 334 30 30
 AnchorPos=0 0
 Notes=
 Text=11
@@ -138,7 +121,7 @@ Remark=活动数量
 [CTRL_TEXT_MAIL_TIPS_NUM]
 Type=4
 Tag=10
-Rect=580 447 30 30
+Rect=591 439 30 30
 AnchorPos=0 0
 Notes=
 Text=11
@@ -147,4 +130,3 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=邮件数量
-

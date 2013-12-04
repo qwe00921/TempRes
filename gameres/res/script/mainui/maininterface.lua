@@ -46,9 +46,10 @@ function p.SetBtn(btn)
 end
 
 function p.SetDelegate()
+	--[[
 	local shop = GetButton( p.layer, ui.ID_CTRL_BUTTON_SHOP );
 	p.SetBtn( shop );
-	
+	--]]
 	local mail = GetButton( p.layer, ui.ID_CTRL_BUTTON_MAIL );
 	p.SetBtn( mail );
 	
@@ -67,11 +68,15 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		p.CloseAllPanel();
 		
+		--[[
 		if ui.ID_CTRL_BUTTON_SHOP == tag then
 			WriteCon("**========ÉÌ³Ç========**");
 			dlg_gacha.ShowUI( SHOP_ITEM );
 			p.BecomeBackground();
-		elseif ui.ID_CTRL_BUTTON_MAIL == tag then
+		end
+		--]]
+		
+		if ui.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========ÓÊ¼þ========**");
 			mail_main.ShowUI();
 			
