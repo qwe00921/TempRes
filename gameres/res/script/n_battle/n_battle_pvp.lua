@@ -25,6 +25,40 @@ local enemyUIArray = {
 	ui.ID_CTRL_RIGHT_SPRITE_6,
 }
 
+local petNameUIArray = {
+       ui.ID_CTRL_TEXT_PET_NAME_1,
+       ui.ID_CTRL_TEXT_PET_NAME_2,
+       ui.ID_CTRL_TEXT_PET_NAME_3,
+       ui.ID_CTRL_TEXT_PET_NAME_4,
+}
+local petPicUIArray = {
+       ui.ID_CTRL_PICTURE_PET_PIC_1,
+       ui.ID_CTRL_PICTURE_PET_PIC_2,
+       ui.ID_CTRL_PICTURE_PET_PIC_3,
+       ui.ID_CTRL_PICTURE_PET_PIC_4,
+}
+local petLVUIArray = {
+       ui.ID_CTRL_TEXT_PET_LV_1,
+       ui.ID_CTRL_TEXT_PET_LV_2,
+       ui.ID_CTRL_TEXT_PET_LV_3,
+       ui.ID_CTRL_TEXT_PET_LV_4,
+}
+local petSkillUIArray = {
+       ui.ID_CTRL_PICTURE_PET_SKILL_1,
+       ui.ID_CTRL_PICTURE_PET_SKILL_2,
+       ui.ID_CTRL_PICTURE_PET_SKILL_3,
+       ui.ID_CTRL_PICTURE_PET_SKILL_4,
+}
+
+local petRageUIArray = {
+       ui.ID_CTRL_EXP_PET_RAGE_1,
+       ui.ID_CTRL_EXP_PET_RAGE_2,
+       ui.ID_CTRL_EXP_PET_RAGE_3,
+       ui.ID_CTRL_EXP_PET_RAGE_4,
+}
+
+local PETCAMPNUM = 2;
+
 -----
 p.battleLayer = nil;
 p.TestHeroFighter1 = nil;
@@ -63,7 +97,7 @@ function p.ShowUI()
 	p.battleLayer = layer;
 	
 	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
-	skillNameBar:SetFramePosXY(0,skillNameBar:GetFramePos().y);
+	skillNameBar:SetFramePosXY(-640,skillNameBar:GetFramePos().y);
 	p.skillNameBarOldPos = skillNameBar:GetFramePos();
 	
 	p.pBgImage = GetImage(p.battleLayer,ui_n_battle_pvp.ID_CTRL_PICTURE_BG);
@@ -80,6 +114,42 @@ function p.ShowUI()
 	return true;
 end
 
+function p.GetScreenCenterPos()
+	local cNode = GetImage( p.battleLayer,ui.ID_CTRL_PICTURE_CENTER );
+	return cNode:GetCenterPos();
+end
+
+--初始化控件
+function p.InitPetRage( Position, cValue )
+    local Position = Position;
+    if Position == nil or cValue == nil then
+        return;
+    elseif Position > N_BATTLE_CAMP_CARD_NUM then
+        Position = Position - N_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
+    end
+    local petRage = GetExp( p.battleLayer, petRageUIArray[ Position ]);
+    petRage:SetNoText();
+    petRage:SetValue( MIN_RAGE_NUM, MAX_RAGE_NUM, cValue );
+end
+
+function p.UpdatePetRage( Position, cValue )
+	local Position = Position;
+    if Position == nil or cValue == nil then
+        return;
+    elseif Position > N_BATTLE_CAMP_CARD_NUM then
+        Position = Position - N_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
+    end
+    local petRage = GetExp( p.battleLayer, petRageUIArray[ Position ]);
+    local oldValue = tonumber( petRage:GetProcess() );
+    local allv = oldValue + cValue ;
+    if allv > MAX_RAGE_NUM then
+    	allv = MAX_RAGE_NUM;
+    elseif allv < 0 then	
+        allv = 0;
+    end
+    petRage:SetValue( MIN_RAGE_NUM, MAX_RAGE_NUM, allv );
+end
+
 --当前攻击卡牌信息
 function p.SetAtkCardInfo()
 	local pic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_ATK_PIC );
@@ -94,29 +164,24 @@ function p.SetAtkTargetCardInfo()
     local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATKTARGET_NAME );
 end
 
-function p.InitHeroPet()
-	local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_1 );
-	local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_1 );
-    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_1 );
-    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_1 );
-    
-    local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_2 );
-    local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_2 );
-    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_2 );
-    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_2 );
-    
-end
-
-function p.InitEnemyPet()
-    local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_3 );
-    local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_3 );
-    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_3 );
-    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_3 );
-    
-    local petPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_PIC_4 );
-    local petSkillPic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_PET_SKILL_4 );
-    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_LV_4 );
-    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_PET_NAME_4 );
+function p.InitPetUI( Position, petName, petLV, petIconAni, petSkillIconAni )
+	local Position = Position;
+	if Position == nil then
+		return;
+	elseif Position > N_BATTLE_CAMP_CARD_NUM then
+		Position = Position - N_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
+	end
+	
+	local name = GetLabel( p.battleLayer, petNameUIArray[ Position ] );
+	local lv = GetLabel( p.battleLayer, petLVUIArray[ Position ] );
+	local petPic = GetImage( p.battleLayer, petPicUIArray[ Position ] );
+	local skillPic = GetImage( p.battleLayer, petSkillUIArray[ Position ] );
+	
+	name:SetText( petName );
+	lv:SetText( "LV"..petLV );
+	petPic:AddFgEffect( petIconAni );
+	skillPic:AddFgEffect( petSkillIconAni );
+	
 end
 
 --关闭
@@ -133,19 +198,20 @@ function p.SetSkillNameBarToLeft()
 	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
 	skillNameBar:SetFramePos(p.skillNameBarOldPos);
 	
+	--[[
 	local tempPos = skillNameBar:GetFramePos();
 	tempPos.x = tempPos.x - GetScreenWidth();
 	skillNameBar:SetFramePos(tempPos);
+	--]]
 end
 
 --设置技能名称栏UI到右边，以提供从右进入特效
 function p.SetSkillNameBarToRight()
 	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
-	skillNameBar:SetFramePos(p.skillNameBarOldPos);
-	
+	--skillNameBar:SetFramePos(p.skillNameBarOldPos);
 	local tempPos = skillNameBar:GetFramePos();
-	tempPos.x = tempPos.x + GetScreenWidth();
-	skillNameBar:SetFramePos(tempPos);
+	--tempPos.x = tempPos.x + GetScreenWidth();
+	skillNameBar:SetFramePosXY( 640,tempPos.y );
 end
 
 --添加战斗背景框
@@ -165,8 +231,8 @@ end
 function p.ReSetSkillNameBarPos()
 	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 );
 	skillNameBar:SetFramePos(p.skillNameBarOldPos);
-	skillNameBar:DelAniEffect("x_cmb.skill_name_fx");
-	skillNameBar:DelAniEffect("x_cmb.skill_name_fx_reverse");
+	--skillNameBar:DelAniEffect("x_cmb.skill_name_fx");
+	--skillNameBar:DelAniEffect("x_cmb.skill_name_fx_reverse");
 end
 
 --初始化战斗

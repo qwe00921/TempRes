@@ -27,6 +27,7 @@ function p:ctor()
 	self.pOriginPos = nil;
 	self.m_kShadow = nil;
 	self.m_kCurrentBatch = nil;
+	self.flynumGreen = nil;
 end
 
 --初始化（重载）
@@ -35,6 +36,7 @@ function p:Init( idFighter, node, camp )
 	--self.hpbar:GetNode():SetVisible( false );
 	self.tmplife = self.life;
 	self:CreateHpBar();
+	self:CreateFlyNumGreen();
 end
 
 --创建飘血数字
@@ -53,6 +55,19 @@ function p:CreateFlyNum(nType)
     return flynum;
 end
 
+--创建飘血数字
+function p:CreateFlyNumGreen()
+    if self.flynumGreen ~= nil then
+        return self.flynumGreen;
+    end
+    local flynum = n_fly_num_green:new();
+    flynum:SetOwnerNode( self.node );
+    flynum:Init();
+    flynum:SetOffset(30,-50);
+    self.node:AddChildZ( flynum:GetNode(), 3 );
+    self.flynumGreen = flynum;
+end
+
 --创建血条
 function p:CreateHpBar()
 	if self.hpbar == nil or self.m_kShadow == nil then
@@ -62,6 +77,17 @@ function p:CreateHpBar()
 		self.hpbar:Init( self.node, self.life, self.lifeMax );
 		--self.hpbar:HideBar();
 	end	
+end
+
+--增加生命
+function p:SetLifeAdd( num )
+    self.life = self.life + num;
+    if self.life > self.lifeMax then
+        self.life = self.lifeMax;
+    end
+    self:SetLife( self.life );
+    self.tmplife = self.life;
+    self.flynumGreen:PlayNum( num );
 end
 
 --临时生命值

@@ -7,241 +7,240 @@
 n_battle_skill = {}
 local p = n_battle_skill;
 
---创建新实例
-function p:new()    
-    o = {}
-    setmetatable( o, self );
-    self.__index = self;
-    o:ctor(); return o;
-end
-
---构造函数
-function p:ctor()
-
-    --单体技能配置
-    self.singleConfig = {
-        action = nil,
-        actionTime = 0,
-        ani = nil,
-        aniTime = 0,
-        bulletConfig = nil,
-        targetAction = nil,
-        targetactionTime = 0,
-        targetAni = nil,
-        targetAniTime = 0,
-        backEffect = false
-    };
-    --群体技能配置
-    self.aoeConfig = {
-        action = nil,
-        actionTime = 0,
-        ani = nil,
-        aniTime = 0,
-        bulletConfig = nil,
-        targetAction = nil,
-        targetactionTime = 0,
-        targetAni = nil,
-        targetAniTime = 0,
-    };
-end
-
-function p:Init()
-
-    --单体技能默认配置
-    self.singleConfig.action = "card_battle.blow_up";
-    self.singleConfig.targetAni = "card_battle.b_z";
-    self.singleConfig.targetAniTime = 0.01;
-    
-    --群体技能默认配置
-    self.aoeConfig.ani = "card_battle_cmb.x_w";
-    self.aoeConfig.targetAni = "card_battle.b_z";
-    self.aoeConfig.targetAniTime = 0.1;
-    self.aoeConfig.bulletConfig = "bullet.bullet1";
-end
-
 --单体技能
-function p:SkillSingle( atkFighter, targetfighter, hurt, batch )
-    local seqSkill = batch:AddSerialSequence();     --攻击方特效
-    local seqTarget = batch:AddSerialSequence();    --受击方特效
-    local seqBullet = batch:AddSerialSequence();    --弹道特效
-    local config = self.singleConfig;               --单体技能配置
-    local bulletEnd = nil;                          --弹道特效完成指令
+function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
+    if hero == nil or SkillId == nil or distance == nil or Targets == nil or TCamp == nil or batch == nil then return end
     
-    --1:攻击方表现
-    local cmdAction; 
-    local cmdAni;
-    if config.action ~= nil then
-    	cmdAction = createCommandEffect():AddActionEffect( config.actionTime, atkFighter:GetPlayerNode(), config.action );
-        seqSkill:AddCommand( cmdAction );
-    end
-    if config.ani ~= nil then
-        cmdAni = createCommandEffect():AddFgEffect( config.aniTime, atkFighter:GetPlayerNode(), config.ani );
-        seqSkill:AddCommand( cmdAni );
-    end
-    
-    --2:技能特效：目前技能子弹特效
-    if config.bulletConfig ~= nil then
-        local deg = atkFighter:GetAngleByFighter( targetfighter );
-        local bullet = bullet:new();
-        bullet:AddToBattleLayer();
-        bullet:UseConfig( config.bulletConfig );
-        bullet:GetNode():SetRotationDeg( deg );
-        local bullet1 = bullet:cmdSetVisible( true, seqBullet );
-        local bullet2 = bullet:cmdShoot( atkFighter, targetfighter, seqBullet, false );
-        bulletEnd = bullet:cmdSetVisible( false, seqBullet );
-        
-        --设置等待
-        if cmdAni ~= nil then
-            seqBullet:SetWaitEnd( cmdAni );
-        elseif cmdAction ~= nil then
-            seqBullet:SetWaitEnd( cmdAction );
-        end
-        
-    end
-    
-    --3:受击方表现
-    local cmd10;
-    if config.targetAction ~= nil then
-        cmd10 = createCommandEffect():AddActionEffect( config.targetActionTime, targetfighter:GetPlayerNode(), config.targetAction );
-        seqTarget:AddCommand( cmd10 );
-    end
-    if config.targetAni ~= nil then
-    	cmd10 = createCommandEffect():AddFgEffect( config.targetAniTime, targetfighter:GetPlayerNode(), config.targetAni );
-        seqTarget:AddCommand( cmd10 );
-    end
-    
-    --击退特效
-    if config.backEffect then
-    	local cmdBack = createCommandEffect():AddActionEffect( 0.01, targetfighter:GetPlayerNode(), "lancer.target_hurt_back" );
-        seqTarget:AddCommand( cmdBack );
-    end
-                
-    local cmd11 = targetfighter:cmdLua( "fighter_damage", tonumber( hurt ), "", seqTarget );
-    
-    --击退特效还原
-    if config.backEffect then
-        local cmdBackRset = createCommandEffect():AddActionEffect( 0, targetfighter:GetPlayerNode(), "lancer.target_hurt_back_reset" );
-        seqTarget:AddCommand( cmdBackRset );
-    end
-                
-    self:HurtResultAni( targetfighter, seqTarget );
-    
-    --设置等待
-    if config.bulletConfig ~= nil then
-        seqTarget:SetWaitEnd( bulletEnd );
-    elseif cmdAni ~= nil then
-        seqTarget:SetWaitEnd( cmdAni );    
-    elseif cmdAction ~= nil then
-        seqTarget:SetWaitEnd( cmdAction ); 
-    end
-end
-
---群体技能
-function p:SkillAOE( atkFighter, targets, tCamp, batch)
-	if batch == nil then return end
-	local config = self.aoeConfig;--群体技能配置
+    --创建3个序列给攻击者、受击者、ui
     local seqAtk    = batch:AddSerialSequence();
-    if seqAtk == nil then
-        WriteCon( "create seqAtk failed");
-        return;
+    local seqTarget = batch:AddParallelSequence();
+    local seqUI = batch:AddSerialSequence();
+    
+    local playerNode = hero:GetPlayerNode();
+    
+    --攻击者最初的位置
+    local originPos = playerNode:GetCenterPos();
+    
+    --受击目标类型
+    local targetType = tonumber( SelectCell( T_SKILL, SkillId, "Target_type" ) );
+    
+    --攻击目标的位置
+    local enemyPos; 
+    if IsAoeSkillByType( targetType ) then
+       enemyPos = n_battle_pvp.GetScreenCenterPos();
+    else
+       enemyPos = GetBestTargetPos( hero, TCamp, Targets );    
     end
     
-    if targets == nil or #targets <= 0 then
-    	WriteConErr("SkillAOE no target!");
+    local sing = SelectCell( T_SKILL_RES, SkillId, "sing_effect" );
+    local hurt = SelectCell( T_SKILL_RES, SkillId, "hurt_effect" );
+    local isBullet = tonumber( SelectCell( T_SKILL_RES, SkillId, "is_bullet" ) );
+    local bulletAni;
+    if isBullet == N_BATTLE_BULLET_1 then
+    	bulletAni = "n_bullet."..tostring( hero.uniqueId );
     end
     
-    --敌方的索引开始点为：当前索引+英雄方个数
-    local basePos = 0;
-    if tCamp == E_CARD_CAMP_ENEMY then
-        basePos = basePos + N_BATTLE_CAMP_CARD_NUM;
-    end  
+    local cmd1 = createCommandEffect():AddFgEffect( 0.1, hero:GetNode(), sing );
+    seqAtk:AddCommand( cmd1 );
     
-    --1:攻击方表现
-    local cmdAction; 
-    local cmdAni;
-    if config.action ~= nil then
-        cmdAction = createCommandEffect():AddActionEffect( config.actionTime, atkFighter:GetPlayerNode(), config.action );
-        seqAtk:AddCommand( cmdAction );
+    --近战攻击
+    local cmdDoPos;
+    if distance == N_BATTLE_DISTANCE_1 then
+        cmdDoPos = JumpMoveTo(hero, originPos, enemyPos, seqAtk );
     end
-    if config.ani ~= nil then
-        cmdAni = createCommandEffect():AddFgEffect( config.aniTime, atkFighter:GetPlayerNode(), config.ani );
-        seqAtk:AddCommand( cmdAni );
-    end
-    --local cmd2 = createCommandEffect():AddFgEffect( 0.5, atkFighter:GetPlayerNode(), "card_battle."..atkFighter.UseConfig );
-    --seqAtk:AddCommand( cmd2 );
     
-    --local targets = card_battle_mgr.enemyCamp:GetAliveFighters();
-    for k, v in ipairs(targets) do
-        local targetFighter = n_battle_mgr.FindFighter( tonumber( v.TPos ) + basePos );
-        
-        local Damage = tonumber( v.Damage ); --伤害值
+    local cmd2 = createCommandPlayer():Atk( 0, hero:GetPlayerNode(), "" );
+    seqAtk:AddCommand( cmd2 );
+    
+    local cmd3 = createCommandPlayer():Standby( 0.01, hero:GetPlayerNode(), "" );
+    seqAtk:AddCommand( cmd3 );
+    
+    if distance == N_BATTLE_DISTANCE_1 then
+        local cmd4 = JumpMoveTo(hero, enemyPos, originPos, seqAtk);
+    end
+                            
+    local cmd_ui = p.doUIEffect( TCamp, seqUI, SkillId );
+    
+    seqUI:SetWaitEnd( cmd1 );
+    if distance == N_BATTLE_DISTANCE_1 and cmdDoPos ~= nil then
+        cmdDoPos:SetWaitEnd( cmd_ui );
+    else
+        cmd2:SetWaitEnd( cmd_ui );
+    end
+    
+    for k, v in ipairs(Targets) do
+        local enemy = nil; --受击者
+        if TCamp == E_CARD_CAMP_HERO then
+            enemy = n_battle_mgr.heroCamp:FindFighter( tonumber( v.TPos ) );
+        elseif TCamp == E_CARD_CAMP_ENEMY then
+            enemy = n_battle_mgr.enemyCamp:FindFighter( tonumber( v.TPos ) + N_BATTLE_CAMP_CARD_NUM );
+        end
+        local Damage = tonumber( v.Damage ); --扣除血量
+        local RemainHp = tonumber( v.RemainHp ); --所剩血量
+        local Crit = tonumber( v.Crit ); --暴击
         local Dead = v.TargetDead;--死亡
-        
-        --local buffValue = tonumber( v.buff_value );
-        --local buffWorkTime = tonumber( v.buff_work_time );
-        --local buffEffect = tonumber( v.buff_effect );
-        
-        local seqBullet = batch:AddSerialSequence();
-        local seqTarget = batch:AddSerialSequence();
-        
-        --2:技能特效：子弹特效
-        local deg = atkFighter:GetAngleByFighter( targetFighter );
-        local bullet = n_bullet:new();
-        bullet:AddToBattleLayer();
-        bullet:UseConfig(config.bulletConfig);
-            
-        bullet:GetNode():SetRotationDeg( deg );
-        local bullet1 = bullet:cmdSetVisible( true, seqBullet );
-        local bullet2 = bullet:cmdShoot( atkFighter, targetFighter, seqBullet, false );
-        local bullet3 = bullet:cmdSetVisible( false, seqBullet );
-        seqBullet:SetWaitEnd( cmd2 );
-        
-        --3:受击方表现
-        local cmd3;
-        if config.targetAction ~= nil then
-            cmd3 = createCommandEffect():AddActionEffect( config.targetActionTime, targetFighter:GetPlayerNode(), config.targetAction );
-            seqTarget:AddCommand( cmd3 );
-        end
-        if config.targetAni ~= nil then
-            cmd3 = createCommandEffect():AddFgEffect( config.targetAniTime, targetFighter:GetPlayerNode(), config.targetAni );
-            seqTarget:AddCommand( cmd3 );
-        end
-        
-        local cmdBack = createCommandEffect():AddActionEffect( 0, targetFighter:GetNode(), "card_battle.target_hurt_back" );
-        seqTarget:AddCommand( cmdBack );
-                    
         --受击者死亡
-        if Dead and Damage ~= targetFighter.life then
-            Damage = targetFighter.life;
+        if Dead and Damage < enemy.life then
+            Damage = enemy.life;
             WriteConWarning("the TargetFighter Mandatory death!");
         end
-        
-        --飘血
-        local cmd12 = targetFighter:cmdLua( "fighter_damage", Damage, "", seqTarget );
-        
-        local cmdForward = createCommandEffect():AddActionEffect( 0, targetFighter:GetNode(), "card_battle.target_hurt_back_reset" );
-        seqTarget:AddCommand( cmdForward ); 
-        
-        --受攻击的后续动画【死亡 OR 站立】
-        self:HurtResultAni( targetFighter, seqTarget );
+        if enemy ~= nil then
+            local seq1 = batch:AddParallelSequence();
+            local seqBullet = batch:AddSerialSequence();
+            local bulletend;
             
-        --受击者序列等待子弹打到目标点
-        seqTarget:SetWaitEnd( bullet3 );
-    end
+            if bulletAni ~= nil then
+            	--2:技能特效：子弹特效
+                local deg = hero:GetAngleByFighter( enemy );
+                local bullet = n_bullet:new();
+                bullet:AddToBattleLayer();
+                bullet:SetEffectAni( bulletAni );
+                    
+                bullet:GetNode():SetRotationDeg( deg );
+                local bullet1 = bullet:cmdSetVisible( true, seqBullet );
+                local bullet2 = bullet:cmdShoot( hero, enemy, seqBullet, false );
+                bulletend = bullet:cmdSetVisible( false, seqBullet );
+                seqBullet:SetWaitEnd( cmd2 );
+            end
+        
+            if seq1 ~= nil then
+                --受击特效
+                --AddFgReverseEffect
+                local cmd11 = createCommandEffect():AddFgEffect( 0, enemy:GetNode(), hurt );
+                seq1:AddCommand( cmd11 );
+                
+                local cmdBackRset = createCommandEffect():AddActionEffect( 0.01, enemy:GetNode(), "lancer.target_hurt_back_reset" );
+                seq1:AddCommand( cmdBackRset ); 
+                cmdBackRset:SetWaitEnd( cmd11 );
+                
+                
+                --受击动画
+                local cmd12 = createCommandPlayer():Hurt( 0, enemy:GetNode(), "" );
+                seq1:AddCommand( cmd12 );
+                
+                --飘血
+                local cmd13 = enemy:cmdLua( "fighter_damage", Damage, "", seq1 );
+                cmd13:SetWaitEnd( cmd12 );
+                
+                local cmdBack = createCommandEffect():AddActionEffect( 0, enemy:GetNode(), "lancer.target_hurt_back" );
+                seq1:AddCommand( cmdBack );
+                cmdBack:SetWaitEnd( cmd13 );
+                
+                HurtResultAni( enemy, seq1 )
+                
+                --设置等待
+                if bulletend ~= nil then
+                	seq1:SetWaitEnd( bulletend );
+                else
+                	seq1:SetWaitEnd( cmd3 );
+                end
+                
+            end     
+        end
+    end 
 end
 
---受击结果：死亡动作或站立动画
-function p:HurtResultAni( targetFighter, seqTarget )
-    if targetFighter:CheckTmpLife() then
-        --local cmdA = createCommandPlayer():Standby( 0, targetFighter:GetNode(), "" );
-        --seqTarget:AddCommand( cmdA );
+function p.doUIEffect( camp, seqUI, SkillId )
+    --初始化技能名称栏对应的ACTION特效
+    local skillNameBarInAction = nil;
+    local skillNameBarOutAction = nil;
+    local skillFxBor = nil;
+    local skillFxBg = nil;
+    local fx_lightning = nil;
+    local fx_pic = nil;
+    local fx_title = SelectCell( T_SKILL_RES, SkillId, "name_effect" );
+    if camp == E_CARD_CAMP_HERO then
+        skillNameBarInAction = "n.skill_name_move_left_in";
+        skillNameBarOutAction = "n.skill_name_move_right_out";
+        skillFxBor = "n.fx_skill_bar_border";
+        skillFxBg = "n.fx_skill_bar_bg";
+        fx_lightning = "n.fx_skill_bar_lightning";
+        fx_pic = "n.fx_skill_bar_pet";
     else
-        --local cmdB = createCommandPlayer():Dead( 0, targetFighter:GetNode(), "" );
-        --seqTarget:AddCommand( cmdB );   
-        
-        local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
-        seqTarget:AddCommand( cmdC );
+        skillNameBarInAction = "n.skill_name_move_right_in";
+        skillNameBarOutAction = "n.skill_name_move_left_out";
+        skillFxBor = "n.fx_skill_bar_border_reverse";
+        skillFxBg = "n.fx_skill_bar_bg_reverse";
+        fx_lightning = "n.fx_skill_bar_lightning_reverse";
+        fx_pic = "n.fx_skill_bar_pet_reverse";
     end
+    
+    --设置技能名称栏的位置
+    local cmd1;
+    if camp == E_CARD_CAMP_HERO then
+        cmd1 = createCommandLua():SetCmd( "SetSkillNameBarToLeft", 0, 0, "" );
+    else
+        cmd1 = createCommandLua():SetCmd( "SetSkillNameBarToRight", 0, 0, "" );
+    end
+    if cmd1 ~= nil then
+        seqUI:AddCommand( cmd1 );
+    end 
+    
+    --增加蒙版
+    local cmd2 = createCommandLua():SetCmd( "AddMaskImage", 0, 0, "" );
+    if cmd2 ~= nil then
+        seqUI:AddCommand( cmd2 );
+    end 
+    
+    --大招名称特效
+    --0:初始化特效
+    local skillNameBar;
+    if n_battle_mgr.isPVE then
+        skillNameBar = GetImage( n_battle_pve.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
+    else    
+        skillNameBar = GetImage( n_battle_pvp.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 );
+    end
+    local cmdBor = createCommandEffect():AddFgEffect( 0.01, skillNameBar, skillFxBor );
+    seqUI:AddCommand( cmd3 );   
+    
+    local cmdBg = createCommandEffect():AddFgEffect( 0.01, skillNameBar, skillFxBg );
+    seqUI:AddCommand( cmdBg );   
+    
+    local cmdLightning = createCommandEffect():AddFgEffect( 0.01, skillNameBar, fx_lightning );
+    seqUI:AddCommand( cmdLightning ); 
+    
+    local cmdFxPic = createCommandEffect():AddFgEffect( 0, skillNameBar, fx_pic );
+    seqUI:AddCommand( cmdFxPic ); 
+    
+    local cmdFxTitle = createCommandEffect():AddFgEffect( 0, skillNameBar, fx_title );
+    seqUI:AddCommand( cmdFxTitle ); 
+    
+    
+    --1:设置模糊
+    local cmd4 = createCommandEffect():AddActionEffect( 0.01, skillNameBar, "n.gsblur5" );
+    seqUI:AddCommand( cmd4 );
+    
+    --2:进入屏幕
+    local cmd5 = createCommandEffect():AddActionEffect( 0, skillNameBar, skillNameBarInAction );
+    seqUI:AddCommand( cmd5 );   
+    
+    --2:恢复清晰
+    local cmd6 = createCommandEffect():AddActionEffect( 0, skillNameBar, "n.gsblur_zero" );
+    seqUI:AddCommand( cmd6 );
+    cmd6:SetDelay(0.2); 
+    
+    --4:移出屏幕
+    local cmd7 = createCommandEffect():AddActionEffect( 0, skillNameBar, skillNameBarOutAction );
+    seqUI:AddCommand( cmd7 );   
+    cmd7:SetDelay(0.3);     
+        
+    --隐藏蒙版
+    local cmd8 = createCommandLua():SetCmd( "HideMaskImage", 0, 0, "" );
+    if cmd8 ~= nil then
+        seqUI:AddCommand( cmd8 );
+    end 
+    
+    --还原技能名称栏的位置
+    local cmd9 = createCommandLua():SetCmd( "ReSetSkillNameBarPos", 0, 0, "" );
+    if cmd9 ~= nil then
+        seqUI:AddCommand( cmd9 );
+    end 
+    
+    local cmd_dumb = createCommandInstant():Dumb();
+    if cmd_dumb ~= nil then
+        seqUI:AddCommand( cmd_dumb );
+    end 
+    return cmd_dumb;
 end
 
 

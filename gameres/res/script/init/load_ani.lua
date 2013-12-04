@@ -26,6 +26,9 @@ LoadAni("n.ani")
 LoadAni("button.ani")
 LoadAni("pet_skill.ani")
 LoadAni("skill_icon.ani")
+LoadAni("skill_effect.ani")
+LoadAni("n_battle_buff.ani")
+LoadAni("n_bullet.ani")
 LoadAni_Done()
 
 --加载组合特效
