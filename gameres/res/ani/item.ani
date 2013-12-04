@@ -114,3 +114,8 @@ image\ui\bag\star3.png
 ;是否装备图标	by:xmk
 [equipUse]
 image\ui\bag\bag_equip.png
+
+;装备模式		by:xmk
+[equipMode]
+image\ui\bag\star1.png
+image\ui\bag\star2.png

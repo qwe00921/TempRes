@@ -78,6 +78,7 @@ DoFile("http/msg/msg_achievement.lua")
 DoFile("http/msg/msg_beast_main.lua");--召唤兽列表
 DoFile("http/msg/msg_beast_call.lua");--召唤兽出战
 DoFile("http/msg/msg_beast_train.lua");--召唤兽培养
+DoFile("http/msg/msg_beast_sell.lua");--召唤兽出售
 
 --战斗消息类
 DoFile("http/msg/msg_battle.lua");				--战斗消息

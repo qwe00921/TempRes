@@ -70,14 +70,8 @@ end
 
 --判断是否为出战召唤兽
 function p.CheckIsFightPet( id )
-	local flag = false;
-	for _, petid in pairs( p.fightId ) do
-		if petid == id then
-			flag = true;
-			break;
-		end
-	end
-	return flag;
+	local obj = p.objs[id];
+	return obj ~= nil and obj.Team_id ~= 0;
 end
 
 --设置出战
@@ -204,7 +198,7 @@ end
 --非正常选择和取消的情况，返回0
 function p.SelectPetID( id, layer )
 	if p.CheckIsFightPet( id ) then
-		dlg_msgbox.ShowOK( ToUtf8("提示"), ToUtf8("不能选择出战召唤兽"), nil, layer );
+		dlg_msgbox.ShowOK( ToUtf8("提示"), ToUtf8("不能选择已编组召唤兽"), nil, layer );
 		return 0;
 	end
 	
@@ -263,4 +257,20 @@ end
 
 function p.ClearIDList()
 	p.idList = {};
+end
+
+--出售召唤兽
+function p.SellPet( node )
+	local id = node:GetId();
+	if p.CheckIsFightPet( id ) then
+		dlg_msgbox.ShowOK( ToUtf8("提示"), ToUtf8("不能出售已编组召唤兽"), nil, layer );
+		return 0;
+	end
+	
+	local uid = GetUID();
+	if uid == 0 or uid == nil then
+		return ;
+	end
+	
+	SendReq( "Pet", "SellPet", uid, "&id="..tostring(id) );
 end

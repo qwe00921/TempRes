@@ -31,12 +31,13 @@ DoFile("ui/ui_quest_list_view.lua")
 --背包
 DoFile("ui/ui_bag_main.lua")
 DoFile("ui/ui_bag_list.lua")
-DoFile("ui/ui_card_bag_sort_view.lua")
-DoFile("ui/ui_card_bag_select.lua")
+DoFile("ui/ui_bag_equip_view.lua")
 
 --卡牌背包
 DoFile("ui/ui_card_main_view.lua")
 DoFile("ui/ui_card_list_view.lua")
+DoFile("ui/ui_card_bag_sort_view.lua")
+DoFile("ui/ui_card_bag_select.lua")
 
 --加载所有UI
 DoFile("ui/ui_battle_boss.lua")
