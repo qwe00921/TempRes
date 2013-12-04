@@ -1,20 +1,31 @@
-[1]
-@sing image\skill\1_sing.png 
-@skill image\skill\1_bullet.png 
-@hurt image\skill\1_hurt.png 
-[2]
-@sing image\skill\2_sing.png 
-@skill image\skill\2_bullet.png 
-@hurt image\skill\2_hurt.png 
-[1001]
-@sing image\skill\3_sing.png 
-@skill image\skill\3_bullet.png 
-@hurt image\skill\3_hurt.png 
-[1002]
-@hurt image\skill\4_hurt.png 
-[1003]
-@hurt image\skill\4_hurt.png 
-[1004]
-@hurt image\skill\4_hurt.png 
-[1005]
-@hurt image\skill\4_hurt.png 
+[sing_aperture_blue]
+image\skill\2_sing.png @cut(1,5)
+
+[hurt_fire]
+image\skill\3_hurt.png @cut(2,7) @use(1,10) @time=0.1
+
+[hurt_add_hp]
+image\skill\single_cure.png @cut(3,8) @use(1,20) @time=0.04
+
+
+;技能名称特效
+[name_1]
+image\skill_name\1001.png @cut(1,1) @stay
+
+[name_2]
+image\skill_name\1001.png @cut(1,1) @stay
+
+[name_1001]
+image\skill_name\1001.png @cut(1,1) @stay
+
+[name_1002]
+image\skill_name\1002.png @cut(1,1) @stay
+
+[name_1003]
+image\skill_name\1003.png @cut(1,1) @stay
+
+[name_1004] 
+image\skill_name\1004.png @cut(1,1) @stay
+
+[name_1005]
+image\skill_name\1005.png @cut(1,1) @stay

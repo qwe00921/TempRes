@@ -41,3 +41,16 @@
 [n_fadein]
 @show
 @fadeto(0,0)
+
+;技能名称移动特效
+[skill_name_move_left_in]
+@move+(0.1, 640, 0,50) @stretch
+
+[skill_name_move_right_out]
+@move+(0.1, 640, 0,50) @stretch
+
+[skill_name_move_right_in]
+@move+(0.1, -640, 0,50) @stretch
+
+[skill_name_move_left_out]
+@move+(0.1, -640, 0,50) @stretch
