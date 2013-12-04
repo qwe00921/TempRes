@@ -243,11 +243,16 @@ function p.ShowItemInfo( view, item, itemIndex )
 		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_25;
         isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP4;
 	end
-	--显示物品图片
-	local itemButton = GetButton(view, itemBtn);
+	
 	local item_id = tonumber(item.Item_id);
 	WriteCon("item_id == "..item_id);
-	local aniIndex = "item."..item_id;
+	local itemTable = SelectRowInner(T_ITEM,"id",item_id);
+	if itemTable == nil then
+		WriteConErr("itemTable error ");
+	end
+	--显示物品图片
+	local itemButton = GetButton(view, itemBtn);
+	local aniIndex = itemTable.item_pic;
     itemButton:SetImage( GetPictureByAni(aniIndex,0) );
 	itemButton:SetId(item_id);
 	local itemUniqueId = tonumber(item.id);
@@ -257,14 +262,8 @@ function p.ShowItemInfo( view, item, itemIndex )
 
 	--显示物品名字
 	local itemNameText = GetLabel(view,itemName );
-	local itemTable = SelectRowList(T_ITEM,"id",item_id);
-	if #itemTable == 1 then
-		local text = itemTable[1].Name;
-		itemNameText:SetText(ToUtf8(text));
-	else
-		WriteConErr("itemTable error ");
-	end
-	
+	local text = itemTable.Name;
+	itemNameText:SetText(ToUtf8(text));
 	local itemNumText = GetLabel(view,itemNum );	--物品数量
 	local equipStarPic = GetImage(view,equipStarPic);	--装备星级
 	local equipLevelText = GetLabel(view,equipLevel);	--装备等级
@@ -309,21 +308,25 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local itemUniqueId = uiNode:GetUID();
 	local itemType = uiNode:GetXID();
 	
-	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
-	local itemData = SelectRowList(T_ITEM,"id",itemId);
-	if #itemData == 1 then
-		local text = itemData[1].Description;
-		itemDescribeText:SetText(ToUtf8(text));
+	if itemType == 1 or itemType == 2 or itemType == 3 then
+		pack_box_equip.ShowEquip(itemId,itemUniqueId,itemType);
 	else
-		WriteConErr("itemTable error ");
-	end
+		local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
+		local itemData = SelectRowList(T_ITEM,"id",itemId);
+		if #itemData == 1 then
+			local text = itemData[1].Description;
+			itemDescribeText:SetText(ToUtf8(text));
+		else
+			WriteConErr("itemTable error ");
+		end
 	
-	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
-	useBtn:SetLuaDelegate(p.OnUseItemClickEvent);
-	useBtn:SetVisible(true);
-	useBtn:SetId(itemId);
-	useBtn:SetUID(itemUniqueId);
-	useBtn:SetXID(itemType);
+		local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
+		useBtn:SetLuaDelegate(p.OnUseItemClickEvent);
+		useBtn:SetVisible(true);
+		useBtn:SetId(itemId);
+		useBtn:SetUID(itemUniqueId);
+		useBtn:SetXID(itemType);
+	end
 end
 
 --点击使用物品事件

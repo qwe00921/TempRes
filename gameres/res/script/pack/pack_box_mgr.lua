@@ -136,6 +136,25 @@ function p.UseItemCallBack(self)
 	end
 end
 
+function p.getItemInfoTable(uniqueid)
+	local allItemList = pack_box_mgr.itemList;
+	if allItemList == nil then
+		WriteCon("allItemList table error");
+		return;
+	end
+	local itemInfoTable = {};
+	for k,v in pairs(allItemList) do
+		if tonumber(v.id) == uniqueid then
+			itemInfoTable = v
+			WriteConErr(tostring(itemInfoTable));
+			WriteConErr(tostring(k));
+			break;
+		end
+	end
+	return itemInfoTable;
+end
+
+
 -- UseHealItem //行动力恢复道具使用
 -- UseQuickItem //活力恢复道具使用
 -- UseStorageItem //背包扩展道具

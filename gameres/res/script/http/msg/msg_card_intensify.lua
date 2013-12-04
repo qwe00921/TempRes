@@ -23,15 +23,6 @@ function p:ctor()
     super.ctor(self);
     self.idMsg = MSG_CARDBOX_INTENSIFY; --消息号
     
-    self.user_id = nil;
-    self.gold = nil;
-    self.user_card_id = nil;
-    self.card_id = nil;
-    self.exp = nil;
-    self.level = nil;
-    self.hp = nil;
-    self.attack = nil;
-    self.defence = nil;
     
 end
 
@@ -41,7 +32,11 @@ end
 
 --处理消息
 function p:Process()
-    WriteConWarning( "** msg_card_intensify:Process() called" );
-    --dump_obj(self.user_cards);
-    dlg_card_intensify_result.RefreshUI(self);
+	msg_cache.msg_card_sale_one = self;
+	WriteConWarning( "** msg_card_intensify:Process() called" );
+	if self.result == true then 
+		card_intensify_succeed.ShowCardLevel(self);
+	else
+		WriteConWarning( "** MSG_CARDBOX_USER_CARDS error" );
+	end
 end

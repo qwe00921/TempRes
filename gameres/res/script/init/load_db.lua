@@ -39,6 +39,9 @@ T_CONFIG     = LoadTable( "config.ini" );
 --技能表
 T_SKILL     = LoadTable( "skill.ini" );
 
+--技能资源
+T_SKILL_RES		= 	LoadTable( "skill_res.ini" );
+
 --装备成长表
 T_EQUIPMENT_GROW	=LoadTable( "equipment_grow.ini" );
 

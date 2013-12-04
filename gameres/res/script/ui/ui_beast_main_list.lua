@@ -4,10 +4,12 @@
 --------------------------------------------------------------
 ui_beast_main_list = {};
 local p =  ui_beast_main_list;
-p.ID_CTRL_PICTURE_17					     = 27;
-p.ID_CTRL_PICTURE_16					     = 26;
+p.ID_CTRL_9SLICES_53					     = 53;
+p.ID_CTRL_TEXT_TEAM					      = 52;
+p.ID_CTRL_TEXT_51						       = 51;
+p.ID_CTRL_9SLICES_50					     = 50;
 p.ID_CTRL_PICTURE_SKILL				   = 25;
-p.ID_CTRL_BUTTON_FIGHT				    = 24;
+p.ID_CTRL_BUTTON_SELL					    = 24;
 p.ID_CTRL_BUTTON_INCUBATE				 = 23;
 p.ID_CTRL_TEXT_22						       = 22;
 p.ID_CTRL_TEXT_ATTACK2				    = 21;
