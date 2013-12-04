@@ -119,3 +119,11 @@ image\ui\bag\bag_equip.png
 [equipMode]
 image\ui\bag\star1.png
 image\ui\bag\star2.png
+
+;元宝物品图标		by:crj
+[item_emoney]
+image\ui\main_interface\coin.png
+
+;金币物品图标		by:crj
+[item_money]
+image\ui\main_interface\money.png
