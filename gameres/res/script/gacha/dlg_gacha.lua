@@ -582,6 +582,7 @@ function p.SetItemInfo( view , item , position, index)
     local description;
     local buy;
 	local picture;
+	local desc;
     
     if position == LEFT then
         name = ui_shop_item_view.ID_CTRL_TEXT_NAME_L;
@@ -590,6 +591,7 @@ function p.SetItemInfo( view , item , position, index)
         rebateprice = ui_shop_item_view.ID_CTRL_TEXT_REBATE_PRICE_L;
         buy = ui_shop_item_view.ID_CTRL_BUTTON_BUY_L;
 		picture = ui_shop_item_view.ID_CTRL_PICTURE_11;
+		desc = ui_shop_item_view.ID_CTRL_TEXT_DESCRIPTION_L;
     elseif position == GIFT_LEFT then
         name = ui_shop_gift_pack_view.ID_CTRL_TEXT_NAME_L;
         limit = ui_shop_gift_pack_view.ID_CTRL_TEXT_LIMIT_L;
@@ -597,6 +599,7 @@ function p.SetItemInfo( view , item , position, index)
         rebateprice = ui_shop_gift_pack_view.ID_CTRL_TEXT_REBATE_PRICE_L;
         buy = ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L;
 		picture = ui_shop_gift_pack_view.ID_CTRL_PICTURE_ICON_L;
+		desc = ui_shop_gift_pack_view.ID_CTRL_TEXT_DESCRIPTION_L;
     end
 
     --名称
@@ -657,6 +660,8 @@ function p.SetItemInfo( view , item , position, index)
         rebatePriceLab:SetText("");
     end
 	--道具说明（暂无）
+	local descLabel = GetLabel( view, desc );
+	descLabel:SetText( ToUtf8( SelectCell( T_ITEM, item.item_id, "description" ) ) );
 	
 	--道具图片
 	local image = GetImage( view, picture );
