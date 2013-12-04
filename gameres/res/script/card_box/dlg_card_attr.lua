@@ -33,13 +33,13 @@ end
 function p.SetDelegate(layer)
 	
 	
-	local pCardInfo= SelectRowInner( LoadTable( "card_res.ini" ), "card_id", p.cardID); --从表中获取卡牌详细信息	
-	local pCardInfo2= SelectRowInner( LoadTable( "card.ini" ), "id", p.cardID);
-	local skill_res = SelectRowInner(LoadTable( "skill_res.ini" ),"id",pCardInfo2.skill);
+	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardID); --从表中获取卡牌详细信息	
+	local pCardInfo2= SelectRowInner( T_CARD, "id", p.cardID);
+	local skill_res = nil;
 	local cardSkillInfo = nil;
-	if skill_res ~= 0 then
-		skill_res = SelectRowInner(LoadTable( "skill_res.ini" ),"id",pCardInfo2.skill);
-		cardSkillInfo = SelectRowInner(LoadTable( "skill.ini" ),"id",pCardInfo2.skill);	
+	if pCardInfo2.skill ~= 0 then
+		skill_res = SelectRowInner(T_SKILL_RES,"id",pCardInfo2.skill);
+		cardSkillInfo = SelectRowInner(T_SKILL,"id",pCardInfo2.skill);	
 	end
 	
 	
@@ -93,7 +93,7 @@ function p.SetDelegate(layer)
 	pLabCardIntro:SetText(ToUtf8(pFromCardInfo.description));
 	--天赋介绍
 	local pLabDowerIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_DOWER_INTRO);
-	if skill_res == nil then 
+	if cardSkillInfo ~= nil then
 		pLabDowerIntro:SetText(tostring(cardSkillInfo.description));
 	end
 	--缘份
@@ -105,10 +105,6 @@ end
 
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
-	
-	local pCardInfo= SelectRowInner( T_CHAR, "id", p.cardID); --从表中获取卡牌详细信息	
-	local cardSkillInfo = SelectRowInner(T_SKILL,"id",pCardInfo.skill);	
-	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr.ID_CTRL_DOWER_INTRO);
 	
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
