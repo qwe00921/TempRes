@@ -1,39 +1,40 @@
-CARD_BAG_SORT_BY_LEVEL	= 1001;
-CARD_BAG_SORT_BY_STAR	= 1002;
-CARD_BAG_SORT_BY_TIME = 1003;
 
-PROFESSION_TYPE_1 = 2001;
-PROFESSION_TYPE_2 = 2002;
-PROFESSION_TYPE_3 = 2003;
-PROFESSION_TYPE_4 = 2004;
 
-MARK_ON = 100;
-MARK_OFF = nil;
 
 card_equip_select_list  = {}
 local p = card_equip_select_list;
 
+p.INTENT_ADD = 1; --添加
+p.INTENT_UPDATE = 2;--更换
+p.INTENT_UPGRADE = 3; -- 升级
+
+p.layer = nil;
+p.allItems = nil;
+p.groupItems = nil;
+
 local ui = ui_card_equip_select_list;
 local ui_list = ui_card_equip_select_list_item;
 
-p.layer = nil;
-p.listInfo = nil;
 p.curBtnNode = nil;
-p.sortByRuleV = nil;
 p.allCardPrice = 0;
 p.sellCardList = {};
 
-p.baseCardId = nil;
+
+p.cardEquipment = nil;
 
 p.selectList = {};
 
 p.selectNum = 0;
-function p.ShowUI(baseCardId)
-	if baseCardId == nil then 
-	--	return;
+
+p.tabIndex = 0;
+
+
+function p.ShowUI(cardEquipment)
+	if cardEquipment == nil then 
+		return;
 	end
-	p.baseCardId = baseCardId;
 	
+	p.cardEquipment = cardEquipment;
 	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
@@ -54,6 +55,8 @@ function p.ShowUI(baseCardId)
     p.layer = layer;
     p.SetDelegate(layer);
 	
+	
+	
 	--加载卡牌列表数据  发请求
     p.OnSendReq();
 	
@@ -64,25 +67,53 @@ end
 function p.SetDelegate(layer)
 	local retBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
 	retBtn:SetLuaDelegate(p.OnUIClickEvent);
+	
 
 	local cardBtnAll = GetButton(layer, ui.ID_CTRL_BUTTON_ALL);
-	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
-	p.SetBtnCheckedFX( cardBtnAll );
-
 	local cardBtnPro1 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO1);
-	cardBtnPro1:SetLuaDelegate(p.OnUIClickEvent);
-
 	local cardBtnPro2 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO2);
-	cardBtnPro2:SetLuaDelegate(p.OnUIClickEvent);
-	
 	local cardBtnPro3 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO3);
+	
 	cardBtnPro3:SetLuaDelegate(p.OnUIClickEvent);
+	cardBtnPro2:SetLuaDelegate(p.OnUIClickEvent);
+	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
+	cardBtnPro1:SetLuaDelegate(p.OnUIClickEvent);
+	p.SetBtnCheckedFX( cardBtnAll );
 	
-	local cardBtnPro4 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO4);
-	cardBtnPro4:SetLuaDelegate(p.OnUIClickEvent);
 	
-	local sortByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT_BY);
-	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
+	if p.cardEquipment.intent == p.INTENT_ADD 
+		or p.cardEquipment.intent == p.INTENT_UPDATE then
+		cardBtnAll:SetEnabled(false);
+		cardBtnPro3:SetEnabled(false);
+		cardBtnPro2:SetEnabled(false);
+		cardBtnPro1:SetEnabled(false);
+		if p.cardEquipment.equipPos == 1 then
+			cardBtnPro1:SetEnabled(true);
+			p.tabIndex = 1;
+		elseif p.cardEquipment.equipPos == 2 then
+			cardBtnPro2:SetEnabled(true);
+			p.tabIndex = 2;
+		elseif p.cardEquipment.equipPos == 3 then
+			cardBtnPro3:SetEnabled(true);
+			p.tabIndex = 3;
+		end
+	end
+	
+	local str = "";
+	if p.cardEquipment.intent == p.INTENT_ADD then
+		str = GetStr("card_equip_add");
+	elseif p.cardEquipment.intent == p.INTENT_UPDATE then
+		str = GetStr("card_equip_chg");
+	else
+		str = GetStr("card_equip_upgrade");
+	end
+	
+	local lv = GetLabel(p.layer, ui.ID_CTRL_TEXT_HEAD);
+	if lv then
+		lv:SetText(str);
+	end
+	
+	
 end
 
 --事件处理
@@ -94,31 +125,20 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowAllCards();
-		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --职业1
+			p.tabIndex = 0;
+		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --武器
 			WriteCon("=====cardBtnPro1");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_1);
-		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --职业2
+			p.tabIndex = 1
+		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --防具
 			WriteCon("=====cardBtnPro2");
 			p.SetBtnCheckedFX( uiNode );
+			p.tabIndex = 2
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_2);
-		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --职业3
+		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --鞋子
 			WriteCon("=====cardBtnPro3");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_3);
-		elseif(ui.ID_CTRL_BUTTON_PRO4 == tag) then --职业4
-			WriteCon("=====cardBtnPro4");
-			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_4);
-		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
-			WriteCon("card_bag_sort.ShowUI()");
-			if p.sortBtnMark == nil then
-				card_bag_sort.ShowUI();
-			else
-				p.sortBtnMark = nil;
-				card_bag_sort.CloseUI();
-			end
+			p.tabIndex = 3
 		end
 	end
 end
@@ -131,38 +151,31 @@ function p.OnMsgBoxCallback(result)
 	end
 end
 
---按规则排序按钮
-function p.sortByBtnEvent(sortType)
-	if sortType == nil then
-		return
+--显示
+function p.refreshTab()
+	local lst = nil;
+	if p.tabIndex == 0 then
+		lst = p.allItems;
+	else 
+		if p.groupItems then
+			lst = p.groupItems[p.tabIndex];
+		end
 	end
-	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SORT_BY);
-	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
-	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
-		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
-	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
-		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-	elseif(sortType == CARD_BAG_SORT_BY_TIME) then 
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
-		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
-	end
-	card_bag_mgr.sortByRule(sortType)
-
-end 
-
-
---显示卡牌列表
-function p.ShowList(lst)
 	
-	WriteCon("ShowList()");
+	p.refreshList(lst);
+end
+
+
+--显示列表
+function p.refreshList(lst)
+	
+	WriteCon("refreshList()");
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 
-	p.listInfo = lst;
+	p.allItems = lst;
 	if lst == nil or #lst <= 0 then
-		WriteCon("ShowList():cardList is null");
+		WriteCon("refreshList():cardList is null");
 		return;
 	end
 	WriteCon("cardCount ===== "..#lst);
@@ -186,15 +199,17 @@ function p.ShowList(lst)
 			if j <= cardNum then
 				local card = lst[j];
 				local cardIndex = j - start_index + 1;
-				p.ShowCardInfo( view, card, cardIndex );
+				p.ShowCardInfo( view, card, cardIndex , j);
 			end
 		end
 		list:AddView( view );
 	end
+	
+		
 end
 
 --显示单张卡牌
-function p.ShowCardInfo( view, card, cardIndex )
+function p.ShowCardInfo( view, card, cardIndex ,dataListIndex)
 	local cardBtn = nil;
 	local cardLevel = nil;
 	local cardTeam = nil;
@@ -223,23 +238,42 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local aniIndex = "item."..card.Item_id;
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
 	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
-	local cardUniqueId = tonumber(card.id);
- 	WriteCon("cardUniqueId ===== "..cardUniqueId);
-    cardButton:SetId(cardUniqueId);
+	--local cardUniqueId = tonumber(card.id);
+ 	--WriteCon("cardUniqueId ===== "..cardUniqueId);
+    cardButton:SetId(dataListIndex);
 
 	local cardSelectText = GetLabel(view,cardSelect );
 	cardSelectText:SetVisible( false );
 	
-	p.selectList[cardUniqueId] = cardSelectText;
+	--p.selectList[cardUniqueId] = cardSelectText;
 	--设置卡牌按钮事件
-	--cardButton:SetLuaDelegate(p.OnCardClickEvent);
+	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
 end
 
 --点击卡牌
 function p.OnCardClickEvent(uiNode, uiEventType, param)
-	local cardUniqueId = uiNode:GetId();
-	WriteCon("cardUniqueId = "..cardUniqueId);
+	local dataListIndex = uiNode:GetId();
+	WriteCon("dataListIndex = "..dataListIndex);
+	local equip = p.allItems[dataListIndex]
+	
+	if (equip == nil ) then
+		return
+	end
+	
+	if p.cardEquipment.intent == p.INTENT_ADD 
+		or p.cardEquipment.intent == p.INTENT_UPDATE then
+		local item = p.SelectItem(equip.Item_id);
+		equip.equipId = equip.id;
+		equip.itemInfo = item;
+		equip.cardUniqueId = p.cardEquipment.cardUniqueId;
+		if p.cardEquipment.intent == p.INTENT_UPDATE then
+			
+		end
+		dlg_card_equip_detail.ShowUI4Dress(equip, p.cardEquipment.dressedItem);
+	end
+	
+	--[[
 	local cardSelectText = p.selectList[cardUniqueId] 
 	
 	if cardSelectText:IsVisible() == true then
@@ -253,7 +287,18 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 			p.selectNum = p.selectNum+1;
 		end
 	end
+	]]--
 		
+end
+
+function p.SelectItem(id)
+	local itemTable = SelectRowList(T_ITEM,"id",tonumber(id));
+	if #itemTable == 1 then
+		local item = itemTable[1];
+		return item;
+	else
+		WriteConErr("itemTable error ");
+	end
 end
 
 --提示框回调方法
@@ -294,8 +339,20 @@ function p.SetBtnCheckedFX( node )
     end
 	btnNode:SetChecked( true );
 	p.curBtnNode = btnNode;
-	card_bag_sort.CloseUI();
 	p.sellCardList = {};
+end
+
+function p.divideItems()
+	if p.allItems == nil then
+		return
+	end
+	p.groupItems = p.groupItems or {};
+	for i = 1, #p.allItems do
+		local t = tonumber(p.allItems[i].Item_type);
+			p.groupItems[t] = p.groupItems[t] or {};
+			p.groupItems[t][#p.groupItems[t] + 1] = p.allItems[i];
+	end
+	
 end
 
 
@@ -311,32 +368,33 @@ function p.CloseUI()
         p.layer = nil;
 		p.ClearData()
         card_bag_mgr.ClearData();
-		p.listInfo = nil;
+		p.allItems = nil;
 		p.curBtnNode = nil;
-		p.sortByRuleV = nil;
 		p.allCardPrice = nil;
 		p.sellCardList = nil;
-		p.baseCardId = nil;
+		
 		p.selectList = {};
     end
 end
 
 function p.ClearData()
-	p.listInfo = nil;
+	p.allItems = nil;
 	p.curBtnNode = nil;
-	p.sortBtnMark = MARK_OFF;
-	p.sortByRuleV = nil;
-	p.BatchSellMark = MARK_OFF;
 	p.allCardPrice = 0;
 	p.sellCardList = {};
+	
+	p.allItems = nil;
+	p.groupItems = nil;
 end
+
+
 
 ----------------------------网络--------------------------------
 --可强化卡牌List请求
 function p.OnSendReq()
 	
 	local uid = GetUID();
-	uid=123456
+	--uid=123456
 	
 	if uid == 0 or uid == nil  then
 		return ;
@@ -371,7 +429,12 @@ function p.OnLoadList(msg)
 	
 	
 	if msg.result == true then
-		p.ShowList(msg.equipment_info or {})
+		
+		p.allItems = msg.equipment_info;
+		p.divideItems()
+		
+		p.refreshTab();
+		--p.ShowList(msg.equipment_info or {})
 		
 		WriteCon( "** OnLoadList1 " .. #msg.equipment_info);
 	else
