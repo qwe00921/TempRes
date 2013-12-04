@@ -9,8 +9,8 @@ Tag=163
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\mt\data.dat_000493.png
-NormalFileUV=0 0 210 249
+NormalFile=.\res\lj\map\map01.png
+NormalFileUV=0 0 960 640
 
 [CTRL_PICTURE_CARD]
 Type=1

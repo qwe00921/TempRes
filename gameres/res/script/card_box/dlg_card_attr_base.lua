@@ -177,6 +177,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			--¿¨ÅÆÇ¿»¯
 			card_intensify.ShowUI(p.cardInfo);
 			p.CloseUI();
+			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_SALE == tag then
 			--¿¨ÅÆÂô³ö
 			if p.cardInfo.Item_Id1 ~= 0 or  p.cardInfo.Gem1 ~= 0 then

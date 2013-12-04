@@ -27,17 +27,25 @@ function p.ShowUI(cardID)
 	GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_card_attr.xui", layer, nil);
 	p.layer = layer;
-    p.SetDelegate(layer,cardID);
+    p.SetDelegate(layer);
 end
 
 function p.SetDelegate(layer)
 	
 	
+	local pCardInfo= SelectRowInner( LoadTable( "card_res.ini" ), "card_id", p.cardID); --从表中获取卡牌详细信息	
+	local pCardInfo2= SelectRowInner( LoadTable( "card.ini" ), "id", p.cardID);
+	local skill_res = SelectRowInner(LoadTable( "skill_res.ini" ),"id",pCardInfo2.skill);
+	local cardSkillInfo = nil;
+	if skill_res ~= 0 then
+		skill_res = SelectRowInner(LoadTable( "skill_res.ini" ),"id",pCardInfo2.skill);
+		cardSkillInfo = SelectRowInner(LoadTable( "skill.ini" ),"id",pCardInfo2.skill);	
+	end
 	
-	T_CHAR_RES     = LoadTable( "char_res.ini" );
-	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardID); --从表中获取卡牌详细信息	
+	
+	
 	if pCardInfo ==nil then
-		WriteCon("**====pCardInfo == nil ====**"..cardID);
+		WriteCon("**====pCardInfo == nil ====**"..p.cardID);
 	end
 	--返回
     local pBtnBack = GetButton(layer,ui_dlg_card_attr.ID_CTRL_BUTTON_BACK);
@@ -49,31 +57,34 @@ function p.SetDelegate(layer)
 	--天赋技能3
 	local pBtnDower3 = GetButton(layer,ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_3);
 	--因为没有数据所以先改为 ~=nil 
-	if pCardInfo.dower_intro_1 ~= nil then 
+	if skill_res == nil then 
 		pBtnDower1:SetVisible(false);
-		pBtnDower2:SetVisible(false);
-		pBtnDower3:SetVisible(false);
+	--	pBtnDower2:SetVisible(false);
+	--	pBtnDower3:SetVisible(false);
 	else
-		pBtnDower1:SetImage(GetPictureByAni(pCardInfo.dower_pic_1,0))
-		pBtnDower1:SetLuaDelegate(p.OnUIEventEvolution);
-		if pCardInfo.dower_intro_2 == nil then 
-			pBtnDower2:SetVisible(false);
-			pBtnDower3:SetVisible(false);
-		else
-			pBtnDower2:SetImage(GetPictureByAni(pCardInfo.dower_pic_2,0))
-			pBtnDower2:SetLuaDelegate(p.OnUIEventEvolution);
-			if pCardInfo.dower_intro_3 == nil then 
-				pBtnDower3:SetVisible(false);
-			else
-				pBtnDower3:SetImage(GetPictureByAni(pCardInfo.dower_pic_3,0))
-				pBtnDower3:SetLuaDelegate(p.OnUIEventEvolution);
-			end
-		end
+		pBtnDower1:SetImage(GetPictureByAni(skill_res.icon,0))
+	--	pBtnDower1:SetLuaDelegate(p.OnUIEventEvolution);
+	--	if pCardInfo.dower_intro_2 == nil then 
+	--		pBtnDower2:SetVisible(false);
+	--		pBtnDower3:SetVisible(false);
+	--	else
+	--		pBtnDower2:SetImage(GetPictureByAni(cardSkill_icon.icon,0))
+	--		pBtnDower2:SetLuaDelegate(p.OnUIEventEvolution);
+	--		if pCardInfo.dower_intro_3 == nil then 
+	--			pBtnDower3:SetVisible(false);
+	--		else
+	--			pBtnDower3:SetImage(GetPictureByAni(cardSkill_icon.icon,0))
+	--			pBtnDower3:SetLuaDelegate(p.OnUIEventEvolution);
+	--		end
+	--	end
 	end
 	
 	--卡牌图片
 	local pImgCardPic = GetImage(layer, ui_dlg_card_attr.ID_CTRL_PICTURE); --卡牌图片控件
-	local pImage = GetPictureByAni(pCardInfo.card_pic,0)--卡牌图片
+	
+	local aniIndex = "card.card_"..p.cardID;
+	local pImage = GetPictureByAni(aniIndex,0)--卡牌图片
+	
 	pImgCardPic:SetPicture(pImage);
 	--简介
 	T_CHAR    = LoadTable( "card.ini" );
@@ -82,8 +93,8 @@ function p.SetDelegate(layer)
 	pLabCardIntro:SetText(ToUtf8(pFromCardInfo.description));
 	--天赋介绍
 	local pLabDowerIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_DOWER_INTRO);
-	if pCardInfo.dower_intro_1 ~= nil then 
-		pLabDowerIntro:SetText(tostring(pCardInfo.dower_intro_1));
+	if skill_res == nil then 
+		pLabDowerIntro:SetText(tostring(cardSkillInfo.description));
 	end
 	--缘份
 	local pLabLuckIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_LUCK_INTRO);
@@ -95,8 +106,8 @@ end
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
-	T_CHAR_RES     = LoadTable( "char_res.ini" );
-	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardID); --从表中获取卡牌详细信息	
+	local pCardInfo= SelectRowInner( T_CHAR, "id", p.cardID); --从表中获取卡牌详细信息	
+	local cardSkillInfo = SelectRowInner(T_SKILL,"id",pCardInfo.skill);	
 	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr.ID_CTRL_DOWER_INTRO);
 	
 	if IsClickEvent( uiEventType ) then
@@ -104,11 +115,11 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		if ui_dlg_card_attr.ID_CTRL_BUTTON_BACK == tag then
 			p.CloseUI();
 		elseif ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_1 == tag then
-			pLabDowerIntro:SetText(tostring(pCardInfo.dower_intro_1));
+			pLabDowerIntro:SetText(tostring(cardSkillInfo.description));
 		elseif ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_2 == tag then
-			pLabDowerIntro:SetText(tostring(pCardInfo.dower_intro_2));
+			pLabDowerIntro:SetText(tostring(cardSkillInfo.description));
 		elseif ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_3 == tag then
-			pLabDowerIntro:SetText(tostring(pCardInfo.dower_intro_3));
+			pLabDowerIntro:SetText(tostring(cardSkillInfo.description));
 		end
 	end
 end

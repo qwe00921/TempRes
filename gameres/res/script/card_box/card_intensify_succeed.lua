@@ -59,7 +59,8 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_INTENSIFY == tag) then --Ç¿»¯
 			
-			card_intensify.ShowUI(p.cardInfo);
+			--card_intensify.ShowUI(p.cardInfo);
+			card_intensify.OnSendReq();
 			p.CloseUI();
 		end
 	end
@@ -79,6 +80,7 @@ function p.ShowCardLevel(msg)
 	
 	local cardPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_CARD);
 	local aniIndex = "card.card_"..p.cardInfo.CardID;
+	
 	cardPic:SetPicture( GetPictureByAni(aniIndex, 0) );
 	
 	local pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", p.cardInfo.Level);
