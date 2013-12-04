@@ -276,10 +276,6 @@ end
 
 --œ‘ æµ•’≈ø®≈∆
 function p.ShowCardInfo( view, card, cardIndex )
-	
-	if card == nil then
-		return;
-	end
 	local cardBtn = nil;
 	local cardLevel = nil;
 	local cardTeam = nil;

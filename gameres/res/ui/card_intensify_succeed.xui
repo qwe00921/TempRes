@@ -22,11 +22,9 @@ Notes=
 [CTRL_PICTURE_165]
 Type=1
 Tag=165
-Rect=46 547 555 44
+Rect=46 547 555 311
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\mt\effect\data.dat_000065.png
-NormalFileUV=0 0 543 141
 
 [CTRL_TEXT_EXP]
 Type=4
