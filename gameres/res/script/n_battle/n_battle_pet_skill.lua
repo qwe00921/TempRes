@@ -8,22 +8,28 @@ n_battle_pet_skill = {}
 local p = n_battle_pet_skill;
 
 --宠物技能
-function p.skill( UCamp, TCamp, PetId, SkillId, Targets, batch )
+function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     if batch == nil then return end
-    local seqSkill    = batch:AddSerialSequence();
+    local batch = batch;
+    local seqSkill  = batch:AddSerialSequence();
+    local seqTarget = batch:AddParallelSequence();
+    
     if seqSkill == nil then
-        WriteCon( "create seqAtk failed");
+        WriteCon( "create seqSkill failed");
         return;
     end
-    
     if Targets == nil or #Targets <= 0 then
         WriteConErr("Skill no target!");
     end
-    
-    local petNode = n_battle_mgr.GetPetNode( PetId, UCamp );
+    local petNode = n_battle_mgr.GetPetNode( Pos, UCamp );
+    local petNameNode = n_battle_mgr.GetPetNameNode( Pos, UCamp );
+    local hurtEffect = SelectCell( T_SKILL_RES, SkillId, "hurt_effect" );
+    local skillType = tonumber( SelectCell( T_SKILL, SkillId, "Skill_type" ) );
+    local buffType = tonumber( SelectCell( T_SKILL, SkillId, "Buff_type" ) );
     
     --初始化技能名称栏对应的ACTION特效
     local petInAction = nil;
+    local petNameAction =  nil;
     local petOutAction = nil;
     local skillFx = nil;
     
@@ -31,44 +37,82 @@ function p.skill( UCamp, TCamp, PetId, SkillId, Targets, batch )
     local cmd1;
     if UCamp == E_CARD_CAMP_HERO then
         petInAction = "n.pet_left_in";
-        petOutAction = "n.pet_right_out";
+        petNameAction ="n.pet_right_in";
         skillFx = "";
-        p.SetToScreenLeft( petNode );
     else
         petInAction = "n.pet_right_in";
-        petOutAction = "n.pet_left_out";
+        petNameAction ="n.pet_left_in";
         skillFx = ""
-        p.SetToScreenRight( petNode );
     end
     --增加蒙版
-    --local cmdAddMask = createCommandLua():SetCmd( "AddMaskImage", 0, 0, "" );
-    --seqSkill:AddCommand( cmdAddMask );
+    local cmdAddMask = createCommandLua():SetCmd( "AddMaskImage", 0, 0, "" );
+    seqSkill:AddCommand( cmdAddMask );
     
     --1:设置模糊
-    --local cmdGsblur = createCommandEffect():AddActionEffect( 0.01, petNode, "n.gsblur5" );
-    --seqSkill:AddCommand( cmdGsblur );
+    local cmdGsblur = createCommandEffect():AddActionEffect( 0.01, petNode, "n.gsblur5" );
+    seqSkill:AddCommand( cmdGsblur );
     
-    local cmdIn = createCommandEffect():AddActionEffect( 0, petNode, petInAction );
-    seqSkill:AddCommand( cmdIn );   
+    --宠物图片进场
+    local cmdPetPicIn = createCommandEffect():AddActionEffect( 0.1, petNode, petInAction );
+    seqSkill:AddCommand( cmdPetPicIn );   
+    
+    --宠物名称进场
+    local cmdPetNameIn = createCommandEffect():AddActionEffect( 0.1, petNameNode, petNameAction );
+    seqSkill:AddCommand( cmdPetNameIn );   
     
     --2:恢复清晰
-    --local cmdGsblurZero = createCommandEffect():AddActionEffect( 0, petNode, "n.gsblur_zero" );
-   -- seqSkill:AddCommand( cmdGsblurZero );
-    --cmdGsblurZero:SetDelay(0.5); 
+    local cmdGsblurZero = createCommandEffect():AddActionEffect( 0, petNode, "n.gsblur_zero" );
+    seqSkill:AddCommand( cmdGsblurZero );
+    cmdGsblurZero:SetDelay(0.2); 
     
-    local Idle = createCommandInterval():Idle( 1 );
+    
+    local Idle = createCommandInterval():Idle( 0.5 );
     if Idle ~= nil then
         seqSkill:AddCommand( Idle );
     end 
     
-    local cmdOut = createCommandEffect():AddActionEffect( 0, petNode, "n.n_fadeout" );
-    seqSkill:AddCommand( cmdOut );
+    --还原位置
+    local cmdReSet = createCommandLua():SetCmd( "ReSetPetNodePos", 0, 0, "" );
+    seqSkill:AddCommand( cmdReSet );
     
     --隐藏蒙版
-    --local cmdHideMask = createCommandLua():SetCmd( "HideMaskImage", 0, 0, "" );
-    --seqSkill:AddCommand( cmdHideMask );
+    local cmdHideMask = createCommandLua():SetCmd( "HideMaskImage", 0, 0, "" );
+    seqSkill:AddCommand( cmdHideMask );
     
-    
+    for key, var in ipairs(Targets) do
+    	local TPos = tonumber( var.TPos );
+    	local Damage = tonumber( var.Damage );
+    	local RemainHp = tonumber( var.RemainHp );
+    	local Buff = var.Buff;
+    	local TargetDead = var.TargetDead;
+    	
+    	local targetF;
+    	if TCamp == E_CARD_CAMP_HERO then
+            targetF = n_battle_mgr.heroCamp:FindFighter( TPos );
+        elseif TCamp == E_CARD_CAMP_ENEMY then
+            targetF = n_battle_mgr.enemyCamp:FindFighter( TPos + N_BATTLE_CAMP_CARD_NUM );
+        end
+        
+        --受击特效
+        local cmd11 = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), hurtEffect );
+        seqTarget:AddCommand( cmd11 );
+        
+        if skillType == N_SKILL_TYPE_1 then
+        	targetF:cmdLua( "fighter_damage",  Damage, "", seqTarget );
+        elseif skillType == N_SKILL_TYPE_2 then	
+            targetF:cmdLua( "fighter_addHp", Damage, "", seqTarget );
+        elseif skillType == N_SKILL_TYPE_5 then
+            --主动复活技能    
+        end
+        
+        if Buff then
+        	local buffAni = GetBuffAniByType( buffType );
+        	local cmdBuff = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), buffAni );
+            seqTarget:AddCommand( cmdBuff );
+        end
+    	
+    end
+    seqTarget:SetWaitEnd( cmdHideMask );
 end
 
 --移到屏幕左边
@@ -161,4 +205,3 @@ function p.HurtResultAni( targetFighter, seqTarget )
         seqTarget:AddCommand( cmdC );
     end
 end
-    

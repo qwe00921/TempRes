@@ -1,14 +1,14 @@
 [1]
-image\card_icon\1.png 
+image\card_icon\1.png @cut(1,1) @stay
 [2]
-image\card_icon\2.png 
+image\card_icon\2.png @cut(1,1) @stay
 [1001]
-image\card_icon\1001.png 
+image\card_icon\1001.png @cut(1,1) @stay
 [1002]
-image\card_icon\1002.png 
+image\card_icon\1002.png @cut(1,1) @stay
 [1003]
-image\card_icon\1003.png 
+image\card_icon\1003.png @cut(1,1) @stay
 [1004]
-image\card_icon\1004.png 
+image\card_icon\1004.png @cut(1,1) @stay
 [1005]
-image\card_icon\1005.png 
+image\card_icon\1005.png @cut(1,1) @stay

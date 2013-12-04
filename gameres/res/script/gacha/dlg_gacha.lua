@@ -581,6 +581,8 @@ function p.SetItemInfo( view , item , position, index)
     local rebateprice;
     local description;
     local buy;
+	local picture;
+	local desc;
     
     if position == LEFT then
         name = ui_shop_item_view.ID_CTRL_TEXT_NAME_L;
@@ -588,18 +590,23 @@ function p.SetItemInfo( view , item , position, index)
         price = ui_shop_item_view.ID_CTRL_TEXT_PRICE_L;
         rebateprice = ui_shop_item_view.ID_CTRL_TEXT_REBATE_PRICE_L;
         buy = ui_shop_item_view.ID_CTRL_BUTTON_BUY_L;
+		picture = ui_shop_item_view.ID_CTRL_PICTURE_11;
+		desc = ui_shop_item_view.ID_CTRL_TEXT_DESCRIPTION_L;
     elseif position == GIFT_LEFT then
         name = ui_shop_gift_pack_view.ID_CTRL_TEXT_NAME_L;
         limit = ui_shop_gift_pack_view.ID_CTRL_TEXT_LIMIT_L;
         price = ui_shop_gift_pack_view.ID_CTRL_TEXT_PRICE_L;
         rebateprice = ui_shop_gift_pack_view.ID_CTRL_TEXT_REBATE_PRICE_L;
         buy = ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L;
+		picture = ui_shop_gift_pack_view.ID_CTRL_PICTURE_ICON_L;
+		desc = ui_shop_gift_pack_view.ID_CTRL_TEXT_DESCRIPTION_L;
     end
 
     --名称
     local nameLab = GetLabel( view , name );
-    local row_name = SelectRowInner( T_SHOP, "item_id", item.item_id , "name"  );
-    nameLab:SetText( tostring( row_name ));
+    --local row_name = SelectRowInner( T_SHOP, "item_id", item.item_id , "name"  );
+	local row_name = SelectCell( T_ITEM, item.item_id, "name" );
+    nameLab:SetText( ToUtf8( row_name ));
     
     --限制
     local limitLab = GetLabel( view, limit );
@@ -653,6 +660,15 @@ function p.SetItemInfo( view , item , position, index)
         rebatePriceLab:SetText("");
     end
 	--道具说明（暂无）
+	local descLabel = GetLabel( view, desc );
+	descLabel:SetText( ToUtf8( SelectCell( T_ITEM, item.item_id, "description" ) ) );
+	
+	--道具图片
+	local image = GetImage( view, picture );
+	local imageData = GetPictureByAni( SelectCell( T_ITEM, item.item_id , "item_pic" ) ,0 );
+	if image and imageData then
+		image:SetPicture( imageData );
+	end
 	
 	--如果是礼包项
 	if position == GIFT_LEFT  then

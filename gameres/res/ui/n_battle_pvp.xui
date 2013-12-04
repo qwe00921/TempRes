@@ -83,7 +83,7 @@ Rect=20 330 71 90
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_12]
+[CTRL_PICTURE_CENTER]
 Type=1
 Tag=12
 Rect=295 330 71 90
@@ -125,8 +125,6 @@ Tag=68
 Rect=12 581 107 20
 AnchorPos=0 0
 Notes=
-Text=召唤兽名字
-TextTradition=召喚獸名字
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -135,20 +133,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_PET_PIC_1]
 Type=1
 Tag=69
-Rect=12 601 120 60
+Rect=12 601 120 67
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\summon_card\summon_card_0000_M.png
-NormalFileUV=0 0 320 480
 
 [CTRL_PICTURE_PET_SKILL_1]
 Type=1
 Tag=70
-Rect=139 601 83 60
+Rect=139 601 83 47
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\skill_thumb\skill_thumb_auto_down_attr0.png
-NormalFileUV=0 0 48 48
 
 [CTRL_PICTURE_71]
 Type=1
@@ -163,8 +157,6 @@ Tag=72
 Rect=12 689 107 20
 AnchorPos=0 0
 Notes=
-Text=召唤兽名字
-TextTradition=召喚獸名字
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -173,20 +165,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_PET_PIC_2]
 Type=1
 Tag=73
-Rect=11 710 120 60
+Rect=11 710 120 67
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\summon_card\summon_card_0000_M.png
-NormalFileUV=0 0 320 480
 
 [CTRL_PICTURE_PET_SKILL_2]
 Type=1
 Tag=74
-Rect=140 710 83 60
+Rect=140 710 83 47
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\skill_thumb\skill_thumb_auto_down_attr0.png
-NormalFileUV=0 0 48 48
 
 [CTRL_PICTURE_75]
 Type=1
@@ -201,8 +189,6 @@ Tag=76
 Rect=523 581 107 20
 AnchorPos=0 0
 Notes=
-Text=召唤兽名字
-TextTradition=召喚獸名字
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -211,20 +197,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_PET_PIC_3]
 Type=1
 Tag=77
-Rect=510 601 120 60
+Rect=510 601 120 67
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\summon_card\summon_card_0000_M.png
-NormalFileUV=0 0 320 480
 
 [CTRL_PICTURE_PET_SKILL_3]
 Type=1
 Tag=78
-Rect=419 601 83 60
+Rect=419 601 83 47
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\skill_thumb\skill_thumb_auto_down_attr0.png
-NormalFileUV=0 0 48 48
 
 [CTRL_PICTURE_79]
 Type=1
@@ -239,8 +221,6 @@ Tag=80
 Rect=523 691 107 20
 AnchorPos=0 0
 Notes=
-Text=召唤兽名字
-TextTradition=召喚獸名字
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -249,20 +229,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_PET_SKILL_4]
 Type=1
 Tag=81
-Rect=420 711 83 60
+Rect=420 711 83 47
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\skill_thumb\skill_thumb_auto_down_attr0.png
-NormalFileUV=0 0 48 48
 
 [CTRL_PICTURE_PET_PIC_4]
 Type=1
 Tag=82
-Rect=510 711 120 60
+Rect=510 711 120 67
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\summon_card\summon_card_0000_S.png
-NormalFileUV=0 0 84 126
 
 [CTRL_PICTURE_ATK_PIC]
 Type=1
@@ -340,8 +316,6 @@ Tag=99
 Rect=74 602 57 20
 AnchorPos=0 0
 Notes=
-Text=LV50
-TextTradition=LV50
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -353,8 +327,6 @@ Tag=100
 Rect=73 710 57 20
 AnchorPos=0 0
 Notes=
-Text=LV50
-TextTradition=LV50
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -366,8 +338,6 @@ Tag=101
 Rect=510 602 57 20
 AnchorPos=0 0
 Notes=
-Text=LV50
-TextTradition=LV50
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -379,9 +349,55 @@ Tag=102
 Rect=510 712 57 20
 AnchorPos=0 0
 Notes=
-Text=LV50
-TextTradition=LV50
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_PET_RAGE_1]
+Type=9
+Tag=59
+Rect=15 669 207 6
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
+NormalFileUV=0 0 87 5
+
+[CTRL_EXP_PET_RAGE_2]
+Type=9
+Tag=60
+Rect=15 777 207 6
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
+NormalFileUV=0 0 87 5
+
+[CTRL_EXP_PET_RAGE_3]
+Type=9
+Tag=61
+Rect=425 669 207 6
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
+NormalFileUV=0 0 87 5
+
+[CTRL_EXP_PET_RAGE_4]
+Type=9
+Tag=62
+Rect=425 778 207 6
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
+NormalFileUV=0 0 87 5

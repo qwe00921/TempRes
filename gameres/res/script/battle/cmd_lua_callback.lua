@@ -39,12 +39,17 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 	--÷¥––æﬂÃÂ√¸¡Ó
 	if cmdtype == "fighter_damage" then
 		fighter:SetLifeDamage(num);
+	elseif cmdtype == "fighter_addHp" then
+        fighter:SetLifeAdd( num );	
 	elseif cmdtype == "fighter_strike_damage" then
 		fighter:SetLifeStrikeDamage(num);
 	elseif cmdtype == "fighter_heal" then
 		fighter:SetLifeHeal(num);
 	elseif cmdtype == "fighter_showbar" then
 		fighter:ShowHpBarMoment();
+	elseif cmdtype == "ReSetPetNodePos" and E_DEMO_VER == 4 then
+        n_battle_mgr.ReSetPetNodePos();  
+        	
 	elseif cmdtype == "AddMaskImage" then
 		if E_DEMO_VER == 2 then
 			x_battle_mgr:AddMaskImage();

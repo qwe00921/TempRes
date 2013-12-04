@@ -58,12 +58,13 @@ function p.Init( item )
     local giftId = item.item_id;
 	local itemList = {};
 	for i = 1, 6 do
+		local itemtype = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_type" ..i ) );
 		local itemid = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id" ..i) );
 		local itemnum = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num" ..i) );
-		
+		--WriteCon( tostring(itemtype) .. " "..tostring(itemid).. " "..tostring(itemnum));
 		--过滤礼包中物品的数量
-		if itemid ~= 0 and itemnum ~= 0 then
-			table.insert( itemList, {itemid, itemnum} );
+		if itemtype ~= 0 then
+			table.insert( itemList, {itemtype, itemid, itemnum} );
 		end
 	end
 	
@@ -71,12 +72,32 @@ function p.Init( item )
 		for i = 1, #itemList do
 			--local itemid = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id" ..i) );
 			--local itemnum = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num" ..i) );
-			local itemid = itemList[i][1];
-			local itemnum = itemList[i][2];
+			local itemtype = itemList[i][1];
+			local itemid = itemList[i][2];
+			local itemnum = itemList[i][3];
 			
-			if itemid ~= 0 and itemnum ~= 0 then
+			--WriteCon( "aaa"..tostring(itemtype) .. " "..tostring(itemid).. " "..tostring(itemnum));
+			
+			if itemtype ~= 0 then
 				--显示名字
-				local itemname = SelectCell( T_ITEM, itemid, "name" );
+				local itemname;
+				local pictureData;
+				if itemtype == 1 then
+					itemname = SelectCell( T_CARD, itemid, "name" );
+					--pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "head_pic" ), 0 );
+					pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "card_pic" ), 0 );
+				elseif itemtype == 2 then
+					itemname = SelectCell( T_ITEM, itemid, "name" );
+					pictureData = GetPictureByAni( SelectCell( T_ITEM, itemid, "item_pic" ), 0 );
+				elseif itemtype == 3 then
+					itemname = "宝石";
+					pictureData = GetPictureByAni( "item.item_emoney", 0 );
+				elseif itemtype == 4 then
+					itemname = "金币";
+					pictureData = GetPictureByAni( "item.item_money", 0 );
+				end
+				
+				--local itemname = SelectCell( T_ITEM, itemid, "name" );
 				local nameLab = GetLabel( p.layer, p.nodeTag[i][NAME_INDEX] );
 				nameLab:SetText( ToUtf8(tostring(itemname)) );
 				
@@ -85,8 +106,10 @@ function p.Init( item )
 				numLab:SetText( tostring(itemnum) );
 				
 				--图片显示
-				--[[
-				--]]
+				local picture = GetImage( p.layer, p.nodeTag[i][PIC_INDEX] );
+				if picture and pictureData then
+					picture:SetPicture( pictureData );
+				end
 			end
 		end
 	end

@@ -13,7 +13,8 @@ p.uiLayer = nil;			--战斗层
 p.heroUIArray = nil;		--玩家阵营站位UITag表
 p.enemyUIArray = nil;		--敌对阵营站位UITag表
 
-p.petNode={};
+p.petNode={};       --双方宠物结点
+p.petNameNode={};   --双方宠物名称结点
 
 p.imageMask = nil			--增加蒙版特效
 
@@ -72,8 +73,9 @@ function p.ReceiveStartPVPRes( msg )
     p.createHeroCamp( UCardList );
     p.createEnemyCamp( TCardList );
     
-    p.createHeroPet( UPetList );
-    p.createEnemyPet( TPetList );
+    p.createPet( UPetList, E_CARD_CAMP_HERO );
+    p.createPet( TPetList, E_CARD_CAMP_ENEMY );
+    p.ReSetPetNodePos();
     
     n_battle_pvp.ReadyGo();
     p.ShowRoundNum();
@@ -102,14 +104,12 @@ end
 
 --进入回合阶段->互殴
 function p.EnterBattle_RoundStage_Atk()
-    n_battle_mainui.OnBattleShowFinished();
-    --[[
+    --n_battle_mainui.OnBattleShowFinished();
     local rounds = n_battle_stage.GetRoundNum();
     local atkData = n_battle_db_mgr.GetRoundDB( rounds );
     if atkData ~= nil and #atkData > 0 and rounds <= N_BATTLE_MAX_ROUND then
     	n_battle_show.DoEffectAtk( atkData );
     end
-    --]]
 end
 
 --进入回合阶段->清算
@@ -118,6 +118,7 @@ function p.EnterBattle_RoundStage_Clearing()
     --进入下一个回合
     n_battle_stage.NextRound();
     p.ShowRoundNum();
+    p.UpdatePetRage();
     n_battle_mainui.OnBattleShowFinished();
 end
 
@@ -129,58 +130,128 @@ function p:GetBattleLayer()
 	return nil;
 end
 
-function p.createHeroPet( UPetList )
-    if UPetList == nil or #UPetList < 0 then
-    	return false;
-    end
-    for key, var in ipairs(UPetList) do
-        local petId = tonumber( var.Pet_id );
-    	local petPic = createNDUIImage();
-        petPic:Init();
-        petPic:AddFgEffect( SelectCell( T_PET_RES, petId, "total_pic" ) );
-        
-        petPic:SetFramePosXY( -256, GetScreenHeight()/2 - 128 );
-    
-        p.uiLayer:AddChildZ( petPic,101);
-        petPic:SetId(petId);
-        p.petNode[ #p.petNode+1 ] = petPic;
-    end
-end   
-
-function p.createEnemyPet( TPetList )
-    if TPetList == nil or #TPetList < 0 then
+--创建宠物
+function p.createPet( petList, camp )
+	if petList == nil or #petList < 0 then
         return false;
     end
-    for key, var in ipairs(TPetList) do
+    for key, var in ipairs(petList) do
         local petId = tonumber( var.Pet_id );
-        local petPic = createNDUIImage();
+        local skillId = tonumber( var.Skill_id );
+        local Position = tonumber( var.Position );
+        
+        if camp == E_CARD_CAMP_ENEMY then
+        	Position = Position + N_BATTLE_CAMP_CARD_NUM ;
+        end
+        
+        local petPic = createNDUINode();
         petPic:Init();
-        petPic:AddFgEffect( SelectCell( T_PET_RES, petId, "total_pic" ) );
-        
-        petPic:SetFramePosXY( -640, GetScreenHeight()/2 - 128 );
-        
+        if camp == E_CARD_CAMP_ENEMY then
+        	petPic:AddFgReverseEffect( SelectCell( T_PET_RES, petId, "total_pic" ) );
+        else
+            petPic:AddFgEffect( SelectCell( T_PET_RES, petId, "total_pic" ) );
+        end
         p.uiLayer:AddChildZ( petPic,101);
-        petPic:SetId( petId + N_BATTLE_CAMP_CARD_NUM );
+        petPic:SetId( Position );
         p.petNode[ #p.petNode+1 ] = petPic;
+        
+        local petName = createNDUINode();
+        petName:Init();
+        petName:AddFgEffect( SelectCell( T_SKILL_RES, skillId, "name_effect" ) );
+        p.uiLayer:AddChildZ( petName,101);
+        p.petNameNode[ #p.petNameNode+1 ] = petName;
+        petName:SetId( Position );
+        
+        local petLV = tonumber( var.Level );
+        local petName = SelectCell( T_PET, petId, "name" );
+        local petIconAni = SelectCell( T_PET_RES, petId, "face_pic" );
+        local petSkillIconAni = SelectCell( T_SKILL_RES, skillId, "icon" );
+        
+        n_battle_pvp.InitPetUI( Position, petName, petLV, petIconAni, petSkillIconAni );
+        n_battle_pvp.InitPetRage( Position, 0 );
     end
-end 
+end
 
-function p.GetPetNode( petId, camp )
-	if petId == nil or camp == nil then
+--更新宠物怒气
+function p.UpdatePetRage()
+    local UPetList = n_battle_db_mgr.GetPlayerPetList();
+    local TPetList = n_battle_db_mgr.GetTargetPetList();
+    if UPetList ~= nil then
+    	for key, var in ipairs(UPetList) do
+            local pos = tonumber( var.Position );
+            local sp = tonumber( var.Sp );
+            n_battle_pvp.UpdatePetRage( pos, sp );
+        end
+    end
+    if TPetList ~= nil then
+        for key, var in ipairs(UPetList) do
+            local pos = tonumber( var.Position ) + N_BATTLE_CAMP_CARD_NUM;
+            local sp = tonumber( var.Sp );
+            n_battle_pvp.UpdatePetRage( pos, sp );
+        end
+    end
+    
+end
+
+--获取宠物结点
+function p.GetPetNode( posId, camp )
+	if posId == nil or camp == nil then
 		return false;
 	end
 	local ln = #p.petNode;
-	local id = tonumber( petId )
+	local posId = tonumber( posId )
 	if camp == E_CARD_CAMP_ENEMY then
-		id = id + N_BATTLE_CAMP_CARD_NUM;
+		posId = posId + N_BATTLE_CAMP_CARD_NUM;
 	end
 	for i=1, ln do
-		local petNode = p.petNode[i];
-		if petNode ~= nil and petNode:GetId() == id then
-			return petNode;
+		local pNode = p.petNode[i];
+		if pNode ~= nil and pNode:GetId() == posId then
+			return pNode;
 		end
 	end
 end 
+
+--获取宠物名称结点
+function p.GetPetNameNode( posId, camp )
+    if posId == nil or camp == nil then
+        return false;
+    end
+    local ln = #p.petNameNode;
+    local posId = tonumber( posId )
+    if camp == E_CARD_CAMP_ENEMY then
+        posId = posId + N_BATTLE_CAMP_CARD_NUM;
+    end
+    for i=1, ln do
+        local pNode = p.petNameNode[i];
+        if pNode ~= nil and pNode:GetId() == posId then
+            return pNode;
+        end
+    end
+end
+
+--设置宠物及名称结点位置
+function p.ReSetPetNodePos()
+	local ln = #p.petNode;
+	local ln2 = #p.petNameNode;
+    for i=1, ln do
+        local petNode = p.petNode[i];
+        local id = petNode:GetId();
+        if id > N_BATTLE_CAMP_CARD_NUM then
+            petNode:SetFramePosXY( 768, GetScreenHeight()/2 - 128 );
+        else
+            petNode:SetFramePosXY( -256, GetScreenHeight()/2 ); 
+        end
+    end
+    for j=1, ln2 do
+        local pNode = p.petNameNode[j];
+        local pId = pNode:GetId();
+        if pId > N_BATTLE_CAMP_CARD_NUM then
+            pNode:SetFramePosXY( -256, GetScreenHeight()/2 - 128 );
+        else
+            pNode:SetFramePosXY( 768, GetScreenHeight()/2 ); 
+        end
+    end
+end
 
 --添加蒙版图片
 function p.AddMaskImage()
