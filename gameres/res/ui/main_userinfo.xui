@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -85,7 +85,7 @@ Remark=代币数值
 [CTRL_BUTTON_ADD_EMONEY]
 Type=2
 Tag=59
-Rect=275 61 95 60
+Rect=275 61 95 62
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -94,8 +94,8 @@ TextVerAlign=AlignVerCenter
 Remark=充值按钮
 NormalFile=.\res\image\ui\main_interface\addemoney.PNG
 NormalFileUV=0 0 116 76
-SelectFile=.\res\image\ui\main_interface\addemoney.PNG
-SelectedFileUV=0 0 95 60
+SelectFile=.\res\image\ui\main_interface\addemoney_click.png
+SelectedFileUV=0 0 116 76
 DisableFile=.\res\image\ui\main_interface\addemoney.PNG
 DisableFileUV=0 0 95 60
 
