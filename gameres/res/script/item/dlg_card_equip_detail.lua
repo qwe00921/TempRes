@@ -268,7 +268,7 @@ end
 function p.SelectItemName(id)
 	local itemTable = SelectRowList(T_ITEM,"id",id);
 	if #itemTable >= 1 then
-		local text = itemTable[1].Name;
+		local text = itemTable[1].name;
 		return text;
 	else
 		WriteConErr("itemTable error ");
@@ -278,7 +278,7 @@ end
 function p.SelectItemDes(id)
 	local itemTable = SelectRowList(T_ITEM,"id",id);
 	if #itemTable >= 1 then
-		local text = itemTable[1].Description;
+		local text = itemTable[1].description;
 		return text;
 	else
 		WriteConErr("itemTable error ");
@@ -301,7 +301,7 @@ function p.LoadEquipDetail(equidId)
 	local uid = GetUID();
 
 		
-	uid=123456
+	--uid=123456
 	if uid == 0 or uid == nil or equidId == nil then
 		return ;
 	end;
