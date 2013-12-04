@@ -57,6 +57,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_BACK == tag) then --·µ»Ø
 			p.CloseUI();
+			card_intensify.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_INTENSIFY == tag) then --Ç¿»¯
 			
 			--card_intensify.ShowUI(p.cardInfo);

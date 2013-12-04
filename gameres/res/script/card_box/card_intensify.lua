@@ -67,7 +67,7 @@ function p.OnSendReq()
 	
 	local uid = GetUID();
 	WriteCon("**可强化卡牌List请求**"..uid);
-	uid = 1234;
+	--uid = 1234;
 	if uid ~= nil and uid > 0 then
 		--模块  Action 
 		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
@@ -86,6 +86,7 @@ function p.OnSendReqIntensify(msg)
 		WriteCon("param = "..param);
 		SendReq("Card","Feedwould",uid,param);
 		card_intensify_succeed.ShowUI(p.baseCardInfo);
+		p.ClearData();
 	end
 end
 
@@ -139,7 +140,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 					end
 				end
 				p.OnSendReqIntensify(param);
-				p.CloseUI();
+				--p.CloseUI();
 			end 
 			
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
@@ -275,6 +276,10 @@ end
 
 --显示单张卡牌
 function p.ShowCardInfo( view, card, cardIndex )
+	
+	if card == nil then
+		return;
+	end
 	local cardBtn = nil;
 	local cardLevel = nil;
 	local cardTeam = nil;
@@ -430,25 +435,26 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
-		p.ClearData();
+		p.cardListInfo = nil;
+		p.curBtnNode = nil;
+		p.sortBtnMark = MARK_OFF;
+		p.sortByRuleV = nil;
+		p.BatchSellMark = MARK_OFF;
+		p.allCardPrice = 0;
+		p.selectList = {};
+		p.teamList = {};
+		p.sellCardList = {};
+		p.selectCardId = {};
+		p.baseCardInfo = nil;
+		p.consumeMoney = 0;
+		p.selectNum = 0;
         card_bag_mgr.ClearData();
 		
     end
 end
 
 function p.ClearData()
-	p.cardListInfo = nil;
-	p.curBtnNode = nil;
-	p.sortBtnMark = MARK_OFF;
-	p.sortByRuleV = nil;
-	p.BatchSellMark = MARK_OFF;
-	p.allCardPrice = 0;
-	p.selectList = {};
-	p.teamList = {};
-	p.sellCardList = {};
-	p.selectCardId = {};
-	p.baseCardInfo = nil;
-	p.consumeMoney = 0;
 	p.selectNum = 0;
-	
+	p.selectCardId = {};
+	p.cardListInfo = nil;
 end
