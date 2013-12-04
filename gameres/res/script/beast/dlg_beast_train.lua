@@ -174,6 +174,7 @@ function p.ShowBeastInfo()
 				local pic = GetPictureByAni( SelectCell( T_PET_RES, SelectRowInner( T_PET, "pet_type", tostring( pet.Pet_type ), "id" ), "card_pic" ), 0 );
 				cardPic:SetPicture( pic );
 				levLabel:SetText( string.format( "LV %d", pet.Level ) );
+				isFight:SetText( ToUtf8( string.format( "∂”ŒÈ%d", pet.Team_id ) ) );
 				btn:SetId( pet.id );
 				btn:SetLuaDelegate( p.OnListBtnClick );
 			end

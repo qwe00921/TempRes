@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -164,14 +164,14 @@ NormalFileUV=0 0 245 87
 SelectFile=.\res\image\ui\beast\button_highlight.png
 SelectedFileUV=0 0 247 86
 
-[CTRL_BUTTON_FIGHT]
+[CTRL_BUTTON_SELL]
 Type=2
 Tag=24
 Rect=482 11 120 60
 AnchorPos=0 0
 Notes=
-Text=出战
-TextTradition=出戰
+Text=卖出
+TextTradition=賣出
 TextSize=36
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -184,26 +184,54 @@ SelectedFileUV=0 0 247 86
 [CTRL_PICTURE_SKILL]
 Type=1
 Tag=25
-Rect=323 80 89 131
+Rect=323 80 125 131
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\skill.png
 NormalFileUV=0 0 84 126
 
-[CTRL_PICTURE_16]
-Type=1
-Tag=26
-Rect=421 80 89 131
+[CTRL_9SLICES_50]
+Type=22
+Tag=50
+Rect=460 83 146 126
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\beast\skill.png
-NormalFileUV=0 0 84 126
+Stretch=1
+NormalFile=.\res\image\ui\card_group\team_bg.PNG
+NormalFileUV=0 0 46 38
 
-[CTRL_PICTURE_17]
-Type=1
-Tag=27
-Rect=515 80 89 131
+[CTRL_TEXT_51]
+Type=4
+Tag=51
+Rect=462 88 142 119
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\beast\skill.png
-NormalFileUV=0 0 84 126
+Text=技能信息技能信息技能信息技能信息技能信息技能信息技能信息
+TextTradition=技能信息技能信息技能信息技能信息技能信息技能信息技能信息
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_9SLICES_53]
+Type=22
+Tag=53
+Rect=3 0 85 38
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\card_group\team_bg.PNG
+NormalFileUV=0 0 46 38
+
+[CTRL_TEXT_TEAM]
+Type=4
+Tag=52
+Rect=3 0 85 35
+AnchorPos=0 0
+Notes=
+Text=队伍1
+TextTradition=隊伍1
+TextSize=22
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+
