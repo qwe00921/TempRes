@@ -8,7 +8,7 @@ n_battle_atk = {}
 local p = n_battle_atk;
 
 --双方互殴
-function p.Atk( atkFighter, targetFighter, batch, hurt )
+function p.Atk( atkFighter, distance, targetFighter, batch, hurt )
     if batch == nil then return end
     
     local batch = batch;
@@ -36,17 +36,15 @@ function p.Atk( atkFighter, targetFighter, batch, hurt )
     local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( playerNode, true );
     seqAtk:AddCommand( cmdAtkBegin );
     
-    --奔跑动画
-    local cmd1 = createCommandPlayer():Run( 0.1, playerNode, "" );
-    seqAtk:AddCommand( cmd1 );
-    
-    --向攻击目标移动
-    local cmd2 = p.JumpMoveTo(atkFighter, originPos, enemyPos, seqAtk, false);
+    if distance == N_BATTLE_DISTANCE_1 then
+        --向攻击目标移动
+        local cmd2 = JumpMoveTo(atkFighter, originPos, enemyPos, seqAtk, false);
+    end
     
     --攻击敌人动画
-    local cmd3 = createCommandPlayer():Atk( 0, playerNode, "" );
-    seqAtk:AddCommand( cmd3 );
-    cmd3:SetDelay(0.2f); --设置攻击延迟
+    local cmdAtk = createCommandPlayer():Atk( 0, playerNode, "" );
+    seqAtk:AddCommand( cmdAtk );
+    cmdAtk:SetDelay(0.2f); --设置攻击延迟
     
     --最初站立动画
     local cmd4 = createCommandPlayer():Standby( 0.01, playerNode, "" );
@@ -61,8 +59,10 @@ function p.Atk( atkFighter, targetFighter, batch, hurt )
     seqTarget:AddCommand( cmdForward ); 
     --]]
     
-     --返回原来的位置
-    local cmd5 = p.JumpMoveTo(atkFighter, enemyPos, originPos, seqAtk, false);
+    if distance == N_BATTLE_DISTANCE_1 then
+        --返回原来的位置
+        local cmd5 = JumpMoveTo(atkFighter, enemyPos, originPos, seqAtk, false);
+    end
     
     local cmdAtkEnd = createCommandInstant_Misc():SetZOrderAtTop( atkFighter:GetNode(), false );
     seqAtk:AddCommand( cmdAtkEnd );
@@ -90,48 +90,6 @@ function p.Atk( atkFighter, targetFighter, batch, hurt )
     seqTarget:SetWaitEnd( cmd3 );
         
     --受攻击的后续动画【死亡 OR 站立】
-    p.HurtResultAni( targetFighter, seqTarget );
+    HurtResultAni( targetFighter, seqTarget );
     
-end
-
-function p.JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq, isFallback)
-    local fx = "lancer_cmb.begin_battle_jump";
-    
-    local atkPos = fPos;
-    
-    local x = tPos.x - atkPos.x;
-    local y = tPos.y - atkPos.y;
-    local distance = (x ^ 2 + y ^ 2) ^ 0.75;
-    
-    -- calc start offset
-    local startOffset = 0;
-    local offsetX = x * startOffset / distance;
-    local offsetY = y * startOffset / distance;
-    --local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
-
-    --self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
-
-    local pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
-    
-    local varEnv = pCmd:GetVarEnv();
-    varEnv:SetFloat( "$1", x );
-    varEnv:SetFloat( "$2", y );
-    varEnv:SetFloat( "$3", 75 );
-    
-    return pCmd;
-end
-
---受击结果：死亡动作或站立动画
-function p.HurtResultAni( targetFighter, seqTarget )
-    if targetFighter:CheckTmpLife() then
-        --local cmdA = createCommandPlayer():Standby( 0, targetFighter:GetNode(), "" );
-        --seqTarget:AddCommand( cmdA );
-    else
-        --local cmdB = createCommandPlayer():Dead( 0, targetFighter:GetNode(), "" );
-        --seqTarget:AddCommand( cmdB );   
-        local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
-        seqTarget:AddCommand( cmdC );
-        local cmdD = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die_v2" );
-        seqTarget:AddCommand( cmdD );
-    end
 end

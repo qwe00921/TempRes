@@ -4,6 +4,10 @@
 --------------------------------------------------------------
 ui_n_battle_pvp = {};
 local p =  ui_n_battle_pvp;
+p.ID_CTRL_EXP_PET_RAGE_4				  = 62;
+p.ID_CTRL_EXP_PET_RAGE_3				  = 61;
+p.ID_CTRL_EXP_PET_RAGE_2				  = 60;
+p.ID_CTRL_EXP_PET_RAGE_1				  = 59;
 p.ID_CTRL_TEXT_PET_LV_4				   = 102;
 p.ID_CTRL_TEXT_PET_LV_3				   = 101;
 p.ID_CTRL_TEXT_PET_LV_2				   = 100;
@@ -33,7 +37,7 @@ p.ID_CTRL_PICTURE_67					     = 67;
 p.ID_CTRL_RIGHT_SPRITE_6				  = 18;
 p.ID_CTRL_LEFT_SPRITE_6				   = 16;
 p.ID_CTRL_PICTURE_13					     = 13;
-p.ID_CTRL_PICTURE_12					     = 12;
+p.ID_CTRL_PICTURE_CENTER				  = 12;
 p.ID_CTRL_LEFT_SPRITE_5				   = 4;
 p.ID_CTRL_LEFT_SPRITE_4				   = 3;
 p.ID_CTRL_LEFT_SPRITE_3				   = 2;
