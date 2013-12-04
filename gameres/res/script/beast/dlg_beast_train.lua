@@ -6,6 +6,7 @@ local p = dlg_beast_train;
 p.layer = nil;
 p.id = nil;
 p.pet = nil;
+p.index = nil;
 
 local ui = ui_beast_incubate;
 
@@ -15,6 +16,7 @@ function p.ShowUI( id )
 	for i,v in pairs(source.pet) do
 		if v.id == p.id then
 			p.pet = v;
+			p.index = i;
 			break;
 		end
 	end
@@ -134,7 +136,14 @@ function p.ShowBeastInfo()
 	list:ClearView();
 	
 	local source = beast_mgr.GetSource();
-	local row = math.ceil(#source.pet / 5);
+	
+	--È¥³ý±¾Éí
+	local petList = CopyTable( source.pet );
+	if p.index then
+		table.remove(petList, p.index);
+	end
+	
+	local row = math.ceil((#source.pet-1) / 5);
 
 	for i = 1, row do
 		local view = createNDUIXView();
@@ -145,7 +154,7 @@ function p.ShowBeastInfo()
         view:SetViewSize( bg:GetFrameSize());
 
 		for j = 1, 5 do
-			local pet = source.pet[(i-1)*5+j];
+			local pet = petList[(i-1)*5+j];
 			
 			local maskPic = GetImage( view, ui_beast_incubate_list["ID_CTRL_PICTURE_MASK_"..j]);
 			local levLabel = GetLabel( view, ui_beast_incubate_list["ID_CTRL_TEXT_LEV_"..j] );
@@ -249,6 +258,25 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.id = nil;
+		p.pet = nil;
+		p.index = nil;
+		
+		beast_mgr.ClearIDList();
 	end
 end
 
+function CopyTable( t )
+	local temp = {}
+	if t ~= nil and type(t) == "table" then
+		for key , value in pairs(t) do
+			if type(value) == "table" then
+				local ret = CopyTable( value );
+				temp[key] = ret;
+			else
+				temp[key] = value;
+			end
+		end
+	end
+	return temp;
+end
