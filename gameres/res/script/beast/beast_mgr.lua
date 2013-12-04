@@ -260,3 +260,7 @@ function p.TrainBeast(source)
 
 	dlg_beast_train.TrainCallBack();
 end
+
+function p.ClearIDList()
+	p.idList = {};
+end

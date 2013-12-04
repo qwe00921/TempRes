@@ -199,19 +199,34 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 				dlg_card_equip_detail.ShowUI4CardEquip(p.equip1, p.cardInfo);
 			else
-				card_equip_select_list.ShowUI();
+				p.cardEquipment = {};
+				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
+				p.cardEquipment.equipPos = 1
+				p.cardEquipment.intent = 1;--表示穿上
+				card_equip_select_list.ShowUI(p.cardEquipment);
 			end
+			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
+				
 				dlg_card_equip_detail.ShowUI4CardEquip(p.equip2, p.cardInfo);
 			else
-				card_equip_select_list.ShowUI();
+				p.cardEquipment = {};
+				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
+				p.cardEquipment.equipPos = 2
+				p.cardEquipment.intent = 1;--表示穿上
+				card_equip_select_list.ShowUI(p.cardEquipment);
 			end
+			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
 			if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
 				dlg_card_equip_detail.ShowUI4CardEquip(p.equip3, p.cardInfo);
 			else
-				card_equip_select_list.ShowUI();
+				p.cardEquipment = {};
+				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
+				p.cardEquipment.equipPos = 3
+				p.cardEquipment.intent = 1; --表示穿上
+				card_equip_select_list.ShowUI(p.cardEquipment);
 			end
 		end
 	end

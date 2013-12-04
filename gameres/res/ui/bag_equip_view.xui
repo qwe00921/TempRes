@@ -1,0 +1,213 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=4 5 629 580
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\bag\bag_main_bg.png
+NormalFileUV=0 0 640 960
+
+[CTRL_COLOR_LABEL_EQUIP_NAME]
+Type=7
+Tag=82
+Rect=232 19 193 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CLOSE]
+Type=2
+Tag=62
+Rect=535 24 74 48
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+NormalFile=.\res\image\ui\bag\bag_back.png
+NormalFileUV=0 0 151 101
+
+[CTRL_PICTURE_EQUIP]
+Type=1
+Tag=65
+Rect=31 89 220 288
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR]
+Type=1
+Tag=72
+Rect=35 98 33 109
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_LEVEL]
+Type=4
+Tag=69
+Rect=173 99 65 27
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_TYPE]
+Type=1
+Tag=71
+Rect=34 336 73 26
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_PROPERTY]
+Type=1
+Tag=63
+Rect=268 91 341 167
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_MAIN_PRO]
+Type=4
+Tag=75
+Rect=279 103 107 33
+AnchorPos=0 0
+Notes=
+Text=主属性
+TextTradition=主屬性
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_MAIN_PRO1]
+Type=7
+Tag=85
+Rect=430 96 138 40
+AnchorPos=0 0
+Notes=
+Text=防御
+TextTradition=防御
+TextSize=24
+TextColor=0xff00ff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SUB_PRO]
+Type=4
+Tag=76
+Rect=282 145 104 32
+AnchorPos=0 0
+Notes=
+Text=附加属性
+TextTradition=附加屬性
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SUB_PRO1]
+Type=7
+Tag=86
+Rect=429 143 141 29
+AnchorPos=0 0
+Notes=
+Text=暴击
+TextTradition=暴擊
+TextSize=24
+TextColor=0xff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SUB_PRO2]
+Type=7
+Tag=87
+Rect=429 178 143 25
+AnchorPos=0 0
+Notes=
+Text=闪避
+TextTradition=閃避
+TextSize=24
+TextColor=0xff00
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SUB_PRO3]
+Type=7
+Tag=88
+Rect=430 212 138 30
+AnchorPos=0 0
+Notes=
+Text=闪避
+TextTradition=閃避
+TextSize=24
+TextColor=0xffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_INTRODUCE]
+Type=1
+Tag=64
+Rect=264 265 335 180
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_83]
+Type=4
+Tag=83
+Rect=279 281 99 39
+AnchorPos=0 0
+Notes=
+Text=介绍
+TextTradition=介紹
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_INFO]
+Type=4
+Tag=84
+Rect=281 326 304 107
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_MODE]
+Type=1
+Tag=66
+Rect=44 398 198 37
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_STRENGTHEN]
+Type=2
+Tag=67
+Rect=136 482 107 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+NormalFile=.\res\image\ui\bag\star1.png
+NormalFileUV=0 0 44 52
+
+[CTRL_BUTTON_SELL]
+Type=2
+Tag=68
+Rect=360 479 107 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+NormalFile=.\res\image\ui\bag\star2.png
+NormalFileUV=0 0 44 52
