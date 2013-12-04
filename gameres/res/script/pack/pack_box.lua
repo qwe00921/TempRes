@@ -274,7 +274,7 @@ function p.ShowItemInfo( view, item, itemIndex )
 	equipLevelText:SetVisible( false );
 	isUsePic:SetVisible( false );
 
-	local itemType = tonumber(item.Item_type)
+	--local itemType = tonumber(item.Item_type)
 	WriteCon("itemType == "..itemType);
 
 	if itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
@@ -306,8 +306,8 @@ end
 --点击物品事件
 function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local itemId = uiNode:GetId();
-	WriteCon("Use itemUniqueId = "..itemUniqueId);
-	--p.itemUsedId = itemId;
+	local itemUniqueId = uiNode:GetUID();
+	local itemType = uiNode:GetXID();
 	
 	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
 	local itemData = SelectRowList(T_ITEM,"id",itemId);
@@ -322,6 +322,8 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	useBtn:SetLuaDelegate(p.OnUseItemClickEvent);
 	useBtn:SetVisible(true);
 	useBtn:SetId(itemId);
+	useBtn:SetUID(itemUniqueId);
+	useBtn:SetXID(itemType);
 end
 
 --点击使用物品事件
@@ -329,13 +331,17 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_USE == tag) then --使用
-			local useBtnId = uiNode:GetId();
-			if useBtnId == 0 or useBtnId == nil then
+			local itemId = uiNode:GetId();
+			local itemUniqueId = uiNode:GetUID();
+			local itemType = uiNode:GetXID();
+			WriteCon("Use itemId = "..itemId);
+			WriteCon("Use itemUniqueId = "..itemUniqueId);
+			WriteCon("Use itemType = "..itemType);
+			if itemId == 0 or itemId == nil then
 				WriteConErr("used Button id error ");
 				return
 			end
-			WriteCon("useBtn == "..useBtnId);
-			pack_box_mgr.UseItemEvent(useBtnId);
+			pack_box_mgr.UseItemEvent(itemId,itemUniqueId,itemType);
 		end
 	end
 	

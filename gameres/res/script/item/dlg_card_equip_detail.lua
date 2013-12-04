@@ -12,19 +12,25 @@ local p = dlg_card_equip_detail;
 p.layer = nil;
 p.item = nil;
 p.showType = 1; 
-p.itemId = nil;
-p.cardDetail = nil;
+p.equipId = nil;
+p.cardInfo = nil;
+p.equip = nil;
+--p.itemCommInfo = nil;
+p.dressEquip = nil;
 
 local ui = ui_dlg_card_equip_detail
 
 
 ---------显示UI----------
-function p.ShowUI( itemId )
+function p.ShowUI( equip, cardInfo)
    -- if item == nil then
     --	return ;
     --end
    -- p.item = item;
-	p.itemId = itemId;
+	--p.equipId = equipId;
+	p.equip = equip;
+	p.cardInfo = cardInfo;
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return ;
@@ -40,98 +46,124 @@ function p.ShowUI( itemId )
 	GetUIRoot():AddDlg( layer );
     LoadDlg("dlg_card_equip_detail.xui", layer, nil);
 	
-	--p.SetDelegate(layer);
-	p.layer = layer;
 	
-	--p.ShowItem( item );
+	p.layer = layer;
+	p.SetDelegate(layer);
+	
+	--p.LoadEquipDetail(itemId);
+	
+	WriteConErr("ShowUI4CardEquip2  ");
+	
+	p.ShowItem(p.equip.itemInfo);
 end
 
-function p.ShowUI4CardEquip(itemId)
+function p.ShowUI4CardEquip(equip,cardInfo)
+	WriteConErr("ShowUI4CardEquip  ");
 	p.showType = 1
-	p.ShowUI( itemId );
+	p.ShowUI(equip,cardInfo );
 end
 
+function p.ShowUI4Dress(equip,dressEquip)
+	p.showType = 2
+	p.dressEquip = dressEquip;
+	p.ShowUI(equip );
+end
 
 --设置事件处理
 function p.SetDelegate(layer)
-	local pBtn01 = GetButton(layer,ui.ID_CTRL_BUTTON_UPGRADE);
-    pBtn01:SetLuaDelegate(p.OnUIEvent);
+	if p.showType and p.showType == 2 then
+		
+		local upgradeLb = GetLabel( p.layer,ui.ID_CTRL_TEXT_UPGRADE );
+		upgradeLb:SetVisible(false);
+		local pBtn01 = GetButton(layer,ui.ID_CTRL_BUTTON_UPGRADE);
+		pBtn01:SetVisible(false);
+		
+		local upgradeLb = GetLabel( p.layer,ui.ID_CTRL_TEXT_LABEL_CHANGE );
+		upgradeLb:SetVisible(false);
+		
+		local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
+		pBtn03:SetVisible(false);
+		
+	elseif p.equip.intent == card_equip_select_list.INTENT_UPDATE then
+		
+		local pBtn01 = GetButton(layer,ui.ID_CTRL_BUTTON_UPGRADE);
+		pBtn01:SetLuaDelegate(p.OnUIEvent);
+		
+		local upgradeLb = GetLabel( p.layer,ui.ID_CTRL_TEXT_INSTALL);
+		upgradeLb:SetVisible(false);
+		
+		local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
+		pBtn03:SetLuaDelegate(p.OnUIEvent);
+	end
+	
     
     local pBtn02 = GetButton(layer,ui.ID_CTRL_BUTTON_CHANGE);
     pBtn02:SetLuaDelegate(p.OnUIEvent);
+	
+	pBtn02 = GetButton(layer,ui.ID_CTRL_BUTTON_CLOSE);
+    pBtn02:SetLuaDelegate(p.OnUIEvent);
+	
+	
     
-    local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
-    pBtn03:SetLuaDelegate(p.OnUIEvent);
-	
-	pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_CLOSE);
-    pBtn03:SetLuaDelegate(p.OnUIEvent);
-	
     
 end
 
 function p.InitView()
+
 end
 
 function p.ShowItem( item )
-	--是否己装备
-	local isUse = GetLabel( p.layer, ui.ID_CTRL_TEXT_8 );
-	if tonumber( item.card_id ) == 0 then
-	   isUse:SetText( GetStr( "item_unused" ) );
-	else
-	   isUse:SetText( GetStr( "item_used" ) );
+	
+	if item == nil then 
+		return;
 	end
+
+	--武器名称
+	local labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_NAME );
+	--labelV:SetText(p.SelectItemName(item.Item_id));
+	labelV:SetText(item.Name or "");
 	
-	--道具图片
-	local pic = 9;
-	--[[
-    if tonumber( item.type ) == ITEM_TYPE_3 then
-        pic = math.random(0,2);
-    elseif tonumber( item.type ) ==ITEM_TYPE_2 then
-        pic = math.random(3,5); 
-    else
-        pic = math.random(6,8);     
-    end
-    --]]
-	local itemPic = GetImage( p.layer,ui.ID_CTRL_PICTURE_3 );
-	itemPic:SetPicture( GetPictureByAni("item.item_db", pic) );
+	--武器类型
+	labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_TYP);
+	--WriteConErr("item.Type  "..GetStr("card_equip_type"..item.Type));
+	labelV:SetText(GetStr("card_equip_type"..item.Type));
 	
-	--道具名称
-	local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_4 );
-	itemName:SetText( item.name );
+	--武器主要属性值
+	labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_ATTR);
+	labelV:SetText(GetStr("card_equip_attr"..item.Attribute_type) .. "+" .. item.Attribute_value);
 	
-	--道具说明
-	local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_5 );
-	description:SetText( item.description );
+	--图片
+	local itemPic = GetImage( p.layer,ui.ID_CTRL_PICTURE_IMAGE );
+	itemPic:SetPicture( p.SelectImage(item.id) );
+	
+	--卡牌名称
+	local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CARD_NAME );
+	itemName:SetText( item.Name or "");
+	
+	--说明
+	local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_DES );
+	description:SetText( item.Description or "");
 	
 	--生命
-	local hp_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_9 );
-	local hp_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_10 );
-	hp_value:SetText( tostring( p.GetHP( item ) ) );
+	--local hp_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_9 );
+	--local hp_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_10 );
+	--hp_value:SetText( tostring( p.GetHP( item ) ) );
 	
 	--等级
-	local lv_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_11 );
-    local lv_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_12 );
-    lv_value:SetText( item.level );
+	--local lv_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_11 );
+    local lv_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_LEVEL );
+    lv_value:SetText( item.Equip_level or "0");
 	
 	--攻击
-	local atk_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
-    local atk_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_14 );
-    atk_value:SetText( tostring( p.GetAttack( item ) ) );
+	--local atk_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
+    --local atk_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_14 );
+   -- atk_value:SetText( tostring( p.GetAttack( item ) ) );
     
 	--防御
-	local def_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_15 );
-    local def_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_16 );
-    def_value:SetText( tostring( p.GetDef( item ) ) );
+	--local def_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_15 );
+   -- local def_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_16 );
+   -- def_value:SetText( tostring( p.GetDef( item ) ) );
     
-	--技能名称
-	local skill = GetLabel( p.layer, ui.ID_CTRL_TEXT_17 );
-	local skillName;
-	if tonumber( item.skill ) == 0 then
-		skillName = GetStr( "item_no_skill" );
-	else
-	   	skillName = SelectCell( T_SKILL, item.skill, "name" );
-	end
-	skill:SetText( GetStr( "item_skill")..":"..skillName );
 end
 
 --获取道具当前的生命值
@@ -169,15 +201,28 @@ function p.OnUIEvent(uiNode, uiEventType, param)
             --dlg_msgbox.parent = p.layer;
             --dlg_msgbox.ShowYesNo( ToUtf8( "确认提示框" ), ToUtf8( "出售价"..p.item.sellprice ), p.OnMsgBoxCallback, p.layer );
             
-        elseif ( ui.ID_CTRL_BUTTON_9 == tag ) then
+        elseif ( ui.ID_CTRL_BUTTON_CHANGE == tag ) then
             --装备
-			if tonumber(p.item.level) == 7 then
-				dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "该装备已经满级无法强化" ), p.OnMsgBoxTip, p.layer );
-				return;
+			--if tonumber(p.item.level) == 7 then
+			--	dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "该装备已经满级无法强化" ), p.OnMsgBoxTip, p.layer );
+				--return;
+			--end
+			--dlg_equip_upgrade.ShowUI( p.item );
+			if p.showType == 2 then
+				p.sendDress();
+			else
+				p.cardEquipment = {};
+				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
+				p.cardEquipment.equipPos = 2
+				p.cardEquipment.intent = card_equip_select_list.INTENT_UPDATE;--表示更换
+				p.cardEquipment.dressedItem = p.equip;
+				card_equip_select_list.ShowUI(p.cardEquipment);
+				p.CloseUI(); 
 			end
-			dlg_equip_upgrade.ShowUI( p.item );
         elseif ( ui.ID_CTRL_BUTTON_CLOSE == tag ) then  
             p.CloseUI(); 
+		elseif (ui.ID_CTRL_BUTTON_UNLOAD == tag) then
+			p.sendUnDress();
 			
 		end		
 	end
@@ -205,31 +250,52 @@ function p.CloseUI()
 	    p.layer:LazyClose();
         p.layer = nil;
         p.item = nil;
+		p.dressEquip = nil;
     end
+end
+
+function p.SelectImage(id)
+	local aniIndex = "item."..id;
+	return GetPictureByAni(aniIndex,0);
+end
+
+function p.SelectItemName(id)
+	local itemTable = SelectRowList(T_ITEM,"id",tonumber(id));
+	if #itemTable == 1 then
+		local text = itemTable[1].Name;
+		return ToUtf8(text);
+	else
+		WriteConErr("itemTable error ");
+	end
 end
 
 -------------------------------网络------------------------------------------------------
 --读取装备细信息
 function p.LoadEquipDetail(equidId)
 	local uid = GetUID();
+
+		
+	uid=123456
 	if uid == 0 or uid == nil or equidId == nil then
 		return ;
 	end;
 	
 	local param = string.format("&item_unique_id=%s",equidId)
+	WriteConErr("send req ");
 	SendReq("Item","EquipmentDetailShow",uid,param);		
 	
 end
 --网络返回卡详细信息
 function p.OnLoadEquitDetail(msg)
 	
-	if p.layer == nil or p.layer:IsVisible() ~= true then
+	if p.layer == nil then --or p.layer:IsVisible() ~= true then
 		return;
 	end
 	
 	if msg.result == true then
-		p.cardDetail = msg.item_info or {};
-		p.ShowItem(p.cardDetail);
+		p.itemInfo = msg.item_info or {};
+		p.itemCommInfo = msg.item_common_info or {};
+		p.ShowItem(p.itemInfo,p.itemCommInfo);
 	else
 		--local str = mail_main.GetNetResultError(msg);
 		--if str then
@@ -278,4 +344,66 @@ function p.OnLoadEquitDetail(msg)
 		Skill: "0"
 		}
 		]]--
+end
+
+function p.sendDress()
+	--http://fanta2.sb.dev.91.com/index.php?command=Item&action=&user_id=123456&=33450&item_unique_id=33461&item_position=1&card_unique_id=10000272
+	local uid = GetUID();
+
+		
+	--uid=123456
+	local equid = p.equip;
+	if uid == 0 or uid == nil or equid == nil then
+		return ;
+	end;
+	local pos = (p.equip.Item_type) or (p.equip.ItemInfo.Item_type);
+	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",equid.equipId, equid.cardUniqueId,tostring(pos));
+	--param = param .. "" .. 
+	if p.dressEquip and p.dressEquip.equipId then
+		param = param .. "&item_unique_id_old" .. p.dressEquip.equipId;
+	end
+	
+	WriteConErr("send req ");
+	SendReq("Item","ReplaceEquipment",uid,param);	
+end
+
+function p.sendUnDress()
+	
+	--http://fanta2.sb.dev.91.com/index.php?command=Item&action=&user_id=123456&card_unique_id=10000272&item_unique_id=33451&item_position=2
+	
+	local uid = GetUID();
+		
+	--uid=123456
+	local equid = p.equip;
+	if uid == 0 or uid == nil or equid == nil then
+		return ;
+	end;
+	
+	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",equid.equipId, equid.cardUniqueId,tostring(p.equip.Item_type));
+	
+	WriteConErr("send req ");
+	SendReq("Item","TakeoffEquipment",uid,param);	
+end
+
+function p.OnDress(msg)
+	if p.layer == nil then --or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	if msg.result == true then
+		dlg_msgbox.ShowOK(" ",GetStr("card_equip_dress_suc"),p.OnOk);
+	else
+		--local str = mail_main.GetNetResultError(msg);
+		--if str then
+			--dlg_msgbox.ShowOK(GetStr("mail_erro_title"), str,nil);
+		--else
+		--	WriteCon("**======mail_write_mail.NetCallback error ======**");
+		--end
+		--TODO...
+	end
+end
+
+function p.OnOk()
+	p.CloseUI();
+	card_equip_select_list.CloseUI();
 end

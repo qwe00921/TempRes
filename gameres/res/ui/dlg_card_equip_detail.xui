@@ -30,7 +30,7 @@ Notes=
 NormalFile=.\res\image\ui\common\item_bg.png
 NormalFileUV=0 0 126 126
 
-[CTRL_PICTURE_3]
+[CTRL_PICTURE_IMAGE]
 Type=1
 Tag=3
 Rect=114 266 120 120
@@ -144,15 +144,6 @@ SelectedFileUV=0 0 74 74
 DisableFile=.\res\image\ui\common\close_disable.png
 DisableFileUV=0 0 74 74
 
-[CTRL_PICTURE_24]
-Type=1
-Tag=26
-Rect=134 600 56 30
-AnchorPos=0 0
-Notes=
-NormalFile=.\res.cn\image\ui\font\q_h.png
-NormalFileUV=0 0 56 30
-
 [CTRL_BUTTON_CHANGE]
 Type=2
 Tag=1327
@@ -173,7 +164,7 @@ DisableFileUV=0 0 136 60
 [CTRL_TEXT_TYP]
 Type=4
 Tag=1328
-Rect=255 212 79 20
+Rect=245 212 122 20
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -184,7 +175,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTR]
 Type=4
 Tag=1330
-Rect=368 211 155 20
+Rect=378 211 155 20
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -257,5 +248,53 @@ AnchorPos=0 0
 Notes=
 TextSize=15
 TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LABEL_CHANGE]
+Type=4
+Tag=1538
+Rect=264 588 122 47
+AnchorPos=0 0
+Notes=
+Text=更换
+TextTradition=更換
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_UNLOAD]
+Type=4
+Tag=1539
+Rect=423 586 113 51
+AnchorPos=0 0
+Notes=
+Text=御下
+TextTradition=御下
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_INSTALL]
+Type=4
+Tag=27
+Rect=265 590 122 47
+AnchorPos=0 0
+Notes=
+Text=装备
+TextTradition=裝備
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_UPGRADE]
+Type=4
+Tag=28
+Rect=111 590 122 47
+AnchorPos=0 0
+Notes=
+Text=强化
+TextTradition=強化
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

@@ -1,337 +1,337 @@
-card_equip_select_list = {}
+
+
+
+card_equip_select_list  = {}
 local p = card_equip_select_list;
 
-local ui = ui_card_equip_select_list;
-local packLimit = 100; --è·å–ç©å®¶èƒŒåŒ…æ ¼å­æ•°é‡
-p.layer = nil;
-p.curBtnNode = nil;
---p.itemUsedId = nil;
+p.INTENT_ADD = 1; --Ìí¼Ó
+p.INTENT_UPDATE = 2;--¸ü»»
+p.INTENT_UPGRADE = 3; -- Éı¼¶
 
-function p.ShowUI()
+p.layer = nil;
+p.allItems = nil;
+p.groupItems = nil;
+
+local ui = ui_card_equip_select_list;
+local ui_list = ui_card_equip_select_list_item;
+
+p.curBtnNode = nil;
+p.allCardPrice = 0;
+p.sellCardList = {};
+
+
+p.cardEquipment = nil;
+
+p.selectList = {};
+
+p.selectNum = 0;
+
+p.tabIndex = 0;
+
+
+function p.ShowUI(cardEquipment)
+	if cardEquipment == nil then 
+		return;
+	end
+	
+	p.cardEquipment = cardEquipment;
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
 	end
 	
-    local layer = createNDUIDialog();
+	local layer = createNDUIDialog();
     if layer == nil then
         return false;
     end
-
-	layer:NoMask();
-    layer:Init();   
-	layer:SetSwallowTouch(false);
 	
-    GetUIRoot():AddDlg(layer);
+	layer:NoMask();
+	layer:Init();	
+	GetUIRoot():AddDlg( layer );
     LoadDlg("card_equip_select_list.xui", layer, nil);
+    
 
     p.layer = layer;
     p.SetDelegate(layer);
 	
-	--åŠ è½½èƒŒåŒ…æ•°æ®
-   -- pack_box_mgr.LoadAllItem( p.layer );
-	--p.ShowItemList( itemList )
-end
-
---ä¸»ç•Œé¢è®¾ç½®äº‹ä»¶å¤„ç†
-function p.SetDelegate(layer)
-	local returnBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
-	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
-	--æ•´ç†,æš‚æ—¶å»æ‰
-	--local sortBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT);
-	--sortBtn:SetVisible(false);
-	--sortBtn:SetLuaDelegate(p.OnUIClickEvent);
-
-	local useBtn = GetButton(layer, ui.ID_CTRL_BUTTON_USE);
-	useBtn:SetVisible(false);
 	
-	local allItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM1);
-	allItemBtn:SetLuaDelegate(p.OnUIClickEvent);
-
-	local debrisItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM2);
-	debrisItemBtn:SetLuaDelegate(p.OnUIClickEvent);
-
-	local equipItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_TIEM3);
-	equipItemBtn:SetLuaDelegate(p.OnUIClickEvent);
-
-	local otherItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM4);
-	otherItemBtn:SetLuaDelegate(p.OnUIClickEvent);
-	--éšè—è£…å¤‡åˆ†ç±»æŒ‰é’®
-	p.HideEquipTypeBtn();
+	
+	--¼ÓÔØ¿¨ÅÆÁĞ±íÊı¾İ  ·¢ÇëÇó
+    p.OnSendReq();
+	
 end
 
---äº‹ä»¶å¤„ç†
+
+--Ö÷½çÃæÊÂ¼ş´¦Àí
+function p.SetDelegate(layer)
+	local retBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
+	retBtn:SetLuaDelegate(p.OnUIClickEvent);
+	
+
+	local cardBtnAll = GetButton(layer, ui.ID_CTRL_BUTTON_ALL);
+	local cardBtnPro1 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO1);
+	local cardBtnPro2 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO2);
+	local cardBtnPro3 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO3);
+	
+	cardBtnPro3:SetLuaDelegate(p.OnUIClickEvent);
+	cardBtnPro2:SetLuaDelegate(p.OnUIClickEvent);
+	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
+	cardBtnPro1:SetLuaDelegate(p.OnUIClickEvent);
+	p.SetBtnCheckedFX( cardBtnAll );
+	
+	
+	if p.cardEquipment.intent == p.INTENT_ADD 
+		or p.cardEquipment.intent == p.INTENT_UPDATE then
+		cardBtnAll:SetEnabled(false);
+		cardBtnPro3:SetEnabled(false);
+		cardBtnPro2:SetEnabled(false);
+		cardBtnPro1:SetEnabled(false);
+		if p.cardEquipment.equipPos == 1 then
+			cardBtnPro1:SetEnabled(true);
+			p.tabIndex = 1;
+		elseif p.cardEquipment.equipPos == 2 then
+			cardBtnPro2:SetEnabled(true);
+			p.tabIndex = 2;
+		elseif p.cardEquipment.equipPos == 3 then
+			cardBtnPro3:SetEnabled(true);
+			p.tabIndex = 3;
+		end
+	end
+	
+	local str = "";
+	if p.cardEquipment.intent == p.INTENT_ADD then
+		str = GetStr("card_equip_add");
+	elseif p.cardEquipment.intent == p.INTENT_UPDATE then
+		str = GetStr("card_equip_chg");
+	else
+		str = GetStr("card_equip_upgrade");
+	end
+	
+	local lv = GetLabel(p.layer, ui.ID_CTRL_TEXT_HEAD);
+	if lv then
+		lv:SetText(str);
+	end
+	
+	
+end
+
+--ÊÂ¼ş´¦Àí
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --è¿”å›
+		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --·µ»Ø
 			p.CloseUI();
-			--maininterface.CloseAllPanel();
-		--elseif(ui.ID_CTRL_BUTTON_SORT == tag) then --æ•´ç†
-		elseif(ui.ID_CTRL_BUTTON_ITEM1 == tag) then --å…¨éƒ¨
-			WriteCon("=====allItemBtn");
+		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --È«²¿
+			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );
-			p.HideEquipTypeBtn();
-			pack_box_mgr.ShowAllItems();
-		elseif(ui.ID_CTRL_BUTTON_ITEM2 == tag) then --é“å…·
-			WriteCon("=====debrisItemBtn");
+			p.tabIndex = 0;
+		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --ÎäÆ÷
+			WriteCon("=====cardBtnPro1");
 			p.SetBtnCheckedFX( uiNode );
-			p.HideEquipTypeBtn();
-			pack_box_mgr.ShowItemByType(1);
-		elseif(ui.ID_CTRL_BUTTON_TIEM3 == tag) then --è£…å¤‡
-			WriteCon("=====equipItemBtn");
+			p.tabIndex = 1
+		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --·À¾ß
+			WriteCon("=====cardBtnPro2");
 			p.SetBtnCheckedFX( uiNode );
-			--æ˜¾ç¤ºæ‰€æœ‰è£…å¤‡  å’Œ 4ä¸ªæŒ‰é’®
-			p.ShowEquipTypeBtn();
-			pack_box_mgr.ShowItemByType(2);
-		elseif(ui.ID_CTRL_BUTTON_ITEM4 == tag) then --å…¶ä»–
-			WriteCon("=====otherItemBtn");
+			p.tabIndex = 2
+			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_2);
+		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --Ğ¬×Ó
+			WriteCon("=====cardBtnPro3");
 			p.SetBtnCheckedFX( uiNode );
-			p.HideEquipTypeBtn();
-			pack_box_mgr.ShowItemByType(3);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB1 == tag) then --è£…å¤‡å…¨éƒ¨
-			WriteCon("=====allEquipBtn");
-			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(2);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB2 == tag) then --è£…å¤‡æ­¦å™¨
-			WriteCon("=====armsBtn");
-			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(4);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB3 == tag) then --è£…å¤‡é˜²å…·
-			WriteCon("=====armorBtn");
-			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(5);
-		elseif(ui.ID_CTRL_BUTTON_ITEM_SUB4 == tag) then --è£…å¤‡é‹å­
-			WriteCon("=====shoesBtn");
-			p.SetBtnCheckedFX( uiNode );
-			pack_box_mgr.ShowItemByType(6);
+			p.tabIndex = 3
 		end
 	end
 end
 
-function p.ShowEquipTypeBtn()
-	--è£…å¤‡å…¨éƒ¨
-	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
-	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
-	allEquipBtn:SetVisible( true );
-	--è£…å¤‡æ­¦å™¨
-	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
-	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armsBtn:SetVisible( true );
-	--è£…å¤‡é˜²å…·
-	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
-	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armorBtn:SetVisible( true );
-	--è£…å¤‡é‹å­
-	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
-	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
-	shoesBtn:SetVisible( true );
-end
-
-function p.HideEquipTypeBtn()
-	--è£…å¤‡å…¨éƒ¨
-	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
-	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
-	allEquipBtn:SetVisible( false );
-	--è£…å¤‡æ­¦å™¨
-	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
-	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armsBtn:SetVisible( false );
-	--è£…å¤‡é˜²å…·
-	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
-	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armorBtn:SetVisible( false );
-	--è£…å¤‡é‹å­
-	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
-	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
-	shoesBtn:SetVisible( false );
-end
-
-
---æ˜¾ç¤ºç‰©å“åˆ—è¡¨
-function p.ShowItemList(itemList)
-	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_ITEM);
-	list:ClearView();
-	
-	local itemCountText = GetLabel(p.layer,ui.ID_CTRL_TEXT_COUNT );
-
-	if itemList == nil or #itemList <= 0 then
-		local countText = "0/"..packLimit;
-		itemCountText:SetText(ToUtf8(countText));
+--È·ÈÏÇ¿»¯ÎªTRUE
+function p.OnMsgBoxCallback(result)
+	if result == true then
+		WriteCon("true");
 		
-		WriteCon("ShowItemList():itemList is null");
-		return
 	end
-	WriteCon("itemCount ===== "..#itemList);
-	local itemNum = #itemList;
+end
+
+--ÏÔÊ¾
+function p.refreshTab()
+	local lst = nil;
+	if p.tabIndex == 0 then
+		lst = p.allItems;
+	else 
+		if p.groupItems then
+			lst = p.groupItems[p.tabIndex];
+		end
+	end
 	
-	local countText = itemNum.."/"..packLimit;
-	itemCountText:SetText(ToUtf8(countText));
-		
-	local row = math.ceil(itemNum / 4);
+	p.refreshList(lst);
+end
+
+
+--ÏÔÊ¾ÁĞ±í
+function p.refreshList(lst)
+	
+	WriteCon("refreshList()");
+	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
+	list:ClearView();
+
+	p.allItems = lst;
+	if lst == nil or #lst <= 0 then
+		WriteCon("refreshList():cardList is null");
+		return;
+	end
+	WriteCon("cardCount ===== "..#lst);
+	local cardNum = #lst;
+	local row = math.ceil(cardNum / 4);
 	WriteCon("row ===== "..row);
 	
 	for i = 1, row do
 		local view = createNDUIXView();
 		view:Init();
-		LoadUI("bag_list.xui",view,nil);
-		local bg = GetUiNode( view, ui_bag_list.ID_CTRL_PICTURE_13);
+		LoadUI("card_equip_select_list_item.xui",view,nil);
+		local bg = GetUiNode( view, ui_list.ID_CTRL_PICTURE_13);
         view:SetViewSize( bg:GetFrameSize());
 		
 		local row_index = i;
 		local start_index = (row_index-1)*4+1
         local end_index = start_index + 3;
-
-		--è®¾ç½®åˆ—è¡¨é¡¹ä¿¡æ¯ï¼Œä¸€è¡Œ4ä¸ªé“å…·
+		
+		--ÉèÖÃÁĞ±íĞÅÏ¢£¬Ò»ĞĞ4ÕÅ¿¨ÅÆ
 		for j = start_index,end_index do
-			if j <= itemNum then
-				local item = itemList[j];
-				local itemIndex = j - start_index + 1;
-				p.ShowItemInfo( view, item, itemIndex );
+			if j <= cardNum then
+				local card = lst[j];
+				local cardIndex = j - start_index + 1;
+				p.ShowCardInfo( view, card, cardIndex , j);
 			end
 		end
 		list:AddView( view );
 	end
+	
+		
 end
 
---å•ä¸ªç‰©å“æ˜¾ç¤º
-function p.ShowItemInfo( view, item, itemIndex )
-    local itemBtn = nil;
-    local itemNum = nil;
-    local itemName = nil;
-	local equipStarPic = nil;
-	local subTitleBg = nil;
-    local isUse = nil;
-	
-	if itemIndex == 1 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM1;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM1;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME1;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR1;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV1
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_22;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP1;
-		
-	elseif itemIndex == 2 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM2;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM2;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME2;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR2;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV2
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_23;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP2;
-	elseif itemIndex == 3 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM3;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM3;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME3;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR3;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV3
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_24;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP3;
-	elseif itemIndex == 4 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM4;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM4;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME4;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR4;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV4
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_25;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP4;
+--ÏÔÊ¾µ¥ÕÅ¿¨ÅÆ
+function p.ShowCardInfo( view, card, cardIndex ,dataListIndex)
+	local cardBtn = nil;
+	local cardLevel = nil;
+	local cardTeam = nil;
+	if cardIndex == 1 then
+		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
+		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_1;
+		cardTeam = ui_list.ID_CTRL_TEAM1;
+	elseif cardIndex == 2 then
+		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
+		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_2;
+		cardTeam = ui_list.ID_CTRL_TEAM2;
+	elseif cardIndex == 3 then
+		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
+		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_3;
+		cardTeam = ui_list.ID_CTRL_TEAM3;
+	elseif cardIndex == 4 then
+		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
+		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_4;
+		cardTeam = ui_list.ID_CTRL_TEAM4;
 	end
-	--æ˜¾ç¤ºç‰©å“å›¾ç‰‡
-	local itemButton = GetButton(view, itemBtn);
-	local item_id = tonumber(item.Item_id);
-	WriteCon("item_id == "..item_id);
-	local aniIndex = "item.itemPic_"..item_id;
-    itemButton:SetImage( GetPictureByAni(aniIndex,0) );
-    itemButton:SetId(item_id);
+	--ÏÔÊ¾¿¨ÅÆÍ¼Æ¬
+	local cardButton = GetButton(view, cardBtn);
+	--local cardId = tonumber(card.CardID);
+	--WriteCon("CardID ===== "..cardId);
+	--local aniIndex = "card.card_"..cardId;
+	local aniIndex = "item."..card.Item_id;
+	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
+	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
+	--local cardUniqueId = tonumber(card.id);
+ 	--WriteCon("cardUniqueId ===== "..cardUniqueId);
+    cardButton:SetId(dataListIndex);
+
+	local cardSelectText = GetLabel(view,cardSelect );
+	cardSelectText:SetVisible( false );
 	
-	--æ˜¾ç¤ºç‰©å“åå­—
-	local itemNameText = GetLabel(view,itemName );
-	local itemTable = SelectRowList(T_ITEM,"item_id",item_id);
+	--p.selectList[cardUniqueId] = cardSelectText;
+	--ÉèÖÃ¿¨ÅÆ°´Å¥ÊÂ¼ş
+	cardButton:SetLuaDelegate(p.OnCardClickEvent);
+	cardButton:RemoveAllChildren(true);
+end
+
+--µã»÷¿¨ÅÆ
+function p.OnCardClickEvent(uiNode, uiEventType, param)
+	local dataListIndex = uiNode:GetId();
+	WriteCon("dataListIndex = "..dataListIndex);
+	local equip = p.allItems[dataListIndex]
+	
+	if (equip == nil ) then
+		return
+	end
+	
+	if p.cardEquipment.intent == p.INTENT_ADD 
+		or p.cardEquipment.intent == p.INTENT_UPDATE then
+		local item = p.SelectItem(equip.Item_id);
+		equip.equipId = equip.id;
+		equip.itemInfo = item;
+		equip.cardUniqueId = p.cardEquipment.cardUniqueId;
+		if p.cardEquipment.intent == p.INTENT_UPDATE then
+			
+		end
+		dlg_card_equip_detail.ShowUI4Dress(equip, p.cardEquipment.dressedItem);
+	end
+	
+	--[[
+	local cardSelectText = p.selectList[cardUniqueId] 
+	
+	if cardSelectText:IsVisible() == true then
+		cardSelectText:SetVisible(false);
+		p.selectNum = p.selectNum-1;
+	else
+		if p.selectNum >= 10 then 
+			dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
+		else
+			cardSelectText:SetVisible(true);
+			p.selectNum = p.selectNum+1;
+		end
+	end
+	]]--
+		
+end
+
+function p.SelectItem(id)
+	local itemTable = SelectRowList(T_ITEM,"id",tonumber(id));
 	if #itemTable == 1 then
-		local text = itemTable[1].item_name;
-		itemNameText:SetText(ToUtf8(text));
+		local item = itemTable[1];
+		return item;
 	else
 		WriteConErr("itemTable error ");
 	end
-	
-	local itemNumText = GetLabel(view,itemNum );	--ç‰©å“æ•°é‡
-	local equipStarPic = GetImage(view,equipStarPic);	--è£…å¤‡æ˜Ÿçº§
-	local equipLevelText = GetLabel(view,equipLevel);	--è£…å¤‡ç­‰çº§
-	local isUsePic = GetImage(view,isUse);			--æ˜¯å¦è£…å¤‡
-	itemNumText:SetVisible( false );
-	equipStarPic:SetVisible( false );
-	equipLevelText:SetVisible( false );
-	isUsePic:SetVisible( false );
-
-	local itemType = tonumber(item.Item_type)
-	WriteCon("itemType == "..itemType);
-
-	if itemType == 1 or itemType == 2 or itemType == 3 then
-	--æ™®é€šå¯å åŠ ç‰©å“ï¼Œæ˜¾ç¤ºæ•°é‡
-		itemNumText:SetVisible(true);
-		itemNumText:SetText(ToUtf8(item.Num));
-	elseif itemType == 5 or itemType == 6 then 
-		--è£…å¤‡ï¼Œæ˜¾ç¤ºæ˜Ÿçº§
-		equipStarPic:SetVisible(true);
-		local starNum = tonumber(item.Rare);
-		starNum = starNum -1;
-		equipStarPic:SetPicture( GetPictureByAni("item.equipStar", starNum) );
-		--æ˜¾ç¤ºè£…å¤‡ç­‰çº§
-		equipLevelText:SetVisible(true);
-		equipLevelText:SetText(ToUtf8(item.Equip_level));
-		
-		--æ˜¯å¦è£…å¤‡
-		if item.Is_dress == 1 or item.Is_dress == "1" then
-			isUsePic:SetVisible(true);
-			isUsePic:SetPicture( GetPictureByAni("item.equipUse", 0) );
-		end
-	end
-	
-	--è®¾ç½®ç‰©å“æŒ‰é’®äº‹ä»¶
-	itemButton:SetLuaDelegate(p.OnItemClickEvent);
-
 end
 
---ç‚¹å‡»ç‰©å“äº‹ä»¶
-function p.OnItemClickEvent(uiNode, uiEventType, param)
-	local itemId = uiNode:GetId();
-	WriteCon("Use itemId = "..itemId);
-	--p.itemUsedId = itemId;
+--ÌáÊ¾¿ò»Øµ÷·½·¨
+function p.OnMsgCallback(result)
 	
-	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
-	local itemData = SelectRowList(T_ITEM,"item_id",itemId);
-	if #itemData == 1 then
-		local text = itemData[1].describe;
-		itemDescribeText:SetText(ToUtf8(text));
+	WriteCon("OnMsgCallback");
+	
+end
+
+
+function p.ShowSelectPic(uiNode)
+	local cardUniqueId = tostring(uiNode:GetId());
+	if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
+		local view = createNDUIXView();
+		view:Init();
+		LoadUI("card_bag_select.xui",view,nil);
+		local bg = GetUiNode( view, ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
+        view:SetViewSize( bg:GetFrameSize());
+		view:SetTag(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
+		uiNode:AddChild( view );
+		p.sellCardList[#p.sellCardList + 1] = cardUniqueId;
 	else
-		WriteConErr("itemTable error ");
-	end
-	
-	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
-	useBtn:SetLuaDelegate(p.OnUseItemClickEvent);
-	useBtn:SetVisible(true);
-	useBtn:SetId(itemId);
-end
-
---ç‚¹å‡»ä½¿ç”¨ç‰©å“äº‹ä»¶
-function p.OnUseItemClickEvent(uiNode, uiEventType, param)
-	local tag = uiNode:GetTag();
-	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_USE == tag) then --ä½¿ç”¨
-			local useBtnId = uiNode:GetId();
-			if useBtnId == 0 or useBtnId == nil then
-				WriteConErr("used Button id error ");
-				return
+		WriteCon("RemoveAllChildren");
+		for k,v in pairs(p.sellCardList) do
+			if v == cardUniqueId then
+				table.remove(p.sellCardList,k);
 			end
-			WriteCon("useBtn == "..useBtnId);
-			pack_box_mgr.UseItemEvent(useBtnId);
 		end
+		uiNode:RemoveAllChildren(true);
 	end
-	
 end
 
---è®¾ç½®é€‰ä¸­æŒ‰é’®
+--ÉèÖÃÑ¡ÖĞ°´Å¥
 function p.SetBtnCheckedFX( node )
     local btnNode = ConverToButton( node );
     if p.curBtnNode ~= nil then
@@ -339,7 +339,22 @@ function p.SetBtnCheckedFX( node )
     end
 	btnNode:SetChecked( true );
 	p.curBtnNode = btnNode;
+	p.sellCardList = {};
 end
+
+function p.divideItems()
+	if p.allItems == nil then
+		return
+	end
+	p.groupItems = p.groupItems or {};
+	for i = 1, #p.allItems do
+		local t = tonumber(p.allItems[i].Item_type);
+			p.groupItems[t] = p.groupItems[t] or {};
+			p.groupItems[t][#p.groupItems[t] + 1] = p.allItems[i];
+	end
+	
+end
+
 
 function p.HideUI()
     if p.layer ~= nil then
@@ -351,8 +366,118 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
-        pack_box_mgr.ClearData();
+		p.ClearData()
+        card_bag_mgr.ClearData();
+		p.allItems = nil;
+		p.curBtnNode = nil;
+		p.allCardPrice = nil;
+		p.sellCardList = nil;
+		
+		p.selectList = {};
     end
 end
 
+function p.ClearData()
+	p.allItems = nil;
+	p.curBtnNode = nil;
+	p.allCardPrice = 0;
+	p.sellCardList = {};
+	
+	p.allItems = nil;
+	p.groupItems = nil;
+end
 
+
+
+----------------------------ÍøÂç--------------------------------
+--¿ÉÇ¿»¯¿¨ÅÆListÇëÇó
+function p.OnSendReq()
+	
+	local uid = GetUID();
+	--uid=123456
+	
+	if uid == 0 or uid == nil  then
+		return ;
+	end;
+	
+	local param = "";--string.format("&card_unique_id=%s",cardUniqueId)
+	SendReq("Item","EquipmentList",uid,param);		
+end
+
+
+--Ç¿»¯¿¨ÅÆÇëÇó
+function p.OnSendReqIntensify()
+	local uid = GetUID();
+	WriteCon("**¿ÉÇ¿»¯¿¨ÅÆListÇëÇó**"..uid);
+	--uid = 10002;
+	if uid ~= nil and uid > 0 then
+		--Ä£¿é  Action idm = ËÇÁÏ¿¨ÅÆunique_ID (1000125,10000123) 
+		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
+		--SendReq("card","e_Feedwould",p.baseCardId,param);
+	end
+end
+
+
+--ÍøÂç·µ»Ø¿¨ÏêÏ¸ĞÅÏ¢
+function p.OnLoadList(msg)
+	
+	WriteCon( "** OnLoadList21" );
+	
+	if p.layer == nil then --or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	
+	if msg.result == true then
+		
+		p.allItems = msg.equipment_info;
+		p.divideItems()
+		
+		p.refreshTab();
+		--p.ShowList(msg.equipment_info or {})
+		
+		WriteCon( "** OnLoadList1 " .. #msg.equipment_info);
+	else
+		--local str = mail_main.GetNetResultError(msg);
+		--if str then
+			--dlg_msgbox.ShowOK(GetStr("mail_erro_title"), str,nil);
+		--else
+		--	WriteCon("**======mail_write_mail.NetCallback error ======**");
+		--end
+		--TODO...
+		WriteCon( "** OnLoadList2" );
+	end
+	--[[ Êı¾İ½á¹¹
+		card_info: {
+		UniqueID: "10000272",
+		UserID: "123456",
+		CardID: "101",
+		Race: "1",
+		Class: "2",
+		Level: "1",
+		Level_max: "60",
+		Exp: "0",
+		Damage_type: "1",
+		Bind: "0",
+		Team_marks: "0",
+		Signature: "0",
+		Rare: "2",
+		Rare_max: "6",
+		Hp: "400",
+		Attack: "200",
+		Defence: "90",
+		Speed: "5",
+		Skill: "0",
+		Crit: "10",
+		Item_id1: "33450",
+		Item_id2: "0",
+		Item_id3: "33452",
+		Gem1: "0",
+			Gem2: "0",
+		Gem3: "0",
+		Price: "0",
+		Time: "2013-11-30 13:51:45",
+		Source: "0"
+		}
+		]]--
+end

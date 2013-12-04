@@ -6,7 +6,7 @@ p.layer = nil;
 -- p.selectItem = nil;
 -- p.selectItemList = {};
 
---åŠ è½½ç”¨æˆ·æ‰€æœ‰é“å…·åˆ—è¡¨
+--¼ÓÔØÓÃ»§ËùÓĞµÀ¾ßÁĞ±í
 function p.LoadAllItem(layer)
 	p.ClearData();
 	if layer ~= nil then
@@ -20,7 +20,7 @@ function p.LoadAllItem(layer)
 	SendReq("Item","List",uid,"");
 end
 
---æ¸…ç©ºæ•°æ®
+--Çå¿ÕÊı¾İ
 function p.ClearData()
     p.itemList = nil;
     p.layer = nil;
@@ -28,19 +28,19 @@ function p.ClearData()
     --p.selectItemList = {};
 end
 
---è¯·æ±‚å›è°ƒï¼Œæ˜¾ç¤ºé“å…·åˆ—è¡¨
+--ÇëÇó»Øµ÷£¬ÏÔÊ¾µÀ¾ßÁĞ±í
 function p.RefreshUI(dataList)
 	p.itemList = dataList;
 	pack_box.ShowItemList(p.itemList);
 end
 
---æ˜¾ç¤ºæ‰€æœ‰é“å…·
+--ÏÔÊ¾ËùÓĞµÀ¾ß
 function p.ShowAllItems()
 	WriteCon("pack_box_mgr.ShowAllItems();");
 	pack_box.ShowItemList(p.itemList);
 end
 
---åŠ è½½åˆ†ç±»é“å…·
+--¼ÓÔØ·ÖÀàµÀ¾ß
 function p.ShowItemByType(sortType)
 	if sortType == nil then 
 		WriteCon("ShowItemByType():sortType is null");
@@ -95,37 +95,50 @@ function p.GetItemList(sortType)
     return t;
 end
 
-function p.UseItemEvent(itemId)
+function p.UseItemEvent(itemId,itemUniqueId,itemType)
 	WriteCon("pack_box_mgr.UseItemEvent();");
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
 		return;
 	end
-	if itemId == nil or itemId == 0 then
+	if itemId == nil or itemId == 0 or itemUniqueId == nil or itemUniqueId == 0 then
 		WriteConErr("used item id error ");
 		return
 	end
-	local param = "MachineType=Android&item_id="..itemId;
+	local param = "MachineType=Android&item_id="..itemId.."&id="..itemUniqueId;
 	if itemId == 1001 then
 		SendReq("Item","UseHealItem",uid,param);
 	elseif itemId == 1002 then
 		SendReq("Item","UseQuickItem",uid,param);
 	elseif itemId == 3001 then
 		SendReq("Item","UseStorageItem",uid,param);
-	elseif itemId == 4 then
+	elseif itemId == 10003 then
 		SendReq("Item","UseGiftItem",uid,param);
-	elseif itemId == 5 then
+	elseif itemId == 10004 then
 		SendReq("Item","UseTreasureItem",uid,param);
-	elseif itemId == 6 then
-		SendReq("Item","UseHealItem ",uid,param);
 	else
 		WriteConErr("used item id error ");
 	end
 end
 
--- UseHealItem //è¡ŒåŠ¨åŠ›æ¢å¤é“å…·ä½¿ç”¨
--- UseQuickItem //æ´»åŠ›æ¢å¤é“å…·ä½¿ç”¨
--- UseStorageItem //èƒŒåŒ…æ‰©å±•é“å…·
--- UseGiftItem//ç¤¼åŒ…
--- UseTreasureItem//å®ç®±  
+function p.UseItemCallBack(self)
+	WriteCon("=======UseItemCallBack()");
+	if self.result == true then
+		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("Ê¹ÓÃÎïÆ·³É¹¦¡£"),nil,p.layer);
+		local uid = GetUID();
+		if uid == 0 or uid == nil then 
+			return;
+		end
+		SendReq("Item","List",uid,"");
+	elseif self.result == false then
+		local messageText = self.message
+		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),messageText,nil,p.layer);
+	end
+end
+
+-- UseHealItem //ĞĞ¶¯Á¦»Ö¸´µÀ¾ßÊ¹ÓÃ
+-- UseQuickItem //»îÁ¦»Ö¸´µÀ¾ßÊ¹ÓÃ
+-- UseStorageItem //±³°üÀ©Õ¹µÀ¾ß
+-- UseGiftItem//Àñ°ü
+-- UseTreasureItem//±¦Ïä  
 

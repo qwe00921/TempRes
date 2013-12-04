@@ -74,9 +74,10 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========邮件========**");
 			mail_main.ShowUI();
+			
 			--隐藏主UI
 			maininterface.CloseAllPanel();
-			maininterface.HideUI();
+			--maininterface.HideUI();
 			--隐藏用户信息
 			dlg_userinfo.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then

@@ -7,6 +7,8 @@ dlg_card_attr_base = {}
 local p = dlg_card_attr_base;
 p.layer = nil;
 p.cardInfo = nil;
+p.cardDetail = nil;
+
 --id是UniqueId
 function p.ShowUI(cardInfo)
 	WriteCon(cardInfo.CardID.."************");
@@ -23,12 +25,14 @@ function p.ShowUI(cardInfo)
         return false;
     end
 	
-	--layer:NoMask();
+	layer:NoMask();
 	layer:Init();	
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddDlg( layer );
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
 	p.layer = layer;
     p.SetDelegate(layer);
+	
+	p.LoadCardDetail(cardInfo.UniqueId);
 end
 
 function p.SetDelegate(layer)
@@ -88,28 +92,28 @@ function p.SetDelegate(layer)
 	
 	
 	
-	local T_ITEM     = LoadTable( "item.ini" );
+	--local T_ITEM     = LoadTable( "item.ini" );
 	local pCardInfo= nil;
 	
 	--local cardInfo = msg.cardInfo;
 	--装备
 	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
-	if p.cardInfo.Item_Id1 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id1); --从表中获取卡牌详细信息	
-		pEquipPic1:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
+	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
+		local aniIndex = "item."..p.equip1.itemInfo.id;
+		pEquipPic1:SetPicture( GetPictureByAni(aniIndex,0) );
 		
 	end
 	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
-	if p.cardInfo.Item_Id2 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id2); --从表中获取卡牌详细信息	
-		pEquipPic2:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
+	if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
+		local aniIndex = "item."..p.equip2.itemInfo.id;
+		pEquipPic2:SetPicture( GetPictureByAni(aniIndex,0) );
 	end
 	
 	
 	local pEquipPic3 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_3);
-	if p.cardInfo.Item_Id3 ~= 0 then
-		pCardInfo= SelectRowInner( T_ITEM, "item_id", p.cardInfo.Item_id3); --从表中获取卡牌详细信息	
-		pEquipPic3:SetImage(GetPictureByAni(pCardInfo.item_pic,0))
+	if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
+		local aniIndex = "item."..p.equip3.itemInfo.id;
+		pEquipPic3:SetPicture( GetPictureByAni(aniIndex,0) );
 	end
 	
 	
@@ -171,7 +175,6 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_INTENSIFY == tag then
 			--卡牌强化
-			card_intensify.ShowUI(p.cardInfo.UniqueId);
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_SALE == tag then
 			--卡牌卖出
 			if p.cardInfo.Item_Id1 ~= 0 or  p.cardInfo.Gem1 ~= 0 then
@@ -193,23 +196,37 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			--卡牌详细
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
+			if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.equip1, p.cardInfo);
+			else
+				p.cardEquipment = {};
+				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
+				p.cardEquipment.equipPos = 1
+				p.cardEquipment.intent = 1;--表示穿上
+				card_equip_select_list.ShowUI(p.cardEquipment);
+			end
 			
-			if p.cardInfo and p.cardInfo.Item_id1 and tonumber(p.cardInfo.Item_id1) ~= 0 then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id1);
-			else
-				card_equip_select_list.ShowUI();
-			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
-			if p.cardInfo and p.cardInfo.Item_id2 and tonumber(p.cardInfo.Item_id2) ~= 0 then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id2);
+			if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
+				
+				dlg_card_equip_detail.ShowUI4CardEquip(p.equip2, p.cardInfo);
 			else
-				dlg_card_equip_detail.ShowUI();
+				p.cardEquipment = {};
+				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
+				p.cardEquipment.equipPos = 2
+				p.cardEquipment.intent = 1;--表示穿上
+				card_equip_select_list.ShowUI(p.cardEquipment);
 			end
+			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
-			if p.cardInfo and p.cardInfo.Item_id3 and tonumber(p.cardInfo.Item_id3) ~= 0 then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.cardInfo.Item_id3);
+			if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
+				dlg_card_equip_detail.ShowUI4CardEquip(p.equip3, p.cardInfo);
 			else
-				dlg_card_equip_detail.ShowUI();
+				p.cardEquipment = {};
+				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
+				p.cardEquipment.equipPos = 3
+				p.cardEquipment.intent = 1; --表示穿上
+				card_equip_select_list.ShowUI(p.cardEquipment);
 			end
 		end
 	end
@@ -268,6 +285,7 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
+		p.cardDetail = nil;
 	end
 end
 
@@ -283,20 +301,6 @@ end
 
 ---------------------------------------网络-----------------------------------------------------------
 
-function p.OnNetCallback(msg)
-	if p.layer == nil or p.layer:IsVisible() ~= true then
-		return;
-	end
-	
-	if msg == nil then
-		return;
-	end
-	
-	if msg.idMsg == MSG_CARD_ROLE_DETAIL then
-		p.OnLoadCardDetail(msg);
-	end
-	
-end
 
 --读取卡详细信息
 function p.LoadCardDetail(cardUniqueId)
@@ -304,8 +308,8 @@ function p.LoadCardDetail(cardUniqueId)
 	
 	local uid = GetUID();
 	
-	uid=123456
-	cardUniqueId="10000272";
+	--uid=123456
+	--cardUniqueId="10000272";
 	
 	if uid == 0 or uid == nil or cardUniqueId == nil then
 		return ;
@@ -317,12 +321,22 @@ end
 --网络返回卡详细信息
 function p.OnLoadCardDetail(msg)
 	
-	if p.layer == nil or p.layer:IsVisible() ~= true then
+	if p.layer == nil then --or p.layer:IsVisible() ~= true then
 		return;
 	end
 	
-	if msg.result == true then
-		p.cardInfo = msg.card_info or {};
+	if msg.result == true and msg.card_info then
+		p.cardDetail = msg.card_info or {};
+		p.equip1 = {};
+		p.equip2 = {};
+		p.equip3 = {};
+		p.equip1.equipId = msg.card_info.Item_id1;
+		p.equip1.itemInfo = msg.item1_info;
+		p.equip2.equipId = msg.card_info.Item_id2;
+		p.equip2.itemInfo = msg.item2_info;
+		p.equip3.equipId = msg.card_info.Item_id3;
+		p.equip3.itemInfo = msg.item3_info;
+		
 		p.SetDelegate();
 	else
 		--local str = mail_main.GetNetResultError(msg);

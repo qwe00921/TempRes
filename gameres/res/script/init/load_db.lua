@@ -30,6 +30,9 @@ T_CARD_GROW     = LoadTable( "card_grow.ini" );
 --卡牌
 T_CARD     = LoadTable( "card.ini" );
 
+--卡牌等级表
+T_CARD_LEVEL   = LoadTable( "card_level.ini" );
+
 --配置表【包括：进化所需金钱..】
 T_CONFIG     = LoadTable( "config.ini" );
 
