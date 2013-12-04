@@ -22,7 +22,7 @@ p.curBtnNode = nil;
 p.sortByRuleV = nil;
 p.allCardPrice = 0;
 p.sellCardList = {};
-p.baseCardId = nil;
+p.baseCardInfo = nil;
 
 p.selectList = {};
 p.teamList = {};
@@ -30,12 +30,13 @@ p.selectNum = 0;
 p.consumeMoney = 0;
 p.selectCardId = {};
 p.userMoney = 0;
-function p.ShowUI(baseCardId)
-	if baseCardId == nil then 
+function p.ShowUI(baseCardInfo)
+	
+	if baseCardInfo == nil then 
 		return;
 	end
-	p.baseCardId = baseCardId;
-	
+	p.baseCardInfo = baseCardInfo;
+	--WriteCon(baseCardInfo.UniqueID.."********************");
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -75,17 +76,18 @@ function p.OnSendReq()
 	
 end
 --强化卡牌请求
-function p.OnSendReqIntensify()
+function p.OnSendReqIntensify(msg)
 	local uid = GetUID();
-	WriteCon("**强化卡牌请求**"..uid);
+	WriteCon("**强化卡牌请求**"..uid.." uniqueid = "..p.baseCardInfo.UniqueId);
 	--uid = 10002;
 	if uid ~= nil and uid > 0 then
 		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
-		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
-		SendReq("card","e_Feedwould",p.baseCardId,param);
+		local param = string.format("&card_id=%d&idm="..msg, tonumber(p.baseCardInfo.UniqueId));
+		WriteCon("param = "..param);
+		SendReq("Card","Feedwould",uid,param);
+		card_intensify_succeed.ShowUI(p.baseCardInfo);
 	end
 end
-
 
 --主界面事件处理
 function p.SetDelegate(layer)
@@ -124,6 +126,21 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --强化
 			WriteCon("=====intensifyByBtn");
+			if #p.selectCardId <=0 then
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
+			else
+				local param = "";
+				for k,v in pairs(p.selectCardId) do
+					
+					if k == #p.selectCardId then
+						param = param..v;
+					else
+						param = param..v..",";
+					end
+				end
+				p.OnSendReqIntensify(param);
+				p.CloseUI();
+			end 
 			
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			WriteCon("=====allCardBtn");
@@ -188,8 +205,11 @@ end
 
 
 --显示卡牌列表
-function p.ShowCardList(cardList,cardlist_num)
-	if p.layer == nil or p.layer:IsVisible() ~= true then
+function p.ShowCardList(cardList,msg)
+	if p.layer == nil then
+		return;
+	end
+	if #cardList <= 0 then
 		return;
 	end
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
@@ -221,7 +241,7 @@ function p.ShowCardList(cardList,cardlist_num)
 	
 	--列表删除要强化的那条卡牌数据 
 	for i = 1 , #p.cardListInfo do
-		if p.cardListInfo[i].UniqueId == p.baseCardId then
+		if p.cardListInfo[i].UniqueId == p.baseCardInfo.UniqueId then
 			table.remove(p.cardListInfo,i);
 			break;
 		end
@@ -350,7 +370,7 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_32);
 	cardMoney:SetText(tostring(p.consumeMoney)); 
 	
-	if p.userMoney < p.consumeMoney then
+	if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
 		local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
 		moneyLab:SetFontColor(ccc4(255,0,0,255));
 	end
@@ -427,7 +447,7 @@ function p.ClearData()
 	p.teamList = {};
 	p.sellCardList = {};
 	p.selectCardId = {};
-	p.baseCardId = nil;
+	p.baseCardInfo = nil;
 	p.consumeMoney = 0;
 	p.selectNum = 0;
 	

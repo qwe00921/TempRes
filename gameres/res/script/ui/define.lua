@@ -110,6 +110,7 @@ DoFile("ui/ui_dlg_card_attr_base.lua")
 
 --卡牌强化
 DoFile("ui/ui_card_intensify.lua")
+DoFile("ui/ui_card_intensify_succeed.lua")
 --队伍
 DoFile("ui/ui_team_list_view.lua")
 DoFile("ui/ui_team_cardlist_view.lua")

@@ -1,0 +1,262 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_163]
+Type=1
+Tag=163
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\mt\data.dat_000493.png
+NormalFileUV=0 0 210 249
+
+[CTRL_PICTURE_CARD]
+Type=1
+Tag=164
+Rect=123 62 390 489
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_165]
+Type=1
+Tag=165
+Rect=46 547 555 44
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\mt\effect\data.dat_000065.png
+NormalFileUV=0 0 543 141
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=166
+Rect=233 551 172 39
+AnchorPos=0 0
+Notes=
+TextSize=25
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_5]
+Type=4
+Tag=5
+Rect=100 607 170 60
+AnchorPos=0 0
+Notes=
+Text=卡片等级
+TextTradition=卡片等級
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=6
+Rect=127 677 100 30
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_7]
+Type=4
+Tag=7
+Rect=127 712 100 30
+AnchorPos=0 0
+Notes=
+Text=攻击
+TextTradition=攻擊
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_8]
+Type=4
+Tag=8
+Rect=127 747 100 30
+AnchorPos=0 0
+Notes=
+Text=防御
+TextTradition=防御
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_9]
+Type=4
+Tag=9
+Rect=127 782 100 30
+AnchorPos=0 0
+Notes=
+Text=速度
+TextTradition=速度
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_10]
+Type=4
+Tag=10
+Rect=127 817 100 30
+AnchorPos=0 0
+Notes=
+Text=暴击
+TextTradition=暴擊
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP_1]
+Type=4
+Tag=11
+Rect=277 677 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP_2]
+Type=4
+Tag=12
+Rect=427 677 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATTACK_1]
+Type=4
+Tag=13
+Rect=277 712 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEFENCE_1]
+Type=4
+Tag=14
+Rect=277 747 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SPEED_1]
+Type=4
+Tag=15
+Rect=277 782 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CRIT_1]
+Type=4
+Tag=16
+Rect=277 817 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ATTACK_2]
+Type=4
+Tag=17
+Rect=427 712 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DEFENCE_2]
+Type=4
+Tag=18
+Rect=427 747 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SPEED_2]
+Type=4
+Tag=19
+Rect=427 782 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CRIT_2]
+Type=4
+Tag=20
+Rect=427 817 100 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_21]
+Type=4
+Tag=21
+Rect=286 607 107 60
+AnchorPos=0 0
+Notes=
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_22]
+Type=4
+Tag=22
+Rect=477 607 107 60
+AnchorPos=0 0
+Notes=
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=405 617 61 41
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_INTENSIFY]
+Type=2
+Tag=24
+Rect=166 855 130 50
+AnchorPos=0 0
+Notes=
+Text=继续强化
+TextTradition=繼續強化
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=25
+Rect=368 855 130 50
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
