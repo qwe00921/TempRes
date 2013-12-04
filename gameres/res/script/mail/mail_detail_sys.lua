@@ -175,7 +175,7 @@ function p.SelectItemName(id)
 	local itemTable = SelectRowList(T_ITEM,"id",id);
 	if #itemTable == 1 then
 		local text = itemTable[1].Name;
-		return ToUtf8(text);
+		return text;
 	else
 		WriteConErr("itemTable error ");
 	end
