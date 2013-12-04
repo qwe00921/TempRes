@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_BG_BTN]
 Type=2
 Tag=11
-Rect=5 0 640 960
+Rect=0 0 638 956
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -17,7 +17,7 @@ Remark=隐藏子界面按钮
 [CTRL_MAIN_PICTURE_BG]
 Type=1
 Tag=1
-Rect=5 1 640 960
+Rect=0 0 638 960
 AnchorPos=0 0
 Notes=
 Remark=背景
@@ -37,7 +37,7 @@ NormalFileUV=0 0 449 643
 [CTRL_BUTTON_MORE]
 Type=2
 Tag=3
-Rect=12 749 100 100
+Rect=-2 750 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -54,7 +54,7 @@ DisableFileUV=0 0 80 80
 [CTRL_BUTTON_ACTIVITY]
 Type=2
 Tag=4
-Rect=532 360 100 100
+Rect=532 334 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -71,7 +71,7 @@ DisableFileUV=0 0 100 90
 [CTRL_BUTTON_MAIL]
 Type=2
 Tag=5
-Rect=532 460 100 100
+Rect=532 434 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -88,7 +88,7 @@ DisableFileUV=0 0 100 90
 [CTRL_PICTURE_ACTIVITY_TIPS_BG]
 Type=1
 Tag=7
-Rect=588 360 36 36
+Rect=588 334 36 36
 AnchorPos=0 0
 Notes=
 Remark=活动数量通知背景
@@ -98,7 +98,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_MAIL_TIPS_BG]
 Type=1
 Tag=8
-Rect=588 464 36 36
+Rect=588 438 36 36
 AnchorPos=0 0
 Notes=
 Remark=邮件数量通知背景
@@ -108,7 +108,7 @@ NormalFileUV=0 0 36 36
 [CTRL_TEXT_ACTIVITY_TIPS_NUM]
 Type=4
 Tag=9
-Rect=592 360 30 30
+Rect=592 334 30 30
 AnchorPos=0 0
 Notes=
 Text=11
@@ -121,7 +121,7 @@ Remark=活动数量
 [CTRL_TEXT_MAIL_TIPS_NUM]
 Type=4
 Tag=10
-Rect=591 465 30 30
+Rect=591 439 30 30
 AnchorPos=0 0
 Notes=
 Text=11
