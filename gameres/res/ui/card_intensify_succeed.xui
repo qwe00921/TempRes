@@ -19,13 +19,6 @@ Rect=123 62 390 489
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_165]
-Type=1
-Tag=165
-Rect=46 547 555 311
-AnchorPos=0 0
-Notes=
-
 [CTRL_TEXT_EXP]
 Type=4
 Tag=166

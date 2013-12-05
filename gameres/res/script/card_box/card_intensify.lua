@@ -304,8 +304,9 @@ function p.ShowCardInfo( view, card, cardIndex )
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
-	local aniIndex = "card.card_"..cardId;
-	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
+	
+	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", cardId); --从表中获取卡牌详细信息	
+	cardButton:SetImage( GetPictureByAni(pCardInfo.card_pic, 0) );
 	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
 	local cardUniqueId = tonumber(card.UniqueId);
     cardButton:SetId(cardUniqueId);

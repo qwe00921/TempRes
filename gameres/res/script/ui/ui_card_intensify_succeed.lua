@@ -26,6 +26,5 @@ p.ID_CTRL_TEXT_7						        = 7;
 p.ID_CTRL_TEXT_6						        = 6;
 p.ID_CTRL_TEXT_5						        = 5;
 p.ID_CTRL_TEXT_EXP					       = 166;
-p.ID_CTRL_PICTURE_165					    = 165;
 p.ID_CTRL_PICTURE_CARD				    = 164;
 p.ID_CTRL_PICTURE_163					    = 163;
