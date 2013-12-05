@@ -2,16 +2,25 @@ pack_box_equip = {}
 local p = pack_box_equip;
 
 local ui = ui_bag_equip_view;
-
+p.layer = nil;
+p.equipPrice = nil;
+p.equipUid = nil;
+p.equipInfoTable = nil;	--装备信息
 function p.ShowEquip(itemId,itemUniqueId,itemType)
+	p.equipUid = itemUniqueId;
 	local equipInfo = pack_box_mgr.getItemInfoTable(itemUniqueId)
-			WriteConErr(tostring(equipInfo));
-
+	if equipInfo == nil then
+		WriteCon("equipInfo error");
+		return;
+	end
+	p.equipInfoTable = equipInfo;
+	--装备价格
+	p.equipPrice = tonumber(equipInfo.SellPrice);
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
 	end
-	local loayer = createNDUIDialog();
+	local layer = createNDUIDialog();
 	if layer == nil then
 		return false;
 	end
@@ -29,15 +38,15 @@ function p.ShowEquip(itemId,itemUniqueId,itemType)
 	p.ShowEquipInfo(equipInfo)
 end
 
-function p.SetDelegate()
+function p.SetDelegate(layer)
 	local closeBtn = GetButton(layer, ui.ID_CTRL_BUTTON_CLOSE);
-	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
+	closeBtn:SetLuaDelegate(p.OnUIClickEvent);
 	
 	local strengthenBtn = GetButton(layer, ui.ID_CTRL_BUTTON_STRENGTHEN);
-	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
+	strengthenBtn:SetLuaDelegate(p.OnUIClickEvent);
 
 	local sellBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SELL);
-	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
+	sellBtn:SetLuaDelegate(p.OnUIClickEvent);
 end
 
 --事件处理
@@ -45,12 +54,30 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_CLOSE == tag) then --关闭
-			WriteCon("=====ID_CTRL_BUTTON_CLOSE");
+			WriteCon("============关闭===========");
+			p.CloseUI()
 		elseif(ui.ID_CTRL_BUTTON_STRENGTHEN == tag) then --强化
-			WriteCon("=====ID_CTRL_BUTTON_STRENGTHEN");
+			WriteCon("============强化===========");
 		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then --出售
-			WriteCon("=====ID_CTRL_BUTTON_SELL");
+			WriteCon("============出售===========");
+			local equipInformation = p.equipInfoTable
+			if tonumber(equipInformation.Is_dress) > 0 then
+				dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("穿在身上的装备，无法出售。"),nil,p.layer);
+			elseif tonumber(equipInformation.Issell) > 0 then
+				dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("此装备无法出售。"),nil,p.layer);
+			else
+				dlg_msgbox.ShowYesNo(ToUtf8("确认提示框"),ToUtf8("你确定要出售这件装备吗？这件装备价值："..tostring(p.equipPrice).."金币，你确定要卖出这些卡牌吗？"),p.OnSellEquipMsgBoxCallback,p.layer);
+			end
 		end
+	end
+end
+--是否出售装备
+function p.OnSellEquipMsgBoxCallback(result)
+	if result == true then
+		WriteCon("确认出售");
+		pack_box_mgr.SendSellEquipRequest(p.equipUid);
+	elseif result == false then
+		WriteCon("取消出售");
 	end
 end
 
@@ -62,9 +89,9 @@ function p.ShowEquipInfo(equipInfo)
 		WriteConErr("itemTable error ");
 		return;
 	end
-	
-	local equipNameText = GetLabel(p.layer, ui.ID_CTRL_COLOR_LABEL_EQUIP_NAME);	--装备名字
-	equipNameText:SetText(ToUtf8(itemTable.Name));
+
+	local equipNameText = GetColorLabel(p.layer, ui.ID_CTRL_COLOR_LABEL_EQUIP_NAME);	--装备名字
+	equipNameText:SetText(ToUtf8(itemTable.name));
 
 	local equipPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_EQUIP);					--装备图片
 	equipPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
@@ -83,8 +110,30 @@ function p.ShowEquipInfo(equipInfo)
 	local subPro3Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO3);				--副属性3
 	
 	local infoText = GetLabel(p.layer, ui.ID_CTRL_TEXT_INFO);						--介绍信息
-	infoText:SetText(ToUtf8(itemTable.Description));
-	
+	infoText:SetText(ToUtf8(itemTable.description));
+
 	local modePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_MODE);						--是否装备图片
-	modePic:SetPicture( GetPictureByAni("item.equipMode", tonumber(equipInfo.Is_dress)));
+	local dressIndex = tonumber(equipInfo.Is_dress)
+	modePic:SetPicture( GetPictureByAni("item.equipMode", dressIndex));
+end
+
+
+function p.HideUI()
+    if p.layer ~= nil then
+        p.layer:SetVisible( false );
+    end
+end
+
+function p.CloseUI()
+    if p.layer ~= nil then
+        p.layer:LazyClose();
+        p.layer = nil;
+		p.ClearData();
+    end
+end
+
+function p.ClearData()
+	p.equipPrice = nil;
+	p.equipUid = nil;
+	p.equipInfoTable = nil;
 end

@@ -11,142 +11,306 @@ Rect=0 0 639 208
 AnchorPos=0 0
 Notes=
 
-[CTRL_BUTTON_ITEM4]
-Type=2
-Tag=63
-Rect=477 8 145 190
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=物品4
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
-
-[CTRL_BUTTON_ITEM3]
-Type=2
-Tag=62
-Rect=322 8 145 190
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=物品3
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
-
-[CTRL_BUTTON_ITEM2]
-Type=2
-Tag=61
-Rect=167 8 145 190
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=物品2
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
-
-[CTRL_BUTTON_ITEM1]
+[CTRL_BUTTON_ITEM_1]
 Type=2
 Tag=59
-Rect=13 8 145 190
+Rect=20 8 136 188
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
+
+[CTRL_PICTURE_IMAGE_1]
+Type=1
+Tag=169
+Rect=30 44 107 101
+AnchorPos=0 0
+Notes=
 NormalFile=.\res\image\ui\bag\pic_item.png
 NormalFileUV=0 0 151 143
 
-[CTRL_TEXT_SELECT_4]
+[CTRL_TEXT_SELECT_1]
 Type=4
-Tag=19
-Rect=510 83 70 28
+Tag=170
+Rect=45 85 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
 TextTradition=已選擇
-TextSize=20
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ITEM_2]
+Type=2
+Tag=171
+Rect=174 11 136 188
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_BUTTON_ITEM_3]
+Type=2
+Tag=172
+Rect=329 11 136 188
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_BUTTON_ITEM_4]
+Type=2
+Tag=173
+Rect=480 8 136 188
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_PICTURE_IMAGE_2]
+Type=1
+Tag=175
+Rect=187 46 107 101
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_PICTURE_IMAGE_3]
+Type=1
+Tag=176
+Rect=342 50 107 101
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_PICTURE_IMAGE_4]
+Type=1
+Tag=177
+Rect=495 51 107 101
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_TEXT_SELECT_2]
+Type=4
+Tag=178
+Rect=205 83 70 28
+AnchorPos=0 0
+Notes=
+Text=已选择
+TextTradition=已選擇
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SELECT_3]
 Type=4
-Tag=18
-Rect=355 83 70 28
+Tag=179
+Rect=356 84 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
 TextTradition=已選擇
-TextSize=20
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_SELECT_2]
+[CTRL_TEXT_SELECT_4]
 Type=4
-Tag=17
-Rect=200 83 70 28
+Tag=180
+Rect=513 85 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
 TextTradition=已選擇
-TextSize=20
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_SELECT_1]
+[CTRL_TEXT_LEVEL_1]
 Type=4
-Tag=16
-Rect=46 83 70 28
+Tag=182
+Rect=46 14 70 28
 AnchorPos=0 0
 Notes=
-Text=已选择
-TextTradition=已選擇
-TextSize=20
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEAM_1]
+[CTRL_TEXT_LEVEL_2]
 Type=4
-Tag=10
-Rect=94 15 60 20
+Tag=183
+Rect=206 16 70 28
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEAM_4]
+[CTRL_TEXT_LEVEL_3]
 Type=4
-Tag=11
-Rect=559 15 60 20
+Tag=184
+Rect=363 20 70 28
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEAM_3]
+[CTRL_TEXT_LEVEL_4]
 Type=4
-Tag=12
-Rect=403 15 60 20
+Tag=185
+Rect=515 18 70 28
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEAM_2]
+[CTRL_TEXT_NAME_1]
 Type=4
-Tag=13
-Rect=248 15 60 20
+Tag=186
+Rect=36 154 97 28
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME_2]
+Type=4
+Tag=187
+Rect=192 156 97 28
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME_3]
+Type=4
+Tag=188
+Rect=345 156 97 28
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME_4]
+Type=4
+Tag=189
+Rect=499 159 97 28
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DRESSED_1]
+Type=4
+Tag=190
+Rect=34 48 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DRESSED_4]
+Type=4
+Tag=191
+Rect=500 54 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DRESSED_3]
+Type=4
+Tag=192
+Rect=346 54 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DRESSED_2]
+Type=4
+Tag=193
+Rect=191 50 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RANK_1]
+Type=4
+Tag=194
+Rect=60 117 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RANK_4]
+Type=4
+Tag=195
+Rect=526 126 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RANK_3]
+Type=4
+Tag=196
+Rect=368 125 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_RANK_2]
+Type=4
+Tag=197
+Rect=218 120 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

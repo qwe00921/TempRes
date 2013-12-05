@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -28,7 +28,7 @@ NormalFileUV=0 0 151 101
 [CTRL_PICTURE_LIST_BG]
 Type=1
 Tag=23
-Rect=10 200 619 600
+Rect=15 207 619 600
 AnchorPos=0 0
 Notes=
 
@@ -91,7 +91,7 @@ SelectedFileUV=0 0 44 52
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=10 200 620 400
+Rect=9 200 620 400
 AnchorPos=0 0
 Notes=
 
@@ -107,10 +107,10 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_BUTTON_26]
+[CTRL_BUTTON_UPGRADE]
 Type=2
 Tag=33
-Rect=438 656 148 60
+Rect=452 696 148 60
 AnchorPos=0 0
 Notes=
 Text=开始强化
@@ -119,69 +119,45 @@ TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_27]
+[CTRL_TEXT_LABEL_1]
 Type=4
 Tag=34
-Rect=34 617 107 30
+Rect=171 608 64 27
 AnchorPos=0 0
 Notes=
 Text=素材数
 TextTradition=素材數
-TextSize=20
-TextHorAlign=AlignHorCenter
+TextSize=15
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_28]
-Type=4
-Tag=35
-Rect=34 717 107 30
-AnchorPos=0 0
-Notes=
-Text=持有
-TextTradition=持有
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_30]
+[CTRL_TEXT_USED_NUM]
 Type=4
 Tag=37
-Rect=165 616 211 30
+Rect=240 607 167 24
 AnchorPos=0 0
 Notes=
-TextSize=20
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_31]
+[CTRL_TEXT_USER_MONE]
 Type=4
 Tag=38
-Rect=165 717 211 30
+Rect=241 672 167 25
 AnchorPos=0 0
 Notes=
-TextSize=20
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_32]
+[CTRL_TEXT_USED_MONEY]
 Type=4
 Tag=39
-Rect=165 667 211 30
+Rect=241 640 165 23
 AnchorPos=0 0
 Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_59]
-Type=4
-Tag=59
-Rect=34 667 107 30
-AnchorPos=0 0
-Notes=
-Text=消耗
-TextTradition=消耗
-TextSize=20
+TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -192,5 +168,120 @@ Rect=150 43 347 72
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LABEL_2]
+Type=4
+Tag=49
+Rect=174 646 64 27
+AnchorPos=0 0
+Notes=
+Text=消耗
+TextTradition=消耗
+TextSize=15
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LABEL_3]
+Type=4
+Tag=50
+Rect=172 673 64 27
+AnchorPos=0 0
+Notes=
+Text=持有
+TextTradition=持有
+TextSize=15
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_PRE_ITEM_EXP]
+Type=4
+Tag=51
+Rect=166 703 244 28
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_PRE_ITEM_IMAGE]
+Type=1
+Tag=52
+Rect=30 613 110 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_PRE_ITEM_NAME]
+Type=4
+Tag=53
+Rect=31 722 107 45
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_54]
+Type=4
+Tag=54
+Rect=145 641 54 52
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LABEL_4]
+Type=4
+Tag=55
+Rect=416 607 41 27
+AnchorPos=0 0
+Notes=
+Text=LV:
+TextTradition=LV:
+TextSize=15
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LABEL_5]
+Type=4
+Tag=56
+Rect=419 652 41 27
+AnchorPos=0 0
+Notes=
+Text=Atk:
+TextTradition=Atk:
+TextSize=15
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_57]
+Type=4
+Tag=57
+Rect=467 606 148 30
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_58]
+Type=4
+Tag=58
+Rect=467 647 148 30
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_PRE_ITEM_EXP]
+Type=9
+Tag=112
+Rect=150 747 270 31
+AnchorPos=0 0
+Notes=
+TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

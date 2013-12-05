@@ -19,22 +19,22 @@ p.curBtnNode = nil;
 p.allCardPrice = 0;
 p.sellCardList = {};
 
-
-p.cardEquipment = nil;
-
 p.selectList = {};
 
 p.selectNum = 0;
-
 p.tabIndex = 0;
 
 
-function p.ShowUI(cardEquipment)
-	if cardEquipment == nil then 
-		return;
-	end
-	
-	p.cardEquipment = cardEquipment;
+p.intent = 0;
+p.cardUid = nil;
+p.selectType = 0;
+p.upgradeItem = nil;
+
+function p.ShowUI(intent , cardUid, selectType, upgradeItem)
+	p.intent = intent;
+	p.cardUid = cardUid;
+	p.selectType = tonumber(selectType);
+	p.upgradeItem = upgradeItem;
 	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
@@ -54,7 +54,7 @@ function p.ShowUI(cardEquipment)
 
     p.layer = layer;
     p.SetDelegate(layer);
-	
+	p.refreshEquipUpgradeInfo();
 	
 	
 	--加载卡牌列表数据  发请求
@@ -81,31 +81,35 @@ function p.SetDelegate(layer)
 	p.SetBtnCheckedFX( cardBtnAll );
 	
 	
-	if p.cardEquipment.intent == p.INTENT_ADD 
-		or p.cardEquipment.intent == p.INTENT_UPDATE then
+	if p.intent == p.INTENT_ADD 
+		or p.intent == p.INTENT_UPDATE then
 		cardBtnAll:SetEnabled(false);
 		cardBtnPro3:SetEnabled(false);
 		cardBtnPro2:SetEnabled(false);
 		cardBtnPro1:SetEnabled(false);
-		if p.cardEquipment.equipPos == 1 then
+		if p.selectType == 1 then
 			cardBtnPro1:SetEnabled(true);
 			p.tabIndex = 1;
-		elseif p.cardEquipment.equipPos == 2 then
+		elseif p.selectType == 2 then
 			cardBtnPro2:SetEnabled(true);
 			p.tabIndex = 2;
-		elseif p.cardEquipment.equipPos == 3 then
+		elseif p.selectType == 3 then
 			cardBtnPro3:SetEnabled(true);
 			p.tabIndex = 3;
 		end
+	else 
+		p.tabIndex = 0;
 	end
 	
 	local str = "";
-	if p.cardEquipment.intent == p.INTENT_ADD then
+	if p.intent == p.INTENT_ADD then
 		str = GetStr("card_equip_add");
-	elseif p.cardEquipment.intent == p.INTENT_UPDATE then
+	elseif p.intent == p.INTENT_UPDATE then
 		str = GetStr("card_equip_chg");
 	else
 		str = GetStr("card_equip_upgrade");
+		local bt = GetButton(layer, ui.ID_CTRL_BUTTON_UPGRADE);
+		bt:SetLuaDelegate(p.OnUIClickEvent);
 	end
 	
 	local lv = GetLabel(p.layer, ui.ID_CTRL_TEXT_HEAD);
@@ -126,19 +130,25 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );
 			p.tabIndex = 0;
+			p.refreshTab();
 		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --武器
 			WriteCon("=====cardBtnPro1");
 			p.SetBtnCheckedFX( uiNode );
 			p.tabIndex = 1
+			p.refreshTab();
 		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --防具
 			WriteCon("=====cardBtnPro2");
 			p.SetBtnCheckedFX( uiNode );
 			p.tabIndex = 2
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_2);
+			p.refreshTab();
 		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --鞋子
 			WriteCon("=====cardBtnPro3");
 			p.SetBtnCheckedFX( uiNode );
 			p.tabIndex = 3
+			p.refreshTab();
+		elseif ui.ID_CTRL_BUTTON_UPGRADE == tag then
+			p.upgrade();
+			
 		end
 	end
 end
@@ -151,7 +161,78 @@ function p.OnMsgBoxCallback(result)
 	end
 end
 
---显示
+function p.upgrade()
+	
+	local ids = "";
+	if p.allItems then
+		for i = 1, #p.allItems do
+			local equip =  p.allItems[i];
+			if equip and equip.isSelected == true then
+				if i > 1 then
+					ids = ids .. ",";
+				end
+				ids = ids .. equip.id;
+			end
+		end
+	end
+	
+	if ids == "" or ids == nil then
+		return;
+	end
+	
+	p.reqUpgrade(p.upgradeItem.itemUid, ids);
+
+end
+
+--显示要升级的装备信息
+function p.refreshEquipUpgradeInfo()
+	local imgV 	= GetImage(p.layer,ui.ID_CTRL_PICTURE_PRE_ITEM_IMAGE);
+	local nmV 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_NAME);
+	local lb1 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_1);
+	local lb2 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_2);
+	local lb3 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_3);
+	local lb4 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_4);
+	local lb5 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_5);
+	local bt	= GetButton(p.layer, ui.ID_CTRL_BUTTON_UPGRADE);
+	
+	
+	if p.upgradeItem == nil and p.intent ~= p.INTENT_UPGRADE then
+		
+		imgV:SetVisible(false);
+		nmV:SetVisible(false);
+		lb1:SetVisible(false);
+		lb2:SetVisible(false);
+		lb3:SetVisible(false);
+		lb3:SetVisible(false);
+		lb4:SetVisible(false);
+		bt:SetVisible(false);
+		return
+	end
+	
+	--显示卡牌图片
+	local lst = p.allItems or {};
+	local selNum = 0;
+	for i=1,#lst do
+		local item = lst[i];
+		if item.isSelected == true then
+			selNum = selNum+1;
+		end
+	end
+	
+	local aniIndex = "item."..p.upgradeItem.itemId;
+	imgV:SetPicture( GetPictureByAni(aniIndex, 0) );
+	local nmStr = p.SelectItemName(p.upgradeItem.itemId);
+	nmV:SetText(nmStr or "");
+	
+	local useNumV 		= GetLabel(p.layer, ui.ID_CTRL_TEXT_USED_NUM);
+	local useMoneyV 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_USED_MONEY);
+	local userMoneyV 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_USER_MONE);
+	
+	useNumV:SetText(tostring(selNum) .. "/10");
+	
+end
+
+--显示Tab数据
 function p.refreshTab()
 	local lst = nil;
 	if p.tabIndex == 0 then
@@ -173,7 +254,6 @@ function p.refreshList(lst)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 
-	p.allItems = lst;
 	if lst == nil or #lst <= 0 then
 		WriteCon("refreshList():cardList is null");
 		return;
@@ -196,11 +276,11 @@ function p.refreshList(lst)
 		
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
-			if j <= cardNum then
+			--if j <= cardNum then
 				local card = lst[j];
 				local cardIndex = j - start_index + 1;
 				p.ShowCardInfo( view, card, cardIndex , j);
-			end
+			--end
 		end
 		list:AddView( view );
 	end
@@ -208,86 +288,140 @@ function p.refreshList(lst)
 		
 end
 
---显示单张卡牌
-function p.ShowCardInfo( view, card, cardIndex ,dataListIndex)
-	local cardBtn = nil;
-	local cardLevel = nil;
-	local cardTeam = nil;
-	if cardIndex == 1 then
-		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_1;
-		cardTeam = ui_list.ID_CTRL_TEAM1;
-	elseif cardIndex == 2 then
-		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_2;
-		cardTeam = ui_list.ID_CTRL_TEAM2;
-	elseif cardIndex == 3 then
-		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_3;
-		cardTeam = ui_list.ID_CTRL_TEAM3;
-	elseif cardIndex == 4 then
-		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_4;
-		cardTeam = ui_list.ID_CTRL_TEAM4;
-	end
-	--显示卡牌图片
-	local cardButton = GetButton(view, cardBtn);
-	--local cardId = tonumber(card.CardID);
-	--WriteCon("CardID ===== "..cardId);
-	--local aniIndex = "card.card_"..cardId;
-	local aniIndex = "item."..card.Item_id;
-	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
-	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
-	--local cardUniqueId = tonumber(card.id);
- 	--WriteCon("cardUniqueId ===== "..cardUniqueId);
-    cardButton:SetId(dataListIndex);
 
-	local cardSelectText = GetLabel(view,cardSelect );
-	cardSelectText:SetVisible( false );
+
+--显示单张卡牌
+function p.ShowCardInfo( view, itemInfo, cardIndex ,dataListIndex)
 	
-	--p.selectList[cardUniqueId] = cardSelectText;
-	--设置卡牌按钮事件
-	cardButton:SetLuaDelegate(p.OnCardClickEvent);
-	cardButton:RemoveAllChildren(true);
+	local indexStr = tostring(cardIndex);
+	local btTagStr 	= "ID_CTRL_BUTTON_ITEM_"..indexStr;
+	local imgTagStr = "ID_CTRL_PICTURE_IMAGE_"..indexStr;
+	local lvTagStr 	= "ID_CTRL_TEXT_LEVEL_"..indexStr;  --等级
+	local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备
+	local selTagStr = "ID_CTRL_TEXT_SELECT_"..indexStr;  --是否已选择标记
+	local rankTagStr= "ID_CTRL_TEXT_RANK_"..indexStr; --星级
+	local nmTagStr  = "ID_CTRL_TEXT_NAME_"..indexStr; --卡牌名
+	
+	local bt 	= GetButton(view, ui_list[btTagStr]);
+	local imgV	= GetImage(view, ui_list[imgTagStr]);
+	local lvV 	= GetLabel(view, ui_list[lvTagStr]);
+	local drsV	= GetLabel(view, ui_list[drsTagStr]);
+	local selV	= GetLabel(view, ui_list[selTagStr]);
+	local rankV	= GetLabel(view, ui_list[rankTagStr]);
+	local nmV	= GetLabel(view, ui_list[nmTagStr]);
+	
+	
+	selV:SetVisible( false );
+	drsV:SetVisible( false );
+	
+	if itemInfo == nil then
+		imgV:SetVisible( false );
+		return;
+	end
+	
+	--设置事件
+	bt:SetLuaDelegate(p.OnItemClickEvent);
+	bt:RemoveAllChildren(true);
+	bt:SetId(dataListIndex);
+	
+	--显示卡牌图片
+	local aniIndex = "item."..itemInfo.Item_id;
+	imgV:SetPicture( GetPictureByAni(aniIndex, 0) );
+	
+	--显示等级
+	lvV:SetText("LV." .. (itemInfo.Equip_level or "1"));
+	--显示星级
+	if itemInfo.Rare and itemInfo.Rare ~= "0" then
+		rankV:SetText(itemInfo.Rare .. GetStr("card_equip_rand_txt"));
+	end
+	
+	--是否已装备
+	if itemInfo.Is_dress == "1" then
+		drsV:SetVisible(true);
+	end
+	
+	--名称
+	local str = p.SelectItemName(itemInfo.Item_id)
+	nmV:SetText(str or "");
+	
+	--是否已选择
+	if itemInfo.isSelected == true then
+		selV:SetVisible( true );
+	end
+	
+	p.selectList[dataListIndex] = selV;
+	
+	
+	
+end
+
+function p.SelectItemName(id)
+	local itemTable = SelectRowList(T_ITEM,"id",id);
+	if #itemTable >= 1 then
+		local text = itemTable[1].Name;
+		return text;
+	else
+		WriteConErr("itemTable error ");
+	end
 end
 
 --点击卡牌
-function p.OnCardClickEvent(uiNode, uiEventType, param)
+function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local dataListIndex = uiNode:GetId();
 	WriteCon("dataListIndex = "..dataListIndex);
-	local equip = p.allItems[dataListIndex]
+	
+	local lst = nil;
+	if p.tabIndex == 0 then
+		lst = p.allItems;
+	else
+		local gs = p.groupItems or {};
+		lst = gs[p.tabIndex];
+	end
+		
+	if lst == nil then 
+		return;
+	end
+	
+	local equip = lst[dataListIndex]
 	
 	if (equip == nil ) then
 		return
 	end
 	
-	if p.cardEquipment.intent == p.INTENT_ADD 
-		or p.cardEquipment.intent == p.INTENT_UPDATE then
-		local item = p.SelectItem(equip.Item_id);
-		equip.equipId = equip.id;
-		equip.itemInfo = item;
-		equip.cardUniqueId = p.cardEquipment.cardUniqueId;
-		if p.cardEquipment.intent == p.INTENT_UPDATE then
-			
+	if p.intent == p.INTENT_ADD 
+		or p.intent == p.INTENT_UPDATE then
+		--local item = p.SelectItem(equip.Item_id);
+		local preItemUid = nil 
+		if p.upgradeItem then
+			preItemUid = p.upgradeItem.ItemUid;
 		end
-		dlg_card_equip_detail.ShowUI4Dress(equip, p.cardEquipment.dressedItem);
-	end
-	
-	--[[
-	local cardSelectText = p.selectList[cardUniqueId] 
-	
-	if cardSelectText:IsVisible() == true then
-		cardSelectText:SetVisible(false);
-		p.selectNum = p.selectNum-1;
+ 		local it = p.PasreCardDetail(p.cardUid, equip, preItemUid);
+		dlg_card_equip_detail.ShowUI4Dress(it);
 	else
-		if p.selectNum >= 10 then 
-			dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
+		local cardSelectText = p.selectList[dataListIndex] 
+	
+		if cardSelectText:IsVisible() == true then
+			cardSelectText:SetVisible(false);
+			equip.isSelected = false;
+			p.selectNum = p.selectNum-1;
 		else
-			cardSelectText:SetVisible(true);
-			p.selectNum = p.selectNum+1;
+			if p.selectNum >= 10 then 
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
+			else
+				cardSelectText:SetVisible(true);
+				equip.isSelected = true;
+				p.selectNum = p.selectNum+1;
+				
+				
+			end
 		end
+		
+		p.refreshEquipUpgradeInfo();
+		
+		
+		
 	end
-	]]--
+	
 		
 end
 
@@ -308,28 +442,6 @@ function p.OnMsgCallback(result)
 	
 end
 
-
-function p.ShowSelectPic(uiNode)
-	local cardUniqueId = tostring(uiNode:GetId());
-	if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
-		local view = createNDUIXView();
-		view:Init();
-		LoadUI("card_bag_select.xui",view,nil);
-		local bg = GetUiNode( view, ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
-        view:SetViewSize( bg:GetFrameSize());
-		view:SetTag(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
-		uiNode:AddChild( view );
-		p.sellCardList[#p.sellCardList + 1] = cardUniqueId;
-	else
-		WriteCon("RemoveAllChildren");
-		for k,v in pairs(p.sellCardList) do
-			if v == cardUniqueId then
-				table.remove(p.sellCardList,k);
-			end
-		end
-		uiNode:RemoveAllChildren(true);
-	end
-end
 
 --设置选中按钮
 function p.SetBtnCheckedFX( node )
@@ -353,6 +465,29 @@ function p.divideItems()
 			p.groupItems[t][#p.groupItems[t] + 1] = p.allItems[i];
 	end
 	
+end
+function p.PasreCardDetail(cardUid, itemInfo, dressId)
+	local item = {};
+	--item.cardId 	= cardInfo.CardID;
+	item.cardUid 	= cardUid;
+  --item.cardName	= "xxx"
+	item.itemId 	= itemInfo.Item_id;
+	item.itemUid	= itemInfo.id;
+	item.itemType	= itemInfo.Item_type;
+	item.itemLevel 	= itemInfo.Equip_level;
+	item.itemExp	= itemInfo.Equip_exp;
+	item.itemRank	= itemInfo.Rare
+	item.attrType	= itemInfo.Attribute_type;
+	item.attrValue	= itemInfo.Attribute_value;
+	item.attrGrow	= itemInfo.Attribute_grow;
+	item.exType1 	= itemInfo.Extra_type1;
+	item.exValue1 	= itemInfo.Extra_value1;
+	item.exType2 	= itemInfo.Extra_type2;
+	item.exValue2 	= itemInfo.Extra_value2;
+	item.exType3	= itemInfo.Extra_type3;
+	item.exValue3	= itemInfo.Extra_value3;
+	item.preItemUid	=	dressId--穿戴装备id
+	return item;
 end
 
 
@@ -382,7 +517,7 @@ function p.ClearData()
 	p.curBtnNode = nil;
 	p.allCardPrice = 0;
 	p.sellCardList = {};
-	
+	p.tabIndex = 0
 	p.allItems = nil;
 	p.groupItems = nil;
 end
@@ -394,7 +529,7 @@ end
 function p.OnSendReq()
 	
 	local uid = GetUID();
-	--uid=123456
+	
 	
 	if uid == 0 or uid == nil  then
 		return ;
@@ -415,6 +550,40 @@ function p.OnSendReqIntensify()
 		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
 		--SendReq("card","e_Feedwould",p.baseCardId,param);
 	end
+end
+
+function p.reqUpgrade(odId, ids)
+	local uid = GetUID();
+	
+	
+	if uid == 0 or uid == nil  or odId == nil or ids == nil then
+		return ;
+	end;
+	
+	local param = string.format("&base_user_card_id=%s&material_user_card_ids=%s",odId, ids);
+	SendReq("Item","AddPower",uid,param);	 
+end
+
+function p.OnNetUpgradeCallback(msg)
+if p.layer == nil then --or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
+	if msg.result == true then
+		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_dress_suc"),p.OnOk);
+	else
+		local str = dlg_card_equip_detail.GetNetResultError(msg);
+		if str then
+			dlg_msgbox.ShowOK(GetStr("card_equip_net_err_titel"), str,nil);
+		else
+			WriteCon("**======mail_write_mail.NetCallback error ======**");
+		end
+		--TODO...
+	end
+end
+
+function p.OnOk()
+	p.OnSendReq();
 end
 
 

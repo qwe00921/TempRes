@@ -41,10 +41,7 @@ function p.HideUI()
 end
 
 function p.RefreshUI(user_team)
-	if user_team == nil then
-		return;
-	end
-	
+	user_team = user_team or {};
 	local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_13 );
 	if list == nil then
 		return;
@@ -60,24 +57,46 @@ function p.RefreshUI(user_team)
 	
 	for i = 1, 6 do
 		local id = user_team["Pos_card"..i]
+		local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..i] );
+		local frameBtn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_"..(i+9)] );
+		
 		if id ~= nil and tonumber(id) ~= 0 then
-			local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..i] );
 			if btn ~= nil then
 				btn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
 				btn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
 				btn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(id), "head_pic" ), 0 ) );
+			end
+		else
+			if btn ~= nil then
+				btn:SetVisible( false );
+			end
+			
+			if frameBtn ~= nil then
+				frameBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
+				frameBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
 			end
 		end
 	end
 	
 	for i = 1, 2 do
 		local id = user_team["Pet_card"..i];
+		local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..(i+6)] );
+		local frameBtn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_"..(i+6+9)] );
+		
 		if id ~= nil and tonumber(id) ~= 0 then
-			local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..(i+6)] );
 			if btn ~= nil then
 				btn:SetImage( GetPictureByAni( SelectCell( T_PET_RES, tostring( id ), "face_pic" ), 0 ) );
 				btn:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, tostring( id ), "face_pic" ), 0 ) );
 				btn:SetDisabledImage( GetPictureByAni( SelectCell( T_PET_RES, tostring( id ), "face_pic" ), 0 ) );
+			end
+		else
+			if btn ~= nil then
+				btn:SetVisible( false );
+			end
+			
+			if frameBtn ~= nil then
+				frameBtn:SetImage( GetPictureByAni( "ui.default_pet_btn", 0 ) );
+				frameBtn:SetTouchDownImage( GetPictureByAni( "ui.default_pet_btn", 1 ) );
 			end
 		end
 	end
