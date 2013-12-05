@@ -69,17 +69,17 @@ function p.addAllStage(stageData)
 	if fgLayer == nil then return end;
 	
 	local stageList = SelectRowList( T_STAGE );
-	local position = {
-		{x=10,  y=10, offsetX=0, offsetY=0},
-		{x=20,  y=10, offsetX=0, offsetY=0}, 
-		{x=30,  y=10, offsetX=0, offsetY=0}, 
-		{x=40,  y=10, offsetX=0, offsetY=0}, 
-		{x=50,  y=10, offsetX=0, offsetY=0}, 
-		{x=10,  y=20, offsetX=0, offsetY=0},
-		{x=20,  y=20, offsetX=0, offsetY=0},
-		{x=30,  y=20, offsetX=0, offsetY=0}, 
-		{x=40,  y=20, offsetX=0, offsetY=0}, 
-	};                                 
+	-- local position = {
+		-- {x=10,  y=10, offsetX=0, offsetY=0},
+		-- {x=20,  y=10, offsetX=0, offsetY=0}, 
+		-- {x=30,  y=10, offsetX=0, offsetY=0}, 
+		-- {x=40,  y=10, offsetX=0, offsetY=0}, 
+		-- {x=50,  y=10, offsetX=0, offsetY=0}, 
+		-- {x=10,  y=20, offsetX=0, offsetY=0},
+		-- {x=20,  y=20, offsetX=0, offsetY=0},
+		-- {x=30,  y=20, offsetX=0, offsetY=0}, 
+		-- {x=40,  y=20, offsetX=0, offsetY=0}, 
+	-- };                                 
 	WriteCon("show stageList===="..#stageList);
 
 	for i = 1, #stageList do
@@ -92,8 +92,8 @@ function p.addAllStage(stageData)
 			isUnlock = true;
 		end
 		p.AddStageObj( fgLayer, 
-			position[i].x, position[i].y, 
-			position[i].offsetX, position[i].offsetY, 
+			STAGE_POSITION_MAP__1[i].x, STAGE_POSITION_MAP__1[i].y, 
+			STAGE_POSITION_MAP__1[i].offsetX, STAGE_POSITION_MAP__1[i].offsetY, 
 			pic, titleText, stageId, stageName, isUnlock );
 	end
 end
