@@ -66,8 +66,6 @@ end
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
-		p.CloseAllPanel();
-		
 		--[[
 		if ui.ID_CTRL_BUTTON_SHOP == tag then
 			WriteCon("**========商城========**");
@@ -87,6 +85,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			dlg_userinfo.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========活动========**");
+			p.CloseAllPanel();
+			
 		elseif ui.ID_CTRL_BUTTON_MORE == tag then
 			WriteCon("**======弹出按钮======**");
 			dlg_btn_list.ShowUI();

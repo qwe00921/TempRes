@@ -11,7 +11,8 @@ local btn_num = 10;
 
 function p.ShowUI()
 	if p.layer ~= nil then
-		p.layer:SetVisible( true );
+		--p.layer:SetVisible( not p.layer:IsVisible() );
+		p.CloseUI();
 		return;
 	end
 	
