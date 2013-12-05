@@ -32,7 +32,7 @@ function p.SetDelegate(layer)
 	OKBtn:SetLuaDelegate(p.OnUIClickEvent);
 end
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
@@ -40,8 +40,8 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	end
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_OK == tag) then --¹Ø±Õ
-			WriteCon("È·ÈÏ");
+		if(ui.ID_CTRL_BUTTON_OK == tag) then --å…³é—­
+			WriteCon("ç¡®è®¤");
 			p.CloseUI();
 			--SendReq("Item","List",uid,"");
 			pack_box.CloseUI();
@@ -57,37 +57,37 @@ function p.ShowTreasureInfo(self)
 	local itemNumber = tonumber(self.treasure.Reward_num);
 	
 	local treasureBoxText = GetLabel(p.layer, ui.ID_CTRL_TEXT_76);
-	treasureBoxText:SetText(ToUtf8("¹§Ï²Äú£¬´ò¿ª±¦Ïä»ñµÃÒÔÏÂÎïÆ·¡£"));
+	treasureBoxText:SetText("æ­å–œæ‚¨ï¼Œæ‰“å¼€å®ç®±è·å¾—ä»¥ä¸‹ç‰©å“ã€‚");
 	
 	local treasureNum = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_NUM);
-	treasureNum:SetText(ToUtf8(tostring(itemNumber)));
+	treasureNum:SetText(tostring(itemNumber));
 	
 	local treasureName = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_NAME);
 	local treasurePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_ITEM);
 	
-	if itemType == 1 then		--¿¨Æ¬
+	if itemType == 1 then		--å¡ç‰‡
 		itemInfoTable = SelectRowInner(T_CARD,"id",itemId);
-		treasureName:SetText(ToUtf8(itemInfoTable.name));
+		treasureName:SetText(itemInfoTable.name);
 		
 		cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
 		treasurePic:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
-	elseif itemType == 2 then	--ÎïÆ·
+	elseif itemType == 2 then	--ç‰©å“
 		itemInfoTable = SelectRowInner(T_ITEM,"id",itemId);
-		treasureName:SetText(ToUtf8(itemInfoTable.name));
+		treasureName:SetText(itemInfoTable.name);
 		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
-	elseif itemType == 3 then	--Ôª±¦
+	elseif itemType == 3 then	--å…ƒå®
 		itemInfoTable = SelectRowInner(T_ITEM,"id",1);
-		treasureName:SetText(ToUtf8(itemInfoTable.name));
+		treasureName:SetText(itemInfoTable.name);
 		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
-	elseif itemType == 4 then	--½ğ±Ò
+	elseif itemType == 4 then	--é‡‘å¸
 		itemInfoTable = SelectRowInner(T_ITEM,"id",2);
-		treasureName:SetText(ToUtf8(itemInfoTable.name));
+		treasureName:SetText(itemInfoTable.name);
 		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 	end
 end
 
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
@@ -95,7 +95,7 @@ function p.HideUI()
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();

@@ -2,7 +2,7 @@
 ; Item
 ;----------------------------------------
 
-;¼¼ÄÜËéÆ¬ºÏ³ÉÍ¼±ê
+;æŠ€èƒ½ç¢ç‰‡åˆæˆå›¾æ ‡
 [skill_piece_icon]
 image\ui\skillpiece_combo\piece01.png
 image\ui\skillpiece_combo\piece02.png
@@ -12,7 +12,7 @@ image\ui\skillpiece_combo\piece05.png
 image\ui\skillpiece_combo\piece06.png
 image\ui\skillpiece_combo\piece07.png
 
-;Ç¿»¯ÎïÆ·Í¼±ê
+;å¼ºåŒ–ç‰©å“å›¾æ ‡
 [item_icon]
 image\ui\equip\item1.png
 image\ui\equip\item2.png
@@ -31,7 +31,7 @@ image\item\item3_2.png
 image\item\item3_3.png
 image\item\item.png
 
-;ÎïÆ·±³°üÍ¼Æ¬
+;ç‰©å“èƒŒåŒ…å›¾ç‰‡
 [1001]
 image\item\1001.png
 [1002]
@@ -92,7 +92,7 @@ image\item\90000.png
 image\item\90000.png
 
 
-;ÈÎÎñ½±Àø	by:xmk
+;ä»»åŠ¡å¥–åŠ±	by:xmk
 [reward]
 image\item\item1_1.png
 image\item\item1_2.png
@@ -105,7 +105,7 @@ image\item\item3_2.png
 image\item\item3_3.png
 image\item\item.png
 
-;×°±¸ĞÇ¼¶	by:xmk
+;è£…å¤‡æ˜Ÿçº§	by:xmk
 [equipStar]
 image\ui\bag\star1.png
 image\ui\bag\star2.png
@@ -116,25 +116,25 @@ image\ui\bag\star3.png
 image\ui\bag\star3.png
 image\ui\bag\star3.png
 
-;ÊÇ·ñ×°±¸Í¼±ê	by:xmk
+;æ˜¯å¦è£…å¤‡å›¾æ ‡	by:xmk
 [equipUse]
 image\ui\bag\bag_equip.png
 
-;×°±¸Ä£Ê½		by:xmk
+;è£…å¤‡æ¨¡å¼		by:xmk
 [equipMode]
 image\ui\bag\star1.png
 image\ui\bag\star2.png
 
-;×°±¸TYPE 0£ºÎäÆ÷	1£º·À¾ß		2£ºĞ¬×Ó
+;è£…å¤‡TYPE 0ï¼šæ­¦å™¨	1ï¼šé˜²å…·		2ï¼šé‹å­
 [equipType]
 image\ui\bag\star1.png
 image\ui\bag\star2.png
 image\ui\bag\star3.png
 
-;Ôª±¦ÎïÆ·Í¼±ê		by:crj
+;å…ƒå®ç‰©å“å›¾æ ‡		by:crj
 [item_emoney]
 image\ui\main_interface\coin.png
 
-;½ğ±ÒÎïÆ·Í¼±ê		by:crj
+;é‡‘å¸ç‰©å“å›¾æ ‡		by:crj
 [item_money]
 image\ui\main_interface\money.png
