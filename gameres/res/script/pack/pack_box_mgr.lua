@@ -69,7 +69,7 @@ function p.GetItemList(sortType)
 		end
 	elseif sortType == ITEM_TYPE_OTHER then 
 		for k,v in ipairs(p.itemList) do		
-			if tonumber(v.Item_type) == 5 or tonumber(v.Item_type) == 6 then
+			if tonumber(v.Item_type) == 5 or tonumber(v.Item_type) == 6 or tonumber(v.Item_type) == 4 then
 				t[#t+1] = v;
 			end
 		end
@@ -110,11 +110,11 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		SendReq("Item","UseHealItem",uid,param);
 	elseif itemId == 1002 then
 		SendReq("Item","UseQuickItem",uid,param);
-	elseif itemId == 3001 then
+	elseif itemId == 4 then
 		SendReq("Item","UseStorageItem",uid,param);
-	elseif itemId == 10003 then
+	elseif itemType == 5 then
 		SendReq("Item","UseGiftItem",uid,param);
-	elseif itemId == 10004 then
+	elseif itemType == 6 then
 		SendReq("Item","UseTreasureItem",uid,param);
 	else
 		WriteConErr("used item id error ");
@@ -122,19 +122,36 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 end
 
 function p.UseItemCallBack(self)
+	local uid = GetUID();
+	if uid == 0 or uid == nil then 
+		return;
+	end
 	WriteCon("=======UseItemCallBack()");
 	if self.result == true then
 		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("使用物品成功。"),nil,p.layer);
-		local uid = GetUID();
-		if uid == 0 or uid == nil then 
-			return;
-		end
 		SendReq("Item","List",uid,"");
 	elseif self.result == false then
 		local messageText = self.message
 		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),messageText,nil,p.layer);
 	end
 end
+
+--打开礼包回调
+function p.UseGiftItemCallBack(self)
+	local uid = GetUID();
+	if uid == 0 or uid == nil then 
+		return;
+	end
+	if self.result == true then
+		pack_gift_box.ShowGiftBox(self);
+	elseif self.result == false then
+		local messageText = self.message
+		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),messageText,nil,p.layer);
+	end
+end
+
+
+
 
 function p.getItemInfoTable(uniqueid)
 	local allItemList = pack_box_mgr.itemList;
@@ -146,14 +163,41 @@ function p.getItemInfoTable(uniqueid)
 	for k,v in pairs(allItemList) do
 		if tonumber(v.id) == uniqueid then
 			itemInfoTable = v
-			WriteConErr(tostring(itemInfoTable));
-			WriteConErr(tostring(k));
 			break;
 		end
 	end
 	return itemInfoTable;
 end
 
+--出售装备
+function p.SendSellEquipRequest(EquipUid)
+	local uid = GetUID();
+	if uid == 0 or uid == nil then 
+		return;
+	end
+	if EquipUid == nil or EquipUid == 0 then
+		WriteConErr("sell equip EquipUid error ");
+		return
+	end
+	local param = "&id="..EquipUid;
+	SendReq("Item","Sell",uid,param);
+end
+
+--出售装备回调
+function p.sellEquipCallBack(self)
+	local uid = GetUID();
+	if uid == 0 or uid == nil then 
+		return;
+	end
+	if self.result == true then 
+		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),ToUtf8("出售成功。"),nil,p.layer);
+		pack_box_equip.CloseUI();
+		SendReq("Item","List",uid,"");
+	elseif self.result == false then
+		local messageText = self.message;
+		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),messageText,nil,p.layer);
+	end
+end
 
 -- UseHealItem //行动力恢复道具使用
 -- UseQuickItem //活力恢复道具使用

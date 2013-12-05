@@ -53,7 +53,8 @@ function p.SetDelegate(layer)
 	
 	local allItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM1);
 	allItemBtn:SetLuaDelegate(p.OnUIClickEvent);
-
+	p.SetBtnCheckedFX( allItemBtn )
+	
 	local debrisItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM2);
 	debrisItemBtn:SetLuaDelegate(p.OnUIClickEvent);
 
@@ -71,6 +72,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --·µ»Ø
+			pack_box_equip.CloseUI();
 			p.CloseUI();
 			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();

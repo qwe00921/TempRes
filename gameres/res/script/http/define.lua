@@ -17,7 +17,7 @@ DoFile("http/msg/msg_item_heal.lua");
 DoFile("http/msg/msg_item_quick.lua");
 DoFile("http/msg/msg_item_storage.lua");
 DoFile("http/msg/msg_item_treasure.lua");
-
+DoFile("http/msg/msg_pack_equip_sell.lua");
 
 DoFile("http/msg/msg_maininterface.lua");
 DoFile("http/msg/msg_createrole.lua")
