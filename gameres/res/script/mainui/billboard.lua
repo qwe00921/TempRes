@@ -46,7 +46,7 @@ function p.ShowUI()
         
 		--…Ë÷√æÿ–Œ«¯”Ú
 		local x = p.billboard_x or 0.5f * (1.0f - p.billboardRatio) * GetScreenWidth();
-		local y = p.billboard_y or UIOffsetX(90);
+		local y = p.billboard_y or UIOffsetY(56);
 		local w = GetScreenWidth() * p.billboardRatio;
 		local rect = CCRectMake( x, y, w, UIOffsetY(p.billboardHeight) );
         p.title:SetFrameRect( rect );

@@ -142,10 +142,14 @@ end
 
 --≈‹¬Ìµ∆œ‘ æ
 function p.ShowBillboardWithInit()
-	billboard.ShowUIWithInit(layer); 
+	--local bg = GetImage( p.layer, ui.ID_CTRL_PICTURE_BILLBOARD_BG);
+	--ocal rect = bg:GetFrameRect() or {}
+	--local pt = rect.origin or {}
+	billboard.ShowUIWithInit(p.layer) --,nil, pt.y); 
 end
 
 function p.HideBillboard()
+	
 	billboard.pauseBillBoard();
 end
 
