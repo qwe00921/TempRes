@@ -9,13 +9,16 @@ pack_box = {}
 local p = pack_box;
 
 local ui = ui_bag_main;
-local packLimit = 100; --获取玩家背包格子数量
+local packLimit = nil; --获取玩家背包格子数量
 p.allItemNumber = nil;
 p.layer = nil;
 p.curBtnNode = nil;
 --p.itemUsedId = nil;
 
 function p.ShowUI()
+	packLimit = msg_cache.msg_player.Storage
+	WriteCon("packLimit========="..packLimit);
+
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
