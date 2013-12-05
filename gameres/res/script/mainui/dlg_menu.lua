@@ -51,6 +51,8 @@ end
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
+		--maininterface.CloseAllPanel();
+		
 		if ui.ID_CTRL_BUTTON_GASHAPON == tag then
 			WriteCon("**========扭蛋========**");
 			dlg_gacha.ShowUI( SHOP_ITEM );
@@ -62,23 +64,25 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========背包========**");
 			pack_box.ShowUI();
 			--隐藏主UI
-			maininterface.CloseAllPanel();
+			--maininterface.CloseAllPanel();
 			--maininterface.HideUI();
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
 			WriteCon("**========卡组========**");
 			card_bag_mian.ShowUI();
+			--dlg_card_group_main.ShowUI();
+			
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
 			WriteCon("**========任务========**");
 			stageMap_main.OpenWorldMap();
 			--隐藏主UI
-			maininterface.CloseAllPanel();
+			--maininterface.CloseAllPanel();
 			maininterface.HideUI();
 		elseif ui.ID_CTRL_BUTTON_HOME_PAGE == tag then
 			WriteCon("**========主页========**");
 			
 			world_map.CheckToCloseMap();
-			maininterface.CloseAllPanel();
 		end
+		maininterface.CloseAllPanel();
 	end
 end
 

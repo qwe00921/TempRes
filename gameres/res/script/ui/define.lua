@@ -34,6 +34,8 @@ DoFile("ui/ui_bag_main.lua")
 DoFile("ui/ui_bag_list.lua")
 DoFile("ui/ui_bag_equip_view.lua")
 DoFile("ui/ui_bag_gift_box.lua")
+DoFile("ui/ui_bag_treasure_view.lua")
+DoFile("ui/ui_bag_item_select.lua")
 
 --卡牌背包
 DoFile("ui/ui_card_main_view.lua")

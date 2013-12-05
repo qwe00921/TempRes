@@ -82,8 +82,8 @@ function p.SetDelegate(layer)
 	--¿¨ÅÆÍ¼Æ¬
 	local pImgCardPic = GetImage(layer, ui_dlg_card_attr.ID_CTRL_PICTURE); --¿¨ÅÆÍ¼Æ¬¿Ø¼þ
 	
-	local aniIndex = "card.card_"..p.cardID;
-	local pImage = GetPictureByAni(aniIndex,0)--¿¨ÅÆÍ¼Æ¬
+	--local aniIndex = "card.card_"..p.cardID;
+	local pImage = GetPictureByAni(pCardInfo.card_pic,0)--¿¨ÅÆÍ¼Æ¬
 	
 	pImgCardPic:SetPicture(pImage);
 	--¼ò½é

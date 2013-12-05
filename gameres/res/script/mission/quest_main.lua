@@ -9,22 +9,22 @@ local num_easy = nil;
 local num_normal = nil;
 local num_difficult = nil;
 
-p.stageId = nil;	--¹Ø¿¨ID
-p.missionId = nil; 	--ÈÎÎñID
+p.stageId = nil;	--å…³å¡ID
+p.missionId = nil; 	--ä»»åŠ¡ID
 
-p.stageTable = nil;		--¹Ø¿¨¾²Ì¬Êı¾İ
+p.stageTable = nil;		--å…³å¡é™æ€æ•°æ®
 --p.missionTable = nil;
 
-p.missionList = {};	--·şÎñ¶ËÏÂ·¢ÁĞ±í
-p.curBtnNode = nil;		--Ñ¡ÖĞ±ê¼Ç
-p.power = nil; 		--»ñÈ¡Íæ¼ÒÌåÁ¦Öµ
+p.missionList = {};	--æœåŠ¡ç«¯ä¸‹å‘åˆ—è¡¨
+p.curBtnNode = nil;		--é€‰ä¸­æ ‡è®°
+p.power = nil; 		--è·å–ç©å®¶ä½“åŠ›å€¼
 
 function p.ShowUI(stageId)
 	p.stageId  = stageId;
 	
-	--»ñÈ¡missionId³õÊ¼Öµ
+	--è·å–missionIdåˆå§‹å€¼
 	p.GetMissionId();
-	--»ñÈ¡ÕÂ½Ú¾²Ì¬Êı¾İ
+	--è·å–ç« èŠ‚é™æ€æ•°æ®
 	p.GetStageTable();
 
 	if p.layer ~= nil then 
@@ -48,9 +48,9 @@ function p.ShowUI(stageId)
 	p.layer = layer;
 	p.SetDelegate(layer);
 	
-	--ÉèÖÃÕÂ½ÚÃû×Ö
+	--è®¾ç½®ç« èŠ‚åå­—
 	local stageName = GetLabel(p.layer, ui.ID_CTRL_TEXT_QUEST_NAME_6);
-	stageName:SetText(ToUtf8(p.stageTable[1].stage_name));
+	stageName:SetText(p.stageTable[1].stage_name);
 	
 	WriteCon("send mission request");
 	local uid = GetUID();
@@ -79,22 +79,22 @@ function p.GetStageTable()
 end
 
 function p.SetDelegate()
-	--·µ»Ø
+	--è¿”å›
 	local btnBack = GetButton( p.layer, ui.ID_CTRL_BTN_TETURN_2 );
 	btnBack:SetLuaDelegate(p.OnBtnClick);
-	--¼òµ¥
+	--ç®€å•
 	local btnEasy =  GetButton(p.layer, ui.ID_CTRL_BTN_EAYE_7);
 	btnEasy:SetLuaDelegate(p.OnBtnClick);
-	p.SetBtnCheckedFX( btnEasy );--ÉèÖÃ³õÊ¼×´Ì¬
-	--ÆÕÍ¨
+	p.SetBtnCheckedFX( btnEasy );--è®¾ç½®åˆå§‹çŠ¶æ€
+	--æ™®é€š
 	local BtnNormal =  GetButton(p.layer, ui.ID_CTRL_BTN_NORMAL_8);
 	BtnNormal:SetLuaDelegate(p.OnBtnClick);
-	--À§ÄÑ
+	--å›°éš¾
 	local BtnDifficult =  GetButton(p.layer, ui.ID_CTRL_BTN_HARD_9);
 	BtnDifficult:SetLuaDelegate(p.OnBtnClick);
 end
 
---°´Å¥ÊÂ¼ş
+--æŒ‰é’®äº‹ä»¶
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
@@ -121,7 +121,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	end
 end
 
---µã»÷Õ½¶·°´Å¥
+--ç‚¹å‡»æˆ˜æ–—æŒ‰é’®
 function p.OnFightBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		WriteCon("=========OnFightBtnClick==========");
@@ -131,7 +131,7 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 		local powerLimit = tonumber(missionTable[1]["power"]);
 		local power = p.power;
 		if power < powerLimit then
-			dlg_msgbox.ShowOK(ToUtf8( "ÌáÊ¾" ), ToUtf8( "ÌåÁ¦Öµ²»×ã¡£" ));
+			dlg_msgbox.ShowOK("æç¤º" ,  "ä½“åŠ›å€¼ä¸è¶³ã€‚");
 			WriteCon("power not enough");
 			return
 		else
@@ -155,7 +155,7 @@ function p.SetBtnCheckedFX( node )
     p.curBtnNode = btnNode;
 end
 
---ÏÔÊ¾ÁĞ±í
+--æ˜¾ç¤ºåˆ—è¡¨
 function p.ShowQuestList(List)
 	for k,v in pairs(List) do
 		if k == "missions" then
@@ -174,10 +174,10 @@ function p.ShowQuestList(List)
 		-- ListLength = ListLength + 1;
 	-- end
 	-- WriteCon("**ListLength = "..ListLength); 
-	--ÉèÖÃÄÑµÀ°´Å¥
+	--è®¾ç½®éš¾é“æŒ‰é’®
 	p.setHardBtn();
 	
-	--¼ÓÔØÁĞ±í
+	--åŠ è½½åˆ—è¡¨
 	local missionStartId = p.missionId;
 	p.loadMissionList(missionStartId,num_easy);
 end
@@ -212,7 +212,7 @@ function p.loadMissionList(missionStartId,num)
 		view:Init();
 		LoadUI("quest_list_view.xui",view, nil);
 		
-		--Òş²ØÄ¬ÈÏUI
+		--éšè—é»˜è®¤UI
 		p.HideStar(view);
 		p.HideItem(view);
 		
@@ -220,11 +220,11 @@ function p.loadMissionList(missionStartId,num)
 		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
 		view:SetId(MisId);
 		
-		--ĞÅÏ¢³õÊ¼»¯
+		--ä¿¡æ¯åˆå§‹åŒ–
 		p.setMissionInif(MisId,view);
 		
-		--¼ÓÔØ·şÎñ¶ËÏÂ·¢Êı¾İ
-		--Õ½¶·°´Å¥
+		--åŠ è½½æœåŠ¡ç«¯ä¸‹å‘æ•°æ®
+		--æˆ˜æ–—æŒ‰é’®
 		local fightBtn = GetButton(view, uiList.ID_CTRL_BUTTON_FIGHTING);
 		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
 		local MisKey = "M"..MisId;
@@ -235,8 +235,8 @@ function p.loadMissionList(missionStartId,num)
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
 			local missionTable = SelectRowList(T_MISSION,"mission_id",mis_id);
 			local text = p.missionList[MisKey]["Fight_num"].."/"..missionTable[1]["timesLimit"]
-			timesText:SetText(ToUtf8(text));
-			--ÏÔÊ¾ĞÇ¼¶
+			timesText:SetText(text);
+			--æ˜¾ç¤ºæ˜Ÿçº§
 			local StarNum = p.missionList[MisKey]["High_score"]
 			p.ShowStar(view,StarNum)
 		else
@@ -249,7 +249,7 @@ function p.loadMissionList(missionStartId,num)
 	end
 end
 
---¶ÁÈ¡¾²Ì¬±íÊı¾İ
+--è¯»å–é™æ€è¡¨æ•°æ®
 function p.setMissionInif(MisId, view)
 	local mis_id = MisId;
 	local misstionName = GetLabel(view, uiList.ID_CTRL_TEXT_QUEST_NAME_V);
@@ -263,12 +263,12 @@ function p.setMissionInif(MisId, view)
 	
 	local missionTable = SelectRowList(T_MISSION,"mission_id",mis_id);
 	if #missionTable == 1 then 
-		misstionName:SetText(ToUtf8(missionTable[1]["name"]));
-		power:SetText(ToUtf8(missionTable[1]["power"]));
-		expText:SetText(ToUtf8(missionTable[1]["exp"]));
-		moneyText:SetText(ToUtf8(missionTable[1]["money"]));
-		local text = "0/"..missionTable[1]["timesLimit"]
-		timesText:SetText(ToUtf8(text));
+		misstionName:SetText(missionTable[1]["name"]);
+		power:SetText(missionTable[1]["power"]);
+		expText:SetText(missionTable[1]["exp"]);
+		moneyText:SetText(missionTable[1]["money"]);
+		local text = missionTable[1]["timesLimit"].."/"..missionTable[1]["timesLimit"]
+		timesText:SetText(text);
 		
 		local rewardId1 = tonumber(missionTable[1]["reward_1"]);
 		local rewardId2 = tonumber(missionTable[1]["reward_2"]);
@@ -291,7 +291,7 @@ function p.setMissionInif(MisId, view)
 end
 
 
---Òş²ØÍ¨¹ØÆÀ¼Û
+--éšè—é€šå…³è¯„ä»·
 function p.HideStar(view)
 	local star1 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR1)
 	star1:SetVisible(false);
@@ -328,7 +328,7 @@ function p.ShowStar(view,num)
 	end
 end
 
---Òş²Ø½±ÀøÎïÆ·Í¼±ê
+--éšè—å¥–åŠ±ç‰©å“å›¾æ ‡
 function p.HideItem(view)
 	local Item1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD1)
 	Item1:SetVisible(false);
@@ -339,7 +339,7 @@ function p.HideItem(view)
 end
 
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
@@ -347,7 +347,7 @@ function p.HideUI()
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();

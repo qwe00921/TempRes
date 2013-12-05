@@ -7,11 +7,15 @@ local ui = ui_main_btn_list;
 
 p.layer = nil;
 
+local ID_PET = 6;
+local ID_CARD = 10;
+
 local btn_num = 10;
 
 function p.ShowUI()
 	if p.layer ~= nil then
-		p.layer:SetVisible( true );
+		--p.layer:SetVisible( not p.layer:IsVisible() );
+		p.CloseUI();
 		return;
 	end
 	
@@ -74,8 +78,12 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId();
 		WriteCon( tostring(id) );
-		if id == 6 then
+		if id == ID_PET then
 			dlg_beast_main.ShowUI();
+		end
+		
+		if id == ID_CARD then
+			card_bag_mian.ShowUI();
 		end
 	end
 end
