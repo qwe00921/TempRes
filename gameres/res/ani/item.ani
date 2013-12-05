@@ -125,6 +125,12 @@ image\ui\bag\bag_equip.png
 image\ui\bag\star1.png
 image\ui\bag\star2.png
 
+;装备TYPE 0：武器	1：防具		2：鞋子
+[equipType]
+image\ui\bag\star1.png
+image\ui\bag\star2.png
+image\ui\bag\star3.png
+
 ;元宝物品图标		by:crj
 [item_emoney]
 image\ui\main_interface\coin.png

@@ -90,7 +90,7 @@ function p.ShowEquipInfo(equipInfo)
 		return;
 	end
 
-	local equipNameText = GetColorLabel(p.layer, ui.ID_CTRL_COLOR_LABEL_EQUIP_NAME);	--装备名字
+	local equipNameText = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_NAME);	--装备名字
 	equipNameText:SetText(ToUtf8(itemTable.name));
 
 	local equipPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_EQUIP);					--装备图片
@@ -104,10 +104,43 @@ function p.ShowEquipInfo(equipInfo)
 	local equipLevelText = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);				--装备等级
 	equipLevelText:SetText(ToUtf8(equipInfo.Equip_level));
 		
+	local equipTypePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_TYPE);	
+	if tonumber(equipInfo.Item_type) == 1 then
+		equipTypePic:SetPicture( GetPictureByAni("item.equipType", 0) );
+	elseif tonumber(equipInfo.Item_type) == 2 then
+		equipTypePic:SetPicture( GetPictureByAni("item.equipType", 1) );
+	elseif tonumber(equipInfo.Item_type) == 3 then
+		equipTypePic:SetPicture( GetPictureByAni("item.equipType", 2) );
+	else
+		WriteConErr("Iequip type error");
+	end
+		
 	local mainProText = GetLabel(p.layer, ui.ID_CTRL_TEXT_MAIN_PRO1);				--主属性
+	if tonumber(equipInfo.Attribute_type) ~= 0 then
+		local AttType = equipInfo.Attribute_type;
+		local AttValue = equipInfo.Attribute_value;
+		p.equipAttByType(mainProText,AttType,AttValue)
+	end
 	local subPro1Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO1);				--副属性1
+	if tonumber(equipInfo.Extra_type1) ~= 0 then
+		local AttType = equipInfo.Extra_type1;
+		local AttValue = equipInfo.Extra_value1;
+		p.equipAttByType(subPro1Text,AttType,AttValue)
+	end
 	local subPro2Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO2);				--副属性2
+	if tonumber(equipInfo.Extra_type2) ~= 0 then
+		local AttType = equipInfo.Extra_type2;
+		local AttValue = equipInfo.Extra_value2;
+		p.equipAttByType(subPro2Text,AttType,AttValue)
+	end
 	local subPro3Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO3);				--副属性3
+	if tonumber(equipInfo.Extra_value3) ~= 0 then
+		local AttType = equipInfo.Extra_type3;
+		local AttValue = equipInfo.Extra_value3;
+		p.equipAttByType(subPro3Text,AttType,AttValue)
+	end
+
+	
 	
 	local infoText = GetLabel(p.layer, ui.ID_CTRL_TEXT_INFO);						--介绍信息
 	infoText:SetText(ToUtf8(itemTable.description));
@@ -116,6 +149,24 @@ function p.ShowEquipInfo(equipInfo)
 	local dressIndex = tonumber(equipInfo.Is_dress)
 	modePic:SetPicture( GetPictureByAni("item.equipMode", dressIndex));
 end
+
+function p.equipAttByType(nodeUI,AttType,AttValue)
+	local AttName = nil
+	if tonumber(AttType) == 1 then
+		AttName = "攻击"
+	elseif tonumber(AttType) == 2 then
+		AttName = "防御"
+	elseif tonumber(AttType) == 3 then
+		AttName = "血量"
+	elseif tonumber(AttType) == 4 then
+		AttName = "速度"
+	elseif tonumber(AttType) == 5 then
+		AttName = "暴击"
+	end
+	local text = AttName..AttValue
+	nodeUI:SetText(ToUtf8(text));
+end
+
 
 
 function p.HideUI()

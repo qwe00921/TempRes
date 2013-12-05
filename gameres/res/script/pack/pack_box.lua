@@ -10,6 +10,7 @@ local p = pack_box;
 
 local ui = ui_bag_main;
 local packLimit = 100; --获取玩家背包格子数量
+p.allItemNumber = nil;
 p.layer = nil;
 p.curBtnNode = nil;
 --p.itemUsedId = nil;
@@ -163,19 +164,23 @@ function p.ShowItemList(itemList)
 	list:ClearView();
 	
 	local itemCountText = GetLabel(p.layer,ui.ID_CTRL_TEXT_COUNT );
-
+	local itemNum = nil;
 	if itemList == nil or #itemList <= 0 then
-		local countText = "0/"..packLimit;
-		itemCountText:SetText(ToUtf8(countText));
-		
+		if p.allItemNumber == nil or p.allItemNumber == 0 then
+			local countText = "0/"..packLimit;
+			itemCountText:SetText(ToUtf8(countText));
+		end
 		WriteCon("ShowItemList():itemList is null");
 		return
+	else
+		itemNum = #itemList;
+		WriteCon("itemCount ===== "..itemNum);
+		if p.allItemNumber == nil or p.allItemNumber == 0 then
+			p.allItemNumber = itemNum;
+			local countText = itemNum.."/"..packLimit;
+			itemCountText:SetText(ToUtf8(countText));
+		end
 	end
-	WriteCon("itemCount ===== "..#itemList);
-	local itemNum = #itemList;
-	
-	local countText = itemNum.."/"..packLimit;
-	itemCountText:SetText(ToUtf8(countText));
 		
 	local row = math.ceil(itemNum / 4);
 	WriteCon("row ===== "..row);
@@ -373,6 +378,7 @@ function p.CloseUI()
         p.layer:LazyClose();
         p.layer = nil;
         pack_box_mgr.ClearData();
+		p.allItemNumber = nil;
     end
 end
 

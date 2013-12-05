@@ -13,13 +13,16 @@ Stretch=1
 NormalFile=.\res\image\ui\bag\bag_main_bg.png
 NormalFileUV=0 0 640 960
 
-[CTRL_COLOR_LABEL_EQUIP_NAME]
-Type=7
-Tag=82
-Rect=232 263 193 60
+[CTRL_TEXT_EQUIP_NAME]
+Type=4
+Tag=21
+Rect=234 264 185 60
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=装备名称
+TextTradition=裝備名稱
+TextSize=24
+TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -77,7 +80,7 @@ Notes=
 [CTRL_TEXT_MAIN_PRO]
 Type=4
 Tag=75
-Rect=279 347 107 33
+Rect=279 342 107 33
 AnchorPos=0 0
 Notes=
 Text=主属性
@@ -87,13 +90,11 @@ TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_MAIN_PRO1]
-Type=7
-Tag=85
-Rect=430 340 138 40
+Type=4
+Tag=22
+Rect=430 343 130 30
 AnchorPos=0 0
 Notes=
-Text=防御
-TextTradition=防御
 TextSize=24
 TextColor=0xff00ff
 TextHorAlign=AlignLeft
@@ -102,7 +103,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SUB_PRO]
 Type=4
 Tag=76
-Rect=282 389 104 32
+Rect=282 380 104 32
 AnchorPos=0 0
 Notes=
 Text=附加属性
@@ -112,41 +113,35 @@ TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SUB_PRO1]
-Type=7
-Tag=86
-Rect=429 387 141 29
+Type=4
+Tag=23
+Rect=431 380 130 30
 AnchorPos=0 0
 Notes=
-Text=暴击
-TextTradition=暴擊
 TextSize=24
-TextColor=0xff
+TextColor=0x8080
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SUB_PRO2]
-Type=7
-Tag=87
-Rect=429 422 143 25
+Type=4
+Tag=24
+Rect=431 417 130 30
 AnchorPos=0 0
 Notes=
-Text=闪避
-TextTradition=閃避
 TextSize=24
 TextColor=0xff00
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SUB_PRO3]
-Type=7
-Tag=88
-Rect=430 456 138 30
+Type=4
+Tag=25
+Rect=432 450 130 30
 AnchorPos=0 0
 Notes=
-Text=闪避
-TextTradition=閃避
 TextSize=24
-TextColor=0xffff
+TextColor=0xff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
@@ -166,7 +161,8 @@ Notes=
 Text=介绍
 TextTradition=介紹
 TextSize=24
-TextHorAlign=AlignHorCenter
+TextColor=0xff00ff
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_INFO]
