@@ -93,15 +93,15 @@ function p.ShowGiftBoxInfo(self)
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
 		elseif giftTyep == 2 then	--物品
 			itemInfoTable = SelectRowInner(T_ITEM,"id",itemId);
-			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.Name));
+			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.name));
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 		elseif giftTyep == 3 then	--元宝
 			itemInfoTable = SelectRowInner(T_ITEM,"id",1);
-			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.Name));
+			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.name));
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 		elseif giftTyep == 4 then	--金币
 			itemInfoTable = SelectRowInner(T_ITEM,"id",2);
-			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.Name));
+			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.name));
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 		end
 	end

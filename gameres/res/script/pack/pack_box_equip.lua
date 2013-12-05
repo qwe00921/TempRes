@@ -91,7 +91,7 @@ function p.ShowEquipInfo(equipInfo)
 	end
 
 	local equipNameText = GetColorLabel(p.layer, ui.ID_CTRL_COLOR_LABEL_EQUIP_NAME);	--装备名字
-	equipNameText:SetText(ToUtf8(itemTable.Name));
+	equipNameText:SetText(ToUtf8(itemTable.name));
 
 	local equipPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_EQUIP);					--装备图片
 	equipPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
@@ -110,7 +110,7 @@ function p.ShowEquipInfo(equipInfo)
 	local subPro3Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO3);				--副属性3
 	
 	local infoText = GetLabel(p.layer, ui.ID_CTRL_TEXT_INFO);						--介绍信息
-	infoText:SetText(ToUtf8(itemTable.Description));
+	infoText:SetText(ToUtf8(itemTable.description));
 
 	local modePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_MODE);						--是否装备图片
 	local dressIndex = tonumber(equipInfo.Is_dress)

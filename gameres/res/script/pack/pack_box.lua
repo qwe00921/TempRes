@@ -264,7 +264,7 @@ function p.ShowItemInfo( view, item, itemIndex )
 
 	--显示物品名字
 	local itemNameText = GetLabel(view,itemName );
-	local text = itemTable.Name;
+	local text = itemTable.name;
 	itemNameText:SetText(ToUtf8(text));
 	local itemNumText = GetLabel(view,itemNum );	--物品数量
 	local equipStarPic = GetImage(view,equipStarPic);	--装备星级
@@ -316,7 +316,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
 		local itemData = SelectRowList(T_ITEM,"id",itemId);
 		if #itemData == 1 then
-			local text = itemData[1].Description;
+			local text = itemData[1].description;
 			itemDescribeText:SetText(ToUtf8(text));
 		else
 			WriteConErr("itemTable error ");

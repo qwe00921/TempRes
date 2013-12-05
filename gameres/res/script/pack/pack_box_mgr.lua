@@ -110,7 +110,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		SendReq("Item","UseHealItem",uid,param);
 	elseif itemId == 1002 then
 		SendReq("Item","UseQuickItem",uid,param);
-	elseif itemId == 4 then
+	elseif itemType == 4 then
 		SendReq("Item","UseStorageItem",uid,param);
 	elseif itemType == 5 then
 		SendReq("Item","UseGiftItem",uid,param);
