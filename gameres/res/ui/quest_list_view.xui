@@ -6,66 +6,84 @@ Height=960
 [CTRL_PIC_LIST_BG]
 Type=1
 Tag=1
-Rect=0 0 639 255
+Rect=0 0 614 337
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_list_bg.png
-NormalFileUV=0 0 598 239
+NormalFileUV=0 0 614 344
 
 [CTRL_TEXT_QUEST_NAME_V]
 Type=4
 Tag=2
-Rect=13 5 278 37
+Rect=27 15 208 37
 AnchorPos=0 0
 Notes=
-Text=关卡名字
-TextTradition=關卡名字
-TextSize=24
-TextColor=0xffff
+Text=关卡名字七个字
+TextTradition=關卡名字七個字
+TextSize=28
+TextColor=0xd3cf9b
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_59]
+Type=1
+Tag=59
+Rect=252 11 220 48
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\txt_bg.png
+NormalFileUV=0 0 122 38
 
 [CTRL_TEXT_POWRE]
 Type=4
 Tag=3
-Rect=331 5 85 30
+Rect=255 18 129 30
 AnchorPos=0 0
 Notes=
-Text=消耗:
-TextTradition=消耗:
+Text=体力消耗：
+TextTradition=體力消耗：
 TextSize=24
-TextColor=0xffff
+TextColor=0xd6ce96
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_60]
+Type=1
+Tag=60
+Rect=488 13 99 43
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\txt_bg.png
+NormalFileUV=0 0 122 38
 
 [CTRL_TEXT_POWER1]
 Type=4
 Tag=22
-Rect=453 4 50 30
+Rect=409 18 50 30
 AnchorPos=0 0
 Notes=
 Text=体力
 TextTradition=體力
 TextSize=24
-TextColor=0xffff
+TextColor=0xd6ce96
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_POWER_V]
 Type=4
 Tag=4
-Rect=417 5 30 30
+Rect=381 18 30 30
 AnchorPos=0 0
 Notes=
-TextSize=24
-TextColor=0xffff
+TextSize=20
+TextColor=0xd6ce96
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_TIMES]
 Type=1
 Tag=16
-Rect=511 5 30 30
+Rect=497 18 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\battle.png
@@ -74,33 +92,33 @@ NormalFileUV=0 0 40 40
 [CTRL_TEXT_TIEMS_V]
 Type=4
 Tag=5
-Rect=543 5 73 30
+Rect=533 19 51 30
 AnchorPos=0 0
 Notes=
 Text=0/5
 TextTradition=0/5
-TextSize=24
-TextColor=0xffff
+TextSize=20
+TextColor=0xd6ce96
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_REWARD]
 Type=4
 Tag=6
-Rect=58 79 107 33
+Rect=39 88 121 34
 AnchorPos=0 0
 Notes=
-Text=任务奖励
-TextTradition=任務獎勵
+Text=任务奖励:
+TextTradition=任務獎勵:
 TextSize=24
-TextColor=0xffff
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_EXP_8]
 Type=1
 Tag=8
-Rect=188 83 30 30
+Rect=383 95 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\exp.png
@@ -109,92 +127,122 @@ NormalFileUV=0 0 63 61
 [CTRL_TEXT_EXP_V]
 Type=4
 Tag=17
-Rect=227 84 62 29
+Rect=418 89 62 33
 AnchorPos=0 0
 Notes=
 Text=EXP
 TextTradition=EXP
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=9
-Rect=304 85 30 30
+Rect=182 96 24 24
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\money.png
-NormalFileUV=0 0 41 51
+NormalFile=.\res\image\ui\main_interface\money.png
+NormalFileUV=0 0 28 28
 
 [CTRL_TEXT_MONEY_V]
 Type=4
 Tag=18
-Rect=356 85 67 30
+Rect=220 92 67 30
 AnchorPos=0 0
 Notes=
 Text=MONEY
 TextTradition=MONEY
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_99]
+Type=1
+Tag=99
+Rect=148 144 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\star_less.png
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_EVALUATION]
 Type=4
 Tag=11
-Rect=443 86 59 30
+Rect=39 147 76 30
 AnchorPos=0 0
 Notes=
-Text=评价
-TextTradition=評價
+Text=评价:
+TextTradition=評價:
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_64]
+Type=1
+Tag=64
+Rect=229 144 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\star_less.png
+NormalFileUV=0 0 36 36
+
+[CTRL_PICTURE_63]
+Type=1
+Tag=63
+Rect=189 144 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\star_less.png
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=19
-Rect=509 79 50 50
+Rect=148 144 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
-NormalFileUV=0 0 44 44
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=20
-Rect=528 79 50 50
+Rect=190 144 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
-NormalFileUV=0 0 44 44
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=21
-Rect=550 79 50 50
+Rect=229 144 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
-NormalFileUV=0 0 44 44
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_PROBABILITY]
 Type=4
 Tag=7
-Rect=59 164 107 33
+Rect=42 199 56 33
 AnchorPos=0 0
 Notes=
 Text=概率
 TextTradition=概率
 TextSize=24
-TextColor=0xffff
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_REWARD1]
 Type=1
 Tag=12
-Rect=200 160 50 58
+Rect=129 217 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png
@@ -203,7 +251,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_REWARD2]
 Type=1
 Tag=13
-Rect=269 159 50 58
+Rect=271 217 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png
@@ -212,7 +260,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_REWARD3]
 Type=1
 Tag=14
-Rect=339 161 50 58
+Rect=522 120 50 58
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png
@@ -221,13 +269,31 @@ NormalFileUV=0 0 72 84
 [CTRL_BUTTON_FIGHTING]
 Type=2
 Tag=15
-Rect=446 173 173 48
+Rect=413 232 170 70
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\quest\mission_start.png
-NormalFileUV=0 0 279 77
+NormalFileUV=0 0 170 70
 DisableFile=.\res\image\ui\quest\mission_start_un.png
 DisableFileUV=0 0 279 77
+
+[CTRL_PICTURE_100]
+Type=1
+Tag=100
+Rect=129 217 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\item-list.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_101]
+Type=1
+Tag=101
+Rect=271 217 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\item-list.png
+NormalFileUV=0 0 100 100
