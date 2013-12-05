@@ -130,3 +130,12 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=邮件数量
+
+[CTRL_PICTURE_BILLBOARD_BG]
+Type=1
+Tag=13
+Rect=0 272 640 52
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_ui\ad_bg.png
+NormalFileUV=0 0 40 52

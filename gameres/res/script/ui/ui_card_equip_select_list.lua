@@ -5,11 +5,11 @@
 ui_card_equip_select_list = {};
 local p =  ui_card_equip_select_list;
 p.ID_CTRL_EXP_PRE_ITEM_EXP			 = 112;
-p.ID_CTRL_TEXT_58						       = 58;
-p.ID_CTRL_TEXT_57						       = 57;
+p.ID_CTR_PRE_ITEM_ATTR_VALUE			= 58;
+p.ID_CTRL_TEXT_PRE_ITEM_LV			 = 57;
 p.ID_CTRL_TEXT_LABEL_5				    = 56;
 p.ID_CTRL_TEXT_LABEL_4				    = 55;
-p.ID_CTRL_TEXT_54						       = 54;
+p.ID_CTRL_TEXT_LABEL_6				    = 54;
 p.ID_CTRL_TEXT_PRE_ITEM_NAME			= 53;
 p.ID_CTRL_PICTURE_PRE_ITEM_IMAGE		= 52;
 p.ID_CTRL_TEXT_PRE_ITEM_EXP			= 51;

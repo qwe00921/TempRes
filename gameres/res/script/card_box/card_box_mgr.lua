@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	card_box_mgr.lua
 -- author:		hst, 2013/07/10
--- purpose:		¿¨Ïä¹ÜÀíÆ÷--¸ºÔğ¼ÓÔØ¿¨ÅÆÊı¾İ
+-- purpose:		å¡ç®±ç®¡ç†å™¨--è´Ÿè´£åŠ è½½å¡ç‰Œæ•°æ®
 --------------------------------------------------------------
 
 card_box_mgr = {}
@@ -13,43 +13,43 @@ p.selectCard = nil;
 p.selectCardList = {};
 p.bag_max = nil;
 
-----------------¿¨ÅÆÁĞ±íµÄ¹ıÂË-----------------------
+----------------å¡ç‰Œåˆ—è¡¨çš„è¿‡æ»¤-----------------------
 
---´ÓÁĞ±íÖĞÆÁ±ÎÖ¸¶¨µÄ¿¨ÅÆ
+--ä»åˆ—è¡¨ä¸­å±è”½æŒ‡å®šçš„å¡ç‰Œ
 p.delCardId = nil;
 
---¼ÇÂ¼ÈÚºÏ¿¨ÅÆµÄĞÇ¼¶£º½öÈÚºÏ¹¦ÄÜÊ¹ÓÃ
+--è®°å½•èåˆå¡ç‰Œçš„æ˜Ÿçº§ï¼šä»…èåˆåŠŸèƒ½ä½¿ç”¨
 p.fuseCardRare = nil;
 
---¹ıÂËÓĞ×°±¸µÄ¿¨ÅÆ
+--è¿‡æ»¤æœ‰è£…å¤‡çš„å¡ç‰Œ
 p.isEquiped = false;
 
---´ÓÁĞ±íÖĞÆÁ±Î¶ÓÎéµÄÖ÷¿¨ÅÆ
+--ä»åˆ—è¡¨ä¸­å±è”½é˜Ÿä¼çš„ä¸»å¡ç‰Œ
 p.isDelLeader = false;
 
---´ÓÁĞ±íÖĞÆÁ±Î²»¿É±»Ñ¡ÔñÎª½ø»¯µÄ¸±¿¨ÅÆ,ĞèÒªÖ¸¶¨"card_mate"µÄÖµ¡£
+--ä»åˆ—è¡¨ä¸­å±è”½ä¸å¯è¢«é€‰æ‹©ä¸ºè¿›åŒ–çš„å‰¯å¡ç‰Œ,éœ€è¦æŒ‡å®š"card_mate"çš„å€¼ã€‚
 p.isSelectEvolution = false;
 p.cardMate = nil;
 
---¿ÉÑ¡ÔñµÄÊıÁ¿¡¾½ö¶àÑ¡ÓĞĞ§¡¿
+--å¯é€‰æ‹©çš„æ•°é‡ã€ä»…å¤šé€‰æœ‰æ•ˆã€‘
 p.selectMaxNum = nil;
 p.selectMaxNumMsg = nil;
 
 p.titleText = nil;
 p.tipText = nil;
 
---¶ÓÎéÖĞµÄ¿¨ÅÆ²»ÄÜ·ÅÈë²Ö¿â
+--é˜Ÿä¼ä¸­çš„å¡ç‰Œä¸èƒ½æ”¾å…¥ä»“åº“
 p.isNoSelectInTeam = false;
 p.noSelectInTeamMsg = nil;
 
---Ñ¡ÔñÂú¼¶µÄ¿¨ÅÆ
+--é€‰æ‹©æ»¡çº§çš„å¡ç‰Œ
 p.isSelectMaxLevel = false;
 
---¼ÓÔØÓÃ»§ËùÓĞµÄ¿¨ÅÆĞÅÏ¢
+--åŠ è½½ç”¨æˆ·æ‰€æœ‰çš„å¡ç‰Œä¿¡æ¯
 function p.LoadAllCard()
     p.layer = dlg_card_box_mainui.layer;
     p.intent = dlg_card_box_mainui.intent;
-    --WriteCon("**ÇëÇó¿¨°üÊı¾İ**");
+    --WriteCon("**è¯·æ±‚å¡åŒ…æ•°æ®**");
     local uid = GetUID();
     if uid == 0 or uid == nil then
         return ;
@@ -57,7 +57,7 @@ function p.LoadAllCard()
     SendReq("User","GetUserCardsInfo",uid,"");
 end
 
---ÇëÇó»Øµ÷£¬ÏÔÊ¾¿¨ÅÆÁĞ±í
+--è¯·æ±‚å›è°ƒï¼Œæ˜¾ç¤ºå¡ç‰Œåˆ—è¡¨
 function p.RefreshUI( data )
     if data == nil then
         WriteCon("RefreshUI():dataList is null");
@@ -87,7 +87,7 @@ function p.RefreshUI( data )
     dlg_card_box_mainui.UpdateDepotInfo();
 end
 
---¼ÓÔØ¿ÉÇ¿»¯µÄ¿¨ÅÆ
+--åŠ è½½å¯å¼ºåŒ–çš„å¡ç‰Œ
 function p.LoadIntensifyCard( cardList )
     if cardList =="" or cardList == nil then
         return nil;
@@ -101,7 +101,7 @@ function p.LoadIntensifyCard( cardList )
     return t;
 end
 
---¼ÓÔØÂú¼¶µÄ¿¨ÅÆ
+--åŠ è½½æ»¡çº§çš„å¡ç‰Œ
 function p.LoadMaxLevelCard( cardList )
     if cardList =="" or cardList == nil then
         return nil;
@@ -115,7 +115,7 @@ function p.LoadMaxLevelCard( cardList )
     return t;
 end
 
---¼ÓÔØ¿É½ø»¯µÄ¿¨ÅÆ
+--åŠ è½½å¯è¿›åŒ–çš„å¡ç‰Œ
 function p.LoadEvolutionCard( cardList )
     if cardList =="" or cardList == nil then
         return nil;
@@ -148,12 +148,12 @@ function p.LoadEvolutionCard( cardList )
     return t;
 end
 
---¼ÓÔØ¿É±»Ñ¡ÔñµÄ¿¨ÅÆ
+--åŠ è½½å¯è¢«é€‰æ‹©çš„å¡ç‰Œ
 function p.LoadSelectCardList ( cardList )
     if cardList =="" or cardList == nil then
         return nil;
     end
-    --ÆÁ±ÎÖ¸¶¨¿¨ÅÆ
+    --å±è”½æŒ‡å®šå¡ç‰Œ
     if p.delCardId ~= nil then
         for k, v in ipairs(cardList) do
             if tonumber( v.id ) == p.delCardId then
@@ -163,22 +163,22 @@ function p.LoadSelectCardList ( cardList )
         end
     end
 
-    --ÆÁ±Î¶ÓÎéÖĞµÄÖ÷¿¨ÅÆ
+    --å±è”½é˜Ÿä¼ä¸­çš„ä¸»å¡ç‰Œ
     if p.isDelLeader then
         cardList = p.LoadUnLeaderCard( cardList );
     end
 
-    --ÆÁ±Î²»¿É±»Ö¸¶¨Îª½ø»¯µÄ¸±¿¨ÅÆ
+    --å±è”½ä¸å¯è¢«æŒ‡å®šä¸ºè¿›åŒ–çš„å‰¯å¡ç‰Œ
     if p.isSelectEvolution and p.cardMate ~= nil then
         cardList = p.LoadSelectEvolutionCard ( cardList,p.cardMate );
     end
     
-    --Ö»¼ÓÔØÂú¼¶µÄ¿¨ÅÆ
+    --åªåŠ è½½æ»¡çº§çš„å¡ç‰Œ
     if p.isSelectMaxLevel == true then
         cardList = p.LoadMaxLevelCard ( cardList );
     end
 	
-	--ÆÁ±Î³¬³öÈÚºÏËùĞèĞÇ¼¶·¶Î§µÄ¿¨ÅÆ
+	--å±è”½è¶…å‡ºèåˆæ‰€éœ€æ˜Ÿçº§èŒƒå›´çš„å¡ç‰Œ
 	if p.fuseCardRare ~= nil then
 		cardList = p.LoadCanFuseCard(cardList);		
 	end
@@ -190,7 +190,7 @@ function p.LoadSelectCardList ( cardList )
     return cardList;
 end
 
---ÔØÈëÃ»ÓĞ×°±¸µÄ¿¨ÅÆ
+--è½½å…¥æ²¡æœ‰è£…å¤‡çš„å¡ç‰Œ
 function p.LoadNoEquipCard(cardList)
 	local t = {};	
 	for k, v in ipairs(cardList) do
@@ -201,7 +201,7 @@ function p.LoadNoEquipCard(cardList)
 	return t;
 end
 	
---ÔØÈë¿ÉÒÔÈÚºÏµÄ¿¨ÅÆ
+--è½½å…¥å¯ä»¥èåˆçš„å¡ç‰Œ
 function p.LoadCanFuseCard(cardList)
 	
 	local maxRare = p.fuseCardRare + 2;
@@ -218,7 +218,7 @@ function p.LoadCanFuseCard(cardList)
 	return t;
 end
 
---ÆÁ±ÎÖ÷¿¨ÅÆ
+--å±è”½ä¸»å¡ç‰Œ
 function p.LoadUnLeaderCard( cardList )
     if cardList =="" or cardList == nil then
         return nil;
@@ -233,7 +233,7 @@ function p.LoadUnLeaderCard( cardList )
     return t;
 end
 
---¼ÓÔØÍ¬Ò»Àà±ğµÄ¿¨ÅÆÒÔÌá¹©½ø»¯
+--åŠ è½½åŒä¸€ç±»åˆ«çš„å¡ç‰Œä»¥æä¾›è¿›åŒ–
 function p.LoadSelectEvolutionCard ( cardList,cardMate )
     if cardList =="" or cardList == nil then
         return nil;
@@ -248,7 +248,7 @@ function p.LoadSelectEvolutionCard ( cardList,cardMate )
     return t;
 end
 
---ÊÇ·ñÂú¼¶
+--æ˜¯å¦æ»¡çº§
 function p.IsMaxLevel( card )
     local level = tonumber( card.level );
     local maxLevel = SelectCell( T_CARD, card.card_id, "max_level" );
@@ -260,12 +260,12 @@ function p.IsMaxLevel( card )
     end 
 end
 
---ÏÔÊ¾ËùÓĞ¿¨ÅÆ
+--æ˜¾ç¤ºæ‰€æœ‰å¡ç‰Œ
 function p.ShowAllCards()
     dlg_card_box_mainui.ShowCardList( p.cardList );
 end
 
---¼ÓÔØÄ³Ò»·ÖÀàµÄ¿¨ÅÆ
+--åŠ è½½æŸä¸€åˆ†ç±»çš„å¡ç‰Œ
 function p.LoadCardByCategory( category )
     if category == nil then
         --WriteCon("loadCardByCategory():category is null");
@@ -275,19 +275,19 @@ function p.LoadCardByCategory( category )
     dlg_card_box_mainui.ShowCardList( cardList );
 end
 
---°´µÈ¼¶ÅÅĞò
+--æŒ‰ç­‰çº§æ’åº
 function p.SortByLevelDes()
 	table.sort(p.cardList, p.sortLevelDes);
 	p.ShowAllCards();
 end
 
---°´ĞÇ¼¶ÅÅĞò
+--æŒ‰æ˜Ÿçº§æ’åº
 function p.SortByRareDes()
     table.sort(p.cardList, p.sortRareDes);
     p.ShowAllCards();
 end
 
---»ñÈ¡Ä³Ò»·ÖÀà¿¨ÅÆ
+--è·å–æŸä¸€åˆ†ç±»å¡ç‰Œ
 function p.GetCardList( category )
     if p.cardList == nil or #p.cardList <= 0 then
         return nil;
@@ -320,7 +320,7 @@ function p.GetCardById( cardId )
     end
 end
 
---É¾³ıÁĞ±íÖĞµÄÄ³ÕÅ¿¨ÅÆ£¬ÓÃÓÚÆÁ±Î±»Ñ¡Ôñ¡£
+--åˆ é™¤åˆ—è¡¨ä¸­çš„æŸå¼ å¡ç‰Œï¼Œç”¨äºå±è”½è¢«é€‰æ‹©ã€‚
 function p.SetDelCardById(cardId)
     if cardId == nil then
         return;
@@ -328,7 +328,7 @@ function p.SetDelCardById(cardId)
     p.delCardId = tonumber( cardId );
 end
 
---´ÓÁĞ±íÖĞÆÁ±Î²»¿É±»Ñ¡ÔñÎª½ø»¯µÄ¸±¿¨ÅÆ
+--ä»åˆ—è¡¨ä¸­å±è”½ä¸å¯è¢«é€‰æ‹©ä¸ºè¿›åŒ–çš„å‰¯å¡ç‰Œ
 function p.SetSelectEvolution( cardMate, bEnable )
     if bEnable == nil or cardMate == nil then
         return;
@@ -337,7 +337,7 @@ function p.SetSelectEvolution( cardMate, bEnable )
     p.isSelectEvolution = bEnable;
 end
 
---ÆôÓÃÆÁ±ÎÖ÷¿¨ÅÆ
+--å¯ç”¨å±è”½ä¸»å¡ç‰Œ
 function p.SetDelLeader( bEnable )
     if bEnable == nil then
         return;
@@ -345,12 +345,12 @@ function p.SetDelLeader( bEnable )
     p.isDelLeader = bEnable;
 end
 
---»ñÈ¡¼ºÑ¡ÔñµÄ¿¨ÅÆ
+--è·å–å·±é€‰æ‹©çš„å¡ç‰Œ
 function p.GetSelectCard()
     return p.GetCardById( p.selectCard:GetId() );
 end
 
---»ñÈ¡¼ºÑ¡ÔñµÄ¿¨ÅÆÁĞ±í
+--è·å–å·±é€‰æ‹©çš„å¡ç‰Œåˆ—è¡¨
 function p.GetSelectCardList()
     local t = {};
     for k, v in ipairs(p.selectCardList) do
@@ -401,21 +401,21 @@ function p.SetEquiped( bEnable )
 	end
 end
 
---ÉèÖÃÖ»ÏÔÊ¾Âú¼¶µÄ¿¨ÅÆ
+--è®¾ç½®åªæ˜¾ç¤ºæ»¡çº§çš„å¡ç‰Œ
 function p.SetSelectMaxLevel( bEnable )
     if bEnable ~= nil then
         p.isSelectMaxLevel = bEnable;
     end
 end
 
---ÉèÖÃÈÚºÏ¿¨ÅÆµÄĞÇ¼¶
+--è®¾ç½®èåˆå¡ç‰Œçš„æ˜Ÿçº§
 function p.SetFuseCardRare( num )
 	if num ~= nil then
 		p.fuseCardRare = tonumber( num );
 	end 
 end
 
--- µÈ¼¶ÅÅĞò
+-- ç­‰çº§æ’åº
 function p.sortLevelDes(a,b)
     if tonumber(a.level) == tonumber(b.level) then
         return tonumber(a.id) < tonumber(b.id);
@@ -424,7 +424,7 @@ function p.sortLevelDes(a,b)
     end
 end
 
--- Ï¡ÓĞ¶ÈÅÅĞò
+-- ç¨€æœ‰åº¦æ’åº
 function p.sortRareDes(a,b)
     if tonumber(a.rare) == tonumber(b.rare) then
         return tonumber(a.id) < tonumber(b.id);
@@ -434,7 +434,7 @@ function p.sortRareDes(a,b)
 end
 
 
---Çå¿ÕÊı¾İ
+--æ¸…ç©ºæ•°æ®
 function p.ClearData()
     p.cardList = nil;
     p.layer = nil;

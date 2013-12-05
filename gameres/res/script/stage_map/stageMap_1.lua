@@ -147,7 +147,7 @@ function p.AddStageObj( fgLayer, tileX, tileY, offsetX, offsetY,
 			title:Init();
 			title:SetFontSize( FontSize(25));
 			title:SetFrameSize(picSize.w,picSize.h);
-			title:SetText(ToUtf8(titleText));
+			title:SetText(titleText);
 			title:SetFramePosXY( 0, -obj:GetFrameSize().h * 0.6f );
 			obj:AddChild(title);
 			if isUnlock then

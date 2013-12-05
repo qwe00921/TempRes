@@ -1,0 +1,64 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=70
+Rect=106 170 403 335
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\bag\bag_main_bg.png
+NormalFileUV=0 0 640 960
+
+[CTRL_BUTTON_OK]
+Type=2
+Tag=75
+Rect=260 430 95 44
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+NormalFile=.\res\image\ui\bag\star1.png
+NormalFileUV=0 0 44 52
+
+[CTRL_TEXT_76]
+Type=4
+Tag=76
+Rect=150 195 322 42
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ITEM]
+Type=1
+Tag=77
+Rect=218 247 187 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_ITEM_NAME]
+Type=4
+Tag=78
+Rect=223 366 176 35
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM_NUM]
+Type=4
+Tag=79
+Rect=324 312 76 27
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

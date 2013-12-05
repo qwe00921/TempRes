@@ -1,0 +1,13 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 145 137
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\bag\item_select.png
+NormalFileUV=0 0 640 670

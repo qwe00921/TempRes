@@ -1,21 +1,21 @@
 --------------------------------------------------------------
 -- FileName: 	stage_main.lua
 -- author:		zhangwq, 2013/05/16
--- purpose:		卡牌游戏的主入口
+-- purpose:		鍗＄墝娓告垙鐨勪富鍏ュ彛
 --------------------------------------------------------------
 
 stageMap_main = {}
 local p = stageMap_main;
 
---进入世界地图
+--杩涘叆涓栫晫鍦板浘
 function p.OpenWorldMap()
-	--打开世界地图
+	--鎵撳紑涓栫晫鍦板浘
     WriteCon("to stageMap_main");
 	stageMap_1.OpenStageMap();
 
 end
 
---关闭UI
+--鍏抽棴UI
 function p.CloseWorldMap()
 	stageMap_1.CloseStageMap();
 end

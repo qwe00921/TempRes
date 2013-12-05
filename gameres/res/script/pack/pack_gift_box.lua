@@ -17,7 +17,7 @@ function p.ShowGiftBox(self)
 	
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(false);
+	--layer:SetSwallowTouch(false);
 
 	GetUIRoot():AddDlg(layer);
     LoadDlg("bag_gift_box.xui", layer, nil);
@@ -33,7 +33,7 @@ function p.SetDelegate(layer)
 	OKBtn:SetLuaDelegate(p.OnUIClickEvent);
 end
 
--- ¬º˛¥¶¿Ì
+--‰∫ã‰ª∂Â§ÑÁêÜ
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
@@ -41,8 +41,8 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	end
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_OK == tag) then --πÿ±’
-			WriteCon("»∑»œ");
+		if(ui.ID_CTRL_BUTTON_OK == tag) then --ÂÖ≥Èó≠
+			WriteCon("Á°ÆËÆ§");
 			p.CloseUI();
 			--SendReq("Item","List",uid,"");
 			pack_box.CloseUI();
@@ -54,8 +54,9 @@ end
 --
 function p.ShowGiftBoxInfo(self)
 	local giftBoxText = GetLabel(p.layer, ui.ID_CTRL_TEXT_GIFT_HEAD);
+	giftBoxText:SetText("ÊÅ≠ÂñúÊÇ®ÔºåÊâìÂºÄÁ§ºÂåÖËé∑Âæó‰ª•‰∏ãÁâ©ÂìÅ„ÄÇ");
+	
 	local giftTable = {}
-
 	giftTable["giftPic_1"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_GIFT_1);
 	giftTable["giftPic_2"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_GIFT_2);
 	giftTable["giftPic_3"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_GIFT_3);
@@ -85,23 +86,23 @@ function p.ShowGiftBoxInfo(self)
 		itemNum = tonumber(self.gift["Reward_num"..i]);
 		WriteCon("itemNum==="..itemNum);
 		local giftTyep = tonumber(self.gift["Reward_type"..i]);
-		if giftTyep == 1 then		--ø®∆¨
+		if giftTyep == 1 then		--Âç°Áâá
 			itemInfoTable = SelectRowInner(T_CARD,"id",itemId);
-			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.name));
+			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			
 			cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
-		elseif giftTyep == 2 then	--ŒÔ∆∑
+		elseif giftTyep == 2 then	--Áâ©ÂìÅ
 			itemInfoTable = SelectRowInner(T_ITEM,"id",itemId);
-			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.name));
+			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
-		elseif giftTyep == 3 then	--‘™±¶
+		elseif giftTyep == 3 then	--ÂÖÉÂÆù
 			itemInfoTable = SelectRowInner(T_ITEM,"id",1);
-			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.name));
+			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
-		elseif giftTyep == 4 then	--Ω±“
+		elseif giftTyep == 4 then	--ÈáëÂ∏Å
 			itemInfoTable = SelectRowInner(T_ITEM,"id",2);
-			giftTable["giftName_"..i]:SetText(ToUtf8(itemInfoTable.name));
+			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 		end
 	end

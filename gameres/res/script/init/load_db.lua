@@ -77,3 +77,6 @@ T_PET_RES		= LoadTable( "Pet_res.ini" );
 
 --技能资源表
 T_SKILL_RES       = LoadTable( "skill_res.ini" );
+
+--装备等级表
+T_EQUIP_LEVEL	= LoadTable("equip_level.ini");

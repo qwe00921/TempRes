@@ -124,6 +124,9 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --强化
 			if #p.selectCardId <=0 then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
+			elseif tonumber( p.baseCardInfo.Level) >= tonumber(p.baseCardInfo.Level_max) then
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_level_max"),p.OnMsgCallback,p.layer);
+				
 			else
 				local param = "";
 				for k,v in pairs(p.selectCardId) do
@@ -301,8 +304,9 @@ function p.ShowCardInfo( view, card, cardIndex )
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
-	local aniIndex = "card.card_"..cardId;
-	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
+	
+	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", cardId); --从表中获取卡牌详细信息	
+	cardButton:SetImage( GetPictureByAni(pCardInfo.card_pic, 0) );
 	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
 	local cardUniqueId = tonumber(card.UniqueId);
     cardButton:SetId(cardUniqueId);
