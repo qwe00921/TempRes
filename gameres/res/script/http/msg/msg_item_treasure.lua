@@ -23,7 +23,7 @@ end
 function p:Process()
 	msg_cache.msg_item_treasure = self;
     WriteConWarning( "** msg_item_treasure:Process() called" );
-	pack_box_mgr.UseItemCallBack(self)
+	pack_box_mgr.UseTreasureCallBack(self)
 	-- if self.result == true then 
 	-- else
 		-- WriteConWarning( "** msg_item_gift error" );

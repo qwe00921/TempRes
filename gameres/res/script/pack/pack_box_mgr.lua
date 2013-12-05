@@ -120,7 +120,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		WriteConErr("used item id error ");
 	end
 end
-
+--使用物品回调
 function p.UseItemCallBack(self)
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
@@ -138,10 +138,6 @@ end
 
 --打开礼包回调
 function p.UseGiftItemCallBack(self)
-	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
 	if self.result == true then
 		pack_gift_box.ShowGiftBox(self);
 	elseif self.result == false then
@@ -150,6 +146,15 @@ function p.UseGiftItemCallBack(self)
 	end
 end
 
+--打开宝箱回调
+function p.UseTreasureCallBack(self)
+	if self.result == true then
+		pack_box_treasure.ShowTreasureView(self);
+	elseif self.result == false then
+		local messageText = self.message
+		dlg_msgbox.ShowOK(ToUtf8("确认提示框"),messageText,nil,p.layer);
+	end
+end
 
 
 

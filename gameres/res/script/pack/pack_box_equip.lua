@@ -27,7 +27,7 @@ function p.ShowEquip(itemId,itemUniqueId,itemType)
 	
 	layer:NoMask();
     layer:Init();   
-	layer:SetSwallowTouch(false);
+	--layer:SetSwallowTouch(false);
 	
     GetUIRoot():AddDlg(layer);
     LoadDlg("bag_equip_view.xui", layer, nil);
@@ -151,6 +151,7 @@ function p.ShowEquipInfo(equipInfo)
 end
 
 function p.equipAttByType(nodeUI,AttType,AttValue)
+		WriteConErr("IAttType====="..AttType);
 	local AttName = nil
 	if tonumber(AttType) == 1 then
 		AttName = "¹¥»÷"

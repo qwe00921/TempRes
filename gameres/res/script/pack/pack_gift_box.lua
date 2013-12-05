@@ -17,7 +17,7 @@ function p.ShowGiftBox(self)
 	
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(false);
+	--layer:SetSwallowTouch(false);
 
 	GetUIRoot():AddDlg(layer);
     LoadDlg("bag_gift_box.xui", layer, nil);
@@ -54,8 +54,9 @@ end
 --
 function p.ShowGiftBoxInfo(self)
 	local giftBoxText = GetLabel(p.layer, ui.ID_CTRL_TEXT_GIFT_HEAD);
+	giftBoxText:SetText(ToUtf8("恭喜您，打开礼包获得以下物品。"));
+	
 	local giftTable = {}
-
 	giftTable["giftPic_1"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_GIFT_1);
 	giftTable["giftPic_2"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_GIFT_2);
 	giftTable["giftPic_3"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_GIFT_3);
