@@ -14,6 +14,7 @@ p.allItemNumber = nil;
 p.layer = nil;
 p.curBtnNode = nil;
 --p.itemUsedId = nil;
+p.itemBtnNode = nil;
 
 function p.ShowUI()
 	packLimit = msg_cache.msg_player.Storage
@@ -307,6 +308,11 @@ function p.ShowItemInfo( view, item, itemIndex )
 		end
 	end
 	
+	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
+	useBtn:SetVisible(false);
+	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
+	itemDescribeText:SetText(ToUtf8(" "));
+	
 	--设置物品按钮事件
 	itemButton:SetLuaDelegate(p.OnItemClickEvent);
 
@@ -320,6 +326,10 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	
 	if itemType == 1 or itemType == 2 or itemType == 3 then
 		pack_box_equip.ShowEquip(itemId,itemUniqueId,itemType);
+		local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
+		useBtn:SetVisible(false);
+		local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
+		itemDescribeText:SetText(ToUtf8(" "));
 	else
 		local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
 		local itemData = SelectRowList(T_ITEM,"id",itemId);
@@ -337,7 +347,31 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		useBtn:SetUID(itemUniqueId);
 		useBtn:SetXID(itemType);
 	end
+	p.SetItemChechedFX(uiNode);
 end
+
+--设置选址物品
+function p.SetItemChechedFX(uiNode)
+	local itemNode = ConverToButton( uiNode );
+	if p.itemBtnNode ~= nil then
+		p.itemBtnNode:RemoveAllChildren(true);
+	end
+	p.ShowSelectEffect(itemNode)
+	p.itemBtnNode = itemNode;
+end
+
+
+function p.ShowSelectEffect(uiNode)
+	local view = createNDUIXView();
+	view:Init();
+	LoadUI("bag_item_select.xui",view,nil);
+	local bg = GetUiNode( view, ui_bag_item_select.ID_CTRL_PICTURE_1);
+	view:SetViewSize( bg:GetFrameSize());
+	view:SetTag(ui_bag_item_select.ID_CTRL_PICTURE_1);
+	uiNode:AddChild( view );
+end
+
+
 
 --点击使用物品事件
 function p.OnUseItemClickEvent(uiNode, uiEventType, param)
