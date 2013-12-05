@@ -124,6 +124,9 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --Ç¿»¯
 			if #p.selectCardId <=0 then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
+			elseif tonumber( p.baseCardInfo.Level) >= tonumber(p.baseCardInfo.Level_max) then
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_level_max"),p.OnMsgCallback,p.layer);
+				
 			else
 				local param = "";
 				for k,v in pairs(p.selectCardId) do
