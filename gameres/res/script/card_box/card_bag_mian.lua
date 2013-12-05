@@ -259,7 +259,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			WriteCon("card_bag_sort.ShowUI()");
 			p.ClearDelList()
 			if p.sortBtnMark == nil then
-				card_bag_sort.ShowUI();
+				card_bag_sort.ShowUI(0);
 			else
 				p.sortBtnMark = nil;
 				card_bag_sort.CloseUI();

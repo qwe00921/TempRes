@@ -66,11 +66,9 @@ end
 function p.OnSendReq()
 	
 	local uid = GetUID();
-	WriteCon("**可强化卡牌List请求**"..uid);
 	--uid = 1234;
 	if uid ~= nil and uid > 0 then
 		--模块  Action 
-		--local param = string.format("&id=%d", p.cardInfo.UniqueId);
 		SendReq("CardList","List",uid,"");
 	end
 	
@@ -78,12 +76,10 @@ end
 --强化卡牌请求
 function p.OnSendReqIntensify(msg)
 	local uid = GetUID();
-	WriteCon("**强化卡牌请求**"..uid.." uniqueid = "..p.baseCardInfo.UniqueId);
 	--uid = 10002;
 	if uid ~= nil and uid > 0 then
 		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
 		local param = string.format("&card_id=%d&idm="..msg, tonumber(p.baseCardInfo.UniqueId));
-		WriteCon("param = "..param);
 		SendReq("Card","Feedwould",uid,param);
 		card_intensify_succeed.ShowUI(p.baseCardInfo);
 		p.ClearData();
@@ -126,7 +122,6 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --强化
-			WriteCon("=====intensifyByBtn");
 			if #p.selectCardId <=0 then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
 			else
@@ -144,33 +139,22 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			end 
 			
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
-			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowAllCards();
+			p.ShowCardView(p.cardListInfo);
 		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --职业1
-			WriteCon("=====cardBtnPro1");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_1);
+			p.ShowCardByProfession(PROFESSION_TYPE_1);
 		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --职业2
-			WriteCon("=====cardBtnPro2");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_2);
+			p.ShowCardByProfession(PROFESSION_TYPE_2);
 		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --职业3
-			WriteCon("=====cardBtnPro3");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_3);
+			p.ShowCardByProfession(PROFESSION_TYPE_3);
 		elseif(ui.ID_CTRL_BUTTON_PRO4 == tag) then --职业4
-			WriteCon("=====cardBtnPro4");
 			p.SetBtnCheckedFX( uiNode );
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_4);
+			p.ShowCardByProfession(PROFESSION_TYPE_4);
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
-			WriteCon("card_bag_sort.ShowUI()");
-			if p.sortBtnMark == nil then
-				card_bag_sort.ShowUI();
-			else
-				p.sortBtnMark = nil;
-				card_bag_sort.CloseUI();
-			end
+				card_bag_sort.ShowUI(1);
 		end
 	end
 end
@@ -185,6 +169,7 @@ end
 
 --按规则排序按钮
 function p.sortByBtnEvent(sortType)
+	WriteCon("sortType = "..sortType);
 	if sortType == nil then
 		return
 	end
@@ -200,12 +185,12 @@ function p.sortByBtnEvent(sortType)
 		sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
 	end
-	card_bag_mgr.sortByRule(sortType)
+	p.sortByRule(sortType)
 
 end 
 
 
---显示卡牌列表
+--返回数据显示 Lab框
 function p.ShowCardList(cardList,msg)
 	if p.layer == nil then
 		return;
@@ -213,8 +198,7 @@ function p.ShowCardList(cardList,msg)
 	if #cardList <= 0 then
 		return;
 	end
-	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
-	list:ClearView();
+	
 
 	local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);
 	cardCount:SetText(tostring(p.selectNum).."/10"); 	
@@ -224,21 +208,15 @@ function p.ShowCardList(cardList,msg)
 	
 	
 	local countLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_25);
-	countLab:SetText(tostring(msg.cardlist_num).."/"..tostring(msg.cardmax));
+	
 	--持有金币
 	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+	
+	
+	countLab:SetText(tostring(msg.cardlist_num).."/"..tostring(msg.cardmax));
 	moneyLab:SetText(tostring(msg.money));
-	
 	p.userMoney = msg.money;
-	
 	p.cardListInfo = cardList;
-	
-	if p.cardListInfo == nil or #p.cardListInfo <= 0 then
-		WriteCon("ShowCardList():p.cardListInfo is null");
-		return;
-	end
-	
-	local cardNum = #p.cardListInfo -1;
 	
 	--列表删除要强化的那条卡牌数据 
 	for i = 1 , #p.cardListInfo do
@@ -247,6 +225,24 @@ function p.ShowCardList(cardList,msg)
 			break;
 		end
 	end	
+	p.cardListByProf = p.cardListInfo;
+	p.ShowCardView(p.cardListInfo);
+	
+	
+end
+--显示卡牌列表
+function p.ShowCardView(cardList)
+	
+	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
+	list:ClearView();
+	
+	if cardList == nil or #cardList <= 0 then
+		WriteCon("ShowCardView():cardList is null");
+		return;
+	end
+	
+	local cardNum = #cardList -1;
+	
 	local row = math.ceil(cardNum / 4);
 	
 	for i = 1, row do
@@ -263,7 +259,7 @@ function p.ShowCardList(cardList,msg)
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
 			if j <= cardNum then
-				local card = p.cardListInfo[j];
+				local card = cardList[j];
 				
 				local cardIndex = j - start_index + 1;
 				p.ShowCardInfo( view, card, cardIndex );
@@ -272,8 +268,14 @@ function p.ShowCardList(cardList,msg)
 		end
 		list:AddView( view );
 	end
+	--p.selectList ID是key   p.selectCardId
+	
+	for k,v in pairs(p.selectCardId) do
+		p.selectList[v]:SetVisible(true);
+	end
+	
+	
 end
-
 --显示单张卡牌
 function p.ShowCardInfo( view, card, cardIndex )
 	local cardBtn = nil;
@@ -319,6 +321,10 @@ function p.ShowCardInfo( view, card, cardIndex )
 	p.teamList[cardUniqueId] = Team_marks;
 	
 	p.selectList[cardUniqueId] = cardSelectText;
+	
+	
+	
+	
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
@@ -386,28 +392,6 @@ function p.OnMsgCallback(result)
 end
 
 
-function p.ShowSelectPic(uiNode)
-	local cardUniqueId = tostring(uiNode:GetId());
-	if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
-		local view = createNDUIXView();
-		view:Init();
-		LoadUI("card_bag_select.xui",view,nil);
-		local bg = GetUiNode( view, ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
-        view:SetViewSize( bg:GetFrameSize());
-		view:SetTag(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
-		uiNode:AddChild( view );
-		p.sellCardList[#p.sellCardList + 1] = cardUniqueId;
-	else
-		WriteCon("RemoveAllChildren");
-		for k,v in pairs(p.sellCardList) do
-			if v == cardUniqueId then
-				table.remove(p.sellCardList,k);
-			end
-		end
-		uiNode:RemoveAllChildren(true);
-	end
-end
-
 --设置选中按钮
 function p.SetBtnCheckedFX( node )
     local btnNode = ConverToButton( node );
@@ -426,6 +410,92 @@ function p.HideUI()
         p.layer:SetVisible( false );
     end
 end
+
+--按职业显示卡牌
+function p.ShowCardByProfession(profType)
+	WriteCon("card_intensify.ShowCardByProfession();");
+	if profType == nil then
+		WriteCon("ShowCardByProfession():profession Type is null");
+		return;
+	end 
+	p.cardListByProf = p.GetCardList(profType);
+		
+	
+	
+	if p.sortByRuleV ~= nil then
+		p.sortByRule(p.sortByRuleV)
+	else
+		p.ShowCardView(p.cardListByProf);
+	end
+end
+
+--获取显示列表
+function p.GetCardList(profType)
+	local t = {};
+	if p.cardList == nil then 
+		return t;
+	end
+	if profType == PROFESSION_TYPE_0 then
+		t = p.cardList;
+	elseif profType == PROFESSION_TYPE_1 then 
+		for k,v in pairs(p.cardList) do
+			if tonumber(v.Class) == 1 then
+				t[#t + 1] = v;
+			end
+		end
+	elseif profType == PROFESSION_TYPE_2 then 
+		for k,v in pairs(p.cardList) do
+			if tonumber(v.Class) == 2 then
+				t[#t + 1] = v;
+			end
+		end
+	elseif profType == PROFESSION_TYPE_3 then 
+		for k,v in pairs(p.cardList) do
+			if tonumber(v.Class) == 3 then
+				t[#t + 1] = v;
+			end
+		end
+	elseif profType == PROFESSION_TYPE_4 then 
+		for k,v in pairs(p.cardList) do
+			if tonumber(v.Class) == 4 then
+				t[#t + 1] = v;
+			end
+		end
+	end
+	return t;
+end
+
+--按规则排序
+function p.sortByRule(sortType)
+	if sortType == nil or p.cardListByProf == nil then 
+		return
+	end
+	if sortType == CARD_BAG_SORT_BY_LEVEL then
+		WriteCon("========sort by level");
+		table.sort(p.cardListByProf,p.sortByLevel);
+	elseif sortType == CARD_BAG_SORT_BY_STAR then
+		WriteCon("========sort by star");
+		table.sort(p.cardListByProf,p.sortByStar);
+	elseif sortType == CARD_BAG_SORT_BY_TIME then
+		WriteCon("========sort by time");
+		table.sort(p.cardListByProf,p.sortByTime);
+	end
+	p.ShowCardView(p.cardListByProf);
+end
+
+--按等级排序
+function p.sortByLevel(a,b)
+	return tonumber(a.Level) < tonumber(b.Level);
+end
+--按星级排序
+function p.sortByStar(a,b)
+	return tonumber(a.Rare) < tonumber(b.Rare);
+end
+--按时间排序
+function p.sortByTime(a,b)
+	return tonumber(a.Time) < tonumber(b.Time);
+end
+
 
 function p.CloseUI()
     if p.layer ~= nil then

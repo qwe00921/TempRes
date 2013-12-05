@@ -1,13 +1,13 @@
 card_bag_sort = {}
 local p = card_bag_sort;
 local ui = ui_card_bag_sort_view;
-
-function p.ShowUI()
+p.id= nil;
+function p.ShowUI(id)
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
 	end
-	
+	p.id = id;
 	local layer = createNDUIDialog();
 	if layer == nil then
 		return false;
@@ -22,7 +22,13 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate();
-	card_bag_mian.sortBtnMark = MARK_ON;
+	
+	if id == 0 then
+		card_bag_mian.sortBtnMark = MARK_ON;
+	elseif id == 1 then
+		card_intensify.sortBtnMark = MARK_ON;
+	end
+	--card_bag_mian.sortBtnMark = MARK_ON;
 end
 
 function p.SetDelegate()
@@ -41,13 +47,30 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_SOTR_LEVEL == tag then
 			WriteCon("**========byLevelBtn========**");
-			card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			if p.id == 0 then
+				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			elseif p.id == 1 then
+				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			end
 		elseif ui.ID_CTRL_BUTTON_SORT_STAR == tag then
 			WriteCon("**=======byStarBtn=======**");
-			card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			
+			if p.id == 0 then
+				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			elseif p.id == 1 then
+				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			end
 		elseif ui.ID_CTRL_BUTTON_SOTR_ITEM == tag then
 			WriteCon("**========byItemBtn========**");
-			card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+			
+			if p.id == 0 then
+				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+			elseif p.id == 1 then
+				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+			end
 		end
 		p.CloseUI();
 	end
@@ -57,6 +80,7 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
+		p.id = nil;
 		card_bag_mian.sortBtnMark = MARK_OFF;
     end
 end
