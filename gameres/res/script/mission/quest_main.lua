@@ -267,7 +267,7 @@ function p.setMissionInif(MisId, view)
 		power:SetText(ToUtf8(missionTable[1]["power"]));
 		expText:SetText(ToUtf8(missionTable[1]["exp"]));
 		moneyText:SetText(ToUtf8(missionTable[1]["money"]));
-		local text = "0/"..missionTable[1]["timesLimit"]
+		local text = missionTable[1]["timesLimit"].."/"..missionTable[1]["timesLimit"]
 		timesText:SetText(ToUtf8(text));
 		
 		local rewardId1 = tonumber(missionTable[1]["reward_1"]);

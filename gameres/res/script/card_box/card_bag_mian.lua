@@ -382,6 +382,7 @@ function p.ClearData()
 	p.BatchSellMark = MARK_OFF;
 	p.allCardPrice = 0;
 	p.sellCardList = {};
+	p.allCardNumber = nil;
 end
 
 function p.ClearDelList()
