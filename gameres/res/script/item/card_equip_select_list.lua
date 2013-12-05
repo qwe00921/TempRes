@@ -193,6 +193,7 @@ function p.refreshEquipUpgradeInfo()
 	local lb3 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_3);
 	local lb4 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_4);
 	local lb5 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_5);
+	local lb6 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_6);
 	local bt	= GetButton(p.layer, ui.ID_CTRL_BUTTON_UPGRADE);
 	
 	
@@ -203,8 +204,9 @@ function p.refreshEquipUpgradeInfo()
 		lb1:SetVisible(false);
 		lb2:SetVisible(false);
 		lb3:SetVisible(false);
-		lb3:SetVisible(false);
 		lb4:SetVisible(false);
+		lb5:SetVisible(false);
+		lb6:SetVisible(false);
 		bt:SetVisible(false);
 		return
 	end
@@ -212,10 +214,24 @@ function p.refreshEquipUpgradeInfo()
 	--显示卡牌图片
 	local lst = p.allItems or {};
 	local selNum = 0;
+	local feeMoney = 0;
+	local gainExp = 0;
+	local userMoney = tonumber(msg_cache.msg_player.Money or 0);
 	for i=1,#lst do
 		local item = lst[i];
 		if item.isSelected == true then
 			selNum = selNum+1;
+			local levelConfig 	= p.SelectEquipConfig(item.Equip_level);
+			local itemConfig 	= p.SelectItem(item.Item_id);
+			
+			if itemConfig then
+				gainExp  = gainExp + tonumber(itemConfig.exp);
+			end
+			
+			if levelConfig then
+				feeMoney = feeMoney + tonumber(levelConfig.feed_money);
+				gainExp  = gainExp	+ tonumber(levelConfig.feed_exp);
+			end
 		end
 	end
 	
@@ -229,6 +245,63 @@ function p.refreshEquipUpgradeInfo()
 	local userMoneyV 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_USER_MONE);
 	
 	useNumV:SetText(tostring(selNum) .. "/10");
+	useMoneyV:SetText(tostring(feeMoney));
+	userMoneyV:SetText(tostring(userMoney));
+	if feeMoney < userMoney then
+		
+	end
+	
+	local levelExp = 0;
+	local levelConfig = p.SelectEquipConfig(p.upgradeItem.itemLevel);
+	if levelConfig then
+		levelExp = tonumber(levelConfig.exp);
+	end
+	
+	--显示经验值
+	local expFmt = "";	
+	if gainExp > 0 then
+		expFmt = string.format("%s (+%d)/%d",p.upgradeItem.itemExp or "0", gainExp, levelExp);
+	else 
+		expFmt = string.format("%s/%d",p.upgradeItem.itemExp or "0", levelExp);
+	end
+	if expFmt then
+		local preItemExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_EXP);
+		preItemExp:SetText(expFmt);
+	end
+	
+	--显示经验条
+	if levelExp > 0 then
+		local Exp = GetExp( p.layer, ui.ID_CTRL_EXP_PRE_ITEM_EXP );
+		Exp:SetValue( 0, tonumber( levelExp ), gainExp +  tonumber(p.upgradeItem.itemExp or 0));
+	end
+	
+	local nextLeve = tonumber(p.upgradeItem.itemLevel) + 1  -- TODO
+	
+	--level
+	local itemV = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_LV );
+	if itemV then
+		itemV:SetText(p.upgradeItem.itemLevel .. " => " .. tostring(nextLeve) or "");
+	end
+	
+	--显示属性类别
+	local labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_LABEL_5);
+	local str = GetStr("card_equip_attr"..p.upgradeItem.attrType)
+	labelV:SetText(str or "");
+	
+	--显示属性值
+	local itemConfig 	= p.SelectItem(p.upgradeItem.itemId);
+	if itemConfig then
+		labelV = GetLabel( p.layer, ui.ID_CTR_PRE_ITEM_ATTR_VALUE);
+		local attr1 = tonumber(p.upgradeItem.itemLevel)*tonumber(itemConfig.attribute_grow) + tonumber(itemConfig.attribute_value)
+		local attr2 = nextLeve*tonumber(itemConfig.attribute_grow) + tonumber(itemConfig.attribute_value);
+		local str =  string.format("%d => %d", attr1, attr2);
+		labelV:SetText(str or "");
+	end
+	
+	
+	
+	
+	--msg_cache.msg_player.Money
 	
 end
 
@@ -355,15 +428,6 @@ function p.ShowCardInfo( view, itemInfo, cardIndex ,dataListIndex)
 	
 end
 
-function p.SelectItemName(id)
-	local itemTable = SelectRowList(T_ITEM,"id",id);
-	if #itemTable >= 1 then
-		local text = itemTable[1].Name;
-		return text;
-	else
-		WriteConErr("itemTable error ");
-	end
-end
 
 --点击卡牌
 function p.OnItemClickEvent(uiNode, uiEventType, param)
@@ -405,14 +469,16 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 			equip.isSelected = false;
 			p.selectNum = p.selectNum-1;
 		else
-			if p.selectNum >= 10 then 
-				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
+			if equip.Is_dress == "1" then
+				dlg_msgbox.ShowOK("",GetStr("card_equip_up_dressed"),p.OnMsgCallback);
+				return;
+			elseif p.selectNum >= 10 then 
+				dlg_msgbox.ShowOK("",GetStr("card_equip_up_10"),p.OnMsgCallback);
+				return;
 			else
 				cardSelectText:SetVisible(true);
 				equip.isSelected = true;
 				p.selectNum = p.selectNum+1;
-				
-				
 			end
 		end
 		
@@ -425,15 +491,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		
 end
 
-function p.SelectItem(id)
-	local itemTable = SelectRowList(T_ITEM,"id",tonumber(id));
-	if #itemTable == 1 then
-		local item = itemTable[1];
-		return item;
-	else
-		WriteConErr("itemTable error ");
-	end
-end
+
 
 --提示框回调方法
 function p.OnMsgCallback(result)
@@ -454,6 +512,7 @@ function p.SetBtnCheckedFX( node )
 	p.sellCardList = {};
 end
 
+--数据分组
 function p.divideItems()
 	if p.allItems == nil then
 		return
@@ -466,6 +525,8 @@ function p.divideItems()
 	end
 	
 end
+
+--组装装备详细界面所需的数据(统一字段名)
 function p.PasreCardDetail(cardUid, itemInfo, dressId)
 	local item = {};
 	--item.cardId 	= cardInfo.CardID;
@@ -512,6 +573,7 @@ function p.CloseUI()
     end
 end
 
+--清除数据
 function p.ClearData()
 	p.allItems = nil;
 	p.curBtnNode = nil;
@@ -522,9 +584,50 @@ function p.ClearData()
 	p.groupItems = nil;
 end
 
+--读取物品表,物品名
+function p.SelectItemName(id)
+	local itemTable = SelectRowList(T_ITEM,"id",id);
+	if #itemTable >= 1 then
+		local text = itemTable[1].name;
+		return text;
+	else
+		WriteConErr("itemTable error ");
+	end
+end
 
 
-----------------------------网络--------------------------------
+--读取物品表物品信息
+function p.SelectItem(id)
+	local itemTable = SelectRowList(T_ITEM,"id",id);
+	if #itemTable == 1 then
+		local item = itemTable[1];
+		return item;
+	else
+		WriteConErr("itemTable error ");
+	end
+end
+
+--读取装备等级表配置信息
+function p.SelectEquipConfig(level)
+	local itemTable = SelectRowList(T_EQUIP_LEVEL,"equip_level",level);
+	if #itemTable >= 1 then
+		local item = itemTable[1];
+		return item;
+	else
+		WriteConErr("itemTable error ");
+	end
+end
+
+--读取装备等级对应的经验
+function p.SelectEquipCofig4Exp(level)
+	local item = p.SelectEquipConfig(level);
+	if item then
+		return item.exp;
+	end
+end
+
+
+------------------------------------------------------------------网络----------------------------------------------------------------------
 --可强化卡牌List请求
 function p.OnSendReq()
 	
@@ -570,7 +673,12 @@ if p.layer == nil then --or p.layer:IsVisible() ~= true then
 	end
 	
 	if msg.result == true then
-		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_dress_suc"),p.OnOk);
+		if msg.base_card_new_info then
+			p.upgradeItem.itemLevel = msg.base_card_new_info.Equip_level;
+			p.upgradeItem.itemExp	= msg.base_card_new_info.Equip_exp;
+			p.upgradeItem.attrValue = msg.base_card_new_info.Attribute_value;
+		end
+		dlg_msgbox.ShowYesNo(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_upgrade_suc"),p.OnResult);
 	else
 		local str = dlg_card_equip_detail.GetNetResultError(msg);
 		if str then
@@ -582,8 +690,14 @@ if p.layer == nil then --or p.layer:IsVisible() ~= true then
 	end
 end
 
-function p.OnOk()
-	p.OnSendReq();
+function p.OnResult(result)
+	if result == true then
+		p.refreshEquipUpgradeInfo();
+		p.OnSendReq();
+	else
+		p.CloseUI();
+		dlg_card_attr_base.RefreshCardDetail();
+	end
 end
 
 
