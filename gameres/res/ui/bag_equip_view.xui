@@ -6,27 +6,30 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=4 5 629 580
+Rect=4 249 629 580
 AnchorPos=0 0
 Notes=
 Stretch=1
 NormalFile=.\res\image\ui\bag\bag_main_bg.png
 NormalFileUV=0 0 640 960
 
-[CTRL_COLOR_LABEL_EQUIP_NAME]
-Type=7
-Tag=82
-Rect=232 19 193 60
+[CTRL_TEXT_EQUIP_NAME]
+Type=4
+Tag=21
+Rect=234 264 185 60
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=装备名称
+TextTradition=裝備名稱
+TextSize=24
+TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_CLOSE]
 Type=2
 Tag=62
-Rect=535 24 74 48
+Rect=535 268 74 48
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -39,21 +42,21 @@ NormalFileUV=0 0 151 101
 [CTRL_PICTURE_EQUIP]
 Type=1
 Tag=65
-Rect=31 89 220 288
+Rect=31 333 220 288
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR]
 Type=1
 Tag=72
-Rect=35 98 33 109
+Rect=35 342 33 109
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=69
-Rect=173 99 65 27
+Rect=173 343 65 27
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -63,21 +66,21 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_TYPE]
 Type=1
 Tag=71
-Rect=34 336 73 26
+Rect=34 580 73 26
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_PROPERTY]
 Type=1
 Tag=63
-Rect=268 91 341 167
+Rect=268 335 341 167
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_MAIN_PRO]
 Type=4
 Tag=75
-Rect=279 103 107 33
+Rect=279 342 107 33
 AnchorPos=0 0
 Notes=
 Text=主属性
@@ -87,13 +90,11 @@ TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_MAIN_PRO1]
-Type=7
-Tag=85
-Rect=430 96 138 40
+Type=4
+Tag=22
+Rect=430 343 130 30
 AnchorPos=0 0
 Notes=
-Text=防御
-TextTradition=防御
 TextSize=24
 TextColor=0xff00ff
 TextHorAlign=AlignLeft
@@ -102,7 +103,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SUB_PRO]
 Type=4
 Tag=76
-Rect=282 145 104 32
+Rect=282 380 104 32
 AnchorPos=0 0
 Notes=
 Text=附加属性
@@ -112,67 +113,62 @@ TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SUB_PRO1]
-Type=7
-Tag=86
-Rect=429 143 141 29
+Type=4
+Tag=23
+Rect=431 380 130 30
 AnchorPos=0 0
 Notes=
-Text=暴击
-TextTradition=暴擊
 TextSize=24
-TextColor=0xff
+TextColor=0x8080
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SUB_PRO2]
-Type=7
-Tag=87
-Rect=429 178 143 25
+Type=4
+Tag=24
+Rect=431 417 130 30
 AnchorPos=0 0
 Notes=
-Text=闪避
-TextTradition=閃避
 TextSize=24
 TextColor=0xff00
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SUB_PRO3]
-Type=7
-Tag=88
-Rect=430 212 138 30
+Type=4
+Tag=25
+Rect=432 450 130 30
 AnchorPos=0 0
 Notes=
-Text=闪避
-TextTradition=閃避
 TextSize=24
-TextColor=0xffff
+TextColor=0xff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_INTRODUCE]
 Type=1
 Tag=64
-Rect=264 265 335 180
+Rect=264 509 335 180
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_83]
 Type=4
 Tag=83
-Rect=279 281 99 39
+Rect=279 525 99 39
 AnchorPos=0 0
 Notes=
 Text=介绍
 TextTradition=介紹
 TextSize=24
-TextHorAlign=AlignHorCenter
+TextColor=0xff00ff
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_INFO]
 Type=4
 Tag=84
-Rect=281 326 304 107
+Rect=281 570 304 107
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -182,14 +178,14 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_MODE]
 Type=1
 Tag=66
-Rect=44 398 198 37
+Rect=44 642 198 37
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_STRENGTHEN]
 Type=2
 Tag=67
-Rect=136 482 107 60
+Rect=136 726 107 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -202,7 +198,7 @@ NormalFileUV=0 0 44 52
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=68
-Rect=360 479 107 60
+Rect=360 723 107 60
 AnchorPos=0 0
 Notes=
 TextSize=10

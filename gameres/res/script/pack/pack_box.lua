@@ -10,6 +10,7 @@ local p = pack_box;
 
 local ui = ui_bag_main;
 local packLimit = 100; --获取玩家背包格子数量
+p.allItemNumber = nil;
 p.layer = nil;
 p.curBtnNode = nil;
 --p.itemUsedId = nil;
@@ -53,7 +54,8 @@ function p.SetDelegate(layer)
 	
 	local allItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM1);
 	allItemBtn:SetLuaDelegate(p.OnUIClickEvent);
-
+	p.SetBtnCheckedFX( allItemBtn )
+	
 	local debrisItemBtn = GetButton(layer, ui.ID_CTRL_BUTTON_ITEM2);
 	debrisItemBtn:SetLuaDelegate(p.OnUIClickEvent);
 
@@ -71,6 +73,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
+			pack_box_equip.CloseUI();
 			p.CloseUI();
 			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
@@ -161,19 +164,23 @@ function p.ShowItemList(itemList)
 	list:ClearView();
 	
 	local itemCountText = GetLabel(p.layer,ui.ID_CTRL_TEXT_COUNT );
-
+	local itemNum = nil;
 	if itemList == nil or #itemList <= 0 then
-		local countText = "0/"..packLimit;
-		itemCountText:SetText(ToUtf8(countText));
-		
+		if p.allItemNumber == nil or p.allItemNumber == 0 then
+			local countText = "0/"..packLimit;
+			itemCountText:SetText(ToUtf8(countText));
+		end
 		WriteCon("ShowItemList():itemList is null");
 		return
+	else
+		itemNum = #itemList;
+		WriteCon("itemCount ===== "..itemNum);
+		if p.allItemNumber == nil or p.allItemNumber == 0 then
+			p.allItemNumber = itemNum;
+			local countText = itemNum.."/"..packLimit;
+			itemCountText:SetText(ToUtf8(countText));
+		end
 	end
-	WriteCon("itemCount ===== "..#itemList);
-	local itemNum = #itemList;
-	
-	local countText = itemNum.."/"..packLimit;
-	itemCountText:SetText(ToUtf8(countText));
 		
 	local row = math.ceil(itemNum / 4);
 	WriteCon("row ===== "..row);
@@ -262,7 +269,7 @@ function p.ShowItemInfo( view, item, itemIndex )
 
 	--显示物品名字
 	local itemNameText = GetLabel(view,itemName );
-	local text = itemTable.Name;
+	local text = itemTable.name;
 	itemNameText:SetText(ToUtf8(text));
 	local itemNumText = GetLabel(view,itemNum );	--物品数量
 	local equipStarPic = GetImage(view,equipStarPic);	--装备星级
@@ -314,7 +321,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
 		local itemData = SelectRowList(T_ITEM,"id",itemId);
 		if #itemData == 1 then
-			local text = itemData[1].Description;
+			local text = itemData[1].description;
 			itemDescribeText:SetText(ToUtf8(text));
 		else
 			WriteConErr("itemTable error ");
@@ -371,6 +378,7 @@ function p.CloseUI()
         p.layer:LazyClose();
         p.layer = nil;
         pack_box_mgr.ClearData();
+		p.allItemNumber = nil;
     end
 end
 

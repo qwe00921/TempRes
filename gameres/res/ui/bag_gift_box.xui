@@ -1,0 +1,199 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=100 175 463 390
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\bag\pic_item.png
+NormalFileUV=0 0 151 143
+
+[CTRL_TEXT_GIFT_HEAD]
+Type=4
+Tag=8
+Rect=173 189 320 27
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_GIFT_1]
+Type=1
+Tag=2
+Rect=137 228 110 80
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_GIFT_2]
+Type=1
+Tag=3
+Rect=272 227 110 80
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_GIFT_3]
+Type=1
+Tag=4
+Rect=414 228 110 80
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_GIFT_4]
+Type=1
+Tag=5
+Rect=136 374 110 80
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_GIFT_5]
+Type=1
+Tag=6
+Rect=272 375 110 80
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_GIFT_6]
+Type=1
+Tag=7
+Rect=414 372 110 80
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_1]
+Type=4
+Tag=9
+Rect=138 318 110 35
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_2]
+Type=4
+Tag=10
+Rect=272 319 110 35
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_3]
+Type=4
+Tag=11
+Rect=414 319 110 35
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_4]
+Type=4
+Tag=12
+Rect=136 462 110 35
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_5]
+Type=4
+Tag=13
+Rect=270 461 110 35
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_6]
+Type=4
+Tag=14
+Rect=413 460 110 35
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GIFT_NUM_1]
+Type=4
+Tag=16
+Rect=165 285 80 20
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GIFT_NUM_2]
+Type=4
+Tag=17
+Rect=300 284 80 20
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GIFT_NUM_3]
+Type=4
+Tag=18
+Rect=442 285 80 20
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GIFT_NUM_4]
+Type=4
+Tag=19
+Rect=164 431 80 20
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GIFT_NUM_5]
+Type=4
+Tag=20
+Rect=300 432 80 20
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GIFT_NUM_6]
+Type=4
+Tag=21
+Rect=442 429 80 20
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_OK]
+Type=2
+Tag=15
+Rect=273 508 107 35
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+NormalFile=.\res\image\ui\bag\star3.png
+NormalFileUV=0 0 44 52

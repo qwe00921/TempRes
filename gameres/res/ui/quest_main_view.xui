@@ -6,7 +6,7 @@ Height=960
 [CTRL_PIC_HEAD_BG_1]
 Type=1
 Tag=1
-Rect=0 0 640 262
+Rect=0 141 640 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_bg1.png
@@ -24,7 +24,7 @@ NormalFileUV=0 0 640 512
 [CTRL_BTN_TETURN_2]
 Type=2
 Tag=2
-Rect=500 120 90 90
+Rect=519 133 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10

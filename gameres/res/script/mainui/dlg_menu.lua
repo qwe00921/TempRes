@@ -53,6 +53,9 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_GASHAPON == tag then
 			WriteCon("**========Å¤µ°========**");
+			dlg_gacha.ShowUI( SHOP_ITEM );
+			maininterface.BecomeBackground();
+			
 		elseif ui.ID_CTRL_BUTTON_PVP == tag then
 			WriteCon("**=======¾º¼¼³¡=======**");
 		elseif ui.ID_CTRL_BUTTON_BAG == tag then

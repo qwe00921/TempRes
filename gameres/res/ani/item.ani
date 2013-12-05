@@ -110,6 +110,11 @@ image\item\item.png
 image\ui\bag\star1.png
 image\ui\bag\star2.png
 image\ui\bag\star3.png
+image\ui\bag\star3.png
+image\ui\bag\star3.png
+image\ui\bag\star3.png
+image\ui\bag\star3.png
+image\ui\bag\star3.png
 
 ;是否装备图标	by:xmk
 [equipUse]
@@ -119,6 +124,12 @@ image\ui\bag\bag_equip.png
 [equipMode]
 image\ui\bag\star1.png
 image\ui\bag\star2.png
+
+;装备TYPE 0：武器	1：防具		2：鞋子
+[equipType]
+image\ui\bag\star1.png
+image\ui\bag\star2.png
+image\ui\bag\star3.png
 
 ;元宝物品图标		by:crj
 [item_emoney]

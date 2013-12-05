@@ -42,7 +42,7 @@ function p.ShowUI(stageId)
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddChild(layer);
+	GetUIRoot():AddDlg(layer);
 	LoadUI("quest_main_view.xui",layer,nil);
 	
 	p.layer = layer;

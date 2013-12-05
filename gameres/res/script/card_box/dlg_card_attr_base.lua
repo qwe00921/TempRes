@@ -107,12 +107,16 @@ function p.SetDelegate(layer)
 	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 		local aniIndex = "item."..p.equip1.itemInfo.id;
 		pEquipPic1:SetPicture( GetPictureByAni(aniIndex,0) );
-		
+	else
+		pEquipPic1:SetPicture(nil);
 	end
+	
 	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
 	if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
 		local aniIndex = "item."..p.equip2.itemInfo.id;
 		pEquipPic2:SetPicture( GetPictureByAni(aniIndex,0) );
+	else
+		pEquipPic2:SetPicture(nil);
 	end
 	
 	
@@ -120,6 +124,8 @@ function p.SetDelegate(layer)
 	if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
 		local aniIndex = "item."..p.equip3.itemInfo.id;
 		pEquipPic3:SetPicture( GetPictureByAni(aniIndex,0) );
+	else
+		pEquipPic3:SetPicture(nil);
 	end
 	
 	
@@ -206,36 +212,27 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
 			if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.equip1, p.cardInfo);
+				local item = p.PasreCardDetail(p.cardInfo, p.equip1, "1");
+				dlg_card_equip_detail.ShowUI4CardEquip(item);
 			else
-				p.cardEquipment = {};
-				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
-				p.cardEquipment.equipPos = 1
-				p.cardEquipment.intent = 1;--表示穿上
-				card_equip_select_list.ShowUI(p.cardEquipment);
+				
+				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 1, nil);
 			end
 			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
-				
-				dlg_card_equip_detail.ShowUI4CardEquip(p.equip2, p.cardInfo);
+				local item = p.PasreCardDetail(p.cardInfo, p.equip2, "2");
+				dlg_card_equip_detail.ShowUI4CardEquip(item);
 			else
-				p.cardEquipment = {};
-				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
-				p.cardEquipment.equipPos = 2
-				p.cardEquipment.intent = 1;--表示穿上
-				card_equip_select_list.ShowUI(p.cardEquipment);
+				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 2, nil);
 			end
 			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
 			if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
-				dlg_card_equip_detail.ShowUI4CardEquip(p.equip3, p.cardInfo);
+				local item = p.PasreCardDetail(p.cardInfo, p.equip3, "3");
+				dlg_card_equip_detail.ShowUI4CardEquip(item);
 			else
-				p.cardEquipment = {};
-				p.cardEquipment.cardUniqueId = p.cardInfo.UniqueId;
-				p.cardEquipment.equipPos = 3
-				p.cardEquipment.intent = 1; --表示穿上
-				card_equip_select_list.ShowUI(p.cardEquipment);
+				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
 			end
 		end
 	end
@@ -294,7 +291,6 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
-		p.cardDetail = nil;
 	end
 end
 
@@ -303,9 +299,42 @@ function p.CloseUI()
 		p.cardInfo = nil;
 	    p.layer:LazyClose();
         p.layer = nil;
-		
+		p.cardDetail = {}
+		p.equip1 = {};
+		p.equip2 = {};
+		p.equip3 = {};
     end
-    
+end
+
+--组装dlg_card_equip_detail需要的字段
+function p.PasreCardDetail(cardInfo, equip, pos)
+	local item = {};
+	local itemInfo = equip.itemInfo;
+	item.cardId 	= cardInfo.CardID;
+	item.cardUid 	= cardInfo.UniqueId;
+  --item.cardName	= "xxx"
+	item.itemId 	= itemInfo.id;
+	item.itemUid	= equip.equipId;
+	item.itemType	= pos;
+	item.itemLevel 	= itemInfo.Equip_level;
+	item.itemExp	= itemInfo.Equip_exp;
+	item.itemRank	= itemInfo.Rare
+	item.attrType	= itemInfo.Attribute_type;
+	item.attrValue	= itemInfo.Attribute_value;
+	item.attrGrow	= itemInfo.Attribute_grow;
+	item.exType1 	= itemInfo.Extra_type1;
+	item.exValue1 	= itemInfo.Extra_value1;
+	item.exType2 	= itemInfo.Extra_type2;
+	item.exValue2 	= itemInfo.Extra_value2;
+	item.exType3	= itemInfo.Extra_type3;
+	item.exValue3	= itemInfo.Extra_value3;
+	--preItemUid="xxxx"  --穿戴装备id
+	return item;
+end
+
+--重新重新卡的信息
+function p.RefreshCardDetail()
+	p.LoadCardDetail(p.cardInfo.UniqueId);
 end
 
 ---------------------------------------网络-----------------------------------------------------------
@@ -334,17 +363,19 @@ function p.OnLoadCardDetail(msg)
 		return;
 	end
 	
-	if msg.result == true and msg.card_info then
+	if msg.result == true then
 		p.cardDetail = msg.card_info or {};
 		p.equip1 = {};
 		p.equip2 = {};
 		p.equip3 = {};
-		p.equip1.equipId = msg.card_info.Item_id1;
-		p.equip1.itemInfo = msg.item1_info;
-		p.equip2.equipId = msg.card_info.Item_id2;
-		p.equip2.itemInfo = msg.item2_info;
-		p.equip3.equipId = msg.card_info.Item_id3;
-		p.equip3.itemInfo = msg.item3_info;
+		if msg.card_info then
+			p.equip1.equipId = msg.card_info.Item_id1;
+			p.equip1.itemInfo = msg.item1_info;
+			p.equip2.equipId = msg.card_info.Item_id2;
+			p.equip2.itemInfo = msg.item2_info;
+			p.equip3.equipId = msg.card_info.Item_id3;
+			p.equip3.itemInfo = msg.item3_info;
+		end
 		
 		p.SetDelegate();
 	else

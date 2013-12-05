@@ -48,3 +48,4 @@ BuildConfig.java
 /dev/bin_publish
 /publish
 /dev/Bin/win32_assets
+/LuaDebug/libcocos2d.pdb

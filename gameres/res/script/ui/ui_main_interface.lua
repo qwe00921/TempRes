@@ -4,13 +4,10 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
-p.ID_CTRL_LIST_13						       = 14;
-p.ID_CTRL_PICTURE_LISTBG				  = 13;
 p.ID_CTRL_TEXT_MAIL_TIPS_NUM			= 10;	--邮件数量
 p.ID_CTRL_TEXT_ACTIVITY_TIPS_NUM		= 9;	--活动数量
 p.ID_CTRL_PICTURE_MAIL_TIPS_BG		= 8;	--邮件数量通知背景
 p.ID_CTRL_PICTURE_ACTIVITY_TIPS_BG	= 7;	--活动数量通知背景
-p.ID_CTRL_BUTTON_SHOP					    = 6;	--商城按钮
 p.ID_CTRL_BUTTON_MAIL					    = 5;	--邮件按钮
 p.ID_CTRL_BUTTON_ACTIVITY				 = 4;	--活动按钮
 p.ID_CTRL_BUTTON_MORE					    = 3;	--弹出按钮

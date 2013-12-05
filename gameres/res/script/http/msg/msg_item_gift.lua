@@ -23,7 +23,7 @@ end
 function p:Process()
 	msg_cache.msg_item_gift = self;
     WriteConWarning( "** msg_item_gift:Process() called" );
-	pack_box_mgr.UseItemCallBack(self)
+	pack_box_mgr.UseGiftItemCallBack(self)
 	-- if self.result == true then 
 	-- else
 		-- WriteConWarning( "** msg_item_gift error" );
