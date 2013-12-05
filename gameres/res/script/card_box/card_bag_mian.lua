@@ -15,9 +15,10 @@ card_bag_mian  = {}
 local p = card_bag_mian;
 local ui = ui_card_main_view;
 local ui_list = ui_card_list_view;
+local cardNumLimit = nil
+p.allCardNumber = nil;
 
 p.layer 		= nil;
-p.cardBoxCount 	= 100;
 p.cardListInfo 	= nil;
 p.curBtnNode 	= nil;
 p.sortByRuleV 	= nil;
@@ -27,6 +28,9 @@ p.allCardPrice 	= 0;	--出售卡牌总价值
 p.sellCardList 	= {};	--出售卡牌列表
 
 function p.ShowUI()
+	cardNumLimit = msg_cache.msg_player.CardMax
+	WriteCon("cardNumLimit========="..cardNumLimit);
+
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -55,13 +59,33 @@ function p.ShowCardList(cardList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 
-	p.cardListInfo = cardList;
+	local cardNumText = GetLabel(p.layer,ui.ID_CTRL_TEXT_CARD_NUM );
+	local cardNum = nil;
+	
 	if cardList == nil or #cardList <= 0 then
+		if p.allCardNumber == nil or p.allCardNumber == 0 then
+			local countText = "0/"..cardNumLimit;
+			cardNumText:SetText(ToUtf8(countText));
+		end
 		WriteCon("ShowCardList():cardList is null");
 		return;
+	else
+		cardNum = #cardList;
+		WriteCon("cardNum ===== "..cardNum);
+		if p.allCardNumber == nil or p.allCardNumber == 0 then
+			p.allCardNumber = cardNum;
+			local countText = cardNum.."/"..cardNumLimit;
+			cardNumText:SetText(ToUtf8(countText));
+		end
 	end
-	WriteCon("cardCount ===== "..#cardList);
-	local cardNum = #cardList;
+	
+	p.cardListInfo = cardList;
+	-- if cardList == nil or #cardList <= 0 then
+		-- WriteCon("ShowCardList():cardList is null");
+		-- return;
+	-- end
+	--WriteCon("cardCount ===== "..#cardList);
+	--local cardNum = #cardList;
 	local row = math.ceil(cardNum / 4);
 	WriteCon("row ===== "..row);
 	

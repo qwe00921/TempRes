@@ -141,3 +141,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\card_bag\star1.png
 NormalFileUV=0 0 44 52
+
+[CTRL_TEXT_CARD_NUM]
+Type=4
+Tag=38
+Rect=504 105 107 33
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
