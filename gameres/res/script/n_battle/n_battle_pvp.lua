@@ -63,6 +63,7 @@ local PETCAMPNUM = 2;
 p.battleLayer = nil;
 p.TestHeroFighter1 = nil;
 p.pBgImage = nil;
+p.battleType = nil;
 -----
 
 --设置可见
@@ -74,12 +75,14 @@ function p.HideUI()
 end
 
 --显示UI
-function p.ShowUI()
+function p.ShowUI( battleType )
 	if p.battleLayer ~= nil then
 		p.battleLayer:SetVisible( true );
 		GetBattleShow():EnableTick( true );
 		return;
 	end
+	
+	p.battleType = battleType;
 
 	local layer = createCardBattleUILayer();
     if layer == nil then
@@ -150,18 +153,42 @@ function p.UpdatePetRage( Position, cValue )
     petRage:SetValue( MIN_RAGE_NUM, MAX_RAGE_NUM, allv );
 end
 
---当前攻击卡牌信息
-function p.SetAtkCardInfo()
-	local pic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_ATK_PIC );
-	local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATK_LV );
-	local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATK_NAME );
+function p.SetFighterPic( fighter )
+	local camp = fighter.camp;
+	local lv = fighter.level;
+	local name = SelectCell( T_CARD, fighter.cardId, "name" );
+	local ani = SelectCellMatch( T_CHAR_RES, "card_id", fighter.cardId, "head_pic" );
+	local picNode;
+	local nameNode;
+	local lvNode;
+	
+	if camp == E_CARD_CAMP_HERO then
+		picNode = GetImage( p.battleLayer,ui.ID_CTRL_PICTURE_HERO_PIC );
+		lvNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_HERO_LV );
+		nameNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_HERO_NAME );
+	else
+	   	picNode = GetImage( p.battleLayer,ui.ID_CTRL_PICTURE_ENEMY_PIC );
+        lvNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_ENEMY_LV );
+        nameNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_ENEMY_NAME );
+	end
+	picNode:SetPicture( GetPictureByAni(ani, 0) );
+	lvNode:SetText( tostring( lv ) );
+	nameNode:SetText( name );
 end
 
---当前受击卡牌信息
-function p.SetAtkTargetCardInfo()
-    local pic = GetImage( p.layer,ui_n_battle_pvp.ID_CTRL_PICTURE_ATKTARGET_PIC );
-    local lv = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATKTARGET_LV );
-    local name = GetLabel( p.layer, ui_n_battle_pvp.ID_CTRL_TEXT_ATKTARGET_NAME );
+function p.ClearAllFighterPic()
+	local picNode = GetImage( p.battleLayer,ui.ID_CTRL_PICTURE_HERO_PIC );
+    local lvNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_HERO_LV );
+    local nameNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_HERO_NAME );
+    picNode:SetPicture(nil);
+    lvNode:SetText("");
+    nameNode:SetText("");  
+    picNode = GetImage( p.battleLayer,ui.ID_CTRL_PICTURE_ENEMY_PIC );
+    lvNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_ENEMY_LV );
+    nameNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_ENEMY_NAME ); 
+    picNode:SetPicture(nil);
+    lvNode:SetText("");
+    nameNode:SetText(""); 
 end
 
 function p.InitPetUI( Position, petName, petLV, petIconAni, petSkillIconAni )
@@ -179,7 +206,7 @@ function p.InitPetUI( Position, petName, petLV, petIconAni, petSkillIconAni )
 	
 	name:SetText( petName );
 	lv:SetText( "LV"..petLV );
-	petPic:AddFgEffect( petIconAni );
+	petPic:SetPicture( GetPictureByAni(petIconAni, 0) );
 	skillPic:AddFgEffect( petSkillIconAni );
 	
 end
@@ -240,7 +267,12 @@ function p.InitBattle()
 	n_battle_mgr.uiLayer = p.battleLayer;
 	n_battle_mgr.heroUIArray = heroUIArray;
 	n_battle_mgr.enemyUIArray = enemyUIArray;
-	n_battle_mgr.play_pvp();
+	if p.battleType == N_BATTLE_PVP then
+		n_battle_mgr.play_pvp();
+	else
+	   	n_battle_mgr.play_pve();
+	end
+	
 	
 	--SetTimerOnce(p.ReadyGo,1.5f);
 end

@@ -49,6 +49,9 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_TEAM_UPDATE then	
 		msg = msg_team_update:new();
 		
+	elseif idmsg == MSG_TEAM_MODIFY then
+		msg = msg_team_replace:new();
+		
 	elseif idmsg == MSG_PACK_EQUIP_SELL then   	
 		msg = msg_pack_equip_sell:new();
 		
@@ -136,6 +139,9 @@ function CreateMsg( idmsg )
     elseif idmsg == MSG_BATTLE then       
         msg = msg_battle:new();
     
+    elseif idmsg == MSG_BATTLE_PVE then       
+        msg = msg_battle_pve:new();
+        
     elseif idmsg == MSG_BATTLE_FIGHTERS then   
         msg = msg_battle_fighters:new();
 

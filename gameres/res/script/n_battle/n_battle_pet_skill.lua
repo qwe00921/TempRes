@@ -25,7 +25,6 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     local petNameNode = n_battle_mgr.GetPetNameNode( Pos, UCamp );
     local hurtEffect = SelectCell( T_SKILL_RES, SkillId, "hurt_effect" );
     local skillType = tonumber( SelectCell( T_SKILL, SkillId, "Skill_type" ) );
-    local buffType = tonumber( SelectCell( T_SKILL, SkillId, "Buff_type" ) );
     
     --初始化技能名称栏对应的ACTION特效
     local petInAction = nil;
@@ -44,6 +43,13 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
         petNameAction ="n.pet_left_in";
         skillFx = ""
     end
+    local petIndex = Pos;
+    if UCamp == E_CARD_CAMP_ENEMY then
+    	petIndex = petIndex + N_BATTLE_CAMP_CARD_NUM;
+    end
+    local cmdUpDateRage = createCommandLua():SetCmd( "UpdatePetRage", petIndex, Rage, "" );
+    seqSkill:AddCommand( cmdUpDateRage );
+    
     --增加蒙版
     local cmdAddMask = createCommandLua():SetCmd( "AddMaskImage", 0, 0, "" );
     seqSkill:AddCommand( cmdAddMask );
@@ -83,14 +89,20 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     	local TPos = tonumber( var.TPos );
     	local Damage = tonumber( var.Damage );
     	local RemainHp = tonumber( var.RemainHp );
-    	local Buff = var.Buff;
-    	local TargetDead = var.TargetDead;
+    	local Buff = tonumber( var.Buff );
+    	local Dead = var.TargetDead;
     	
     	local targetF;
     	if TCamp == E_CARD_CAMP_HERO then
             targetF = n_battle_mgr.heroCamp:FindFighter( TPos );
         elseif TCamp == E_CARD_CAMP_ENEMY then
             targetF = n_battle_mgr.enemyCamp:FindFighter( TPos + N_BATTLE_CAMP_CARD_NUM );
+        end
+        
+        --受击者死亡
+        if Dead and Damage < targetF.life then
+            Damage = targetF.life;
+            WriteConWarning("the TargetFighter Mandatory death!");
         end
         
         --受击特效
@@ -105,12 +117,14 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
             --主动复活技能    
         end
         
-        if Buff then
-        	local buffAni = GetBuffAniByType( buffType );
-        	local cmdBuff = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), buffAni );
-            seqTarget:AddCommand( cmdBuff );
+        if Buff ~= N_BUFF_TYPE_0 then
+        	local buffAni = GetBuffAniByType( Buff );
+        	if not targetF:GetNode():HasAniEffect( buffAni ) then
+        		local cmdBuff = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), buffAni );
+                seqTarget:AddCommand( cmdBuff );
+        	end
         end
-    	
+    	HurtResultAni( targetF, seqTarget );
     end
     seqTarget:SetWaitEnd( cmdHideMask );
 end
@@ -190,18 +204,4 @@ function p.doUIEffect( UCamp, seqUI )
     local cmd_dumb = createCommandInstant():Dumb( 0 );
     seqUI:AddCommand( cmd_dumb );
     return cmd_dumb;
-end
-
---受击结果：死亡动作或站立动画
-function p.HurtResultAni( targetFighter, seqTarget )
-    if targetFighter:CheckTmpLife() then
-        --local cmdA = createCommandPlayer():Standby( 0, targetFighter:GetNode(), "" );
-        --seqTarget:AddCommand( cmdA );
-    else
-        --local cmdB = createCommandPlayer():Dead( 0, targetFighter:GetNode(), "" );
-        --seqTarget:AddCommand( cmdB );   
-        
-        local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
-        seqTarget:AddCommand( cmdC );
-    end
 end

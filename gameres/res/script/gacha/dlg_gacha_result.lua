@@ -163,7 +163,7 @@ function p.ShowCardInfo(card_id)
         rareLab:SetText(SelectCell( T_CARD, card_id, "rare" ));
         --名称
         local cardName = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_NAME );
-        cardName:SetText( ToUtf8( SelectCell( T_CARD, card_id, "name" )));
+        cardName:SetText( SelectCell( T_CARD, card_id, "name" ));
         --HP
         local cardHp = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_HP );
         cardHp:SetText( SelectCell(T_CARD, card_id, "hp") );
@@ -178,12 +178,12 @@ function p.ShowCardInfo(card_id)
         local cardSkill = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_SKILL );
         local skill_id = SelectCell( T_CARD, card_id, "skill" );
         if skill_id ~= "0" then
-            cardSkill:SetText( ToUtf8(SelectCell( T_SKILL, skill_id, "name" ) ) );
+            cardSkill:SetText( SelectCell( T_SKILL, skill_id, "name" ) );
         end
 
         --描述
         local description = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DESCRIPTION);
-        description:SetText( ToUtf8( SelectCell( T_CARD, card_id, "description" ) ));
+        description:SetText( SelectCell( T_CARD, card_id, "description" ) );
     end
     --判断没有后续卡牌 则开始再扭一次判断，并隐藏下一张按钮
     if p.cardIndex == #p.cardIdList then

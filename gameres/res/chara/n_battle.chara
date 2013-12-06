@@ -1,0 +1,84 @@
+;----------------------------------------------------
+; ½ÇÉ«ÅäÖÃ
+;----------------------------------------------------
+
+[101]
+@standby            name=standby  ani=n_battle.standby_101
+@atk                name=standby  ani=n_battle.attack_101
+@run
+@skill              name=skill  ani=n_battle.skill_101
+@defence        
+@hurt               
+@dead               name=dead  ani=n_battle.death
+
+[102]
+@standby            name=standby  ani=n_battle.standby_102
+@atk                name=standby  ani=n_battle.attack_102
+@run
+@skill              name=skill  ani=n_battle.skill_102
+@defence        
+@hurt               
+@dead               name=dead  ani=n_battle.death
+
+[103]
+@standby            name=standby  ani=n_battle.standby_103
+@atk                name=standby  ani=n_battle.attack_103
+@run
+@skill              name=skill  ani=n_battle.skill_103
+@defence        
+@hurt               
+@dead               
+
+[104]
+@standby            name=standby  ani=n_battle.standby_104
+@atk                name=standby  ani=n_battle.attack_104
+@run
+@skill              name=skill  ani=n_battle.skill_104
+@defence        
+@hurt               
+@dead               name=dead  ani=n_battle.death
+
+[105]
+@standby            name=standby  ani=n_battle.standby_105
+@atk                name=standby  ani=n_battle.attack_105
+@run
+@skill              name=skill  ani=n_battle.skill_105
+@defence        
+@hurt               
+@dead               
+
+[106]
+@standby            name=standby  ani=n_battle.standby_106
+@atk                name=standby  ani=n_battle.attack_106
+@run
+@skill              name=skill  ani=n_battle.skill_106
+@defence        
+@hurt               
+@dead               
+
+[107]
+@standby            name=standby  ani=n_battle.standby_107
+@atk                name=standby  ani=n_battle.attack_107
+@run
+@skill              name=skill  ani=n_battle.skill_107
+@defence        
+@hurt               
+@dead               
+
+[108]
+@standby            name=standby  ani=n_battle.standby_108
+@atk                name=standby  ani=n_battle.attack_108
+@run
+@skill              name=skill  ani=n_battle.skill_108
+@defence        
+@hurt               
+@dead               
+
+[109]
+@standby            name=standby  ani=n_battle.standby_109
+@atk                name=standby  ani=n_battle.attack_109
+@run
+@skill              name=skill  ani=n_battle.skill_109
+@defence        
+@hurt               
+@dead               

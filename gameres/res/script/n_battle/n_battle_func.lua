@@ -77,7 +77,7 @@ function GetBestTargetPos( Hero, TCamp, Targets )
 	local tempPosId;
 	local figther;
 	for key, var in ipairs(Targets) do
-		local pos = tonumber( v.TPos );
+		local pos = tonumber( var.TPos );
 		if tempPosId == nil then
 		  tempPosId = pos;
 		elseif tempPosId > pos then
@@ -102,8 +102,25 @@ function HurtResultAni( targetFighter, seqTarget )
     else
         --local cmdB = createCommandPlayer():Dead( 0, targetFighter:GetNode(), "" );
         --seqTarget:AddCommand( cmdB );   
-        
+        local cmdf = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die_v2" );
+        seqTarget:AddCommand( cmdf );
         local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
         seqTarget:AddCommand( cmdC );
     end
 end
+
+function IsSkillTargetSelfCamp( targetType )
+	if targetType == nil then
+		return false;
+	end
+	if targetType == N_SKILL_TARGET_TYPE_11 or targetType == N_SKILL_TARGET_TYPE_12 or targetType == N_SKILL_TARGET_TYPE_13 then
+		return true;
+	else
+	   return false;	
+	end
+end
+
+
+
+
+

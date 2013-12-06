@@ -3,6 +3,8 @@
 -- author:      hst, 2013/11/26
 -- purpose:     战斗常量定义
 --------------------------------------------------------------
+N_BATTLE_PVP = 1;
+N_BATTLE_PVE = 2;
 
 --对战最多为10个回合
 N_BATTLE_ROUND_1 = 1;
@@ -15,7 +17,7 @@ N_BATTLE_ROUND_7 = 7;
 N_BATTLE_ROUND_8 = 8;
 N_BATTLE_ROUND_9 = 9;
 N_BATTLE_ROUND_10 = 10;
-N_BATTLE_MAX_ROUND = 4;
+N_BATTLE_MAX_ROUND = 10;
 
 N_BATTLE_CAMP_CARD_NUM = 6;--阵营中的卡牌数量上限
 
@@ -34,6 +36,7 @@ N_BATTLE_ROUND_STAGE_ATK = 3;--互殴
 N_BATTLE_ROUND_STAGE_CLEARING = 4;--结算
 
 --buff
+N_BUFF_TYPE_0 = 0;--没BUFF
 N_BUFF_TYPE_1 = 1;--晕眩
 N_BUFF_TYPE_2 = 2;--冰冻
 N_BUFF_TYPE_3 = 3;--缠绕

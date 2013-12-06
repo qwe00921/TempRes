@@ -6,87 +6,87 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 68 640 720
+Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\xbattleui\pvpbg1.png
-NormalFileUV=0 0 480 580
+NormalFile=.\res\image\ui\n_battle\n_battle_bg.png
+NormalFileUV=0 0 1280 1920
 
 [CTRL_RIGHT_SPRITE_5]
 Type=19
 Tag=11
-Rect=549 331 71 90
+Rect=549 347 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_RIGHT_SPRITE_4]
 Type=19
 Tag=10
-Rect=539 231 71 90
+Rect=539 247 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_RIGHT_SPRITE_3]
 Type=19
 Tag=7
-Rect=463 431 71 90
+Rect=463 447 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_RIGHT_SPRITE_2]
 Type=19
 Tag=8
-Rect=453 331 71 90
+Rect=453 347 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_RIGHT_SPRITE_1]
 Type=19
 Tag=9
-Rect=443 231 71 90
+Rect=443 247 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_LEFT_SPRITE_1]
 Type=19
 Tag=6
-Rect=126 231 71 90
+Rect=126 247 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_LEFT_SPRITE_2]
 Type=19
 Tag=5
-Rect=116 330 70 90
+Rect=116 346 70 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_LEFT_SPRITE_3]
 Type=19
 Tag=2
-Rect=106 430 71 90
+Rect=106 446 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_LEFT_SPRITE_4]
 Type=19
 Tag=3
-Rect=30 231 71 90
+Rect=30 247 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_LEFT_SPRITE_5]
 Type=19
 Tag=4
-Rect=20 330 71 90
+Rect=20 346 71 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_CENTER]
 Type=1
 Tag=12
-Rect=295 330 71 90
+Rect=295 346 71 90
 AnchorPos=0 0
 Notes=
 
@@ -101,28 +101,39 @@ Notes=
 [CTRL_LEFT_SPRITE_6]
 Type=19
 Tag=16
-Rect=10 430 71 90
+Rect=10 446 71 90
 AnchorPos=0 0
 Notes=
+
+[CTRL_PICTURE_47]
+Type=1
+Tag=47
+Rect=3 575 212 176
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\pet_l_bg.png
+NormalFileUV=0 0 212 176
 
 [CTRL_RIGHT_SPRITE_6]
 Type=19
 Tag=18
-Rect=559 431 71 90
+Rect=559 447 71 90
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_67]
+[CTRL_PICTURE_49]
 Type=1
-Tag=67
-Rect=1 573 234 104
+Tag=50
+Rect=1 717 202 22
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
 
 [CTRL_TEXT_PET_NAME_1]
 Type=4
 Tag=68
-Rect=12 581 107 20
+Rect=15 603 150 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -130,31 +141,60 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_50]
+Type=1
+Tag=51
+Rect=101 624 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_51]
+Type=1
+Tag=52
+Rect=5 624 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
+
 [CTRL_PICTURE_PET_PIC_1]
 Type=1
 Tag=69
-Rect=12 601 120 67
+Rect=15 633 80 80
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_PET_SKILL_1]
 Type=1
 Tag=70
-Rect=139 601 83 47
+Rect=111 633 80 80
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_71]
+[CTRL_PICTURE_48]
 Type=1
-Tag=71
-Rect=1 681 234 104
+Tag=48
+Rect=3 761 212 176
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\n_battle\pet_l_bg.png
+NormalFileUV=0 0 212 176
+
+[CTRL_PICTURE_55]
+Type=1
+Tag=56
+Rect=5 810 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_PET_NAME_2]
 Type=4
 Tag=72
-Rect=12 689 107 20
+Rect=15 789 150 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -162,31 +202,60 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_57]
+Type=1
+Tag=58
+Rect=101 810 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
+
 [CTRL_PICTURE_PET_PIC_2]
 Type=1
 Tag=73
-Rect=11 710 120 67
+Rect=15 819 80 80
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_PET_SKILL_2]
 Type=1
 Tag=74
-Rect=140 710 83 47
+Rect=111 819 80 80
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_75]
 Type=1
 Tag=75
-Rect=406 573 234 104
+Rect=426 575 212 176
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\n_battle\pet_r_bg.png
+NormalFileUV=0 0 212 176
+
+[CTRL_PICTURE_59]
+Type=1
+Tag=64
+Rect=439 624 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_60]
+Type=1
+Tag=65
+Rect=534 624 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_PET_NAME_3]
 Type=4
 Tag=76
-Rect=523 581 107 20
+Rect=449 603 150 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -197,28 +266,57 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_PET_PIC_3]
 Type=1
 Tag=77
-Rect=510 601 120 67
+Rect=449 633 80 80
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_PET_SKILL_3]
 Type=1
 Tag=78
-Rect=419 601 83 47
+Rect=544 633 80 80
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_79]
 Type=1
 Tag=79
-Rect=406 681 234 104
+Rect=426 761 212 176
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\n_battle\pet_r_bg.png
+NormalFileUV=0 0 212 176
+
+[CTRL_PICTURE_62]
+Type=1
+Tag=67
+Rect=439 810 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_53]
+Type=1
+Tag=54
+Rect=435 903 202 22
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_63]
+Type=1
+Tag=71
+Rect=534 810 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg.png
+NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_PET_NAME_4]
 Type=4
 Tag=80
-Rect=523 691 107 20
+Rect=449 789 150 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -226,85 +324,64 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_52]
+Type=1
+Tag=53
+Rect=1 903 202 22
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
 [CTRL_PICTURE_PET_SKILL_4]
 Type=1
 Tag=81
-Rect=420 711 83 47
+Rect=544 819 80 80
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_PET_PIC_4]
 Type=1
 Tag=82
-Rect=510 711 120 67
+Rect=449 819 80 80
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_ATK_PIC]
+[CTRL_PICTURE_HERO_PIC]
 Type=1
 Tag=83
-Rect=17 96 80 73
+Rect=53 95 96 73
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\sk\chara_thumb\chara_thumb_battle0730.png
-NormalFileUV=0 0 162 336
 
-[CTRL_PICTURE_ATKTARGET_PIC]
-Type=1
-Tag=84
-Rect=545 96 80 73
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\sk\chara_thumb\chara_thumb_battle0720.png
-NormalFileUV=0 0 162 336
-
-[CTRL_TEXT_ATK_NAME]
+[CTRL_TEXT_HERO_NAME]
 Type=4
 Tag=85
-Rect=4 171 107 20
+Rect=26 171 150 20
 AnchorPos=0 0
 Notes=
-Text=卡牌名称
-TextTradition=卡牌名稱
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_ATKTARGET_NAME]
+[CTRL_TEXT_ENEMY_NAME]
 Type=4
 Tag=86
-Rect=532 171 107 20
+Rect=467 171 150 20
 AnchorPos=0 0
 Notes=
-Text=卡牌名称
-TextTradition=卡牌名稱
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_ATK_LV]
+[CTRL_TEXT_HERO_LV]
 Type=4
 Tag=88
-Rect=1 69 107 20
+Rect=53 147 40 20
 AnchorPos=0 0
 Notes=
-Text=LV 100
-TextTradition=LV 100
-TextSize=16
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_ATKTARGET_LV]
-Type=4
-Tag=89
-Rect=533 71 107 20
-AnchorPos=0 0
-Notes=
-Text=LV 100
-TextTradition=LV 100
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -313,7 +390,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PET_LV_1]
 Type=4
 Tag=99
-Rect=74 602 57 20
+Rect=26 691 57 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -324,7 +401,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PET_LV_2]
 Type=4
 Tag=100
-Rect=73 710 57 20
+Rect=26 876 57 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -335,7 +412,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PET_LV_3]
 Type=4
 Tag=101
-Rect=510 602 57 20
+Rect=460 691 57 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -346,7 +423,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PET_LV_4]
 Type=4
 Tag=102
-Rect=510 712 57 20
+Rect=460 877 57 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -357,47 +434,110 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_PET_RAGE_1]
 Type=9
 Tag=59
-Rect=15 669 207 6
+Rect=1 716 202 24
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
-NormalFileUV=0 0 87 5
+NormalFile=.\res\image\ui\n_battle\rage1.png
+NormalFileUV=0 0 202 24
+
+[CTRL_PICTURE_54]
+Type=1
+Tag=55
+Rect=435 716 202 22
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
 
 [CTRL_EXP_PET_RAGE_2]
 Type=9
 Tag=60
-Rect=15 777 207 6
+Rect=1 902 202 24
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
-NormalFileUV=0 0 87 5
+NormalFile=.\res\image\ui\n_battle\rage1.png
+NormalFileUV=0 0 202 24
 
 [CTRL_EXP_PET_RAGE_3]
 Type=9
 Tag=61
-Rect=425 669 207 6
+Rect=435 715 202 24
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
-NormalFileUV=0 0 87 5
+NormalFile=.\res\image\ui\n_battle\rage1.png
+NormalFileUV=0 0 202 24
 
 [CTRL_EXP_PET_RAGE_4]
 Type=9
 Tag=62
-Rect=425 778 207 6
+Rect=435 902 202 24
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_battle_main_ui\hp_bar.png
-NormalFileUV=0 0 87 5
+NormalFile=.\res\image\ui\n_battle\rage1.png
+NormalFileUV=0 0 202 24
+
+[CTRL_PICTURE_ENEMY_PIC]
+Type=1
+Tag=46
+Rect=494 95 96 73
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_46]
+Type=1
+Tag=49
+Rect=69 562 144 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\atk.png
+NormalFileUV=0 0 144 36
+
+[CTRL_TEXT_ENEMY_LV]
+Type=4
+Tag=89
+Rect=550 147 40 20
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_56]
+Type=1
+Tag=57
+Rect=70 749 144 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\fz.png
+NormalFileUV=0 0 144 36
+
+[CTRL_PICTURE_58]
+Type=1
+Tag=63
+Rect=428 562 144 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\atk.png
+NormalFileUV=0 0 144 36
+
+[CTRL_PICTURE_61]
+Type=1
+Tag=66
+Rect=428 749 144 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\fz.png
+NormalFileUV=0 0 144 36

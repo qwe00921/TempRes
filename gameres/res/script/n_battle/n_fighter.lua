@@ -86,7 +86,7 @@ function p:SetLifeAdd( num )
         self.life = self.lifeMax;
     end
     self:SetLife( self.life );
-    self.tmplife = self.life;
+    --self.tmplife = self.life;
     self.flynumGreen:PlayNum( num );
 end
 
@@ -238,6 +238,8 @@ function p:cmdLua( cmdtype, num, str, seq )
 	--暂时临时扣血保存到tmplife
     if cmdtype == "fighter_damage" then
         self:SubTmpLife( num ); 
+    elseif cmdtype == "fighter_addHp" then  
+        self:SubTmpLifeHeal( num );   
     end
     return super.cmdLua( self, cmdtype, num, str, seq );
     

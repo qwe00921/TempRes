@@ -28,6 +28,7 @@ DoFile("ui/ui_login_severselect_option.lua")
 --任务
 DoFile("ui/ui_quest_main_view.lua")
 DoFile("ui/ui_quest_list_view.lua")
+DoFile("ui/ui_quest_reward_view.lua")
 
 --背包
 DoFile("ui/ui_bag_main.lua")
@@ -254,4 +255,9 @@ DoFile("ui/ui_n_battle_pvp.lua");
 DoFile("ui/ui_dlg_card_equip_detail.lua");
 DoFile("ui/ui_card_equip_select_list.lua");
 DoFile("ui/ui_card_equip_select_list_item.lua");
+
+--卡牌编辑
+DoFile("ui/ui_card_group.lua");
+DoFile("ui/ui_card_group_node.lua");
+DoFile("ui/ui_card_group_select_pet.lua");
 

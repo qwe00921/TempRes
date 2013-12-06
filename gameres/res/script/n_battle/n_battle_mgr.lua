@@ -28,9 +28,9 @@ local BATTLE_PVP = 2;
 --开始战斗表现:pve
 function p.play_pve()
 	isPVE = true;	
-	p.createHeroCamp();
-	p.createEnemyCamp();
-	p.GetBoss():SetBossFlag( true );	
+	n_battle_stage.Init();
+    n_battle_stage.EnterBattle_Stage_Loading();
+    p.SendStartPVEReq();
 end
 
 --开始战斗表现:pvp
@@ -43,8 +43,9 @@ end
 
 --显示回合数
 function p.ShowRoundNum()
-    local roundNum = n_battle_stage.GetRoundNum();
-    n_battle_mainui.ShowRoundNum( roundNum );
+    --local roundNum = n_battle_stage.GetRoundNum();
+    --n_battle_mainui.ShowRoundNum( roundNum );
+    n_battle_show.DoEffectShowTurnNum();
 end
 
 --战斗阶段->加载->请求
@@ -59,7 +60,19 @@ function p.SendStartPVPReq()
     SendReq("Fight","StartPvP",UID,param);
 end
 
---战斗阶段->加载->响应
+--战斗阶段->加载->请求
+function p.SendStartPVEReq()
+    local UID = 10001; 
+    local TID = 101011;
+    local uid = GetUID();
+    if UID == 0 or UID == nil then
+        return ;
+    end;
+    local param = string.format("&missionID=%d", TID);
+    SendReq("Fight","StartPvC",UID,param);
+end
+
+--战斗阶段PVP->加载->响应
 function p.ReceiveStartPVPRes( msg )
     n_battle_db_mgr.Init( msg );
     local UCardList = n_battle_db_mgr.GetPlayerCardList();
@@ -81,6 +94,11 @@ function p.ReceiveStartPVPRes( msg )
     p.ShowRoundNum();
 end
 
+--战斗阶段PVE->加载->响应
+function p.ReceiveStartPVERes( msg )
+	p.ReceiveStartPVPRes( msg );
+end
+
 --战斗阶段->永久BUFF表现
 function p.EnterBattle_Stage_Permanent_Buff()
 	n_battle_mainui.OnBattleShowFinished();
@@ -99,7 +117,13 @@ end
 
 --进入回合阶段->BUFF表现
 function p.EnterBattle_RoundStage_Buff()
-    n_battle_mainui.OnBattleShowFinished();
+    local rounds = n_battle_stage.GetRoundNum();
+    local buffEffectData = n_battle_db_mgr.GetBuffEffectRoundDB( rounds );
+    if buffEffectData ~= nil and #buffEffectData > 0 and rounds <= N_BATTLE_MAX_ROUND then
+        n_battle_show.DoEffectBuff( buffEffectData );
+    else
+        n_battle_mainui.OnBattleShowFinished();   
+    end
 end
 
 --进入回合阶段->互殴
@@ -394,7 +418,7 @@ function p.CheckBattleLose()
 end
 
 --进入战斗
-function p.EnterBattle()
+function p.EnterBattle( battleType )
 	WriteCon( "n_battle_mgr.EnterBattle()" );
 	
 	--hide 
@@ -406,7 +430,7 @@ function p.EnterBattle()
 --	dlg_menu.CloseUI();
 	
 	--enter PVP
-	n_battle_pvp.ShowUI();	
+	n_battle_pvp.ShowUI( battleType );	
 	n_battle_mainui.ShowUI();
 	
 	--音乐
@@ -443,80 +467,4 @@ function p.IsBattleEnd()
 	end
 
 	return false;
-end
-
---英雄回合
-function p.HeroTurn()
-	p.CampBattle(E_CARD_CAMP_HERO);
-end
-
---敌人回合
-function p.EnemyTurn()
-	p.CampBattle(E_CARD_CAMP_ENEMY);
-end
-
-function p.CampBattle(campType)
-	--攻击阵营
-	local atkCamp;
-	--防守阵营
-	local defenseCamp;
-	
-	if campType==E_CARD_CAMP_HERO then
-		atkCamp = p.heroCamp;
-		defenseCamp = p.enemyCamp;
-	else
-		atkCamp = p.enemyCamp;
-		defenseCamp = p.heroCamp;
-	end
-	
-	--先记录临时血量
-	local defenceFighters = defenseCamp:GetAliveFighters();
-	for i = 1, #defenceFighters do
-		defenceFighters[i]:SetTmpLife();
-	end
-	
-	--获取未死亡的战士
-	local atkCampAliveFighter = atkCamp:GetAliveFighters();
-	
-	local prevBatch = nil;
-	for i = 1, #atkCampAliveFighter do
-		local batch = battle_show.GetNewBatch();
-		local attacker = atkCampAliveFighter[i];
-		
-		--每次重新取目标fighters，确保都是活的
-		local defenseCampAliveFighter = defenseCamp:GetAliveFighters();
-		if #defenseCampAliveFighter == 0 then break end
-		
-		local defenderId = 1;
-		if #defenseCampAliveFighter > 1 then
-			defenderId = math.random(1,#defenseCampAliveFighter);
-		end
-		
-		local nAttakType = math.random(0,99);
-
-		--@override
-		if 30 > nAttakType then
-			local target = defenseCampAliveFighter[defenderId];
-			attacker:Atk( target, batch );
-		elseif 50 > nAttakType then
-			local target = defenseCampAliveFighter[defenderId];
-			attacker:AtkSkill( target, batch,1,1,1);
-		elseif 70 > nAttakType then
-			local target = defenseCampAliveFighter[defenderId];
-			attacker:AtkSkill( target, batch,1,1,2);
-		elseif 85 > nAttakType then
-			attacker:AtkSkillOneToCamp( atkCamp, batch,true);
-		else
-			attacker:AtkSkillOneToCamp( defenseCamp, batch,false);
-		end
-		
-		--设置批次等待
-		if useParallelBatch and (prevBatch ~= nil) then
-			local cmdSpecial = prevBatch:GetSpecialCmd( E_BATCH_STAGE_HURT_END );
-			if cmdSpecial ~= nil then
-				batch:SetWaitEnd( cmdSpecial );
-			end
-		end
-		prevBatch = batch;
-	end
 end

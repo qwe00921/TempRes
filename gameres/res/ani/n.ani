@@ -78,3 +78,7 @@ image\fx\pet_blue_devil\fx_skill_bar_pet.png @cut(3,1) @reverse @time=0.1 @offse
 [fx_skill_bar_title_reverse]
 image\fx\pet_blue_devil\fx_skill_bar_title.png @cut(1,1) @time=0.15 @offset(-166,0) @stay @scale=0.66 
 ;}---------------------------------
+
+;对战回合数
+[turn_num]
+image\ui\n_battle\hh_num.png @cut(1,10)

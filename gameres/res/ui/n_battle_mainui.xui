@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -19,72 +19,6 @@ SelectFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan.png
 SelectedFileUV=0 0 124 124
 DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
 DisableFileUV=0 0 114 73
-
-[CTRL_PICTURE_21]
-Type=1
-Tag=24
-Rect=76 860 107 107
-AnchorPos=0 0
-Notes=
-Remark=技能1背景
-NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
-NormalFileUV=0 0 160 160
-
-[CTRL_PICTURE_22]
-Type=1
-Tag=25
-Rect=192 863 107 107
-AnchorPos=0 0
-Notes=
-Remark=技能2背景
-NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
-NormalFileUV=0 0 160 160
-
-[CTRL_BUTTON_SKILL1]
-Type=2
-Tag=10
-Rect=74 856 110 110
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=技能按钮1
-NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
-NormalFileUV=0 0 240 240
-
-[CTRL_PICTURE_23]
-Type=1
-Tag=26
-Rect=309 860 107 107
-AnchorPos=0 0
-Notes=
-Remark=技能3背景
-NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
-NormalFileUV=0 0 160 160
-
-[CTRL_PICTURE_SKILL2]
-Type=1
-Tag=12
-Rect=193 860 110 110
-AnchorPos=0 0
-Notes=
-Remark=技能2
-NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
-NormalFileUV=0 0 240 240
-
-[CTRL_BUTTON_SKILL3]
-Type=2
-Tag=13
-Rect=308 859 110 110
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=技能3
-NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
-NormalFileUV=0 0 240 240
 
 [CTRL_BUTTON_SKILL4]
 Type=2
@@ -118,22 +52,14 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_HOR3SLICES_POWER]
-Type=10
-Tag=43
-Rect=46 872 365 84
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_PICTURE_24]
 Type=1
 Tag=27
-Rect=0 0 640 66
+Rect=0 0 640 82
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\n_battle\head_t_bg.png
+NormalFileUV=0 0 640 82
 
 [CTRL_TEXT_UNAME]
 Type=4
@@ -141,8 +67,6 @@ Tag=28
 Rect=18 16 107 25
 AnchorPos=0 0
 Notes=
-Text=用户名称
-TextTradition=用戶名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -154,8 +78,6 @@ Tag=29
 Rect=513 16 107 25
 AnchorPos=0 0
 Notes=
-Text=用户名称
-TextTradition=用戶名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -164,30 +86,15 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_26]
 Type=1
 Tag=30
-Rect=259 0 123 74
+Rect=227 10 188 50
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\n_battle\hh.png
+NormalFileUV=0 0 188 50
 
-[CTRL_TEXT_ROUNDTITLE]
-Type=4
-Tag=31
-Rect=267 6 107 25
+[CTRL_PICTURE_ROUNDNUM]
+Type=1
+Tag=17
+Rect=273 21 70 23
 AnchorPos=0 0
 Notes=
-Text=剩余回合数
-TextTradition=剩余回合數
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_ROUNDNUM]
-Type=4
-Tag=32
-Rect=266 38 107 25
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter

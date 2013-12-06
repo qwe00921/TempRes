@@ -84,22 +84,22 @@ function p.Init( item )
 				local pictureData;
 				if itemtype == 1 then
 					itemname = SelectCell( T_CARD, itemid, "name" );
-					--pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "head_pic" ), 0 );
-					pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "card_pic" ), 0 );
+					pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "head_pic" ), 0 );
+					--pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "card_pic" ), 0 );
 				elseif itemtype == 2 then
 					itemname = SelectCell( T_ITEM, itemid, "name" );
 					pictureData = GetPictureByAni( SelectCell( T_ITEM, itemid, "item_pic" ), 0 );
 				elseif itemtype == 3 then
-					itemname = "宝石";
+					itemname = ToUtf8("宝石");
 					pictureData = GetPictureByAni( "item.item_emoney", 0 );
 				elseif itemtype == 4 then
-					itemname = "金币";
+					itemname = ToUtf8("金币");
 					pictureData = GetPictureByAni( "item.item_money", 0 );
 				end
 				
 				--local itemname = SelectCell( T_ITEM, itemid, "name" );
 				local nameLab = GetLabel( p.layer, p.nodeTag[i][NAME_INDEX] );
-				nameLab:SetText( ToUtf8(tostring(itemname)) );
+				nameLab:SetText( tostring(itemname) );
 				
 				--显示数量
 				local numLab = GetLabel( p.layer, p.nodeTag[i][NUM_INDEX] );

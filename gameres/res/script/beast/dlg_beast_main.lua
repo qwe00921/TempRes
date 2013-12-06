@@ -11,8 +11,14 @@ p.layer = nil;
 
 local ui = ui_beast_mainui;
 
+p.groupFlag = false;
+
 --显示UI
-function p.ShowUI()
+function p.ShowUI( bgroupFlag )
+	if bgroupFlag ~= nil then
+		p.groupFlag = bgroupFlag;
+	end
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
@@ -78,19 +84,77 @@ function p.ShowBeastList( petList )
     end
 	
 	local lenth = #petList;
-	
+
 	for i = 1, lenth do
 		local view = createNDUIXView();
         view:Init();
 		
-        LoadUI( "beast_main_list.xui", view, nil );
-        local bg = GetUiNode( view, ui_beast_main_list.ID_CTRL_PICTURE_LISTBG );
-        view:SetViewSize( bg:GetFrameSize());
+		if p.groupFlag then
+			LoadUI( "card_group_select_pet.xui", view, nil );
+			local bg = GetUiNode( view, ui_card_group_select_pet.ID_CTRL_PICTURE_LISTBG );
+			view:SetViewSize( bg:GetFrameSize());
+			
+			view:SetLuaDelegate( p.OnViewClick );
+			p.ShowSelectPetInfo( view, petList[i]);
+		else
+			LoadUI( "beast_main_list.xui", view, nil );
+			local bg = GetUiNode( view, ui_beast_main_list.ID_CTRL_PICTURE_LISTBG );
+			view:SetViewSize( bg:GetFrameSize());
 
-		p.ShowBeastInfo( view, petList[i] );
+			p.ShowBeastInfo( view, petList[i] );
+		end
 		
 		list:AddView( view );
 	end
+end
+
+--设置可选召唤兽单个视图
+function p.ShowSelectPetInfo(  view, pet )
+	if view == nil or pet == nil then
+		WriteCon("data error");
+		return;
+	end
+	
+	view:SetId( pet.id );
+	
+	local spLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_22 );
+	if spLabel then
+		spLabel:SetText( tostring(pet.Sp));
+	end
+	
+	local atkLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_ATTACK2 );
+	if atkLabel then
+		atkLabel:SetText( tostring(pet.Atk) );
+	end
+	
+	--名字显示，根据type读csv数据
+	local pet_type = pet.Pet_type;
+	local nameLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_14 );
+	if nameLabel then
+		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "name" ) );
+	end
+	
+	local attrLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_ELEMENT );
+	if attrLabel then
+		--attrLabel:SetText( ... );
+	end
+	
+	--技能显示
+	local skillPic = GetImage( view, ui_card_group_select_pet.ID_CTRL_PICTURE_SKILL );
+	local skillPicData = GetPictureByAni( SelectCell( T_SKILL_RES, pet.Skill_id, "icon" ), 0 );
+	if skillPic and skillPicData then
+		skillPic:SetPicture( skillPicData );
+	end
+	
+	local skillText = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_51 );
+	skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
+	
+	local teamText = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_TEAM );
+	teamText:SetText( ToUtf8( string.format( "队伍%d", pet.Team_id) ) );
+	teamText:SetVisible( pet.Team_id ~= 0 );
+	
+	local team9 = Get9SlicesImage( view, ui_card_group_select_pet.ID_CTRL_9SLICES_53 );
+	team9:SetVisible( pet.Team_id ~= 0 );
 end
 
 --设置单个召唤兽视图
@@ -195,6 +259,15 @@ function p.OnListBtnClick( uiNode, uiEventType, param )
 	end
 end
 
+--卡组编辑，节点选择
+function p.OnViewClick( uiNode, uiEventType, param )
+	p.CloseUI();
+	beast_mgr.ClearData();
+	
+	--WriteCon( " id:"..tostring( uiNode:GetId() ));
+	dlg_card_group_main.UpdatePosCard( uiNode:GetId() );
+end
+
 --刷新出战按钮
 function p.SetFightBtnCheck( node, flag )
 	if node == nil then
@@ -223,6 +296,7 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.groupFlag = false;
 	end
 end
 
