@@ -85,9 +85,13 @@ function p.addAllStage(stageData)
 		if stageListInif["S"..stageId] then
 			isUnlock = true;
 		end
+		local pos_x = tonumber(stageList[i].pos_x)
+		local pos_y = tonumber(stageList[i].pos_y)
+		local offset_x = tonumber(stageList[i].offset_x)
+		local offset_y = tonumber(stageList[i].offset_y)
+		
 		p.AddStageObj( fgLayer, 
-			STAGE_POSITION_MAP__1[i].x, STAGE_POSITION_MAP__1[i].y, 
-			STAGE_POSITION_MAP__1[i].offsetX, STAGE_POSITION_MAP__1[i].offsetY, 
+			pos_x, pos_y,offset_x,offset_y, 
 			pic, titleText, stageId, stageName, isUnlock );
 	end
 end
