@@ -1,12 +1,12 @@
 --------------------------------------------------------------
 -- FileName: 	load_db.lua
 -- author:		zhangwq, 2013/05/25
--- purpose:		¼ÓÔØÊı¾İ¿â
+-- purpose:		åŠ è½½æ•°æ®åº“
 --------------------------------------------------------------
 
 T_TEST          = LoadTable( "test.ini" );
 
---µØÍ¼±í
+--åœ°å›¾è¡¨
 T_CHAPTER_MAP   = LoadTable( "chapter_map.ini" );
 T_STAGE_MAP     = LoadTable( "stage_map.ini" );
 T_TRAVEL_MAP    = LoadTable( "travel_map.ini" );
@@ -14,69 +14,69 @@ T_CHAPTER_OPEN_CHECK    = LoadTable( "chapter_open_check.ini" );
 T_STAGE_OPEN_CHECK      = LoadTable( "stage_open_check.ini" );
 T_TRAVEL_DUNGEON_INFO   = LoadTable( "travel_dungeon_info.ini" );
 
---µÀ¾ß±í
+--é“å…·è¡¨
 T_ITEM          = LoadTable( "item.ini" );
---¿¨ÅÆÏêÏ¸±í
+--å¡ç‰Œè¯¦ç»†è¡¨
 T_CHAR_RES      = LoadTable( "char_res.ini" );
---ÈÎÎñĞÅÏ¢±í
+--ä»»åŠ¡ä¿¡æ¯è¡¨
 T_MISSION		= LoadTable( "mission.ini" );
-
---ÈÎÎñÕÂ½Ú±í
+T_MISSION_REWARD = LoadTable( "mission_reward.ini")
+--ä»»åŠ¡ç« èŠ‚è¡¨
 T_STAGE			= LoadTable( "Stage.ini" );
 
---¿¨ÅÆÇ¿»¯ËùĞèµÄ½ğ±ÒÒÔ¾­Ñé±í
+--å¡ç‰Œå¼ºåŒ–æ‰€éœ€çš„é‡‘å¸ä»¥ç»éªŒè¡¨
 T_CARD_GROW     = LoadTable( "card_grow.ini" );
 
---¿¨ÅÆ
+--å¡ç‰Œ
 T_CARD     = LoadTable( "card.ini" );
 
---¿¨ÅÆµÈ¼¶±í
+--å¡ç‰Œç­‰çº§è¡¨
 T_CARD_LEVEL   = LoadTable( "card_level.ini" );
 
---ÅäÖÃ±í¡¾°üÀ¨£º½ø»¯ËùĞè½ğÇ®..¡¿
+--é…ç½®è¡¨ã€åŒ…æ‹¬ï¼šè¿›åŒ–æ‰€éœ€é‡‘é’±..ã€‘
 T_CONFIG     = LoadTable( "config.ini" );
 
---¼¼ÄÜ±í
+--æŠ€èƒ½è¡¨
 T_SKILL     = LoadTable( "skill.ini" );
 
---¼¼ÄÜ×ÊÔ´
+--æŠ€èƒ½èµ„æº
 T_SKILL_RES		= 	LoadTable( "skill_res.ini" );
 
---×°±¸³É³¤±í
+--è£…å¤‡æˆé•¿è¡¨
 T_EQUIPMENT_GROW	=LoadTable( "equipment_grow.ini" );
 
---gacha±í
+--gachaè¡¨
 T_GACHA    =LoadTable( "gacha.ini" );
 
--- ¼¼ÄÜ³É³¤±í
+-- æŠ€èƒ½æˆé•¿è¡¨
 T_SKILL_GROW = LoadTable( "skill_grow.ini" );
 
--- ÏûÏ¢ÌáÊ¾±í
+-- æ¶ˆæ¯æç¤ºè¡¨
 T_EVENT_MESSAGE = LoadTable( "event_message.ini" );
 
--- Íæ¼Ò³É³¤±í
+-- ç©å®¶æˆé•¿è¡¨
 T_PLAYER_GROW = LoadTable( "player_grow.ini" );
 
--- ÉÌ³ÇÉÌÆ·±í
+-- å•†åŸå•†å“è¡¨
 T_SHOP        = LoadTable( "shop.ini");
 
--- ÀñÎï±í
+-- ç¤¼ç‰©è¡¨
 T_GIFT        = LoadTable( "gift.ini");
 
---¾çÇé
+--å‰§æƒ…
 T_STORY_INFO  = LoadTable( "story_info.ini");
 
---ÕÙ»½ÊŞ±í
+--å¬å”¤å…½è¡¨
 T_PET			= LoadTable( "Pet.ini" );
 
---ÕÙ»½ÊŞÉı¼¶±í
+--å¬å”¤å…½å‡çº§è¡¨
 T_PET_LEVEL		= LoadTable( "Pet_Level.ini" );
 
---ÕÙ»½ÊŞ×ÊÔ´±í
+--å¬å”¤å…½èµ„æºè¡¨
 T_PET_RES		= LoadTable( "Pet_res.ini" );
 
---¼¼ÄÜ×ÊÔ´±í
+--æŠ€èƒ½èµ„æºè¡¨
 T_SKILL_RES       = LoadTable( "skill_res.ini" );
 
---×°±¸µÈ¼¶±í
+--è£…å¤‡ç­‰çº§è¡¨
 T_EQUIP_LEVEL	= LoadTable("equip_level.ini");
