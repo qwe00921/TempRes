@@ -4,8 +4,9 @@
 --------------------------------------------------------------
 ui_quest_list_view = {};
 local p =  ui_quest_list_view;
+p.ID_CTRL_PICTURE_101					    = 101;
+p.ID_CTRL_PICTURE_100					    = 100;
 p.ID_CTRL_BUTTON_FIGHTING				 = 15;
-p.ID_CTRL_PICTURE_REWARD3				 = 14;
 p.ID_CTRL_PICTURE_REWARD2				 = 13;
 p.ID_CTRL_PICTURE_REWARD1				 = 12;
 p.ID_CTRL_TEXT_PROBABILITY			 = 7;
@@ -22,6 +23,12 @@ p.ID_CTRL_TEXT_TIEMS_V				    = 5;
 p.ID_CTRL_PICTURE_TIMES				   = 16;
 p.ID_CTRL_TEXT_POWER_V				    = 4;
 p.ID_CTRL_TEXT_POWER1					    = 22;
+p.ID_CTRL_PICTURE_60					     = 60;
 p.ID_CTRL_TEXT_POWRE					     = 3;
+p.ID_CTRL_PICTURE_59					     = 59;
 p.ID_CTRL_TEXT_QUEST_NAME_V			= 2;
+p.ID_CTRL_PICTURE_64					     = 64;
+p.ID_CTRL_PICTURE_63					     = 63;
+p.ID_CTRL_PICTURE_99					     = 99;
 p.ID_CTRL_PIC_LIST_BG					    = 1;
+p.ID_CTRL_PICTURE_REWARD3				 = 14;

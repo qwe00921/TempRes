@@ -1,23 +1,23 @@
 --------------------------------------------------------------
 -- FileName: 	card_box_inc.lua
 -- author:		hst, 2013/07/10
--- purpose:		¿¨Ïä³£Á¿ÅäÖÃ
+-- purpose:		å¡ç®±å¸¸é‡é…ç½®
 --------------------------------------------------------------
 
---¿¨ÅÆ·ÖÀà
-CARD_PIERCE_1 = 1; --Áú
-CARD_PIERCE_2 = 2; --¶ñÄ§
-CARD_PIERCE_3 = 3; --·ÉÐÐ
-CARD_PIERCE_4 = 4; --×ÔÈ»
-CARD_PIERCE_5 = 5; --¶¯Îï
-CARD_PIERCE_6 = 6; --Ö²Îï
-CARD_PIERCE_7 = 7; --ÎïÖÊ
+--å¡ç‰Œåˆ†ç±»
+CARD_PIERCE_1 = 1; --é¾™
+CARD_PIERCE_2 = 2; --æ¶é­”
+CARD_PIERCE_3 = 3; --é£žè¡Œ
+CARD_PIERCE_4 = 4; --è‡ªç„¶
+CARD_PIERCE_5 = 5; --åŠ¨ç‰©
+CARD_PIERCE_6 = 6; --æ¤ç‰©
+CARD_PIERCE_7 = 7; --ç‰©è´¨
 
---½øÈë¿¨°üÒâÍ¼
-CARD_INTENT_PREVIEW 	= 1;--Ô¤ÀÀ¿¨ÅÆ
-CARD_INTENT_INTENSIFY 	= 2;--Ç¿»¯¿¨ÅÆ
-CARD_INTENT_EVOLUTION	= 3;--½ø»¯¿¨ÅÆ
-CARD_INTENT_GETONE 		= 4;--Ñ¡È¡1ÕÅ¿¨ÅÆ
-CARD_INTENT_GETLIST 	= 5;--Ñ¡È¡¶àÕÅ¿¨ÅÆ
-CARD_INTENT_LEADER 		= 6;--Ñ¡È¡Ö÷¿¨ÅÆ
-CARD_INTENT_SKILL		= 7;--Ñ¡È¡¼¼ÄÜ¿¨ÅÆ
+--è¿›å…¥å¡åŒ…æ„å›¾
+CARD_INTENT_PREVIEW 	= 1;--é¢„è§ˆå¡ç‰Œ
+CARD_INTENT_INTENSIFY 	= 2;--å¼ºåŒ–å¡ç‰Œ
+CARD_INTENT_EVOLUTION	= 3;--è¿›åŒ–å¡ç‰Œ
+CARD_INTENT_GETONE 		= 4;--é€‰å–1å¼ å¡ç‰Œ
+CARD_INTENT_GETLIST 	= 5;--é€‰å–å¤šå¼ å¡ç‰Œ
+CARD_INTENT_LEADER 		= 6;--é€‰å–ä¸»å¡ç‰Œ
+CARD_INTENT_SKILL		= 7;--é€‰å–æŠ€èƒ½å¡ç‰Œ

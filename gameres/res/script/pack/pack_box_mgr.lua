@@ -6,7 +6,7 @@ p.layer = nil;
 -- p.selectItem = nil;
 -- p.selectItemList = {};
 
---¼ÓÔØÓÃ»§ËùÓĞµÀ¾ßÁĞ±í
+--åŠ è½½ç”¨æˆ·æ‰€æœ‰é“å…·åˆ—è¡¨
 function p.LoadAllItem(layer)
 	p.ClearData();
 	if layer ~= nil then
@@ -20,7 +20,7 @@ function p.LoadAllItem(layer)
 	SendReq("Item","List",uid,"");
 end
 
---Çå¿ÕÊı¾İ
+--æ¸…ç©ºæ•°æ®
 function p.ClearData()
     p.itemList = nil;
     p.layer = nil;
@@ -28,19 +28,19 @@ function p.ClearData()
     --p.selectItemList = {};
 end
 
---ÇëÇó»Øµ÷£¬ÏÔÊ¾µÀ¾ßÁĞ±í
+--è¯·æ±‚å›è°ƒï¼Œæ˜¾ç¤ºé“å…·åˆ—è¡¨
 function p.RefreshUI(dataList)
 	p.itemList = dataList;
 	pack_box.ShowItemList(p.itemList);
 end
 
---ÏÔÊ¾ËùÓĞµÀ¾ß
+--æ˜¾ç¤ºæ‰€æœ‰é“å…·
 function p.ShowAllItems()
 	WriteCon("pack_box_mgr.ShowAllItems();");
 	pack_box.ShowItemList(p.itemList);
 end
 
---¼ÓÔØ·ÖÀàµÀ¾ß
+--åŠ è½½åˆ†ç±»é“å…·
 function p.ShowItemByType(sortType)
 	if sortType == nil then 
 		WriteCon("ShowItemByType():sortType is null");
@@ -120,7 +120,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		WriteConErr("used item id error ");
 	end
 end
---Ê¹ÓÃÎïÆ·»Øµ÷
+--ä½¿ç”¨ç‰©å“å›è°ƒ
 function p.UseItemCallBack(self)
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
@@ -128,31 +128,31 @@ function p.UseItemCallBack(self)
 	end
 	WriteCon("=======UseItemCallBack()");
 	if self.result == true then
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("Ê¹ÓÃÎïÆ·³É¹¦¡£"),nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†","ä½¿ç”¨ç‰©å“æˆåŠŸã€‚",nil,p.layer);
 		SendReq("Item","List",uid,"");
 	elseif self.result == false then
 		local messageText = self.message
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),messageText,nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†",messageText,nil,p.layer);
 	end
 end
 
---´ò¿ªÀñ°ü»Øµ÷
+--æ‰“å¼€ç¤¼åŒ…å›è°ƒ
 function p.UseGiftItemCallBack(self)
 	if self.result == true then
 		pack_gift_box.ShowGiftBox(self);
 	elseif self.result == false then
 		local messageText = self.message
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),messageText,nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†",messageText,nil,p.layer);
 	end
 end
 
---´ò¿ª±¦Ïä»Øµ÷
+--æ‰“å¼€å®ç®±å›è°ƒ
 function p.UseTreasureCallBack(self)
 	if self.result == true then
 		pack_box_treasure.ShowTreasureView(self);
 	elseif self.result == false then
 		local messageText = self.message
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),messageText,nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†",messageText,nil,p.layer);
 	end
 end
 
@@ -174,7 +174,7 @@ function p.getItemInfoTable(uniqueid)
 	return itemInfoTable;
 end
 
---³öÊÛ×°±¸
+--å‡ºå”®è£…å¤‡
 function p.SendSellEquipRequest(EquipUid)
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
@@ -188,25 +188,25 @@ function p.SendSellEquipRequest(EquipUid)
 	SendReq("Item","Sell",uid,param);
 end
 
---³öÊÛ×°±¸»Øµ÷
+--å‡ºå”®è£…å¤‡å›è°ƒ
 function p.sellEquipCallBack(self)
 	local uid = GetUID();
 	if uid == 0 or uid == nil then 
 		return;
 	end
 	if self.result == true then 
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("³öÊÛ³É¹¦¡£"),nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†","å‡ºå”®æˆåŠŸã€‚",nil,p.layer);
 		pack_box_equip.CloseUI();
 		SendReq("Item","List",uid,"");
 	elseif self.result == false then
 		local messageText = self.message;
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),messageText,nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†",messageText,nil,p.layer);
 	end
 end
 
--- UseHealItem //ĞĞ¶¯Á¦»Ö¸´µÀ¾ßÊ¹ÓÃ
--- UseQuickItem //»îÁ¦»Ö¸´µÀ¾ßÊ¹ÓÃ
--- UseStorageItem //±³°üÀ©Õ¹µÀ¾ß
--- UseGiftItem//Àñ°ü
--- UseTreasureItem//±¦Ïä  
+-- UseHealItem //è¡ŒåŠ¨åŠ›æ¢å¤é“å…·ä½¿ç”¨
+-- UseQuickItem //æ´»åŠ›æ¢å¤é“å…·ä½¿ç”¨
+-- UseStorageItem //èƒŒåŒ…æ‰©å±•é“å…·
+-- UseGiftItem//ç¤¼åŒ…
+-- UseTreasureItem//å®ç®±  
 

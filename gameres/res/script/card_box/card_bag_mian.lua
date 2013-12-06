@@ -22,10 +22,10 @@ p.layer 		= nil;
 p.cardListInfo 	= nil;
 p.curBtnNode 	= nil;
 p.sortByRuleV 	= nil;
-p.sortBtnMark 	= MARK_OFF;		--ÅúÁ¿³öÊÛÊÇ·ñ¿ªÆô
-p.BatchSellMark = MARK_OFF;		--ÅúÁ¿³öÊÛÊÇ·ñ¿ªÆô
-p.allCardPrice 	= 0;	--³öÊÛ¿¨ÅÆ×Ü¼ÛÖµ
-p.sellCardList 	= {};	--³öÊÛ¿¨ÅÆÁĞ±í
+p.sortBtnMark 	= MARK_OFF;		--æ‰¹é‡å‡ºå”®æ˜¯å¦å¼€å¯
+p.BatchSellMark = MARK_OFF;		--æ‰¹é‡å‡ºå”®æ˜¯å¦å¼€å¯
+p.allCardPrice 	= 0;	--å‡ºå”®å¡ç‰Œæ€»ä»·å€¼
+p.sellCardList 	= {};	--å‡ºå”®å¡ç‰Œåˆ—è¡¨
 
 function p.ShowUI()
 	cardNumLimit = msg_cache.msg_player.CardMax
@@ -50,11 +50,11 @@ function p.ShowUI()
     p.layer = layer;
     p.SetDelegate(layer);
 	
-	--¼ÓÔØ¿¨ÅÆÁĞ±íÊı¾İ
+	--åŠ è½½å¡ç‰Œåˆ—è¡¨æ•°æ®
     card_bag_mgr.LoadAllCard( p.layer );
 end
 
---ÏÔÊ¾¿¨ÅÆÁĞ±í
+--æ˜¾ç¤ºå¡ç‰Œåˆ—è¡¨
 function p.ShowCardList(cardList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
@@ -65,7 +65,7 @@ function p.ShowCardList(cardList)
 	if cardList == nil or #cardList <= 0 then
 		if p.allCardNumber == nil or p.allCardNumber == 0 then
 			local countText = "0/"..cardNumLimit;
-			cardNumText:SetText(ToUtf8(countText));
+			cardNumText:SetText(countText);
 		end
 		WriteCon("ShowCardList():cardList is null");
 		return;
@@ -75,7 +75,7 @@ function p.ShowCardList(cardList)
 		if p.allCardNumber == nil or p.allCardNumber == 0 then
 			p.allCardNumber = cardNum;
 			local countText = cardNum.."/"..cardNumLimit;
-			cardNumText:SetText(ToUtf8(countText));
+			cardNumText:SetText(countText);
 		end
 	end
 	
@@ -100,7 +100,7 @@ function p.ShowCardList(cardList)
 		local start_index = (row_index-1)*4+1
         local end_index = start_index + 3;
 		
-		--ÉèÖÃÁĞ±íĞÅÏ¢£¬Ò»ĞĞ4ÕÅ¿¨ÅÆ
+		--è®¾ç½®åˆ—è¡¨ä¿¡æ¯ï¼Œä¸€è¡Œ4å¼ å¡ç‰Œ
 		for j = start_index,end_index do
 			if j <= cardNum then
 				local card = cardList[j];
@@ -112,7 +112,7 @@ function p.ShowCardList(cardList)
 	end
 end
 
---ÏÔÊ¾µ¥ÕÅ¿¨ÅÆ
+--æ˜¾ç¤ºå•å¼ å¡ç‰Œ
 function p.ShowCardInfo( view, card, cardIndex )
 	local cardBtn = nil;
 	local cardLevel = nil;
@@ -134,7 +134,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL4;
 		cardTeam = ui_list.ID_CTRL_TEXT_TEAM4;
 	end
-	--ÏÔÊ¾¿¨ÅÆÍ¼Æ¬
+	--æ˜¾ç¤ºå¡ç‰Œå›¾ç‰‡
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
 	WriteCon("CardID ===== "..cardId);
@@ -152,21 +152,21 @@ function p.ShowCardInfo( view, card, cardIndex )
 
 	local cardLevelText = GetLabel(view,cardLevel );
 	local levelText = tostring(card.Level)
-	cardLevelText:SetText(ToUtf8(levelText));
+	cardLevelText:SetText(levelText);
 	
 	local cardTeamText = GetLabel(view,cardTeam );
 	local teamText = tostring(card.Team_marks)
 	if teamText ~= "0" then
-		cardTeamText:SetText(ToUtf8(teamText));
+		cardTeamText:SetText(teamText);
 	end
 
-	--ÉèÖÃ¿¨ÅÆ°´Å¥ÊÂ¼ş
+	--è®¾ç½®å¡ç‰ŒæŒ‰é’®äº‹ä»¶
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
 	p.ClearDelList();
 end
 
---µã»÷¿¨ÅÆ
+--ç‚¹å‡»å¡ç‰Œ
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
@@ -180,7 +180,7 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		end
 		WriteCon("team ===== "..team);
 		if tonumber(team) ~= 0 then
-			dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("¶ÓÎéÖĞµÄ¿¨ÅÆÎŞ·¨³öÊÛ¡£"),nil,p.layer);
+			dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†","é˜Ÿä¼ä¸­çš„å¡ç‰Œæ— æ³•å‡ºå”®ã€‚",nil,p.layer);
 			return
 		end
 		p.ShowSelectPic(uiNode);
@@ -221,7 +221,7 @@ end
 
 
 
---Ö÷½çÃæÊÂ¼ş´¦Àí
+--ä¸»ç•Œé¢äº‹ä»¶å¤„ç†
 function p.SetDelegate(layer)
 	local retBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
 	retBtn:SetLuaDelegate(p.OnUIClickEvent);
@@ -249,37 +249,37 @@ function p.SetDelegate(layer)
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 end
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_SELL == tag) then --ÅúÁ¿Âô³ö
+		if(ui.ID_CTRL_BUTTON_SELL == tag) then --æ‰¹é‡å–å‡º
 			p.sellBtnEvent();
-		elseif(ui.ID_CTRL_BUTTON_RETURN == tag) then --·µ»Ø
+		elseif(ui.ID_CTRL_BUTTON_RETURN == tag) then --è¿”å›
 			p.CloseUI();
 			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
-		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --È«²¿
+		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --å…¨éƒ¨
 			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_0);
-		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --Ö°Òµ1
+		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --èŒä¸š1
 			WriteCon("=====cardBtnPro1");
 			p.SetBtnCheckedFX( uiNode );
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_1);
-		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --Ö°Òµ2
+		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --èŒä¸š2
 			WriteCon("=====cardBtnPro2");
 			p.SetBtnCheckedFX( uiNode );
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_2);
-		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --Ö°Òµ3
+		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --èŒä¸š3
 			WriteCon("=====cardBtnPro3");
 			p.SetBtnCheckedFX( uiNode );
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_3);
-		elseif(ui.ID_CTRL_BUTTON_PRO4 == tag) then --Ö°Òµ4
+		elseif(ui.ID_CTRL_BUTTON_PRO4 == tag) then --èŒä¸š4
 			WriteCon("=====cardBtnPro4");
 			p.SetBtnCheckedFX( uiNode );
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_4);
-		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --°´µÈ¼¶ÅÅĞò
+		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --æŒ‰ç­‰çº§æ’åº
 			WriteCon("card_bag_sort.ShowUI()");
 			p.ClearDelList()
 			if p.sortBtnMark == nil then
@@ -291,7 +291,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		end
 	end
 end
---µã»÷ÅúÁ¿°´Å¥ÊÂ¼ş
+--ç‚¹å‡»æ‰¹é‡æŒ‰é’®äº‹ä»¶
 function p.sellBtnEvent()
 	local btn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SELL);
 	if p.BatchSellMark == MARK_OFF then
@@ -299,7 +299,7 @@ function p.sellBtnEvent()
 		btn:SetImage( GetPictureByAni("button.sell",0));
 	elseif p.BatchSellMark == MARK_ON then
 		if #p.sellCardList <= 0 then
-			dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("ÇëÑ¡ÔñÄúÒª³öÊÛµÄ¿¨Æ¬"),nil,p.layer);
+			dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†","è¯·é€‰æ‹©æ‚¨è¦å‡ºå”®çš„å¡ç‰‡",nil,p.layer);
 		else
 			for i=1,#p.sellCardList do
 				for j=1, #p.cardListInfo do
@@ -308,12 +308,12 @@ function p.sellBtnEvent()
 					end
 				end
 			end
-			dlg_msgbox.ShowYesNo(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("ÕâĞ©¿¨ÅÆÂô³öµÄ¼Û¸ñÊÇ£º"..tostring(p.allCardPrice).."½ğ±Ò£¬ÄãÈ·¶¨ÒªÂô³öÕâĞ©¿¨ÅÆÂğ£¿"),p.OnMsgBoxCallback,p.layer);
+			dlg_msgbox.ShowYesNo("ç¡®è®¤æç¤ºæ¡†","è¿™äº›å¡ç‰Œå–å‡ºçš„ä»·æ ¼æ˜¯ï¼š"..tostring(p.allCardPrice).."é‡‘å¸ï¼Œä½ ç¡®å®šè¦å–å‡ºè¿™äº›å¡ç‰Œå—ï¼Ÿ",p.OnMsgBoxCallback,p.layer);
 		end
 	end
 end
 
---È·ÈÏ»òÈ¡Ïû³öÊÛ
+--ç¡®è®¤æˆ–å–æ¶ˆå‡ºå”®
 function p.OnMsgBoxCallback(result)
 	if result == true then
 		WriteCon("true");
@@ -327,7 +327,7 @@ end
 
 
 
---°´¹æÔòÅÅĞò°´Å¥
+--æŒ‰è§„åˆ™æ’åºæŒ‰é’®
 function p.sortByBtnEvent(sortType)
 	if sortType == nil then
 		return
@@ -347,7 +347,7 @@ function p.sortByBtnEvent(sortType)
 	card_bag_mgr.sortByRule(sortType)
 end 
 
---ÉèÖÃÑ¡ÖĞ°´Å¥
+--è®¾ç½®é€‰ä¸­æŒ‰é’®
 function p.SetBtnCheckedFX( node )
     local btnNode = ConverToButton( node );
     if p.curBtnNode ~= nil then

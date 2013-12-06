@@ -63,23 +63,17 @@ end
 
 --加载地图章节
 function p.addAllStage(stageData)
+	if stageData == nil then
+		dlg_msgbox.ShowOK("错误提示","玩家数据错误，请联系开发人员。",nil,p.layer);
+		return;
+	end
 	local stageListInif = stageData;
 	--获取前景层
 	local fgLayer = GetTileMap():FindFgLayer();
 	if fgLayer == nil then return end;
 	
 	local stageList = SelectRowList( T_STAGE );
-	-- local position = {
-		-- {x=10,  y=10, offsetX=0, offsetY=0},
-		-- {x=20,  y=10, offsetX=0, offsetY=0}, 
-		-- {x=30,  y=10, offsetX=0, offsetY=0}, 
-		-- {x=40,  y=10, offsetX=0, offsetY=0}, 
-		-- {x=50,  y=10, offsetX=0, offsetY=0}, 
-		-- {x=10,  y=20, offsetX=0, offsetY=0},
-		-- {x=20,  y=20, offsetX=0, offsetY=0},
-		-- {x=30,  y=20, offsetX=0, offsetY=0}, 
-		-- {x=40,  y=20, offsetX=0, offsetY=0}, 
-	-- };                                 
+	
 	WriteCon("show stageList===="..#stageList);
 
 	for i = 1, #stageList do
@@ -147,7 +141,7 @@ function p.AddStageObj( fgLayer, tileX, tileY, offsetX, offsetY,
 			title:Init();
 			title:SetFontSize( FontSize(25));
 			title:SetFrameSize(picSize.w,picSize.h);
-			title:SetText(ToUtf8(titleText));
+			title:SetText(titleText);
 			title:SetFramePosXY( 0, -obj:GetFrameSize().h * 0.6f );
 			obj:AddChild(title);
 			if isUnlock then

@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -110,7 +110,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_UPGRADE]
 Type=2
 Tag=33
-Rect=452 696 148 60
+Rect=462 712 148 60
 AnchorPos=0 0
 Notes=
 Text=开始强化
@@ -198,7 +198,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PRE_ITEM_EXP]
 Type=4
 Tag=51
-Rect=166 703 244 28
+Rect=238 710 217 28
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -222,54 +222,56 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_54]
+[CTRL_TEXT_LABEL_6]
 Type=4
 Tag=54
-Rect=145 641 54 52
+Rect=157 705 75 33
 AnchorPos=0 0
 Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
+Text=经验值
+TextTradition=經驗值
+TextSize=18
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LABEL_4]
 Type=4
 Tag=55
-Rect=416 607 41 27
+Rect=416 616 41 27
 AnchorPos=0 0
 Notes=
 Text=LV:
 TextTradition=LV:
 TextSize=15
-TextHorAlign=AlignLeft
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LABEL_5]
 Type=4
 Tag=56
-Rect=419 652 41 27
+Rect=418 659 41 27
 AnchorPos=0 0
 Notes=
 Text=Atk:
 TextTradition=Atk:
 TextSize=15
-TextHorAlign=AlignLeft
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_57]
+[CTRL_TEXT_PRE_ITEM_LV]
 Type=4
 Tag=57
-Rect=467 606 148 30
+Rect=466 613 148 30
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_58]
+[CTR_PRE_ITEM_ATTR_VALUE]
 Type=4
 Tag=58
-Rect=467 647 148 30
+Rect=467 660 148 30
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -279,7 +281,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_PRE_ITEM_EXP]
 Type=9
 Tag=112
-Rect=150 747 270 31
+Rect=155 747 301 31
 AnchorPos=0 0
 Notes=
 TextSize=10

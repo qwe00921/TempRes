@@ -2,11 +2,11 @@ card_bag_mgr = {}
 local p = card_bag_mgr;
 
 p.layer 		= nil;
-p.cardList	 	= nil;	--×Ü¿¨ÅÆÁĞ±í
-p.cardListByProf = nil;	--°´Ö°Òµ¿¨ÅÆÁĞ±í
-p.delCardList 	= nil;	--É¾³ı¿¨ÅÆÁĞ±í
+p.cardList	 	= nil;	--æ€»å¡ç‰Œåˆ—è¡¨
+p.cardListByProf = nil;	--æŒ‰èŒä¸šå¡ç‰Œåˆ—è¡¨
+p.delCardList 	= nil;	--åˆ é™¤å¡ç‰Œåˆ—è¡¨
 
---¼ÓÔØÓÃ»§ËùÓĞµÀ¾ß
+--åŠ è½½ç”¨æˆ·æ‰€æœ‰é“å…·
 function p.LoadAllCard(layer)
 	p.ClearData();
 	if layer ~= nil then
@@ -20,7 +20,7 @@ function p.LoadAllCard(layer)
 	SendReq("CardList","List",uid,"");
 end
 
---ÇëÇó»Øµ÷£¬ÏÔÊ¾¿¨ÅÆÁĞ±í
+--è¯·æ±‚å›è°ƒï¼Œæ˜¾ç¤ºå¡ç‰Œåˆ—è¡¨
 function p.RefreshUI(dataList)
 	if p.layer == nil or p.layer:IsVisible() ~= true then
 		return;
@@ -32,7 +32,7 @@ function p.RefreshUI(dataList)
 	card_bag_mian.ShowCardList(p.cardList);
 end
 
---·¢ËÍÉ¾³ıÇëÇó
+--å‘é€åˆ é™¤è¯·æ±‚
 function p.SendDelRequest(deleteList)
 	p.delCardList = deleteList;
 	local uid = GetUID();
@@ -52,7 +52,7 @@ function p.SendDelRequest(deleteList)
 	SendReq("CardList","Sell",uid,param);
 end
 
---É¾³ıÇëÇó»Øµ÷
+--åˆ é™¤è¯·æ±‚å›è°ƒ
 function p.DelCallBack(self)
 	if self.result == true then
 		p.RefreshCardList(p.delCardList)
@@ -62,15 +62,15 @@ function p.DelCallBack(self)
 		card_bag_mian.BatchSellMark = OFF;
 		local btn = GetButton(p.layer, ui_card_main_view.ID_CTRL_BUTTON_SELL);
 		btn:SetImage( GetPictureByAni("button.sell",1));
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("³öÊÛ¿¨ÅÆ»ñµÃ "..tostring(self.money.Add).."½ğ±Ò¡£"),nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†","å‡ºå”®å¡ç‰Œè·å¾— "..tostring(self.money.Add).."é‡‘å¸ã€‚",nil,p.layer);
 	else
 		local messageText = self.message
-		dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),messageText,nil,p.layer);
+		dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†",messageText,nil,p.layer);
 		card_bag_mian.sellCardList = {};
 		p.delCardList = nil;
 	end
 end
---Ë¢ĞÂ¿¨ÅÆÁĞ±í
+--åˆ·æ–°å¡ç‰Œåˆ—è¡¨
 function p.RefreshCardList(delData)
 	if type(delData) ~= "table"  then
 		WriteCon("not table delete");
@@ -92,7 +92,7 @@ function p.RefreshCardList(delData)
 	card_bag_mian.ShowCardList(p.cardList);
 end
 
---°´Ö°ÒµÏÔÊ¾¿¨ÅÆ
+--æŒ‰èŒä¸šæ˜¾ç¤ºå¡ç‰Œ
 function p.ShowCardByProfession(profType)
 	WriteCon("card_bag_mgr.ShowCardByProfession();");
 	if profType == nil then
@@ -108,7 +108,7 @@ function p.ShowCardByProfession(profType)
 	end
 end
 
---»ñÈ¡ÏÔÊ¾ÁĞ±í
+--è·å–æ˜¾ç¤ºåˆ—è¡¨
 function p.GetCardList(profType)
 	local t = {};
 	if p.cardList == nil then 
@@ -144,7 +144,7 @@ function p.GetCardList(profType)
 	return t;
 end
 
---°´¹æÔòÅÅĞò
+--æŒ‰è§„åˆ™æ’åº
 function p.sortByRule(sortType)
 	if sortType == nil or p.cardListByProf == nil then 
 		return
@@ -162,20 +162,20 @@ function p.sortByRule(sortType)
 	card_bag_mian.ShowCardList(p.cardListByProf);
 end
 
---°´µÈ¼¶ÅÅĞò
+--æŒ‰ç­‰çº§æ’åº
 function p.sortByLevel(a,b)
 	return tonumber(a.Level) < tonumber(b.Level);
 end
---°´ĞÇ¼¶ÅÅĞò
+--æŒ‰æ˜Ÿçº§æ’åº
 function p.sortByStar(a,b)
 	return tonumber(a.Rare) < tonumber(b.Rare);
 end
---°´Ê±¼äÅÅĞò
+--æŒ‰æ—¶é—´æ’åº
 function p.sortByTime(a,b)
 	return tonumber(a.Time) < tonumber(b.Time);
 end
 
---Çé¿ÕÊı¾İ
+--æƒ…ç©ºæ•°æ®
 function p.ClearData()
 	p.layer 		= nil;
 	p.cardList	 	= nil;

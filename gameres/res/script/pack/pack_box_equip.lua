@@ -5,7 +5,7 @@ local ui = ui_bag_equip_view;
 p.layer = nil;
 p.equipPrice = nil;
 p.equipUid = nil;
-p.equipInfoTable = nil;	--×°±¸ĞÅÏ¢
+p.equipInfoTable = nil;	--è£…å¤‡ä¿¡æ¯
 function p.ShowEquip(itemId,itemUniqueId,itemType)
 	p.equipUid = itemUniqueId;
 	local equipInfo = pack_box_mgr.getItemInfoTable(itemUniqueId)
@@ -14,7 +14,7 @@ function p.ShowEquip(itemId,itemUniqueId,itemType)
 		return;
 	end
 	p.equipInfoTable = equipInfo;
-	--×°±¸¼Û¸ñ
+	--è£…å¤‡ä»·æ ¼
 	p.equipPrice = tonumber(equipInfo.SellPrice);
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
@@ -49,35 +49,35 @@ function p.SetDelegate(layer)
 	sellBtn:SetLuaDelegate(p.OnUIClickEvent);
 end
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_CLOSE == tag) then --¹Ø±Õ
-			WriteCon("============¹Ø±Õ===========");
+		if(ui.ID_CTRL_BUTTON_CLOSE == tag) then --å…³é—­
+			WriteCon("============å…³é—­===========");
 			p.CloseUI()
-		elseif(ui.ID_CTRL_BUTTON_STRENGTHEN == tag) then --Ç¿»¯
-			WriteCon("============Ç¿»¯===========");
-		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then --³öÊÛ
-			WriteCon("============³öÊÛ===========");
+		elseif(ui.ID_CTRL_BUTTON_STRENGTHEN == tag) then --å¼ºåŒ–
+			WriteCon("============å¼ºåŒ–===========");
+		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then --å‡ºå”®
+			WriteCon("============å‡ºå”®===========");
 			local equipInformation = p.equipInfoTable
 			if tonumber(equipInformation.Is_dress) > 0 then
-				dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("´©ÔÚÉíÉÏµÄ×°±¸£¬ÎŞ·¨³öÊÛ¡£"),nil,p.layer);
+				dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†","ç©¿åœ¨èº«ä¸Šçš„è£…å¤‡ï¼Œæ— æ³•å‡ºå”®ã€‚",nil,p.layer);
 			elseif tonumber(equipInformation.Issell) > 0 then
-				dlg_msgbox.ShowOK(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("´Ë×°±¸ÎŞ·¨³öÊÛ¡£"),nil,p.layer);
+				dlg_msgbox.ShowOK("ç¡®è®¤æç¤ºæ¡†","æ­¤è£…å¤‡æ— æ³•å‡ºå”®ã€‚",nil,p.layer);
 			else
-				dlg_msgbox.ShowYesNo(ToUtf8("È·ÈÏÌáÊ¾¿ò"),ToUtf8("ÄãÈ·¶¨Òª³öÊÛÕâ¼ş×°±¸Âğ£¿Õâ¼ş×°±¸¼ÛÖµ£º"..tostring(p.equipPrice).."½ğ±Ò£¬ÄãÈ·¶¨ÒªÂô³öÕâĞ©¿¨ÅÆÂğ£¿"),p.OnSellEquipMsgBoxCallback,p.layer);
+				dlg_msgbox.ShowYesNo("ç¡®è®¤æç¤ºæ¡†","ä½ ç¡®å®šè¦å‡ºå”®è¿™ä»¶è£…å¤‡å—ï¼Ÿè¿™ä»¶è£…å¤‡ä»·å€¼ï¼š"..tostring(p.equipPrice).."é‡‘å¸ï¼Œä½ ç¡®å®šè¦å–å‡ºè¿™äº›å¡ç‰Œå—ï¼Ÿ",p.OnSellEquipMsgBoxCallback,p.layer);
 			end
 		end
 	end
 end
---ÊÇ·ñ³öÊÛ×°±¸
+--æ˜¯å¦å‡ºå”®è£…å¤‡
 function p.OnSellEquipMsgBoxCallback(result)
 	if result == true then
-		WriteCon("È·ÈÏ³öÊÛ");
+		WriteCon("ç¡®è®¤å‡ºå”®");
 		pack_box_mgr.SendSellEquipRequest(p.equipUid);
 	elseif result == false then
-		WriteCon("È¡Ïû³öÊÛ");
+		WriteCon("å–æ¶ˆå‡ºå”®");
 	end
 end
 
@@ -90,19 +90,19 @@ function p.ShowEquipInfo(equipInfo)
 		return;
 	end
 
-	local equipNameText = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_NAME);	--×°±¸Ãû×Ö
-	equipNameText:SetText(ToUtf8(itemTable.name));
+	local equipNameText = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_NAME);	--è£…å¤‡åå­—
+	equipNameText:SetText(itemTable.name);
 
-	local equipPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_EQUIP);					--×°±¸Í¼Æ¬
+	local equipPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_EQUIP);					--è£…å¤‡å›¾ç‰‡
 	equipPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
 	
-	local equipStarPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_STAR);				--×°±¸ĞÇ¼¶Í¼Æ¬
+	local equipStarPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_STAR);				--è£…å¤‡æ˜Ÿçº§å›¾ç‰‡
 	local starNum = tonumber(equipInfo.Rare);
 	starNum = starNum -1;
 	equipStarPic:SetPicture( GetPictureByAni("item.equipStar", starNum) );
 	
-	local equipLevelText = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);				--×°±¸µÈ¼¶
-	equipLevelText:SetText(ToUtf8(equipInfo.Equip_level));
+	local equipLevelText = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);				--è£…å¤‡ç­‰çº§
+	equipLevelText:SetText(equipInfo.Equip_level);
 		
 	local equipTypePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_TYPE);	
 	if tonumber(equipInfo.Item_type) == 1 then
@@ -115,25 +115,25 @@ function p.ShowEquipInfo(equipInfo)
 		WriteConErr("Iequip type error");
 	end
 		
-	local mainProText = GetLabel(p.layer, ui.ID_CTRL_TEXT_MAIN_PRO1);				--Ö÷ÊôĞÔ
+	local mainProText = GetLabel(p.layer, ui.ID_CTRL_TEXT_MAIN_PRO1);				--ä¸»å±æ€§
 	if tonumber(equipInfo.Attribute_type) ~= 0 then
 		local AttType = equipInfo.Attribute_type;
 		local AttValue = equipInfo.Attribute_value;
 		p.equipAttByType(mainProText,AttType,AttValue)
 	end
-	local subPro1Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO1);				--¸±ÊôĞÔ1
+	local subPro1Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO1);				--å‰¯å±æ€§1
 	if tonumber(equipInfo.Extra_type1) ~= 0 then
 		local AttType = equipInfo.Extra_type1;
 		local AttValue = equipInfo.Extra_value1;
 		p.equipAttByType(subPro1Text,AttType,AttValue)
 	end
-	local subPro2Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO2);				--¸±ÊôĞÔ2
+	local subPro2Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO2);				--å‰¯å±æ€§2
 	if tonumber(equipInfo.Extra_type2) ~= 0 then
 		local AttType = equipInfo.Extra_type2;
 		local AttValue = equipInfo.Extra_value2;
 		p.equipAttByType(subPro2Text,AttType,AttValue)
 	end
-	local subPro3Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO3);				--¸±ÊôĞÔ3
+	local subPro3Text = GetLabel(p.layer, ui.ID_CTRL_TEXT_SUB_PRO3);				--å‰¯å±æ€§3
 	if tonumber(equipInfo.Extra_value3) ~= 0 then
 		local AttType = equipInfo.Extra_type3;
 		local AttValue = equipInfo.Extra_value3;
@@ -142,10 +142,10 @@ function p.ShowEquipInfo(equipInfo)
 
 	
 	
-	local infoText = GetLabel(p.layer, ui.ID_CTRL_TEXT_INFO);						--½éÉÜĞÅÏ¢
-	infoText:SetText(ToUtf8(itemTable.description));
+	local infoText = GetLabel(p.layer, ui.ID_CTRL_TEXT_INFO);						--ä»‹ç»ä¿¡æ¯
+	infoText:SetText(itemTable.description);
 
-	local modePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_MODE);						--ÊÇ·ñ×°±¸Í¼Æ¬
+	local modePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_MODE);						--æ˜¯å¦è£…å¤‡å›¾ç‰‡
 	local dressIndex = tonumber(equipInfo.Is_dress)
 	modePic:SetPicture( GetPictureByAni("item.equipMode", dressIndex));
 end
@@ -154,18 +154,18 @@ function p.equipAttByType(nodeUI,AttType,AttValue)
 		WriteConErr("IAttType====="..AttType);
 	local AttName = nil
 	if tonumber(AttType) == 1 then
-		AttName = "¹¥»÷"
+		AttName = "æ”»å‡»"
 	elseif tonumber(AttType) == 2 then
-		AttName = "·ÀÓù"
+		AttName = "é˜²å¾¡"
 	elseif tonumber(AttType) == 3 then
-		AttName = "ÑªÁ¿"
+		AttName = "è¡€é‡"
 	elseif tonumber(AttType) == 4 then
-		AttName = "ËÙ¶È"
+		AttName = "é€Ÿåº¦"
 	elseif tonumber(AttType) == 5 then
-		AttName = "±©»÷"
+		AttName = "æš´å‡»"
 	end
 	local text = AttName..AttValue
-	nodeUI:SetText(ToUtf8(text));
+	nodeUI:SetText(text);
 end
 
 
