@@ -3,6 +3,13 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_REWARD3]
+Type=1
+Tag=14
+Rect=544 195 50 28
+AnchorPos=0 0
+Notes=
+
 [CTRL_PIC_LIST_BG]
 Type=1
 Tag=1
@@ -11,6 +18,33 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_list_bg.png
 NormalFileUV=0 0 614 344
+
+[CTRL_PICTURE_99]
+Type=1
+Tag=99
+Rect=148 144 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\star_less.png
+NormalFileUV=0 0 36 36
+
+[CTRL_PICTURE_63]
+Type=1
+Tag=63
+Rect=189 144 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\star_less.png
+NormalFileUV=0 0 36 36
+
+[CTRL_PICTURE_64]
+Type=1
+Tag=64
+Rect=229 144 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\star_less.png
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_QUEST_NAME_V]
 Type=4
@@ -159,15 +193,6 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_99]
-Type=1
-Tag=99
-Rect=148 144 36 36
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\star_less.png
-NormalFileUV=0 0 36 36
-
 [CTRL_TEXT_EVALUATION]
 Type=4
 Tag=11
@@ -180,24 +205,6 @@ TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_64]
-Type=1
-Tag=64
-Rect=229 144 36 36
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_63]
-Type=1
-Tag=63
-Rect=189 144 36 36
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\star_less.png
-NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR1]
 Type=1
@@ -252,15 +259,6 @@ NormalFileUV=0 0 72 84
 Type=1
 Tag=13
 Rect=271 217 100 100
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\getitem.png
-NormalFileUV=0 0 72 84
-
-[CTRL_PICTURE_REWARD3]
-Type=1
-Tag=14
-Rect=522 120 50 58
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png

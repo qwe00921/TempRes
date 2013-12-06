@@ -156,7 +156,13 @@ function p.SetBtnCheckedFX( node )
 end
 
 --显示列表
-function p.ShowQuestList(List)
+function p.ShowQuestList(self)
+	if self.result == false then
+		dlg_msgbox.ShowOK("错误提示","玩家数据错误，请联系开发人员。",nil,p.layer);
+		return;
+	end
+	
+	local List = self.data;
 	for k,v in pairs(List) do
 		if k == "missions" then
 			p.missionList = List[k];
@@ -259,7 +265,7 @@ function p.setMissionInif(MisId, view)
 	local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
 	local item1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD1);
 	local item2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD2);
-	local item3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3);
+	--local item3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3);
 	
 	local missionTable = SelectRowList(T_MISSION,"mission_id",mis_id);
 	if #missionTable == 1 then 
@@ -272,7 +278,7 @@ function p.setMissionInif(MisId, view)
 		
 		local rewardId1 = tonumber(missionTable[1]["reward_1"]);
 		local rewardId2 = tonumber(missionTable[1]["reward_2"]);
-		local rewardId3 = tonumber(missionTable[1]["reward_3"]);
+		--local rewardId3 = tonumber(missionTable[1]["reward_3"]);
 		if rewardId1 ~= nil  then
 			item1:SetVisible(true);
 			item1:SetPicture(GetPictureByAni("item.reward", rewardId1));
@@ -281,10 +287,10 @@ function p.setMissionInif(MisId, view)
 			item2:SetVisible(true);
 			item2:SetPicture(GetPictureByAni("item.reward", rewardId2));
 		end
-		if rewardId3 ~= nil  then
-			item3:SetVisible(true);
-			item3:SetPicture(GetPictureByAni("item.reward", rewardId3));
-		end
+		--if rewardId3 ~= nil  then
+		--	item3:SetVisible(true);
+		--	item3:SetPicture(GetPictureByAni("item.reward", rewardId3));
+		--end
 	else
 			WriteCon("missionTable error");
 	end
@@ -334,8 +340,8 @@ function p.HideItem(view)
 	Item1:SetVisible(false);
 	local Item2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD2)
 	Item2:SetVisible(false);
-	local item3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3)
-	item3:SetVisible(false);
+	--local item3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3)
+	--item3:SetVisible(false);
 end
 
 
