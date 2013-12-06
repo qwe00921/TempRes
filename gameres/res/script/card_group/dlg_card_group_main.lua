@@ -242,6 +242,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		if ui.ID_CTRL_BUTTON_BACK == tag then
 			WriteCon("¹Ø±Õ");
 			p.CloseUI();
+			maininterface.BecomeFirstUI();
 		end
 	end
 end
