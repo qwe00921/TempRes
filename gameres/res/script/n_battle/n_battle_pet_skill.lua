@@ -119,9 +119,10 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
         
         if Buff ~= N_BUFF_TYPE_0 then
         	local buffAni = GetBuffAniByType( Buff );
-        	local cmdBuff = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), buffAni );
-            seqTarget:AddCommand( cmdBuff );
-            --AddBuffIcon( targetF, Buff );
+        	if not targetF:GetNode():HasAniEffect( buffAni ) then
+        		local cmdBuff = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), buffAni );
+                seqTarget:AddCommand( cmdBuff );
+        	end
         end
     	HurtResultAni( targetF, seqTarget );
     end

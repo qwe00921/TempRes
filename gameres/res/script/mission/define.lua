@@ -19,4 +19,4 @@ DoFile("mission/dlg_dungeon_result.lua");
 
 --хннЯ
 DoFile("mission/quest_main.lua");
---DoFile("mission/quest_data.lua");
+DoFile("mission/quest_reward.lua");

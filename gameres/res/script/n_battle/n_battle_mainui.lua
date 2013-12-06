@@ -12,6 +12,7 @@ p.imageMask = nil;
 p.m_kPower = nil;
 p.m_nPowerTimer = 0;
 p.m_fPowerPercent = 100.0f;
+p.roundNumNode = nil;
 
 local useSkill = false;  --当前回合是否用技能攻击
 local isHeroAutoAtk = true; --是否托管（自动攻击）
@@ -53,6 +54,8 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate(layer);
+	p.roundNumNode = GetImage( layer, ui_n_battle_mainui.ID_CTRL_PICTURE_ROUNDNUM );
+	
 	--[[
 	p.m_kPower = GetExp(p.layer,ui_n_battle_mainui.ID_CTRL_HOR3SLICES_POWER);
 
@@ -72,12 +75,6 @@ function p.ShowUI()
 --	p.AddMaskImage();
 
 	return true;
-end
-
---显示回合数
-function p.ShowRoundNum( roundNum )
-	local roundNumNode = GetLabel( p.layer, ui_n_battle_mainui.ID_CTRL_TEXT_ROUNDNUM );
-	roundNumNode:SetText( roundNum.."/"..N_BATTLE_MAX_ROUND );
 end
 
 --设置对战双方玩家名称

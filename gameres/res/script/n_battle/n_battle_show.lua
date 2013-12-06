@@ -6,6 +6,7 @@
 
 n_battle_show = {}
 local p = n_battle_show;
+p.flyRoundNumNode = nil;
 
 --相方互殴表现
 function p.DoEffectAtk( atkData )
@@ -160,5 +161,14 @@ function p.UpdateBuffIcon( target, BuffType, seq )
         seq:AddCommand( cmd );
     end
     return cmd;
+end
+
+function p.DoEffectShowTurnNum()
+	local roundNum = n_battle_stage.GetRoundNum();
+    if p.flyRoundNumNode == nil then
+        p.flyRoundNumNode = n_battle_round_num:new();
+        p.flyRoundNumNode:InitWithImageNode( n_battle_mainui.roundNumNode );
+    end
+    p.flyRoundNumNode:PlayNum( roundNum );
 end
 

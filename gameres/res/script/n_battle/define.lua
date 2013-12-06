@@ -25,6 +25,8 @@ DoFile("n_battle/n_battle_skill.lua");
 DoFile("n_battle/n_battle_pet_skill.lua");
 DoFile("n_battle/n_fly_num_green.lua");
 DoFile("n_battle/n_battle_func.lua");
+DoFile("n_battle/n_battle_round_num.lua");
+
 
 
 

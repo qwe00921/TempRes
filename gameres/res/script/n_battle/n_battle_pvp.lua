@@ -63,6 +63,7 @@ local PETCAMPNUM = 2;
 p.battleLayer = nil;
 p.TestHeroFighter1 = nil;
 p.pBgImage = nil;
+p.battleType = nil;
 -----
 
 --设置可见
@@ -74,12 +75,14 @@ function p.HideUI()
 end
 
 --显示UI
-function p.ShowUI()
+function p.ShowUI( battleType )
 	if p.battleLayer ~= nil then
 		p.battleLayer:SetVisible( true );
 		GetBattleShow():EnableTick( true );
 		return;
 	end
+	
+	p.battleType = battleType;
 
 	local layer = createCardBattleUILayer();
     if layer == nil then
@@ -264,7 +267,12 @@ function p.InitBattle()
 	n_battle_mgr.uiLayer = p.battleLayer;
 	n_battle_mgr.heroUIArray = heroUIArray;
 	n_battle_mgr.enemyUIArray = enemyUIArray;
-	n_battle_mgr.play_pvp();
+	if p.battleType == N_BATTLE_PVP then
+		n_battle_mgr.play_pvp();
+	else
+	   	n_battle_mgr.play_pve();
+	end
+	
 	
 	--SetTimerOnce(p.ReadyGo,1.5f);
 end

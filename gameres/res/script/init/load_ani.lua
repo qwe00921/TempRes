@@ -5,6 +5,7 @@
 --------------------------------------------------------------
 
 --º”‘ÿÃÿ–ß
+LoadAni("common_ui.ani")
 LoadAni("bottom_bar.ani")
 LoadAni("effect.ani")
 LoadAni("sk_test.ani")

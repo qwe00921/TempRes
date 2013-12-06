@@ -6,25 +6,25 @@ Height=960
 [CTRL_PICTURE_LISTBG]
 Type=1
 Tag=10
-Rect=0 0 619 223
+Rect=0 0 590 264
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\beast_bg.png
-NormalFileUV=0 0 626 226
+NormalFileUV=0 0 590 264
 
 [CTRL_PICTURE_BEAST]
 Type=1
 Tag=11
-Rect=11 5 115 172
+Rect=35 81 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\beast_head.png
-NormalFileUV=0 0 84 126
+NormalFileUV=0 100 84 26
 
 [CTRL_TEXT_12]
 Type=4
 Tag=12
-Rect=12 182 109 33
+Rect=87 348 109 33
 AnchorPos=0 0
 Notes=
 Text=LV 100
@@ -37,29 +37,51 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_14]
 Type=4
 Tag=14
-Rect=137 8 181 42
+Rect=28 23 287 42
 AnchorPos=0 0
 Notes=
-Text=召唤兽名称
-TextTradition=召喚獸名稱
+Text=召唤兽名称八个字
+TextTradition=召喚獸名稱八個字
 TextSize=36
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
+TextColor=0xfef9d2
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_ELEMENT]
 Type=1
 Tag=15
-Rect=135 55 96 32
+Rect=157 81 129 35
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\beast\bg_element.png
-NormalFileUV=0 0 96 32
+Text=攻击型
+TextTradition=攻擊型
+NormalFile=.\res\image\ui\beast\bg_type.png
+NormalFileUV=0 0 249 51
+
+[CTRL_9SLICES_53]
+Type=22
+Tag=53
+Rect=199 416 142 30
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt.png
+NormalFileUV=0 0 122 38
+
+[CTRL_9SLICES_20]
+Type=22
+Tag=26
+Rect=158 206 128 32
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_ELEMENT]
 Type=4
 Tag=16
-Rect=152 56 61 24
+Rect=217 345 61 24
 AnchorPos=0 0
 Notes=
 Text=火属性
@@ -69,88 +91,108 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_9SLICES_21]
+Type=22
+Tag=27
+Rect=158 164 128 32
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_9SLICES_22]
+Type=22
+Tag=28
+Rect=158 123 128 32
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
 [CTRL_TEXT_HP]
 Type=4
 Tag=17
-Rect=155 102 39 33
+Rect=158 123 57 33
 AnchorPos=0 0
 Notes=
-Text=HP
-TextTradition=HP
-TextSize=28
-TextColor=0xffffff
+Text=速度
+TextTradition=速度
+TextSize=20
+TextColor=0x8aff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_ATTACK]
 Type=4
 Tag=18
-Rect=146 136 57 33
+Rect=158 164 57 33
 AnchorPos=0 0
 Notes=
 Text=攻击
 TextTradition=攻擊
-TextSize=28
-TextColor=0xffffff
+TextSize=20
+TextColor=0xb400ff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_MANA]
 Type=4
 Tag=19
-Rect=146 170 57 33
+Rect=158 206 57 33
 AnchorPos=0 0
 Notes=
 Text=灵气
 TextTradition=靈氣
-TextSize=28
-TextColor=0xffffff
+TextSize=20
+TextColor=0xfffc
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_HP2]
 Type=4
 Tag=20
-Rect=219 101 97 33
+Rect=215 123 74 33
 AnchorPos=0 0
 Notes=
 Text=999999
 TextTradition=999999
-TextSize=28
-TextColor=0xffffff
+TextSize=20
+TextColor=0x8aff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_ATTACK2]
 Type=4
 Tag=21
-Rect=219 137 99 33
+Rect=213 164 74 33
 AnchorPos=0 0
 Notes=
 Text=999999
 TextTradition=999999
-TextSize=28
-TextColor=0xffffff
+TextSize=20
+TextColor=0xb400ff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_22]
 Type=4
 Tag=22
-Rect=219 174 97 33
+Rect=215 206 74 33
 AnchorPos=0 0
 Notes=
 Text=999999
 TextTradition=999999
-TextSize=28
-TextColor=0xffffff
+TextSize=20
+TextColor=0xfffc
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_INCUBATE]
 Type=2
 Tag=23
-Rect=344 11 120 60
+Rect=330 21 110 54
 AnchorPos=0 0
 Notes=
 Text=培养
@@ -159,15 +201,15 @@ TextSize=36
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\beast\button_normal.png
-NormalFileUV=0 0 245 87
-SelectFile=.\res\image\ui\beast\button_highlight.png
-SelectedFileUV=0 0 247 86
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=24
-Rect=482 11 120 60
+Rect=458 21 110 54
 AnchorPos=0 0
 Notes=
 Text=卖出
@@ -176,34 +218,25 @@ TextSize=36
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\beast\button_normal.png
-NormalFileUV=0 0 245 87
-SelectFile=.\res\image\ui\beast\button_highlight.png
-SelectedFileUV=0 0 247 86
-
-[CTRL_PICTURE_SKILL]
-Type=1
-Tag=25
-Rect=323 80 125 131
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\beast\skill.png
-NormalFileUV=0 0 84 126
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_9SLICES_50]
 Type=22
 Tag=50
-Rect=460 83 146 126
+Rect=307 88 259 150
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card_group\team_bg.PNG
-NormalFileUV=0 0 46 38
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_51]
 Type=4
 Tag=51
-Rect=462 88 142 119
+Rect=427 99 133 122
 AnchorPos=0 0
 Notes=
 Text=技能信息技能信息技能信息技能信息技能信息技能信息技能信息
@@ -212,20 +245,10 @@ TextSize=20
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 
-[CTRL_9SLICES_53]
-Type=22
-Tag=53
-Rect=3 0 85 38
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\card_group\team_bg.PNG
-NormalFileUV=0 0 46 38
-
 [CTRL_TEXT_TEAM]
 Type=4
 Tag=52
-Rect=3 0 85 35
+Rect=299 330 85 35
 AnchorPos=0 0
 Notes=
 Text=队伍1
@@ -234,4 +257,50 @@ TextSize=22
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_SKILL]
+Type=1
+Tag=25
+Rect=314 111 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\skill.png
+NormalFileUV=0 0 84 126
 
+[CTRL_PICTURE_TEAM1]
+Type=1
+Tag=29
+Rect=33 196 110 50
+AnchorPos=0 0
+Notes=
+Remark=team1标志
+NormalFile=.\res\image\ui\beast\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_TEAM2]
+Type=1
+Tag=30
+Rect=32 196 110 50
+AnchorPos=0 0
+Notes=
+Remark=team2标志
+NormalFile=.\res\image\ui\beast\team2.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_TEAM3]
+Type=1
+Tag=31
+Rect=32 196 110 50
+AnchorPos=0 0
+Notes=
+Remark=team3标志
+NormalFile=.\res\image\ui\beast\team3.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_106]
+Type=1
+Tag=106
+Rect=32 81 103 103
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
