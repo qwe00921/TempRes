@@ -5,7 +5,6 @@
 ui_n_battle_mainui = {};
 local p =  ui_n_battle_mainui;
 p.ID_CTRL_TEXT_ROUNDNUM				   = 32;
-p.ID_CTRL_TEXT_ROUNDTITLE				 = 31;
 p.ID_CTRL_PICTURE_26					     = 30;
 p.ID_CTRL_TEXT_TNAME					     = 29;
 p.ID_CTRL_TEXT_UNAME					     = 28;

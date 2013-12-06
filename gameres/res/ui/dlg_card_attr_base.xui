@@ -285,3 +285,15 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_REPLACE]
+Type=2
+Tag=30
+Rect=155 831 110 60
+AnchorPos=0 0
+Notes=
+Text=替换
+TextTradition=替換
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

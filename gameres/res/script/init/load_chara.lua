@@ -7,6 +7,7 @@
 --加载角色配置
 LoadChara("test.chara")
 LoadChara("card_battle.chara")
+LoadChara("n_battle.chara")
 
 --加载子弹配置
 LoadBullet("bullet.ini");

@@ -213,9 +213,11 @@ function p:AddFighters( uiArray, fighters )
         f.lifeMax = tonumber( fighterInfo.Hp );
         f.level = tonumber( fighterInfo.Level );
         f.uniqueId = tonumber( fighterInfo.UniqueId );
+        f.cardId = tonumber( fighterInfo.CardID );
+        f.buffList = {};
         
 		f:Init( uiTag, node, self.idCamp );
-		self:SetFighterConfig( f, i );
+		self:SetFighterConfig( f, f.cardId );
 		f:standby();
 		
         f.idFighter = tonumber( fighterInfo.Position );
@@ -255,7 +257,7 @@ function p:SetFighterConfig( f, idx )
 		f.petTag = PET_FLY_DRAGON_TAG;
 		return;
 	end
-	
-	f:UseConfig( string.format("test%s", tobjId[self.idCamp == E_CARD_CAMP_HERO and idx or idx + 8]) );
-	f.petTag = idx % 2 == 0 and PET_FLY_DRAGON_TAG or PET_BLUE_DEVIL_TAG;
+	f:UseConfig( string.format( "%s", idx ));
+	--f:UseConfig( string.format("test%s", tobjId[self.idCamp == E_CARD_CAMP_HERO and idx or idx + 8]) );
+	--f.petTag = idx % 2 == 0 and PET_FLY_DRAGON_TAG or PET_BLUE_DEVIL_TAG;
 end

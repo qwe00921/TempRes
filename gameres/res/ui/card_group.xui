@@ -1,0 +1,54 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 640 816
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\bg.png
+NormalFileUV=0 0 480 612
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=121 7 392 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\beast\title.png
+NormalFileUV=0 0 392 100
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=5
+Rect=548 5 87 69
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\beast\back.png
+NormalFileUV=0 0 85 68
+
+[CTRL_VERTICAL_LIST_6]
+Type=14
+Tag=6
+Rect=20 116 600 660
+AnchorPos=0 0
+Notes=
+Remark=卡组列表
+
+[CTRL_TEXT_38]
+Type=4
+Tag=38
+Rect=203 21 240 60
+AnchorPos=0 0
+Notes=
+Text=卡组
+TextTradition=卡組
+TextSize=37
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

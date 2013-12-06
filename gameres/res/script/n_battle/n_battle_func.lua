@@ -77,7 +77,7 @@ function GetBestTargetPos( Hero, TCamp, Targets )
 	local tempPosId;
 	local figther;
 	for key, var in ipairs(Targets) do
-		local pos = tonumber( v.TPos );
+		local pos = tonumber( var.TPos );
 		if tempPosId == nil then
 		  tempPosId = pos;
 		elseif tempPosId > pos then
@@ -107,3 +107,47 @@ function HurtResultAni( targetFighter, seqTarget )
         seqTarget:AddCommand( cmdC );
     end
 end
+
+function IsSkillTargetSelfCamp( targetType )
+	if targetType == nil then
+		return false;
+	end
+	if targetType == N_SKILL_TARGET_TYPE_11 or targetType == N_SKILL_TARGET_TYPE_12 or targetType == N_SKILL_TARGET_TYPE_13 then
+		return true;
+	else
+	   return false;	
+	end
+end
+
+function AddBuffIcon( target, buffType )
+    if target == nil or buffType == nil then
+    	return false;
+    end
+	local ln = #target.buffList;
+	local isIn = false;
+	for i=1, ln do
+		local v = target.buffList[i];
+		if tonumber( v ) == tonumber( buffType ) then
+			isIn = true;
+		end
+	end
+	if not isIn then
+		target.buffList[ #target.buffList + 1 ] = buffType;
+	end
+end
+
+function DelBuffIcon( target, buffType )
+    if target == nil or buffType == nil then
+        return false;
+    end
+    for key, var in ipairs(target.buffList) do
+        if tonumber( var ) == tonumber( buffType ) then
+            table.remove( target.buffList, key);
+        end
+    end
+end
+
+
+
+
+

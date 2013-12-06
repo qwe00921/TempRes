@@ -99,7 +99,13 @@ end
 
 --进入回合阶段->BUFF表现
 function p.EnterBattle_RoundStage_Buff()
-    n_battle_mainui.OnBattleShowFinished();
+    local rounds = n_battle_stage.GetRoundNum();
+    local buffEffectData = n_battle_db_mgr.GetBuffEffectRoundDB( rounds );
+    if buffEffectData ~= nil and #buffEffectData > 0 and rounds <= N_BATTLE_MAX_ROUND then
+        n_battle_show.DoEffectBuff( buffEffectData );
+    else
+        n_battle_mainui.OnBattleShowFinished();   
+    end
 end
 
 --进入回合阶段->互殴

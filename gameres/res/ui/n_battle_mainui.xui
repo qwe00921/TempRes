@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -131,9 +131,11 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_24]
 Type=1
 Tag=27
-Rect=0 0 640 66
+Rect=0 0 640 82
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\n_battle\head_t_bg.png
+NormalFileUV=0 0 640 82
 
 [CTRL_TEXT_UNAME]
 Type=4
@@ -164,27 +166,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_26]
 Type=1
 Tag=30
-Rect=259 0 123 74
+Rect=227 10 188 50
 AnchorPos=0 0
 Notes=
-
-[CTRL_TEXT_ROUNDTITLE]
-Type=4
-Tag=31
-Rect=267 6 107 25
-AnchorPos=0 0
-Notes=
-Text=剩余回合数
-TextTradition=剩余回合數
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\n_battle\hh.png
+NormalFileUV=0 0 188 50
 
 [CTRL_TEXT_ROUNDNUM]
 Type=4
 Tag=32
-Rect=266 38 107 25
+Rect=274 18 70 25
 AnchorPos=0 0
 Notes=
 TextSize=20
