@@ -39,6 +39,8 @@ function p.ShowUI(cardInfo, groupFlag)
 	p.layer = layer;
     p.SetDelegate(layer);
 	
+	cardInfo.UniqueId = cardInfo.UniqueId or cardInfo.UniqueID;
+	
 	p.LoadCardDetail(cardInfo.UniqueId);
 end
 

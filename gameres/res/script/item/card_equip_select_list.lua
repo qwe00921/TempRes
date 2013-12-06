@@ -29,6 +29,8 @@ p.intent = 0;
 p.cardUid = nil;
 p.selectType = 0;
 p.upgradeItem = nil;
+p.useMoney = 0;
+p.upIds = nil;
 
 function p.ShowUI(intent , cardUid, selectType, upgradeItem)
 	p.intent = intent;
@@ -163,7 +165,13 @@ end
 
 function p.upgrade()
 	
+	local userMoney = tonumber(msg_cache.msg_player.Money or 0);
+	if p.useMoney and p.useMoney > userMoney then
+		dlg_msgbox.ShowOK("",GetStr("card_equip_up_money_short"),p.OnMsgCallback);
+	end
+	
 	local ids = "";
+	local has5Rank = false;
 	if p.allItems then
 		for i = 1, #p.allItems do
 			local equip =  p.allItems[i];
@@ -173,6 +181,9 @@ function p.upgrade()
 				end
 				ids = ids .. equip.id;
 			end
+			if equip and tonumber(equip.Rare) >= 5 then
+				has5Rank = true;
+			end
 		end
 	end
 	
@@ -180,11 +191,24 @@ function p.upgrade()
 		return;
 	end
 	
+	if has5Rank then
+		p.upIds = ids;
+		dlg_msgbox.ShowYesNo("",GetStr("card_equip_up_5rank"),p.ContinueUpgrade);
+		return
+	end
+	
 	p.reqUpgrade(p.upgradeItem.itemUid, ids);
 
 end
 
+function p.ContinueUpgrade(ret)
+	if ret then
+		p.reqUpgrade(p.upgradeItem.itemUid, p.upIds);
+	end
+end
+
 --显示要升级的装备信息
+-- 
 function p.refreshEquipUpgradeInfo()
 	local imgV 	= GetImage(p.layer,ui.ID_CTRL_PICTURE_PRE_ITEM_IMAGE);
 	local nmV 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_NAME);
@@ -210,6 +234,8 @@ function p.refreshEquipUpgradeInfo()
 		bt:SetVisible(false);
 		return
 	end
+	
+	
 	
 	--显示卡牌图片
 	local lst = p.allItems or {};
@@ -247,22 +273,36 @@ function p.refreshEquipUpgradeInfo()
 	useNumV:SetText(tostring(selNum) .. "/10");
 	useMoneyV:SetText(tostring(feeMoney));
 	userMoneyV:SetText(tostring(userMoney));
-	if feeMoney < userMoney then
-		
+	if feeMoney > userMoney then
+		useMoneyV:SetFontColor(ccc4(255,0,0,255));
 	end
 	
-	local levelExp = 0;
-	local levelConfig = p.SelectEquipConfig(p.upgradeItem.itemLevel);
-	if levelConfig then
-		levelExp = tonumber(levelConfig.exp);
+	p.useMoney = feeMoney
+	
+	local itemLevel = tonumber(p.upgradeItem.itemLevel or 1);
+	local preLevel	= itemLevel - 1;
+	local levelCfg 	= p.SelectEquipConfig(tostring(itemLevel));
+	local preLevelCfg = p.SelectEquipConfig(tostring(preLevel));
+	
+	local upExp = 0;
+	local hadExp = 0;
+	if levelCfg then
+		upExp = tonumber(levelCfg.exp);
+		
+		if preLevelCfg then
+			upExp = upExp - tonumber(preLevelCfg.exp);
+		end
+		
+		hadExp = tonumber(p.upgradeItem.itemExp) - tonumber(levelCfg.exp);
 	end
+	
 	
 	--显示经验值
 	local expFmt = "";	
 	if gainExp > 0 then
-		expFmt = string.format("%s (+%d)/%d",p.upgradeItem.itemExp or "0", gainExp, levelExp);
+		expFmt = string.format("%d (+%d)/%d",hadExp or "0", gainExp, upExp);
 	else 
-		expFmt = string.format("%s/%d",p.upgradeItem.itemExp or "0", levelExp);
+		expFmt = string.format("%d/%d",hadExp or "0", upExp);
 	end
 	if expFmt then
 		local preItemExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_EXP);
@@ -270,14 +310,22 @@ function p.refreshEquipUpgradeInfo()
 	end
 	
 	--显示经验条
-	if levelExp > 0 then
+	if upExp > 0 then
 		local Exp = GetExp( p.layer, ui.ID_CTRL_EXP_PRE_ITEM_EXP );
-		Exp:SetValue( 0, tonumber( levelExp ), gainExp +  tonumber(p.upgradeItem.itemExp or 0));
+		Exp:SetValue( 0, tonumber( upExp ), gainExp +  hadExp);
 	end
 	
 	local nextLeve = tonumber(p.upgradeItem.itemLevel) + 1  -- TODO
+	local maxExp = tonumber(p.upgradeItem.itemExp) + gainExp;
+	local nextCfg = levelCfg;
 	
-	--level
+	while (nextCfg and (maxExp > tonumber(nextCfg.exp))) do
+		nextLeve = nextLeve + 1;
+		nextCfg = p.SelectEquipConfig(tostring(nextLeve));
+	end
+	
+	
+	--显示可升级的等级
 	local itemV = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_LV2 );
 	if itemV then
 		itemV:SetText(p.upgradeItem.itemLevel .. " => " .. tostring(nextLeve) or "");
@@ -286,6 +334,7 @@ function p.refreshEquipUpgradeInfo()
 	--显示属性类别
 	local labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_LABEL_5);
 	local str = GetStr("card_equip_attr"..p.upgradeItem.attrType)
+	--local str = "c--"..tostring(nextLeve)
 	labelV:SetText(str or "");
 	
 	--显示属性值
@@ -297,6 +346,7 @@ function p.refreshEquipUpgradeInfo()
 		local str =  string.format("%d => %d", attr1, attr2);
 		labelV:SetText(str or "");
 	end
+	
 	
 	
 	--msg_cache.msg_player.Money
@@ -480,9 +530,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 			end
 		end
 		
-		p.refreshEquipUpgradeInfo();
-		
-		
+		p.refreshEquipUpgradeInfo(true);
 		
 	end
 	
@@ -566,7 +614,7 @@ function p.CloseUI()
 		p.curBtnNode = nil;
 		p.allCardPrice = nil;
 		p.sellCardList = nil;
-		
+		p.useMoney = 0;
 		p.selectList = {};
     end
 end
