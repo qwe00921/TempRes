@@ -239,8 +239,8 @@ function p.loadMissionList(missionStartId,num)
 			fightBtn:SetEnabled(true);
 			fightBtn:SetId(MisId);
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
-			local missionTable = SelectRowList(T_MISSION,"mission_id",mis_id);
-			local text = p.missionList[MisKey]["Fight_num"].."/"..missionTable[1]["timesLimit"]
+			local missionTable = SelectRowInner(T_MISSION,"id",MisId);
+			local text = p.missionList[MisKey]["Fight_num"].."/"..missionTable["fight_limit"]
 			timesText:SetText(text);
 			--显示星级
 			local StarNum = p.missionList[MisKey]["High_score"]
@@ -267,33 +267,56 @@ function p.setMissionInif(MisId, view)
 	local item2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD2);
 	--local item3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3);
 	
-	local missionTable = SelectRowList(T_MISSION,"mission_id",mis_id);
-	if #missionTable == 1 then 
-		misstionName:SetText(missionTable[1]["name"]);
-		power:SetText(missionTable[1]["power"]);
-		expText:SetText(missionTable[1]["exp"]);
-		moneyText:SetText(missionTable[1]["money"]);
-		local text = missionTable[1]["timesLimit"].."/"..missionTable[1]["timesLimit"]
-		timesText:SetText(text);
-		
-		local rewardId1 = tonumber(missionTable[1]["reward_1"]);
-		local rewardId2 = tonumber(missionTable[1]["reward_2"]);
-		--local rewardId3 = tonumber(missionTable[1]["reward_3"]);
-		if rewardId1 ~= nil  then
-			item1:SetVisible(true);
-			item1:SetPicture(GetPictureByAni("item.reward", rewardId1));
-		end
-		if rewardId2 ~= nil  then
-			item2:SetVisible(true);
-			item2:SetPicture(GetPictureByAni("item.reward", rewardId2));
-		end
-		--if rewardId3 ~= nil  then
-		--	item3:SetVisible(true);
-		--	item3:SetPicture(GetPictureByAni("item.reward", rewardId3));
-		--end
-	else
-			WriteCon("missionTable error");
+	local missionTable = SelectRowInner(T_MISSION,"id",mis_id);
+	if 	missionTable == nil then
+		WriteCon("missionTable error");
+		return;
 	end
+	misstionName:SetText(missionTable.mission_name);
+	power:SetText(missionTable.move_cost);
+	expText:SetText(missionTable.reward_exp);
+	moneyText:SetText(missionTable.reward_money);
+	local text = missionTable["fight_limit"].."/"..missionTable["fight_limit"]
+	timesText:SetText(text);
+	
+	local rewardId = missionTable.reward_id;
+	WriteCon("rewardId==="..rewardId);
+
+	local rewardTable = SelectRowList(T_MISSION_REWARD,"reward_id",rewardId);
+	if rewardTable == nil then
+		WriteCon("rewardTable error");
+		return
+	end
+	local rewardItemId = nil;
+	for k,v in pairs(rewardTable) do
+		rewardItemId = tonumber(v.type_id);
+		if tonumber(v.type) == 2 then --卡牌
+			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
+			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
+			item1:SetVisible(true);
+			item1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			WriteCon("tonumberv.type==="..tonumber(v.type));
+		elseif tonumber(v.type) == 1 then	--物品
+			local itemTable = SelectRowInner(T_ITEM,"id",rewardItemId);
+			item2:SetVisible(true);
+			item2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+		end
+	end
+	
+	--local rewardId1 = tonumber(missionTable["reward_1"]);
+	--local rewardId2 = tonumber(missionTable["reward_2"]);
+	--local rewardId3 = tonumber(missionTable[1]["reward_3"]);
+	-- if rewardId1 ~= nil  then
+		-- item1:SetPicture(GetPictureByAni("item.reward", rewardId1));
+	-- end
+	-- if rewardId2 ~= nil  then
+		-- item2:SetPicture(GetPictureByAni("item.reward", rewardId2));
+	-- end
+	--if rewardId3 ~= nil  then
+	--	item3:SetVisible(true);
+	--	item3:SetPicture(GetPictureByAni("item.reward", rewardId3));
+	--end
+
 end
 
 

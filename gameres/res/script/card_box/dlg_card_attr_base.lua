@@ -9,12 +9,19 @@ p.layer = nil;
 p.cardInfo = nil;
 p.cardDetail = nil;
 
+p.groupFlag = false;
+
 --idÊÇUniqueId
-function p.ShowUI(cardInfo)
+function p.ShowUI(cardInfo, groupFlag)
 	WriteCon(cardInfo.CardID.."************");
-	  if cardInfo == nil then
-    	return;
-	  end
+	
+	if groupFlag ~= nil then
+		p.groupFlag = groupFlag;
+	end
+	
+	if cardInfo == nil then
+		return;
+	end
 	p.cardInfo = cardInfo;
 	 if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -83,6 +90,12 @@ function p.SetDelegate(layer)
 	--Âô³ö
 	local pBtnSale = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_SALE);
     pBtnSale:SetLuaDelegate(p.OnUIEventEvolution);
+	pBtnSale:SetVisible( not p.groupFlag );
+	
+	--Ìæ»»
+	local pBtnReplace = GetButton( layer, ui_dlg_card_attr_base.ID_CTRL_BUTTON_REPLACE );
+	pBtnReplace:SetLuaDelegate( p.OnUIEventEvolution );
+	pBtnReplace:SetVisible( p.groupFlag );
 	
 	--ÏêÏ¸
 	local pBtnArrt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT);
@@ -234,6 +247,10 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			else
 				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
 			end
+		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_REPLACE == tag then
+			--Ìæ»»£¬ÏÔÊ¾ÐÇÁéÁÐ±í
+			card_bag_mian.ShowUI( true );
+			p.CloseUI();
 		end
 	end
 end
@@ -299,6 +316,8 @@ function p.CloseUI()
 		p.cardInfo = nil;
 	    p.layer:LazyClose();
         p.layer = nil;
+		p.groupFlag = false;
+		
 		p.cardDetail = {}
 		p.equip1 = {};
 		p.equip2 = {};

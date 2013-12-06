@@ -32,5 +32,8 @@ end
 function p:Process()
 	msg_cache.msg_teamlist = self;
 	WriteConWarning( "** msg_teamlist:Process() called" );
-	dlg_card_group.ShowGruopList(self.teams);
+	if self.result then
+		dlg_card_group_main.RefreshUI( self );
+	else
+	end
 end

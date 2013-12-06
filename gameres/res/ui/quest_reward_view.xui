@@ -1,0 +1,187 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=20 3 498 623
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\quest\quest_bg22.png
+NormalFileUV=0 0 640 512
+
+[CTRL_BUTTON_OK]
+Type=2
+Tag=11
+Rect=222 528 107 30
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\mission_start_un.png
+NormalFileUV=0 0 279 77
+
+[CTRL_TEXT_ITEM_NAME]
+Type=4
+Tag=10
+Rect=254 451 100 25
+AnchorPos=0 0
+Notes=
+Text=物品名称
+TextTradition=物品名稱
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ITEM]
+Type=1
+Tag=9
+Rect=108 424 107 91
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\boss1.png
+NormalFileUV=0 0 84 126
+
+[CTRL_TEXT_GET_ITEM]
+Type=4
+Tag=8
+Rect=244 372 107 31
+AnchorPos=0 0
+Notes=
+Text=获得
+TextTradition=獲得
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GET_MONEY]
+Type=4
+Tag=18
+Rect=233 332 107 32
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EMONEY]
+Type=4
+Tag=7
+Rect=109 333 100 25
+AnchorPos=0 0
+Notes=
+Text=金币
+TextTradition=金幣
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_GET_EXP]
+Type=4
+Tag=17
+Rect=233 288 107 32
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=6
+Rect=107 292 100 25
+AnchorPos=0 0
+Notes=
+Text=经验
+TextTradition=經驗
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_REWARD]
+Type=4
+Tag=5
+Rect=244 243 100 25
+AnchorPos=0 0
+Notes=
+Text=奖励
+TextTradition=獎勵
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_STAR3]
+Type=1
+Tag=16
+Rect=338 200 48 37
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR2]
+Type=1
+Tag=15
+Rect=291 200 36 32
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR1]
+Type=1
+Tag=14
+Rect=245 199 34 36
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_STAR]
+Type=4
+Tag=4
+Rect=107 203 100 25
+AnchorPos=0 0
+Notes=
+Text=评价
+TextTradition=評價
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_DIFF]
+Type=1
+Tag=13
+Rect=259 153 107 28
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_DIFFICULT]
+Type=4
+Tag=3
+Rect=106 153 100 25
+AnchorPos=0 0
+Notes=
+Text=难度
+TextTradition=難度
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_MISSION_NAME]
+Type=4
+Tag=2
+Rect=153 101 279 33
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_HRED_RESULT]
+Type=1
+Tag=12
+Rect=157 32 271 60
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\quest\mission_start1.png
+NormalFileUV=0 0 279 77

@@ -49,6 +49,9 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_TEAM_UPDATE then	
 		msg = msg_team_update:new();
 		
+	elseif idmsg == MSG_TEAM_MODIFY then
+		msg = msg_team_replace:new();
+		
 	elseif idmsg == MSG_PACK_EQUIP_SELL then   	
 		msg = msg_pack_equip_sell:new();
 		
