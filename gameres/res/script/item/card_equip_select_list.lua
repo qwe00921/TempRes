@@ -221,7 +221,7 @@ function p.refreshEquipUpgradeInfo()
 	local bt	= GetButton(p.layer, ui.ID_CTRL_BUTTON_UPGRADE);
 	
 	
-	if p.upgradeItem == nil and p.intent ~= p.INTENT_UPGRADE then
+	if p.upgradeItem == nil or p.intent ~= p.INTENT_UPGRADE then
 		
 		imgV:SetVisible(false);
 		nmV:SetVisible(false);
