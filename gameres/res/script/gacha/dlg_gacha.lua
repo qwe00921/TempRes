@@ -27,7 +27,7 @@ p.rmb = nil; --元宝值
 p.pt  = nil; --pt值
 p.idTimerRefresh = nil;
 p.freeTimeList = {};
-p.timerIDList = {};
+--p.timerIDList = {};
 p.coin_config = {};
 p.gachaBtnlist = {};
 p.useTicketSign = 0;
@@ -221,16 +221,16 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			--单次扭蛋
 			local id = uiNode:GetParent():GetId();
 			local curTime = os.time();
-			local freeTime = DateStrToTime( p.gachadata.gacha[id].gacha_endtime );
+			local freeTime = p.gachadata.gachaData[id].gacha_endtime;
 			if freeTime <= curTime then
 				--免费
-				local gacha_id = tonumber(p.gachadata.gacha[id].gacha_id);
+				local gacha_id = tonumber(p.gachadata.gachaData[id].gacha_id);
 				p.charge_type = 1;
 				p.gacha_type = 1;
 				p.gacha_id = gacha_id;
 				p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			else
-				local gacha_id = tonumber(p.gachadata.gacha[id].gacha_id);
+				local gacha_id = tonumber(p.gachadata.gachaData[id].gacha_id);
 				local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "single_gacha_cost"));
 
 				if p.rmb < needRmb then
@@ -246,7 +246,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 		elseif ui_gacha_list_view.ID_CTRL_BUTTON_TEN == tag then
 			--N次扭蛋
 			local id = uiNode:GetParent():GetId();
-			local gacha_id = tonumber(p.gachadata.gacha[id].gacha_id);
+			local gacha_id = tonumber(p.gachadata.gachaData[id].gacha_id);
 			local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "complex_gacha_cost"));
 			if p.rmb < needRmb then
 				WriteCon("**扭蛋需求代币不足**");
@@ -366,23 +366,24 @@ function p.StartGacha(gacha_id, gacha_num, charge_type)
     SendReq("Gacha","Start",uid, gachaparam);
 end
 
---[[
 --每秒刷新时间
 function p.RefreshFreeTime()
    --删除定时
-   if p.idTimerRefresh ~= nil then
+	if p.idTimerRefresh ~= nil then
 		KillTimer(p.idTimerRefresh);
 		p.idTimerRefresh = nil;
-   end
-   p.idTimerRefresh = SetTimer(p.onFreeTime,1.0);
+	end
+	p.idTimerRefresh = SetTimer(p.onFreeTime,1.0);
+	p.onFreeTime();
 end
---]]
 
 --显示刷新时间
-function p.onFreeTime( idTimer )
+function p.onFreeTime( )
+	--[[
 	local index = p.timerIDList[idTimer];
+	WriteCon(tostring(index));
 	local curTime = os.time();
-	local freeTime = DateStrToTime( p.gachadata.gacha[index].gacha_endtime );
+	local freeTime = p.gachadata.gachaData[index].gacha_endtime ;
 	
 	if freeTime <= curTime then
 		p.freeTimeList[index]:SetText( ToUtf8( "当前可以进行免费扭蛋！" ) );
@@ -392,6 +393,28 @@ function p.onFreeTime( idTimer )
 		local secs = freeTime - curTime;
 		p.freeTimeList[index]:SetText( ToUtf8( TimeToStr(secs) .. "后可免费抽取1次") );
 		--p.freeTimeList[index]:SetText( ToUtf8("后可免费抽取1次") );
+	end
+	--]]
+	
+	local gachaData = p.gachadata.gachaData or {};
+	local curTime = os.time();
+	local needTime = false;
+	
+	for i = 1, #gachaData do
+		local gacha = gachaData[i];
+		local freeTime = gacha.gacha_endtime or 0;
+		if freeTime <= curTime then
+			p.freeTimeList[i]:SetText( ToUtf8( "当前可以进行免费扭蛋！" ) );
+		else
+			needTime = true;
+			local secs = freeTime - curTime;
+			p.freeTimeList[i]:SetText( ToUtf8( TimeToStr(secs) .. "后可免费抽取1次") );
+		end
+	end
+	
+	if not needTime then
+		KillTimer(p.idTimerRefresh);
+		p.idTimerRefresh = nil;
 	end
 	
 	--[[
@@ -606,7 +629,7 @@ function p.SetItemInfo( view , item , position, index)
     local nameLab = GetLabel( view , name );
     --local row_name = SelectRowInner( T_SHOP, "item_id", item.item_id , "name"  );
 	local row_name = SelectCell( T_ITEM, item.item_id, "name" );
-    nameLab:SetText( ToUtf8( row_name ));
+    nameLab:SetText(  row_name );
     
     --限制
     local limitLab = GetLabel( view, limit );
@@ -661,7 +684,7 @@ function p.SetItemInfo( view , item , position, index)
     end
 	--道具说明（暂无）
 	local descLabel = GetLabel( view, desc );
-	descLabel:SetText( ToUtf8( SelectCell( T_ITEM, item.item_id, "description" ) ) );
+	descLabel:SetText( SelectCell( T_ITEM, item.item_id, "description" ) );
 	
 	--道具图片
 	local image = GetImage( view, picture );
@@ -695,23 +718,23 @@ function p.ShowGachaData( gachadata )
     
     p.gachaList:ClearView();
 	
+	--[[
 	--删除定时
 	for timer, _ in pairs(p.timerIDList) do
 		WriteCon(tostring(timer));
 		KillTimer(timer);
 	end
 	p.timerIDList = {};
+	--]]
 	
     p.gachadata = gachadata;
-	
-	--p.RefreshFreeTime();
 
     p.rmb = tonumber(gachadata.emoney);
     --元宝值
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring( p.rmb ));
 
-	local gacha = gachadata.gacha or {};
+	local gacha = gachadata.gachaData or {};
 	local curTime = os.time();
 	
 	for i=1,#gacha do
@@ -739,9 +762,13 @@ function p.ShowGachaData( gachadata )
 		p.freeTimeList[i] = gachaFreeTime;
 		
 		--免费时间大于当前时间，则进行倒计时
-		if DateStrToTime( gacha[i]. gacha_endtime) > curTime then
+		if gacha[i]. gacha_endtime > curTime then
+			--[[
 			local timerid = SetTimer( p.onFreeTime, 1.0f );
 			p.timerIDList[timerid] = i;
+			
+			p.onFreeTime(timerid);
+			--]]
 			
 			gachaOneNum:SetVisible(true);
 			gachaOnePic:SetVisible(true);
@@ -750,9 +777,10 @@ function p.ShowGachaData( gachadata )
 			gachaOneNum:SetVisible(false);
 			gachaOnePic:SetVisible(false);
 			gachaFreeMsg:SetVisible(true);
+			gachaFreeTime:SetText( ToUtf8( "当前可以进行免费扭蛋！" ) );
 		end
 		
-		gachaName:SetText( ToUtf8( SelectCell( T_GACHA, gachaid,  "name" ) ) );
+		gachaName:SetText( gacha[i].name );
 		gachaPic:SetPicture( GetPictureByAni( "gacha_pic." .. gachaid, 0 ) );
 		
 		gachaOneBtn:SetImage( GetPictureByAni("ui.gacha_btn", 1));
@@ -766,6 +794,8 @@ function p.ShowGachaData( gachadata )
 
 		p.gachaList:AddView( view );
 	end
+	
+	p.RefreshFreeTime();
 end
 
 --获取扭蛋代币数量配置
@@ -819,12 +849,18 @@ end
 
 function p.CloseUI()
 	if p.layer ~= nil then
+		--[[
 		--删除定时
         for timer, _ in pairs(p.timerIDList) do
 			WriteCon(tostring(timer));
 			KillTimer(timer);
 		end
 		p.timerIDList = {};
+		--]]
+		if p.idTimerRefresh then
+			KillTimer( p.idTimerRefresh );
+			p.idTimerRefresh = nil;
+		end
 		
 	    p.layer:LazyClose();
         p.layer = nil;
