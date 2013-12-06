@@ -15,7 +15,7 @@ NormalFileUV=0 0 264 108
 [CTRL_PIC_LIST_BG_3]
 Type=1
 Tag=3
-Rect=0 220 640 790
+Rect=0 220 640 680
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_bg2.png
@@ -38,7 +38,7 @@ SelectedFileUV=0 0 100 98
 [CTRL_VERTICAL_LIST_5]
 Type=14
 Tag=5
-Rect=0 296 637 680
+Rect=0 296 637 602
 AnchorPos=0 0
 Notes=
 
