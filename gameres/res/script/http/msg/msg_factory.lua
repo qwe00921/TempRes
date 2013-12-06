@@ -136,6 +136,9 @@ function CreateMsg( idmsg )
     elseif idmsg == MSG_BATTLE then       
         msg = msg_battle:new();
     
+    elseif idmsg == MSG_BATTLE_PVE then       
+        msg = msg_battle_pve:new();
+        
     elseif idmsg == MSG_BATTLE_FIGHTERS then   
         msg = msg_battle_fighters:new();
 

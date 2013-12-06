@@ -82,6 +82,7 @@ DoFile("http/msg/msg_beast_sell.lua");--召唤兽出售
 
 --战斗消息类
 DoFile("http/msg/msg_battle.lua");				--战斗消息
+DoFile("http/msg/msg_battle_pve.lua");              --战斗消息
 DoFile("http/msg/msg_battle_fighters.lua");		--fighter消息
 DoFile("http/msg/msg_battle_stage_hand.lua");     --起手阶段消息
 DoFile("http/msg/msg_battle_turn_dot.lua");		--回合DOT阶段消息

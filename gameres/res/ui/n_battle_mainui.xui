@@ -20,72 +20,6 @@ SelectedFileUV=0 0 124 124
 DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
 DisableFileUV=0 0 114 73
 
-[CTRL_PICTURE_21]
-Type=1
-Tag=24
-Rect=76 860 107 107
-AnchorPos=0 0
-Notes=
-Remark=技能1背景
-NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
-NormalFileUV=0 0 160 160
-
-[CTRL_PICTURE_22]
-Type=1
-Tag=25
-Rect=192 863 107 107
-AnchorPos=0 0
-Notes=
-Remark=技能2背景
-NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
-NormalFileUV=0 0 160 160
-
-[CTRL_BUTTON_SKILL1]
-Type=2
-Tag=10
-Rect=74 856 110 110
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=技能按钮1
-NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
-NormalFileUV=0 0 240 240
-
-[CTRL_PICTURE_23]
-Type=1
-Tag=26
-Rect=309 860 107 107
-AnchorPos=0 0
-Notes=
-Remark=技能3背景
-NormalFile=.\res\image\pet\skill\legend_memories_02_none.png
-NormalFileUV=0 0 160 160
-
-[CTRL_PICTURE_SKILL2]
-Type=1
-Tag=12
-Rect=193 860 110 110
-AnchorPos=0 0
-Notes=
-Remark=技能2
-NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
-NormalFileUV=0 0 240 240
-
-[CTRL_BUTTON_SKILL3]
-Type=2
-Tag=13
-Rect=308 859 110 110
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=技能3
-NormalFile=.\res\image\pet\skill\legend_memories_0001_02.png
-NormalFileUV=0 0 240 240
-
 [CTRL_BUTTON_SKILL4]
 Type=2
 Tag=14
@@ -112,16 +46,6 @@ TextVerAlign=AlignVerCenter
 Type=2
 Tag=23
 Rect=207 960 107 60
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_HOR3SLICES_POWER]
-Type=10
-Tag=43
-Rect=46 872 365 84
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -172,13 +96,9 @@ Notes=
 NormalFile=.\res\image\ui\n_battle\hh.png
 NormalFileUV=0 0 188 50
 
-[CTRL_TEXT_ROUNDNUM]
-Type=4
-Tag=32
-Rect=274 18 70 25
+[CTRL_PICTURE_ROUNDNUM]
+Type=1
+Tag=17
+Rect=273 21 70 23
 AnchorPos=0 0
 Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter

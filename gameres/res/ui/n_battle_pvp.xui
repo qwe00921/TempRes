@@ -350,14 +350,14 @@ Notes=
 [CTRL_PICTURE_HERO_PIC]
 Type=1
 Tag=83
-Rect=5 95 96 73
+Rect=53 95 96 73
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_HERO_NAME]
 Type=4
 Tag=85
-Rect=4 171 107 20
+Rect=26 171 150 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -368,7 +368,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ENEMY_NAME]
 Type=4
 Tag=86
-Rect=532 171 107 20
+Rect=467 171 150 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -379,18 +379,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_HERO_LV]
 Type=4
 Tag=88
-Rect=1 69 107 20
-AnchorPos=0 0
-Notes=
-TextSize=16
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_ENEMY_LV]
-Type=4
-Tag=89
-Rect=533 71 107 20
+Rect=53 147 40 20
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -502,7 +491,7 @@ NormalFileUV=0 0 202 24
 [CTRL_PICTURE_ENEMY_PIC]
 Type=1
 Tag=46
-Rect=538 95 96 73
+Rect=494 95 96 73
 AnchorPos=0 0
 Notes=
 
@@ -514,6 +503,17 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\n_battle\atk.png
 NormalFileUV=0 0 144 36
+
+[CTRL_TEXT_ENEMY_LV]
+Type=4
+Tag=89
+Rect=550 147 40 20
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_56]
 Type=1

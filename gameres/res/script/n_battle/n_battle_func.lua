@@ -102,7 +102,8 @@ function HurtResultAni( targetFighter, seqTarget )
     else
         --local cmdB = createCommandPlayer():Dead( 0, targetFighter:GetNode(), "" );
         --seqTarget:AddCommand( cmdB );   
-        
+        local cmdf = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die_v2" );
+        seqTarget:AddCommand( cmdf );
         local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
         seqTarget:AddCommand( cmdC );
     end
@@ -117,34 +118,6 @@ function IsSkillTargetSelfCamp( targetType )
 	else
 	   return false;	
 	end
-end
-
-function AddBuffIcon( target, buffType )
-    if target == nil or buffType == nil then
-    	return false;
-    end
-	local ln = #target.buffList;
-	local isIn = false;
-	for i=1, ln do
-		local v = target.buffList[i];
-		if tonumber( v ) == tonumber( buffType ) then
-			isIn = true;
-		end
-	end
-	if not isIn then
-		target.buffList[ #target.buffList + 1 ] = buffType;
-	end
-end
-
-function DelBuffIcon( target, buffType )
-    if target == nil or buffType == nil then
-        return false;
-    end
-    for key, var in ipairs(target.buffList) do
-        if tonumber( var ) == tonumber( buffType ) then
-            table.remove( target.buffList, key);
-        end
-    end
 end
 
 

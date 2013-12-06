@@ -65,8 +65,10 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     if distance == N_BATTLE_DISTANCE_1 then
         local cmd4 = JumpMoveTo(hero, enemyPos, originPos, seqAtk);
     end
+           
+    local cmdClearPic = hero:cmdLua( "ClearAllFighterPic",  0, "", seqAtk );
                             
-    local cmd_ui = p.doUIEffect( TCamp, seqUI, SkillId );
+    local cmd_ui = p.doUIEffect( hero.camp, seqUI, SkillId );
     
     seqUI:SetWaitEnd( cmd1 );
     if distance == N_BATTLE_DISTANCE_1 and cmdDoPos ~= nil then
@@ -88,10 +90,12 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
         local Crit = v.Crit; --±©»÷
         local Dead = v.TargetDead;--ËÀÍö
         --ÊÜ»÷ÕßËÀÍö
+        --[[
         if Dead and Damage < enemy.life then
             Damage = enemy.life;
             WriteConWarning("the TargetFighter Mandatory death!");
         end
+        ]]
         if enemy ~= nil then
             local seq1 = batch:AddParallelSequence();
             local seqBullet = batch:AddSerialSequence();
@@ -142,8 +146,10 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
                 
                 if Buff ~= N_BUFF_TYPE_0 then
                     local buffAni = GetBuffAniByType( Buff );
-                    local cmdBuff = createCommandEffect():AddFgEffect( 0, enemy:GetNode(), buffAni );
-                    seq1:AddCommand( cmdBuff );
+                    if not enemy:GetNode():HasAniEffect( buffAni ) then
+                        local cmdBuff = createCommandEffect():AddFgEffect( 0, enemy:GetNode(), buffAni );
+                        seq1:AddCommand( cmdBuff );
+                    end
                 end
                 
                 if not isSelfCamp then
