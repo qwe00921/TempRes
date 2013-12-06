@@ -105,7 +105,7 @@ function p.SetDelegate(layer)
 	--×°±¸
 	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
 	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
-		local aniIndex = "item."..p.equip1.itemInfo.id;
+		local aniIndex = "item."..p.equip1.itemInfo.Item_id;
 		pEquipPic1:SetPicture( GetPictureByAni(aniIndex,0) );
 	else
 		pEquipPic1:SetPicture(nil);
@@ -113,7 +113,7 @@ function p.SetDelegate(layer)
 	
 	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
 	if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
-		local aniIndex = "item."..p.equip2.itemInfo.id;
+		local aniIndex = "item."..p.equip2.itemInfo.Item_id;
 		pEquipPic2:SetPicture( GetPictureByAni(aniIndex,0) );
 	else
 		pEquipPic2:SetPicture(nil);
@@ -122,7 +122,7 @@ function p.SetDelegate(layer)
 	
 	local pEquipPic3 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_3);
 	if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
-		local aniIndex = "item."..p.equip3.itemInfo.id;
+		local aniIndex = "item."..p.equip3.itemInfo.Item_id;
 		pEquipPic3:SetPicture( GetPictureByAni(aniIndex,0) );
 	else
 		pEquipPic3:SetPicture(nil);
@@ -313,7 +313,7 @@ function p.PasreCardDetail(cardInfo, equip, pos)
 	item.cardId 	= cardInfo.CardID;
 	item.cardUid 	= cardInfo.UniqueId;
   --item.cardName	= "xxx"
-	item.itemId 	= itemInfo.id;
+	item.itemId 	= itemInfo.Item_id;
 	item.itemUid	= equip.equipId;
 	item.itemType	= pos;
 	item.itemLevel 	= itemInfo.Equip_level;

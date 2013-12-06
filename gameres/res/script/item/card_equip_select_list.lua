@@ -278,7 +278,7 @@ function p.refreshEquipUpgradeInfo()
 	local nextLeve = tonumber(p.upgradeItem.itemLevel) + 1  -- TODO
 	
 	--level
-	local itemV = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_LV );
+	local itemV = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_LV2 );
 	if itemV then
 		itemV:SetText(p.upgradeItem.itemLevel .. " => " .. tostring(nextLeve) or "");
 	end
@@ -292,13 +292,11 @@ function p.refreshEquipUpgradeInfo()
 	local itemConfig 	= p.SelectItem(p.upgradeItem.itemId);
 	if itemConfig then
 		labelV = GetLabel( p.layer, ui.ID_CTR_PRE_ITEM_ATTR_VALUE);
-		local attr1 = tonumber(p.upgradeItem.itemLevel)*tonumber(itemConfig.attribute_grow) + tonumber(itemConfig.attribute_value)
-		local attr2 = nextLeve*tonumber(itemConfig.attribute_grow) + tonumber(itemConfig.attribute_value);
+		local attr1 = tonumber(p.upgradeItem.attrValue)
+		local attr2 = attr1 + (tonumber(nextLeve) - tonumber(p.upgradeItem.itemLevel)) *tonumber(itemConfig.attribute_grow) ;
 		local str =  string.format("%d => %d", attr1, attr2);
 		labelV:SetText(str or "");
 	end
-	
-	
 	
 	
 	--msg_cache.msg_player.Money
