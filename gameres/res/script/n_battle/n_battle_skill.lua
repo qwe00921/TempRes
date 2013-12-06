@@ -7,9 +7,12 @@
 n_battle_skill = {}
 local p = n_battle_skill;
 
---单体技能
+--技能
 function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
-    if hero == nil or SkillId == nil or distance == nil or Targets == nil or TCamp == nil or batch == nil then return end
+    if hero == nil or SkillId == nil or distance == nil or Targets == nil or TCamp == nil or batch == nil then 
+        WriteConWarning("n_battle_skill.Skill data err!");
+        return false; 
+    end
     
     --创建3个序列给攻击者、受击者、ui
     local seqAtk    = batch:AddSerialSequence();
@@ -23,6 +26,8 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     
     --受击目标类型
     local targetType = tonumber( SelectCell( T_SKILL, SkillId, "Target_type" ) );
+    local skillType = tonumber( SelectCell( T_SKILL, SkillId, "Skill_type" ) );
+    local isSelfCamp = IsSkillTargetSelfCamp( targetType );
     
     --攻击目标的位置
     local enemyPos; 
@@ -37,8 +42,10 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     local isBullet = tonumber( SelectCell( T_SKILL_RES, SkillId, "is_bullet" ) );
     local bulletAni;
     if isBullet == N_BATTLE_BULLET_1 then
-    	bulletAni = "n_bullet."..tostring( hero.uniqueId );
+    	bulletAni = "n_bullet."..tostring( hero.cardId );
     end
+    
+    local cmdSetPic = hero:cmdLua( "SetFighterPic",  0, "", seqAtk );
     
     local cmd1 = createCommandEffect():AddFgEffect( 0.1, hero:GetNode(), sing );
     seqAtk:AddCommand( cmd1 );
@@ -77,7 +84,8 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
         end
         local Damage = tonumber( v.Damage ); --扣除血量
         local RemainHp = tonumber( v.RemainHp ); --所剩血量
-        local Crit = tonumber( v.Crit ); --暴击
+        local Buff = tonumber( v.Buff );
+        local Crit = v.Crit; --暴击
         local Dead = v.TargetDead;--死亡
         --受击者死亡
         if Dead and Damage < enemy.life then
@@ -105,28 +113,46 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
         
             if seq1 ~= nil then
                 --受击特效
-                --AddFgReverseEffect
                 local cmd11 = createCommandEffect():AddFgEffect( 0, enemy:GetNode(), hurt );
                 seq1:AddCommand( cmd11 );
                 
-                local cmdBackRset = createCommandEffect():AddActionEffect( 0.01, enemy:GetNode(), "lancer.target_hurt_back_reset" );
-                seq1:AddCommand( cmdBackRset ); 
-                cmdBackRset:SetWaitEnd( cmd11 );
-                
-                
-                --受击动画
-                local cmd12 = createCommandPlayer():Hurt( 0, enemy:GetNode(), "" );
-                seq1:AddCommand( cmd12 );
+                local cmd12;
+                if not isSelfCamp then
+                	local cmdBackRset = createCommandEffect():AddActionEffect( 0.01, enemy:GetNode(), "lancer.target_hurt_back_reset" );
+                    seq1:AddCommand( cmdBackRset ); 
+                    cmdBackRset:SetWaitEnd( cmd11 );
+                    
+                    --受击动画
+                    cmd12 = createCommandPlayer():Hurt( 0, enemy:GetNode(), "" );
+                    seq1:AddCommand( cmd12 );
+                end
                 
                 --飘血
-                local cmd13 = enemy:cmdLua( "fighter_damage", Damage, "", seq1 );
-                cmd13:SetWaitEnd( cmd12 );
+                local cmd13;
+                if skillType == N_SKILL_TYPE_1 then
+                    cmd13 = enemy:cmdLua( "fighter_damage",  Damage, "", seq1 );
+                elseif skillType == N_SKILL_TYPE_2 then 
+                    cmd13 = enemy:cmdLua( "fighter_addHp", Damage, "", seq1 );
+                elseif skillType == N_SKILL_TYPE_5 then
+                    --主动复活技能    
+                end
+                if cmd13 ~= nil and cmd12 ~= nil then
+                	cmd13:SetWaitEnd( cmd12 );
+                end
                 
-                local cmdBack = createCommandEffect():AddActionEffect( 0, enemy:GetNode(), "lancer.target_hurt_back" );
-                seq1:AddCommand( cmdBack );
-                cmdBack:SetWaitEnd( cmd13 );
+                if Buff ~= N_BUFF_TYPE_0 then
+                    local buffAni = GetBuffAniByType( Buff );
+                    local cmdBuff = createCommandEffect():AddFgEffect( 0, enemy:GetNode(), buffAni );
+                    seq1:AddCommand( cmdBuff );
+                end
                 
-                HurtResultAni( enemy, seq1 )
+                if not isSelfCamp then
+                    local cmdBack = createCommandEffect():AddActionEffect( 0, enemy:GetNode(), "lancer.target_hurt_back" );
+                    seq1:AddCommand( cmdBack );
+                    cmdBack:SetWaitEnd( cmd13 );
+                end
+                
+                HurtResultAni( enemy, seq1 );
                 
                 --设置等待
                 if bulletend ~= nil then

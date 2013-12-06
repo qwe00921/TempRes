@@ -23,14 +23,9 @@
 [pet_left_in]
 @move+(0.1, 400, 0,50) @stretch
 
-[pet_right_out]
-@move+(0.1, 960, 0,50) @stretch
-
 [pet_right_in]
 @move+(0.1, -400, 0,50) @stretch
 
-[pet_left_out]
-@move+(0.1, -400, 0,50) @stretch
 
 ;µ­³ö
 [n_fadeout]

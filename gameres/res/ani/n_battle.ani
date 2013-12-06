@@ -1,0 +1,62 @@
+[standby_101]
+image\n_battle\101\standby.png @cut(1,2) @time=0.3 @scale=1.8  @loop
+[attack_101]
+image\n_battle\101\atk.png @cut(1,3)    @time=0.15 @scale=1.8  @stay
+[skill_101]
+image\n_battle\101\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_102]
+image\n_battle\102\standby.png @cut(1,2) @time=0.3 @scale=1.8  @loop
+[attack_102]
+image\n_battle\102\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_102]
+image\n_battle\102\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_103]
+image\n_battle\103\standby.png @cut(1,2) @time=0.3 @scale=1.8 @loop
+[attack_103]
+image\n_battle\103\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_103]
+image\n_battle\103\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_104]
+image\n_battle\104\standby.png @cut(1,2) @time=0.3 @scale=1.8 @loop
+[attack_104]
+image\n_battle\104\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_104]
+image\n_battle\104\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_105]
+image\n_battle\105\standby.png @cut(1,2) @time=0.3 @scale=1.8 @loop
+[attack_105]
+image\n_battle\105\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_105]
+image\n_battle\105\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_106]
+image\n_battle\106\standby.png @cut(1,2) @time=0.3 @scale=1.8 @loop
+[attack_106]
+image\n_battle\106\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_106]
+image\n_battle\106\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_107]
+image\n_battle\107\standby.png @cut(1,2) @time=0.3 @scale=1.8 @loop
+[attack_107]
+image\n_battle\107\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_107]
+image\n_battle\107\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_108]
+image\n_battle\108\standby.png @cut(1,2) @time=0.3 @scale=1.8 @loop
+[attack_108]
+image\n_battle\108\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_108]
+image\n_battle\108\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+
+[standby_109]
+image\n_battle\109\standby.png @cut(1,2) @time=0.3 @scale=1.8 @loop
+[attack_109]
+image\n_battle\109\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay
+[skill_109]
+image\n_battle\1019\atk.png @cut(1,3)    @time=0.15 @scale=1.8 @stay

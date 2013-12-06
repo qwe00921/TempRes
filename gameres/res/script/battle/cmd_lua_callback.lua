@@ -49,7 +49,12 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter:ShowHpBarMoment();
 	elseif cmdtype == "ReSetPetNodePos" and E_DEMO_VER == 4 then
         n_battle_mgr.ReSetPetNodePos();  
-        	
+    elseif cmdtype == "SetFighterPic" and E_DEMO_VER == 4 then
+        n_battle_pvp.SetFighterPic( fighter ); 
+    elseif cmdtype == "ClearAllFighterPic" and E_DEMO_VER == 4 then
+        n_battle_pvp.ClearAllFighterPic();    
+    elseif cmdtype == "UpdatePetRage" and E_DEMO_VER == 4 then
+        n_battle_pvp.UpdatePetRage( id , -num );           	
 	elseif cmdtype == "AddMaskImage" then
 		if E_DEMO_VER == 2 then
 			x_battle_mgr:AddMaskImage();
