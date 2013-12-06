@@ -255,3 +255,8 @@ DoFile("ui/ui_dlg_card_equip_detail.lua");
 DoFile("ui/ui_card_equip_select_list.lua");
 DoFile("ui/ui_card_equip_select_list_item.lua");
 
+--卡牌编辑
+DoFile("ui/ui_card_group.lua");
+DoFile("ui/ui_card_group_node.lua");
+DoFile("ui/ui_card_group_select_pet.lua");
+

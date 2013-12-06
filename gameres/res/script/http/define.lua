@@ -109,3 +109,6 @@ DoFile("http/msg/msg_card_detail.lua");
 --卡牌装备各种处理消息
 DoFile("http/msg/msg_card_equip_msg.lua");
 
+--卡组编辑
+DoFile("http/msg/msg_team_replace.lua");
+

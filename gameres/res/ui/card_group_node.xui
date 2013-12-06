@@ -1,0 +1,366 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=64
+Rect=0 0 600 340
+AnchorPos=0 0
+Notes=
+
+[CTRL_9SLICES_3]
+Type=22
+Tag=3
+Rect=4 5 595 330
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\card_group\card_group_bg.PNG
+NormalFileUV=0 0 146 150
+
+[CTRL_BUTTON_CARD_1]
+Type=2
+Tag=4
+Rect=156 57 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_BUTTON_CARD_2]
+Type=2
+Tag=5
+Rect=156 147 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_BUTTON_CARD_3]
+Type=2
+Tag=6
+Rect=156 237 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_BUTTON_CARD_4]
+Type=2
+Tag=8
+Rect=56 57 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_BUTTON_CARD_5]
+Type=2
+Tag=9
+Rect=56 147 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_BUTTON_CARD_6]
+Type=2
+Tag=10
+Rect=56 237 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_TEXT_LEV_1]
+Type=4
+Tag=11
+Rect=206 59 46 18
+AnchorPos=0 0
+Notes=
+Text=LV999
+TextTradition=LV999
+TextSize=14
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEV_2]
+Type=4
+Tag=12
+Rect=206 149 46 18
+AnchorPos=0 0
+Notes=
+Text=LV999
+TextTradition=LV999
+TextSize=14
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEV_3]
+Type=4
+Tag=13
+Rect=206 239 46 18
+AnchorPos=0 0
+Notes=
+Text=LV999
+TextTradition=LV999
+TextSize=14
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEV_4]
+Type=4
+Tag=14
+Rect=106 59 46 18
+AnchorPos=0 0
+Notes=
+Text=LV999
+TextTradition=LV999
+TextSize=14
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEV_5]
+Type=4
+Tag=15
+Rect=106 149 46 18
+AnchorPos=0 0
+Notes=
+Text=LV999
+TextTradition=LV999
+TextSize=14
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEV_6]
+Type=4
+Tag=16
+Rect=106 239 46 18
+AnchorPos=0 0
+Notes=
+Text=LV999
+TextTradition=LV999
+TextSize=14
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_18]
+Type=22
+Tag=18
+Rect=4 5 88 43
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\card_group\team_bg.PNG
+NormalFileUV=0 0 46 38
+
+[CTRL_TEXT_TEAM]
+Type=4
+Tag=19
+Rect=4 5 88 43
+AnchorPos=0 0
+Notes=
+Text=队伍1
+TextTradition=隊伍1
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_20]
+Type=4
+Tag=20
+Rect=185 5 107 33
+AnchorPos=0 0
+Notes=
+Text=出阵人数
+TextTradition=出陣人數
+TextSize=25
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARD_NUM]
+Type=4
+Tag=21
+Rect=291 5 69 33
+AnchorPos=0 0
+Notes=
+Text=6/6
+TextTradition=6/6
+TextSize=25
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_SETFIGHT]
+Type=2
+Tag=22
+Rect=486 5 113 46
+AnchorPos=0 0
+Notes=
+Text=出战
+TextTradition=出戰
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\beast\button_normal.png
+NormalFileUV=0 0 245 87
+SelectFile=.\res\image\ui\beast\button_highlight.png
+SelectedFileUV=0 0 247 86
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=308 62 31 84
+AnchorPos=0 0
+Notes=
+Text=战术
+TextTradition=戰術
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignTop
+
+[CTRL_TEXT_27]
+Type=4
+Tag=27
+Rect=337 155 107 32
+AnchorPos=0 0
+Notes=
+Text=战术名称
+TextTradition=戰術名稱
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_28]
+Type=4
+Tag=28
+Rect=291 178 27 123
+AnchorPos=0 0
+Notes=
+Text=召唤兽
+TextTradition=召喚獸
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignTop
+
+[CTRL_BUTTON_FORMATION]
+Type=2
+Tag=29
+Rect=342 60 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_TEXT_PET_NAME_1]
+Type=4
+Tag=31
+Rect=335 306 107 29
+AnchorPos=0 0
+Notes=
+Text=召唤兽名字
+TextTradition=召喚獸名字
+TextSize=21
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_PET_NAME_2]
+Type=4
+Tag=33
+Rect=457 306 107 29
+AnchorPos=0 0
+Notes=
+Text=召唤兽名字
+TextTradition=召喚獸名字
+TextSize=21
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_PET_1]
+Type=2
+Tag=34
+Rect=339 216 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_BUTTON_PET_2]
+Type=2
+Tag=35
+Rect=461 216 100 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\default_card.PNG
+NormalFileUV=0 0 100 90
+SelectFile=.\res\image\ui\main_interface\default_card.PNG
+SelectedFileUV=0 0 100 90
+
+[CTRL_TEXT_TOTAL_ATK]
+Type=4
+Tag=32
+Rect=448 76 127 27
+AnchorPos=0 0
+Notes=
+Text=总攻击力：9999999
+TextTradition=總攻擊力：9999999
+TextSize=14
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_TOTAL_DEF]
+Type=4
+Tag=36
+Rect=448 112 127 27
+AnchorPos=0 0
+Notes=
+Text=总防御力：9999999
+TextTradition=總防御力：9999999
+TextSize=14
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

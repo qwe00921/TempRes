@@ -27,10 +27,16 @@ p.BatchSellMark = MARK_OFF;		--批量出售是否开启
 p.allCardPrice 	= 0;	--出售卡牌总价值
 p.sellCardList 	= {};	--出售卡牌列表
 
-function p.ShowUI()
+p.modifyTeam = false;
+
+function p.ShowUI( bModify )
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
 
+	if bModify ~= nil then
+		p.modifyTeam = bModify;
+	end
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -170,6 +176,13 @@ end
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
+	
+	if p.modifyTeam then
+		p.CloseUI();
+		dlg_card_group_main.UpdatePosCard( cardUniqueId );
+		return;
+	end
+	
 	if p.BatchSellMark == MARK_ON then
 		local team = nil;
 		for k,v in pairs(p.cardListInfo) do
@@ -218,9 +231,6 @@ function p.ShowSelectPic(uiNode)
 	end
 end
 
-
-
-
 --主界面事件处理
 function p.SetDelegate(layer)
 	local retBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
@@ -228,6 +238,10 @@ function p.SetDelegate(layer)
 	
 	local sellBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SELL);
 	sellBtn:SetLuaDelegate(p.OnUIClickEvent);
+	
+	if p.modifyTeam then
+		sellBtn:SetVisible( false );
+	end
 
 	local cardBtnAll = GetButton(layer, ui.ID_CTRL_BUTTON_ALL);
 	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
@@ -325,8 +339,6 @@ function p.OnMsgBoxCallback(result)
 	end
 end
 
-
-
 --按规则排序按钮
 function p.sortByBtnEvent(sortType)
 	if sortType == nil then
@@ -368,6 +380,8 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
+		p.modifyTeam = false;
+		
 		p.ClearData()
         card_bag_mgr.ClearData();
 		card_bag_sort.CloseUI();

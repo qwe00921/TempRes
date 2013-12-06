@@ -32,4 +32,9 @@ end
 function p:Process()
 	msg_cache.msg_team_update = self;
 	WriteConWarning( "** msg_team_update:Process() called" );
+	if self.result then
+		dlg_card_group_main.RefreshBattleBtn( self );
+	else
+		dlg_msgbox.ShowOK( ToUtf8("ÌבÊ¾"), self.message, nil, dlg_card_group_main.layer );
+	end
 end
