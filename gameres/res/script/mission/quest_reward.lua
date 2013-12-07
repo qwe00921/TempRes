@@ -58,7 +58,7 @@ end
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
-		if(ui.ID_CTRL_BUTTON_OK == tag) then
+		if(ui.ID_CTRL_BUTTON_BG == tag) then
 			WriteCon("OK BUTTON");
 			p.CloseUI();
 		end
@@ -108,22 +108,60 @@ function p.ShowQuestRewardView(rewardData)
 	
 	--经验
 	local missionExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_GET_EXP);
-	missionExp:SetText(tostring(rewardData.Reward_exp));
+	local expText = tonumber(rewardData.Reward_exp);
+	if expText == nil or expText == 0 then
+		expText = "0";
+	end
+	missionExp:SetText(tostring(expText));
+	
 	--金币
 	local missionMoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_GET_MONEY);
-	missionExp:SetText(tostring(rewardData.reward_money));
+	local moneyText = tonumber(rewardData.reward_money)
+	if moneyText == nil or moneyText == 0 then
+		moneyText = "0";
+	end
+	missionMoney:SetText(tostring(moneyText));
 
 	local itemPic_1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_ITEM1);
 	local itemName_1 = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME1);
 	local itemPic_2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_ITEM2);
 	local itemName_2 = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME2);
-	local touchText = GetImage(p.layer, ui.ID_CTRL_PICTURE_TOUCH);
 
-	if rewardData.item then
-	
-	
+	if rewardData["item"][1] then
+		local itemType = tonumber(Reward["item"][1]["Type"])
+		local itemId = tonumber(Reward["item"][1]["Reward_id"])
+		if itemType == 1 or itemType == 3 or itemType == 4 then --物品
+			local itemTable = SelectRowInner(T_ITEM,"id",itemId);
+			itemPic_1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+			itemName_1:SetText(itemTable.name)
+		elseif itemType == 2 then		--卡牌
+			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+			itemPic_1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
+			itemName_1:SetText(cardTable2.name);
+		end
+	else
+		itemPic_1:SetVisible(false);
+		itemName_1:SetVisible(false);
 	end
 	
+	if rewardData["item"][2] then
+		local itemType = tonumber(Reward["item"][2]["Type"])
+		local itemId = tonumber(Reward["item"][2]["Reward_id"])
+		if itemType == 1 or itemType == 3 or itemType == 4 then --物品
+			local itemTable = SelectRowInner(T_ITEM,"id",itemId);
+			itemPic_2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+			itemName_2:SetText(itemTable.name)
+		elseif itemType == 2 then		--卡牌
+			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+			itemPic_2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
+			itemName_2:SetText(cardTable2.name);
+		end
+	else
+		itemPic_2:SetVisible(false);
+		itemName_2:SetVisible(false);
+	end
 	
 end
 
