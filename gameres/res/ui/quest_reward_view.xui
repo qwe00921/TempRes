@@ -3,32 +3,47 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_1]
-Type=1
-Tag=1
-Rect=20 3 498 623
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\quest\quest_bg22.png
-NormalFileUV=0 0 640 512
-
-[CTRL_BUTTON_OK]
+[CTRL_BUTTON_BG]
 Type=2
-Tag=11
-Rect=222 528 107 30
+Tag=21
+Rect=19 8 498 635
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\quest\mission_start_un.png
-NormalFileUV=0 0 279 77
+Stretch=1
+NormalFile=.\res\image\ui\quest\quest_bg22.png
+NormalFileUV=0 0 640 512
 
-[CTRL_TEXT_ITEM_NAME]
+[CTRL_PICTURE_TOUCH]
+Type=1
+Tag=22
+Rect=144 572 204 46
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_ITEM_NAME2]
+Type=4
+Tag=20
+Rect=272 523 107 28
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ITEM2]
+Type=1
+Tag=19
+Rect=271 424 107 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_ITEM_NAME1]
 Type=4
 Tag=10
-Rect=254 451 100 25
+Rect=112 526 100 25
 AnchorPos=0 0
 Notes=
 Text=物品名称
@@ -37,7 +52,7 @@ TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_ITEM]
+[CTRL_PICTURE_ITEM1]
 Type=1
 Tag=9
 Rect=108 424 107 91
@@ -49,7 +64,7 @@ NormalFileUV=0 0 84 126
 [CTRL_TEXT_GET_ITEM]
 Type=4
 Tag=8
-Rect=244 372 107 31
+Rect=207 376 107 31
 AnchorPos=0 0
 Notes=
 Text=获得
@@ -64,7 +79,7 @@ Tag=18
 Rect=233 332 107 32
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -86,7 +101,7 @@ Tag=17
 Rect=233 288 107 32
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -117,23 +132,29 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=16
-Rect=338 200 48 37
+Rect=334 196 36 36
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=15
-Rect=291 200 36 32
+Rect=292 196 36 36
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=14
-Rect=245 199 34 36
+Rect=244 196 34 34
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_STAR]
 Type=4
@@ -172,7 +193,7 @@ Tag=2
 Rect=153 101 279 33
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 

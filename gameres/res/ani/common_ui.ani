@@ -1,0 +1,15 @@
+;----------------------------------------
+; common_ui
+;----------------------------------------
+
+;普通UI
+[mission_result]
+image\ui\quest\mission_start1.png
+image\ui\quest\mission_start_un.png
+
+;任务难度图标
+[mission_difficult]
+image\ui\quest\easy.png
+image\ui\quest\easy.png
+image\ui\quest\normal.png
+image\ui\quest\hard.png
