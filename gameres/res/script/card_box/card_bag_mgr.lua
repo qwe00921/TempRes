@@ -56,7 +56,9 @@ end
 function p.DelCallBack(self)
 	if self.result == true then
 		p.RefreshCardList(p.delCardList)
-		
+		local delNum = #p.delCardList;
+		card_bag_mian.SetCardNum(delNum)
+
 		p.delCardList = nil;
 		card_bag_mian.sellCardList = {};
 		card_bag_mian.BatchSellMark = OFF;
