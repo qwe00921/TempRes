@@ -6,37 +6,47 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=88
-Rect=0 0 620 195
+Rect=0 0 620 224
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_48]
+Type=22
+Tag=48
+Rect=189 32 400 64
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_9SLICES_27]
 Type=22
 Tag=27
-Rect=20 5 580 180
+Rect=14 6 594 208
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\common\item_bg.png
-NormalFileUV=0 0 126 126
+NormalFile=.\res\image\ui\shop\bg_shop.png
+NormalFileUV=0 0 594 208
 
 [CTRL_TEXT_GACHANAME]
 Type=4
 Tag=89
-Rect=242 20 282 30
+Rect=197 49 282 30
 AnchorPos=0 0
 Notes=
 Text=黑暗魔法师卡包
 TextTradition=黑暗魔法師卡包
-TextSize=25
+TextSize=28
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=扭蛋名称
 
 [CTRL_PICTURE_PIC]
 Type=1
 Tag=90
-Rect=34 20 126 149
+Rect=43 24 124 124
 AnchorPos=0 0
 Notes=
 Remark=扭蛋图片
@@ -46,7 +56,7 @@ NormalFileUV=0 0 126 149
 [CTRL_BUTTON_ONE]
 Type=2
 Tag=109
-Rect=216 57 147 37
+Rect=181 114 203 80
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -54,11 +64,13 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=抽取一次按钮
+NormalFile=.\res\image\ui\shop\gacha.png
+NormalFileUV=0 0 202 80
 
 [CTRL_BUTTON_TEN]
 Type=2
 Tag=110
-Rect=399 57 147 37
+Rect=393 114 203 80
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -66,11 +78,13 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=抽取5次按钮
+NormalFile=.\res\image\ui\shop\gacha.png
+NormalFileUV=0 0 202 80
 
 [CTRL_TEXT_FREE_TIME]
 Type=4
 Tag=112
-Rect=210 135 350 30
+Rect=32 157 144 42
 AnchorPos=0 0
 Notes=
 Text=23:57:33后可免费抽取1次
@@ -84,11 +98,11 @@ Remark=免费扭蛋倒计时
 [CTRL_TEXT_FREE_MSG]
 Type=4
 Tag=11
-Rect=237 102 107 30
+Rect=291 137 94 30
 AnchorPos=0 0
 Notes=
-Text=本次免费！
-TextTradition=本次免費！
+Text=本次免费
+TextTradition=本次免費
 TextSize=19
 TextColor=0xff00
 TextHorAlign=AlignHorCenter
@@ -98,7 +112,7 @@ Remark=免费扭蛋文字
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=259 100 30 30
+Rect=302 137 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\coin.png
@@ -107,7 +121,7 @@ NormalFileUV=0 0 30 30
 [CTRL_PICTURE_13]
 Type=1
 Tag=13
-Rect=444 100 30 30
+Rect=517 137 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\coin.png
@@ -116,7 +130,7 @@ NormalFileUV=0 0 30 30
 [CTRL_TEXT_EMONEY_ONCE]
 Type=4
 Tag=14
-Rect=293 101 51 30
+Rect=331 137 46 30
 AnchorPos=0 0
 Notes=
 Text=50
@@ -130,7 +144,7 @@ Remark=抽取一次元宝
 [CTRL_TEXT_EMONEY_SOMETIMES]
 Type=4
 Tag=15
-Rect=477 100 48 30
+Rect=543 137 48 30
 AnchorPos=0 0
 Notes=
 Text=50
@@ -140,3 +154,30 @@ TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=抽取5次元宝
+
+[CTRL_PICTURE_44]
+Type=1
+Tag=44
+Rect=38 22 130 130
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_45]
+Type=1
+Tag=45
+Rect=200 133 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\once.png
+NormalFileUV=0 0 85 30
+
+[CTRL_PICTURE_46]
+Type=1
+Tag=46
+Rect=420 133 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\fivetimes.png
+NormalFileUV=0 0 85 30

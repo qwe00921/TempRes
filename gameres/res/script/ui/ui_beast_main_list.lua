@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_beast_main_list = {};
 local p =  ui_beast_main_list;
+p.ID_CTRL_TEXT_28						       = 33;
+p.ID_CTRL_PICTURE_27					     = 32;
 p.ID_CTRL_PICTURE_106					    = 106;
 p.ID_CTRL_PICTURE_TEAM3				   = 31;	--team3标志
 p.ID_CTRL_PICTURE_TEAM2				   = 30;	--team2标志

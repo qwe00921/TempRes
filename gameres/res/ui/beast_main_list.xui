@@ -15,11 +15,11 @@ NormalFileUV=0 0 590 264
 [CTRL_PICTURE_BEAST]
 Type=1
 Tag=11
-Rect=35 81 100 100
+Rect=31 77 112 112
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\beast_head.png
-NormalFileUV=0 100 84 26
+NormalFileUV=0 100 26 26
 
 [CTRL_TEXT_12]
 Type=4
@@ -299,8 +299,30 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_106]
 Type=1
 Tag=106
-Rect=32 81 103 103
+Rect=28 74 118 118
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=32
+Rect=39 160 98 25
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_28]
+Type=4
+Tag=33
+Rect=57 160 65 23
+AnchorPos=0 0
+Notes=
+Text=Lv 999
+TextTradition=Lv 999
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

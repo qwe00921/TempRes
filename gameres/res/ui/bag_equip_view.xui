@@ -29,15 +29,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CLOSE]
 Type=2
 Tag=62
-Rect=535 268 74 48
+Rect=544 258 67 65
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Stretch=1
-NormalFile=.\res\image\ui\bag\bag_back.png
-NormalFileUV=0 0 151 101
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 50 49
 
 [CTRL_PICTURE_EQUIP]
 Type=1
