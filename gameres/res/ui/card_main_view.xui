@@ -10,144 +10,200 @@ Rect=0 0 640 870
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card_bag\main_bg.png
+NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=20
-Rect=37 58 105 51
+Rect=-9 9 151 60
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=批量卖出
+TextTradition=批量賣出
+TextSize=24
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\star2.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\card\sellall.png
+NormalFileUV=0 0 202 80
+SelectFile=.\res\image\ui\card\sellall_click.png
+SelectedFileUV=0 0 202 80
 
 [CTRL_PICTURE_HEAD]
 Type=1
 Tag=21
-Rect=172 36 313 97
+Rect=146 0 368 84
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\card_bag\herd.png
-NormalFileUV=0 0 641 198
+Text=卡牌一览
+TextTradition=卡牌一覽
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
 
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=523 55 65 43
+Rect=539 1 100 98
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_return.png
-NormalFileUV=0 0 151 101
-
-[CTRL_PICTURE_LIST_BG]
-Type=1
-Tag=23
-Rect=10 200 619 600
-AnchorPos=0 0
-Notes=
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
 
 [CTRL_BUTTON_ALL]
 Type=2
 Tag=24
-Rect=17 145 80 51
+Rect=6 121 104 78
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=全部
+TextTradition=全部
+TextSize=28
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO1]
 Type=2
 Tag=25
-Rect=101 145 80 51
+Rect=110 121 104 78
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=职业1
+TextTradition=職業1
+TextSize=28
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO2]
 Type=2
 Tag=26
-Rect=184 146 80 51
+Rect=214 121 104 78
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=职业2
+TextTradition=職業2
+TextSize=28
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO3]
 Type=2
 Tag=28
-Rect=268 146 80 51
+Rect=318 121 104 78
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=职业3
+TextTradition=職業3
+TextSize=28
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_BUTTON_15]
+Type=2
+Tag=15
+Rect=528 121 104 78
+AnchorPos=0 0
+Notes=
+Text=职业5
+TextTradition=職業5
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO4]
 Type=2
 Tag=29
-Rect=350 145 80 51
+Rect=423 121 104 78
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=职业4
+TextTradition=職業4
+TextSize=28
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_9SLICES_14]
+Type=22
+Tag=14
+Rect=1 198 636 670
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
+
+[CTRL_9SLICES_16]
+Type=22
+Tag=16
+Rect=268 219 122 44
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt.png
+NormalFileUV=0 0 122 38
 
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=10 200 620 600
+Rect=9 283 620 576
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=511 142 100 57
+Rect=503 216 100 54
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=排序
+TextTradition=排序
+TextSize=26
+TextColor=0xd3cf9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\star1.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
 
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=38
-Rect=504 105 107 33
+Rect=276 224 107 33
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xe3dca1
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
