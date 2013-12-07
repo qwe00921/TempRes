@@ -1,33 +1,30 @@
-Reward = {}
-Reward["item"] = {}
-Reward["item"][1] = {}
-Reward["item"][1]["Reward_id"] = 101
-Reward["item"][1]["Type"] = 2
-Reward["item"][1]["Num"] = 1
-Reward["item"][1]["Group"] = 1
+-- Reward = {}
+-- Reward["item"] = {}
+-- Reward["item"][1] = {}
+-- Reward["item"][1]["Reward_id"] = 101
+-- Reward["item"][1]["Type"] = 2
+-- Reward["item"][1]["Num"] = 1
+-- Reward["item"][1]["Group"] = 1
 
-Reward["item"][2] = {}
-Reward["item"][2]["Reward_id"] = 1
-Reward["item"][2]["Type"] = 3
-Reward["item"][2]["Num"] = 1
-Reward["item"][2]["Group"] = 2
+-- Reward["item"][2] = {}
+-- Reward["item"][2]["Reward_id"] = 1
+-- Reward["item"][2]["Type"] = 3
+-- Reward["item"][2]["Num"] = 1
+-- Reward["item"][2]["Group"] = 2
 
-Reward["Mission_id"] = 101011
-Reward["Res"] = 1
-Reward["Difficulty"]= 1
-Reward["Score"] = 3
-Reward["Reward_exp"] = 130
-Reward["reward_money"] = nil;
-
-
+-- Reward["Mission_id"] = 101011
+-- Reward["Res"] = 1
+-- Reward["Difficulty"]= 1
+-- Reward["Score"] = 3
+-- Reward["Reward_exp"] = 130
+-- Reward["reward_money"] = nil;
 quest_reward = {}
 local p = quest_reward;
 
 p.layer = nil;
 local ui = ui_quest_reward_view;
 
-function p.ShowUI()
-	rewardData = Reward
+function p.ShowUI(rewardData)
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
