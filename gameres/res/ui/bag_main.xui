@@ -6,109 +6,111 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 640 850
+Rect=0 0 640 860
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_main_bg.png
+NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
-
-[CTRL_TEXT_COUNT]
-Type=4
-Tag=19
-Rect=24 20 100 80
-AnchorPos=0 0
-Notes=
-Text=0/0
-TextTradition=0/0
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_LIST]
 Type=1
 Tag=20
-Rect=135 19 360 100
+Rect=126 0 379 86
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_title.png
-NormalFileUV=0 0 361 100
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
 
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=21
-Rect=506 26 107 72
+Rect=539 -5 100 98
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_back.png
-NormalFileUV=0 0 151 101
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98
 
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=22
-Rect=31 120 100 63
+Rect=8 116 100 63
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=全部
+TextTradition=全部
+TextSize=28
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=23
-Rect=132 120 100 63
+Rect=109 116 100 63
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=道具
+TextTradition=道具
+TextSize=28
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_TIEM3]
 Type=2
 Tag=24
-Rect=232 120 100 63
+Rect=209 116 100 63
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=装备
+TextTradition=裝備
+TextSize=28
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=25
-Rect=332 120 100 62
+Rect=309 116 100 62
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=其他
+TextTradition=其他
+TextSize=28
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_SORT]
 Type=2
 Tag=26
-Rect=484 130 107 69
+Rect=423 15 107 69
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -117,89 +119,122 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\bag\bag_button_clear.png
 NormalFileUV=0 0 110 71
 
+[CTRL_9SLICES_19]
+Type=22
+Tag=31
+Rect=0 179 640 685
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
+
 [CTRL_BUTTON_ITEM_SUB1]
 Type=2
 Tag=27
-Rect=34 180 85 57
+Rect=8 195 110 57
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=全部
+TextTradition=全部
+TextSize=24
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_ITEM_SUB2]
 Type=2
 Tag=28
-Rect=121 180 85 57
+Rect=123 195 110 57
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=武器
+TextTradition=武器
+TextSize=24
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_ITEM_SUB3]
 Type=2
 Tag=29
-Rect=207 180 85 57
+Rect=235 195 110 57
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=防具
+TextTradition=防具
+TextSize=24
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_ITEM_SUB4]
 Type=2
 Tag=30
-Rect=294 180 85 57
+Rect=348 195 110 57
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=鞋子
+TextTradition=鞋子
+TextSize=24
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_VERTICAL_LIST_ITEM]
 Type=14
 Tag=32
-Rect=3 239 635 441
+Rect=3 266 635 593
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_USE]
 Type=1
 Tag=33
-Rect=0 688 640 148
+Rect=1 700 640 166
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\test_bg.png
-NormalFileUV=0 0 148 100
+NormalFile=.\res\image\ui\shop\bg_shop.png
+NormalFileUV=0 0 594 208
+
+[CTRL_9SLICES_21]
+Type=22
+Tag=36
+Rect=502 207 107 32
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=34
-Rect=24 709 421 103
+Rect=34 724 421 103
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 Remark=物品说明
@@ -207,11 +242,29 @@ Remark=物品说明
 [CTRL_BUTTON_USE]
 Type=2
 Tag=35
-Rect=490 727 107 52
+Rect=477 748 131 64
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=使用
+TextTradition=使用
+TextSize=24
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_button_use.png
-NormalFileUV=0 0 141 68
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
+
+[CTRL_TEXT_COUNT]
+Type=4
+Tag=19
+Rect=513 198 84 47
+AnchorPos=0 0
+Notes=
+Text=0/0
+TextTradition=0/0
+TextSize=24
+TextColor=0xfef9d2
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
