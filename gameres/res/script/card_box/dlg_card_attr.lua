@@ -53,9 +53,9 @@ function p.SetDelegate(layer)
 	--天赋技能1
 	local pBtnDower1 = GetButton(layer,ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_1);
 	--天赋技能2
-	local pBtnDower2 = GetButton(layer,ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_2);
+	--local pBtnDower2 = GetButton(layer,ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_2);
 	--天赋技能3
-	local pBtnDower3 = GetButton(layer,ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_3);
+	--local pBtnDower3 = GetButton(layer,ui_dlg_card_attr.ID_CTRL_BUTTON_PICTURE_3);
 	--因为没有数据所以先改为 ~=nil 
 	if skill_res == nil then 
 		pBtnDower1:SetVisible(false);

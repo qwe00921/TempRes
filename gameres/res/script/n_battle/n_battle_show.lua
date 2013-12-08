@@ -121,18 +121,21 @@ function p.DoEffectBuff( buffData )
 	   
 	   local cmdBuffEffect;
 	   if BuffType == N_BUFF_TYPE_4 or BuffType == N_BUFF_TYPE_5 then
-            targetF:cmdLua( "fighter_damage",  Damage, "", seqTarget );
+            cmdBuffEffect = targetF:cmdLua( "fighter_damage",  Damage, "", seqTarget );
        elseif BuffType == N_BUFF_TYPE_9 then 
-            targetF:cmdLua( "fighter_addHp", Damage, "", seqTarget );
+            cmdBuffEffect = targetF:cmdLua( "fighter_addHp", Damage, "", seqTarget );
        end
+       --[[
 	   local cmdBuffIcon = p.UpdateBuffIcon( targetF, BuffType, seqTarget );
-	   if cmdBuffEffect ~= nil then
+	   if cmdBuffEffect ~= nil and cmdBuffIcon ~= nil then
 	   	   cmdBuffIcon:SetWaitEnd( cmdBuffEffect );
 	   end
+	   --]]
 	end
 end
 
 function p.UpdateBuffIcon( target, BuffType, seq )
+    WriteConWarning("=================UpdateBuffIcon================");
     if target == nil or BuffType == nil then
     	return nil;
     end
@@ -157,6 +160,7 @@ function p.UpdateBuffIcon( target, BuffType, seq )
         end
     end
     if isDel then
+        WriteConWarning("del effect id ====="..targetPos);
     	cmd = createCommandEffect():DelEffect( 0, target:GetNode(), buffAni );
         seq:AddCommand( cmd );
     end

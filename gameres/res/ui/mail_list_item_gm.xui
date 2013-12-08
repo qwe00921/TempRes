@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
@@ -6,11 +6,11 @@ Height=640
 [CTRL_PICTURE_BG]
 Type=1
 Tag=298
-Rect=0 0 616 78
+Rect=0 0 616 83
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_bg.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\mail\bg_gm.png
+NormalFileUV=0 0 546 74
 
 [CTRL_TEXT_TITLE]
 Type=4
@@ -19,6 +19,7 @@ Rect=10 10 367 49
 AnchorPos=0 0
 Notes=
 TextSize=25
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -29,5 +30,6 @@ Rect=442 13 166 43
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter

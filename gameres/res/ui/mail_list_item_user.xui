@@ -6,27 +6,40 @@ Height=640
 [CTRL_PICTURE_BG]
 Type=1
 Tag=298
-Rect=0 0 617 209
+Rect=4 18 617 276
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_bg.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\beast\beast_bg.png
+NormalFileUV=0 0 590 264
 
 [CTRL_CHECK_BUTTON_SEL]
 Type=2
 Tag=301
-Rect=528 88 61 34
+Rect=539 15 80 70
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\player\common_ui_select_normal.png
-NormalFileUV=0 0 49 43
-SelectFile=.\res\image\ui\player\common_ui_select_select.png
-SelectedFileUV=0 0 52 50
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mail\choose.png
+NormalFileUV=0 0 80 70
+SelectFile=.\res\image\ui\mail\choose_select.png
+SelectedFileUV=0 0 80 70
+
+[CTRL_9SLICES_8]
+Type=22
+Tag=8
+Rect=22 99 577 174
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\frame_item.png
+NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=330
-Rect=10 10 367 49
+Rect=28 35 317 49
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -36,7 +49,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TIME]
 Type=4
 Tag=331
-Rect=443 7 166 43
+Rect=365 38 166 43
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -46,7 +59,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CONTENT]
 Type=4
 Tag=332
-Rect=12 115 417 82
+Rect=30 163 560 102
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -56,7 +69,7 @@ TextVerAlign=AlignTop
 [CTRL_TEXT_STATE]
 Type=4
 Tag=343
-Rect=467 145 135 43
+Rect=449 109 135 43
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -66,9 +79,27 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME]
 Type=4
 Tag=387
-Rect=15 62 304 38
+Rect=34 112 304 38
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=479 112 107 41
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\read.png
+NormalFileUV=0 0 98 38
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=479 111 107 43
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\toread.png
+NormalFileUV=0 0 98 39

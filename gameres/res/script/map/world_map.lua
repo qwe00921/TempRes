@@ -277,11 +277,11 @@ function p.OnMapEvent( mapEvent, delta, distance )
 end
 
 function p.CheckToCloseMap()
-	--ɧڻԐղߪ֘ͼìղژҕ֘ͼì׵ܘ׷UI
 	local mapNode = GetTileMapMgr():GetMapNode();
 	if mapNode ~= nil then
 		mapNode:FadeOut();
 		SetTimerOnce( p.OnTimer_BackMainUI, 0.5f );
+		--p.OnTimer_BackMainUI();
 	end
 end
 

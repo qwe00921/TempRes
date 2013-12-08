@@ -6,16 +6,16 @@ Height=960
 [CTRL_PICTURE_245]
 Type=1
 Tag=245
-Rect=0 0 640 960
+Rect=0 0 640 860
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_bg.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_REPLY]
 Type=2
 Tag=158
-Rect=65 787 107 43
+Rect=61 761 232 84
 AnchorPos=0 0
 Notes=
 Text=回复邮件
@@ -23,36 +23,64 @@ TextTradition=回復郵件
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\button_blue.png
+NormalFileUV=0 0 232 84
+SelectFile=.\res\image\ui\public\button_blue_click.png
+SelectedFileUV=0 0 232 84
+
+[CTRL_9SLICES_18]
+Type=22
+Tag=18
+Rect=121 210 475 48
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_9SLICES_16]
+Type=22
+Tag=16
+Rect=140 91 426 48
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=455 786 110 43
+Rect=538 -7 100 98
 AnchorPos=0 0
 Notes=
-Text=返回
-TextTradition=返回
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98
 
-[CTRL_TEXT_164]
-Type=4
-Tag=164
-Rect=241 6 148 70
+[CTRL_9SLICES_19]
+Type=22
+Tag=19
+Rect=31 279 572 172
 AnchorPos=0 0
 Notes=
-Text=邮箱
-TextTradition=郵箱
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\title_bg.png
-NormalFileUV=0 0 350 82
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_9SLICES_17]
+Type=22
+Tag=17
+Rect=151 148 414 48
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_209]
 Type=4
@@ -63,25 +91,27 @@ Notes=
 Text=发件人:
 TextTradition=發件人:
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=28 214 89 43
+Rect=28 214 75 43
 AnchorPos=0 0
 Notes=
 Text=主题:
 TextTradition=主題:
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_DEL]
 Type=2
 Tag=454
-Rect=229 786 107 43
+Rect=356 764 232 84
 AnchorPos=0 0
 Notes=
 Text=删除邮件
@@ -89,84 +119,109 @@ TextTradition=刪除郵件
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\button_red.png
+NormalFileUV=0 0 232 84
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=129 92 202 48
+Rect=142 92 456 48
 AnchorPos=0 0
 Notes=
 Text=广告小天使
 TextTradition=廣告小天使
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=128 212 440 48
+Rect=118 212 450 48
 AnchorPos=0 0
 Notes=
 Text=服务器维护补偿礼包
 TextTradition=服務器維護補償禮包
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=30 149 88 50
+Rect=30 149 96 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
 TextTradition=發件時間:
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=128 151 443 48
+Rect=153 150 445 48
 AnchorPos=0 0
 Notes=
 Text=2014-05-21 19:33:33
 TextTradition=2014-05-21 19:33:33
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_CONTENT]
 Type=4
 Tag=460
-Rect=24 274 577 146
+Rect=37 286 564 154
 AnchorPos=0 0
 Notes=
 Text=你好,我是大灰狼,你好,你好.
 TextTradition=你好,我是大灰狼,你好,你好.
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 
-[CTRL_TEXT_LABEL_HISTORY]
-Type=4
-Tag=31
-Rect=24 445 574 51
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
+Rect=129 1 368 84
 AnchorPos=0 0
 Notes=
-Text=历史记录
-TextTradition=歷史記錄
-TextSize=20
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
+
+[CTRL_TEXT_164]
+Type=4
+Tag=164
+Rect=241 2 148 70
+AnchorPos=0 0
+Notes=
+Text=邮箱
+TextTradition=郵箱
+TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\title_bg.png
+NormalFileUV=0 0 350 82
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=22
+Rect=34 466 570 280
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\note.png
+NormalFileUV=0 0 566 280
 
 [CTRL_VERTICAL_LIST]
 Type=14
 Tag=32
-Rect=23 501 578 280
+Rect=39 527 553 211
 AnchorPos=0 0
 Notes=

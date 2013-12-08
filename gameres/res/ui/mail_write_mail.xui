@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -6,30 +6,25 @@ Height=960
 [CTRL_PICTURE_245]
 Type=1
 Tag=245
-Rect=0 0 640 960
+Rect=0 0 640 860
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_bg.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
 
-[CTRL_BUTTON_FRIENDS]
-Type=2
-Tag=95
-Rect=351 88 66 44
+[CTRL_PICTURE_16]
+Type=1
+Tag=16
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
-Text=V
-TextTradition=V
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
 
 [CTRL_BUTTON_SEND]
 Type=2
 Tag=158
-Rect=140 747 107 43
+Rect=204 771 232 84
 AnchorPos=0 0
 Notes=
 Text=发送
@@ -37,27 +32,47 @@ TextTradition=發送
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\button_blue.png
+NormalFileUV=0 0 232 84
+
+[CTRL_9SLICES_17]
+Type=22
+Tag=17
+Rect=138 94 464 60
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=385 743 110 43
+Rect=560 0 80 78
 AnchorPos=0 0
 Notes=
-Text=取消
-TextTradition=取消
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98
+
+[CTRL_9SLICES_18]
+Type=22
+Tag=18
+Rect=142 174 464 60
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_164]
 Type=4
 Tag=164
-Rect=255 5 133 70
+Rect=254 -3 133 70
 AnchorPos=0 0
 Notes=
 Text=写信
@@ -77,25 +92,27 @@ Notes=
 Text=收件人:
 TextTradition=收件人:
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=25 174 89 43
+Rect=25 185 89 43
 AnchorPos=0 0
 Notes=
 Text=主题:
 TextTradition=主題:
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_INPUT_TEXT_RECIEVER]
 Type=18
 Tag=270
-Rect=113 93 229 60
+Rect=138 94 466 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -105,17 +122,41 @@ TextVerAlign=AlignVerCenter
 [CTRL_INPUT_TEXT_TITLE]
 Type=18
 Tag=271
-Rect=115 171 468 66
+Rect=138 171 472 66
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_BUTTON_FRIENDS]
+Type=2
+Tag=95
+Rect=562 113 30 26
+AnchorPos=0 0
+Notes=
+Text=V
+TextTradition=V
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mail\fordown.png
+NormalFileUV=0 0 30 26
+
+[CTRL_9SLICES_19]
+Type=22
+Tag=19
+Rect=32 264 576 496
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
 [CTRL_INPUT_CONTENT]
 Type=18
 Tag=296
-Rect=32 259 571 489
+Rect=44 277 553 473
 AnchorPos=0 0
 Notes=
 TextSize=20
