@@ -31,6 +31,8 @@ function p.ShowUI(userinfo)
 	
 	p.ShowMailNum(userinfo);
 	
+	dlg_battlearray.ShowUI();
+	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
 	--dlg_battlearray.ShowUI();
@@ -149,16 +151,18 @@ function p.ShowBillboardWithInit()
 end
 
 function p.HideBillboard()
-	
+	WriteCon("**HideBillboard**");
 	billboard.pauseBillBoard();
 end
 
 function p.ShowBillboard()
+	
 	billboard.resumeBillBoard();
 end
 
 --从子界面退出，刷新主界面
 function p.BecomeFirstUI()
+	WriteCon("**BecomeFirstUI**");
 	dlg_userinfo.ShowUI();
 	 p.ShowBillboard()
 end

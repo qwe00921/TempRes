@@ -23,7 +23,8 @@ function p.ShowUI()
 	layer:Init(layer);
 	layer:SetSwallowTouch(false);
     
-	GetUIRoot():AddChild(layer);
+	--GetUIRoot():AddChild(layer);
+	GetUIRoot():AddDlg(layer);
 	LoadUI("main_menu.xui", layer, nil);
 	layer:SetZOrder(9);
     
@@ -88,6 +89,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========ึ๗าณ========**");
 			
 			world_map.CheckToCloseMap();
+			
+			p.SetNewUI( {} );
 		end
 		maininterface.CloseAllPanel();
 	end

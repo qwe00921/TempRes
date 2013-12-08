@@ -21,6 +21,7 @@ p.imageMask = nil			--增加蒙版特效
 local isPVE = false;
 local isActive = false;
 local useParallelBatch = true; --是否使用并行批次
+p.isBattleEnd = false;
 
 local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
@@ -123,6 +124,31 @@ function p.EnterBattle_RoundStage_Buff()
         n_battle_show.DoEffectBuff( buffEffectData );
     else
         n_battle_mainui.OnBattleShowFinished();   
+    end
+end
+
+--更新战士身上的BUFF
+function p.UpdateFighterBuff()
+	local heroes = p.heroCamp:GetAliveFighters();
+	p.DelFighterBuff( heroes );
+	local enemies = p.enemyCamp:GetAliveFighters();
+	p.DelFighterBuff( enemies );
+end
+
+--更新战士身上的BUFF
+function p.DelFighterBuff( fighters )
+	if fighters ~= nil and #fighters >0 then
+        for key, fighter in ipairs(fighters) do
+            local fighterBuff = fighter.buffList;
+            for k, v in ipairs(fighterBuff) do
+                local buffType = v.buttType;
+                local buffAni = v.buffAni;
+                if not v.isDel and not HasBuffType( fighter, buffType ) then
+                    fighter:GetNode():DelAniEffect( buffAni );
+                    v.isDel = true;
+                end
+            end
+        end
     end
 end
 
@@ -378,6 +404,7 @@ end
 --战斗胜利
 function p.OnBattleWin()
 	--GetBattleShow():Stop();
+	p.isBattleEnd = true;
 	SetTimerOnce( p.OpenBattleWin, 1.0f );
 end
 
@@ -391,6 +418,7 @@ end
 --战斗失败
 function p.OnBattleLose()
 	--GetBattleShow():Stop();
+	p.isBattleEnd = true;
 	SetTimerOnce( p.OpenBattleLose, 2.0f );
 end
 
