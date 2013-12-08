@@ -25,7 +25,7 @@ function p.ShowUI()
     
 	GetUIRoot():AddChild(layer);
 	LoadUI("main_menu.xui", layer, nil);
-	layer:SetZOrder(9);
+	layer:SetZOrder(99);
     
 	p.layer = layer;
 	p.SetDelegate();

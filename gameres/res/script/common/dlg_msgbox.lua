@@ -107,7 +107,7 @@ function p.OnClick(uiNode, uiEventType, param)
 			if p.delegate ~= nil then
 			    p.delegate( false );
 			end
-		end						
+		end
 	end
 end
 

@@ -78,7 +78,7 @@ function p.ShowUI( intent )
 		return;
 	end
 	
-	local layer = createNDUIDialog();
+	local layer = createNDUILayer();
     if layer == nil then
         return false;
     end
