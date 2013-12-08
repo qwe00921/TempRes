@@ -31,6 +31,8 @@ function p.ShowUI(userinfo)
 	
 	p.ShowMailNum(userinfo);
 	
+	dlg_battlearray.ShowUI();
+	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
 	--dlg_battlearray.ShowUI();

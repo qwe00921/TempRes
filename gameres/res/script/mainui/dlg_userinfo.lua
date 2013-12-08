@@ -17,7 +17,7 @@ local ui = ui_main_userinfo
 function p.ShowUI(userinfo)
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		dlg_battlearray.ShowUI();
+		--dlg_battlearray.ShowUI();
 		
 		if userinfo ~= nil then
 			p.RefreshUI(userinfo)
@@ -42,7 +42,7 @@ function p.ShowUI(userinfo)
     
 	p.layer = layer;
 	
-	dlg_battlearray.ShowUI();
+	--dlg_battlearray.ShowUI();
 	
 	if userinfo ~= nil then
 		p.RefreshUI(userinfo)

@@ -88,6 +88,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========ึ๗าณ========**");
 			
 			world_map.CheckToCloseMap();
+			
+			p.SetNewUI( {} );
 		end
 		maininterface.CloseAllPanel();
 	end
