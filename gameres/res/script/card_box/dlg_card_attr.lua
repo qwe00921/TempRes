@@ -17,7 +17,7 @@ function p.ShowUI(cardID)
 		p.layer:SetVisible( true );
 		return;
 	end
-	local layer = createNDUIDialog();
+	local layer = createNDUILayer();
     if layer == nil then
         return false;
     end

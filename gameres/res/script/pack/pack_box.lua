@@ -17,6 +17,8 @@ p.curBtnNode = nil;
 p.itemBtnNode = nil;
 
 function p.ShowUI()
+	dlg_menu.SetNewUI( p );
+	
 	packLimit = msg_cache.msg_player.Storage
 	WriteCon("packLimit========="..packLimit);
 
@@ -419,4 +421,7 @@ function p.CloseUI()
     end
 end
 
+function p.UIDisappear()
+	p.CloseUI();
+end
 

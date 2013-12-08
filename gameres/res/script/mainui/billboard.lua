@@ -222,7 +222,7 @@ end
 -- 恢复跑马灯
 function p.resumeBillBoard()
 	p.title:SetVisible(true);
-	p.LoadMessage();
+	--p.LoadMessage(); -- 不在resumeBillBoard下读数据
 	p.StartTimer();
 end
 
