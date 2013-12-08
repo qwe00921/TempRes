@@ -6,69 +6,79 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 620 195
+Rect=0 0 620 224
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_BGINFO]
+Type=22
+Tag=26
+Rect=193 27 400 166
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_9SLICES_18]
 Type=22
 Tag=21
-Rect=20 5 580 180
+Rect=14 5 594 208
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\common\item_bg.png
-NormalFileUV=0 0 126 126
+NormalFile=.\res\image\ui\shop\bg_shop.png
+NormalFileUV=0 0 594 208
 
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=5
-Rect=25 123 563 50
+Rect=220 139 365 49
 AnchorPos=0 0
 Notes=
 Text=道具说明道具说明道具说明道具说明道具说明道具说明道具说明
 TextTradition=道具說明道具說明道具說明道具說明道具說明道具說明道具說明
-TextSize=15
+TextSize=20
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
 
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=6
-Rect=175 13 198 30
+Rect=208 35 166 41
 AnchorPos=0 0
 Notes=
 Text=超级体力石
 TextTradition=超級體力石
-TextSize=20
+TextSize=30
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_BUY_L]
 Type=2
 Tag=10
-Rect=428 60 136 60
+Rect=32 136 136 56
 AnchorPos=0 0
 Notes=
 Text=购买
 TextTradition=購買
-TextSize=20
-TextColor=0xfffbf0
+TextSize=28
+TextColor=0xfeffaf
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
+NormalFile=.\res\image\ui\shop\buy.png
+NormalFileUV=0 0 126 52
+SelectFile=.\res\image\ui\shop\buy_click.png
+SelectedFileUV=0 0 126 52
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
 [CTRL_PICTURE_11]
 Type=1
 Tag=11
-Rect=60 30 80 68
+Rect=50 26 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\item\item.png
@@ -77,12 +87,12 @@ NormalFileUV=0 0 120 120
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=12
-Rect=175 94 86 25
+Rect=283 96 79 25
 AnchorPos=0 0
 Notes=
-Text=现价：20000
-TextTradition=現價：20000
-TextSize=15
+Text=20000
+TextTradition=20000
+TextSize=24
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -90,25 +100,87 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=35
-Rect=175 43 196 25
+Rect=405 45 183 37
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
 TextTradition=15級以上可以購買
-TextSize=15
+TextSize=20
 TextColor=0xff0000
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
+TextHorAlign=AlignRight
+TextVerAlign=AlignTop
 
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=37
-Rect=175 68 86 25
+Rect=510 96 73 25
 AnchorPos=0 0
 Notes=
-Text=原价：50000
-TextTradition=原價：50000
-TextSize=15
-TextColor=0xff0000
+Text=50000
+TextTradition=50000
+TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=50 26 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_28]
+Type=4
+Tag=28
+Rect=207 96 57 25
+AnchorPos=0 0
+Notes=
+Text=现价
+TextTradition=現價
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_29]
+Type=1
+Tag=29
+Rect=256 93 30 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\coin.png
+NormalFileUV=0 0 30 30
+
+[CTRL_TEXT_30]
+Type=4
+Tag=30
+Rect=431 96 57 25
+AnchorPos=0 0
+Notes=
+Text=原价
+TextTradition=原價
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_31]
+Type=1
+Tag=31
+Rect=483 93 30 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\coin.png
+NormalFileUV=0 0 30 30
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=487 104 94 6
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\deletelilne.png
+NormalFileUV=0 0 68 4

@@ -9,5 +9,6 @@ p.ID_CTRL_VERTICAL_LIST_7				 = 7;
 p.ID_CTRL_BUTTON_BACK					    = 6;
 p.ID_CTRL_PICTURE_TITLE				   = 3;
 p.ID_CTRL_TEXT_NUM					       = 2;
-p.ID_CTRL_PICTURE_NUM_BG				  = 1;	--召唤兽数目
+p.ID_CTRL_PICTURE_NUMBG				   = 10;
 p.ID_CTRL_PICTURE_4					      = 4;
+p.ID_CTRL_PICTURE_BGUN				    = 8;	--最下层背景

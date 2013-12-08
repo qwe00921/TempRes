@@ -3,32 +3,58 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_1]
-Type=1
-Tag=1
-Rect=20 3 498 623
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\quest\quest_bg22.png
-NormalFileUV=0 0 640 512
-
-[CTRL_BUTTON_OK]
+[CTRL_BUTTON_BG]
 Type=2
-Tag=11
-Rect=222 528 107 30
+Tag=21
+Rect=19 8 498 690
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\quest\mission_start_un.png
-NormalFileUV=0 0 279 77
+Stretch=1
+NormalFile=.\res\image\ui\quest\bg_reward.png
+NormalFileUV=0 0 580 848
 
-[CTRL_TEXT_ITEM_NAME]
+[CTRL_PICTURE_TOUCH]
+Type=1
+Tag=22
+Rect=173 605 204 53
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\text_reward.png
+NormalFileUV=0 0 208 54
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=24
+Rect=40 393 430 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\bg_reward1.png
+NormalFileUV=0 0 430 54
+
+[CTRL_TEXT_ITEM_NAME2]
+Type=4
+Tag=20
+Rect=293 561 107 28
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_ITEM2]
+Type=1
+Tag=19
+Rect=296 451 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_ITEM_NAME1]
 Type=4
 Tag=10
-Rect=254 451 100 25
+Rect=133 564 100 25
 AnchorPos=0 0
 Notes=
 Text=物品名称
@@ -37,10 +63,10 @@ TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_ITEM]
+[CTRL_PICTURE_ITEM1]
 Type=1
 Tag=9
-Rect=108 424 107 91
+Rect=133 451 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\boss1.png
@@ -49,7 +75,7 @@ NormalFileUV=0 0 84 126
 [CTRL_TEXT_GET_ITEM]
 Type=4
 Tag=8
-Rect=244 372 107 31
+Rect=136 402 279 33
 AnchorPos=0 0
 Notes=
 Text=获得
@@ -61,17 +87,26 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GET_MONEY]
 Type=4
 Tag=18
-Rect=233 332 107 32
+Rect=279 353 107 32
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=25
+Rect=49 248 430 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\bg_reward1.png
+NormalFileUV=0 0 430 54
 
 [CTRL_TEXT_EMONEY]
 Type=4
 Tag=7
-Rect=109 333 100 25
+Rect=135 354 100 25
 AnchorPos=0 0
 Notes=
 Text=金币
@@ -83,17 +118,17 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GET_EXP]
 Type=4
 Tag=17
-Rect=233 288 107 32
+Rect=279 309 107 32
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_EXP]
 Type=4
 Tag=6
-Rect=107 292 100 25
+Rect=135 313 100 25
 AnchorPos=0 0
 Notes=
 Text=经验
@@ -105,7 +140,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_REWARD]
 Type=4
 Tag=5
-Rect=244 243 100 25
+Rect=136 256 279 33
 AnchorPos=0 0
 Notes=
 Text=奖励
@@ -117,28 +152,34 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=16
-Rect=338 200 48 37
+Rect=358 209 36 36
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=15
-Rect=291 200 36 32
+Rect=316 209 36 36
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=14
-Rect=245 199 34 36
+Rect=268 210 34 34
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\quest\star.png
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_STAR]
 Type=4
 Tag=4
-Rect=107 203 100 25
+Rect=135 215 100 25
 AnchorPos=0 0
 Notes=
 Text=评价
@@ -147,41 +188,69 @@ TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_21]
+Type=1
+Tag=23
+Rect=52 99 430 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\bg_reward1.png
+NormalFileUV=0 0 430 54
+
 [CTRL_PICTURE_DIFF]
 Type=1
 Tag=13
-Rect=259 153 107 28
+Rect=279 165 107 28
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_DIFFICULT]
 Type=4
 Tag=3
-Rect=106 153 100 25
+Rect=135 167 100 25
 AnchorPos=0 0
 Notes=
 Text=难度
 TextTradition=難度
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_MISSION_NAME]
 Type=4
 Tag=2
-Rect=153 101 279 33
+Rect=136 108 279 33
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_HRED_RESULT]
 Type=1
 Tag=12
-Rect=157 32 271 60
+Rect=139 30 271 60
 AnchorPos=0 0
 Notes=
 Stretch=1
 NormalFile=.\res\image\ui\quest\mission_start1.png
 NormalFileUV=0 0 279 77
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=26
+Rect=130 448 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\item-list.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=27
+Rect=292 448 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\item-list.png
+NormalFileUV=0 0 100 100

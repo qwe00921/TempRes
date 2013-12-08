@@ -3,6 +3,15 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_6]
+Type=1
+Tag=7
+Rect=0 0 640 815
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
+
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
@@ -15,7 +24,7 @@ NormalFileUV=0 0 480 612
 [CTRL_PICTURE_3]
 Type=1
 Tag=3
-Rect=121 7 392 100
+Rect=120 7 392 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\title.png
@@ -24,19 +33,21 @@ NormalFileUV=0 0 392 100
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=5
-Rect=548 5 87 69
+Rect=539 2 100 98
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\beast\back.png
-NormalFileUV=0 0 85 68
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98
 
 [CTRL_VERTICAL_LIST_6]
 Type=14
 Tag=6
-Rect=20 116 600 660
+Rect=20 106 600 670
 AnchorPos=0 0
 Notes=
 Remark=卡组列表
@@ -44,7 +55,7 @@ Remark=卡组列表
 [CTRL_TEXT_38]
 Type=4
 Tag=38
-Rect=203 21 240 60
+Rect=201 19 240 60
 AnchorPos=0 0
 Notes=
 Text=卡组

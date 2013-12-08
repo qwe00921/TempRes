@@ -6,24 +6,34 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 620 195
+Rect=0 0 620 218
 AnchorPos=0 0
 Notes=
 
 [CTRL_9SLICES_39]
 Type=22
 Tag=39
-Rect=20 5 580 180
+Rect=14 5 594 208
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\common\item_bg.png
-NormalFileUV=0 0 126 126
+NormalFile=.\res\image\ui\shop\bg_shop.png
+NormalFileUV=0 0 594 208
+
+[CTRL_9SLICES_13]
+Type=22
+Tag=13
+Rect=187 27 393 174
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\frame_item.png
+NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_ICON_L]
 Type=1
 Tag=3
-Rect=60 30 80 68
+Rect=39 28 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\map_base\box.png
@@ -32,12 +42,12 @@ NormalFileUV=0 0 78 66
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=4
-Rect=175 13 198 30
+Rect=197 40 198 30
 AnchorPos=0 0
 Notes=
 Text=我是礼包名
 TextTradition=我是禮包名
-TextSize=20
+TextSize=28
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -45,38 +55,38 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=5
-Rect=175 43 196 25
+Rect=423 48 148 41
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
 TextTradition=15級以上可以購買
-TextSize=15
+TextSize=18
 TextColor=0xff0000
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
+TextHorAlign=AlignRight
+TextVerAlign=AlignTop
 
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=6
-Rect=175 68 92 25
+Rect=491 101 79 25
 AnchorPos=0 0
 Notes=
-Text=原价：50000
-TextTradition=原價：50000
-TextSize=15
-TextColor=0xff0000
+Text=50000
+TextTradition=50000
+TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=7
-Rect=175 94 92 25
+Rect=291 101 79 25
 AnchorPos=0 0
 Notes=
-Text=现价：20000
-TextTradition=現價：20000
-TextSize=15
+Text=20000
+TextTradition=20000
+TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -84,20 +94,20 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=8
-Rect=25 123 563 50
+Rect=203 143 371 51
 AnchorPos=0 0
 Notes=
 Text=礼包说明礼包说明礼包说明礼包说明礼包说明礼包说明
 TextTradition=禮包說明禮包說明禮包說明禮包說明禮包說明禮包說明
-TextSize=15
+TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
 
 [CTRL_BUTTON_BUY_L]
 Type=2
 Tag=9
-Rect=428 60 136 60
+Rect=26 139 136 56
 AnchorPos=0 0
 Notes=
 Text=购买
@@ -106,24 +116,82 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
-DisableFile=.\res\image\ui\common\btn_2_disable.png
-DisableFileUV=0 0 136 60
+NormalFile=.\res\image\ui\shop\buy.png
+NormalFileUV=0 0 126 52
+SelectFile=.\res\image\ui\shop\buy_click.png
+SelectedFileUV=0 0 126 52
+DisableFile=.\res\image\ui\shop\buy_un.png
+DisableFileUV=0 0 126 52
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=36 25 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
 
 [CTRL_BUTTON_LOOK_L]
 Type=2
 Tag=10
-Rect=431 15 85 36
+Rect=39 27 100 100
 AnchorPos=0 0
 Notes=
-Text=查看
-TextTradition=查看
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+
+[CTRL_TEXT_14]
+Type=4
+Tag=14
+Rect=404 100 55 26
+AnchorPos=0 0
+Notes=
+Text=原价
+TextTradition=原價
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
+Rect=263 98 30 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\coin.png
+NormalFileUV=0 0 30 30
+
+[CTRL_PICTURE_16]
+Type=1
+Tag=16
+Rect=466 98 30 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\coin.png
+NormalFileUV=0 0 30 30
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=205 102 54 23
+AnchorPos=0 0
+Notes=
+Text=现价
+TextTradition=現價
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_18]
+Type=1
+Tag=18
+Rect=465 110 103 6
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\deletelilne.png
+NormalFileUV=0 0 68 4

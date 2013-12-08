@@ -22,7 +22,7 @@ p.layer 		= nil;
 p.cardListInfo 	= nil;
 p.curBtnNode 	= nil;
 p.sortByRuleV 	= nil;
-p.sortBtnMark 	= MARK_OFF;		--批量出售是否开启
+p.sortBtnMark 	= MARK_OFF;		--按规则排序是否开启
 p.BatchSellMark = MARK_OFF;		--批量出售是否开启
 p.allCardPrice 	= 0;	--出售卡牌总价值
 p.sellCardList 	= {};	--出售卡牌列表
@@ -58,6 +58,17 @@ function p.ShowUI( bModify )
 	
 	--加载卡牌列表数据
     card_bag_mgr.LoadAllCard( p.layer );
+end
+
+function p.SetCardNum(delNum)
+	local cardNumText = GetLabel(p.layer,ui.ID_CTRL_TEXT_CARD_NUM );
+	local cardNum = p.allCardNumber;
+	if delNum ~= nil and delNum > 0 then
+		cardNum = cardNum - delNum;
+		p.allCardNumber = cardNum;
+		local countText = cardNum.."/"..cardNumLimit;
+		cardNumText:SetText(countText);
+	end
 end
 
 --显示卡牌列表

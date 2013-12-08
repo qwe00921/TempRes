@@ -6,44 +6,57 @@ Height=960
 [CTRL_PICTURE_SORT_BG]
 Type=1
 Tag=15
-Rect=430 200 185 218
+Rect=472 274 166 260
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_main_bg.png
-NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_SOTR_LEVEL]
 Type=2
 Tag=2
-Rect=443 224 160 50
+Rect=475 276 160 82
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=等级排序
+TextTradition=等級排序
+TextSize=26
+TextColor=0xd3cf9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\star1.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\card\choose.png
+NormalFileUV=0 0 196 100
+SelectFile=.\res\image\ui\card\choose_click.png
+SelectedFileUV=0 0 196 100
 
 [CTRL_BUTTON_SORT_STAR]
 Type=2
 Tag=3
-Rect=443 283 160 50
+Rect=475 358 160 82
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=星级排序
+TextTradition=星級排序
+TextSize=26
+TextColor=0xd3cf9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\star2.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\card\choose.png
+NormalFileUV=0 0 196 100
+SelectFile=.\res\image\ui\card\choose_click.png
+SelectedFileUV=0 0 196 100
 
 [CTRL_BUTTON_SOTR_ITEM]
 Type=2
 Tag=4
-Rect=444 342 160 50
+Rect=475 440 160 82
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=入手时间
+TextTradition=入手時間
+TextSize=26
+TextColor=0xd3cf9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\star3.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\card\choose.png
+NormalFileUV=0 0 196 100
+SelectFile=.\res\image\ui\card\choose_click.png
+SelectedFileUV=0 0 196 100

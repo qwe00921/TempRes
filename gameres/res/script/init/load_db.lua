@@ -80,3 +80,6 @@ T_SKILL_RES       = LoadTable( "skill_res.ini" );
 
 --装备等级表
 T_EQUIP_LEVEL	= LoadTable("equip_level.ini");
+
+--玩家等级配置表
+T_PLAYER_LEVEL	= LoadTable("player_level.ini");

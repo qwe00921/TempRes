@@ -6,47 +6,37 @@ Height=960
 [CTRL_PICTURE_295]
 Type=1
 Tag=295
-Rect=0 0 640 960
+Rect=1 0 639 860
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\gacha_1\gacha_bg.PNG
-NormalFileUV=0 0 296 311
-
-[CTRL_TEXT_297]
-Type=4
-Tag=297
-Rect=95 0 426 58
-AnchorPos=0 0
-Notes=
-Text=出阵人物
-TextTradition=出陣人物
-TextSize=40
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=299
-Rect=565 0 76 60
+Rect=540 0 100 98
 AnchorPos=0 0
 Notes=
-Text=返回
-TextTradition=返回
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98
 
 [CTRL_CARD_PICTURE]
 Type=1
 Tag=300
-Rect=30 67 379 555
+Rect=44 102 314 466
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_301]
 Type=4
 Tag=301
-Rect=424 73 100 50
+Rect=9 13 100 50
 AnchorPos=0 0
 Notes=
 Text=装备
@@ -58,7 +48,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_302]
 Type=4
 Tag=302
-Rect=536 73 100 50
+Rect=12 19 100 50
 AnchorPos=0 0
 Notes=
 Text=宝石
@@ -70,119 +60,135 @@ TextVerAlign=AlignVerCenter
 [CTRL_EQUIP_PIC_1]
 Type=1
 Tag=303
-Rect=424 130 100 100
+Rect=411 148 92 92
 AnchorPos=0 0
 Notes=
 
 [CTRL_EQUIP_PIC_3]
 Type=1
 Tag=304
-Rect=424 343 100 100
+Rect=411 361 92 92
 AnchorPos=0 0
 Notes=
-
-[CTRL_LUCK_INTRO]
-Type=4
-Tag=320
-Rect=411 656 225 259
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 
 [CTRL_EQUIP_PIC_2]
 Type=1
 Tag=305
-Rect=424 236 100 100
+Rect=411 253 92 92
 AnchorPos=0 0
 Notes=
 
 [CTRL_GEM_PIC_1]
 Type=1
 Tag=306
-Rect=536 130 100 100
+Rect=534 148 92 92
 AnchorPos=0 0
 Notes=
 
 [CTRL_GEM_PIC_2]
 Type=1
 Tag=307
-Rect=536 236 100 100
+Rect=534 253 92 92
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_206]
+Type=22
+Tag=206
+Rect=407 492 228 128
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\frame_item.png
+NormalFileUV=0 0 100 100
 
 [CTRL_GEM_PIC_3]
 Type=1
 Tag=308
-Rect=536 343 100 100
+Rect=534 360 92 92
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_197]
+Type=22
+Tag=197
+Rect=23 583 370 179
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\frame_item.png
+NormalFileUV=0 0 100 100
 
 [CTRL_CARD_GRADE]
 Type=4
 Tag=309
-Rect=47 629 160 50
+Rect=44 594 160 50
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffe631
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_CARD_HP]
 Type=4
 Tag=310
-Rect=222 629 160 50
+Rect=219 594 160 50
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xfe546c
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_CARD_ATTACK]
 Type=4
 Tag=312
-Rect=47 692 160 50
+Rect=44 648 160 50
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xde97fd
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_CARD_SPEED]
 Type=4
 Tag=313
-Rect=222 692 160 50
+Rect=219 648 160 50
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0x6ca0fe
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_CARD_DEFENSE]
 Type=4
 Tag=314
-Rect=47 756 160 50
+Rect=44 703 160 50
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0x8bff93
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_CARD_CRITICAL]
 Type=4
 Tag=315
-Rect=222 756 160 50
+Rect=219 703 160 50
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xfea14d
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_316]
 Type=4
 Tag=316
-Rect=424 456 127 43
+Rect=12 30 127 43
 AnchorPos=0 0
 Notes=
 Text=天赋技能
@@ -194,24 +200,25 @@ TextVerAlign=AlignVerCenter
 [CTRL_DOWER_PIC]
 Type=1
 Tag=317
-Rect=428 507 85 90
+Rect=417 521 85 90
 AnchorPos=0 0
 Notes=
 
 [CTRL_DOWER_INTRO]
 Type=4
 Tag=318
-Rect=520 507 115 90
+Rect=513 521 115 90
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xb8ff93
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_319]
 Type=4
 Tag=319
-Rect=411 606 85 43
+Rect=17 9 85 43
 AnchorPos=0 0
 Notes=
 Text=缘份
@@ -223,19 +230,24 @@ TextVerAlign=AlignVerCenter
 [CTRL_BTN_INTENSIFY]
 Type=2
 Tag=321
-Rect=30 831 110 60
+Rect=25 784 110 54
 AnchorPos=0 0
 Notes=
 Text=强化
 TextTradition=強化
 TextSize=30
+TextColor=0xd5ce9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BTN_SALE]
 Type=2
 Tag=323
-Rect=155 831 110 60
+Rect=156 784 110 54
 AnchorPos=0 0
 Notes=
 Text=卖出
@@ -243,23 +255,32 @@ TextTradition=賣出
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BTN_ARRT]
 Type=2
 Tag=324
-Rect=285 831 110 60
+Rect=280 784 110 54
 AnchorPos=0 0
 Notes=
 Text=详细
 TextTradition=詳細
 TextSize=30
+TextColor=0xd5ce9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_EQUIP_1]
 Type=2
 Tag=1142
-Rect=425 127 100 100
+Rect=411 148 92 92
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -269,7 +290,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_EQUIP_2]
 Type=2
 Tag=1143
-Rect=422 237 100 100
+Rect=411 253 92 92
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -279,7 +300,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_EQUIP_3]
 Type=2
 Tag=1144
-Rect=425 340 100 100
+Rect=411 361 92 92
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -289,11 +310,154 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_REPLACE]
 Type=2
 Tag=30
-Rect=155 831 110 60
+Rect=155 784 110 54
 AnchorPos=0 0
 Notes=
 Text=替换
 TextTradition=替換
 TextSize=30
+TextColor=0xd5ce9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
+
+[CTRL_PICTURE_198]
+Type=1
+Tag=198
+Rect=404 92 107 47
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\equipment.png
+NormalFileUV=0 0 128 56
+
+[CTRL_PICTURE_199]
+Type=1
+Tag=199
+Rect=527 92 107 47
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\pem.png
+NormalFileUV=0 0 128 56
+
+[CTRL_PICTURE_200]
+Type=1
+Tag=200
+Rect=410 148 93 93
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_201]
+Type=1
+Tag=201
+Rect=410 253 93 93
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_202]
+Type=1
+Tag=202
+Rect=410 361 93 93
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_203]
+Type=1
+Tag=203
+Rect=534 149 93 93
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_204]
+Type=1
+Tag=204
+Rect=533 253 93 93
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_205]
+Type=1
+Tag=205
+Rect=533 360 93 93
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_207]
+Type=1
+Tag=207
+Rect=407 472 229 47
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title2.png
+NormalFileUV=0 0 249 51
+
+[CTRL_PICTURE_209]
+Type=1
+Tag=209
+Rect=468 482 107 27
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\skill.png
+NormalFileUV=0 0 144 36
+
+[CTRL_9SLICES_210]
+Type=22
+Tag=210
+Rect=410 644 219 187
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\frame_item.png
+NormalFileUV=0 0 100 100
+
+[CTRL_LUCK_INTRO]
+Type=4
+Tag=320
+Rect=417 677 211 149
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_211]
+Type=1
+Tag=211
+Rect=407 625 229 47
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title2.png
+NormalFileUV=0 0 249 51
+
+[CTRL_PICTURE_212]
+Type=1
+Tag=212
+Rect=490 632 62 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\skill2.png
+NormalFileUV=0 0 74 36
+
+[CTRL_PICTURE_213]
+Type=1
+Tag=213
+Rect=154 2 368 84
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84

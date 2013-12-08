@@ -127,8 +127,8 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 		WriteCon("=========OnFightBtnClick==========");
 		local btnId = uiNode:GetId();
 		local missionId = uiNode:GetId();
-		local missionTable = SelectRowList(T_MISSION,"mission_id",missionId);
-		local powerLimit = tonumber(missionTable[1]["power"]);
+		local missionTable = SelectRowList(T_MISSION,"id",missionId);
+		local powerLimit = tonumber(missionTable[1]["move_cost"]);
 		local power = p.power;
 		if power < powerLimit then
 			dlg_msgbox.ShowOK("提示" ,  "体力值不足。");

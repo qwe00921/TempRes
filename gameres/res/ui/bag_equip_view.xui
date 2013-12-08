@@ -3,60 +3,81 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_BG]
-Type=1
-Tag=1
-Rect=4 249 629 580
+[CTRL_9SLICES_24]
+Type=22
+Tag=30
+Rect=3 250 640 458
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\bag\bag_main_bg.png
+NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=4 249 629 458
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
+
+[CTRL_9SLICES_22]
+Type=22
+Tag=27
+Rect=39 522 570 98
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_EQUIP_NAME]
 Type=4
 Tag=21
-Rect=234 264 185 60
+Rect=234 267 185 60
 AnchorPos=0 0
 Notes=
 Text=装备名称
 TextTradition=裝備名稱
-TextSize=24
-TextColor=0xff0000
+TextSize=28
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_CLOSE]
 Type=2
 Tag=62
-Rect=535 268 74 48
+Rect=568 249 67 67
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Stretch=1
-NormalFile=.\res\image\ui\bag\bag_back.png
-NormalFileUV=0 0 151 101
+NormalFile=.\res\image\ui\public\close2.png
+NormalFileUV=0 0 68 68
+SelectFile=.\res\image\ui\public\close2_click.png
+SelectedFileUV=0 0 68 68
 
 [CTRL_PICTURE_EQUIP]
 Type=1
 Tag=65
-Rect=31 333 220 288
+Rect=42 354 160 160
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR]
 Type=1
 Tag=72
-Rect=35 342 33 109
+Rect=18 914 33 109
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=69
-Rect=173 343 65 27
+Rect=134 358 65 27
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -66,33 +87,27 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_TYPE]
 Type=1
 Tag=71
-Rect=34 580 73 26
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_PROPERTY]
-Type=1
-Tag=63
-Rect=268 335 341 167
+Rect=88 479 73 26
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_MAIN_PRO]
 Type=4
 Tag=75
-Rect=279 342 107 33
+Rect=66 533 107 33
 AnchorPos=0 0
 Notes=
 Text=主属性
 TextTradition=主屬性
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_MAIN_PRO1]
 Type=4
 Tag=22
-Rect=430 343 130 30
+Rect=192 536 130 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -103,19 +118,20 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SUB_PRO]
 Type=4
 Tag=76
-Rect=282 380 104 32
+Rect=66 581 104 32
 AnchorPos=0 0
 Notes=
 Text=附加属性
 TextTradition=附加屬性
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_SUB_PRO1]
 Type=4
 Tag=23
-Rect=431 380 130 30
+Rect=192 585 130 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -126,7 +142,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SUB_PRO2]
 Type=4
 Tag=24
-Rect=431 417 130 30
+Rect=329 585 130 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -134,10 +150,20 @@ TextColor=0xff00
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
+[CTRL_9SLICES_21]
+Type=22
+Tag=26
+Rect=238 349 369 165
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\frame_item.png
+NormalFileUV=0 0 100 100
+
 [CTRL_TEXT_SUB_PRO3]
 Type=4
 Tag=25
-Rect=432 450 130 30
+Rect=468 585 130 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -145,17 +171,10 @@ TextColor=0xff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_INTRODUCE]
-Type=1
-Tag=64
-Rect=264 509 335 180
-AnchorPos=0 0
-Notes=
-
 [CTRL_TEXT_83]
 Type=4
 Tag=83
-Rect=279 525 99 39
+Rect=247 361 99 39
 AnchorPos=0 0
 Notes=
 Text=介绍
@@ -168,42 +187,67 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_INFO]
 Type=4
 Tag=84
-Rect=281 570 304 107
+Rect=254 406 333 92
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_MODE]
-Type=1
-Tag=66
-Rect=44 642 198 37
-AnchorPos=0 0
-Notes=
-
 [CTRL_BUTTON_STRENGTHEN]
 Type=2
 Tag=67
-Rect=136 726 107 60
+Rect=252 630 136 67
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=强化
+TextTradition=強化
+TextSize=24
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Stretch=1
-NormalFile=.\res\image\ui\bag\star1.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=68
-Rect=360 723 107 60
+Rect=431 630 136 67
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=卖出
+TextTradition=賣出
+TextSize=24
+TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
-NormalFile=.\res\image\ui\bag\star2.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
+
+[CTRL_9SLICES_23]
+Type=22
+Tag=28
+Rect=41 630 193 53
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_TEXT_24]
+Type=4
+Tag=29
+Rect=71 637 124 41
+AnchorPos=0 0
+Notes=
+Text=闲置
+TextTradition=閑置
+TextSize=28
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

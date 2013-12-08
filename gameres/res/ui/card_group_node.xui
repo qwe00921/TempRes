@@ -6,24 +6,23 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=64
-Rect=0 0 600 340
+Rect=0 0 600 389
 AnchorPos=0 0
 Notes=
 
 [CTRL_9SLICES_3]
 Type=22
 Tag=3
-Rect=4 5 595 330
+Rect=2 10 593 364
 AnchorPos=0 0
 Notes=
-Stretch=1
-NormalFile=.\res\image\ui\card_group\card_group_bg.PNG
-NormalFileUV=0 0 146 150
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
 
 [CTRL_BUTTON_CARD_1]
 Type=2
 Tag=4
-Rect=156 57 100 90
+Rect=302 259 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -37,7 +36,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_2]
 Type=2
 Tag=5
-Rect=156 147 100 90
+Rect=396 259 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -51,7 +50,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_3]
 Type=2
 Tag=6
-Rect=156 237 100 90
+Rect=490 259 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -65,7 +64,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_4]
 Type=2
 Tag=8
-Rect=56 57 100 90
+Rect=22 259 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -79,7 +78,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_5]
 Type=2
 Tag=9
-Rect=56 147 100 90
+Rect=115 259 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -93,7 +92,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_6]
 Type=2
 Tag=10
-Rect=56 237 100 90
+Rect=209 259 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -104,181 +103,210 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
+[CTRL_PICTURE_66]
+Type=1
+Tag=67
+Rect=28 328 72 19
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_67]
+Type=1
+Tag=68
+Rect=126 328 72 19
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_68]
+Type=1
+Tag=69
+Rect=220 328 72 19
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_69]
+Type=1
+Tag=70
+Rect=311 328 72 19
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_70]
+Type=1
+Tag=71
+Rect=405 328 72 19
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_71]
+Type=1
+Tag=72
+Rect=500 328 72 19
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
 [CTRL_TEXT_LEV_1]
 Type=4
 Tag=11
-Rect=206 59 46 18
+Rect=324 330 46 18
 AnchorPos=0 0
 Notes=
 Text=LV999
 TextTradition=LV999
 TextSize=14
+TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LEV_2]
 Type=4
 Tag=12
-Rect=206 149 46 18
+Rect=418 330 46 18
 AnchorPos=0 0
 Notes=
 Text=LV999
 TextTradition=LV999
 TextSize=14
+TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LEV_3]
 Type=4
 Tag=13
-Rect=206 239 46 18
+Rect=512 330 46 18
 AnchorPos=0 0
 Notes=
 Text=LV999
 TextTradition=LV999
 TextSize=14
+TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LEV_4]
 Type=4
 Tag=14
-Rect=106 59 46 18
+Rect=41 330 46 18
 AnchorPos=0 0
 Notes=
 Text=LV999
 TextTradition=LV999
 TextSize=14
+TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LEV_5]
 Type=4
 Tag=15
-Rect=106 149 46 18
+Rect=136 330 46 18
 AnchorPos=0 0
 Notes=
 Text=LV999
 TextTradition=LV999
 TextSize=14
+TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LEV_6]
 Type=4
 Tag=16
-Rect=106 239 46 18
+Rect=231 330 46 18
 AnchorPos=0 0
 Notes=
 Text=LV999
 TextTradition=LV999
 TextSize=14
+TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_9SLICES_18]
-Type=22
-Tag=18
-Rect=4 5 88 43
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\card_group\team_bg.PNG
-NormalFileUV=0 0 46 38
-
-[CTRL_TEXT_TEAM]
+[CTRL_TEXT_TEAM111]
 Type=4
-Tag=19
-Rect=4 5 88 43
+Tag=9999
+Rect=343 559 110 50
 AnchorPos=0 0
 Notes=
-Text=队伍1
-TextTradition=隊伍1
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
 
 [CTRL_TEXT_20]
 Type=4
 Tag=20
-Rect=185 5 107 33
+Rect=171 33 107 33
 AnchorPos=0 0
 Notes=
 Text=出阵人数
 TextTradition=出陣人數
 TextSize=25
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=21
-Rect=291 5 69 33
+Rect=285 34 69 33
 AnchorPos=0 0
 Notes=
 Text=6/6
 TextTradition=6/6
 TextSize=25
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_SETFIGHT]
 Type=2
 Tag=22
-Rect=486 5 113 46
+Rect=455 27 113 55
 AnchorPos=0 0
 Notes=
 Text=出战
 TextTradition=出戰
 TextSize=24
-TextColor=0xffffff
+TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\beast\button_normal.png
-NormalFileUV=0 0 245 87
-SelectFile=.\res\image\ui\beast\button_highlight.png
-SelectedFileUV=0 0 247 86
-
-[CTRL_TEXT_26]
-Type=4
-Tag=26
-Rect=308 62 31 84
-AnchorPos=0 0
-Notes=
-Text=战术
-TextTradition=戰術
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignTop
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_TEXT_27]
 Type=4
 Tag=27
-Rect=337 155 107 32
+Rect=476 205 107 29
 AnchorPos=0 0
 Notes=
 Text=战术名称
 TextTradition=戰術名稱
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_28]
-Type=4
-Tag=28
-Rect=291 178 27 123
-AnchorPos=0 0
-Notes=
-Text=召唤兽
-TextTradition=召喚獸
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignTop
 
 [CTRL_BUTTON_FORMATION]
 Type=2
 Tag=29
-Rect=342 60 100 90
+Rect=480 108 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -292,31 +320,43 @@ SelectedFileUV=0 0 100 90
 [CTRL_TEXT_PET_NAME_1]
 Type=4
 Tag=31
-Rect=335 306 107 29
+Rect=237 204 107 29
 AnchorPos=0 0
 Notes=
 Text=召唤兽名字
 TextTradition=召喚獸名字
 TextSize=21
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_56]
+Type=22
+Tag=56
+Rect=20 112 198 95
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_PET_NAME_2]
 Type=4
 Tag=33
-Rect=457 306 107 29
+Rect=348 204 107 29
 AnchorPos=0 0
 Notes=
 Text=召唤兽名字
 TextTradition=召喚獸名字
 TextSize=21
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_PET_1]
 Type=2
 Tag=34
-Rect=339 216 100 90
+Rect=247 106 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -327,10 +367,19 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
+[CTRL_PICTURE_TEAM1]
+Type=1
+Tag=37
+Rect=15 30 107 49
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
 [CTRL_BUTTON_PET_2]
 Type=2
 Tag=35
-Rect=461 216 100 90
+Rect=351 106 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -344,23 +393,181 @@ SelectedFileUV=0 0 100 90
 [CTRL_TEXT_TOTAL_ATK]
 Type=4
 Tag=32
-Rect=448 76 127 27
+Rect=24 124 189 27
 AnchorPos=0 0
 Notes=
 Text=总攻击力：9999999
 TextTradition=總攻擊力：9999999
-TextSize=14
+TextSize=22
+TextColor=0xff00ff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_TOTAL_DEF]
 Type=4
 Tag=36
-Rect=448 112 127 27
+Rect=24 166 187 27
 AnchorPos=0 0
 Notes=
 Text=总防御力：9999999
 TextTradition=總防御力：9999999
-TextSize=14
+TextSize=22
+TextColor=0xffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_TEAM2]
+Type=1
+Tag=38
+Rect=14 30 110 50
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team2.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_38]
+Type=1
+Tag=39
+Rect=14 29 110 50
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team3.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_39]
+Type=1
+Tag=40
+Rect=278 429 107 60
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_TEAM]
+Type=4
+Tag=19
+Rect=165 431 107 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_57]
+Type=1
+Tag=57
+Rect=245 106 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_58]
+Type=1
+Tag=58
+Rect=349 105 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_59]
+Type=1
+Tag=59
+Rect=479 108 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_60]
+Type=1
+Tag=60
+Rect=20 259 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_61]
+Type=1
+Tag=61
+Rect=114 259 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_62]
+Type=1
+Tag=62
+Rect=208 259 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_63]
+Type=1
+Tag=63
+Rect=301 258 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_64]
+Type=1
+Tag=65
+Rect=395 258 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_65]
+Type=1
+Tag=66
+Rect=488 259 92 92
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_72]
+Type=1
+Tag=73
+Rect=309 97 36 36
+AnchorPos=0 0
+Notes=
+Remark=召唤兽1辅助标志
+NormalFile=.\res\image\ui\pet\he.png
+NormalFileUV=0 0 36 36
+
+[CTRL_PICTURE_73]
+Type=1
+Tag=74
+Rect=309 97 36 36
+AnchorPos=0 0
+Notes=
+Remark=召唤兽1攻击标志
+NormalFile=.\res\image\ui\pet\att.png
+NormalFileUV=0 0 36 36
+
+[CTRL_PICTURE_74]
+Type=1
+Tag=75
+Rect=414 97 36 36
+AnchorPos=0 0
+Notes=
+Remark=召唤兽2辅助
+NormalFile=.\res\image\ui\pet\he.png
+NormalFileUV=0 0 36 36
+
+[CTRL_PICTURE_75]
+Type=1
+Tag=76
+Rect=414 96 36 36
+AnchorPos=0 0
+Notes=
+Remark=召唤兽2攻击
+NormalFile=.\res\image\ui\pet\att.png
+NormalFileUV=0 0 36 36
