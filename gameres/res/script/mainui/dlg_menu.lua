@@ -5,6 +5,9 @@ local p = dlg_menu;
 local ui = ui_main_menu;
 p.layer = nil;
 
+p.preUI = nil;
+p.curUI = nil;
+
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -56,13 +59,17 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		if ui.ID_CTRL_BUTTON_GASHAPON == tag then
 			WriteCon("**========扭蛋========**");
 			dlg_gacha.ShowUI( SHOP_ITEM );
+			--p.SetNewUI( dlg_gacha );
 			maininterface.BecomeBackground();
 			
 		elseif ui.ID_CTRL_BUTTON_PVP == tag then
 			WriteCon("**=======竞技场=======**");
+			--p.CloseLastUI( pNewSingleton );
+			--p.preUI = dlg_gacha;
 		elseif ui.ID_CTRL_BUTTON_BAG == tag then
 			WriteCon("**========背包========**");
 			pack_box.ShowUI();
+			--p.SetNewUI( pack_box );
 			--隐藏主UI
 			--maininterface.CloseAllPanel();
 			--maininterface.HideUI();
@@ -70,7 +77,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========卡组========**");
 			--card_bag_mian.ShowUI();
 			dlg_card_group_main.ShowUI();
-			
+			--p.SetNewUI( dlg_card_group_main );
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
 			WriteCon("**========任务========**");
 			stageMap_main.OpenWorldMap();
@@ -86,10 +93,32 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	end
 end
 
+--外部调用接口
+function p.SetNewUI( pSingleton )
+	if pSingleton == nil then
+		return;
+	end
+	
+	p.curUI = pSingleton;
+	p.CloseLastUI( );
+end
+
+--通过菜单打开界面时，先关闭上一个界面
+function p.CloseLastUI( )
+	if p.preUI and p.preUI ~= p.curUI then
+		if p.preUI.UIDisappear then
+			p.preUI.UIDisappear();
+		end
+	end
+	p.preUI = p.curUI;
+end
+
 function p.CloseUI()    
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
+		p.preUI = nil;
+		p.curUI = nil;
     end
 end
 
