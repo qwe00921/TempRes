@@ -41,11 +41,15 @@ p.curPage = 1;
 p.msgs = {};
 p.selIds = nil;
 
+p.subLayer = nil;
+
 local ui = ui_mail_main
 local ui_item_sys = ui_mail_list_item_sys
 local ui_item_usr = ui_mail_list_item_user
 
 function p.ShowUI(isReloadNet)
+	dlg_menu.SetNewUI( p );
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		p.isShowed = true
@@ -103,6 +107,7 @@ function p.CloseUI()
         p.layer = nil;
 		p.curListTypeTag = nil;
 		p.msgs = {}
+		p.subLayer = nil;
     end
 end
 
@@ -153,11 +158,13 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_WRITE == tag then
 			WriteCon("**========写信========**");
 			p.HideUI();
-			mail_write_mail.ShowUI({});
+			mail_write_mail.ShowUI();
+			p.subLayer = mail_write_mail
 		elseif ui.ID_CTRL_BUTTON_GM == tag then
 			WriteCon("**========客服========**");
 			p.HideUI();
 			mail_gm_mail.ShowUI();
+			p.subLayer = mail_gm_mail;
 		elseif ui.ID_CTRL_BUTTON_SYS == tag then
 			WriteCon("**======系统列表======**");
 			if (p.curListTypeTag == p.MAIL_TYPE_SYS) then
@@ -189,7 +196,7 @@ end
 function p.OnItemClick(uiNode, uiEventType, param)
 	local id = uiNode:GetId();
 	WriteCon("**======OnItemClick======** " .. tostring(id));
-	if p.isShowed == true then
+	--if p.isShowed == true then
 		p.HideUI();
 		local lst = p.msgs[p.curListTypeTag] or {};
 		local pages = lst.pages or {};
@@ -202,11 +209,13 @@ function p.OnItemClick(uiNode, uiEventType, param)
 		if p.curListTypeTag == p.MAIL_TYPE_SYS then
 			mail_detail_sys.ShowUI(item);
 			p.msgs.sysUnRead = p.msgs.sysUnRead - n;
+			p.subLayer = mail_detail_sys
 		else
 			mail_detail_user.ShowUI(item);
 			p.msgs.userUnRead = p.msgs.userUnRead - n;
+			p.subLayer = mail_detail_user
 		end
-	end
+	--end
 end
 
 function p.OnCheckEvent(uiNode, uiEventType, param)
@@ -801,6 +810,15 @@ function p.GetNetResultError(msg)
 	end
 	
 	return str;
+end
+
+function p.UIDisappear()
+	if p.subLayer then 
+		p.subLayer.CloseUI();
+	end
+	p.CloseUI();
+	maininterface.ShowUI();
+	dlg_userinfo.ShowUI();
 end
 
 
