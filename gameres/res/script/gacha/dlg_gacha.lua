@@ -71,7 +71,8 @@ end
 
 --œ‘ æUI
 function p.ShowUI( intent )
-    
+	dlg_menu.SetNewUI( p );
+	
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
@@ -867,3 +868,6 @@ function p.CloseUI()
     end
 end
 
+function p.UIDisappear()
+	p.CloseUI();
+end

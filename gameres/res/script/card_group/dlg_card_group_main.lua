@@ -17,6 +17,8 @@ p.pos_no = nil;
 local ui = ui_card_group;
 
 function p.ShowUI()
+	dlg_menu.SetNewUI( p );
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
@@ -29,7 +31,9 @@ function p.ShowUI()
 
 	--layer:NoMask();
     layer:Init();
+	layer:SetSwallowTouch(false);
     GetUIRoot():AddDlg( layer );
+	
     LoadDlg ("card_group.xui" , layer , nil );
 
 	p.layer = layer;
@@ -287,10 +291,12 @@ function p.ShowCardInfo( teamid, index )
 	p.pos_no = index;
 	
 	local cardinfo = nil;
-	if tonumber(team_data["Pos_unique"..index]) ~= 0 then
+	if team_data["Pos_unique"..index] and tonumber(team_data["Pos_unique"..index]) ~= 0 then
 		cardinfo = {};
-		for i,v in pairs(p.cardlist[team_data["Pos_unique"..index]]) do
-			cardinfo[i] = tonumber(v);
+		if p.cardlist[team_data["Pos_unique"..index]] and type(p.cardlist[team_data["Pos_unique"..index]]) == "table" then
+			for i,v in pairs(p.cardlist[team_data["Pos_unique"..index]]) do
+				cardinfo[i] = tonumber(v);
+			end
 		end
 	end
 	if cardinfo then
@@ -380,5 +386,7 @@ function p.CloseUI()
 	end
 end
 
-
+function p.UIDisappear()
+	p.CloseUI();
+end
 
