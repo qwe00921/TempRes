@@ -149,6 +149,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
                     if not enemy:GetNode():HasAniEffect( buffAni ) then
                         local cmdBuff = createCommandEffect():AddFgEffect( 0, enemy:GetNode(), buffAni );
                         seq1:AddCommand( cmdBuff );
+                        AddBuffObj( enemy, Buff, buffAni );
                     end
                 end
                 

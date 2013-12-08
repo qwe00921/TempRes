@@ -120,6 +120,51 @@ function IsSkillTargetSelfCamp( targetType )
 	end
 end
 
+function AddBuffObj( target, buffType, buffAni )
+    if target == nil or buffType == nil or buffAni == nil then
+        return false;
+    end
+    local isIn = false;
+    for key, var in ipairs( target.buffList ) do
+        if var.id == tonumber( buffType ) then
+            var.isDel = false;
+            isIn = true;
+        end
+    end
+    if not isIn then
+        local t = {};
+        t.id = tonumber( buffType );
+        t.buttType = tonumber( buffType );
+        t.buffAni = buffAni;
+        t.isDel = false;
+        target.buffList[ #target.buffList + 1 ] = t;
+    end
+end
+
+function HasBuffType( fighter, buffType )
+    if fighter == nil or buffType == nil then
+    	WriteConErr("HasBuffType err!");
+    	return nil;
+    end
+    local buffList = n_battle_db_mgr.GetBuffRoundDB( n_battle_stage.GetRoundNum() );
+    if buffList == nil or #buffList <= 0 then
+    	return false;
+    end
+	local pos = fighter.idFighter;
+	local camp = fighter.camp;
+	if camp == E_CARD_CAMP_ENEMY then
+		pos = pos - N_BATTLE_CAMP_CARD_NUM;
+	end
+	for bk, buff in ipairs( buffList ) do
+		local bCamp = tonumber( buff.Camp );
+		local bPos = tonumber( buff.Pos );
+		local bBuffType = tonumber( buff.Buff_type );
+		if bCamp == camp and pos == bPos and buffType == bBuffType then
+			return true;
+		end
+	end
+	return false;
+end
 
 
 

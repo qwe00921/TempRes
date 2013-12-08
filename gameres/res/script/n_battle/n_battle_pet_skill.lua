@@ -122,6 +122,7 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
         	if not targetF:GetNode():HasAniEffect( buffAni ) then
         		local cmdBuff = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), buffAni );
                 seqTarget:AddCommand( cmdBuff );
+                AddBuffObj( targetF, Buff, buffAni );
         	end
         end
     	HurtResultAni( targetF, seqTarget );

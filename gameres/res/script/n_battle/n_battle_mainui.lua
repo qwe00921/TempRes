@@ -233,6 +233,11 @@ end
 function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
+	if n_battle_mgr.isBattleEnd then
+		WriteCon("-------------------------is battle ene ----------------------------");
+		return ;
+	end
+	
 	if N_BATTLE_MAX_ROUND < tonumber( n_battle_stage.GetRoundNum() ) and not n_battle_stage.IsBattle_Stage_End() then
 	    n_battle_stage.EnterBattle_Stage_End();--战斗阶段->结束
         p.HideUI();
@@ -267,6 +272,7 @@ function p.OnBattleShowFinished()
     	--BUFF表现完成	
     	elseif n_battle_stage.IsBattle_RoundStage_Buff() then	
     	   WriteConWarning("=============EnterBattle_RoundStage_Atk============");
+    	   n_battle_mgr.UpdateFighterBuff();--更新战士身上的BUFF
     	   n_battle_stage.EnterBattle_RoundStage_Atk();--回合阶段->互殴
            n_battle_mgr.EnterBattle_RoundStage_Atk();--互殴表现效果
         
