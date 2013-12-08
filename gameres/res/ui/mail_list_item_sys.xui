@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
@@ -6,90 +6,159 @@ Height=640
 [CTRL_PICTURE_BG]
 Type=1
 Tag=298
-Rect=0 0 617 209
+Rect=0 8 617 283
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\bag_bg.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\mail\bg_mail.png
+NormalFileUV=0 0 588 258
 
 [CTRL_CHECK_BUTTON_SEL]
 Type=2
 Tag=301
-Rect=528 88 61 34
+Rect=539 5 80 70
 AnchorPos=0 0
 Notes=
 TextSize=0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\player\common_ui_select_normal.png
-NormalFileUV=0 0 49 43
-SelectFile=.\res\image\ui\player\common_ui_select_select.png
-SelectedFileUV=0 0 52 50
+NormalFile=.\res\image\ui\mail\choose.png
+NormalFileUV=0 0 80 70
+SelectFile=.\res\image\ui\mail\choose_select.png
+SelectedFileUV=0 0 80 70
 
 [CTRL_PICTURE_ITEM_1]
 Type=1
 Tag=302
-Rect=16 125 64 64
+Rect=15 194 64 64
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_ITEM_2]
 Type=1
 Tag=303
-Rect=93 125 64 64
+Rect=95 194 64 64
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_ITEM_3]
 Type=1
 Tag=304
-Rect=174 125 64 64
+Rect=173 194 64 64
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_11]
+Type=22
+Tag=11
+Rect=13 22 342 50
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_PICTURE_ITEM_4]
 Type=1
 Tag=305
-Rect=250 125 64 64
+Rect=253 194 64 64
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=330
-Rect=10 10 367 49
+Rect=13 22 339 49
 AnchorPos=0 0
 Notes=
 TextSize=25
-TextHorAlign=AlignHorCenter
+TextColor=0xffffff
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_16]
+Type=22
+Tag=16
+Rect=12 78 591 101
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_9SLICES_17]
+Type=22
+Tag=17
+Rect=449 209 142 53
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_TIME]
 Type=4
 Tag=331
-Rect=443 7 166 43
+Rect=367 25 166 43
 AnchorPos=0 0
 Notes=
 TextSize=15
-TextHorAlign=AlignLeft
+TextColor=0xffffff
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_CONTENT]
 Type=4
 Tag=332
-Rect=10 64 417 97
+Rect=20 83 578 94
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 
 [CTRL_TEXT_STATE]
 Type=4
 Tag=343
-Rect=467 145 135 43
+Rect=453 213 135 43
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=13 194 66 66
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Rect=94 194 66 66
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=172 194 66 66
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
+Rect=252 194 66 66
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100

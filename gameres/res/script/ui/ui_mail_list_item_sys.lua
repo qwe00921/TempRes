@@ -4,11 +4,18 @@
 --------------------------------------------------------------
 ui_mail_list_item_sys = {};
 local p =  ui_mail_list_item_sys;
+p.ID_CTRL_PICTURE_15					     = 15;
+p.ID_CTRL_PICTURE_14					     = 14;
+p.ID_CTRL_PICTURE_13					     = 13;
+p.ID_CTRL_PICTURE_12					     = 12;
 p.ID_CTRL_TEXT_STATE					     = 343;
 p.ID_CTRL_TEXT_CONTENT				    = 332;
 p.ID_CTRL_TEXT_TIME					      = 331;
+p.ID_CTRL_9SLICES_17					     = 17;
+p.ID_CTRL_9SLICES_16					     = 16;
 p.ID_CTRL_TEXT_TITLE					     = 330;
 p.ID_CTRL_PICTURE_ITEM_4				  = 305;
+p.ID_CTRL_9SLICES_11					     = 11;
 p.ID_CTRL_PICTURE_ITEM_3				  = 304;
 p.ID_CTRL_PICTURE_ITEM_2				  = 303;
 p.ID_CTRL_PICTURE_ITEM_1				  = 302;
