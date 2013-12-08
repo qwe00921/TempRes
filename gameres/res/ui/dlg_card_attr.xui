@@ -3,26 +3,45 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_158]
+[CTRL_PICTURE_BG]
 Type=1
 Tag=158
-Rect=0 0 639 960
+Rect=0 0 639 860
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\gacha_1\gacha_bg.PNG
-NormalFileUV=0 0 296 311
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
+
+[CTRL_PICTURE_TITLE]
+Type=1
+Tag=353
+Rect=131 0 364 83
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
 
 [CTRL_PICTURE]
 Type=1
 Tag=790
-Rect=18 67 322 485
+Rect=20 128 285 442
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_361]
+Type=22
+Tag=361
+Rect=22 609 606 242
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TITLE]
 Type=4
 Tag=791
-Rect=95 0 426 58
+Rect=100 5 426 58
 AnchorPos=0 0
 Notes=
 Text=人物详情
@@ -34,85 +53,120 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=792
-Rect=565 0 76 60
+Rect=540 0 100 98
 AnchorPos=0 0
 Notes=
-Text=返回
-TextTradition=返回
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98
 
-[CTRL_INTRO_TITLE]
-Type=4
-Tag=793
-Rect=341 70 79 33
+[CTRL_9SLICES_357]
+Type=22
+Tag=357
+Rect=327 360 289 208
 AnchorPos=0 0
 Notes=
-Text=简介
-TextTradition=簡介
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_LUCK_INTRO]
 Type=4
 Tag=795
-Rect=8 600 631 358
+Rect=41 649 574 190
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
-
-[CTRL_INTRO]
-Type=4
-Tag=804
-Rect=341 105 300 147
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_DOWER_TITLE]
-Type=4
-Tag=805
-Rect=341 254 122 41
-AnchorPos=0 0
-Notes=
-Text=天赋技能
-TextTradition=天賦技能
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 
 [CTRL_DOWER_INTRO]
 Type=4
 Tag=810
-Rect=343 392 298 155
+Rect=343 491 260 67
 AnchorPos=0 0
 Notes=
 TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_LUCK_TITLE]
-Type=4
-Tag=811
-Rect=17 557 107 43
-AnchorPos=0 0
-Notes=
-Text=缘份
-TextTradition=緣份
-TextSize=30
+TextColor=0x8bff93
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_PICTURE_1]
 Type=2
 Tag=14
-Rect=354 300 85 90
+Rect=344 392 85 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_INFO]
+Type=22
+Tag=354
+Rect=323 136 299 188
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_PICTURE_INFO_TITLE]
+Type=1
+Tag=355
+Rect=324 113 245 50
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title2.png
+NormalFileUV=0 0 249 51
+
+[CTRL_INTRO]
+Type=4
+Tag=804
+Rect=336 167 275 147
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_TXT_INFO]
+Type=1
+Tag=356
+Rect=410 117 72 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\info.png
+NormalFileUV=0 0 72 36
+
+[CTRL_PICTURE_358]
+Type=1
+Tag=358
+Rect=324 341 245 50
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title2.png
+NormalFileUV=0 0 249 51
+
+[CTRL_PICTURE_360]
+Type=1
+Tag=360
+Rect=374 345 144 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\skill.png
+NormalFileUV=0 0 144 36
+
+[CTRL_BUTTON_PICTURE_3]
+Type=2
+Tag=17
+Rect=10 64 107 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -122,19 +176,27 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_PICTURE_2]
 Type=2
 Tag=15
-Rect=450 300 85 90
+Rect=28 63 107 60
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_BUTTON_PICTURE_3]
-Type=2
-Tag=17
-Rect=545 300 85 90
+[CTRL_PICTURE_67]
+Type=1
+Tag=67
+Rect=21 590 245 50
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\bg_title2.png
+NormalFileUV=0 0 249 51
+
+[CTRL_PICTURE_363]
+Type=1
+Tag=363
+Rect=106 595 74 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\skill2.png
+NormalFileUV=0 0 74 36
