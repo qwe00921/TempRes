@@ -67,14 +67,18 @@ function p.ShowUI(isReloadNet)
 	end
 	
 	layer:Init();
-	layer:SetSwallowTouch(true);
+	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
     
 	GetUIRoot():AddChild(layer);
+	--maininterface.layer:AddChild(layer)
 	LoadUI("mail_main.xui", layer, nil);
     
 	p.layer = layer;
 	p.SetDelegate();
+	
+	--dlg_menu.CloseUI();
+	--dlg_menu.ShowUI();
 	
 	p.ShowList(p.MAIL_TYPE_SYS);
 end
