@@ -27,7 +27,7 @@ function p.ShowUI(cardInfo, groupFlag)
 		p.layer:SetVisible( true );
 		return;
 	end
-	local layer = createNDUIDialog();
+	local layer = createNDUILayer();
     if layer == nil then
         return false;
     end
