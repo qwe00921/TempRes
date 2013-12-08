@@ -78,7 +78,7 @@ function p.ShowUI( intent )
 		return;
 	end
 	
-	local layer = createNDUILayer();
+	local layer = createNDUIDialog();
     if layer == nil then
         return false;
     end
@@ -90,6 +90,7 @@ function p.ShowUI( intent )
 	layer:Init();	
 	GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_gacha.xui", layer, nil);
+	layer:SetSwallowTouch(false);
 	
 	p.layer = layer;
 	p.SetDelegate();

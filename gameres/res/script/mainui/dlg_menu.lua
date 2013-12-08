@@ -14,16 +14,16 @@ function p.ShowUI()
 		return;
 	end
 	
-	local layer = createNDUIDialog();
+	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
 	end
 	
-	layer:NoMask();
+	--layer:NoMask();
 	layer:Init(layer);
 	layer:SetSwallowTouch(false);
     
-	GetUIRoot():AddChild(layer);
+	GetUIRoot():AddDlg(layer);
 	LoadUI("main_menu.xui", layer, nil);
 	layer:SetZOrder(99);
     
