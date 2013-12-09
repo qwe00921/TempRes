@@ -7,8 +7,11 @@ local ui = ui_main_btn_list;
 
 p.layer = nil;
 
+local ID_STRENGTHEN = 5;
 local ID_PET = 6;
 local ID_CARD = 10;
+
+local tValidIndex = { ID_STRENGTHEN, ID_PET, ID_CARD };
 
 local btn_num = 10;
 
@@ -65,6 +68,8 @@ function p.ShowBtnList()
 							btn:SetDisabledImage( GetPictureByAni( "ui.more_action_list", (i-1)*4+j-1) );
 							
 							btn:SetLuaDelegate( p.OnBtnClick );
+							
+							btn:SetEnabled( p.CheckEnabledIndex( (i-1)*4+j ) );
 						end
 					end
 				end
@@ -72,6 +77,17 @@ function p.ShowBtnList()
 			list:AddView( view );
 		end
 	end
+end
+
+function p.CheckEnabledIndex( index )
+	local flag = false;
+	for _, v in pairs(tValidIndex) do
+		if index == v then
+			flag = true;
+			break;
+		end
+	end
+	return flag;
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
