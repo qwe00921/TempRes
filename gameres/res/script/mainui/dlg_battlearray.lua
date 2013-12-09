@@ -59,6 +59,7 @@ function p.RefreshUI(user_team)
 		local id = user_team["Pos_card"..i]
 		local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..i] );
 		local frameBtn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_"..(i+9)] );
+		frameBtn:SetLuaDelegate( p.OnBtnClick );
 		
 		if id ~= nil and tonumber(id) ~= 0 then
 			if btn ~= nil then
@@ -82,6 +83,7 @@ function p.RefreshUI(user_team)
 		local id = user_team["Pet_card"..i];
 		local btn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_ROLE_"..(i+6)] );
 		local frameBtn = GetButton( view, ui_main_battlearray["ID_CTRL_BUTTON_"..(i+6+9)] );
+		frameBtn:SetLuaDelegate( p.OnBtnClick );
 		
 		if id ~= nil and tonumber(id) ~= 0 then
 			if btn ~= nil then
@@ -104,3 +106,9 @@ function p.RefreshUI(user_team)
 	list:AddView( view );
 end
 
+function p.OnBtnClick(uiNode, uiEventType, param)
+	if IsClickEvent( uiEventType ) then
+	    --local tag = uiNode:GetTag();
+		dlg_card_group_main.ShowUI();
+	end	
+end

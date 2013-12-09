@@ -86,7 +86,7 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_9]
+[CTRL_PICTURE_READED]
 Type=1
 Tag=9
 Rect=479 112 107 41
@@ -95,7 +95,7 @@ Notes=
 NormalFile=.\res\image\ui\mail\read.png
 NormalFileUV=0 0 98 38
 
-[CTRL_PICTURE_10]
+[CTRL_PICTURE_UNREAD]
 Type=1
 Tag=10
 Rect=479 111 107 43

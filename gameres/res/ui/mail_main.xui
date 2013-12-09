@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -214,7 +214,7 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\common\sub_title.png
 NormalFileUV=0 0 125 34
 
-[CTRL_PICTURE_39]
+[CTRL_PICTURE_SYS_BG]
 Type=1
 Tag=39
 Rect=83 90 36 36
@@ -236,7 +236,7 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_40]
+[CTRL_PICTURE_USER_BG]
 Type=1
 Tag=40
 Rect=189 90 36 36

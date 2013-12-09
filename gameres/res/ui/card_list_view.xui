@@ -21,8 +21,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品4
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
 
 [CTRL_BUTTON_ITEM3]
 Type=2
@@ -34,8 +32,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品3
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
 
 [CTRL_BUTTON_ITEM2]
 Type=2
@@ -47,8 +43,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品2
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
 
 [CTRL_PICTURE_33]
 Type=1
@@ -69,8 +63,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
+NormalFile=
+NormalFileUV=0 0 107 60
 
 [CTRL_PICTURE_32]
 Type=1
@@ -102,7 +96,7 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_TEAM1]
 Type=4
 Tag=56
-Rect=86 362 60 28
+Rect=93 11 60 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -112,7 +106,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TEAM2]
 Type=4
 Tag=57
-Rect=186 381 60 28
+Rect=249 11 60 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -122,7 +116,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TEAM3]
 Type=4
 Tag=58
-Rect=350 370 60 28
+Rect=404 11 60 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -132,120 +126,12 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TEAM4]
 Type=4
 Tag=60
-Rect=436 357 60 28
+Rect=559 11 60 28
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_C1T3]
-Type=1
-Tag=40
-Rect=81 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team3.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C1T2]
-Type=1
-Tag=41
-Rect=82 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team2.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C2T3]
-Type=1
-Tag=42
-Rect=237 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team3.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C3T3]
-Type=1
-Tag=43
-Rect=393 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team3.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C4T3]
-Type=1
-Tag=44
-Rect=547 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team3.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C2T2]
-Type=1
-Tag=38
-Rect=237 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team2.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C3T2]
-Type=1
-Tag=45
-Rect=393 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team2.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C4T2]
-Type=1
-Tag=46
-Rect=547 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team2.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C1T1]
-Type=1
-Tag=37
-Rect=82 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C2T1]
-Type=1
-Tag=47
-Rect=238 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C3T1]
-Type=1
-Tag=48
-Rect=393 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_C4T1]
-Type=1
-Tag=49
-Rect=547 12 72 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
 
 [CTRL_TEXT_LEVEL1]
 Type=4
@@ -253,8 +139,6 @@ Tag=16
 Rect=20 13 46 19
 AnchorPos=0 0
 Notes=
-Text=LV300
-TextTradition=LV300
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignLeft

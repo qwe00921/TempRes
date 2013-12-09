@@ -126,22 +126,25 @@ function p.SetViewInfo()
 		local picTagName = "ID_CTRL_PICTURE_ITEM_"..i;
 		local numTagName = "ID_CTRL_TEXT_ITEM_NUM_"..i;
 		local nameTagName = "ID_CTRL_TEXT_ITEM_NAME_"..i;
+		local picBgTagName = "ID_CTRL_PICTURE_BG_"..i;
 		local picV = GetImage(parentV,idTags[picTagName]);
-		local numV = GetLabel( parentV, idTags[numTagName]);
-		local nameV = GetLabel( parentV, idTags[nameTagName]);
+		local picBgV = GetImage(parentV,idTags[picBgTagName]);
+		--local numV = GetLabel( parentV, idTags[numTagName]);  --暂不显示数量跟名称
+		--local nameV = GetLabel( parentV, idTags[nameTagName]);
 		
-		if rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
+		if item.rewardState == mail_main.MAIL_REWARD_UNGET and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
 			--rewrad.rewordId = "10002"
-			numV:SetText("X"..(rewrad.num or "1"))
+			--numV:SetText("X"..(rewrad.num or "1"))
 			local aniIndex = "item."..rewrad.rewordId;
 			picV:SetPicture( GetPictureByAni(aniIndex,0) );
 			
-			local txt = p.SelectItemName(tonumber(rewrad.rewordId));
-			nameV:SetText(txt or "");
+			--local txt = p.SelectItemName(tonumber(rewrad.rewordId));
+			--nameV:SetText(txt or "");
 		else
 			picV:SetVisible(false);
-			numV:SetVisible(false);
-			nameV:SetVisible(false);
+			picBgV:SetVisible(false);
+			--numV:SetVisible(false);
+			--nameV:SetVisible(false);
 		end
 	end
 	

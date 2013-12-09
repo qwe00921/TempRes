@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
@@ -127,7 +127,7 @@ TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_12]
+[CTRL_PICTURE_BG_1]
 Type=1
 Tag=12
 Rect=13 194 66 66
@@ -136,7 +136,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_13]
+[CTRL_PICTURE_BG_2]
 Type=1
 Tag=13
 Rect=94 194 66 66
@@ -145,16 +145,16 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_14]
+[CTRL_PICTURE_BG_3]
 Type=1
 Tag=14
-Rect=172 194 66 66
+Rect=172 193 66 66
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_15]
+[CTRL_PICTURE_BG_4]
 Type=1
 Tag=15
 Rect=252 194 66 66

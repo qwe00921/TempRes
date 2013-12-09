@@ -155,6 +155,12 @@ function p.SetAskLayerVisible(visible)
 	v = GetButton(p.layer, ui.ID_CTRL_BUTTON_SEND);
 	v:SetVisible(visible);
 	
+	v = Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_TITLE);
+	v:SetVisible(visible);
+	
+	v = Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_WRITEBG);
+	v:SetVisible(visible);
+	
 end
 
 function p.SetAnswerLayerVisible(visible)
@@ -197,6 +203,20 @@ function p.SetAnswerLayerVisible(visible)
 	
 	v = GetLabel( p.layer, ui.ID_CTRL_TEXT_USER_CONTENT);
 	v:SetVisible(visible);
+	
+	v = Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_ANSWERBG);
+	v:SetVisible(visible);
+	
+	v = Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_QUESTIONBG);
+	v:SetVisible(visible);
+	
+	v = Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_USERBG);
+	v:SetVisible(visible);
+	
+	v = Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_GMBG);
+	v:SetVisible(visible);
+	
+	
 end
 
 
