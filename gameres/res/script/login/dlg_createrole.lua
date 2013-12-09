@@ -13,6 +13,7 @@ p.selectFace = nil;
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
+		PlayMusic_LoginUI();
 		return;
 	end
 	
@@ -34,6 +35,7 @@ function p.ShowUI()
 	p.RandomName();
 
 	p.SetDelegate();
+	PlayMusic_LoginUI();
 end
 
 --…Ë÷√ŒØÕ–

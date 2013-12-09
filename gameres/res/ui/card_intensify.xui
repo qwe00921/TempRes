@@ -13,6 +13,16 @@ Stretch=1
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
+[CTRL_9SLICES_42]
+Type=22
+Tag=42
+Rect=0 169 640 699
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
+
 [CTRL_PICTURE_HEAD]
 Type=1
 Tag=21
@@ -37,103 +47,112 @@ NormalFileUV=0 0 100 98
 [CTRL_PICTURE_LIST_BG]
 Type=1
 Tag=23
-Rect=10 200 619 600
+Rect=10 256 619 570
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_ALL]
 Type=2
 Tag=24
-Rect=17 145 80 51
+Rect=8 109 80 60
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO1]
 Type=2
 Tag=25
-Rect=101 145 80 51
+Rect=89 109 80 60
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO2]
 Type=2
 Tag=26
-Rect=184 146 80 51
+Rect=169 109 80 60
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO3]
 Type=2
 Tag=28
-Rect=268 146 80 51
+Rect=249 109 80 60
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_PRO4]
 Type=2
 Tag=29
-Rect=350 145 80 51
+Rect=329 109 80 60
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_PICTURE_41]
+Type=1
+Tag=41
+Rect=514 192 107 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_txt.png
+NormalFileUV=0 0 122 38
 
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=10 200 620 400
+Rect=8 255 620 400
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=511 142 100 57
+Rect=504 111 110 60
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\star1.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
 
 [CTRL_TEXT_25]
 Type=4
 Tag=32
-Rect=51 77 80 50
+Rect=527 184 80 50
 AnchorPos=0 0
 Notes=
 Text=/
@@ -217,5 +236,18 @@ Notes=
 Text=消耗
 TextTradition=消耗
 TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_43]
+Type=4
+Tag=43
+Rect=227 10 186 60
+AnchorPos=0 0
+Notes=
+Text=卡牌强化
+TextTradition=卡牌強化
+TextSize=35
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
