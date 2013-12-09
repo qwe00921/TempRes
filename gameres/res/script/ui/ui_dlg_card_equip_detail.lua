@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_dlg_card_equip_detail = {};
 local p =  ui_dlg_card_equip_detail;
+p.ID_CTRL_9SLICES_20					     = 22;
 p.ID_CTRL_TEXT_UPGRADE				    = 28;
 p.ID_CTRL_TEXT_INSTALL				    = 27;
 p.ID_CTRL_TEXT_UNLOAD					    = 1539;
@@ -26,6 +27,6 @@ p.ID_CTRL_TEXT_DES					       = 5;
 p.ID_CTRL_TEXT_4						        = 4;
 p.ID_CTRL_9SLICES_21					     = 23;
 p.ID_CTRL_PICTURE_IMAGE				   = 3;
-p.ID_CTRL_9SLICES_20					     = 22;
 p.ID_CTRL_9SLICES_19					     = 21;
 p.ID_CTRL_9SLICES_18					     = 20;
+p.ID_CTRL_9SLICES_28					     = 29;

@@ -1,7 +1,7 @@
 ﻿
 [UI_INFO]
-Width=500
-Height=550
+Width=640
+Height=960
 
 [CTRL_9SLICES_BG]
 Type=22
@@ -9,13 +9,23 @@ Tag=7
 Rect=71 400 500 310
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\common\sub_ui_bg.png
-NormalFileUV=0 0 165 165
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
+
+[CTRL_9SLICES_10]
+Type=22
+Tag=11
+Rect=111 493 419 108
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_2]
 Type=4
 Tag=2
-Rect=227 407 184 36
+Rect=229 424 184 36
 AnchorPos=0 0
 Notes=
 Text=标题
@@ -28,7 +38,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_3]
 Type=4
 Tag=3
-Rect=119 470 400 97
+Rect=115 498 413 98
 AnchorPos=0 0
 Notes=
 Text=提示内容
@@ -41,77 +51,74 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_OK]
 Type=2
 Tag=4
-Rect=258 592 136 60
+Rect=260 617 136 67
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
 [CTRL_BUTTON_YES]
 Type=2
 Tag=5
-Rect=117 592 136 60
+Rect=119 617 136 67
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
 [CTRL_BUTTON_NO]
 Type=2
 Tag=6
-Rect=399 592 136 60
+Rect=401 617 136 67
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
 [CTRL_PICTURE_OK]
 Type=1
 Tag=9
-Rect=298 607 56 30
+Rect=300 632 56 30
 AnchorPos=0 0
 Notes=
-Parent=CTRL_BUTTON_OK
 NormalFile=.\res.cn\image\ui\font\q_r.png
 NormalFileUV=0 0 56 30
 
 [CTRL_PICTURE_NO]
 Type=1
 Tag=10
-Rect=439 607 56 30
+Rect=441 632 56 30
 AnchorPos=0 0
 Notes=
-Parent=CTRL_BUTTON_NO
 NormalFile=.\res.cn\image\ui\font\q_x.png
 NormalFileUV=0 0 56 30
 
 [CTRL_PICTURE_YES]
 Type=1
 Tag=12
-Rect=157 607 56 30
+Rect=157 630 56 30
 AnchorPos=0 0
 Notes=
-Parent=CTRL_BUTTON_YES
 NormalFile=.\res.cn\image\ui\font\q_r.png
 NormalFileUV=0 0 56 30
