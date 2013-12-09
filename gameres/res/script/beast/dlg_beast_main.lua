@@ -15,6 +15,7 @@ p.groupFlag = false;
 
 --œ‘ æUI
 function p.ShowUI( bgroupFlag )
+	dlg_menu.SetNewUI( p );
 	if bgroupFlag ~= nil then
 		p.groupFlag = bgroupFlag;
 	end
@@ -31,6 +32,8 @@ function p.ShowUI( bgroupFlag )
 
 	layer:NoMask();
     layer:Init();
+	layer:SetSwallowTouch(false);
+	
     GetUIRoot():AddDlg( layer );
     LoadDlg ("beast_mainui.xui" , layer , nil );
 
@@ -276,5 +279,10 @@ function p.CloseUI()
 		p.layer = nil;
 		p.groupFlag = false;
 	end
+end
+
+function p.UIDisappear()
+	dlg_beast_train.CloseUI();
+	p.CloseUI();
 end
 
