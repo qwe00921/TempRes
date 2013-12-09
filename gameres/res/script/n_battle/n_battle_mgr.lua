@@ -411,7 +411,8 @@ end
 function p.OpenBattleWin()
 	PlayEffectSoundByName( "battle_win.mp3" );
 	n_battle_ko.CloseUI();
-	dlg_battle_win.ShowUI();
+	--dlg_battle_win.ShowUI();
+	ui_quest_reward_view.ShowUI( n_battle_db_mgr.GetRewardData() );
 end
 
 --战斗失败
@@ -423,7 +424,8 @@ end
 
 --打开战斗失败界面
 function p.OpenBattleLose()
-	dlg_battle_lose.ShowUI();
+	--dlg_battle_lose.ShowUI();
+	ui_quest_reward_view.ShowUI( n_battle_db_mgr.GetRewardData() );
 end
 
 --检查是否战斗胜利
