@@ -234,7 +234,7 @@ function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
 	if n_battle_mgr.isBattleEnd then
-		WriteCon("-------------------------is battle ene ----------------------------");
+		WriteCon("-------------------------is battle end ----------------------------");
 		return ;
 	end
 	

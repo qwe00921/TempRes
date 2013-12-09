@@ -251,3 +251,13 @@ TextSize=28
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_MODE]
+Type=1
+Tag=31
+Rect=25 361 107 34
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\bag\star1.png
+NormalFileUV=0 0 44 52

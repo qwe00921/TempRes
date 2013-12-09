@@ -19,7 +19,7 @@ p.roundBuffData = nil; --战士Buff数据
 p.roundBuffEffectData = nil; --BUFF特效数据
 
 p.battleResult = nil; --对战结果数据
-
+p.rewardData = nil;
 
 --初使化对战数据
 function p.Init( battleDB )
@@ -37,6 +37,7 @@ function p.Init( battleDB )
     
     p.roundBuffData = battleDB.fightinfo.BuffList;
     p.roundBuffEffectData = battleDB.fightinfo.BuffEffect;
+    p.rewardData = battleDB.fightinfo.Reward;
 
     --dump_obj( p.playerPetList );
 end
@@ -151,6 +152,10 @@ function p.GetBuffEffectRoundDB( roundIndex)
     elseif roundIndex == N_BATTLE_ROUND_10 then
         return p.roundBuffEffectData.round_10;   
     end
+end
+
+function p.GetRewardData()
+	return p.rewardData;
 end
 
 --获取攻方卡牌列表

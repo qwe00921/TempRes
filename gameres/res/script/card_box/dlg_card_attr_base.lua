@@ -171,7 +171,7 @@ function p.SetDelegate(layer)
 	
 	--¿¨ÅÆ¹¥»÷
 	local pLabCardAttack = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_ATTACK);
-	pLabCardAttack:SetText(GetStr("card_exp")..tostring("  ")..tostring(p.cardInfo.Attack));
+	pLabCardAttack:SetText(GetStr("card_attack")..tostring("  ")..tostring(p.cardInfo.Attack));
 	
 	--¿¨ÅÆËÙ¶È
 	local pLabCardSpeed = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_SPEED);
