@@ -133,10 +133,10 @@ function p.AddStageObj( fgLayer, tileX, tileY, offsetX, offsetY,
             obj:AddChild(imageNode);
             local pos = imageNode:GetFramePos();
             imageNode:SetFramePosXY(pos.x + picSize.w * 0.5f, pos.y + picSize.h * 0.5f);
-            imageNode:AddFgEffect("ui.map_lock");
+            --imageNode:AddFgEffect("ui.map_lock");
         else
 			--如果已经解锁，播放表现效果
-            p.AddEffect( obj );
+            --p.AddEffect( obj );
 		end
 		
 		--增加标题
