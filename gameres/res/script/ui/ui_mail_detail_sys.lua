@@ -4,12 +4,12 @@
 --------------------------------------------------------------
 ui_mail_detail_sys = {};
 local p =  ui_mail_detail_sys;
-p.ID_CTRL_PICTURE_43					     = 43;
-p.ID_CTRL_PICTURE_42					     = 42;
-p.ID_CTRL_PICTURE_41					     = 41;
-p.ID_CTRL_PICTURE_40					     = 40;
-p.ID_CTRL_PICTURE_39					     = 39;
-p.ID_CTRL_PICTURE_38					     = 38;
+p.ID_CTRL_PICTURE_BG_6				    = 43;
+p.ID_CTRL_PICTURE_BG_5				    = 42;
+p.ID_CTRL_PICTURE_BG_4				    = 41;
+p.ID_CTRL_PICTURE_BG_3				    = 40;
+p.ID_CTRL_PICTURE_BG_2				    = 39;
+p.ID_CTRL_PICTURE_BG_1				    = 38;
 p.ID_CTRL_TEXT_164					       = 164;
 p.ID_CTRL_PICTURE_31					     = 31;
 p.ID_CTRL_TEXT_ITEM_NAME_6			 = 478;

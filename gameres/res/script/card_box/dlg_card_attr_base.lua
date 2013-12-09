@@ -375,7 +375,7 @@ function p.LoadCardDetail(cardUniqueId)
 	end;
 	
 	local param = string.format("&card_unique_id=%s",cardUniqueId)
-	SendReq("Item","CardDetailShow",uid,param);		
+	SendReq("Equip","CardDetailShow",uid,param);		
 end
 --ÍøÂç·µ»Ø¿¨ÏêÏ¸ĞÅÏ¢
 function p.OnLoadCardDetail(msg)

@@ -341,8 +341,6 @@ Tag=475
 Rect=565 358 162 39
 AnchorPos=0 0
 Notes=
-Text=宝石
-TextTradition=寶石
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -353,8 +351,6 @@ Tag=476
 Rect=555 451 162 39
 AnchorPos=0 0
 Notes=
-Text=宝石
-TextTradition=寶石
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -362,11 +358,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEM_NAME_5]
 Type=4
 Tag=477
-Rect=537 558 162 39
+Rect=583 564 162 39
 AnchorPos=0 0
 Notes=
-Text=宝石
-TextTradition=寶石
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -374,11 +368,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEM_NAME_6]
 Type=4
 Tag=478
-Rect=555 627 162 39
+Rect=568 629 162 39
 AnchorPos=0 0
 Notes=
-Text=宝石
-TextTradition=寶石
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -407,7 +399,7 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\common\title_bg.png
 NormalFileUV=0 0 350 82
 
-[CTRL_PICTURE_38]
+[CTRL_PICTURE_BG_1]
 Type=1
 Tag=38
 Rect=48 641 82 82
@@ -416,7 +408,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_39]
+[CTRL_PICTURE_BG_2]
 Type=1
 Tag=39
 Rect=141 641 82 82
@@ -425,7 +417,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_40]
+[CTRL_PICTURE_BG_3]
 Type=1
 Tag=40
 Rect=236 641 82 82
@@ -434,7 +426,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_41]
+[CTRL_PICTURE_BG_4]
 Type=1
 Tag=41
 Rect=334 642 82 82
@@ -443,7 +435,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_42]
+[CTRL_PICTURE_BG_5]
 Type=1
 Tag=42
 Rect=427 641 82 82
@@ -452,7 +444,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_43]
+[CTRL_PICTURE_BG_6]
 Type=1
 Tag=43
 Rect=525 641 82 82

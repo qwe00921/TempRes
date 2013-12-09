@@ -308,7 +308,7 @@ function p.LoadEquipDetail(equidId)
 	
 	local param = string.format("&item_unique_id=%s",equidId)
 	WriteConErr("send req ");
-	SendReq("Item","EquipmentDetailShow",uid,param);		
+	SendReq("Equip","EquipmentDetailShow",uid,param);		
 	
 end
 --ÍøÂç·µ»Ø¿¨ÏêÏ¸ÐÅÏ¢
@@ -390,7 +390,7 @@ function p.sendDress()
 	end
 	
 	WriteConErr("send req ");
-	SendReq("Item","ReplaceEquipment",uid,param);	
+	SendReq("Equip","ReplaceEquipment",uid,param);	
 end
 
 function p.sendUnDress()
@@ -406,7 +406,7 @@ function p.sendUnDress()
 	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",equip.itemUid, equip.cardUid,tostring(equip.itemType));
 	
 	WriteConErr("send req ");
-	SendReq("Item","TakeoffEquipment",uid,param);	
+	SendReq("Equip","TakeoffEquipment",uid,param);	
 end
 
 function p.OnDress(msg)

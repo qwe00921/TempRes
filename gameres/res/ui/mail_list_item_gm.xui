@@ -6,7 +6,7 @@ Height=640
 [CTRL_PICTURE_BG]
 Type=1
 Tag=298
-Rect=0 0 616 83
+Rect=4 0 578 83
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\mail\bg_gm.png
@@ -15,7 +15,7 @@ NormalFileUV=0 0 546 74
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=330
-Rect=10 10 367 49
+Rect=11 10 367 49
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -26,7 +26,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TIME]
 Type=4
 Tag=331
-Rect=442 13 166 43
+Rect=405 13 166 43
 AnchorPos=0 0
 Notes=
 TextSize=15
