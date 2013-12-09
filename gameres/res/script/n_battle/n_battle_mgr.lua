@@ -411,7 +411,8 @@ end
 function p.OpenBattleWin()
 	PlayEffectSoundByName( "battle_win.mp3" );
 	n_battle_ko.CloseUI();
-	dlg_battle_win.ShowUI();
+	--dlg_battle_win.ShowUI();
+	ui_quest_reward_view.ShowUI( n_battle_db_mgr.GetRewardData() );
 end
 
 --Õ½¶·Ê§°Ü
