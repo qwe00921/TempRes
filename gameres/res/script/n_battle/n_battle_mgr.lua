@@ -457,6 +457,9 @@ function p.EnterBattle( battleType, missionId )
 	--Òþ²Ø°´Å¥
 --	dlg_userinfo2.HideUI();
 --	dlg_menu.CloseUI();
+    dlg_menu.CloseUI();
+    dlg_userinfo.CloseUI();
+    
 	
 	--enter PVP
 	n_battle_pvp.ShowUI( battleType, missionId );	
@@ -476,6 +479,8 @@ function p.QuitBattle()
 	n_battle_mainui.CloseUI();
 
 	--game_main.EnterWorldMap();
+	dlg_menu.ShowUI();
+	dlg_userinfo.ShowUI();
 		
 	hud.FadeIn();
 	
