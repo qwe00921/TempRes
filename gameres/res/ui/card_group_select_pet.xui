@@ -134,7 +134,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_9SLICES_50]
 Type=22
 Tag=50
-Rect=330 72 277 140
+Rect=330 38 277 140
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -144,7 +144,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_51]
 Type=4
 Tag=51
-Rect=454 83 142 119
+Rect=454 49 142 119
 AnchorPos=0 0
 Notes=
 Text=技能信息技能信息技能信息技能信息技能信息技能信息技能信息
@@ -153,22 +153,10 @@ TextSize=20
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 
-[CTRL_TEXT_TEAM]
-Type=4
-Tag=52
-Rect=214 328 85 35
-AnchorPos=0 0
-Notes=
-Text=队伍1
-TextTradition=隊伍1
-TextSize=22
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-
 [CTRL_PICTURE_SKILL]
 Type=1
 Tag=25
-Rect=348 91 100 100
+Rect=348 57 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\skill.png
@@ -180,8 +168,8 @@ Tag=17
 Rect=142 113 57 20
 AnchorPos=0 0
 Notes=
-Text=攻击
-TextTradition=攻擊
+Text=速度
+TextTradition=速度
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -193,8 +181,8 @@ Tag=20
 Rect=210 113 99 19
 AnchorPos=0 0
 Notes=
-Text=999999
-TextTradition=999999
+Text=20
+TextTradition=20
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -235,37 +223,3 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
-
-[CTRL_BUTTON_22]
-Type=2
-Tag=28
-Rect=354 20 107 53
-AnchorPos=0 0
-Notes=
-Text=培养
-TextTradition=培養
-TextSize=24
-TextColor=0xfef9d2
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
-
-[CTRL_BUTTON_23]
-Type=2
-Tag=29
-Rect=488 19 107 53
-AnchorPos=0 0
-Notes=
-Text=出战
-TextTradition=出戰
-TextSize=24
-TextColor=0xfef9d2
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54

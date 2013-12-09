@@ -21,19 +21,6 @@ Notes=
 NormalFile=.\res\image\ui\beast\beast_head.png
 NormalFileUV=0 100 26 26
 
-[CTRL_TEXT_12]
-Type=4
-Tag=12
-Rect=87 348 109 33
-AnchorPos=0 0
-Notes=
-Text=LV 100
-TextTradition=LV 100
-TextSize=28
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_14]
 Type=4
 Tag=14
@@ -58,16 +45,6 @@ TextTradition=攻擊型
 NormalFile=.\res\image\ui\beast\bg_type.png
 NormalFileUV=0 0 249 51
 
-[CTRL_9SLICES_53]
-Type=22
-Tag=53
-Rect=199 416 142 30
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_txt.png
-NormalFileUV=0 0 122 38
-
 [CTRL_9SLICES_20]
 Type=22
 Tag=26
@@ -77,19 +54,6 @@ Notes=
 Stretch=1
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
-
-[CTRL_TEXT_ELEMENT]
-Type=4
-Tag=16
-Rect=217 345 61 24
-AnchorPos=0 0
-Notes=
-Text=火属性
-TextTradition=火屬性
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 
 [CTRL_9SLICES_21]
 Type=22
@@ -156,8 +120,8 @@ Tag=20
 Rect=215 123 74 33
 AnchorPos=0 0
 Notes=
-Text=999999
-TextTradition=999999
+Text=20
+TextTradition=20
 TextSize=20
 TextColor=0x8aff
 TextHorAlign=AlignHorCenter
@@ -244,18 +208,6 @@ TextTradition=技能信息技能信息技能信息技能信息技能信息技能
 TextSize=20
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
-
-[CTRL_TEXT_TEAM]
-Type=4
-Tag=52
-Rect=299 330 85 35
-AnchorPos=0 0
-Notes=
-Text=队伍1
-TextTradition=隊伍1
-TextSize=22
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_SKILL]
 Type=1
