@@ -14,7 +14,7 @@ Notes=
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=477 10 145 137
+Rect=477 10 140 140
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -22,19 +22,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品4
 
-[CTRL_PICTURE_22]
-Type=1
-Tag=22
-Rect=14 146 145 39
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=322 10 145 137
+Rect=322 10 140 140
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -45,7 +36,7 @@ Remark=物品3
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=167 10 145 137
+Rect=167 10 140 140
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -56,13 +47,49 @@ Remark=物品2
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=13 10 145 137
+Rect=13 10 140 140
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
+
+[CTRL_PICTURE_94]
+Type=1
+Tag=99
+Rect=474 5 147 147
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_93]
+Type=1
+Tag=98
+Rect=316 5 147 147
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_92]
+Type=1
+Tag=97
+Rect=165 5 147 147
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_91]
+Type=1
+Tag=96
+Rect=11 5 147 147
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_ITEMNUM4]
 Type=4
@@ -130,6 +157,15 @@ NormalFileUV=0 0 90 24
 Type=1
 Tag=23
 Rect=169 146 145 39
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=22
+Rect=14 146 145 39
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -641,39 +677,3 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\star.png
 NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_91]
-Type=1
-Tag=96
-Rect=11 5 147 147
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_92]
-Type=1
-Tag=97
-Rect=165 5 147 147
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_93]
-Type=1
-Tag=98
-Rect=316 5 147 147
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_94]
-Type=1
-Tag=99
-Rect=474 5 147 147
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100

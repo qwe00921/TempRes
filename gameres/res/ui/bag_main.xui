@@ -3,6 +3,18 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_SORT]
+Type=2
+Tag=26
+Rect=423 15 107 69
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\bag\bag_button_clear.png
+NormalFileUV=0 0 110 71
+
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
@@ -107,18 +119,6 @@ NormalFileUV=0 0 104 78
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
-[CTRL_BUTTON_SORT]
-Type=2
-Tag=26
-Rect=423 15 107 69
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_button_clear.png
-NormalFileUV=0 0 110 71
-
 [CTRL_9SLICES_19]
 Type=22
 Tag=31
@@ -204,7 +204,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_ITEM]
 Type=14
 Tag=32
-Rect=3 266 635 593
+Rect=3 266 635 440
 AnchorPos=0 0
 Notes=
 
