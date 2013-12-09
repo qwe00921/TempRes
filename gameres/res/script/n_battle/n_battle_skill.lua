@@ -122,7 +122,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
                 
                 local cmd12;
                 if not isSelfCamp then
-                	local cmdBackRset = createCommandEffect():AddActionEffect( 0.01, enemy:GetNode(), "lancer.target_hurt_back_reset" );
+                	local cmdBackRset = createCommandEffect():AddActionEffect( 0, enemy:GetNode(), "lancer.target_hurt_back" );
                     seq1:AddCommand( cmdBackRset ); 
                     cmdBackRset:SetWaitEnd( cmd11 );
                     
@@ -154,7 +154,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
                 end
                 
                 if not isSelfCamp then
-                    local cmdBack = createCommandEffect():AddActionEffect( 0, enemy:GetNode(), "lancer.target_hurt_back" );
+                    local cmdBack = createCommandEffect():AddActionEffect( 0.01, enemy:GetNode(), "lancer.target_hurt_back_reset" );
                     seq1:AddCommand( cmdBack );
                     cmdBack:SetWaitEnd( cmd13 );
                 end
