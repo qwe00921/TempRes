@@ -1,7 +1,7 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_PICTURE_BG]
 Type=1
@@ -10,20 +10,95 @@ Rect=0 1 640 870
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card_bag\main_bg.png
+NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
+
+[CTRL_BUTTON_ALL]
+Type=2
+Tag=24
+Rect=12 113 80 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_BUTTON_PRO1]
+Type=2
+Tag=25
+Rect=92 113 80 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_BUTTON_PRO2]
+Type=2
+Tag=26
+Rect=172 113 80 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_BUTTON_PRO3]
+Type=2
+Tag=28
+Rect=251 112 80 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_9SLICES_57]
+Type=22
+Tag=60
+Rect=2 167 640 701
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
+
+[CTRL_PICTURE_56]
+Type=1
+Tag=59
+Rect=153 1 368 84
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
 
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=38 55 80 50
+Rect=559 1 80 80
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_return.png
-NormalFileUV=0 0 151 101
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
 
 [CTRL_PICTURE_LIST_BG]
 Type=1
@@ -32,73 +107,17 @@ Rect=15 207 619 600
 AnchorPos=0 0
 Notes=
 
-[CTRL_BUTTON_ALL]
-Type=2
-Tag=24
-Rect=17 145 80 51
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
-
-[CTRL_BUTTON_PRO1]
-Type=2
-Tag=25
-Rect=101 145 80 51
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
-
-[CTRL_BUTTON_PRO2]
-Type=2
-Tag=26
-Rect=184 146 80 51
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
-
-[CTRL_BUTTON_PRO3]
-Type=2
-Tag=28
-Rect=268 146 80 51
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\easy.png
-NormalFileUV=0 0 44 52
-SelectFile=.\res\image\ui\card_bag\easy_onselect.png
-SelectedFileUV=0 0 44 52
-
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=9 200 620 400
+Rect=12 182 620 400
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_25]
 Type=4
 Tag=32
-Rect=518 55 80 50
+Rect=469 103 80 50
 AnchorPos=0 0
 Notes=
 Text=/
@@ -107,17 +126,30 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_9SLICES_29]
+Type=22
+Tag=29
+Rect=12 584 617 219
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\card\bg_card.png
+NormalFileUV=0 0 192 279
+
 [CTRL_BUTTON_UPGRADE]
 Type=2
 Tag=33
-Rect=462 712 148 60
+Rect=466 714 148 65
 AnchorPos=0 0
 Notes=
 Text=开始强化
 TextTradition=開始強化
 TextSize=30
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button_blue.png
+NormalFileUV=0 0 232 84
 
 [CTRL_TEXT_LABEL_1]
 Type=4
@@ -164,7 +196,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_HEAD]
 Type=4
 Tag=48
-Rect=150 43 347 72
+Rect=164 0 347 72
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -204,6 +236,16 @@ Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_30]
+Type=22
+Tag=30
+Rect=30 720 107 48
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_PRE_ITEM_IMAGE]
 Type=1

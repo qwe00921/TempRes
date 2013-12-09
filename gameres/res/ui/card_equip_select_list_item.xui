@@ -1,7 +1,7 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_PICTURE_13]
 Type=1
@@ -25,7 +25,7 @@ Remark=物品1
 [CTRL_PICTURE_IMAGE_1]
 Type=1
 Tag=169
-Rect=30 44 107 101
+Rect=32 15 107 101
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\pic_item.png
@@ -34,7 +34,7 @@ NormalFileUV=0 0 151 143
 [CTRL_TEXT_SELECT_1]
 Type=4
 Tag=170
-Rect=45 85 70 28
+Rect=48 59 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -79,7 +79,7 @@ Remark=物品1
 [CTRL_PICTURE_IMAGE_2]
 Type=1
 Tag=175
-Rect=187 46 107 101
+Rect=183 18 107 101
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\pic_item.png
@@ -88,7 +88,7 @@ NormalFileUV=0 0 151 143
 [CTRL_PICTURE_IMAGE_3]
 Type=1
 Tag=176
-Rect=342 50 107 101
+Rect=344 18 107 101
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\pic_item.png
@@ -97,7 +97,7 @@ NormalFileUV=0 0 151 143
 [CTRL_PICTURE_IMAGE_4]
 Type=1
 Tag=177
-Rect=495 51 107 101
+Rect=493 16 107 101
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\bag\pic_item.png
@@ -106,7 +106,7 @@ NormalFileUV=0 0 151 143
 [CTRL_TEXT_SELECT_2]
 Type=4
 Tag=178
-Rect=205 83 70 28
+Rect=201 55 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -118,7 +118,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_3]
 Type=4
 Tag=179
-Rect=356 84 70 28
+Rect=358 52 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -130,7 +130,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_4]
 Type=4
 Tag=180
-Rect=513 85 70 28
+Rect=511 50 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -142,7 +142,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL_1]
 Type=4
 Tag=182
-Rect=46 14 70 28
+Rect=92 18 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -152,47 +152,83 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL_2]
 Type=4
 Tag=183
-Rect=206 16 70 28
+Rect=244 20 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_35]
+Type=1
+Tag=35
+Rect=33 121 107 29
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_LEVEL_3]
 Type=4
 Tag=184
-Rect=363 20 70 28
+Rect=405 20 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_36]
+Type=1
+Tag=36
+Rect=183 122 107 29
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_LEVEL_4]
 Type=4
 Tag=185
-Rect=515 18 70 28
+Rect=552 17 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_37]
+Type=1
+Tag=37
+Rect=344 123 107 29
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_NAME_1]
 Type=4
 Tag=186
-Rect=36 154 97 28
+Rect=38 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_38]
+Type=1
+Tag=38
+Rect=495 122 107 29
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
 [CTRL_TEXT_NAME_2]
 Type=4
 Tag=187
-Rect=192 156 97 28
+Rect=189 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -202,7 +238,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME_3]
 Type=4
 Tag=188
-Rect=345 156 97 28
+Rect=349 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -212,7 +248,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_NAME_4]
 Type=4
 Tag=189
-Rect=499 159 97 28
+Rect=501 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -222,7 +258,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DRESSED_1]
 Type=4
 Tag=190
-Rect=34 48 29 23
+Rect=36 19 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -235,7 +271,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DRESSED_4]
 Type=4
 Tag=191
-Rect=500 54 29 23
+Rect=498 19 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -248,7 +284,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DRESSED_3]
 Type=4
 Tag=192
-Rect=346 54 29 23
+Rect=348 22 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -261,7 +297,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DRESSED_2]
 Type=4
 Tag=193
-Rect=191 50 29 23
+Rect=187 22 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -274,7 +310,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RANK_1]
 Type=4
 Tag=194
-Rect=60 117 46 23
+Rect=61 157 46 23
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -285,7 +321,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RANK_4]
 Type=4
 Tag=195
-Rect=526 126 46 23
+Rect=529 157 46 23
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -296,7 +332,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RANK_3]
 Type=4
 Tag=196
-Rect=368 125 46 23
+Rect=373 157 46 23
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -307,10 +343,46 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RANK_2]
 Type=4
 Tag=197
-Rect=218 120 46 23
+Rect=211 157 46 23
 AnchorPos=0 0
 Notes=
 TextSize=15
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_31]
+Type=1
+Tag=31
+Rect=32 13 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_32]
+Type=1
+Tag=32
+Rect=184 13 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_33]
+Type=1
+Tag=33
+Rect=344 13 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_34]
+Type=1
+Tag=34
+Rect=494 13 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100

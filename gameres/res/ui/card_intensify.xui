@@ -10,29 +10,29 @@ Rect=0 0 640 870
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card_bag\main_bg.png
+NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
 [CTRL_PICTURE_HEAD]
 Type=1
 Tag=21
-Rect=172 36 313 97
+Rect=136 1 368 84
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\card_bag\herd.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
 
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=38 55 80 50
+Rect=560 -1 80 80
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card_bag\btn_return.png
-NormalFileUV=0 0 151 101
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
 
 [CTRL_PICTURE_LIST_BG]
 Type=1
@@ -133,7 +133,7 @@ NormalFileUV=0 0 44 52
 [CTRL_TEXT_25]
 Type=4
 Tag=32
-Rect=518 55 80 50
+Rect=51 77 80 50
 AnchorPos=0 0
 Notes=
 Text=/
