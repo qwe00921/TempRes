@@ -15,6 +15,7 @@ p.groupFlag = false;
 
 --显示UI
 function p.ShowUI( bgroupFlag )
+	dlg_menu.SetNewUI( p );
 	if bgroupFlag ~= nil then
 		p.groupFlag = bgroupFlag;
 	end
@@ -31,6 +32,8 @@ function p.ShowUI( bgroupFlag )
 
 	layer:NoMask();
     layer:Init();
+	layer:SetSwallowTouch(false);
+	
     GetUIRoot():AddDlg( layer );
     LoadDlg ("beast_mainui.xui" , layer , nil );
 
@@ -127,16 +130,16 @@ function p.ShowSelectPetInfo(  view, pet )
 		atkLabel:SetText( tostring(pet.Atk) );
 	end
 	
+	local levLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_12 );
+	if levLabel then
+		levLabel:SetText( string.format("Lv %d", pet.Level) );
+	end
+	
 	--名字显示，根据type读csv数据
 	local pet_type = pet.Pet_type;
 	local nameLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_14 );
 	if nameLabel then
 		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "name" ) );
-	end
-	
-	local attrLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_ELEMENT );
-	if attrLabel then
-		--attrLabel:SetText( ... );
 	end
 	
 	--技能显示
@@ -148,13 +151,13 @@ function p.ShowSelectPetInfo(  view, pet )
 	
 	local skillText = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_51 );
 	skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
-	
-	local teamText = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_TEAM );
-	teamText:SetText( ToUtf8( string.format( "队伍%d", pet.Team_id) ) );
-	teamText:SetVisible( pet.Team_id ~= 0 );
-	
-	local team9 = Get9SlicesImage( view, ui_card_group_select_pet.ID_CTRL_9SLICES_53 );
-	team9:SetVisible( pet.Team_id ~= 0 );
+
+	for i = 1, 3 do
+		local pic = GetImage( view, ui_card_group_select_pet["ID_CTRL_PICTURE_TEAM"..i] );
+		if pic then
+			pic:SetVisible( pet.Team_id == i );
+		end
+	end
 end
 
 --设置单个召唤兽视图
@@ -166,18 +169,11 @@ function p.ShowBeastInfo( view, pet )
 	
 	view:SetId( pet.id );
 	
-	local levLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_12 );
+	local levLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_28 );
 	if levLabel then
 		levLabel:SetText( string.format("Lv %d", pet.Level) );
 	end
-	
-	--[[
-	local hpLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_HP2 );
-	if hpLabel then
-		hpLabel:SetText( pet.hp );
-	end
-	--]]
-	
+
 	local spLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_22 );
 	if spLabel then
 		spLabel:SetText( tostring(pet.Sp));
@@ -194,25 +190,11 @@ function p.ShowBeastInfo( view, pet )
 	if nameLabel then
 		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "name" ) );
 	end
-	
-	local attrLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_ELEMENT );
-	if attrLabel then
-		--attrLabel:SetText( ... );
-	end
-	
+
 	--培养按钮
 	local trainBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_INCUBATE );
 	trainBtn:SetLuaDelegate( p.OnListBtnClick );
-	
-	--[[
-	--出战按钮
-	local fightBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_SELL );
-	fightBtn:SetLuaDelegate( p.OnListBtnClick );
-	local flag = beast_mgr.CheckIsFightPet( pet.id );
-	fightBtn:SetChecked( flag );
-	local str = flag and "休息" or "出战";
-	fightBtn:SetText( ToUtf8(str) );
-	--]]
+
 	local sellBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_SELL );
 	sellBtn:SetLuaDelegate( p.OnListBtnClick );
 	
@@ -232,12 +214,12 @@ function p.ShowBeastInfo( view, pet )
 	local skillText = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_51 );
 	skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
 	
-	local teamText = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_TEAM );
-	teamText:SetText( ToUtf8( string.format( "队伍%d", pet.Team_id) ) );
-	teamText:SetVisible( pet.Team_id ~= 0 );
-	
-	local team9 = Get9SlicesImage( view, ui_beast_main_list.ID_CTRL_9SLICES_53 );
-	team9:SetVisible( pet.Team_id ~= 0 );
+	for i = 1, 3 do
+		local pic = GetImage( view, ui_beast_main_list["ID_CTRL_PICTURE_TEAM"..i] );
+		if pic then
+			pic:SetVisible( pet.Team_id == i );
+		end
+	end
 end
 
 --召唤兽列表中子按钮回调
@@ -263,8 +245,7 @@ end
 function p.OnViewClick( uiNode, uiEventType, param )
 	p.CloseUI();
 	beast_mgr.ClearData();
-	
-	--WriteCon( " id:"..tostring( uiNode:GetId() ));
+
 	dlg_card_group_main.UpdatePosCard( uiNode:GetId() );
 end
 
@@ -298,5 +279,10 @@ function p.CloseUI()
 		p.layer = nil;
 		p.groupFlag = false;
 	end
+end
+
+function p.UIDisappear()
+	dlg_beast_train.CloseUI();
+	p.CloseUI();
 end
 

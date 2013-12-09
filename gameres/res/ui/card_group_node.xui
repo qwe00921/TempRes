@@ -19,7 +19,7 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_frame2.png
 NormalFileUV=0 0 640 376
 
-[CTRL_BUTTON_CARD_1]
+[CTRL_BUTTON_CARD_4]
 Type=2
 Tag=4
 Rect=302 259 90 90
@@ -33,7 +33,7 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
-[CTRL_BUTTON_CARD_2]
+[CTRL_BUTTON_CARD_5]
 Type=2
 Tag=5
 Rect=396 259 90 90
@@ -47,7 +47,7 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
-[CTRL_BUTTON_CARD_3]
+[CTRL_BUTTON_CARD_6]
 Type=2
 Tag=6
 Rect=490 259 90 90
@@ -61,7 +61,7 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
-[CTRL_BUTTON_CARD_4]
+[CTRL_BUTTON_CARD_1]
 Type=2
 Tag=8
 Rect=22 259 90 90
@@ -75,7 +75,7 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
-[CTRL_BUTTON_CARD_5]
+[CTRL_BUTTON_CARD_2]
 Type=2
 Tag=9
 Rect=115 259 90 90
@@ -89,7 +89,7 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
-[CTRL_BUTTON_CARD_6]
+[CTRL_BUTTON_CARD_3]
 Type=2
 Tag=10
 Rect=209 259 90 90
@@ -103,7 +103,7 @@ NormalFileUV=0 0 100 90
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
-[CTRL_PICTURE_66]
+[CTRL_PICTURE_1]
 Type=1
 Tag=67
 Rect=28 328 72 19
@@ -112,7 +112,7 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_67]
+[CTRL_PICTURE_2]
 Type=1
 Tag=68
 Rect=126 328 72 19
@@ -121,7 +121,7 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_68]
+[CTRL_PICTURE_3]
 Type=1
 Tag=69
 Rect=220 328 72 19
@@ -130,7 +130,7 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_69]
+[CTRL_PICTURE_4]
 Type=1
 Tag=70
 Rect=311 328 72 19
@@ -139,7 +139,7 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_70]
+[CTRL_PICTURE_5]
 Type=1
 Tag=71
 Rect=405 328 72 19
@@ -148,7 +148,7 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_71]
+[CTRL_PICTURE_6]
 Type=1
 Tag=72
 Rect=500 328 72 19
@@ -157,7 +157,7 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_TEXT_LEV_1]
+[CTRL_TEXT_LEV_4]
 Type=4
 Tag=11
 Rect=324 330 46 18
@@ -170,7 +170,7 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEV_2]
+[CTRL_TEXT_LEV_5]
 Type=4
 Tag=12
 Rect=418 330 46 18
@@ -183,7 +183,7 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEV_3]
+[CTRL_TEXT_LEV_6]
 Type=4
 Tag=13
 Rect=512 330 46 18
@@ -196,7 +196,7 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEV_4]
+[CTRL_TEXT_LEV_1]
 Type=4
 Tag=14
 Rect=41 330 46 18
@@ -209,7 +209,7 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEV_5]
+[CTRL_TEXT_LEV_2]
 Type=4
 Tag=15
 Rect=136 330 46 18
@@ -222,7 +222,7 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEV_6]
+[CTRL_TEXT_LEV_3]
 Type=4
 Tag=16
 Rect=231 330 46 18
@@ -234,18 +234,6 @@ TextSize=14
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_TEAM111]
-Type=4
-Tag=9999
-Rect=343 559 110 50
-AnchorPos=0 0
-Notes=
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
 
 [CTRL_TEXT_20]
 Type=4
@@ -393,63 +381,46 @@ SelectedFileUV=0 0 100 90
 [CTRL_TEXT_TOTAL_ATK]
 Type=4
 Tag=32
-Rect=24 124 189 27
+Rect=129 124 84 27
 AnchorPos=0 0
 Notes=
-Text=总攻击力：9999999
-TextTradition=總攻擊力：9999999
-TextSize=22
+Text=9999999
+TextTradition=9999999
+TextSize=21
 TextColor=0xff00ff
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_TOTAL_DEF]
 Type=4
 Tag=36
-Rect=24 166 187 27
+Rect=129 166 84 27
 AnchorPos=0 0
 Notes=
-Text=总防御力：9999999
-TextTradition=總防御力：9999999
-TextSize=22
+Text=9999999
+TextTradition=9999999
+TextSize=21
 TextColor=0xffff
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_TEAM2]
 Type=1
 Tag=38
-Rect=14 30 110 50
+Rect=13 28 110 50
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\team2.png
 NormalFileUV=0 0 110 50
 
-[CTRL_PICTURE_38]
+[CTRL_PICTURE_TEAM3]
 Type=1
 Tag=39
-Rect=14 29 110 50
+Rect=13 28 110 50
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\team3.png
 NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_39]
-Type=1
-Tag=40
-Rect=278 429 107 60
-AnchorPos=0 0
-Notes=
-
-[CTRL_TEXT_TEAM]
-Type=4
-Tag=19
-Rect=165 431 107 60
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_57]
 Type=1
@@ -569,5 +540,31 @@ Rect=414 96 36 36
 AnchorPos=0 0
 Notes=
 Remark=召唤兽2攻击
-NormalFile=.\res\image\ui\pet\att.png
+NormalFile=.\res\image\ui\pet\he.png
 NormalFileUV=0 0 36 36
+
+[CTRL_TEXT_52]
+Type=4
+Tag=52
+Rect=24 124 105 27
+AnchorPos=0 0
+Notes=
+Text=总攻击力：
+TextTradition=總攻擊力：
+TextSize=21
+TextColor=0xff00ff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_53]
+Type=4
+Tag=53
+Rect=24 166 105 27
+AnchorPos=0 0
+Notes=
+Text=总防御力：
+TextTradition=總防御力：
+TextSize=21
+TextColor=0xffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

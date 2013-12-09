@@ -24,17 +24,17 @@ function p.ShowUI()
 		return;
 	end
 	
-	local layer = createNDUILayer();
+	local layer = createNDUIDialog();
     if layer == nil then
         return false;
     end
 
-	--layer:NoMask();
+	layer:NoMask();
     layer:Init();
 	layer:SetSwallowTouch(false);
     GetUIRoot():AddDlg( layer );
 	
-    LoadDlg ("card_group.xui" , layer , nil );
+    LoadDlg("card_group.xui" , layer , nil );
 
 	p.layer = layer;
     p.SetDelegate();
@@ -148,13 +148,19 @@ end
 
 --显示单个节点
 function p.SetTeamInfo( view, user_teamData )
-	local teamIndex = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_TEAM );
-	teamIndex:SetText( ToUtf8( string.format( "队伍%s", user_teamData.Team_id ) ) );
+	local teamid = tonumber( user_teamData.Team_id ) or 0;
+	for i = 1, 3 do
+		local teamPic = GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_TEAM"..i] );
+		if teamPic then
+			teamPic:SetVisible( i == teamid );
+		end
+	end
 	
 	local cardNum = 0;
 	for i = 1, 6 do
 		local cardBtn = GetButton( view, ui_card_group_node["ID_CTRL_BUTTON_CARD_" .. i] );
 		local levLabel = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_LEV_" .. i] );
+		local pic = GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
 		
 		cardBtn:SetLuaDelegate( p.OnListBtnClick );
 		cardBtn:SetId( i );
@@ -163,6 +169,7 @@ function p.SetTeamInfo( view, user_teamData )
 			cardNum = cardNum + 1;
 			cardBtn:SetVisible( true );
 			levLabel:SetVisible( true );
+			pic:SetVisible( true );
 			
 			cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
@@ -179,18 +186,13 @@ function p.SetTeamInfo( view, user_teamData )
 			cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
 			
 			levLabel:SetVisible( false );
+			pic:SetVisible( false );
 		end
 	end
 	
 	local cardNumLab = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_CARD_NUM );
 	cardNumLab:SetText( string.format( "%d/%d", cardNum, 6) );
-	--[[
-	local formationTitleLab = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_26 );
-	formationTitleLab:SetText( ToUtf8( "战\n术" ) );
-	
-	local petLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_28 );
-	petLabel:SetText( ToUtf8( "召\n唤\n兽" ) );
-	--]]
+
 	local formationBtn = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_FORMATION );
 	formationBtn:SetLuaDelegate( p.OnListBtnClick );
 	
@@ -237,11 +239,33 @@ function p.SetTeamInfo( view, user_teamData )
 	fightBtn:SetChecked( flag );
 	local str = flag and ToUtf8("出战中") or ToUtf8("出战");
 	fightBtn:SetText( str );
+	
+	local atkLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_TOTAL_ATK );
+	atkLabel:SetText(  tostring( p.TotalData( user_teamData, "Attack" )) );
+	
+	local defLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_TOTAL_DEF );
+	defLabel:SetText( tostring( p.TotalData( user_teamData, "Defence" )) );
+end
+
+function p.TotalData( user_teamData, str )
+	local num = 0;
+	if user_teamData == nil then
+		return num;
+	end
+	
+	for i = 1, 6 do
+		if tonumber(user_teamData["Pos_unique"..i]) ~= 0 then
+			local obj = p.cardlist[user_teamData["Pos_unique"..i]];
+			if obj and obj[str] then
+				num = num + tonumber(obj[str]);
+			end
+		end
+	end
+	return num;
 end
 
 --按钮回调
 function p.OnBtnClick(uiNode, uiEventType, param)
-	WriteCon("feawfawe\n");
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
 		if ui.ID_CTRL_BUTTON_BACK == tag then
