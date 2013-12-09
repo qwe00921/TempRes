@@ -9,36 +9,49 @@ Tag=13
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui_honor\login\login_bg1.png
-NormalFileUV=0 0 640 960
+NormalFile=.\res\image\ui\creat_role\gacha_bg0003.png
+NormalFileUV=0 0 480 450
 
-[CTRL_PICTURE_14]
-Type=1
-Tag=14
-Rect=116 76 408 55
+[CTRL_9SLICES_17]
+Type=22
+Tag=27
+Rect=1 480 640 280
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui_honor\create_role\titletext.png
-NormalFileUV=0 0 408 55
+Stretch=1
+NormalFile=.\res\image\ui\card\bg_card.png
+NormalFileUV=0 0 192 279
 
-[CTRL_PICTURE_15]
-Type=1
-Tag=15
-Rect=71 153 416 93
+[CTRL_9SLICES_20]
+Type=22
+Tag=31
+Rect=0 221 639 245
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui_honor\create_role\usernamebg.png
-NormalFileUV=0 0 416 93
+Stretch=1
+NormalFile=.\res\image\ui\card\bg_card.png
+NormalFileUV=0 0 192 279
+
+[CTRL_9SLICES_21]
+Type=22
+Tag=29
+Rect=90 275 300 45
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
 
 [CTRL_INPUT_TEXT_USER_NAME]
 Type=18
 Tag=16
-Rect=104 175 351 46
+Rect=91 274 299 46
 AnchorPos=0 0
 Notes=
-Text=阿斯达
-TextTradition=阿斯達
-TextSize=22
+Text=阿斯达名字八个字
+TextTradition=阿斯達名字八個字
+TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=玩家姓名
@@ -46,64 +59,43 @@ Remark=玩家姓名
 [CTRL_BUTTON_RAND_NAME]
 Type=2
 Tag=17
-Rect=504 162 80 79
+Rect=446 270 110 54
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=随机姓名
+TextTradition=隨機姓名
+TextSize=24
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=随机姓名按钮
-NormalFile=.\res\image\ui_honor\create_role\random.png
-NormalFileUV=0 0 80 79
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui_honor\create_role\random.png
 SelectedFileUV=0 0 80 79
 DisableFile=.\res\image\ui_honor\create_role\random.png
 DisableFileUV=0 0 80 79
 
-[CTRL_PICTURE_19]
-Type=1
-Tag=19
-Rect=115 415 406 57
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui_honor\create_role\chooseface.png
-NormalFileUV=0 0 406 57
-
 [CTRL_BUTTON_START_GAME]
 Type=2
 Tag=22
-Rect=156 748 317 59
+Rect=204 801 232 84
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=开始冒险
+TextTradition=開始冒險
+TextSize=35
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=开始游戏
-NormalFile=.\res\image\ui_honor\create_role\startgame.png
-NormalFileUV=0 0 317 59
-
-[CTRL_PICTURE_SELECT1]
-Type=1
-Tag=20
-Rect=352 273 85 93
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui_honor\create_role\select.PNG
-NormalFileUV=0 0 58 57
-
-[CTRL_PICTURE_SELECT2]
-Type=1
-Tag=23
-Rect=58 514 164 164
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui_honor\create_role\select.PNG
-NormalFileUV=0 0 58 57
+NormalFile=.\res\image\ui\public\button_red.png
+NormalFileUV=0 0 232 84
 
 [CTRL_BUTTON_FACE1]
 Type=2
 Tag=24
-Rect=60 516 160 160
+Rect=50 558 160 160
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -120,7 +112,7 @@ DisableFileUV=0 0 157 161
 [CTRL_BUTTON_FACE2]
 Type=2
 Tag=25
-Rect=235 515 160 160
+Rect=234 558 160 160
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -137,10 +129,10 @@ DisableFileUV=0 0 164 165
 [CTRL_BUTTON_FACE3]
 Type=2
 Tag=26
-Rect=417 515 160 160
+Rect=416 558 160 160
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=25
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=3号头像
@@ -151,19 +143,10 @@ SelectedFileUV=0 0 164 168
 DisableFile=.\res\image\ui_honor\create_role\face3.png
 DisableFileUV=0 0 164 168
 
-[CTRL_PICTURE_16]
-Type=1
-Tag=18
-Rect=74 293 256 57
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui_honor\create_role\gendertext.png
-NormalFileUV=0 0 256 57
-
 [CTRL_BUTTON_MALE]
 Type=2
 Tag=21
-Rect=354 275 81 89
+Rect=206 358 81 81
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -180,7 +163,7 @@ DisableFileUV=0 0 81 89
 [CTRL_BUTTON_FEMALE]
 Type=2
 Tag=28
-Rect=448 274 81 89
+Rect=353 358 81 81
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -193,3 +176,45 @@ SelectFile=.\res\image\ui_honor\create_role\female.png
 SelectedFileUV=0 0 81 90
 DisableFile=.\res\image\ui_honor\create_role\female.png
 DisableFileUV=0 0 81 90
+
+[CTRL_9SLICES_16]
+Type=22
+Tag=19
+Rect=-2 454 640 60
+AnchorPos=0 0
+Notes=
+Text=请选择头像
+TextTradition=請選擇頭像
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_title2.png
+NormalFileUV=0 0 249 51
+
+[CTRL_9SLICES_19]
+Type=22
+Tag=30
+Rect=-3 197 639 60
+AnchorPos=0 0
+Notes=
+Text=请输入名字和性别
+TextTradition=請輸入名字和性別
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_title2.png
+NormalFileUV=0 0 249 51
+
+[CTRL_PICTURE_SELECT1]
+Type=1
+Tag=20
+Rect=204 356 85 85
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame_click.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_SELECT2]
+Type=1
+Tag=23
+Rect=47 556 164 164
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame_click.png
+NormalFileUV=0 0 100 100
