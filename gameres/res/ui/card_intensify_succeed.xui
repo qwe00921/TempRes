@@ -231,7 +231,7 @@ Notes=
 [CTRL_BUTTON_INTENSIFY]
 Type=2
 Tag=24
-Rect=166 855 130 50
+Rect=166 855 130 64
 AnchorPos=0 0
 Notes=
 Text=继续强化
@@ -239,11 +239,15 @@ TextTradition=繼續強化
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=25
-Rect=368 855 130 50
+Rect=368 855 130 64
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -251,3 +255,7 @@ TextTradition=返回
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54

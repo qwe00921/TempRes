@@ -53,7 +53,7 @@ NormalFileUV=0 0 151 143
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=13 8 145 190
+Rect=16 9 145 190
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -111,6 +111,15 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_38]
+Type=1
+Tag=38
+Rect=91 17 60 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
 [CTRL_TEAM_1]
 Type=4
 Tag=10
@@ -120,6 +129,33 @@ Notes=
 TextSize=20
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_39]
+Type=1
+Tag=39
+Rect=244 14 60 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_40]
+Type=1
+Tag=40
+Rect=400 15 60 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_41]
+Type=1
+Tag=41
+Rect=555 17 60 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
 
 [CTRL_TEAM_4]
 Type=4

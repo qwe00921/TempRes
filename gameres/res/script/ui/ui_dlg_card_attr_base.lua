@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_dlg_card_attr_base = {};
 local p =  ui_dlg_card_attr_base;
+p.ID_CTRL_TEXT_301					       = 301;
 p.ID_CTRL_PICTURE_213					    = 213;
 p.ID_CTRL_PICTURE_212					    = 212;
 p.ID_CTRL_PICTURE_211					    = 211;
@@ -26,10 +27,8 @@ p.ID_CTRL_BUTTON_EQUIP_1				  = 1142;
 p.ID_CTRL_BTN_ARRT					       = 324;
 p.ID_CTRL_BTN_SALE					       = 323;
 p.ID_CTRL_BTN_INTENSIFY				   = 321;
-p.ID_CTRL_TEXT_319					       = 319;
 p.ID_CTRL_DOWER_INTRO					    = 318;
 p.ID_CTRL_DOWER_PIC					      = 317;
-p.ID_CTRL_TEXT_316					       = 316;
 p.ID_CTRL_CARD_CRITICAL				   = 315;
 p.ID_CTRL_CARD_DEFENSE				    = 314;
 p.ID_CTRL_CARD_SPEED					     = 313;
@@ -44,8 +43,6 @@ p.ID_CTRL_GEM_PIC_1					      = 306;
 p.ID_CTRL_EQUIP_PIC_2					    = 305;
 p.ID_CTRL_EQUIP_PIC_3					    = 304;
 p.ID_CTRL_EQUIP_PIC_1					    = 303;
-p.ID_CTRL_TEXT_302					       = 302;
-p.ID_CTRL_TEXT_301					       = 301;
 p.ID_CTRL_CARD_PICTURE				    = 300;
 p.ID_CTRL_BUTTON_BACK					    = 299;
 p.ID_CTRL_PICTURE_295					    = 295;
