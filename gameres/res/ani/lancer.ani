@@ -18,6 +18,7 @@ image\card\bai_gu_jing_02.png
 [mask]
 ;image\ui\card_get\bk2.png
 image\ui\common\mask_gray.png
+image\ui\common\mask.png
 
 ;boss
 [boss]

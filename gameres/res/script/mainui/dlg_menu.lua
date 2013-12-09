@@ -30,6 +30,17 @@ function p.ShowUI()
     
 	p.layer = layer;
 	p.SetDelegate();
+	
+	local kRect = layer:GetFrameRect();
+	local kOrigin = kRect.origin
+	local kSize = kRect.size;
+	local pImage = createNDUIImage();
+	pImage:Init();
+	local kWinSize = GetWinSizeInPixels();
+	pImage:SetFrameRect(CCRectMake(0,kSize.h * 0.8f,kSize.w,999));
+	local pPic = GetPictureByAni("lancer.mask",1);
+	pImage:SetPicture(pPic);
+	layer:AddChildZ(pImage,10);
 end
 
 function p.SetDelegate()
