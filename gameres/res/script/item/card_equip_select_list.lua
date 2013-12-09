@@ -685,7 +685,7 @@ function p.OnSendReq()
 	end;
 	
 	local param = "";--string.format("&card_unique_id=%s",cardUniqueId)
-	SendReq("Item","EquipmentList",uid,param);		
+	SendReq("Equip","EquipmentList",uid,param);		
 end
 
 
@@ -710,7 +710,7 @@ function p.reqUpgrade(odId, ids)
 	end;
 	
 	local param = string.format("&base_user_card_id=%s&material_user_card_ids=%s",odId, ids);
-	SendReq("Item","AddPower",uid,param);	 
+	SendReq("Equip","AddPower",uid,param);	 
 end
 
 function p.OnNetUpgradeCallback(msg)

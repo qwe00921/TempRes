@@ -514,8 +514,11 @@ function p.SetItemInfo4Sys( view, item )
 			local aniIndex = "item."..rewrad.rewordId;
 			picV:SetPicture( GetPictureByAni(aniIndex,0) );
 			
-		elseif picV then
+		else
 			picV:SetVisible(false);
+			local picBg = "ID_CTRL_PICTURE_BG_"..i;
+			local picBgV = GetImage(view,ui_item_sys[picBg]);
+			picBgV:SetVisible(false);
 		end
 	end
 	

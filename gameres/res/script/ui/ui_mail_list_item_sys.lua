@@ -4,10 +4,10 @@
 --------------------------------------------------------------
 ui_mail_list_item_sys = {};
 local p =  ui_mail_list_item_sys;
-p.ID_CTRL_PICTURE_15					     = 15;
-p.ID_CTRL_PICTURE_14					     = 14;
-p.ID_CTRL_PICTURE_13					     = 13;
-p.ID_CTRL_PICTURE_12					     = 12;
+p.ID_CTRL_PICTURE_BG_4				    = 15;
+p.ID_CTRL_PICTURE_BG_3				    = 14;
+p.ID_CTRL_PICTURE_BG_2				    = 13;
+p.ID_CTRL_PICTURE_BG_1				    = 12;
 p.ID_CTRL_TEXT_STATE					     = 343;
 p.ID_CTRL_TEXT_CONTENT				    = 332;
 p.ID_CTRL_TEXT_TIME					      = 331;
