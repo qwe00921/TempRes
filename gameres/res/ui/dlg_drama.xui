@@ -8,6 +8,8 @@ Type=2
 Tag=8
 Z_Order=-1
 Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -17,58 +19,79 @@ Type=1
 Tag=1
 Z_Order=-1
 Rect=0 -1 640 960
+AnchorPos=0 0
+Notes=
 
 [CTRL_PICTURE_MASK]
 Type=1
 Tag=12
 Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
 
 [CTRL_PICTURE_L]
 Type=1
 Tag=2
-Rect=-46 89 501 500
+Rect=-19 139 351 440
+AnchorPos=0 0
+Notes=
 
 [CTRL_PICTURE_M]
 Type=1
 Tag=3
-Rect=300 86 500 500
+Rect=307 142 350 440
+AnchorPos=0 0
+Notes=
 
 [CTRL_PICTURE_R]
 Type=1
 Tag=4
-Rect=296 92 500 500
+Rect=308 139 350 440
+AnchorPos=0 0
+Notes=
 
 [CTRL_PICTURE_CONTENT_BG]
 Type=1
 Tag=11
-Rect=-23 582 662 282
-NormalFile=.\res\image\drama_bg\content_bg.png
-NormalFileUV=0 0 565 97
+Rect=-23 566 662 293
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\drama\frame.png
+NormalFileUV=0 0 636 266
 
 [CTRL_COLOR_LABEL_TEXT]
 Type=7
 Tag=6
-Rect=34 597 572 244
+Rect=34 612 572 229
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_SKIP]
 Type=2
 Tag=10
-Rect=531 24 92 49
+Rect=531 24 92 73
+AnchorPos=0 0
+Notes=
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\drama\pass.png
-NormalFileUV=0 0 43 23
-SelectFile=.\res\image\ui\drama\pass.png
-SelectedFileUV=0 0 43 23
+NormalFile=.\res\image\ui\drama\skip.png
+NormalFileUV=0 0 96 76
+SelectFile=.\res\image\ui\drama\skip-click.png
+SelectedFileUV=0 0 96 76
 DisableFile=.\res\image\ui\drama\pass.png
 DisableFileUV=0 0 43 23
 
 [CTRL_TEXT_NPC_NAME]
 Type=4
 Tag=5
-Rect=21 531 71 51
+Rect=16 569 71 51
+AnchorPos=0 0
+Notes=
 Text=说话者
 TextTradition=說話者
 TextSize=20
@@ -79,10 +102,12 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CLICK]
 Type=2
 Tag=9
-Rect=551 775 47 75
-Text=下一个
-TextTradition=下一個
+Rect=563 803 30 26
+AnchorPos=0 0
+Notes=
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\drama\next.png
+NormalFileUV=0 0 30 26
