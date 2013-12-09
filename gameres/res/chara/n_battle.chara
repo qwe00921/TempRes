@@ -1,84 +1,867 @@
 ;----------------------------------------------------
 ; ½ÇÉ«ÅäÖÃ
 ;----------------------------------------------------
-
-[101]
-@standby            name=standby  ani=n_battle.standby_101
-@atk                name=standby  ani=n_battle.attack_101
+[10000]
+@standby name=standby ani=n_battle.standby_10000
+@atk name=atk ani=n_battle.attack_10000
 @run
-@skill              name=skill  ani=n_battle.skill_101
-@defence        
-@hurt               
-@dead               name=dead  ani=n_battle.death
-
-[102]
-@standby            name=standby  ani=n_battle.standby_102
-@atk                name=standby  ani=n_battle.attack_102
+@skill name=skill ani=n_battle.skill_10000
+@defence 
+@hurt
+@dead
+[10001]
+@standby name=standby ani=n_battle.standby_10001
+@atk name=atk ani=n_battle.attack_10001
 @run
-@skill              name=skill  ani=n_battle.skill_102
-@defence        
-@hurt               
-@dead               name=dead  ani=n_battle.death
-
-[103]
-@standby            name=standby  ani=n_battle.standby_103
-@atk                name=standby  ani=n_battle.attack_103
+@skill name=skill ani=n_battle.skill_10001
+@defence 
+@hurt
+@dead
+[10003]
+@standby name=standby ani=n_battle.standby_10003
+@atk name=atk ani=n_battle.attack_10003
 @run
-@skill              name=skill  ani=n_battle.skill_103
-@defence        
-@hurt               
-@dead               
-
-[104]
-@standby            name=standby  ani=n_battle.standby_104
-@atk                name=standby  ani=n_battle.attack_104
+@skill name=skill ani=n_battle.skill_10003
+@defence 
+@hurt
+@dead
+[10004]
+@standby name=standby ani=n_battle.standby_10004
+@atk name=atk ani=n_battle.attack_10004
 @run
-@skill              name=skill  ani=n_battle.skill_104
-@defence        
-@hurt               
-@dead               name=dead  ani=n_battle.death
-
-[105]
-@standby            name=standby  ani=n_battle.standby_105
-@atk                name=standby  ani=n_battle.attack_105
+@skill name=skill ani=n_battle.skill_10004
+@defence 
+@hurt
+@dead
+[10005]
+@standby name=standby ani=n_battle.standby_10005
+@atk name=atk ani=n_battle.attack_10005
 @run
-@skill              name=skill  ani=n_battle.skill_105
-@defence        
-@hurt               
-@dead               
-
-[106]
-@standby            name=standby  ani=n_battle.standby_106
-@atk                name=standby  ani=n_battle.attack_106
+@skill name=skill ani=n_battle.skill_10005
+@defence 
+@hurt
+@dead
+[10009]
+@standby name=standby ani=n_battle.standby_10009
+@atk name=atk ani=n_battle.attack_10009
 @run
-@skill              name=skill  ani=n_battle.skill_106
-@defence        
-@hurt               
-@dead               
-
-[107]
-@standby            name=standby  ani=n_battle.standby_107
-@atk                name=standby  ani=n_battle.attack_107
+@skill name=skill ani=n_battle.skill_10009
+@defence 
+@hurt
+@dead
+[10012]
+@standby name=standby ani=n_battle.standby_10012
+@atk name=atk ani=n_battle.attack_10012
 @run
-@skill              name=skill  ani=n_battle.skill_107
-@defence        
-@hurt               
-@dead               
-
-[108]
-@standby            name=standby  ani=n_battle.standby_108
-@atk                name=standby  ani=n_battle.attack_108
+@skill name=skill ani=n_battle.skill_10012
+@defence 
+@hurt
+@dead
+[10015]
+@standby name=standby ani=n_battle.standby_10015
+@atk name=atk ani=n_battle.attack_10015
 @run
-@skill              name=skill  ani=n_battle.skill_108
-@defence        
-@hurt               
-@dead               
-
-[109]
-@standby            name=standby  ani=n_battle.standby_109
-@atk                name=standby  ani=n_battle.attack_109
+@skill name=skill ani=n_battle.skill_10015
+@defence 
+@hurt
+@dead
+[10016]
+@standby name=standby ani=n_battle.standby_10016
+@atk name=atk ani=n_battle.attack_10016
 @run
-@skill              name=skill  ani=n_battle.skill_109
-@defence        
-@hurt               
-@dead               
+@skill name=skill ani=n_battle.skill_10016
+@defence 
+@hurt
+@dead
+[10017]
+@standby name=standby ani=n_battle.standby_10017
+@atk name=atk ani=n_battle.attack_10017
+@run
+@skill name=skill ani=n_battle.skill_10017
+@defence 
+@hurt
+@dead
+[10019]
+@standby name=standby ani=n_battle.standby_10019
+@atk name=atk ani=n_battle.attack_10019
+@run
+@skill name=skill ani=n_battle.skill_10019
+@defence 
+@hurt
+@dead
+[10020]
+@standby name=standby ani=n_battle.standby_10020
+@atk name=atk ani=n_battle.attack_10020
+@run
+@skill name=skill ani=n_battle.skill_10020
+@defence 
+@hurt
+@dead
+[10021]
+@standby name=standby ani=n_battle.standby_10021
+@atk name=atk ani=n_battle.attack_10021
+@run
+@skill name=skill ani=n_battle.skill_10021
+@defence 
+@hurt
+@dead
+[10022]
+@standby name=standby ani=n_battle.standby_10022
+@atk name=atk ani=n_battle.attack_10022
+@run
+@skill name=skill ani=n_battle.skill_10022
+@defence 
+@hurt
+@dead
+[10023]
+@standby name=standby ani=n_battle.standby_10023
+@atk name=atk ani=n_battle.attack_10023
+@run
+@skill name=skill ani=n_battle.skill_10023
+@defence 
+@hurt
+@dead
+[10024]
+@standby name=standby ani=n_battle.standby_10024
+@atk name=atk ani=n_battle.attack_10024
+@run
+@skill name=skill ani=n_battle.skill_10024
+@defence 
+@hurt
+@dead
+[10027]
+@standby name=standby ani=n_battle.standby_10027
+@atk name=atk ani=n_battle.attack_10027
+@run
+@skill name=skill ani=n_battle.skill_10027
+@defence 
+@hurt
+@dead
+[10029]
+@standby name=standby ani=n_battle.standby_10029
+@atk name=atk ani=n_battle.attack_10029
+@run
+@skill name=skill ani=n_battle.skill_10029
+@defence 
+@hurt
+@dead
+[10033]
+@standby name=standby ani=n_battle.standby_10033
+@atk name=atk ani=n_battle.attack_10033
+@run
+@skill name=skill ani=n_battle.skill_10033
+@defence 
+@hurt
+@dead
+[10035]
+@standby name=standby ani=n_battle.standby_10035
+@atk name=atk ani=n_battle.attack_10035
+@run
+@skill name=skill ani=n_battle.skill_10035
+@defence 
+@hurt
+@dead
+[10036]
+@standby name=standby ani=n_battle.standby_10036
+@atk name=atk ani=n_battle.attack_10036
+@run
+@skill name=skill ani=n_battle.skill_10036
+@defence 
+@hurt
+@dead
+[10037]
+@standby name=standby ani=n_battle.standby_10037
+@atk name=atk ani=n_battle.attack_10037
+@run
+@skill name=skill ani=n_battle.skill_10037
+@defence 
+@hurt
+@dead
+[10038]
+@standby name=standby ani=n_battle.standby_10038
+@atk name=atk ani=n_battle.attack_10038
+@run
+@skill name=skill ani=n_battle.skill_10038
+@defence 
+@hurt
+@dead
+[10039]
+@standby name=standby ani=n_battle.standby_10039
+@atk name=atk ani=n_battle.attack_10039
+@run
+@skill name=skill ani=n_battle.skill_10039
+@defence 
+@hurt
+@dead
+[10040]
+@standby name=standby ani=n_battle.standby_10040
+@atk name=atk ani=n_battle.attack_10040
+@run
+@skill name=skill ani=n_battle.skill_10040
+@defence 
+@hurt
+@dead
+[10041]
+@standby name=standby ani=n_battle.standby_10041
+@atk name=atk ani=n_battle.attack_10041
+@run
+@skill name=skill ani=n_battle.skill_10041
+@defence 
+@hurt
+@dead
+[10042]
+@standby name=standby ani=n_battle.standby_10042
+@atk name=atk ani=n_battle.attack_10042
+@run
+@skill name=skill ani=n_battle.skill_10042
+@defence 
+@hurt
+@dead
+[10043]
+@standby name=standby ani=n_battle.standby_10043
+@atk name=atk ani=n_battle.attack_10043
+@run
+@skill name=skill ani=n_battle.skill_10043
+@defence 
+@hurt
+@dead
+[10044]
+@standby name=standby ani=n_battle.standby_10044
+@atk name=atk ani=n_battle.attack_10044
+@run
+@skill name=skill ani=n_battle.skill_10044
+@defence 
+@hurt
+@dead
+[10051]
+@standby name=standby ani=n_battle.standby_10051
+@atk name=atk ani=n_battle.attack_10051
+@run
+@skill name=skill ani=n_battle.skill_10051
+@defence 
+@hurt
+@dead
+[10052]
+@standby name=standby ani=n_battle.standby_10052
+@atk name=atk ani=n_battle.attack_10052
+@run
+@skill name=skill ani=n_battle.skill_10052
+@defence 
+@hurt
+@dead
+[10053]
+@standby name=standby ani=n_battle.standby_10053
+@atk name=atk ani=n_battle.attack_10053
+@run
+@skill name=skill ani=n_battle.skill_10053
+@defence 
+@hurt
+@dead
+[10054]
+@standby name=standby ani=n_battle.standby_10054
+@atk name=atk ani=n_battle.attack_10054
+@run
+@skill name=skill ani=n_battle.skill_10054
+@defence 
+@hurt
+@dead
+[10055]
+@standby name=standby ani=n_battle.standby_10055
+@atk name=atk ani=n_battle.attack_10055
+@run
+@skill name=skill ani=n_battle.skill_10055
+@defence 
+@hurt
+@dead
+[10056]
+@standby name=standby ani=n_battle.standby_10056
+@atk name=atk ani=n_battle.attack_10056
+@run
+@skill name=skill ani=n_battle.skill_10056
+@defence 
+@hurt
+@dead
+[10057]
+@standby name=standby ani=n_battle.standby_10057
+@atk name=atk ani=n_battle.attack_10057
+@run
+@skill name=skill ani=n_battle.skill_10057
+@defence 
+@hurt
+@dead
+[10058]
+@standby name=standby ani=n_battle.standby_10058
+@atk name=atk ani=n_battle.attack_10058
+@run
+@skill name=skill ani=n_battle.skill_10058
+@defence 
+@hurt
+@dead
+[10059]
+@standby name=standby ani=n_battle.standby_10059
+@atk name=atk ani=n_battle.attack_10059
+@run
+@skill name=skill ani=n_battle.skill_10059
+@defence 
+@hurt
+@dead
+[10061]
+@standby name=standby ani=n_battle.standby_10061
+@atk name=atk ani=n_battle.attack_10061
+@run
+@skill name=skill ani=n_battle.skill_10061
+@defence 
+@hurt
+@dead
+[10062]
+@standby name=standby ani=n_battle.standby_10062
+@atk name=atk ani=n_battle.attack_10062
+@run
+@skill name=skill ani=n_battle.skill_10062
+@defence 
+@hurt
+@dead
+[10066]
+@standby name=standby ani=n_battle.standby_10066
+@atk name=atk ani=n_battle.attack_10066
+@run
+@skill name=skill ani=n_battle.skill_10066
+@defence 
+@hurt
+@dead
+[10068]
+@standby name=standby ani=n_battle.standby_10068
+@atk name=atk ani=n_battle.attack_10068
+@run
+@skill name=skill ani=n_battle.skill_10068
+@defence 
+@hurt
+@dead
+[10069]
+@standby name=standby ani=n_battle.standby_10069
+@atk name=atk ani=n_battle.attack_10069
+@run
+@skill name=skill ani=n_battle.skill_10069
+@defence 
+@hurt
+@dead
+[10071]
+@standby name=standby ani=n_battle.standby_10071
+@atk name=atk ani=n_battle.attack_10071
+@run
+@skill name=skill ani=n_battle.skill_10071
+@defence 
+@hurt
+@dead
+[10072]
+@standby name=standby ani=n_battle.standby_10072
+@atk name=atk ani=n_battle.attack_10072
+@run
+@skill name=skill ani=n_battle.skill_10072
+@defence 
+@hurt
+@dead
+[10082]
+@standby name=standby ani=n_battle.standby_10082
+@atk name=atk ani=n_battle.attack_10082
+@run
+@skill name=skill ani=n_battle.skill_10082
+@defence 
+@hurt
+@dead
+[10093]
+@standby name=standby ani=n_battle.standby_10093
+@atk name=atk ani=n_battle.attack_10093
+@run
+@skill name=skill ani=n_battle.skill_10093
+@defence 
+@hurt
+@dead
+[10095]
+@standby name=standby ani=n_battle.standby_10095
+@atk name=atk ani=n_battle.attack_10095
+@run
+@skill name=skill ani=n_battle.skill_10095
+@defence 
+@hurt
+@dead
+[10096]
+@standby name=standby ani=n_battle.standby_10096
+@atk name=atk ani=n_battle.attack_10096
+@run
+@skill name=skill ani=n_battle.skill_10096
+@defence 
+@hurt
+@dead
+[10097]
+@standby name=standby ani=n_battle.standby_10097
+@atk name=atk ani=n_battle.attack_10097
+@run
+@skill name=skill ani=n_battle.skill_10097
+@defence 
+@hurt
+@dead
+[10100]
+@standby name=standby ani=n_battle.standby_10100
+@atk name=atk ani=n_battle.attack_10100
+@run
+@skill name=skill ani=n_battle.skill_10100
+@defence 
+@hurt
+@dead
+[10101]
+@standby name=standby ani=n_battle.standby_10101
+@atk name=atk ani=n_battle.attack_10101
+@run
+@skill name=skill ani=n_battle.skill_10101
+@defence 
+@hurt
+@dead
+[10103]
+@standby name=standby ani=n_battle.standby_10103
+@atk name=atk ani=n_battle.attack_10103
+@run
+@skill name=skill ani=n_battle.skill_10103
+@defence 
+@hurt
+@dead
+[10108]
+@standby name=standby ani=n_battle.standby_10108
+@atk name=atk ani=n_battle.attack_10108
+@run
+@skill name=skill ani=n_battle.skill_10108
+@defence 
+@hurt
+@dead
+[10109]
+@standby name=standby ani=n_battle.standby_10109
+@atk name=atk ani=n_battle.attack_10109
+@run
+@skill name=skill ani=n_battle.skill_10109
+@defence 
+@hurt
+@dead
+[10111]
+@standby name=standby ani=n_battle.standby_10111
+@atk name=atk ani=n_battle.attack_10111
+@run
+@skill name=skill ani=n_battle.skill_10111
+@defence 
+@hurt
+@dead
+[10113]
+@standby name=standby ani=n_battle.standby_10113
+@atk name=atk ani=n_battle.attack_10113
+@run
+@skill name=skill ani=n_battle.skill_10113
+@defence 
+@hurt
+@dead
+[10116]
+@standby name=standby ani=n_battle.standby_10116
+@atk name=atk ani=n_battle.attack_10116
+@run
+@skill name=skill ani=n_battle.skill_10116
+@defence 
+@hurt
+@dead
+[10117]
+@standby name=standby ani=n_battle.standby_10117
+@atk name=atk ani=n_battle.attack_10117
+@run
+@skill name=skill ani=n_battle.skill_10117
+@defence 
+@hurt
+@dead
+[10118]
+@standby name=standby ani=n_battle.standby_10118
+@atk name=atk ani=n_battle.attack_10118
+@run
+@skill name=skill ani=n_battle.skill_10118
+@defence 
+@hurt
+@dead
+[10121]
+@standby name=standby ani=n_battle.standby_10121
+@atk name=atk ani=n_battle.attack_10121
+@run
+@skill name=skill ani=n_battle.skill_10121
+@defence 
+@hurt
+@dead
+[10132]
+@standby name=standby ani=n_battle.standby_10132
+@atk name=atk ani=n_battle.attack_10132
+@run
+@skill name=skill ani=n_battle.skill_10132
+@defence 
+@hurt
+@dead
+[10133]
+@standby name=standby ani=n_battle.standby_10133
+@atk name=atk ani=n_battle.attack_10133
+@run
+@skill name=skill ani=n_battle.skill_10133
+@defence 
+@hurt
+@dead
+[10135]
+@standby name=standby ani=n_battle.standby_10135
+@atk name=atk ani=n_battle.attack_10135
+@run
+@skill name=skill ani=n_battle.skill_10135
+@defence 
+@hurt
+@dead
+[10138]
+@standby name=standby ani=n_battle.standby_10138
+@atk name=atk ani=n_battle.attack_10138
+@run
+@skill name=skill ani=n_battle.skill_10138
+@defence 
+@hurt
+@dead
+[10140]
+@standby name=standby ani=n_battle.standby_10140
+@atk name=atk ani=n_battle.attack_10140
+@run
+@skill name=skill ani=n_battle.skill_10140
+@defence 
+@hurt
+@dead
+[10141]
+@standby name=standby ani=n_battle.standby_10141
+@atk name=atk ani=n_battle.attack_10141
+@run
+@skill name=skill ani=n_battle.skill_10141
+@defence 
+@hurt
+@dead
+[10143]
+@standby name=standby ani=n_battle.standby_10143
+@atk name=atk ani=n_battle.attack_10143
+@run
+@skill name=skill ani=n_battle.skill_10143
+@defence 
+@hurt
+@dead
+[10144]
+@standby name=standby ani=n_battle.standby_10144
+@atk name=atk ani=n_battle.attack_10144
+@run
+@skill name=skill ani=n_battle.skill_10144
+@defence 
+@hurt
+@dead
+[10145]
+@standby name=standby ani=n_battle.standby_10145
+@atk name=atk ani=n_battle.attack_10145
+@run
+@skill name=skill ani=n_battle.skill_10145
+@defence 
+@hurt
+@dead
+[10157]
+@standby name=standby ani=n_battle.standby_10157
+@atk name=atk ani=n_battle.attack_10157
+@run
+@skill name=skill ani=n_battle.skill_10157
+@defence 
+@hurt
+@dead
+[10158]
+@standby name=standby ani=n_battle.standby_10158
+@atk name=atk ani=n_battle.attack_10158
+@run
+@skill name=skill ani=n_battle.skill_10158
+@defence 
+@hurt
+@dead
+[10162]
+@standby name=standby ani=n_battle.standby_10162
+@atk name=atk ani=n_battle.attack_10162
+@run
+@skill name=skill ani=n_battle.skill_10162
+@defence 
+@hurt
+@dead
+[10175]
+@standby name=standby ani=n_battle.standby_10175
+@atk name=atk ani=n_battle.attack_10175
+@run
+@skill name=skill ani=n_battle.skill_10175
+@defence 
+@hurt
+@dead
+[10176]
+@standby name=standby ani=n_battle.standby_10176
+@atk name=atk ani=n_battle.attack_10176
+@run
+@skill name=skill ani=n_battle.skill_10176
+@defence 
+@hurt
+@dead
+[10187]
+@standby name=standby ani=n_battle.standby_10187
+@atk name=atk ani=n_battle.attack_10187
+@run
+@skill name=skill ani=n_battle.skill_10187
+@defence 
+@hurt
+@dead
+[10188]
+@standby name=standby ani=n_battle.standby_10188
+@atk name=atk ani=n_battle.attack_10188
+@run
+@skill name=skill ani=n_battle.skill_10188
+@defence 
+@hurt
+@dead
+[10201]
+@standby name=standby ani=n_battle.standby_10201
+@atk name=atk ani=n_battle.attack_10201
+@run
+@skill name=skill ani=n_battle.skill_10201
+@defence 
+@hurt
+@dead
+[10202]
+@standby name=standby ani=n_battle.standby_10202
+@atk name=atk ani=n_battle.attack_10202
+@run
+@skill name=skill ani=n_battle.skill_10202
+@defence 
+@hurt
+@dead
+[10207]
+@standby name=standby ani=n_battle.standby_10207
+@atk name=atk ani=n_battle.attack_10207
+@run
+@skill name=skill ani=n_battle.skill_10207
+@defence 
+@hurt
+@dead
+[10208]
+@standby name=standby ani=n_battle.standby_10208
+@atk name=atk ani=n_battle.attack_10208
+@run
+@skill name=skill ani=n_battle.skill_10208
+@defence 
+@hurt
+@dead
+[10214]
+@standby name=standby ani=n_battle.standby_10214
+@atk name=atk ani=n_battle.attack_10214
+@run
+@skill name=skill ani=n_battle.skill_10214
+@defence 
+@hurt
+@dead
+[10217]
+@standby name=standby ani=n_battle.standby_10217
+@atk name=atk ani=n_battle.attack_10217
+@run
+@skill name=skill ani=n_battle.skill_10217
+@defence 
+@hurt
+@dead
+[10223]
+@standby name=standby ani=n_battle.standby_10223
+@atk name=atk ani=n_battle.attack_10223
+@run
+@skill name=skill ani=n_battle.skill_10223
+@defence 
+@hurt
+@dead
+[10226]
+@standby name=standby ani=n_battle.standby_10226
+@atk name=atk ani=n_battle.attack_10226
+@run
+@skill name=skill ani=n_battle.skill_10226
+@defence 
+@hurt
+@dead
+[10227]
+@standby name=standby ani=n_battle.standby_10227
+@atk name=atk ani=n_battle.attack_10227
+@run
+@skill name=skill ani=n_battle.skill_10227
+@defence 
+@hurt
+@dead
+[10229]
+@standby name=standby ani=n_battle.standby_10229
+@atk name=atk ani=n_battle.attack_10229
+@run
+@skill name=skill ani=n_battle.skill_10229
+@defence 
+@hurt
+@dead
+[10230]
+@standby name=standby ani=n_battle.standby_10230
+@atk name=atk ani=n_battle.attack_10230
+@run
+@skill name=skill ani=n_battle.skill_10230
+@defence 
+@hurt
+@dead
+[10232]
+@standby name=standby ani=n_battle.standby_10232
+@atk name=atk ani=n_battle.attack_10232
+@run
+@skill name=skill ani=n_battle.skill_10232
+@defence 
+@hurt
+@dead
+[10233]
+@standby name=standby ani=n_battle.standby_10233
+@atk name=atk ani=n_battle.attack_10233
+@run
+@skill name=skill ani=n_battle.skill_10233
+@defence 
+@hurt
+@dead
+[10234]
+@standby name=standby ani=n_battle.standby_10234
+@atk name=atk ani=n_battle.attack_10234
+@run
+@skill name=skill ani=n_battle.skill_10234
+@defence 
+@hurt
+@dead
+[10238]
+@standby name=standby ani=n_battle.standby_10238
+@atk name=atk ani=n_battle.attack_10238
+@run
+@skill name=skill ani=n_battle.skill_10238
+@defence 
+@hurt
+@dead
+[10243]
+@standby name=standby ani=n_battle.standby_10243
+@atk name=atk ani=n_battle.attack_10243
+@run
+@skill name=skill ani=n_battle.skill_10243
+@defence 
+@hurt
+@dead
+[10249]
+@standby name=standby ani=n_battle.standby_10249
+@atk name=atk ani=n_battle.attack_10249
+@run
+@skill name=skill ani=n_battle.skill_10249
+@defence 
+@hurt
+@dead
+[10264]
+@standby name=standby ani=n_battle.standby_10264
+@atk name=atk ani=n_battle.attack_10264
+@run
+@skill name=skill ani=n_battle.skill_10264
+@defence 
+@hurt
+@dead
+[10266]
+@standby name=standby ani=n_battle.standby_10266
+@atk name=atk ani=n_battle.attack_10266
+@run
+@skill name=skill ani=n_battle.skill_10266
+@defence 
+@hurt
+@dead
+[10268]
+@standby name=standby ani=n_battle.standby_10268
+@atk name=atk ani=n_battle.attack_10268
+@run
+@skill name=skill ani=n_battle.skill_10268
+@defence 
+@hurt
+@dead
+[10296]
+@standby name=standby ani=n_battle.standby_10296
+@atk name=atk ani=n_battle.attack_10296
+@run
+@skill name=skill ani=n_battle.skill_10296
+@defence 
+@hurt
+@dead
+[10328]
+@standby name=standby ani=n_battle.standby_10328
+@atk name=atk ani=n_battle.attack_10328
+@run
+@skill name=skill ani=n_battle.skill_10328
+@defence 
+@hurt
+@dead
+[10411]
+@standby name=standby ani=n_battle.standby_10411
+@atk name=atk ani=n_battle.attack_10411
+@run
+@skill name=skill ani=n_battle.skill_10411
+@defence 
+@hurt
+@dead
+[10468]
+@standby name=standby ani=n_battle.standby_10468
+@atk name=atk ani=n_battle.attack_10468
+@run
+@skill name=skill ani=n_battle.skill_10468
+@defence 
+@hurt
+@dead
+[10475]
+@standby name=standby ani=n_battle.standby_10475
+@atk name=atk ani=n_battle.attack_10475
+@run
+@skill name=skill ani=n_battle.skill_10475
+@defence 
+@hurt
+@dead
+[10640]
+@standby name=standby ani=n_battle.standby_10640
+@atk name=atk ani=n_battle.attack_10640
+@run
+@skill name=skill ani=n_battle.skill_10640
+@defence 
+@hurt
+@dead
+[10653]
+@standby name=standby ani=n_battle.standby_10653
+@atk name=atk ani=n_battle.attack_10653
+@run
+@skill name=skill ani=n_battle.skill_10653
+@defence 
+@hurt
+@dead
+[10654]
+@standby name=standby ani=n_battle.standby_10654
+@atk name=atk ani=n_battle.attack_10654
+@run
+@skill name=skill ani=n_battle.skill_10654
+@defence 
+@hurt
+@dead
+[10667]
+@standby name=standby ani=n_battle.standby_10667
+@atk name=atk ani=n_battle.attack_10667
+@run
+@skill name=skill ani=n_battle.skill_10667
+@defence 
+@hurt
+@dead
+[10745]
+@standby name=standby ani=n_battle.standby_10745
+@atk name=atk ani=n_battle.attack_10745
+@run
+@skill name=skill ani=n_battle.skill_10745
+@defence 
+@hurt
+@dead
+[10776]
+@standby name=standby ani=n_battle.standby_10776
+@atk name=atk ani=n_battle.attack_10776
+@run
+@skill name=skill ani=n_battle.skill_10776
+@defence 
+@hurt
+@dead

@@ -383,5 +383,15 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.Clear();
 	end
+end
+
+function p.Clear()
+	p.stageId = nil;	--关卡ID
+	p.missionId = nil; 	--任务ID
+	p.stageTable = nil;		--关卡静态数据
+	p.missionList = {};	--服务端下发列表
+	p.curBtnNode = nil;		--选中标记
+	p.power = nil; 		--获取玩家体力值
 end

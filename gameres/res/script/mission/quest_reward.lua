@@ -57,7 +57,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		local tag = uiNode:GetTag();
 		if(ui.ID_CTRL_BUTTON_BG == tag) then
 			WriteCon("OK BUTTON");
+			n_battle_mgr.QuitBattle();
 			p.CloseUI();
+			stageMap_main.OpenWorldMap();
 		end
 	end
 end
@@ -66,13 +68,13 @@ function p.ShowQuestRewardView(rewardData)
 	--成功失败图片
 	local resultPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_HRED_RESULT);
 	if tonumber(rewardData.Res) == 0 then	--失败
-		resultPic:SetPicture( GetPictureByAni(common_ui.mission_result, 0) );
+		resultPic:SetPicture( GetPictureByAni("common_ui.mission_result", 0) );
 	elseif tonumber(rewardData.Res) == 1 then	--胜利
 		resultPic:SetPicture( GetPictureByAni("common_ui.mission_result", 0) );
 	end
 	--任务名称
 	local missionName = GetLabel(p.layer, ui.ID_CTRL_TEXT_MISSION_NAME);
-	local missionId = tonumber(Reward.Mission_id);
+	local missionId = tonumber(rewardData.Mission_id);
 	local missionTable = SelectRowInner(T_MISSION,"id",missionId);
 	missionName:SetText(missionTable.mission_name);
 	--难度图片
@@ -124,42 +126,48 @@ function p.ShowQuestRewardView(rewardData)
 	local itemPic_2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_ITEM2);
 	local itemName_2 = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME2);
 
-	if rewardData["item"][1] then
-		local itemType = tonumber(Reward["item"][1]["Type"])
-		local itemId = tonumber(Reward["item"][1]["Reward_id"])
-		if itemType == 1 or itemType == 3 or itemType == 4 then --物品
-			local itemTable = SelectRowInner(T_ITEM,"id",itemId);
-			itemPic_1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-			itemName_1:SetText(itemTable.name)
-		elseif itemType == 2 then		--卡牌
-			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-			itemPic_1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
-			local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
-			itemName_1:SetText(cardTable2.name);
+	if rewardData["item"] then
+		if rewardData["item"][1] then
+			local itemType = tonumber(Reward["item"][1]["Type"])
+			local itemId = tonumber(Reward["item"][1]["Reward_id"])
+			if itemType == 1 or itemType == 3 or itemType == 4 then --物品
+				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
+				itemPic_1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+				itemName_1:SetText(itemTable.name)
+			elseif itemType == 2 then		--卡牌
+				local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+				itemPic_1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+				local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
+				itemName_1:SetText(cardTable2.name);
+			end
+		else
+			itemPic_1:SetVisible(false);
+			itemName_1:SetVisible(false);
+		end
+	
+		if rewardData["item"][2] then
+			local itemType = tonumber(Reward["item"][2]["Type"])
+			local itemId = tonumber(Reward["item"][2]["Reward_id"])
+			if itemType == 1 or itemType == 3 or itemType == 4 then --物品
+				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
+				itemPic_2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+				itemName_2:SetText(itemTable.name)
+			elseif itemType == 2 then		--卡牌
+				local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+				itemPic_2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+				local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
+				itemName_2:SetText(cardTable2.name);
+			end
+		else
+			itemPic_2:SetVisible(false);
+			itemName_2:SetVisible(false);
 		end
 	else
 		itemPic_1:SetVisible(false);
 		itemName_1:SetVisible(false);
-	end
-	
-	if rewardData["item"][2] then
-		local itemType = tonumber(Reward["item"][2]["Type"])
-		local itemId = tonumber(Reward["item"][2]["Reward_id"])
-		if itemType == 1 or itemType == 3 or itemType == 4 then --物品
-			local itemTable = SelectRowInner(T_ITEM,"id",itemId);
-			itemPic_2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-			itemName_2:SetText(itemTable.name)
-		elseif itemType == 2 then		--卡牌
-			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-			itemPic_2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
-			local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
-			itemName_2:SetText(cardTable2.name);
-		end
-	else
 		itemPic_2:SetVisible(false);
 		itemName_2:SetVisible(false);
 	end
-	
 end
 
 --隐藏UI

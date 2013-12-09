@@ -4,6 +4,10 @@
 --------------------------------------------------------------
 ui_card_equip_select_list_item = {};
 local p =  ui_card_equip_select_list_item;
+p.ID_CTRL_PICTURE_34					     = 34;
+p.ID_CTRL_PICTURE_33					     = 33;
+p.ID_CTRL_PICTURE_32					     = 32;
+p.ID_CTRL_PICTURE_31					     = 31;
 p.ID_CTRL_TEXT_RANK_2					    = 197;
 p.ID_CTRL_TEXT_RANK_3					    = 196;
 p.ID_CTRL_TEXT_RANK_4					    = 195;
@@ -15,9 +19,13 @@ p.ID_CTRL_TEXT_DRESSED_1				  = 190;
 p.ID_CTRL_TEXT_NAME_4					    = 189;
 p.ID_CTRL_TEXT_NAME_3					    = 188;
 p.ID_CTRL_TEXT_NAME_2					    = 187;
+p.ID_CTRL_PICTURE_38					     = 38;
 p.ID_CTRL_TEXT_NAME_1					    = 186;
+p.ID_CTRL_PICTURE_37					     = 37;
 p.ID_CTRL_TEXT_LEVEL_4				    = 185;
+p.ID_CTRL_PICTURE_36					     = 36;
 p.ID_CTRL_TEXT_LEVEL_3				    = 184;
+p.ID_CTRL_PICTURE_35					     = 35;
 p.ID_CTRL_TEXT_LEVEL_2				    = 183;
 p.ID_CTRL_TEXT_LEVEL_1				    = 182;
 p.ID_CTRL_TEXT_SELECT_4				   = 180;
