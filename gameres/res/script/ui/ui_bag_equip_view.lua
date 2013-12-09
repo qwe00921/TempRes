@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_bag_equip_view = {};
 local p =  ui_bag_equip_view;
+p.ID_CTRL_PICTURE_MODE				    = 31;
 p.ID_CTRL_TEXT_24						       = 29;
 p.ID_CTRL_9SLICES_23					     = 28;
 p.ID_CTRL_BUTTON_SELL					    = 68;
