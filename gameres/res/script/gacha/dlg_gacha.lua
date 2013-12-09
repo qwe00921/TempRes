@@ -223,16 +223,16 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			--单次扭蛋
 			local id = uiNode:GetParent():GetId();
 			local curTime = os.time();
-			local freeTime = p.gachadata.gachaData[id].gacha_endtime;
+			local freeTime = p.gachadata.gachaData[id].Gacha_endtime;
 			if freeTime <= curTime then
 				--免费
-				local gacha_id = tonumber(p.gachadata.gachaData[id].gacha_id);
+				local gacha_id = tonumber(p.gachadata.gachaData[id].Gacha_id);
 				p.charge_type = 1;
 				p.gacha_type = 1;
 				p.gacha_id = gacha_id;
 				p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			else
-				local gacha_id = tonumber(p.gachadata.gachaData[id].gacha_id);
+				local gacha_id = tonumber(p.gachadata.gachaData[id].Gacha_id);
 				local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "single_gacha_cost"));
 
 				if p.rmb < needRmb then
@@ -248,7 +248,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 		elseif ui_gacha_list_view.ID_CTRL_BUTTON_TEN == tag then
 			--N次扭蛋
 			local id = uiNode:GetParent():GetId();
-			local gacha_id = tonumber(p.gachadata.gachaData[id].gacha_id);
+			local gacha_id = tonumber(p.gachadata.gachaData[id].Gacha_id);
 			local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "complex_gacha_cost"));
 			if p.rmb < needRmb then
 				WriteCon("**扭蛋需求代币不足**");
@@ -385,7 +385,7 @@ function p.onFreeTime( )
 	local index = p.timerIDList[idTimer];
 	WriteCon(tostring(index));
 	local curTime = os.time();
-	local freeTime = p.gachadata.gachaData[index].gacha_endtime ;
+	local freeTime = p.gachadata.gachaData[index].Gacha_endtime ;
 	
 	if freeTime <= curTime then
 		p.freeTimeList[index]:SetText( ToUtf8( "当前可以进行免费扭蛋！" ) );
@@ -404,7 +404,7 @@ function p.onFreeTime( )
 	
 	for i = 1, #gachaData do
 		local gacha = gachaData[i];
-		local freeTime = gacha.gacha_endtime or 0;
+		local freeTime = gacha.Gacha_endtime or 0;
 		if freeTime <= curTime then
 			p.freeTimeList[i]:SetText( ToUtf8( "当前可以进行免费扭蛋！" ) );
 		else
@@ -758,13 +758,13 @@ function p.ShowGachaData( gachadata )
 		
 		local gachaFreeMsg = GetLabel( view, ui_gacha_list_view.ID_CTRL_TEXT_FREE_MSG );
 		
-		local gachaid = gacha[i].gacha_id;
+		local gachaid = gacha[i].Gacha_id;
 		view:SetId( tonumber(gachaid) );
 		
 		p.freeTimeList[i] = gachaFreeTime;
 		
 		--免费时间大于当前时间，则进行倒计时
-		if gacha[i]. gacha_endtime > curTime then
+		if gacha[i]. Gacha_endtime > curTime then
 			--[[
 			local timerid = SetTimer( p.onFreeTime, 1.0f );
 			p.timerIDList[timerid] = i;
@@ -782,7 +782,7 @@ function p.ShowGachaData( gachadata )
 			gachaFreeTime:SetText( ToUtf8( "当前可以进行免费扭蛋！" ) );
 		end
 		
-		gachaName:SetText( gacha[i].name );
+		gachaName:SetText( gacha[i].Name );
 		gachaPic:SetPicture( GetPictureByAni( "gacha_pic." .. gachaid, 0 ) );
 		
 		gachaOneBtn:SetImage( GetPictureByAni("ui.gacha_btn", 1));
