@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -17,134 +17,74 @@ Remark=隐藏子界面按钮
 [CTRL_MAIN_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 640 960
+Rect=0 0 640 860
 AnchorPos=0 0
 Notes=
 Remark=背景
-NormalFile=.\res\image\ui\bag\bag_bg.png
-NormalFileUV=0 0 641 198
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_SYS]
 Type=2
 Tag=94
-Rect=13 104 97 45
+Rect=9 91 107 80
 AnchorPos=0 0
 Notes=
 Text=系统
 TextTradition=系統
-TextSize=20
+TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
-SelectFile=.\res\image\ui\skillpiece_combo\combobk01.png
-SelectedFileUV=0 0 453 148
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_USER]
 Type=2
 Tag=95
-Rect=148 103 107 47
+Rect=116 91 107 80
 AnchorPos=0 0
 Notes=
 Text=个人
 TextTradition=個人
-TextSize=20
+TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
-SelectFile=.\res\image\ui\skillpiece_combo\combobk01.png
-SelectedFileUV=0 0 453 148
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=154
-Rect=528 5 107 72
+Rect=559 -1 80 78
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\bag\bag_back.png
-NormalFileUV=0 0 151 101
+NormalFile=.\res\image\ui\public\close.png
+NormalFileUV=0 0 100 98
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98
 
-[CTRL_VERTICAL_LIST_MAIN]
-Type=14
-Tag=157
-Rect=16 163 602 591
+[CTRL_PICTURE_36]
+Type=1
+Tag=36
+Rect=127 1 368 84
 AnchorPos=0 0
 Notes=
-
-[CTRL_BUTTON_SELECT_ALL]
-Type=2
-Tag=158
-Rect=16 760 107 43
-AnchorPos=0 0
-Notes=
-Text=全选
-TextTradition=全選
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
-
-[CTRL_BUTTON_DEL]
-Type=2
-Tag=159
-Rect=131 760 110 43
-AnchorPos=0 0
-Notes=
-Text=删除
-TextTradition=刪除
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
-
-[CTRL_BUTTON_PRE_PAGE]
-Type=2
-Tag=160
-Rect=378 758 59 44
-AnchorPos=0 0
-Notes=
-Text=<<
-TextTradition=<<
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
-
-[CTRL_TEXT_PAGE_INFO]
-Type=4
-Tag=161
-Rect=441 760 125 43
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_NEXT_PAGE]
-Type=2
-Tag=162
-Rect=564 758 60 43
-AnchorPos=0 0
-Notes=
-Text=>>
-TextTradition=>>
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\bg_title.png
+NormalFileUV=0 0 368 84
 
 [CTRL_TEXT_164]
 Type=4
 Tag=164
-Rect=255 5 133 70
+Rect=255 1 133 70
 AnchorPos=0 0
 Notes=
 Text=邮箱
@@ -158,47 +98,162 @@ NormalFileUV=0 0 350 82
 [CTRL_BUTTON_GM]
 Type=2
 Tag=165
-Rect=405 94 107 61
+Rect=223 91 107 80
 AnchorPos=0 0
 Notes=
 Text=客服
 TextTradition=客服
-TextSize=25
+TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_WRITE]
 Type=2
 Tag=166
-Rect=516 94 107 59
+Rect=330 90 107 80
 AnchorPos=0 0
 Notes=
 Text=写信
 TextTradition=寫信
-TextSize=25
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
+[CTRL_9SLICES_38]
+Type=22
+Tag=38
+Rect=0 171 640 692
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_frame.png
+NormalFileUV=0 0 640 780
+
+[CTRL_VERTICAL_LIST_MAIN]
+Type=14
+Tag=157
+Rect=22 201 602 577
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_SELECT_ALL]
+Type=2
+Tag=158
+Rect=24 785 110 54
+AnchorPos=0 0
+Notes=
+Text=全选
+TextTradition=全選
+TextSize=20
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_BUTTON_DEL]
+Type=2
+Tag=159
+Rect=149 785 110 54
+AnchorPos=0 0
+Notes=
+Text=删除
+TextTradition=刪除
+TextSize=20
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_BUTTON_PRE_PAGE]
+Type=2
+Tag=160
+Rect=373 786 59 44
+AnchorPos=0 0
+Notes=
+Text=<<
+TextTradition=<<
+TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\common\sub_title.png
 NormalFileUV=0 0 125 34
 
+[CTRL_TEXT_PAGE_INFO]
+Type=4
+Tag=161
+Rect=436 786 125 43
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_NEXT_PAGE]
+Type=2
+Tag=162
+Rect=559 786 60 43
+AnchorPos=0 0
+Notes=
+Text=>>
+TextTradition=>>
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\common\sub_title.png
+NormalFileUV=0 0 125 34
+
+[CTRL_PICTURE_39]
+Type=1
+Tag=39
+Rect=83 90 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_txt3.png
+NormalFileUV=0 0 36 36
+
 [CTRL_TEXT_SYS_UNREAD]
 Type=4
 Tag=284
-Rect=90 87 45 33
+Rect=80 89 45 33
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=99
+TextTradition=99
+TextSize=18
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_40]
+Type=1
+Tag=40
+Rect=189 90 36 36
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_txt3.png
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_USER_UNREAD]
 Type=4
 Tag=285
-Rect=219 83 45 33
+Rect=184 89 45 33
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=99
+TextTradition=99
+TextSize=18
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
