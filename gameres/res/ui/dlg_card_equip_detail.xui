@@ -1,55 +1,56 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
 
+[CTRL_9SLICES_28]
+Type=22
+Tag=29
+Rect=91 508 208 54
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
 [CTRL_9SLICES_18]
 Type=22
 Tag=20
-Rect=76 197 509 455
+Rect=72 182 528 397
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\common\sub_ui_bg.png
-NormalFileUV=0 0 165 165
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
 
 [CTRL_9SLICES_19]
 Type=22
 Tag=21
-Rect=250 252 326 209
+Rect=97 402 473 98
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\common\content_bg.png
-NormalFileUV=0 0 33 33
-
-[CTRL_9SLICES_20]
-Type=22
-Tag=22
-Rect=106 259 136 136
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\common\item_bg.png
-NormalFileUV=0 0 126 126
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_PICTURE_IMAGE]
 Type=1
 Tag=3
-Rect=114 266 120 120
+Rect=91 272 120 120
 AnchorPos=0 0
 Notes=
 
 [CTRL_9SLICES_21]
 Type=22
 Tag=23
-Rect=98 469 464 106
+Rect=222 280 346 104
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\common\input_bg.9.png
-NormalFileUV=0 0 33 33
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_4]
 Type=4
 Tag=4
-Rect=102 398 120 20
+Rect=103 514 167 42
 AnchorPos=0 0
 Notes=
 Text=装备者:
@@ -62,7 +63,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DES]
 Type=4
 Tag=5
-Rect=106 474 450 96
+Rect=227 285 334 96
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -73,15 +74,15 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_UPGRADE]
 Type=2
 Tag=6
-Rect=105 586 136 60
+Rect=309 511 110 54
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui\common\btn_2_click.png
 SelectedFileUV=0 0 136 60
 DisableFile=.\res\image\ui\common\btn_2_disable.png
@@ -90,7 +91,7 @@ DisableFileUV=0 0 136 60
 [CTRL_BUTTON_UNLOAD]
 Type=2
 Tag=9
-Rect=411 586 136 60
+Rect=305 7 136 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -107,18 +108,20 @@ DisableFileUV=0 0 136 60
 [CTRL_TEXT_NAME]
 Type=4
 Tag=8
-Rect=114 212 120 20
+Rect=170 198 336 52
 AnchorPos=0 0
 Notes=
-TextSize=15
-TextColor=0xfffbf0
+Text=装备名称
+TextTradition=裝備名稱
+TextSize=35
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_9]
 Type=4
 Tag=10
-Rect=271 270 102 20
+Rect=89 408 118 40
 AnchorPos=0 0
 Notes=
 Text=装备等级：
@@ -131,31 +134,31 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CLOSE]
 Type=2
 Tag=19
-Rect=538 171 74 74
+Rect=562 187 68 68
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\close_normal.png
-NormalFileUV=0 0 74 74
-SelectFile=.\res\image\ui\common\close_click.png
-SelectedFileUV=0 0 74 74
+NormalFile=.\res\image\ui\public\close2.png
+NormalFileUV=0 0 68 68
+SelectFile=.\res\image\ui\public\close2_click.png
+SelectedFileUV=0 0 68 68
 DisableFile=.\res\image\ui\common\close_disable.png
 DisableFileUV=0 0 74 74
 
 [CTRL_BUTTON_CHANGE]
 Type=2
 Tag=1327
-Rect=255 585 136 60
+Rect=452 511 110 54
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui\common\btn_2_click.png
 SelectedFileUV=0 0 136 60
 DisableFile=.\res\image\ui\common\btn_2_disable.png
@@ -175,7 +178,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTR]
 Type=4
 Tag=1330
-Rect=378 211 155 20
+Rect=235 215 155 20
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -186,7 +189,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_1331]
 Type=4
 Tag=1331
-Rect=272 316 102 20
+Rect=89 449 118 48
 AnchorPos=0 0
 Notes=
 Text=附加属性：
@@ -199,7 +202,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=1335
-Rect=405 260 148 37
+Rect=214 409 111 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -210,7 +213,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTR_EX_3]
 Type=4
 Tag=1336
-Rect=406 408 148 37
+Rect=329 455 117 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -221,7 +224,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTR_EX_2]
 Type=4
 Tag=1337
-Rect=406 355 148 37
+Rect=450 455 115 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -232,7 +235,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTR_EX_1]
 Type=4
 Tag=1338
-Rect=405 308 148 37
+Rect=215 455 110 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -243,7 +246,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CARD_NAME]
 Type=4
 Tag=1339
-Rect=111 424 127 37
+Rect=272 27 127 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -254,7 +257,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LABEL_CHANGE]
 Type=4
 Tag=1538
-Rect=264 588 122 47
+Rect=448 512 122 47
 AnchorPos=0 0
 Notes=
 Text=更换
@@ -266,7 +269,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_UNLOAD]
 Type=4
 Tag=1539
-Rect=423 586 113 51
+Rect=294 12 113 51
 AnchorPos=0 0
 Notes=
 Text=御下
@@ -278,7 +281,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_INSTALL]
 Type=4
 Tag=27
-Rect=265 590 122 47
+Rect=449 512 122 47
 AnchorPos=0 0
 Notes=
 Text=装备
@@ -290,7 +293,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_UPGRADE]
 Type=4
 Tag=28
-Rect=111 590 122 47
+Rect=309 514 122 47
 AnchorPos=0 0
 Notes=
 Text=强化
@@ -298,3 +301,12 @@ TextTradition=強化
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_20]
+Type=22
+Tag=22
+Rect=91 273 120 120
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
