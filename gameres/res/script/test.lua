@@ -83,11 +83,12 @@ function p.test()
 
 	--测试9宫格控件
 --	p.Test9Slices();
-	
+
 	--直接进战斗
 	--p.EnterBattle();
 	--x_battle_mgr.EnterBattle();
-	--n_battle_mgr.EnterBattle();
+	--n_battle_mgr.EnterBattle( N_BATTLE_PVE, 101011 );
+	--n_battle_mgr.EnterBattle( N_BATTLE_PVP, 10002 );
 --	--测试utf8子串
 --	p.TestUtf8String();
     

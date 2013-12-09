@@ -61,9 +61,9 @@ local PETCAMPNUM = 2;
 
 -----
 p.battleLayer = nil;
-p.TestHeroFighter1 = nil;
 p.pBgImage = nil;
 p.battleType = nil;
+p.targetId = nil;
 -----
 
 --设置可见
@@ -75,14 +75,15 @@ function p.HideUI()
 end
 
 --显示UI
-function p.ShowUI( battleType )
+function p.ShowUI( battleType, targetId )
 	if p.battleLayer ~= nil then
 		p.battleLayer:SetVisible( true );
 		GetBattleShow():EnableTick( true );
 		return;
 	end
 	
-	p.battleType = battleType;
+	p.battleType = tonumber( battleType );
+	p.targetId = tonumber( targetId );
 
 	local layer = createCardBattleUILayer();
     if layer == nil then
@@ -216,6 +217,9 @@ function p.CloseUI()
 	if p.battleLayer ~= nil then	
 		p.battleLayer:LazyClose();
 		p.battleLayer = nil;
+        p.pBgImage = nil;
+        p.battleType = nil;
+        p.targetId = nil;
 	end
 	GetBattleShow():EnableTick( false );
 end
@@ -268,9 +272,9 @@ function p.InitBattle()
 	n_battle_mgr.heroUIArray = heroUIArray;
 	n_battle_mgr.enemyUIArray = enemyUIArray;
 	if p.battleType == N_BATTLE_PVP then
-		n_battle_mgr.play_pvp();
+		n_battle_mgr.play_pvp( p.targetId );
 	else
-	   	n_battle_mgr.play_pve();
+	   	n_battle_mgr.play_pve( p.targetId );
 	end
 	
 	

@@ -27,19 +27,21 @@ local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
 
 --开始战斗表现:pve
-function p.play_pve()
+function p.play_pve( targetId )
+    WriteCon("-----------------Enter the pve mission id = "..targetId);
 	isPVE = true;	
 	n_battle_stage.Init();
     n_battle_stage.EnterBattle_Stage_Loading();
-    p.SendStartPVEReq();
+    p.SendStartPVEReq( targetId );
 end
 
 --开始战斗表现:pvp
-function p.play_pvp()
+function p.play_pvp( targetId )
+    WriteCon("-----------------Enter the pvp Tuser id = "..targetId);
     isPVE = false;
     n_battle_stage.Init();
     n_battle_stage.EnterBattle_Stage_Loading();
-    p.SendStartPVPReq();
+    p.SendStartPVPReq( targetId );
 end
 
 --显示回合数
@@ -50,26 +52,23 @@ function p.ShowRoundNum()
 end
 
 --战斗阶段->加载->请求
-function p.SendStartPVPReq()
-    local UID = 10001; 
-    local TID = 10002;
-    local uid = GetUID();
+function p.SendStartPVPReq( targetId )
+    local UID = GetUID();
     if UID == 0 or UID == nil then
         return ;
     end;
-    local param = string.format("&target=%d", TID);
+    local param = string.format("&target=%d", targetId);
     SendReq("Fight","StartPvP",UID,param);
 end
 
 --战斗阶段->加载->请求
-function p.SendStartPVEReq()
-    local UID = 10001; 
-    local TID = 101011;
-    local uid = GetUID();
+function p.SendStartPVEReq( targetId )
+    --local TID = 101011;
+    local UID = GetUID();
     if UID == 0 or UID == nil then
         return ;
     end;
-    local param = string.format("&missionID=%d", TID);
+    local param = string.format("&missionID=%d", targetId);
     SendReq("Fight","StartPvC",UID,param);
 end
 
@@ -446,19 +445,19 @@ function p.CheckBattleLose()
 end
 
 --进入战斗
-function p.EnterBattle( battleType )
+function p.EnterBattle( battleType, missionId )
 	WriteCon( "n_battle_mgr.EnterBattle()" );
 	
 	--hide 
 	--GetTileMap():SetVisible( false );
-	task_map_mainui.HideUI();
+	--task_map_mainui.HideUI();
 	
 	--隐藏按钮
 --	dlg_userinfo2.HideUI();
 --	dlg_menu.CloseUI();
 	
 	--enter PVP
-	n_battle_pvp.ShowUI( battleType );	
+	n_battle_pvp.ShowUI( battleType, missionId );	
 	n_battle_mainui.ShowUI();
 	
 	--音乐
@@ -474,7 +473,7 @@ function p.QuitBattle()
 	n_battle_pvp.CloseUI();
 	n_battle_mainui.CloseUI();
 
-	game_main.EnterWorldMap();
+	--game_main.EnterWorldMap();
 		
 	hud.FadeIn();
 	
@@ -482,6 +481,7 @@ function p.QuitBattle()
 	PlayMusic_Task();
 	
 	isActive = false;
+	p.clearDate();
 end
 
 --检查战斗结束
@@ -495,4 +495,16 @@ function p.IsBattleEnd()
 	end
 
 	return false;
+end
+
+function p.clearDate()
+	p.heroCamp = nil;
+    p.enemyCamp = nil;          
+    p.uiLayer = nil;           
+    p.heroUIArray = nil;        
+    p.enemyUIArray = nil;       
+    p.petNode={};     
+    p.petNameNode={};   
+    p.imageMask = nil          
+    p.isBattleEnd = false;
 end
