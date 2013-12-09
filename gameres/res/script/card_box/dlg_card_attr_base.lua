@@ -32,7 +32,7 @@ function p.ShowUI(cardInfo, groupFlag)
         return false;
     end
 	
-	layer:NoMask();
+	--layer:NoMask();
 	layer:Init();	
 	GetUIRoot():AddDlg( layer );
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
