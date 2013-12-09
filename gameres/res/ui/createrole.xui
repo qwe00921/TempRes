@@ -218,3 +218,29 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame_click.png
 NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_17]
+Type=4
+Tag=18
+Rect=158 193 325 60
+AnchorPos=0 0
+Notes=
+Text=请确定你的名字与性别
+TextTradition=請確定你的名字與性別
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_20]
+Type=4
+Tag=32
+Rect=158 455 325 60
+AnchorPos=0 0
+Notes=
+Text=请选择头像
+TextTradition=請選擇頭像
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
