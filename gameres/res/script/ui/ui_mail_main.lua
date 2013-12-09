@@ -5,9 +5,9 @@
 ui_mail_main = {};
 local p =  ui_mail_main;
 p.ID_CTRL_TEXT_USER_UNREAD			 = 285;
-p.ID_CTRL_PICTURE_40					     = 40;
+p.ID_CTRL_PICTURE_USER_BG				 = 40;
 p.ID_CTRL_TEXT_SYS_UNREAD				 = 284;
-p.ID_CTRL_PICTURE_39					     = 39;
+p.ID_CTRL_PICTURE_SYS_BG				  = 39;
 p.ID_CTRL_BUTTON_NEXT_PAGE			 = 162;
 p.ID_CTRL_TEXT_PAGE_INFO				  = 161;
 p.ID_CTRL_BUTTON_PRE_PAGE				 = 160;

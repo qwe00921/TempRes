@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -24,7 +24,7 @@ NormalFileUV=0 0 368 84
 [CTRL_9SLICES_WRITEBG]
 Type=22
 Tag=28
-Rect=32 155 593 601
+Rect=32 235 593 420
 AnchorPos=0 0
 Notes=
 Remark=意见填写底背景，显示状态：提交问题
@@ -131,15 +131,15 @@ TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button_click.png
+NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\common\btn_1_click.png
-SelectedFileUV=0 0 112 44
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_SEND]
 Type=2
 Tag=36
-Rect=253 764 232 84
+Rect=240 764 232 84
 AnchorPos=0 0
 Notes=
 Text=发送
@@ -324,3 +324,14 @@ Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_TITLE]
+Type=22
+Tag=29
+Rect=124 154 499 61
+AnchorPos=0 0
+Notes=
+Remark=gm回复底背景，显示状态：提交问题
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50

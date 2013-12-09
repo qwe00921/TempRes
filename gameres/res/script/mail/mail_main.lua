@@ -337,19 +337,26 @@ function p.RefreshPageInfo()
 	end
 	
 	local v = GetLabel( p.layer, ui.ID_CTRL_TEXT_SYS_UNREAD);
+	local bg = 	GetImage(p.layer, ui.ID_CTRL_PICTURE_SYS_BG);
+		
 	if p.msgs.sysUnRead and tonumber(p.msgs.sysUnRead) > 0 then 
 		v:SetText(tostring(p.msgs.sysUnRead));
 		v:SetVisible(true);
+		bg:SetVisible(true);
 	else
 		v:SetVisible(false);
+		bg:SetVisible(false);
 	end
 	
 	v = GetLabel( p.layer, ui.ID_CTRL_TEXT_USER_UNREAD);
+	bg = GetImage(p.layer, ui.ID_CTRL_PICTURE_USER_BG);
 	if p.msgs.userUnRead and tonumber(p.msgs.userUnRead) > 0 then 
 		v:SetText(tostring(p.msgs.userUnRead));
 		v:SetVisible(true);
+		bg:SetVisible(true);
 	else 
 		v:SetVisible(false);
+		bg:SetVisible(false);
 	end
 	
 	
@@ -509,7 +516,7 @@ function p.SetItemInfo4Sys( view, item )
 		local picTagName = "ID_CTRL_PICTURE_ITEM_"..i;
 		local picV = GetImage(view,ui_item_sys[picTagName]);
 		
-		if picV and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
+		if stRe == p.MAIL_REWARD_UNGET and picV and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
 			--rewrad.rewordId = "10002";
 			local aniIndex = "item."..rewrad.rewordId;
 			picV:SetPicture( GetPictureByAni(aniIndex,0) );
@@ -585,7 +592,9 @@ function p.SetItemInfo4User( view, item )
 	contentV:SetText(item.content or "");
 	
 	--״̬
-	local stateV = GetLabel( view, ui_item_usr.ID_CTRL_TEXT_STATE);
+	--local stateV = GetLabel( view, ui_item_usr.ID_CTRL_TEXT_STATE);
+	local stateUnRead = GetImage(view, ui_item_usr.ID_CTRL_PICTURE_UNREAD);
+	local stateReaded = GetImage(view, ui_item_usr.ID_CTRL_PICTURE_READED);
 	local stN = tonumber(item.state) or 0;
 	local stRe = tonumber(item.rewardState) or 2
 	--local str = "";
@@ -594,13 +603,17 @@ function p.SetItemInfo4User( view, item )
 		titleV:SetFontColor(ccc4(144,144,144,255));
 		timeV:SetFontColor(ccc4(144,144,144,255));
 		contentV:SetFontColor(ccc4(144,144,144,255));
-		stateV:SetFontColor(ccc4(144,144,144,255));
-		stateV:SetText(GetStr("mail_readed"));
+		--stateV:SetFontColor(ccc4(144,144,144,255));
+		--stateV:SetText(GetStr("mail_readed"));
 		--stateV:SetText("Readed");
+		stateUnRead:SetVisible(false);
+		stateReaded:SetVisible(true);
 	else
+		stateUnRead:SetVisible(true);
+		stateReaded:SetVisible(false);
 		--str = "Unreaded"
-		stateV:SetText(GetStr("mail_unread"));
-		stateV:SetFontColor(ccc4(255,0,0,255));
+		--stateV:SetText(GetStr("mail_unread"));
+		--stateV:SetFontColor(ccc4(255,0,0,255));
 		--stateV:SetText("Unreaded");
 	end
 	
