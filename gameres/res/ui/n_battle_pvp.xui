@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -350,7 +350,7 @@ Notes=
 [CTRL_PICTURE_HERO_PIC]
 Type=1
 Tag=83
-Rect=53 95 96 73
+Rect=53 72 100 100
 AnchorPos=0 0
 Notes=
 
@@ -491,7 +491,7 @@ NormalFileUV=0 0 202 24
 [CTRL_PICTURE_ENEMY_PIC]
 Type=1
 Tag=46
-Rect=494 95 96 73
+Rect=494 72 100 100
 AnchorPos=0 0
 Notes=
 

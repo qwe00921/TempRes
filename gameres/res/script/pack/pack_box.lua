@@ -24,6 +24,7 @@ function p.ShowUI()
 
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
+		PlayMusic_ShopUI();
 		return;
 	end
 	
@@ -44,6 +45,7 @@ function p.ShowUI()
 	
 	--加载背包数据
     pack_box_mgr.LoadAllItem( p.layer );
+	PlayMusic_ShopUI();
 end
 
 --主界面设置事件处理

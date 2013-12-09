@@ -11,6 +11,7 @@ function p.ShowUI(userinfo)
 		p.layer:SetVisible( true );
 		dlg_battlearray.ShowUI();
 		p.ShowBillboard();
+		PlayMusic_MainUI();
 		return;
 	end
 	
@@ -38,6 +39,7 @@ function p.ShowUI(userinfo)
 	--dlg_battlearray.ShowUI();
 	
 	p.ShowBillboardWithInit();
+	PlayMusic_MainUI();
 	
 end
 

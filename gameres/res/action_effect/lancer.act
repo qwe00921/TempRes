@@ -114,13 +114,13 @@
 
 ;击退效果
 [target_hurt_back]
-@gsblur(0.25)
+;@gsblur(0.1)
 @move(0.4, -20, 0) @easeout
 
 ;击退后返回
 [target_hurt_back_reset]
 @move(0.2, 20, 0,) @easeout
-@gsblur(0)
+;@gsblur(0)
 
 ;{-------最新飘血动画---------
 

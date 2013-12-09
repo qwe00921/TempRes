@@ -1,652 +1,652 @@
 [standby_10000]
-image\n_battle\u10000_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10000_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10001]
-image\n_battle\u10001_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10001_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10003]
-image\n_battle\u10003_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10003_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10004]
-image\n_battle\u10004_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10004_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10005]
-image\n_battle\u10005_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10005_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10009]
-image\n_battle\u10009_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10009_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10012]
-image\n_battle\u10012_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10012_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10015]
-image\n_battle\u10015_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10015_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10016]
-image\n_battle\u10016_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10016_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10017]
-image\n_battle\u10017_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10017_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10019]
-image\n_battle\u10019_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10019_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10020]
-image\n_battle\u10020_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10020_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10021]
-image\n_battle\u10021_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10021_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10022]
-image\n_battle\u10022_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10022_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10023]
-image\n_battle\u10023_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10023_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10024]
-image\n_battle\u10024_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10024_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10027]
-image\n_battle\u10027_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10027_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10029]
-image\n_battle\u10029_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10029_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10033]
-image\n_battle\u10033_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10033_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10035]
-image\n_battle\u10035_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10035_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10036]
-image\n_battle\u10036_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10036_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10037]
-image\n_battle\u10037_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10037_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10038]
-image\n_battle\u10038_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10038_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10039]
-image\n_battle\u10039_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10039_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10040]
-image\n_battle\u10040_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10040_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10041]
-image\n_battle\u10041_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10041_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10042]
-image\n_battle\u10042_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10042_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse @reverse
 [standby_10043]
-image\n_battle\u10043_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10043_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10044]
-image\n_battle\u10044_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10044_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10051]
-image\n_battle\u10051_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10051_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10052]
-image\n_battle\u10052_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10052_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10053]
-image\n_battle\u10053_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10053_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10054]
-image\n_battle\u10054_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10054_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10055]
-image\n_battle\u10055_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10055_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10056]
-image\n_battle\u10056_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10056_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10057]
-image\n_battle\u10057_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10057_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10058]
-image\n_battle\u10058_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10058_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10059]
-image\n_battle\u10059_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10059_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10061]
-image\n_battle\u10061_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10061_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10062]
-image\n_battle\u10062_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10062_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10066]
-image\n_battle\u10066_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10066_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10068]
-image\n_battle\u10068_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10068_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10069]
-image\n_battle\u10069_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10069_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10071]
-image\n_battle\u10071_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10071_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10072]
-image\n_battle\u10072_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10072_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10082]
-image\n_battle\u10082_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10082_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10093]
-image\n_battle\u10093_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10093_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10095]
-image\n_battle\u10095_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10095_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10096]
-image\n_battle\u10096_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10096_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10097]
-image\n_battle\u10097_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10097_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10100]
-image\n_battle\u10100_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10100_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10101]
-image\n_battle\u10101_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10101_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10103]
-image\n_battle\u10103_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10103_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10108]
-image\n_battle\u10108_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10108_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10109]
-image\n_battle\u10109_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10109_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10111]
-image\n_battle\u10111_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10111_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10113]
-image\n_battle\u10113_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10113_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10116]
-image\n_battle\u10116_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10116_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10117]
-image\n_battle\u10117_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10117_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10118]
-image\n_battle\u10118_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10118_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10121]
-image\n_battle\u10121_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10121_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10132]
-image\n_battle\u10132_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10132_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10133]
-image\n_battle\u10133_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10133_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10135]
-image\n_battle\u10135_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10135_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10138]
-image\n_battle\u10138_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10138_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10140]
-image\n_battle\u10140_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10140_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10141]
-image\n_battle\u10141_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10141_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10143]
-image\n_battle\u10143_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10143_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10144]
-image\n_battle\u10144_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10144_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10145]
-image\n_battle\u10145_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10145_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10157]
-image\n_battle\u10157_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10157_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10158]
-image\n_battle\u10158_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10158_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10162]
-image\n_battle\u10162_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10162_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10175]
-image\n_battle\u10175_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10175_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10176]
-image\n_battle\u10176_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10176_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10187]
-image\n_battle\u10187_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10187_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10188]
-image\n_battle\u10188_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10188_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10201]
-image\n_battle\u10201_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10201_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10202]
-image\n_battle\u10202_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10202_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10207]
-image\n_battle\u10207_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10207_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10208]
-image\n_battle\u10208_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10208_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10214]
-image\n_battle\u10214_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10214_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10217]
-image\n_battle\u10217_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10217_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10223]
-image\n_battle\u10223_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10223_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10226]
-image\n_battle\u10226_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10226_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10227]
-image\n_battle\u10227_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10227_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10229]
-image\n_battle\u10229_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10229_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10230]
-image\n_battle\u10230_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10230_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10232]
-image\n_battle\u10232_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10232_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10233]
-image\n_battle\u10233_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10233_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10234]
-image\n_battle\u10234_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10234_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10238]
-image\n_battle\u10238_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10238_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10243]
-image\n_battle\u10243_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10243_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10249]
-image\n_battle\u10249_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10249_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10264]
-image\n_battle\u10264_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10264_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10266]
-image\n_battle\u10266_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10266_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10268]
-image\n_battle\u10268_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10268_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10296]
-image\n_battle\u10296_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10296_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10328]
-image\n_battle\u10328_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10328_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10411]
-image\n_battle\u10411_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10411_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10468]
-image\n_battle\u10468_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10468_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10475]
-image\n_battle\u10475_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10475_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10640]
-image\n_battle\u10640_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10640_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10653]
-image\n_battle\u10653_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10653_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10654]
-image\n_battle\u10654_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10654_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10667]
-image\n_battle\u10667_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10667_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10745]
-image\n_battle\u10745_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10745_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 [standby_10776]
-image\n_battle\u10776_d.png @cut(4,8) @ues(17,2) @time=0.12 @scale=1.8 @loop
+image\n_battle\u10776_d.png @cut(4,8) @use(16,2) @time=0.3 @scale=1.8 @loop @reverse
 
 
 [attack_10000]
-image\n_battle\u10000_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10000_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10001]
-image\n_battle\u10001_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10001_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10003]
-image\n_battle\u10003_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10003_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10004]
-image\n_battle\u10004_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10004_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10005]
-image\n_battle\u10005_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10005_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10009]
-image\n_battle\u10009_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10009_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10012]
-image\n_battle\u10012_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10012_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10015]
-image\n_battle\u10015_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10015_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10016]
-image\n_battle\u10016_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10016_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10017]
-image\n_battle\u10017_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10017_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10019]
-image\n_battle\u10019_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10019_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10020]
-image\n_battle\u10020_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10020_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10021]
-image\n_battle\u10021_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10021_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10022]
-image\n_battle\u10022_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10022_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10023]
-image\n_battle\u10023_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10023_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10024]
-image\n_battle\u10024_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10024_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10027]
-image\n_battle\u10027_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10027_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10029]
-image\n_battle\u10029_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10029_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10033]
-image\n_battle\u10033_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10033_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10035]
-image\n_battle\u10035_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10035_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10036]
-image\n_battle\u10036_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10036_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10037]
-image\n_battle\u10037_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10037_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10038]
-image\n_battle\u10038_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10038_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10039]
-image\n_battle\u10039_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10039_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10040]
-image\n_battle\u10040_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10040_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10041]
-image\n_battle\u10041_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10041_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10042]
-image\n_battle\u10042_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10042_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10043]
-image\n_battle\u10043_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10043_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10044]
-image\n_battle\u10044_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10044_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10051]
-image\n_battle\u10051_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10051_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10052]
-image\n_battle\u10052_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10052_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10053]
-image\n_battle\u10053_d.png @cut(4,8) @ues(19,5) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10053_d.png @cut(4,8) @use(19,5) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10054]
-image\n_battle\u10054_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10054_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10055]
-image\n_battle\u10055_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10055_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10056]
-image\n_battle\u10056_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10056_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10057]
-image\n_battle\u10057_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10057_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10058]
-image\n_battle\u10058_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10058_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10059]
-image\n_battle\u10059_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10059_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10061]
-image\n_battle\u10061_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10061_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10062]
-image\n_battle\u10062_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10062_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10066]
-image\n_battle\u10066_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10066_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10068]
-image\n_battle\u10068_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10068_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10069]
-image\n_battle\u10069_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10069_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10071]
-image\n_battle\u10071_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10071_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10072]
-image\n_battle\u10072_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10072_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10082]
-image\n_battle\u10082_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10082_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10093]
-image\n_battle\u10093_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10093_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10095]
-image\n_battle\u10095_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10095_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10096]
-image\n_battle\u10096_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10096_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10097]
-image\n_battle\u10097_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10097_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10100]
-image\n_battle\u10100_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10100_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10101]
-image\n_battle\u10101_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10101_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10103]
-image\n_battle\u10103_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10103_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10108]
-image\n_battle\u10108_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10108_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10109]
-image\n_battle\u10109_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10109_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10111]
-image\n_battle\u10111_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10111_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10113]
-image\n_battle\u10113_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10113_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10116]
-image\n_battle\u10116_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10116_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10117]
-image\n_battle\u10117_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10117_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10118]
-image\n_battle\u10118_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10118_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10121]
-image\n_battle\u10121_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10121_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10132]
-image\n_battle\u10132_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10132_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10133]
-image\n_battle\u10133_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10133_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10135]
-image\n_battle\u10135_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10135_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10138]
-image\n_battle\u10138_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10138_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10140]
-image\n_battle\u10140_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10140_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10141]
-image\n_battle\u10141_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10141_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10143]
-image\n_battle\u10143_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10143_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10144]
-image\n_battle\u10144_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10144_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10145]
-image\n_battle\u10145_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10145_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10157]
-image\n_battle\u10157_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10157_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10158]
-image\n_battle\u10158_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10158_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10162]
-image\n_battle\u10162_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10162_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10175]
-image\n_battle\u10175_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10175_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10176]
-image\n_battle\u10176_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10176_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10187]
-image\n_battle\u10187_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10187_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10188]
-image\n_battle\u10188_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10188_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10201]
-image\n_battle\u10201_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10201_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10202]
-image\n_battle\u10202_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10202_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10207]
-image\n_battle\u10207_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10207_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10208]
-image\n_battle\u10208_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10208_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10214]
-image\n_battle\u10214_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10214_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10217]
-image\n_battle\u10217_d.png @cut(4,8) @ues(19,6) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10217_d.png @cut(4,8) @use(19,6) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10223]
-image\n_battle\u10223_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10223_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10226]
-image\n_battle\u10226_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10226_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10227]
-image\n_battle\u10227_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10227_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10229]
-image\n_battle\u10229_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10229_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10230]
-image\n_battle\u10230_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10230_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10232]
-image\n_battle\u10232_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10232_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10233]
-image\n_battle\u10233_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10233_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10234]
-image\n_battle\u10234_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10234_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10238]
-image\n_battle\u10238_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10238_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10243]
-image\n_battle\u10243_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10243_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10249]
-image\n_battle\u10249_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10249_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10264]
-image\n_battle\u10264_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10264_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10266]
-image\n_battle\u10266_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10266_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10268]
-image\n_battle\u10268_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10268_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10296]
-image\n_battle\u10296_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10296_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10328]
-image\n_battle\u10328_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10328_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10411]
-image\n_battle\u10411_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10411_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10468]
-image\n_battle\u10468_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10468_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10475]
-image\n_battle\u10475_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10475_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10640]
-image\n_battle\u10640_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10640_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10653]
-image\n_battle\u10653_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10653_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10654]
-image\n_battle\u10654_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10654_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10667]
-image\n_battle\u10667_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10667_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10745]
-image\n_battle\u10745_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10745_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [attack_10776]
-image\n_battle\u10776_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10776_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 
 
 [skill_10000]
-image\n_battle\u10000_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10000_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10001]
-image\n_battle\u10001_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10001_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10003]
-image\n_battle\u10003_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10003_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10004]
-image\n_battle\u10004_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10004_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10005]
-image\n_battle\u10005_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10005_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10009]
-image\n_battle\u10009_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10009_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10012]
-image\n_battle\u10012_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10012_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10015]
-image\n_battle\u10015_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10015_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10016]
-image\n_battle\u10016_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10016_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10017]
-image\n_battle\u10017_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10017_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10019]
-image\n_battle\u10019_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10019_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10020]
-image\n_battle\u10020_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10020_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10021]
-image\n_battle\u10021_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10021_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10022]
-image\n_battle\u10022_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10022_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10023]
-image\n_battle\u10023_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10023_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10024]
-image\n_battle\u10024_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10024_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10027]
-image\n_battle\u10027_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10027_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10029]
-image\n_battle\u10029_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10029_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10033]
-image\n_battle\u10033_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10033_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10035]
-image\n_battle\u10035_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10035_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10036]
-image\n_battle\u10036_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10036_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10037]
-image\n_battle\u10037_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10037_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10038]
-image\n_battle\u10038_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10038_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10039]
-image\n_battle\u10039_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10039_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10040]
-image\n_battle\u10040_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10040_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10041]
-image\n_battle\u10041_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10041_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10042]
-image\n_battle\u10042_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10042_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10043]
-image\n_battle\u10043_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10043_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10044]
-image\n_battle\u10044_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10044_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10051]
-image\n_battle\u10051_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10051_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10052]
-image\n_battle\u10052_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10052_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10053]
-image\n_battle\u10053_d.png @cut(4,8) @ues(19,5) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10053_d.png @cut(4,8) @use(19,5) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10054]
-image\n_battle\u10054_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10054_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10055]
-image\n_battle\u10055_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10055_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10056]
-image\n_battle\u10056_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10056_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10057]
-image\n_battle\u10057_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10057_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10058]
-image\n_battle\u10058_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10058_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10059]
-image\n_battle\u10059_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10059_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10061]
-image\n_battle\u10061_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10061_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10062]
-image\n_battle\u10062_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10062_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10066]
-image\n_battle\u10066_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10066_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10068]
-image\n_battle\u10068_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10068_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10069]
-image\n_battle\u10069_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10069_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10071]
-image\n_battle\u10071_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10071_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10072]
-image\n_battle\u10072_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10072_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10082]
-image\n_battle\u10082_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10082_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10093]
-image\n_battle\u10093_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10093_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10095]
-image\n_battle\u10095_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10095_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10096]
-image\n_battle\u10096_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10096_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10097]
-image\n_battle\u10097_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10097_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10100]
-image\n_battle\u10100_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10100_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10101]
-image\n_battle\u10101_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10101_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10103]
-image\n_battle\u10103_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10103_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10108]
-image\n_battle\u10108_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10108_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10109]
-image\n_battle\u10109_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10109_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10111]
-image\n_battle\u10111_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10111_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10113]
-image\n_battle\u10113_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10113_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10116]
-image\n_battle\u10116_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10116_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10117]
-image\n_battle\u10117_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10117_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10118]
-image\n_battle\u10118_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10118_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10121]
-image\n_battle\u10121_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10121_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10132]
-image\n_battle\u10132_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10132_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10133]
-image\n_battle\u10133_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10133_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10135]
-image\n_battle\u10135_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10135_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10138]
-image\n_battle\u10138_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10138_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10140]
-image\n_battle\u10140_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10140_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10141]
-image\n_battle\u10141_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10141_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10143]
-image\n_battle\u10143_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10143_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10144]
-image\n_battle\u10144_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10144_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10145]
-image\n_battle\u10145_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10145_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10157]
-image\n_battle\u10157_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10157_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10158]
-image\n_battle\u10158_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10158_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10162]
-image\n_battle\u10162_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10162_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10175]
-image\n_battle\u10175_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10175_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10176]
-image\n_battle\u10176_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10176_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10187]
-image\n_battle\u10187_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10187_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10188]
-image\n_battle\u10188_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10188_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10201]
-image\n_battle\u10201_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10201_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10202]
-image\n_battle\u10202_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10202_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10207]
-image\n_battle\u10207_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10207_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10208]
-image\n_battle\u10208_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10208_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10214]
-image\n_battle\u10214_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10214_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10217]
-image\n_battle\u10217_d.png @cut(4,8) @ues(19,6) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10217_d.png @cut(4,8) @use(19,6) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10223]
-image\n_battle\u10223_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10223_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10226]
-image\n_battle\u10226_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10226_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10227]
-image\n_battle\u10227_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10227_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10229]
-image\n_battle\u10229_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10229_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10230]
-image\n_battle\u10230_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10230_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10232]
-image\n_battle\u10232_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10232_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10233]
-image\n_battle\u10233_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10233_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10234]
-image\n_battle\u10234_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10234_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10238]
-image\n_battle\u10238_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10238_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10243]
-image\n_battle\u10243_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10243_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10249]
-image\n_battle\u10249_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10249_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10264]
-image\n_battle\u10264_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10264_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10266]
-image\n_battle\u10266_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10266_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10268]
-image\n_battle\u10268_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10268_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10296]
-image\n_battle\u10296_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10296_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10328]
-image\n_battle\u10328_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10328_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10411]
-image\n_battle\u10411_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10411_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10468]
-image\n_battle\u10468_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10468_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10475]
-image\n_battle\u10475_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10475_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10640]
-image\n_battle\u10640_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10640_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10653]
-image\n_battle\u10653_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10653_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10654]
-image\n_battle\u10654_d.png @cut(4,8) @ues(19,4) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10654_d.png @cut(4,8) @use(18,4) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10667]
-image\n_battle\u10667_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10667_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10745]
-image\n_battle\u10745_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10745_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse
 [skill_10776]
-image\n_battle\u10776_d.png @cut(4,8) @ues(19,3) @time=0.12 @scale=1.8 @stay
+image\n_battle\u10776_d.png @cut(4,8) @use(18,3) @time=0.12 @scale=1.8 @stay @reverse

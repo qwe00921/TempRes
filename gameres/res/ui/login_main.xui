@@ -1,19 +1,14 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
-
-[CTRL_LOGIN_MAIN_BG]
-Type=1
-Tag=1
-Rect=170 283 630 357
-NormalFile=.\res\image\ui_honor\login\login_bg2.png
-NormalFileUV=0 0 600 372
 
 [CTRL_LOGIN_TEXT_ID]
 Type=4
 Tag=2
 Rect=282 349 108 61
+AnchorPos=0 0
+Notes=
 Text=账号
 TextTradition=賬號
 TextSize=48
@@ -25,6 +20,8 @@ Remark=提示文字（输入账号）
 Type=2
 Tag=7
 Rect=410 348 320 60
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -34,6 +31,8 @@ Remark=玩家选择账号按钮
 Type=4
 Tag=9
 Rect=237 443 153 60
+AnchorPos=0 0
+Notes=
 Text=服务器
 TextTradition=服務器
 TextSize=48
@@ -45,6 +44,8 @@ Remark=提示文字（选择服务器）
 Type=4
 Tag=11
 Rect=410 349 320 60
+AnchorPos=0 0
+Notes=
 TextSize=36
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -54,6 +55,8 @@ Remark=玩家账号选择信息
 Type=2
 Tag=13
 Rect=410 441 360 60
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -63,6 +66,8 @@ Remark=玩家选择服务器按钮
 Type=4
 Tag=14
 Rect=410 443 360 60
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -72,6 +77,8 @@ Remark=玩家服务器选择信息
 Type=2
 Tag=15
 Rect=380 520 200 71
+AnchorPos=0 0
+Notes=
 Text=开始游戏
 TextTradition=開始游戲
 TextSize=36
@@ -80,3 +87,13 @@ TextVerAlign=AlignVerCenter
 Remark=开始游戏按钮
 NormalFile=.\res\image\ui_honor\login\logyin_button.png
 NormalFileUV=0 0 245 87
+
+[CTRL_9SLICES_29]
+Type=22
+Tag=29
+Rect=173 288 648 335
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\card\bg_card.png
+NormalFileUV=0 0 192 279
