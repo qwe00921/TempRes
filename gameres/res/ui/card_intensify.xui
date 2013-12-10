@@ -204,7 +204,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_26]
 Type=2
 Tag=33
-Rect=414 722 174 63
+Rect=9 185 174 63
 AnchorPos=0 0
 Notes=
 Text=开始强化
