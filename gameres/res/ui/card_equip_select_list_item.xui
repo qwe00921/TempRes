@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -22,15 +22,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
 
-[CTRL_PICTURE_IMAGE_1]
-Type=1
-Tag=169
-Rect=32 15 107 101
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
-
 [CTRL_TEXT_SELECT_1]
 Type=4
 Tag=170
@@ -40,6 +31,7 @@ Notes=
 Text=已选择
 TextTradition=已選擇
 TextSize=15
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -76,33 +68,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
 
-[CTRL_PICTURE_IMAGE_2]
-Type=1
-Tag=175
-Rect=183 18 107 101
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
-
-[CTRL_PICTURE_IMAGE_3]
-Type=1
-Tag=176
-Rect=344 18 107 101
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
-
-[CTRL_PICTURE_IMAGE_4]
-Type=1
-Tag=177
-Rect=493 16 107 101
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
-
 [CTRL_TEXT_SELECT_2]
 Type=4
 Tag=178
@@ -112,6 +77,7 @@ Notes=
 Text=已选择
 TextTradition=已選擇
 TextSize=15
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -124,6 +90,7 @@ Notes=
 Text=已选择
 TextTradition=已選擇
 TextSize=15
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -136,6 +103,7 @@ Notes=
 Text=已选择
 TextTradition=已選擇
 TextSize=15
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -146,6 +114,7 @@ Rect=92 18 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -156,6 +125,7 @@ Rect=244 20 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -175,6 +145,7 @@ Rect=405 20 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -194,6 +165,7 @@ Rect=552 17 45 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -213,6 +185,7 @@ Rect=38 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -232,6 +205,7 @@ Rect=189 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -242,6 +216,7 @@ Rect=349 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -252,6 +227,7 @@ Rect=501 123 97 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -351,7 +327,7 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_31]
+[CTRL_PICTURE_IMAGE_1]
 Type=1
 Tag=31
 Rect=32 13 107 107
@@ -360,7 +336,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_32]
+[CTRL_PICTURE_IMAGE_2]
 Type=1
 Tag=32
 Rect=184 13 107 107
@@ -369,7 +345,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_33]
+[CTRL_PICTURE_IMAGE_3]
 Type=1
 Tag=33
 Rect=344 13 107 107
@@ -378,7 +354,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_34]
+[CTRL_PICTURE_IMAGE_4]
 Type=1
 Tag=34
 Rect=494 13 107 107
