@@ -22,7 +22,6 @@ function p.ShowUI()
     
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		PlayMusic_Task();
 		return;
 	end
 	
@@ -46,7 +45,6 @@ function p.ShowUI()
 	p.RollButton:SetEnabled( false );
 	p.RollButtonBGPic = GetImage(layer, ui.ID_CTRL_PICTURE_ROLL_BTN_BG);
 	p.SendHttpRequest();
-	PlayMusic_Task();
 end
 
 function p.Init()	

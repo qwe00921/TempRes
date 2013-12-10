@@ -21,6 +21,7 @@ function p.ShowUI()
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		PlayMusic_ShopUI();
 		return;
 	end
 	
@@ -39,6 +40,7 @@ function p.ShowUI()
 	p.layer = layer;
     p.SetDelegate();
 	p.RequestData();
+	PlayMusic_ShopUI();
 end
 
 --设置回调
@@ -171,9 +173,9 @@ function p.SetTeamInfo( view, user_teamData )
 			levLabel:SetVisible( true );
 			pic:SetVisible( true );
 			
-			--cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
-			--cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
-			--cardBtn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
+			cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
+			cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
+			cardBtn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			
 			local data = p.cardlist[user_teamData["Pos_unique"..i]];
 			if data then
@@ -182,8 +184,8 @@ function p.SetTeamInfo( view, user_teamData )
 			
 			--[[增加星级显示]]--
 		else
-			--cardBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
-			--cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
+			cardBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
+			cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
 			
 			levLabel:SetVisible( false );
 			pic:SetVisible( false );

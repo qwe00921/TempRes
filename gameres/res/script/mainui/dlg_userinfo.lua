@@ -12,6 +12,8 @@ p.energy_time = 30;
 p.move_remain_time = 0;
 p.energy_remain_time = 0;
 
+p.levNum = nil;
+
 local ui = ui_main_userinfo
 
 function p.ShowUI(userinfo)
@@ -59,6 +61,7 @@ function p.CloseUI()
         p.layer:LazyClose();
         p.layer = nil;
 		p.userinfo = nil;
+		p.levNum = nil;
 		if p.updateTimer then
 			KillTimer( p.updateTimer );
 		end
@@ -86,8 +89,17 @@ function p.RefreshUI(userinfo)
 	username:SetText( userinfo.Name );
 	
 	local level = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL_NUM);
-	level:SetText( userinfo.Level );
+	level:SetText( " " );
 	
+	if p.levNum == nil then
+		local levNum = effect_num:new();
+		levNum:SetOwnerNode( level );
+		levNum:Init();
+		p.levNum = levNum;
+		level:AddChild( levNum:GetNode() );
+	end
+	p.levNum:PlayNum( tonumber(userinfo.Level) );
+
 	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);
 	money:SetText( userinfo.Money );
 	
@@ -139,6 +151,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_ADD_EMONEY == tag then
 			WriteCon("**========充值========**");
+			--p.levNum:PlayNum( tostring( math.random(1, 999)));
 		end
 	end
 end

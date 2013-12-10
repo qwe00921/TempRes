@@ -39,6 +39,7 @@ function p.ShowUI( bModify )
 	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
+		PlayMusic_ShopUI();
 		return;
 	end
     local layer = createNDUIDialog();
@@ -58,6 +59,7 @@ function p.ShowUI( bModify )
 	
 	--加载卡牌列表数据
     card_bag_mgr.LoadAllCard( p.layer );
+
 end
 
 function p.SetCardNum(delNum)
