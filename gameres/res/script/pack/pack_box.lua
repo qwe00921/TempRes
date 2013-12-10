@@ -7,24 +7,17 @@ ITEM_TYPE_EQUIP_3 = 1005;	--3
 
 pack_box = {}
 local p = pack_box;
-
 local ui = ui_bag_main;
+local ui_list = ui_bag_list;
 local packLimit = nil; --获取玩家背包格子数量
-p.allItemNumber = nil;
 p.layer = nil;
 p.curBtnNode = nil;
---p.itemUsedId = nil;
+p.allItemNumber = nil;
 p.itemBtnNode = nil;
 
 function p.ShowUI()
-	dlg_menu.SetNewUI( p );
-	
-	packLimit = msg_cache.msg_player.Storage
-	WriteCon("packLimit========="..packLimit);
-
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
-		PlayMusic_ShopUI();
 		return;
 	end
 	
@@ -42,20 +35,26 @@ function p.ShowUI()
 
     p.layer = layer;
     p.SetDelegate(layer);
-	
+	p.Init();
+end
+
+function p.Init()
+	dlg_menu.SetNewUI( p );
+	packLimit = msg_cache.msg_player.Storage
+	WriteCon("packLimit========="..packLimit);
 	--加载背包数据
     pack_box_mgr.LoadAllItem( p.layer );
-	PlayMusic_ShopUI();
 end
 
 --主界面设置事件处理
 function p.SetDelegate(layer)
-	local returnBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
-	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
 	--整理,暂时去掉
 	local sortBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT);
 	sortBtn:SetVisible(false);
 	--sortBtn:SetLuaDelegate(p.OnUIClickEvent);
+	
+	local returnBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
+	returnBtn:SetLuaDelegate(p.OnUIClickEvent);
 
 	local useBtn = GetButton(layer, ui.ID_CTRL_BUTTON_USE);
 	useBtn:SetVisible(false);
@@ -74,6 +73,44 @@ function p.SetDelegate(layer)
 	otherItemBtn:SetLuaDelegate(p.OnUIClickEvent);
 	--隐藏装备分类按钮
 	p.HideEquipTypeBtn();
+end
+
+function p.ShowEquipTypeBtn()
+	--装备全部
+	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
+	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
+	allEquipBtn:SetVisible( true );
+	--装备武器
+	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
+	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
+	armsBtn:SetVisible( true );
+	--装备防具
+	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
+	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
+	armorBtn:SetVisible( true );
+	--装备鞋子
+	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
+	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
+	shoesBtn:SetVisible( true );
+end
+
+function p.HideEquipTypeBtn()
+	--装备全部
+	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
+	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
+	allEquipBtn:SetVisible( false );
+	--装备武器
+	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
+	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
+	armsBtn:SetVisible( false );
+	--装备防具
+	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
+	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
+	armorBtn:SetVisible( false );
+	--装备鞋子
+	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
+	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
+	shoesBtn:SetVisible( false );
 end
 
 --事件处理
@@ -127,50 +164,11 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	end
 end
 
-function p.ShowEquipTypeBtn()
-	--装备全部
-	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
-	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
-	allEquipBtn:SetVisible( true );
-	--装备武器
-	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
-	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armsBtn:SetVisible( true );
-	--装备防具
-	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
-	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armorBtn:SetVisible( true );
-	--装备鞋子
-	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
-	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
-	shoesBtn:SetVisible( true );
-end
-
-function p.HideEquipTypeBtn()
-	--装备全部
-	local allEquipBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB1);
-	allEquipBtn:SetLuaDelegate(p.OnUIClickEvent);
-	allEquipBtn:SetVisible( false );
-	--装备武器
-	local armsBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB2);
-	armsBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armsBtn:SetVisible( false );
-	--装备防具
-	local armorBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB3);
-	armorBtn:SetLuaDelegate(p.OnUIClickEvent);
-	armorBtn:SetVisible( false );
-	--装备鞋子
-	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
-	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
-	shoesBtn:SetVisible( false );
-end
-
-
---显示物品列表
+-- 显示物品列表
 function p.ShowItemList(itemList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_ITEM);
 	list:ClearView();
-	
+
 	local itemCountText = GetLabel(p.layer,ui.ID_CTRL_TEXT_COUNT );
 	local itemNum = nil;
 	if itemList == nil or #itemList <= 0 then
@@ -182,22 +180,21 @@ function p.ShowItemList(itemList)
 		return
 	else
 		itemNum = #itemList;
-		WriteCon("itemCount ===== "..itemNum);
+		WriteCon("itemNum ===== "..itemNum);
 		if p.allItemNumber == nil or p.allItemNumber == 0 then
 			p.allItemNumber = itemNum;
 			local countText = itemNum.."/"..packLimit;
 			itemCountText:SetText(countText);
 		end
 	end
-		
+
 	local row = math.ceil(itemNum / 4);
-	WriteCon("row ===== "..row);
 	
 	for i = 1, row do
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("bag_list.xui",view,nil);
-		local bg = GetUiNode( view, ui_bag_list.ID_CTRL_PICTURE_13);
+		local bg = GetUiNode( view, ui_list.ID_CTRL_PICTURE_13);
         view:SetViewSize( bg:GetFrameSize());
 		
 		local row_index = i;
@@ -216,7 +213,6 @@ function p.ShowItemList(itemList)
 	end
 end
 
---单个物品显示
 function p.ShowItemInfo( view, item, itemIndex )
     local itemBtn = nil;
     local itemNum = nil;
@@ -226,59 +222,58 @@ function p.ShowItemInfo( view, item, itemIndex )
     local isUse = nil;
 	
 	if itemIndex == 1 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM1;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM1;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME1;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR1;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV1
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_22;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP1;
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM1;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME1;
+		equipStarPic = ui_list.ID_CTRL_PICTURE_STAR1;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV1
+		subTitleBg = ui_list.ID_CTRL_PICTURE_22;
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP1;
 	elseif itemIndex == 2 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM2;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM2;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME2;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR2;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV2
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_23;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP2;
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM2;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME2;
+		equipStarPic = ui_list.ID_CTRL_PICTURE_STAR2;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV2
+		subTitleBg = ui_list.ID_CTRL_PICTURE_23;
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP2;
 	elseif itemIndex == 3 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM3;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM3;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME3;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR3;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV3
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_24;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP3;
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM3;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME3;
+		equipStarPic = ui_list.ID_CTRL_PICTURE_STAR3;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV3
+		subTitleBg = ui_list.ID_CTRL_PICTURE_24;
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP3;
 	elseif itemIndex == 4 then
-        itemBtn = ui_bag_list.ID_CTRL_BUTTON_ITEM4;
-        itemNum = ui_bag_list.ID_CTRL_TEXT_ITEMNUM4;
-        itemName = ui_bag_list.ID_CTRL_TEXT_ITEMNAME4;
-		equipStarPic = ui_bag_list.ID_CTRL_PICTURE_STAR4;
-		equipLevel = ui_bag_list.ID_CTRL_TEXT_EQUIP_LEV4
-		subTitleBg = ui_bag_list.ID_CTRL_PICTURE_25;
-        isUse = ui_bag_list.ID_CTRL_PICTURE_EQUIP4;
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM4;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME4;
+		equipStarPic = ui_list.ID_CTRL_PICTURE_STAR4;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV4
+		subTitleBg = ui_list.ID_CTRL_PICTURE_25;
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP4;
 	end
-	
+
 	local item_id = tonumber(item.Item_id);
-	WriteCon("item_id == "..item_id);
 	local itemTable = SelectRowInner(T_ITEM,"id",item_id);
 	if itemTable == nil then
 		WriteConErr("itemTable error ");
 	end
+
 	--显示物品图片
 	local itemButton = GetButton(view, itemBtn);
-	local aniIndex = itemTable.item_pic;
-    itemButton:SetImage( GetPictureByAni(aniIndex,0) );
+    itemButton:SetImage( GetPictureByAni(itemTable.item_pic,0) );
 	itemButton:SetId(item_id);
 	local itemUniqueId = tonumber(item.id);
     itemButton:SetUID(itemUniqueId);
 	local itemType = tonumber(item.Item_type);
 	itemButton:SetXID(itemType);
-
-	--显示物品名字
+	
+	--物品名字
 	local itemNameText = GetLabel(view,itemName );
-	local text = itemTable.name;
-	itemNameText:SetText(text);
+	itemNameText:SetText(itemTable.name);
+	
 	local itemNumText = GetLabel(view,itemNum );	--物品数量
 	local equipStarPic = GetImage(view,equipStarPic);	--装备星级
 	local equipLevelText = GetLabel(view,equipLevel);	--装备等级
@@ -288,9 +283,6 @@ function p.ShowItemInfo( view, item, itemIndex )
 	equipLevelText:SetVisible( false );
 	isUsePic:SetVisible( false );
 
-	--local itemType = tonumber(item.Item_type)
-	WriteCon("itemType == "..itemType);
-
 	if itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
 	--普通可叠加物品，显示数量
 		itemNumText:SetVisible(true);
@@ -299,8 +291,7 @@ function p.ShowItemInfo( view, item, itemIndex )
 		--装备，显示星级
 		equipStarPic:SetVisible(true);
 		local starNum = tonumber(item.Rare);
-		starNum = starNum -1;
-		equipStarPic:SetPicture( GetPictureByAni("item.equipStar", starNum) );
+		equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
 		--显示装备等级
 		equipLevelText:SetVisible(true);
 		equipLevelText:SetText(item.Equip_level);
@@ -308,10 +299,11 @@ function p.ShowItemInfo( view, item, itemIndex )
 		--是否装备
 		if item.Is_dress == 1 or item.Is_dress == "1" then
 			isUsePic:SetVisible(true);
-			isUsePic:SetPicture( GetPictureByAni("item.equipUse", 0) );
+			isUsePic:SetPicture( GetPictureByAni("common_ui.equipUse", 0) );
 		end
 	end
 	
+	--使用按钮
 	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
 	useBtn:SetVisible(false);
 	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
@@ -319,7 +311,6 @@ function p.ShowItemInfo( view, item, itemIndex )
 	
 	--设置物品按钮事件
 	itemButton:SetLuaDelegate(p.OnItemClickEvent);
-
 end
 
 --点击物品事件
@@ -327,7 +318,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local itemId = uiNode:GetId();
 	local itemUniqueId = uiNode:GetUID();
 	local itemType = uiNode:GetXID();
-	
+
 	if itemType == 1 or itemType == 2 or itemType == 3 then
 		pack_box_equip.ShowEquip(itemId,itemUniqueId,itemType);
 		local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
@@ -336,13 +327,11 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		itemDescribeText:SetText(" ");
 	else
 		local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
-		local itemData = SelectRowList(T_ITEM,"id",itemId);
-		if #itemData == 1 then
-			local text = itemData[1].description;
-			itemDescribeText:SetText(text);
-		else
+		local itemData = SelectRowInner(T_ITEM,"id",itemId);
+		if itemData == nil then
 			WriteConErr("itemTable error ");
 		end
+		itemDescribeText:SetText(itemData.description);
 	
 		local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
 		useBtn:SetLuaDelegate(p.OnUseItemClickEvent);
@@ -354,7 +343,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	p.SetItemChechedFX(uiNode);
 end
 
---设置选址物品
+--设置选中物品
 function p.SetItemChechedFX(uiNode)
 	local itemNode = ConverToButton( uiNode );
 	if p.itemBtnNode ~= nil then
@@ -363,7 +352,6 @@ function p.SetItemChechedFX(uiNode)
 	p.ShowSelectEffect(itemNode)
 	p.itemBtnNode = itemNode;
 end
-
 
 function p.ShowSelectEffect(uiNode)
 	local view = createNDUIXView();
@@ -374,8 +362,6 @@ function p.ShowSelectEffect(uiNode)
 	view:SetTag(ui_bag_item_select.ID_CTRL_PICTURE_1);
 	uiNode:AddChild( view );
 end
-
-
 
 --点击使用物品事件
 function p.OnUseItemClickEvent(uiNode, uiEventType, param)
@@ -395,7 +381,6 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 			pack_box_mgr.UseItemEvent(itemId,itemUniqueId,itemType);
 		end
 	end
-	
 end
 
 --设置选中按钮
@@ -418,12 +403,17 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
-        pack_box_mgr.ClearData();
-		p.allItemNumber = nil;
+		p.Clear();
     end
+end
+
+function p.Clear()
+	p.curBtnNode = nil;
+	p.allItemNumber = nil;
+	p.itemBtnNode = nil;
+	pack_box_mgr.ClearData();
 end
 
 function p.UIDisappear()
 	p.CloseUI();
 end
-

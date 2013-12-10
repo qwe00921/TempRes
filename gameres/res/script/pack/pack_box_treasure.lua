@@ -44,8 +44,9 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			WriteCon("确认");
 			p.CloseUI();
 			--SendReq("Item","List",uid,"");
-			pack_box.CloseUI();
-			pack_box.ShowUI();
+			pack_box_mgr.reOpenPackBox()
+			-- pack_box.CloseUI();
+			-- pack_box.ShowUI();
 		end
 	end
 end

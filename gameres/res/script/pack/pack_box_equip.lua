@@ -99,18 +99,18 @@ function p.ShowEquipInfo(equipInfo)
 	local equipStarPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_STAR);				--装备星级图片
 	local starNum = tonumber(equipInfo.Rare);
 	starNum = starNum -1;
-	equipStarPic:SetPicture( GetPictureByAni("item.equipStar", starNum) );
+	equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
 	
 	local equipLevelText = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);				--装备等级
 	equipLevelText:SetText(equipInfo.Equip_level);
 		
 	local equipTypePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_TYPE);	
 	if tonumber(equipInfo.Item_type) == 1 then
-		equipTypePic:SetPicture( GetPictureByAni("item.equipType", 0) );
+		equipTypePic:SetPicture( GetPictureByAni("common_ui.equipType", 0) );
 	elseif tonumber(equipInfo.Item_type) == 2 then
-		equipTypePic:SetPicture( GetPictureByAni("item.equipType", 1) );
+		equipTypePic:SetPicture( GetPictureByAni("common_ui.equipType", 1) );
 	elseif tonumber(equipInfo.Item_type) == 3 then
-		equipTypePic:SetPicture( GetPictureByAni("item.equipType", 2) );
+		equipTypePic:SetPicture( GetPictureByAni("common_ui.equipType", 2) );
 	else
 		WriteConErr("Iequip type error");
 	end
@@ -147,7 +147,7 @@ function p.ShowEquipInfo(equipInfo)
 
 	local modePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_MODE);						--是否装备图片
 	local dressIndex = tonumber(equipInfo.Is_dress)
-	modePic:SetPicture( GetPictureByAni("item.equipMode", dressIndex));
+	modePic:SetPicture( GetPictureByAni("common_ui.equipMode", dressIndex));
 end
 
 function p.equipAttByType(nodeUI,AttType,AttValue)
