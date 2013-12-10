@@ -183,12 +183,7 @@ function p.ShowQuestList(self)
 		WriteCon("**missionsList error**"); 
 		return
 	end
-	-- local ListLength = 0;
-	-- for k,v in pairs(p.missionList) do
-		-- ListLength = ListLength + 1;
-	-- end
-	-- WriteCon("**ListLength = "..ListLength); 
-	--设置难道按钮
+
 	p.setHardBtn();
 	
 	--加载列表
