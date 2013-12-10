@@ -16,6 +16,7 @@ function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		--p.SendReqUserInfo();
+		PlayMusic_LoginUI();
 		return;
 	end
 	
@@ -33,6 +34,7 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate();
+	PlayMusic_LoginUI();
 end
 
 function p.SetDelegate()
