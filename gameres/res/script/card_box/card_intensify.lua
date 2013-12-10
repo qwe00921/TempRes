@@ -20,8 +20,6 @@ p.layer = nil;
 p.cardListInfo = nil;
 p.curBtnNode = nil;
 p.sortByRuleV = nil;
-p.allCardPrice = 0;
-p.sellCardList = {};
 p.baseCardInfo = nil;
 
 p.selectList = {};
@@ -30,6 +28,7 @@ p.selectNum = 0;
 p.consumeMoney = 0;
 p.selectCardId = {};
 p.userMoney = 0;
+p.cardListByProf = {};
 function p.ShowUI(baseCardInfo)
 	
 	if baseCardInfo == nil then 
@@ -127,9 +126,11 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --强化
 			WriteCon("OnUIClickEvent....   intensify");
+			local pCardLevelMax= SelectRowInner( T_CARD_LEVEL_LIMIT, "star", p.baseCardInfo.Rare); --从表中获取卡牌详细信息	
+			--WriteCon("Max Level ："..pCardLevelMax.level_limit.."  now Level : "..p.baseCardInfo.Level);
 			if #p.selectCardId <=0 then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
-			elseif tonumber( p.baseCardInfo.Level) >= tonumber(p.baseCardInfo.Level_max) then
+			elseif tonumber( p.baseCardInfo.Level) >= tonumber(pCardLevelMax.level_limit) then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_level_max"),p.OnMsgCallback,p.layer);
 				
 			else
@@ -244,7 +245,6 @@ function p.ShowCardList(cardList,msg)
 end
 --显示卡牌列表
 function p.ShowCardView(cardList)
-	
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 	
@@ -252,8 +252,7 @@ function p.ShowCardView(cardList)
 		WriteCon("ShowCardView():cardList is null");
 		return;
 	end
-	
-	local cardNum = #cardList -1;
+	local cardNum = #cardList;
 	
 	local row = math.ceil(cardNum / 4);
 	
@@ -285,7 +284,6 @@ function p.ShowCardView(cardList)
 	for k,v in pairs(p.selectCardId) do
 		p.selectList[v]:SetVisible(true);
 	end
-	
 	
 end
 --显示单张卡牌
@@ -414,7 +412,6 @@ function p.SetBtnCheckedFX( node )
 	btnNode:SetChecked( true );
 	p.curBtnNode = btnNode;
 	card_bag_sort.CloseUI();
-	p.sellCardList = {};
 end
 
 
@@ -436,12 +433,12 @@ function p.ShowCardByProfession(profType)
 	if p.cardListByProf == nil or #p.cardListByProf <= 0 then
 		WriteCon("p.cardListByProf == nil or #p.cardListByProf <= 0");
 	end
-	
 	if p.sortByRuleV ~= nil then
 		p.sortByRule(p.sortByRuleV)
 	else
 		p.ShowCardView(p.cardListByProf);
 	end
+	
 end
 
 --获取显示列表
@@ -527,15 +524,15 @@ function p.CloseUI()
 		p.sortBtnMark = MARK_OFF;
 		p.sortByRuleV = nil;
 		p.BatchSellMark = MARK_OFF;
-		p.allCardPrice = 0;
 		p.selectList = {};
 		p.teamList = {};
-		p.sellCardList = {};
 		p.selectCardId = {};
 		p.baseCardInfo = nil;
 		p.consumeMoney = 0;
 		p.selectNum = 0;
         card_bag_mgr.ClearData();
+		p.cardListByProf = {};
+		p.userMoney = 0;
 		
     end
 end
@@ -544,4 +541,5 @@ function p.ClearData()
 	p.selectNum = 0;
 	p.selectCardId = {};
 	p.cardListInfo = nil;
+	p.cardListByProf = {};
 end
