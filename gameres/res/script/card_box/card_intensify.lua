@@ -69,7 +69,7 @@ function p.OnSendReq()
 	--uid = 1234;
 	if uid ~= nil and uid > 0 then
 		--Ä£¿é  Action 
-		SendReq("CardList","List",uid,"");
+		SendReq("CardList","ListFeed",uid,"");
 	end
 	
 end
