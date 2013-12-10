@@ -33,30 +33,6 @@ Rect=44 102 314 466
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_301]
-Type=4
-Tag=301
-Rect=9 13 100 50
-AnchorPos=0 0
-Notes=
-Text=装备
-TextTradition=裝備
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_302]
-Type=4
-Tag=302
-Rect=12 19 100 50
-AnchorPos=0 0
-Notes=
-Text=宝石
-TextTradition=寶石
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_EQUIP_PIC_1]
 Type=1
 Tag=303
@@ -185,18 +161,6 @@ TextColor=0xfea14d
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_316]
-Type=4
-Tag=316
-Rect=12 30 127 43
-AnchorPos=0 0
-Notes=
-Text=天赋技能
-TextTradition=天賦技能
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_DOWER_PIC]
 Type=1
 Tag=317
@@ -212,18 +176,6 @@ AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xb8ff93
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_319]
-Type=4
-Tag=319
-Rect=17 9 85 43
-AnchorPos=0 0
-Notes=
-Text=缘份
-TextTradition=緣份
-TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -461,3 +413,16 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
 NormalFileUV=0 0 368 84
+
+[CTRL_TEXT_301]
+Type=4
+Tag=301
+Rect=287 10 100 50
+AnchorPos=0 0
+Notes=
+Text=卡牌
+TextTradition=卡牌
+TextSize=30
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -1,10 +1,7 @@
 pack_box_mgr = {}
 local p = pack_box_mgr;
-p.itemList = nil;
 p.layer = nil;
-
--- p.selectItem = nil;
--- p.selectItemList = {};
+p.itemList = nil;
 
 --加载用户所有道具列表
 function p.LoadAllItem(layer)
@@ -14,24 +11,16 @@ function p.LoadAllItem(layer)
 	end
 	WriteCon("====request back_box");
 	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
 	SendReq("Item","List",uid,"");
 end
-
---清空数据
-function p.ClearData()
-    p.itemList = nil;
-    p.layer = nil;
-    --p.selectItem = nil;
-    --p.selectItemList = {};
-end
-
---请求回调，显示道具列表
-function p.RefreshUI(dataList)
-	p.itemList = dataList;
-	pack_box.ShowItemList(p.itemList);
+--请求卡牌列表回调，显示道具列表
+function p.RefreshUI(self)
+	if self.result == true then
+		p.itemList = self.user_items
+		pack_box.ShowItemList(p.itemList);
+	elseif self.result == false then
+		WriteConWarning( "** msg_pack_box error" );
+	end
 end
 
 --显示所有道具
@@ -95,12 +84,10 @@ function p.GetItemList(sortType)
     return t;
 end
 
+--使用物品
 function p.UseItemEvent(itemId,itemUniqueId,itemType)
 	WriteCon("pack_box_mgr.UseItemEvent();");
 	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
 	if itemId == nil or itemId == 0 or itemUniqueId == nil or itemUniqueId == 0 then
 		WriteConErr("used item id error ");
 		return
@@ -120,16 +107,13 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		WriteConErr("used item id error ");
 	end
 end
+
 --使用物品回调
 function p.UseItemCallBack(self)
 	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
 	WriteCon("=======UseItemCallBack()");
 	if self.result == true then
-		dlg_msgbox.ShowOK("确认提示框","使用物品成功。",nil,p.layer);
-		SendReq("Item","List",uid,"");
+		dlg_msgbox.ShowOK("确认提示框","使用物品成功。",p.reOpenPackBox(),p.layer);
 	elseif self.result == false then
 		local messageText = self.message
 		dlg_msgbox.ShowOK("确认提示框",messageText,nil,p.layer);
@@ -156,10 +140,37 @@ function p.UseTreasureCallBack(self)
 	end
 end
 
+--出售装备
+function p.SendSellEquipRequest(EquipUid)
+	local uid = GetUID();
+	if EquipUid == nil or EquipUid == 0 then
+		WriteConErr("sell equip EquipUid error ");
+		return
+	end
+	local param = "&id="..EquipUid;
+	SendReq("Item","Sell",uid,param);
+end
 
+--出售装备回调
+function p.sellEquipCallBack(self)
+	local uid = GetUID();
+	if self.result == true then 
+		dlg_msgbox.ShowOK("确认提示框","出售成功。",p.reOpenPackBox(),p.layer);
+		--p.reOpenPackBox();
+	elseif self.result == false then
+		local messageText = self.message;
+		dlg_msgbox.ShowOK("确认提示框",messageText,nil,p.layer);
+	end
+end
+
+function p.reOpenPackBox()
+	pack_box_equip.CloseUI();
+	pack_box.CloseUI();
+	pack_box.ShowUI();
+end
 
 function p.getItemInfoTable(uniqueid)
-	local allItemList = pack_box_mgr.itemList;
+	local allItemList = p.itemList;
 	if allItemList == nil then
 		WriteCon("allItemList table error");
 		return;
@@ -174,39 +185,8 @@ function p.getItemInfoTable(uniqueid)
 	return itemInfoTable;
 end
 
---出售装备
-function p.SendSellEquipRequest(EquipUid)
-	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
-	if EquipUid == nil or EquipUid == 0 then
-		WriteConErr("sell equip EquipUid error ");
-		return
-	end
-	local param = "&id="..EquipUid;
-	SendReq("Item","Sell",uid,param);
+--清空数据
+function p.ClearData()
+    p.itemList = nil;
+    p.layer = nil;
 end
-
---出售装备回调
-function p.sellEquipCallBack(self)
-	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
-	if self.result == true then 
-		dlg_msgbox.ShowOK("确认提示框","出售成功。",nil,p.layer);
-		pack_box_equip.CloseUI();
-		SendReq("Item","List",uid,"");
-	elseif self.result == false then
-		local messageText = self.message;
-		dlg_msgbox.ShowOK("确认提示框",messageText,nil,p.layer);
-	end
-end
-
--- UseHealItem //行动力恢复道具使用
--- UseQuickItem //活力恢复道具使用
--- UseStorageItem //背包扩展道具
--- UseGiftItem//礼包
--- UseTreasureItem//宝箱  
-

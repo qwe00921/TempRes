@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_createrole = {};
 local p =  ui_createrole;
+p.ID_CTRL_TEXT_20						       = 32;
+p.ID_CTRL_TEXT_17						       = 18;
 p.ID_CTRL_PICTURE_SELECT2				 = 23;
 p.ID_CTRL_PICTURE_SELECT1				 = 20;
 p.ID_CTRL_9SLICES_19					     = 30;

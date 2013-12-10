@@ -7,11 +7,15 @@ Height=640
 Type=1
 Tag=143
 Rect=0 0 160 40
+AnchorPos=0 0
+Notes=
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=144
 Rect=0 0 160 40
+AnchorPos=0 0
+Notes=
 Text=小伙伴
 TextTradition=小伙伴
 TextSize=20

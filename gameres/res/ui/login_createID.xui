@@ -3,29 +3,77 @@
 Width=640
 Height=960
 
-[CTRL_LOGIN_CREATEIDBG]
-Type=1
-Tag=1
-Rect=70 409 500 310
-NormalFile=.\res\image\ui_honor\login\login_bg2.png
-NormalFileUV=0 0 600 372
+[CTRL_9SLICES_14]
+Type=22
+Tag=14
+Rect=73 415 504 297
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_9SLICES_11]
+Type=22
+Tag=11
+Rect=76 415 502 296
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_9SLICES_88]
+Type=22
+Tag=88
+Rect=69 409 514 311
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\card\bg_card.png
+NormalFileUV=0 0 192 279
 
 [CTRL_LOGIN_TEXT_ID]
 Type=4
 Tag=2
 Rect=119 491 88 49
+AnchorPos=0 0
+Notes=
 Text=账号
 TextTradition=賬號
 TextSize=40
-TextColor=0xffffff
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_12]
+Type=22
+Tag=12
+Rect=224 491 319 50
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_9SLICES_13]
+Type=22
+Tag=13
+Rect=226 554 319 50
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_INPUT_TEXT_ID]
 Type=18
 Tag=4
 Rect=226 494 314 44
+AnchorPos=0 0
+Notes=
 TextSize=36
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -33,10 +81,12 @@ TextVerAlign=AlignVerCenter
 Type=4
 Tag=150
 Rect=118 557 88 49
+AnchorPos=0 0
+Notes=
 Text=密码
 TextTradition=密碼
 TextSize=40
-TextColor=0xffffff
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -44,48 +94,66 @@ TextVerAlign=AlignVerCenter
 Type=18
 Tag=151
 Rect=227 557 313 45
+AnchorPos=0 0
+Notes=
 TextSize=36
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_152]
 Type=4
 Tag=152
-Rect=160 449 325 35
+Rect=164 432 325 35
+AnchorPos=0 0
+Notes=
 Text=对不起，您输入的账号不存在
 TextTradition=對不起，您輸入的賬號不存在
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_LOGIN_CTRL_BUTTON_STARTGAME]
 Type=2
 Tag=153
-Rect=106 625 165 58
+Rect=124 625 164 80
+AnchorPos=0 0
+Notes=
 Text=登陆游戏
 TextTradition=登陸游戲
 TextSize=36
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui_honor\login\logyin_button.png
-NormalFileUV=0 0 245 87
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_LOGIN_CTRL_BUTTON_CREATEID]
 Type=2
 Tag=154
-Rect=351 625 165 58
+Rect=351 625 165 81
+AnchorPos=0 0
+Notes=
 Text=注册账号
 TextTradition=注冊賬號
 TextSize=36
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui_honor\login\logyin_button.png
-NormalFileUV=0 0 245 87
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_LOGIN_CTRL_PICTURE_LOGIN]
 Type=1
 Tag=9
 Rect=106 960 200 71
+AnchorPos=0 0
+Notes=
 Text=登陆游戏
 TextTradition=登陸游戲
 NormalFile=.\res\image\ui_honor\login\logyin_button.png
@@ -95,6 +163,8 @@ NormalFileUV=0 0 245 87
 Type=1
 Tag=10
 Rect=97 960 162 57
+AnchorPos=0 0
+Notes=
 Text=创建账号
 TextTradition=創建賬號
 NormalFile=.\res\image\ui_honor\login\logyin_button.png

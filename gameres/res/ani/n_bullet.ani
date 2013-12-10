@@ -1,134 +1,134 @@
 [10001]
-image\n_battle\10001\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10001_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10003]
-image\n_battle\10003\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10003_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10015]
-image\n_battle\10015\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10015_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10016]
-image\n_battle\10016\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10016_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10019]
-image\n_battle\10019\bullet.png @cut(4,8) @use(28,4) @stay
+image\n_battle\u10019_d.png @cut(4,8) @use(27,4) @scale=1.8 @loop @reverse
 [10020]
-image\n_battle\10020\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10020_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10021]
-image\n_battle\10021\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10021_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10022]
-image\n_battle\10022\bullet.png @cut(4,8) @use(28,4) @stay
+image\n_battle\u10022_d.png @cut(4,8) @use(27,4) @scale=1.8 @loop @reverse
 [10023]
-image\n_battle\10023\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10023_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10024]
-image\n_battle\10024\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10024_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10033]
-image\n_battle\10033\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10033_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10035]
-image\n_battle\10035\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10035_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10036]
-image\n_battle\10036\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10036_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10039]
-image\n_battle\10039\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10039_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10040]
-image\n_battle\10040\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10040_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10042]
-image\n_battle\10042\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10042_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10043]
-image\n_battle\10043\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10043_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10051]
-image\n_battle\10051\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10051_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10052]
-image\n_battle\10052\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10052_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10053]
-image\n_battle\10053\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10053_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10054]
-image\n_battle\10054\bullet.png @cut(4,8) @use(28,4) @stay
+image\n_battle\u10054_d.png @cut(4,8) @use(27,4) @scale=1.8 @loop @reverse
 [10055]
-image\n_battle\10055\bullet.png @cut(4,8) @use(28,2) @stay
+image\n_battle\u10055_d.png @cut(4,8) @use(27,2) @scale=1.8 @loop @reverse
 [10062]
-image\n_battle\10062\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10062_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10066]
-image\n_battle\10066\bullet.png @cut(4,8) @use(28,4) @stay
+image\n_battle\u10066_d.png @cut(4,8) @use(27,4) @scale=1.8 @loop @reverse
 [10069]
-image\n_battle\10069\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10069_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10071]
-image\n_battle\10071\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10071_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10072]
-image\n_battle\10072\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10072_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10082]
-image\n_battle\10082\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10082_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10095]
-image\n_battle\10095\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10095_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10096]
-image\n_battle\10096\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10096_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10101]
-image\n_battle\10101\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10101_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10103]
-image\n_battle\10103\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10103_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10109]
-image\n_battle\10109\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10109_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10111]
-image\n_battle\10111\bullet.png @cut(4,8) @use(28,2) @stay
+image\n_battle\u10111_d.png @cut(4,8) @use(27,2) @scale=1.8 @loop @reverse
 [10117]
-image\n_battle\10117\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10117_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10118]
-image\n_battle\10118\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10118_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10132]
-image\n_battle\10132\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10132_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10133]
-image\n_battle\10133\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10133_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10135]
-image\n_battle\10135\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10135_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10138]
-image\n_battle\10138\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10138_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10140]
-image\n_battle\10140\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10140_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10143]
-image\n_battle\10143\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10143_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10145]
-image\n_battle\10145\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10145_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10158]
-image\n_battle\10158\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10158_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10175]
-image\n_battle\10175\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10175_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10176]
-image\n_battle\10176\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10176_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10187]
-image\n_battle\10187\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10187_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10188]
-image\n_battle\10188\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10188_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10201]
-image\n_battle\10201\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10201_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop
 [10202]
-image\n_battle\10202\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10202_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10207]
-image\n_battle\10207\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10207_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10223]
-image\n_battle\10223\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10223_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10227]
-image\n_battle\10227\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10227_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10233]
-image\n_battle\10233\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10233_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10238]
-image\n_battle\10238\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10238_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10264]
-image\n_battle\10264\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10264_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10266]
-image\n_battle\10266\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10266_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10268]
-image\n_battle\10268\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10268_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10296]
-image\n_battle\10296\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10296_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10328]
-image\n_battle\10328\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10328_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10468]
-image\n_battle\10468\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10468_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10475]
-image\n_battle\10475\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10475_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10653]
-image\n_battle\10653\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10653_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10654]
-image\n_battle\10654\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10654_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10667]
-image\n_battle\10667\bullet.png @cut(4,8) @use(28,1) @stay
+image\n_battle\u10667_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10745]
-image\n_battle\10745\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10745_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10776]
-image\n_battle\10776\bullet.png @cut(4,8) @use(28,3) @stay
+image\n_battle\u10776_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
