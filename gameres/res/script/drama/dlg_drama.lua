@@ -23,6 +23,7 @@ p.contentStrLn = nil;   --当前对话内容长度
 p.contentIndex = nil;   --当前说话的索引，用于特效
 p.timerId = nil;        --定时器ID
 p.isActivity = false;
+p.curStageId = 0;
 
 local act_zoom = "engine_cmb.zoom_in_out"; --呼吸效果
 
@@ -36,7 +37,8 @@ function p.ShowUI( stageId, storyId  )
 	p.isActivity = true;
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		drama_mgr.LoadDramaInfo( storyId );
+		p.curStageId = stageId;
+		drama_mgr.LoadDramaInfo( stageId,storyId );
 		return;
 	end
 	
@@ -112,7 +114,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
             end
             p.isActivity = false;
             p.CloseUI();
-            after_drama.DoAfterDrama();
+            after_drama.DoAfterDrama(p.curStageId);
         end
     end
 end
@@ -148,7 +150,7 @@ function p.ResetUI( dramaInfo )
     if p.contentStr ~= nil and p.contentStrLn > 1 then
     	p.timerId = SetTimer( p.DoEffectContent, 0.01f );
     end
-    
+
     --NPC图片以特效更新：左边NPC
     if tonumber( dramaInfo.picLeft ) ~= nil and tonumber( dramaInfo.picLeft ) ~= 0 then
     	bgPic = GetPictureByAni( "drama.npc_"..dramaInfo.picLeft, 0);
@@ -157,8 +159,7 @@ function p.ResetUI( dramaInfo )
 			p.AddNpcEffect( p.npcPicNodeL );
     	end
     end
-  
-    
+
      --NPC图片以特效更新：右边NPC
     if tonumber( dramaInfo.picRight ) ~= nil and tonumber( dramaInfo.picRight ) ~= 0 then
         bgPic = GetPictureByAni( "drama.npc_"..dramaInfo.picRight, 0);

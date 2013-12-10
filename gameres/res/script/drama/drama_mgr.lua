@@ -8,12 +8,16 @@ drama_mgr = {}
 local p = drama_mgr;
 p.dramaList = {};--剧情对话内容列表
 p.index = nil;--对话位置索引
+p.currentStageId = 0;
 
 --载入剧情对话内容
-function p.LoadDramaInfo( dramaId )
+function p.LoadDramaInfo( stageId,dramaId )
     if dramaId == nil then
     	return;
     end
+
+	p.currentStageId = stageId;
+	
     local dramaList = SelectRowList( T_STORY_INFO, "story_id", dramaId );
     if dramaList == nil or #dramaList == 0 then
     	WriteConWarning("story_id not find!");
@@ -44,7 +48,7 @@ function p.NextDramaInfo()
 	if #p.dramaList < p.index then
 		dlg_drama.CloseUI();
 		p.ClearData();
-		after_drama.DoAfterDrama();
+		after_drama.DoAfterDrama(p.currentStageId);
 	else
 	   p.dramaList[p.index]:ShowPage();	
 	end
