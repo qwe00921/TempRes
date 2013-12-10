@@ -179,10 +179,20 @@ NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui\public\button_click.png
 SelectedFileUV=0 0 110 54
 
+[CTRL_9SLICES_29]
+Type=22
+Tag=47
+Rect=0 661 640 190
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
 [CTRL_9SLICES_24]
 Type=22
 Tag=40
-Rect=18 656 601 193
+Rect=0 656 640 204
 AnchorPos=0 0
 Notes=
 Stretch=1

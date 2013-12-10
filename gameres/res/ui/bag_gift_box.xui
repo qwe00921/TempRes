@@ -10,8 +10,7 @@ Rect=100 175 463 390
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
+
 
 [CTRL_TEXT_GIFT_HEAD]
 Type=4
