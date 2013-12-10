@@ -7,6 +7,7 @@ PROFESSION_TYPE_1 = 2001;
 PROFESSION_TYPE_2 = 2002;
 PROFESSION_TYPE_3 = 2003;
 PROFESSION_TYPE_4 = 2004;
+PROFESSION_TYPE_5 = 2005;
 
 MARK_ON = 100;
 MARK_OFF = nil;
@@ -36,10 +37,9 @@ function p.ShowUI( bModify )
 	if bModify ~= nil then
 		p.modifyTeam = bModify;
 	end
-
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
-		PlayMusic_ShopUI();
 		return;
 	end
     local layer = createNDUIDialog();
@@ -59,7 +59,6 @@ function p.ShowUI( bModify )
 	
 	--加载卡牌列表数据
     card_bag_mgr.LoadAllCard( p.layer );
-
 end
 
 function p.SetCardNum(delNum)
@@ -99,12 +98,7 @@ function p.ShowCardList(cardList)
 	end
 	
 	p.cardListInfo = cardList;
-	-- if cardList == nil or #cardList <= 0 then
-		-- WriteCon("ShowCardList():cardList is null");
-		-- return;
-	-- end
-	--WriteCon("cardCount ===== "..#cardList);
-	--local cardNum = #cardList;
+
 	local row = math.ceil(cardNum / 4);
 	WriteCon("row ===== "..row);
 	
@@ -139,19 +133,23 @@ function p.ShowCardInfo( view, card, cardIndex )
 	if cardIndex == 1 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
 		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL1;
-		cardTeam = ui_list.ID_CTRL_TEXT_TEAM1;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
+		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
 		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL2;
-		cardTeam = ui_list.ID_CTRL_TEXT_TEAM2;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
+		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
 		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL3;
-		cardTeam = ui_list.ID_CTRL_TEXT_TEAM3;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
+		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
 		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL4;
-		cardTeam = ui_list.ID_CTRL_TEXT_TEAM4;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
+		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL4;
 	end
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
@@ -173,11 +171,20 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local levelText = tostring(card.Level)
 	cardLevelText:SetText(levelText);
 	
-	local cardTeamText = GetLabel(view,cardTeam );
-	local teamText = tostring(card.Team_marks)
-	if teamText ~= "0" then
-		cardTeamText:SetText(teamText);
+	local cardTeamPic = GetImage(view,cardTeam );
+	local teamId = tonumber(card.Team_marks)
+	if teamId == 0 then
+		cardTeamPic:SetVisible(false);
+	elseif teamId == 1 then
+		cardTeamPic:SetPicture( GetPictureByAni("common_ui.teamName",0));
+	elseif teamId == 2 then
+		cardTeamPic:SetPicture( GetPictureByAni("common_ui.teamName",1));
+	elseif teamId == 3 then
+		cardTeamPic:SetPicture( GetPictureByAni("common_ui.teamName",2));
 	end
+
+	local levelBgPic = GetImage(view,levelBg);
+	levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
 
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
@@ -272,6 +279,9 @@ function p.SetDelegate(layer)
 	local cardBtnPro4 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO4);
 	cardBtnPro4:SetLuaDelegate(p.OnUIClickEvent);
 	
+	local cardBtnPro5 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO5);
+	cardBtnPro5:SetLuaDelegate(p.OnUIClickEvent);
+	
 	local sortByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT_BY);
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 end
@@ -283,12 +293,9 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_SELL == tag) then --批量卖出
 			p.sellBtnEvent();
 		elseif(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
-			if not p.modifyTeam then
-				maininterface.BecomeFirstUI();
-				maininterface.CloseAllPanel();
-			end
-			
 			p.CloseUI();
+			maininterface.BecomeFirstUI();
+			maininterface.CloseAllPanel();
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );
@@ -309,6 +316,10 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			WriteCon("=====cardBtnPro4");
 			p.SetBtnCheckedFX( uiNode );
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_4);
+		elseif(ui.ID_CTRL_BUTTON_PRO5 == tag) then --职业5
+			WriteCon("=====cardBtnPro5");
+			p.SetBtnCheckedFX( uiNode );
+			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_5);
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
 			WriteCon("card_bag_sort.ShowUI()");
 			p.ClearDelList()

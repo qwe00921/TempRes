@@ -40,3 +40,13 @@ image\ui\bag\star3.png
 [equipMode]
 image\ui\bag\star1.png
 image\ui\bag\star2.png
+
+;队伍图片	XMK
+[teamName]
+image\ui\public\team1.png
+image\ui\public\team2.png
+image\ui\public\team3.png
+
+;卡牌背包等级背景图片
+[levelBg]
+image\ui\public\bg_lv.png
