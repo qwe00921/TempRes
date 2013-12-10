@@ -87,6 +87,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--maininterface.HideUI();
 			--隐藏用户信息
 			dlg_userinfo.HideUI();
+			dlg_battlearray.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========活动========**");
 			p.CloseAllPanel();

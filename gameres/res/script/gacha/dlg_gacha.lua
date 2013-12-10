@@ -785,9 +785,11 @@ function p.ShowGachaData( gachadata )
 		gachaName:SetText( gacha[i].Name );
 		gachaPic:SetPicture( GetPictureByAni( "gacha_pic." .. gachaid, 0 ) );
 		
+		--[[
 		gachaOneBtn:SetImage( GetPictureByAni("ui.gacha_btn", 1));
 		gachaFewBtn:SetImage( GetPictureByAni("ui.gacha_btn", 2));
-
+		--]]
+		
 		gachaOneBtn:SetLuaDelegate(p.OnGachaUIEvent);
 		gachaFewBtn:SetLuaDelegate(p.OnGachaUIEvent);
 		
