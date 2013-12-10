@@ -5,6 +5,16 @@
 --------------------------------------------------------------
 
 
+MUSIC_GLOBAL_MUSICE  = 0;
+
+--[[
+	1	 battle
+	2	 task
+	3	 mainui
+	4    loginui
+	5	 shopui;
+]]--
+
 --播放战斗音乐
 function PlayMusic_Battle()
 	StopBGMusic()
@@ -18,10 +28,11 @@ function PlayMusic_Battle()
     end        
 	]]--
 	PlayBGMusicByName( "bgm_battle.mp3" );
+	MUSIC_GLOBAL_MUSICE = 1
 end
 
 --播放任务地图音乐
-function PlayMusic_Task()
+function PlayMusic_Task(chapter)
     StopBGMusic()
     
 	--[[
@@ -33,7 +44,14 @@ function PlayMusic_Task()
         PlayBGMusicByName( "bgm_task.mp3" );
     end        
 	]]--
-	PlayBGMusicByName( "bgm_task.mp3" );
+	if chapter == 1 then
+		PlayBGMusicByName( "bgm_task_chapter_1.mp3" );
+	else
+		PlayBGMusicByName( "bgm_task.mp3" );
+	end
+	
+	MUSIC_GLOBAL_MUSICE = 2
+	
 end
 
 --播放主界面音乐
@@ -50,21 +68,27 @@ function PlayMusic_MainUI()
     end        
     --]]
 	PlayBGMusicByName( "bgm_main.mp3" ); 
+	MUSIC_GLOBAL_MUSICE = 3
 end
 
 --播放登录界面音乐
 function PlayMusic_LoginUI()
     StopBGMusic()
 	PlayBGMusicByName( "bgm_login.mp3" ); 
+	MUSIC_GLOBAL_MUSICE = 4
 end
 
---播放商店界面音乐
+--播放商店,卡组,邮件等界面音乐
 function PlayMusic_ShopUI()
-    StopBGMusic()
-	PlayBGMusicByName( "bgm_shop.mp3" ); 
+	if MUSIC_GLOBAL_MUSICE ~= 5 then
+		StopBGMusic()
+		PlayBGMusicByName( "bgm_shop.mp3" ); 
+		MUSIC_GLOBAL_MUSICE = 5;
+	end
 end
 
 --停止背景音乐
 function StopMusic()
     StopBGMusic();
+	MUSIC_GLOBAL_MUSICE = 0;
 end

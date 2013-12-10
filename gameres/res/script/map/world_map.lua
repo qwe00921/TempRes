@@ -280,8 +280,8 @@ function p.CheckToCloseMap()
 	local mapNode = GetTileMapMgr():GetMapNode();
 	if mapNode ~= nil then
 		mapNode:FadeOut();
-		SetTimerOnce( p.OnTimer_BackMainUI, 0.5f );
-		--p.OnTimer_BackMainUI();
+		--SetTimerOnce( p.OnTimer_BackMainUI, 0.5f );
+		p.OnTimer_BackMainUI();
 	end
 end
 

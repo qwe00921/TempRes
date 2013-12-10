@@ -18,6 +18,7 @@ p.itemBtnNode = nil;
 function p.ShowUI()
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
+		PlayMusic_ShopUI();
 		return;
 	end
 	
@@ -36,6 +37,7 @@ function p.ShowUI()
     p.layer = layer;
     p.SetDelegate(layer);
 	p.Init();
+	PlayMusic_ShopUI();
 end
 
 function p.Init()
