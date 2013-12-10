@@ -835,6 +835,7 @@ function p.UIDisappear()
 	p.CloseUI();
 	maininterface.ShowUI();
 	dlg_userinfo.ShowUI();
+	dlg_battlearray.ShowUI();
 end
 
 

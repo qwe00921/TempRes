@@ -16,6 +16,7 @@ function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		--p.SendReqUserInfo();
+		PlayMusic_LoginUI();
 		return;
 	end
 	
@@ -33,6 +34,7 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate();
+	PlayMusic_LoginUI();
 end
 
 function p.SetDelegate()
@@ -49,10 +51,13 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_102 == tag then
 			uiNode:SetVisible(false);
-			login_ui.ShowUI();
+			--login_ui.ShowUI();
 			--暂时去除登录界面
 			--p.CloseUI();
 			--maininterface.ShowUI();
+			local uid = GetUID();
+			SendReq("ServerList","List",uid,"MachineType=Android");
+
 		end
 	end
 end

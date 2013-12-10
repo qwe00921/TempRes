@@ -98,7 +98,7 @@ NormalFileUV=0 0 104 78
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
-[CTRL_BUTTON_23]
+[CTRL_BUTTON_PRO5]
 Type=2
 Tag=36
 Rect=409 109 80 60
@@ -204,7 +204,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_26]
 Type=2
 Tag=33
-Rect=428 720 174 63
+Rect=414 722 174 63
 AnchorPos=0 0
 Notes=
 Text=开始强化
