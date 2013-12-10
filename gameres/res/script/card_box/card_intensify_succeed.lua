@@ -8,23 +8,19 @@ p.layer = nil;
 p.beforCardInfo = nil;
 p.cardInfo = nil;
 function p.ShowUI(beforCardInfo)
-	WriteCon("ShowUI.....1"..beforCardInfo.UniqueId);
 	if beforCardInfo == nil then 
 		return;
 	end
-	WriteCon("ShowUI.....2"..beforCardInfo.UniqueId);
 	p.beforCardInfo = beforCardInfo;
 	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
 	end
-	WriteCon("ShowUI.....3"..beforCardInfo.UniqueId);
     local layer = createNDUIDialog();
     if layer == nil then
         return false;
     end
-	WriteCon("ShowUI.....4"..beforCardInfo.UniqueId);
 	
 	layer:NoMask();
     layer:Init();   
@@ -35,7 +31,6 @@ function p.ShowUI(beforCardInfo)
 
     p.layer = layer;
     p.SetDelegate(layer);
-	WriteCon("ShowUI-------------");
 end
 
 

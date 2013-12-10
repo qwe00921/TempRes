@@ -126,9 +126,11 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --强化
 			WriteCon("OnUIClickEvent....   intensify");
+			local pCardLevelMax= SelectRowInner( T_CARD_LEVEL_LIMIT, "id", p.baseCardInfo.Rare); --从表中获取卡牌详细信息	
+			--WriteCon("Max Level ："..pCardLevelMax.level_limit.."  now Level : "..p.baseCardInfo.Level);
 			if #p.selectCardId <=0 then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
-			elseif tonumber( p.baseCardInfo.Level) >= tonumber(p.baseCardInfo.Level_max) then
+			elseif tonumber( p.baseCardInfo.Level) >= tonumber(pCardLevelMax.level_limit) then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_level_max"),p.OnMsgCallback,p.layer);
 				
 			else
