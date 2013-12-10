@@ -6,26 +6,24 @@ Height=960
 [CTRL_9SLICES_19]
 Type=22
 Tag=32
-Rect=-3 154 640 468
+Rect=30 142 583 517
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\common\sub_ui_bg.png
-NormalFileUV=0 0 165 165
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
 
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=16
-Rect=78 215 240 320
+Rect=78 231 240 320
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\card\10100301.png
-NormalFileUV=0 0 450 600
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=17
-Rect=377 218 180 30
+Rect=377 234 180 30
 AnchorPos=0 0
 Notes=
 Text=女武神玛利亚
@@ -38,7 +36,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_18]
 Type=4
 Tag=18
-Rect=380 253 50 30
+Rect=380 269 50 30
 AnchorPos=0 0
 Notes=
 Text=HP
@@ -51,7 +49,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_19]
 Type=4
 Tag=19
-Rect=380 291 50 30
+Rect=380 307 50 30
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -64,7 +62,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_20]
 Type=4
 Tag=20
-Rect=380 329 50 30
+Rect=380 345 50 30
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -77,7 +75,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_21]
 Type=4
 Tag=21
-Rect=380 366 50 30
+Rect=380 382 50 30
 AnchorPos=0 0
 Notes=
 Text=技能
@@ -90,7 +88,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_HP]
 Type=4
 Tag=22
-Rect=436 253 120 30
+Rect=436 269 120 30
 AnchorPos=0 0
 Notes=
 Text=999999
@@ -103,7 +101,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATK]
 Type=4
 Tag=23
-Rect=436 291 120 30
+Rect=436 307 120 30
 AnchorPos=0 0
 Notes=
 Text=999999
@@ -116,7 +114,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DEF]
 Type=4
 Tag=24
-Rect=437 329 120 30
+Rect=437 345 120 30
 AnchorPos=0 0
 Notes=
 Text=999999
@@ -129,7 +127,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SKILL]
 Type=4
 Tag=25
-Rect=438 366 120 30
+Rect=438 382 120 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -140,7 +138,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DESCRIPTION]
 Type=4
 Tag=26
-Rect=379 403 180 143
+Rect=379 419 180 143
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -151,7 +149,7 @@ TextVerAlign=AlignTop
 [CTRL_BUTTON_AGAIN]
 Type=2
 Tag=27
-Rect=41 553 136 60
+Rect=112 580 110 54
 AnchorPos=0 0
 Notes=
 Text=再扭一次
@@ -160,17 +158,17 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=28
-Rect=453 553 136 60
+Rect=439 580 110 54
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -179,17 +177,17 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
 [CTRL_TEXT_29]
 Type=4
 Tag=29
-Rect=137 159 326 40
+Rect=157 159 326 40
 AnchorPos=0 0
 Notes=
 Text=获得   星卡片
@@ -202,7 +200,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RARE]
 Type=4
 Tag=30
-Rect=260 159 50 40
+Rect=281 159 50 40
 AnchorPos=0 0
 Notes=
 Text=6
@@ -215,7 +213,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_NEXT]
 Type=2
 Tag=31
-Rect=247 553 136 60
+Rect=279 580 110 54
 AnchorPos=0 0
 Notes=
 Text=下一张
@@ -224,9 +222,9 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_2_normal.png
-NormalFileUV=0 0 136 60
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60

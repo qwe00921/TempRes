@@ -81,8 +81,7 @@ Tag=11
 Rect=50 26 100 100
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
