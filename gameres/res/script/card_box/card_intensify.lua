@@ -6,7 +6,7 @@ PROFESSION_TYPE_1 = 2001;
 PROFESSION_TYPE_2 = 2002;
 PROFESSION_TYPE_3 = 2003;
 PROFESSION_TYPE_4 = 2004;
-
+PROFESSION_TYPE_5 = 2005;
 MARK_ON = 100;
 MARK_OFF = nil;
 
@@ -107,6 +107,9 @@ function p.SetDelegate(layer)
 	local cardBtnPro4 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO4);
 	cardBtnPro4:SetLuaDelegate(p.OnUIClickEvent);
 	
+	local cardBtnPro5 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO5);
+	cardBtnPro5:SetLuaDelegate(p.OnUIClickEvent);
+	
 	local sortByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT_BY);
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	
@@ -117,11 +120,13 @@ end
 
 --事件处理
 function p.OnUIClickEvent(uiNode, uiEventType, param)
+	WriteCon("OnUIClickEvent....");
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --强化
+			WriteCon("OnUIClickEvent....   intensify");
 			if #p.selectCardId <=0 then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
 			elseif tonumber( p.baseCardInfo.Level) >= tonumber(p.baseCardInfo.Level_max) then
@@ -144,6 +149,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			p.SetBtnCheckedFX( uiNode );
 			p.ShowCardView(p.cardListInfo);
+			p.cardListByProf = p.cardListInfo;
 		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --职业1
 			p.SetBtnCheckedFX( uiNode );
 			p.ShowCardByProfession(PROFESSION_TYPE_1);
@@ -156,6 +162,9 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_PRO4 == tag) then --职业4
 			p.SetBtnCheckedFX( uiNode );
 			p.ShowCardByProfession(PROFESSION_TYPE_4);
+		elseif(ui.ID_CTRL_BUTTON_PRO5 == tag) then --职业5
+			p.SetBtnCheckedFX( uiNode );
+			p.ShowCardByProfession(PROFESSION_TYPE_5);
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
 				card_bag_sort.ShowUI(1);
 		end
@@ -424,7 +433,9 @@ function p.ShowCardByProfession(profType)
 	end 
 	p.cardListByProf = p.GetCardList(profType);
 		
-	
+	if p.cardListByProf == nil or #p.cardListByProf <= 0 then
+		WriteCon("p.cardListByProf == nil or #p.cardListByProf <= 0");
+	end
 	
 	if p.sortByRuleV ~= nil then
 		p.sortByRule(p.sortByRuleV)
@@ -436,32 +447,38 @@ end
 --获取显示列表
 function p.GetCardList(profType)
 	local t = {};
-	if p.cardList == nil then 
+	if p.cardListInfo == nil then 
 		return t;
 	end
 	if profType == PROFESSION_TYPE_0 then
-		t = p.cardList;
+		t = p.cardListInfo;
 	elseif profType == PROFESSION_TYPE_1 then 
-		for k,v in pairs(p.cardList) do
+		for k,v in pairs(p.cardListInfo) do
 			if tonumber(v.Class) == 1 then
 				t[#t + 1] = v;
 			end
 		end
 	elseif profType == PROFESSION_TYPE_2 then 
-		for k,v in pairs(p.cardList) do
+		for k,v in pairs(p.cardListInfo) do
 			if tonumber(v.Class) == 2 then
 				t[#t + 1] = v;
 			end
 		end
 	elseif profType == PROFESSION_TYPE_3 then 
-		for k,v in pairs(p.cardList) do
+		for k,v in pairs(p.cardListInfo) do
 			if tonumber(v.Class) == 3 then
 				t[#t + 1] = v;
 			end
 		end
 	elseif profType == PROFESSION_TYPE_4 then 
-		for k,v in pairs(p.cardList) do
+		for k,v in pairs(p.cardListInfo) do
 			if tonumber(v.Class) == 4 then
+				t[#t + 1] = v;
+			end
+		end
+	elseif profType == PROFESSION_TYPE_5 then 
+		for k,v in pairs(p.cardListInfo) do
+			if tonumber(v.Class) == 5 then
 				t[#t + 1] = v;
 			end
 		end
