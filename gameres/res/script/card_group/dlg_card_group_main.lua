@@ -21,6 +21,7 @@ function p.ShowUI()
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		PlayMusic_ShopUI();
 		return;
 	end
 	
@@ -39,6 +40,7 @@ function p.ShowUI()
 	p.layer = layer;
     p.SetDelegate();
 	p.RequestData();
+	PlayMusic_ShopUI();
 end
 
 --…Ë÷√ªÿµ˜
@@ -412,5 +414,8 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+	dlg_beast_main.CloseUI();
+	dlg_card_attr_base.CloseUI();
+	card_bag_mian.CloseUI();
 end
 

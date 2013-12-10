@@ -198,7 +198,7 @@ end
 function p.RefreshUI(msg)
 
 	if (msg.created_time > 0) then
-		SetUID( p.create_user_id );
+--		SetUID( p.create_user_id );
 		GetUserConfig():Save();
 		--ÌבÊ¾¿ע
 		dlg_msgbox.ShowOK( GetStr("create_player"), GetStr("create_player_ok"), p.OnMsgBoxSuccess );

@@ -36,9 +36,10 @@ function p.ShowUI( bModify )
 	if bModify ~= nil then
 		p.modifyTeam = bModify;
 	end
-	
+
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
+		PlayMusic_ShopUI();
 		return;
 	end
     local layer = createNDUIDialog();
@@ -58,6 +59,7 @@ function p.ShowUI( bModify )
 	
 	--加载卡牌列表数据
     card_bag_mgr.LoadAllCard( p.layer );
+
 end
 
 function p.SetCardNum(delNum)
@@ -281,9 +283,12 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_SELL == tag) then --批量卖出
 			p.sellBtnEvent();
 		elseif(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
+			if not p.modifyTeam then
+				maininterface.BecomeFirstUI();
+				maininterface.CloseAllPanel();
+			end
+			
 			p.CloseUI();
-			maininterface.BecomeFirstUI();
-			maininterface.CloseAllPanel();
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );

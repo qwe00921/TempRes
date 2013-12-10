@@ -136,14 +136,14 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			return
 		else
 			WriteCon("btnID="..btnId);
-			n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
-			p.CloseUI()
-			-- if p.missionList["M"..btnId] then
-				-- local storyId = p.missionList["M"..btnId].Begin_story;
-				-- WriteCon("storyId = "..storyId);
-				-- dlg_drama.ShowUI(btnId,storyId);
-				-- p.CloseUI();
-			--end
+			--n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+			--p.CloseUI()
+			if p.missionList["M"..btnId] then
+				local storyId = p.missionList["M"..btnId].Begin_story;
+				WriteCon("storyId = "..storyId);
+				dlg_drama.ShowUI(btnId,storyId);
+				p.CloseUI();
+			end
 		end
 	end
 end

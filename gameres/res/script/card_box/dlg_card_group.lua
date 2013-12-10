@@ -25,7 +25,6 @@ function p.ShowUI()
     
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		PlayMusic_ShopUI();
 		return;
 	end
 	local layer = createNDUIDialog();
@@ -40,7 +39,6 @@ function p.ShowUI()
 	p.layer = layer;
     p.SetDelegate();
     p.LoadTeamData();
-	PlayMusic_ShopUI();
 end
 
 

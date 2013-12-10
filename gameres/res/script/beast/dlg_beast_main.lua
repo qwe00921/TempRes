@@ -15,9 +15,10 @@ p.groupFlag = false;
 
 --œ‘ æUI
 function p.ShowUI( bgroupFlag )
-	dlg_menu.SetNewUI( p );
 	if bgroupFlag ~= nil then
 		p.groupFlag = bgroupFlag;
+	else
+		dlg_menu.SetNewUI( p );
 	end
 	
 	if p.layer ~= nil then
