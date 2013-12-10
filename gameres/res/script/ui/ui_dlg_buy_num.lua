@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_dlg_buy_num = {};
 local p =  ui_dlg_buy_num;
+p.ID_CTRL_PICTURE_24					     = 24;
 p.ID_CTRL_PICTURE_23					     = 23;
 p.ID_CTRL_PICTURE_22					     = 22;
 p.ID_CTRL_BUTTON_CANCEL				   = 21;
@@ -14,6 +15,7 @@ p.ID_CTRL_TEXT_PRICE					     = 17;
 p.ID_CTRL_TEXT_16						       = 16;
 p.ID_CTRL_BUTTON_MAX					     = 15;
 p.ID_CTRL_BUTTON_ADD_10				   = 14;
+p.ID_CTRL_9SLICES_23					     = 25;
 p.ID_CTRL_BUTTON_ADD_5				    = 13;
 p.ID_CTRL_BUTTON_ADD_2				    = 12;
 p.ID_CTRL_TEXT_NUM					       = 8;
