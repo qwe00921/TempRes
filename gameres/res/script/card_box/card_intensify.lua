@@ -20,8 +20,6 @@ p.layer = nil;
 p.cardListInfo = nil;
 p.curBtnNode = nil;
 p.sortByRuleV = nil;
-p.allCardPrice = 0;
-p.sellCardList = {};
 p.baseCardInfo = nil;
 
 p.selectList = {};
@@ -30,6 +28,7 @@ p.selectNum = 0;
 p.consumeMoney = 0;
 p.selectCardId = {};
 p.userMoney = 0;
+p.cardListByProf = {};
 function p.ShowUI(baseCardInfo)
 	
 	if baseCardInfo == nil then 
@@ -414,7 +413,6 @@ function p.SetBtnCheckedFX( node )
 	btnNode:SetChecked( true );
 	p.curBtnNode = btnNode;
 	card_bag_sort.CloseUI();
-	p.sellCardList = {};
 end
 
 
@@ -527,15 +525,15 @@ function p.CloseUI()
 		p.sortBtnMark = MARK_OFF;
 		p.sortByRuleV = nil;
 		p.BatchSellMark = MARK_OFF;
-		p.allCardPrice = 0;
 		p.selectList = {};
 		p.teamList = {};
-		p.sellCardList = {};
 		p.selectCardId = {};
 		p.baseCardInfo = nil;
 		p.consumeMoney = 0;
 		p.selectNum = 0;
         card_bag_mgr.ClearData();
+		p.cardListByProf = {};
+		p.userMoney = 0;
 		
     end
 end
@@ -544,4 +542,5 @@ function p.ClearData()
 	p.selectNum = 0;
 	p.selectCardId = {};
 	p.cardListInfo = nil;
+	p.cardListByProf = {};
 end
