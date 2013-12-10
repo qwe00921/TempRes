@@ -121,14 +121,14 @@ NormalFileUV=0 0 104 78
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
-[CTRL_BUTTON_15]
+[CTRL_BUTTON_PRO4]
 Type=2
-Tag=15
-Rect=528 121 104 78
+Tag=29
+Rect=423 121 104 78
 AnchorPos=0 0
 Notes=
-Text=职业5
-TextTradition=職業5
+Text=职业4
+TextTradition=職業4
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -138,14 +138,14 @@ NormalFileUV=0 0 104 78
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
-[CTRL_BUTTON_PRO4]
+[CTRL_BUTTON_PRO5]
 Type=2
-Tag=29
-Rect=423 121 104 78
+Tag=15
+Rect=528 121 104 78
 AnchorPos=0 0
 Notes=
-Text=职业4
-TextTradition=職業4
+Text=职业5
+TextTradition=職業5
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter

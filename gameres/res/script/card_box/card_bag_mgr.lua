@@ -14,22 +14,25 @@ function p.LoadAllCard(layer)
 	end
 	WriteCon("====request card list");
 	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
 	SendReq("CardList","List",uid,"");
 end
 
 --请求回调，显示卡牌列表
-function p.RefreshUI(dataList)
+function p.RefreshUI(self)
 	if p.layer == nil or p.layer:IsVisible() ~= true then
 		return;
 	end
-	card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
-	table.sort(dataList,p.sortByLevel);
-	p.cardList = dataList;
-	p.cardListByProf = dataList;
-	card_bag_mian.ShowCardList(p.cardList);
+	
+	if self.result == true then
+		local cardList = self.cardlist
+		card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
+		table.sort(cardList,p.sortByLevel);
+		p.cardList = cardList;
+		p.cardListByProf = cardList;
+		card_bag_mian.ShowCardList(cardList);
+	elseif self.result == false then
+		WriteConWarning( "** msg_card_box error" );
+	end
 end
 
 --发送删除请求
@@ -139,6 +142,12 @@ function p.GetCardList(profType)
 	elseif profType == PROFESSION_TYPE_4 then 
 		for k,v in pairs(p.cardList) do
 			if tonumber(v.Class) == 4 then
+				t[#t + 1] = v;
+			end
+		end
+	elseif profType == PROFESSION_TYPE_5 then 
+		for k,v in pairs(p.cardList) do
+			if tonumber(v.Class) == 5 then
 				t[#t + 1] = v;
 			end
 		end
