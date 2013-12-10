@@ -95,15 +95,16 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
 			WriteCon("**========任务========**");
 			stageMap_main.OpenWorldMap();
+			PlayMusic_Task(1);
 			--隐藏主UI
 			--maininterface.CloseAllPanel();
 			maininterface.HideUI();
 		elseif ui.ID_CTRL_BUTTON_HOME_PAGE == tag then
 			WriteCon("**========主页========**");
-			
 			world_map.CheckToCloseMap();
-			
+			--PlayMusic_MainUI();
 			p.SetNewUI( {} );
+			PlayMusic_MainUI();
 		end
 		maininterface.CloseAllPanel();
 	end

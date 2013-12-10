@@ -21,6 +21,7 @@ function p.ShowUI()
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		PlayMusic_ShopUI();
 		return;
 	end
 	
@@ -39,6 +40,7 @@ function p.ShowUI()
 	p.layer = layer;
     p.SetDelegate();
 	p.RequestData();
+	PlayMusic_ShopUI();
 end
 
 --…Ë÷√ªÿµ˜
