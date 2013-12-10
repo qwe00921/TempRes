@@ -75,9 +75,11 @@ function p.ShowCardLevel(msg)
 	p.cardInfo = msg.cardinfo;
 	
 	local cardPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_CARD);
-	local aniIndex = "card.card_"..p.cardInfo.CardID;
 	
-	cardPic:SetPicture( GetPictureByAni(aniIndex, 0) );
+	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
+	
+	cardPic:SetPicture(GetPictureByAni(pCardInfo.card_pic, 0) );
+	
 	
 	local pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", p.cardInfo.Level);
 	
