@@ -414,5 +414,8 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+	dlg_beast_main.CloseUI();
+	dlg_card_attr_base.CloseUI();
+	card_bag_mian.CloseUI();
 end
 
