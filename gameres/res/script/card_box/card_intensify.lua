@@ -243,7 +243,6 @@ function p.ShowCardList(cardList,msg)
 end
 --显示卡牌列表
 function p.ShowCardView(cardList)
-	
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 	
@@ -251,8 +250,7 @@ function p.ShowCardView(cardList)
 		WriteCon("ShowCardView():cardList is null");
 		return;
 	end
-	
-	local cardNum = #cardList -1;
+	local cardNum = #cardList;
 	
 	local row = math.ceil(cardNum / 4);
 	
@@ -284,7 +282,6 @@ function p.ShowCardView(cardList)
 	for k,v in pairs(p.selectCardId) do
 		p.selectList[v]:SetVisible(true);
 	end
-	
 	
 end
 --显示单张卡牌
@@ -434,12 +431,12 @@ function p.ShowCardByProfession(profType)
 	if p.cardListByProf == nil or #p.cardListByProf <= 0 then
 		WriteCon("p.cardListByProf == nil or #p.cardListByProf <= 0");
 	end
-	
 	if p.sortByRuleV ~= nil then
 		p.sortByRule(p.sortByRuleV)
 	else
 		p.ShowCardView(p.cardListByProf);
 	end
+	
 end
 
 --获取显示列表
