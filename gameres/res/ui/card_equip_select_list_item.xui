@@ -28,8 +28,6 @@ Tag=169
 Rect=32 15 107 101
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
 
 [CTRL_TEXT_SELECT_1]
 Type=4
@@ -91,8 +89,7 @@ Tag=176
 Rect=344 18 107 101
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
+
 
 [CTRL_PICTURE_IMAGE_4]
 Type=1
@@ -100,8 +97,7 @@ Tag=177
 Rect=493 16 107 101
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
+
 
 [CTRL_TEXT_SELECT_2]
 Type=4

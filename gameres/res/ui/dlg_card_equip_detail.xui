@@ -91,7 +91,7 @@ DisableFileUV=0 0 136 60
 [CTRL_BUTTON_UNLOAD]
 Type=2
 Tag=9
-Rect=305 7 136 60
+Rect=280 13 136 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -134,7 +134,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CLOSE]
 Type=2
 Tag=19
-Rect=562 187 68 68
+Rect=533 187 68 68
 AnchorPos=0 0
 Notes=
 TextSize=10

@@ -143,15 +143,15 @@ function p.AddStageObj( fgLayer, tileX, tileY, offsetX, offsetY,
 		local title = createNDUILabel();
 		if title ~= nil then
 			title:Init();
-			title:SetFontSize( FontSize(25));
+			title:SetFontSize( FontSize(20));
 			title:SetFrameSize(picSize.w,picSize.h);
 			title:SetText(titleText);
-			title:SetFramePosXY( 0, -obj:GetFrameSize().h * 0.6f );
+			title:SetFramePosXY( 0, -obj:GetFrameSize().h * 0.3f );
 			obj:AddChild(title);
 			if isUnlock then
-				title:SetFontColor( ccc4(0,0,255,255));
+				title:SetFontColor( ccc4(255,153,51,255));
 			else
-				title:SetFontColor( ccc4(125,125,125,255));
+				title:SetFontColor( ccc4(255,0,102,255));
 			end
 		else
 			WriteConErr( "create label err");

@@ -17,6 +17,7 @@ p.ID_CTRL_9SLICES_26					     = 45;
 p.ID_CTRL_BUTTON_26					      = 33;
 p.ID_CTRL_TEXT_25						       = 32;
 p.ID_CTRL_9SLICES_24					     = 40;
+p.ID_CTRL_9SLICES_29					     = 47;
 p.ID_CTRL_BUTTON_SORT_BY				  = 30;
 p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
 p.ID_CTRL_PICTURE_41					     = 41;
