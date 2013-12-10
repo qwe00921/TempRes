@@ -134,7 +134,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CLOSE]
 Type=2
 Tag=19
-Rect=535 184 68 68
+Rect=535 184 69 69
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -144,8 +144,6 @@ NormalFile=.\res\image\ui\public\close2.png
 NormalFileUV=0 0 68 68
 SelectFile=.\res\image\ui\public\close2_click.png
 SelectedFileUV=0 0 68 68
-DisableFile=.\res\image\ui\common\close_disable.png
-DisableFileUV=0 0 74 74
 
 [CTRL_BUTTON_CHANGE]
 Type=2
@@ -167,7 +165,7 @@ DisableFileUV=0 0 136 60
 [CTRL_TEXT_TYP]
 Type=4
 Tag=1328
-Rect=245 212 122 20
+Rect=307 416 122 20
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -178,7 +176,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTR]
 Type=4
 Tag=1330
-Rect=235 215 155 20
+Rect=435 417 131 20
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -202,7 +200,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=1335
-Rect=214 409 111 37
+Rect=213 409 89 37
 AnchorPos=0 0
 Notes=
 TextSize=15

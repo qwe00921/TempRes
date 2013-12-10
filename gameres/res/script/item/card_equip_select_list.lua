@@ -180,10 +180,11 @@ function p.upgrade()
 					ids = ids .. ",";
 				end
 				ids = ids .. equip.id;
+				if equip and tonumber(equip.Rare) >= 5 then
+					has5Rank = true;
+				end
 			end
-			if equip and tonumber(equip.Rare) >= 5 then
-				has5Rank = true;
-			end
+			
 		end
 	end
 	
