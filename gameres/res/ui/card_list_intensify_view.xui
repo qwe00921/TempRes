@@ -21,8 +21,7 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品4
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
+
 
 [CTRL_BUTTON_ITEM3]
 Type=2
@@ -34,8 +33,7 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品3
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
+
 
 [CTRL_BUTTON_ITEM2]
 Type=2
@@ -47,8 +45,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品2
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
 
 [CTRL_BUTTON_ITEM1]
 Type=2
@@ -60,8 +56,7 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
-NormalFile=.\res\image\ui\bag\pic_item.png
-NormalFileUV=0 0 151 143
+
 
 [CTRL_TEXT_SELECT_4]
 Type=4

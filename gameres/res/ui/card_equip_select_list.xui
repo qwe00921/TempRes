@@ -103,21 +103,31 @@ NormalFileUV=0 0 100 98
 [CTRL_PICTURE_LIST_BG]
 Type=1
 Tag=23
-Rect=15 207 619 600
+Rect=21 261 619 336
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_59]
+Type=22
+Tag=62
+Rect=448 190 122 44
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt.png
+NormalFileUV=0 0 122 38
 
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=12 182 620 400
+Rect=16 252 620 400
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_25]
 Type=4
 Tag=32
-Rect=469 103 80 50
+Rect=470 187 80 50
 AnchorPos=0 0
 Notes=
 Text=/
@@ -125,6 +135,16 @@ TextTradition=/
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_58]
+Type=22
+Tag=61
+Rect=15 589 610 215
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
 
 [CTRL_9SLICES_29]
 Type=22
