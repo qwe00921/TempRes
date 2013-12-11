@@ -215,7 +215,8 @@ Tag=25
 Rect=314 111 100 100
 AnchorPos=0 0
 Notes=
-
+NormalFile=.\res\image\ui\beast\skill.png
+NormalFileUV=0 0 84 126
 
 [CTRL_PICTURE_TEAM1]
 Type=1

@@ -70,7 +70,7 @@ function p.ShowQuestRewardView(rewardData)
 	if tonumber(rewardData.Res) == 0 then	--失败
 		resultPic:SetPicture( GetPictureByAni("common_ui.mission_result", 0) );
 	elseif tonumber(rewardData.Res) == 1 then	--胜利
-		resultPic:SetPicture( GetPictureByAni("common_ui.mission_result", 1) );
+		resultPic:SetPicture( GetPictureByAni("common_ui.mission_result", 0) );
 	end
 	--任务名称
 	local missionName = GetLabel(p.layer, ui.ID_CTRL_TEXT_MISSION_NAME);
@@ -128,21 +128,17 @@ function p.ShowQuestRewardView(rewardData)
 
 	if rewardData["item"] then
 		if rewardData["item"][1] then
-			local itemType = tonumber(Reward["item"][1]["Type"])
-			local itemId = tonumber(Reward["item"][1]["Reward_id"])
-			if itemType == 1 or itemType == 3 then --物品
+			local itemType = tonumber(rewardData["item"][1]["Type"])
+			local itemId = tonumber(rewardData["item"][1]["Reward_id"])
+			if itemType == 1 or itemType == 3 or itemType == 4 then --物品
 				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
 				itemPic_1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-				itemName_1:SetText(itemTable.name);
+				itemName_1:SetText(itemTable.name)
 			elseif itemType == 2 then		--卡牌
 				local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
 				itemPic_1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
 				local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
 				itemName_1:SetText(cardTable2.name);
-			elseif itemType == 4 then		--装备
-				local equipTable = SelectRowInner(T_EQUIP,"id",itemId);
-				itemPic_1:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
-				itemName_1:SetText(equipTable.name);
 			end
 		else
 			itemPic_1:SetVisible(false);
@@ -150,8 +146,8 @@ function p.ShowQuestRewardView(rewardData)
 		end
 	
 		if rewardData["item"][2] then
-			local itemType = tonumber(Reward["item"][2]["Type"])
-			local itemId = tonumber(Reward["item"][2]["Reward_id"])
+			local itemType = tonumber(rewardData["item"][2]["Type"])
+			local itemId = tonumber(rewardData["item"][2]["Reward_id"])
 			if itemType == 1 or itemType == 3 or itemType == 4 then --物品
 				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
 				itemPic_2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );

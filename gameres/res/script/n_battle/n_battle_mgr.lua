@@ -153,17 +153,20 @@ end
 
 --进入回合阶段->互殴
 function p.EnterBattle_RoundStage_Atk()
-    --n_battle_mainui.OnBattleShowFinished();
     local rounds = n_battle_stage.GetRoundNum();
     local atkData = n_battle_db_mgr.GetRoundDB( rounds );
     if atkData ~= nil and #atkData > 0 and rounds <= N_BATTLE_MAX_ROUND then
     	n_battle_show.DoEffectAtk( atkData );
+    else
+        n_battle_mainui.OnBattleShowFinished();	
     end
 end
 
 --进入回合阶段->清算
 function p.EnterBattle_RoundStage_Clearing()
-
+    if not p.CheckBattleWin() then
+         p.CheckBattleLose();
+    end
     --进入下一个回合
     n_battle_stage.NextRound();
     p.ShowRoundNum();

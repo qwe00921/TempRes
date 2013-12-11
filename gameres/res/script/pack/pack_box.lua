@@ -258,7 +258,14 @@ function p.ShowItemInfo( view, item, itemIndex )
 	end
 
 	local item_id = tonumber(item.Item_id);
-	local itemTable = SelectRowInner(T_ITEM,"id",item_id);
+	local itemType = tonumber(item.Item_type);
+	local itemUniqueId = tonumber(item.id);
+	local itemTable = nil;
+	if itemType == 1 or  itemType == 2 or itemType == 3 then
+		itemTable = SelectRowInner(T_EQUIP,"id",item_id);
+	elseif itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
+		itemTable = SelectRowInner(T_ITEM,"id",item_id);
+	end
 	if itemTable == nil then
 		WriteConErr("itemTable error ");
 	end
@@ -267,9 +274,7 @@ function p.ShowItemInfo( view, item, itemIndex )
 	local itemButton = GetButton(view, itemBtn);
     itemButton:SetImage( GetPictureByAni(itemTable.item_pic,0) );
 	itemButton:SetId(item_id);
-	local itemUniqueId = tonumber(item.id);
     itemButton:SetUID(itemUniqueId);
-	local itemType = tonumber(item.Item_type);
 	itemButton:SetXID(itemType);
 	
 	--物品名字

@@ -14,26 +14,11 @@ p.m_nPowerTimer = 0;
 p.m_fPowerPercent = 100.0f;
 p.roundNumNode = nil;
 
-local useSkill = false;  --当前回合是否用技能攻击
-local isHeroAutoAtk = true; --是否托管（自动攻击）
-local waitingInput = true;
-
-local atkBtn = nil;
-local autoBtn = nil;
---local bossHpBar = nil;
+local skillBtn = nil;
 local idTimer_SortZOrder = 0; --定时更新ZOrder
-
---重置
-function p.Reset()
-	useSkill = false;
-	isHeroAutoAtk = true;
-	waitingInput = true;
-end
 
 --显示UI
 function p.ShowUI()
-	p.Reset();
-		
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return true;
@@ -132,6 +117,9 @@ function p.CloseUI()
 		p.ResetZOrder();
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.imageMask = nil;
+        p.m_kPower = nil;
+        p.roundNumNode = nil;
 	end
 end
 
@@ -142,8 +130,20 @@ function p.SetDelegate(layer)
    -- atkBtn:SetLuaDelegate( p.OnBtnClicked_Atk );
 	
 	--SKIP按钮
-	autoBtn = GetButton( layer, ui_n_battle_mainui.ID_CTRL_BUTTON_SKIP );
-	autoBtn:SetLuaDelegate( p.OnBtnClicked_Auto );
+	skillBtn = GetButton( layer, ui_n_battle_mainui.ID_CTRL_BUTTON_SKIP );
+	skillBtn:SetLuaDelegate( p.OnBtnClicked_Skill );
+end
+
+function p.OnBtnClicked_Skill( uiNode, uiEventType, param )
+    GetBattleShow():Stop();
+    n_battle_mgr.isBattleEnd = true;
+    local battleResult = n_battle_db_mgr.GetBattleResult();
+    local result = tonumber( battleResult.Result ); 
+    if result == 1 then
+        n_battle_mgr.OnBattleWin();
+    elseif result == 0 then
+        n_battle_mgr.OnBattleLose();
+    end
 end
 
 --[[

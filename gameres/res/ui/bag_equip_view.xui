@@ -3,6 +3,13 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_TYPE]
+Type=1
+Tag=71
+Rect=88 479 73 26
+AnchorPos=0 0
+Notes=
+
 [CTRL_9SLICES_24]
 Type=22
 Tag=30
@@ -70,7 +77,7 @@ Notes=
 [CTRL_PICTURE_STAR]
 Type=1
 Tag=72
-Rect=18 914 33 109
+Rect=45 488 122 20
 AnchorPos=0 0
 Notes=
 
@@ -81,15 +88,9 @@ Rect=134 358 65 27
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xff0000
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_TYPE]
-Type=1
-Tag=71
-Rect=88 479 73 26
-AnchorPos=0 0
-Notes=
 
 [CTRL_TEXT_MAIN_PRO]
 Type=4
@@ -239,25 +240,24 @@ Stretch=1
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
-[CTRL_TEXT_24]
+[CTRL_TEXT_MODE]
 Type=4
 Tag=29
 Rect=71 637 124 41
 AnchorPos=0 0
 Notes=
-Text=闲置
-TextTradition=閑置
 TextSize=28
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_MODE]
-Type=1
+[CTRL_TEXT_TYPE]
+Type=4
 Tag=31
-Rect=25 361 107 34
+Rect=44 359 89 29
 AnchorPos=0 0
 Notes=
-Stretch=1
-NormalFile=.\res\image\ui\bag\star1.png
-NormalFileUV=0 0 44 52
+TextSize=24
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

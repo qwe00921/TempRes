@@ -16,8 +16,25 @@ end
 --请求卡牌列表回调，显示道具列表
 function p.RefreshUI(self)
 	if self.result == true then
-		p.itemList = self.user_items
-		pack_box.ShowItemList(p.itemList);
+		local amount = tonumber(self.amount);
+		local items = self.user_items;
+		local equips = self.user_equips;
+		local allItemTable = {};
+		if items ~= nil then
+			allItemTable = items;
+		end
+		if equips ~= nil then
+			for k,v in pairs(equips) do
+				allItemTable[#allItemTable+1] = v;
+			end
+		end
+		
+		if #allItemTable == amount then
+			p.itemList = allItemTable
+			pack_box.ShowItemList(p.itemList);
+		else
+			WriteConWarning( "** allItemTable num error" );
+		end
 	elseif self.result == false then
 		WriteConWarning( "** msg_pack_box error" );
 	end
@@ -178,8 +195,10 @@ function p.getItemInfoTable(uniqueid)
 	local itemInfoTable = {};
 	for k,v in pairs(allItemList) do
 		if tonumber(v.id) == uniqueid then
-			itemInfoTable = v
-			break;
+			if tonumber(v.Item_type) == 1 or tonumber(v.Item_type) == 2 or tonumber(v.Item_type) == 3 then
+				itemInfoTable = v
+				break;
+			end
 		end
 	end
 	return itemInfoTable;

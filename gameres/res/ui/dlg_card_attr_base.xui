@@ -363,7 +363,8 @@ Tag=209
 Rect=468 482 107 27
 AnchorPos=0 0
 Notes=
-
+NormalFile=.\res\image\ui\card\skill.png
+NormalFileUV=0 0 144 36
 
 [CTRL_9SLICES_210]
 Type=22
