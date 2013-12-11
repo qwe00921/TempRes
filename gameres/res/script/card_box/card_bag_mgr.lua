@@ -23,6 +23,7 @@ function p.RefreshUI(self)
 		return;
 	end
 	
+	WriteCon("bbbbbbbbbbbbbbbbbb");
 	if self.result == true then
 		local cardList = self.cardlist
 		card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;

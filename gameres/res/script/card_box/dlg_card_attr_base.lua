@@ -10,13 +10,18 @@ p.cardInfo = nil;
 p.cardDetail = nil;
 
 p.groupFlag = false;
+p.mainUIFlag = false;
 
 --id是UniqueId
-function p.ShowUI(cardInfo, groupFlag)
+function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 	WriteCon(cardInfo.CardID.."************");
 	
 	if groupFlag ~= nil then
 		p.groupFlag = groupFlag;
+	end
+	
+	if mainUIFlag ~= nil then
+		p.mainUIFlag = mainUIFlag;
 	end
 	
 	if cardInfo == nil then
@@ -251,7 +256,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_REPLACE == tag then
 			--替换，显示星灵列表
-			card_bag_mian.ShowUI( true );
+			card_bag_mian.ShowUI( true, p.mainUIFlag );
 			p.CloseUI();
 		end
 	end
@@ -319,6 +324,7 @@ function p.CloseUI()
 	    p.layer:LazyClose();
         p.layer = nil;
 		p.groupFlag = false;
+		p.mainUIFlag = false;
 		
 		p.cardDetail = {}
 		p.equip1 = {};
