@@ -1,5 +1,15 @@
 
-;物品背包图片
+[1001]
+image\item\1001.png
+[1002]
+image\item\1002.png
+[2001]
+image\item\2001.png
+[2002]
+image\item\2002.png
+[3001]
+image\item\3001.png
+
 [111001]
 image\item\111001.png
 [211002]
@@ -127,10 +137,3 @@ image\item\736062.png
 [737063]
 image\item\737063.png
 
-;元宝物品图标		by:crj
-[item_emoney]
-image\ui\main_interface\coin.png
-
-;金币物品图标		by:crj
-[item_money]
-image\ui\main_interface\money.png
