@@ -160,8 +160,7 @@ Tag=360
 Rect=374 345 144 36
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\card\skill.png
-NormalFileUV=0 0 144 36
+
 
 [CTRL_BUTTON_PICTURE_3]
 Type=2
