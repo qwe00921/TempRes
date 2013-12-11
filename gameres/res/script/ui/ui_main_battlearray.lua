@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_main_battlearray = {};
 local p =  ui_main_battlearray;
+p.ID_CTRL_TEXT_72						       = 72;
+p.ID_CTRL_PICTURE_71					     = 71;
 p.ID_CTRL_BUTTON_17					      = 17;
 p.ID_CTRL_BUTTON_16					      = 16;
 p.ID_CTRL_BUTTON_15					      = 15;

@@ -259,7 +259,8 @@ function p.SetDelegate(layer)
 	
 	local sellBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SELL);
 	sellBtn:SetLuaDelegate(p.OnUIClickEvent);
-	
+	sellBtn:SetImage( GetPictureByAni("button.sell",0));
+	sellBtn:SetText("批量出售")
 	if p.modifyTeam then
 		sellBtn:SetVisible( false );
 	end
@@ -338,7 +339,8 @@ function p.sellBtnEvent()
 	local btn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SELL);
 	if p.BatchSellMark == MARK_OFF then
 		p.BatchSellMark = MARK_ON;
-		btn:SetImage( GetPictureByAni("button.sell",0));
+		btn:SetImage( GetPictureByAni("button.sell",1));
+		btn:SetText("确认出售")
 	elseif p.BatchSellMark == MARK_ON then
 		if #p.sellCardList <= 0 then
 			dlg_msgbox.ShowOK("确认提示框","请选择您要出售的卡片",nil,p.layer);
