@@ -25,7 +25,7 @@ Remark=物品1
 [CTRL_PICTURE_IMAGE_1]
 Type=1
 Tag=169
-Rect=32 15 107 60
+Rect=32 15 105 105
 AnchorPos=0 0
 Notes=
 
@@ -78,21 +78,21 @@ Remark=物品1
 [CTRL_PICTURE_IMAGE_2]
 Type=1
 Tag=175
-Rect=183 18 107 60
+Rect=183 18 105 105
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_IMAGE_3]
 Type=1
 Tag=176
-Rect=344 18 107 60
+Rect=344 18 105 105
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_IMAGE_4]
 Type=1
 Tag=177
-Rect=493 16 107 60
+Rect=493 16 105 105
 AnchorPos=0 0
 Notes=
 
@@ -157,7 +157,7 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_35]
+[CTRL_PICTURE_NM_BG_1]
 Type=1
 Tag=35
 Rect=33 121 107 29
@@ -177,7 +177,7 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_36]
+[CTRL_PICTURE_NM_BG_2]
 Type=1
 Tag=36
 Rect=183 122 107 29
@@ -197,7 +197,7 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_37]
+[CTRL_PICTURE_NM_BG_3]
 Type=1
 Tag=37
 Rect=344 123 107 29
@@ -217,7 +217,7 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_38]
+[CTRL_PICTURE_NM_BG_4]
 Type=1
 Tag=38
 Rect=495 122 107 29
@@ -336,7 +336,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RANK_3]
 Type=4
 Tag=196
-Rect=373 157 46 23
+Rect=376 158 46 23
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -355,7 +355,7 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_31]
+[CTRL_PICTURE_BD_1]
 Type=1
 Tag=31
 Rect=32 13 107 107
@@ -364,7 +364,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_32]
+[CTRL_PICTURE_BD_2]
 Type=1
 Tag=32
 Rect=184 13 107 107
@@ -373,7 +373,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_33]
+[CTRL_PICTURE_BD_3]
 Type=1
 Tag=33
 Rect=344 13 107 107
@@ -382,7 +382,7 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_34]
+[CTRL_PICTURE_BD_4]
 Type=1
 Tag=34
 Rect=494 13 107 107

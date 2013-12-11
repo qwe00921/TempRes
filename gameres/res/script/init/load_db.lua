@@ -86,3 +86,6 @@ T_EQUIP_LEVEL	= LoadTable("equip_level.ini");
 
 --玩家等级配置表
 T_PLAYER_LEVEL	= LoadTable("player_level.ini");
+
+--装备表
+T_EQUIP			= LoadTable("equip.ini");

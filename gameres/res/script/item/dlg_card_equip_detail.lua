@@ -230,7 +230,7 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 			if p.showType == p.SHOW_DRESS then
 				p.sendDress();
 			else
-				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPDATE , p.equip.cardId, p.equip.itemType, p.equip)
+				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPDATE , p.equip.cardUid, p.equip.itemType, p.equip)
 				p.CloseUI(); 
 			end
         elseif ( ui.ID_CTRL_BUTTON_CLOSE == tag ) then  
@@ -238,7 +238,7 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 		elseif (ui.ID_CTRL_BUTTON_UNLOAD == tag) then
 			p.sendUnDress();
 		elseif ui.ID_CTRL_BUTTON_UPGRADE == tag then
-			card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardId, p.equip.itemType, p.equip)
+			card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardUid, p.equip.itemType, p.equip)
 			p.CloseUI(); 
 		end		
 	end
@@ -266,7 +266,7 @@ function p.SelectImage(id)
 end
 
 function p.SelectItemName(id)
-	local itemTable = SelectRowList(T_ITEM,"id",id);
+	local itemTable = SelectRowList(T_EQUIP,"id",id);
 	if #itemTable >= 1 then
 		local text = itemTable[1].name;
 		return text;
@@ -276,7 +276,7 @@ function p.SelectItemName(id)
 end
 
 function p.SelectItemDes(id)
-	local itemTable = SelectRowList(T_ITEM,"id",id);
+	local itemTable = SelectRowList(T_EQUIP,"id",id);
 	if #itemTable >= 1 then
 		local text = itemTable[1].description;
 		return text;
@@ -286,7 +286,7 @@ function p.SelectItemDes(id)
 end
 
 function p.SelectItem(id)
-	local itemTable = SelectRowList(T_ITEM,"id",tonumber(id));
+	local itemTable = SelectRowList(T_EQUIP,"id",tonumber(id));
 	if #itemTable == 1 then
 		local item = itemTable[1];
 		return item;
@@ -386,7 +386,7 @@ function p.sendDress()
 	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",equip.itemUid, equip.cardUid,tostring(equip.itemType));
 	--param = param .. "" .. 
 	if equip.preItemUid then
-		param = param .. "&item_unique_id_old" ..equip.preItemUid;
+		param = param .. "&item_unique_id_old=" ..equip.preItemUid;
 	end
 	
 	WriteConErr("send req ");
