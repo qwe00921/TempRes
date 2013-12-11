@@ -80,6 +80,7 @@ function p.AddHeroFightersJumpEffect()
 	local pFighter = g_Herofighters[g_HeroIndex];
 
 	if pFighter == nil then
+		WriteConWarning(string.format("pFighter is nil,ID is %d\n",g_HeroIndex));
 		return nil;
 	end
 	
@@ -129,8 +130,15 @@ function p.AddEnemyFightersJumpEffect()
 end
 
 function p:AddAllRandomTimeJumpEffect(bHero)
+
+	if self.fighters == nil then
+		WriteConWarning("self.fighters is nil");
+	end
+	
 	if bHero == true then
+		WriteCon("Add hero Jump");
 		g_Herofighters = self.fighters;
+		g_HeroIndex = 1;
 		for k,v in ipairs(self.fighters) do
 			local fTime = k / 10.0f + 0.3f;
 			local str = string.format("Hero jump time is %8.6f",fTime);
@@ -139,6 +147,7 @@ function p:AddAllRandomTimeJumpEffect(bHero)
 		end
 	else
 		g_Enemyfighters = self.fighters;
+		g_EnemyIndex = 1;
 		for k,v in ipairs(self.fighters) do
 			local fTime = k / 10.0f + 0.3f;
 			local str = string.format("Enemy jump time is %8.6f",fTime);
