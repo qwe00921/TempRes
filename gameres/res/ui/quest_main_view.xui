@@ -24,16 +24,16 @@ NormalFileUV=0 0 640 790
 [CTRL_BTN_TETURN_2]
 Type=2
 Tag=2
-Rect=565 136 70 70
+Rect=571 139 70 70
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\quest\button_back.png
-NormalFileUV=0 0 100 98
-SelectFile=.\res\image\ui\quest\button_back_click.png
-SelectedFileUV=0 0 100 98
+NormalFile=.\res\image\ui\public\close2.png
+NormalFileUV=0 0 68 68
+SelectFile=.\res\image\ui\public\close2_click.png
+SelectedFileUV=0 0 68 68
 
 [CTRL_VERTICAL_LIST_5]
 Type=14
