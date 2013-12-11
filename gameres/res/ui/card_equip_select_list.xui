@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -267,7 +267,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_9SLICES_30]
 Type=22
 Tag=30
-Rect=30 720 107 48
+Rect=33 763 107 48
 AnchorPos=0 0
 Notes=
 Stretch=1

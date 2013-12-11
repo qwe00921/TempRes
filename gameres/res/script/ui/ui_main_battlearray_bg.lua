@@ -4,5 +4,7 @@
 --------------------------------------------------------------
 ui_main_battlearray_bg = {};
 local p =  ui_main_battlearray_bg;
+p.ID_CTRL_TEXT_6						        = 6;
+p.ID_CTRL_PICTURE_5					      = 5;
 p.ID_CTRL_LIST_13						       = 14;
 p.ID_CTRL_PICTURE_LISTBG				  = 13;

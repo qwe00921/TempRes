@@ -249,3 +249,25 @@ NormalFile=.\res\image\ui\main_interface\pet_frame.png
 NormalFileUV=0 0 100 100
 SelectFile=.\res\image\ui\main_interface\pet_frame_click.png
 SelectedFileUV=0 0 100 100
+
+[CTRL_PICTURE_71]
+Type=1
+Tag=71
+Rect=550 3 38 105
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_title2_l.png
+NormalFileUV=0 0 51 249
+
+[CTRL_TEXT_72]
+Type=4
+Tag=72
+Rect=557 17 23 77
+AnchorPos=0 0
+Notes=
+Text=召唤兽
+TextTradition=召喚獸
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
