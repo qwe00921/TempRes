@@ -128,8 +128,8 @@ function p.ShowQuestRewardView(rewardData)
 
 	if rewardData["item"] then
 		if rewardData["item"][1] then
-			local itemType = tonumber(Reward["item"][1]["Type"])
-			local itemId = tonumber(Reward["item"][1]["Reward_id"])
+			local itemType = tonumber(rewardData["item"][1]["Type"])
+			local itemId = tonumber(rewardData["item"][1]["Reward_id"])
 			if itemType == 1 or itemType == 3 or itemType == 4 then --物品
 				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
 				itemPic_1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
@@ -146,8 +146,8 @@ function p.ShowQuestRewardView(rewardData)
 		end
 	
 		if rewardData["item"][2] then
-			local itemType = tonumber(Reward["item"][2]["Type"])
-			local itemId = tonumber(Reward["item"][2]["Reward_id"])
+			local itemType = tonumber(rewardData["item"][2]["Type"])
+			local itemId = tonumber(rewardData["item"][2]["Reward_id"])
 			if itemType == 1 or itemType == 3 or itemType == 4 then --物品
 				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
 				itemPic_2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
