@@ -4,8 +4,8 @@
 
 ;普通UI
 [mission_result]
-image\ui\quest\mission_start1.png
-image\ui\quest\mission_start_un.png
+image\ui\quest\you-lost.png
+image\ui\quest\you-win.png
 
 ;任务难度图标
 [mission_difficult]
