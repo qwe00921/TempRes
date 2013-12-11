@@ -33,6 +33,7 @@ p.modifyTeam = false;
 function p.ShowUI( bModify )
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
+	dlg_menu.SetNewUI( p );
 
 	if bModify ~= nil then
 		p.modifyTeam = bModify;
@@ -429,4 +430,8 @@ end
 function p.ClearDelList()
 	p.allCardPrice = 0;
 	p.sellCardList = {};
+end
+
+function p.UIDisappear()
+	p.CloseUI();
 end
