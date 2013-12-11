@@ -69,7 +69,11 @@ end
 
 --更新数据
 function p.UpdateListData( dataSource )
-	WriteCon( "asdasdasdasd");
+	if p.layer == nil then
+		--界面未开启，可能是主界面直接进行出战卡组编辑
+		return;
+	end
+
 	p.SetData( dataSource );
 	p.ShowTeamList();
 end
@@ -368,7 +372,6 @@ function p.RefreshBattleBtn( data )
 		local view = list:GetViewAt( i-1 );
 		if view then
 			local id = view:GetId();
-			
 			local fightBtn = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_SETFIGHT );
 			fightBtn:SetLuaDelegate( p.OnListBtnClick );
 			local flag = tonumber(id) == tonumber( data.nowteam )
@@ -409,6 +412,9 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		
+		p.modify_team_id = nil;
+		p.pos_no = nil;
 	end
 end
 
