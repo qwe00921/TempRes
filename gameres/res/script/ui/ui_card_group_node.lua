@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_card_group_node = {};
 local p =  ui_card_group_node;
+p.ID_CTRL_PICTURE_63					     = 63;
+p.ID_CTRL_PICTURE_61					     = 61;
 p.ID_CTRL_TEXT_53						       = 53;
 p.ID_CTRL_TEXT_52						       = 52;
 p.ID_CTRL_PICTURE_75					     = 76;	--ÕÙ»½ÊÞ2¹¥»÷
@@ -12,9 +14,7 @@ p.ID_CTRL_PICTURE_73					     = 74;	--ÕÙ»½ÊÞ1¹¥»÷±êÖ¾
 p.ID_CTRL_PICTURE_72					     = 73;	--ÕÙ»½ÊÞ1¸¨Öú±êÖ¾
 p.ID_CTRL_PICTURE_65					     = 66;
 p.ID_CTRL_PICTURE_64					     = 65;
-p.ID_CTRL_PICTURE_63					     = 63;
 p.ID_CTRL_PICTURE_62					     = 62;
-p.ID_CTRL_PICTURE_61					     = 61;
 p.ID_CTRL_PICTURE_60					     = 60;
 p.ID_CTRL_PICTURE_59					     = 59;
 p.ID_CTRL_PICTURE_58					     = 58;

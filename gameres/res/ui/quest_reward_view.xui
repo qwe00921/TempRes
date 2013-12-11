@@ -196,7 +196,7 @@ NormalFileUV=0 0 430 54
 [CTRL_PICTURE_DIFF]
 Type=1
 Tag=13
-Rect=310 301 107 28
+Rect=310 291 107 58
 AnchorPos=0 0
 Notes=
 
@@ -226,7 +226,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_HRED_RESULT]
 Type=1
 Tag=12
-Rect=170 166 271 60
+Rect=81 121 422 109
 AnchorPos=0 0
 Notes=
 Stretch=1

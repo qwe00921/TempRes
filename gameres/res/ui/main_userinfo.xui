@@ -40,7 +40,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=55
-Rect=125 51 30 30
+Rect=128 54 26 26
 AnchorPos=0 0
 Notes=
 Remark=金币图标
@@ -50,7 +50,7 @@ NormalFileUV=0 0 30 30
 [CTRL_PICTURE_EMONEY]
 Type=1
 Tag=56
-Rect=109 85 30 30
+Rect=109 88 30 30
 AnchorPos=0 0
 Notes=
 Remark=代币图标
@@ -60,26 +60,26 @@ NormalFileUV=0 0 30 30
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=158 51 107 30
+Rect=158 52 107 30
 AnchorPos=0 0
 Notes=
 Text=1111111111
 TextTradition=1111111111
 TextSize=18
-TextHorAlign=AlignLeft
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=金币数值
 
 [CTRL_TEXT_EMONEY_NUM]
 Type=4
 Tag=58
-Rect=144 85 107 30
+Rect=144 88 107 30
 AnchorPos=0 0
 Notes=
 Text=2222222222
 TextTradition=2222222222
 TextSize=18
-TextHorAlign=AlignLeft
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=代币数值
 
@@ -97,8 +97,8 @@ NormalFile=.\res\image\ui\main_interface\addemoney.PNG
 NormalFileUV=0 0 116 76
 SelectFile=.\res\image\ui\main_interface\addemoney_click.png
 SelectedFileUV=0 0 116 76
-DisableFile=.\res\image\ui\main_interface\addemoney.PNG
-DisableFileUV=0 0 95 60
+DisableFile=.\res\image\ui\main_interface\addemoney_un.png
+DisableFileUV=0 0 116 76
 
 [CTRL_PICTURE_LEVEL]
 Type=1
@@ -126,7 +126,7 @@ Remark=等级数值
 [CTRL_PICTURE_ENERGY]
 Type=1
 Tag=62
-Rect=371 51 60 35
+Rect=373 84 60 35
 AnchorPos=0 0
 Notes=
 Remark=精力图标
@@ -136,7 +136,7 @@ NormalFileUV=0 0 60 40
 [CTRL_PICTURE_STRENGTH]
 Type=1
 Tag=63
-Rect=371 85 60 35
+Rect=372 50 60 35
 AnchorPos=0 0
 Notes=
 Remark=体力图标
@@ -146,7 +146,7 @@ NormalFileUV=0 0 60 40
 [CTRL_PROGRESSBAR_EXP]
 Type=9
 Tag=67
-Rect=428 17 192 25
+Rect=428 18 192 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -159,7 +159,7 @@ NormalFileUV=0 0 190 30
 [CTRL_PROGRESSBAR_ENERGY]
 Type=9
 Tag=68
-Rect=429 54 190 30
+Rect=431 88 190 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -172,7 +172,7 @@ NormalFileUV=0 0 190 30
 [CTRL_PROGRESSBAR_STRENGTH]
 Type=9
 Tag=69
-Rect=429 88 190 30
+Rect=430 52 190 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -194,7 +194,7 @@ NormalFileUV=0 0 190 30
 [CTRL_PICTURE_PROGRESSBAR_BG1]
 Type=1
 Tag=65
-Rect=429 54 190 30
+Rect=431 88 190 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
@@ -203,7 +203,7 @@ NormalFileUV=0 0 190 30
 [CTRL_PICTURE_PROGRESSBAR_BG2]
 Type=1
 Tag=66
-Rect=429 87 190 30
+Rect=430 52 190 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
