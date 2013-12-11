@@ -4,19 +4,19 @@
 --------------------------------------------------------------
 ui_card_list_view = {};
 local p =  ui_card_list_view;
+p.ID_CTRL_PICTURE_TEAM4				   = 23;
+p.ID_CTRL_PICTURE_TEAM3				   = 22;
+p.ID_CTRL_PICTURE_TEAM2				   = 21;
+p.ID_CTRL_PICTURE_TEAM1				   = 20;
 p.ID_CTRL_TEXT_LEVEL4					    = 19;
 p.ID_CTRL_TEXT_LEVEL3					    = 18;
 p.ID_CTRL_TEXT_LEVEL2					    = 17;
 p.ID_CTRL_TEXT_LEVEL1					    = 16;
-p.ID_CTRL_TEXT_TEAM4					     = 60;
-p.ID_CTRL_TEXT_TEAM3					     = 58;
-p.ID_CTRL_TEXT_TEAM2					     = 57;
-p.ID_CTRL_TEXT_TEAM1					     = 56;
-p.ID_CTRL_PICTURE_30					     = 30;
-p.ID_CTRL_PICTURE_31					     = 31;
-p.ID_CTRL_PICTURE_32					     = 32;
+p.ID_CTRL_PICTURE_LEVEL1				  = 30;
+p.ID_CTRL_PICTURE_LEVEL2				  = 31;
+p.ID_CTRL_PICTURE_LEVEL3				  = 32;
+p.ID_CTRL_PICTURE_LEVEL4				  = 33;
 p.ID_CTRL_BUTTON_ITEM1				    = 59;	--物品1
-p.ID_CTRL_PICTURE_33					     = 33;
 p.ID_CTRL_BUTTON_ITEM2				    = 61;	--物品2
 p.ID_CTRL_BUTTON_ITEM3				    = 62;	--物品3
 p.ID_CTRL_BUTTON_ITEM4				    = 63;	--物品4

@@ -103,21 +103,31 @@ NormalFileUV=0 0 100 98
 [CTRL_PICTURE_LIST_BG]
 Type=1
 Tag=23
-Rect=15 207 619 600
+Rect=21 261 619 336
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_59]
+Type=22
+Tag=62
+Rect=448 190 122 44
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt.png
+NormalFileUV=0 0 122 38
 
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=12 182 620 400
+Rect=16 252 620 400
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_25]
 Type=4
 Tag=32
-Rect=469 103 80 50
+Rect=470 187 80 50
 AnchorPos=0 0
 Notes=
 Text=/
@@ -126,10 +136,20 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_9SLICES_58]
+Type=22
+Tag=61
+Rect=17 630 610 215
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
 [CTRL_9SLICES_29]
 Type=22
 Tag=29
-Rect=12 584 617 219
+Rect=15 629 617 219
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -139,7 +159,7 @@ NormalFileUV=0 0 192 279
 [CTRL_BUTTON_UPGRADE]
 Type=2
 Tag=33
-Rect=466 714 148 65
+Rect=469 760 148 65
 AnchorPos=0 0
 Notes=
 Text=开始强化
@@ -154,42 +174,46 @@ NormalFileUV=0 0 232 84
 [CTRL_TEXT_LABEL_1]
 Type=4
 Tag=34
-Rect=171 608 64 27
+Rect=174 652 64 27
 AnchorPos=0 0
 Notes=
 Text=素材数
 TextTradition=素材數
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_USED_NUM]
 Type=4
 Tag=37
-Rect=240 607 167 24
+Rect=243 652 167 24
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_USER_MONE]
 Type=4
 Tag=38
-Rect=241 672 167 25
+Rect=243 717 167 25
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_USED_MONEY]
 Type=4
 Tag=39
-Rect=241 640 165 23
+Rect=244 685 165 23
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -206,34 +230,37 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LABEL_2]
 Type=4
 Tag=49
-Rect=174 646 64 27
+Rect=177 690 64 27
 AnchorPos=0 0
 Notes=
 Text=消耗
 TextTradition=消耗
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LABEL_3]
 Type=4
 Tag=50
-Rect=172 673 64 27
+Rect=175 717 64 27
 AnchorPos=0 0
 Notes=
 Text=持有
 TextTradition=持有
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_PRE_ITEM_EXP]
 Type=4
 Tag=51
-Rect=238 710 217 28
+Rect=241 755 217 28
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -250,70 +277,75 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_PRE_ITEM_IMAGE]
 Type=1
 Tag=52
-Rect=30 613 110 100
+Rect=33 657 110 100
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_PRE_ITEM_NAME]
 Type=4
 Tag=53
-Rect=31 722 107 45
+Rect=34 766 107 45
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LABEL_6]
 Type=4
 Tag=54
-Rect=157 705 75 33
+Rect=160 749 75 33
 AnchorPos=0 0
 Notes=
 Text=经验值
 TextTradition=經驗值
 TextSize=18
+TextColor=0xfffbf0
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LABEL_4]
 Type=4
 Tag=55
-Rect=416 616 41 27
+Rect=419 662 41 27
 AnchorPos=0 0
 Notes=
 Text=LV:
 TextTradition=LV:
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LABEL_5]
 Type=4
 Tag=56
-Rect=418 659 41 27
+Rect=421 705 41 27
 AnchorPos=0 0
 Notes=
 Text=Atk:
 TextTradition=Atk:
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_PRE_ITEM_LV]
 Type=4
 Tag=57
-Rect=466 613 148 30
+Rect=469 658 148 30
 AnchorPos=0 0
 Notes=
 TextSize=15
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTR_PRE_ITEM_ATTR_VALUE]
 Type=4
 Tag=58
-Rect=467 660 148 30
+Rect=470 705 148 30
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -323,9 +355,62 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_PRE_ITEM_EXP]
 Type=9
 Tag=112
-Rect=155 747 301 31
+Rect=158 791 301 31
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_31]
+Type=4
+Tag=35
+Rect=20 119 64 42
+AnchorPos=0 0
+Notes=
+Text=全部
+TextTradition=全部
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_32]
+Type=4
+Tag=36
+Rect=100 119 64 42
+AnchorPos=0 0
+Notes=
+Text=武器
+TextTradition=武器
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_33]
+Type=4
+Tag=40
+Rect=180 119 64 42
+AnchorPos=0 0
+Notes=
+Text=防具
+TextTradition=防具
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_34]
+Type=4
+Tag=41
+Rect=259 119 64 42
+AnchorPos=0 0
+Notes=
+Text=鞋子
+TextTradition=鞋子
+TextSize=20
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

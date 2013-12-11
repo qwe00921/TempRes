@@ -133,25 +133,25 @@ function p.AddStageObj( fgLayer, tileX, tileY, offsetX, offsetY,
             obj:AddChild(imageNode);
             local pos = imageNode:GetFramePos();
             imageNode:SetFramePosXY(pos.x + picSize.w * 0.5f, pos.y + picSize.h * 0.5f);
-            imageNode:AddFgEffect("ui.map_lock");
+            --imageNode:AddFgEffect("ui.map_lock");
         else
 			--如果已经解锁，播放表现效果
-            p.AddEffect( obj );
+            --p.AddEffect( obj );
 		end
 		
 		--增加标题
 		local title = createNDUILabel();
 		if title ~= nil then
 			title:Init();
-			title:SetFontSize( FontSize(25));
+			title:SetFontSize( FontSize(20));
 			title:SetFrameSize(picSize.w,picSize.h);
 			title:SetText(titleText);
-			title:SetFramePosXY( 0, -obj:GetFrameSize().h * 0.6f );
+			title:SetFramePosXY( 0, -obj:GetFrameSize().h * 0.3f );
 			obj:AddChild(title);
 			if isUnlock then
-				title:SetFontColor( ccc4(0,0,255,255));
+				title:SetFontColor( ccc4(255,153,51,255));
 			else
-				title:SetFontColor( ccc4(125,125,125,255));
+				title:SetFontColor( ccc4(255,0,102,255));
 			end
 		else
 			WriteConErr( "create label err");

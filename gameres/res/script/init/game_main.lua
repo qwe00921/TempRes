@@ -12,10 +12,11 @@ math.randomseed(os.time());
 --main入口
 function p.main()
 	WriteCon( "*** game_main.main() ***\r\n")
-	
+
 	if true and GetUID() == 0 then
 		dlg_create_player:ShowUI();--新建角色
 	else
+		WriteConWarning(string.format("Current User ID Is %d\n",GetUID()));
 	    if false then
 	        --这是资本主义邪路
 		    --p.EnterWorldMap();

@@ -62,6 +62,7 @@ function p.ShowUI(isReloadNet)
 			p.msgs[p.curListTypeTag] = {};
 		end
 		p.ShowList(p.curListTypeTag);
+		PlayMusic_ShopUI();
 		return;
 	end
 	
@@ -85,6 +86,7 @@ function p.ShowUI(isReloadNet)
 	--dlg_menu.ShowUI();
 	
 	p.ShowList(p.MAIL_TYPE_SYS);
+	PlayMusic_ShopUI();
 end
 
 
@@ -835,6 +837,7 @@ function p.UIDisappear()
 	p.CloseUI();
 	maininterface.ShowUI();
 	dlg_userinfo.ShowUI();
+	dlg_battlearray.ShowUI();
 end
 
 

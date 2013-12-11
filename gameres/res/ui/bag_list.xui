@@ -138,7 +138,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=479 146 145 39
+Rect=479 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -147,7 +147,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=324 146 145 39
+Rect=324 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -156,7 +156,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=169 146 145 39
+Rect=169 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -165,7 +165,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_22]
 Type=1
 Tag=22
-Rect=14 146 145 39
+Rect=14 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -253,28 +253,28 @@ Notes=
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=30
-Rect=92 112 62 30
+Rect=18 181 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=31
-Rect=246 112 62 30
+Rect=174 180 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=32
-Rect=401 112 62 30
+Rect=327 180 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR4]
 Type=1
 Tag=33
-Rect=557 112 62 30
+Rect=483 180 136 20
 AnchorPos=0 0
 Notes=
 
@@ -317,363 +317,3 @@ Notes=
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_30]
-Type=1
-Tag=38
-Rect=16 182 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_31]
-Type=1
-Tag=39
-Rect=45 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_32]
-Type=1
-Tag=40
-Rect=72 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_33]
-Type=1
-Tag=41
-Rect=101 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_34]
-Type=1
-Tag=42
-Rect=128 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_40]
-Type=1
-Tag=47
-Rect=16 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_41]
-Type=1
-Tag=48
-Rect=172 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_42]
-Type=1
-Tag=49
-Rect=199 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_43]
-Type=1
-Tag=50
-Rect=228 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_44]
-Type=1
-Tag=51
-Rect=256 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_45]
-Type=1
-Tag=52
-Rect=283 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_51]
-Type=1
-Tag=58
-Rect=327 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_52]
-Type=1
-Tag=60
-Rect=355 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_53]
-Type=1
-Tag=64
-Rect=383 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_54]
-Type=1
-Tag=65
-Rect=410 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_55]
-Type=1
-Tag=66
-Rect=438 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_61]
-Type=1
-Tag=72
-Rect=485 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_62]
-Type=1
-Tag=73
-Rect=513 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_63]
-Type=1
-Tag=74
-Rect=540 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_64]
-Type=1
-Tag=75
-Rect=566 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_65]
-Type=1
-Tag=76
-Rect=595 182 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star_less.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_72]
-Type=1
-Tag=77
-Rect=45 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_73]
-Type=1
-Tag=78
-Rect=72 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_74]
-Type=1
-Tag=79
-Rect=101 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_75]
-Type=1
-Tag=80
-Rect=128 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_76]
-Type=1
-Tag=81
-Rect=327 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_77]
-Type=1
-Tag=82
-Rect=283 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_78]
-Type=1
-Tag=83
-Rect=256 182 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_79]
-Type=1
-Tag=84
-Rect=228 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_80]
-Type=1
-Tag=85
-Rect=199 182 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_81]
-Type=1
-Tag=86
-Rect=172 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_82]
-Type=1
-Tag=87
-Rect=485 182 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_83]
-Type=1
-Tag=88
-Rect=439 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_84]
-Type=1
-Tag=89
-Rect=410 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_85]
-Type=1
-Tag=90
-Rect=383 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_86]
-Type=1
-Tag=91
-Rect=355 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_87]
-Type=1
-Tag=92
-Rect=595 182 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_88]
-Type=1
-Tag=93
-Rect=566 182 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_89]
-Type=1
-Tag=94
-Rect=540 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_90]
-Type=1
-Tag=95
-Rect=513 183 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\star.png
-NormalFileUV=0 0 36 36

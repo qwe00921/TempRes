@@ -42,14 +42,14 @@ NormalFileUV=0 0 78 66
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=4
-Rect=197 40 198 30
+Rect=197 40 209 30
 AnchorPos=0 0
 Notes=
-Text=我是礼包名
-TextTradition=我是禮包名
-TextSize=28
+Text=小型体力药剂
+TextTradition=小型體力藥劑
+TextSize=25
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_LIMIT_L]

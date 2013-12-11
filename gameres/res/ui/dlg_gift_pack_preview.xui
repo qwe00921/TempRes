@@ -55,8 +55,7 @@ Tag=5
 Rect=64 273 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_PICTURE_6]
 Type=1
@@ -64,8 +63,7 @@ Tag=6
 Rect=355 273 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_PICTURE_7]
 Type=1
@@ -73,8 +71,7 @@ Tag=7
 Rect=64 366 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_PICTURE_8]
 Type=1
@@ -82,8 +79,7 @@ Tag=8
 Rect=355 366 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_PICTURE_9]
 Type=1
@@ -91,8 +87,7 @@ Tag=9
 Rect=64 458 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_PICTURE_10]
 Type=1
@@ -100,8 +95,6 @@ Tag=10
 Rect=355 458 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
 
 [CTRL_TEXT_NAME1]
 Type=4

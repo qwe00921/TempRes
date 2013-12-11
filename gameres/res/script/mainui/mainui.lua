@@ -254,7 +254,7 @@ end
 --提示框回调处理
 function p.OnMsgBoxCallback( result )
 	if result then
-		SetUID(0);
+--		SetUID(0);
 		GetUserConfig():Save();
 		
 		p.CloseUI();

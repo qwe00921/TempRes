@@ -39,8 +39,7 @@ Rect=31 26 90 90
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_PICTURE_CARD_NAME_BG_L]
 Type=1
@@ -185,8 +184,7 @@ Rect=425 26 90 90
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
+
 
 [CTRL_PICTURE_CARD_NAME_BG_R]
 Type=1

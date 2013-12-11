@@ -89,20 +89,20 @@ function p.ShowQuestRewardView(rewardData)
 	local startNum = tonumber(rewardData.Score)
 	if startNum == 3 then
 		Star1:SetVisible(true);
-		Star1:SetVisible(true);
-		Star1:SetVisible(true);
+		Star2:SetVisible(true);
+		Star3:SetVisible(true);
 	elseif startNum == 2 then
 		Star1:SetVisible(true);
-		Star1:SetVisible(true);
-		Star1:SetVisible(false);
+		Star2:SetVisible(true);
+		Star3:SetVisible(false);
 	elseif startNum == 1 then 
 		Star1:SetVisible(true);
-		Star1:SetVisible(false);
-		Star1:SetVisible(false);
+		Star2:SetVisible(false);
+		Star3:SetVisible(false);
 	elseif startNum == 0 then
 		Star1:SetVisible(false);
-		Star1:SetVisible(false);
-		Star1:SetVisible(false);
+		Star2:SetVisible(false);
+		Star3:SetVisible(false);
 	end
 	
 	--经验

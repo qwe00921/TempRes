@@ -1,5 +1,15 @@
 
-;物品背包图片
+[1001]
+image\item\1001.png
+[1002]
+image\item\1002.png
+[2001]
+image\item\2001.png
+[2002]
+image\item\2002.png
+[3001]
+image\item\3001.png
+
 [111001]
 image\item\111001.png
 [211002]
@@ -127,49 +137,3 @@ image\item\736062.png
 [737063]
 image\item\737063.png
 
-;任务奖励	by:xmk
-[reward]
-image\item\item1_1.png
-image\item\item1_2.png
-image\item\item1_3.png
-image\item\item2_1.png
-image\item\item2_2.png
-image\item\item2_3.png
-image\item\item3_1.png
-image\item\item3_2.png
-image\item\item3_3.png
-image\item\item.png
-
-;装备星级	by:xmk
-[equipStar]
-image\ui\bag\star1.png
-image\ui\bag\star2.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-
-;是否装备图标	by:xmk
-[equipUse]
-image\ui\bag\bag_equip.png
-
-;装备模式		by:xmk
-[equipMode]
-image\ui\bag\star1.png
-image\ui\bag\star2.png
-
-;装备TYPE 0：武器	1：防具		2：鞋子
-[equipType]
-image\ui\bag\star1.png
-image\ui\bag\star2.png
-image\ui\bag\star3.png
-
-;元宝物品图标		by:crj
-[item_emoney]
-image\ui\main_interface\coin.png
-
-;金币物品图标		by:crj
-[item_money]
-image\ui\main_interface\money.png

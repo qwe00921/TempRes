@@ -12,6 +12,10 @@ p.OKBtn = nil;
 p.YesBtn = nil;
 p.NoBtn = nil;
 
+p.OKPic = nil;
+p.YesPic = nil;
+p.NoPic = nil;
+
 p.caption = nil;
 p.text = nil;
 p.delegate = nil;
@@ -42,6 +46,10 @@ function p.ShowInner( showType, caption, text, delegate, parent )
 	p.YesBtn:SetVisible	( showType == TYPE_YESNO );
 	p.NoBtn:SetVisible	( showType == TYPE_YESNO );	
 	p.OKBtn:SetVisible	( showType == TYPE_OK );	
+	
+	p.YesPic:SetVisible	( showType == TYPE_YESNO );
+	p.NoPic:SetVisible	( showType == TYPE_YESNO );	
+	p.OKPic:SetVisible	( showType == TYPE_OK );	
 end
 
 --创建对话框
@@ -75,6 +83,10 @@ function p.SetDelegate(layer)
 	--No按钮
 	p.NoBtn = GetButton(layer, ui_dlg_msgbox.ID_CTRL_BUTTON_NO);
     p.NoBtn:SetLuaDelegate(p.OnClick);
+	
+	p.OKPic = GetImage(layer, ui_dlg_msgbox.ID_CTRL_PICTURE_OK);
+	p.YesPic = GetImage(layer, ui_dlg_msgbox.ID_CTRL_PICTURE_YES);
+	p.NoPic = GetImage(layer, ui_dlg_msgbox.ID_CTRL_PICTURE_NO);
 end
 
 --设置文本

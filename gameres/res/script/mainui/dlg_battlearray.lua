@@ -8,6 +8,10 @@ p.layer = nil;
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_13 );
+		if list  then
+			list:SetVisible(true);
+		end
 		return;
 	end
 	
@@ -37,6 +41,10 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
         p.layer:SetVisible(false);
+		local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_13 );
+		if list  then
+			list:SetVisible(false);
+		end
 	end
 end
 

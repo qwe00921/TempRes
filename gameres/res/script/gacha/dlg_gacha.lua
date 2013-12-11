@@ -512,9 +512,13 @@ function p.ShowShopData( shopdata )
     --保存商城物品信息
     p.shopData = shopdata;
     
+	if p.rmb == nil then
+		p.rmb = tonumber(shopdata.user_coin);
+	end
+	
     --刷新玩家元宝
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
-    rmbLab:SetText( tostring(shopdata.user_coin));
+    rmbLab:SetText( tostring(p.rmb));
     
     local itemList = shopdata.list;
     local listLength = #itemList;
@@ -555,9 +559,14 @@ function p.ShowGiftPackData( giftdata )
     
     --保存商城礼包信息
 	p.giftData = giftdata;
+	
+	if p.rmb == nil then
+		p.rmb = tonumber(giftdata.user_coin);
+	end
+	
     --刷新玩家元宝
 	local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
-    rmbLab:SetText( tostring( giftdata.user_coin ));
+    rmbLab:SetText( tostring( p.rmb ));
     
     local giftList = giftdata.list;
     local listLength = #giftList;
@@ -608,12 +617,20 @@ function p.SetItemInfo( view , item , position, index)
     local buy;
 	local picture;
 	local desc;
+	local priceLabel;
+	local emoneyPic;
+	local linePic;
     
     if position == LEFT then
         name = ui_shop_item_view.ID_CTRL_TEXT_NAME_L;
         limit = ui_shop_item_view.ID_CTRL_TEXT_LIMIT_L;
         price = ui_shop_item_view.ID_CTRL_TEXT_PRICE_L;
         rebateprice = ui_shop_item_view.ID_CTRL_TEXT_REBATE_PRICE_L;
+		
+		priceLabel = ui_shop_item_view.ID_CTRL_TEXT_30;
+		emoneyPic = ui_shop_item_view.ID_CTRL_PICTURE_31;
+		linePic = ui_shop_item_view.ID_CTRL_PICTURE_27;
+		
         buy = ui_shop_item_view.ID_CTRL_BUTTON_BUY_L;
 		picture = ui_shop_item_view.ID_CTRL_PICTURE_11;
 		desc = ui_shop_item_view.ID_CTRL_TEXT_DESCRIPTION_L;
@@ -622,6 +639,11 @@ function p.SetItemInfo( view , item , position, index)
         limit = ui_shop_gift_pack_view.ID_CTRL_TEXT_LIMIT_L;
         price = ui_shop_gift_pack_view.ID_CTRL_TEXT_PRICE_L;
         rebateprice = ui_shop_gift_pack_view.ID_CTRL_TEXT_REBATE_PRICE_L;
+		
+		priceLabel = ui_shop_gift_pack_view.ID_CTRL_TEXT_14;
+		emoneyPic = ui_shop_gift_pack_view.ID_CTRL_PICTURE_16;
+		linePic = ui_shop_gift_pack_view.ID_CTRL_PICTURE_18;
+		
         buy = ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L;
 		picture = ui_shop_gift_pack_view.ID_CTRL_PICTURE_ICON_L;
 		desc = ui_shop_gift_pack_view.ID_CTRL_TEXT_DESCRIPTION_L;
@@ -672,17 +694,30 @@ function p.SetItemInfo( view , item , position, index)
     local rebatePriceLab = GetLabel( view, rebateprice );
     --有折扣价
     if tonumber( row_rebatePrice ) ~= 0 then
-        priceLab:SetText( ToUtf8( "原价:" .. row_price ));
+        priceLab:SetText( ToUtf8(  row_price ));
         priceLab:SetCenterline( true );
         priceLab:SetCenterlineColor( priceLab:GetFontColor() );
         
-        rebatePriceLab:SetText( ToUtf8( "现价:" .. row_rebatePrice ));
+        rebatePriceLab:SetText( ToUtf8( row_rebatePrice ));
     --无折扣
-    else 
+    else
+		rebatePriceLab:SetText( ToUtf8( row_price ) );
+		
+		priceLab:SetVisible( false );
+		local label = GetLabel( view, priceLabel );
+		label:SetVisible( false );
+
+		local pic = GetImage( view, emoneyPic );
+		pic:SetVisible( false );
+		
+		pic = GetImage( view, linePic);
+		pic:SetVisible( false );
+		--[[ 
         --原价处显示现价，修改颜色，现价处清零
-        priceLab:SetText( ToUtf8( "现价:" .. row_price ));
+        priceLab:SetText( ToUtf8( row_price ));
         priceLab:SetFontColor( ccc4(255,255,255,255));
         rebatePriceLab:SetText("");
+		--]]
     end
 	--道具说明（暂无）
 	local descLabel = GetLabel( view, desc );
@@ -785,9 +820,11 @@ function p.ShowGachaData( gachadata )
 		gachaName:SetText( gacha[i].Name );
 		gachaPic:SetPicture( GetPictureByAni( "gacha_pic." .. gachaid, 0 ) );
 		
+		--[[
 		gachaOneBtn:SetImage( GetPictureByAni("ui.gacha_btn", 1));
 		gachaFewBtn:SetImage( GetPictureByAni("ui.gacha_btn", 2));
-
+		--]]
+		
 		gachaOneBtn:SetLuaDelegate(p.OnGachaUIEvent);
 		gachaFewBtn:SetLuaDelegate(p.OnGachaUIEvent);
 		

@@ -126,10 +126,10 @@ TextVerAlign=AlignVerCenter
 Remark=充值按钮
 NormalFile=.\res\image\ui\public\button_click.png
 NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\common\btn_2_click.png
-SelectedFileUV=0 0 136 60
-DisableFile=.\res\image\ui\common\btn_2_disable.png
-DisableFileUV=0 0 136 60
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
+DisableFile=.\res\image\ui\public\button_click.png
+DisableFileUV=0 0 110 54
 
 [CTRL_VERTICAL_LIST_GACHA]
 Type=14

@@ -4,6 +4,10 @@
 --------------------------------------------------------------
 ui_card_equip_select_list = {};
 local p =  ui_card_equip_select_list;
+p.ID_CTRL_TEXT_34						       = 41;
+p.ID_CTRL_TEXT_33						       = 40;
+p.ID_CTRL_TEXT_32						       = 36;
+p.ID_CTRL_TEXT_31						       = 35;
 p.ID_CTRL_EXP_PRE_ITEM_EXP			 = 112;
 p.ID_CTR_PRE_ITEM_ATTR_VALUE			= 58;
 p.ID_CTRL_TEXT_PRE_ITEM_LV			 = 57;
@@ -23,8 +27,10 @@ p.ID_CTRL_TEXT_USED_NUM				   = 37;
 p.ID_CTRL_TEXT_LABEL_1				    = 34;
 p.ID_CTRL_BUTTON_UPGRADE				  = 33;
 p.ID_CTRL_9SLICES_29					     = 29;
+p.ID_CTRL_9SLICES_58					     = 61;
 p.ID_CTRL_TEXT_25						       = 32;
 p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
+p.ID_CTRL_9SLICES_59					     = 62;
 p.ID_CTRL_PICTURE_LIST_BG				 = 23;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_PICTURE_56					     = 59;

@@ -134,17 +134,28 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			dlg_msgbox.ShowOK("提示" ,  "体力值不足。");
 			WriteCon("power not enough");
 			return
-		else
-			WriteCon("btnID="..btnId);
-			n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
-			p.CloseUI()
-			-- if p.missionList["M"..btnId] then
-				-- local storyId = p.missionList["M"..btnId].Begin_story;
-				-- WriteCon("storyId = "..storyId);
-				-- dlg_drama.ShowUI(btnId,storyId);
-				-- p.CloseUI();
-			--end
 		end
+		local fightTimes = tonumber(p.missionList["M"..missionId]["Fight_num"])
+		if fightTimes <= 0 then
+			dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
+			return
+		end
+			
+		--n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+		local id = btnId;
+		
+		if p.missionList["M"..btnId] then
+			local storyId = p.missionList["M"..btnId].Begin_story;
+			WriteCon("storyId = "..storyId);
+			if tonumber(storyId) ~= 0 then
+				dlg_drama.ShowUI( id , storyId);
+			else
+				n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+			end
+		else
+			n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+		end
+		p.CloseUI();
 	end
 end
 
@@ -173,16 +184,12 @@ function p.ShowQuestList(self)
 			WriteCon("**p.power="..p.power); 
 		end
 	end
+	
 	if p.missionList == nil then
 		WriteCon("**missionsList error**"); 
 		return
 	end
-	-- local ListLength = 0;
-	-- for k,v in pairs(p.missionList) do
-		-- ListLength = ListLength + 1;
-	-- end
-	-- WriteCon("**ListLength = "..ListLength); 
-	--设置难道按钮
+
 	p.setHardBtn();
 	
 	--加载列表
@@ -215,7 +222,7 @@ function p.loadMissionList(missionStartId,num)
 	missionListTable:ClearView();
 	
 	for i = 1,count do
-		WriteCon("MisId =="..MisId);
+		--WriteCon("MisId =="..MisId);
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("quest_list_view.xui",view, nil);
@@ -237,7 +244,7 @@ function p.loadMissionList(missionStartId,num)
 		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
 		local MisKey = "M"..MisId;
 		if p.missionList[MisKey] then
-			WriteCon("=====true");
+			--WriteCon("=====true");
 			fightBtn:SetEnabled(true);
 			fightBtn:SetId(MisId);
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
@@ -248,7 +255,7 @@ function p.loadMissionList(missionStartId,num)
 			local StarNum = p.missionList[MisKey]["High_score"]
 			p.ShowStar(view,StarNum)
 		else
-			WriteCon("=====false=====");
+			--WriteCon("=====false=====");
 			fightBtn:SetEnabled(false);
 		end
 			
@@ -282,29 +289,58 @@ function p.setMissionInif(MisId, view)
 	timesText:SetText(text);
 	
 	local rewardId = missionTable.reward_id;
-	WriteCon("rewardId==="..rewardId);
+	--WriteCon("rewardId==="..rewardId);
 
 	local rewardTable = SelectRowList(T_MISSION_REWARD,"reward_id",rewardId);
 	if rewardTable == nil then
 		WriteCon("rewardTable error");
 		return
 	end
-	local rewardItemId = nil;
+	local rewardGroupTable = {};
 	for k,v in pairs(rewardTable) do
-		rewardItemId = tonumber(v.type_id);
-		if tonumber(v.type) == 2 then --卡牌
+		if tonumber(v.group) == 1 then
+			rewardGroupTable[#rewardGroupTable + 1] = v;
+		end
+	end
+	local rewardItemId = nil;
+	if rewardGroupTable[1]["type_id"] then
+		rewardItemId = tonumber(rewardGroupTable[1]["type_id"]);
+		local typeID = tonumber(rewardGroupTable[1]["type"]);
+		if typeID == 1 then	--物品
+			local itemTable = SelectRowInner(T_ITEM,"id",rewardItemId);
+			item1:SetVisible(true);
+			item1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+		elseif typeID == 2 then --卡牌
 			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
 			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
 			item1:SetVisible(true);
 			item1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
-			WriteCon("tonumberv.type==="..tonumber(v.type));
-		elseif tonumber(v.type) == 1 then	--物品
+			--WriteCon("tonumberv.type==="..tonumber(v.type));
+		elseif typeID == 4 then	--装备
+			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);
+			item1:SetVisible(true);
+			item1:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
+		end
+	end
+	if rewardGroupTable[2]["type_id"] then
+		rewardItemId = tonumber(rewardGroupTable[2]["type_id"]);
+		local typeID = tonumber(rewardGroupTable[2]["type"]);
+		if typeID == 1 then	--物品
 			local itemTable = SelectRowInner(T_ITEM,"id",rewardItemId);
 			item2:SetVisible(true);
 			item2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+		elseif typeID == 2 then --卡牌
+			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
+			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
+			item2:SetVisible(true);
+			item2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			--WriteCon("tonumberv.type==="..tonumber(v.type));
+		elseif typeID == 4 then	--装备
+			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);
+			item2:SetVisible(true);
+			item2:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
 		end
 	end
-	
 	--local rewardId1 = tonumber(missionTable["reward_1"]);
 	--local rewardId2 = tonumber(missionTable["reward_2"]);
 	--local rewardId3 = tonumber(missionTable[1]["reward_3"]);

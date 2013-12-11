@@ -49,9 +49,9 @@ Tag=6
 Rect=208 35 166 41
 AnchorPos=0 0
 Notes=
-Text=超级体力石
-TextTradition=超級體力石
-TextSize=30
+Text=小型体力药剂
+TextTradition=小型體力藥劑
+TextSize=26
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -81,8 +81,6 @@ Tag=11
 Rect=50 26 100 100
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item.png
-NormalFileUV=0 0 120 120
 
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4

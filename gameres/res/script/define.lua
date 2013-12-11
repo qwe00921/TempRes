@@ -169,3 +169,5 @@ DoFile("mail/define.lua");
 --卡牌分组
 DoFile("card_group/define.lua");
 
+
+DoFile("mainui/effect_num.lua");
