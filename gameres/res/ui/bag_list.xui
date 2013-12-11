@@ -138,7 +138,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=479 146 145 39
+Rect=479 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -147,7 +147,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=324 146 145 39
+Rect=324 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -156,7 +156,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=169 146 145 39
+Rect=169 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -165,7 +165,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_22]
 Type=1
 Tag=22
-Rect=14 146 145 39
+Rect=14 146 145 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -253,28 +253,28 @@ Notes=
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=30
-Rect=18 178 136 30
+Rect=18 181 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=31
-Rect=174 178 136 30
+Rect=174 180 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=32
-Rect=327 178 136 30
+Rect=327 180 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR4]
 Type=1
 Tag=33
-Rect=483 178 136 30
+Rect=483 180 136 20
 AnchorPos=0 0
 Notes=
 

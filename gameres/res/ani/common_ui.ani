@@ -16,15 +16,14 @@ image\ui\quest\hard.png
 
 ;装备星级	by:xmk
 [equipStar]
-image\ui\bag\star1.png
-image\ui\bag\star1.png
-image\ui\bag\star2.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
-image\ui\bag\star3.png
+image\ui\public\star1.png
+image\ui\public\star1.png
+image\ui\public\star2.png
+image\ui\public\star3.png
+image\ui\public\star4.png
+image\ui\public\star5.png
+image\ui\public\star6.png
+image\ui\public\star7.png
 
 ;是否装备图标	by:xmk
 [equipUse]

@@ -512,9 +512,13 @@ function p.ShowShopData( shopdata )
     --保存商城物品信息
     p.shopData = shopdata;
     
+	if p.rmb == nil then
+		p.rmb = tonumber(shopdata.user_coin);
+	end
+	
     --刷新玩家元宝
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
-    rmbLab:SetText( tostring(shopdata.user_coin));
+    rmbLab:SetText( tostring(p.rmb));
     
     local itemList = shopdata.list;
     local listLength = #itemList;
@@ -555,9 +559,14 @@ function p.ShowGiftPackData( giftdata )
     
     --保存商城礼包信息
 	p.giftData = giftdata;
+	
+	if p.rmb == nil then
+		p.rmb = tonumber(giftdata.user_coin);
+	end
+	
     --刷新玩家元宝
 	local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
-    rmbLab:SetText( tostring( giftdata.user_coin ));
+    rmbLab:SetText( tostring( p.rmb ));
     
     local giftList = giftdata.list;
     local listLength = #giftList;
