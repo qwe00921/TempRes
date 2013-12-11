@@ -21,3 +21,4 @@ p.ID_CTRL_TEXT_18						       = 18;
 p.ID_CTRL_TEXT_NAME					      = 17;
 p.ID_CTRL_PICTURE_CARD				    = 16;
 p.ID_CTRL_9SLICES_19					     = 32;
+p.ID_CTRL_9SLICES_18					     = 33;
