@@ -51,26 +51,8 @@ end
 
 --普通攻击
 function p.SimpleAtk( hero, TCamp, Targets, batch )
-	for key, var in ipairs(Targets) do
-        local enemy = nil; --受击者
-        if TCamp == E_CARD_CAMP_HERO then
-            enemy = n_battle_mgr.heroCamp:FindFighter( tonumber( var.TPos ) );
-        elseif TCamp == E_CARD_CAMP_ENEMY then
-            enemy = n_battle_mgr.enemyCamp:FindFighter( tonumber( var.TPos ) + N_BATTLE_CAMP_CARD_NUM );
-        end
-        local Damage = tonumber( var.Damage ); --扣除血量
-        local RemainHp = tonumber( var.RemainHp ); --所剩血量
-        local Crit = var.Crit ; --暴击
-        local Dead = var.TargetDead;--死亡
-        local distance = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", hero.cardId, "distance" ) );
-        --受击者死亡
-        --[[
-        if Dead and Damage < enemy.life then
-            Damage = enemy.life;
-            WriteConWarning("the TargetFighter Mandatory death!");
-        end
-        --]]
-        n_battle_atk.Atk( hero, distance, enemy, batch, Damage );
+	for key, enemy in ipairs(Targets) do
+        n_battle_atk.Atk( hero, enemy, TCamp, batch );
     end
 end
 

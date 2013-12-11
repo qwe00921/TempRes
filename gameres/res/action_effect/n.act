@@ -9,16 +9,16 @@
 @gsblur(0)
 
 [left_in]
-@move+(0.1, 640, 0,50) @stretch
+@move+(0.05, 640, 0,50) @stretch
 
 [right_out]
-@move+(0.1, 640, 0,50) @stretch
+@move+(0.05, 640, 0,50) @stretch
 
 [right_in]
-@move+(0.1, -640, 0,50) @stretch
+@move+(0.05, -640, 0,50) @stretch
 
 [left_out]
-@move+(0.1, -640, 0,50) @stretch
+@move+(0.05, -640, 0,50) @stretch
 
 [pet_left_in]
 @move+(0.1, 400, 0,50) @stretch

@@ -71,7 +71,7 @@ function p:Init( parentNode, in_life, in_lifeMax )
 	self.node:SetTextFontSize(10);
 	self.node:SetTextFontColor( ccc4(255,255,255,255));
 	self.node:SetStart(0);
-	self.node:SetTextStyle(0);
+	self.node:SetTextStyle(2);
 	self.node:SetTotal( in_lifeMax );
 	self.node:SetProcess( in_life );
 end

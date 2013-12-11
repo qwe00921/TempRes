@@ -296,22 +296,51 @@ function p.setMissionInif(MisId, view)
 		WriteCon("rewardTable error");
 		return
 	end
-	local rewardItemId = nil;
+	local rewardGroupTable = {};
 	for k,v in pairs(rewardTable) do
-		rewardItemId = tonumber(v.type_id);
-		if tonumber(v.type) == 2 then --卡牌
+		if tonumber(v.group) == 1 then
+			rewardGroupTable[#rewardGroupTable + 1] = v;
+		end
+	end
+	local rewardItemId = nil;
+	if rewardGroupTable[1]["type_id"] then
+		rewardItemId = tonumber(rewardGroupTable[1]["type_id"]);
+		local typeID = tonumber(rewardGroupTable[1]["type"]);
+		if typeID == 1 then	--物品
+			local itemTable = SelectRowInner(T_ITEM,"id",rewardItemId);
+			item1:SetVisible(true);
+			item1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+		elseif typeID == 2 then --卡牌
 			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
 			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
 			item1:SetVisible(true);
 			item1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
 			--WriteCon("tonumberv.type==="..tonumber(v.type));
-		elseif tonumber(v.type) == 1 then	--物品
+		elseif typeID == 4 then	--装备
+			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);
+			item1:SetVisible(true);
+			item1:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
+		end
+	end
+	if rewardGroupTable[2]["type_id"] then
+		rewardItemId = tonumber(rewardGroupTable[2]["type_id"]);
+		local typeID = tonumber(rewardGroupTable[2]["type"]);
+		if typeID == 1 then	--物品
 			local itemTable = SelectRowInner(T_ITEM,"id",rewardItemId);
 			item2:SetVisible(true);
 			item2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+		elseif typeID == 2 then --卡牌
+			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
+			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
+			item2:SetVisible(true);
+			item2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			--WriteCon("tonumberv.type==="..tonumber(v.type));
+		elseif typeID == 4 then	--装备
+			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);
+			item2:SetVisible(true);
+			item2:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
 		end
 	end
-	
 	--local rewardId1 = tonumber(missionTable["reward_1"]);
 	--local rewardId2 = tonumber(missionTable["reward_2"]);
 	--local rewardId3 = tonumber(missionTable[1]["reward_3"]);

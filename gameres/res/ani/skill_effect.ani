@@ -1,5 +1,5 @@
 [sing_aperture_blue]
-image\skill\2_sing.png @cut(1,5)
+image\skill\2_sing.png @cut(1,5) @time=0.1
 
 [hurt_fire]
 image\skill\3_hurt.png @cut(2,7) @use(1,10) @time=0.1

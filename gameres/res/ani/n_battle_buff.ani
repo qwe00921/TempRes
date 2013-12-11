@@ -33,3 +33,6 @@ image\battle_buff\202.png @cut(1,1) @stay @scale=0.3
 
 [buff_type_203]
 image\battle_buff\203.png @cut(1,1) @stay @scale=0.3
+
+[buff_type_301]
+image\battle_buff\203.png @cut(1,1) @stay @scale=0.3

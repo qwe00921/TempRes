@@ -55,6 +55,8 @@ N_BUFF_TYPE_201 = 201;--攻击减弱
 N_BUFF_TYPE_202 = 202;--防御减弱
 N_BUFF_TYPE_203 = 203;--暴击减弱
 
+N_BUFF_TYPE_301 = 301;--复活
+
 --skill type
 N_SKILL_TYPE_1 = 1;--主动伤害技能
 N_SKILL_TYPE_2 = 2;--主动恢复技能
@@ -65,8 +67,8 @@ N_SKILL_TYPE_5 = 5;--主动复活技能
 --技能攻击目标
 N_SKILL_TARGET_TYPE_1 = 1;--敌方单体
 N_SKILL_TARGET_TYPE_2 = 2;--敌方群体：远程攻击位置：中间
-N_SKILL_TARGET_TYPE_3 = 3;--敌方直线：远程攻击位置：中间
-N_SKILL_TARGET_TYPE_4 = 4;--敌方横排
+N_SKILL_TARGET_TYPE_3 = 3;--敌方直线：
+N_SKILL_TARGET_TYPE_4 = 4;--敌方横排: 远程攻击位置：中间
 N_SKILL_TARGET_TYPE_5 = 5;--敌方穿越
 
 N_SKILL_TARGET_TYPE_11 = 11;--自己

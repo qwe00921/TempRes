@@ -21,7 +21,13 @@ lancer.shake
 [die]
 @type=0
 lancer.fadeout
-lancer.hide
+;lancer.hide
+
+;¸´»î
+[revive]
+@type=0
+lancer.fadein
+;lancer.show
 
 ;µ­³ö+Òþ²Ø
 [die_v2]

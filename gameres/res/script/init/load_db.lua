@@ -44,7 +44,8 @@ T_SKILL     = LoadTable( "skill.ini" );
 
 --技能资源
 T_SKILL_RES		= 	LoadTable( "skill_res.ini" );
-
+--装备表
+T_EQUIP			=  	LoadTable( "equip.ini" );
 --装备成长表
 T_EQUIPMENT_GROW	=LoadTable( "equipment_grow.ini" );
 
@@ -87,5 +88,9 @@ T_EQUIP_LEVEL	= LoadTable("equip_level.ini");
 --玩家等级配置表
 T_PLAYER_LEVEL	= LoadTable("player_level.ini");
 
---装备表
-T_EQUIP			= LoadTable("equip.ini");
+--技能音效
+T_SKILL_SOUND  = LoadTable("skill_sound.ini");
+
+--卡牌普通攻击音效
+T_CARD_ATK_SOUND  = LoadTable("card_atk_sound.ini");
+

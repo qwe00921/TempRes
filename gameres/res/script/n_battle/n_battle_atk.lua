@@ -8,13 +8,22 @@ n_battle_atk = {}
 local p = n_battle_atk;
 
 --双方互殴
-function p.Atk( atkFighter, distance, targetFighter, batch, hurt )
+function p.Atk( atkFighter, target, TCamp, batch )
     if batch == nil then return end
     
-    local batch = batch;
-    local targetFighter = targetFighter;
-    local atkFighter = atkFighter;
-    local hurt = hurt;
+    local targetFighter = nil; --受击者
+    if TCamp == E_CARD_CAMP_HERO then
+        targetFighter = n_battle_mgr.heroCamp:FindFighter( tonumber( target.TPos ) );
+    elseif TCamp == E_CARD_CAMP_ENEMY then
+        targetFighter = n_battle_mgr.enemyCamp:FindFighter( tonumber( target.TPos ) + N_BATTLE_CAMP_CARD_NUM );
+    end
+    local Damage = tonumber( target.Damage ); --扣除血量
+    local RemainHp = tonumber( target.RemainHp ); --所剩血量
+    local Crit = target.Crit ; --暴击
+    local Dead = target.TargetDead;--死亡
+    local Revive = target.Revive;--复活
+    local distance = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
+    local atkSound = SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );
     
     local seqAtk    = batch:AddSerialSequence();
     local seqTarget = batch:AddSerialSequence();
@@ -50,9 +59,15 @@ function p.Atk( atkFighter, distance, targetFighter, batch, hurt )
     end
     
     --攻击敌人动画
-    local cmdAtk = createCommandPlayer():Atk( 0, playerNode, "" );
+    local cmdAtk = createCommandPlayer():Atk( 0.3, playerNode, "" );
     seqAtk:AddCommand( cmdAtk );
     --cmdAtk:SetDelay(0.2f); --设置攻击延迟
+    
+    --受击音乐
+    if atkSound ~= nil then
+        local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( atkSound );
+        seqAtk:AddCommand( cmdAtkMusic );
+    end
     
     --最初站立动画
     local cmd4 = createCommandPlayer():Standby( 0.01, playerNode, "" );
@@ -72,8 +87,8 @@ function p.Atk( atkFighter, distance, targetFighter, batch, hurt )
                     
         bullet:GetNode():SetRotationDeg( deg );
         local bullet1 = bullet:cmdSetVisible( true, seqBullet );
-        local bullet2 = bullet:cmdShoot( atkFighter, targetFighter, seqBullet, false );
-        bulletend = bullet:cmdSetVisible( false, seqBullet );
+        bulletend = bullet:cmdShoot( atkFighter, targetFighter, seqBullet, false );
+        local bullet3 = bullet:cmdSetVisible( false, seqBullet );
         seqBullet:SetWaitEnd( cmdAtk );
     end
     
@@ -89,7 +104,7 @@ function p.Atk( atkFighter, distance, targetFighter, batch, hurt )
     local cmdBack = createCommandEffect():AddActionEffect( 0, targetFighter:GetPlayerNode(), "lancer.target_hurt_back" );
     seqTarget:AddCommand( cmdBack );
         
-    local cmd11 = targetFighter:cmdLua( "fighter_damage",  hurt, "", seqTarget );
+    local cmd11 = targetFighter:cmdLua( "fighter_damage",  Damage, "", seqTarget );
     
     local cmdBackRset = createCommandEffect():AddActionEffect( 0, targetFighter:GetPlayerNode(), "lancer.target_hurt_back_reset" );
     seqTarget:AddCommand( cmdBackRset ); 
@@ -98,12 +113,19 @@ function p.Atk( atkFighter, distance, targetFighter, batch, hurt )
     --cmdClearPic:SetWaitEnd( seqTarget );
     
     if bulletend ~= nil then
-    	seqTarget:SetWaitEnd( bulletend );
+    	seqTarget:SetWaitBegin( bulletend );
     else
         seqTarget:SetWaitBegin( cmdAtk );	
     end
         
     --受攻击的后续动画【死亡 OR 站立】
     HurtResultAni( targetFighter, seqTarget );
+    
+    if Dead then
+        --BUGG复活技能  
+        if Revive then
+            targetFighter:cmdLua( "fighter_revive", RemainHp, "", seqTarget );  
+        end
+    end
     
 end
