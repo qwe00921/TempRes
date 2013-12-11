@@ -3,7 +3,7 @@
 ;----------------------
 
 [bullet_shoot]
-@move+(0.4, $1, $2, 100)
+@move+(0.2, $1, $2, 100)
 
 [bullet_tornado]
 @move(1, $1, $2)
@@ -12,7 +12,7 @@
 @jump(0.4, $1, $2, $3, 1) @sinin
 
 [begin_battle_jump]
-@jump(0.2, $1, $2, $3, 1) @sinin
+@jump(0.1, $1, $2, $3, 1) @sinin
 
 [bullet_rotate]
 @rotate(1,360)
@@ -114,13 +114,13 @@
 
 ;击退效果
 [target_hurt_back]
-;@gsblur(0.1)
-@move(0.4, -20, 0) @easeout
+@gsblur(0.05)
+@move(0.1, -15, 0) @easeout
 
 ;击退后返回
 [target_hurt_back_reset]
-@move(0.2, 20, 0,) @easeout
-;@gsblur(0)
+@move(0.05, 15, 0,) @easeout
+@gsblur(0)
 
 ;{-------最新飘血动画---------
 
