@@ -293,10 +293,15 @@ function p.ShowItemInfo( view, item, itemIndex )
 		--装备，显示星级
 		equipStarPic:SetVisible(true);
 		local starNum = tonumber(item.Rare);
-		equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
-		--显示装备等级
+		if starNum == 0 then
+			equipStarPic:SetVisible(false);
+		else
+			equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
+		end
+			--显示装备等级
 		equipLevelText:SetVisible(true);
 		equipLevelText:SetText(item.Equip_level);
+
 		
 		--是否装备
 		if item.Is_dress == 1 or item.Is_dress == "1" then
