@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_BG]
 Type=2
 Tag=21
-Rect=19 8 498 690
+Rect=20 8 498 690
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -57,8 +57,6 @@ Tag=10
 Rect=133 564 100 25
 AnchorPos=0 0
 Notes=
-Text=物品名称
-TextTradition=物品名稱
 TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -69,8 +67,6 @@ Tag=9
 Rect=133 451 100 100
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\boss1.png
-NormalFileUV=0 0 84 126
 
 [CTRL_TEXT_GET_ITEM]
 Type=4
