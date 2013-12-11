@@ -48,6 +48,7 @@ function p:Process()
 		dlg_createrole.CloseUI();
 		maininterface.ShowUI(self.user);
 	else
-		WriteConWarning("创建人物失败");
+		dlg_msgbox.ShowOK( ToUtf8("提示"), self.message, nil, dlg_createrole.layer );
+		--WriteConWarning("创建人物失败");
 	end
 end
