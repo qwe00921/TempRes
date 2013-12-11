@@ -27,6 +27,9 @@ p.curStageId = 0;
 
 local act_zoom = "engine_cmb.zoom_in_out"; --呼吸效果
 
+local DIR_LEFT = 1;--图片在左
+local DIR_RIGHT = 2;--图片在右
+
 --显示UI
 function p.ShowUI( stageId, storyId  )
     if storyId == nil then
@@ -54,7 +57,7 @@ function p.ShowUI( stageId, storyId  )
 	p.layer = layer;
 	p.Init();
 	p.SetDelegate();
-	drama_mgr.LoadDramaInfo( storyId );
+	drama_mgr.LoadDramaInfo( stageId, storyId );
 end
 
 --初始化控件
@@ -153,20 +156,36 @@ function p.ResetUI( dramaInfo )
 
     --NPC图片以特效更新：左边NPC
     if tonumber( dramaInfo.picLeft ) ~= nil and tonumber( dramaInfo.picLeft ) ~= 0 then
-    	bgPic = GetPictureByAni( "drama.npc_"..dramaInfo.picLeft, 0);
-    	p.npcPicNodeL:SetPicture( bgPic );
-    	if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picLeft ) then
-			p.AddNpcEffect( p.npcPicNodeL );
-    	end
+		for i = 0, 2, 1 do
+			local npcid = tonumber( dramaInfo.picLeft ) == 99999 and msg_cache.msg_player.Face or dramaInfo.picLeft;
+			local ani = GetAni( "drama."..npcid .. "_" .. i );
+			if ani ~= nil then
+				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
+				bgPic:SetReverse( i == DIR_LEFT );--图片在左，卡牌本身朝向左则翻转图片
+				p.npcPicNodeL:SetPicture( bgPic );
+				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picLeft ) then
+					p.AddNpcEffect( p.npcPicNodeL );
+				end
+				break;
+			end
+		end
     end
 
      --NPC图片以特效更新：右边NPC
     if tonumber( dramaInfo.picRight ) ~= nil and tonumber( dramaInfo.picRight ) ~= 0 then
-        bgPic = GetPictureByAni( "drama.npc_"..dramaInfo.picRight, 0);
-        p.npcPicNodeR:SetPicture( bgPic );
-        if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picRight ) then
-			p.AddNpcEffect( p.npcPicNodeR );
-        end
+		for i = 0, 2, 1 do
+			local npcid = tonumber( dramaInfo.picRight ) == 99999 and msg_cache.msg_player.Face or dramaInfo.picRight;
+			local ani = GetAni( "drama."..npcid .. "_" .. i );
+			if ani ~= nil then
+				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
+				bgPic:SetReverse( i == DIR_RIGHT );--图片在右，卡牌本身朝向右则翻转图片
+				p.npcPicNodeR:SetPicture( bgPic );
+				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picRight ) then
+					p.AddNpcEffect( p.npcPicNodeR );
+				end
+				break;
+			end
+		end
     end
 end
 
