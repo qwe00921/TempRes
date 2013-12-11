@@ -29,13 +29,18 @@ p.allCardPrice 	= 0;	--出售卡牌总价值
 p.sellCardList 	= {};	--出售卡牌列表
 
 p.modifyTeam = false;
+p.mainUIFlag = false;
 
-function p.ShowUI( bModify )
+function p.ShowUI( bModify , mainUIFlag )
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
 
 	if bModify ~= nil then
 		p.modifyTeam = bModify;
+	end
+	
+	if mainUIFlag ~= nil then
+		p.mainUIFlag = mainUIFlag;
 	end
 	
 	if p.layer ~= nil then 
@@ -56,6 +61,8 @@ function p.ShowUI( bModify )
 
     p.layer = layer;
     p.SetDelegate(layer);
+	
+	p.layer:SetVisible( true );
 	
 	--加载卡牌列表数据
     card_bag_mgr.LoadAllCard( p.layer );
@@ -198,8 +205,12 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	WriteCon("cardUniqueId = "..cardUniqueId);
 	
 	if p.modifyTeam then
-		p.CloseUI();
-		dlg_card_group_main.UpdatePosCard( cardUniqueId );
+		if p.mainUIFlag then
+			dlg_battlearray.UpdatePosCard( cardUniqueId );
+		else
+			p.CloseUI();
+			dlg_card_group_main.UpdatePosCard( cardUniqueId );
+		end
 		return;
 	end
 	
@@ -408,6 +419,7 @@ function p.CloseUI()
         p.layer:LazyClose();
         p.layer = nil;
 		p.modifyTeam = false;
+		p.mainUIFlag = false;
 		
 		p.ClearData()
         card_bag_mgr.ClearData();
