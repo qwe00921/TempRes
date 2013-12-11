@@ -276,9 +276,6 @@ function p.InitBattle()
 	else
 	   	n_battle_mgr.play_pve( p.targetId );
 	end
-	
-	
-	--SetTimerOnce(p.ReadyGo,1.5f);
 end
 
 function p.ReadyGo()

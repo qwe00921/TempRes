@@ -105,6 +105,10 @@ end
 
 function p:SubTmpLife( val )
 	self.tmplife = self.tmplife - val;
+	
+	if self.tmplife < 0 then
+        self.tmplife = 0;
+    end
 end
 
 function p:SubTmpLifeHeal( val )
@@ -233,12 +237,34 @@ function p:ShowHpBarMoment()
 	self.hpbar:ShowBarMoment();
 end
 
+--去血
+function p:SetLifeDamage(num)   
+    self.life = self.life - num;
+    --WriteCon( string.format("%f", self.life ));
+    if self.life <= 0 then
+        self.life = 0;
+        self:SetLife( 0 );
+        self:Die();
+        
+        --死亡不显示血条
+        self.hpbar:GetNode():SetVisible( false );
+    else
+        self:SetLife(self.life);
+    end
+    
+    --表现飘血
+    local flynum = self:GetFreeFlyNum(0);
+    if flynum ~= nil then
+        flynum:PlayNum( num );
+    end
+end
+
 --添加lua命令
 function p:cmdLua( cmdtype, num, str, seq )
 	--暂时临时扣血保存到tmplife
     if cmdtype == "fighter_damage" then
         self:SubTmpLife( num ); 
-    elseif cmdtype == "fighter_addHp" then  
+    elseif cmdtype == "fighter_addHp" or cmdtype == "fighter_revive" then  
         self:SubTmpLifeHeal( num );   
     end
     return super.cmdLua( self, cmdtype, num, str, seq );

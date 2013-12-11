@@ -4,8 +4,8 @@
 --------------------------------------------------------------
 ui_bag_equip_view = {};
 local p =  ui_bag_equip_view;
-p.ID_CTRL_PICTURE_MODE				    = 31;
-p.ID_CTRL_TEXT_24						       = 29;
+p.ID_CTRL_TEXT_TYPE					      = 31;
+p.ID_CTRL_TEXT_MODE					      = 29;
 p.ID_CTRL_9SLICES_23					     = 28;
 p.ID_CTRL_BUTTON_SELL					    = 68;
 p.ID_CTRL_BUTTON_STRENGTHEN			= 67;
@@ -18,7 +18,6 @@ p.ID_CTRL_TEXT_SUB_PRO1				   = 23;
 p.ID_CTRL_TEXT_SUB_PRO				    = 76;
 p.ID_CTRL_TEXT_MAIN_PRO1				  = 22;
 p.ID_CTRL_TEXT_MAIN_PRO				   = 75;
-p.ID_CTRL_PICTURE_TYPE				    = 71;
 p.ID_CTRL_TEXT_LEVEL					     = 69;
 p.ID_CTRL_PICTURE_STAR				    = 72;
 p.ID_CTRL_PICTURE_EQUIP				   = 65;
@@ -27,3 +26,4 @@ p.ID_CTRL_TEXT_EQUIP_NAME				 = 21;
 p.ID_CTRL_9SLICES_22					     = 27;
 p.ID_CTRL_PICTURE_BG					     = 1;
 p.ID_CTRL_9SLICES_24					     = 30;
+p.ID_CTRL_PICTURE_TYPE				    = 71;

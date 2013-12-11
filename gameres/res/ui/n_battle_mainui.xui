@@ -6,17 +6,17 @@ Height=960
 [CTRL_BUTTON_SKIP]
 Type=2
 Tag=11
-Rect=395 103 85 48
+Rect=346 102 96 76
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=开始按钮/跳过
-SelectFile=.\res.cn\image\ui\x_battle_main_ui\tuo_guan.png
-SelectedFileUV=0 0 124 124
-DisableFile=.\res.cn\image\ui\x_battle_main_ui\atk.png
-DisableFileUV=0 0 114 73
+NormalFile=.\res\image\ui\drama\skip.png
+NormalFileUV=0 0 96 76
+SelectFile=.\res\image\ui\drama\skip-click.png
+SelectedFileUV=0 0 96 76
 
 [CTRL_BUTTON_SKILL4]
 Type=2

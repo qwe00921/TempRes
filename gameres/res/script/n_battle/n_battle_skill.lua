@@ -28,6 +28,8 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     local targetType = tonumber( SelectCell( T_SKILL, SkillId, "Target_type" ) );
     local skillType = tonumber( SelectCell( T_SKILL, SkillId, "Skill_type" ) );
     local isSelfCamp = IsSkillTargetSelfCamp( targetType );
+    local singSound = SelectCell( T_SKILL_SOUND, SkillId, "sing_sound" );
+    local hurtSound = SelectCell( T_SKILL_SOUND, SkillId, "hurt_sound" );
     
     --攻击目标的位置
     local enemyPos; 
@@ -47,7 +49,13 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     
     local cmdSetPic = hero:cmdLua( "SetFighterPic",  0, "", seqAtk );
     
-    local cmd1 = createCommandEffect():AddFgEffect( 0.1, hero:GetNode(), sing );
+    --吟唱动作音乐
+    if singSound ~= nil then
+    	local cmdSingMusic = createCommandSoundMusicVideo():PlaySoundByName( singSound );
+        seqAtk:AddCommand( cmdSingMusic );
+    end
+    
+    local cmd1 = createCommandEffect():AddFgEffect( 0.01, hero:GetNode(), sing );
     seqAtk:AddCommand( cmd1 );
     
     --近战攻击
@@ -56,7 +64,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
         cmdDoPos = JumpMoveTo(hero, originPos, enemyPos, seqAtk );
     end
     
-    local cmd2 = createCommandPlayer():Atk( 0, hero:GetPlayerNode(), "" );
+    local cmd2 = createCommandPlayer():Atk( 0.3, hero:GetPlayerNode(), "" );
     seqAtk:AddCommand( cmd2 );
     
     local cmd3 = createCommandPlayer():Standby( 0.01, hero:GetPlayerNode(), "" );
@@ -89,6 +97,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
         local Buff = tonumber( v.Buff );
         local Crit = v.Crit; --暴击
         local Dead = v.TargetDead;--死亡
+        local Revive = v.Revive;--复活
         --受击者死亡
         --[[
         if Dead and Damage < enemy.life then
@@ -110,19 +119,25 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
                     
                 bullet:GetNode():SetRotationDeg( deg );
                 local bullet1 = bullet:cmdSetVisible( true, seqBullet );
-                local bullet2 = bullet:cmdShoot( hero, enemy, seqBullet, false );
-                bulletend = bullet:cmdSetVisible( false, seqBullet );
+                bulletend = bullet:cmdShoot( hero, enemy, seqBullet, false );
+                local bullet3 = bullet:cmdSetVisible( false, seqBullet );
                 seqBullet:SetWaitEnd( cmd2 );
             end
         
             if seq1 ~= nil then
+                --受击音乐
+                if hurtSound ~= nil then
+                	local cmdHurtMusic = createCommandSoundMusicVideo():PlaySoundByName( hurtSound );
+                    seq1:AddCommand( cmdHurtMusic );
+                end
+    
                 --受击特效
                 local cmd11 = createCommandEffect():AddFgEffect( 0, enemy:GetNode(), hurt );
                 seq1:AddCommand( cmd11 );
                 
                 local cmd12;
                 if not isSelfCamp then
-                	local cmdBackRset = createCommandEffect():AddActionEffect( 0.01, enemy:GetNode(), "lancer.target_hurt_back_reset" );
+                	local cmdBackRset = createCommandEffect():AddActionEffect( 0, enemy:GetNode(), "lancer.target_hurt_back_reset" );
                     seq1:AddCommand( cmdBackRset ); 
                     cmdBackRset:SetWaitEnd( cmd11 );
                     
@@ -138,7 +153,12 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
                 elseif skillType == N_SKILL_TYPE_2 then 
                     cmd13 = enemy:cmdLua( "fighter_addHp", Damage, "", seq1 );
                 elseif skillType == N_SKILL_TYPE_5 then
-                    --主动复活技能    
+                    --主动复活技能  
+                    if Revive then
+                    	cmd13 = enemy:cmdLua( "fighter_revive", RemainHp, "", seq1 );  
+                    	enemy.isDead = false;
+                        enemy:SubTmpLifeHeal( RemainHp );   
+                    end
                 end
                 if cmd13 ~= nil and cmd12 ~= nil then
                 	cmd13:SetWaitEnd( cmd12 );
@@ -161,9 +181,16 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
                 
                 HurtResultAni( enemy, seq1 );
                 
+                if Dead then
+                	--BUGG复活技能  
+                    if Revive then
+                        enemy:cmdLua( "fighter_revive", RemainHp, "", seq1 );  
+                    end
+                end
+                
                 --设置等待
                 if bulletend ~= nil then
-                	seq1:SetWaitEnd( bulletend );
+                	seq1:SetWaitBegin( bulletend );
                 else
                 	seq1:SetWaitEnd( cmd3 );
                 end
@@ -232,10 +259,10 @@ function p.doUIEffect( camp, seqUI, SkillId )
     local cmdLightning = createCommandEffect():AddFgEffect( 0.01, skillNameBar, fx_lightning );
     seqUI:AddCommand( cmdLightning ); 
     
-    local cmdFxPic = createCommandEffect():AddFgEffect( 0, skillNameBar, fx_pic );
+    local cmdFxPic = createCommandEffect():AddFgEffect( 0.01, skillNameBar, fx_pic );
     seqUI:AddCommand( cmdFxPic ); 
     
-    local cmdFxTitle = createCommandEffect():AddFgEffect( 0, skillNameBar, fx_title );
+    local cmdFxTitle = createCommandEffect():AddFgEffect( 0.01, skillNameBar, fx_title );
     seqUI:AddCommand( cmdFxTitle ); 
     
     
@@ -248,7 +275,7 @@ function p.doUIEffect( camp, seqUI, SkillId )
     seqUI:AddCommand( cmd5 );   
     
     --2:恢复清晰
-    local cmd6 = createCommandEffect():AddActionEffect( 0, skillNameBar, "n.gsblur_zero" );
+    local cmd6 = createCommandEffect():AddActionEffect( 0.01, skillNameBar, "n.gsblur_zero" );
     seqUI:AddCommand( cmd6 );
     cmd6:SetDelay(0.2); 
     

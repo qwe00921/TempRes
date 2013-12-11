@@ -67,7 +67,8 @@ function p.DelCallBack(self)
 		card_bag_mian.sellCardList = {};
 		card_bag_mian.BatchSellMark = OFF;
 		local btn = GetButton(p.layer, ui_card_main_view.ID_CTRL_BUTTON_SELL);
-		btn:SetImage( GetPictureByAni("button.sell",1));
+		btn:SetImage( GetPictureByAni("button.sell",0));
+		btn:SetText("批量出售")
 		dlg_msgbox.ShowOK("确认提示框","出售卡牌获得 "..tostring(self.money.Add).."金币。",nil,p.layer);
 	else
 		local messageText = self.message

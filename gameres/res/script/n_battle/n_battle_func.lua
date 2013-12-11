@@ -34,7 +34,7 @@ end
 function IsAoeSkillByType( targetType )
     if targetType == nil then
     	return false;
-    elseif targetType == N_SKILL_TARGET_TYPE_2 or targetType == N_SKILL_TARGET_TYPE_3 or targetType == N_SKILL_TARGET_TYPE_12 then	
+    elseif targetType == N_SKILL_TARGET_TYPE_2 or targetType == N_SKILL_TARGET_TYPE_4 or targetType == N_SKILL_TARGET_TYPE_12 then	
         return true;
     else
         return false;   
@@ -90,8 +90,10 @@ function GetBestTargetPos( Hero, TCamp, Targets )
         elseif TCamp == E_CARD_CAMP_ENEMY then
             figther = n_battle_mgr.enemyCamp:FindFighter( tempPosId + N_BATTLE_CAMP_CARD_NUM );
         end
+        return figther:GetFrontPos( Hero:GetPlayerNode() );
+    else
+        return nil;  
 	end
-	return figther:GetFrontPos( Hero:GetPlayerNode() );
 end
 
 --受击结果：死亡动作或站立动画
@@ -102,10 +104,12 @@ function HurtResultAni( targetFighter, seqTarget )
     else
         --local cmdB = createCommandPlayer():Dead( 0, targetFighter:GetNode(), "" );
         --seqTarget:AddCommand( cmdB );   
-        local cmdf = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die_v2" );
+        
+        local cmdf = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die" );
         seqTarget:AddCommand( cmdf );
-        local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die_v2" );
+        local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die" );
         seqTarget:AddCommand( cmdC );
+        
     end
 end
 
@@ -164,6 +168,19 @@ function HasBuffType( fighter, buffType )
 		end
 	end
 	return false;
+end
+
+--复活战士
+function FighterRevive( fighter, hp)
+    fighter.hpbar:GetNode():SetVisible( true );
+    fighter:SetLifeAdd( hp );
+    --fighter:SubTmpLifeHeal( hp );
+    fighter.isDead = false;
+    fighter:standby();
+    fighter:GetNode():AddActionEffect("lancer_cmb.revive");
+    fighter.m_kShadow:AddActionEffect("lancer_cmb.revive");
+    fighter:GetNode():ClearAllAniEffect();
+    fighter.buffList = {};
 end
 
 

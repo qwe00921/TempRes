@@ -25,6 +25,7 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     local petNameNode = n_battle_mgr.GetPetNameNode( Pos, UCamp );
     local hurtEffect = SelectCell( T_SKILL_RES, SkillId, "hurt_effect" );
     local skillType = tonumber( SelectCell( T_SKILL, SkillId, "Skill_type" ) );
+    local hurtSound = SelectCell( T_SKILL_SOUND, SkillId, "hurt_sound" );
     
     --初始化技能名称栏对应的ACTION特效
     local petInAction = nil;
@@ -91,6 +92,7 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     	local RemainHp = tonumber( var.RemainHp );
     	local Buff = tonumber( var.Buff );
     	local Dead = var.TargetDead;
+    	local Revive = var.Revive;
     	
     	local targetF;
     	if TCamp == E_CARD_CAMP_HERO then
@@ -100,11 +102,17 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
         end
         
         --受击者死亡
+        --[[
         if Dead and Damage < targetF.life then
             Damage = targetF.life;
             WriteConWarning("the TargetFighter Mandatory death!");
         end
+        --]]
         
+        --受击音乐
+        local cmdHurtMusic = createCommandSoundMusicVideo():PlaySoundByName( hurtSound );
+        seqTarget:AddCommand( cmdHurtMusic );
+                
         --受击特效
         local cmd11 = createCommandEffect():AddFgEffect( 0, targetF:GetNode(), hurtEffect );
         seqTarget:AddCommand( cmd11 );
@@ -126,6 +134,12 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
         	end
         end
     	HurtResultAni( targetF, seqTarget );
+    	if Dead then
+            --BUGG复活技能  
+            if Revive then
+                targetF:cmdLua( "fighter_revive", RemainHp, "", seqTarget );  
+            end
+        end
     end
     seqTarget:SetWaitEnd( cmdHideMask );
 end

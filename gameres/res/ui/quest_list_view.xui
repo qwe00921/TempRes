@@ -6,23 +6,31 @@ Height=960
 [CTRL_PICTURE_REWARD3]
 Type=1
 Tag=14
-Rect=544 195 50 28
+Rect=624 121 50 28
 AnchorPos=0 0
 Notes=
 
 [CTRL_PIC_LIST_BG]
 Type=1
 Tag=1
-Rect=0 0 614 337
+Rect=0 0 620 318
 AnchorPos=0 0
 Notes=
+
+[CTRL_9SLICES_37]
+Type=22
+Tag=37
+Rect=0 0 614 308
+AnchorPos=0 0
+Notes=
+Stretch=1
 NormalFile=.\res\image\ui\quest\quest_list_bg.png
 NormalFileUV=0 0 614 344
 
 [CTRL_PICTURE_99]
 Type=1
 Tag=99
-Rect=148 144 36 36
+Rect=152 124 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -31,7 +39,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_63]
 Type=1
 Tag=63
-Rect=189 144 36 36
+Rect=193 124 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -40,7 +48,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_64]
 Type=1
 Tag=64
-Rect=229 144 36 36
+Rect=233 124 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -62,7 +70,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_59]
 Type=1
 Tag=59
-Rect=252 11 220 48
+Rect=271 11 178 48
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\txt_bg.png
@@ -71,7 +79,7 @@ NormalFileUV=0 0 122 38
 [CTRL_TEXT_POWRE]
 Type=4
 Tag=3
-Rect=255 18 129 30
+Rect=280 18 129 30
 AnchorPos=0 0
 Notes=
 Text=体力消耗：
@@ -90,23 +98,10 @@ Notes=
 NormalFile=.\res\image\ui\quest\txt_bg.png
 NormalFileUV=0 0 122 38
 
-[CTRL_TEXT_POWER1]
-Type=4
-Tag=22
-Rect=409 18 50 30
-AnchorPos=0 0
-Notes=
-Text=体力
-TextTradition=體力
-TextSize=24
-TextColor=0xd6ce96
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_POWER_V]
 Type=4
 Tag=4
-Rect=381 18 30 30
+Rect=406 18 30 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -139,7 +134,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_REWARD]
 Type=4
 Tag=6
-Rect=39 88 121 34
+Rect=39 84 121 34
 AnchorPos=0 0
 Notes=
 Text=任务奖励:
@@ -152,7 +147,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_EXP_8]
 Type=1
 Tag=8
-Rect=383 95 30 30
+Rect=375 88 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\exp.png
@@ -161,7 +156,7 @@ NormalFileUV=0 0 63 61
 [CTRL_TEXT_EXP_V]
 Type=4
 Tag=17
-Rect=418 89 62 33
+Rect=414 87 62 33
 AnchorPos=0 0
 Notes=
 Text=EXP
@@ -174,7 +169,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=9
-Rect=182 96 24 24
+Rect=197 91 24 24
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\money.png
@@ -183,7 +178,7 @@ NormalFileUV=0 0 28 28
 [CTRL_TEXT_MONEY_V]
 Type=4
 Tag=18
-Rect=220 92 67 30
+Rect=235 88 67 30
 AnchorPos=0 0
 Notes=
 Text=MONEY
@@ -196,7 +191,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_EVALUATION]
 Type=4
 Tag=11
-Rect=39 147 76 30
+Rect=39 127 76 30
 AnchorPos=0 0
 Notes=
 Text=评价:
@@ -209,16 +204,26 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=19
-Rect=148 144 36 36
+Rect=152 124 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
 NormalFileUV=0 0 36 36
 
+[CTRL_9SLICES_38]
+Type=22
+Tag=38
+Rect=21 176 379 116
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=20
-Rect=190 144 36 36
+Rect=194 124 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
@@ -227,7 +232,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=21
-Rect=229 144 36 36
+Rect=233 124 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
@@ -236,7 +241,7 @@ NormalFileUV=0 0 36 36
 [CTRL_TEXT_PROBABILITY]
 Type=4
 Tag=7
-Rect=42 199 56 33
+Rect=39 188 56 33
 AnchorPos=0 0
 Notes=
 Text=概率
@@ -249,7 +254,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_REWARD1]
 Type=1
 Tag=12
-Rect=129 217 100 100
+Rect=151 186 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png
@@ -258,7 +263,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_REWARD2]
 Type=1
 Tag=13
-Rect=271 217 100 100
+Rect=272 186 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png
@@ -267,7 +272,7 @@ NormalFileUV=0 0 72 84
 [CTRL_BUTTON_FIGHTING]
 Type=2
 Tag=15
-Rect=413 232 170 70
+Rect=416 202 170 70
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -281,7 +286,7 @@ DisableFileUV=0 0 279 77
 [CTRL_PICTURE_100]
 Type=1
 Tag=100
-Rect=129 217 100 100
+Rect=151 186 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\item-list.png
@@ -290,7 +295,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_101]
 Type=1
 Tag=101
-Rect=271 217 100 100
+Rect=272 186 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\item-list.png
