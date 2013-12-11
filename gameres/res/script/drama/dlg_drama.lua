@@ -23,8 +23,12 @@ p.contentStrLn = nil;   --当前对话内容长度
 p.contentIndex = nil;   --当前说话的索引，用于特效
 p.timerId = nil;        --定时器ID
 p.isActivity = false;
+p.curStageId = 0;
 
 local act_zoom = "engine_cmb.zoom_in_out"; --呼吸效果
+
+local DIR_LEFT = 1;--图片在左
+local DIR_RIGHT = 2;--图片在右
 
 --显示UI
 function p.ShowUI( stageId, storyId  )
@@ -36,7 +40,8 @@ function p.ShowUI( stageId, storyId  )
 	p.isActivity = true;
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		drama_mgr.LoadDramaInfo( storyId );
+		p.curStageId = stageId;
+		drama_mgr.LoadDramaInfo( stageId,storyId );
 		return;
 	end
 	
@@ -52,7 +57,7 @@ function p.ShowUI( stageId, storyId  )
 	p.layer = layer;
 	p.Init();
 	p.SetDelegate();
-	drama_mgr.LoadDramaInfo( storyId );
+	drama_mgr.LoadDramaInfo( stageId, storyId );
 end
 
 --初始化控件
@@ -112,7 +117,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
             end
             p.isActivity = false;
             p.CloseUI();
-            after_drama.DoAfterDrama();
+            after_drama.DoAfterDrama(p.curStageId);
         end
     end
 end
@@ -148,24 +153,39 @@ function p.ResetUI( dramaInfo )
     if p.contentStr ~= nil and p.contentStrLn > 1 then
     	p.timerId = SetTimer( p.DoEffectContent, 0.01f );
     end
-    
+
     --NPC图片以特效更新：左边NPC
     if tonumber( dramaInfo.picLeft ) ~= nil and tonumber( dramaInfo.picLeft ) ~= 0 then
-    	bgPic = GetPictureByAni( "drama.npc_"..dramaInfo.picLeft, 0);
-    	p.npcPicNodeL:SetPicture( bgPic );
-    	if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picLeft ) then
-			p.AddNpcEffect( p.npcPicNodeL );
-    	end
+		for i = 0, 2, 1 do
+			local npcid = tonumber( dramaInfo.picLeft ) == 99999 and msg_cache.msg_player.Face or dramaInfo.picLeft;
+			local ani = GetAni( "drama."..npcid .. "_" .. i );
+			if ani ~= nil then
+				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
+				bgPic:SetReverse( i == DIR_LEFT );--图片在左，卡牌本身朝向左则翻转图片
+				p.npcPicNodeL:SetPicture( bgPic );
+				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picLeft ) then
+					p.AddNpcEffect( p.npcPicNodeL );
+				end
+				break;
+			end
+		end
     end
-  
-    
+
      --NPC图片以特效更新：右边NPC
     if tonumber( dramaInfo.picRight ) ~= nil and tonumber( dramaInfo.picRight ) ~= 0 then
-        bgPic = GetPictureByAni( "drama.npc_"..dramaInfo.picRight, 0);
-        p.npcPicNodeR:SetPicture( bgPic );
-        if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picRight ) then
-			p.AddNpcEffect( p.npcPicNodeR );
-        end
+		for i = 0, 2, 1 do
+			local npcid = tonumber( dramaInfo.picRight ) == 99999 and msg_cache.msg_player.Face or dramaInfo.picRight;
+			local ani = GetAni( "drama."..npcid .. "_" .. i );
+			if ani ~= nil then
+				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
+				bgPic:SetReverse( i == DIR_RIGHT );--图片在右，卡牌本身朝向右则翻转图片
+				p.npcPicNodeR:SetPicture( bgPic );
+				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picRight ) then
+					p.AddNpcEffect( p.npcPicNodeR );
+				end
+				break;
+			end
+		end
     end
 end
 

@@ -142,13 +142,20 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 		end
 			
 		--n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
-		--p.CloseUI()
+		local id = btnId;
+		
 		if p.missionList["M"..btnId] then
 			local storyId = p.missionList["M"..btnId].Begin_story;
 			WriteCon("storyId = "..storyId);
-			dlg_drama.ShowUI(btnId,storyId);
-			p.CloseUI();
+			if tonumber(storyId) ~= 0 then
+				dlg_drama.ShowUI( id , storyId);
+			else
+				n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+			end
+		else
+			n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
 		end
+		p.CloseUI();
 	end
 end
 
@@ -177,16 +184,12 @@ function p.ShowQuestList(self)
 			WriteCon("**p.power="..p.power); 
 		end
 	end
+	
 	if p.missionList == nil then
 		WriteCon("**missionsList error**"); 
 		return
 	end
-	-- local ListLength = 0;
-	-- for k,v in pairs(p.missionList) do
-		-- ListLength = ListLength + 1;
-	-- end
-	-- WriteCon("**ListLength = "..ListLength); 
-	--设置难道按钮
+
 	p.setHardBtn();
 	
 	--加载列表

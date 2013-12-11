@@ -180,10 +180,11 @@ function p.upgrade()
 					ids = ids .. ",";
 				end
 				ids = ids .. equip.id;
+				if equip and tonumber(equip.Rare) >= 5 then
+					has5Rank = true;
+				end
 			end
-			if equip and tonumber(equip.Rare) >= 5 then
-				has5Rank = true;
-			end
+			
 		end
 	end
 	
@@ -219,6 +220,9 @@ function p.refreshEquipUpgradeInfo()
 	local lb5 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_5);
 	local lb6 	= GetLabel(p.layer, ui.ID_CTRL_TEXT_LABEL_6);
 	local bt	= GetButton(p.layer, ui.ID_CTRL_BUTTON_UPGRADE);
+	local bg 	= Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_29);
+	local txtBg = Get9SlicesImage(p.layer, ui.ID_CTRL_9SLICES_30);
+	
 	
 	
 	if p.upgradeItem == nil or p.intent ~= p.INTENT_UPGRADE then
@@ -232,6 +236,8 @@ function p.refreshEquipUpgradeInfo()
 		lb5:SetVisible(false);
 		lb6:SetVisible(false);
 		bt:SetVisible(false);
+		bg:SetVisible(false);
+		txtBg:SetVisible(false);
 		return
 	end
 	
@@ -326,7 +332,7 @@ function p.refreshEquipUpgradeInfo()
 	
 	
 	--显示可升级的等级
-	local itemV = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_LV2 );
+	local itemV = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRE_ITEM_LV );
 	if itemV then
 		itemV:SetText(p.upgradeItem.itemLevel .. " => " .. tostring(nextLeve) or "");
 	end
