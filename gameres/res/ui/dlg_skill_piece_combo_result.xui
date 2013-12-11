@@ -37,8 +37,7 @@ TextVerAlign=AlignVerCenter
 Type=1
 Tag=76
 Rect=291 214 150 150
-NormalFile=.\res\image\ui\skillpiece_combo\skill.png
-NormalFileUV=0 0 64 64
+
 
 [CTRL_BUTTON_OK]
 Type=2
