@@ -1,6 +1,6 @@
 ﻿
 [UI_INFO]
-Width=640
+Width=1280
 Height=960
 
 [CTRL_PICTURE_BG]
@@ -132,7 +132,7 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\main_interface\default_card.PNG
-NormalFileUV=0 0 100 90
+NormalFileUV=0 0 85 85
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 DisableFile=.\res\image\ui\main_interface\default_card.PNG
@@ -227,7 +227,7 @@ SelectedFileUV=0 0 100 100
 [CTRL_BUTTON_17]
 Type=2
 Tag=17
-Rect=652 6 102 102
+Rect=657 11 89 89
 AnchorPos=0 0
 Notes=
 TextSize=10

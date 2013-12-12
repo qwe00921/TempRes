@@ -27,7 +27,7 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_LIST]
 Type=1
 Tag=20
-Rect=126 0 379 86
+Rect=131 0 379 86
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
@@ -36,7 +36,7 @@ NormalFileUV=0 0 368 84
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=21
-Rect=539 -5 100 98
+Rect=553 0 86 86
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -230,7 +230,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=34
-Rect=34 724 421 103
+Rect=30 721 421 116
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -266,5 +266,17 @@ Text=0/0
 TextTradition=0/0
 TextSize=24
 TextColor=0xfef9d2
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_127]
+Type=4
+Tag=127
+Rect=247 7 147 60
+AnchorPos=0 0
+Notes=
+Text=背包
+TextTradition=背包
+TextSize=36
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

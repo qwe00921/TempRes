@@ -294,14 +294,14 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_FORMATION]
 Type=2
 Tag=29
-Rect=499 103 90 90
+Rect=497 97 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\main_interface\default_card.PNG
-NormalFileUV=0 0 100 90
+NormalFile=.\res\image\ui\main_interface\cha_less.png
+NormalFileUV=0 0 100 100
 SelectFile=.\res\image\ui\main_interface\default_card.PNG
 SelectedFileUV=0 0 100 90
 
@@ -367,7 +367,7 @@ NormalFileUV=0 0 110 50
 [CTRL_BUTTON_PET_2]
 Type=2
 Tag=35
-Rect=370 104 90 90
+Rect=370 102 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -421,33 +421,6 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\team3.png
 NormalFileUV=0 0 110 50
-
-[CTRL_PICTURE_57]
-Type=1
-Tag=57
-Rect=263 101 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_58]
-Type=1
-Tag=58
-Rect=369 103 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_59]
-Type=1
-Tag=59
-Rect=498 102 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_73]
 Type=1

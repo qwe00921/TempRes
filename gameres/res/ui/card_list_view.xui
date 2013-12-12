@@ -7,14 +7,25 @@ Height=640
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 0 639 208
+Rect=0 0 638 199
 AnchorPos=0 0
 Notes=
+
+[CTRL_BUTTON_ITEM5]
+Type=2
+Tag=81
+Rect=500 7 120 180
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品4
 
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=477 8 145 190
+Rect=377 7 120 180
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -25,7 +36,7 @@ Remark=物品4
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=322 8 145 190
+Rect=255 7 120 180
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -36,7 +47,7 @@ Remark=物品3
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=167 8 145 190
+Rect=133 7 120 180
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -47,7 +58,7 @@ Remark=物品2
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=11 8 145 190
+Rect=11 7 120 180
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -55,40 +66,49 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
 
+[CTRL_PICTURE_LEVEL5]
+Type=1
+Tag=83
+Rect=502 11 39 18
+AnchorPos=0 0
+Notes=
+
 [CTRL_PICTURE_LEVEL4]
 Type=1
 Tag=33
-Rect=476 15 68 18
+Rect=379 11 39 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_LEVEL3]
 Type=1
 Tag=32
-Rect=321 15 68 18
+Rect=257 11 39 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_LEVEL2]
 Type=1
 Tag=31
-Rect=167 16 68 18
+Rect=136 12 39 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_LEVEL1]
 Type=1
 Tag=30
-Rect=9 15 68 18
+Rect=14 12 39 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_LEVEL1]
 Type=4
 Tag=16
-Rect=16 15 60 18
+Rect=13 12 39 18
 AnchorPos=0 0
 Notes=
+Text=LV99
+TextTradition=LV99
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -97,7 +117,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL2]
 Type=4
 Tag=17
-Rect=174 16 60 18
+Rect=136 12 39 18
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -108,7 +128,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL3]
 Type=4
 Tag=18
-Rect=328 15 60 18
+Rect=257 11 39 18
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -119,7 +139,18 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL4]
 Type=4
 Tag=19
-Rect=481 14 60 18
+Rect=379 11 39 18
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LEVEL5]
+Type=4
+Tag=84
+Rect=502 11 39 18
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -130,27 +161,34 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_TEAM1]
 Type=1
 Tag=20
-Rect=86 11 67 24
+Rect=62 11 67 24
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_TEAM2]
 Type=1
 Tag=21
-Rect=243 11 67 24
+Rect=185 11 67 24
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_TEAM3]
 Type=1
 Tag=22
-Rect=397 11 67 24
+Rect=306 11 67 24
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_TEAM4]
 Type=1
 Tag=23
+Rect=428 11 67 24
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_TEAM5]
+Type=1
+Tag=85
 Rect=552 11 67 24
 AnchorPos=0 0
 Notes=
