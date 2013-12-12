@@ -215,7 +215,7 @@ function p.SetTeamInfo( view, user_teamData )
 	
 	local petName1 = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_PET_NAME_1 );
 	if tonumber(user_teamData.Pet_card1) ~= 0 then
-		petName1:SetText( ToUtf8( SelectRowInner( T_PET, "pet_type", user_teamData.Pet_card1, "name" ) ) );
+		petName1:SetText( ToUtf8( SelectRowInner( T_PET, "id", user_teamData.Pet_card1, "name" ) ) );
 		
 		petBtn1:SetImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
 		petBtn1:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
@@ -228,7 +228,7 @@ function p.SetTeamInfo( view, user_teamData )
 	
 	local petName2 = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_PET_NAME_2 );
 	if tonumber(user_teamData.Pet_card2) ~= 0 then
-		petName2:SetText( ToUtf8( SelectRowInner( T_PET, "pet_type", user_teamData.Pet_card2, "name" ) ) );
+		petName2:SetText( ToUtf8( SelectRowInner( T_PET, "id", user_teamData.Pet_card2, "name" ) ) );
 		
 		petBtn2:SetImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card2, "face_pic" ), 0 ) );
 		petBtn2:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card2, "face_pic" ), 0 ) );
