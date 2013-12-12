@@ -14,7 +14,7 @@ Notes=
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=477 10 140 140
+Rect=474 5 147 147
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -25,7 +25,7 @@ Remark=物品4
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=322 10 140 140
+Rect=316 5 147 147
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -36,7 +36,7 @@ Remark=物品3
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=167 10 140 140
+Rect=165 5 147 147
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -47,7 +47,7 @@ Remark=物品2
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=13 10 140 140
+Rect=11 5 147 147
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -61,8 +61,6 @@ Tag=99
 Rect=474 5 147 147
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_93]
 Type=1
@@ -70,8 +68,6 @@ Tag=98
 Rect=316 5 147 147
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_92]
 Type=1
@@ -79,8 +75,6 @@ Tag=97
 Rect=165 5 147 147
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_91]
 Type=1
@@ -88,8 +82,6 @@ Tag=96
 Rect=11 5 147 147
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_ITEMNUM4]
 Type=4
@@ -138,43 +130,35 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=479 146 145 30
+Rect=475 147 145 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=324 146 145 30
+Rect=317 147 145 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=169 146 145 30
+Rect=166 147 145 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_22]
 Type=1
 Tag=22
-Rect=14 146 145 30
+Rect=12 147 145 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_ITEMNAME4]
 Type=4
 Tag=13
-Rect=487 151 130 27
+Rect=484 149 130 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -186,7 +170,7 @@ Remark=道具名称
 [CTRL_TEXT_ITEMNAME3]
 Type=4
 Tag=14
-Rect=332 151 130 27
+Rect=324 149 130 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -198,7 +182,7 @@ Remark=道具名称
 [CTRL_TEXT_ITEMNAME2]
 Type=4
 Tag=3
-Rect=178 151 130 27
+Rect=173 149 130 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -210,7 +194,7 @@ Remark=道具名称
 [CTRL_TEXT_ITEMNAME1]
 Type=4
 Tag=5
-Rect=22 151 130 27
+Rect=20 149 130 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -253,28 +237,28 @@ Notes=
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=30
-Rect=18 181 136 20
+Rect=16 181 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=31
-Rect=174 180 136 20
+Rect=170 180 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=32
-Rect=327 180 136 20
+Rect=322 180 136 20
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_STAR4]
 Type=1
 Tag=33
-Rect=483 180 136 20
+Rect=479 180 136 20
 AnchorPos=0 0
 Notes=
 
