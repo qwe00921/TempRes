@@ -34,12 +34,14 @@ p.mainUIFlag = false;
 function p.ShowUI( bModify , mainUIFlag )
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
-	dlg_menu.SetNewUI( p );
+	
 
 	if bModify ~= nil then
 		p.modifyTeam = bModify;
+	else
+		dlg_menu.SetNewUI( p );
 	end
-	
+
 	if mainUIFlag ~= nil then
 		p.mainUIFlag = mainUIFlag;
 	end

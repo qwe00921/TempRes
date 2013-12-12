@@ -7,6 +7,8 @@ p.layer = nil;
 p.modify_team_id = nil;
 p.pos_no = nil;
 
+p.mainUIFlag = false;
+
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -150,9 +152,11 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				
 				local cardInfo = formation["Pos"..id];
 				if cardInfo then
+					p.mainUIFlag = true;
 					dlg_card_attr_base.ShowUI( cardInfo , true , true );
 				else
 					--直接显示星灵列表
+					p.mainUIFlag = true;
 					card_bag_mian.ShowUI( true, true );
 				end
 			end
@@ -179,7 +183,10 @@ function p.UpdatePosCard( cardId )
 end
 
 function p.UpdateListData( dataSource )
-	dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "成功替换" ), p.OnMsgBoxCallback, maininterface.layer );
+	if p.mainUIFlag then
+		p.mainUIFlag = false;
+		dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "成功替换" ), p.OnMsgBoxCallback, maininterface.layer );
+	end
 end
 
 function p.OnMsgBoxCallback()

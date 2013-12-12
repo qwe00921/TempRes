@@ -384,6 +384,7 @@ end
 
 --卡牌选择回调、召唤兽选择回调
 function p.UpdatePosCard( cardId )
+	WriteCon( tostring(cardId) .. " "..tostring(p.modify_team_id) .." "..tostring(p.pos_no) );
 	if cardId == nil or p.modify_team_id == nil or p.pos_no == nil then
 		return;
 	end
@@ -412,9 +413,6 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
-		
-		p.modify_team_id = nil;
-		p.pos_no = nil;
 	end
 end
 
