@@ -36,7 +36,13 @@ function p.ShowUI()
     
 	p.layer = layer;
 	
+	p.SetDelegate();
 	p.ShowBtnList();
+end
+
+function p.SetDelegate()
+	local closeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_3 );
+	closeBtn:SetLuaDelegate( p.OnCloseClick );
 end
 
 function p.ShowBtnList()
@@ -90,6 +96,15 @@ function p.CheckEnabledIndex( index )
 	return flag;
 end
 
+function p.OnCloseClick(uiNode, uiEventType, param)
+	if IsClickEvent( uiEventType ) then
+		local tag = uiNode:GetTag();
+		if ui.ID_CTRL_BUTTON_3 == tag then
+			p.CloseUI();
+		end
+	end
+end
+
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId();
@@ -105,6 +120,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 end
 
 function p.CloseUI()
+	p.HideUI();
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
