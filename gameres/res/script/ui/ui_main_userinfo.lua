@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_main_userinfo = {};
 local p =  ui_main_userinfo;
+p.ID_CTRL_PICTURE_85					     = 85;
 p.ID_CTRL_PICTURE_PROGRESSBAR_BG2		= 66;
 p.ID_CTRL_PICTURE_PROGRESSBAR_BG1		= 65;
 p.ID_CTRL_PICTURE_PROGRESSBAR_BG		= 64;

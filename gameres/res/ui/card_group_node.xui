@@ -264,19 +264,17 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_SETFIGHT]
 Type=2
 Tag=22
-Rect=486 29 113 55
+Rect=476 29 126 54
 AnchorPos=0 0
 Notes=
-Text=出战
-TextTradition=出戰
 TextSize=24
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
+NormalFile=.\res\image\ui\public\fight.png
+NormalFileUV=0 0 126 54
+SelectFile=.\res\image\ui\public\fight_click.png
+SelectedFileUV=0 0 126 54
 
 [CTRL_TEXT_27]
 Type=4

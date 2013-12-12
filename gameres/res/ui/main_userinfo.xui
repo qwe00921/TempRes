@@ -27,12 +27,12 @@ NormalFileUV=0 0 640 152
 [CTRL_TEXT_NAME]
 Type=4
 Tag=54
-Rect=123 4 167 47
+Rect=119 4 139 47
 AnchorPos=0 0
 Notes=
 Text=完颜阿鲁两个字
 TextTradition=完顏阿魯兩個字
-TextSize=24
+TextSize=20
 TextColor=0xfdffaa
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -105,7 +105,7 @@ DisableFileUV=0 0 116 76
 [CTRL_PICTURE_LEVEL]
 Type=1
 Tag=60
-Rect=302 13 40 30
+Rect=265 13 40 30
 AnchorPos=0 0
 Notes=
 Remark=等级图标
@@ -115,7 +115,7 @@ NormalFileUV=0 0 48 26
 [CTRL_TEXT_LEVEL_NUM]
 Type=4
 Tag=61
-Rect=349 13 65 30
+Rect=312 13 54 30
 AnchorPos=0 0
 Notes=
 Text=350
@@ -210,3 +210,12 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
 NormalFileUV=0 0 190 30
+
+[CTRL_PICTURE_85]
+Type=1
+Tag=85
+Rect=372 8 60 40
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\EXP..png
+NormalFileUV=0 0 60 40
