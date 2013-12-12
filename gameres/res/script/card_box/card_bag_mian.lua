@@ -109,7 +109,7 @@ function p.ShowCardList(cardList)
 	
 	p.cardListInfo = cardList;
 
-	local row = math.ceil(cardNum / 4);
+	local row = math.ceil(cardNum / 5);
 	WriteCon("row ===== "..row);
 	
 	for i = 1, row do
@@ -120,8 +120,8 @@ function p.ShowCardList(cardList)
         view:SetViewSize( bg:GetFrameSize());
 		
 		local row_index = i;
-		local start_index = (row_index-1)*4+1
-        local end_index = start_index + 3;
+		local start_index = (row_index-1)*5+1
+        local end_index = start_index + 4;
 		
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
@@ -160,7 +160,11 @@ function p.ShowCardInfo( view, card, cardIndex )
 		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
 		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL4;
-	end
+	elseif cardIndex == 5 then
+		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
+		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL5;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
+		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL5;	end
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
@@ -178,7 +182,7 @@ function p.ShowCardInfo( view, card, cardIndex )
     cardButton:SetId(cardUniqueId);
 
 	local cardLevelText = GetLabel(view,cardLevel );
-	local levelText = tostring(card.Level)
+	local levelText = "LV "..tostring(card.Level)
 	cardLevelText:SetText(levelText);
 	
 	local cardTeamPic = GetImage(view,cardTeam );

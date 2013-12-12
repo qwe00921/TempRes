@@ -114,7 +114,7 @@ Notes=
 [CTRL_TEXT_ITEMNUM4]
 Type=4
 Tag=19
-Rect=547 112 70 28
+Rect=537 112 81 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -125,7 +125,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM3]
 Type=4
 Tag=18
-Rect=388 112 70 28
+Rect=378 112 80 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -136,7 +136,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM2]
 Type=4
 Tag=17
-Rect=237 112 70 28
+Rect=229 112 78 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -147,7 +147,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM1]
 Type=4
 Tag=16
-Rect=84 112 70 28
+Rect=76 112 78 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -293,7 +293,7 @@ Notes=
 [CTRL_TEXT_EQUIP_LEV1]
 Type=4
 Tag=34
-Rect=16 112 57 28
+Rect=14 112 57 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -303,7 +303,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_EQUIP_LEV2]
 Type=4
 Tag=35
-Rect=169 112 57 28
+Rect=168 112 57 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -313,7 +313,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_EQUIP_LEV3]
 Type=4
 Tag=36
-Rect=326 112 57 28
+Rect=320 112 57 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -323,7 +323,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_EQUIP_LEV4]
 Type=4
 Tag=37
-Rect=482 112 57 28
+Rect=478 112 57 28
 AnchorPos=0 0
 Notes=
 TextSize=24

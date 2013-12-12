@@ -270,11 +270,7 @@ function p.ShowItemInfo( view, item, itemIndex )
 	--显示名字背景图片
 	local subTitleBgPic = GetImage(view,subTitleBg);
 	subTitleBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
-	--显示数量背景
-	local numBgPic = GetImage(view,numBg);
-	numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 
-	
 	local item_id = tonumber(item.Item_id);
 	local itemType = tonumber(item.Item_type);
 	local itemUniqueId = tonumber(item.id);
@@ -311,7 +307,10 @@ function p.ShowItemInfo( view, item, itemIndex )
 	if itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
 	--普通可叠加物品，显示数量
 		itemNumText:SetVisible(true);
-		itemNumText:SetText(item.Num);
+		itemNumText:SetText("X "..item.Num);
+	--显示数量背景
+		local numBgPic = GetImage(view,numBg);
+		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 	elseif itemType == 1 or itemType == 2 or itemType == 3 then 
 		--装备，显示星级
 		equipStarPic:SetVisible(true);
