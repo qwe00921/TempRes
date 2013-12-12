@@ -29,6 +29,7 @@ p.ID_CTRL_TEXT_POWER_V				    = 4;
 p.ID_CTRL_PICTURE_60					     = 60;
 p.ID_CTRL_PICTURE_59					     = 59;
 p.ID_CTRL_TEXT_QUEST_NAME_V			= 2;
+p.ID_CTRL_9SLICES_32					     = 32;
 p.ID_CTRL_PICTURE_64					     = 64;
 p.ID_CTRL_PICTURE_63					     = 63;
 p.ID_CTRL_PICTURE_99					     = 99;
