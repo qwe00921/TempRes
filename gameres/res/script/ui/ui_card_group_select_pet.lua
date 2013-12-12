@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_card_group_select_pet = {};
 local p =  ui_card_group_select_pet;
+p.ID_CTRL_TEXT_12						       = 12;
+p.ID_CTRL_9SLICES_53					     = 53;
 p.ID_CTRL_PICTURE_21					     = 27;
 p.ID_CTRL_PICTURE_TEAM3				   = 26;
 p.ID_CTRL_PICTURE_TEAM2				   = 24;
@@ -20,7 +22,5 @@ p.ID_CTRL_TEXT_ATTACK					    = 18;
 p.ID_CTRL_TEXT_ELEMENT				    = 16;
 p.ID_CTRL_PICTURE_ELEMENT				 = 15;
 p.ID_CTRL_TEXT_14						       = 14;
-p.ID_CTRL_TEXT_12						       = 12;
-p.ID_CTRL_9SLICES_53					     = 53;
 p.ID_CTRL_PICTURE_BEAST				   = 11;
 p.ID_CTRL_PICTURE_LISTBG				  = 10;

@@ -142,21 +142,33 @@ function p.ShowSelectPetInfo(  view, pet )
 	end
 	
 	--名字显示，根据type读csv数据
-	local pet_type = pet.Pet_type;
+	local pet_type = pet.Pet_id;
 	local nameLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_14 );
 	if nameLabel then
-		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "name" ) );
+		nameLabel:SetText( SelectRowInner( T_PET, "id", tostring( pet_type ), "name" ) );
 	end
 	
 	--技能显示
 	local skillPic = GetImage( view, ui_card_group_select_pet.ID_CTRL_PICTURE_SKILL );
-	local skillPicData = GetPictureByAni( SelectCell( T_SKILL_RES, pet.Skill_id, "icon" ), 0 );
-	if skillPic and skillPicData then
-		skillPic:SetPicture( skillPicData );
+	local skillText = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_51 );
+	
+	if tonumber(pet.Skill_id) ~= 0 then 
+		local skillPicData = GetPictureByAni( SelectCell( T_SKILL_RES, pet.Skill_id, "icon" ), 0 );
+		if skillPic and skillPicData then
+			skillPic:SetPicture( skillPicData );
+		end
+		skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
+	else
+		skillPic:SetVisible( false );
+		skillText:SetVisible( false );
 	end
 	
-	local skillText = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_51 );
-	skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
+	local face = GetImage( view, ui_card_group_select_pet.ID_CTRL_PICTURE_21 );
+
+	local faceData = GetPictureByAni( SelectCell( T_PET_RES, pet.Pet_id, "face_pic" ) ,0 );
+	if face and faceData then
+		face:SetPicture( faceData );
+	end
 
 	for i = 1, 3 do
 		local pic = GetImage( view, ui_card_group_select_pet["ID_CTRL_PICTURE_TEAM"..i] );
@@ -164,6 +176,10 @@ function p.ShowSelectPetInfo(  view, pet )
 			pic:SetVisible( pet.Team_id == i );
 		end
 	end
+	
+	local attrLabel = GetLabel( view, ui_card_group_select_pet.ID_CTRL_TEXT_ELEMENT );
+	--local attrLaImg = GetImage( view, ui_card_group_select_pet.ID_CTRL_PICTURE_ELEMENT );
+	attrLabel:SetText( tonumber(SelectCell( T_PET, pet.Pet_id, "pet_type" )) == 1 and ToUtf8("攻击型") or ToUtf8("辅助型") );
 end
 
 --设置单个召唤兽视图
@@ -191,34 +207,41 @@ function p.ShowBeastInfo( view, pet )
 	end
 	
 	--名字显示，根据type读csv数据
-	local pet_type = pet.Pet_type;
+	local pet_type = pet.Pet_id;
 	local nameLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_14 );
 	if nameLabel then
-		nameLabel:SetText( SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "name" ) );
+		nameLabel:SetText( SelectRowInner( T_PET, "id", tostring( pet_type ), "name" ) );
 	end
 
 	--培养按钮
 	local trainBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_INCUBATE );
 	trainBtn:SetLuaDelegate( p.OnListBtnClick );
+	trainBtn:SetVisible( false );
 
 	local sellBtn = GetButton( view, ui_beast_main_list.ID_CTRL_BUTTON_SELL );
 	sellBtn:SetLuaDelegate( p.OnListBtnClick );
+	--sellBtn:SetVisible( false );
 	
 	local pic = GetImage( view, ui_beast_main_list.ID_CTRL_PICTURE_BEAST );
-	local picData = GetPictureByAni( SelectCell( T_PET_RES, SelectRowInner( T_PET, "pet_type", tostring( pet_type ), "id" ), "card_pic" ), 0 );
+	local picData = GetPictureByAni( SelectCell( T_PET_RES, pet_type , "face_pic" ), 0 );
 	if picData then
 		pic:SetPicture( picData );
 	end
 	
 	--技能显示
 	local skillPic = GetImage( view, ui_beast_main_list.ID_CTRL_PICTURE_SKILL );
-	local skillPicData = GetPictureByAni( SelectCell( T_SKILL_RES, pet.Skill_id, "icon" ), 0 );
-	if skillPic and skillPicData then
-		skillPic:SetPicture( skillPicData );
-	end
-	
 	local skillText = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_51 );
-	skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
+	if tonumber(pet.Skill_id) ~= 0 then
+		local skillPicData = GetPictureByAni( SelectCell( T_SKILL_RES, pet.Skill_id, "icon" ), 0 );
+		if skillPic and skillPicData then
+			skillPic:SetPicture( skillPicData );
+		end
+
+		skillText:SetText( SelectCell( T_SKILL, pet.Skill_id, "Description" ) );
+	else
+		skillPic:SetVisible( false );
+		skillText:SetVisible( false );
+	end
 	
 	for i = 1, 3 do
 		local pic = GetImage( view, ui_beast_main_list["ID_CTRL_PICTURE_TEAM"..i] );
@@ -226,6 +249,9 @@ function p.ShowBeastInfo( view, pet )
 			pic:SetVisible( pet.Team_id == i );
 		end
 	end
+
+	local attrLabel = GetLabel( view, ui_beast_main_list.ID_CTRL_TEXT_69 );
+	attrLabel:SetText( tonumber(SelectCell( T_PET, pet.Pet_id, "pet_type" )) == 1 and ToUtf8("攻击型") or ToUtf8("辅助型") );
 end
 
 --召唤兽列表中子按钮回调

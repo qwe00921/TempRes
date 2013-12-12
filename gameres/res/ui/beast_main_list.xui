@@ -40,8 +40,6 @@ Tag=15
 Rect=157 81 129 35
 AnchorPos=0 0
 Notes=
-Text=攻击型
-TextTradition=攻擊型
 NormalFile=.\res\image\ui\beast\bg_type.png
 NormalFileUV=0 0 249 51
 
@@ -276,5 +274,17 @@ Text=Lv 999
 TextTradition=Lv 999
 TextSize=20
 TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_69]
+Type=4
+Tag=69
+Rect=169 85 107 24
+AnchorPos=0 0
+Notes=
+Text=攻击型
+TextTradition=攻擊型
+TextSize=19
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
