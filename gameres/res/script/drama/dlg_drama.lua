@@ -55,6 +55,7 @@ function p.ShowUI( stageId, storyId  )
     LoadDlg("dlg_drama.xui", layer, nil);
 	
 	p.layer = layer;
+	p.curStageId = stageId;
 	p.Init();
 	p.SetDelegate();
 	drama_mgr.LoadDramaInfo( stageId, storyId );
