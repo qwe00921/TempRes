@@ -191,8 +191,6 @@ Tag=461
 Rect=49 642 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item3_1.png
-NormalFileUV=0 0 240 240
 
 [CTRL_PICTURE_ITEM_5]
 Type=1
@@ -200,8 +198,6 @@ Tag=462
 Rect=428 642 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item3_3.png
-NormalFileUV=0 0 240 240
 
 [CTRL_PICTURE_ITEM_4]
 Type=1
@@ -209,8 +205,6 @@ Tag=463
 Rect=335 642 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item3_3.png
-NormalFileUV=0 0 240 240
 
 [CTRL_PICTURE_ITEM_3]
 Type=1
@@ -218,8 +212,6 @@ Tag=464
 Rect=237 642 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item3_2.png
-NormalFileUV=0 0 240 240
 
 [CTRL_PICTURE_ITEM_2]
 Type=1
@@ -227,8 +219,6 @@ Tag=465
 Rect=142 642 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item1_1.png
-NormalFileUV=0 0 360 210
 
 [CTRL_PICTURE_ITEM_6]
 Type=1
@@ -236,8 +226,6 @@ Tag=466
 Rect=526 642 80 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\item\item3_2.png
-NormalFileUV=0 0 240 240
 
 [CTRL_TEXT_ITEM_NUM_1]
 Type=4
@@ -387,7 +375,7 @@ NormalFileUV=0 0 368 84
 [CTRL_TEXT_164]
 Type=4
 Tag=164
-Rect=242 -3 148 70
+Rect=242 -3 148 83
 AnchorPos=0 0
 Notes=
 Text=邮箱
@@ -396,8 +384,6 @@ TextSize=30
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\title_bg.png
-NormalFileUV=0 0 350 82
 
 [CTRL_PICTURE_BG_1]
 Type=1

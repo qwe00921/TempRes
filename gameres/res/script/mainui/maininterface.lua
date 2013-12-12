@@ -95,6 +95,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_MORE == tag then
 			WriteCon("**======µ¯³ö°´Å¥======**");
 			dlg_btn_list.ShowUI();
+		elseif ui.ID_CTRL_BUTTON_BG_BTN == tag then
+			p.CloseAllPanel();
 		end
 	end
 end

@@ -55,6 +55,6 @@ function p.NextDramaInfo()
 end
 
 function p.ClearData()
-	p.dramaList = nil;
+	p.dramaList = {};
     p.index = nil;
 end

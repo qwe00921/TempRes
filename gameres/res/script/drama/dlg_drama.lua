@@ -55,6 +55,7 @@ function p.ShowUI( stageId, storyId  )
     LoadDlg("dlg_drama.xui", layer, nil);
 	
 	p.layer = layer;
+	p.curStageId = stageId;
 	p.Init();
 	p.SetDelegate();
 	drama_mgr.LoadDramaInfo( stageId, storyId );
@@ -129,8 +130,12 @@ function p.DoEffectContent()
     end
 	
 	local strText = GetSubStringUtf8( p.contentStr, p.contentIndex );
-	WriteCon(contentStr);
+	--WriteCon(strText);
 	p.contentNode:SetText(strText);
+	
+	p.contentNode:SetHorzAlign( 0 );
+	p.contentNode:SetVertAlign( 0 );
+
 	p.contentIndex = p.contentIndex + 1;
 	if p.contentIndex > p.contentStrLn and p.timerId ~= nil then
 		KillTimer( p.timerId );
@@ -144,7 +149,12 @@ function p.ResetUI( dramaInfo )
 	local bgPic = GetPictureByAni( "drama.bg_"..dramaInfo.picBg, 0);
     p.bgPicNode:SetPicture( bgPic );
     
-    p.npcNameNode:SetText( dramaInfo.npcName );
+	local name = dramaInfo.npcName;
+	if string.find( name, ToUtf8("主角") ) then
+		name = msg_cache.msg_player.Name or dramaInfo.npcName;
+	end
+
+    p.npcNameNode:SetText( name );
     
     --对话内容
     p.contentStr = dramaInfo.talkText;

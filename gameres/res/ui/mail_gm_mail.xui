@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -139,7 +139,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_BUTTON_SEND]
 Type=2
 Tag=36
-Rect=240 764 232 84
+Rect=240 764 200 75
 AnchorPos=0 0
 Notes=
 Text=发送
@@ -149,8 +149,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\public\button_blue.png
 NormalFileUV=0 0 232 84
-SelectFile=.\res\image\ui\common\btn_1_click.png
-SelectedFileUV=0 0 112 44
 
 [CTRL_9SLICES_QUESTIONBG]
 Type=22
@@ -173,34 +171,36 @@ Notes=
 [CTRL_BUTTON_PAGE_PRE]
 Type=2
 Tag=104
-Rect=188 374 69 44
+Rect=195 376 60 48
 AnchorPos=0 0
 Notes=
 Text=<<
 TextTradition=<<
 TextSize=20
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_1_normal.png
-NormalFileUV=0 0 112 44
-SelectFile=.\res\image\ui\common\btn_1_click.png
-SelectedFileUV=0 0 112 44
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_PAGE_NEXT]
 Type=2
 Tag=105
-Rect=376 374 69 44
+Rect=376 374 60 48
 AnchorPos=0 0
 Notes=
 Text=>>
 TextTradition=>>
 TextSize=20
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\btn_1_normal.png
-NormalFileUV=0 0 112 44
-SelectFile=.\res\image\ui\common\btn_1_click.png
-SelectedFileUV=0 0 112 44
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_TEXT_PAGE_INFO]
 Type=4

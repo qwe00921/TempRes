@@ -1,23 +1,3 @@
--- Reward = {}
--- Reward["item"] = {}
--- Reward["item"][1] = {}
--- Reward["item"][1]["Reward_id"] = 101
--- Reward["item"][1]["Type"] = 2
--- Reward["item"][1]["Num"] = 1
--- Reward["item"][1]["Group"] = 1
-
--- Reward["item"][2] = {}
--- Reward["item"][2]["Reward_id"] = 1
--- Reward["item"][2]["Type"] = 3
--- Reward["item"][2]["Num"] = 1
--- Reward["item"][2]["Group"] = 2
-
--- Reward["Mission_id"] = 101011
--- Reward["Res"] = 1
--- Reward["Difficulty"]= 1
--- Reward["Score"] = 3
--- Reward["Reward_exp"] = 130
--- Reward["reward_money"] = nil;
 quest_reward = {}
 local p = quest_reward;
 
@@ -130,19 +110,21 @@ function p.ShowQuestRewardView(rewardData)
 		if rewardData["item"][1] then
 			local itemType = tonumber(rewardData["item"][1]["Type"])
 			local itemId = tonumber(rewardData["item"][1]["Reward_id"])
-			if itemType == 1 or itemType == 3 then --物品
+			if itemType == 1 then --物品
 				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
 				itemPic_1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
 				itemName_1:SetText(itemTable.name);
 			elseif itemType == 2 then		--卡牌
 				local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-				itemPic_1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+				itemPic_1:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 				local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
 				itemName_1:SetText(cardTable2.name);
 			elseif itemType == 4 then		--装备
 				local equipTable = SelectRowInner(T_EQUIP,"id",itemId);
 				itemPic_1:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
 				itemName_1:SetText(equipTable.name);
+			elseif itemType == 3 then 	--宠物
+				WriteConErr("error reward type error ");
 			end
 		else
 			itemPic_1:SetVisible(false);
@@ -158,7 +140,7 @@ function p.ShowQuestRewardView(rewardData)
 				itemName_2:SetText(itemTable.name)
 			elseif itemType == 2 then		--卡牌
 				local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-				itemPic_2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+				itemPic_2:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 				local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
 				itemName_2:SetText(cardTable2.name);
 			elseif itemType == 4 then		--装备
