@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_bag_list = {};
 local p =  ui_bag_list;
+p.ID_CTRL_TEXT_114					       = 114;
+p.ID_CTRL_TEXT_113					       = 113;
+p.ID_CTRL_PICTURE_115					    = 115;
+p.ID_CTRL_PICTURE_112					    = 112;	--装备标志4
+p.ID_CTRL_PICTURE_111					    = 111;
 p.ID_CTRL_TEXT_EQUIP_LEV4				 = 37;
 p.ID_CTRL_TEXT_EQUIP_LEV3				 = 36;
 p.ID_CTRL_TEXT_EQUIP_LEV2				 = 35;

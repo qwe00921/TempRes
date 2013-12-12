@@ -204,14 +204,14 @@ SelectedFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_ITEM]
 Type=14
 Tag=32
-Rect=3 266 635 440
+Rect=2 265 635 475
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_USE]
 Type=1
 Tag=33
-Rect=1 700 640 166
+Rect=1 744 640 123
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\shop\bg_shop.png
@@ -230,7 +230,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=34
-Rect=30 721 421 116
+Rect=13 761 459 76
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -242,7 +242,7 @@ Remark=物品说明
 [CTRL_BUTTON_USE]
 Type=2
 Tag=35
-Rect=477 748 131 64
+Rect=490 771 131 64
 AnchorPos=0 0
 Notes=
 Text=使用
