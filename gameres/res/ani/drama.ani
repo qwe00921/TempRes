@@ -92,17 +92,17 @@ image\npc\10963.png
 image\npc\10487.png
 
 ;男性主角半身像
-[10_1]
-image\npc\10904.png
-[20_1]
-image\npc\10904.png
+[10_2]
+image\npc\10487.png
+[20_2]
+image\npc\10755.png
 [30_1]
-image\npc\10904.png
+image\npc\10518.png
 
 ;女性主角半身像
 [11_1]
-image\npc\10904.png
+image\npc\10355.png
 [21_1]
-image\npc\10904.png
+image\npc\10753.png
 [31_1]
-image\npc\10904.png
+image\npc\10961.png
