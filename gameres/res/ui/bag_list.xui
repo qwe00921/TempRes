@@ -83,10 +83,38 @@ Rect=11 5 147 147
 AnchorPos=0 0
 Notes=
 
+[CTRL_PICTURE_NUM_BG1]
+Type=1
+Tag=263
+Rect=84 112 70 28
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_NUM_BG2]
+Type=1
+Tag=264
+Rect=237 112 70 28
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_NUM_BG3]
+Type=1
+Tag=265
+Rect=388 112 70 28
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_NUM_BG4]
+Type=1
+Tag=266
+Rect=547 112 70 28
+AnchorPos=0 0
+Notes=
+
 [CTRL_TEXT_ITEMNUM4]
 Type=4
 Tag=19
-Rect=547 13 70 28
+Rect=547 112 70 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -97,7 +125,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM3]
 Type=4
 Tag=18
-Rect=392 15 70 28
+Rect=388 112 70 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -108,7 +136,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM2]
 Type=4
 Tag=17
-Rect=236 15 70 28
+Rect=237 112 70 28
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -119,7 +147,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM1]
 Type=4
 Tag=16
-Rect=83 14 70 28
+Rect=84 112 70 28
 AnchorPos=0 0
 Notes=
 TextSize=24

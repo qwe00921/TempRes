@@ -53,3 +53,5 @@ image\ui\public\bg_lv.png
 ;卡牌背包格子边框
 [frame]
 image\ui\public\frame.png
+image\ui\public\frame_click.png
+
