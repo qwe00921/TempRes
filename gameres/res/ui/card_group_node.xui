@@ -6,14 +6,14 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=64
-Rect=0 0 600 336
+Rect=0 0 621 308
 AnchorPos=0 0
 Notes=
 
 [CTRL_9SLICES_3]
 Type=22
 Tag=3
-Rect=0 10 593 310
+Rect=0 11 614 292
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_frame2.png
@@ -22,7 +22,7 @@ NormalFileUV=0 0 640 376
 [CTRL_BUTTON_CARD_4]
 Type=2
 Tag=4
-Rect=304 209 90 90
+Rect=315 202 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -36,7 +36,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_5]
 Type=2
 Tag=5
-Rect=397 209 90 90
+Rect=415 202 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -50,7 +50,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_6]
 Type=2
 Tag=6
-Rect=492 209 90 90
+Rect=515 202 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -64,7 +64,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_1]
 Type=2
 Tag=8
-Rect=16 209 90 90
+Rect=15 201 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -78,7 +78,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_2]
 Type=2
 Tag=9
-Rect=114 209 90 90
+Rect=115 202 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -92,7 +92,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_BUTTON_CARD_3]
 Type=2
 Tag=10
-Rect=210 209 90 90
+Rect=215 202 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -106,7 +106,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_PICTURE_1]
 Type=1
 Tag=67
-Rect=12 210 44 19
+Rect=12 202 44 19
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -115,7 +115,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_2]
 Type=1
 Tag=68
-Rect=111 210 47 19
+Rect=111 202 47 19
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -124,7 +124,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_3]
 Type=1
 Tag=69
-Rect=205 210 50 19
+Rect=211 203 47 19
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -133,7 +133,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_4]
 Type=1
 Tag=70
-Rect=301 210 50 19
+Rect=311 203 47 19
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -142,7 +142,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_5]
 Type=1
 Tag=71
-Rect=393 210 50 19
+Rect=411 203 47 19
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -151,7 +151,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_6]
 Type=1
 Tag=72
-Rect=489 210 50 19
+Rect=511 203 47 19
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -160,7 +160,7 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_LEV_4]
 Type=4
 Tag=11
-Rect=311 210 32 18
+Rect=317 202 32 18
 AnchorPos=0 0
 Notes=
 Text=LV99
@@ -173,7 +173,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEV_5]
 Type=4
 Tag=12
-Rect=402 211 31 18
+Rect=417 202 31 18
 AnchorPos=0 0
 Notes=
 Text=LV99
@@ -186,7 +186,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEV_6]
 Type=4
 Tag=13
-Rect=497 210 34 18
+Rect=517 202 34 18
 AnchorPos=0 0
 Notes=
 Text=LV99
@@ -199,7 +199,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEV_1]
 Type=4
 Tag=14
-Rect=19 211 34 18
+Rect=17 202 34 18
 AnchorPos=0 0
 Notes=
 Text=LV99
@@ -212,7 +212,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEV_2]
 Type=4
 Tag=15
-Rect=117 210 33 18
+Rect=117 202 33 18
 AnchorPos=0 0
 Notes=
 Text=LV99
@@ -225,7 +225,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEV_3]
 Type=4
 Tag=16
-Rect=214 210 33 18
+Rect=217 202 33 18
 AnchorPos=0 0
 Notes=
 Text=LV99
@@ -238,7 +238,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_20]
 Type=4
 Tag=20
-Rect=200 37 107 33
+Rect=214 37 107 33
 AnchorPos=0 0
 Notes=
 Text=出阵人数
@@ -251,7 +251,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=21
-Rect=317 37 69 33
+Rect=330 37 69 33
 AnchorPos=0 0
 Notes=
 Text=6/6
@@ -264,7 +264,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_SETFIGHT]
 Type=2
 Tag=22
-Rect=455 26 113 55
+Rect=486 29 113 55
 AnchorPos=0 0
 Notes=
 Text=出战
@@ -281,7 +281,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_TEXT_27]
 Type=4
 Tag=27
-Rect=370 884 107 29
+Rect=640 884 107 29
 AnchorPos=0 0
 Notes=
 Text=战术名称
@@ -294,7 +294,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_FORMATION]
 Type=2
 Tag=29
-Rect=480 99 90 90
+Rect=499 103 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -308,7 +308,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_TEXT_PET_NAME_1]
 Type=4
 Tag=31
-Rect=131 883 107 29
+Rect=640 883 107 29
 AnchorPos=0 0
 Notes=
 Text=召唤兽名字
@@ -321,7 +321,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_9SLICES_56]
 Type=22
 Tag=56
-Rect=19 96 198 95
+Rect=19 100 207 95
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -331,7 +331,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_PET_NAME_2]
 Type=4
 Tag=33
-Rect=242 883 107 29
+Rect=640 883 107 29
 AnchorPos=0 0
 Notes=
 Text=召唤兽名字
@@ -344,7 +344,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_PET_1]
 Type=2
 Tag=34
-Rect=245 98 90 90
+Rect=264 102 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -367,7 +367,7 @@ NormalFileUV=0 0 110 50
 [CTRL_BUTTON_PET_2]
 Type=2
 Tag=35
-Rect=351 100 90 90
+Rect=370 104 90 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -381,7 +381,7 @@ SelectedFileUV=0 0 100 90
 [CTRL_TEXT_TOTAL_ATK]
 Type=4
 Tag=32
-Rect=128 106 84 27
+Rect=131 110 84 27
 AnchorPos=0 0
 Notes=
 Text=9999999
@@ -394,7 +394,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TOTAL_DEF]
 Type=4
 Tag=36
-Rect=128 148 84 27
+Rect=131 152 84 27
 AnchorPos=0 0
 Notes=
 Text=9999999
@@ -425,7 +425,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_57]
 Type=1
 Tag=57
-Rect=243 98 92 92
+Rect=263 101 92 92
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
@@ -434,7 +434,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_58]
 Type=1
 Tag=58
-Rect=349 99 92 92
+Rect=369 103 92 92
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
@@ -443,62 +443,16 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_59]
 Type=1
 Tag=59
-Rect=479 99 92 92
+Rect=498 102 92 92
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_60]
-Type=1
-Tag=60
-Rect=13 209 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_62]
-Type=1
-Tag=62
-Rect=207 209 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_64]
-Type=1
-Tag=65
-Rect=394 208 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_65]
-Type=1
-Tag=66
-Rect=490 208 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_72]
-Type=1
-Tag=73
-Rect=307 89 36 36
-AnchorPos=0 0
-Notes=
-Remark=召唤兽1辅助标志
-NormalFile=.\res\image\ui\pet\he.png
-NormalFileUV=0 0 36 36
 
 [CTRL_PICTURE_73]
 Type=1
 Tag=74
-Rect=307 89 36 36
+Rect=327 95 36 36
 AnchorPos=0 0
 Notes=
 Remark=召唤兽1攻击标志
@@ -508,27 +462,17 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_74]
 Type=1
 Tag=75
-Rect=414 91 36 36
+Rect=433 95 36 36
 AnchorPos=0 0
 Notes=
 Remark=召唤兽2辅助
 NormalFile=.\res\image\ui\pet\he.png
 NormalFileUV=0 0 36 36
 
-[CTRL_PICTURE_75]
-Type=1
-Tag=76
-Rect=414 90 36 36
-AnchorPos=0 0
-Notes=
-Remark=召唤兽2攻击
-NormalFile=.\res\image\ui\pet\he.png
-NormalFileUV=0 0 36 36
-
 [CTRL_TEXT_52]
 Type=4
 Tag=52
-Rect=23 106 105 27
+Rect=23 110 105 27
 AnchorPos=0 0
 Notes=
 Text=总攻击力：
@@ -541,7 +485,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_53]
 Type=4
 Tag=53
-Rect=23 148 105 27
+Rect=23 152 105 27
 AnchorPos=0 0
 Notes=
 Text=总防御力：
@@ -550,21 +494,3 @@ TextSize=21
 TextColor=0xffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_61]
-Type=1
-Tag=61
-Rect=111 209 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_63]
-Type=1
-Tag=63
-Rect=301 208 92 92
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100

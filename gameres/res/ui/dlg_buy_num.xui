@@ -3,6 +3,16 @@
 Width=640
 Height=960
 
+[CTRL_9SLICES_25]
+Type=22
+Tag=26
+Rect=75 259 548 400
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
 [CTRL_9SLICES_BG]
 Type=22
 Tag=1
@@ -32,7 +42,6 @@ Tag=3
 Rect=102 353 120 120
 AnchorPos=0 0
 Notes=
-
 
 [CTRL_TEXT_NAME]
 Type=4

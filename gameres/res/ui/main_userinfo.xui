@@ -187,7 +187,7 @@ NormalFileUV=0 0 190 30
 [CTRL_PICTURE_PROGRESSBAR_BG]
 Type=1
 Tag=64
-Rect=430 16 190 25
+Rect=429 16 190 25
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG

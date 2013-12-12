@@ -13,14 +13,14 @@ Notes=
 [CTRL_PIC_LIST_BG]
 Type=1
 Tag=1
-Rect=0 0 620 286
+Rect=0 -9 620 275
 AnchorPos=0 0
 Notes=
 
 [CTRL_9SLICES_37]
 Type=22
 Tag=37
-Rect=0 0 614 289
+Rect=1 0 614 257
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -30,7 +30,7 @@ NormalFileUV=0 0 614 344
 [CTRL_PICTURE_99]
 Type=1
 Tag=99
-Rect=152 117 36 36
+Rect=152 111 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -39,7 +39,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_63]
 Type=1
 Tag=63
-Rect=193 117 36 36
+Rect=193 111 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -48,23 +48,33 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_64]
 Type=1
 Tag=64
-Rect=233 117 36 36
+Rect=233 111 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
 NormalFileUV=0 0 36 36
 
+[CTRL_9SLICES_32]
+Type=22
+Tag=32
+Rect=21 71 574 79
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
 [CTRL_TEXT_QUEST_NAME_V]
 Type=4
 Tag=2
-Rect=27 15 208 37
+Rect=27 15 259 37
 AnchorPos=0 0
 Notes=
 Text=关卡名字七个字
 TextTradition=關卡名字七個字
 TextSize=28
 TextColor=0xd3cf9b
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_59]
@@ -180,7 +190,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_EVALUATION]
 Type=4
 Tag=11
-Rect=39 119 76 30
+Rect=39 112 76 30
 AnchorPos=0 0
 Notes=
 Text=评价:
@@ -193,7 +203,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=19
-Rect=152 118 36 36
+Rect=152 111 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
@@ -202,7 +212,7 @@ NormalFileUV=0 0 36 36
 [CTRL_9SLICES_38]
 Type=22
 Tag=38
-Rect=21 166 379 100
+Rect=21 161 379 79
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -212,7 +222,7 @@ NormalFileUV=0 0 50 50
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=20
-Rect=194 118 36 36
+Rect=194 111 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
@@ -221,7 +231,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=21
-Rect=233 118 36 36
+Rect=233 111 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
@@ -230,7 +240,7 @@ NormalFileUV=0 0 36 36
 [CTRL_TEXT_PROBABILITY]
 Type=4
 Tag=7
-Rect=39 172 56 33
+Rect=39 166 56 33
 AnchorPos=0 0
 Notes=
 Text=概率
@@ -243,7 +253,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_REWARD1]
 Type=1
 Tag=12
-Rect=175 182 70 70
+Rect=199 171 60 60
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png
@@ -252,7 +262,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_REWARD2]
 Type=1
 Tag=13
-Rect=275 182 70 70
+Rect=273 171 60 60
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\getitem.png
@@ -261,7 +271,7 @@ NormalFileUV=0 0 72 84
 [CTRL_BUTTON_FIGHTING]
 Type=2
 Tag=15
-Rect=420 180 170 70
+Rect=418 164 170 70
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -275,7 +285,7 @@ DisableFileUV=0 0 279 77
 [CTRL_PICTURE_100]
 Type=1
 Tag=100
-Rect=175 182 70 70
+Rect=199 171 60 60
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\item-list.png
@@ -284,7 +294,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_101]
 Type=1
 Tag=101
-Rect=275 182 70 70
+Rect=273 171 60 60
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\item-list.png
