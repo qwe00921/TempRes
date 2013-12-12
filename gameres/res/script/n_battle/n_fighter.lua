@@ -197,6 +197,7 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
     end
     
     local varEnv = pCmd:GetVarEnv();
+
     varEnv:SetFloat( "$1", x );
     varEnv:SetFloat( "$2", y );
     varEnv:SetFloat( "$3", 50 );

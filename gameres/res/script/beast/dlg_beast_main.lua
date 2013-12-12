@@ -12,13 +12,18 @@ p.layer = nil;
 local ui = ui_beast_mainui;
 
 p.groupFlag = false;
+p.mainUIFlag = false;
 
 --显示UI
-function p.ShowUI( bgroupFlag )
+function p.ShowUI( bgroupFlag , mainUIFlag )
 	if bgroupFlag ~= nil then
 		p.groupFlag = bgroupFlag;
 	else
 		dlg_menu.SetNewUI( p );
+	end
+	
+	if mainUIFlag ~= nil then
+		p.mainUIFlag = mainUIFlag;
 	end
 	
 	if p.layer ~= nil then
@@ -244,10 +249,14 @@ end
 
 --卡组编辑，节点选择
 function p.OnViewClick( uiNode, uiEventType, param )
-	p.CloseUI();
-	beast_mgr.ClearData();
+	if p.mainUIFlag then
+		dlg_battlearray.UpdatePosCard( uiNode:GetId() );
+	else
+		p.CloseUI();
+		beast_mgr.ClearData();
 
-	dlg_card_group_main.UpdatePosCard( uiNode:GetId() );
+		dlg_card_group_main.UpdatePosCard( uiNode:GetId() );
+	end
 end
 
 --刷新出战按钮

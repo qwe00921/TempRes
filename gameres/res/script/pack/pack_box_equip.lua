@@ -84,7 +84,7 @@ end
 function p.ShowEquipInfo(equipInfo)
 	local item_id = tonumber(equipInfo.Item_id);
 	WriteCon("item_id == "..item_id);
-	local itemTable = SelectRowInner(T_ITEM,"id",item_id);
+	local itemTable = SelectRowInner(T_EQUIP,"id",item_id);
 	if itemTable == nil then
 		WriteConErr("itemTable error ");
 		return;
@@ -98,13 +98,13 @@ function p.ShowEquipInfo(equipInfo)
 	
 	local equipStarPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_STAR);				--装备星级图片
 	local starNum = tonumber(equipInfo.Rare);
-	starNum = starNum -1;
-	equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
-	
+	if starNum >= 1 then
+		equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
+	end
 	local equipLevelText = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);				--装备等级
 	equipLevelText:SetText(equipInfo.Equip_level);
 		
-	local equipTypePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_TYPE);	
+	local equipTypePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_TYPE);		--装备类型
 	if tonumber(equipInfo.Item_type) == 1 then
 		equipTypePic:SetPicture( GetPictureByAni("common_ui.equipType", 0) );
 	elseif tonumber(equipInfo.Item_type) == 2 then
@@ -115,6 +115,15 @@ function p.ShowEquipInfo(equipInfo)
 		WriteConErr("Iequip type error");
 	end
 		
+	local equipTypeText = GetLabel(p.layer, ui.ID_CTRL_TEXT_TYPE);	
+	if tonumber(equipInfo.Item_type) == 1 then
+		equipTypeText:SetText( "武器" );
+	elseif tonumber(equipInfo.Item_type) == 2 then
+		equipTypeText:SetText(  "防具" );
+	elseif tonumber(equipInfo.Item_type) == 3 then
+		equipTypeText:SetText( "鞋子" );
+	end
+	
 	local mainProText = GetLabel(p.layer, ui.ID_CTRL_TEXT_MAIN_PRO1);				--主属性
 	if tonumber(equipInfo.Attribute_type) ~= 0 then
 		local AttType = equipInfo.Attribute_type;
@@ -145,9 +154,13 @@ function p.ShowEquipInfo(equipInfo)
 	local infoText = GetLabel(p.layer, ui.ID_CTRL_TEXT_INFO);						--介绍信息
 	infoText:SetText(itemTable.description);
 
-	local modePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_MODE);						--是否装备图片
+	local modeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_MODE);						--是否装备图片
 	local dressIndex = tonumber(equipInfo.Is_dress)
-	modePic:SetPicture( GetPictureByAni("common_ui.equipMode", dressIndex));
+	if dressIndex == 0 then
+		modeText:SetText("闲置");
+	elseif dressIndex == 1 then
+		modeText:SetText("装备");
+	end
 end
 
 function p.equipAttByType(nodeUI,AttType,AttValue)
