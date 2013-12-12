@@ -54,7 +54,13 @@ function p.Init( item )
     else
          priceLab:SetText( tostring(row_rebatePrice));
     end
-    
+		
+	local pic = GetImage( p.layer, ui_dlg_buy_num.ID_CTRL_PICTURE_ICON );
+	local picData = GetPictureByAni( SelectCell( T_ITEM, item.item_id , "item_pic" ) ,0 );
+	if pic and picData then
+		pic:SetPicture( picData );
+	end
+	
     p.RefreshTotalPrice();
 end
 
@@ -105,22 +111,22 @@ end
 
 --获取该物品最大购买数量
 function p.GetMaxNum()
-     --配置购买上限
-	 local row_limitNum = tonumber(SelectRowInner( T_SHOP,"item_id", p.item.item_id,"num_limit"));
-	 --已购买数量
-	 local num = tonumber( p.item.num );
-	 --可购买数量
-	 local numByLimit = row_limitNum - num;
-	 --根据剩余元宝计算可购买数量
-	 local rmb = tonumber( dlg_gacha.shopData.user_coin );
-	 local price = tonumber(GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_PRICE ):GetText());
-	 local numByRmb = math.floor( rmb / price ); 
+    --配置购买上限
+	local row_limitNum = tonumber(SelectRowInner( T_SHOP,"item_id", p.item.item_id,"num_limit"));
+	--已购买数量
+	local num = tonumber( p.item.num );
+	--可购买数量
+	local numByLimit = row_limitNum - num;
+	--根据剩余元宝计算可购买数量
+	local rmb = tonumber( dlg_gacha.rmb );
+	local price = tonumber(GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_PRICE ):GetText());
+	local numByRmb = math.floor( rmb / price ); 
 	 
-	 if numByRmb < numByLimit then
-	      p.maxNum = numByRmb;
-	 else 
-	      p.maxNum = numByLimit;
-	 end
+	if row_limitNum == 0 then
+		p.maxNum = numByRmb;
+	else
+		p.maxNum = math.min( numByLimit, numByRmb );
+	end
 end
 
 function p.OnBuyNumUIEvent(uiNode, uiEventType, param)
@@ -180,6 +186,12 @@ function p.ReqBuyItem()
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
     local num = GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_NUM ):GetText();
+
+	if tonumber(num) == 0 then
+		dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "购买数量为0" ), nil , p.layer );
+		return;
+	end
+	
 	local type_id = tostring( SelectRowInner( T_SHOP, "item_id", p.item.item_id  , "type"));
     local param = "&type_id=" .. type_id .. "&item_id=" .. p.item.item_id .."&num=" .. num;
     WriteCon( "购买参数" .. param );
