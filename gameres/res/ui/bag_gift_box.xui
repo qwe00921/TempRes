@@ -3,19 +3,20 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_BG]
-Type=1
-Tag=1
-Rect=100 175 463 390
+[CTRL_9SLICES_22]
+Type=22
+Tag=22
+Rect=38 90 565 530
 AnchorPos=0 0
 Notes=
 Stretch=1
-
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
 
 [CTRL_TEXT_GIFT_HEAD]
 Type=4
 Tag=8
-Rect=173 189 320 27
+Rect=160 108 320 48
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -25,49 +26,49 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_GIFT_1]
 Type=1
 Tag=2
-Rect=137 228 110 80
+Rect=97 187 110 110
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_2]
 Type=1
 Tag=3
-Rect=272 227 110 80
+Rect=271 188 110 110
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_3]
 Type=1
 Tag=4
-Rect=414 228 110 80
+Rect=435 188 110 110
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_4]
 Type=1
 Tag=5
-Rect=136 374 110 80
+Rect=97 371 110 110
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_5]
 Type=1
 Tag=6
-Rect=272 375 110 80
+Rect=270 371 110 110
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_6]
 Type=1
 Tag=7
-Rect=414 372 110 80
+Rect=435 371 110 110
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_1]
 Type=4
 Tag=9
-Rect=138 318 110 35
+Rect=98 301 110 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -77,7 +78,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_2]
 Type=4
 Tag=10
-Rect=272 319 110 35
+Rect=274 301 110 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -87,7 +88,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_3]
 Type=4
 Tag=11
-Rect=414 319 110 35
+Rect=437 301 110 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -97,7 +98,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_4]
 Type=4
 Tag=12
-Rect=136 462 110 35
+Rect=97 487 110 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -107,7 +108,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_5]
 Type=4
 Tag=13
-Rect=270 461 110 35
+Rect=268 487 110 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -117,17 +118,44 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_6]
 Type=4
 Tag=14
-Rect=413 460 110 35
+Rect=436 487 110 35
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=128 272 80 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=24
+Rect=300 272 80 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=465 272 80 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
 [CTRL_TEXT_GIFT_NUM_1]
 Type=4
 Tag=16
-Rect=165 285 80 20
+Rect=125 270 80 24
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -137,7 +165,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_2]
 Type=4
 Tag=17
-Rect=300 284 80 20
+Rect=300 270 80 24
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -147,17 +175,44 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_3]
 Type=4
 Tag=18
-Rect=442 285 80 20
+Rect=463 265 80 29
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_26]
+Type=1
+Tag=26
+Rect=128 455 80 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=299 455 80 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_28]
+Type=1
+Tag=28
+Rect=466 455 80 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
 [CTRL_TEXT_GIFT_NUM_4]
 Type=4
 Tag=19
-Rect=164 431 80 20
+Rect=126 448 80 28
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -167,7 +222,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_5]
 Type=4
 Tag=20
-Rect=300 432 80 20
+Rect=298 448 80 30
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -177,7 +232,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_6]
 Type=4
 Tag=21
-Rect=442 429 80 20
+Rect=463 448 80 30
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -187,12 +242,14 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_OK]
 Type=2
 Tag=15
-Rect=273 508 107 35
+Rect=265 543 110 54
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=确定
+TextTradition=確定
+TextSize=24
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Stretch=1
-NormalFile=.\res\image\ui\bag\star3.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
