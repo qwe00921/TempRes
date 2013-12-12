@@ -51,6 +51,9 @@ p.shopData = nil;
 --存放礼包列表信息
 p.giftData = nil;
 
+p.requestFlag = false;
+p.clickEvent = false;
+
 function DateStrToTime( dateStr )
 	local indexName ={"year", "month","day","hour","min","sec"};
 	local timeTab ={};
@@ -174,7 +177,9 @@ end
 
 function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
-	if IsClickEvent( uiEventType ) then
+
+	if not p.clickEvent and (IsClickEvent( uiEventType ) or IsDoubleEvent( uiEventType ))  then
+		p.clickEvent = true;
 		if ( ui_dlg_gacha.ID_CTRL_BUTTON_BACK == tag ) then  
 			p.CloseUI();
 			maininterface.BecomeFirstUI();
@@ -187,35 +192,37 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	       local adList = GetListBoxHorz( p.layer, ui_dlg_gacha.ID_CTRL_LIST_AD);
            adList:MoveToPrevView();
            --]]
+			p.clickEvent = false; 
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --扭蛋界面按钮
 			WriteCon( "扭蛋界面按钮" );
 			--p.ReqGachaData();
 			p.ShowGachaData( p.gachadata );
+			p.clickEvent = false; 
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_ITEMUI == tag ) then  --商店界面按钮
 			WriteCon( "商店界面按钮" );
 			p.ShowShopData( p.shopData );
-
+			p.clickEvent = false; 
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI == tag ) then  --礼包界面按钮
 			WriteCon( "礼包界面按钮" );
 			p.ShowGiftPackData( p.giftData );
-	
+			p.clickEvent = false; 
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_PAY == tag) then --充值按钮
 			WriteCon( "充值按钮" );
-       
+			p.clickEvent = false; 
        --商品购买按钮    
        --elseif ( ui_shop_item_view.ID_CTRL_BUTTON_BUY_L == tag or  ui_shop_item_view.ID_CTRL_BUTTON_BUY_R == tag) then 
 		elseif ( ui_shop_item_view.ID_CTRL_BUTTON_BUY_L == tag ) then 
 			WriteCon( "商城购买" );
 			local item = p.shopData.list[uiNode:GetId()];
 			dlg_buy_num.ShowUI( item );
-           
+			p.clickEvent = false; 
        --礼包购买按钮    
        --elseif ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L == tag or  ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_R == tag) then 
 		elseif ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L == tag ) then 
 			WriteCon( "礼包购买" );
 			local gift = p.giftData.list[uiNode:GetId()];
 			dlg_buy_num.ShowUI( gift );
-			
+			p.clickEvent = false; 
            --p.ReqGiftPackBuy( giftid );
 		
 		
@@ -237,13 +244,13 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 
 				if p.rmb < needRmb then
 					WriteCon("**扭蛋需求代币不足**");
-					return;
+				else
+					--付费
+					p.charge_type = 2;
+					p.gacha_type = 1;
+					p.gacha_id = gacha_id;
+					p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 				end
-				--付费
-				p.charge_type = 2;
-				p.gacha_type = 1;
-				p.gacha_id = gacha_id;
-				p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			end
 		elseif ui_gacha_list_view.ID_CTRL_BUTTON_TEN == tag then
 			--N次扭蛋
@@ -252,13 +259,13 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "complex_gacha_cost"));
 			if p.rmb < needRmb then
 				WriteCon("**扭蛋需求代币不足**");
-				return;
+			else
+				--付费
+				p.charge_type = 2;
+				p.gacha_type = 2;
+				p.gacha_id = gacha_id;
+				p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			end
-			--付费
-			p.charge_type = 2;
-			p.gacha_type = 2;
-			p.gacha_id = gacha_id;
-			p.ReqStartGacha( p.gacha_id, p.charge_type, p.gacha_type);
 			
 		--[[
 		elseif ( ui_gacha_list_view.ID_CTRL_BUTTON_ONE == tag ) then  
@@ -315,7 +322,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
                 dlg_msgbox.ShowYesNo(GetStr( "msg_title_tips" ),GetStr("gacha_need") .. coin_num .. GetStr("gacha_rmb"), p.OnCostGacha , layer );
 			end
 		--]]   
-		end       
+		end
 	end
 end
 
@@ -483,12 +490,24 @@ function p.ReqGiftPackBuy( giftid )
 end
 
 function p.ReqStartGacha( gacha_id, charge_type, gacha_type)
+	if p.requestFlag then
+		return;
+	end
+	
+	p.requestFlag = true;
+	
 	WriteCon("**请求开始扭蛋**");
 	local uid = GetUID();
     if uid == 0 then uid = 100 end; 
-	local param = string.format( "&gacha_id=%d&charge_type=%d&gacha_type=%d", gacha_id, charge_type, gacha_type)
+	local param = string.format( "&gacha_id=%d&charge_type=%d&gacha_type=%d", gacha_id, charge_type, gacha_type);
 	WriteCon( "扭蛋参数：" .. param );
 	SendReq("Gacha","Start",uid, param);
+end
+
+--
+function p.RequestCallBack()
+	p.requestFlag = false;
+	p.clickEvent = false;
 end
 
 --显示商城道具列表
@@ -765,7 +784,7 @@ function p.ShowGachaData( gachadata )
 	--]]
 	
     p.gachadata = gachadata;
-
+	
     p.rmb = tonumber(gachadata.emoney);
     --元宝值
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
@@ -903,6 +922,42 @@ function p.CloseUI()
 		
 	    p.layer:LazyClose();
         p.layer = nil;
+		
+		--扭蛋参数
+		p.gacha_id = nil;
+		p.charge_type = nil;
+		p.gacha_type = nil;
+
+		p.gachaIndex = nil;
+
+		p.gachaList = nil;
+		p.shopItemList = nil;
+		p.shopPackList = nil;
+		p.gachaBtn = nil;
+		p.shopItmeBtn = nil;
+		p.shopPackBtn = nil;
+
+		--存放商品列表信息
+		p.shopData = nil;
+		--存放礼包列表信息
+		p.giftData = nil;
+		
+		p.intent = nil;
+		p.timezj = nil; --中级扭蛋时间
+		p.timegj = nil; --高级扭蛋时间
+
+		p.gachadata = nil;
+		p.rmb = nil; --元宝值
+		p.pt  = nil; --pt值
+		p.idTimerRefresh = nil;
+		p.freeTimeList = {};
+		--p.timerIDList = {};
+		p.coin_config = {};
+		p.gachaBtnlist = {};
+		p.useTicketSign = 0;
+
+		p.requestFlag = false;
+		p.clickEvent = false;
     end
 end
 

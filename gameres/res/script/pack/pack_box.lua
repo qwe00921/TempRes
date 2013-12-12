@@ -231,6 +231,8 @@ function p.ShowItemInfo( view, item, itemIndex )
 		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV1
 		subTitleBg = ui_list.ID_CTRL_PICTURE_22;
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP1;
+		boxFrame = ui_list.ID_CTRL_PICTURE_91;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG1;
 	elseif itemIndex == 2 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
         itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM2;
@@ -239,6 +241,8 @@ function p.ShowItemInfo( view, item, itemIndex )
 		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV2
 		subTitleBg = ui_list.ID_CTRL_PICTURE_23;
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP2;
+		boxFrame = ui_list.ID_CTRL_PICTURE_92;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG2;
 	elseif itemIndex == 3 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
         itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM3;
@@ -247,6 +251,8 @@ function p.ShowItemInfo( view, item, itemIndex )
 		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV3
 		subTitleBg = ui_list.ID_CTRL_PICTURE_24;
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP3;
+		boxFrame = ui_list.ID_CTRL_PICTURE_93;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG3;
 	elseif itemIndex == 4 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
         itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM4;
@@ -255,8 +261,20 @@ function p.ShowItemInfo( view, item, itemIndex )
 		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV4
 		subTitleBg = ui_list.ID_CTRL_PICTURE_25;
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP4;
+		boxFrame = ui_list.ID_CTRL_PICTURE_94;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG4;
 	end
+	--显示边框
+	local boxFramePic = GetImage(view,boxFrame);
+	boxFramePic:SetPicture( GetPictureByAni("common_ui.frame", 0) );
+	--显示名字背景图片
+	local subTitleBgPic = GetImage(view,subTitleBg);
+	subTitleBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
+	--显示数量背景
+	local numBgPic = GetImage(view,numBg);
+	numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 
+	
 	local item_id = tonumber(item.Item_id);
 	local itemType = tonumber(item.Item_type);
 	local itemUniqueId = tonumber(item.id);
@@ -303,11 +321,9 @@ function p.ShowItemInfo( view, item, itemIndex )
 		else
 			equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
 		end
-			--显示装备等级
+		--显示装备等级
 		equipLevelText:SetVisible(true);
 		equipLevelText:SetText(item.Equip_level);
-
-		
 		--是否装备
 		if item.Is_dress == 1 or item.Is_dress == "1" then
 			isUsePic:SetVisible(true);
