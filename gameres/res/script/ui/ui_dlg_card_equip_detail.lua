@@ -29,4 +29,3 @@ p.ID_CTRL_9SLICES_21					     = 23;
 p.ID_CTRL_PICTURE_IMAGE				   = 3;
 p.ID_CTRL_9SLICES_19					     = 21;
 p.ID_CTRL_9SLICES_18					     = 20;
-p.ID_CTRL_9SLICES_28					     = 29;

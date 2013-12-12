@@ -3,16 +3,6 @@
 Width=960
 Height=640
 
-[CTRL_9SLICES_28]
-Type=22
-Tag=29
-Rect=443 5 208 54
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
-
 [CTRL_9SLICES_18]
 Type=22
 Tag=20
@@ -53,8 +43,6 @@ Tag=4
 Rect=92 20 167 42
 AnchorPos=0 0
 Notes=
-Text=装备者:
-TextTradition=裝備者:
 TextSize=15
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -294,7 +282,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_UPGRADE]
 Type=4
 Tag=28
-Rect=110 513 122 47
+Rect=112 512 122 47
 AnchorPos=0 0
 Notes=
 Text=强化

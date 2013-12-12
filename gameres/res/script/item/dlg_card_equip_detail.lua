@@ -161,8 +161,8 @@ function p.ShowItem(  )
 	itemPic:SetPicture( p.SelectImage(item.itemId) );
 	
 	--¿¨ÅÆÃû³Æ
-	local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CARD_NAME );
-	itemName:SetText( itemNamestr or "");
+	--local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CARD_NAME );
+	--itemName:SetText( itemNamestr or "");
 	
 	--ËµÃ÷
 	local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_DES );
