@@ -31,6 +31,7 @@ function p.OnClickObj( tileObj, isTouchDown, objType, tileX, tileY )
 			WriteCon("show Stage_id error ");
 			return 
 		end
+		tileObj:AddActionEffect("lancer_cmb.world_map_chapter_fx");
 		p.CloseStageMap()
 		WriteCon("show stageMap == "..Stage_id);
 		quest_main.ShowUI(Stage_id);
@@ -74,11 +75,11 @@ function p.addAllStage(stageData)
 	
 	local stageList = SelectRowList( T_STAGE );
 	
-	WriteCon("show stageList===="..#stageList);
 
 	for i = 1, #stageList do
-		local pic = GetPictureByAni("map.stage_1", i-1);
-		local titleText = stageList[i].stage_name;
+		local pic = GetPictureByAni("map.stage_"..i, 0);
+		--local titleText = stageList[i].stage_name;
+		local titleText = ""
 		local stageId = tonumber( stageList[i].stage_id );
 		local stageName = "stage_"..i;
 		local isUnlock = false;
@@ -126,14 +127,15 @@ function p.AddStageObj( fgLayer, tileX, tileY, offsetX, offsetY,
 		
 		if not isUnlock then
 			--如果未解锁则，播放表现效果：锁特效、灰色蒙版
-            obj:SetMaskColor( ccc4(80,80,80,255) );
+            -- obj:SetMaskColor( ccc4(80,80,80,255) );
             
-            local imageNode = createNDUIImage();
-            imageNode:Init();
-            obj:AddChild(imageNode);
-            local pos = imageNode:GetFramePos();
-            imageNode:SetFramePosXY(pos.x + picSize.w * 0.5f, pos.y + picSize.h * 0.5f);
+            -- local imageNode = createNDUIImage();
+            -- imageNode:Init();
+            -- obj:AddChild(imageNode);
+            -- local pos = imageNode:GetFramePos();
+            -- imageNode:SetFramePosXY(pos.x + picSize.w * 0.5f, pos.y + picSize.h * 0.5f);
             --imageNode:AddFgEffect("ui.map_lock");
+			obj:SetVisible(false)
         else
 			--如果已经解锁，播放表现效果
             --p.AddEffect( obj );
