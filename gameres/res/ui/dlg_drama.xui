@@ -66,8 +66,8 @@ Rect=34 612 572 229
 AnchorPos=0 0
 Notes=
 TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
 
 [CTRL_BUTTON_SKIP]
 Type=2
@@ -89,14 +89,14 @@ DisableFileUV=0 0 43 23
 [CTRL_TEXT_NPC_NAME]
 Type=4
 Tag=5
-Rect=16 569 71 51
+Rect=16 569 149 41
 AnchorPos=0 0
 Notes=
 Text=说话者
 TextTradition=說話者
 TextSize=20
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_CLICK]
