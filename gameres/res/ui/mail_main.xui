@@ -84,7 +84,7 @@ NormalFileUV=0 0 368 84
 [CTRL_TEXT_164]
 Type=4
 Tag=164
-Rect=255 1 133 70
+Rect=235 0 133 75
 AnchorPos=0 0
 Notes=
 Text=邮箱
@@ -92,8 +92,6 @@ TextTradition=郵箱
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\title_bg.png
-NormalFileUV=0 0 350 82
 
 [CTRL_BUTTON_GM]
 Type=2
@@ -179,16 +177,19 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_PRE_PAGE]
 Type=2
 Tag=160
-Rect=373 786 59 44
+Rect=373 786 60 48
 AnchorPos=0 0
 Notes=
 Text=<<
 TextTradition=<<
 TextSize=30
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_TEXT_PAGE_INFO]
 Type=4
@@ -203,16 +204,19 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_NEXT_PAGE]
 Type=2
 Tag=162
-Rect=559 786 60 43
+Rect=558 785 60 48
 AnchorPos=0 0
 Notes=
 Text=>>
 TextTradition=>>
 TextSize=30
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\sub_title.png
-NormalFileUV=0 0 125 34
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
 
 [CTRL_PICTURE_SYS_BG]
 Type=1
