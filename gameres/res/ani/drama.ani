@@ -95,15 +95,15 @@ image\npc\10963.png
 ;卡牌本身朝右_2
 ;卡牌本身无朝向_0
 
-[10355_1]
+[10_2]
 image\npc\10487.png
-[10487_2]
-image\npc\10487.png
-[10518_0]
-image\npc\10487.png
-[10753_1]
-image\npc\10487.png
-[10755_2]
-image\npc\10487.png
-[10961_1]
-image\npc\10487.png
+[20_2]
+image\npc\10755.png
+[30_2]
+image\npc\10518.png
+[11_1]
+image\npc\10355.png
+[21_1]
+image\npc\10753.png
+[31_1]
+image\npc\10961.png
