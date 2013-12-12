@@ -31,3 +31,4 @@ p.ID_CTRL_PICTURE_GIFT_2				  = 3;
 p.ID_CTRL_PICTURE_GIFT_1				  = 2;
 p.ID_CTRL_TEXT_GIFT_HEAD				  = 8;
 p.ID_CTRL_9SLICES_22					     = 22;
+p.ID_CTRL_9SLICES_29					     = 29;

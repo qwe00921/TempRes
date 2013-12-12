@@ -31,6 +31,8 @@ p.sellCardList 	= {};	--出售卡牌列表
 p.modifyTeam = false;
 p.mainUIFlag = false;
 
+p.showCardType = PROFESSION_TYPE_0;
+
 function p.ShowUI( bModify , mainUIFlag )
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
@@ -285,10 +287,10 @@ function p.SetDelegate(layer)
 	local cardBtnAll = GetButton(layer, ui.ID_CTRL_BUTTON_ALL);
 	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
 	p.SetBtnCheckedFX( cardBtnAll );
-
+	
 	local cardBtnPro1 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO1);
 	cardBtnPro1:SetLuaDelegate(p.OnUIClickEvent);
-
+	
 	local cardBtnPro2 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO2);
 	cardBtnPro2:SetLuaDelegate(p.OnUIClickEvent);
 	
@@ -318,26 +320,32 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			WriteCon("=====allCardBtn");
 			p.SetBtnCheckedFX( uiNode );
+			p.showCardType = PROFESSION_TYPE_0;
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_0);
 		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --职业1
 			WriteCon("=====cardBtnPro1");
 			p.SetBtnCheckedFX( uiNode );
+			p.showCardType = PROFESSION_TYPE_1;
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_1);
 		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --职业2
 			WriteCon("=====cardBtnPro2");
 			p.SetBtnCheckedFX( uiNode );
+			p.showCardType = PROFESSION_TYPE_2;
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_2);
 		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --职业3
 			WriteCon("=====cardBtnPro3");
 			p.SetBtnCheckedFX( uiNode );
+			p.showCardType = PROFESSION_TYPE_3;
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_3);
 		elseif(ui.ID_CTRL_BUTTON_PRO4 == tag) then --职业4
 			WriteCon("=====cardBtnPro4");
 			p.SetBtnCheckedFX( uiNode );
+			p.showCardType = PROFESSION_TYPE_4;
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_4);
 		elseif(ui.ID_CTRL_BUTTON_PRO5 == tag) then --职业5
 			WriteCon("=====cardBtnPro5");
 			p.SetBtnCheckedFX( uiNode );
+			p.showCardType = PROFESSION_TYPE_5;
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_5);
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
 			WriteCon("card_bag_sort.ShowUI()");
