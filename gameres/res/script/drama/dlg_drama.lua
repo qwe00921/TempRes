@@ -133,8 +133,8 @@ function p.DoEffectContent()
 	--WriteCon(strText);
 	p.contentNode:SetText(strText);
 	
-	p.contentNode:SetHorzAlign( 0 );
-	p.contentNode:SetVertAlign( 0 );
+	--p.contentNode:SetHorzAlign( 0 );
+	--p.contentNode:SetVertAlign( 0 );
 
 	p.contentIndex = p.contentIndex + 1;
 	if p.contentIndex > p.contentStrLn and p.timerId ~= nil then
@@ -150,6 +150,9 @@ function p.ResetUI( dramaInfo )
     p.bgPicNode:SetPicture( bgPic );
     
 	local name = dramaInfo.npcName;
+	if tonumber(name) ~= nil and tonumber(name) == 0 then
+		name = " ";
+	end
 	if string.find( name, ToUtf8("主角") ) then
 		name = msg_cache.msg_player.Name or dramaInfo.npcName;
 	end
@@ -172,6 +175,7 @@ function p.ResetUI( dramaInfo )
 			if ani ~= nil then
 				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
 				bgPic:SetReverse( i == DIR_LEFT );--图片在左，卡牌本身朝向左则翻转图片
+				p.npcPicNodeL:SetVisible( true );
 				p.npcPicNodeL:SetPicture( bgPic );
 				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picLeft ) then
 					p.AddNpcEffect( p.npcPicNodeL );
@@ -179,7 +183,9 @@ function p.ResetUI( dramaInfo )
 				break;
 			end
 		end
-    end
+    else
+		p.npcPicNodeL:SetVisible( false );
+	end
 
      --NPC图片以特效更新：右边NPC
     if tonumber( dramaInfo.picRight ) ~= nil and tonumber( dramaInfo.picRight ) ~= 0 then
@@ -189,6 +195,7 @@ function p.ResetUI( dramaInfo )
 			if ani ~= nil then
 				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
 				bgPic:SetReverse( i == DIR_RIGHT );--图片在右，卡牌本身朝向右则翻转图片
+				p.npcPicNodeR:SetVisible( true );
 				p.npcPicNodeR:SetPicture( bgPic );
 				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picRight ) then
 					p.AddNpcEffect( p.npcPicNodeR );
@@ -196,7 +203,9 @@ function p.ResetUI( dramaInfo )
 				break;
 			end
 		end
-    end
+    else
+		p.npcPicNodeR:SetVisible( false );
+	end
 end
 
 --添加Npc特效
