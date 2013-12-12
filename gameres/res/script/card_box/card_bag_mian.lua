@@ -164,7 +164,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
-	WriteCon("CardID ===== "..cardId);
+	--WriteCon("CardID ===== "..cardId);
 	
 	local cardPicTable = SelectRowInner(T_CHAR_RES,"card_id",cardId);
 	if cardPicTable == nil then
@@ -174,7 +174,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
 
 	local cardUniqueId = tonumber(card.UniqueId);
- 	WriteCon("cardUniqueId ===== "..cardUniqueId);
+ 	--WriteCon("cardUniqueId ===== "..cardUniqueId);
     cardButton:SetId(cardUniqueId);
 
 	local cardLevelText = GetLabel(view,cardLevel );
@@ -337,11 +337,11 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_5);
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
 			WriteCon("card_bag_sort.ShowUI()");
-			p.ClearDelList()
-			if p.sortBtnMark == nil then
+			--p.ClearDelList()
+			if p.sortBtnMark == MARK_OFF then
 				card_bag_sort.ShowUI(0);
 			else
-				p.sortBtnMark = nil;
+				p.sortBtnMark = MARK_OFF;
 				card_bag_sort.CloseUI();
 			end
 		end
@@ -390,14 +390,17 @@ function p.sortByBtnEvent(sortType)
 	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SORT_BY);
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
+		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
+		sortByBtn:SetText("等级排序");
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
+		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
+		sortByBtn:SetText("星级排序");
 	elseif(sortType == CARD_BAG_SORT_BY_TIME) then 
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
+		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
+		sortByBtn:SetText("入手时间");
 	end
 	card_bag_mgr.sortByRule(sortType)
 end 

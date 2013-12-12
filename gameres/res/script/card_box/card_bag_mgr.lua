@@ -23,7 +23,6 @@ function p.RefreshUI(self)
 		return;
 	end
 	
-	WriteCon("bbbbbbbbbbbbbbbbbb");
 	if self.result == true then
 		local cardList = self.cardlist
 		card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
@@ -40,9 +39,6 @@ end
 function p.SendDelRequest(deleteList)
 	p.delCardList = deleteList;
 	local uid = GetUID();
-	if uid == 0 or uid == nil then 
-		return;
-	end
 	local param = nil;
 	for k,v in pairs(deleteList) do
 		if param == nil then
@@ -88,14 +84,16 @@ function p.RefreshCardList(delData)
 		end
 	elseif type(delData) == "table" then
 		WriteCon("table delete");
-		for k,v in pairs(p.cardList) do
-			for j,h in pairs(delData) do
-				if tonumber(v.UniqueId) == tonumber(h) then 
+		for j,h in pairs(delData) do
+			for k,v in pairs(p.cardList) do 
+				if tonumber(h) == tonumber(v.UniqueId) then
 					table.remove(p.cardList,k)
 				end
 			end
 		end
 	end
+	--WriteConErr( "** p.cardList"..#p.cardList );
+
 	card_bag_mian.ShowCardList(p.cardList);
 end
 
@@ -195,7 +193,6 @@ function p.ClearData()
 	p.cardListByProf = nil;
 	p.delCardList 	= nil;
 end
-
 
 
 

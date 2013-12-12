@@ -183,12 +183,12 @@ Notes=
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=503 216 100 54
+Rect=502 215 120 54
 AnchorPos=0 0
 Notes=
 Text=排序
 TextTradition=排序
-TextSize=26
+TextSize=24
 TextColor=0xd3cf9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
