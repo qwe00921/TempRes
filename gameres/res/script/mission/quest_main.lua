@@ -314,7 +314,7 @@ function p.setMissionInif(MisId, view)
 			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
 			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
 			item1:SetVisible(true);
-			item1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			item1:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 			--WriteCon("tonumberv.type==="..tonumber(v.type));
 		elseif typeID == 4 then	--装备
 			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);
@@ -333,7 +333,7 @@ function p.setMissionInif(MisId, view)
 			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
 			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
 			item2:SetVisible(true);
-			item2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			item2:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 			--WriteCon("tonumberv.type==="..tonumber(v.type));
 		elseif typeID == 4 then	--装备
 			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);

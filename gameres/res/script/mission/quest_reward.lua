@@ -116,7 +116,7 @@ function p.ShowQuestRewardView(rewardData)
 				itemName_1:SetText(itemTable.name);
 			elseif itemType == 2 then		--卡牌
 				local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-				itemPic_1:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+				itemPic_1:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 				local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
 				itemName_1:SetText(cardTable2.name);
 			elseif itemType == 4 then		--装备
@@ -140,7 +140,7 @@ function p.ShowQuestRewardView(rewardData)
 				itemName_2:SetText(itemTable.name)
 			elseif itemType == 2 then		--卡牌
 				local cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-				itemPic_2:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+				itemPic_2:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 				local cardTable2 = SelectRowInner(T_CARD,"id",itemId);
 				itemName_2:SetText(cardTable2.name);
 			elseif itemType == 4 then		--装备
