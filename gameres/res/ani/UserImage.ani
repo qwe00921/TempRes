@@ -1,18 +1,18 @@
 ;规则FaceAB，A为头像编号，B为性别，0男1女
 [Face10]
-image\face\male_01.PNG
+image\face\10487.png
 
 [Face11]
-image\face\female_01.PNG
+image\face\10355.png
 
 [Face20]
-image\face\male_02.PNG
+image\face\10755.png
 
 [Face21]
-image\face\female_02.PNG
+image\face\10753.png
 
 [Face30]
-image\face\male_03.PNG
+image\face\10518.png
 
 [Face31]
-image\face\female_03.PNG
+image\face\10961.png
