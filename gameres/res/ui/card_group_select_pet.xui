@@ -21,29 +21,6 @@ Notes=
 NormalFile=.\res\image\ui\beast\beast_head.png
 NormalFileUV=0 0 84 126
 
-[CTRL_9SLICES_53]
-Type=22
-Tag=53
-Rect=38 124 90 34
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_TEXT_12]
-Type=4
-Tag=12
-Rect=48 129 72 26
-AnchorPos=0 0
-Notes=
-Text=LV 100
-TextTradition=LV 100
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_14]
 Type=4
 Tag=14
@@ -223,3 +200,26 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_53]
+Type=22
+Tag=53
+Rect=38 124 90 34
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=48 129 72 26
+AnchorPos=0 0
+Notes=
+Text=LV 1001
+TextTradition=LV 1001
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
