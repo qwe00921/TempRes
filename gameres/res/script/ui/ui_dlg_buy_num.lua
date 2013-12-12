@@ -27,3 +27,4 @@ p.ID_CTRL_TEXT_NAME					      = 4;
 p.ID_CTRL_PICTURE_ICON				    = 3;
 p.ID_CTRL_TEXT_2						        = 2;
 p.ID_CTRL_9SLICES_BG					     = 1;
+p.ID_CTRL_9SLICES_25					     = 26;

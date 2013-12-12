@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -12,19 +12,10 @@ Notes=
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
-[CTRL_PICTURE_1]
-Type=1
-Tag=1
-Rect=0 0 640 860
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\beast\bg.png
-NormalFileUV=0 0 480 612
-
 [CTRL_PICTURE_3]
 Type=1
 Tag=3
-Rect=120 7 378 86
+Rect=131 -2 378 86
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\title.png
@@ -33,7 +24,7 @@ NormalFileUV=0 0 392 100
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=5
-Rect=553 3 86 86
+Rect=554 0 86 85
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -47,7 +38,7 @@ SelectedFileUV=0 0 100 98
 [CTRL_VERTICAL_LIST_6]
 Type=14
 Tag=6
-Rect=24 97 602 759
+Rect=14 87 602 769
 AnchorPos=0 0
 Notes=
 Remark=卡组列表
@@ -55,7 +46,7 @@ Remark=卡组列表
 [CTRL_TEXT_38]
 Type=4
 Tag=38
-Rect=201 15 240 60
+Rect=200 3 240 60
 AnchorPos=0 0
 Notes=
 Text=卡组

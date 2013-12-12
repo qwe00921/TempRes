@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -15,7 +15,7 @@ NormalFileUV=0 0 264 108
 [CTRL_PIC_LIST_BG_3]
 Type=1
 Tag=3
-Rect=5 137 640 806
+Rect=0 137 640 806
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_bg3.png
@@ -24,7 +24,7 @@ NormalFileUV=0 0 640 790
 [CTRL_BTN_TETURN_2]
 Type=2
 Tag=2
-Rect=571 139 70 70
+Rect=567 139 70 70
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -38,14 +38,14 @@ SelectedFileUV=0 0 68 68
 [CTRL_VERTICAL_LIST_5]
 Type=14
 Tag=5
-Rect=4 207 637 736
+Rect=3 207 636 680
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_QUEST_NAME_6]
 Type=4
 Tag=6
-Rect=41 148 201 40
+Rect=35 148 201 40
 AnchorPos=0 0
 Notes=
 Text=章节名称
@@ -59,7 +59,7 @@ Stretch=1
 [CTRL_BTN_EAYE_7]
 Type=2
 Tag=7
-Rect=263 144 98 56
+Rect=257 144 98 56
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -75,7 +75,7 @@ DisableFileUV=0 0 98 56
 [CTRL_BTN_NORMAL_8]
 Type=2
 Tag=8
-Rect=365 144 98 56
+Rect=359 144 98 56
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -91,7 +91,7 @@ DisableFileUV=0 0 98 56
 [CTRL_BTN_HARD_9]
 Type=2
 Tag=9
-Rect=463 144 98 56
+Rect=457 144 98 56
 AnchorPos=0 0
 Notes=
 TextSize=10

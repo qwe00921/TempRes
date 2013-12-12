@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -31,7 +31,7 @@ SelectedFileUV=0 0 202 80
 [CTRL_PICTURE_HEAD]
 Type=1
 Tag=21
-Rect=146 0 368 84
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 Text=卡牌一览
