@@ -148,6 +148,15 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
+[CTRL_PICTURE_105]
+Type=1
+Tag=105
+Rect=332 38 78 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_txt.png
+NormalFileUV=0 0 122 38
+
 [CTRL_PICTURE_6]
 Type=1
 Tag=72
@@ -235,10 +244,10 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_20]
+[CTRL_TEXT_20_DELETE]
 Type=4
 Tag=20
-Rect=214 37 107 33
+Rect=640 409 107 33
 AnchorPos=0 0
 Notes=
 Text=出阵人数
@@ -251,7 +260,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=21
-Rect=330 37 69 33
+Rect=338 37 69 33
 AnchorPos=0 0
 Notes=
 Text=6/6
@@ -465,3 +474,12 @@ TextSize=21
 TextColor=0xffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_104]
+Type=1
+Tag=104
+Rect=219 37 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\fighternum.png
+NormalFileUV=0 0 152 54

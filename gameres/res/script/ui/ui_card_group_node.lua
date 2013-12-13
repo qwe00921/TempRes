@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_card_group_node = {};
 local p =  ui_card_group_node;
+p.ID_CTRL_PICTURE_104					    = 104;
 p.ID_CTRL_TEXT_53						       = 53;
 p.ID_CTRL_TEXT_52						       = 52;
 p.ID_CTRL_PICTURE_74					     = 75;	--ÕÙ»½ÊÞ2¸¨Öú
@@ -22,7 +23,7 @@ p.ID_CTRL_BUTTON_FORMATION			 = 29;
 p.ID_CTRL_TEXT_27						       = 27;
 p.ID_CTRL_BUTTON_SETFIGHT				 = 22;
 p.ID_CTRL_TEXT_CARD_NUM				   = 21;
-p.ID_CTRL_TEXT_20						       = 20;
+p.ID_CTRL_TEXT_20_DELETE				  = 20;
 p.ID_CTRL_TEXT_LEV_3					     = 16;
 p.ID_CTRL_TEXT_LEV_2					     = 15;
 p.ID_CTRL_TEXT_LEV_1					     = 14;
@@ -30,6 +31,7 @@ p.ID_CTRL_TEXT_LEV_6					     = 13;
 p.ID_CTRL_TEXT_LEV_5					     = 12;
 p.ID_CTRL_TEXT_LEV_4					     = 11;
 p.ID_CTRL_PICTURE_6					      = 72;
+p.ID_CTRL_PICTURE_105					    = 105;
 p.ID_CTRL_PICTURE_5					      = 71;
 p.ID_CTRL_PICTURE_4					      = 70;
 p.ID_CTRL_PICTURE_3					      = 69;

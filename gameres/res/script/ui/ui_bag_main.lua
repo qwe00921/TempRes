@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_bag_main = {};
 local p =  ui_bag_main;
+p.ID_CTRL_PICTURE_26					     = 41;
+p.ID_CTRL_PICTURE_25					     = 40;
+p.ID_CTRL_PICTURE_24					     = 39;
+p.ID_CTRL_PICTURE_23					     = 38;
+p.ID_CTRL_PICTURE_22					     = 37;
 p.ID_CTRL_PICTURE_83					     = 83;
 p.ID_CTRL_TEXT_127_DELETE				 = 127;
 p.ID_CTRL_TEXT_COUNT					     = 19;
