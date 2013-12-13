@@ -51,7 +51,17 @@ end
 --飘个数值
 function p:PlayNum( num )
 
+    if not self.isInited then return end
     
+    --push数字图片
+    self:PushNum( num );
+    
+    --设置图片
+    self.imageNode:SetPicture( self.comboPicture );
+    self.imageNode:ResizeToFitPicture();
+    
+    --播放动画
+    self:AddAction();
 end
 
 --加action效果
