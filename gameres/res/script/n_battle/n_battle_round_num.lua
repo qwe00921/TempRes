@@ -25,7 +25,8 @@ end
 
 --≥ı πªØimageNode
 function p:InitWithImageNode( node )
-    if not self.isInited then
+    if true then
+		WriteConWarning("\nInit Fly Image\n");
         self:CreateComboPicture();
         self:InitPicNum();
         self.isInited = true;

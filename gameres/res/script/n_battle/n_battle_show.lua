@@ -8,6 +8,10 @@ n_battle_show = {}
 local p = n_battle_show;
 p.flyRoundNumNode = nil;
 
+function p.DestroyAll()
+	p.flyRoundNumNode = nil;
+end
+
 --相方互殴表现
 function p.DoEffectAtk( atkData )
     if atkData == nil and not n_battle_stage.IsBattle_RoundStage_Atk() then
@@ -151,7 +155,7 @@ end
 
 function p.DoEffectShowTurnNum()
 	local roundNum = n_battle_stage.GetRoundNum();
-    if p.flyRoundNumNode == nil then
+    if true then
         p.flyRoundNumNode = n_battle_round_num:new();
         p.flyRoundNumNode:InitWithImageNode( n_battle_mainui.roundNumNode );
     end
