@@ -28,4 +28,5 @@ p.ID_CTRL_PICTURE_ITEM2				   = 19;
 p.ID_CTRL_TEXT_ITEM_NAME2				 = 20;
 p.ID_CTRL_PICTURE_23					     = 24;
 p.ID_CTRL_PICTURE_TOUCH				   = 22;
+p.ID_CTRL_PICTURE_27					     = 28;
 p.ID_CTRL_BUTTON_BG					      = 21;
