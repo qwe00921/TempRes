@@ -464,6 +464,9 @@ function p.CloseUI()
         p.layer:LazyClose();
         p.layer = nil;
 		p.Clear();
+		pack_box_equip.CloseUI();
+		pack_box_treasure.CloseUI();
+		pack_gift_box.CloseUI();
     end
 end
 

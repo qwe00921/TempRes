@@ -63,7 +63,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then --出售
 			WriteCon("============出售===========");
 			local equipInformation = p.equipInfoTable
-			if tonumber(equipInformation.Is_dress) > 0 then
+			if tonumber(equipInformation.Is_dress) ~= 1 then
 				dlg_msgbox.ShowOK("确认提示框","穿在身上的装备，无法出售。",nil,p.layer);
 			elseif tonumber(equipInformation.Issell) > 0 then
 				dlg_msgbox.ShowOK("确认提示框","此装备无法出售。",nil,p.layer);
