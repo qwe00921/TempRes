@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -43,10 +43,10 @@ AnchorPos=0 0
 Notes=
 Remark=卡组列表
 
-[CTRL_TEXT_38]
+[CTRL_TEXT_38_DELETE]
 Type=4
 Tag=38
-Rect=200 3 240 60
+Rect=640 3 240 60
 AnchorPos=0 0
 Notes=
 Text=卡组
@@ -54,3 +54,12 @@ TextTradition=卡組
 TextSize=37
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_7]
+Type=1
+Tag=8
+Rect=274 9 90 56
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_cardgroup.png
+NormalFileUV=0 0 86 54

@@ -4,7 +4,8 @@
 --------------------------------------------------------------
 ui_card_group = {};
 local p =  ui_card_group;
-p.ID_CTRL_TEXT_38						       = 38;
+p.ID_CTRL_PICTURE_7					      = 8;
+p.ID_CTRL_TEXT_38_DELETE				  = 38;
 p.ID_CTRL_VERTICAL_LIST_6				 = 6;	--¿¨×éÁÐ±í
 p.ID_CTRL_BUTTON_BACK					    = 5;
 p.ID_CTRL_PICTURE_3					      = 3;

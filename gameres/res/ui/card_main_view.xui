@@ -34,8 +34,6 @@ Tag=21
 Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
-Text=卡牌一览
-TextTradition=卡牌一覽
 NormalFile=.\res\image\ui\public\bg_title.png
 NormalFileUV=0 0 368 84
 
@@ -176,7 +174,7 @@ NormalFileUV=0 0 122 38
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=-1 283 620 576
+Rect=-2 283 620 576
 AnchorPos=0 0
 Notes=
 
@@ -205,3 +203,21 @@ TextSize=24
 TextColor=0xe3dca1
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_53]
+Type=1
+Tag=53
+Rect=244 12 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_cardgroup.png
+NormalFileUV=0 0 86 54
+
+[CTRL_PICTURE_54]
+Type=1
+Tag=54
+Rect=313 14 84 52
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_bag.png
+NormalFileUV=0 0 86 54

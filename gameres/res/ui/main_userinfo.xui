@@ -45,17 +45,17 @@ AnchorPos=0 0
 Notes=
 Remark=金币图标
 NormalFile=.\res\image\ui\main_interface\money.png
-NormalFileUV=0 0 30 30
+NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_EMONEY]
 Type=1
 Tag=56
-Rect=108 88 30 30
+Rect=109 88 30 30
 AnchorPos=0 0
 Notes=
 Remark=代币图标
 NormalFile=.\res\image\ui\main_interface\coin.png
-NormalFileUV=0 0 30 30
+NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_MONEY_NUM]
 Type=4

@@ -269,10 +269,10 @@ TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_127]
+[CTRL_TEXT_127_DELETE]
 Type=4
 Tag=127
-Rect=247 7 147 60
+Rect=640 7 147 60
 AnchorPos=0 0
 Notes=
 Text=背包
@@ -280,3 +280,12 @@ TextTradition=背包
 TextSize=36
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_83]
+Type=1
+Tag=83
+Rect=277 14 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_bag.png
+NormalFileUV=0 0 86 54
