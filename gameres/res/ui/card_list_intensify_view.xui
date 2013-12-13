@@ -7,14 +7,14 @@ Height=640
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 0 639 208
+Rect=0 0 640 235
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=477 8 145 190
+Rect=474 8 145 217
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -22,11 +22,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品4
 
-
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=322 8 145 190
+Rect=319 8 145 217
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -34,11 +33,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品3
 
-
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=167 8 145 190
+Rect=167 8 145 217
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -49,7 +47,7 @@ Remark=物品2
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=16 9 145 190
+Rect=16 9 145 217
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -57,11 +55,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
 
-
 [CTRL_TEXT_SELECT_4]
 Type=4
 Tag=19
-Rect=510 83 70 28
+Rect=515 95 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -73,7 +70,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_3]
 Type=4
 Tag=18
-Rect=355 83 70 28
+Rect=360 95 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -85,7 +82,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_2]
 Type=4
 Tag=17
-Rect=200 83 70 28
+Rect=205 95 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -97,7 +94,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_1]
 Type=4
 Tag=16
-Rect=46 83 70 28
+Rect=51 95 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -118,7 +115,7 @@ NormalFileUV=0 0 90 24
 [CTRL_TEAM_1]
 Type=4
 Tag=10
-Rect=91 16 60 20
+Rect=91 17 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -128,7 +125,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_39]
 Type=1
 Tag=39
-Rect=244 14 60 20
+Rect=244 17 60 20
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -137,7 +134,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_40]
 Type=1
 Tag=40
-Rect=400 15 60 20
+Rect=400 17 60 20
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -165,7 +162,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEAM_3]
 Type=4
 Tag=12
-Rect=400 16 60 20
+Rect=400 17 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -175,7 +172,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEAM_2]
 Type=4
 Tag=13
-Rect=245 16 60 20
+Rect=245 17 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
