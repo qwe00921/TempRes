@@ -109,26 +109,26 @@ DisableFileUV=0 0 136 60
 [CTRL_PICTURE_OK]
 Type=1
 Tag=9
-Rect=300 632 56 30
+Rect=290 627 76 40
 AnchorPos=0 0
 Notes=
-NormalFile=.\res.cn\image\ui\font\q_r.png
-NormalFileUV=0 0 56 30
+NormalFile=.\res\image\ui\public\ok.png
+NormalFileUV=0 0 76 40
 
 [CTRL_PICTURE_NO]
 Type=1
 Tag=10
-Rect=441 632 56 30
+Rect=432 627 76 40
 AnchorPos=0 0
 Notes=
-NormalFile=.\res.cn\image\ui\font\q_x.png
-NormalFileUV=0 0 56 30
+NormalFile=.\res\image\ui\public\cancel.png
+NormalFileUV=0 0 76 40
 
 [CTRL_PICTURE_YES]
 Type=1
 Tag=12
-Rect=157 630 56 30
+Rect=149 627 76 40
 AnchorPos=0 0
 Notes=
-NormalFile=.\res.cn\image\ui\font\q_r.png
-NormalFileUV=0 0 56 30
+NormalFile=.\res\image\ui\public\ok.png
+NormalFileUV=0 0 76 40

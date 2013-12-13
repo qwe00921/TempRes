@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_dlg_card_attr = {};
 local p =  ui_dlg_card_attr;
+p.ID_CTRL_PICTURE_120					    = 120;
 p.ID_CTRL_PICTURE_363					    = 363;
 p.ID_CTRL_PICTURE_67					     = 67;
 p.ID_CTRL_BUTTON_PICTURE_2			 = 15;
@@ -19,7 +20,7 @@ p.ID_CTRL_DOWER_INTRO					    = 810;
 p.ID_CTRL_LUCK_INTRO					     = 795;
 p.ID_CTRL_9SLICES_357					    = 357;
 p.ID_CTRL_BUTTON_BACK					    = 792;
-p.ID_CTRL_TITLE						         = 791;
+p.ID_CTRL_TITLE_DELETE				    = 791;
 p.ID_CTRL_9SLICES_361					    = 361;
 p.ID_CTRL_PICTURE						       = 790;
 p.ID_CTRL_PICTURE_TITLE				   = 353;
