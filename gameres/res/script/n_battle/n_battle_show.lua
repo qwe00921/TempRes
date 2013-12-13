@@ -155,7 +155,7 @@ end
 
 function p.DoEffectShowTurnNum()
 	local roundNum = n_battle_stage.GetRoundNum();
-    if true then
+    if p.flyRoundNumNode == nil then
         p.flyRoundNumNode = n_battle_round_num:new();
         p.flyRoundNumNode:InitWithImageNode( n_battle_mainui.roundNumNode );
     end
