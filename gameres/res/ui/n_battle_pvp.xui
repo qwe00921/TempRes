@@ -6,12 +6,12 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 640 960
+Rect=0 0 720 1136
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\n_battle\n_battle_bg.png
-NormalFileUV=0 0 1280 1920
+NormalFile=.\res\image\ui\n_battle\n_battle_bg_2.png
+NormalFileUV=0 88 720 1048
 
 [CTRL_RIGHT_SPRITE_5]
 Type=19
