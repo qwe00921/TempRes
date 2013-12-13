@@ -243,8 +243,8 @@ function p.SetTeamInfo( view, user_teamData )
 	fightBtn:SetLuaDelegate( p.OnListBtnClick );
 	local flag = tonumber(user_teamData.Team_id) == tonumber(p.source.nowteam)
 	fightBtn:SetChecked( flag );
-	local str = flag and ToUtf8("出战中") or ToUtf8("出战");
-	fightBtn:SetText( str );
+	--local str = flag and ToUtf8("出战中") or ToUtf8("出战");
+	--fightBtn:SetText( str );
 	
 	local atkLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_TOTAL_ATK );
 	atkLabel:SetText(  tostring( p.TotalData( user_teamData, "Attack" )) );
@@ -376,8 +376,8 @@ function p.RefreshBattleBtn( data )
 			fightBtn:SetLuaDelegate( p.OnListBtnClick );
 			local flag = tonumber(id) == tonumber( data.nowteam )
 			fightBtn:SetChecked( flag );
-			local str = flag and ToUtf8("出战中") or ToUtf8("出战");
-			fightBtn:SetText( str );
+			--local str = flag and ToUtf8("出战中") or ToUtf8("出战");
+			--fightBtn:SetText( str );
 		end
 	end
 end
