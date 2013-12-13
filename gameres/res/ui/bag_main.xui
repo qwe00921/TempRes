@@ -135,8 +135,6 @@ Tag=27
 Rect=8 195 110 57
 AnchorPos=0 0
 Notes=
-Text=全部
-TextTradition=全部
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -153,8 +151,6 @@ Tag=28
 Rect=123 195 110 57
 AnchorPos=0 0
 Notes=
-Text=武器
-TextTradition=武器
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -171,8 +167,6 @@ Tag=29
 Rect=235 195 110 57
 AnchorPos=0 0
 Notes=
-Text=防具
-TextTradition=防具
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -189,8 +183,6 @@ Tag=30
 Rect=348 195 110 57
 AnchorPos=0 0
 Notes=
-Text=鞋子
-TextTradition=鞋子
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -204,14 +196,14 @@ SelectedFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_ITEM]
 Type=14
 Tag=32
-Rect=3 266 635 440
+Rect=2 265 635 475
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_USE]
 Type=1
 Tag=33
-Rect=1 700 640 166
+Rect=1 744 640 123
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\shop\bg_shop.png
@@ -230,7 +222,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=34
-Rect=30 721 421 116
+Rect=13 761 459 76
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -242,11 +234,9 @@ Remark=物品说明
 [CTRL_BUTTON_USE]
 Type=2
 Tag=35
-Rect=477 748 131 64
+Rect=490 771 131 64
 AnchorPos=0 0
 Notes=
-Text=使用
-TextTradition=使用
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -269,10 +259,10 @@ TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_127]
+[CTRL_TEXT_127_DELETE]
 Type=4
 Tag=127
-Rect=247 7 147 60
+Rect=640 7 147 60
 AnchorPos=0 0
 Notes=
 Text=背包
@@ -280,3 +270,57 @@ TextTradition=背包
 TextSize=36
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_83]
+Type=1
+Tag=83
+Rect=277 14 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_bag.png
+NormalFileUV=0 0 86 54
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=37
+Rect=29 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\all.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=38
+Rect=146 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\weapon.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=39
+Rect=258 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\def.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=40
+Rect=372 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\sh.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=41
+Rect=524 781 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\use.png
+NormalFileUV=0 0 52 28

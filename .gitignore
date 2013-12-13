@@ -16,6 +16,7 @@ win32_assets
 DNSG.sqlite
 armeabi/
 
+Encrypt/
 debug/
 Debug/
 Release/

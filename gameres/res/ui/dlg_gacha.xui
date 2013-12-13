@@ -19,8 +19,6 @@ Tag=1
 Rect=0 131 110 82
 AnchorPos=0 0
 Notes=
-Text=扭蛋
-TextTradition=扭蛋
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -39,8 +37,6 @@ Tag=14
 Rect=220 132 110 82
 AnchorPos=0 0
 Notes=
-Text=礼包
-TextTradition=禮包
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -59,8 +55,6 @@ Tag=2
 Rect=110 131 110 82
 AnchorPos=0 0
 Notes=
-Text=道具
-TextTradition=道具
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -86,7 +80,7 @@ NormalFileUV=0 0 640 780
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=4
-Rect=562 3 74 73
+Rect=556 2 84 84
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -158,11 +152,11 @@ Remark=礼包list
 [CTRL_PICTURE_21]
 Type=1
 Tag=22
-Rect=363 152 90 32
+Rect=382 154 52 28
 AnchorPos=0 0
 Notes=
-NormalFile=.\res.cn\image\ui\font\chong_z.png
-NormalFileUV=0 0 90 32
+NormalFile=.\res\image\ui\public\add.png
+NormalFileUV=0 0 52 28
 
 [CTRL_PICTURE_17]
 Type=1
@@ -176,11 +170,11 @@ NormalFileUV=0 0 368 84
 [CTRL_PICTURE_22]
 Type=1
 Tag=23
-Rect=268 19 90 32
+Rect=277 17 86 54
 AnchorPos=0 0
 Notes=
-NormalFile=.\res.cn\image\ui\font\s_c.png
-NormalFileUV=0 0 90 32
+NormalFile=.\res\image\ui\public\shop.png
+NormalFileUV=0 0 86 54
 
 [CTRL_PICTURE_23]
 Type=1
@@ -189,4 +183,31 @@ Rect=498 155 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\coin.png
-NormalFileUV=0 0 30 30
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_111]
+Type=1
+Tag=111
+Rect=132 153 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\item.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_112]
+Type=1
+Tag=112
+Rect=242 154 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\gift.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_113]
+Type=1
+Tag=113
+Rect=22 153 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\text_gacha.png
+NormalFileUV=0 0 66 38

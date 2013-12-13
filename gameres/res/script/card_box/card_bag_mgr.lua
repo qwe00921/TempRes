@@ -93,8 +93,9 @@ function p.RefreshCardList(delData)
 		end
 	end
 	--WriteConErr( "** p.cardList"..#p.cardList );
-
-	card_bag_mian.ShowCardList(p.cardList);
+	p.ShowCardByProfession(card_bag_mian.showCardType);
+	
+	--card_bag_mian.ShowCardList(p.cardList);
 end
 
 --按职业显示卡牌

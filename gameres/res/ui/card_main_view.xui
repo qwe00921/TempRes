@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -34,8 +34,6 @@ Tag=21
 Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
-Text=卡牌一览
-TextTradition=卡牌一覽
 NormalFile=.\res\image\ui\public\bg_title.png
 NormalFileUV=0 0 368 84
 
@@ -74,8 +72,8 @@ Tag=25
 Rect=110 121 104 78
 AnchorPos=0 0
 Notes=
-Text=职业1
-TextTradition=職業1
+Text=战灵星
+TextTradition=戰靈星
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -91,8 +89,8 @@ Tag=26
 Rect=214 121 104 78
 AnchorPos=0 0
 Notes=
-Text=职业2
-TextTradition=職業2
+Text=御灵星
+TextTradition=御靈星
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -108,8 +106,8 @@ Tag=28
 Rect=318 121 104 78
 AnchorPos=0 0
 Notes=
-Text=职业3
-TextTradition=職業3
+Text=射灵星
+TextTradition=射靈星
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -125,8 +123,8 @@ Tag=29
 Rect=423 121 104 78
 AnchorPos=0 0
 Notes=
-Text=职业4
-TextTradition=職業4
+Text=术灵星
+TextTradition=術靈星
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -142,8 +140,8 @@ Tag=15
 Rect=528 121 104 78
 AnchorPos=0 0
 Notes=
-Text=职业5
-TextTradition=職業5
+Text=牧灵星
+TextTradition=牧靈星
 TextSize=28
 TextColor=0xece39d
 TextHorAlign=AlignHorCenter
@@ -176,7 +174,7 @@ NormalFileUV=0 0 122 38
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=9 283 620 576
+Rect=-2 283 620 576
 AnchorPos=0 0
 Notes=
 
@@ -205,3 +203,21 @@ TextSize=24
 TextColor=0xe3dca1
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_53]
+Type=1
+Tag=53
+Rect=244 12 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_cardgroup.png
+NormalFileUV=0 0 86 54
+
+[CTRL_PICTURE_54]
+Type=1
+Tag=54
+Rect=313 14 84 52
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_bag.png
+NormalFileUV=0 0 86 54

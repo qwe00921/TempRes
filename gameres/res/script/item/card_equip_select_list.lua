@@ -31,6 +31,7 @@ p.selectType = 0;
 p.upgradeItem = nil;
 p.useMoney = 0;
 p.upIds = nil;
+p.upgradeCallback = nil;
 
 function p.ShowUI(intent , cardUid, selectType, upgradeItem)
 	p.intent = intent;
@@ -62,6 +63,29 @@ function p.ShowUI(intent , cardUid, selectType, upgradeItem)
 	--加载卡牌列表数据  发请求
     p.OnSendReq();
 	
+end
+
+function p.ShowPackageUpgrade(pacageItem, callback)
+	if pacageItem then
+		local item = {};
+		item.itemId 	= pacageItem.Item_id;
+		item.itemUid	= pacageItem.id;
+		item.itemType	= pacageItem.Item_type;
+		item.itemLevel 	= pacageItem.Equip_level;
+		item.itemExp	= pacageItem.Equip_exp;
+		item.itemRank	= pacageItem.Rare
+		item.attrType	= pacageItem.Attribute_type;
+		item.attrValue	= pacageItem.Attribute_value;
+		item.attrGrow	= pacageItem.Attribute_grow or 0;
+		item.exType1 	= pacageItem.Extra_type1;
+		item.exValue1 	= pacageItem.Extra_value1;
+		item.exType2 	= pacageItem.Extra_type2;
+		item.exValue2 	= pacageItem.Extra_value2;
+		item.exType3	= pacageItem.Extra_type3;
+		item.exValue3	= pacageItem.Extra_value3;
+		p.ShowUI(p.INTENT_UPGRADE,nil,nil,item);
+		p.upgradeCallback = callback;
+	end
 end
 
 
@@ -134,7 +158,11 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			if p.dataChanged == true then
 				p.CloseUI();
-				dlg_card_attr_base.RefreshCardDetail();
+				if p.upgradeCallback then
+					p.upgradeCallback(true);
+				else
+					dlg_card_attr_base.RefreshCardDetail();
+				end
 			else
 				p.CloseUI();
 			end
@@ -657,6 +685,7 @@ function p.CloseUI()
 		p.useMoney = 0;
 		p.selectList = {};
 		p.dataChanged = false;
+		p.upgradeCallback = nil;
     end
 end
 
@@ -795,7 +824,12 @@ function p.OnResult(result)
 		p.OnSendReq();
 	else
 		p.CloseUI();
-		dlg_card_attr_base.RefreshCardDetail();
+		if p.upgradeCallback then
+			p.upgradeCallback(true);
+		else
+			dlg_card_attr_base.RefreshCardDetail();
+		end
+		
 	end
 end
 

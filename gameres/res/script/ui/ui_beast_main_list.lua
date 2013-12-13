@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_beast_main_list = {};
 local p =  ui_beast_main_list;
+p.ID_CTRL_TEXT_69						       = 69;
 p.ID_CTRL_TEXT_28						       = 33;
 p.ID_CTRL_PICTURE_27					     = 32;
 p.ID_CTRL_PICTURE_106					    = 106;

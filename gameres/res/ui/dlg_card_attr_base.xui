@@ -279,7 +279,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_PICTURE_198]
 Type=1
 Tag=198
-Rect=404 92 107 47
+Rect=392 86 128 56
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\card\equipment.png
@@ -288,7 +288,7 @@ NormalFileUV=0 0 128 56
 [CTRL_PICTURE_199]
 Type=1
 Tag=199
-Rect=527 92 107 47
+Rect=516 86 128 56
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\card\pem.png
@@ -408,16 +408,16 @@ NormalFileUV=0 0 74 36
 [CTRL_PICTURE_213]
 Type=1
 Tag=213
-Rect=154 2 368 84
+Rect=136 -2 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
 NormalFileUV=0 0 368 84
 
-[CTRL_TEXT_301]
+[CTRL_TEXT_301_DELETE]
 Type=4
 Tag=301
-Rect=287 10 100 50
+Rect=640 10 100 50
 AnchorPos=0 0
 Notes=
 Text=卡牌
@@ -426,3 +426,12 @@ TextSize=30
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_48]
+Type=1
+Tag=48
+Rect=277 13 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text_cardgroup.png
+NormalFileUV=0 0 86 54

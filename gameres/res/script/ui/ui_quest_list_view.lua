@@ -4,7 +4,8 @@
 --------------------------------------------------------------
 ui_quest_list_view = {};
 local p =  ui_quest_list_view;
-p.ID_CTRL_TEXT_33						       = 33;
+p.ID_CTRL_PICTURE_42					     = 42;
+p.ID_CTRL_TEXT_33_DELETE				  = 33;
 p.ID_CTRL_TEXT_31						       = 31;
 p.ID_CTRL_PICTURE_30					     = 30;
 p.ID_CTRL_PICTURE_101					    = 101;
