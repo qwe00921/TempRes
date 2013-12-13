@@ -456,6 +456,7 @@ end
 
 --请求gacha数据
 function p.ReqGachaData()
+	p.rmb = nil;
 	WriteCon("**请求gacha数据**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
@@ -464,6 +465,7 @@ end
 
 --请求商城物品数据
 function p.ReqShopItem()
+	p.rmb = nil;
 	WriteCon("**请求商城物品数据**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
@@ -472,6 +474,7 @@ end
 
 --请求礼包数据
 function p.ReqGitfPack()
+	p.rmb = nil;
     WriteCon("**请求礼包数据**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
@@ -514,6 +517,7 @@ end
 function p.ShowShopData( shopdata )
 	
 	if shopdata == nil then
+		p.rmb = nil;
 		p.ReqShopItem();
 		return;
 	end
@@ -562,6 +566,7 @@ end
 function p.ShowGiftPackData( giftdata )
     
 	if giftdata == nil then
+		p.rmb = nil;
 		p.ReqGitfPack();
 		return;
 	end
@@ -760,6 +765,7 @@ end
 --请求gacha数据回调函数
 function p.ShowGachaData( gachadata )
 	if gachadata == nil then
+		p.rmb = nil;
 		p.ReqGachaData();
 		return;
 	end
@@ -785,7 +791,10 @@ function p.ShowGachaData( gachadata )
 	
     p.gachadata = gachadata;
 	
-    p.rmb = tonumber(gachadata.emoney);
+	if p.rmb == nil then
+		p.rmb = tonumber(gachadata.emoney);
+	end
+	
     --元宝值
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring( p.rmb ));
@@ -963,4 +972,16 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+end
+
+function p.UpdateRmb( emoney )
+	if p.layer == nil then
+		return;
+	end
+	
+	p.rmb = tonumber(emoney);
+	
+	--元宝值
+    local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
+    rmbLab:SetText( tostring( p.rmb ));
 end
