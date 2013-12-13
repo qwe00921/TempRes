@@ -157,12 +157,13 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --·µ»Ø
 			if p.dataChanged == true then
-				p.CloseUI();
+				
 				if p.upgradeCallback then
 					p.upgradeCallback(true);
 				else
 					dlg_card_attr_base.RefreshCardDetail();
 				end
+				p.CloseUI();
 			else
 				p.CloseUI();
 			end
@@ -823,13 +824,12 @@ function p.OnResult(result)
 		p.refreshEquipUpgradeInfo();
 		p.OnSendReq();
 	else
-		p.CloseUI();
 		if p.upgradeCallback then
 			p.upgradeCallback(true);
 		else
 			dlg_card_attr_base.RefreshCardDetail();
 		end
-		
+		p.CloseUI();
 	end
 end
 

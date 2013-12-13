@@ -120,6 +120,10 @@ function p.ShowGiftBoxInfo(self)
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 			giftTable["giftNumBG_"..i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 			giftTable["giftNum_"..i]:SetText(itemNum);
+		elseif giftType == 4 then	--装备
+			itemInfoTable = SelectRowInner(T_EQUIP,"id",itemId);
+			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
+			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 		end
 	end
 end

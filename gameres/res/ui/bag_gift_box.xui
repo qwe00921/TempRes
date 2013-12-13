@@ -185,7 +185,7 @@ AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_2]
@@ -196,7 +196,7 @@ AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_3]
@@ -207,7 +207,7 @@ AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_4]
@@ -218,7 +218,7 @@ AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_5]
@@ -229,7 +229,7 @@ AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_6]
@@ -240,7 +240,7 @@ AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_OK]
