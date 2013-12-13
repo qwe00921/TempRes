@@ -3,6 +3,110 @@
 Width=960
 Height=640
 
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=445 175 145 30
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=24
+Rect=252 167 145 30
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=136 164 145 30
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=22
+Rect=29 176 145 30
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_ITEMNAME4]
+Type=4
+Tag=13
+Rect=470 160 130 27
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_TEXT_ITEMNAME3]
+Type=4
+Tag=14
+Rect=280 182 130 27
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_TEXT_ITEMNAME2]
+Type=4
+Tag=3
+Rect=141 168 130 27
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_TEXT_ITEMNAME1]
+Type=4
+Tag=5
+Rect=34 185 130 27
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+
+[CTRL_PICTURE_STAR1]
+Type=1
+Tag=30
+Rect=27 220 136 20
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR2]
+Type=1
+Tag=31
+Rect=142 210 136 20
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR3]
+Type=1
+Tag=32
+Rect=278 213 136 20
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_STAR4]
+Type=1
+Tag=33
+Rect=444 218 136 20
+AnchorPos=0 0
+Notes=
+
 [CTRL_PICTURE_13]
 Type=1
 Tag=15
@@ -10,6 +114,16 @@ Z_Order=-1
 Rect=-8 -3 638 134
 AnchorPos=0 0
 Notes=
+
+[CTRL_BUTTON_ITEM5]
+Type=2
+Tag=64
+Rect=494 5 115 115
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_ITEM4]
 Type=2
@@ -55,6 +169,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
 
+[CTRL_PICTURE_95]
+Type=1
+Tag=111
+Rect=494 5 115 115
+AnchorPos=0 0
+Notes=
+
 [CTRL_PICTURE_94]
 Type=1
 Tag=99
@@ -86,35 +207,53 @@ Notes=
 [CTRL_PICTURE_NUM_BG1]
 Type=1
 Tag=263
-Rect=71 94 53 22
+Rect=54 95 70 22
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_NUM_BG2]
 Type=1
 Tag=264
-Rect=191 94 54 22
+Rect=174 95 70 22
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_NUM_BG3]
 Type=1
 Tag=265
-Rect=319 95 47 22
+Rect=295 95 70 22
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_NUM_BG4]
 Type=1
 Tag=266
-Rect=439 95 47 22
+Rect=415 95 70 22
 AnchorPos=0 0
 Notes=
+
+[CTRL_PICTURE_NUM_BG5]
+Type=1
+Tag=115
+Rect=537 95 70 22
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_ITEMNUM5]
+Type=4
+Tag=114
+Rect=536 96 70 20
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_ITEMNUM4]
 Type=4
 Tag=19
-Rect=440 98 46 19
+Rect=414 96 70 20
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -125,7 +264,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM3]
 Type=4
 Tag=18
-Rect=320 98 45 19
+Rect=294 96 70 20
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -136,7 +275,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM2]
 Type=4
 Tag=17
-Rect=193 98 51 19
+Rect=173 96 70 20
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -147,91 +286,21 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ITEMNUM1]
 Type=4
 Tag=16
-Rect=72 98 51 19
+Rect=53 96 70 20
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_25]
+[CTRL_PICTURE_EQUIP5]
 Type=1
-Tag=25
-Rect=558 566 145 30
+Tag=112
+Rect=495 6 30 30
 AnchorPos=0 0
 Notes=
-
-[CTRL_PICTURE_24]
-Type=1
-Tag=24
-Rect=364 567 145 30
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_23]
-Type=1
-Tag=23
-Rect=190 575 145 30
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_22]
-Type=1
-Tag=22
-Rect=23 573 145 30
-AnchorPos=0 0
-Notes=
-
-[CTRL_TEXT_ITEMNAME4]
-Type=4
-Tag=13
-Rect=567 568 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_TEXT_ITEMNAME3]
-Type=4
-Tag=14
-Rect=371 569 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_TEXT_ITEMNAME2]
-Type=4
-Tag=3
-Rect=197 577 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_TEXT_ITEMNAME1]
-Type=4
-Tag=5
-Rect=22 579 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
+Remark=装备标志4
 
 [CTRL_PICTURE_EQUIP4]
 Type=1
@@ -264,115 +333,52 @@ Rect=12 6 30 30
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_STAR1]
-Type=1
-Tag=30
-Rect=19 615 136 20
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_STAR2]
-Type=1
-Tag=31
-Rect=194 608 136 20
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_STAR3]
-Type=1
-Tag=32
-Rect=369 600 136 20
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_STAR4]
-Type=1
-Tag=33
-Rect=562 599 136 20
-AnchorPos=0 0
-Notes=
-
 [CTRL_TEXT_EQUIP_LEV1]
 Type=4
 Tag=34
-Rect=13 99 38 18
+Rect=18 96 51 20
 AnchorPos=0 0
 Notes=
-Text=LV11
-TextTradition=LV11
 TextSize=18
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_EQUIP_LEV2]
 Type=4
 Tag=35
-Rect=133 99 38 18
+Rect=138 96 51 20
 AnchorPos=0 0
 Notes=
-TextSize=24
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_EQUIP_LEV3]
 Type=4
 Tag=36
-Rect=253 99 38 18
+Rect=259 96 51 20
 AnchorPos=0 0
 Notes=
-TextSize=24
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_EQUIP_LEV4]
 Type=4
 Tag=37
-Rect=374 99 38 18
-AnchorPos=0 0
-Notes=
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_111]
-Type=1
-Tag=111
-Rect=494 5 115 115
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_112]
-Type=1
-Tag=112
-Rect=495 6 30 30
-AnchorPos=0 0
-Notes=
-Remark=装备标志4
-
-[CTRL_PICTURE_115]
-Type=1
-Tag=115
-Rect=561 95 47 22
-AnchorPos=0 0
-Notes=
-
-[CTRL_TEXT_113]
-Type=4
-Tag=113
-Rect=495 99 38 18
-AnchorPos=0 0
-Notes=
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_114]
-Type=4
-Tag=114
-Rect=562 98 45 19
+Rect=379 96 51 20
 AnchorPos=0 0
 Notes=
 TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EQUIP_LEV5]
+Type=4
+Tag=113
+Rect=501 96 51 20
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
