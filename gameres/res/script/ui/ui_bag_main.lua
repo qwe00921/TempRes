@@ -4,7 +4,8 @@
 --------------------------------------------------------------
 ui_bag_main = {};
 local p =  ui_bag_main;
-p.ID_CTRL_TEXT_127					       = 127;
+p.ID_CTRL_PICTURE_83					     = 83;
+p.ID_CTRL_TEXT_127_DELETE				 = 127;
 p.ID_CTRL_TEXT_COUNT					     = 19;
 p.ID_CTRL_BUTTON_USE					     = 35;
 p.ID_CTRL_TEXT_ITEM_INFO				  = 34;	--物品说明

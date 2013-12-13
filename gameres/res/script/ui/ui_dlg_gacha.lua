@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_dlg_gacha = {};
 local p =  ui_dlg_gacha;
+p.ID_CTRL_PICTURE_113					    = 113;
+p.ID_CTRL_PICTURE_112					    = 112;
+p.ID_CTRL_PICTURE_111					    = 111;
 p.ID_CTRL_PICTURE_23					     = 24;
 p.ID_CTRL_PICTURE_22					     = 23;
 p.ID_CTRL_PICTURE_17					     = 17;
