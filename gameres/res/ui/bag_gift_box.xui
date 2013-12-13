@@ -26,10 +26,11 @@ NormalFileUV=0 0 640 376
 [CTRL_TEXT_GIFT_HEAD]
 Type=4
 Tag=8
-Rect=160 108 320 48
+Rect=97 116 466 48
 AnchorPos=0 0
 Notes=
-TextSize=20
+TextSize=24
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -78,7 +79,7 @@ Notes=
 [CTRL_TEXT_1]
 Type=4
 Tag=9
-Rect=98 319 130 35
+Rect=98 318 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -88,7 +89,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_2]
 Type=4
 Tag=10
-Rect=274 319 130 35
+Rect=272 319 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -98,7 +99,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_3]
 Type=4
 Tag=11
-Rect=437 319 130 35
+Rect=435 319 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -108,7 +109,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_4]
 Type=4
 Tag=12
-Rect=97 505 130 35
+Rect=97 502 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -118,7 +119,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_5]
 Type=4
 Tag=13
-Rect=268 505 130 35
+Rect=268 502 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -128,7 +129,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_6]
 Type=4
 Tag=14
-Rect=436 505 130 35
+Rect=436 502 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -138,49 +139,49 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=148 284 80 30
+Rect=145 288 80 25
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=320 285 80 30
+Rect=319 289 80 25
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=485 285 80 30
+Rect=483 289 80 25
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_26]
 Type=1
 Tag=26
-Rect=148 468 80 30
+Rect=146 472 80 25
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_27]
 Type=1
 Tag=27
-Rect=319 468 80 30
+Rect=318 472 80 25
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_28]
 Type=1
 Tag=28
-Rect=486 468 80 30
+Rect=484 472 80 25
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_GIFT_NUM_1]
 Type=4
 Tag=16
-Rect=145 283 80 30
+Rect=144 287 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -191,7 +192,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_2]
 Type=4
 Tag=17
-Rect=320 284 80 30
+Rect=318 288 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -202,7 +203,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_3]
 Type=4
 Tag=18
-Rect=483 284 80 30
+Rect=482 288 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -213,7 +214,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_4]
 Type=4
 Tag=19
-Rect=146 467 80 30
+Rect=145 471 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -224,7 +225,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_5]
 Type=4
 Tag=20
-Rect=318 467 80 30
+Rect=317 471 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -235,7 +236,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_GIFT_NUM_6]
 Type=4
 Tag=21
-Rect=483 467 80 30
+Rect=483 471 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18

@@ -101,7 +101,7 @@ function p.ShowGiftBoxInfo(self)
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			
 			cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 		elseif giftType == 2 then	--物品
 			itemInfoTable = SelectRowInner(T_ITEM,"id",itemId);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
@@ -120,7 +120,7 @@ function p.ShowGiftBoxInfo(self)
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 			giftTable["giftNumBG_"..i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 			giftTable["giftNum_"..i]:SetText(itemNum);
-		elseif giftType == 4 then	--装备
+		elseif giftType == 5 then	--装备
 			itemInfoTable = SelectRowInner(T_EQUIP,"id",itemId);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
