@@ -159,20 +159,20 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=263 98 30 30
+Rect=261 98 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\coin.png
-NormalFileUV=0 0 30 30
+NormalFile=.\res\image\ui\main_interface\coin.png
+NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_16]
 Type=1
 Tag=16
-Rect=466 98 30 30
+Rect=462 98 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\coin.png
-NormalFileUV=0 0 30 30
+NormalFile=.\res\image\ui\main_interface\coin.png
+NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_17]
 Type=4

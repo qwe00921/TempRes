@@ -29,7 +29,7 @@ SelectedFileUV=0 0 100 98
 [CTRL_CARD_PICTURE]
 Type=1
 Tag=300
-Rect=43 94 320 480
+Rect=44 102 314 466
 AnchorPos=0 0
 Notes=
 
@@ -185,8 +185,6 @@ Tag=321
 Rect=25 784 110 54
 AnchorPos=0 0
 Notes=
-Text=强化
-TextTradition=強化
 TextSize=30
 TextColor=0xd5ce9d
 TextHorAlign=AlignHorCenter
@@ -218,8 +216,6 @@ Tag=324
 Rect=280 784 110 54
 AnchorPos=0 0
 Notes=
-Text=详细
-TextTradition=詳細
 TextSize=30
 TextColor=0xd5ce9d
 TextHorAlign=AlignHorCenter
@@ -265,8 +261,6 @@ Tag=30
 Rect=155 784 110 54
 AnchorPos=0 0
 Notes=
-Text=替换
-TextTradition=替換
 TextSize=30
 TextColor=0xd5ce9d
 TextHorAlign=AlignHorCenter
@@ -435,3 +429,30 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\text_cardgroup.png
 NormalFileUV=0 0 86 54
+
+[CTRL_PICTURE_100]
+Type=1
+Tag=100
+Rect=54 795 52 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\inc.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_101]
+Type=1
+Tag=101
+Rect=184 795 52 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\change.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_102]
+Type=1
+Tag=102
+Rect=310 794 52 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\info.png
+NormalFileUV=0 0 52 28

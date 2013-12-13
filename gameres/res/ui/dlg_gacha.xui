@@ -6,7 +6,7 @@ Height=960
 [CTRL_9SLICES_BG]
 Type=22
 Tag=18
-Rect=0 0 640 850
+Rect=0 0 640 870
 AnchorPos=0 0
 Notes=
 Stretch=1

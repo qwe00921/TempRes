@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_dlg_card_attr_base = {};
 local p =  ui_dlg_card_attr_base;
+p.ID_CTRL_PICTURE_102					    = 102;
+p.ID_CTRL_PICTURE_101					    = 101;
+p.ID_CTRL_PICTURE_100					    = 100;
 p.ID_CTRL_PICTURE_48					     = 48;
 p.ID_CTRL_TEXT_301_DELETE				 = 301;
 p.ID_CTRL_PICTURE_213					    = 213;

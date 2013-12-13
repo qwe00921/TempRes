@@ -366,16 +366,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_31]
 Type=1
 Tag=31
-Rect=134 0 368 84
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
 NormalFileUV=0 0 368 84
 
-[CTRL_TEXT_164]
+[CTRL_TEXT_164_DELETE]
 Type=4
 Tag=164
-Rect=242 -3 148 83
+Rect=640 -2 148 82
 AnchorPos=0 0
 Notes=
 Text=邮箱
@@ -438,3 +438,12 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_104]
+Type=1
+Tag=104
+Rect=277 12 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\mail.png
+NormalFileUV=0 0 86 54
