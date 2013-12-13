@@ -165,7 +165,7 @@ function p.SendSellEquipRequest(EquipUid)
 		return
 	end
 	local param = "&id="..EquipUid;
-	SendReq("Item","Sell",uid,param);
+	SendReq("Equip","Sell",uid,param);
 end
 
 --出售装备回调

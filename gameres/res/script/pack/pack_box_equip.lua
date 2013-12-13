@@ -15,7 +15,10 @@ function p.ShowEquip(itemId,itemUniqueId,itemType)
 	end
 	p.equipInfoTable = equipInfo;
 	--装备价格
-	p.equipPrice = tonumber(equipInfo.SellPrice);
+	local equipPrice = tonumber(equipInfo.Sellprice);
+	local equipLevel = equipInfo.Equip_level 
+	p.equipPrice = equipPrice * (1 + equipLevel/100 * 2);
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
