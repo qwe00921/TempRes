@@ -173,8 +173,8 @@ function p.SetFighterPic( fighter )
         nameNode = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_ENEMY_NAME );
 	end
 	picNode:SetPicture( GetPictureByAni(ani, 0) );
-	lvNode:SetText( tostring( lv ) );
-	nameNode:SetText( name );
+	--lvNode:SetText( tostring( lv ) );
+	--nameNode:SetText( name );
 end
 
 function p.ClearAllFighterPic()

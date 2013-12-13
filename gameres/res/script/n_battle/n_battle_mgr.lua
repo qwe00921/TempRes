@@ -517,4 +517,5 @@ function p.clearDate()
     p.petNameNode={};   
     p.imageMask = nil          
     p.isBattleEnd = false;
+    n_battle_show.DestroyAll();
 end

@@ -58,12 +58,12 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI()
 		elseif(ui.ID_CTRL_BUTTON_STRENGTHEN == tag) then --强化
 			WriteCon("============强化===========");
-			local callback = nil;  --此处传一回调函数,当关闭时数据有改时回调.
+			local callback = pack_box_mgr.reOpenPackBox;  --此处传一回调函数,当关闭时数据有改时回调.
 			card_equip_select_list.ShowPackageUpgrade(p.equipInfoTable,callback);
 		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then --出售
 			WriteCon("============出售===========");
 			local equipInformation = p.equipInfoTable
-			if tonumber(equipInformation.Is_dress) > 0 then
+			if tonumber(equipInformation.Is_dress) ~= 1 then
 				dlg_msgbox.ShowOK("确认提示框","穿在身上的装备，无法出售。",nil,p.layer);
 			elseif tonumber(equipInformation.Issell) > 0 then
 				dlg_msgbox.ShowOK("确认提示框","此装备无法出售。",nil,p.layer);

@@ -55,13 +55,13 @@ function p.ShowTreasureInfo(self)
 	WriteCon("ShowTreasureInfo=========OK");
 	local itemType = tonumber(self.treasure.Reward_type);
 	local itemId = tonumber(self.treasure.Reward_id);
-	local itemNumber = tonumber(self.treasure.Reward_num);
+	local itemNumber = tostring(self.treasure.Reward_num);
 	
 	local treasureBoxText = GetLabel(p.layer, ui.ID_CTRL_TEXT_76);
 	treasureBoxText:SetText("恭喜您，打开宝箱获得以下物品。");
 	
 	local treasureNum = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_NUM);
-	treasureNum:SetText(tostring(itemNumber));
+	--treasureNum:SetText(tostring(itemNumber));
 	
 	local treasureName = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_NAME);
 	local treasurePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_ITEM);
@@ -71,17 +71,24 @@ function p.ShowTreasureInfo(self)
 		treasureName:SetText(itemInfoTable.name);
 		
 		cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-		treasurePic:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
+		treasurePic:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
 	elseif itemType == 2 then	--物品
 		itemInfoTable = SelectRowInner(T_ITEM,"id",itemId);
 		treasureName:SetText(itemInfoTable.name);
 		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
+		treasureNum:SetText(itemNumber);
 	elseif itemType == 3 then	--元宝
-		itemInfoTable = SelectRowInner(T_ITEM,"id",1);
+		itemInfoTable = SelectRowInner(T_MONEY,"id",1);
 		treasureName:SetText(itemInfoTable.name);
 		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
+		treasureNum:SetText(itemNumber);
 	elseif itemType == 4 then	--金币
-		itemInfoTable = SelectRowInner(T_ITEM,"id",2);
+		itemInfoTable = SelectRowInner(T_MONEY,"id",2);
+		treasureName:SetText(itemInfoTable.name);
+		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
+		treasureNum:SetText(itemNumber);
+	elseif itemType == 5 then	--装备
+		itemInfoTable = SelectRowInner(T_EQUIP,"id",itemId);
 		treasureName:SetText(itemInfoTable.name);
 		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 	end

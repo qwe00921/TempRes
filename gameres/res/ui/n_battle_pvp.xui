@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -6,12 +6,12 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 640 960
+Rect=0 0 720 1136
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\n_battle\n_battle_bg.png
-NormalFileUV=0 0 1280 1920
+NormalFile=.\res\image\ui\n_battle\n_battle_bg_2.png
+NormalFileUV=0 88 720 1048
 
 [CTRL_RIGHT_SPRITE_5]
 Type=19
@@ -350,7 +350,7 @@ Notes=
 [CTRL_PICTURE_HERO_PIC]
 Type=1
 Tag=83
-Rect=53 72 100 100
+Rect=53 91 80 80
 AnchorPos=0 0
 Notes=
 
@@ -491,7 +491,7 @@ NormalFileUV=0 0 202 24
 [CTRL_PICTURE_ENEMY_PIC]
 Type=1
 Tag=46
-Rect=494 72 100 100
+Rect=494 91 80 80
 AnchorPos=0 0
 Notes=
 
@@ -507,7 +507,7 @@ NormalFileUV=0 0 144 36
 [CTRL_TEXT_ENEMY_LV]
 Type=4
 Tag=89
-Rect=550 147 40 20
+Rect=534 147 40 20
 AnchorPos=0 0
 Notes=
 TextSize=16

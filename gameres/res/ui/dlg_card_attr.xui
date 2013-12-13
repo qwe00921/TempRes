@@ -24,7 +24,7 @@ NormalFileUV=0 0 368 84
 [CTRL_PICTURE]
 Type=1
 Tag=790
-Rect=20 128 285 442
+Rect=15 124 320 480
 AnchorPos=0 0
 Notes=
 
@@ -67,7 +67,7 @@ SelectedFileUV=0 0 100 98
 [CTRL_9SLICES_357]
 Type=22
 Tag=357
-Rect=327 360 289 208
+Rect=343 360 289 208
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -88,7 +88,7 @@ TextVerAlign=AlignTop
 [CTRL_DOWER_INTRO]
 Type=4
 Tag=810
-Rect=343 491 260 67
+Rect=360 491 260 67
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -99,7 +99,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_PICTURE_1]
 Type=2
 Tag=14
-Rect=344 392 85 90
+Rect=360 392 85 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -109,7 +109,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_9SLICES_INFO]
 Type=22
 Tag=354
-Rect=323 136 299 188
+Rect=339 136 299 188
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -119,7 +119,7 @@ NormalFileUV=0 0 50 50
 [CTRL_PICTURE_INFO_TITLE]
 Type=1
 Tag=355
-Rect=324 113 245 50
+Rect=340 113 245 50
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title2.png
@@ -128,7 +128,7 @@ NormalFileUV=0 0 249 51
 [CTRL_INTRO]
 Type=4
 Tag=804
-Rect=336 167 275 147
+Rect=352 167 275 147
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -139,7 +139,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_TXT_INFO]
 Type=1
 Tag=356
-Rect=410 117 72 36
+Rect=426 117 72 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\card\info.png
@@ -148,7 +148,7 @@ NormalFileUV=0 0 72 36
 [CTRL_PICTURE_358]
 Type=1
 Tag=358
-Rect=324 341 245 50
+Rect=340 341 245 50
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title2.png
@@ -157,7 +157,7 @@ NormalFileUV=0 0 249 51
 [CTRL_PICTURE_360]
 Type=1
 Tag=360
-Rect=374 345 144 36
+Rect=390 345 144 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\card\skill.png
@@ -186,7 +186,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_67]
 Type=1
 Tag=67
-Rect=21 590 245 50
+Rect=21 601 245 50
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title2.png
@@ -195,7 +195,7 @@ NormalFileUV=0 0 249 51
 [CTRL_PICTURE_363]
 Type=1
 Tag=363
-Rect=106 595 74 36
+Rect=106 606 74 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\card\skill2.png

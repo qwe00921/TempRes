@@ -16,7 +16,7 @@ NormalFileUV=0 0 640 338
 [CTRL_9SLICES_22]
 Type=22
 Tag=22
-Rect=38 90 565 530
+Rect=45 99 565 530
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -26,59 +26,60 @@ NormalFileUV=0 0 640 376
 [CTRL_TEXT_GIFT_HEAD]
 Type=4
 Tag=8
-Rect=160 108 320 48
+Rect=97 116 466 48
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_GIFT_1]
 Type=1
 Tag=2
-Rect=97 187 110 110
+Rect=97 187 130 130
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_2]
 Type=1
 Tag=3
-Rect=271 188 110 110
+Rect=271 188 130 130
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_3]
 Type=1
 Tag=4
-Rect=435 188 110 110
+Rect=435 188 130 130
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_4]
 Type=1
 Tag=5
-Rect=97 371 110 110
+Rect=97 371 130 130
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_5]
 Type=1
 Tag=6
-Rect=270 371 110 110
+Rect=270 371 130 130
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_GIFT_6]
 Type=1
 Tag=7
-Rect=435 371 110 110
+Rect=435 371 130 130
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_1]
 Type=4
 Tag=9
-Rect=98 301 110 35
+Rect=98 318 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -88,7 +89,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_2]
 Type=4
 Tag=10
-Rect=274 301 110 35
+Rect=272 319 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -98,7 +99,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_3]
 Type=4
 Tag=11
-Rect=437 301 110 35
+Rect=435 319 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -108,7 +109,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_4]
 Type=4
 Tag=12
-Rect=97 487 110 35
+Rect=97 502 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -118,7 +119,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_5]
 Type=4
 Tag=13
-Rect=268 487 110 35
+Rect=268 502 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -128,7 +129,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_6]
 Type=4
 Tag=14
-Rect=436 487 110 35
+Rect=436 502 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -138,115 +139,109 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=128 272 80 20
+Rect=145 288 80 25
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=300 272 80 20
+Rect=319 289 80 25
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=465 272 80 20
+Rect=483 289 80 25
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=26
+Rect=146 472 80 25
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=318 472 80 25
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_28]
+Type=1
+Tag=28
+Rect=484 472 80 25
+AnchorPos=0 0
+Notes=
 
 [CTRL_TEXT_GIFT_NUM_1]
 Type=4
 Tag=16
-Rect=125 270 80 24
+Rect=144 287 80 25
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_2]
 Type=4
 Tag=17
-Rect=300 270 80 24
+Rect=318 288 80 25
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_3]
 Type=4
 Tag=18
-Rect=463 265 80 29
+Rect=482 288 80 25
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_26]
-Type=1
-Tag=26
-Rect=128 455 80 20
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_27]
-Type=1
-Tag=27
-Rect=299 455 80 20
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_28]
-Type=1
-Tag=28
-Rect=466 455 80 20
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_GIFT_NUM_4]
 Type=4
 Tag=19
-Rect=126 448 80 28
+Rect=145 471 80 25
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_5]
 Type=4
 Tag=20
-Rect=298 448 80 30
+Rect=317 471 80 25
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_GIFT_NUM_6]
 Type=4
 Tag=21
-Rect=463 448 80 30
+Rect=483 471 80 25
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+TextSize=18
+TextColor=0xfffbf0
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_OK]

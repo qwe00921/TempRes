@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_163]
 Type=1
 Tag=163
-Rect=0 0 640 960
+Rect=0 -3 640 960
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\lj\map\map01.png
@@ -15,14 +15,14 @@ NormalFileUV=0 0 960 640
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=164
-Rect=123 62 390 489
+Rect=158 21 320 480
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_EXP]
 Type=4
 Tag=166
-Rect=233 551 172 39
+Rect=233 506 172 39
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -32,7 +32,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_5]
 Type=4
 Tag=5
-Rect=100 607 170 60
+Rect=100 547 170 60
 AnchorPos=0 0
 Notes=
 Text=卡片等级
@@ -44,7 +44,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_6]
 Type=4
 Tag=6
-Rect=127 677 100 30
+Rect=127 611 100 30
 AnchorPos=0 0
 Notes=
 Text=HP
@@ -56,7 +56,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_7]
 Type=4
 Tag=7
-Rect=127 712 100 30
+Rect=127 644 100 30
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -68,7 +68,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_8]
 Type=4
 Tag=8
-Rect=127 747 100 30
+Rect=127 677 100 30
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -80,7 +80,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_9]
 Type=4
 Tag=9
-Rect=127 782 100 30
+Rect=127 710 100 30
 AnchorPos=0 0
 Notes=
 Text=速度
@@ -92,7 +92,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_10]
 Type=4
 Tag=10
-Rect=127 817 100 30
+Rect=127 743 100 30
 AnchorPos=0 0
 Notes=
 Text=暴击
@@ -104,7 +104,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_HP_1]
 Type=4
 Tag=11
-Rect=277 677 100 30
+Rect=277 611 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -114,7 +114,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_HP_2]
 Type=4
 Tag=12
-Rect=427 677 100 30
+Rect=427 611 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -124,7 +124,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTACK_1]
 Type=4
 Tag=13
-Rect=277 712 100 30
+Rect=277 644 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -134,7 +134,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DEFENCE_1]
 Type=4
 Tag=14
-Rect=277 747 100 30
+Rect=277 677 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -144,7 +144,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SPEED_1]
 Type=4
 Tag=15
-Rect=277 782 100 30
+Rect=277 710 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -154,7 +154,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CRIT_1]
 Type=4
 Tag=16
-Rect=277 817 100 30
+Rect=277 743 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -164,7 +164,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATTACK_2]
 Type=4
 Tag=17
-Rect=427 712 100 30
+Rect=427 644 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -174,7 +174,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DEFENCE_2]
 Type=4
 Tag=18
-Rect=427 747 100 30
+Rect=427 677 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -184,7 +184,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SPEED_2]
 Type=4
 Tag=19
-Rect=427 782 100 30
+Rect=427 710 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -194,7 +194,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CRIT_2]
 Type=4
 Tag=20
-Rect=427 817 100 30
+Rect=427 743 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -204,7 +204,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_21]
 Type=4
 Tag=21
-Rect=286 607 107 60
+Rect=286 547 107 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -214,7 +214,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_22]
 Type=4
 Tag=22
-Rect=477 607 107 60
+Rect=477 547 107 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -224,14 +224,14 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=405 617 61 41
+Rect=405 557 61 41
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_INTENSIFY]
 Type=2
 Tag=24
-Rect=166 855 130 64
+Rect=166 784 130 64
 AnchorPos=0 0
 Notes=
 Text=继续强化
@@ -247,7 +247,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=25
-Rect=368 855 130 64
+Rect=368 784 130 64
 AnchorPos=0 0
 Notes=
 Text=返回
