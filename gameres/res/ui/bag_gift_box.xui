@@ -29,7 +29,7 @@ Tag=8
 Rect=160 108 320 48
 AnchorPos=0 0
 Notes=
-TextSize=24
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -141,8 +141,6 @@ Tag=23
 Rect=128 272 80 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_24]
 Type=1
@@ -150,8 +148,6 @@ Tag=24
 Rect=300 272 80 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PICTURE_25]
 Type=1
@@ -159,8 +155,27 @@ Tag=25
 Rect=465 272 80 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=26
+Rect=128 455 80 20
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=299 455 80 20
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_28]
+Type=1
+Tag=28
+Rect=466 455 80 20
+AnchorPos=0 0
+Notes=
 
 [CTRL_TEXT_GIFT_NUM_1]
 Type=4
@@ -168,7 +183,8 @@ Tag=16
 Rect=125 270 80 24
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=18
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -178,7 +194,8 @@ Tag=17
 Rect=300 270 80 24
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=18
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -188,36 +205,10 @@ Tag=18
 Rect=463 265 80 29
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=18
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_26]
-Type=1
-Tag=26
-Rect=128 455 80 20
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_27]
-Type=1
-Tag=27
-Rect=299 455 80 20
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_28]
-Type=1
-Tag=28
-Rect=466 455 80 20
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_GIFT_NUM_4]
 Type=4
@@ -225,7 +216,8 @@ Tag=19
 Rect=126 448 80 28
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=18
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -235,7 +227,8 @@ Tag=20
 Rect=298 448 80 30
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=18
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -245,7 +238,8 @@ Tag=21
 Rect=463 448 80 30
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=18
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 

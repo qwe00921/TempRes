@@ -71,40 +71,55 @@ function p.ShowGiftBoxInfo(self)
 	giftTable["giftNum_4"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_GIFT_NUM_4);
 	giftTable["giftNum_5"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_GIFT_NUM_5);
 	giftTable["giftNum_6"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_GIFT_NUM_6);
-	          
+	
+	giftTable["giftNumBG_1"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_23);
+	giftTable["giftNumBG_2"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_24);
+	giftTable["giftNumBG_3"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_25);
+	giftTable["giftNumBG_4"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_26);
+	giftTable["giftNumBG_5"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_27);
+	giftTable["giftNumBG_6"] = GetImage(p.layer,ui.ID_CTRL_PICTURE_28);
+	
 	giftTable["giftName_1"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_1);
 	giftTable["giftName_2"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_2);
 	giftTable["giftName_3"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_3);
 	giftTable["giftName_4"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_4);
 	giftTable["giftName_5"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_5);
 	giftTable["giftName_6"] = GetLabel(p.layer,ui.ID_CTRL_TEXT_6);
+	
+
 
 	local itemInfoTable = nil;
 	local cardTable = nil;
 	for i = 1, 6 do
 		itemId = tonumber(self.gift["Reward_id"..i]);
 		WriteCon("itemId==="..itemId);
-		itemNum = tonumber(self.gift["Reward_num"..i]);
+		itemNum = tostring(self.gift["Reward_num"..i]);
 		WriteCon("itemNum==="..itemNum);
-		local giftTyep = tonumber(self.gift["Reward_type"..i]);
-		if giftTyep == 1 then		--卡片
+		local giftType = tonumber(self.gift["Reward_type"..i]);
+		if giftType == 1 then		--卡片
 			itemInfoTable = SelectRowInner(T_CARD,"id",itemId);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			
 			cardTable = SelectRowInner(T_CHAR_RES,"card_id",itemId);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(cardTable.card_pic, 0) );
-		elseif giftTyep == 2 then	--物品
+		elseif giftType == 2 then	--物品
 			itemInfoTable = SelectRowInner(T_ITEM,"id",itemId);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
-		elseif giftTyep == 3 then	--元宝
-			itemInfoTable = SelectRowInner(T_ITEM,"id",1);
+			giftTable["giftNumBG_"..i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
+			giftTable["giftNum_"..i]:SetText(itemNum);
+		elseif giftType == 3 then	--元宝
+			itemInfoTable = SelectRowInner(T_MONEY,"id",1);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
-		elseif giftTyep == 4 then	--金币
-			itemInfoTable = SelectRowInner(T_ITEM,"id",2);
+			giftTable["giftNumBG_"..i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
+			giftTable["giftNum_"..i]:SetText(itemNum);
+		elseif giftType == 4 then	--金币
+			itemInfoTable = SelectRowInner(T_MONEY,"id",2);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
+			giftTable["giftNumBG_"..i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
+			giftTable["giftNum_"..i]:SetText(itemNum);
 		end
 	end
 end
