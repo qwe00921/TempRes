@@ -173,7 +173,7 @@ Tag=23
 Rect=277 17 86 54
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\商城@2x.png
+NormalFile=.\res\image\ui\public\shop.png
 NormalFileUV=0 0 86 54
 
 [CTRL_PICTURE_23]

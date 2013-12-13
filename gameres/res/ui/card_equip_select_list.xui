@@ -363,10 +363,10 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_31]
+[CTRL_TEXT_31_DELETE]
 Type=4
 Tag=35
-Rect=20 119 64 42
+Rect=640 193 64 42
 AnchorPos=0 0
 Notes=
 Text=全部
@@ -376,10 +376,10 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_32]
+[CTRL_TEXT_32_DELETE]
 Type=4
 Tag=36
-Rect=100 119 64 42
+Rect=640 184 64 42
 AnchorPos=0 0
 Notes=
 Text=武器
@@ -389,10 +389,10 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_33]
+[CTRL_TEXT_33_DETELE]
 Type=4
 Tag=40
-Rect=180 119 64 42
+Rect=640 197 64 42
 AnchorPos=0 0
 Notes=
 Text=防具
@@ -402,10 +402,10 @@ TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_34]
+[CTRL_TEXT_34_DELETE]
 Type=4
 Tag=41
-Rect=259 119 64 42
+Rect=640 198 64 42
 AnchorPos=0 0
 Notes=
 Text=鞋子
@@ -414,3 +414,39 @@ TextSize=20
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_206]
+Type=1
+Tag=206
+Rect=19 121 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\all.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_207]
+Type=1
+Tag=207
+Rect=108 126 52 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\weapon.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_208]
+Type=1
+Tag=208
+Rect=188 126 52 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\def.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_209]
+Type=1
+Tag=209
+Rect=269 126 52 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\sh.png
+NormalFileUV=0 0 52 28

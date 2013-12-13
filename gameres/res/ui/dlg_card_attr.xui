@@ -15,7 +15,7 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_TITLE]
 Type=1
 Tag=353
-Rect=131 0 364 83
+Rect=138 0 364 83
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
@@ -38,10 +38,10 @@ Stretch=1
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
-[CTRL_TITLE]
+[CTRL_TITLE_DELETE]
 Type=4
 Tag=791
-Rect=100 5 426 58
+Rect=640 5 426 58
 AnchorPos=0 0
 Notes=
 Text=人物详情
@@ -200,3 +200,12 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\card\skill2.png
 NormalFileUV=0 0 74 36
+
+[CTRL_PICTURE_120]
+Type=1
+Tag=120
+Rect=244 16 152 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\cha_info.png
+NormalFileUV=0 0 152 54

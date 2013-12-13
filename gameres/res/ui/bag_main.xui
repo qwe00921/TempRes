@@ -135,8 +135,6 @@ Tag=27
 Rect=8 195 110 57
 AnchorPos=0 0
 Notes=
-Text=全部
-TextTradition=全部
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -153,8 +151,6 @@ Tag=28
 Rect=123 195 110 57
 AnchorPos=0 0
 Notes=
-Text=武器
-TextTradition=武器
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -171,8 +167,6 @@ Tag=29
 Rect=235 195 110 57
 AnchorPos=0 0
 Notes=
-Text=防具
-TextTradition=防具
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -189,8 +183,6 @@ Tag=30
 Rect=348 195 110 57
 AnchorPos=0 0
 Notes=
-Text=鞋子
-TextTradition=鞋子
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -245,8 +237,6 @@ Tag=35
 Rect=490 771 131 64
 AnchorPos=0 0
 Notes=
-Text=使用
-TextTradition=使用
 TextSize=24
 TextColor=0xfef9d2
 TextHorAlign=AlignHorCenter
@@ -289,3 +279,48 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\text_bag.png
 NormalFileUV=0 0 86 54
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=37
+Rect=29 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\all.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=38
+Rect=146 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\weapon.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=39
+Rect=258 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\def.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=40
+Rect=372 203 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\sh.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=41
+Rect=524 781 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\use.png
+NormalFileUV=0 0 52 28

@@ -94,6 +94,15 @@ function p.ShowEquipTypeBtn()
 	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
 	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
 	shoesBtn:SetVisible( true );
+	
+	local TextPic1 = GetImage(p.layer,ui.ID_CTRL_PICTURE_22);
+	local TextPic2 = GetImage(p.layer,ui.ID_CTRL_PICTURE_23);
+	local TextPic3 = GetImage(p.layer,ui.ID_CTRL_PICTURE_24);
+	local TextPic4 = GetImage(p.layer,ui.ID_CTRL_PICTURE_25);
+	TextPic1:SetVisible( true );
+	TextPic2:SetVisible( true );
+	TextPic3:SetVisible( true );
+	TextPic4:SetVisible( true );
 end
 
 function p.HideEquipTypeBtn()
@@ -113,6 +122,15 @@ function p.HideEquipTypeBtn()
 	local shoesBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ITEM_SUB4);
 	shoesBtn:SetLuaDelegate(p.OnUIClickEvent);
 	shoesBtn:SetVisible( false );
+	
+	local TextPic1 = GetImage(p.layer,ui.ID_CTRL_PICTURE_22);
+	local TextPic2 = GetImage(p.layer,ui.ID_CTRL_PICTURE_23);
+	local TextPic3 = GetImage(p.layer,ui.ID_CTRL_PICTURE_24);
+	local TextPic4 = GetImage(p.layer,ui.ID_CTRL_PICTURE_25);
+	TextPic1:SetVisible( false );
+	TextPic2:SetVisible( false );
+	TextPic3:SetVisible( false );
+	TextPic4:SetVisible( false );
 end
 
 --事件处理
@@ -341,6 +359,8 @@ function p.ShowItemInfo( view, item, itemIndex )
 	--使用按钮
 	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
 	useBtn:SetVisible(false);
+	local useTextPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_26);
+	useTextPic:SetVisible(false);
 	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
 	itemDescribeText:SetText(" ");
 	
@@ -358,6 +378,8 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		pack_box_equip.ShowEquip(itemId,itemUniqueId,itemType);
 		local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
 		useBtn:SetVisible(false);
+		local useTextPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_26);
+		useTextPic:SetVisible(false);
 		local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
 		itemDescribeText:SetText(" ");
 	else
@@ -374,6 +396,9 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		useBtn:SetId(itemId);
 		useBtn:SetUID(itemUniqueId);
 		useBtn:SetXID(itemType);
+		
+		local useTextPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_26);
+		useTextPic:SetVisible(true);
 	end
 	p.SetItemChechedFX(uiNode);
 end

@@ -6,9 +6,9 @@ Height=960
 [CTRL_PICTURE_CARD_SELECT]
 Type=1
 Tag=608
-Rect=45 90 60 40
+Rect=45 90 42 42
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card_bag\star3.png
-NormalFileUV=0 0 44 52
+NormalFile=.\res\image\ui\public\select.png
+NormalFileUV=0 0 42 42
