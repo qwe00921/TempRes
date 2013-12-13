@@ -55,3 +55,10 @@ image\ui\public\bg_lv.png
 image\ui\public\frame.png
 image\ui\public\frame_click.png
 
+;金币图片
+[money]
+image\ui\main_interface\money.png
+
+;元宝图片
+[coin]
+image\ui\main_interface\coin.png
