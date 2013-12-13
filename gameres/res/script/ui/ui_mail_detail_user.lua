@@ -4,9 +4,10 @@
 --------------------------------------------------------------
 ui_mail_detail_user = {};
 local p =  ui_mail_detail_user;
+p.ID_CTRL_PICTURE_124					    = 124;
 p.ID_CTRL_VERTICAL_LIST				   = 32;
 p.ID_CTRL_PICTURE_22					     = 22;
-p.ID_CTRL_TEXT_164					       = 164;
+p.ID_CTRL_TEXT_164_DELETE				 = 164;
 p.ID_CTRL_PICTURE_15					     = 15;
 p.ID_CTRL_TEXT_CONTENT				    = 460;
 p.ID_CTRL_TEXT_TIME					      = 459;

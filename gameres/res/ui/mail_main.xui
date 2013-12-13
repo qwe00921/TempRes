@@ -24,14 +24,27 @@ Remark=背景
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
+[CTRL_BUTTON_WRITE]
+Type=2
+Tag=166
+Rect=330 91 107 80
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\page.png
+NormalFileUV=0 0 104 78
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+
 [CTRL_BUTTON_SYS]
 Type=2
 Tag=94
 Rect=9 91 107 80
 AnchorPos=0 0
 Notes=
-Text=系统
-TextTradition=系統
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -47,9 +60,7 @@ Tag=95
 Rect=116 91 107 80
 AnchorPos=0 0
 Notes=
-Text=个人
-TextTradition=個人
-TextSize=24
+TextSize=8
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -61,7 +72,7 @@ SelectedFileUV=0 0 104 78
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=154
-Rect=559 -1 80 78
+Rect=555 0 84 85
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -75,16 +86,16 @@ SelectedFileUV=0 0 100 98
 [CTRL_PICTURE_36]
 Type=1
 Tag=36
-Rect=127 1 368 84
+Rect=136 1 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
 NormalFileUV=0 0 368 84
 
-[CTRL_TEXT_164]
+[CTRL_TEXT_164_DELETE]
 Type=4
 Tag=164
-Rect=235 0 133 75
+Rect=640 0 133 75
 AnchorPos=0 0
 Notes=
 Text=邮箱
@@ -99,25 +110,6 @@ Tag=165
 Rect=223 91 107 80
 AnchorPos=0 0
 Notes=
-Text=客服
-TextTradition=客服
-TextSize=24
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-
-[CTRL_BUTTON_WRITE]
-Type=2
-Tag=166
-Rect=330 90 107 80
-AnchorPos=0 0
-Notes=
-Text=写信
-TextTradition=寫信
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -147,11 +139,9 @@ Notes=
 [CTRL_BUTTON_SELECT_ALL]
 Type=2
 Tag=158
-Rect=24 785 110 54
+Rect=24 798 110 54
 AnchorPos=0 0
 Notes=
-Text=全选
-TextTradition=全選
 TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -162,11 +152,9 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_DEL]
 Type=2
 Tag=159
-Rect=149 785 110 54
+Rect=149 798 110 54
 AnchorPos=0 0
 Notes=
-Text=删除
-TextTradition=刪除
 TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -177,24 +165,22 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_PRE_PAGE]
 Type=2
 Tag=160
-Rect=373 786 60 48
+Rect=346 799 70 52
 AnchorPos=0 0
 Notes=
-Text=<<
-TextTradition=<<
 TextSize=30
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
+NormalFile=.\res\image\ui\mail\left1.png
+NormalFileUV=0 0 70 52
+SelectFile=.\res\image\ui\mail\left_click.png
+SelectedFileUV=0 0 70 52
 
 [CTRL_TEXT_PAGE_INFO]
 Type=4
 Tag=161
-Rect=436 786 125 43
+Rect=422 804 125 43
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -204,19 +190,17 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_NEXT_PAGE]
 Type=2
 Tag=162
-Rect=558 785 60 48
+Rect=553 799 70 52
 AnchorPos=0 0
 Notes=
-Text=>>
-TextTradition=>>
 TextSize=30
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
+NormalFile=.\res\image\ui\mail\right.png
+NormalFileUV=0 0 70 52
+SelectFile=.\res\image\ui\mail\right_click.png
+SelectedFileUV=0 0 70 52
 
 [CTRL_PICTURE_SYS_BG]
 Type=1
@@ -261,3 +245,66 @@ TextSize=18
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_21]
+Type=1
+Tag=21
+Rect=30 116 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\system.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=22
+Rect=137 116 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\person.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=242 116 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\GM.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=24
+Rect=352 116 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\writemail.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=44 803 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\all.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=26
+Rect=171 802 66 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\delete.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=277 13 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\mail.png
+NormalFileUV=0 0 86 54

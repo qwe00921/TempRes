@@ -149,8 +149,8 @@ Tag=29
 Rect=256 93 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\coin.png
-NormalFileUV=0 0 30 30
+NormalFile=.\res\image\ui\main_interface\coin.png
+NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_30]
 Type=4
@@ -171,8 +171,8 @@ Tag=31
 Rect=483 93 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\coin.png
-NormalFileUV=0 0 30 30
+NormalFile=.\res\image\ui\main_interface\coin.png
+NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_27]
 Type=1
