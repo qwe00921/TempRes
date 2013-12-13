@@ -48,7 +48,7 @@ Tag=20
 Rect=348 772 107 28
 AnchorPos=0 0
 Notes=
-TextSize=24
+TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -65,8 +65,8 @@ Tag=10
 Rect=199 775 100 25
 AnchorPos=0 0
 Notes=
-TextSize=24
-TextHorAlign=AlignLeft
+TextSize=16
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_ITEM1]
