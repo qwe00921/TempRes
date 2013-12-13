@@ -44,12 +44,15 @@ function p.SetDelegate()
 	start:AddFgEffect("ui.TapToStart");
 	start:AddActionEffect( "ui_cmb.mainui_btn_scale" );
 
+	local startBg = GetButton(p.layer, ui.ID_CTRL_BUTTON_4);
+	startBg:SetLuaDelegate(p.OnBtnClick);
+
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
-		if ui.ID_CTRL_BUTTON_102 == tag then
+		if ui.ID_CTRL_BUTTON_102 == tag or ui.ID_CTRL_BUTTON_4 == tag then
 			uiNode:SetVisible(false);
 			--login_ui.ShowUI();
 			--暂时去除登录界面
