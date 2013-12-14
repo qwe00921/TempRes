@@ -59,7 +59,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--p.CloseUI();
 			--maininterface.ShowUI();
 			local uid = GetUID();
-			SendReq("ServerList","List",uid,"MachineType=Android");
+			SendReq("ServerList","List",uid,"");
 
 		end
 	end
