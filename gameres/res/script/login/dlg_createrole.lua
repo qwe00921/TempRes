@@ -78,7 +78,7 @@ function p.CreateRole()
     local uid = GetUID();
     if uid ~= nil and uid > 0 then
 		local nameText = GetEdit( p.layer, ui.ID_CTRL_INPUT_TEXT_USER_NAME );
-		SendReq("Login", "CreateRole", uid, string.format( "&name=%s&gender=%d&face_id=%d", nameText:GetText(), p.gender, p.faceID ) );
+		SendReq("Login", "CreateRole", uid, string.format( "&name=%s&sex=%d&face_id=%d", nameText:GetText(), p.gender, p.faceID ) );
 	end
 end
 
