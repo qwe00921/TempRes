@@ -13,6 +13,14 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=28
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+Stretch=1
 NormalFile=.\res\image\ui\quest\bg_reward.png
 NormalFileUV=0 0 580 848
 
@@ -40,7 +48,7 @@ Tag=20
 Rect=348 772 107 28
 AnchorPos=0 0
 Notes=
-TextSize=24
+TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -57,8 +65,8 @@ Tag=10
 Rect=199 775 100 25
 AnchorPos=0 0
 Notes=
-TextSize=24
-TextHorAlign=AlignLeft
+TextSize=16
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_ITEM1]

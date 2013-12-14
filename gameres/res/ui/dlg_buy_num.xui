@@ -6,7 +6,7 @@ Height=960
 [CTRL_9SLICES_25]
 Type=22
 Tag=26
-Rect=75 259 548 400
+Rect=46 259 548 400
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -16,7 +16,7 @@ NormalFileUV=0 0 640 338
 [CTRL_9SLICES_BG]
 Type=22
 Tag=1
-Rect=72 256 551 411
+Rect=45 254 551 411
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -26,7 +26,7 @@ NormalFileUV=0 0 640 376
 [CTRL_TEXT_2]
 Type=4
 Tag=2
-Rect=149 280 394 40
+Rect=120 280 394 40
 AnchorPos=0 0
 Notes=
 Text=购买数量选择
@@ -39,14 +39,14 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_ICON]
 Type=1
 Tag=3
-Rect=102 353 120 120
+Rect=73 353 120 120
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=4
-Rect=95 490 130 30
+Rect=66 490 130 30
 AnchorPos=0 0
 Notes=
 Text=我是道具名称
@@ -59,7 +59,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_5]
 Type=4
 Tag=5
-Rect=273 339 298 40
+Rect=244 339 298 40
 AnchorPos=0 0
 Notes=
 Text=请选择您要购买的数量
@@ -72,7 +72,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_SUB]
 Type=2
 Tag=6
-Rect=256 398 50 50
+Rect=227 398 50 50
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -86,7 +86,7 @@ SelectedFileUV=0 0 33 33
 [CTRL_BUTTON_ADD]
 Type=2
 Tag=7
-Rect=524 398 50 50
+Rect=495 398 50 50
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -100,7 +100,7 @@ SelectedFileUV=0 0 33 33
 [CTRL_9SLICES_11]
 Type=22
 Tag=11
-Rect=332 404 170 38
+Rect=303 404 170 38
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -110,7 +110,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_NUM]
 Type=4
 Tag=8
-Rect=366 406 107 35
+Rect=337 406 107 35
 AnchorPos=0 0
 Notes=
 Text=1
@@ -123,11 +123,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_ADD_2]
 Type=2
 Tag=12
-Rect=247 469 80 50
+Rect=218 469 80 50
 AnchorPos=0 0
 Notes=
-Text=+2
-TextTradition=+2
 TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -140,11 +138,9 @@ SelectedFileUV=0 0 33 33
 [CTRL_BUTTON_ADD_5]
 Type=2
 Tag=13
-Rect=335 469 80 50
+Rect=306 469 80 50
 AnchorPos=0 0
 Notes=
-Text=+5
-TextTradition=+5
 TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -157,7 +153,7 @@ SelectedFileUV=0 0 33 33
 [CTRL_9SLICES_23]
 Type=22
 Tag=25
-Rect=106 534 496 51
+Rect=77 534 496 51
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -167,11 +163,9 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_ADD_10]
 Type=2
 Tag=14
-Rect=424 469 80 50
+Rect=395 469 80 50
 AnchorPos=0 0
 Notes=
-Text=+10
-TextTradition=+10
 TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -184,11 +178,9 @@ SelectedFileUV=0 0 33 33
 [CTRL_BUTTON_MAX]
 Type=2
 Tag=15
-Rect=511 469 80 50
+Rect=482 469 80 50
 AnchorPos=0 0
 Notes=
-Text=Max
-TextTradition=Max
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -201,7 +193,7 @@ SelectedFileUV=0 0 33 33
 [CTRL_TEXT_16]
 Type=4
 Tag=16
-Rect=136 547 50 30
+Rect=104 547 50 30
 AnchorPos=0 0
 Notes=
 Text=单价
@@ -214,7 +206,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_PRICE]
 Type=4
 Tag=17
-Rect=190 547 120 30
+Rect=158 547 120 30
 AnchorPos=0 0
 Notes=
 Text=999999
@@ -227,7 +219,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_18]
 Type=4
 Tag=18
-Rect=388 545 50 30
+Rect=359 545 50 30
 AnchorPos=0 0
 Notes=
 Text=总价
@@ -240,7 +232,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TOTAL]
 Type=4
 Tag=19
-Rect=443 545 120 30
+Rect=414 545 120 30
 AnchorPos=0 0
 Notes=
 Text=0
@@ -253,7 +245,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_OK]
 Type=2
 Tag=20
-Rect=129 591 172 62
+Rect=100 591 172 62
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -269,7 +261,7 @@ DisableFileUV=0 0 136 60
 [CTRL_BUTTON_CANCEL]
 Type=2
 Tag=21
-Rect=391 590 172 62
+Rect=362 590 172 62
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -285,26 +277,62 @@ DisableFileUV=0 0 136 60
 [CTRL_PICTURE_22]
 Type=1
 Tag=22
-Rect=192 607 56 30
+Rect=152 600 76 40
 AnchorPos=0 0
 Notes=
-NormalFile=.\res.cn\image\ui\font\q_r.png
-NormalFileUV=0 0 56 30
+NormalFile=.\res\image\ui\public\ok.png
+NormalFileUV=0 0 76 40
 
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=459 605 56 30
+Rect=419 599 76 40
 AnchorPos=0 0
 Notes=
-NormalFile=.\res.cn\image\ui\font\q_x.png
-NormalFileUV=0 0 56 30
+NormalFile=.\res\image\ui\public\cancel.png
+NormalFileUV=0 0 76 40
 
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=99 350 120 120
+Rect=70 351 122 122
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_128]
+Type=1
+Tag=128
+Rect=239 478 40 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\+2.png
+NormalFileUV=0 0 40 28
+
+[CTRL_PICTURE_129]
+Type=1
+Tag=129
+Rect=326 477 40 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\+5.png
+NormalFileUV=0 0 40 28
+
+[CTRL_PICTURE_130]
+Type=1
+Tag=130
+Rect=409 477 58 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\+10.png
+NormalFileUV=0 0 58 28
+
+[CTRL_PICTURE_131]
+Type=1
+Tag=131
+Rect=495 481 55 22
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\MAX.png
+NormalFileUV=0 0 70 28

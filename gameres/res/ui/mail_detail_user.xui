@@ -190,16 +190,16 @@ TextVerAlign=AlignTop
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=129 1 368 84
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
 NormalFileUV=0 0 368 84
 
-[CTRL_TEXT_164]
+[CTRL_TEXT_164_DELETE]
 Type=4
 Tag=164
-Rect=241 2 148 83
+Rect=640 2 148 83
 AnchorPos=0 0
 Notes=
 Text=邮箱
@@ -223,3 +223,12 @@ Tag=32
 Rect=39 527 553 211
 AnchorPos=0 0
 Notes=
+
+[CTRL_PICTURE_124]
+Type=1
+Tag=124
+Rect=277 12 86 54
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\mail.png
+NormalFileUV=0 0 86 54

@@ -69,20 +69,6 @@ Stretch=1
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
-[CTRL_TEXT_164]
-Type=4
-Tag=164
-Rect=254 -3 133 70
-AnchorPos=0 0
-Notes=
-Text=写信
-TextTradition=寫信
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\common\title_bg.png
-NormalFileUV=0 0 350 82
-
 [CTRL_TEXT_LABEL_RECIEVER]
 Type=4
 Tag=209
@@ -162,3 +148,12 @@ Notes=
 TextSize=20
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+
+[CTRL_PICTURE_32]
+Type=1
+Tag=32
+Rect=276 14 89 51
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\mail\writemail.png
+NormalFileUV=0 0 66 38
