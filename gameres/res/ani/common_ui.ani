@@ -57,8 +57,8 @@ image\ui\public\frame_click.png
 
 ;金币图片
 [money]
-image\ui\main_interface\money.png
+image\ui\public\money.png
 
 ;元宝图片
 [coin]
-image\ui\main_interface\coin.png
+image\ui\public\emoney.png
