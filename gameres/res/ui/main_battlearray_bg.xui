@@ -22,21 +22,8 @@ Notes=
 [CTRL_PICTURE_5]
 Type=1
 Tag=5
-Rect=3 163 50 101
+Rect=7 164 40 98
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_txt_l.png
-NormalFileUV=0 0 54 110
-
-[CTRL_TEXT_6]
-Type=4
-Tag=6
-Rect=14 172 26 80
-AnchorPos=0 0
-Notes=
-Text=阵容
-TextTradition=陣容
-TextSize=24
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\fighter.png
+NormalFileUV=0 0 36 98
