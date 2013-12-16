@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -175,6 +175,15 @@ SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
+[CTRL_PICTURE_19]
+Type=1
+Tag=34
+Rect=180 150 280 64
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\result.png
+NormalFileUV=0 0 280 64
+
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=28
@@ -194,10 +203,10 @@ SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
-[CTRL_TEXT_29]
+[CTRL_TEXT_29_DELETE]
 Type=4
 Tag=29
-Rect=157 159 326 40
+Rect=640 40 326 40
 AnchorPos=0 0
 Notes=
 Text=获得   星卡片
@@ -210,13 +219,13 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_RARE]
 Type=4
 Tag=30
-Rect=281 159 50 40
+Rect=274 159 50 40
 AnchorPos=0 0
 Notes=
 Text=6
 TextTradition=6
-TextSize=30
-TextColor=0xffff00
+TextSize=35
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
