@@ -58,7 +58,7 @@ end
 function p.getStageMapData()
 	WriteCon("send stageMap request");
 	local uid = GetUID();
-	local param = "MachineType=Android";
+	local param = "";
 	SendReq("Mission","StageList",uid,param);
 end
 
