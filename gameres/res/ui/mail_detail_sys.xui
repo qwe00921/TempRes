@@ -39,7 +39,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=540 -1 100 98
+Rect=556 0 84 84
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -442,7 +442,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_104]
 Type=1
 Tag=104
-Rect=277 12 86 54
+Rect=277 13 86 54
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\mail.png

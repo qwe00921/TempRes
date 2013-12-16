@@ -170,7 +170,7 @@ NormalFileUV=0 0 368 84
 [CTRL_PICTURE_22]
 Type=1
 Tag=23
-Rect=277 17 86 54
+Rect=277 13 86 54
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\shop.png

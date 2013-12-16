@@ -27,7 +27,7 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_LIST]
 Type=1
 Tag=20
-Rect=131 0 379 86
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
@@ -36,7 +36,7 @@ NormalFileUV=0 0 368 84
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=21
-Rect=553 0 86 86
+Rect=555 0 84 84
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -274,7 +274,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_83]
 Type=1
 Tag=83
-Rect=277 14 86 54
+Rect=277 13 86 54
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\text_bag.png
