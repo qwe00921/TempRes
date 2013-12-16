@@ -402,7 +402,7 @@ NormalFileUV=0 0 74 36
 [CTRL_PICTURE_213]
 Type=1
 Tag=213
-Rect=136 -2 368 84
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
