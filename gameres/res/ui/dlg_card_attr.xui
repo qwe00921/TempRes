@@ -15,7 +15,7 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_TITLE]
 Type=1
 Tag=353
-Rect=138 0 364 83
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
@@ -31,7 +31,7 @@ Notes=
 [CTRL_9SLICES_361]
 Type=22
 Tag=361
-Rect=22 609 606 242
+Rect=22 624 606 227
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -53,7 +53,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=792
-Rect=540 0 100 98
+Rect=555 0 84 84
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -204,7 +204,7 @@ NormalFileUV=0 0 74 36
 [CTRL_PICTURE_120]
 Type=1
 Tag=120
-Rect=244 16 152 54
+Rect=244 13 152 54
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\text\cha_info.png

@@ -15,7 +15,7 @@ NormalFileUV=0 0 640 960
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=299
-Rect=540 0 100 98
+Rect=556 0 84 84
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -402,7 +402,7 @@ NormalFileUV=0 0 74 36
 [CTRL_PICTURE_213]
 Type=1
 Tag=213
-Rect=136 -2 368 84
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_title.png
@@ -424,11 +424,11 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_48]
 Type=1
 Tag=48
-Rect=277 13 86 54
+Rect=244 13 152 54
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\text_cardgroup.png
-NormalFileUV=0 0 86 54
+NormalFile=.\res\image\ui\public\text\cha_info.png
+NormalFileUV=0 0 152 54
 
 [CTRL_PICTURE_100]
 Type=1
