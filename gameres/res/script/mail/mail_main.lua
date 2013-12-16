@@ -518,9 +518,18 @@ function p.SetItemInfo4Sys( view, item )
 		local picTagName = "ID_CTRL_PICTURE_ITEM_"..i;
 		local picV = GetImage(view,ui_item_sys[picTagName]);
 		
-		if stRe == p.MAIL_REWARD_UNGET and picV and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
+		if stRe == p.MAIL_REWARD_UNGET and picV and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 and rewrad.rewordType then
 			--rewrad.rewordId = "10002";
+			local rtype = tonumber(rewrad.rewordType);
 			local aniIndex = "item."..rewrad.rewordId;
+			if rtype == 2  or rtype == 3 then
+				aniIndex = "card_icon."..rewrad.rewordId;
+			elseif rtype == 4 then
+				aniIndex = "ui.emoney"
+			elseif rtype == 5 then
+				aniIndex = "ui.money"
+			end
+			
 			picV:SetPicture( GetPictureByAni(aniIndex,0) );
 			
 		else

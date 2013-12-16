@@ -132,11 +132,20 @@ function p.SetViewInfo()
 		--local numV = GetLabel( parentV, idTags[numTagName]);  --暂不显示数量跟名称
 		--local nameV = GetLabel( parentV, idTags[nameTagName]);
 		
-		if item.rewardState == mail_main.MAIL_REWARD_UNGET and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 then
+		if item.rewardState == mail_main.MAIL_REWARD_UNGET and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 and rewrad.rewordType then
 			--rewrad.rewordId = "10002"
 			--numV:SetText("X"..(rewrad.num or "1"))
+			local rtype = tonumber(rewrad.rewordType);
 			local aniIndex = "item."..rewrad.rewordId;
+			if rtype == 2  or rtype == 3 then
+				aniIndex = "card_icon."..rewrad.rewordId;
+			elseif rtype == 4 then
+				aniIndex = "ui.emoney"
+			elseif rtype == 5 then
+				aniIndex = "ui.money"
+			end
 			picV:SetPicture( GetPictureByAni(aniIndex,0) );
+			
 			
 			--local txt = p.SelectItemName(tonumber(rewrad.rewordId));
 			--nameV:SetText(txt or "");
