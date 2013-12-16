@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_mail_gm_mail = {};
 local p =  ui_mail_gm_mail;
+p.ID_CTRL_PICTURE_130					    = 130;
+p.ID_CTRL_PICTURE_129					    = 129;
 p.ID_CTRL_PICTURE_154					    = 154;
 p.ID_CTRL_9SLICES_TITLE				   = 29;	--gm回复底背景，显示状态：提交问题
 p.ID_CTRL_TEXT_26						       = 26;
@@ -21,6 +23,7 @@ p.ID_CTRL_BUTTON_PAGE_NEXT			 = 105;
 p.ID_CTRL_BUTTON_PAGE_PRE				 = 104;
 p.ID_CTRL_VERTICAL_LIST				   = 37;
 p.ID_CTRL_9SLICES_QUESTIONBG			= 23;	--客服问题底背景，显示状态：提交问题
+p.ID_CTRL_PICTURE_SEND				    = 128;
 p.ID_CTRL_BUTTON_SEND					    = 36;
 p.ID_CTRL_BUTTON_ANSWER				   = 35;
 p.ID_CTRL_BUTTON_ASK					     = 296;

@@ -7,14 +7,14 @@ Height=640
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 0 640 235
+Rect=0 1 640 196
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=474 8 145 217
+Rect=379 12 116 175
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -25,7 +25,7 @@ Remark=物品4
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=319 8 145 217
+Rect=256 12 116 175
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -36,7 +36,7 @@ Remark=物品3
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=167 8 145 217
+Rect=136 12 116 175
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -47,7 +47,7 @@ Remark=物品2
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=16 9 145 217
+Rect=14 12 116 175
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -58,7 +58,7 @@ Remark=物品1
 [CTRL_TEXT_SELECT_4]
 Type=4
 Tag=19
-Rect=515 95 70 28
+Rect=927 56 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -70,7 +70,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_3]
 Type=4
 Tag=18
-Rect=360 95 70 28
+Rect=927 55 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -82,7 +82,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_2]
 Type=4
 Tag=17
-Rect=205 95 70 28
+Rect=927 58 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -94,7 +94,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SELECT_1]
 Type=4
 Tag=16
-Rect=51 95 70 28
+Rect=927 58 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -106,7 +106,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_38]
 Type=1
 Tag=38
-Rect=91 17 60 20
+Rect=14 13 60 20
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -115,7 +115,7 @@ NormalFileUV=0 0 90 24
 [CTRL_TEAM_1]
 Type=4
 Tag=10
-Rect=91 17 60 20
+Rect=15 13 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -125,7 +125,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_39]
 Type=1
 Tag=39
-Rect=244 17 60 20
+Rect=139 13 60 20
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -134,7 +134,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_40]
 Type=1
 Tag=40
-Rect=400 17 60 20
+Rect=258 13 60 20
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -143,7 +143,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_41]
 Type=1
 Tag=41
-Rect=555 17 60 20
+Rect=379 13 60 20
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -152,7 +152,7 @@ NormalFileUV=0 0 90 24
 [CTRL_TEAM_4]
 Type=4
 Tag=11
-Rect=555 16 60 20
+Rect=379 14 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -162,7 +162,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEAM_3]
 Type=4
 Tag=12
-Rect=400 17 60 20
+Rect=257 15 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -172,9 +172,129 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEAM_2]
 Type=4
 Tag=13
-Rect=245 17 60 20
+Rect=137 13 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_45]
+Type=2
+Tag=45
+Rect=503 12 116 175
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品4
+
+[CTRL_PICTURE_47]
+Type=1
+Tag=47
+Rect=505 13 60 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_46]
+Type=4
+Tag=46
+Rect=504 13 60 20
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_S1]
+Type=1
+Tag=48
+Rect=89 141 42 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\select.png
+NormalFileUV=0 0 42 42
+
+[CTRL_PICTURE_S2]
+Type=1
+Tag=49
+Rect=210 141 42 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\select.png
+NormalFileUV=0 0 42 42
+
+[CTRL_PICTURE_S3]
+Type=1
+Tag=50
+Rect=330 144 42 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\select.png
+NormalFileUV=0 0 42 42
+
+[CTRL_PICTURE_S4]
+Type=1
+Tag=51
+Rect=453 142 42 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\select.png
+NormalFileUV=0 0 42 42
+
+[CTRL_PICTURE_S5]
+Type=1
+Tag=52
+Rect=577 142 42 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\select.png
+NormalFileUV=0 0 42 42
+
+[CTRL_PICTURE_TEAM1]
+Type=1
+Tag=78
+Rect=81 15 48 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_TEAM2]
+Type=1
+Tag=79
+Rect=203 15 48 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_TEAM3]
+Type=1
+Tag=80
+Rect=323 15 48 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_TEAM4]
+Type=1
+Tag=81
+Rect=446 16 48 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_TEAM5]
+Type=1
+Tag=82
+Rect=570 15 48 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50

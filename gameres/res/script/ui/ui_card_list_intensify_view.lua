@@ -4,6 +4,19 @@
 --------------------------------------------------------------
 ui_card_list_intensify_view = {};
 local p =  ui_card_list_intensify_view;
+p.ID_CTRL_PICTURE_TEAM5				   = 82;
+p.ID_CTRL_PICTURE_TEAM4				   = 81;
+p.ID_CTRL_PICTURE_TEAM3				   = 80;
+p.ID_CTRL_PICTURE_TEAM2				   = 79;
+p.ID_CTRL_PICTURE_TEAM1				   = 78;
+p.ID_CTRL_PICTURE_S5					     = 52;
+p.ID_CTRL_PICTURE_S4					     = 51;
+p.ID_CTRL_PICTURE_S3					     = 50;
+p.ID_CTRL_PICTURE_S2					     = 49;
+p.ID_CTRL_PICTURE_S1					     = 48;
+p.ID_CTRL_TEXT_46						       = 46;
+p.ID_CTRL_PICTURE_47					     = 47;
+p.ID_CTRL_BUTTON_45					      = 45;	--ŒÔ∆∑4
 p.ID_CTRL_TEAM_2						        = 13;
 p.ID_CTRL_TEAM_3						        = 12;
 p.ID_CTRL_TEAM_4						        = 11;
