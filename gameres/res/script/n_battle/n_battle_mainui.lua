@@ -135,6 +135,7 @@ function p.SetDelegate(layer)
 end
 
 function p.OnBtnClicked_Skill( uiNode, uiEventType, param )
+	uiNode:SetVisible(false);
     GetBattleShow():Stop();
     n_battle_mgr.isBattleEnd = true;
     local battleResult = n_battle_db_mgr.GetBattleResult();
