@@ -46,7 +46,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_TITLE]
 Type=1
 Tag=3
-Rect=124 7 368 84
+Rect=136 0 368 84
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\title.png
@@ -55,7 +55,7 @@ NormalFileUV=0 0 368 84
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=6
-Rect=539 -1 100 100
+Rect=556 0 84 84
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -74,11 +74,11 @@ Notes=
 [CTRL_TEXT_9]
 Type=4
 Tag=9
-Rect=182 9 240 60
+Rect=216 13 209 46
 AnchorPos=0 0
 Notes=
 Text=召唤兽一览
 TextTradition=召喚獸一覽
-TextSize=48
+TextSize=35
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
