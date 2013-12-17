@@ -30,9 +30,14 @@ end
 function p:Process()
 	msg_cache.msg_shop_buy_result = self;
 	WriteConWarning( "** msg_shop_buy_result:Process() called" );
+	--[[
 	if tonumber( self.type ) == 1 then
        dlg_buy_num.BuySuccessResult( self );
     elseif tonumber( self.type ) == 2 then 
-       
+       dlg_buy_num.BuySuccessResult( self );
     end
+	--]]
+	if self.result then
+		dlg_buy_num.BuySuccessResult( self );
+	end
 end

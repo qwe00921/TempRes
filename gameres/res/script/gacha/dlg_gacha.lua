@@ -11,6 +11,8 @@ SHOP_GACHA      = 1;
 SHOP_ITEM       = 2;
 SHOP_GIFT_PACK  = 3;
 
+local curPage = SHOP_ITEM;
+
 local LEFT      = 1;
 local RIGHT     = 2;
 local GIFT_LEFT   = 3;
@@ -196,15 +198,21 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --扭蛋界面按钮
 			WriteCon( "扭蛋界面按钮" );
 			--p.ReqGachaData();
-			p.ShowGachaData( p.gachadata );
+			if curPage ~= SHOP_GACHA then
+				p.ShowGachaData( p.gachadata );
+			end
 			p.clickEvent = false; 
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_ITEMUI == tag ) then  --商店界面按钮
 			WriteCon( "商店界面按钮" );
-			p.ShowShopData( p.shopData );
+			if curPage ~= SHOP_ITEM then
+				p.ShowShopData( p.shopData );
+			end
 			p.clickEvent = false; 
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI == tag ) then  --礼包界面按钮
 			WriteCon( "礼包界面按钮" );
-			p.ShowGiftPackData( p.giftData );
+			if curPage ~= SHOP_GIFT_PACK then
+				p.ShowGiftPackData( p.giftData );
+			end
 			p.clickEvent = false; 
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_PAY == tag) then --充值按钮
 			WriteCon( "充值按钮" );
@@ -515,20 +523,21 @@ end
 
 --显示商城道具列表
 function p.ShowShopData( shopdata )
+	curPage = SHOP_ITEM;
 	
 	if shopdata == nil then
 		p.rmb = nil;
 		p.ReqShopItem();
 		return;
 	end
-    
+
     p.shopItemList:SetVisible( true );
     p.gachaList:SetVisible( false ); 
     p.shopPackList:SetVisible( false );
     
-    p.gachaBtn:SetEnabled( true );
-    p.shopPackBtn:SetEnabled( true );
-    p.shopItmeBtn:SetEnabled( false );
+    p.gachaBtn:SetChecked( false );
+    p.shopPackBtn:SetChecked( false );
+    p.shopItmeBtn:SetChecked( true );
     
     p.shopItemList:ClearView();
     
@@ -564,20 +573,21 @@ end
 
 --显示商城礼包列表
 function p.ShowGiftPackData( giftdata )
-    
+    curPage = SHOP_GIFT_PACK;
+	
 	if giftdata == nil then
 		p.rmb = nil;
 		p.ReqGitfPack();
 		return;
 	end
-	
+
 	p.shopPackList:SetVisible( true );
 	p.gachaList:SetVisible( false ); 
 	p.shopItemList:SetVisible( false );
     
-	p.gachaBtn:SetEnabled( true );
-    p.shopPackBtn:SetEnabled( false );
-	p.shopItmeBtn:SetEnabled( true );
+	p.gachaBtn:SetChecked( false );
+    p.shopPackBtn:SetChecked( true );
+	p.shopItmeBtn:SetChecked( false );
 	
 	p.shopPackList:ClearView();
     
@@ -764,6 +774,8 @@ end
 
 --请求gacha数据回调函数
 function p.ShowGachaData( gachadata )
+	curPage = SHOP_GACHA;
+	
 	if gachadata == nil then
 		p.rmb = nil;
 		p.ReqGachaData();
@@ -774,9 +786,9 @@ function p.ShowGachaData( gachadata )
     p.shopItemList:SetVisible( false ); 
     p.shopPackList:SetVisible( false );
     
-    p.gachaBtn:SetEnabled( false );
-    p.shopPackBtn:SetEnabled( true );
-    p.shopItmeBtn:SetEnabled( true );
+    p.gachaBtn:SetChecked( true );
+    p.shopPackBtn:SetChecked( false );
+    p.shopItmeBtn:SetChecked( false );
     
     p.gachaList:ClearView();
 	

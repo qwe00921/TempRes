@@ -11,6 +11,8 @@ p.layer = nil;
 p.item = nil;
 p.maxNum = nil;
 
+p.addNum = nil;
+
 --显示UI
 function p.ShowUI( item )
     
@@ -195,12 +197,21 @@ function p.ReqBuyItem()
 	local type_id = tostring( SelectRowInner( T_SHOP, "item_id", p.item.item_id  , "type"));
     local param = "&type_id=" .. type_id .. "&item_id=" .. p.item.item_id .."&num=" .. num;
     WriteCon( "购买参数" .. param );
+	p.addNum = num;
     SendReq("Shop","AddUserItem",uid, param);
 end
 
 --购买成功回调
 function p.BuySuccessResult( msg )
     p.CloseUI();
+	if msg~= nil and msg.list ~= nil then
+		local item_id = msg.list.item_id or 0 ;
+		local num = p.addNum or 0;
+		if item_id ~= 0 and num ~= 0 then
+			local item_name = SelectCell( T_ITEM, item_id, "name" ) or "";
+			dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "你成功购买了" ) .. ToUtf8(tostring(num)) .. ToUtf8("个") .. item_name, nil, p.layer );
+		end
+	end
 end
 
 --设置可见
