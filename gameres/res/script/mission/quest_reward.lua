@@ -39,6 +39,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("OK BUTTON");
 			n_battle_mgr.QuitBattle();
 			p.CloseUI();
+			dlg_userinfo.ShowUI();
 			stageMap_main.OpenWorldMap();
 		end
 	end
