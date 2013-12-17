@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -194,7 +194,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_101]
 Type=4
 Tag=101
-Rect=199 20 243 43
+Rect=199 19 243 43
 AnchorPos=0 0
 Notes=
 Text=请选择要强化的卡牌

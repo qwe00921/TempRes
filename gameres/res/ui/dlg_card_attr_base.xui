@@ -200,8 +200,6 @@ Tag=323
 Rect=156 784 110 54
 AnchorPos=0 0
 Notes=
-Text=卖出
-TextTradition=賣出
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -234,6 +232,10 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\item_less.png
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui\public\item_less_click.png
+SelectedFileUV=0 0 100 100
 
 [CTRL_BUTTON_EQUIP_2]
 Type=2
@@ -244,6 +246,10 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\item_less.png
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui\public\item_less_click.png
+SelectedFileUV=0 0 100 100
 
 [CTRL_BUTTON_EQUIP_3]
 Type=2
@@ -254,11 +260,24 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\item_less.png
+NormalFileUV=0 0 100 100
+SelectFile=.\res\image\ui\public\item_less_click.png
+SelectedFileUV=0 0 100 100
+
+[CTRL_PICTURE_SELL]
+Type=1
+Tag=62
+Rect=185 794 52 28
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\sell.png
+NormalFileUV=0 0 52 28
 
 [CTRL_BUTTON_REPLACE]
 Type=2
 Tag=30
-Rect=155 784 110 54
+Rect=156 784 110 54
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -291,7 +310,7 @@ NormalFileUV=0 0 128 56
 [CTRL_PICTURE_200]
 Type=1
 Tag=200
-Rect=410 148 93 93
+Rect=410 147 93 93
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
@@ -300,7 +319,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_201]
 Type=1
 Tag=201
-Rect=410 253 93 93
+Rect=411 253 93 93
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
@@ -309,7 +328,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_202]
 Type=1
 Tag=202
-Rect=410 361 93 93
+Rect=411 360 93 93
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
@@ -442,7 +461,7 @@ NormalFileUV=0 0 52 28
 [CTRL_PICTURE_101]
 Type=1
 Tag=101
-Rect=184 795 52 28
+Rect=185 795 52 28
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\text\change.png
