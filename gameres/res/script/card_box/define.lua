@@ -18,6 +18,8 @@ DoFile("card_box/dlg_card_intensify.lua");
 DoFile("card_box/dlg_card_intensify_result.lua");
 DoFile("card_box/card_intensify.lua");
 DoFile("card_box/card_intensify_succeed.lua");
+DoFile("card_box/card_rein.lua");
+DoFile("card_box/card_intensify2.lua");
 
 --¿¨ÅÆÈÚºÏ
 DoFile("card_box/dlg_card_fuse.lua");

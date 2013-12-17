@@ -50,6 +50,10 @@ image\ui\public\team3.png
 [levelBg]
 image\ui\public\bg_lv.png
 
+;卡牌强化的背景图片
+[cardBg]
+image\ui\public\card_big_choose.png
+
 ;卡牌背包格子边框
 [frame]
 image\ui\public\frame.png

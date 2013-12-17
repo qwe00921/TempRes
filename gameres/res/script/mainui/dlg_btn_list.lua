@@ -116,6 +116,10 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		if id == ID_CARD then
 			card_bag_mian.ShowUI();
 		end
+		
+		if id == ID_STRENGTHEN then
+			card_rein.ShowUI();
+		end
 	end
 end
 

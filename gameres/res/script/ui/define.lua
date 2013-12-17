@@ -91,7 +91,10 @@ DoFile("ui/ui_card_battle_mainui.lua")
 DoFile("ui/ui_dlg_card_box_mainui.lua")
 DoFile("ui/ui_card_box_view.lua")
 --卡牌强化
+DoFile("ui/ui_card_rein.lua")
+DoFile("ui/ui_card_intensify2.lua")
 DoFile("ui/ui_card_list_intensify_view.lua")
+
 
 --加载角色创建界面
 DoFile("ui/ui_dlg_create_player.lua")
