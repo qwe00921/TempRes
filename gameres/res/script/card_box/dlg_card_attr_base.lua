@@ -22,6 +22,8 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 	
 	if mainUIFlag ~= nil then
 		p.mainUIFlag = mainUIFlag;
+		WriteCon( "asdasdasdasdasdasdsa " );
+		dlg_menu.SetNewUI( p );
 	end
 	
 	if cardInfo == nil then
@@ -103,6 +105,9 @@ function p.SetDelegate(layer)
 	local pBtnReplace = GetButton( layer, ui_dlg_card_attr_base.ID_CTRL_BUTTON_REPLACE );
 	pBtnReplace:SetLuaDelegate( p.OnUIEventEvolution );
 	pBtnReplace:SetVisible( p.groupFlag );
+	
+	local pPic = GetImage( layer, ui_dlg_card_attr_base.ID_CTRL_PICTURE_101 );
+	pPic:SetVisible( p.groupFlag );
 	
 	--ÏêÏ¸
 	local pBtnArrt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT);
@@ -447,4 +452,8 @@ function p.OnLoadCardDetail(msg)
 		Source: "0"
 		}
 		]]--
+end
+
+function p.UIDisappear()
+	p.CloseUI();
 end

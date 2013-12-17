@@ -46,6 +46,7 @@ function p.ShowUI( bModify , mainUIFlag )
 
 	if mainUIFlag ~= nil then
 		p.mainUIFlag = mainUIFlag;
+		dlg_menu.SetNewUI( p );
 	end
 	
 	if p.layer ~= nil then 
