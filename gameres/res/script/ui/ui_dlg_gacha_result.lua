@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_dlg_gacha_result = {};
 local p =  ui_dlg_gacha_result;
+p.ID_CTRL_TEXT_CRIT					      = 40;
+p.ID_CTRL_TEXT_SPEED					     = 39;
+p.ID_CTRL_TEXT_23						       = 37;
+p.ID_CTRL_TEXT_22						       = 36;
+p.ID_CTRL_PICTURE_SKILL				   = 35;
 p.ID_CTRL_BUTTON_NEXT					    = 31;
 p.ID_CTRL_TEXT_RARE					      = 30;
 p.ID_CTRL_TEXT_29_DELETE				  = 29;

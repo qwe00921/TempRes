@@ -26,14 +26,14 @@ NormalFileUV=0 0 640 376
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=16
-Rect=78 231 240 320
+Rect=50 231 240 320
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=17
-Rect=377 234 180 30
+Rect=307 232 279 30
 AnchorPos=0 0
 Notes=
 Text=女武神玛利亚
@@ -46,7 +46,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_18]
 Type=4
 Tag=18
-Rect=380 269 50 30
+Rect=298 273 50 30
 AnchorPos=0 0
 Notes=
 Text=HP
@@ -59,7 +59,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_19]
 Type=4
 Tag=19
-Rect=380 307 50 30
+Rect=298 311 50 30
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -72,7 +72,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_20]
 Type=4
 Tag=20
-Rect=380 345 50 30
+Rect=298 349 50 30
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -85,7 +85,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_21]
 Type=4
 Tag=21
-Rect=380 382 50 30
+Rect=298 390 50 30
 AnchorPos=0 0
 Notes=
 Text=技能
@@ -98,7 +98,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_HP]
 Type=4
 Tag=22
-Rect=436 269 120 30
+Rect=354 273 66 30
 AnchorPos=0 0
 Notes=
 Text=999999
@@ -111,7 +111,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_ATK]
 Type=4
 Tag=23
-Rect=436 307 120 30
+Rect=354 311 65 30
 AnchorPos=0 0
 Notes=
 Text=999999
@@ -124,7 +124,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DEF]
 Type=4
 Tag=24
-Rect=437 345 120 30
+Rect=355 349 66 30
 AnchorPos=0 0
 Notes=
 Text=999999
@@ -137,7 +137,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_SKILL]
 Type=4
 Tag=25
-Rect=438 382 120 30
+Rect=69 168 81 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -148,7 +148,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DESCRIPTION]
 Type=4
 Tag=26
-Rect=379 419 180 143
+Rect=422 406 180 143
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -247,3 +247,62 @@ SelectFile=.\res\image\ui\public\button_click.png
 SelectedFileUV=0 0 110 54
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
+
+[CTRL_PICTURE_SKILL]
+Type=1
+Tag=35
+Rect=301 435 110 110
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_22]
+Type=4
+Tag=36
+Rect=462 311 50 30
+AnchorPos=0 0
+Notes=
+Text=速度
+TextTradition=速度
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=37
+Rect=462 349 50 30
+AnchorPos=0 0
+Notes=
+Text=暴击
+TextTradition=暴擊
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SPEED]
+Type=4
+Tag=39
+Rect=520 311 66 30
+AnchorPos=0 0
+Notes=
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CRIT]
+Type=4
+Tag=40
+Rect=520 349 66 30
+AnchorPos=0 0
+Notes=
+Text=999999
+TextTradition=999999
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

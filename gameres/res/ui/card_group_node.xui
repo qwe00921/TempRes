@@ -309,8 +309,8 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\main_interface\cha_less.png
 NormalFileUV=0 0 100 100
-SelectFile=.\res\image\ui\main_interface\default_card.PNG
-SelectedFileUV=0 0 100 90
+SelectFile=.\res\image\ui\public\item_less_click.png
+SelectedFileUV=0 0 100 100
 
 [CTRL_TEXT_PET_NAME_1]
 Type=4
