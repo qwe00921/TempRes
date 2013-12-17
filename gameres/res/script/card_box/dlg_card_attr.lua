@@ -35,6 +35,7 @@ function p.SetDelegate(layer)
 	
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardID); --从表中获取卡牌详细信息	
 	local pCardInfo2= SelectRowInner( T_CARD, "id", p.cardID);
+	
 	local skill_res = nil;
 	local cardSkillInfo = nil;
 	if pCardInfo2.skill ~= 0 then
@@ -87,15 +88,17 @@ function p.SetDelegate(layer)
 	
 	pImgCardPic:SetPicture(pImage);
 	--简介
-	T_CHAR    = LoadTable( "card.ini" );
-	local pFromCardInfo= SelectRowInner( T_CHAR, "id", p.cardID); --从表中获取卡牌详细信息	
 	local pLabCardIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_INTRO);
-	pLabCardIntro:SetText(ToUtf8(pFromCardInfo.description));
+	pLabCardIntro:SetText(pCardInfo2.description);
+	
+	--WriteCon("description = "..pCardInfo2.description);
+	
 	--天赋介绍
 	local pLabDowerIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_DOWER_INTRO);
 	if cardSkillInfo ~= nil then
-		pLabDowerIntro:SetText(tostring(cardSkillInfo.description));
+		pLabDowerIntro:SetText(cardSkillInfo.description);
 	end
+	
 	--缘份
 	local pLabLuckIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_LUCK_INTRO);
 	pLabLuckIntro:SetText(tostring(pCardInfo.luck_intro));

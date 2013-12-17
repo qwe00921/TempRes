@@ -112,14 +112,15 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_TEAM_1]
+[CTRL_LEVEL_1]
 Type=4
 Tag=10
 Rect=15 13 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
-TextHorAlign=AlignRight
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_39]
@@ -149,37 +150,40 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_TEAM_4]
+[CTRL_LEVEL_4]
 Type=4
 Tag=11
 Rect=379 14 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
-TextHorAlign=AlignRight
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEAM_3]
+[CTRL_LEVEL_3]
 Type=4
 Tag=12
 Rect=257 15 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
-TextHorAlign=AlignRight
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEAM_2]
+[CTRL_LEVEL_2]
 Type=4
 Tag=13
 Rect=137 13 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
-TextHorAlign=AlignRight
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_BUTTON_45]
+[CTRL_BUTTON_ITEM5]
 Type=2
 Tag=45
 Rect=503 12 116 175
@@ -199,14 +203,15 @@ Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_TEXT_46]
+[CTRL_LEVEL_5]
 Type=4
 Tag=46
 Rect=504 13 60 20
 AnchorPos=0 0
 Notes=
 TextSize=20
-TextHorAlign=AlignRight
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_S1]

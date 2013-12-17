@@ -78,7 +78,7 @@ function p.SetDelegate(layer)
 	--因为数据是错的所以先改为 ==nil 
 	if skill_res ~= nil then 
 		pBtnDower:SetImage(GetPictureByAni(skill_res.icon,0))
-		pLabDowerIntro:SetText(tostring(pCardInfo.dower_intro_1));
+		pLabDowerIntro:SetText(pCardInfo.dower_intro_1);
 	else
 		pLabDowerIntro:SetText(GetStr("card_no_dower"));
 	end
@@ -90,7 +90,7 @@ function p.SetDelegate(layer)
 	
 	--缘份
 	local pLabLuckIntro = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_LUCK_INTRO);
-	pLabLuckIntro:SetText(tostring(pCardInfo.luck_intro));
+	pLabLuckIntro:SetText(pCardInfo.luck_intro);
 	
 	--强化
 	local pBtnIntensify = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_INTENSIFY);

@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -104,8 +104,8 @@ Tag=36
 Rect=409 109 80 60
 AnchorPos=0 0
 Notes=
-Text=愈灵星
-TextTradition=愈靈星
+Text=牧灵星
+TextTradition=牧靈星
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
