@@ -106,6 +106,8 @@ function p.ShowQuestRewardView(rewardData)
 	local itemName_1 = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME1);
 	local itemPic_2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_ITEM2);
 	local itemName_2 = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME2);
+	local itemBox_1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_25);
+	local itemBox_2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_26);
 
 	if rewardData["item"] then
 		if rewardData["item"][1] then
@@ -130,6 +132,7 @@ function p.ShowQuestRewardView(rewardData)
 		else
 			itemPic_1:SetVisible(false);
 			itemName_1:SetVisible(false);
+			itemBox_1:SetVisible(false);
 		end
 	
 		if rewardData["item"][2] then
@@ -152,12 +155,15 @@ function p.ShowQuestRewardView(rewardData)
 		else
 			itemPic_2:SetVisible(false);
 			itemName_2:SetVisible(false);
+			itemBox_2:SetVisible(false);
 		end
 	else
 		itemPic_1:SetVisible(false);
 		itemName_1:SetVisible(false);
 		itemPic_2:SetVisible(false);
 		itemName_2:SetVisible(false);
+		itemBox_1:SetVisible(false);
+		itemBox_2:SetVisible(false);
 	end
 end
 

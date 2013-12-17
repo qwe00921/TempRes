@@ -374,7 +374,7 @@ function p.sellBtnEvent()
 			for i=1,#p.sellCardList do
 				for j=1, #p.cardListInfo do
 					if tonumber(p.sellCardList[i]) == p.cardListInfo[j].UniqueId then
-						p.allCardPrice = p.allCardPrice + p.cardListInfo[j].Price;
+						p.allCardPrice = p.allCardPrice + p.cardListInfo[j].Price * (1 + p.cardListInfo[j].Level/100 * 2);
 					end
 				end
 			end
