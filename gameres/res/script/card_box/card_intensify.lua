@@ -254,7 +254,7 @@ function p.ShowCardView(cardList)
 	end
 	local cardNum = #cardList;
 	
-	local row = math.ceil(cardNum / 4);
+	local row = math.ceil(cardNum / 5);
 	
 	for i = 1, row do
 		local view = createNDUIXView();
@@ -264,8 +264,8 @@ function p.ShowCardView(cardList)
         view:SetViewSize( bg:GetFrameSize());
 		
 		local row_index = i;
-		local start_index = (row_index-1)*4+1
-        local end_index = start_index + 3;
+		local start_index = (row_index-1)*5+1
+        local end_index = start_index + 4;
 		
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
@@ -288,25 +288,36 @@ function p.ShowCardView(cardList)
 end
 --显示单张卡牌
 function p.ShowCardInfo( view, card, cardIndex )
+	--WriteCon("************"..cardIndex);
 	local cardBtn = nil;
 	local cardLevel = nil;
 	local cardTeam = nil;
+	local cardSelect = nil;
 	if cardIndex == 1 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_1;
-		cardTeam = ui_list.ID_CTRL_TEAM_1;
+		cardSelect = ui_list.ID_CTRL_PICTURE_S1;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
+		cardLevel = ui_list.ID_CTRL_LEVEL_1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_2;
-		cardTeam = ui_list.ID_CTRL_TEAM_2;
+		cardSelect = ui_list.ID_CTRL_PICTURE_S2;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
+		cardLevel = ui_list.ID_CTRL_LEVEL_2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_3;
-		cardTeam = ui_list.ID_CTRL_TEAM_3;
+		cardSelect = ui_list.ID_CTRL_PICTURE_S3;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
+		cardLevel = ui_list.ID_CTRL_LEVEL_3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
-		cardSelect = ui_list.ID_CTRL_TEXT_SELECT_4;
-		cardTeam = ui_list.ID_CTRL_TEAM_4;
+		cardSelect = ui_list.ID_CTRL_PICTURE_S4;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
+		cardLevel = ui_list.ID_CTRL_LEVEL_4;
+	elseif cardIndex == 5 then
+		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
+		cardSelect = ui_list.ID_CTRL_PICTURE_S5;
+		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
+		cardLevel = ui_list.ID_CTRL_LEVEL_5;
 	end
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
@@ -318,15 +329,24 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local cardUniqueId = tonumber(card.UniqueId);
     cardButton:SetId(cardUniqueId);
 
+	--ui.public.team1.png  队伍
+	local teamText = GetImage(view,cardTeam);
 	
-	local teamText = GetLabel(view,cardTeam);
-	
-	if card.Team_marks ~= 0 then
-		teamText:SetText(GetStr("card_intensify_team")..tostring(card.Team_marks));
+	if card.Team_marks == 1 then
+		teamText:SetImage( GetPictureByAni("ui.public.team1.png", 0) );
+	elseif card.Team_marks == 2 then
+		teamText:SetImage( GetPictureByAni("ui.public.team2.png", 0) );
+	elseif card.Team_marks == 3 then
+		teamText:SetImage( GetPictureByAni("ui.public.team3.png", 0) );
+	else
+		teamText:SetVisible( false );
 	end
+	--卡牌等级
+	local levelText = GetLabel(view,cardLevel);
+	levelText:SetText(tostring(card.Level));
 	
-	
-	local cardSelectText = GetLabel(view,cardSelect );
+	--是否选中图片
+	local cardSelectText = GetImage(view,cardSelect );
 	cardSelectText:SetVisible( false );
 	local Team_marks = card.Team_marks;
 	p.teamList[cardUniqueId] = Team_marks;
