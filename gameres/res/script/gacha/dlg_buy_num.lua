@@ -209,7 +209,7 @@ function p.BuySuccessResult( msg )
 		local num = p.addNum or 0;
 		if item_id ~= 0 and num ~= 0 then
 			local item_name = SelectCell( T_ITEM, item_id, "name" ) or "";
-			dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "你成功购买了" ) .. ToUtf8(tostring(num)) .. ToUtf8("个") .. item_name, nil, p.layer );
+			dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "你成功购买了" ) .. ToUtf8(tostring(num)) .. ToUtf8("个") .. item_name, p.OnMsgOKClick, p.layer );
 		end
 	end
 end
@@ -227,5 +227,18 @@ function p.CloseUI()
         p.layer = nil;
     end
 
+end
+
+function p.OnMsgOKClick()
+	local item_id = p.item.item_id;
+	local num_limit = tonumber( SelectRowInner( T_SHOP, "item_id", p.item.item_id  , "num_limit"));
+	local type_id = tonumber( SelectRowInner( T_SHOP, "item_id", p.item.item_id  , "type"));
+	if num_limit ~= 0 then
+		if type_id == 1 then
+			dlg_gacha.ReqShopItem();
+		elseif type_id == 2 then
+			dlg_gacha.ReqGitfPack();
+		end
+	end
 end
 
