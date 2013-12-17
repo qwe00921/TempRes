@@ -460,7 +460,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CARD1]
 Type=2
 Tag=48
-Rect=14 333 116 175
+Rect=12 333 116 175
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -607,3 +607,193 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\card\intensify.png
 NormalFileUV=0 0 640 162
+
+[CTRL_PICTURE_110]
+Type=1
+Tag=110
+Rect=11 339 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_CARDLEVEL1]
+Type=4
+Tag=111
+Rect=17 339 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_112]
+Type=1
+Tag=112
+Rect=138 338 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_113]
+Type=1
+Tag=113
+Rect=260 337 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_114]
+Type=1
+Tag=114
+Rect=388 339 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_115]
+Type=1
+Tag=115
+Rect=511 336 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_116]
+Type=1
+Tag=116
+Rect=17 517 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_117]
+Type=1
+Tag=117
+Rect=139 518 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_118]
+Type=1
+Tag=118
+Rect=260 520 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_119]
+Type=1
+Tag=119
+Rect=387 520 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_120]
+Type=1
+Tag=120
+Rect=511 520 58 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_CARDLEVEL2]
+Type=4
+Tag=121
+Rect=144 338 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL3]
+Type=4
+Tag=122
+Rect=266 337 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL4]
+Type=4
+Tag=123
+Rect=390 338 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL5]
+Type=4
+Tag=124
+Rect=515 338 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL6]
+Type=4
+Tag=125
+Rect=18 518 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL7]
+Type=4
+Tag=126
+Rect=142 518 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL8]
+Type=4
+Tag=127
+Rect=265 517 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL9]
+Type=4
+Tag=128
+Rect=389 517 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CARDLEVEL10]
+Type=4
+Tag=129
+Rect=514 517 51 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

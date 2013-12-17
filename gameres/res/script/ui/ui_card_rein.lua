@@ -4,6 +4,26 @@
 --------------------------------------------------------------
 ui_card_rein = {};
 local p =  ui_card_rein;
+p.ID_CTRL_TEXT_CARDLEVEL10			 = 129;
+p.ID_CTRL_TEXT_CARDLEVEL9				 = 128;
+p.ID_CTRL_TEXT_CARDLEVEL8				 = 127;
+p.ID_CTRL_TEXT_CARDLEVEL7				 = 126;
+p.ID_CTRL_TEXT_CARDLEVEL6				 = 125;
+p.ID_CTRL_TEXT_CARDLEVEL5				 = 124;
+p.ID_CTRL_TEXT_CARDLEVEL4				 = 123;
+p.ID_CTRL_TEXT_CARDLEVEL3				 = 122;
+p.ID_CTRL_TEXT_CARDLEVEL2				 = 121;
+p.ID_CTRL_PICTURE_120					    = 120;
+p.ID_CTRL_PICTURE_119					    = 119;
+p.ID_CTRL_PICTURE_118					    = 118;
+p.ID_CTRL_PICTURE_117					    = 117;
+p.ID_CTRL_PICTURE_116					    = 116;
+p.ID_CTRL_PICTURE_115					    = 115;
+p.ID_CTRL_PICTURE_114					    = 114;
+p.ID_CTRL_PICTURE_113					    = 113;
+p.ID_CTRL_PICTURE_112					    = 112;
+p.ID_CTRL_TEXT_CARDLEVEL1				 = 111;
+p.ID_CTRL_PICTURE_110					    = 110;
 p.ID_CTRL_BUTTON_CARD_CHOOSE			= 58;
 p.ID_CTRL_PICTURE_60					     = 61;
 p.ID_CTRL_9SLICES_59					     = 60;
