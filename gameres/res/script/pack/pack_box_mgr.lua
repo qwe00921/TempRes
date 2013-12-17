@@ -117,6 +117,16 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 	elseif itemId == 3001 then
 		SendReq("Item","UseStorageItem",uid,param);
 	elseif itemType == 5 then
+		local itemTable = p.GetItemByID( itemUniqueId );
+		if itemTable then
+			local level_limit = tonumber(itemTable.Level_limit) or 0;
+			local level = tonumber(msg_cache.msg_player.Level) or 0;
+			WriteCon( tostring( level_limit) .. "   ".. tostring(level) );
+			if level < level_limit then
+				dlg_msgbox.ShowOK( "提示", "你的等级不足，无法使用！" , nil, pack_box.layer );
+				return;
+			end
+		end
 		SendReq("Item","UseGiftItem",uid,param);
 	elseif itemType == 6 then
 		SendReq("Item","UseTreasureItem",uid,param);
@@ -196,6 +206,25 @@ function p.getItemInfoTable(uniqueid)
 	for k,v in pairs(allItemList) do
 		if tonumber(v.id) == uniqueid then
 			if tonumber(v.Item_type) == 1 or tonumber(v.Item_type) == 2 or tonumber(v.Item_type) == 3 then
+				itemInfoTable = v
+				break;
+			end
+		end
+	end
+	return itemInfoTable;
+end
+
+function p.GetItemByID( uniqueid )
+	local allItemList = p.itemList;
+	if allItemList == nil then
+		WriteCon("allItemList table error");
+		return;
+	end
+	
+	local itemInfoTable = {};
+	for k,v in pairs(allItemList) do
+		if tonumber(v.id) == uniqueid then
+			if not (tonumber(v.Item_type) == 1 or tonumber(v.Item_type) == 2 or tonumber(v.Item_type) == 3) then
 				itemInfoTable = v
 				break;
 			end
