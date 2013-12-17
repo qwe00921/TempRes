@@ -96,7 +96,7 @@ function p.SetDelegate(layer)
 	--ÃÏ∏≥ΩÈ…‹
 	local pLabDowerIntro = GetLabel(layer,ui_dlg_card_attr.ID_CTRL_DOWER_INTRO);
 	if cardSkillInfo ~= nil then
-		pLabDowerIntro:SetText(tostring(cardSkillInfo.description));
+		pLabDowerIntro:SetText(cardSkillInfo.description);
 	end
 	
 	--‘µ∑›
