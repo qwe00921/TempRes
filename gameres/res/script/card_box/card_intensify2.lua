@@ -206,6 +206,7 @@ function p.ShowCardList(cardList,msg)
 	countLab:SetText(tostring(msg.cardlist_num).."/"..tostring(msg.cardmax));
 	--moneyLab:SetText(tostring(msg.money));
 	--p.userMoney = msg.money;
+	card_rein.SetUserMoney(msg.money);
 	p.cardListInfo = cardList;
 	card_rein.setCardListInfo(cardList);
 	--[[
@@ -364,12 +365,13 @@ function p.ShowCardInfo( view, card, cardIndex )
 	--ui.public.team1.png  ¶ÓÎé
 	local teamText = GetImage(view,cardTeam);
 	teamText:SetVisible( true );
+	
 	if card.Team_marks == 1 then
-		teamText:SetImage( GetPictureByAni("ui.public.team1.png", 0) );
+		teamText:SetPicture( GetPictureByAni("common_ui.teamName", 0) );
 	elseif card.Team_marks == 2 then
-		teamText:SetImage( GetPictureByAni("ui.public.team2.png", 0) );
+		teamText:SetPicture( GetPictureByAni("common_ui.teamName", 1) );
 	elseif card.Team_marks == 3 then
-		teamText:SetImage( GetPictureByAni("ui.public.team3.png", 0) );
+		teamText:SetPicture( GetPictureByAni("common_ui.teamName", 2) );
 	else
 		teamText:SetVisible( false );
 	end
@@ -400,12 +402,11 @@ end
 --µã»÷¿¨ÅÆ
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
+	p.OnSendCardDetail(cardUniqueId);	
+end
 
-	
+function p.OnSendCardDetail(cardUniqueId)
 	local uid = GetUID();
-	
-	--uid=123456
-	--cardUniqueId="10000272";
 	
 	if uid == 0 or uid == nil or cardUniqueId == nil then
 		return ;
@@ -413,27 +414,8 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	
 	local param = string.format("&card_unique_id=%s",cardUniqueId)
 	SendReq("Equip","CardDetailShow",uid,param);		
-	card_rein.ClearSelData();
-
-	--[[
-	local cardSelectText = p.selectList[cardUniqueId] 
-	local pCardLeveInfo = nil;	
-	for k,v in pairs(p.cardListInfo) do
-		if v.UniqueId == cardUniqueId then
-			
-			if v.Level == 0 then
-				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", 1);
-			else
-				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", v.Level);
-			end
-
-			
-			break;
-		end
-	end
-	]]--
-	
-end
+	card_rein.ClearSelData();	
+end;	
 
 function p.GetCardInfo(cardUniqueId)
 	for k,v in pairs(p.cardListInfo) do

@@ -11,8 +11,6 @@ p.userMoney = 0;
 
 local ui = ui_card_rein;
 
-
-
 function p.ShowUI(card_info)
 	
 	if p.layer ~= nil then 
@@ -46,12 +44,22 @@ function p.SetCardData(card_info)
 	end	
 end;	
 
+function p.GetRefreshCardUI()
+	if p.baseCardInfo ~= nil then
+		card_intensify2.OnSendCardDetail(tostring(p.baseCardInfo.UniqueID))
+	end
+end;
+
 function p.getCardListInfo()
 	return p.cardListInfo;
 end;	
 
 function p.setCardListInfo(cardListInfo)
 	p.cardListInfo = cardListInfo;
+end;	
+
+function p.SetUserMoney(userMoney)
+	p.userMoney	 = userMoney;
 end;	
 
 
@@ -133,6 +141,8 @@ function p.InitUI(card_info)
 end	
 
 function p.setSelCardList(cardIDList)
+	p.ClearSelData();
+	
 	local lCount=0;
 	for k,v in pairs(cardIDList) do
 		local lUniqueId = v;
@@ -157,9 +167,14 @@ function p.ShowCardCost()
 	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_32);
 	cardMoney:SetText(tostring(p.consumeMoney)); 
 	
+	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+	moneyLab:SetText(tostring(p.userMoney));	
+	
 	if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
-		local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+		--local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
 		moneyLab:SetFontColor(ccc4(255,0,0,255));
+    else	
+		moneyLab:SetFontColor(ccc4(255,255,255,255));
 	end		
 end;	
 
@@ -168,14 +183,13 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 		return ;
 	end
 
-	local cardLevPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+pIndex-1);
-	cardLevPic:SetVisible(true);	
-												
 	local cardLevText = GetLabel(p.layer, ui.ID_CTRL_TEXT_CARDLEVEL1+pIndex-1);
 	cardLevText:SetVisible(true);
-	cardLevText:SetText("LV"..tostring(pCardInfo.Level));
+	cardLevText:SetText("LV "..tostring(pCardInfo.Level));
 	
-			
+	local cardLevPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+pIndex-1);
+	cardLevPic:SetVisible(true);	
+		
 	local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+pIndex-1);
 	local lcardId = tonumber(pCardInfo.CardID);
 	local lCardRowInfo= SelectRowInner( T_CHAR_RES, "card_id", lcardId); --从表中获取卡牌详细信息	
@@ -256,13 +270,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
-			if(p.baseCardInfo ~= nil) then
-				p.consumeMoney = 0;
-				p.selectNum = 0;
-				card_intensify2.ShowUI(p.baseCardInfo);
-			else
-			
-			end;
+			card_intensify2.ShowUI(p.baseCardInfo);
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
 			local param = "";
 			for k,v in pairs(p.selectCardId) do
@@ -275,10 +283,14 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			if param ~= "" then
 				p.OnSendReqIntensify(param);
 			else
-			
+				--没有素材
 			end;
 		elseif((ui.ID_CTRL_BUTTON_CARD1 <= tag) and (ui.ID_CTRL_PICTURE_CARD10 >= tag)) then --卡牌点击
-			card_intensify.ShowUI(p.baseCardInfo);  
+			if p.baseCardInfo ~= nil then
+				card_intensify.ShowUI(p.baseCardInfo);  
+			else
+				--未选择需强化的卡牌
+			end;
 		end;
 	end
 end		

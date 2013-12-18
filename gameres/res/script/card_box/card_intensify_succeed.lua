@@ -56,7 +56,8 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_INTENSIFY == tag) then --Ç¿»¯
 			
 			--card_intensify.ShowUI(p.cardInfo);
-			card_intensify.OnSendReq();
+			card_intensify2.OnSendReq();
+			card_rein.GetRefreshCardUI();
 			p.CloseUI();
 		end
 	end

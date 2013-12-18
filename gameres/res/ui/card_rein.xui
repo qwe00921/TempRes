@@ -277,12 +277,14 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_CARDEXP]
 Type=9
 Tag=236
-Rect=359 122 270 24
+Rect=355 121 275 30
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
+NormalFileUV=0 0 176 28
 
 [CTRL_TEXT_DEFENCE1]
 Type=4
@@ -596,7 +598,7 @@ NormalFileUV=0 0 248 54
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=0 108 640 162
+Rect=0 108 639 162
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -620,7 +622,10 @@ Tag=130
 Rect=17 339 51 19
 AnchorPos=0 0
 Notes=
+Text=LV 10
+TextTradition=LV 10
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -712,6 +717,7 @@ Rect=144 338 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -722,6 +728,7 @@ Rect=266 337 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -732,6 +739,7 @@ Rect=390 338 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -742,6 +750,7 @@ Rect=515 338 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -752,6 +761,7 @@ Rect=18 518 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -762,6 +772,7 @@ Rect=142 518 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -772,6 +783,7 @@ Rect=265 517 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -782,6 +794,7 @@ Rect=389 517 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
@@ -792,5 +805,6 @@ Rect=514 517 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
