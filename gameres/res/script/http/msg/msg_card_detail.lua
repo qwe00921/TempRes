@@ -36,6 +36,7 @@ function p:Process()
 	WriteCon( "** msg_card_detail:Process() called" );
 	--dump_obj(self.user_cards);
 	if self.idMsg == MSG_CARD_ROLE_DETAIL then
+		card_rein.SetCardData(self.card_info);
 		dlg_card_attr_base.OnLoadCardDetail(self);
 	end
 end

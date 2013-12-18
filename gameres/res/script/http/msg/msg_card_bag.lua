@@ -29,6 +29,7 @@ function p:Process()
 	card_bag_mgr.RefreshUI(self);
 	if self.result == true then 
 		--card_bag_mgr.RefreshUI(self.cardlist);
+		card_intensify2.ShowCardList(self.cardlist,self);
 		card_intensify.ShowCardList(self.cardlist,self);
 	else
 		WriteConWarning( "** msg_card_bag error" );
