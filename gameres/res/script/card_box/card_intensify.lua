@@ -352,7 +352,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	end
 	--卡牌等级
 	local levelText = GetLabel(view,cardLevel);
-	levelText:SetText(tostring(card.Level));
+	levelText:SetText("LV "..tostring(card.Level));
 	
 	--是否选中图片
 	local cardSelectText = GetImage(view,cardSelect );
