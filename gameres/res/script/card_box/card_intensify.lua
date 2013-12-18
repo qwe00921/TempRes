@@ -282,7 +282,16 @@ function p.ShowCardView(cardList)
 	--p.selectList IDÊÇkey   p.selectCardId
 	
 	for k,v in pairs(p.selectCardId) do
-		p.selectList[v]:SetVisible(true);
+		for i = 1,cardNum do 
+			local card = cardList[i];
+			if card.UniqueId == v then
+				
+				p.selectList[v]:SetVisible(true);
+				
+			end
+		end
+		
+		
 	end
 	
 end
