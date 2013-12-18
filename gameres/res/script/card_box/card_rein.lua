@@ -8,6 +8,8 @@ p.selectNum = 0;
 p.consumeMoney = 0;
 p.selectCardId = {};
 p.userMoney = 0;
+p.addExp = 0;
+p.nowExp = 0;
 
 local ui = ui_card_rein;
 
@@ -86,6 +88,12 @@ function p.InitUI(card_info)
 		local lTextName = GetLabel(p.layer, ui.ID_CTRL_TEXT_252);
 		lTextName:SetText(tostring(lCardRowInfo.name));
 		
+		--当前经验值更新
+		p.nowExp = tonumber(card_info.Exp);
+		
+		p.SetExp(card_info);
+		
+		--[[
 		--等级 ID_CTRL_TEXT_LEVEL		
 		local lTextLev = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);
 		local llevel = card_info.Level;
@@ -93,14 +101,24 @@ function p.InitUI(card_info)
 		
 		--经验值 ID_CTRL_TEXT_EXP
 		local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", card_info.Level);
-		--local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
-		--lTextExp:SetText(tostring(card_info.Exp).."/"..tostring(lCardLeveInfo.exp));
+		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
+		lTextExp:SetText(tostring(card_info.Exp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
 		
 		--经验值条 ID_CTRL_EXP_CARDEXP
 		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
 		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
 		lCardExp:SetProcess(tonumber(card_info.Exp));
+		lCardExp:SetNoText();
 		
+		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDADD);
+		local laddAllExp = tonumber(card_info.Exp) + p.addExp;
+		if laddAllExp > tonumber(lCardLeveInfo.exp) then
+			laddAllExp = tonumber(lCardLeveInfo.exp)
+		end;
+		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
+		lCardExp:SetProcess(tonumber(laddAllExp));
+		lCardExp:SetNoText();
+		]]--
 		--生命值 ID_CTRL_TEXT_HP
 		local lTextHP = GetLabel(p.layer, ui.ID_CTRL_TEXT_HP);
 		lTextHP:SetText(tostring(card_info.Hp));
@@ -200,12 +218,43 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	
 	local lCardLeveInfo;
 	if pCardInfo.Level == 0 then
-		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", 1);
+		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", 1);
 	else
-		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", pCardInfo.Level);
+		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", pCardInfo.Level);
 	end		
 	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money;	
 	
+	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
+	p.addExp = p.addExp + lCardInfo.feedbase_exp + lCardLeveInfo.feed_exp;
+	
+	p.SetExp(pCardInfo);
+end;
+
+function p.SetExp(card_info)
+	--等级 ID_CTRL_TEXT_LEVEL		
+	local lTextLev = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);
+	local llevel = card_info.Level;
+	lTextLev:SetText( tostring(card_info.Level) );
+	
+	--经验值 ID_CTRL_TEXT_EXP
+	local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", card_info.Level);
+	local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
+	lTextExp:SetText(tostring(p.nowExp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
+	
+	--经验值条 ID_CTRL_EXP_CARDEXP
+	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
+	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
+	lCardExp:SetProcess(tonumber(p.nowExp));
+	lCardExp:SetNoText();
+	
+	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDADD);
+	local laddAllExp = p.nowExp + p.addExp;
+	if laddAllExp > tonumber(lCardLeveInfo.exp) then
+		laddAllExp = tonumber(lCardLeveInfo.exp)
+	end;
+	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
+	lCardExp:SetProcess(tonumber(laddAllExp));
+	lCardExp:SetNoText();	
 end;	
 
 function p.InitAllCardInfo()
@@ -241,6 +290,8 @@ function p.CloseUI()
 		p.selectCardId = nil;
 		p.consumeMoney = 0;
 		p.selectNum = 0;
+		p.nowExp = 0;
+		p.addExp = 0;
     end
 end
 
@@ -318,6 +369,7 @@ end
 function p.ClearSelData()
 	p.selectNum = 0;
 	p.selectCardId = {};
+	p.addExp = 0;
 	p.InitAllCardInfo();
 end
 

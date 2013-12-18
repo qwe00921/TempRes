@@ -82,11 +82,11 @@ function p.ShowCardLevel(msg)
 	cardPic:SetPicture(GetPictureByAni(pCardInfo.card_pic, 0) );
 	
 	
-	local pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", p.cardInfo.Level);
+	local pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", p.cardInfo.Level);
 	
 	--经验
 	local cardExp = GetLabel(p.layer,ui.ID_CTRL_TEXT_EXP);
-	cardExp:SetText(tostring(p.cardInfo.Exp).."/"..tostring(pCardLeveInfo.feed_exp)); 	
+	cardExp:SetText(tostring(p.cardInfo.Exp).."/"..tostring(pCardLeveInfo.exp)); 	
 	
 	--未强化前的等级
 	local cardbeforLevel = GetLabel(p.layer,ui.ID_CTRL_TEXT_21);

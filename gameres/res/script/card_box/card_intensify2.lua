@@ -421,9 +421,9 @@ function p.GetCardInfo(cardUniqueId)
 	for k,v in pairs(p.cardListInfo) do
 		if v.UniqueId == cardUniqueId then
 			if v.Level == 0 then
-				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", 1);
+				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", 1);
 			else
-				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", v.Level);
+				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", v.Level);
 			end
 			break;
 		end

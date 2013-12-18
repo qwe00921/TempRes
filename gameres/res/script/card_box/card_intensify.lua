@@ -134,6 +134,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_level_max"),p.OnMsgCallback,p.layer);
 				
 			else
+				--[[
 				local param = "";
 				for k,v in pairs(p.selectCardId) do
 					
@@ -143,8 +144,17 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 						param = param..v..",";
 					end
 				end
+				
 				p.OnSendReqIntensify(param);
 				--p.CloseUI();
+				]]--
+				--update by csd 2013-12-18
+				local lCardIdLst = {}
+				for k,v in pairs(p.selectCardId) do
+					table.insert(lCardIdLst, v);
+				end;
+				card_rein.setSelCardList(lCardIdLst);
+				p.CloseUI();
 			end 
 			
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --È«²¿
@@ -380,9 +390,9 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	for k,v in pairs(p.cardListInfo) do
 		if v.UniqueId == cardUniqueId then
 			if v.Level == 0 then
-				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", 1);
+				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", 1);
 			else
-				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", v.Level);
+				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", v.Level);
 			end
 			break;
 		end

@@ -277,7 +277,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_CARDADD]
 Type=9
 Tag=752
-Rect=365 121 260 22
+Rect=363 124 260 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -607,10 +607,21 @@ Notes=
 NormalFile=.\res\image\ui\public\cardintensify_info.png
 NormalFileUV=0 0 248 54
 
+[CTRL_TEXT_EXP]
+Type=4
+Tag=74
+Rect=407 124 177 19
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=0 105 639 162
+Rect=0 109 639 162
 AnchorPos=0 0
 Notes=
 TextSize=10
