@@ -274,17 +274,29 @@ TextColor=0xde97fd
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_EXP_CARDEXP]
+[CTRL_EXP_CARDADD]
 Type=9
-Tag=236
-Rect=355 121 275 30
+Tag=752
+Rect=350 87 275 27
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
-NormalFileUV=0 0 176 28
+NormalFile=.\res\image\ui\main_interface\exp1.png
+NormalFileUV=0 0 188 32
+
+[CTRL_EXP_CARDEXP]
+Type=9
+Tag=236
+Rect=343 119 275 27
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\exp2.png
+NormalFileUV=0 0 188 32
 
 [CTRL_TEXT_DEFENCE1]
 Type=4
@@ -598,7 +610,7 @@ NormalFileUV=0 0 248 54
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=0 108 639 162
+Rect=10 312 639 162
 AnchorPos=0 0
 Notes=
 TextSize=10
