@@ -3,6 +3,16 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_CHOOSE_BG]
+Type=2
+Tag=724
+Rect=0 108 640 162
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
 [CTRL_PICTURE_BG]
 Type=1
 Tag=27
