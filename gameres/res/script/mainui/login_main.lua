@@ -17,6 +17,9 @@ function p.ShowUI()
 		p.layer:SetVisible(true);
 		--p.SendReqUserInfo();
 		PlayMusic_LoginUI();
+		
+		--除当前外，其他全部隐藏
+		GetUIRoot():VisibleOther( p.layer );
 		return;
 	end
 	
@@ -33,6 +36,10 @@ function p.ShowUI()
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
+	
+	--除当前外，其他全部隐藏
+	GetUIRoot():VisibleOther( p.layer );
+	
 	p.SetDelegate();
 	PlayMusic_LoginUI();
 end

@@ -38,13 +38,15 @@ end
 
 --处理错误，退出到主界面
 function p:Process_Err2()
---[[
-	maininterface.HideUI();
-	dlg_battlearray.HideUI();
-	dlg_userinfo.HideUI();
-	dlg_menu.HideUI();
---]]
-	--game_main.main();
+	--关闭地图
+	local mapNode = GetTileMapMgr():GetMapNode();
+	if mapNode ~= nil then
+		mapNode:FadeOut();
+		world_map.CloseMap();
+	end
+	
+	--显示登陆界面
+	game_main.main();
 end
 
 
