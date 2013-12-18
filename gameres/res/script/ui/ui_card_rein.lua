@@ -52,6 +52,7 @@ p.ID_CTRL_TEXT_SPEED1					    = 239;
 p.ID_CTRL_TEXT_TEAM1					     = 238;
 p.ID_CTRL_TEXT_DEFENCE1				   = 237;
 p.ID_CTRL_EXP_CARDEXP					    = 236;
+p.ID_CTRL_EXP_CARDADD					    = 752;
 p.ID_CTRL_TEXT_ATTACK1				    = 235;
 p.ID_CTRL_TEXT_HP1					       = 234;
 p.ID_CTRL_TEXT_LEVEL1					    = 233;
