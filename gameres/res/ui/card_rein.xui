@@ -423,19 +423,6 @@ TextColor=0xfea14d
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_EXP]
-Type=4
-Tag=249
-Rect=414 123 145 22
-AnchorPos=0 0
-Notes=
-Text=9999/9999
-TextTradition=9999/9999
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_PICTURE_TEAM]
 Type=1
 Tag=250
