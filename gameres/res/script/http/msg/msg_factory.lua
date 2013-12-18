@@ -13,6 +13,9 @@ function CreateMsg( idmsg )
 	
 	if idmsg == 1 then
 		msg = msg_test:new();
+	elseif idmsg == MSG_GENERAL_ERROR then
+		msg = msg_error:new();
+	
 	elseif idmsg == MSG_PLAYER then
 	    msg = msg_player:new();
 	elseif idmsg == MSG_CREATE_PLAYER then

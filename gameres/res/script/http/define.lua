@@ -8,6 +8,8 @@
 DoFile("http/msg/msg_define.lua");
 DoFile("http/msg/msg_base.lua");
 
+
+
 DoFile("http/msg/msg_server_list.lua");
 DoFile("http/msg/msg_quest_list.lua");
 DoFile("http/msg/msg_stage_list.lua");
@@ -25,6 +27,10 @@ DoFile("http/msg/msg_check_exist_role.lua")
 
 DoFile("http/msg/msg_test.lua");
 DoFile("http/msg/msg_err.lua");
+
+--错误消息
+DoFile("http/msg/msg_error.lua");
+
 DoFile("http/msg/msg_factory.lua");
 DoFile("http/msg/msg_cache.lua");
 DoFile("http/msg/msg_player.lua");
