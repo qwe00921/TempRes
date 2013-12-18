@@ -54,6 +54,11 @@ function p.SetDelegate()
     p.againBtn = GetButton(p.layer,ui_dlg_gacha_result.ID_CTRL_BUTTON_AGAIN);
     p.againBtn:SetLuaDelegate(p.OnGachaResultUIEvent);
     p.againBtn:SetEnabled( false );
+	
+	local gacha_type = dlg_gacha.gacha_type or 1;
+	local text = tonumber(gacha_type) == 1 and ToUtf8( "再扭一次" ) or ToUtf8( "再扭五次" );
+	p.againBtn:SetText( text );
+	
 	--继续任务按钮
 	local backBtn = GetButton(p.layer,ui_dlg_gacha_result.ID_CTRL_BUTTON_BACK);
     backBtn:SetLuaDelegate(p.OnGachaResultUIEvent);
@@ -174,12 +179,32 @@ function p.ShowCardInfo(card_id)
         local cardDef = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DEF );
         cardDef:SetText( SelectCell(T_CARD, card_id, "defence") );
 		
+		local speed = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_SPEED );
+		speed:SetText( SelectCell(T_CARD, card_id, "speed") );
+		
+		local crit = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_CRIT );
+		crit:SetText( SelectCell(T_CARD, card_id, "crit") );
+		
         --技能
+		--[[
         local cardSkill = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_SKILL );
         local skill_id = SelectCell( T_CARD, card_id, "skill" );
         if skill_id ~= "0" then
             cardSkill:SetText( SelectCell( T_SKILL, skill_id, "name" ) );
         end
+		--]]
+		local cardSkill = GetImage( p.layer, ui_dlg_gacha_result.ID_CTRL_PICTURE_SKILL );
+		local skill_id = SelectCell( T_CARD, card_id , "skill" );
+		if skill_id ~= "0" then
+			local path = SelectCell( T_SKILL_RES, skill_id, "icon" );
+			local picData;
+			if path then
+				picData = GetPictureByAni( path, 0 );
+			end
+			if picData then
+				cardSkill:SetPicture( picData );
+			end
+		end
 
         --描述
         local description = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DESCRIPTION);
