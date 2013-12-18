@@ -25,9 +25,9 @@ end
 function p:Process()
 	local level = tonumber(self.msglevel);
 	if level ~= nil and level == 1 then
-		dlg_msgbox.ShowOK( ToUtf8( "提示" ), self.message, p.Process_Err1, GetUIRoot() );
+		dlg_msgbox.ShowOK( ToUtf8( "提示" ), self.msgtext, p.Process_Err1, GetUIRoot() );
 	else
-		dlg_msgbox.ShowOK( ToUtf8( "错误" ), self.message, p.Process_Err2, GetUIRoot() );
+		dlg_msgbox.ShowOK( ToUtf8( "错误" ), self.msgtext, p.Process_Err2, GetUIRoot() );
 	end
 end
 
