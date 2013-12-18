@@ -40,7 +40,8 @@ end
 
 function p.SetCardData(card_info)
 	if p.layer ~= nil then 
-		p.ShowUI(card_info)
+		card_info.UniqueId = tonumber(card_info.UniqueID);
+		p.ShowUI(card_info);
 		return;
 	end	
 end;	
@@ -84,8 +85,8 @@ function p.InitUI(card_info)
 		
 		--经验值 ID_CTRL_TEXT_EXP
 		local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", card_info.Level);
-		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
-		lTextExp:SetText(tostring(card_info.Exp).."/"..tostring(lCardLeveInfo.exp));
+		--local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
+		--lTextExp:SetText(tostring(card_info.Exp).."/"..tostring(lCardLeveInfo.exp));
 		
 		--经验值条 ID_CTRL_EXP_CARDEXP
 		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
@@ -255,11 +256,15 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
-			p.consumeMoney = 0;
-			p.selectNum = 0;
-			card_intensify2.ShowUI(p.baseCardInfo);
+			if(p.baseCardInfo ~= nil) then
+				p.consumeMoney = 0;
+				p.selectNum = 0;
+				card_intensify2.ShowUI(p.baseCardInfo);
+			else
+			
+			end;
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
-			local param = {};
+			local param = "";
 			for k,v in pairs(p.selectCardId) do
 				if k == #p.selectCardId then
 					param = param..v;
@@ -267,7 +272,11 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 					param = param..v..",";
 				end
 			end
+			if param ~= "" then
 				p.OnSendReqIntensify(param);
+			else
+			
+			end;
 		elseif((ui.ID_CTRL_BUTTON_CARD1 <= tag) and (ui.ID_CTRL_PICTURE_CARD10 >= tag)) then --卡牌点击
 			card_intensify.ShowUI(p.baseCardInfo);  
 		end;

@@ -66,7 +66,7 @@ function p.OnSendReq()
 	--uid = 1234;
 	if uid ~= nil and uid > 0 then
 		--模块  Action  --msg_card_bag
-		SendReq("CardList","ListFeed",uid,"");
+		SendReq("CardList","List",uid,"");
 	end
 	
 end
@@ -379,7 +379,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	
 	--是否选中图片
 	if p.baseCardInfo ~= nil then
-		if card.UniqueId == p.baseCardInfo.UniqueId then
+		if tonumber(card.UniqueId) == tonumber(p.baseCardInfo.UniqueID) then
 			local cardSelectText = GetImage(view,cardSelect );
 			cardSelectText:SetVisible( true );
 		end;

@@ -40,7 +40,6 @@ p.ID_CTRL_BUTTON_CARD1				    = 48;
 p.ID_CTRL_TEXT_252					       = 252;
 p.ID_CTRL_PICTURE_251					    = 251;
 p.ID_CTRL_PICTURE_TEAM				    = 250;
-p.ID_CTRL_TEXT_EXP					       = 249;
 p.ID_CTRL_TEXT_248					       = 248;
 p.ID_CTRL_TEXT_247					       = 247;
 p.ID_CTRL_TEXT_DEFENCE				    = 245;
