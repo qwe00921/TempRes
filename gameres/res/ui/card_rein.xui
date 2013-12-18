@@ -71,8 +71,8 @@ Rect=0 712 640 148
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card\bg_card.png
-NormalFileUV=0 0 192 279
+NormalFile=.\res\image\ui\card\card2.png
+NormalFileUV=0 0 192 108
 
 [CTRL_TEXT_25]
 Type=4
@@ -223,8 +223,8 @@ Rect=0 105 640 162
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card\bg_card.png
-NormalFileUV=0 0 192 279
+NormalFile=.\res\image\ui\card\card2.png
+NormalFileUV=0 0 192 108
 
 [CTRL_PICTURE_231]
 Type=1
@@ -277,7 +277,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_CARDADD]
 Type=9
 Tag=752
-Rect=350 87 275 27
+Rect=365 121 260 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -289,7 +289,7 @@ NormalFileUV=0 0 188 32
 [CTRL_EXP_CARDEXP]
 Type=9
 Tag=236
-Rect=343 119 275 27
+Rect=363 124 260 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -610,7 +610,7 @@ NormalFileUV=0 0 248 54
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=10 312 639 162
+Rect=0 105 639 162
 AnchorPos=0 0
 Notes=
 TextSize=10
