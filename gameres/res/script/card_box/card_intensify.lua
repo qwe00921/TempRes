@@ -69,6 +69,7 @@ function p.OnSendReq()
 	if uid ~= nil and uid > 0 then
 		--模块  Action 
 		SendReq("CardList","ListFeed",uid,"");
+		--SendReq("CardList","List",uid,"");
 	end
 	
 end
@@ -253,6 +254,55 @@ function p.ShowCardList(cardList,msg)
 	
 	
 end
+
+function p.InitViewUI(view)
+   for cardIndex=1,5 do
+		if cardIndex == 1 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
+			cardSelect = ui_list.ID_CTRL_PICTURE_S1;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
+			cardLevel = ui_list.ID_CTRL_LEVEL_1;
+			cardLevelBg = ui_list.ID_CTRL_PICTURE_38;
+		elseif cardIndex == 2 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
+			cardSelect = ui_list.ID_CTRL_PICTURE_S2;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
+			cardLevel = ui_list.ID_CTRL_LEVEL_2;
+			cardLevelBg = ui_list.ID_CTRL_PICTURE_39;
+		elseif cardIndex == 3 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
+			cardSelect = ui_list.ID_CTRL_PICTURE_S3;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
+			cardLevel = ui_list.ID_CTRL_LEVEL_3;
+			cardLevelBg = ui_list.ID_CTRL_PICTURE_40;
+		elseif cardIndex == 4 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
+			cardSelect = ui_list.ID_CTRL_PICTURE_S4;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
+			cardLevel = ui_list.ID_CTRL_LEVEL_4;
+			cardLevelBg = ui_list.ID_CTRL_PICTURE_41;
+		elseif cardIndex == 5 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
+			cardSelect = ui_list.ID_CTRL_PICTURE_S5;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
+			cardLevel = ui_list.ID_CTRL_LEVEL_5;
+			cardLevelBg = ui_list.ID_CTRL_PICTURE_47;
+		end
+		
+		local teamPic = GetImage(view,cardTeam);
+		teamPic:SetVisible(false);
+		
+		local cardSelectText = GetImage(view,cardSelect );
+		cardSelectText:SetVisible( false );
+			
+		local levelText = GetLabel(view,cardLevel);
+		levelText:SetVisible( false );
+		
+		local levelTextBg = GetImage(view,cardLevelBg );
+		levelTextBg:SetVisible( false );
+  end
+end;	
+
 --显示卡牌列表
 function p.ShowCardView(cardList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
@@ -270,6 +320,8 @@ function p.ShowCardView(cardList)
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("card_list_intensify_view.xui",view,nil);
+		
+		p.InitViewUI(view);
 		local bg = GetUiNode( view, ui_list.ID_CTRL_PICTURE_13);
         view:SetViewSize( bg:GetFrameSize());
 		
@@ -350,13 +402,23 @@ function p.ShowCardInfo( view, card, cardIndex )
 
 	--ui.public.team1.png  队伍
 	local teamText = GetImage(view,cardTeam);
-	
+	--[[
 	if card.Team_marks == 1 then
 		teamText:SetImage( GetPictureByAni("ui.public.team1.png", 0) );
 	elseif card.Team_marks == 2 then
 		teamText:SetImage( GetPictureByAni("ui.public.team2.png", 0) );
 	elseif card.Team_marks == 3 then
 		teamText:SetImage( GetPictureByAni("ui.public.team3.png", 0) );
+	else
+		teamText:SetVisible( false );
+	end
+	]]--
+	if card.Team_marks == 1 then
+		teamText:SetPicture( GetPictureByAni("common_ui.teamName", 0) );
+	elseif card.Team_marks == 2 then
+		teamText:SetPicture( GetPictureByAni("common_ui.teamName", 1) );
+	elseif card.Team_marks == 3 then
+		teamText:SetPicture( GetPictureByAni("common_ui.teamName", 2) );
 	else
 		teamText:SetVisible( false );
 	end

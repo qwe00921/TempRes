@@ -64,26 +64,35 @@ function p.SetUserMoney(userMoney)
 end;	
 
 
-function p.copyTab(st)
-	if st == nil then
-		return nil;
-	end;
+function p.copyTab(ori_tab)
+    if (type(ori_tab) ~= "table") then  
+        return nil  
+    end  
 	
-    dt = {}
-    for k, v in pairs(st or {}) do
-        if type(v) ~= "table" then
-            dt[k] = v
-        else
-            dt[k] = p.copyTab(v)
-        end
-    end
-    return dt;
+    local new_tab = {}  
+    for i,v in pairs(ori_tab) do  
+        local vtyp = type(v)  
+        if (vtyp == "table") then  
+            new_tab[i] = p.copyTab(v)  
+        elseif (vtyp == "thread") then  
+            new_tab[i] = v  
+        elseif (vtyp == "userdata") then  
+            new_tab[i] = v  
+        else  
+            new_tab[i] = v  
+        end  
+    end  
+    return new_tab 
 end
 
 function p.InitUI(card_info)
 
 	if card_info ~= nil then
-		card_info.UniqueId = tonumber(card_info.UniqueID); --属性缺少
+		if card_info.UniqueID ~= nil then
+			card_info.UniqueId = tonumber(card_info.UniqueID); --属性缺少
+		else
+			card_info.UniqueID = tostring(card_info.UniqueId)
+		end;
 	end;
 	p.baseCardInfo = p.copyTab(card_info);  --表的COPY
 	p.InitAllCardInfo(); --初始化所有卡牌
@@ -184,7 +193,8 @@ function p.setSelCardList(cardIDList)
 	local lCount=0;
 	for k,v in pairs(cardIDList) do
 		local lUniqueId = v;
-		for i=1,table.maxn(p.cardListInfo) do
+		local lNum = #(p.cardListInfo)
+		for i=1,lNum do
 		   local lcardInfo = p.cardListInfo[i];
 		   if lUniqueId == lcardInfo.UniqueId then
 				lCount = lCount + 1;

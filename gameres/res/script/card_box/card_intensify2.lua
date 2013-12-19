@@ -182,6 +182,11 @@ end
 
 --返回数据显示 Lab框
 function p.ShowCardList(cardList,msg)
+
+	card_rein.SetUserMoney(msg.money);
+	p.cardListInfo = cardList;
+	card_rein.setCardListInfo(cardList);	
+	
 	if p.layer == nil then
 		return;
 	end
@@ -206,9 +211,7 @@ function p.ShowCardList(cardList,msg)
 	countLab:SetText(tostring(msg.cardlist_num).."/"..tostring(msg.cardmax));
 	--moneyLab:SetText(tostring(msg.money));
 	--p.userMoney = msg.money;
-	card_rein.SetUserMoney(msg.money);
-	p.cardListInfo = cardList;
-	card_rein.setCardListInfo(cardList);
+
 	--[[
 	--列表删除要强化的那条卡牌数据 
 	for i = 1 , #p.cardListInfo do

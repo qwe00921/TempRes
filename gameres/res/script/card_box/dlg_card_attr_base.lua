@@ -212,7 +212,8 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_INTENSIFY == tag then
 			--¿¨ÅÆÇ¿»¯
-			card_intensify.ShowUI(p.cardInfo);
+			card_intensify2.OnSendReq();
+			card_rein.ShowUI(p.cardInfo);
 			p.CloseUI();
 			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_SALE == tag then
