@@ -56,7 +56,7 @@ function p.getCardListInfo()
 end;	
 
 function p.setCardListInfo(cardListInfo)
-	p.cardListInfo = p.copyTab(cardListInfo);
+	p.cardListInfo = cardListInfo;
 end;	
 
 function p.SetUserMoney(userMoney)
