@@ -40,7 +40,6 @@ end
 
 function p.SetCardData(card_info)
 	if p.layer ~= nil then 
-		card_info.UniqueId = tonumber(card_info.UniqueID);
 		p.ShowUI(card_info);
 		return;
 	end	
@@ -57,7 +56,7 @@ function p.getCardListInfo()
 end;	
 
 function p.setCardListInfo(cardListInfo)
-	p.cardListInfo = cardListInfo;
+	p.cardListInfo = p.copyTab(cardListInfo);
 end;	
 
 function p.SetUserMoney(userMoney)
@@ -65,8 +64,28 @@ function p.SetUserMoney(userMoney)
 end;	
 
 
+function p.copyTab(st)
+	if st == nil then
+		return nil;
+	end;
+	
+    dt = {}
+    for k, v in pairs(st or {}) do
+        if type(v) ~= "table" then
+            dt[k] = v
+        else
+            dt[k] = p.copyTab(v)
+        end
+    end
+    return dt;
+end
+
 function p.InitUI(card_info)
-	p.baseCardInfo = card_info;
+
+	if card_info ~= nil then
+		card_info.UniqueId = tonumber(card_info.UniqueID); --属性缺少
+	end;
+	p.baseCardInfo = p.copyTab(card_info);  --表的COPY
 	p.InitAllCardInfo(); --初始化所有卡牌
 	p.ShowCardCost();
 	if card_info == nil then --挡板的设置
@@ -91,25 +110,28 @@ function p.InitUI(card_info)
 		--当前经验值更新
 		p.nowExp = tonumber(card_info.Exp);
 		
-		p.SetExp(card_info);
-		
-		--[[
 		--等级 ID_CTRL_TEXT_LEVEL		
 		local lTextLev = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);
 		local llevel = card_info.Level;
 		lTextLev:SetText( tostring(card_info.Level) );
+
+		--当前的经验值条 ID_CTRL_EXP_CARDEXP
+		local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", card_info.Level);
+		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
+		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
+		lCardExp:SetProcess(tonumber(card_info.Exp));
+		lCardExp:SetNoText();
+				
+		p.SetExp(card_info);
 		
+		--[[
 		--经验值 ID_CTRL_TEXT_EXP
 		local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", card_info.Level);
 		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
 		lTextExp:SetText(tostring(card_info.Exp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
 		
-		--经验值条 ID_CTRL_EXP_CARDEXP
-		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
-		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
-		lCardExp:SetProcess(tonumber(card_info.Exp));
-		lCardExp:SetNoText();
-		
+
+		--加上经验后的经验条
 		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDADD);
 		local laddAllExp = tonumber(card_info.Exp) + p.addExp;
 		if laddAllExp > tonumber(lCardLeveInfo.exp) then
@@ -145,8 +167,6 @@ function p.InitUI(card_info)
 		else
 			lPicTeam:SetVisible( false );
 		end		
-		
-
 		
 		--速度 ID_CTRL_TEXT_247
 		local lTextSpeed = GetLabel(p.layer, ui.ID_CTRL_TEXT_247);
@@ -231,22 +251,20 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 end;
 
 function p.SetExp(card_info)
-	--等级 ID_CTRL_TEXT_LEVEL		
-	local lTextLev = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);
-	local llevel = card_info.Level;
-	lTextLev:SetText( tostring(card_info.Level) );
+
 	
 	--经验值 ID_CTRL_TEXT_EXP
 	local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", card_info.Level);
 	local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
 	lTextExp:SetText(tostring(p.nowExp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
 	
-	--经验值条 ID_CTRL_EXP_CARDEXP
+	--[[--经验值条 ID_CTRL_EXP_CARDEXP
 	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
 	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
 	lCardExp:SetProcess(tonumber(p.nowExp));
-	lCardExp:SetNoText();
-	
+	lCardExp:SetNoText();--]]
+
+ --累加后的经验条	
 	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDADD);
 	local laddAllExp = p.nowExp + p.addExp;
 	if laddAllExp > tonumber(lCardLeveInfo.exp) then
@@ -326,15 +344,15 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			local param = "";
 			for k,v in pairs(p.selectCardId) do
 				if k == #p.selectCardId then
-					param = param..v;
+					param = param..tostring(v);
 				else
-					param = param..v..",";
+					param = param..tostring(v)..",";
 				end
 			end
 			if param ~= "" then
 				p.OnSendReqIntensify(param);
 			else
-				--没有素材
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
 			end;
 		elseif((ui.ID_CTRL_BUTTON_CARD1 <= tag) and (ui.ID_CTRL_PICTURE_CARD10 >= tag)) then --卡牌点击
 			if p.baseCardInfo ~= nil then
@@ -368,6 +386,7 @@ end
 
 function p.ClearSelData()
 	p.selectNum = 0;
+	p.consumeMoney = 0;
 	p.selectCardId = {};
 	p.addExp = 0;
 	p.InitAllCardInfo();
