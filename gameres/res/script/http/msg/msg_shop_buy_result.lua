@@ -39,5 +39,7 @@ function p:Process()
 	--]]
 	if self.result then
 		dlg_buy_num.BuySuccessResult( self );
+	else
+		dlg_buy_num.BuyFailedResult( self );
 	end
 end
