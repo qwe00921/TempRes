@@ -204,6 +204,10 @@ end
 --购买成功回调
 function p.BuySuccessResult( msg )
     p.CloseUI();
+	
+	--更新代币信息
+	dlg_gacha.UpdateRmb( msg.user_coin );
+	
 	if msg~= nil and msg.list ~= nil then
 		local item_id = msg.list.item_id or 0 ;
 		local num = p.addNum or 0;
@@ -212,6 +216,11 @@ function p.BuySuccessResult( msg )
 			dlg_msgbox.ShowOK( ToUtf8( "提示" ), ToUtf8( "你成功购买了" ) .. ToUtf8(tostring(num)) .. ToUtf8("个") .. item_name, p.OnMsgOKClick, p.layer );
 		end
 	end
+end
+
+--购买失败回调
+function p.BuyFailedResult( msg )
+	dlg_msgbox.ShowOK( ToUtf8( "提示" ), msg.message , p.CloseUI, p.layer );
 end
 
 --设置可见
@@ -226,13 +235,13 @@ function p.CloseUI()
 	    p.layer:LazyClose();
         p.layer = nil;
     end
-
 end
 
 function p.OnMsgOKClick()
 	local item_id = p.item.item_id;
 	local num_limit = tonumber( SelectRowInner( T_SHOP, "item_id", p.item.item_id  , "num_limit"));
 	local type_id = tonumber( SelectRowInner( T_SHOP, "item_id", p.item.item_id  , "type"));
+	
 	if num_limit ~= 0 then
 		if type_id == 1 then
 			dlg_gacha.ReqShopItem();
