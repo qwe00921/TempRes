@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName:    n_battle_pet_skill.lua
+-- FileName:    w_battle_pet_skill.lua
 -- author:      hst, 2013年12月1日
 -- purpose:     宠物技能
 --------------------------------------------------------------
 
-n_battle_pet_skill = {}
-local p = n_battle_pet_skill;
+w_battle_pet_skill = {}
+local p = w_battle_pet_skill;
 
 --宠物技能
 function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
@@ -21,8 +21,8 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     if Targets == nil or #Targets <= 0 then
         WriteConErr("Skill no target!");
     end
-    local petNode = n_battle_mgr.GetPetNode( Pos, UCamp );
-    local petNameNode = n_battle_mgr.GetPetNameNode( Pos, UCamp );
+    local petNode = w_battle_mgr.GetPetNode( Pos, UCamp );
+    local petNameNode = w_battle_mgr.GetPetNameNode( Pos, UCamp );
     local hurtEffect = SelectCell( T_SKILL_RES, SkillId, "hurt_effect" );
     local skillType = tonumber( SelectCell( T_SKILL, SkillId, "Skill_type" ) );
     local hurtSound = SelectCell( T_SKILL_SOUND, SkillId, "hurt_sound" );
@@ -46,7 +46,7 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     end
     local petIndex = Pos;
     if UCamp == E_CARD_CAMP_ENEMY then
-    	petIndex = petIndex + N_BATTLE_CAMP_CARD_NUM;
+    	petIndex = petIndex + W_BATTLE_CAMP_CARD_NUM;
     end
     local cmdUpDateRage = createCommandLua():SetCmd( "UpdatePetRage", petIndex, Rage, "" );
     seqSkill:AddCommand( cmdUpDateRage );
@@ -96,9 +96,9 @@ function p.skill(UCamp, TCamp, Pos, SkillId, Targets, Rage, batch )
     	
     	local targetF;
     	if TCamp == E_CARD_CAMP_HERO then
-            targetF = n_battle_mgr.heroCamp:FindFighter( TPos );
+            targetF = w_battle_mgr.heroCamp:FindFighter( TPos );
         elseif TCamp == E_CARD_CAMP_ENEMY then
-            targetF = n_battle_mgr.enemyCamp:FindFighter( TPos + N_BATTLE_CAMP_CARD_NUM );
+            targetF = w_battle_mgr.enemyCamp:FindFighter( TPos + W_BATTLE_CAMP_CARD_NUM );
         end
         
         --受击者死亡
@@ -186,7 +186,7 @@ function p.doUIEffect( UCamp, seqUI )
     
     --大招名称特效
     --0:初始化特效
-    local skillNameBar = GetImage( n_battle_pvp.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
+    local skillNameBar = GetImage( w_battle_pvp.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
     local cmd3 = createCommandEffect():AddFgEffect( 0.01, skillNameBar, skillFx );
     seqUI:AddCommand( cmd3 );   
     

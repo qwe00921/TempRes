@@ -150,10 +150,18 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			if tonumber(storyId) ~= 0 then
 				dlg_drama.ShowUI( id , storyId);
 			else
+			   if E_DEMO_VER == 4 then
 				n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+			   else	
+				w_battle_mgr.EnterBattle( W_BATTLE_PVE, btnId );--进入战斗PVE
+			   end;
 			end
 		else
-			n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+			if E_DEMO_VER== 4 then
+			  n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+			else
+			  w_battle_mgr.EnterBattle( W_BATTLE_PVE, btnId );--进入战斗PVE
+			end;
 		end
 		p.CloseUI();
 	end

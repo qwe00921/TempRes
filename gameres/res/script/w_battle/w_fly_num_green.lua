@@ -1,12 +1,12 @@
 --------------------------------------------------------------
--- FileName:    n_fly_num_green.lua
+-- FileName:    w_fly_num_green.lua
 -- BaseClass:   fly_num
 -- author:      hst, 2013/09/27
 -- purpose:     卡牌战斗类：飞行数字类（可用增益状态）
 --------------------------------------------------------------
 
-n_fly_num_green = fly_num:new();
-local p = n_fly_num_green;
+w_fly_num_green = fly_num:new();
+local p = w_fly_num_green;
 local super = fly_num;
 
 

@@ -5,8 +5,8 @@
 	Date : 2013/10/31
 --]]
 
-shadow = {}
-local p = shadow;
+w_shadow = {}
+local p = w_shadow;
 
 --创建新实例
 function p:new()

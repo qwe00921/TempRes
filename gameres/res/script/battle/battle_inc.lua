@@ -52,7 +52,7 @@ E_LOOKAT_RIGHT				= 0;
 E_LOOKAT_LEFT				= 1;
 
 --demo版本
-E_DEMO_VER = 4;
+E_DEMO_VER = 5;
 
 --角色攻击类型
 MELEE_ATTACK = 1	--近战物理攻击

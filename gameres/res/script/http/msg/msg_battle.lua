@@ -30,7 +30,11 @@ end
 --处理消息
 function p:Process()
     WriteCon( "** msg_battle:Process() called" );
-    n_battle_mgr.ReceiveStartPVPRes( self );
+	if E_DEMO_VER == 4 then
+		n_battle_mgr.ReceiveStartPVPRes( self );
+	elseif E_DEMO_VER == 5 then
+		w_battle_mgr.ReceiveStartPVPRes( self );
+	end;
 end
 
 --[[

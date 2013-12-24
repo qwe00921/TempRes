@@ -1,16 +1,16 @@
 --------------------------------------------------------------
--- FileName:    n_battle_skill.lua
+-- FileName:    w_battle_skill.lua
 -- author:      hst, 2013/11/26
 -- purpose:     卡牌技能
 --------------------------------------------------------------
 
-n_battle_skill = {}
-local p = n_battle_skill;
+w_battle_skill = {}
+local p = w_battle_skill;
 
 --技能
 function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     if hero == nil or SkillId == nil or distance == nil or Targets == nil or TCamp == nil or batch == nil then 
-        WriteConWarning("n_battle_skill.Skill data err!");
+        WriteConWarning("w_battle_skill.Skill data err!");
         return false; 
     end
     
@@ -34,7 +34,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     --攻击目标的位置
     local enemyPos; 
     if IsAoeSkillByType( targetType ) then
-       enemyPos = n_battle_pvp.GetScreenCenterPos();
+       enemyPos = w_battle_pvp.GetScreenCenterPos();
     else
        enemyPos = GetBestTargetPos( hero, TCamp, Targets );    
     end
@@ -43,8 +43,8 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     local hurt = SelectCell( T_SKILL_RES, SkillId, "hurt_effect" );
     local isBullet = tonumber( SelectCell( T_SKILL_RES, SkillId, "is_bullet" ) );
     local bulletAni;
-    if isBullet == N_BATTLE_BULLET_1 then
-    	bulletAni = "n_bullet."..tostring( hero.cardId );
+    if isBullet == W_BATTLE_BULLET_1 then
+    	bulletAni = "w_bullet."..tostring( hero.cardId );
     end
     
     local cmdSetPic = hero:cmdLua( "SetFighterPic",  0, "", seqAtk );
@@ -60,7 +60,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     
     --近战攻击
     local cmdDoPos;
-    if distance == N_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_1 then
         cmdDoPos = JumpMoveTo(hero, originPos, enemyPos, seqAtk );
     end
     
@@ -70,7 +70,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     local cmd3 = createCommandPlayer():Standby( 0.01, hero:GetPlayerNode(), "" );
     seqAtk:AddCommand( cmd3 );
     
-    if distance == N_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_1 then
         local cmd4 = JumpMoveTo(hero, enemyPos, originPos, seqAtk);
     end
            
@@ -79,7 +79,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     local cmd_ui = p.doUIEffect( hero.camp, seqUI, SkillId );
     
     seqUI:SetWaitEnd( cmd1 );
-    if distance == N_BATTLE_DISTANCE_1 and cmdDoPos ~= nil then
+    if distance == W_BATTLE_DISTANCE_1 and cmdDoPos ~= nil then
         cmdDoPos:SetWaitEnd( cmd_ui );
     else
         cmd2:SetWaitEnd( cmd_ui );
@@ -88,9 +88,9 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     for k, v in ipairs(Targets) do
         local enemy = nil; --受击者
         if TCamp == E_CARD_CAMP_HERO then
-            enemy = n_battle_mgr.heroCamp:FindFighter( tonumber( v.TPos ) );
+            enemy = w_battle_mgr.heroCamp:FindFighter( tonumber( v.TPos ) );
         elseif TCamp == E_CARD_CAMP_ENEMY then
-            enemy = n_battle_mgr.enemyCamp:FindFighter( tonumber( v.TPos ) + N_BATTLE_CAMP_CARD_NUM );
+            enemy = w_battle_mgr.enemyCamp:FindFighter( tonumber( v.TPos ) + W_BATTLE_CAMP_CARD_NUM );
         end
         local Damage = tonumber( v.Damage ); --扣除血量
         local RemainHp = tonumber( v.RemainHp ); --所剩血量
@@ -113,7 +113,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
             if bulletAni ~= nil then
             	--2:技能特效：子弹特效
                 local deg = hero:GetAngleByFighter( enemy );
-                local bullet = n_bullet:new();
+                local bullet = w_bullet:new();
                 bullet:AddToBattleLayer();
                 bullet:SetEffectAni( bulletAni );
                     
@@ -245,10 +245,10 @@ function p.doUIEffect( camp, seqUI, SkillId )
     --大招名称特效
     --0:初始化特效
     local skillNameBar;
-    if n_battle_mgr.isPVE then
-        skillNameBar = GetImage( n_battle_pve.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
+    if w_battle_mgr.isPVE then
+        skillNameBar = GetImage( w_battle_pve.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
     else    
-        skillNameBar = GetImage( n_battle_pvp.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 );
+        skillNameBar = GetImage( w_battle_pvp.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 );
     end
     local cmdBor = createCommandEffect():AddFgEffect( 0.01, skillNameBar, skillFxBor );
     seqUI:AddCommand( cmd3 );   

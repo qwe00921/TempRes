@@ -1,12 +1,12 @@
 --------------------------------------------------------------
--- FileName:    n_battle_round_num.lua
+-- FileName:    w_battle_round_num.lua
 -- BaseClass:   fly_num
 -- author:      hst, 2013/12/6
 -- purpose:     卡牌战斗类：回合数字
 --------------------------------------------------------------
 
-n_battle_round_num = fly_num:new();
-local p = n_battle_round_num;
+w_battle_round_num = fly_num:new();
+local p = w_battle_round_num;
 local super = fly_num;
 
 

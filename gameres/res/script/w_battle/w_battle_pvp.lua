@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName: 	n_battle_pvp.lua
+-- FileName: 	w_battle_pvp.lua
 -- author:		zhangwq, 2013/06/20
 -- purpose:		玩家对战 (demo v2.0)
---------------------------------------------------------------
+----------------------------------------------------------
 
-n_battle_pvp = {}
-local p = n_battle_pvp;
+w_battle_pvp = {}
+local p = w_battle_pvp;
 
 local ui = ui_n_battle_pvp;
 local heroUIArray = {
@@ -100,11 +100,11 @@ function p.ShowUI( battleType, targetId )
 	layer:SetFramePosXY(0,0);
 	p.battleLayer = layer;
 	
-	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
+	local skillNameBar = GetImage( p.battleLayer ,ui.ID_CTRL_PICTURE_13 )
 	skillNameBar:SetFramePosXY(-640,skillNameBar:GetFramePos().y);
 	p.skillNameBarOldPos = skillNameBar:GetFramePos();
 	
-	p.pBgImage = GetImage(p.battleLayer,ui_n_battle_pvp.ID_CTRL_PICTURE_BG);
+	p.pBgImage = GetImage(p.battleLayer,ui.ID_CTRL_PICTURE_BG);
 	
 	if nil == p.pBgImage then
 		WriteCon("pBgImage is null");
@@ -128,8 +128,8 @@ function p.InitPetRage( Position, cValue )
     local Position = Position;
     if Position == nil or cValue == nil then
         return;
-    elseif Position > N_BATTLE_CAMP_CARD_NUM then
-        Position = Position - N_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
+    elseif Position > W_BATTLE_CAMP_CARD_NUM then
+        Position = Position - W_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
     end
     local petRage = GetExp( p.battleLayer, petRageUIArray[ Position ]);
     petRage:SetNoText();
@@ -140,8 +140,8 @@ function p.UpdatePetRage( Position, cValue )
 	local Position = Position;
     if Position == nil or cValue == nil then
         return;
-    elseif Position > N_BATTLE_CAMP_CARD_NUM then
-        Position = Position - N_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
+    elseif Position > W_BATTLE_CAMP_CARD_NUM then
+        Position = Position - W_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
     end
     local petRage = GetExp( p.battleLayer, petRageUIArray[ Position ]);
     local oldValue = tonumber( petRage:GetProcess() );
@@ -196,8 +196,8 @@ function p.InitPetUI( Position, petName, petLV, petIconAni, petSkillIconAni )
 	local Position = Position;
 	if Position == nil then
 		return;
-	elseif Position > N_BATTLE_CAMP_CARD_NUM then
-		Position = Position - N_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
+	elseif Position > W_BATTLE_CAMP_CARD_NUM then
+		Position = Position - W_BATTLE_CAMP_CARD_NUM + PETCAMPNUM;
 	end
 	
 	local name = GetLabel( p.battleLayer, petNameUIArray[ Position ] );
@@ -226,7 +226,7 @@ end
 
 --设置技能名称栏UI到左边，以提供从左进入特效
 function p.SetSkillNameBarToLeft()
-	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
+	local skillNameBar = GetImage( p.battleLayer ,ui.ID_CTRL_PICTURE_13 )
 	skillNameBar:SetFramePos(p.skillNameBarOldPos);
 	
 	--[[
@@ -238,7 +238,7 @@ end
 
 --设置技能名称栏UI到右边，以提供从右进入特效
 function p.SetSkillNameBarToRight()
-	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 )
+	local skillNameBar = GetImage( p.battleLayer ,ui.ID_CTRL_PICTURE_13 )
 	--skillNameBar:SetFramePos(p.skillNameBarOldPos);
 	local tempPos = skillNameBar:GetFramePos();
 	--tempPos.x = tempPos.x + GetScreenWidth();
@@ -260,7 +260,7 @@ end
 
 --还原技能名称栏的位置
 function p.ReSetSkillNameBarPos()
-	local skillNameBar = GetImage( p.battleLayer ,ui_n_battle_pvp.ID_CTRL_PICTURE_13 );
+	local skillNameBar = GetImage( p.battleLayer ,ui.ID_CTRL_PICTURE_13 );
 	skillNameBar:SetFramePos(p.skillNameBarOldPos);
 	--skillNameBar:DelAniEffect("x_cmb.skill_name_fx");
 	--skillNameBar:DelAniEffect("x_cmb.skill_name_fx_reverse");
@@ -268,16 +268,16 @@ end
 
 --初始化战斗
 function p.InitBattle()
-	n_battle_mgr.uiLayer = p.battleLayer;
-	n_battle_mgr.heroUIArray = heroUIArray;
-	n_battle_mgr.enemyUIArray = enemyUIArray;
-	if p.battleType == N_BATTLE_PVP then
-		n_battle_mgr.play_pvp( p.targetId );
+	w_battle_mgr.uiLayer = p.battleLayer;
+	w_battle_mgr.heroUIArray = heroUIArray;
+	w_battle_mgr.enemyUIArray = enemyUIArray;
+	if p.battleType == W_BATTLE_PVP then
+		w_battle_mgr.play_pvp( p.targetId );
 	else
-	   	n_battle_mgr.play_pve( p.targetId );
+	   	w_battle_mgr.play_pve( p.targetId );
 	end
 end
 
 function p.ReadyGo()
-	n_battle_mainui.StartBattleEffect();
+	w_battle_mainui.StartBattleEffect();
 end

@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName: 	battle_compute.lua
+-- FileName: 	w_battle_compute.lua
 -- author:		¹ùºÆ 2013/11/08
 -- purpose:		¼ÆËãÀà£¨µ¥Àý£©
 --------------------------------------------------------------
 
-battle_compute = {}
-local p = battle_compute;
+w_battle_compute = {}
+local p = w_battle_compute;
 
 function p.GetFighterStrikeChance(kFighter)
 	local fChance = 0.0f;

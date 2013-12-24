@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName:    n_battle_show.lua
+-- FileName:    w_battle_show.lua
 -- author:      hst, 2013年11月26日
 -- purpose:     卡牌对战表现展示
 --------------------------------------------------------------
 
-n_battle_show = {}
-local p = n_battle_show;
+w_battle_show = {}
+local p = w_battle_show;
 p.flyRoundNumNode = nil;
 
 function p.DestroyAll()
@@ -14,7 +14,7 @@ end
 
 --相方互殴表现
 function p.DoEffectAtk( atkData )
-    if atkData == nil and not n_battle_stage.IsBattle_RoundStage_Atk() then
+    if atkData == nil and not w_battle_stage.IsBattle_RoundStage_Atk() then
         return false;
 	end
     local prevBatch = nil;
@@ -30,16 +30,16 @@ function p.DoEffectAtk( atkData )
         local hero = nil; --攻击者
             
         if UCamp == E_CARD_CAMP_HERO then
-            hero = n_battle_mgr.heroCamp:FindFighter( UPos );
+            hero = w_battle_mgr.heroCamp:FindFighter( UPos );
         elseif UCamp == E_CARD_CAMP_ENEMY then
-            hero = n_battle_mgr.enemyCamp:FindFighter( UPos + N_BATTLE_CAMP_CARD_NUM );
+            hero = w_battle_mgr.enemyCamp:FindFighter( UPos + W_BATTLE_CAMP_CARD_NUM );
         end
         
         --普通攻击
         if SkillId == 0 then
         	p.SimpleAtk( hero, TCamp, Targets, batch );
         else	
-            n_battle_skill.Skill( hero, SkillId, distance, Targets, TCamp, batch );
+            w_battle_skill.Skill( hero, SkillId, distance, Targets, TCamp, batch );
         end
         
         --设置批次等待
@@ -56,13 +56,13 @@ end
 --普通攻击
 function p.SimpleAtk( hero, TCamp, Targets, batch )
 	for key, enemy in ipairs(Targets) do
-        n_battle_atk.Atk( hero, enemy, TCamp, batch );
+        w_battle_atk.Atk( hero, enemy, TCamp, batch );
     end
 end
 
 --双方宠物技能表现
 function p.DoEffectPetSkill( petSkillData )
-    if petSkillData == nil and not n_battle_stage.IsBattle_RoundStage_Pet() then
+    if petSkillData == nil and not w_battle_stage.IsBattle_RoundStage_Pet() then
         WriteConWarning("DoEffectPetSkill err!");
         return false;
     end
@@ -78,7 +78,7 @@ function p.DoEffectPetSkill( petSkillData )
         local Targets = v.TargetSet; --受击卡牌列表
         local Rage = tonumber( v.Rage ); --技能消耗怒气
         
-        n_battle_pet_skill.skill( UCamp, TCamp, Pos, SkillId, Targets, Rage, batch);
+        w_battle_pet_skill.skill( UCamp, TCamp, Pos, SkillId, Targets, Rage, batch);
         
     end
 end
@@ -100,9 +100,9 @@ function p.DoEffectBuff( buffData )
 	   
 	   local targetF;
        if Camp == E_CARD_CAMP_HERO then
-           targetF = n_battle_mgr.heroCamp:FindFighter( Pos );
+           targetF = w_battle_mgr.heroCamp:FindFighter( Pos );
        elseif Camp == E_CARD_CAMP_ENEMY then
-           targetF = n_battle_mgr.enemyCamp:FindFighter( Pos + N_BATTLE_CAMP_CARD_NUM );
+           targetF = w_battle_mgr.enemyCamp:FindFighter( Pos + W_BATTLE_CAMP_CARD_NUM );
        end
 	   
 	   local cmdBuffEffect;
@@ -129,15 +129,15 @@ function p.UpdateBuffIcon( target, BuffType, seq )
     local isDel = true;
     local targetPos = target.idFighter;
     local buffAni = GetBuffAniByType( BuffType );
-	local rounds = n_battle_stage.GetRoundNum();
-    local buffData = n_battle_db_mgr.GetBuffRoundDB( rounds );
-    if buffData ~= nil and #buffData > 0 and rounds <= N_BATTLE_MAX_ROUND then
+	local rounds = w_battle_stage.GetRoundNum();
+    local buffData = w_battle_db_mgr.GetBuffRoundDB( rounds );
+    if buffData ~= nil and #buffData > 0 and rounds <= W_BATTLE_MAX_ROUND then
         for key, var in ipairs(buffData) do
         	local camp = tonumber( var.Camp );
         	local pos = tonumber( var.Pos );
         	local btype = tonumber( var.Buff_type );
         	if camp == E_CARD_CAMP_ENEMY then
-        		pos = pos + N_BATTLE_CAMP_CARD_NUM;
+        		pos = pos + W_BATTLE_CAMP_CARD_NUM;
         	end
         	if targetPos == pos and BuffType == btype then
         		isDel = false;
@@ -154,10 +154,10 @@ function p.UpdateBuffIcon( target, BuffType, seq )
 end
 
 function p.DoEffectShowTurnNum()
-	local roundNum = n_battle_stage.GetRoundNum();
+	local roundNum = w_battle_stage.GetRoundNum();
     if p.flyRoundNumNode == nil then
-        p.flyRoundNumNode = n_battle_round_num:new();
-        p.flyRoundNumNode:InitWithImageNode( n_battle_mainui.roundNumNode );
+        p.flyRoundNumNode = w_battle_round_num:new();
+        p.flyRoundNumNode:InitWithImageNode( w_battle_mainui.roundNumNode );
     end
     p.flyRoundNumNode:PlayNum( roundNum );
 end

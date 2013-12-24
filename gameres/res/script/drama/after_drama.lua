@@ -15,7 +15,11 @@ BATTLE_BEGIN = 3;
 
 function p.DoAfterDrama(stageId)
 	WriteCon("StageID fewafawefaw");
-	n_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
+	if E_DEMO_VER == 4 then
+	  n_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
+	elseif E_DEMO_VER == 5 then
+	  w_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
+	end;
 	p.Clear();
 end
 

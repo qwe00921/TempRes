@@ -1,12 +1,12 @@
 --------------------------------------------------------------
--- FileName: 	n_fighter.lua
+-- FileName: 	w_fighter.lua
 -- BaseClass:   fighter
 -- author:		zhangwq, 2013/06/20
 -- purpose:		战士类（多实例）
 --------------------------------------------------------------
 
-n_fighter = fighter:new();
-local p = n_fighter;
+w_fighter = fighter:new();
+local p = w_fighter;
 local super = fighter;
 
 --创建新实例
@@ -41,7 +41,7 @@ end
 
 --创建飘血数字
 function p:CreateFlyNum(nType)
-    local flynum = n_fly_num:new();
+    local flynum = w_fly_num:new();
     flynum:SetOwnerNode( self.node );
     flynum:Init(nType);
     flynum:SetOffset(30,-50);
@@ -60,7 +60,7 @@ function p:CreateFlyNumGreen()
     if self.flynumGreen ~= nil then
         return self.flynumGreen;
     end
-    local flynum = n_fly_num_green:new();
+    local flynum = w_fly_num_green:new();
     flynum:SetOwnerNode( self.node );
     flynum:Init();
     flynum:SetOffset(30,-50);
@@ -71,7 +71,7 @@ end
 --创建血条
 function p:CreateHpBar()
 	if self.hpbar == nil or self.m_kShadow == nil then
-		self.hpbar = n_hp_bar:new();
+		self.hpbar = w_hp_bar:new();
 		self.hpbar:CreateExpNode();
 		self.node:AddChildZ( self.hpbar:GetNode(), 1 );
 		self.hpbar:Init( self.node, self.life, self.lifeMax );

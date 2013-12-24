@@ -5,8 +5,8 @@
 -- purpose:		子弹类（多实例）
 --------------------------------------------------------------
 
-n_bullet = bullet:new();
-local p = n_bullet;
+w_bullet = bullet:new();
+local p = w_bullet;
 local super = bullet;
 
 

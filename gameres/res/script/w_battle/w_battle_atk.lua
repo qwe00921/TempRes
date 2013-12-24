@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName:    n_battle_atk.lua
+-- FileName:    w_battle_atk.lua
 -- author:      hst, 2013年11月26日
 -- purpose:     普通攻击
 --------------------------------------------------------------
 
-n_battle_atk = {}
-local p = n_battle_atk;
+w_battle_atk = {}
+local p = w_battle_atk;
 
 --双方互殴
 function p.Atk( atkFighter, target, TCamp, batch )
@@ -13,9 +13,9 @@ function p.Atk( atkFighter, target, TCamp, batch )
     
     local targetFighter = nil; --受击者
     if TCamp == E_CARD_CAMP_HERO then
-        targetFighter = n_battle_mgr.heroCamp:FindFighter( tonumber( target.TPos ) );
+        targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( target.TPos ) );
     elseif TCamp == E_CARD_CAMP_ENEMY then
-        targetFighter = n_battle_mgr.enemyCamp:FindFighter( tonumber( target.TPos ) + N_BATTLE_CAMP_CARD_NUM );
+        targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( target.TPos ) + W_BATTLE_CAMP_CARD_NUM );
     end
     local Damage = tonumber( target.Damage ); --扣除血量
     local RemainHp = tonumber( target.RemainHp ); --所剩血量
@@ -36,8 +36,8 @@ function p.Atk( atkFighter, target, TCamp, batch )
     
     local isBullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
     local bulletAni;
-    if isBullet == N_BATTLE_BULLET_1 then
-        bulletAni = "n_bullet."..tostring( atkFighter.cardId );
+    if isBullet == W_BATTLE_BULLET_1 then
+        bulletAni = "w_bullet."..tostring( atkFighter.cardId );
     end
     
     local playerNode = atkFighter:GetPlayerNode();
@@ -53,7 +53,7 @@ function p.Atk( atkFighter, target, TCamp, batch )
     
     local cmdSetPic = atkFighter:cmdLua( "SetFighterPic",  0, "", seqAtk );
     
-    if distance == N_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_1 then
         --向攻击目标移动
         local cmd2 = JumpMoveTo(atkFighter, originPos, enemyPos, seqAtk, false);
     end
@@ -73,7 +73,7 @@ function p.Atk( atkFighter, target, TCamp, batch )
     local cmd4 = createCommandPlayer():Standby( 0.01, playerNode, "" );
     seqAtk:AddCommand( cmd4 );
     
-    if distance == N_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_1 then
         --返回原来的位置
         local cmd5 = JumpMoveTo(atkFighter, enemyPos, originPos, seqAtk, false);
     end
@@ -81,7 +81,7 @@ function p.Atk( atkFighter, target, TCamp, batch )
     local bulletend;
     if bulletAni ~= nil then
         local deg = atkFighter:GetAngleByFighter( targetFighter );
-        local bullet = n_bullet:new();
+        local bullet = w_bullet:new();
         bullet:AddToBattleLayer();
         bullet:SetEffectAni( bulletAni );
                     

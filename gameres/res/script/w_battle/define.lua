@@ -9,7 +9,6 @@ DoFile("w_battle/w_battle_compute.lua");
 DoFile("w_battle/w_battle_mgr.lua");
 DoFile("w_battle/w_battle_db_mgr.lua");
 DoFile("w_battle/w_battle_pvp.lua");
-DoFile("w_battle/w_battle_pve.lua");
 DoFile("w_battle/w_fighter.lua");
 DoFile("w_battle/w_bullet.lua");
 DoFile("w_battle/w_hp_bar.lua");

@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName: 	n_battle_mainui.lua
+-- FileName: 	w_battle_mainui.lua
 -- author:		zhangwq, 2013/06/25
 -- purpose:		对战主UI (demo v2.0)
 --------------------------------------------------------------
 
-n_battle_mainui = {}
-local p = n_battle_mainui;
+w_battle_mainui = {}
+local p = w_battle_mainui;
 
 p.layer = nil;
 p.imageMask = nil;
@@ -126,7 +126,7 @@ end
 --设置事件处理
 function p.SetDelegate(layer)
 	--攻击按钮
-	--atkBtn = GetButton( layer, ui_n_battle_mainui.ID_CTRL_BUTTON_17 );
+	--atkBtn = GetButton( layer, ui_w_battle_mainui.ID_CTRL_BUTTON_17 );
    -- atkBtn:SetLuaDelegate( p.OnBtnClicked_Atk );
 	
 	--SKIP按钮
@@ -137,13 +137,13 @@ end
 function p.OnBtnClicked_Skill( uiNode, uiEventType, param )
 	uiNode:SetVisible(false);
     GetBattleShow():Stop();
-    n_battle_mgr.isBattleEnd = true;
-    local battleResult = n_battle_db_mgr.GetBattleResult();
+    w_battle_mgr.isBattleEnd = true;
+    local battleResult = w_battle_db_mgr.GetBattleResult();
     local result = tonumber( battleResult.Result ); 
     if result == 1 then
-        n_battle_mgr.OnBattleWin();
+        w_battle_mgr.OnBattleWin();
     elseif result == 0 then
-        n_battle_mgr.OnBattleLose();
+        w_battle_mgr.OnBattleLose();
     end
 end
 
@@ -208,8 +208,8 @@ end
 function p.OnBtnClicked_Atk(uiNode, uiEventType, param)
 		--屏蔽按钮
 		--atkBtn:SetEnabled( false );
-	n_battle_mgr.HeroTurn();
-	n_battle_mgr.EnemyTurn();
+	w_battle_mgr.HeroTurn();
+	w_battle_mgr.EnemyTurn();
 		
 	waitingInput = false;
 		
@@ -227,20 +227,20 @@ function p.OnBtnClicked_Auto(uiNode, uiEventType, param)
 end
 
 function p.OnKoRound()
-	n_battle_ko.ShowUI();
+	w_battle_ko.ShowUI();
 end
 
 --战斗表现结束的回调
 function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
-	if n_battle_mgr.isBattleEnd then
+	if w_battle_mgr.isBattleEnd then
 		WriteCon("-------------------------is battle end ----------------------------");
 		return ;
 	end
 	
-	if N_BATTLE_MAX_ROUND < tonumber( n_battle_stage.GetRoundNum() ) and not n_battle_stage.IsBattle_Stage_End() then
-	    n_battle_stage.EnterBattle_Stage_End();--战斗阶段->结束
+	if W_BATTLE_MAX_ROUND < tonumber( w_battle_stage.GetRoundNum() ) and not w_battle_stage.IsBattle_Stage_End() then
+	    w_battle_stage.EnterBattle_Stage_End();--战斗阶段->结束
         p.HideUI();
         local id = AddHudEffect( "lancer.enter_battle" );
         --local id = AddHudEffect( "lancer_cmb.enter_battle" );
@@ -251,43 +251,43 @@ function p.OnBattleShowFinished()
     end
     
     --战斗阶段->加载完成
-    if n_battle_stage.IsBattle_Stage_Loading() then
-        n_battle_stage.EnterBattle_Stage_Permanent_Buff();--战斗阶段->永久BUFF表现
-        n_battle_mgr.EnterBattle_Stage_Permanent_Buff();--永久BUFF表现效果
+    if w_battle_stage.IsBattle_Stage_Loading() then
+        w_battle_stage.EnterBattle_Stage_Permanent_Buff();--战斗阶段->永久BUFF表现
+        w_battle_mgr.EnterBattle_Stage_Permanent_Buff();--永久BUFF表现效果
     
 	--战斗阶段->永久BUFF表现
-	elseif n_battle_stage.IsBattle_Stage_Permanent_Buff() then
-		n_battle_stage.EnterBattle_Stage_Round();--进入回合阶段
-		n_battle_stage.EnterBattle_RoundStage_Pet();--进入回合阶段->召唤兽表现 
-		n_battle_mgr.EnterBattle_RoundStage_Pet();--召唤兽表现效果
+	elseif w_battle_stage.IsBattle_Stage_Permanent_Buff() then
+		w_battle_stage.EnterBattle_Stage_Round();--进入回合阶段
+		w_battle_stage.EnterBattle_RoundStage_Pet();--进入回合阶段->召唤兽表现 
+		w_battle_mgr.EnterBattle_RoundStage_Pet();--召唤兽表现效果
 		
 	--战斗阶段->回合
-    elseif n_battle_stage.IsBattle_Stage_Round() then
+    elseif w_battle_stage.IsBattle_Stage_Round() then
     	
     	--召唤兽表现完成
-    	if n_battle_stage.IsBattle_RoundStage_Pet() then
+    	if w_battle_stage.IsBattle_RoundStage_Pet() then
     	   WriteConWarning("=============EnterBattle_RoundStage_Buff============");
-    	   n_battle_stage.EnterBattle_RoundStage_Buff();--回合阶段->BUFF表现
-    	   n_battle_mgr.EnterBattle_RoundStage_Buff();--BUFF表现效果
+    	   w_battle_stage.EnterBattle_RoundStage_Buff();--回合阶段->BUFF表现
+    	   w_battle_mgr.EnterBattle_RoundStage_Buff();--BUFF表现效果
     	
     	--BUFF表现完成	
-    	elseif n_battle_stage.IsBattle_RoundStage_Buff() then	
+    	elseif w_battle_stage.IsBattle_RoundStage_Buff() then	
     	   WriteConWarning("=============EnterBattle_RoundStage_Atk============");
-    	   n_battle_mgr.UpdateFighterBuff();--更新战士身上的BUFF
-    	   n_battle_stage.EnterBattle_RoundStage_Atk();--回合阶段->互殴
-           n_battle_mgr.EnterBattle_RoundStage_Atk();--互殴表现效果
+    	   w_battle_mgr.UpdateFighterBuff();--更新战士身上的BUFF
+    	   w_battle_stage.EnterBattle_RoundStage_Atk();--回合阶段->互殴
+           w_battle_mgr.EnterBattle_RoundStage_Atk();--互殴表现效果
         
         --互殴表现完成  
-        elseif n_battle_stage.IsBattle_RoundStage_Atk() then   
+        elseif w_battle_stage.IsBattle_RoundStage_Atk() then   
            WriteConWarning("=============EnterBattle_RoundStage_Clearing============");
-           n_battle_stage.EnterBattle_RoundStage_Clearing();--回合阶段->清算
-           n_battle_mgr.EnterBattle_RoundStage_Clearing();--互殴表现效果
+           w_battle_stage.EnterBattle_RoundStage_Clearing();--回合阶段->清算
+           w_battle_mgr.EnterBattle_RoundStage_Clearing();--互殴表现效果
         
         --清算完成  
-        elseif n_battle_stage.IsBattle_RoundStage_Clearing() then   
+        elseif w_battle_stage.IsBattle_RoundStage_Clearing() then   
            WriteConWarning("=============EnterBattle_RoundStage_Pet============");
-           n_battle_stage.EnterBattle_RoundStage_Pet();--进入回合阶段->召唤兽表现 
-           n_battle_mgr.EnterBattle_RoundStage_Pet();--召唤兽表现效果
+           w_battle_stage.EnterBattle_RoundStage_Pet();--进入回合阶段->召唤兽表现 
+           w_battle_mgr.EnterBattle_RoundStage_Pet();--召唤兽表现效果
                  
     	end
 	end
@@ -325,7 +325,7 @@ function p.CheckAutoAtk()
 	--waitingInput = true;
 	--atkBtn:SetEnabled( not isHeroAutoAtk );
 	
-	if n_battle_mgr.IsBattleEnd() or p.m_nBattleRound > 1 then
+	if w_battle_mgr.IsBattleEnd() or p.m_nBattleRound > 1 then
 	    p.ResetZOrder();
     else
 		if isHeroAutoAtk then
@@ -338,8 +338,8 @@ end
 
 --定时更新Z序
 function p.OnTimer_SortZOrder()
-	--WriteCon( "n_battle_mainui: OnTimer_SortZOrder" );
-	local layer = n_battle_mgr.GetBattleLayer();
+	--WriteCon( "w_battle_mainui: OnTimer_SortZOrder" );
+	local layer = w_battle_mgr.GetBattleLayer();
 	if layer ~= nil then
 		layer:SortZOrder();
 	end
@@ -347,8 +347,8 @@ end
 
 --重置Z序
 function p.ResetZOrder()
-	--WriteCon( "n_battle_mainui: ResetZOrder" );
-	local layer = n_battle_mgr.GetBattleLayer();
+	--WriteCon( "w_battle_mainui: ResetZOrder" );
+	local layer = w_battle_mgr.GetBattleLayer();
 	if layer ~= nil then 
 		layer:ResetZOrder();
 	end

@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName: 	n_battle_ko.lua
+-- FileName: 	w_battle_ko.lua
 -- author:		Guo Hao
 -- purpose:		剧情管理器（数据）
 -------------------------------------------------------------
 
-n_battle_ko = {}
-local p = n_battle_ko;
+w_battle_ko = {}
+local p = w_battle_ko;
 p.m_kLeftHp = nil;
 p.m_kLeftMp = nil;
 p.m_kRightHp = nil;
@@ -246,7 +246,7 @@ function p.HpAdd()
 		KillTimer(p.m_nHpTimer);
 		p.LeftTeamDead(200);
 		p.LeftTeamDead(200);
-		n_battle_mgr.OnBattleWin();
+		w_battle_mgr.OnBattleWin();
 		return;
 	end
 	
@@ -256,7 +256,7 @@ function p.HpAdd()
 		KillTimer(p.m_nHpTimer);	
 		p.RightTeamDead(200);
 		p.RightTeamDead(200);
-		n_battle_mgr.OnBattleWin();
+		w_battle_mgr.OnBattleWin();
 		return;
 	end
 	
@@ -366,13 +366,13 @@ function p.AddKoFighters(kUIArray,bLeft)
 end
 
 function p.InitFighters()
-	if nil == n_battle_mgr.heroCamp or nil == n_battle_mgr.enemyCamp then
+	if nil == w_battle_mgr.heroCamp or nil == w_battle_mgr.enemyCamp then
 		WriteCon("No init battle!");
 		return false;
 	end
 	
-	p.m_kLeftTeam = n_battle_mgr.heroCamp:GetAliveFighters();
-	p.m_kRightTeam = n_battle_mgr.enemyCamp:GetAliveFighters();
+	p.m_kLeftTeam = w_battle_mgr.heroCamp:GetAliveFighters();
+	p.m_kRightTeam = w_battle_mgr.enemyCamp:GetAliveFighters();
 	
 	p.AddKoFighters(p.m_kLeftUIArray,true);
 	p.AddKoFighters(p.m_kRightUIArray,false);

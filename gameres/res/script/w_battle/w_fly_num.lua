@@ -5,8 +5,8 @@
 -- purpose:		飞行数字类（可用诸如飘血、魔、经验值等）
 --------------------------------------------------------------
 
-n_fly_num = fly_num:new();
-local p = n_fly_num;
+w_fly_num = fly_num:new();
+local p = w_fly_num;
 local super = fly_num;
 
 

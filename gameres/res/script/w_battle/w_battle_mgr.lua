@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName: 	n_battle_mgr.lua
+-- FileName: 	w_battle_mgr.lua
 -- author:		zhangwq, 2013/06/20
 -- purpose:		战斗管理器（单实例）demo v2.0
 --------------------------------------------------------------
 
-n_battle_mgr = {}
-local p = n_battle_mgr;
+w_battle_mgr = {}
+local p = w_battle_mgr;
 
 p.heroCamp = nil;			--玩家阵营
 p.enemyCamp = nil;			--敌对阵营
@@ -30,8 +30,8 @@ local BATTLE_PVP = 2;
 function p.play_pve( targetId )
     WriteCon("-----------------Enter the pve mission id = "..targetId);
 	isPVE = true;	
-	n_battle_stage.Init();
-    n_battle_stage.EnterBattle_Stage_Loading();
+	w_battle_stage.Init();
+    w_battle_stage.EnterBattle_Stage_Loading();
     p.SendStartPVEReq( targetId );
 end
 
@@ -39,16 +39,16 @@ end
 function p.play_pvp( targetId )
     WriteCon("-----------------Enter the pvp Tuser id = "..targetId);
     isPVE = false;
-    n_battle_stage.Init();
-    n_battle_stage.EnterBattle_Stage_Loading();
+    w_battle_stage.Init();
+    w_battle_stage.EnterBattle_Stage_Loading();
     p.SendStartPVPReq( targetId );
 end
 
 --显示回合数
 function p.ShowRoundNum()
-    --local roundNum = n_battle_stage.GetRoundNum();
-    --n_battle_mainui.ShowRoundNum( roundNum );
-    n_battle_show.DoEffectShowTurnNum();
+    --local roundNum = w_battle_stage.GetRoundNum();
+    --w_battle_mainui.ShowRoundNum( roundNum );
+    w_battle_show.DoEffectShowTurnNum();
 end
 
 --战斗阶段->加载->请求
@@ -74,11 +74,11 @@ end
 
 --战斗阶段PVP->加载->响应
 function p.ReceiveStartPVPRes( msg )
-    n_battle_db_mgr.Init( msg );
-    local UCardList = n_battle_db_mgr.GetPlayerCardList();
-    local TCardList = n_battle_db_mgr.GetTargetCardList();
-    local TPetList = n_battle_db_mgr.GetTargetPetList();
-    local UPetList = n_battle_db_mgr.GetPlayerPetList();
+    w_battle_db_mgr.Init( msg );
+    local UCardList = w_battle_db_mgr.GetPlayerCardList();
+    local TCardList = w_battle_db_mgr.GetTargetCardList();
+    local TPetList = w_battle_db_mgr.GetTargetPetList();
+    local UPetList = w_battle_db_mgr.GetPlayerPetList();
     if UCardList == nil or TCardList == nil or #UCardList == 0 or #TCardList == 0 then
     	WriteConErr(" battle data err! ");
     	return false;
@@ -90,7 +90,7 @@ function p.ReceiveStartPVPRes( msg )
     p.createPet( TPetList, E_CARD_CAMP_ENEMY );
     p.ReSetPetNodePos();
     
-    n_battle_pvp.ReadyGo();
+    w_battle_pvp.ReadyGo();
     p.ShowRoundNum();
 end
 
@@ -101,28 +101,28 @@ end
 
 --战斗阶段->永久BUFF表现
 function p.EnterBattle_Stage_Permanent_Buff()
-	n_battle_mainui.OnBattleShowFinished();
+	w_battle_mainui.OnBattleShowFinished();
 end
 
 --进入回合阶段->召唤兽表现
 function p.EnterBattle_RoundStage_Pet()
-    local rounds = n_battle_stage.GetRoundNum();
-    local petData = n_battle_db_mgr.GetPetRoundDB( rounds );
-    if petData ~= nil and #petData > 0 and rounds <= N_BATTLE_MAX_ROUND then
-        n_battle_show.DoEffectPetSkill( petData );
+    local rounds = w_battle_stage.GetRoundNum();
+    local petData = w_battle_db_mgr.GetPetRoundDB( rounds );
+    if petData ~= nil and #petData > 0 and rounds <= W_BATTLE_MAX_ROUND then
+        w_battle_show.DoEffectPetSkill( petData );
     else
-        n_battle_mainui.OnBattleShowFinished();    
+        w_battle_mainui.OnBattleShowFinished();    
     end
 end
 
 --进入回合阶段->BUFF表现
 function p.EnterBattle_RoundStage_Buff()
-    local rounds = n_battle_stage.GetRoundNum();
-    local buffEffectData = n_battle_db_mgr.GetBuffEffectRoundDB( rounds );
-    if buffEffectData ~= nil and #buffEffectData > 0 and rounds <= N_BATTLE_MAX_ROUND then
-        n_battle_show.DoEffectBuff( buffEffectData );
+    local rounds = w_battle_stage.GetRoundNum();
+    local buffEffectData = w_battle_db_mgr.GetBuffEffectRoundDB( rounds );
+    if buffEffectData ~= nil and #buffEffectData > 0 and rounds <= W_BATTLE_MAX_ROUND then
+        w_battle_show.DoEffectBuff( buffEffectData );
     else
-        n_battle_mainui.OnBattleShowFinished();   
+        w_battle_mainui.OnBattleShowFinished();   
     end
 end
 
@@ -153,12 +153,12 @@ end
 
 --进入回合阶段->互殴
 function p.EnterBattle_RoundStage_Atk()
-    local rounds = n_battle_stage.GetRoundNum();
-    local atkData = n_battle_db_mgr.GetRoundDB( rounds );
-    if atkData ~= nil and #atkData > 0 and rounds <= N_BATTLE_MAX_ROUND then
-    	n_battle_show.DoEffectAtk( atkData );
+    local rounds = w_battle_stage.GetRoundNum();
+    local atkData = w_battle_db_mgr.GetRoundDB( rounds );
+    if atkData ~= nil and #atkData > 0 and rounds <= W_BATTLE_MAX_ROUND then
+    	w_battle_show.DoEffectAtk( atkData );
     else
-        n_battle_mainui.OnBattleShowFinished();	
+        w_battle_mainui.OnBattleShowFinished();	
     end
 end
 
@@ -168,16 +168,16 @@ function p.EnterBattle_RoundStage_Clearing()
          p.CheckBattleLose();
     end
     --进入下一个回合
-    n_battle_stage.NextRound();
+    w_battle_stage.NextRound();
     p.ShowRoundNum();
     p.UpdatePetRage();
-    n_battle_mainui.OnBattleShowFinished();
+    w_battle_mainui.OnBattleShowFinished();
 end
 
 --取战斗层
 function p:GetBattleLayer()
 	if not isPVE then
-		return n_battle_pvp.battleLayer;
+		return w_battle_pvp.battleLayer;
 	end
 	return nil;
 end
@@ -193,7 +193,7 @@ function p.createPet( petList, camp )
         local Position = tonumber( var.Position );
         
         if camp == E_CARD_CAMP_ENEMY then
-        	Position = Position + N_BATTLE_CAMP_CARD_NUM ;
+        	Position = Position + W_BATTLE_CAMP_CARD_NUM ;
         end
         
         local petPic = createNDUINode();
@@ -219,27 +219,27 @@ function p.createPet( petList, camp )
         local petIconAni = SelectCell( T_PET_RES, petId, "face_pic" );
         local petSkillIconAni = SelectCell( T_SKILL_RES, skillId, "icon" );
         
-        n_battle_pvp.InitPetUI( Position, petName, petLV, petIconAni, petSkillIconAni );
-        n_battle_pvp.InitPetRage( Position, 0 );
+        w_battle_pvp.InitPetUI( Position, petName, petLV, petIconAni, petSkillIconAni );
+        w_battle_pvp.InitPetRage( Position, 0 );
     end
 end
 
 --更新宠物怒气
 function p.UpdatePetRage()
-    local UPetList = n_battle_db_mgr.GetPlayerPetList();
-    local TPetList = n_battle_db_mgr.GetTargetPetList();
+    local UPetList = w_battle_db_mgr.GetPlayerPetList();
+    local TPetList = w_battle_db_mgr.GetTargetPetList();
     if UPetList ~= nil then
     	for key, var in ipairs(UPetList) do
             local pos = tonumber( var.Position );
             local sp = tonumber( var.Sp );
-            n_battle_pvp.UpdatePetRage( pos, sp );
+            w_battle_pvp.UpdatePetRage( pos, sp );
         end
     end
     if TPetList ~= nil then
         for key, var in ipairs(UPetList) do
-            local pos = tonumber( var.Position ) + N_BATTLE_CAMP_CARD_NUM;
+            local pos = tonumber( var.Position ) + W_BATTLE_CAMP_CARD_NUM;
             local sp = tonumber( var.Sp );
-            n_battle_pvp.UpdatePetRage( pos, sp );
+            w_battle_pvp.UpdatePetRage( pos, sp );
         end
     end
     
@@ -253,7 +253,7 @@ function p.GetPetNode( posId, camp )
 	local ln = #p.petNode;
 	local posId = tonumber( posId )
 	if camp == E_CARD_CAMP_ENEMY then
-		posId = posId + N_BATTLE_CAMP_CARD_NUM;
+		posId = posId + W_BATTLE_CAMP_CARD_NUM;
 	end
 	for i=1, ln do
 		local pNode = p.petNode[i];
@@ -271,7 +271,7 @@ function p.GetPetNameNode( posId, camp )
     local ln = #p.petNameNode;
     local posId = tonumber( posId )
     if camp == E_CARD_CAMP_ENEMY then
-        posId = posId + N_BATTLE_CAMP_CARD_NUM;
+        posId = posId + W_BATTLE_CAMP_CARD_NUM;
     end
     for i=1, ln do
         local pNode = p.petNameNode[i];
@@ -288,7 +288,7 @@ function p.ReSetPetNodePos()
     for i=1, ln do
         local petNode = p.petNode[i];
         local id = petNode:GetId();
-        if id > N_BATTLE_CAMP_CARD_NUM then
+        if id > W_BATTLE_CAMP_CARD_NUM then
             petNode:SetFramePosXY( 768, GetScreenHeight()/2 - 128 );
         else
             petNode:SetFramePosXY( -256, GetScreenHeight()/2 ); 
@@ -297,7 +297,7 @@ function p.ReSetPetNodePos()
     for j=1, ln2 do
         local pNode = p.petNameNode[j];
         local pId = pNode:GetId();
-        if pId > N_BATTLE_CAMP_CARD_NUM then
+        if pId > W_BATTLE_CAMP_CARD_NUM then
             pNode:SetFramePosXY( -256, GetScreenHeight()/2 - 128 );
         else
             pNode:SetFramePosXY( 768, GetScreenHeight()/2 ); 
@@ -361,7 +361,7 @@ end
 
 --创建玩家阵营
 function p.createHeroCamp( fighters )
-	p.heroCamp = n_battle_camp:new();
+	p.heroCamp = w_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
 	p.heroCamp:AddShadows( p.heroUIArray, fighters );
@@ -370,7 +370,7 @@ end
 
 --创建敌对阵营
 function p.createEnemyCamp( fighters )
-	p.enemyCamp = n_battle_camp:new();
+	p.enemyCamp = w_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
 	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
@@ -413,9 +413,9 @@ end
 --打开战斗胜利界面
 function p.OpenBattleWin()
 	PlayEffectSoundByName( "battle_win.mp3" );
-	n_battle_ko.CloseUI();
+	w_battle_ko.CloseUI();
 	--dlg_battle_win.ShowUI();
-	quest_reward.ShowUI( n_battle_db_mgr.GetRewardData() );
+	quest_reward.ShowUI( w_battle_db_mgr.GetRewardData() );
 end
 
 --战斗失败
@@ -428,7 +428,7 @@ end
 --打开战斗失败界面
 function p.OpenBattleLose()
 	--dlg_battle_lose.ShowUI();
-	quest_reward.ShowUI( n_battle_db_mgr.GetRewardData() );
+	quest_reward.ShowUI( w_battle_db_mgr.GetRewardData() );
 end
 
 --检查是否战斗胜利
@@ -451,7 +451,7 @@ end
 
 --进入战斗
 function p.EnterBattle( battleType, missionId )
-	WriteCon( "n_battle_mgr.EnterBattle()" );
+	WriteCon( "w_battle_mgr.EnterBattle()" );
 	
 	--hide 
 	--GetTileMap():SetVisible( false );
@@ -465,8 +465,8 @@ function p.EnterBattle( battleType, missionId )
     
 	
 	--enter PVP
-	n_battle_pvp.ShowUI( battleType, missionId );	
-	n_battle_mainui.ShowUI();
+	w_battle_pvp.ShowUI( battleType, missionId );	
+	w_battle_mainui.ShowUI();
 	
 	--音乐
 	PlayMusic_Battle();
@@ -476,10 +476,10 @@ end
 
 --退出战斗
 function p.QuitBattle()
-	WriteCon( "n_battle_mgr.QuitBattle()" );
+	WriteCon( "w_battle_mgr.QuitBattle()" );
 
-	n_battle_pvp.CloseUI();
-	n_battle_mainui.CloseUI();
+	w_battle_pvp.CloseUI();
+	w_battle_mainui.CloseUI();
 
 	--game_main.EnterWorldMap();
 	dlg_menu.ShowUI();
@@ -517,5 +517,5 @@ function p.clearDate()
     p.petNameNode={};   
     p.imageMask = nil          
     p.isBattleEnd = false;
-    n_battle_show.DestroyAll();
+    w_battle_show.DestroyAll();
 end

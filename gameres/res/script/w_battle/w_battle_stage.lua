@@ -1,11 +1,11 @@
 --------------------------------------------------------------
--- FileName:    n_battle_stage.lua
+-- FileName:    w_battle_stage.lua
 -- author:      hst, 2013年11月26日
 -- purpose:     战斗状态
 --------------------------------------------------------------
 
-n_battle_stage = {}
-local p = n_battle_stage;
+w_battle_stage = {}
+local p = w_battle_stage;
 
 p.roundNum = 0;                 --战斗回合数
 p.battleStage = 0;              --对战阶段,共1~4个阶段:加载阶段,永久BUFF阶段,回合阶段,结束阶段
@@ -34,22 +34,22 @@ end
 
 --战斗阶段->加载
 function p.EnterBattle_Stage_Loading()
-    p.battleStage = N_BATTLE_STAGE_LOADING;
+    p.battleStage = W_BATTLE_STAGE_LOADING;
 end
 
 --战斗阶段->永久BUFF表现
 function p.EnterBattle_Stage_Permanent_Buff()
-    p.battleStage = N_BATTLE_STAGE_PERMANENT_BUFF;
+    p.battleStage = W_BATTLE_STAGE_PERMANENT_BUFF;
 end
 
 --战斗阶段->回合
 function p.EnterBattle_Stage_Round()
-    p.battleStage = N_BATTLE_STAGE_ROUND;
+    p.battleStage = W_BATTLE_STAGE_ROUND;
 end
 
 --战斗阶段->结束
 function p.EnterBattle_Stage_End()
-    p.battleStage = N_BATTLE_STAGE_END;
+    p.battleStage = W_BATTLE_STAGE_END;
 end
 
 --------------------------------------------------------------
@@ -58,22 +58,22 @@ end
 
 --回合阶段->召唤兽 
 function p.EnterBattle_RoundStage_Pet()
-    p.battleRoundStage = N_BATTLE_ROUND_STAGE_PET;
+    p.battleRoundStage = W_BATTLE_ROUND_STAGE_PET;
 end
 
 --回合阶段->BUFF表现
 function p.EnterBattle_RoundStage_Buff()
-    p.battleRoundStage = N_BATTLE_ROUND_STAGE_BUFF;
+    p.battleRoundStage = W_BATTLE_ROUND_STAGE_BUFF;
 end
 
 --回合阶段->互殴
 function p.EnterBattle_RoundStage_Atk()
-    p.battleRoundStage = N_BATTLE_ROUND_STAGE_ATK;
+    p.battleRoundStage = W_BATTLE_ROUND_STAGE_ATK;
 end
 
 --回合阶段->结算
 function p.EnterBattle_RoundStage_Clearing()
-    p.battleRoundStage = N_BATTLE_ROUND_STAGE_CLEARING;
+    p.battleRoundStage = W_BATTLE_ROUND_STAGE_CLEARING;
 end
 
 --------------------------------------------------------------
@@ -82,7 +82,7 @@ end
 
 --是否是战斗加载阶段
 function p.IsBattle_Stage_Loading()
-    if p.battleStage == N_BATTLE_STAGE_LOADING then
+    if p.battleStage == W_BATTLE_STAGE_LOADING then
         return true;
     end
     return false;
@@ -90,7 +90,7 @@ end
 
 --是否是战斗永久BUFF阶段
 function p.IsBattle_Stage_Permanent_Buff()
-    if p.battleStage == N_BATTLE_STAGE_PERMANENT_BUFF then
+    if p.battleStage == W_BATTLE_STAGE_PERMANENT_BUFF then
         return true;
     end
     return false;
@@ -98,7 +98,7 @@ end
 
 --是否是战斗回合阶段
 function p.IsBattle_Stage_Round()
-    if p.battleStage == N_BATTLE_STAGE_ROUND then
+    if p.battleStage == W_BATTLE_STAGE_ROUND then
         return true;
     end
     return false;
@@ -106,7 +106,7 @@ end
 
 --是否是战斗结束阶段
 function p.IsBattle_Stage_End()
-    if p.battleStage == N_BATTLE_STAGE_END then
+    if p.battleStage == W_BATTLE_STAGE_END then
         return true;
     end
     return false;
@@ -118,7 +118,7 @@ end
 
 --是否是互殴阶段召唤兽表现
 function p.IsBattle_RoundStage_Pet()
-    if p.battleRoundStage == N_BATTLE_ROUND_STAGE_PET then
+    if p.battleRoundStage == W_BATTLE_ROUND_STAGE_PET then
         return true;
     end
     return false;
@@ -126,7 +126,7 @@ end
 
 --是否是互殴阶段BUFF表现
 function p.IsBattle_RoundStage_Buff()
-    if p.battleRoundStage == N_BATTLE_ROUND_STAGE_BUFF then
+    if p.battleRoundStage == W_BATTLE_ROUND_STAGE_BUFF then
         return true;
     end
     return false;
@@ -134,7 +134,7 @@ end
 
 --是否是互殴阶段BUFF表现
 function p.IsBattle_RoundStage_Atk()
-    if p.battleRoundStage == N_BATTLE_ROUND_STAGE_ATK then
+    if p.battleRoundStage == W_BATTLE_ROUND_STAGE_ATK then
         return true;
     end
     return false;
@@ -142,7 +142,7 @@ end
 
 --是否是互殴阶段结算
 function p.IsBattle_RoundStage_Clearing()
-    if p.battleRoundStage == N_BATTLE_ROUND_STAGE_CLEARING then
+    if p.battleRoundStage == W_BATTLE_ROUND_STAGE_CLEARING then
         return true;
     end
     return false;

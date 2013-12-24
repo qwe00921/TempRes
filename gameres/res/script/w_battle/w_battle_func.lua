@@ -1,5 +1,5 @@
 --------------------------------------------------------------
--- FileName:    n_battle_func.lua
+-- FileName:    w_battle_func.lua
 -- author:      hst, 2013年12月13日
 -- purpose:     对战辅助函数
 --------------------------------------------------------------
@@ -9,7 +9,7 @@ function GetBuffAniByType( buffType )
     if buffType == nil then
     	return nil;
     end
-    return "n_battle_buff.buff_type_"..buffType;
+    return "w_battle_buff.buff_type_"..buffType;
     --[[
     if buffType == N_BUFF_TYPE_1 then --晕眩冰冻
     elseif buffType == N_BUFF_TYPE_2 then--冰冻
@@ -86,9 +86,9 @@ function GetBestTargetPos( Hero, TCamp, Targets )
 	end
 	if tempPosId ~= nil then
 		if TCamp == E_CARD_CAMP_HERO then
-            figther = n_battle_mgr.heroCamp:FindFighter( tempPosId );
+            figther = w_battle_mgr.heroCamp:FindFighter( tempPosId );
         elseif TCamp == E_CARD_CAMP_ENEMY then
-            figther = n_battle_mgr.enemyCamp:FindFighter( tempPosId + N_BATTLE_CAMP_CARD_NUM );
+            figther = w_battle_mgr.enemyCamp:FindFighter( tempPosId + W_BATTLE_CAMP_CARD_NUM );
         end
         return figther:GetFrontPos( Hero:GetPlayerNode() );
     else
@@ -150,14 +150,14 @@ function HasBuffType( fighter, buffType )
     	WriteConErr("HasBuffType err!");
     	return nil;
     end
-    local buffList = n_battle_db_mgr.GetBuffRoundDB( n_battle_stage.GetRoundNum() );
+    local buffList = w_battle_db_mgr.GetBuffRoundDB( w_battle_stage.GetRoundNum() );
     if buffList == nil or #buffList <= 0 then
     	return false;
     end
 	local pos = fighter.idFighter;
 	local camp = fighter.camp;
 	if camp == E_CARD_CAMP_ENEMY then
-		pos = pos - N_BATTLE_CAMP_CARD_NUM;
+		pos = pos - W_BATTLE_CAMP_CARD_NUM;
 	end
 	for bk, buff in ipairs( buffList ) do
 		local bCamp = tonumber( buff.Camp );

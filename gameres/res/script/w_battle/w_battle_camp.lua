@@ -1,12 +1,12 @@
 --------------------------------------------------------------
--- FileName: 	n_battle_camp.lua
+-- FileName: 	w_battle_camp.lua
 -- BaseClass:   battle_camp
 -- author:		zhangwq, 2013/06/20
 -- purpose:		作战阵营（多实例）
 --------------------------------------------------------------
 
-n_battle_camp = battle_camp:new();
-local p = n_battle_camp;
+w_battle_camp = battle_camp:new();
+local p = w_battle_camp;
 local super = battle_camp;
 local g_Herofighters = nil;
 local g_HeroIndex = 1;
@@ -53,13 +53,13 @@ end
 
 function p:AddBoss()
 	local uiTag = 14;
-	local node = GetPlayer( n_battle_mgr.uiLayer, uiTag );
+	local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
 	if node == nil then
 		WriteCon( "get player node failed" );
 		return;
 	end
 		
-	local f = n_fighter:new();
+	local f = w_fighter:new();
 	self.fighters[#self.fighters + 1] = f;
 		
 	f:Init( uiTag, node, self.idCamp );
@@ -161,13 +161,13 @@ function p:AddShadows(uiArray, fighters)
 	for i = 1,#fighters do
 	    local fighterInfo = fighters[i];
         local uiTag = uiArray[tonumber( fighterInfo.Position )];
-		local node = GetPlayer( n_battle_mgr.uiLayer, uiTag );
+		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
 		if node == nil then
 			WriteCon( "get player node failed" );
 			return;
 		end
 		
-		local kShadow = shadow:new();
+		local kShadow = w_shadow:new();
 		local nIndex = #self.shadows + 1;
 		self.shadows[nIndex] = kShadow;
 		local pOldPos = node:GetCenterPos();
@@ -182,7 +182,7 @@ function p:AddShadows(uiArray, fighters)
 		
 		local kShadowNode = kShadow:Init("lancer.shadow",node);
 		self.fighters[nIndex]:SetShadow(kShadow.m_kNode);
-		n_battle_mgr.uiLayer:AddChildZ(kShadowNode,0);
+		w_battle_mgr.uiLayer:AddChildZ(kShadowNode,0);
 		--self:SetFighterConfig( kShadow, i );
 		--kShadow:standby();
 		
@@ -200,13 +200,13 @@ function p:AddFighters( uiArray, fighters )
 	for i = 1,#fighters do
 	    local fighterInfo = fighters[i];
 		local uiTag = uiArray[tonumber( fighterInfo.Position )];
-		local node = GetPlayer( n_battle_mgr.uiLayer, uiTag );
+		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
 		if node == nil then
 			WriteCon( "get player node failed" );
 			return;
 		end
 		
-		local f = n_fighter:new();
+		local f = w_fighter:new();
 		self.fighters[#self.fighters + 1] = f;
 		local pOldPos = node:GetCenterPos();
 
@@ -231,7 +231,7 @@ function p:AddFighters( uiArray, fighters )
 		
         f.idFighter = tonumber( fighterInfo.Position );
         if self.idCamp == E_CARD_CAMP_ENEMY then
-            f.idFighter = f.idFighter + N_BATTLE_CAMP_CARD_NUM;
+            f.idFighter = f.idFighter + W_BATTLE_CAMP_CARD_NUM;
         end
 		
 		if self:IsHeroCamp() then

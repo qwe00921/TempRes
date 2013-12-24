@@ -37,7 +37,11 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		local tag = uiNode:GetTag();
 		if(ui.ID_CTRL_BUTTON_BG == tag) then
 			WriteCon("OK BUTTON");
-			n_battle_mgr.QuitBattle();
+			if E_DEMO_VER == 4 then
+				n_battle_mgr.QuitBattle();
+			elseif E_DEMO_VER == 5 then
+				w_battle_mgr.QuitBattle();
+			end;
 			p.CloseUI();
 			dlg_userinfo.ShowUI();
 			stageMap_main.OpenWorldMap();

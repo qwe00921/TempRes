@@ -1,12 +1,12 @@
 --------------------------------------------------------------
--- FileName: 	n_hp_bar.lua
+-- FileName: 	w_hp_bar.lua
 -- BaseClass:   hp_bar
 -- author:		zhangwq, 2013/06/20
 -- purpose:		血条类（多实例）
 --------------------------------------------------------------
 
-n_hp_bar = hp_bar:new();
-local p = n_hp_bar;
+w_hp_bar = hp_bar:new();
+local p = w_hp_bar;
 local super = hp_bar;
 
 function p:new()
