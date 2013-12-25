@@ -74,6 +74,8 @@ function p:AddToBattleLayer()
     	card_battle_mgr.uiLayer:AddChildZTag( node, E_BATTLE_Z_BULLET, E_BATTLE_TAG_BULLET );
     elseif E_DEMO_VER == 4 then
         n_battle_mgr.uiLayer:AddChildZTag( node, E_BATTLE_Z_BULLET, E_BATTLE_TAG_BULLET );    	    
+	elseif E_DEMO_VER == 5 then		
+		w_battle_mgr.uiLayer:AddChildZTag( node, E_BATTLE_Z_BULLET, E_BATTLE_TAG_BULLET );    	    
 	end
 	return node;
 end

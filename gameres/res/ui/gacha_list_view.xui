@@ -98,11 +98,11 @@ Remark=免费扭蛋倒计时
 [CTRL_TEXT_FREE_MSG]
 Type=4
 Tag=11
-Rect=291 137 94 30
+Rect=288 139 94 30
 AnchorPos=0 0
 Notes=
-Text=本次免费
-TextTradition=本次免費
+Text=免费
+TextTradition=免費
 TextSize=19
 TextColor=0xff00
 TextHorAlign=AlignHorCenter

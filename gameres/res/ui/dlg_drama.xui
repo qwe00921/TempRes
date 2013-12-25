@@ -62,7 +62,7 @@ NormalFileUV=0 0 636 266
 [CTRL_COLOR_LABEL_TEXT]
 Type=7
 Tag=6
-Rect=34 641 584 200
+Rect=34 641 588 200
 AnchorPos=0 0
 Notes=
 TextSize=0

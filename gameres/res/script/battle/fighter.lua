@@ -737,6 +737,10 @@ function p:SetLifeDamage(num)
             if not n_battle_mgr.CheckBattleWin() then
                 n_battle_mgr.CheckBattleLose();
             end 	
+		elseif E_DEMO_VER == 5 then   
+            if not w_battle_mgr.CheckBattleWin() then
+                w_battle_mgr.CheckBattleLose();
+            end 			
 		end
 	else
 		self:SetLife(self.life);

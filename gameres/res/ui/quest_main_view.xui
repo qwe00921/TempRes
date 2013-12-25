@@ -3,6 +3,25 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_BG]
+Type=1
+Tag=10
+Rect=1 147 640 841
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\creat_role\gacha_bg0003.png
+NormalFileUV=0 0 480 450
+
+[CTRL_9SLICES_12]
+Type=22
+Tag=12
+Rect=1 147 640 833
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
 [CTRL_PIC_HEAD_BG_1]
 Type=1
 Tag=1
@@ -15,51 +34,51 @@ NormalFileUV=0 0 264 108
 [CTRL_PIC_LIST_BG_3]
 Type=1
 Tag=3
-Rect=0 137 640 806
+Rect=109 172 369 80
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\quest_bg3.png
-NormalFileUV=0 0 640 790
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
 
 [CTRL_BTN_TETURN_2]
 Type=2
 Tag=2
-Rect=567 139 70 70
+Rect=5 171 100 80
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\close2.png
-NormalFileUV=0 0 68 68
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close2_click.png
 SelectedFileUV=0 0 68 68
 
 [CTRL_VERTICAL_LIST_5]
 Type=14
 Tag=5
-Rect=3 207 636 680
+Rect=1 254 636 700
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_QUEST_NAME_6]
 Type=4
 Tag=6
-Rect=35 148 201 40
+Rect=128 190 317 40
 AnchorPos=0 0
 Notes=
 Text=章节名称
 TextTradition=章節名稱
 TextSize=30
-TextColor=0xfeffaf
-TextHorAlign=AlignHorCenter
+TextColor=0xffffff
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Stretch=1
 
 [CTRL_BTN_EAYE_7]
 Type=2
 Tag=7
-Rect=257 144 98 56
+Rect=522 192 98 56
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -75,7 +94,7 @@ DisableFileUV=0 0 98 56
 [CTRL_BTN_NORMAL_8]
 Type=2
 Tag=8
-Rect=359 144 98 56
+Rect=521 192 98 56
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -91,7 +110,7 @@ DisableFileUV=0 0 98 56
 [CTRL_BTN_HARD_9]
 Type=2
 Tag=9
-Rect=457 144 98 56
+Rect=476 167 160 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -103,3 +122,42 @@ SelectFile=.\res\image\ui\quest\hard_onselect.png
 SelectedFileUV=0 0 98 56
 DisableFile=.\res\image\ui\quest\hard_un.png
 DisableFileUV=0 0 98 56
+
+[CTRL_TEXT_48]
+Type=4
+Tag=48
+Rect=11 180 88 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=36
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_LIST_12]
+Type=8
+Tag=13
+Rect=11 286 621 223
+AnchorPos=0 0
+Notes=
+
+[CTRL_LIST_13]
+Type=8
+Tag=14
+Rect=10 552 621 229
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_14]
+Type=2
+Tag=15
+Rect=224 818 169 86
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80

@@ -148,7 +148,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_DESCRIPTION]
 Type=4
 Tag=26
-Rect=422 406 180 143
+Rect=422 422 180 127
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -305,4 +305,17 @@ TextTradition=999999
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=38
+Rect=425 390 50 30
+AnchorPos=0 0
+Notes=
+Text=简介
+TextTradition=簡介
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

@@ -74,6 +74,8 @@ DoFile("card_battle/define.lua");
 
 --【加载战斗 正式版本0.1】
 DoFile("n_battle/define.lua");
+--【加载战斗 正式版本0.1test】
+DoFile("w_battle/define.lua");
 
 --【任务和副本】
 DoFile("mission/define.lua");

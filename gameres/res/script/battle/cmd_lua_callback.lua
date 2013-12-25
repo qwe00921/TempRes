@@ -29,9 +29,11 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter = battle_mgr.FindFighter(id);
 	elseif E_DEMO_VER == 4 then    
         fighter = n_battle_mgr.FindFighter(id);
+	elseif E_DEMO_VER == 5 then    
+		fighter = w_battle_mgr.FindFighter(id);
 	end
 	
-	if fighter == nil and E_DEMO_VER ~= 4 then
+	if fighter == nil and (E_DEMO_VER ~= 4 or E_DEMO_VER ~= 5) then
 		WriteCon( "find fighter failed: id="..id);
 		return;
 	end
@@ -47,16 +49,32 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter:SetLifeHeal(num);
 	elseif cmdtype == "fighter_showbar" then
 		fighter:ShowHpBarMoment();
+
 	elseif cmdtype == "ReSetPetNodePos" and E_DEMO_VER == 4 then
-        n_battle_mgr.ReSetPetNodePos();  
+        n_battle_mgr.ReSetPetNodePos(); 
+	elseif cmdtype == "ReSetPetNodePos" and E_DEMO_VER == 5 then
+		w_battle_mgr.ReSetPetNodePos(); 
+
     elseif cmdtype == "SetFighterPic" and E_DEMO_VER == 4 then
         n_battle_pvp.SetFighterPic( fighter ); 
+    elseif cmdtype == "SetFighterPic" and E_DEMO_VER == 5 then
+        w_battle_pvp.SetFighterPic( fighter ); 
+
     elseif cmdtype == "ClearAllFighterPic" and E_DEMO_VER == 4 then
         n_battle_pvp.ClearAllFighterPic();    
+	elseif cmdtype == "ClearAllFighterPic" and E_DEMO_VER == 5 then
+        w_battle_pvp.ClearAllFighterPic();    
+			
     elseif cmdtype == "UpdatePetRage" and E_DEMO_VER == 4 then
         n_battle_pvp.UpdatePetRage( id , -num );    
+	elseif cmdtype == "UpdatePetRage" and E_DEMO_VER == 5 then
+        w_battle_pvp.UpdatePetRage( id , -num );
+		    		
     elseif cmdtype == "fighter_revive" and E_DEMO_VER == 4 then
         FighterRevive( fighter , num );        
+	elseif cmdtype == "fighter_revive" and E_DEMO_VER == 5 then
+        FighterRevive( fighter , num );        	
+		
 	elseif cmdtype == "AddMaskImage" then
 		if E_DEMO_VER == 2 then
 			x_battle_mgr:AddMaskImage();
@@ -64,6 +82,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 			card_battle_mgr:AddMaskImage();
 		elseif E_DEMO_VER == 4 then   
             n_battle_mgr:AddMaskImage();
+		elseif E_DEMO_VER == 5 then   
+            w_battle_mgr:AddMaskImage();			
 		end
 	elseif cmdtype == "HideMaskImage" then
 		if E_DEMO_VER == 2 then
@@ -72,6 +92,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 			card_battle_mgr:HideMaskImage();
 		elseif E_DEMO_VER == 4 then   
             n_battle_mgr:HideMaskImage();	
+		elseif E_DEMO_VER == 5 then   
+            w_battle_mgr:HideMaskImage();				
 		end
 	elseif cmdtype == "ReSetSkillNameBarPos" then
 		if E_DEMO_VER == 2 then
@@ -80,6 +102,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 			card_battle_pvp:ReSetSkillNameBarPos();
 		elseif E_DEMO_VER == 4 then   
             n_battle_pvp:ReSetSkillNameBarPos();	
+		elseif E_DEMO_VER == 5 then   
+            w_battle_pvp:ReSetSkillNameBarPos();				
 		end
 	elseif cmdtype == "SetSkillNameBarToLeft" then
 		if E_DEMO_VER == 2 then
@@ -88,6 +112,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 			card_battle_pvp:SetSkillNameBarToLeft();
 		elseif E_DEMO_VER == 4 then   
             n_battle_pvp:SetSkillNameBarToLeft();
+		elseif E_DEMO_VER == 5 then   
+            w_battle_pvp:SetSkillNameBarToLeft();			
 		end
 	elseif cmdtype == "SetSkillNameBarToRight" then
 		if E_DEMO_VER == 2 then
@@ -96,6 +122,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 			card_battle_pvp:SetSkillNameBarToRight();	
 		elseif E_DEMO_VER == 4 then   
             n_battle_pvp:SetSkillNameBarToRight();  
+		elseif E_DEMO_VER == 5 then   
+            w_battle_pvp:SetSkillNameBarToRight();  			
 		end
 	elseif cmdtype == "skillbar_change" then
         fighter.skillbar.life = fighter.skillbar.life + num;
