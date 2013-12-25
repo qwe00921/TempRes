@@ -1,0 +1,159 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_BG]
+Type=2
+Tag=21
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=28
+Rect=7 164 640 800
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
+
+[CTRL_PICTURE_21]
+Type=1
+Tag=23
+Rect=0 163 279 68
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_TEXT_CHAPTER]
+Type=4
+Tag=3
+Rect=220 242 201 31
+AnchorPos=0 0
+Notes=
+Text=章节
+TextTradition=章節
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_MISSION_NAME]
+Type=4
+Tag=2
+Rect=220 282 200 33
+AnchorPos=0 0
+Notes=
+Text=任务名称
+TextTradition=任務名稱
+TextSize=32
+TextColor=0xfdfdde
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_STAR]
+Type=4
+Tag=4
+Rect=17 174 155 41
+AnchorPos=0 0
+Notes=
+Text=任务奖励
+TextTradition=任務獎勵
+TextSize=35
+TextColor=0xfefd92
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_EXP]
+Type=9
+Tag=33
+Rect=133 958 324 34
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_PICTURE_38]
+Type=1
+Tag=40
+Rect=259 496 122 122
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_47]
+Type=1
+Tag=47
+Rect=143 364 354 84
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\pride.png
+NormalFileUV=0 0 354 84
+
+[CTRL_PICTURE_48]
+Type=1
+Tag=48
+Rect=254 624 129 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_ITEMNAME]
+Type=4
+Tag=49
+Rect=267 624 107 27
+AnchorPos=0 0
+Notes=
+Text=物品名称
+TextTradition=物品名稱
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_SHINNING1]
+Type=1
+Tag=50
+Rect=108 315 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\GachaReaGet_300x300.png
+NormalFileUV=0 0 300 300
+
+[CTRL_PICTURE_SHINNING2]
+Type=1
+Tag=51
+Rect=412 326 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\GachaSuperGekiRea_300x300.png
+NormalFileUV=0 0 300 300
+
+[CTRL_PICTURE_SHINNING3]
+Type=1
+Tag=52
+Rect=284 398 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\GachaReaGet_300x300.png
+NormalFileUV=0 0 300 300
+
+[CTRL_PICTURE_SHINNING4]
+Type=1
+Tag=53
+Rect=220 322 100 100
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\GachaSuperGekiRea_300x300.png
+NormalFileUV=0 0 300 300
