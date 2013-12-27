@@ -1,32 +1,25 @@
+EASY = 1001;
+HARD = 1002;
+
 quest_main = {}
 local p = quest_main;
 
 p.layer = nil;
 local ui = ui_quest_main_view;
 local uiList = ui_quest_list_view;
-local missionIdGap = 10;
-local num_easy = nil;
-local num_normal = nil;
-local num_difficult = nil;
 
+p.power = nil;
 p.stageId = nil;	--关卡ID
 p.missionId = nil; 	--任务ID
-
-p.stageTable = nil;		--关卡静态数据
---p.missionTable = nil;
-
-p.missionList = {};	--服务端下发列表
-p.curBtnNode = nil;		--选中标记
-p.power = nil; 		--获取玩家体力值
+p.missionMax = 9;
+p.missionIdGap = 10;
+local difficultKey = EASY;
 
 function p.ShowUI(stageId)
 	p.stageId  = stageId;
-	
 	--获取missionId初始值
 	p.GetMissionId();
-	--获取章节静态数据
-	p.GetStageTable();
-
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -36,11 +29,10 @@ function p.ShowUI(stageId)
 	if layer == nil then
 		return false;
 	end
-
+	
 	layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch(false);
-	layer:SetFrameRectFull();
 	
 	GetUIRoot():AddDlg(layer);
 	LoadUI("quest_main_view.xui",layer,nil);
@@ -48,9 +40,15 @@ function p.ShowUI(stageId)
 	p.layer = layer;
 	p.SetDelegate(layer);
 	
-	--设置章节名字
-	local stageName = GetLabel(p.layer, ui.ID_CTRL_TEXT_QUEST_NAME_6);
-	stageName:SetText(p.stageTable[1].stage_name);
+	p.Init()
+end
+
+function p.Init()
+--设置章节名字
+	local stageTable =  SelectRowInner(T_STAGE,"stage_id",p.stageId);
+	local stageName = GetLabel(p.layer, ui.ID_CTRL_TEXT_QUEST_NAME);
+	stageName:SetText(stageTable.stage_name);
+	p.setDifficultBtn()
 	
 	WriteCon("send mission request");
 	local uid = GetUID();
@@ -61,122 +59,103 @@ end
 
 function p.GetMissionId()
 	if p.stageId then
-		p.missionId = tonumber(p.stageId.."011");
+		p.missionId = tonumber(p.stageId.."0"..p.missionMax.."1");
 		WriteCon(tostring(p.missionId));
-	end
-end
-
-function p.GetStageTable()
-	local Table = SelectRowList(T_STAGE,"stage_id",p.stageId);
-	if #Table == 1 then 
-		p.stageTable = Table;
-		num_easy = tonumber(p.stageTable[1].easy_count);
-		num_normal = tonumber(p.stageTable[1].normal_count);
-		num_difficult = tonumber(p.stageTable[1].difficult_count);
-	else
-		WriteCon("stageTable error");
 	end
 end
 
 function p.SetDelegate()
 	--返回
-	local btnBack = GetButton( p.layer, ui.ID_CTRL_BTN_TETURN_2 );
-	btnBack:SetLuaDelegate(p.OnBtnClick);
-	--简单
-	local btnEasy =  GetButton(p.layer, ui.ID_CTRL_BTN_EAYE_7);
-	btnEasy:SetLuaDelegate(p.OnBtnClick);
-	p.SetBtnCheckedFX( btnEasy );--设置初始状态
+	local btnReturn = GetButton( p.layer, ui.ID_CTRL_BTN_TETURN );
+	btnReturn:SetLuaDelegate(p.OnBtnClick);
+	
 	--普通
-	local BtnNormal =  GetButton(p.layer, ui.ID_CTRL_BTN_NORMAL_8);
-	BtnNormal:SetLuaDelegate(p.OnBtnClick);
-	--困难
-	local BtnDifficult =  GetButton(p.layer, ui.ID_CTRL_BTN_HARD_9);
-	BtnDifficult:SetLuaDelegate(p.OnBtnClick);
+	local btnHard =  GetButton(p.layer, ui.ID_CTRL_BTN_HARD);
+	btnHard:SetLuaDelegate(p.OnBtnClick);
 end
-
 --按钮事件
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
-		if (ui.ID_CTRL_BTN_TETURN_2 == tag) then
+		if (ui.ID_CTRL_BTN_TETURN == tag) then
 			WriteCon("return");
 			p.CloseUI();
 			stageMap_1.OpenStageMap();
-		elseif (ui.ID_CTRL_BTN_EAYE_7 == tag) then
-			WriteCon("easy");
-            p.SetBtnCheckedFX( uiNode );
-			local missionStartId = p.missionId;
-			p.loadMissionList(missionStartId,num_easy);
-		elseif (ui.ID_CTRL_BTN_NORMAL_8 == tag) then
-			WriteCon("normal");
-            p.SetBtnCheckedFX( uiNode );
-			local missionStartId = p.missionId + 1;
-			p.loadMissionList(missionStartId,num_normal);
-		elseif (ui.ID_CTRL_BTN_HARD_9 == tag) then
-			WriteCon("hard");
-            p.SetBtnCheckedFX( uiNode );
-			local missionStartId = p.missionId + 2;
-			p.loadMissionList(missionStartId,num_difficult);
+		elseif (ui.ID_CTRL_BTN_HARD == tag) then
+			local missionStartId = nil;
+			if difficultKey == EASY then
+				local misKey = "M"..p.stageId.."012";
+				if p.missionList[misKey] then
+					difficultKey = HARD;
+					missionStartId = p.missionId + 1;
+					p.loadMissionList(missionStartId);
+				else
+					dlg_msgbox.ShowOK( "提示", "当所有任务都获得完美评价时，才能解锁困难难度！" , nil, nil );
+				end
+			elseif difficultKey == HARD then
+				difficultKey = EASY;
+				missionStartId = p.missionId;
+				p.loadMissionList(missionStartId);
+			end
+			p.setDifficultBtn();
 		end
 	end
 end
-
 --点击战斗按钮
 function p.OnFightBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
-		WriteCon("=========OnFightBtnClick==========");
-		local btnId = uiNode:GetId();
-		local missionId = uiNode:GetId();
-		local missionTable = SelectRowList(T_MISSION,"id",missionId);
-		local powerLimit = tonumber(missionTable[1]["move_cost"]);
-		local power = p.power;
-		if power < powerLimit then
-			dlg_msgbox.ShowOK("提示" ,  "体力值不足。");
-			WriteCon("power not enough");
-			return
-		end
-		local fightTimes = tonumber(p.missionList["M"..missionId]["Fight_num"])
-		if fightTimes <= 0 then
-			dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
-			return
-		end
-			
-		--n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
-		local id = btnId;
-		
-		if p.missionList["M"..btnId] then
-			local storyId = p.missionList["M"..btnId].Begin_story;
-			WriteCon("storyId = "..storyId);
-			if tonumber(storyId) ~= 0 then
-				dlg_drama.ShowUI( id , storyId);
-			else
-			   if E_DEMO_VER == 4 then
-				n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
-			   else	
-				w_battle_mgr.EnterBattle( W_BATTLE_PVE, btnId );--进入战斗PVE
-			   end;
+		local tag = uiNode:GetTag();
+		if ( uiList.ID_CTRL_BUTTON_FIGHTING == tag) then
+			local missionId = uiNode:GetId();
+			WriteCon("OnFightBtnClick====="..missionId);
+			local missionTable = SelectRowInner(T_MISSION,"id",missionId);
+			local powerLimit = tonumber(missionTable.move_cost);
+			local power = p.power;
+			if power < powerLimit then
+				dlg_msgbox.ShowOK("提示" ,  "体力值不足。");
+				WriteCon("power not enough");
+				return
 			end
-		else
-			if E_DEMO_VER== 4 then
-			  n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+			local fightTimes = tonumber(p.missionList["M"..missionId]["Fight_num"])
+			if fightTimes <= 0 then
+				dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
+				return
+			end
+					
+			if p.missionList["M"..missionId] then
+				local storyId = p.missionList["M"..missionId].Begin_story;
+				WriteCon("storyId = "..storyId);
+				if tonumber(storyId) ~= 0 then
+					dlg_drama.ShowUI( missionId , storyId);
+				else
+				   if E_DEMO_VER == 4 then
+					n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				   else	
+					w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				   end;
+				end
 			else
-			  w_battle_mgr.EnterBattle( W_BATTLE_PVE, btnId );--进入战斗PVE
-			end;
+				if E_DEMO_VER== 4 then
+				  n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				else
+				  w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				end;
+			end
+			p.CloseUI();
 		end
-		p.CloseUI();
 	end
 end
 
-function p.SetBtnCheckedFX( node )
-    local btnNode = ConverToButton( node );
-    if p.curBtnNode ~= nil then
-        p.curBtnNode:SetChecked( false );
-    end
-    btnNode:SetChecked( true );
-    p.curBtnNode = btnNode;
+function p.setDifficultBtn()
+	local diffBtn = GetButton(p.layer, ui.ID_CTRL_BTN_HARD);
+	if difficultKey == EASY then
+		diffBtn:SetImage( GetPictureByAni("common_ui.mission_hard",0));
+	elseif difficultKey == HARD then
+		diffBtn:SetImage( GetPictureByAni("common_ui.mission_hard",1));
+	end
 end
 
---显示列表
+
 function p.ShowQuestList(self)
 	if self.result == false then
 		dlg_msgbox.ShowOK("错误提示","玩家数据错误，请联系开发人员。",nil,p.layer);
@@ -197,108 +176,81 @@ function p.ShowQuestList(self)
 		WriteCon("**missionsList error**"); 
 		return
 	end
-
-	p.setHardBtn();
 	
 	--加载列表
 	local missionStartId = p.missionId;
-	p.loadMissionList(missionStartId,num_easy);
+	p.loadMissionList(missionStartId);
 end
 
-function p.setHardBtn()
-	local BtnDifficult =  GetButton(p.layer, ui.ID_CTRL_BTN_HARD_9);
-	local BtnNormal =  GetButton(p.layer, ui.ID_CTRL_BTN_NORMAL_8);
-	local normal_id = p.missionId + 1;
-	local difficult_id = normal_id + 1;
-
-	if p.missionList["M"..difficult_id] then
-		BtnDifficult:SetEnabled(true);
-		BtnNormal:SetEnabled(true);
-	elseif p.missionList["M"..normal_id] then
-		BtnDifficult:SetEnabled(false);
-		BtnNormal:SetEnabled(true);
-	else
-		BtnDifficult:SetEnabled(false);
-		BtnNormal:SetEnabled(false);
-	end
-end
-
-function p.loadMissionList(missionStartId,num)
-	local MisId = missionStartId;
-	local count = num;
-	local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST_5);
+function p.loadMissionList(missionStartId)
+	local misId = missionStartId
+	local count = p.missionMax;
+	local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST);
 	missionListTable:ClearView();
 	
 	for i = 1,count do
-		--WriteCon("MisId =="..MisId);
-		local view = createNDUIXView();
-		view:Init();
-		LoadUI("quest_list_view.xui",view, nil);
+		local misKey = "M"..misId;
+		if p.missionList[misKey] then
+			local view = createNDUIXView();
+			view:Init();
+			LoadUI("quest_list_view.xui",view, nil);
+			local bg = GetUiNode(view, uiList.ID_CTRL_PIC_LIST_BG);
+			view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
+			view:SetId(misId);
+			--设置任务静态数据
+			p.setMissionInfi(misId,view)
 		
-		--隐藏默认UI
-		p.HideStar(view);
-		p.HideItem(view);
-		
-		local bg = GetUiNode(view, uiList.ID_CTRL_PIC_LIST_BG);
-		view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
-		view:SetId(MisId);
-		
-		--信息初始化
-		p.setMissionInif(MisId,view);
-		
-		--加载服务端下发数据
-		--战斗按钮
-		local fightBtn = GetButton(view, uiList.ID_CTRL_BUTTON_FIGHTING);
-		fightBtn:SetLuaDelegate(p.OnFightBtnClick);
-		local MisKey = "M"..MisId;
-		if p.missionList[MisKey] then
-			--WriteCon("=====true");
-			fightBtn:SetEnabled(true);
-			fightBtn:SetId(MisId);
-			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
-			local missionTable = SelectRowInner(T_MISSION,"id",MisId);
-			local text = p.missionList[MisKey]["Fight_num"].."/"..missionTable["fight_limit"]
-			timesText:SetText(text);
-			--显示星级
-			local StarNum = p.missionList[MisKey]["High_score"]
-			p.ShowStar(view,StarNum)
-		else
-			--WriteCon("=====false=====");
-			fightBtn:SetEnabled(false);
-		end
+			--设置服务端下发数据
+			local fightBtn = GetButton(view, uiList.ID_CTRL_BUTTON_FIGHTING);
+			fightBtn:SetLuaDelegate(p.OnFightBtnClick);
+			fightBtn:SetId(misId);
 			
-		missionListTable:AddView(view);
-		MisId = MisId + missionIdGap;
+			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
+			local missionTable = SelectRowInner(T_MISSION,"id",misId);
+			local text = p.missionList[misKey]["Fight_num"].."/"..missionTable["fight_limit"]
+			timesText:SetText(text);
+			
+			local misHead = GetImage(view, uiList.ID_CTRL_PICTURE_NEW);
+			local evaluate = tonumber(p.missionList[misKey]["High_score"]);
+			if evaluate == 0 then
+				misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 0));
+			elseif evaluate == 1 then
+				misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 1));
+			elseif evaluate == 2 then
+				misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 2));
+			end
+			
+			
+			missionListTable:AddView(view);
+		end
+		misId = misId - p.missionIdGap;
 	end
 end
 
---读取静态表数据
-function p.setMissionInif(MisId, view)
-	local mis_id = MisId;
-	local misstionName = GetLabel(view, uiList.ID_CTRL_TEXT_QUEST_NAME_V);
-	local power = GetLabel(view, uiList.ID_CTRL_TEXT_POWER_V);
-	local expText = GetLabel(view, uiList.ID_CTRL_TEXT_EXP_V);
-	local moneyText = GetLabel(view, uiList.ID_CTRL_TEXT_MONEY_V);
-	local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
-	local item1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD1);
-	local item2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD2);
-	--local item3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3);
+function p.setMissionInfi(misId,view)
+	local misName = GetLabel(view, uiList.ID_CTRL_TEXT_QUEST_NAME_V);
+	local misStep = GetLabel(view, uiList.ID_CTRL_TEXT_DIF_V);
+	local misPower = GetLabel(view, uiList.ID_CTRL_TEXT_POWER_V);
+	local misMoney = GetLabel(view, uiList.ID_CTRL_TEXT_MONEY_V);
+	local misExp = GetLabel(view, uiList.ID_CTRL_TEXT_EXP_V);
+	local misGhost = GetLabel(view, uiList.ID_CTRL_TEXT_GHO_V);
+	local misReward1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG1);
+	local misReward2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG2);
+	local misReward3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG3);
 	
-	local missionTable = SelectRowInner(T_MISSION,"id",mis_id);
+	local missionTable = SelectRowInner(T_MISSION,"id",misId);
 	if 	missionTable == nil then
 		WriteCon("missionTable error");
 		return;
 	end
-	misstionName:SetText(missionTable.mission_name);
-	power:SetText(missionTable.move_cost);
-	expText:SetText(missionTable.reward_exp);
-	moneyText:SetText(missionTable.reward_money);
-	local text = missionTable["fight_limit"].."/"..missionTable["fight_limit"]
-	timesText:SetText(text);
-	
-	local rewardId = missionTable.reward_id;
-	--WriteCon("rewardId==="..rewardId);
+	misName:SetText(missionTable.mission_name);
+	--misStep:SetText(missionTable.);
+	misPower:SetText(missionTable.move_cost);
+	misMoney:SetText(missionTable.reward_money);
+	misExp:SetText(missionTable.reward_exp);
+	--misGhost:SetText(missionTable.);
 
+	local rewardId = missionTable.reward_id;
 	local rewardTable = SelectRowList(T_MISSION_REWARD,"reward_id",rewardId);
 	if rewardTable == nil then
 		WriteCon("rewardTable error");
@@ -310,109 +262,11 @@ function p.setMissionInif(MisId, view)
 			rewardGroupTable[#rewardGroupTable + 1] = v;
 		end
 	end
-	local rewardItemId = nil;
-	if rewardGroupTable[1]["type_id"] then
-		rewardItemId = tonumber(rewardGroupTable[1]["type_id"]);
-		local typeID = tonumber(rewardGroupTable[1]["type"]);
-		if typeID == 1 then	--物品
-			local itemTable = SelectRowInner(T_ITEM,"id",rewardItemId);
-			item1:SetVisible(true);
-			item1:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-		elseif typeID == 2 then --卡牌
-			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
-			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
-			item1:SetVisible(true);
-			item1:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
-			--WriteCon("tonumberv.type==="..tonumber(v.type));
-		elseif typeID == 4 then	--装备
-			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);
-			item1:SetVisible(true);
-			item1:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
-		end
-	end
-	if rewardGroupTable[2]["type_id"] then
-		rewardItemId = tonumber(rewardGroupTable[2]["type_id"]);
-		local typeID = tonumber(rewardGroupTable[2]["type"]);
-		if typeID == 1 then	--物品
-			local itemTable = SelectRowInner(T_ITEM,"id",rewardItemId);
-			item2:SetVisible(true);
-			item2:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-		elseif typeID == 2 then --卡牌
-			--local itemInfoTable = SelectRowInner(T_CARD,"id",rewardItemId);
-			local cardTable = SelectRowInner(T_CHAR_RES,"card_id",rewardItemId);
-			item2:SetVisible(true);
-			item2:SetPicture( GetPictureByAni(cardTable.head_pic, 0) );
-			--WriteCon("tonumberv.type==="..tonumber(v.type));
-		elseif typeID == 4 then	--装备
-			local equipTable = SelectRowInner(T_EQUIP,"id",rewardItemId);
-			item2:SetVisible(true);
-			item2:SetPicture( GetPictureByAni(equipTable.item_pic, 0) );
-		end
-	end
-	--local rewardId1 = tonumber(missionTable["reward_1"]);
-	--local rewardId2 = tonumber(missionTable["reward_2"]);
-	--local rewardId3 = tonumber(missionTable[1]["reward_3"]);
-	-- if rewardId1 ~= nil  then
-		-- item1:SetPicture(GetPictureByAni("item.reward", rewardId1));
-	-- end
-	-- if rewardId2 ~= nil  then
-		-- item2:SetPicture(GetPictureByAni("item.reward", rewardId2));
-	-- end
-	--if rewardId3 ~= nil  then
-	--	item3:SetVisible(true);
-	--	item3:SetPicture(GetPictureByAni("item.reward", rewardId3));
-	--end
-
+	
+	
+--	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
+	
 end
-
-
---隐藏通关评价
-function p.HideStar(view)
-	local star1 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR1)
-	star1:SetVisible(false);
-	local star2 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR2)
-	star2:SetVisible(false);
-	local star3 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR3)
-	star3:SetVisible(false);
-end
-
-function p.ShowStar(view,num)
-	if num == 1 or num == "1" then
-		local star1 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR1)
-		star1:SetVisible(true);
-		local star2 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR2)
-		star2:SetVisible(false);
-		local star3 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR3)
-		star3:SetVisible(false);
-	elseif num == 2 or num == "2" then
-		local star1 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR1)
-		star1:SetVisible(true);
-		local star2 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR2)
-		star2:SetVisible(true);
-		local star3 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR3)
-		star3:SetVisible(false);
-	elseif num == 3 or num == "3" then
-		local star1 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR1)
-		star1:SetVisible(true);
-		local star2 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR2)
-		star2:SetVisible(true);
-		local star3 = GetImage(view, uiList.ID_CTRL_PICTURE_STAR3)
-		star3:SetVisible(true);
-	else
-		return;
-	end
-end
-
---隐藏奖励物品图标
-function p.HideItem(view)
-	local Item1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD1)
-	Item1:SetVisible(false);
-	local Item2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD2)
-	Item2:SetVisible(false);
-	--local item3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3)
-	--item3:SetVisible(false);
-end
-
 
 --隐藏UI
 function p.HideUI()
@@ -432,10 +286,7 @@ function p.CloseUI()
 end
 
 function p.Clear()
+	p.power = nil;
 	p.stageId = nil;	--关卡ID
 	p.missionId = nil; 	--任务ID
-	p.stageTable = nil;		--关卡静态数据
-	p.missionList = {};	--服务端下发列表
-	p.curBtnNode = nil;		--选中标记
-	p.power = nil; 		--获取玩家体力值
 end
