@@ -1,6 +1,6 @@
 ﻿
 [UI_INFO]
-Width=640
+Width=690
 Height=960
 
 [CTRL_PICTURE_82]
@@ -13,7 +13,7 @@ Notes=
 [CTRL_PICTURE_BG1]
 Type=1
 Tag=217
-Rect=0 443 640 517
+Rect=0 828 640 400
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg2.png
@@ -68,6 +68,215 @@ Rect=34 325 71 90
 AnchorPos=0 0
 Notes=
 
+[CTRL_PICTURE_70]
+Type=1
+Tag=70
+Rect=3 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_71]
+Type=1
+Tag=71
+Rect=130 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_72]
+Type=1
+Tag=72
+Rect=257 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_73]
+Type=1
+Tag=73
+Rect=384 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_74]
+Type=1
+Tag=74
+Rect=511 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_75]
+Type=2
+Tag=75
+Rect=512 20 112 55
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_PICTURE_BOX]
+Type=1
+Tag=84
+Rect=457 20 50 50
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\material_thum.png
+NormalFileUV=0 0 102 102
+
+[CTRL_TEXT_218]
+Type=4
+Tag=218
+Rect=532 29 76 30
+AnchorPos=0 0
+Notes=
+Text=菜单
+TextTradition=菜單
+TextSize=20
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_328]
+Type=1
+Tag=328
+Rect=13 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_329]
+Type=1
+Tag=329
+Rect=140 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_330]
+Type=1
+Tag=330
+Rect=267 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_331]
+Type=1
+Tag=331
+Rect=394 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_332]
+Type=1
+Tag=332
+Rect=521 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_ITEM1]
+Type=4
+Tag=333
+Rect=11 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM2]
+Type=4
+Tag=334
+Rect=139 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM3]
+Type=4
+Tag=335
+Rect=267 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM4]
+Type=4
+Tag=336
+Rect=393 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM5]
+Type=4
+Tag=337
+Rect=521 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_338]
+Type=1
+Tag=338
+Rect=2 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_339]
+Type=1
+Tag=339
+Rect=129 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_340]
+Type=1
+Tag=340
+Rect=256 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_341]
+Type=1
+Tag=341
+Rect=383 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_342]
+Type=1
+Tag=342
+Rect=511 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
 [CTRL_RIGHT_SPRITE_5]
 Type=19
 Tag=11
@@ -110,10 +319,19 @@ Rect=536 325 71 90
 AnchorPos=0 0
 Notes=
 
+[CTRL_PICTURE_IMPORTANT]
+Type=1
+Tag=121
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
 [CTRL_PICTURE_62]
 Type=1
 Tag=62
-Rect=0 477 640 483
+Rect=0 477 641 350
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg2.png
@@ -179,53 +397,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_70]
-Type=1
-Tag=70
-Rect=3 832 125 125
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_71]
-Type=1
-Tag=71
-Rect=130 832 125 125
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_72]
-Type=1
-Tag=72
-Rect=257 832 125 125
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_73]
-Type=1
-Tag=73
-Rect=384 832 125 125
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_74]
-Type=1
-Tag=74
-Rect=511 832 125 125
-AnchorPos=0 0
-Notes=
-
-[CTRL_BUTTON_75]
-Type=2
-Tag=75
-Rect=512 20 112 55
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-
 [CTRL_PICTURE_CHA1]
 Type=1
 Tag=76
@@ -279,15 +450,6 @@ TextTradition=一二三四五六七
 TextSize=18
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_BOX]
-Type=1
-Tag=84
-Rect=457 20 50 50
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\n_battle\material_thum.png
-NormalFileUV=0 0 102 102
 
 [CTRL_TEXT_NAME4]
 Type=4
@@ -881,156 +1043,3 @@ Tag=216
 Rect=435 719 26 26
 AnchorPos=0 0
 Notes=
-
-[CTRL_TEXT_218]
-Type=4
-Tag=218
-Rect=532 29 76 30
-AnchorPos=0 0
-Notes=
-Text=菜单
-TextTradition=菜單
-TextSize=20
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_328]
-Type=1
-Tag=328
-Rect=13 929 107 21
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_329]
-Type=1
-Tag=329
-Rect=140 929 107 21
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_330]
-Type=1
-Tag=330
-Rect=267 929 107 21
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_331]
-Type=1
-Tag=331
-Rect=394 929 107 21
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_PICTURE_332]
-Type=1
-Tag=332
-Rect=521 929 107 21
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_TEXT_ITEM1]
-Type=4
-Tag=333
-Rect=11 930 107 19
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_ITEM2]
-Type=4
-Tag=334
-Rect=139 930 107 19
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_ITEM3]
-Type=4
-Tag=335
-Rect=267 930 107 19
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_ITEM4]
-Type=4
-Tag=336
-Rect=393 930 107 19
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_ITEM5]
-Type=4
-Tag=337
-Rect=521 930 107 19
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_338]
-Type=1
-Tag=338
-Rect=2 833 126 127
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_339]
-Type=1
-Tag=339
-Rect=129 833 126 127
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_340]
-Type=1
-Tag=340
-Rect=256 833 126 127
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_341]
-Type=1
-Tag=341
-Rect=383 833 126 127
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_342]
-Type=1
-Tag=342
-Rect=510 833 126 127
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100

@@ -14,6 +14,16 @@ image\ui\quest\easy.png
 image\ui\quest\normal.png
 image\ui\quest\hard.png
 
+[mission_hard]
+image\ui\quest\easy.png
+image\ui\quest\normal.png
+
+;任务评价
+[evaluate]
+image\ui\quest\new.png
+image\ui\quest\easy.png
+image\ui\quest\normal.png
+
 ;装备星级	by:xmk
 [equipStar]
 image\ui\public\star1.png

@@ -1,0 +1,105 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=4 27 633 144
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title2.png
+NormalFileUV=0 0 640 160
+
+[CTRL_PICTURE_ITEMPIC]
+Type=1
+Tag=11
+Rect=16 35 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=15 36 128 128
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\item-list.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_ITEMNAME]
+Type=4
+Tag=13
+Rect=155 52 234 40
+AnchorPos=0 0
+Notes=
+Text=物品名称
+TextTradition=物品名稱
+TextSize=25
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=157 98 300 3
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\line.png
+NormalFileUV=0 0 567 4
+
+[CTRL_TEXT_ITEMINFO]
+Type=4
+Tag=15
+Rect=155 106 234 40
+AnchorPos=0 0
+Notes=
+Text=物品名称
+TextTradition=物品名稱
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+
+[CTRL_TEXT_16]
+Type=4
+Tag=16
+Rect=477 42 82 60
+AnchorPos=0 0
+Notes=
+Text=持有数量
+TextTradition=持有數量
+TextSize=20
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=566 42 50 60
+AnchorPos=0 0
+Notes=
+Text=99
+TextTradition=99
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_18]
+Type=2
+Tag=18
+Rect=13 870 129 79
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80

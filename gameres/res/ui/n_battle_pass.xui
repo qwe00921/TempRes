@@ -1,0 +1,100 @@
+
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_216]
+Type=1
+Tag=216
+Rect=1 -1 640 458
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg_pass.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_217]
+Type=1
+Tag=217
+Rect=80 311 475 37
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_base.png
+NormalFileUV=0 0 475 37
+
+[CTRL_EXP_218]
+Type=9
+Tag=218
+Rect=104 319 427 21
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\n_battle\battle_meter_gauge.png
+NormalFileUV=0 0 427 21
+
+[CTRL_PICTURE_219]
+Type=1
+Tag=219
+Rect=234 276 87 22
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_caption.png
+NormalFileUV=0 0 87 22
+
+[CTRL_PICTURE_220]
+Type=1
+Tag=220
+Rect=42 188 157 122
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_end.png
+NormalFileUV=0 0 157 122
+
+[CTRL_PICTURE_221]
+Type=1
+Tag=221
+Rect=439 219 160 91
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_start.png
+NormalFileUV=0 0 160 91
+
+[CTRL_TEXT_222]
+Type=4
+Tag=222
+Rect=340 274 87 27
+AnchorPos=0 0
+Notes=
+Text=9/9
+TextTradition=9/9
+TextSize=28
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_CHAPTER]
+Type=4
+Tag=223
+Rect=267 53 107 29
+AnchorPos=0 0
+Notes=
+Text=章节名称
+TextTradition=章節名稱
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_MISSION]
+Type=4
+Tag=224
+Rect=249 96 142 37
+AnchorPos=0 0
+Notes=
+Text=关卡名称
+TextTradition=關卡名稱
+TextSize=30
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
