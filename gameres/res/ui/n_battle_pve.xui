@@ -1,0 +1,1036 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_82]
+Type=1
+Tag=82
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_BG1]
+Type=1
+Tag=217
+Rect=0 443 640 517
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
+[CTRL_LEFT_SPRITE_1]
+Type=19
+Tag=6
+Rect=127 136 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_LEFT_SPRITE_2]
+Type=19
+Tag=5
+Rect=105 230 70 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_LEFT_SPRITE_3]
+Type=19
+Tag=2
+Rect=130 325 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_LEFT_SPRITE_4]
+Type=19
+Tag=3
+Rect=31 136 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_LEFT_SPRITE_5]
+Type=19
+Tag=4
+Rect=11 230 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_CENTER]
+Type=1
+Tag=12
+Rect=290 244 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_LEFT_SPRITE_6]
+Type=19
+Tag=16
+Rect=34 325 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_RIGHT_SPRITE_5]
+Type=19
+Tag=11
+Rect=559 230 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_RIGHT_SPRITE_4]
+Type=19
+Tag=10
+Rect=540 136 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_RIGHT_SPRITE_3]
+Type=19
+Tag=7
+Rect=440 325 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_RIGHT_SPRITE_2]
+Type=19
+Tag=8
+Rect=466 230 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_RIGHT_SPRITE_1]
+Type=19
+Tag=9
+Rect=444 136 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_RIGHT_SPRITE_6]
+Type=19
+Tag=18
+Rect=536 325 71 90
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_62]
+Type=1
+Tag=62
+Rect=0 477 640 483
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
+[CTRL_BUTTON_63]
+Type=2
+Tag=63
+Rect=-1 474 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_64]
+Type=2
+Tag=64
+Rect=319 474 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_65]
+Type=2
+Tag=65
+Rect=0 592 319 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_66]
+Type=2
+Tag=66
+Rect=0 709 319 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_67]
+Type=2
+Tag=67
+Rect=319 592 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_68]
+Type=2
+Tag=68
+Rect=319 709 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_70]
+Type=1
+Tag=70
+Rect=3 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_71]
+Type=1
+Tag=71
+Rect=130 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_72]
+Type=1
+Tag=72
+Rect=257 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_73]
+Type=1
+Tag=73
+Rect=384 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_74]
+Type=1
+Tag=74
+Rect=511 832 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_75]
+Type=2
+Tag=75
+Rect=512 20 112 55
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_PICTURE_CHA1]
+Type=1
+Tag=76
+Rect=8 481 103 103
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_CHA4]
+Type=1
+Tag=77
+Rect=329 481 103 103
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_CHA2]
+Type=1
+Tag=78
+Rect=8 600 103 103
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_CHA5]
+Type=1
+Tag=79
+Rect=329 599 103 103
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_CHA3]
+Type=1
+Tag=80
+Rect=8 716 103 103
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_CHA6]
+Type=1
+Tag=81
+Rect=329 717 103 103
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_NAME1]
+Type=4
+Tag=83
+Rect=145 482 124 26
+AnchorPos=0 0
+Notes=
+Text=一二三四五六七
+TextTradition=一二三四五六七
+TextSize=18
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_BOX]
+Type=1
+Tag=84
+Rect=457 20 50 50
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\material_thum.png
+NormalFileUV=0 0 102 102
+
+[CTRL_TEXT_NAME4]
+Type=4
+Tag=85
+Rect=467 482 122 26
+AnchorPos=0 0
+Notes=
+Text=一二三四五六七
+TextTradition=一二三四五六七
+TextSize=18
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME2]
+Type=4
+Tag=86
+Rect=147 600 122 26
+AnchorPos=0 0
+Notes=
+Text=一二三四五六七
+TextTradition=一二三四五六七
+TextSize=18
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME5]
+Type=4
+Tag=87
+Rect=467 600 122 26
+AnchorPos=0 0
+Notes=
+Text=一二三四五六七
+TextTradition=一二三四五六七
+TextSize=18
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME3]
+Type=4
+Tag=88
+Rect=147 718 122 26
+AnchorPos=0 0
+Notes=
+Text=一二三四五六七
+TextTradition=一二三四五六七
+TextSize=18
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NAME6]
+Type=4
+Tag=89
+Rect=466 718 123 26
+AnchorPos=0 0
+Notes=
+Text=一二三四五六七
+TextTradition=一二三四五六七
+TextSize=18
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_90]
+Type=4
+Tag=90
+Rect=115 505 28 24
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_91]
+Type=4
+Tag=91
+Rect=436 506 28 24
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_92]
+Type=4
+Tag=92
+Rect=115 623 28 24
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_93]
+Type=4
+Tag=93
+Rect=436 623 28 24
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_94]
+Type=4
+Tag=94
+Rect=115 741 28 24
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_95]
+Type=4
+Tag=95
+Rect=435 742 28 24
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP1]
+Type=4
+Tag=96
+Rect=152 505 117 24
+AnchorPos=0 0
+Notes=
+Text=99999/99999
+TextTradition=99999/99999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP4]
+Type=4
+Tag=97
+Rect=472 506 117 24
+AnchorPos=0 0
+Notes=
+Text=99999/99999
+TextTradition=99999/99999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP2]
+Type=4
+Tag=98
+Rect=152 623 117 24
+AnchorPos=0 0
+Notes=
+Text=99999/99999
+TextTradition=99999/99999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP5]
+Type=4
+Tag=99
+Rect=472 623 117 24
+AnchorPos=0 0
+Notes=
+Text=99999/99999
+TextTradition=99999/99999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP6]
+Type=4
+Tag=100
+Rect=472 742 117 24
+AnchorPos=0 0
+Notes=
+Text=99999/99999
+TextTradition=99999/99999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_HP3]
+Type=4
+Tag=101
+Rect=152 742 117 24
+AnchorPos=0 0
+Notes=
+Text=99999/99999
+TextTradition=99999/99999
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_HP1]
+Type=9
+Tag=102
+Rect=113 522 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_HP4]
+Type=9
+Tag=103
+Rect=433 522 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_HP2]
+Type=9
+Tag=104
+Rect=113 640 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_108]
+Type=4
+Tag=108
+Rect=116 777 28 24
+AnchorPos=0 0
+Notes=
+Text=sp
+TextTradition=sp
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_HP5]
+Type=9
+Tag=105
+Rect=434 640 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_HP3]
+Type=9
+Tag=106
+Rect=114 758 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_HP6]
+Type=9
+Tag=107
+Rect=433 758 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_SP3]
+Type=9
+Tag=109
+Rect=114 795 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_110]
+Type=4
+Tag=110
+Rect=435 777 28 24
+AnchorPos=0 0
+Notes=
+Text=sp
+TextTradition=sp
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_SP6]
+Type=9
+Tag=111
+Rect=433 795 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_112]
+Type=4
+Tag=112
+Rect=115 656 28 24
+AnchorPos=0 0
+Notes=
+Text=sp
+TextTradition=sp
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_SP2]
+Type=9
+Tag=113
+Rect=113 674 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_114]
+Type=4
+Tag=114
+Rect=436 656 28 24
+AnchorPos=0 0
+Notes=
+Text=sp
+TextTradition=sp
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_SP5]
+Type=9
+Tag=115
+Rect=434 674 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_116]
+Type=4
+Tag=116
+Rect=115 539 28 24
+AnchorPos=0 0
+Notes=
+Text=sp
+TextTradition=sp
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_SP1]
+Type=9
+Tag=117
+Rect=113 557 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_118]
+Type=4
+Tag=118
+Rect=435 538 28 24
+AnchorPos=0 0
+Notes=
+Text=sp
+TextTradition=sp
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_EXP_SP4]
+Type=9
+Tag=119
+Rect=433 557 177 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_HP]
+Type=9
+Tag=120
+Rect=-4 444 646 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_PICTURE_195]
+Type=1
+Tag=195
+Rect=105 520 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_196]
+Type=1
+Tag=196
+Rect=425 520 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_197]
+Type=1
+Tag=197
+Rect=425 555 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_198]
+Type=1
+Tag=198
+Rect=105 555 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_199]
+Type=1
+Tag=199
+Rect=105 638 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_200]
+Type=1
+Tag=200
+Rect=105 672 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_201]
+Type=1
+Tag=201
+Rect=426 638 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_202]
+Type=1
+Tag=202
+Rect=426 668 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_203]
+Type=1
+Tag=203
+Rect=106 756 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_204]
+Type=1
+Tag=204
+Rect=106 793 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_205]
+Type=1
+Tag=205
+Rect=425 756 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_206]
+Type=1
+Tag=206
+Rect=425 793 193 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_209]
+Type=1
+Tag=209
+Rect=-27 434 693 48
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_PICTURE_NATURE1]
+Type=1
+Tag=211
+Rect=115 482 26 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\nature1.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_NATURE4]
+Type=1
+Tag=212
+Rect=436 483 26 26
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_NATURE2]
+Type=1
+Tag=213
+Rect=115 601 26 26
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_NATURE5]
+Type=1
+Tag=214
+Rect=436 601 26 26
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_NATURE3]
+Type=1
+Tag=215
+Rect=115 719 26 26
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_NATURE6]
+Type=1
+Tag=216
+Rect=435 719 26 26
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_218]
+Type=4
+Tag=218
+Rect=532 29 76 30
+AnchorPos=0 0
+Notes=
+Text=菜单
+TextTradition=菜單
+TextSize=20
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_328]
+Type=1
+Tag=328
+Rect=13 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_329]
+Type=1
+Tag=329
+Rect=140 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_330]
+Type=1
+Tag=330
+Rect=267 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_331]
+Type=1
+Tag=331
+Rect=394 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_332]
+Type=1
+Tag=332
+Rect=521 929 107 21
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_ITEM1]
+Type=4
+Tag=333
+Rect=11 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM2]
+Type=4
+Tag=334
+Rect=139 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM3]
+Type=4
+Tag=335
+Rect=267 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM4]
+Type=4
+Tag=336
+Rect=393 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_ITEM5]
+Type=4
+Tag=337
+Rect=521 930 107 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_338]
+Type=1
+Tag=338
+Rect=2 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_339]
+Type=1
+Tag=339
+Rect=129 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_340]
+Type=1
+Tag=340
+Rect=256 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_341]
+Type=1
+Tag=341
+Rect=383 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_342]
+Type=1
+Tag=342
+Rect=510 833 126 127
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
