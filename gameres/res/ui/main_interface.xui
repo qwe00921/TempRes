@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -13,26 +13,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=隐藏子界面按钮
-
-[CTRL_MAIN_PICTURE_BG]
-Type=1
-Tag=1
-Rect=0 0 638 960
-AnchorPos=0 0
-Notes=
-Remark=背景
-NormalFile=.\res\image\ui\main_interface\bg.png
-NormalFileUV=0 0 510 600
-
-[CTRL_PICTURE_CHA]
-Type=1
-Tag=12
-Rect=-57 397 461 460
-AnchorPos=0 0
-Notes=
-Remark=首领星灵
-NormalFile=.\res\image\ui\main_interface\pic_cha.png
-NormalFileUV=0 0 449 643
 
 [CTRL_BUTTON_MORE]
 Type=2
