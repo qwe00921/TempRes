@@ -17,7 +17,7 @@ local useMoveEffect = false; --是否使用移动特效，否则用缩放特效
 --打开地图
 function p.OpenMap()
 	p.RegEvent();
-	GetTileMapMgr():OpenMapWorld( "test_world_map1.tmx", true ); --true to fade in.
+	--GetTileMapMgr():OpenMapWorld( "test_world_map1.tmx", true ); --true to fade in.
 	--world_map_mainui.ShowUI();
 end	
 

@@ -41,6 +41,8 @@ function p.ShowUI(userinfo)
 	p.ShowBillboardWithInit();
 	PlayMusic_MainUI();
 	
+	GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
+	
 end
 
 --…Ë÷√∞¥≈•
