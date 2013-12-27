@@ -12,7 +12,7 @@ local p = cmd_lua_callback;
 --Lua命令回调
 --参数: cmdtype		lua命令类型
 --		id			物件id
---		num			数值参数1
+--		num			数值参数1,
 --		str			字串参数2
 ---------------------------------------------------
 function p.CmdLuaHandler( cmdtype, id, num, str )
@@ -33,14 +33,23 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter = w_battle_mgr.FindFighter(id);
 	end
 	
-	if fighter == nil and (E_DEMO_VER ~= 4 or E_DEMO_VER ~= 5) then
+	if fighter == nil and (E_DEMO_VER ~= 4) then
 		WriteCon( "find fighter failed: id="..id);
 		return;
 	end
-		
+
 	--执行具体命令
 	if cmdtype == "fighter_damage" then
 		fighter:SetLifeDamage(num);
+	elseif cmdtype == "atk_hurt" and (E_DEMO_VER == 5) then
+	    local targetFighter = nil;
+		targetFighter = w_battle_mgr.FindFighter(num);
+		if targetFighter == nil then
+			WriteCon( "find targetFighter failed: id="..id);
+			return;
+		else
+			w_battle_atk.AtkHurt(fighter,targetFighter);
+		end;
 	elseif cmdtype == "fighter_addHp" then
         fighter:SetLifeAdd( num );	
 	elseif cmdtype == "fighter_strike_damage" then

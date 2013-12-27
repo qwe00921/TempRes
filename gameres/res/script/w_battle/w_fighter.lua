@@ -22,7 +22,14 @@ end
 --构造函数
 function p:ctor()
     super.ctor(self);
+	self.showlife = self.life;  --用来显示的血量
+	self.maxlife = self.life;  --最大血量
+	self.nowlife = self.life; --当前实际血量
+	self.beHitTimes = 0;  --受击次数
+	
 	self.tmplife = self.life;
+    
+	
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
 	self.m_kShadow = nil;
@@ -110,6 +117,39 @@ function p:SubTmpLife( val )
         self.tmplife = 0;
     end
 end
+
+function p:SubLife(val)  --当前实际血量
+	self.nowlife = self.nowlife - val;
+	if self.nowlife < 0 then
+		self.nowlife = 0;
+	end
+end;
+
+function p:AddLife(val)
+	self.nowlife = self.nowlife + val;
+	if self.nowlife > self.maxlife then
+		self.nowlife = self.maxlife;
+	end
+end;
+
+function p:SubShowLife(val) --需展现的血量
+	self.showlife = self.showlife - val;
+	if self.showlife < 0 then
+		self.showlife = 0;
+	end
+	
+    --判断并显示当前血量    
+	--设置UI界面的	
+end;
+
+function p:AddShowLife(val) --需展现的血量
+	self.showlife = self.showlife + val;
+	if self.showlife > self.maxlife then
+		self.showlife =  self.maxlife;
+	end
+	
+end;
+
 
 function p:SubTmpLifeHeal( val )
 	self.tmplife = self.tmplife + val;
@@ -238,6 +278,10 @@ function p:ShowHpBarMoment()
 	self.hpbar:ShowBarMoment();
 end
 
+function p:SetLife(nowHp,maxHp)
+	
+end
+
 --去血
 function p:SetLifeDamage(num)   
     self.life = self.life - num;
@@ -245,10 +289,10 @@ function p:SetLifeDamage(num)
     if self.life <= 0 then
         self.life = 0;
         self:SetLife( 0 );
-        self:Die();
+       -- self:Die();
         
         --死亡不显示血条
-        self.hpbar:GetNode():SetVisible( false );
+        --self.hpbar:GetNode():SetVisible( false );
     else
         self:SetLife(self.life);
     end
@@ -266,8 +310,17 @@ function p:cmdLua( cmdtype, num, str, seq )
     if cmdtype == "fighter_damage" then
         self:SubTmpLife( num ); 
     elseif cmdtype == "fighter_addHp" or cmdtype == "fighter_revive" then  
-        self:SubTmpLifeHeal( num );   
+        self:SubTmpLifeHeal( num );  
     end
+	
     return super.cmdLua( self, cmdtype, num, str, seq );
     
+end
+
+function p:BeHitAdd()
+	self.beHitTimes = self.beHitTimes+1;
+end
+
+function p:BeHitDec()
+	self.beHitTimes = self.beHitTimes-1;
 end

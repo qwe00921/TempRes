@@ -49,6 +49,11 @@ function p:GetAliveFighters()
 	return t;
 end
 
+--获取存活fighters中哪些可成为目标
+function p:GetSelFighterID()
+	
+end;	
+
 --添加战士
 
 function p:AddBoss()
@@ -231,7 +236,7 @@ function p:AddFighters( uiArray, fighters )
 		
         f.idFighter = tonumber( fighterInfo.Position );
         if self.idCamp == E_CARD_CAMP_ENEMY then
-            f.idFighter = f.idFighter + W_BATTLE_CAMP_CARD_NUM;
+            f.idFighter = f.idFighter + W_BATTLE_CAMP_CARD_NUM;  --ID待商定
         end
 		
 		if self:IsHeroCamp() then
