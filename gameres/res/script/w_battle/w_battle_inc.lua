@@ -75,12 +75,15 @@ N_SKILL_TARGET_TYPE_11 = 11;--自己
 N_SKILL_TARGET_TYPE_12 = 12;--己方群体
 N_SKILL_TARGET_TYPE_13 = 13;--己方随机一个已死亡单位
 
-W_BATTLE_DISTANCE_1 = 1;--近战攻击
-W_BATTLE_DISTANCE_2 = 2;--远程攻击
+W_BATTLE_DISTANCE_NoArcher = 1;--近战攻击
+W_BATTLE_DISTANCE_Archer = 2;--远程攻击
+
 
 W_BATTLE_BULLET_0 = 0;--无弹道
 W_BATTLE_BULLET_1 = 1;--有弹道
 
+W_BATTLE_HERO = 0;  --玩家方英雄
+W_BATTLE_ENEMY = 1; --怪物方敌人
 --属性
 --[[
 W_BATTLE_PROP_ICE = 0;  --冰
@@ -103,4 +106,12 @@ W_BATTLE_PROP_DARK  = 7; --暗
 
 --合击时间的间隔
 W_BATTLE_JOINATK_TIME = 1; 
+
+--站位标置
+W_BATTLE_POS_TAG_1 == 1;
+W_BATTLE_POS_TAG_2 == 2;
+W_BATTLE_POS_TAG_3 == 3;
+W_BATTLE_POS_TAG_4 == 4;
+W_BATTLE_POS_TAG_5 == 5;
+W_BATTLE_POS_TAG_6 == 6;
 

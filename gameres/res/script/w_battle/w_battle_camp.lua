@@ -50,9 +50,33 @@ function p:GetAliveFighters()
 end
 
 --获取存活fighters中哪些可成为目标
-function p:GetSelFighterID()
+--id需与pFighterID不同
+function p:GetFirstActiveFighterID(pFighterID)
+	local lminSelId=7;  --
+	local lId= nil; --真实的ID
+	for k,v in ipairs(self.fighters) do
+		if ((v.nowlife > 0) and (v:GetId() ~= pFighterID))then
+			if v.selIndex < lminSelId then
+				lminSelId = v.selIndex ;
+				lId = v:GetId();
+				break;
+			end
+		end;
+	end;
 	
+	return lId;
 end;	
+
+--还有多少存活
+function p:GetActiveFighterCount()
+	local lCount = 0;
+	for k,v in ipairs(self.fighters) do
+		if v.nowlife > 0 then
+			lCount = lCount + 1; 
+		end;
+	end;
+end;
+
 
 --添加战士
 

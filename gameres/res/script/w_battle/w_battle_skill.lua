@@ -60,7 +60,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     
     --½üÕ½¹¥»÷
     local cmdDoPos;
-    if distance == W_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_NoArcher then
         cmdDoPos = JumpMoveTo(hero, originPos, enemyPos, seqAtk );
     end
     
@@ -70,7 +70,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     local cmd3 = createCommandPlayer():Standby( 0.01, hero:GetPlayerNode(), "" );
     seqAtk:AddCommand( cmd3 );
     
-    if distance == W_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_NoArcher then
         local cmd4 = JumpMoveTo(hero, enemyPos, originPos, seqAtk);
     end
            
@@ -79,7 +79,7 @@ function p.Skill( hero, SkillId, distance, Targets, TCamp, batch )
     local cmd_ui = p.doUIEffect( hero.camp, seqUI, SkillId );
     
     seqUI:SetWaitEnd( cmd1 );
-    if distance == W_BATTLE_DISTANCE_1 and cmdDoPos ~= nil then
+    if distance == W_BATTLE_DISTANCE_NoArcher and cmdDoPos ~= nil then
         cmdDoPos:SetWaitEnd( cmd_ui );
     else
         cmd2:SetWaitEnd( cmd_ui );

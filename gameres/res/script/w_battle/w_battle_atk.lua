@@ -7,17 +7,11 @@
 w_battle_atk = {}
 local p = w_battle_atk;
 
-
+--选者结束阶断
 function p.AtkPVE_NPC(atkFighter, targetFighter, batch, damage )
 	--先播放攻击方动画
-	if batch == nil then return end
+	local batch = battle_show.GetNewBatch();  
     
-    --[[local Damage = tonumber( target.Damage ); --扣除血量
-    local RemainHp = tonumber( target.RemainHp ); --所剩血量
-    local Crit = target.Crit ; --暴击
-    local Dead = target.TargetDead;--死亡
-    local Revive = target.Revive;--复活
-    ]]--
 	local distance = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
     local atkSound = SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );
     
@@ -50,7 +44,7 @@ function p.AtkPVE_NPC(atkFighter, targetFighter, batch, damage )
     
     local cmdSetPic = atkFighter:cmdLua( "SetFighterPic",  0, "", seqAtk );
     
-    if distance == W_BATTLE_DISTANCE_1 then  --近战攻击
+    if distance == W_BATTLE_DISTANCE_NoArcher then  --近战攻击
         --向攻击目标移动
         local cmd2 = JumpMoveTo(atkFighter, originPos, enemyPos, seqAtk, false);
 		
@@ -104,19 +98,20 @@ end;
 
 
 function p.AtkHurt(atkFighter, targetFighter)
-	--受击放动画及伤害放到lua回调中执行	
+	
 	local batch = battle_show.GetNewBatch();
 	local seqTarget = batch:AddSerialSequence();
-
-    targetFighter:BeHitDec(); --受击次数减一
-   
-    if targetFighter.beHitTimes == 0 then --受击次数为0时,播放站立	
-		if targetFighter.showlife <= 0 then
-
-			--受攻击的后续动画【死亡 OR 站立】
-            HurtResultAni( targetFighter, seqTarget );
-	--[[
-			if Dead then
+ 
+    
+    targetFighter:BeHitDec(atkFighter:GetId()); --受击次数减一
+      
+    if targetFighter.beHitTimes == 0 then --受击次数为0时
+	    if targetFighter.showlife > 0 then  --还活着,继续播放站立	
+			targetFighter:standby();
+		elseif targetFighter.showlife <= 0 then
+			targerFighter:die();  --死亡开始阶断动画
+			
+	--[[	if Dead then
 				--BUFF复活技能  
 				if Revive then
 					targetFighter:cmdLua( "fighter_revive", RemainHp, "", seqTarget );  
@@ -126,9 +121,9 @@ function p.AtkHurt(atkFighter, targetFighter)
 			
 			--怪物死亡动画完成后的回调
 
-			
-			    if Dead then --怪物死亡
-				    --怪物对象释放
+            function p.dieEnd(atkFighter, targetFighter)  --死亡结束阶断加入队列seqTarget
+			    
+				    --对怪物对象释放
 					if w_battle_atk.enemyCamp == nil then
 						--执行此轮的战斗结束
 						
@@ -148,12 +143,8 @@ function p.AtkHurt(atkFighter, targetFighter)
 					else
 						--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 					end;
-				end;
-				
-
-			
-
-	end;
+			end;	
+end;
     
 	
 	
@@ -163,6 +154,14 @@ function p.AtkHurt(atkFighter, targetFighter)
 	
 end;
 
+function p.atk_damage(atkFighter, targetFighter)
+
+	--处于站立状态下
+	if targetFighter:IsStandBy() then  --站立状态
+		--播放受击动画
+	   targerFighter:Hurt();	
+	end;
+end;
 
 --双方互殴
 function p.Atk( atkFighter, target, TCamp, batch )
@@ -210,7 +209,7 @@ function p.Atk( atkFighter, target, TCamp, batch )
     
     local cmdSetPic = atkFighter:cmdLua( "SetFighterPic",  0, "", seqAtk );
     
-    if distance == W_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_NoArcher then
         --向攻击目标移动
         local cmd2 = JumpMoveTo(atkFighter, originPos, enemyPos, seqAtk, false);
     end
@@ -230,7 +229,7 @@ function p.Atk( atkFighter, target, TCamp, batch )
     local cmd4 = createCommandPlayer():Standby( 0.01, playerNode, "" );
     seqAtk:AddCommand( cmd4 );
     
-    if distance == W_BATTLE_DISTANCE_1 then
+    if distance == W_BATTLE_DISTANCE_NoArcher then
         --返回原来的位置
         local cmd5 = JumpMoveTo(atkFighter, enemyPos, originPos, seqAtk, false);
     end

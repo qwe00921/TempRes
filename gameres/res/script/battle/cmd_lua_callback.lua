@@ -33,23 +33,34 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter = w_battle_mgr.FindFighter(id);
 	end
 	
-	if fighter == nil and (E_DEMO_VER ~= 4) then
+	if fighter == nil and (E_DEMO_VER ~= 4) or (E_DEMO_VER ~= 5) then
 		WriteCon( "find fighter failed: id="..id);
 		return;
 	end
 
 	--÷¥––æﬂÃÂ√¸¡Ó
 	if cmdtype == "fighter_damage" then
-		fighter:SetLifeDamage(num);
-	elseif cmdtype == "atk_hurt" and (E_DEMO_VER == 5) then
-	    local targetFighter = nil;
-		targetFighter = w_battle_mgr.FindFighter(num);
-		if targetFighter == nil then
-			WriteCon( "find targetFighter failed: id="..id);
-			return;
+		if E_DEMO_VER == 5 then
+			w_battle_stateMachineMgr(num,cmdtype)
 		else
-			w_battle_atk.AtkHurt(fighter,targetFighter);
+			fighter:SetLifeDamage(num);
 		end;
+	elseif cmdtype == "atk_startAtk"  and E_DEMO_VER == 5 then
+		w_battle_stateMachineMgr(num,cmdtype)
+    elseif cmdtype == "atk_end" and E_DEMO_VER == 5 then
+		w_battle_stateMachineMgr(num,cmdtype)
+	elseif cmdtype == "atk_standby" and E_DEMO_VER == 5 then
+		w_battle_stateMachineMgr(num,cmdtype)
+	elseif cmdtype == "tar_hurt" and E_DEMO_VER == 5 then
+		w_battle_stateMachineMgr(num,cmdtype)
+	elseif cmdtype == "tar_hurtEnd" and E_DEMO_VER == 5 then
+		w_battle_stateMachineMgr(num,cmdtype)
+	elseif cmdtype == "tar_ReviveEnd" and E_DEMO_VER == 5 then
+		w_battle_stateMachineMgr(num,cmdtype)								
+	elseif cmdtype == "tar_dieEnd" and E_DEMO_VER == 5 then
+		w_battle_stateMachineMgr(num,cmdtype)								
+
+	
 	elseif cmdtype == "fighter_addHp" then
         fighter:SetLifeAdd( num );	
 	elseif cmdtype == "fighter_strike_damage" then
@@ -71,9 +82,6 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 
     elseif cmdtype == "ClearAllFighterPic" and E_DEMO_VER == 4 then
         n_battle_pvp.ClearAllFighterPic();    
-	elseif cmdtype == "ClearAllFighterPic" and E_DEMO_VER == 5 then
-        w_battle_pvp.ClearAllFighterPic();    
-			
     elseif cmdtype == "UpdatePetRage" and E_DEMO_VER == 4 then
         n_battle_pvp.UpdatePetRage( id , -num );    
 	elseif cmdtype == "UpdatePetRage" and E_DEMO_VER == 5 then
@@ -81,8 +89,6 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		    		
     elseif cmdtype == "fighter_revive" and E_DEMO_VER == 4 then
         FighterRevive( fighter , num );        
-	elseif cmdtype == "fighter_revive" and E_DEMO_VER == 5 then
-        FighterRevive( fighter , num );        	
 		
 	elseif cmdtype == "AddMaskImage" then
 		if E_DEMO_VER == 2 then

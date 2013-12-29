@@ -20,12 +20,13 @@ p.imageMask = nil			--增加蒙版特效
 p.PVEEnemyID = nil;   --当前被攻击的敌人ID
 p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
 p.LockEnemy = false; --敌人是否被锁定攻击
+p.LockFagID = nil;  --之前的锁定标志
 
 local isPVE = false;
 local isActive = false;
-local useParallelBatch = true; --是否使用并行批次
+local useParallelBatch = true; --是否.使用并行批次
 p.isBattleEnd = false;
-p.isCanSelFighter = false;  --是否还有可选择的怪物,战斗主界面点击我方人员时,需跟据此判断是否要将按扭置灰
+p.isCanSelFighter = false;  --是否还有可选择的怪物,战斗UI界面点击我方人员时,需先判断此变理,再处理点击
 
 local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
@@ -76,7 +77,7 @@ function p.SetPVEAtkID(atkID)
 	  return;
    end;
 
-   local batch = battle_show.GetNewBatch();  
+   
 
    --点选目标后,先计算伤害
    local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter);
@@ -85,7 +86,7 @@ function p.SetPVEAtkID(atkID)
 
    --默认选择的目标,判定怪物将死
 	if (targetFighter.nowlife < 0) and (p.LockEnemy == false) then
-		p.PVEEnemyID = p.enemyCamp:GetActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
+		p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
 		
 		if p.enemyCamp:GetActiveFighterCount() == 1 then
 			p.LockEnemy = true;
@@ -93,9 +94,12 @@ function p.SetPVEAtkID(atkID)
 	end
 	
    --受击次数先累加,攻击方动画播完后,再减一
-    targetFighter:BeHitAdd();  
-    --攻击动画
-    w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage);	
+    targetFighter:BeHitAdd(atkID);  
+    
+	--攻击某个人物
+     --w_battle_atk.SelOver(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	--选择结束阶断
+	
+    w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	
 	
 end;
 
@@ -106,8 +110,20 @@ function p.SetPVETargerID(targerId)
 		return ;
 	end
 	p.PVEEnemyID = targerId;
+	p.PVEShowEnemyID = p.PVEEnemyID;
+	--显示怪物血量
 	p.LockEnemy = true;
+    p.SetLockAction(targerId);	
+	
 end;	
+
+function p.SetLockAction(targerId)
+   local lfighter = p.enemyUIArray:FindFighter(targerId);
+   if LockFagID ~= targerId then
+		--取消锁定标志
+   end;
+   --设置锁定标志
+end;
 
 --开始战斗表现:pve
 function p.play_pve( targetId )
@@ -168,7 +184,12 @@ function p.ReceiveStartPVPRes( msg )
     end
     p.createHeroCamp( UCardList );
     p.createEnemyCamp( TCardList );
-    
+	--按活着的怪物,给个目标
+    p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
+	p.PVEShowEnemyID = p.PVEEnemyID; 
+	p.LockEnemy = false;
+	p.isCanSelFighter = true;	
+	    
     p.createPet( UPetList, E_CARD_CAMP_HERO );
     p.createPet( TPetList, E_CARD_CAMP_ENEMY );
     p.ReSetPetNodePos();

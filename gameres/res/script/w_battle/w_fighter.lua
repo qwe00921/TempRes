@@ -22,14 +22,10 @@ end
 --构造函数
 function p:ctor()
     super.ctor(self);
-	self.showlife = self.life;  --用来显示的血量
-	self.maxlife = self.life;  --最大血量
-	self.nowlife = self.life; --当前实际血量
-	self.beHitTimes = 0;  --受击次数
 	
 	self.tmplife = self.life;
     
-	
+	self.selIndex = 0;  --目标选择顺序
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
 	self.m_kShadow = nil;
@@ -42,8 +38,33 @@ function p:Init( idFighter, node, camp )
 	super.Init( self, idFighter, node, camp );
 	--self.hpbar:GetNode():SetVisible( false );
 	self.tmplife = self.life;
+	self:SetSelIndex(idFighter);  --按2,1,3,5,4,6顺序选择
 	self:CreateHpBar();
 	self:CreateFlyNumGreen();
+	
+	self.showlife = self.life;  --用来显示的血量
+	self.maxlife = self.life;  --最大血量
+	self.nowlife = self.life; --当前实际血量
+	self.beHitTimes = 0;  --受击次数
+    self.IsHurt = false;	
+	
+end
+
+--初始化被选择顺序
+function p:SetSelIndex(pId)
+    if self.pId == W_BATTLE_POS_TAG_2 then
+       self.selIndex = 1 
+    elseif self.pId == W_BATTLE_POS_TAG_1 then
+	   self.selIndex = 2
+    elseif self.pId == W_BATTLE_POS_TAG_3 then
+	   self.selIndex = 3
+    elseif self.pId == W_BATTLE_POS_TAG_5 then
+	   self.selIndex = 4
+    elseif self.pId == W_BATTLE_POS_TAG_4 then
+	   self.selIndex = 5
+    elseif self.pId == W_BATTLE_POS_TAG_6 then
+	   self.selIndex = 6
+	end;
 end
 
 --创建飘血数字
@@ -139,7 +160,9 @@ function p:SubShowLife(val) --需展现的血量
 	end
 	
     --判断并显示当前血量    
-	--设置UI界面的	
+	if self:GetId() == w_battle_mgr.PVEShowEnemyID then 
+		--设置UI界面的血量
+	end;
 end;
 
 function p:AddShowLife(val) --需展现的血量
@@ -317,10 +340,15 @@ function p:cmdLua( cmdtype, num, str, seq )
     
 end
 
-function p:BeHitAdd()
-	self.beHitTimes = self.beHitTimes+1;
+function p:BeHitAdd(pAtkId)
+	self.beHitTimes[#self.beHitTimes + 1] = pAtkId;
 end
 
-function p:BeHitDec()
-	self.beHitTimes = self.beHitTimes-1;
+function p:BeHitDec(pAtkId)
+	for k,v pairs(self.beHitTimes) do
+		if v == pId then
+			table.remove(self.beHitTimes,k);
+			break;
+		end;
+	end;
 end
