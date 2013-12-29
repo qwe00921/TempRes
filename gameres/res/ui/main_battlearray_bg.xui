@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_LISTBG]
 Type=1
 Tag=13
-Rect=0 129 640 172
+Rect=-2 681 640 172
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\battlearray_bg.png
@@ -15,14 +15,14 @@ NormalFileUV=0 0 640 164
 [CTRL_LIST_13]
 Type=8
 Tag=14
-Rect=49 155 590 124
+Rect=47 707 590 124
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_5]
 Type=1
 Tag=5
-Rect=7 164 40 98
+Rect=5 716 40 98
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\fighter.png

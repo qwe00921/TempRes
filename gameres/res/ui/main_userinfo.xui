@@ -3,119 +3,125 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_FACE]
+[CTRL_PICTURE_45]
 Type=1
-Tag=53
-Rect=9 3 115 130
+Tag=45
+Rect=5 55 209 85
 AnchorPos=0 0
 Notes=
-Remark=头像
-NormalFile=.\res\image\ui\main_interface\user_face.PNG
-NormalFileUV=0 0 115 130
+NormalFile=.\res\image\ui\main_interface\LoadingBlack_10x10.png
+NormalFileUV=0 0 10 10
 
-[CTRL_PICTURE_USERINFO_BG]
-Type=1
-Tag=52
-Rect=0 0 639 150
+[CTRL_PROGRESSBAR_EXP]
+Type=9
+Tag=67
+Rect=41 65 144 36
 AnchorPos=0 0
 Notes=
-Remark=背景
-Stretch=1
-NormalFile=.\res\image\ui\main_interface\top_bg.png
-NormalFileUV=0 0 640 152
-
-[CTRL_TEXT_NAME]
-Type=4
-Tag=54
-Rect=119 4 139 47
-AnchorPos=0 0
-Notes=
-Text=完颜阿鲁两个字
-TextTradition=完顏阿魯兩個字
-TextSize=20
-TextColor=0xfdffaa
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_MONEY]
-Type=1
-Tag=55
-Rect=129 57 25 25
-AnchorPos=0 0
-Notes=
-Remark=金币图标
-NormalFile=.\res\image\ui\main_interface\money.png
-NormalFileUV=0 0 32 32
-
-[CTRL_PICTURE_EMONEY]
-Type=1
-Tag=56
-Rect=109 88 30 30
-AnchorPos=0 0
-Notes=
-Remark=代币图标
-NormalFile=.\res\image\ui\main_interface\coin.png
-NormalFileUV=0 0 32 32
-
-[CTRL_TEXT_MONEY_NUM]
-Type=4
-Tag=57
-Rect=158 54 84 30
-AnchorPos=0 0
-Notes=
-Text=11111111
-TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
-TextHorAlign=AlignLeft
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Remark=金币数值
+Remark=经验条
+NormalFile=.\res\image\ui\main_interface\home_bar01.png
+NormalFileUV=0 0 144 36
+
+[CTRL_PROGRESSBAR_STRENGTH]
+Type=9
+Tag=69
+Rect=41 98 144 36
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=体力条
+NormalFile=.\res\image\ui\main_interface\home_bar02.png
+NormalFileUV=0 0 144 36
+
+[CTRL_PICTURE_20]
+Type=1
+Tag=20
+Rect=0 0 640 172
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\title.png
+NormalFileUV=0 0 644 172
 
 [CTRL_TEXT_EMONEY_NUM]
 Type=4
 Tag=58
-Rect=141 87 84 30
+Rect=532 37 84 30
 AnchorPos=0 0
 Notes=
 Text=11111111
 TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
-TextHorAlign=AlignLeft
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=代币数值
 
-[CTRL_BUTTON_ADD_EMONEY]
-Type=2
-Tag=59
-Rect=258 57 95 62
+[CTRL_TEXT_MONEY_NUM]
+Type=4
+Tag=57
+Rect=532 68 84 30
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
+Text=11111111
+TextTradition=11111111
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
-Remark=充值按钮
-NormalFile=.\res\image\ui\main_interface\addemoney.PNG
-NormalFileUV=0 0 116 76
-SelectFile=.\res\image\ui\main_interface\addemoney_click.png
-SelectedFileUV=0 0 116 76
-DisableFile=.\res\image\ui\main_interface\addemoney_un.png
-DisableFileUV=0 0 116 76
+Remark=金币数值
 
-[CTRL_PICTURE_LEVEL]
-Type=1
-Tag=60
-Rect=265 13 40 30
+[CTRL_TEXT_SOUL]
+Type=4
+Tag=41
+Rect=532 98 84 30
 AnchorPos=0 0
 Notes=
-Remark=等级图标
-NormalFile=.\res\image\ui\main_interface\info_level.png
-NormalFileUV=0 0 48 26
+Text=11111111
+TextTradition=11111111
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+Remark=金币数值
+
+[CTRL_PICTURE_42]
+Type=1
+Tag=42
+Rect=534 126 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_43]
+Type=1
+Tag=43
+Rect=559 126 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_44]
+Type=1
+Tag=44
+Rect=585 126 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_LEVEL_NUM]
 Type=4
 Tag=61
-Rect=312 13 54 30
+Rect=47 35 54 30
 AnchorPos=0 0
 Notes=
 Text=350
@@ -125,97 +131,52 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=等级数值
 
-[CTRL_PICTURE_ENERGY]
+[CTRL_PICTURE_FACE]
 Type=1
-Tag=62
-Rect=373 84 60 35
+Tag=53
+Rect=261 3 115 130
 AnchorPos=0 0
 Notes=
-Remark=精力图标
-NormalFile=.\res\image\ui\main_interface\energy.PNG
-NormalFileUV=0 0 60 40
-
-[CTRL_PICTURE_STRENGTH]
-Type=1
-Tag=63
-Rect=372 50 60 35
-AnchorPos=0 0
-Notes=
-Remark=体力图标
-NormalFile=.\res\image\ui\main_interface\strength.PNG
-NormalFileUV=0 0 60 40
-
-[CTRL_PROGRESSBAR_EXP]
-Type=9
-Tag=67
-Rect=429 16 192 25
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=经验条
-NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
-NormalFileUV=0 0 190 30
+Remark=头像
+NormalFile=.\res\image\ui\main_interface\user_face.PNG
+NormalFileUV=0 0 115 130
 
 [CTRL_PROGRESSBAR_ENERGY]
 Type=9
 Tag=68
-Rect=429 88 190 30
+Rect=226 126 190 30
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=精力条
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.PNG
 NormalFileUV=0 0 190 30
 
-[CTRL_PROGRESSBAR_STRENGTH]
-Type=9
-Tag=69
-Rect=430 52 190 30
+[CTRL_TEXT_NAME]
+Type=4
+Tag=54
+Rect=10 -5 139 47
 AnchorPos=0 0
 Notes=
+Text=完颜阿鲁两个字
+TextTradition=完顏阿魯兩個字
 TextSize=20
+TextColor=0xfdffaa
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_46]
+Type=4
+Tag=46
+Rect=26 132 142 20
+AnchorPos=0 0
+Notes=
+Text=恢复时间
+TextTradition=恢復時間
+TextSize=18
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-Remark=体力条
-NormalFile=.\res\image\ui\main_interface\strength_progressbar.PNG
-NormalFileUV=0 0 190 30
-
-[CTRL_PICTURE_PROGRESSBAR_BG]
-Type=1
-Tag=64
-Rect=429 16 190 25
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
-NormalFileUV=0 0 190 30
-
-[CTRL_PICTURE_PROGRESSBAR_BG1]
-Type=1
-Tag=65
-Rect=430 89 190 30
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
-NormalFileUV=0 0 190 30
-
-[CTRL_PICTURE_PROGRESSBAR_BG2]
-Type=1
-Tag=66
-Rect=430 52 190 30
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.PNG
-NormalFileUV=0 0 190 30
-
-[CTRL_PICTURE_85]
-Type=1
-Tag=85
-Rect=372 8 60 40
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\EXP..png
-NormalFileUV=0 0 60 40

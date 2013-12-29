@@ -1,0 +1,177 @@
+﻿
+[UI_INFO]
+Width=960
+Height=640
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=15
+Z_Order=-1
+Rect=0 0 636 143
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_ITEM5]
+Type=2
+Tag=81
+Rect=511 10 108 108
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品4
+
+[CTRL_BUTTON_ITEM4]
+Type=2
+Tag=63
+Rect=388 10 108 108
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品4
+
+[CTRL_BUTTON_ITEM3]
+Type=2
+Tag=62
+Rect=265 10 108 108
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品3
+
+[CTRL_BUTTON_ITEM2]
+Type=2
+Tag=61
+Rect=142 10 108 108
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品2
+
+[CTRL_BUTTON_ITEM1]
+Type=2
+Tag=59
+Rect=19 10 108 108
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_TEXT_22]
+Type=4
+Tag=22
+Rect=22 106 101 25
+AnchorPos=0 0
+Notes=
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_23]
+Type=4
+Tag=23
+Rect=145 106 101 25
+AnchorPos=0 0
+Notes=
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_24]
+Type=4
+Tag=24
+Rect=268 106 101 25
+AnchorPos=0 0
+Notes=
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=391 106 101 25
+AnchorPos=0 0
+Notes=
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=514 106 101 25
+AnchorPos=0 0
+Notes=
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=74 8 59 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_28]
+Type=1
+Tag=28
+Rect=197 8 59 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_29]
+Type=1
+Tag=29
+Rect=320 8 59 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_30]
+Type=1
+Tag=30
+Rect=443 8 59 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
+
+[CTRL_PICTURE_31]
+Type=1
+Tag=31
+Rect=566 8 59 26
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
