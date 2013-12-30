@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_BG_BTN]
 Type=2
 Tag=11
-Rect=0 0 638 956
+Rect=0 0 637 956
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -14,10 +14,20 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=隐藏子界面按钮
 
+[CTRL_MAIN_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 637 960
+AnchorPos=0 0
+Notes=
+Remark=背景
+NormalFile=.\res\image\ui\main_interface\bg.png
+NormalFileUV=0 0 510 600
+
 [CTRL_BUTTON_MORE]
 Type=2
 Tag=3
-Rect=-2 750 100 100
+Rect=449 560 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -34,7 +44,7 @@ DisableFileUV=0 0 80 80
 [CTRL_BUTTON_ACTIVITY]
 Type=2
 Tag=4
-Rect=532 334 100 100
+Rect=336 556 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -51,7 +61,7 @@ DisableFileUV=0 0 100 100
 [CTRL_BUTTON_MAIL]
 Type=2
 Tag=5
-Rect=532 434 100 100
+Rect=243 557 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -68,7 +78,7 @@ DisableFileUV=0 0 100 100
 [CTRL_PICTURE_ACTIVITY_TIPS_BG]
 Type=1
 Tag=7
-Rect=588 334 36 36
+Rect=540 560 36 36
 AnchorPos=0 0
 Notes=
 Remark=活动数量通知背景
@@ -78,7 +88,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_MAIL_TIPS_BG]
 Type=1
 Tag=8
-Rect=588 438 36 36
+Rect=539 614 36 36
 AnchorPos=0 0
 Notes=
 Remark=邮件数量通知背景
@@ -88,7 +98,7 @@ NormalFileUV=0 0 36 36
 [CTRL_TEXT_ACTIVITY_TIPS_NUM]
 Type=4
 Tag=9
-Rect=592 334 30 30
+Rect=544 560 30 30
 AnchorPos=0 0
 Notes=
 Text=11
@@ -101,7 +111,7 @@ Remark=活动数量
 [CTRL_TEXT_MAIL_TIPS_NUM]
 Type=4
 Tag=10
-Rect=591 439 30 30
+Rect=542 615 30 30
 AnchorPos=0 0
 Notes=
 Text=11
@@ -114,8 +124,89 @@ Remark=邮件数量
 [CTRL_PICTURE_BILLBOARD_BG]
 Type=1
 Tag=13
-Rect=0 272 640 52
+Rect=-2 528 640 52
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_ui\ad_bg.png
 NormalFileUV=0 0 40 52
+
+[CTRL_BUTTON_CHA1]
+Type=2
+Tag=18
+Rect=0 165 108 333
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\card2\u10392_b.png
+NormalFileUV=0 0 108 333
+
+[CTRL_BUTTON_CHA2]
+Type=2
+Tag=19
+Rect=106 162 108 333
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\card2\u10684_b.png
+NormalFileUV=0 0 108 333
+
+[CTRL_BUTTON_CHA3]
+Type=2
+Tag=20
+Rect=212 162 108 333
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\card2\u10706_b.png
+NormalFileUV=0 0 108 333
+
+[CTRL_BUTTON_CHA4]
+Type=2
+Tag=21
+Rect=318 162 108 333
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\card2\u10745_b.png
+NormalFileUV=0 0 108 333
+
+[CTRL_BUTTON_CHA5]
+Type=2
+Tag=22
+Rect=424 162 108 333
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\card2\u10835_b.png
+NormalFileUV=0 0 108 333
+
+[CTRL_BUTTON_CHA6]
+Type=2
+Tag=23
+Rect=530 162 108 333
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\card2\u10884_b.png
+NormalFileUV=0 0 108 333
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=0 145 640 370
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\card_show.png
+NormalFileUV=0 0 640 350

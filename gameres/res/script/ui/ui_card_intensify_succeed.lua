@@ -4,6 +4,15 @@
 --------------------------------------------------------------
 ui_card_intensify_succeed = {};
 local p =  ui_card_intensify_succeed;
+p.ID_CTRL_TEXT_35						       = 35;
+p.ID_CTRL_SPRITE_33					      = 34;
+p.ID_CTRL_9SLICES_32					     = 33;
+p.ID_CTRL_EXP_EXPNEED					    = 32;
+p.ID_CTRL_TEXT_LEVELUPNEED			 = 31;
+p.ID_CTRL_TEXT_28						       = 30;
+p.ID_CTRL_TEXT_NAME					      = 29;
+p.ID_CTRL_PICTURE_26					     = 28;
+p.ID_CTRL_PICTURE_25					     = 26;
 p.ID_CTRL_BUTTON_BACK					    = 25;
 p.ID_CTRL_BUTTON_INTENSIFY			 = 24;
 p.ID_CTRL_PICTURE_23					     = 23;
@@ -27,4 +36,4 @@ p.ID_CTRL_TEXT_6						        = 6;
 p.ID_CTRL_TEXT_5						        = 5;
 p.ID_CTRL_TEXT_EXP					       = 166;
 p.ID_CTRL_PICTURE_CARD				    = 164;
-p.ID_CTRL_PICTURE_163					    = 163;
+p.ID_CTRL_9SLICES_25					     = 27;
