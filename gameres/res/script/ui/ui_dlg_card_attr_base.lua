@@ -4,14 +4,17 @@
 --------------------------------------------------------------
 ui_dlg_card_attr_base = {};
 local p =  ui_dlg_card_attr_base;
+p.ID_CTRL_PICTURE_45					     = 45;
+p.ID_CTRL_EXP_44						        = 44;
+p.ID_CTRL_DOWER_INTRO					    = 318;
 p.ID_CTRL_PICTURE_CARDNATURE			= 68;
 p.ID_CTRL_PICTURE_CARDSTAR			 = 67;
 p.ID_CTRL_TEXT_CARDNAME				   = 66;
 p.ID_CTRL_PICTURE_65					     = 65;
 p.ID_CTRL_TEXT_SKILLINFO				  = 60;
 p.ID_CTRL_TEXT_SKILLNAME				  = 59;
-p.ID_CTRL_TEXT_TYPE					      = 58;
-p.ID_CTRL_TEXT_NAME					      = 57;
+p.ID_CTRL_TEXT_LEVELUPEXP				 = 58;
+p.ID_CTRL_TEXT_TYPE					      = 57;
 p.ID_CTRL_LUCK_INTRO					     = 320;
 p.ID_CTRL_BUTTON_LUCK					    = 223;
 p.ID_CTRL_TEXT_EQUIP3					    = 222;
@@ -31,7 +34,6 @@ p.ID_CTRL_BUTTON_REPLACE				  = 30;
 p.ID_CTRL_BTN_ARRT					       = 324;
 p.ID_CTRL_BTN_SALE					       = 323;
 p.ID_CTRL_BTN_INTENSIFY				   = 321;
-p.ID_CTRL_DOWER_INTRO					    = 318;
 p.ID_CTRL_DOWER_PIC					      = 317;
 p.ID_CTRL_CARD_CRITICAL				   = 315;
 p.ID_CTRL_CARD_DEFENSE				    = 314;
