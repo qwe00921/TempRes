@@ -7,14 +7,14 @@ Height=640
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 4 638 183
+Rect=0 4 638 142
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_ITEM5]
 Type=2
 Tag=81
-Rect=506 10 116 175
+Rect=506 10 116 116
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -25,7 +25,7 @@ Remark=物品4
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=383 10 116 175
+Rect=383 10 116 116
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -36,7 +36,7 @@ Remark=物品4
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=261 10 116 175
+Rect=261 10 116 116
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -47,7 +47,7 @@ Remark=物品3
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=139 10 116 175
+Rect=139 10 116 116
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -58,7 +58,7 @@ Remark=物品2
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=17 10 116 175
+Rect=17 10 116 116
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -69,42 +69,42 @@ Remark=物品1
 [CTRL_PICTURE_LEVEL5]
 Type=1
 Tag=83
-Rect=508 11 39 18
+Rect=528 114 75 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_LEVEL4]
 Type=1
 Tag=33
-Rect=383 11 39 18
+Rect=405 114 75 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_LEVEL3]
 Type=1
 Tag=32
-Rect=262 11 39 18
+Rect=282 114 75 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_LEVEL2]
 Type=1
 Tag=31
-Rect=141 12 39 18
+Rect=159 114 75 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_LEVEL1]
 Type=1
 Tag=30
-Rect=20 12 39 18
+Rect=36 114 75 18
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_LEVEL1]
 Type=4
 Tag=16
-Rect=18 12 39 18
+Rect=53 114 39 18
 AnchorPos=0 0
 Notes=
 Text=LV99
@@ -117,7 +117,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL2]
 Type=4
 Tag=17
-Rect=142 12 39 18
+Rect=177 114 39 18
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -128,7 +128,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL3]
 Type=4
 Tag=18
-Rect=263 11 39 18
+Rect=301 114 39 18
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -139,7 +139,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL4]
 Type=4
 Tag=19
-Rect=384 11 39 18
+Rect=425 114 39 18
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -150,7 +150,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVEL5]
 Type=4
 Tag=84
-Rect=508 11 39 18
+Rect=549 114 39 18
 AnchorPos=0 0
 Notes=
 TextSize=18
