@@ -3,10 +3,10 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_54]
+[CTRL_PICTURE_168]
 Type=1
-Tag=54
-Rect=0 162 640 700
+Tag=168
+Rect=0 165 640 700
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg.png

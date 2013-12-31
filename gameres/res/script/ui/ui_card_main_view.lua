@@ -20,4 +20,4 @@ p.ID_CTRL_BUTTON_ALL					     = 24;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_BUTTON_SELL					    = 20;
 p.ID_CTRL_PICTURE_91					     = 91;
-p.ID_CTRL_PICTURE_54					     = 54;
+p.ID_CTRL_PICTURE_168					    = 168;

@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=10
-Rect=1 140 640 841
+Rect=1 167 640 780
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\creat_role\gacha_bg0003.png
@@ -15,7 +15,7 @@ NormalFileUV=0 0 480 450
 [CTRL_9SLICES_12]
 Type=22
 Tag=12
-Rect=1 140 640 833
+Rect=1 167 640 780
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -25,7 +25,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BTN_TETURN]
 Type=2
 Tag=2
-Rect=5 164 100 80
+Rect=5 184 100 80
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -39,7 +39,7 @@ SelectedFileUV=0 0 68 68
 [CTRL_TEXT_RETURN]
 Type=4
 Tag=48
-Rect=11 173 88 60
+Rect=11 193 88 60
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -52,7 +52,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PIC_LIST_BG]
 Type=1
 Tag=3
-Rect=109 165 369 80
+Rect=109 185 369 80
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_title.png
@@ -61,7 +61,7 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_QUEST_NAME]
 Type=4
 Tag=6
-Rect=128 183 317 40
+Rect=128 203 317 40
 AnchorPos=0 0
 Notes=
 Text=章节名称
@@ -75,7 +75,7 @@ Stretch=1
 [CTRL_BTN_HARD]
 Type=2
 Tag=9
-Rect=483 156 160 90
+Rect=483 176 160 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -85,6 +85,6 @@ TextVerAlign=AlignVerCenter
 [CTRL_VERTICAL_LIST]
 Type=14
 Tag=5
-Rect=1 247 636 620
+Rect=1 267 636 600
 AnchorPos=0 0
 Notes=

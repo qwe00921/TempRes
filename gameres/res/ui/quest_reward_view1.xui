@@ -6,48 +6,48 @@ Height=960
 [CTRL_PICTURE_80]
 Type=1
 Tag=80
-Rect=26 644 592 88
+Rect=5 5 592 88
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_ITEM2]
 Type=1
 Tag=19
-Rect=138 654 70 70
+Rect=117 15 70 70
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_ITEM1]
 Type=1
 Tag=9
-Rect=39 654 70 70
+Rect=18 15 70 70
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_38]
 Type=1
 Tag=40
-Rect=237 654 70 70
+Rect=216 15 70 70
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_39]
 Type=1
 Tag=41
-Rect=336 654 70 70
+Rect=315 15 70 70
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_40]
 Type=1
 Tag=42
-Rect=435 654 70 70
+Rect=414 15 70 70
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_41]
 Type=1
 Tag=43
-Rect=534 654 70 70
+Rect=513 15 70 70
 AnchorPos=0 0
 Notes=
