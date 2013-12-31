@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -33,20 +33,6 @@ NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 
-[CTRL_GEM_PIC_1]
-Type=1
-Tag=306
-Rect=141 34 92 92
-AnchorPos=0 0
-Notes=
-
-[CTRL_GEM_PIC_2]
-Type=1
-Tag=307
-Rect=142 29 92 92
-AnchorPos=0 0
-Notes=
-
 [CTRL_9SLICES_206]
 Type=22
 Tag=206
@@ -56,13 +42,6 @@ Notes=
 Stretch=1
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
-
-[CTRL_GEM_PIC_3]
-Type=1
-Tag=308
-Rect=128 24 92 92
-AnchorPos=0 0
-Notes=
 
 [CTRL_9SLICES_197]
 Type=22
@@ -129,24 +108,6 @@ TextColor=0x8bff93
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_CARD_CRITICAL]
-Type=4
-Tag=315
-Rect=71 33 160 50
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfea14d
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-
-[CTRL_DOWER_PIC]
-Type=1
-Tag=317
-Rect=96 35 85 90
-AnchorPos=0 0
-Notes=
-
 [CTRL_BTN_INTENSIFY]
 Type=2
 Tag=321
@@ -159,50 +120,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
-
-[CTRL_BTN_SALE]
-Type=2
-Tag=323
-Rect=317 47 110 54
-AnchorPos=0 0
-Notes=
-TextSize=30
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
-
-[CTRL_BTN_ARRT]
-Type=2
-Tag=324
-Rect=317 47 110 54
-AnchorPos=0 0
-Notes=
-TextSize=30
-TextColor=0xd5ce9d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
-
-[CTRL_BUTTON_REPLACE]
-Type=2
-Tag=30
-Rect=317 47 110 54
-AnchorPos=0 0
-Notes=
-TextSize=30
-TextColor=0xd5ce9d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui\public\button_click.png
 SelectedFileUV=0 0 110 54
 

@@ -52,6 +52,16 @@ image\ui\gacha\gacha_ad03.png
 image\ui\gacha\gacha_ad04.png
 image\ui\gacha\gacha_ad05.png
 
+;¿¨ÅÆÐÇ¼¶
+[card_star]
+image\ui\public\star1.png
+image\ui\public\star2.png
+image\ui\public\star3.png
+image\ui\public\star4.png
+image\ui\public\star5.png
+image\ui\public\star6.png
+image\ui\public\star7.png
+
 [map_lock]
 \image\ui\word_map\lock.png @cut(1,1) @scale=0.2 @loop
 
