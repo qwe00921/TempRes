@@ -349,7 +349,7 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_CARDNAME]
 Type=4
 Tag=66
-Rect=113 165 172 31
+Rect=113 165 210 31
 AnchorPos=0 0
 Notes=
 Text=卡牌名字很多字

@@ -74,7 +74,7 @@ function p.SetDelegate(layer)
 	
 	--卡牌名字
 	local pLableName = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_CARDNAME);
-	pLableName:SetText(pCardInfo2.name);
+	pLableName:SetText(pCardInfo2.Name);
 	--卡牌星级 ID_CTRL_PICTURE_CARDSTAR Rare
 	local pPicCardStar = GetImage( layer, ui_dlg_card_attr_base.ID_CTRL_PICTURE_CARDSTAR );
 	if p.cardInfo.Rare == 1 then
@@ -92,10 +92,22 @@ function p.SetDelegate(layer)
 	elseif p.cardInfo.Rare == 7 then
 		pPicCardStar:SetPicture(GetPictureByAni("ui.card_star",6));
 	end	
-	
-	--卡牌属性 ID_CTRL_PICTURE_CARDNATURE
+	 
+	--卡牌属性 ID_CTRL_PICTURE_CARDNATURE element card_nature
 	local pPicCardNature = GetImage( layer, ui_dlg_card_attr_base.ID_CTRL_PICTURE_CARDNATURE );
-	--pPicCardNature
+	if tonumber(pCardInfo2.element) == 1 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
+	elseif tonumber(pCardInfo2.element) == 2 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",1));
+	elseif tonumber(pCardInfo2.element) == 3 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",2));
+	elseif tonumber(pCardInfo2.element) == 4 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",3));
+	elseif tonumber(pCardInfo2.element) == 5 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",4));
+	elseif tonumber(pCardInfo2.element) == 6 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
+	end
 	
 	
 	--返回
@@ -174,7 +186,7 @@ function p.SetDelegate(layer)
 	--卡牌Type type =1平衡型（各属性均衡成长）type =2耐力型（HP成长+10%，攻击成长-10%）type=3破坏型（攻击成长+10%，防御成长-10%）type=4守护型（防御成长+10%，攻击成长-10%）
 
 	local pLabCardType = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_TYPE);
-	WriteCon("type = ".. pCardInfo2.type);
+	WriteCon("type = ".. tostring(pCardInfo2.type));
 	if tonumber(pCardInfo2.type) == 1 then
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type1"));
 	elseif tonumber(pCardInfo2.type) == 2 then
@@ -183,6 +195,8 @@ function p.SetDelegate(layer)
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type3"));
 	elseif tonumber(pCardInfo2.type) == 4 then
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type4"));
+	else
+		pLabCardType:SetText(GetStr("card_type")..tostring("  "));
 	end
 	--距离升级的经验是多少
 	local pLabCardUpExp = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_LEVELUPEXP);
@@ -193,11 +207,18 @@ function p.SetDelegate(layer)
 	local pLabSkillName = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_SKILLNAME);
 	local pLabSkillInfo = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
 	--技能
-	if  tonumber(pCardInfo2.skill) ~= 0  then
+	if  tonumber(pCardInfo2.skill) ~= 0 and  pCardInfo2.skill ~= nil then
+		WriteCon("pCardInfo2.skill = "..tostring(pCardInfo2.skill));
 		local pCardSkill= SelectRowInner( T_SKILL, "id", pCardInfo2.skill);
 		pLabSkillName:SetText(pCardSkill.name); 
 		pLabSkillInfo:SetText(pCardSkill.description); 
 	end
+	
+	--经验条
+	local expBar = GetExp( p.layer, ui_dlg_card_attr_base.ID_CTRL_EXP_44 );
+	local expSstartNum = tonumber(p.cardInfo.Exp);
+	local expLeast = 0;
+	expbar_move_effect.showEffect(expBar,expLeast,tonumber(pCardUpLevelInfo.exp),expSstartNum,0);
 	-------------------------------------------------------------------------------------------------
 	--local T_ITEM     = LoadTable( "item.ini" );
 	local pCardInfo= nil;
@@ -346,6 +367,7 @@ function p.CloseUI()
 		p.equip1 = {};
 		p.equip2 = {};
 		p.equip3 = {};
+		expbar_move_effect.ClearData();
     end
 end
 
