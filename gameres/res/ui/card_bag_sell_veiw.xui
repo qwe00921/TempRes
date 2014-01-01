@@ -1,0 +1,103 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=83
+Rect=0 757 634 89
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\frame_item.png
+NormalFileUV=0 0 100 100
+
+[CTRL_BUTTON_CLEAR]
+Type=2
+Tag=84
+Rect=31 773 170 67
+AnchorPos=0 0
+Notes=
+Text=清除数据
+TextTradition=清除數據
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button_click.png
+NormalFileUV=0 0 110 54
+
+[CTRL_BUTTON_SELL]
+Type=2
+Tag=85
+Rect=242 774 146 63
+AnchorPos=0 0
+Notes=
+Text=出售
+TextTradition=出售
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_TEXT_86]
+Type=4
+Tag=88
+Rect=410 764 107 31
+AnchorPos=0 0
+Notes=
+Text=出售金额
+TextTradition=出售金額
+TextSize=16
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_MONEY]
+Type=1
+Tag=89
+Rect=492 761 30 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\coin.png
+NormalFileUV=0 0 30 30
+
+[CTRL_TEXT_SELL_MONEY]
+Type=4
+Tag=90
+Rect=523 765 80 24
+AnchorPos=0 0
+Notes=
+Text=0
+TextTradition=0
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_89]
+Type=4
+Tag=93
+Rect=431 804 107 27
+AnchorPos=0 0
+Notes=
+Text=选择人数
+TextTradition=選擇人數
+TextSize=16
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_SELL_NUM]
+Type=4
+Tag=95
+Rect=523 802 36 31
+AnchorPos=0 0
+Notes=
+Text=0
+TextTradition=0
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
