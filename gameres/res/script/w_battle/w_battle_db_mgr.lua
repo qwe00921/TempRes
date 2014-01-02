@@ -21,8 +21,8 @@ p.roundBuffEffectData = nil; --BUFF特效数据
 p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
 
-
-p.playCardList = {
+  
+p.playerCardList = {
 	{
 	UniqueId= 10000721,
 	CardID= 10017,

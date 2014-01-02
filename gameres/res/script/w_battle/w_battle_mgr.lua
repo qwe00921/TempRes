@@ -56,8 +56,8 @@ atkID,targerID
 function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
 	GetBattleShow():EnableTick( true );
-	p.createHeroCamp( w_battle_db_mgr.playCardList );
-    p.createEnemyCamp( w_battle_db_mgr.targetCardList );
+	p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+    p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
