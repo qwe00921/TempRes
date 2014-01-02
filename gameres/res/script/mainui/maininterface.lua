@@ -3,6 +3,7 @@ maininterface = {}
 local p = maininterface;
 
 p.layer = nil;
+p.m_bgImage = nil;
 
 local ui = ui_main_interface
 
@@ -12,8 +13,13 @@ function p.ShowUI(userinfo)
 		dlg_battlearray.ShowUI();
 		p.ShowBillboard();
 		PlayMusic_MainUI();
+		
+		p.m_bgImage:SetVisible(true);
+		
 		return;
 	end
+	
+	--GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
 	
 	local layer = createNDUILayer();
 	if layer == nil then
@@ -23,6 +29,14 @@ function p.ShowUI(userinfo)
 	layer:Init();
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
+	
+	p.m_bgImage = createNDUIImage();
+	p.m_bgImage:Init();
+	p.m_bgImage:SetFrameRectFull();
+	GetUIRoot():AddChildZ(p.m_bgImage,-99);
+		
+	local pic = GetPictureByAni("lancer.temp_bg", 0); 
+	p.m_bgImage:SetPicture( pic );
     
 	GetUIRoot():AddChild(layer);
 	LoadUI("main_interface.xui", layer, nil);

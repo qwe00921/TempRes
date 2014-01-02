@@ -15,6 +15,4 @@ p.ID_CTRL_TEXT_QUEST_NAME_6			= 6;
 p.ID_CTRL_VERTICAL_LIST_5				 = 5;
 p.ID_CTRL_BTN_TETURN_2				    = 2;
 p.ID_CTRL_PIC_LIST_BG_3				   = 3;
-p.ID_CTRL_PIC_HEAD_BG_1				   = 1;
 p.ID_CTRL_9SLICES_12					     = 12;
-p.ID_CTRL_PICTURE_BG					     = 10;

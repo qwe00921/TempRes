@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -18,7 +18,7 @@ DisableFileUV=0 0 279 77
 [CTRL_PICTURE_REWARD3]
 Type=1
 Tag=14
-Rect=181 297 50 28
+Rect=439 881 50 28
 AnchorPos=0 0
 Notes=
 
@@ -42,7 +42,7 @@ NormalFileUV=0 0 602 167
 [CTRL_PICTURE_99]
 Type=1
 Tag=99
-Rect=256 298 36 36
+Rect=514 882 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -51,7 +51,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_63]
 Type=1
 Tag=63
-Rect=297 298 36 36
+Rect=555 882 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -60,7 +60,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_64]
 Type=1
 Tag=64
-Rect=337 298 36 36
+Rect=595 882 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star_less.png
@@ -189,7 +189,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_EVALUATION]
 Type=4
 Tag=11
-Rect=143 299 76 30
+Rect=401 883 76 30
 AnchorPos=0 0
 Notes=
 Text=评价:
@@ -202,26 +202,16 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_STAR1]
 Type=1
 Tag=19
-Rect=256 298 36 36
+Rect=514 882 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
 NormalFileUV=0 0 36 36
 
-[CTRL_9SLICES_38]
-Type=22
-Tag=38
-Rect=92 265 379 79
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
-
 [CTRL_PICTURE_STAR2]
 Type=1
 Tag=20
-Rect=298 298 36 36
+Rect=556 882 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
@@ -230,7 +220,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_STAR3]
 Type=1
 Tag=21
-Rect=337 298 36 36
+Rect=595 882 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\star.png
