@@ -39,8 +39,9 @@ function p:init(id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,
 	self.seqAtk    = batch:AddSerialSequence();
     self.seqTarget = batch:AddSerialSequence();	
 	self.seqBullet = batch:AddSerialSequence();	
-	
+	--batch:EnableTick(true);	
 	p:start();
+
 end;
 
 function p:start()

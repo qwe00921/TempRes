@@ -60,17 +60,17 @@ end;
 
 --计算属性克制 --金克木, 木克土, 土克水, 水克火, 火克金 ,光暗互克
 function p.CalProperty(atkFighter,tarFighter)
-    local lrate = 1;
+    local lrate = 0;
     
-	if     (atkFighter.prop == W_BATTLE_PROP_LIGHT  and tarFighter.prop == W_BATTLE_PROP_DARK)
-		or (atkFighter.prop == W_BATTLE_PROP_DARK   and tarFighter.prop == W_BATTLE_PROP_LIGHT)
-		or (atkFighter.prop == W_BATTLE_PROP_GOLD 	and tarFighter.prop == W_BATTLE_PROP_WOOD )	
-		or (atkFighter.prop == W_BATTLE_PROP_WOOD 	and tarFighter.prop == W_BATTLE_PROP_WARTH)
-		or (atkFighter.prop == W_BATTLE_PROP_WARTH	and tarFighter.prop == W_BATTLE_PROP_WATER)
-		or (atkFighter.prop == W_BATTLE_PROP_WATER	and tarFighter.prop == W_BATTLE_PROP_FIRE )
-		or (atkFighter.prop == W_BATTLE_PROP_FIRE 	and tarFighter.prop == W_BATTLE_PROP_GOLD) then
+	if     (atkFighter.prop == W_BATTLE_ELEMENT_LIGHT  and tarFighter.prop == W_BATTLE_ELEMENT_DARK)
+		or (atkFighter.prop == W_BATTLE_ELEMENT_DARK   and tarFighter.prop == W_BATTLE_ELEMENT_LIGHT)
+		or (atkFighter.prop == W_BATTLE_ELEMENT_GOLD 	and tarFighter.prop == W_BATTLE_ELEMENT_WOOD )	
+		or (atkFighter.prop == W_BATTLE_ELEMENT_WOOD 	and tarFighter.prop == W_BATTLE_ELEMENT_EARTH)
+		or (atkFighter.prop == W_BATTLE_ELEMENT_EARTH	and tarFighter.prop == W_BATTLE_ELEMENT_WATER)
+		or (atkFighter.prop == W_BATTLE_ELEMENT_WATER	and tarFighter.prop == W_BATTLE_ELEMENT_FIRE )
+		or (atkFighter.prop == W_BATTLE_ELEMENT_FIRE 	and tarFighter.prop == W_BATTLE_PROP_GOLD) then
 		
-		lrate = 1.2
+		lrate = 0.2
 	end
 		
 	return lrate;

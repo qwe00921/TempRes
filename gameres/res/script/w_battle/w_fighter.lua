@@ -25,7 +25,8 @@ function p:ctor()
 	self.beHitTimes	= {}
 	--self.beHitTimes = 0;  --受击次数
     self.IsHurt = false;	
-	
+	self.JoinAtkTime = nil;
+	self.HitTime = 0;
 	self.tmplife = self.life;
     
 	self.selIndex = 0;  --目标选择顺序

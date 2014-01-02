@@ -24,6 +24,7 @@ p.rewardData = nil;
   
 p.playerCardList = {
 	{
+	element = 0,
 	UniqueId= 10000721,
 	CardID= 10017,
 	Level= 1,
@@ -57,6 +58,7 @@ p.playerCardList = {
 	maxSp = 100;
 	},
 	{
+	element = 0,
 	UniqueId= 10000722,
 	CardID= 10012,
 	Level= 1,
@@ -91,6 +93,7 @@ p.playerCardList = {
 	},
 
 	{
+	element = 0,
 	UniqueId= 10000723,
 	CardID= 10021,
 	Level= 1,
@@ -125,6 +128,7 @@ p.playerCardList = {
 	},
 
 	{
+	element = 0,
 		Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000724,
@@ -158,6 +162,7 @@ p.playerCardList = {
 	Position= 4
 	},
 	{
+	element = 0,
 		Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000725,
@@ -194,6 +199,7 @@ p.playerCardList = {
 
 p.targetCardList = {
 	{
+	element = 0,
 	UniqueId= 2,
 	CardID= 10001,
 	Level= 10,
@@ -219,6 +225,7 @@ p.targetCardList = {
 	Position= 1
 	},
 	{
+	element = 0,
 	UniqueId= 3,
 	CardID= 10003,
 	Level= 10,
@@ -244,6 +251,7 @@ p.targetCardList = {
 	Position= 2
 	},
 	{
+	element = 0,
 	UniqueId= 4,
 	CardID= 10004,
 	Level= 10,
@@ -269,6 +277,7 @@ p.targetCardList = {
 	Position= 3
 	},
 	{
+	element = 0,
 	UniqueId= 5,
 	CardID= 10005,
 	Level= 10,
@@ -294,6 +303,7 @@ p.targetCardList = {
 	Position= 4
 	},
 	{
+	element = 0,
 	UniqueId= 6,
 	CardID= 10009,
 	Level= 10,
@@ -319,6 +329,7 @@ p.targetCardList = {
 	Position= 5
 	},
 	{
+	element = 0,
 	UniqueId= 7,
 	CardID= 10012,
 	Level= 10,
