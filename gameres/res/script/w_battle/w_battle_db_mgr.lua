@@ -52,7 +52,9 @@ p.playCardList = {
 	Gem3= 0,
 	Price= 0,
 	Source= 0,
-	Position= 1
+	Position= 1,
+	Sp = 0,
+	maxSp = 100;
 	},
 	{
 	UniqueId= 10000722,
@@ -83,7 +85,9 @@ p.playCardList = {
 	Gem3= 0,
 	Price= 0,
 	Source= 0,
-	Position= 2
+	Position= 2,
+	Sp = 0,
+	maxSp = 100
 	},
 
 	{
@@ -115,10 +119,14 @@ p.playCardList = {
 	Gem3= 0,
 	Price= 0,
 	Source= 0,
-	Position= 3
+	Position= 3,
+	Sp = 0,
+	maxSp = 100,
 	},
 
 	{
+		Sp = 0,
+	maxSp = 100,
 	UniqueId= 10000724,
 	CardID= 10003,
 	Level= 1,
@@ -150,6 +158,8 @@ p.playCardList = {
 	Position= 4
 	},
 	{
+		Sp = 0,
+	maxSp = 100,
 	UniqueId= 10000725,
 	CardID= 10022,
 	Level= 1,
