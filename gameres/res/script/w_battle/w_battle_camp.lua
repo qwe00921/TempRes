@@ -121,7 +121,7 @@ function p.AddHeroFightersJumpEffect()
 		
 	local pOldPos = node:GetCenterPos();
 	
-	local x = pOldPos.x + 220;
+	local x = pOldPos.x - 220;
 	local y = pOldPos.y;
 
 	local pNewPos = CCPointMake(x,y);	
@@ -147,7 +147,7 @@ function p.AddEnemyFightersJumpEffect()
 		
 	local pOldPos = node:GetCenterPos();
 	
-	local x = pOldPos.x - 220;
+	local x = pOldPos.x + 220;
 	local y = pOldPos.y;
 
 	local pNewPos = CCPointMake(x,y);	
@@ -240,9 +240,9 @@ function p:AddFighters( uiArray, fighters )
 		local pOldPos = node:GetCenterPos();
 
 		if self.idCamp == E_CARD_CAMP_HERO then
-			pOldPos.x = pOldPos.x - 220;
-		elseif self.idCamp == E_CARD_CAMP_ENEMY then
 			pOldPos.x = pOldPos.x + 220;
+		elseif self.idCamp == E_CARD_CAMP_ENEMY then
+			pOldPos.x = pOldPos.x - 220;
 		end
 		node:SetCenterPos(pOldPos);
 		
@@ -252,6 +252,8 @@ function p:AddFighters( uiArray, fighters )
         f.level = tonumber( fighterInfo.Level );
         f.uniqueId = tonumber( fighterInfo.UniqueId );
         f.cardId = tonumber( fighterInfo.CardID );
+		f.Attack = tonumber( fighterInfo.Attack);
+		f.Defence = tonumber( fighterInfo.Defence);
         f.buffList = {};
         
 		f:Init( uiTag, node, self.idCamp );

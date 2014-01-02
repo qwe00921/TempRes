@@ -65,7 +65,7 @@ function p.init()
 	p.isCanSelFighter = true;	
 	
 	
-	
+	p.SetPVEAtkID(2);
 	
 end;
 
@@ -77,18 +77,18 @@ function p.SetPVEAtkID(atkID)
    local targerID = w_battle_mgr.PVEEnemyID;
    if targerID == nil then
       WriteCon( "Error! SetPVEAtkID targerID is nil");
-	  return;
+	  return false;
    end; 
 
    if atkFighter == nil then
       WriteCon( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
-	  return;
+	  return false;
    end;
 
    local targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targerID ) );
    if targetFighter == nil then
       WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targerID));
-	  return;
+	  return false;
    end;
 
    
@@ -117,7 +117,7 @@ function p.SetPVEAtkID(atkID)
 	local pStateMachine = w_battle_PVEStateMachine:new();
 	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
 	pStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
-	
+	return true;
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定

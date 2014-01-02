@@ -22,6 +22,9 @@ end
 --构造函数
 function p:ctor()
     super.ctor(self);
+	self.beHitTimes	= {}
+	--self.beHitTimes = 0;  --受击次数
+    self.IsHurt = false;	
 	
 	self.tmplife = self.life;
     
@@ -31,6 +34,7 @@ function p:ctor()
 	self.m_kShadow = nil;
 	self.m_kCurrentBatch = nil;
 	self.flynumGreen = nil;
+	
 end
 
 --初始化（重载）
@@ -41,12 +45,13 @@ function p:Init( idFighter, node, camp )
 	self:SetSelIndex(idFighter);  --按2,1,3,5,4,6顺序选择
 	self:CreateHpBar();
 	self:CreateFlyNumGreen();
+	self.damage = self.Attack;
+	self.Buff = 1;
 	
 	self.showlife = self.life;  --用来显示的血量
 	self.maxlife = self.life;  --最大血量
 	self.nowlife = self.life; --当前实际血量
-	self.beHitTimes = 0;  --受击次数
-    self.IsHurt = false;	
+
 	
 end
 

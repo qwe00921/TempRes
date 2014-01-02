@@ -20,10 +20,11 @@ function p.SimpleDamage(atkFighter,tarFighter)
 	end
 	
 	local lIsCrit = p.IsCrit(atkFighter,tarFighter);
-	local lCritRate = 0;
+	local lCrit = 0;
+	
 	
 	local damage = atkFighter.damage * atkFighter.Buff * lpropRate * (1+lCrit + lJoinAtkRate)
-	             - tarFighter.defend * tarFighter.Buff;
+	             - tarFighter.Defence * tarFighter.Buff;
 --普通攻击伤害 = （人物攻击力 + 装备攻击力）* BUFF百分比加成*属性克制关系加成*（暴击加成+合击加成）
 --           –（对方人物防御值+对方装备防御值）* BUFF百分比加成
 	
@@ -53,7 +54,7 @@ end;
 function p.IsCrit(atkFighter,tarFighter)
 	local lIsCrit = false;
 	
-	
+	return lIsCrit;
 end;
 
 
