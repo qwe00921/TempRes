@@ -11,6 +11,7 @@ local uiList = ui_quest_list_view;
 p.power = nil;
 p.stageId = nil;	--关卡ID
 p.missionId = nil; 	--任务ID
+p.missionList = nil;
 p.missionMax = 9;
 p.missionIdGap = 10;
 local difficultKey = EASY;
@@ -199,7 +200,7 @@ function p.loadMissionList(missionStartId)
 			view:SetViewSize( CCSizeMake(bg:GetFrameSize().w, bg:GetFrameSize().h));
 			view:SetId(misId);
 			--设置任务静态数据
-			p.setMissionInfi(misId,view)
+			p.setMissionInfo(misId,view)
 		
 			--设置服务端下发数据
 			local fightBtn = GetButton(view, uiList.ID_CTRL_BUTTON_FIGHTING);
@@ -228,7 +229,7 @@ function p.loadMissionList(missionStartId)
 	end
 end
 
-function p.setMissionInfi(misId,view)
+function p.setMissionInfo(misId,view)
 	local misName = GetLabel(view, uiList.ID_CTRL_TEXT_QUEST_NAME_V);
 	local misStep = GetLabel(view, uiList.ID_CTRL_TEXT_DIF_V);
 	local misPower = GetLabel(view, uiList.ID_CTRL_TEXT_POWER_V);
@@ -290,4 +291,5 @@ function p.Clear()
 	p.power = nil;
 	p.stageId = nil;	--关卡ID
 	p.missionId = nil; 	--任务ID
+	p.missionList = nil;
 end

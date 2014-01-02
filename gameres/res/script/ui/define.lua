@@ -43,6 +43,7 @@ DoFile("ui/ui_card_main_view.lua")
 DoFile("ui/ui_card_list_view.lua")
 DoFile("ui/ui_card_bag_sort_view.lua")
 DoFile("ui/ui_card_bag_select.lua")
+DoFile("ui/ui_card_bag_sell_veiw.lua")
 
 --加载所有UI
 DoFile("ui/ui_battle_boss.lua")
@@ -253,6 +254,8 @@ DoFile("ui/ui_mail_list_item_user_history.lua");
 DoFile("ui/ui_n_battle_ko.lua");
 DoFile("ui/ui_n_battle_mainui.lua");
 DoFile("ui/ui_n_battle_pvp.lua");
+DoFile("ui/ui_n_battle_pve.lua");
+DoFile("ui/ui_n_battle_itemuse.lua");
 
 --卡牌
 DoFile("ui/ui_dlg_card_equip_detail.lua");

@@ -9,6 +9,8 @@ DoFile("w_battle/w_battle_compute.lua");
 DoFile("w_battle/w_battle_mgr.lua");
 DoFile("w_battle/w_battle_db_mgr.lua");
 DoFile("w_battle/w_battle_pvp.lua");
+DoFile("w_battle/w_battle_pve.lua");
+DoFile("w_battle/w_battle_useitem.lua");
 DoFile("w_battle/w_fighter.lua");
 DoFile("w_battle/w_bullet.lua");
 DoFile("w_battle/w_hp_bar.lua");
@@ -25,6 +27,10 @@ DoFile("w_battle/w_battle_pet_skill.lua");
 DoFile("w_battle/w_fly_num_green.lua");
 DoFile("w_battle/w_battle_func.lua");
 DoFile("w_battle/w_battle_round_num.lua");
+DoFile("w_battle/w_battle_atkDamage.lua");
+DoFile("w_battle/w_battle_PVEStaMachMgr.lua");
+DoFile("w_battle/w_battle_PVEStateMachine.lua");
+
 
 
 

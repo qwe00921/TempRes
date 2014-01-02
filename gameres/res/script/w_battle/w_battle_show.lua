@@ -56,7 +56,7 @@ end
 --ÆÕÍ¨¹¥»÷
 function p.SimpleAtk( hero, TCamp, Targets, batch )
 	for key, enemy in ipairs(Targets) do
-        w_battle_atk.Atk( hero, enemy, TCamp, batch );
+        w_battle_atk.AtkPVE_NPC( hero, enemy, batch );
     end
 end
 

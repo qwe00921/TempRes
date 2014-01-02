@@ -36,6 +36,7 @@ DoFile("card_box/dlg_card_group.lua");
 DoFile("card_box/card_bag_mian.lua");
 DoFile("card_box/card_bag_mgr.lua");
 DoFile("card_box/card_bag_sort.lua");
+DoFile("card_box/card_bag_sell.lua");
 
 --ø®œÍœ∏–≈œ¢
 DoFile("card_box/dlg_card_attr.lua");

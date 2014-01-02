@@ -12,7 +12,7 @@ local p = cmd_lua_callback;
 --Lua命令回调
 --参数: cmdtype		lua命令类型
 --		id			物件id
---		num			数值参数1
+--		num			数值参数1,
 --		str			字串参数2
 ---------------------------------------------------
 function p.CmdLuaHandler( cmdtype, id, num, str )
@@ -33,14 +33,55 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter = w_battle_mgr.FindFighter(id);
 	end
 	
-	if fighter == nil and (E_DEMO_VER ~= 4 or E_DEMO_VER ~= 5) then
+	if fighter == nil and (E_DEMO_VER ~= 4) or (E_DEMO_VER ~= 5) then
 		WriteCon( "find fighter failed: id="..id);
 		return;
 	end
-		
+
 	--执行具体命令
 	if cmdtype == "fighter_damage" then
-		fighter:SetLifeDamage(num);
+		if E_DEMO_VER == 5 then
+			w_battle_stateMachineMgr(num,cmdtype)
+		else
+			fighter:SetLifeDamage(num);
+		end;
+	elseif cmdtype == "atk_startAtk"  and E_DEMO_VER == 5 then
+	    local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:atk_startAtk();
+		end;
+    elseif cmdtype == "atk_end" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:atk_end();
+		end;
+	elseif cmdtype == "atk_standby" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:atk_standby();
+		end;
+	elseif cmdtype == "tar_hurt" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_hurt();
+		end;
+	elseif cmdtype == "tar_hurtEnd" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_hurtEnd();
+		end;
+	elseif cmdtype == "tar_ReviveEnd" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_ReviveEnd();
+		end;
+	elseif cmdtype == "tar_dieEnd" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_dieEnd();
+		end;
+
+	
 	elseif cmdtype == "fighter_addHp" then
         fighter:SetLifeAdd( num );	
 	elseif cmdtype == "fighter_strike_damage" then
@@ -62,9 +103,6 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 
     elseif cmdtype == "ClearAllFighterPic" and E_DEMO_VER == 4 then
         n_battle_pvp.ClearAllFighterPic();    
-	elseif cmdtype == "ClearAllFighterPic" and E_DEMO_VER == 5 then
-        w_battle_pvp.ClearAllFighterPic();    
-			
     elseif cmdtype == "UpdatePetRage" and E_DEMO_VER == 4 then
         n_battle_pvp.UpdatePetRage( id , -num );    
 	elseif cmdtype == "UpdatePetRage" and E_DEMO_VER == 5 then
@@ -72,8 +110,6 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		    		
     elseif cmdtype == "fighter_revive" and E_DEMO_VER == 4 then
         FighterRevive( fighter , num );        
-	elseif cmdtype == "fighter_revive" and E_DEMO_VER == 5 then
-        FighterRevive( fighter , num );        	
 		
 	elseif cmdtype == "AddMaskImage" then
 		if E_DEMO_VER == 2 then

@@ -6,9 +6,20 @@ Height=960
 [CTRL_PICTURE_CARD_SELECT]
 Type=1
 Tag=608
-Rect=45 90 42 42
+Rect=70 1 42 42
 AnchorPos=0 0
 Notes=
 Stretch=1
 NormalFile=.\res\image\ui\public\select.png
 NormalFileUV=0 0 42 42
+
+[CTRL_TEXT_NUM]
+Type=4
+Tag=10
+Rect=80 11 20 20
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

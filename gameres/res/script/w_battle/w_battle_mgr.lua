@@ -17,14 +17,130 @@ p.petNode={};       --双方宠物结点
 p.petNameNode={};   --双方宠物名称结点
 
 p.imageMask = nil			--增加蒙版特效
+p.PVEEnemyID = nil;   --当前被攻击的敌人ID
+p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
+p.LockEnemy = false; --敌人是否被锁定攻击
+p.LockFagID = nil;  --之前的锁定标志
 
 local isPVE = false;
 local isActive = false;
-local useParallelBatch = true; --是否使用并行批次
+local useParallelBatch = true; --是否.使用并行批次
 p.isBattleEnd = false;
+p.isCanSelFighter = false;  --是否还有可选择的怪物,战斗UI界面点击我方人员时,需先判断此变理,再处理点击
 
 local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
+
+--[[
+--创建角色后, 按活着的怪物,给个目标
+  p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID();
+  p.LockEnemy = false;
+  p.isCanSelFighter = true;
+
+--点选目标后,计算伤害
+atkID,targerID
+
+    --默认选择的目标,判定怪物将死
+	if (hp < damage) and (p.LockEnemy == false) then
+		p.PVEEnemyID = p.enemyCamp:GetActiveFighterID(targerID); --除此外的活的怪物目标
+		
+		if p.enemyCamp:GetActiveFighterCount() == 1 then
+			p.LockEnemy = true;
+		end
+	end
+	
+  end;
+
+
+]]--
+function p.starFighter()
+	w_battle_PVEStaMachMgr.init();
+	GetBattleShow():EnableTick( true );
+	p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+    p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
+	--按活着的怪物,给个目标
+    p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
+	p.PVEShowEnemyID = p.PVEEnemyID; 
+	p.LockEnemy = false;
+	p.isCanSelFighter = true;	
+	
+	
+	--p.SetPVEAtkID(2);
+	
+end;
+
+
+--攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
+function p.SetPVEAtkID(atkID)
+   local atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
+
+   local targerID = w_battle_mgr.PVEEnemyID;
+   if targerID == nil then
+      WriteCon( "Error! SetPVEAtkID targerID is nil");
+	  return false;
+   end; 
+
+   if atkFighter == nil then
+      WriteCon( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
+	  return false;
+   end;
+
+   local targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targerID ) );
+   if targetFighter == nil then
+      WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targerID));
+	  return false;
+   end;
+
+   
+
+   --点选目标后,先计算伤害
+   local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter);
+   targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
+   
+
+   --默认选择的目标,判定怪物将死
+	if (targetFighter.nowlife < 0) and (p.LockEnemy == false) then
+		p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
+		
+		if p.enemyCamp:GetActiveFighterCount() == 1 then
+			p.LockEnemy = true;
+		end
+	end
+	
+   --受击次数先累加,攻击方动画播完后,再减一
+    targetFighter:BeHitAdd(atkID);  
+    
+	--攻击某个人物
+     --w_battle_atk.SelOver(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	--选择结束阶断
+	
+    --w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	
+	local pStateMachine = w_battle_PVEStateMachine:new();
+	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
+	pStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
+	return true;
+end;
+
+--战斗界面选择怪物目标,选择后怪物就被锁定
+function p.SetPVETargerID(targerId)
+	if targerId > 6 or targerId < 0 then
+	    WriteCon("SetPVEEnemyID id error! id = "..tostring(targetId));	
+		return ;
+	end
+	p.PVEEnemyID = targerId;
+	p.PVEShowEnemyID = p.PVEEnemyID;
+	--显示怪物血量
+	p.LockEnemy = true;
+    p.SetLockAction(targerId);	
+	
+end;	
+
+function p.SetLockAction(targerId)
+   local lfighter = p.enemyUIArray:FindFighter(targerId);
+   if LockFagID ~= targerId then
+		--取消锁定标志
+   end;
+   --设置锁定标志
+end;
 
 --开始战斗表现:pve
 function p.play_pve( targetId )
@@ -85,7 +201,12 @@ function p.ReceiveStartPVPRes( msg )
     end
     p.createHeroCamp( UCardList );
     p.createEnemyCamp( TCardList );
-    
+	--按活着的怪物,给个目标
+    p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
+	p.PVEShowEnemyID = p.PVEEnemyID; 
+	p.LockEnemy = false;
+	p.isCanSelFighter = true;	
+	    
     p.createPet( UPetList, E_CARD_CAMP_HERO );
     p.createPet( TPetList, E_CARD_CAMP_ENEMY );
     p.ReSetPetNodePos();

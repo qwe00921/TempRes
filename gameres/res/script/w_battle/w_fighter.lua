@@ -22,12 +22,20 @@ end
 --构造函数
 function p:ctor()
     super.ctor(self);
+	self.beHitTimes	= {}
+	--self.beHitTimes = 0;  --受击次数
+    self.IsHurt = false;	
+	self.JoinAtkTime = nil;
+	self.HitTime = 0;
 	self.tmplife = self.life;
+    
+	self.selIndex = 0;  --目标选择顺序
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
 	self.m_kShadow = nil;
 	self.m_kCurrentBatch = nil;
 	self.flynumGreen = nil;
+	
 end
 
 --初始化（重载）
@@ -35,8 +43,34 @@ function p:Init( idFighter, node, camp )
 	super.Init( self, idFighter, node, camp );
 	--self.hpbar:GetNode():SetVisible( false );
 	self.tmplife = self.life;
+	self:SetSelIndex(idFighter);  --按2,1,3,5,4,6顺序选择
 	self:CreateHpBar();
 	self:CreateFlyNumGreen();
+	self.damage = self.Attack;
+	self.Buff = 1;
+	
+	self.showlife = self.life;  --用来显示的血量
+	self.maxlife = self.life;  --最大血量
+	self.nowlife = self.life; --当前实际血量
+
+	
+end
+
+--初始化被选择顺序
+function p:SetSelIndex(pId)
+    if self.pId == W_BATTLE_POS_TAG_2 then
+       self.selIndex = 1 
+    elseif self.pId == W_BATTLE_POS_TAG_1 then
+	   self.selIndex = 2
+    elseif self.pId == W_BATTLE_POS_TAG_3 then
+	   self.selIndex = 3
+    elseif self.pId == W_BATTLE_POS_TAG_5 then
+	   self.selIndex = 4
+    elseif self.pId == W_BATTLE_POS_TAG_4 then
+	   self.selIndex = 5
+    elseif self.pId == W_BATTLE_POS_TAG_6 then
+	   self.selIndex = 6
+	end;
 end
 
 --创建飘血数字
@@ -110,6 +144,41 @@ function p:SubTmpLife( val )
         self.tmplife = 0;
     end
 end
+
+function p:SubLife(val)  --当前实际血量
+	self.nowlife = self.nowlife - val;
+	if self.nowlife < 0 then
+		self.nowlife = 0;
+	end
+end;
+
+function p:AddLife(val)
+	self.nowlife = self.nowlife + val;
+	if self.nowlife > self.maxlife then
+		self.nowlife = self.maxlife;
+	end
+end;
+
+function p:SubShowLife(val) --需展现的血量
+	self.showlife = self.showlife - val;
+	if self.showlife < 0 then
+		self.showlife = 0;
+	end
+	
+    --判断并显示当前血量    
+	if self:GetId() == w_battle_mgr.PVEShowEnemyID then 
+		--设置UI界面的血量
+	end;
+end;
+
+function p:AddShowLife(val) --需展现的血量
+	self.showlife = self.showlife + val;
+	if self.showlife > self.maxlife then
+		self.showlife =  self.maxlife;
+	end
+	
+end;
+
 
 function p:SubTmpLifeHeal( val )
 	self.tmplife = self.tmplife + val;
@@ -238,6 +307,10 @@ function p:ShowHpBarMoment()
 	self.hpbar:ShowBarMoment();
 end
 
+function p:SetLife(nowHp,maxHp)
+	
+end
+
 --去血
 function p:SetLifeDamage(num)   
     self.life = self.life - num;
@@ -245,10 +318,10 @@ function p:SetLifeDamage(num)
     if self.life <= 0 then
         self.life = 0;
         self:SetLife( 0 );
-        self:Die();
+       -- self:Die();
         
         --死亡不显示血条
-        self.hpbar:GetNode():SetVisible( false );
+        --self.hpbar:GetNode():SetVisible( false );
     else
         self:SetLife(self.life);
     end
@@ -266,8 +339,22 @@ function p:cmdLua( cmdtype, num, str, seq )
     if cmdtype == "fighter_damage" then
         self:SubTmpLife( num ); 
     elseif cmdtype == "fighter_addHp" or cmdtype == "fighter_revive" then  
-        self:SubTmpLifeHeal( num );   
+        self:SubTmpLifeHeal( num );  
     end
+	
     return super.cmdLua( self, cmdtype, num, str, seq );
     
+end
+
+function p:BeHitAdd(pAtkId)
+	self.beHitTimes[#self.beHitTimes + 1] = pAtkId;
+end
+
+function p:BeHitDec(pAtkId)
+	for k,v in pairs(self.beHitTimes) do
+		if v == pId then
+			table.remove(self.beHitTimes,k);
+			break;
+		end;
+	end;
 end

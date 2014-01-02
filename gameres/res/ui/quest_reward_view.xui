@@ -14,174 +14,42 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
 
-[CTRL_PICTURE_27]
+[CTRL_PICTURE_BG]
 Type=1
 Tag=28
-Rect=7 164 640 800
+Rect=0 168 640 780
 AnchorPos=0 0
 Notes=
 Stretch=1
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
-[CTRL_PICTURE_TOUCH]
-Type=1
-Tag=22
-Rect=218 848 204 53
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\text_reward.png
-NormalFileUV=0 0 208 54
-
-[CTRL_PICTURE_23]
-Type=1
-Tag=24
-Rect=51 823 517 54
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\bg_reward1.png
-NormalFileUV=0 0 430 54
-
-[CTRL_TEXT_ITEM_NAME2]
-Type=4
-Tag=20
-Rect=295 875 107 28
-AnchorPos=0 0
-Notes=
-TextSize=16
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_ITEM2]
-Type=1
-Tag=19
-Rect=180 853 70 70
-AnchorPos=0 0
-Notes=
-
-[CTRL_TEXT_ITEM_NAME1]
-Type=4
-Tag=10
-Rect=185 850 100 25
-AnchorPos=0 0
-Notes=
-TextSize=16
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_ITEM1]
-Type=1
-Tag=9
-Rect=81 853 70 70
-AnchorPos=0 0
-Notes=
-
-[CTRL_TEXT_GET_ITEM]
-Type=4
-Tag=8
-Rect=170 832 279 33
-AnchorPos=0 0
-Notes=
-Text=获得
-TextTradition=獲得
-TextSize=24
-TextColor=0xfdfdde
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_GET_MONEY]
-Type=4
-Tag=18
-Rect=373 341 107 32
-AnchorPos=0 0
-Notes=
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_GET_EXP]
-Type=4
-Tag=17
-Rect=373 437 107 32
-AnchorPos=0 0
-Notes=
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_EXP]
-Type=4
-Tag=6
-Rect=161 441 100 25
-AnchorPos=0 0
-Notes=
-Text=获得经验
-TextTradition=獲得經驗
-TextSize=24
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_REWARD]
-Type=4
-Tag=5
-Rect=200 341 97 33
-AnchorPos=0 0
-Notes=
-Text=获得金币
-TextTradition=獲得金幣
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_STAR3]
-Type=1
-Tag=16
-Rect=583 846 36 36
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_STAR2]
-Type=1
-Tag=15
-Rect=541 846 36 36
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_STAR1]
-Type=1
-Tag=14
-Rect=493 847 34 34
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\star.png
-NormalFileUV=0 0 36 36
-
-[CTRL_PICTURE_21]
+[CTRL_PICTURE_REWARD_TEXT_BG]
 Type=1
 Tag=23
-Rect=0 163 279 68
+Rect=0 171 279 68
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_DIFF]
-Type=1
-Tag=13
-Rect=22 792 98 56
+[CTRL_TEXT_STAR]
+Type=4
+Tag=4
+Rect=17 182 155 41
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\easy.png
-NormalFileUV=0 0 98 56
+Text=任务奖励
+TextTradition=任務獎勵
+TextSize=35
+TextColor=0xfefd92
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_CHAPTER]
 Type=4
 Tag=3
-Rect=220 242 201 31
+Rect=220 250 201 31
 AnchorPos=0 0
 Notes=
 Text=章节
@@ -194,7 +62,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_MISSION_NAME]
 Type=4
 Tag=2
-Rect=220 282 200 33
+Rect=220 290 200 33
 AnchorPos=0 0
 Notes=
 Text=任务名称
@@ -204,69 +72,50 @@ TextColor=0xfdfdde
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_HRED_RESULT]
-Type=1
-Tag=12
-Rect=21 838 572 96
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\quest\you-lost.png
-NormalFileUV=0 0 572 96
-
-[CTRL_PICTURE_25]
-Type=1
-Tag=26
-Rect=325 837 107 107
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_26]
-Type=1
-Tag=27
-Rect=454 841 107 107
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
-
-[CTRL_TEXT_STAR]
-Type=4
-Tag=4
-Rect=17 174 155 41
-AnchorPos=0 0
-Notes=
-Text=任务奖励
-TextTradition=任務獎勵
-TextSize=35
-TextColor=0xfefd92
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_28]
+[CTRL_PICTURE_MONEY]
 Type=1
 Tag=29
-Rect=161 341 32 32
+Rect=161 349 32 32
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\money.png
 NormalFileUV=0 0 32 32
 
-[CTRL_PICTURE_29]
+[CTRL_TEXT_MONEY]
+Type=4
+Tag=5
+Rect=200 349 97 33
+AnchorPos=0 0
+Notes=
+Text=获得金币
+TextTradition=獲得金幣
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_MONEY_V]
+Type=4
+Tag=18
+Rect=373 349 107 32
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_GHO]
 Type=1
 Tag=30
-Rect=156 383 43 43
+Rect=156 391 43 43
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\karma_thum.png
 NormalFileUV=0 0 102 102
 
-[CTRL_TEXT_29]
+[CTRL_TEXT_SOUL]
 Type=4
 Tag=31
-Rect=202 388 97 33
+Rect=202 396 97 33
 AnchorPos=0 0
 Notes=
 Text=获得魂
@@ -275,10 +124,32 @@ TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_SOUL]
+[CTRL_TEXT_SOUL_V]
 Type=4
 Tag=32
-Rect=373 388 107 32
+Rect=373 396 107 32
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=6
+Rect=161 449 100 25
+AnchorPos=0 0
+Notes=
+Text=获得经验
+TextTradition=獲得經驗
+TextSize=24
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_EXP_V]
+Type=4
+Tag=17
+Rect=373 445 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -288,10 +159,10 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_EXP]
 Type=9
 Tag=33
-Rect=160 483 324 34
+Rect=160 491 324 34
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
@@ -300,61 +171,51 @@ NormalFileUV=0 0 176 28
 [CTRL_PICTURE_32]
 Type=1
 Tag=34
-Rect=167 487 310 27
+Rect=167 495 310 27
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
 NormalFileUV=0 0 176 28
 
-[CTRL_TEXT_33]
+[CTRL_TEXT_EXP_UP]
 Type=4
 Tag=35
-Rect=161 529 100 25
+Rect=161 537 194 25
 AnchorPos=0 0
 Notes=
-Text=获得经验
-TextTradition=獲得經驗
+Text=距离下一等级经验
+TextTradition=距離下一等級經驗
 TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_EXPNEXT]
+[CTRL_TEXT_NEED_EXP_V]
 Type=4
 Tag=36
-Rect=373 525 107 32
+Rect=373 533 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_35]
-Type=4
-Tag=37
-Rect=186 858 100 25
-AnchorPos=0 0
-Notes=
-TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_36]
 Type=1
 Tag=38
-Rect=5 566 279 68
+Rect=5 574 279 68
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_TEXT_37]
+[CTRL_TEXT_ITEM]
 Type=4
 Tag=39
-Rect=27 578 155 41
+Rect=27 586 155 41
 AnchorPos=0 0
 Notes=
-Text=任务奖励
-TextTradition=任務獎勵
+Text=获得素材
+TextTradition=獲得素材
 TextSize=35
 TextColor=0xfefd92
 TextHorAlign=AlignLeft
@@ -363,6 +224,6 @@ TextVerAlign=AlignVerCenter
 [CTRL_VERTICAL_LIST_ITEMANDCHA]
 Type=14
 Tag=40
-Rect=22 647 604 311
+Rect=22 655 604 300
 AnchorPos=0 0
 Notes=

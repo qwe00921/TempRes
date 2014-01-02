@@ -1,54 +1,28 @@
 CARD_BAG_SORT_BY_LEVEL	= 1001;
 CARD_BAG_SORT_BY_STAR	= 1002;
-CARD_BAG_SORT_BY_TIME = 1003;
-
-PROFESSION_TYPE_0 = 2000
-PROFESSION_TYPE_1 = 2001;
-PROFESSION_TYPE_2 = 2002;
-PROFESSION_TYPE_3 = 2003;
-PROFESSION_TYPE_4 = 2004;
-PROFESSION_TYPE_5 = 2005;
+CARD_BAG_SORT_BY_TYPE = 1003;
+CARD_BAG_SORT_BY_TIME = 1004;
 
 MARK_ON = 100;
 MARK_OFF = nil;
 
-card_bag_mian  = {}
+card_bag_mian = {}
 local p = card_bag_mian;
-local ui = ui_card_main_view;
+local ui = ui_card_main_view
 local ui_list = ui_card_list_view;
-local cardNumLimit = nil
-p.allCardNumber = nil;
-
-p.layer 		= nil;
-p.cardListInfo 	= nil;
-p.curBtnNode 	= nil;
-p.sortByRuleV 	= nil;
-p.sortBtnMark 	= MARK_OFF;		--按规则排序是否开启
+p.layer = nil;
+p.allCardNumber = nil;		--所有卡牌数量
+p.cardListInfo = nil;		--卡牌列表
+p.cardListNode = {};		--所有卡牌节点列表
+p.sortByRuleV 	= nil;		--按什么规则排列
+p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
 p.BatchSellMark = MARK_OFF;		--批量出售是否开启
 p.allCardPrice 	= 0;	--出售卡牌总价值
-p.sellCardList 	= {};	--出售卡牌列表
+--p.sellCardList 	= {};	--出售卡牌列表
+p.sellCardNodeList = {}	--出售卡牌节点列表
+p.node = nil;
 
-p.modifyTeam = false;
-p.mainUIFlag = false;
-
-p.showCardType = PROFESSION_TYPE_0;
-
-function p.ShowUI( bModify , mainUIFlag )
-	cardNumLimit = msg_cache.msg_player.CardMax
-	WriteCon("cardNumLimit========="..cardNumLimit);
-	
-
-	if bModify ~= nil then
-		p.modifyTeam = bModify;
-	else
-		dlg_menu.SetNewUI( p );
-	end
-
-	if mainUIFlag ~= nil then
-		p.mainUIFlag = mainUIFlag;
-		dlg_menu.SetNewUI( p );
-	end
-	
+function p.ShowUI()
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -60,18 +34,24 @@ function p.ShowUI( bModify , mainUIFlag )
 
 	layer:NoMask();
     layer:Init();   
-	layer:SetSwallowTouch(false);
+	--layer:SetSwallowTouch(false);
 	
     GetUIRoot():AddDlg(layer);
     LoadDlg("card_main_view.xui", layer, nil);
-
     p.layer = layer;
     p.SetDelegate(layer);
-	
 	p.layer:SetVisible( true );
+	p.Init();
+end
+
+function p.Init()
+	cardNumLimit = msg_cache.msg_player.CardMax
+	WriteCon("cardNumLimit========="..cardNumLimit);
 	
+	local headText = GetLabel(p.layer,ui.ID_CTRL_TEXT_87 );
+	local cardNum = GetLabel(p.layer,ui.ID_CTRL_TEXT_CARD_NUM );
 	--加载卡牌列表数据
-    card_bag_mgr.LoadAllCard( p.layer );
+	card_bag_mgr.LoadAllCard( p.layer );
 end
 
 function p.SetCardNum(delNum)
@@ -89,7 +69,10 @@ end
 function p.ShowCardList(cardList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
-
+	p.cardListNode = {}
+	p.allCardPrice 	= 0;	--出售卡牌总价值
+	p.sellCardNodeList = {}	--出售卡牌节点列表
+	
 	local cardNumText = GetLabel(p.layer,ui.ID_CTRL_TEXT_CARD_NUM );
 	local cardNum = nil;
 	
@@ -111,10 +94,10 @@ function p.ShowCardList(cardList)
 	end
 	
 	p.cardListInfo = cardList;
-
+	
 	local row = math.ceil(cardNum / 5);
 	WriteCon("row ===== "..row);
-	
+
 	for i = 1, row do
 		local view = createNDUIXView();
 		view:Init();
@@ -136,58 +119,61 @@ function p.ShowCardList(cardList)
 		end
 		list:AddView( view );
 	end
+		
+	if p.BatchSellMark == MARK_ON then
+		p.setTeamCardDisEnable()
+		card_bag_sell.Init()	--初始化出售信息
+	end	
 end
 
 --显示单张卡牌
-function p.ShowCardInfo( view, card, cardIndex )
+function p.ShowCardInfo(view, card, cardIndex)
 	local cardBtn = nil;
 	local cardLevel = nil;
 	local cardTeam = nil;
 	if cardIndex == 1 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
-		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL1;
+		cardLevel = ui_list.ID_CTRL_TEXT_LV1;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
-		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL1;
+		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
-		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL2;
+		cardLevel = ui_list.ID_CTRL_TEXT_LV2;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
-		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL2;
+		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
-		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL3;
+		cardLevel = ui_list.ID_CTRL_TEXT_LV3;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
-		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL3;
+		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
-		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL4;
+		cardLevel = ui_list.ID_CTRL_TEXT_LV4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
-		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL4;
+		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG4;
 	elseif cardIndex == 5 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
-		cardLevel = ui_list.ID_CTRL_TEXT_LEVEL5;
+		cardLevel = ui_list.ID_CTRL_TEXT_LV5;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
-		levelBg = ui_list.ID_CTRL_PICTURE_LEVEL5;	end
+		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG5;
+	end
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
-	--WriteCon("CardID ===== "..cardId);
-	
 	local cardPicTable = SelectRowInner(T_CHAR_RES,"card_id",cardId);
 	if cardPicTable == nil then
 		WriteConErr("cardPicTable error ");
 	end
-	local aniIndex = cardPicTable.card_pic;
+	local aniIndex = cardPicTable.head_pic;
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );
-
 	local cardUniqueId = tonumber(card.UniqueId);
  	--WriteCon("cardUniqueId ===== "..cardUniqueId);
     cardButton:SetId(cardUniqueId);
-
+	--等级
 	local cardLevelText = GetLabel(view,cardLevel );
 	local levelText = "LV "..tostring(card.Level)
 	cardLevelText:SetText(levelText);
-	
+	--队伍
 	local cardTeamPic = GetImage(view,cardTeam );
 	local teamId = tonumber(card.Team_marks)
 	if teamId == 0 then
@@ -199,43 +185,83 @@ function p.ShowCardInfo( view, card, cardIndex )
 	elseif teamId == 3 then
 		cardTeamPic:SetPicture( GetPictureByAni("common_ui.teamName",2));
 	end
-
-	local levelBgPic = GetImage(view,levelBg);
-	levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
-
+	
+	--卡牌边框颜色
+	local cardBoxPic = GetImage(view,cardBoxBg );
+	local cardType = tonumber(card.Class)
+	--WriteCon("cardType ===== "..cardType);
+	-- if cardType == 0 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- elseif cardType == 1 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- elseif cardType == 2 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- elseif cardType == 3 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- elseif cardType == 4 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- elseif cardType == 5 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- elseif cardType == 6 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- elseif cardType == 7 then
+		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
+	-- end
+	
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
-	p.ClearDelList();
+	--p.ClearDelList();
+	
+	p.cardListNode[#p.cardListNode + 1] = cardButton;
+	
+	-- if p.BatchSellMark == MARK_ON then
+		-- p.setTeamCardDisEnable()
+	-- end	
+
 end
 
---点击卡牌
+--点击卡牌事件
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
-	
-	if p.modifyTeam then
-		if p.mainUIFlag then
-			dlg_battlearray.UpdatePosCard( cardUniqueId );
-		else
-			p.CloseUI();
-			dlg_card_group_main.UpdatePosCard( cardUniqueId );
-		end
-		return;
-	end
-	
+	--出售中
 	if p.BatchSellMark == MARK_ON then
-		local team = nil;
-		for k,v in pairs(p.cardListInfo) do
-			if cardUniqueId == v.UniqueId then
-				team = v.Team_marks
-				break;
+		if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
+			local team = nil;
+			local rareStart = nil;
+			local Item_Id1 = nil;
+			local Item_Id2 = nil;
+			local Item_Id3 = nil;
+			local Gem1 = nil;
+			local Gem2 = nil;
+			local Gem3 = nil;
+			for k,v in pairs(p.cardListInfo) do
+				if cardUniqueId == v.UniqueId then
+					team = v.Team_marks
+					rareStart = v.Rare
+					Item_Id1 = v.Item_Id1;
+					Item_Id2 = v.Item_Id2;
+					Item_Id3 = v.Item_Id3;
+					Gem1 = v.Gem1;
+					Gem2 = v.Gem2;
+					Gem3 = v.Gem3;
+					break;
+				end
 			end
-		end
-		WriteCon("team ===== "..team);
-		if tonumber(team) ~= 0 then
-			dlg_msgbox.ShowOK("确认提示框","队伍中的卡牌无法出售。",nil,p.layer);
-			return
+			--WriteCon("team ===== "..team);
+			if tonumber(team) ~= 0 then
+				dlg_msgbox.ShowOK("确认提示框","队伍中的卡牌无法出售。",nil,p.layer);
+				return
+			elseif tonumber(Item_Id1) > 0 or tonumber(Item_Id2) > 0 or tonumber(Item_Id3) > 0 
+								or tonumber(Gem1) > 0 or tonumber(Gem2) > 0 or tonumber(Gem3) > 0 then
+				dlg_msgbox.ShowOK("确认提示框","此卡牌身上穿有道具，无法卖出",nil,p.layer);
+				return
+			elseif tonumber(rareStart) >= 4 then
+				p.node = uiNode;
+				dlg_msgbox.ShowYesNo("确认提示框","这张卡片为稀有卡片，确定要卖出吗？",p.SelectCardCallback,p.layer);
+				return
+			end
 		end
 		p.ShowSelectPic(uiNode);
 	elseif p.BatchSellMark == MARK_OFF then 
@@ -250,152 +276,166 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	end
 end
 
+function p.SelectCardCallback(result)
+	if result == true then
+		WriteCon("true");
+		p.ShowSelectPic(p.node);
+		p.node = nil;
+	elseif result == false then
+		WriteCon("false");
+	end
+end
+
 function p.ShowSelectPic(uiNode)
-	local cardUniqueId = tostring(uiNode:GetId());
+	local cardUniqueId = tonumber(uiNode:GetId());
 	if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
-		local view = createNDUIXView();
-		view:Init();
-		LoadUI("card_bag_select.xui",view,nil);
-		local bg = GetUiNode( view, ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
-        view:SetViewSize( bg:GetFrameSize());
-		view:SetTag(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
-		uiNode:AddChild( view );
-		p.sellCardList[#p.sellCardList + 1] = cardUniqueId;
+		if #p.sellCardNodeList < 10 then
+			p.sellCardNodeList[#p.sellCardNodeList + 1] = uiNode
+			local sellNum = #p.sellCardNodeList;
+			p.addSellNum(uiNode,sellNum)
+			if #p.sellCardNodeList >= 10 then
+				p.setAllCardDisEnable()
+			end
+		end
 	else
 		WriteCon("RemoveAllChildren");
-		for k,v in pairs(p.sellCardList) do
-			if v == cardUniqueId then
-				table.remove(p.sellCardList,k);
+		for k,v in pairs(p.sellCardNodeList) do
+			if tonumber(cardUniqueId) == v:GetId() then
+				table.remove(p.sellCardNodeList,k);
+				p.refreshSelectNum()
 			end
 		end
 		uiNode:RemoveAllChildren(true);
 	end
+	--设置出售数量
+	card_bag_sell.setSellCardNum(#p.sellCardNodeList)
+	--设置出售金币
+	p.countSellMoney()
 end
+
+function p.countSellMoney()
+	p.allCardPrice = 0;
+	for k,v in pairs(p.sellCardNodeList) do
+		local cardUid = v:GetId()
+		for j,h in pairs(p.cardListInfo) do
+			if cardUid == tonumber(h.UniqueId) then
+				p.allCardPrice = p.allCardPrice + (h.Price + (h.Level)*(h.Level));--卡片基本价格+卡牌当前等级的平方
+			end
+		end
+	end
+	card_bag_sell.setSellMoney(p.allCardPrice);
+end
+
+function p.refreshSelectNum()
+	if #p.sellCardNodeList >= 9 then
+		p.setTeamCardDisEnable()
+	end
+	
+	for k,v in pairs(p.sellCardNodeList) do
+		local sellCardUid = v:GetId()
+		for j,h in pairs(p.cardListNode) do
+			local inAllCardUid = h:GetId()
+			if sellCardUid == inAllCardUid then
+				local sellNum = k;
+				p.addSellNum(v,sellNum)
+			end
+		end
+	end
+end
+
+--设置除选择外的卡牌不可点
+function p.setAllCardDisEnable()
+	for i=1, #p.cardListNode do
+		local uiNode = p.cardListNode[i]
+		if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
+			uiNode:SetEnabled(false)
+		end
+	end
+end
+
+--屏蔽队伍按钮,其他都可点
+function p.setTeamCardDisEnable()
+	for j,h in pairs(p.cardListNode) do 
+		local cardUniqueId = h:GetId();
+		for k,v in pairs(p.cardListInfo) do
+			if tonumber(v.Team_marks) > 0 and tonumber(v.UniqueId) == cardUniqueId then
+				h:SetEnabled(false)
+			elseif tonumber(v.Team_marks) == 0 and  tonumber(v.UniqueId) == cardUniqueId then
+				h:SetEnabled(true)
+			end
+		end
+	end
+
+end
+
+function p.addSellNum(uiNode,num)
+	local view = createNDUIXView();
+	view:Init();
+	LoadUI("card_bag_select.xui",view,nil);
+	local bg = GetUiNode( view, ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
+	view:SetViewSize( bg:GetFrameSize());
+	view:SetTag(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
+	local number = GetLabel(view,ui_card_bag_select.ID_CTRL_TEXT_NUM );
+	number:SetText(tostring(num));
+	uiNode:AddChild( view );
+end
+
 
 --主界面事件处理
 function p.SetDelegate(layer)
-	local retBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
+	local retBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_RETURN);
 	retBtn:SetLuaDelegate(p.OnUIClickEvent);
-	
-	local sellBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SELL);
-	sellBtn:SetLuaDelegate(p.OnUIClickEvent);
-	sellBtn:SetImage( GetPictureByAni("button.sell",0));
-	sellBtn:SetText("批量出售")
-	if p.modifyTeam then
-		sellBtn:SetVisible( false );
-	end
 
-	local cardBtnAll = GetButton(layer, ui.ID_CTRL_BUTTON_ALL);
-	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
-	p.SetBtnCheckedFX( cardBtnAll );
+	local sellBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SELL );
+	sellBtn:SetLuaDelegate(p.OnUIClickEvent);
 	
-	local cardBtnPro1 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO1);
-	cardBtnPro1:SetLuaDelegate(p.OnUIClickEvent);
-	
-	local cardBtnPro2 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO2);
-	cardBtnPro2:SetLuaDelegate(p.OnUIClickEvent);
-	
-	local cardBtnPro3 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO3);
-	cardBtnPro3:SetLuaDelegate(p.OnUIClickEvent);
-	
-	local cardBtnPro4 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO4);
-	cardBtnPro4:SetLuaDelegate(p.OnUIClickEvent);
-	
-	local cardBtnPro5 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO5);
-	cardBtnPro5:SetLuaDelegate(p.OnUIClickEvent);
-	
-	local sortByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT_BY);
-	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
+	local sortBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SORT_BY );
+	sortBtn:SetLuaDelegate(p.OnUIClickEvent);
 end
 
 --事件处理
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_SELL == tag) then --批量卖出
-			p.sellBtnEvent();
-		elseif(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
+		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
-		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
-			WriteCon("=====allCardBtn");
-			p.SetBtnCheckedFX( uiNode );
-			p.showCardType = PROFESSION_TYPE_0;
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_0);
-		elseif(ui.ID_CTRL_BUTTON_PRO1 == tag) then --职业1
-			WriteCon("=====cardBtnPro1");
-			p.SetBtnCheckedFX( uiNode );
-			p.showCardType = PROFESSION_TYPE_1;
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_1);
-		elseif(ui.ID_CTRL_BUTTON_PRO2 == tag) then --职业2
-			WriteCon("=====cardBtnPro2");
-			p.SetBtnCheckedFX( uiNode );
-			p.showCardType = PROFESSION_TYPE_2;
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_2);
-		elseif(ui.ID_CTRL_BUTTON_PRO3 == tag) then --职业3
-			WriteCon("=====cardBtnPro3");
-			p.SetBtnCheckedFX( uiNode );
-			p.showCardType = PROFESSION_TYPE_3;
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_3);
-		elseif(ui.ID_CTRL_BUTTON_PRO4 == tag) then --职业4
-			WriteCon("=====cardBtnPro4");
-			p.SetBtnCheckedFX( uiNode );
-			p.showCardType = PROFESSION_TYPE_4;
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_4);
-		elseif(ui.ID_CTRL_BUTTON_PRO5 == tag) then --职业5
-			WriteCon("=====cardBtnPro5");
-			p.SetBtnCheckedFX( uiNode );
-			p.showCardType = PROFESSION_TYPE_5;
-			card_bag_mgr.ShowCardByProfession(PROFESSION_TYPE_5);
-		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
+		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then
 			WriteCon("card_bag_sort.ShowUI()");
-			--p.ClearDelList()
 			if p.sortBtnMark == MARK_OFF then
 				card_bag_sort.ShowUI(0);
 			else
 				p.sortBtnMark = MARK_OFF;
 				card_bag_sort.CloseUI();
 			end
+		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then
+			p.sellBtnEvent();
 		end
 	end
 end
---点击批量按钮事件
+
+--点击批量出售事件
 function p.sellBtnEvent()
 	local btn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SELL);
+	--btn:SetEnabled(false)
 	if p.BatchSellMark == MARK_OFF then
 		p.BatchSellMark = MARK_ON;
-		btn:SetImage( GetPictureByAni("button.sell",1));
-		btn:SetText("确认出售")
+		btn:SetText("取消");
+		card_bag_sell.ShowUI();
+		p.setTeamCardDisEnable()
+		
 	elseif p.BatchSellMark == MARK_ON then
-		if #p.sellCardList <= 0 then
-			dlg_msgbox.ShowOK("确认提示框","请选择您要出售的卡片",nil,p.layer);
-		else
-			for i=1,#p.sellCardList do
-				for j=1, #p.cardListInfo do
-					if tonumber(p.sellCardList[i]) == p.cardListInfo[j].UniqueId then
-						p.allCardPrice = p.allCardPrice + p.cardListInfo[j].Price * (1 + p.cardListInfo[j].Level/100 * 2);
-					end
-				end
-			end
-			dlg_msgbox.ShowYesNo("确认提示框","这些卡牌卖出的价格是："..tostring(p.allCardPrice).."金币，你确定要卖出这些卡牌吗？",p.OnMsgBoxCallback,p.layer);
-		end
+		p.BatchSellMark = MARK_OFF
+		p.allCardPrice 	= 0;	--出售卡牌总价值
+		p.sellCardNodeList 	= {};	--出售卡牌列表
+		btn:SetText("卖出");
+		card_bag_sell.CloseUI() 
+		p.ShowCardList(p.cardListInfo)
 	end
 end
 
---确认或取消出售
-function p.OnMsgBoxCallback(result)
-	if result == true then
-		WriteCon("true");
-		p.allCardPrice = 0;
-		card_bag_mgr.SendDelRequest(p.sellCardList);
-	elseif result == false then
-		WriteCon("false");
-		p.allCardPrice = 0;
-	end
-end
-
---按规则排序按钮
+--安规则排序按钮
 function p.sortByBtnEvent(sortType)
 	if sortType == nil then
 		return
@@ -405,65 +445,78 @@ function p.sortByBtnEvent(sortType)
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
-		sortByBtn:SetText("等级排序");
+		sortByBtn:SetText("等级");
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		sortByBtn:SetText("星级排序");
-	elseif(sortType == CARD_BAG_SORT_BY_TIME) then 
+		sortByBtn:SetText("星级");
+	elseif(sortType == CARD_BAG_SORT_BY_TYPE) then 
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
-		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
-		sortByBtn:SetText("入手时间");
+		p.sortByRuleV = CARD_BAG_SORT_BY_TYPE;
+		sortByBtn:SetText("属性");
 	end
 	card_bag_mgr.sortByRule(sortType)
-end 
+end
 
---设置选中按钮
-function p.SetBtnCheckedFX( node )
-    local btnNode = ConverToButton( node );
-    if p.curBtnNode ~= nil then
-    	p.curBtnNode:SetChecked( false );
-    end
-	btnNode:SetChecked( true );
-	p.curBtnNode = btnNode;
-	card_bag_sort.CloseUI();
-	p.ClearDelList()
+--点击出售按钮
+function p.sellCardClick()
+	WriteCon("sellCardClick()");
+	if p.sellCardNodeList == nil or #p.sellCardNodeList <= 0 then
+		dlg_msgbox.ShowOK("确认提示框","请选择您要出售的卡片",nil,p.layer);
+	else
+		dlg_msgbox.ShowYesNo("确认提示框","你确定要卖出这些卡牌吗？",p.OnMsgBoxCallback,p.layer);
+	end
 end
-function p.HideUI()
-    if p.layer ~= nil then
-        p.layer:SetVisible( false );
-    end
+
+--确认或取消出售
+function p.OnMsgBoxCallback(result)
+	if result == true then
+		WriteCon("true");
+		local sellCardList = {}
+		for k,v in pairs(p.sellCardNodeList) do
+			sellCardList[#sellCardList + 1] = v:GetId()
+		end
+		card_bag_mgr.SendDelRequest(sellCardList);
+	elseif result == false then
+		WriteCon("false");
+	end
 end
+
+--点击清除选择
+function p.clearSellClick()
+	WriteCon("clearSellClick()");
+	for k,v in pairs(p.sellCardNodeList) do
+		v:RemoveAllChildren(true);
+	end
+	p.sellCardNodeList = {}	
+	p.setTeamCardDisEnable()
+	card_bag_sell.Init()
+end
+
+
 
 function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
-		p.modifyTeam = false;
-		p.mainUIFlag = false;
+		-- p.modifyTeam = false;
+		-- p.mainUIFlag = false;
 		
 		p.ClearData()
         card_bag_mgr.ClearData();
 		card_bag_sort.CloseUI();
+		card_bag_sell.CloseUI()
     end
 end
 
 function p.ClearData()
-	p.cardListInfo = nil;
-	p.curBtnNode = nil;
-	p.sortByRuleV = nil;
-	p.sortBtnMark = MARK_OFF;
-	p.BatchSellMark = MARK_OFF;
-	p.allCardPrice = 0;
-	p.sellCardList = {};
-	p.allCardNumber = nil;
-end
-
-function p.ClearDelList()
-	p.allCardPrice = 0;
-	p.sellCardList = {};
-end
-
-function p.UIDisappear()
-	p.CloseUI();
+	p.allCardNumber = nil;		--所有卡牌数量
+	p.cardListInfo = nil;		--卡牌列表
+	p.cardListNode = {};		--所有卡牌节点列表
+	p.sortByRuleV 	= nil;		--按什么规则排列
+	p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
+	p.BatchSellMark = MARK_OFF;		--批量出售是否开启
+	p.allCardPrice 	= 0;	--出售卡牌总价值
+	p.sellCardNodeList = {}	--出售卡牌节点列表
+	p.node = nil;
 end
