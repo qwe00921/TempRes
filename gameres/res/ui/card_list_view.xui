@@ -1,20 +1,20 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=960
 
 [CTRL_PICTURE_13]
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 4 638 183
+Rect=0 0 636 130
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_ITEM5]
 Type=2
 Tag=81
-Rect=506 10 116 175
+Rect=510 5 108 108
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -25,7 +25,7 @@ Remark=物品4
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=63
-Rect=383 10 116 175
+Rect=387 5 108 108
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -36,7 +36,7 @@ Remark=物品4
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=62
-Rect=261 10 116 175
+Rect=264 5 108 108
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -47,7 +47,7 @@ Remark=物品3
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=61
-Rect=139 10 116 175
+Rect=141 5 108 108
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -58,7 +58,7 @@ Remark=物品2
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=59
-Rect=17 10 116 175
+Rect=18 5 108 108
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -66,129 +66,147 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
 
-[CTRL_PICTURE_LEVEL5]
+[CTRL_PICTURE_BG1]
 Type=1
-Tag=83
-Rect=508 11 39 18
+Tag=92
+Rect=18 5 108 108
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_LEVEL4]
+[CTRL_PICTURE_BG2]
 Type=1
-Tag=33
-Rect=383 11 39 18
+Tag=93
+Rect=141 5 108 108
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_LEVEL3]
+[CTRL_PICTURE_BG3]
 Type=1
-Tag=32
-Rect=262 11 39 18
+Tag=94
+Rect=264 5 108 108
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_LEVEL2]
+[CTRL_PICTURE_BG4]
 Type=1
-Tag=31
-Rect=141 12 39 18
+Tag=95
+Rect=387 5 108 108
 AnchorPos=0 0
 Notes=
 
-[CTRL_PICTURE_LEVEL1]
+[CTRL_PICTURE_BG5]
 Type=1
-Tag=30
-Rect=20 12 39 18
+Tag=96
+Rect=510 5 108 108
 AnchorPos=0 0
 Notes=
 
-[CTRL_TEXT_LEVEL1]
+[CTRL_TEXT_LV1]
 Type=4
-Tag=16
-Rect=18 12 39 18
+Tag=22
+Rect=21 101 101 25
 AnchorPos=0 0
 Notes=
-Text=LV99
-TextTradition=LV99
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignLeft
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEVEL2]
+[CTRL_TEXT_LV2]
 Type=4
-Tag=17
-Rect=142 12 39 18
+Tag=23
+Rect=144 101 101 25
 AnchorPos=0 0
 Notes=
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignLeft
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEVEL3]
+[CTRL_TEXT_LV3]
 Type=4
-Tag=18
-Rect=263 11 39 18
+Tag=24
+Rect=267 101 101 25
 AnchorPos=0 0
 Notes=
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignLeft
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEVEL4]
+[CTRL_TEXT_LV4]
 Type=4
-Tag=19
-Rect=384 11 39 18
+Tag=25
+Rect=390 101 101 25
 AnchorPos=0 0
 Notes=
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignLeft
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_LEVEL5]
+[CTRL_TEXT_LV5]
 Type=4
-Tag=84
-Rect=508 11 39 18
+Tag=26
+Rect=513 101 101 25
 AnchorPos=0 0
 Notes=
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignLeft
+Text=LV 99
+TextTradition=LV 99
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_TEAM1]
 Type=1
-Tag=20
-Rect=65 11 67 24
+Tag=27
+Rect=73 3 59 26
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM2]
 Type=1
-Tag=21
-Rect=187 11 67 24
+Tag=28
+Rect=196 3 59 26
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM3]
 Type=1
-Tag=22
-Rect=309 11 67 24
+Tag=29
+Rect=319 3 59 26
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM4]
 Type=1
-Tag=23
-Rect=431 11 67 24
+Tag=30
+Rect=442 3 59 26
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM5]
 Type=1
-Tag=85
-Rect=554 11 67 24
+Tag=31
+Rect=565 3 59 26
 AnchorPos=0 0
 Notes=
+NormalFile=.\res\image\ui\public\team1.png
+NormalFileUV=0 0 110 50

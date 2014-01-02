@@ -3,185 +3,117 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_BG]
+[CTRL_PICTURE_168]
 Type=1
-Tag=27
-Rect=0 0 640 870
+Tag=168
+Rect=0 165 640 750
 AnchorPos=0 0
 Notes=
-Stretch=1
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
-
-[CTRL_BUTTON_SELL]
-Type=2
-Tag=20
-Rect=-9 9 151 60
-AnchorPos=0 0
-Notes=
-TextSize=24
-TextColor=0xff00
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card\sellall.png
-NormalFileUV=0 0 202 80
-SelectFile=.\res\image\ui\card\sellall_click.png
-SelectedFileUV=0 0 202 80
-
-[CTRL_PICTURE_HEAD]
-Type=1
-Tag=21
-Rect=136 0 368 84
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg_title.png
-NormalFileUV=0 0 368 84
 
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=539 1 100 98
+Rect=0 163 100 68
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=返回
+TextTradition=返回
+TextSize=24
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
 
-[CTRL_BUTTON_ALL]
+[CTRL_PICTURE_86]
+Type=1
+Tag=86
+Rect=100 164 208 68
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\card2.png
+NormalFileUV=0 0 192 108
+
+[CTRL_TEXT_87]
+Type=4
+Tag=87
+Rect=112 172 180 50
+AnchorPos=0 0
+Notes=
+Text=卡牌一览
+TextTradition=卡牌一覽
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_92]
+Type=1
+Tag=92
+Rect=318 165 107 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\card\card2.png
+NormalFileUV=0 0 192 108
+
+[CTRL_TEXT_94]
+Type=4
+Tag=94
+Rect=324 168 96 24
+AnchorPos=0 0
+Notes=
+Text=伙伴栏
+TextTradition=伙伴欄
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_91]
+Type=1
+Tag=91
+Rect=317 199 107 30
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_TEXT_CARD_NUM]
+Type=4
+Tag=38
+Rect=325 202 90 22
+AnchorPos=0 0
+Notes=
+Text=99/99
+TextTradition=99/99
+TextSize=24
+TextColor=0xe3dca1
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_SELL]
 Type=2
-Tag=24
-Rect=6 121 104 78
+Tag=20
+Rect=432 163 100 68
 AnchorPos=0 0
 Notes=
-Text=全部
-TextTradition=全部
-TextSize=28
-TextColor=0xece39d
+Text=卖出
+TextTradition=賣出
+TextSize=24
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-
-[CTRL_BUTTON_PRO1]
-Type=2
-Tag=25
-Rect=110 121 104 78
-AnchorPos=0 0
-Notes=
-Text=战灵星
-TextTradition=戰靈星
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-
-[CTRL_BUTTON_PRO2]
-Type=2
-Tag=26
-Rect=214 121 104 78
-AnchorPos=0 0
-Notes=
-Text=御灵星
-TextTradition=御靈星
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-
-[CTRL_BUTTON_PRO3]
-Type=2
-Tag=28
-Rect=318 121 104 78
-AnchorPos=0 0
-Notes=
-Text=射灵星
-TextTradition=射靈星
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-
-[CTRL_BUTTON_PRO4]
-Type=2
-Tag=29
-Rect=423 121 104 78
-AnchorPos=0 0
-Notes=
-Text=术灵星
-TextTradition=術靈星
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-
-[CTRL_BUTTON_PRO5]
-Type=2
-Tag=15
-Rect=528 121 104 78
-AnchorPos=0 0
-Notes=
-Text=牧灵星
-TextTradition=牧靈星
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-
-[CTRL_9SLICES_14]
-Type=22
-Tag=14
-Rect=1 198 636 670
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_frame2.png
-NormalFileUV=0 0 640 376
-
-[CTRL_9SLICES_16]
-Type=22
-Tag=16
-Rect=268 219 122 44
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_txt.png
-NormalFileUV=0 0 122 38
-
-[CTRL_VERTICAL_LIST_VIEW]
-Type=14
-Tag=31
-Rect=-2 283 620 576
-AnchorPos=0 0
-Notes=
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\card\sellall_click.png
+SelectedFileUV=0 0 202 80
 
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=502 215 120 54
+Rect=537 163 100 68
 AnchorPos=0 0
 Notes=
 Text=排序
@@ -190,34 +122,12 @@ TextSize=24
 TextColor=0xd3cf9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
 
-[CTRL_TEXT_CARD_NUM]
-Type=4
-Tag=38
-Rect=276 224 107 33
+[CTRL_VERTICAL_LIST_VIEW]
+Type=14
+Tag=31
+Rect=5 240 628 512
 AnchorPos=0 0
 Notes=
-TextSize=24
-TextColor=0xe3dca1
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_53]
-Type=1
-Tag=53
-Rect=244 12 86 54
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\text_cardgroup.png
-NormalFileUV=0 0 86 54
-
-[CTRL_PICTURE_54]
-Type=1
-Tag=54
-Rect=313 14 84 52
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\text_bag.png
-NormalFileUV=0 0 86 54

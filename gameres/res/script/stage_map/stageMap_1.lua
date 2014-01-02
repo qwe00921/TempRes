@@ -3,7 +3,7 @@ local p = stageMap_1;
 
 
 function p.OpenStageMap()
-    WriteCon("show stageMap_1");
+    WriteCon("show 3");
 	p.RegEvent();
 	GetTileMapMgr():OpenMapWorld( "test_world_map1.tmx", true );
 end

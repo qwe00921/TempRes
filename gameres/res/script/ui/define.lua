@@ -43,6 +43,7 @@ DoFile("ui/ui_card_main_view.lua")
 DoFile("ui/ui_card_list_view.lua")
 DoFile("ui/ui_card_bag_sort_view.lua")
 DoFile("ui/ui_card_bag_select.lua")
+DoFile("ui/ui_card_bag_sell_veiw.lua")
 
 --加载所有UI
 DoFile("ui/ui_battle_boss.lua")

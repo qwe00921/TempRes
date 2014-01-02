@@ -142,8 +142,10 @@ function p.RefreshUI(userinfo)
 end
 
 function p.SetDelegate()
+	--[[
 	local addEmoney = GetButton( p.layer, ui.ID_CTRL_BUTTON_ADD_EMONEY );
 	addEmoney:SetLuaDelegate( p.OnBtnClick );
+	--]]
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)

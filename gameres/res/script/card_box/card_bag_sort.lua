@@ -38,8 +38,8 @@ function p.SetDelegate()
 	local byStarBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SORT_STAR );
 	byStarBtn:SetLuaDelegate( p.OnBtnClick );
 
-	local byItemBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SOTR_ITEM );
-	byItemBtn:SetLuaDelegate( p.OnBtnClick );
+	local byTypeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SOTR_ITEM );
+	byTypeBtn:SetLuaDelegate( p.OnBtnClick );
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
@@ -63,13 +63,13 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			end
 		elseif ui.ID_CTRL_BUTTON_SOTR_ITEM == tag then
-			WriteCon("**========byItemBtn========**");
-			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+			WriteCon("**========byTypeBtn========**");
+			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			
 			if p.id == 0 then
-				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			elseif p.id == 1 then
-				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			end
 		end
 		p.CloseUI();

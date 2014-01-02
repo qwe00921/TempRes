@@ -52,6 +52,25 @@ image\ui\gacha\gacha_ad03.png
 image\ui\gacha\gacha_ad04.png
 image\ui\gacha\gacha_ad05.png
 
+;¿¨ÅÆĞÇ¼¶
+[card_star]
+image\ui\public\star1.png
+image\ui\public\star2.png
+image\ui\public\star3.png
+image\ui\public\star4.png
+image\ui\public\star5.png
+image\ui\public\star6.png
+image\ui\public\star7.png
+
+;¿¨ÅÆÊôĞÔ
+[card_nature]
+image\ui\n_battle\nature1.png
+image\ui\n_battle\nature2.png
+image\ui\n_battle\nature3.png
+image\ui\n_battle\nature4.png
+image\ui\n_battle\nature5.png
+image\ui\n_battle\nature6.png
+
 [map_lock]
 \image\ui\word_map\lock.png @cut(1,1) @scale=0.2 @loop
 

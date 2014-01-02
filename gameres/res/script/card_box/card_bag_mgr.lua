@@ -25,8 +25,9 @@ function p.RefreshUI(self)
 	
 	if self.result == true then
 		local cardList = self.cardlist
-		card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
-		table.sort(cardList,p.sortByLevel);
+		card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_TIME;
+		WriteCon("========sort by time");
+		table.sort(cardList,p.sortByTime);
 		p.cardList = cardList;
 		p.cardListByProf = cardList;
 		card_bag_mian.ShowCardList(cardList);
@@ -167,6 +168,9 @@ function p.sortByRule(sortType)
 	elseif sortType == CARD_BAG_SORT_BY_STAR then
 		WriteCon("========sort by star");
 		table.sort(p.cardListByProf,p.sortByStar);
+	elseif sortType == CARD_BAG_SORT_BY_TYPE then
+		WriteCon("========sort by type");
+		table.sort(p.cardListByProf,p.sortByType);
 	elseif sortType == CARD_BAG_SORT_BY_TIME then
 		WriteCon("========sort by time");
 		table.sort(p.cardListByProf,p.sortByTime);
@@ -182,8 +186,12 @@ end
 function p.sortByStar(a,b)
 	return tonumber(a.Rare) < tonumber(b.Rare);
 end
---按时间排序
+--按属性排序
 function p.sortByTime(a,b)
+	return tonumber(a.Class) < tonumber(b.Class);
+end
+--按时间排序
+function p.sortByType(a,b)
 	return tonumber(a.Time) < tonumber(b.Time);
 end
 
