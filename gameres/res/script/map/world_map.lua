@@ -36,10 +36,10 @@ end
 
 --注册地图事件
 function p.RegEvent()
-	RegTileMapCallBack( "click_empty", 	    p.OnClickEmpty );
-	RegTileMapCallBack( "click_obj", 	    p.OnClickObj );
+	RegTileMapCallBack( "click_empty", 		 p.OnClickEmpty );
+	RegTileMapCallBack( "click_obj", 		 p.OnClickObj );
 	RegTileMapCallBack( "loadmap_begin",    p.OnLoadMapBegin );
-	RegTileMapCallBack( "loadmap_end", 	    p.OnLoadMapEnd );
+	RegTileMapCallBack( "loadmap_end", 		 p.OnLoadMapEnd );
 	RegTileMapCallBack( "player_jump_done", nil );
 end
 
@@ -76,7 +76,7 @@ function p.OnClickObj( tileObj, isTouchDown, objType, tileX, tileY )
             -- p.stopActionObj = nil;
             -- local travelId = GetTravelId( chapterId, stageMaps[1].id );
             -- local mapName = GetMapName( travelId );
-		    -- dlg_dungeon_enter.ShowUI( mapName, chapterId, stageMaps[1].id, chapterType );
+			 -- dlg_dungeon_enter.ShowUI( mapName, chapterId, stageMaps[1].id, chapterType );
 		-- else
             -- dlg_stage_map.ShowUI( tileObj, stageMaps );
             -- p.DelEffect( tileObj );
@@ -107,7 +107,7 @@ end
 
 -- 获取世界地图数据
 function p.getWordMapData()
-    ShowLoading( true );
+	ShowLoading( true );
 	local user_id = GetUID();
 	SendReq( "Mission","GetUserMissionProgress",user_id,"" );
 end
@@ -133,15 +133,15 @@ function p.AddAllChapters()
 	local chapters = SelectRowList( T_CHAPTER_MAP );
 	local position = 
 	{
-	   {x=26,  y=9, offsetX=-14, offsetY=-6},
-	   {x=34,  y=10, offsetX=-5,  offsetY=-25}, 
-	   {x=20,  y=23, offsetX=-3,  offsetY=-18}, 
-	   {x=35, y=24, offsetX=-5,  offsetY=25}, 
-	   {x=30,  y=17, offsetX=5,   offsetY=-27}, 
-	   {x=48, y=27, offsetX=1,   offsetY=-12},
-	   
-	   {x=46,  y=13, offsetX=-30, offsetY=-50},
-	   {x=31, y=18, offsetX=15,  offsetY=-10}, 
+		{x=26,  y=9, offsetX=-14, offsetY=-6},
+		{x=34,  y=10, offsetX=-5,  offsetY=-25}, 
+		{x=20,  y=23, offsetX=-3,  offsetY=-18}, 
+		{x=35, y=24, offsetX=-5,  offsetY=25}, 
+		{x=30,  y=17, offsetX=5,   offsetY=-27}, 
+		{x=48, y=27, offsetX=1,   offsetY=-12},
+
+		{x=46,  y=13, offsetX=-30, offsetY=-50},
+		{x=31, y=18, offsetX=15,  offsetY=-10}, 
 	};
 	
 	for i=1, #chapters do
@@ -259,11 +259,11 @@ end
 --判断用户是否完成某旅行地图
 function p.isTravelFinish( travelId )
 	if p.userFinishMissions ~= nil then
-	   for k, v in ipairs(p.userFinishMissions) do
-	       if tonumber( v.travel_id ) == travelId and tonumber( v.finish ) == 1 then
-	           return true;
-	       end
-	   end
+		for k, v in ipairs(p.userFinishMissions) do
+		    if tonumber( v.travel_id ) == travelId and tonumber( v.finish ) == 1 then
+		        return true;
+		    end
+		end
 	end
 	return false;
 end

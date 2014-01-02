@@ -104,17 +104,17 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			stageMap_1.OpenStageMap();
 		elseif (ui.ID_CTRL_BTN_EAYE_7 == tag) then
 			WriteCon("easy");
-            p.SetBtnCheckedFX( uiNode );
+			p.SetBtnCheckedFX( uiNode );
 			local missionStartId = p.missionId;
 			p.loadMissionList(missionStartId,num_easy);
 		elseif (ui.ID_CTRL_BTN_NORMAL_8 == tag) then
 			WriteCon("normal");
-            p.SetBtnCheckedFX( uiNode );
+			p.SetBtnCheckedFX( uiNode );
 			local missionStartId = p.missionId + 1;
 			p.loadMissionList(missionStartId,num_normal);
 		elseif (ui.ID_CTRL_BTN_HARD_9 == tag) then
 			WriteCon("hard");
-            p.SetBtnCheckedFX( uiNode );
+			p.SetBtnCheckedFX( uiNode );
 			local missionStartId = p.missionId + 2;
 			p.loadMissionList(missionStartId,num_difficult);
 		end
@@ -144,17 +144,18 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 		--n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
 		local id = btnId;
 		
+		maininterface.m_bgImage:SetVisible(false);
 		if p.missionList["M"..btnId] then
 			local storyId = p.missionList["M"..btnId].Begin_story;
 			WriteCon("storyId = "..storyId);
 			if tonumber(storyId) ~= 0 then
 				dlg_drama.ShowUI( id , storyId);
 			else
-			   if E_DEMO_VER == 4 then
-				n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
-			   else	
-				w_battle_mgr.EnterBattle( W_BATTLE_PVE, btnId );--进入战斗PVE
-			   end;
+				if E_DEMO_VER == 4 then
+					n_battle_mgr.EnterBattle( N_BATTLE_PVE, btnId );--进入战斗PVE
+				else
+					w_battle_mgr.EnterBattle( W_BATTLE_PVE, btnId );--进入战斗PVE
+				end;
 			end
 		else
 			if E_DEMO_VER== 4 then
@@ -168,12 +169,12 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 end
 
 function p.SetBtnCheckedFX( node )
-    local btnNode = ConverToButton( node );
-    if p.curBtnNode ~= nil then
-        p.curBtnNode:SetChecked( false );
-    end
-    btnNode:SetChecked( true );
-    p.curBtnNode = btnNode;
+	local btnNode = ConverToButton( node );
+	if p.curBtnNode ~= nil then
+		p.curBtnNode:SetChecked( false );
+	end
+	btnNode:SetChecked( true );
+	p.curBtnNode = btnNode;
 end
 
 --显示列表

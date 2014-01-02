@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -39,7 +39,7 @@ SelectedFileUV=0 0 68 68
 [CTRL_VERTICAL_LIST_5]
 Type=14
 Tag=5
-Rect=2 100 636 960
+Rect=1 70 636 960
 AnchorPos=0 0
 Notes=
 
@@ -60,7 +60,7 @@ Stretch=1
 [CTRL_BTN_EAYE_7]
 Type=2
 Tag=7
-Rect=522 192 98 56
+Rect=501 42 98 56
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -76,7 +76,7 @@ DisableFileUV=0 0 98 56
 [CTRL_BTN_NORMAL_8]
 Type=2
 Tag=8
-Rect=522 190 98 56
+Rect=500 41 98 56
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -121,21 +121,21 @@ TextVerAlign=AlignVerCenter
 [CTRL_LIST_12]
 Type=8
 Tag=13
-Rect=11 287 621 223
+Rect=11 876 621 29
 AnchorPos=0 0
 Notes=
 
 [CTRL_LIST_13]
 Type=8
 Tag=14
-Rect=10 552 621 229
+Rect=10 901 621 59
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_14]
 Type=2
 Tag=15
-Rect=224 818 169 86
+Rect=-152 920 169 86
 AnchorPos=0 0
 Notes=
 TextSize=10
