@@ -107,8 +107,6 @@ Tag=22
 Rect=21 101 101 25
 AnchorPos=0 0
 Notes=
-Text=LV 99
-TextTradition=LV 99
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -120,8 +118,6 @@ Tag=23
 Rect=144 101 101 25
 AnchorPos=0 0
 Notes=
-Text=LV 99
-TextTradition=LV 99
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -133,8 +129,6 @@ Tag=24
 Rect=267 101 101 25
 AnchorPos=0 0
 Notes=
-Text=LV 99
-TextTradition=LV 99
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -146,8 +140,6 @@ Tag=25
 Rect=390 101 101 25
 AnchorPos=0 0
 Notes=
-Text=LV 99
-TextTradition=LV 99
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -159,8 +151,6 @@ Tag=26
 Rect=513 101 101 25
 AnchorPos=0 0
 Notes=
-Text=LV 99
-TextTradition=LV 99
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -172,8 +162,6 @@ Tag=27
 Rect=73 3 59 26
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM2]
 Type=1
@@ -181,8 +169,6 @@ Tag=28
 Rect=196 3 59 26
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM3]
 Type=1
@@ -190,8 +176,6 @@ Tag=29
 Rect=319 3 59 26
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM4]
 Type=1
@@ -199,8 +183,6 @@ Tag=30
 Rect=442 3 59 26
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_TEAM5]
 Type=1
@@ -208,5 +190,3 @@ Tag=31
 Rect=565 3 59 26
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50

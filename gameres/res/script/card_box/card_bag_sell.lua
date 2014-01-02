@@ -1,6 +1,7 @@
 card_bag_sell = {}
 local p = card_bag_sell;
 local ui = ui_card_bag_sell_veiw;
+p.layer = nil;
 
 function p.ShowUI()
 	if p.layer ~= nil then
@@ -21,6 +22,7 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate();
+	p.setSellCardNum(0)
 end
 
 function p.SetDelegate()
@@ -34,21 +36,32 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_CLEAR == tag then
-			--card_bag_mian.clear_sell_list();
+			card_bag_mian.clearSellClick();
 		elseif ui.ID_CTRL_BUTTON_SELL == tag then
-			--card_bag_mian.sell_card();
+			card_bag_mian.sellCardClick();
 		end
 	end
 end
 
 function p.setSellMoney(num)
+	if num == 0 or num == nil then
+		num = 0
+	end
 	local sellMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_SELL_MONEY );
-	cardLevelText:SetText(tostring(num));
+	sellMoney:SetText(tostring(num));
 end
 
 function p.setSellCardNum(num)
+	if num == 0 or num == nil then
+		num = 0
+	end
 	local sellCardNum = GetLabel(p.layer,ui.ID_CTRL_TEXT_SELL_NUM );
-	cardLevelText:SetText(tostring(num));
+	sellCardNum:SetText(tostring((num.."/10")));
+end
+
+function p.Init()
+	p.setSellCardNum(0)
+	p.setSellMoney(0)
 end
 
 function p.CloseUI()    
@@ -63,3 +76,5 @@ function p.HideUI()
         p.layer:SetVisible(false);
 	end
 end
+
+
