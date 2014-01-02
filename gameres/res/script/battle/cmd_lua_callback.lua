@@ -46,19 +46,40 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 			fighter:SetLifeDamage(num);
 		end;
 	elseif cmdtype == "atk_startAtk"  and E_DEMO_VER == 5 then
-		w_battle_stateMachineMgr(num,cmdtype)
+	    local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:atk_startAtk();
+		end;
     elseif cmdtype == "atk_end" and E_DEMO_VER == 5 then
-		w_battle_stateMachineMgr(num,cmdtype)
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:atk_end();
+		end;
 	elseif cmdtype == "atk_standby" and E_DEMO_VER == 5 then
-		w_battle_stateMachineMgr(num,cmdtype)
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:atk_standby();
+		end;
 	elseif cmdtype == "tar_hurt" and E_DEMO_VER == 5 then
-		w_battle_stateMachineMgr(num,cmdtype)
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_hurt();
+		end;
 	elseif cmdtype == "tar_hurtEnd" and E_DEMO_VER == 5 then
-		w_battle_stateMachineMgr(num,cmdtype)
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_hurtEnd();
+		end;
 	elseif cmdtype == "tar_ReviveEnd" and E_DEMO_VER == 5 then
-		w_battle_stateMachineMgr(num,cmdtype)								
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_ReviveEnd();
+		end;
 	elseif cmdtype == "tar_dieEnd" and E_DEMO_VER == 5 then
-		w_battle_stateMachineMgr(num,cmdtype)								
+		local lstateMachine = w_battle_PVEStaMachMgr.getSataeMachine(num);
+		if lstatMachine ~= nil then
+			lstateMachine:tar_dieEnd();
+		end;
 
 	
 	elseif cmdtype == "fighter_addHp" then

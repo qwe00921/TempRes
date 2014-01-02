@@ -7,8 +7,8 @@
 w_battle_pvp = {}
 local p = w_battle_pvp;
 
-local ui = ui_n_battle_pvp;
-local heroUIArray = {
+local ui = ui_n_battle_pve;
+local enemyUIArray = {
     ui.ID_CTRL_LEFT_SPRITE_1,
     ui.ID_CTRL_LEFT_SPRITE_2,
     ui.ID_CTRL_LEFT_SPRITE_3,
@@ -16,7 +16,7 @@ local heroUIArray = {
     ui.ID_CTRL_LEFT_SPRITE_5,
 	ui.ID_CTRL_LEFT_SPRITE_6,
 }
-local enemyUIArray = {
+local heroUIArray = {
 	ui.ID_CTRL_RIGHT_SPRITE_1,
 	ui.ID_CTRL_RIGHT_SPRITE_2,
 	ui.ID_CTRL_RIGHT_SPRITE_3,
@@ -78,7 +78,7 @@ end
 function p.ShowUI( battleType, targetId )
 	if p.battleLayer ~= nil then
 		p.battleLayer:SetVisible( true );
-		GetBattleShow():EnableTick( true );
+		--GetBattleShow():EnableTick( true );
 		return;
 	end
 	
@@ -95,11 +95,11 @@ function p.ShowUI( battleType, targetId )
 	layer:SetFrameRectFull();
 	GetRunningScene():AddChild(layer);
 
-    LoadUI("n_battle_pvp.xui", layer, nil);
+    LoadUI("n_battle_pve.xui", layer, nil);
 
 	layer:SetFramePosXY(0,0);
 	p.battleLayer = layer;
-	
+	--[[
 	local skillNameBar = GetImage( p.battleLayer ,ui.ID_CTRL_PICTURE_13 )
 	skillNameBar:SetFramePosXY(-640,skillNameBar:GetFramePos().y);
 	p.skillNameBarOldPos = skillNameBar:GetFramePos();
@@ -112,8 +112,9 @@ function p.ShowUI( battleType, targetId )
 	
 	local batch = battle_show.GetNewBatch();
 	local seqMove = batch:AddSerialSequence();
-	
+	]]--
 	--Õ½¶·
+	
 	p.InitBattle();
 	return true;
 end
@@ -271,11 +272,12 @@ function p.InitBattle()
 	w_battle_mgr.uiLayer = p.battleLayer;
 	w_battle_mgr.heroUIArray = heroUIArray;
 	w_battle_mgr.enemyUIArray = enemyUIArray;
-	if p.battleType == W_BATTLE_PVP then
-		w_battle_mgr.play_pvp( p.targetId );
-	else
-	   	w_battle_mgr.play_pve( p.targetId );
-	end
+	--if p.battleType == W_BATTLE_PVP then
+	--	w_battle_mgr.play_pvp( p.targetId );
+	--else
+	--   	w_battle_mgr.play_pve( p.targetId );
+	--end
+	w_battle_mgr.init();
 end
 
 function p.ReadyGo()

@@ -6,7 +6,7 @@
 
 w_battle_atk = {}
 local p = w_battle_atk;
-
+--[[
 --选者结束阶断
 function p.AtkPVE_NPC(atkFighter, targetFighter, batch, damage )
 	--先播放攻击方动画
@@ -111,16 +111,7 @@ function p.AtkHurt(atkFighter, targetFighter)
 		elseif targetFighter.showlife <= 0 then
 			targerFighter:die();  --死亡开始阶断动画
 			
-	--[[	if Dead then
-				--BUFF复活技能  
-				if Revive then
-					targetFighter:cmdLua( "fighter_revive", RemainHp, "", seqTarget );  
-				end
-			end
-			]]--
-			
 			--怪物死亡动画完成后的回调
-
             function p.dieEnd(atkFighter, targetFighter)  --死亡结束阶断加入队列seqTarget
 			    
 				    --对怪物对象释放
@@ -154,15 +145,8 @@ end;
 	
 end;
 
-function p.atk_damage(atkFighter, targetFighter)
 
-	--处于站立状态下
-	if targetFighter:IsStandBy() then  --站立状态
-		--播放受击动画
-	   targerFighter:Hurt();	
-	end;
-end;
-
+]]--
 --双方互殴
 function p.Atk( atkFighter, target, TCamp, batch )
     if batch == nil then return end

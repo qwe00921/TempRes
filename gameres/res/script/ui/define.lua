@@ -254,6 +254,7 @@ DoFile("ui/ui_mail_list_item_user_history.lua");
 DoFile("ui/ui_n_battle_ko.lua");
 DoFile("ui/ui_n_battle_mainui.lua");
 DoFile("ui/ui_n_battle_pvp.lua");
+DoFile("ui/ui_n_battle_pve.lua");
 
 --卡牌
 DoFile("ui/ui_dlg_card_equip_detail.lua");

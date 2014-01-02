@@ -345,7 +345,7 @@ function p:BeHitAdd(pAtkId)
 end
 
 function p:BeHitDec(pAtkId)
-	for k,v pairs(self.beHitTimes) do
+	for k,v in pairs(self.beHitTimes) do
 		if v == pId then
 			table.remove(self.beHitTimes,k);
 			break;

@@ -53,7 +53,21 @@ atkID,targerID
 
 
 ]]--
-
+function p.init()
+	w_battle_PVEStaMachMgr.init();
+	GetBattleShow():EnableTick( true );
+	p.createHeroCamp( w_battle_db_mgr.playCardList );
+    p.createEnemyCamp( w_battle_db_mgr.targetCardList );
+	--按活着的怪物,给个目标
+    p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
+	p.PVEShowEnemyID = p.PVEEnemyID; 
+	p.LockEnemy = false;
+	p.isCanSelFighter = true;	
+	
+	
+	
+	
+end;
 
 
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
@@ -99,7 +113,10 @@ function p.SetPVEAtkID(atkID)
 	--攻击某个人物
      --w_battle_atk.SelOver(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	--选择结束阶断
 	
-    w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	
+    --w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	
+	local pStateMachine = w_battle_PVEStateMachine:new();
+	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
+	pStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
 	
 end;
 

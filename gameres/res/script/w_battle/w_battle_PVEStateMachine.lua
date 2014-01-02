@@ -1,5 +1,5 @@
-w_battle_PVEAtkState = {}
-local p = w_battle_PVEAtkState;
+w_battle_PVEStateMachine = {}
+local p = w_battle_PVEStateMachine;
 
 --PVE的一次战斗的状态机
 
@@ -211,7 +211,7 @@ function p:tar_hurt()
 	local targetFighter = self:getTarFighter();
 
 
-    if targerFighter.IsHurt = false then
+    if targerFighter.IsHurt == false then
 		targerFighter.IsHurt = true;  --标识受击中
 		--受击动画播放一次
 		local cmdHurt = createCommandPlayer():Hurt( 0, targetFighter:GetNode(), "" );
@@ -308,6 +308,7 @@ function p:CheckEnd()
 	if (self.atkEnd == true) and (self.targerEnd == true) then
 		self.IsEnd = true;
 		w_battle_atkState:delStateMachine(self.id);
+		self = nil;
 	end
 end;
 
