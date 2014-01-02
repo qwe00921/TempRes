@@ -212,7 +212,7 @@ end
 
 function p.InitController()
 	p.targetHp = GetExp( p.battleLayer, ui.ID_CTRL_EXP_HP );
-	p.targetName = GetExp( p.battleLayer, ui.ID_CTRL_TEXT_365 );
+	p.targetName = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_365 );
 	
 	for i = 1, 6 do
 		local tCard = p.GetCardTable( i );

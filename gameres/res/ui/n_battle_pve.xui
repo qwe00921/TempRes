@@ -1,6 +1,6 @@
 ﻿
 [UI_INFO]
-Width=690
+Width=640
 Height=960
 
 [CTRL_PICTURE_82]
@@ -67,6 +67,56 @@ Tag=16
 Rect=34 325 71 90
 AnchorPos=0 0
 Notes=
+
+[CTRL_BUTTON_ITEM1]
+Type=2
+Tag=122
+Rect=3 832 125 125
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ITEM2]
+Type=2
+Tag=123
+Rect=130 832 125 125
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ITEM3]
+Type=2
+Tag=124
+Rect=257 832 125 125
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ITEM4]
+Type=2
+Tag=125
+Rect=384 832 125 125
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_ITEM5]
+Type=2
+Tag=126
+Rect=511 832 125 125
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_70]
 Type=1
@@ -277,6 +327,48 @@ Notes=
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
+[CTRL_EXP_HP]
+Type=9
+Tag=120
+Rect=-4 444 646 28
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_PICTURE_209]
+Type=1
+Tag=209
+Rect=-27 434 693 48
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\rage_bg1.png
+NormalFileUV=0 0 202 22
+
+[CTRL_TEXT_365]
+Type=4
+Tag=365
+Rect=14 417 107 26
+AnchorPos=0 0
+Notes=
+Text=目标名字
+TextTradition=目標名字
+TextSize=21
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_IMPORTANT]
+Type=1
+Tag=121
+Rect=0 0 639 958
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
 [CTRL_RIGHT_SPRITE_5]
 Type=19
 Tag=11
@@ -318,15 +410,6 @@ Tag=18
 Rect=536 325 71 90
 AnchorPos=0 0
 Notes=
-
-[CTRL_PICTURE_IMPORTANT]
-Type=1
-Tag=121
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\n_battle\shade.png
-NormalFileUV=0 0 1 1
 
 [CTRL_PICTURE_62]
 Type=1
@@ -442,73 +525,73 @@ Notes=
 [CTRL_TEXT_NAME1]
 Type=4
 Tag=83
-Rect=145 482 124 26
+Rect=145 482 164 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
 TextTradition=一二三四五六七
 TextSize=18
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_NAME4]
 Type=4
 Tag=85
-Rect=467 482 122 26
+Rect=467 482 161 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
 TextTradition=一二三四五六七
 TextSize=18
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_NAME2]
 Type=4
 Tag=86
-Rect=147 600 122 26
+Rect=147 600 163 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
 TextTradition=一二三四五六七
 TextSize=18
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_NAME5]
 Type=4
 Tag=87
-Rect=467 600 122 26
+Rect=467 600 164 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
 TextTradition=一二三四五六七
 TextSize=18
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_NAME3]
 Type=4
 Tag=88
-Rect=147 718 122 26
+Rect=147 718 163 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
 TextTradition=一二三四五六七
 TextSize=18
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_NAME6]
 Type=4
 Tag=89
-Rect=466 718 123 26
+Rect=466 718 163 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
 TextTradition=一二三四五六七
 TextSize=18
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_90]
@@ -814,7 +897,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_SP5]
 Type=9
 Tag=115
-Rect=434 674 177 28
+Rect=434 676 177 28
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -869,18 +952,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
-NormalFileUV=0 0 176 28
-
-[CTRL_EXP_HP]
-Type=9
-Tag=120
-Rect=-4 444 646 28
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
 [CTRL_PICTURE_195]
@@ -949,7 +1020,7 @@ NormalFileUV=0 0 202 22
 [CTRL_PICTURE_202]
 Type=1
 Tag=202
-Rect=426 668 193 32
+Rect=426 673 193 32
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
@@ -986,15 +1057,6 @@ NormalFileUV=0 0 202 22
 Type=1
 Tag=206
 Rect=425 793 193 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\n_battle\rage_bg1.png
-NormalFileUV=0 0 202 22
-
-[CTRL_PICTURE_209]
-Type=1
-Tag=209
-Rect=-27 434 693 48
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
@@ -1043,3 +1105,66 @@ Tag=216
 Rect=435 719 26 26
 AnchorPos=0 0
 Notes=
+
+[CTRL_PICTURE_115]
+Type=1
+Tag=127
+Rect=-1 474 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_116]
+Type=1
+Tag=128
+Rect=0 592 319 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_117]
+Type=1
+Tag=129
+Rect=0 709 319 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_118]
+Type=1
+Tag=130
+Rect=319 474 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_119]
+Type=1
+Tag=131
+Rect=319 592 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_120]
+Type=1
+Tag=132
+Rect=319 709 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_172]
+Type=1
+Tag=172
+Rect=6 832 628 628
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
