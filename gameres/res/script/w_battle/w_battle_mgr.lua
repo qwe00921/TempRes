@@ -65,7 +65,7 @@ function p.starFighter()
 	p.isCanSelFighter = true;	
 	
 	
-	p.SetPVEAtkID(2);
+	--p.SetPVEAtkID(2);
 	
 end;
 
