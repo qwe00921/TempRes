@@ -121,7 +121,8 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 				dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
 				return
 			end
-					
+			
+			maininterface.m_bgImage:SetVisible(false);
 			if p.missionList["M"..missionId] then
 				local storyId = p.missionList["M"..missionId].Begin_story;
 				WriteCon("storyId = "..storyId);
