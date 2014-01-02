@@ -53,7 +53,7 @@ atkID,targerID
 
 
 ]]--
-function p.init()
+function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
 	GetBattleShow():EnableTick( true );
 	p.createHeroCamp( w_battle_db_mgr.playCardList );
