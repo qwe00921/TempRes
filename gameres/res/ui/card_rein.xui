@@ -1,7 +1,8 @@
 ﻿
 [UI_INFO]
-Width=900
-Height=1500
+Width=640
+Height=960
+
 
 [CTRL_PICTURE_103]
 Type=1
