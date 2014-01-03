@@ -119,6 +119,9 @@ function p.SetDelegate(layer)
 	local intensifyByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_26);
 	intensifyByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	
+	local clearByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_CLEAR);
+	clearByBtn:SetLuaDelegate(p.OnUIClickEvent);
+	
 end
 
 --事件处理
@@ -182,6 +185,9 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.ShowCardByProfession(PROFESSION_TYPE_5);]]-- update 2014-01-03
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
 				card_bag_sort.ShowUI(1);
+		elseif(ui.ID_CTRL_BUTTON_CLEAR == tag) then 
+			--清除按钮
+			p.clearDate();
 		end
 	end
 end
@@ -237,11 +243,11 @@ function p.ShowCardList(cardList,msg)
 	local countLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_25);
 	
 	--持有金币
-	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
-	
+	--local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+	--moneyLab:SetText(tostring(msg.money));
 	
 	countLab:SetText(tostring(msg.cardlist_num).."/"..tostring(msg.cardmax));
-	moneyLab:SetText(tostring(msg.money));
+	
 	p.userMoney = msg.money;
 	p.cardListInfo = cardList;
 	
@@ -543,12 +549,12 @@ function p.setNumFalse()
 			--WriteCon("k : "..k);
 			local numText = p.cardNumListNode[v];
 			numText:SetText(tostring(k));
-		end
+	end
 
 end
 
 
---设置除选择外的卡牌不可点
+--设置卡牌可点
 function p.setCardDisEnable()
 	for i=1, #p.cardListNode do
 		local uiNode = p.cardListNode[i]
@@ -556,6 +562,19 @@ function p.setCardDisEnable()
 	end
 end
 
+--清除方法
+function p.clearDate()
+	for k,v in pairs(p.selectCardId) do
+			--WriteCon("k : "..k);
+			local numText = p.cardNumListNode[v];
+			numText:SetText("");
+			local cardSelectText = p.selectList[v] ;
+			cardSelectText:SetVisible(false);
+	end
+	p.selectNum  = 0;
+	p.selectCardId = {};
+	p.setCardDisEnable();
+end
 
 --提示框回调方法
 function p.OnMsgCallback(result)
@@ -657,7 +676,7 @@ function p.sortByRule(sortType)
 		WriteCon("========sort by star");
 		table.sort(p.cardListByProf,p.sortByStar);
 	elseif sortType == CARD_BAG_SORT_BY_TIME then
-		WriteCon("========sort by time");
+		WriteCon("========sort by time/Element");
 		table.sort(p.cardListByProf,p.sortByTime);
 	end
 	p.ShowCardView(p.cardListByProf);
@@ -673,8 +692,9 @@ function p.sortByStar(a,b)
 end
 --按时间排序
 function p.sortByTime(a,b)
-	return tonumber(a.Time) < tonumber(b.Time);
+	return tonumber(a.Element) < tonumber(b.Element);
 end
+
 
 
 function p.CloseUI()

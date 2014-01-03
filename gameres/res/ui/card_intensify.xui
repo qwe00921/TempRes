@@ -128,16 +128,6 @@ Stretch=1
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
-[CTRL_9SLICES_28]
-Type=22
-Tag=46
-Rect=168 813 220 37
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
-
 [CTRL_TEXT_27]
 Type=4
 Tag=34
@@ -151,33 +141,10 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_28]
-Type=4
-Tag=35
-Rect=42 817 107 30
-AnchorPos=0 0
-Notes=
-Text=持有
-TextTradition=持有
-TextSize=20
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_30]
 Type=4
 Tag=37
 Rect=173 725 211 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_31]
-Type=4
-Tag=38
-Rect=173 817 211 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -249,5 +216,17 @@ Text=星灵数量
 TextTradition=星靈數量
 TextSize=18
 TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_CLEAR]
+Type=2
+Tag=27
+Rect=38 812 122 36
+AnchorPos=0 0
+Notes=
+Text=清除选择
+TextTradition=清除選擇
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
