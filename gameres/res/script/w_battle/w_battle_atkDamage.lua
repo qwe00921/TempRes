@@ -27,6 +27,9 @@ function p.SimpleDamage(atkFighter,tarFighter)
 	             - tarFighter.Defence * tarFighter.Buff;
 --普通攻击伤害 = （人物攻击力 + 装备攻击力）* BUFF百分比加成*属性克制关系加成*（暴击加成+合击加成）
 --           –（对方人物防御值+对方装备防御值）* BUFF百分比加成
+	if damage < 0 then
+		damage = 1;
+	end
 	
 	return damage,lIsJoinAtk,lIsCrit;  --返回伤害值,是否合击
 	

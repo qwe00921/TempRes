@@ -398,7 +398,7 @@ function p.InitBattle()
 	w_battle_mgr.enemyUIArray = enemyUIArray;
 	
 	--开始新一波战斗，波次在w_battle_mgr中记录
-	--w_battle_mgr.starFighter();
+	w_battle_mgr.starFighter();
 end
 
 --设置目标的名字以及血条显示

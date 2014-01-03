@@ -23,7 +23,7 @@ function p.delStateMachine(id)
 	p.StateMachineLst[id] = nil;
 end
 
-function p.getSataeMachine(id)
+function p.getStateMachine(id)
 	return p.StateMachineLst[id]
 	
 end

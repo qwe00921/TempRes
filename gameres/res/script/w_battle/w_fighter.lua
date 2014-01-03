@@ -28,13 +28,20 @@ function p:ctor()
 	self.JoinAtkTime = nil;
 	self.HitTime = 0;
 	self.tmplife = self.life;
-    
+    self.atkType = 0;
 	self.selIndex = 0;  --目标选择顺序
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
 	self.m_kShadow = nil;
 	self.m_kCurrentBatch = nil;
 	self.flynumGreen = nil;
+	
+	self.damage = 0;
+	self.Buff = 1;
+	
+	self.showlife = 0;  --用来显示的血量
+	self.maxlife = 0;  --最大血量
+	self.nowlife = 0; --当前实际血量
 	
 end
 
@@ -58,18 +65,18 @@ end
 
 --初始化被选择顺序
 function p:SetSelIndex(pId)
-    if self.pId == W_BATTLE_POS_TAG_2 then
+    if self.Position == W_BATTLE_POS_TAG_2 then
        self.selIndex = 1 
     elseif self.pId == W_BATTLE_POS_TAG_1 then
-	   self.selIndex = 2
+	   self.Position = 2
     elseif self.pId == W_BATTLE_POS_TAG_3 then
-	   self.selIndex = 3
+	   self.Position = 3
     elseif self.pId == W_BATTLE_POS_TAG_5 then
-	   self.selIndex = 4
+	   self.Position = 4
     elseif self.pId == W_BATTLE_POS_TAG_4 then
-	   self.selIndex = 5
+	   self.Position = 5
     elseif self.pId == W_BATTLE_POS_TAG_6 then
-	   self.selIndex = 6
+	   self.Position = 6
 	end;
 end
 
@@ -310,6 +317,10 @@ end
 function p:SetLife(nowHp,maxHp)
 	
 end
+
+function p:GetAtkType()
+	return self.atkType;
+end;
 
 --去血
 function p:SetLifeDamage(num)   
