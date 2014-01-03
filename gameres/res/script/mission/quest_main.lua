@@ -125,7 +125,7 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			
 			maininterface.m_bgImage:SetVisible(false);
 			if p.missionList["M"..missionId] then
-				local storyId = p.missionList["M"..missionId].Begin_story;
+				local storyId = p.missionList["M"..missionId].begin_story;
 				WriteCon("storyId = "..storyId);
 				if tonumber(storyId) ~= 0 then
 					dlg_drama.ShowUI( missionId , storyId);
