@@ -34,7 +34,7 @@ function p.ShowUI()
 
 	layer:NoMask();
     layer:Init();   
-	--layer:SetSwallowTouch(false);
+	layer:SetSwallowTouch(false);
 	
     GetUIRoot():AddDlg(layer);
     LoadDlg("card_main_view.xui", layer, nil);
@@ -45,6 +45,7 @@ function p.ShowUI()
 end
 
 function p.Init()
+	dlg_menu.SetNewUI( p );
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
 	
@@ -519,4 +520,7 @@ function p.ClearData()
 	p.allCardPrice 	= 0;	--出售卡牌总价值
 	p.sellCardNodeList = {}	--出售卡牌节点列表
 	p.node = nil;
+end
+function p.UIDisappear()
+	p.CloseUI();
 end
