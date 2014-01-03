@@ -591,8 +591,9 @@ end;
 function p.EnterBattle( battleType, missionId )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
 
-	p.battle_result = math.randomseed(tostring(os.time()):reverse():sub(0, 1)) 
-    
+	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
+	p.battle_result = math.random(1);
+	
 	p.SendResult(missionId, p.battle_result);
 
 	--Òþ²Ø°´Å¥
