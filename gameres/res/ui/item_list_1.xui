@@ -1,0 +1,156 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_VERTICAL_LIST_VIEW]
+Type=14
+Tag=31
+Rect=8 243 624 115
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ITEM1]
+Type=1
+Tag=6
+Rect=29 250 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ITEM2]
+Type=1
+Tag=7
+Rect=148 250 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ITEM3]
+Type=1
+Tag=8
+Rect=267 250 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ITEM4]
+Type=1
+Tag=9
+Rect=386 250 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ITEM5]
+Type=1
+Tag=10
+Rect=505 250 100 100
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=30 349 88 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=12
+Rect=150 349 88 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Rect=270 349 88 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=390 349 88 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
+Rect=510 349 88 18
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_lv.png
+NormalFileUV=0 0 90 24
+
+[CTRL_TEXT_ITEMNAME1]
+Type=4
+Tag=16
+Rect=22 349 107 23
+AnchorPos=0 0
+Notes=
+Text=物品名称六字
+TextTradition=物品名稱六字
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=142 349 107 23
+AnchorPos=0 0
+Notes=
+Text=物品名称六字
+TextTradition=物品名稱六字
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_18]
+Type=4
+Tag=18
+Rect=262 349 107 23
+AnchorPos=0 0
+Notes=
+Text=物品名称六字
+TextTradition=物品名稱六字
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=382 349 107 23
+AnchorPos=0 0
+Notes=
+Text=物品名称六字
+TextTradition=物品名稱六字
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_21]
+Type=4
+Tag=21
+Rect=502 349 107 23
+AnchorPos=0 0
+Notes=
+Text=物品名称六字
+TextTradition=物品名稱六字
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
