@@ -31,6 +31,7 @@ p.isCanSelFighter = false;  --是否还有可选择的怪物,战斗UI界面点击我方人员时,需先
 local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
 
+p.battle_result = false;
 --[[
 --创建角色后, 按活着的怪物,给个目标
   p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID();
@@ -570,17 +571,32 @@ function p.CheckBattleLose()
 	return false;
 end
 
+function p.SendResult(missionID,result)
+	local uid = GetUID();
+	--uid = 10002;
+	if uid ~= nil and uid > 0 then
+		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
+		local param = string.format("&missionID=%d&result=%d&money=0&soul=0", tonumber(missionID), tonumber(result));
+		SendReq("Fight","PvEReward",uid,param);
+		--card_intensify_succeed.ShowUI(p.baseCardInfo);
+		--p.ClearData();
+	end
+end;
+
+function p.GetReuslt()
+	return p.battle_result;
+end;
+
 --进入战斗
 function p.EnterBattle( battleType, missionId )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
-	
-	--hide 
-	--GetTileMap():SetVisible( false );
-	--task_map_mainui.HideUI();
-	
+
+	p.battle_result = math.randomseed(tostring(os.time()):reverse():sub(0, 1)) 
+    
+	p.SendResult(missionId, p.battle_result);
+
 	--隐藏按钮
---	dlg_userinfo2.HideUI();
---	dlg_menu.CloseUI();
+--[[
     dlg_menu.CloseUI();
     dlg_userinfo.CloseUI();
     
@@ -593,6 +609,7 @@ function p.EnterBattle( battleType, missionId )
 	PlayMusic_Battle();
 	
 	isActive = true;
+	]]--
 end
 
 --退出战斗

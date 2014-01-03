@@ -213,7 +213,7 @@ function p:atk_end()
 
 	--受击方结算
 	--受击次数减一	
-	targetFighter:BeHitDec(atkFighter:GetId()); 
+	tarFighter:BeHitDec(atkFighter:GetId()); 
 	
 	self:tar_hurtEnd();
 
@@ -239,22 +239,20 @@ function p:tar_hurt()
 
 
 	local atkFighter = self:getAtkFighter();
-	local targetFighter = self:getTarFighter();
+	local targerFighter = self:getTarFighter();
 
 
     if targerFighter.IsHurt == false then
 		targerFighter.IsHurt = true;  --标识受击中
 		--受击动画播放一次
-		local cmdHurt = createCommandPlayer():Hurt( 0, targetFighter:GetNode(), "" );
+		local cmdHurt = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
 		self.seqTarget:AddCommand( cmdHurd );
 
 	    --受击动画无限播
-		local cmdHurtAll = createCommandPlayer():Hurt( 0, targetFighter:GetNode(), "" );
-		self.seqTarget:AddCommand( cmdHurtAll );
+		--local cmdHurtAll = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
+		--self.seqTarget:AddCommand( cmdHurtAll );
 
-        --受击完成
-		--tarFighter:cmdLua("tar_hurtEnd", 0, self.id, seqHurtEnd);
-		--seqHurtEnd:SetWaitEnd( cmdHurt );
+        
 	end;
 	
 end;
