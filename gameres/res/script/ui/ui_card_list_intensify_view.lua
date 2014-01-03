@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_card_list_intensify_view = {};
 local p =  ui_card_list_intensify_view;
+p.ID_CTRL_TEXT_NUM5					      = 1226;
+p.ID_CTRL_TEXT_NUM4					      = 1225;
+p.ID_CTRL_TEXT_NUM3					      = 1224;
+p.ID_CTRL_TEXT_NUM2					      = 1223;
+p.ID_CTRL_TEXT_NUM1					      = 1222;
 p.ID_CTRL_PICTURE_TEAM5				   = 82;
 p.ID_CTRL_PICTURE_TEAM4				   = 81;
 p.ID_CTRL_PICTURE_TEAM3				   = 80;
