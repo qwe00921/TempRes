@@ -167,8 +167,7 @@ function p.SetTeamInfo( view, user_teamData )
 	for i = 1, 6 do
 		local cardBtn = GetButton( view, ui_card_group_node["ID_CTRL_BUTTON_CHA" .. i] );
 		local levLabel = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_LV" .. i] );
-		local pic = GetUiNode( view, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );--GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
-		pic =	ConverToPlayer(pic);
+		local pic = GetPlayer ( view, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );--GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
 		
 		cardBtn:SetLuaDelegate( p.OnListBtnClick );
 		cardBtn:SetId( i );
@@ -189,6 +188,7 @@ function p.SetTeamInfo( view, user_teamData )
 			end
 			
 			pic:UseConfig( user_teamData["Pos_card"..i] );
+			pic:SetLookAt(E_LOOKAT_LEFT);
 			pic:Standby("")
 			
 			--[[增加星级显示]]--
