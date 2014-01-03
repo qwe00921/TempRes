@@ -53,7 +53,7 @@ function p.Init()
 	
 	WriteCon("send mission request");
 	local uid = GetUID();
-	local param = "MachineType=Android&Stage_id="..p.stageId;
+	local param = "Stage_id="..p.stageId;
 	SendReq("Mission","MissionList",uid,param);
 	--p.ShowQuestList();
 end
@@ -117,7 +117,7 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 				WriteCon("power not enough");
 				return
 			end
-			local fightTimes = tonumber(p.missionList["M"..missionId]["Fight_num"])
+			local fightTimes = tonumber(p.missionList["M"..missionId]["fight_num"])
 			if fightTimes <= 0 then
 				dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
 				return
@@ -209,7 +209,7 @@ function p.loadMissionList(missionStartId)
 			
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
 			local missionTable = SelectRowInner(T_MISSION,"id",misId);
-			local text = p.missionList[misKey]["Fight_num"].."/"..missionTable["fight_limit"]
+			local text = p.missionList[misKey]["fight_num"].."/"..missionTable["fight_limit"]
 			timesText:SetText(text);
 			
 			local misHead = GetImage(view, uiList.ID_CTRL_PICTURE_NEW);
