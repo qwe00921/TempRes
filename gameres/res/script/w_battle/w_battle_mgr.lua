@@ -30,6 +30,7 @@ p.isCanSelFighter = false;  --是否还有可选择的怪物,战斗UI界面点击我方人员时,需先
 
 local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
+p.seqStar = nil;
 
 p.battle_result = false;
 --[[
@@ -65,7 +66,8 @@ function p.starFighter()
 	p.LockEnemy = false;
 	p.isCanSelFighter = true;	
 	
-	
+	local batch = battle_show.GetNewBatch(); 
+	p.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
 	--p.SetPVEAtkID(2);
 	
 end;
@@ -117,8 +119,8 @@ function p.SetPVEAtkID(atkID)
     --w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	
 	local pStateMachine = w_battle_PVEStateMachine:new();
 	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
-	pStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
-	return true;
+	pStateMachine:init(p.seqStar,id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
+	return false;
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
@@ -592,7 +594,7 @@ function p.EnterBattle( battleType, missionId )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
 
 	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
-	p.battle_result = math.random(1);
+	p.battle_result = math.random(0,1);
 	
 	p.SendResult(missionId, p.battle_result);
 
@@ -615,10 +617,10 @@ end
 
 --退出战斗
 function p.QuitBattle()
-	WriteCon( "w_battle_mgr.QuitBattle()" );
+	--WriteCon( "w_battle_mgr.QuitBattle()" );
 
-	w_battle_pvp.CloseUI();
-	w_battle_mainui.CloseUI();
+	--w_battle_pvp.CloseUI();
+	--w_battle_mainui.CloseUI();
 
 	--game_main.EnterWorldMap();
 	dlg_menu.ShowUI();

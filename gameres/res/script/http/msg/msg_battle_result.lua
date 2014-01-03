@@ -25,7 +25,14 @@ end
 
 function p:Process()
 	if self.result == true then 
-		w_battle_mgr.GetReuslt();
+		--w_battle_mgr.GetReuslt();
+		local lResult = w_battle_mgr.GetReuslt();
+		if lResult == 1 then
+			WriteConWarning( "**MSG_BATTLE_RESULT  Success" );
+		else
+			WriteConWarning( "**MSG_BATTLE_RESULT  False" );
+		end;
+		w_battle_mgr.QuitBattle();
 	else
 		WriteConWarning( "**MSG_BATTLE_RESULT  error" );
 	end
