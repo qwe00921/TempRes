@@ -117,23 +117,23 @@ end
 
 --显示list
 function p.ShowTeamList()
-	local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+	local list = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_6 );
 	if list == nil then
 		return;
 	end
 	
 	local user_teams = p.user_teams or {};
 
-	--local count = list:GetViewCount() or 0;
-	--if count > 0 then
-	--	for i = 1, count do
-	--		local view = list:GetViewAt(i-1);
-	--		if view then
-	--			p.SetTeamInfo( view, user_teams[i] );
-	--		end
-	--	end
-	--	return;
-	--end
+	local count = list:GetViewCount() or 0;
+	if count > 0 then
+		for i = 1, count do
+			local view = list:GetViewAt(i-1);
+			if view then
+				p.SetTeamInfo( view, user_teams[i] );
+			end
+		end
+		return;
+	end
 	
 	list:ClearView();
 
@@ -154,7 +154,6 @@ end
 
 --显示单个节点
 function p.SetTeamInfo( view, user_teamData )
-	--local ui_card_group_node = ui_card_group_node2; 
 	local teamid = tonumber( user_teamData.Team_id ) or 0;
 	for i = 1, 3 do
 		local teamPic = GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_TEAM"..i] );
@@ -165,10 +164,9 @@ function p.SetTeamInfo( view, user_teamData )
 	
 	local cardNum = 0;
 	for i = 1, 6 do
-		local cardBtn = GetButton( view, ui_card_group_node["ID_CTRL_BUTTON_CHA" .. i] );
-		local levLabel = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_LV" .. i] );
-		local pic = GetUiNode( view, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );--GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
-		pic =	ConverToPlayer(pic);
+		local cardBtn = GetButton( view, ui_card_group_node["ID_CTRL_BUTTON_CARD_" .. i] );
+		local levLabel = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_LEV_" .. i] );
+		local pic = GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
 		
 		cardBtn:SetLuaDelegate( p.OnListBtnClick );
 		cardBtn:SetId( i );
@@ -179,62 +177,58 @@ function p.SetTeamInfo( view, user_teamData )
 			levLabel:SetVisible( true );
 			pic:SetVisible( true );
 			
-			--cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
-			--cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
-			--cardBtn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
+			cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
+			cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
+			cardBtn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			
 			local data = p.cardlist[user_teamData["Pos_unique"..i]];
 			if data then
 				levLabel:SetText( string.format("Lv %s", data.Level) );
 			end
 			
-			pic:UseConfig( user_teamData["Pos_card"..i] );
-			pic:Standby("")
-			
 			--[[增加星级显示]]--
 		else
-			--cardBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
-			--cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
-			cardBtn:SetVisible( false );
+			cardBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
+			cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
 			
 			levLabel:SetVisible( false );
 			pic:SetVisible( false );
 		end
 	end
 	
-	--local cardNumLab = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_CARD_NUM );
-	--cardNumLab:SetText( string.format( "%d/%d", cardNum, 6) );
+	local cardNumLab = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_CARD_NUM );
+	cardNumLab:SetText( string.format( "%d/%d", cardNum, 6) );
 
-	--local formationBtn = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_FORMATION );
-	--formationBtn:SetLuaDelegate( p.OnListBtnClick );
+	local formationBtn = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_FORMATION );
+	formationBtn:SetLuaDelegate( p.OnListBtnClick );
 	
-	--local formationLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_27 );
-	--formationLabel:SetText( ToUtf8("选择战术") );
+	local formationLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_27 );
+	formationLabel:SetText( ToUtf8("选择战术") );
 	
-	--local petBtn1 = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_PET_1 );
-	--petBtn1:SetLuaDelegate( p.OnListBtnClick );
-	--petBtn1:SetId( 7 );
+	local petBtn1 = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_PET_1 );
+	petBtn1:SetLuaDelegate( p.OnListBtnClick );
+	petBtn1:SetId( 7 );
 	
-	--local petBtn2 = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_PET_2 );
-	--petBtn2:SetLuaDelegate( p.OnListBtnClick );
-	--petBtn2:SetId( 8 );
+	local petBtn2 = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_PET_2 );
+	petBtn2:SetLuaDelegate( p.OnListBtnClick );
+	petBtn2:SetId( 8 );
 	
-	--local petName1 = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_PET_NAME_1 );
-	--if tonumber(user_teamData.Pet_card1) ~= 0 then
-	--	petName1:SetText( ToUtf8( SelectRowInner( T_PET, "id", user_teamData.Pet_card1, "name" ) ) );
+	local petName1 = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_PET_NAME_1 );
+	if tonumber(user_teamData.Pet_card1) ~= 0 then
+		petName1:SetText( ToUtf8( SelectRowInner( T_PET, "id", user_teamData.Pet_card1, "name" ) ) );
 		
-	--	petBtn1:SetImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
-	--	petBtn1:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
-	--else
-	--	petName1:SetText( ToUtf8("选择召唤兽") );
+		petBtn1:SetImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
+		petBtn1:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
+	else
+		petName1:SetText( ToUtf8("选择召唤兽") );
 		
-	--	petBtn1:SetImage( GetPictureByAni( "ui.default_pet_btn", 0 ) );
-	--	petBtn1:SetTouchDownImage( GetPictureByAni( "ui.default_pet_btn", 1 ));
-	--end
+		petBtn1:SetImage( GetPictureByAni( "ui.default_pet_btn", 0 ) );
+		petBtn1:SetTouchDownImage( GetPictureByAni( "ui.default_pet_btn", 1 ));
+	end
 	
-	--local petName2 = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_PET_NAME_2 );
-	--if tonumber(user_teamData.Pet_card2) ~= 0 then
-	--[[	petName2:SetText( ToUtf8( SelectRowInner( T_PET, "id", user_teamData.Pet_card2, "name" ) ) );
+	local petName2 = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_PET_NAME_2 );
+	if tonumber(user_teamData.Pet_card2) ~= 0 then
+		petName2:SetText( ToUtf8( SelectRowInner( T_PET, "id", user_teamData.Pet_card2, "name" ) ) );
 		
 		petBtn2:SetImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card2, "face_pic" ), 0 ) );
 		petBtn2:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card2, "face_pic" ), 0 ) );
@@ -257,7 +251,6 @@ function p.SetTeamInfo( view, user_teamData )
 	
 	local defLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_TOTAL_DEF );
 	defLabel:SetText( tostring( p.TotalData( user_teamData, "Defence" )) );
-	]]--
 end
 
 function p.TotalData( user_teamData, str )

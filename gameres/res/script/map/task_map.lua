@@ -72,6 +72,7 @@ end
 --¹Ø±ÕµØÍ¼
 function p.CloseMap()
     GetTileMapMgr():CloseMap();
+	maininterface.m_bgImage:SetVisible(true);
     p.ClearData();
     p.ClearTimer();
 	

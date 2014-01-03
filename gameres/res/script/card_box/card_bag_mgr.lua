@@ -56,21 +56,23 @@ end
 --删除请求回调
 function p.DelCallBack(self)
 	if self.result == true then
+		card_bag_mian.BatchSellMark = OFF;
 		p.RefreshCardList(p.delCardList)
 		local delNum = #p.delCardList;
 		card_bag_mian.SetCardNum(delNum)
 
 		p.delCardList = nil;
-		card_bag_mian.sellCardList = {};
-		card_bag_mian.BatchSellMark = OFF;
+		--card_bag_mian.sellCardList = {};
 		local btn = GetButton(p.layer, ui_card_main_view.ID_CTRL_BUTTON_SELL);
-		btn:SetImage( GetPictureByAni("button.sell",0));
-		btn:SetText("批量出售")
+		--btn:SetImage( GetPictureByAni("button.sell",0));
+		btn:SetText("卖出")
 		dlg_msgbox.ShowOK("确认提示框","出售卡牌获得 "..tostring(self.money.Add).."金币。",nil,p.layer);
+		card_bag_sell.CloseUI()
+
 	else
 		local messageText = self.message
 		dlg_msgbox.ShowOK("确认提示框",messageText,nil,p.layer);
-		card_bag_mian.sellCardList = {};
+		--card_bag_mian.sellCardList = {};
 		p.delCardList = nil;
 	end
 end
@@ -94,8 +96,12 @@ function p.RefreshCardList(delData)
 		end
 	end
 	--WriteConErr( "** p.cardList"..#p.cardList );
-	p.ShowCardByProfession(card_bag_mian.showCardType);
-	
+	--p.ShowCardByProfession(card_bag_mian.showCardType);
+	if card_bag_mian.sortByRuleV ~= nil then
+		p.sortByRule(card_bag_mian.sortByRuleV)
+	else
+		card_bag_mian.ShowCardList(p.cardList);
+	end
 	--card_bag_mian.ShowCardList(p.cardList);
 end
 
@@ -180,11 +186,11 @@ end
 
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.Level) < tonumber(b.Level);
+	return tonumber(a.Level) > tonumber(b.Level);
 end
 --按星级排序
 function p.sortByStar(a,b)
-	return tonumber(a.Rare) < tonumber(b.Rare);
+	return tonumber(a.Rare) > tonumber(b.Rare);
 end
 --按属性排序
 function p.sortByTime(a,b)

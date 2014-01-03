@@ -6,6 +6,7 @@
 
 
 MUSIC_GLOBAL_MUSICE  = 0;
+MUSIC_GLOBAL_SILENT = 0;
 
 --[[
 	1	 battle
@@ -27,6 +28,10 @@ function PlayMusic_Battle()
         PlayBGMusicByName( "bgm_battle_v2.mp3" );--@todo        
     end        
 	]]--
+	if MUSIC_GLOBAL_SILENT == 0 then
+		return;
+	end
+	
 	PlayBGMusicByName( "bgm_battle.mp3" );
 	MUSIC_GLOBAL_MUSICE = 1
 end
@@ -44,6 +49,11 @@ function PlayMusic_Task(chapter)
         PlayBGMusicByName( "bgm_task.mp3" );
     end        
 	]]--
+	
+	if MUSIC_GLOBAL_SILENT == 0 then
+		return;
+	end
+	
 	if chapter == 1 then
 		PlayBGMusicByName( "bgm_task_chapter_1.mp3" );
 	else
@@ -67,6 +77,11 @@ function PlayMusic_MainUI()
         --PlayBGMusicByName( "bgm_task.mp3" );        
     end        
     --]]
+	
+	if MUSIC_GLOBAL_SILENT == 0 then
+		return;
+	end
+	
 	PlayBGMusicByName( "bgm_main.mp3" ); 
 	MUSIC_GLOBAL_MUSICE = 3
 end
@@ -74,14 +89,25 @@ end
 --播放登录界面音乐
 function PlayMusic_LoginUI()
     StopBGMusic()
+	
+	if MUSIC_GLOBAL_SILENT == 0 then
+		return;
+	end
+	
 	PlayBGMusicByName( "bgm_login.mp3" ); 
 	MUSIC_GLOBAL_MUSICE = 4
 end
 
 --播放商店,卡组,邮件等界面音乐
 function PlayMusic_ShopUI()
+
 	if MUSIC_GLOBAL_MUSICE ~= 5 then
 		StopBGMusic()
+		
+		if MUSIC_GLOBAL_SILENT == 0 then
+			return;
+		end
+	
 		PlayBGMusicByName( "bgm_shop.mp3" ); 
 		MUSIC_GLOBAL_MUSICE = 5;
 	end

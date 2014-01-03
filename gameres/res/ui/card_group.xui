@@ -6,42 +6,28 @@ Height=960
 [CTRL_PICTURE_6]
 Type=1
 Tag=7
-Rect=0 0 640 860
+Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
-[CTRL_PICTURE_3]
-Type=1
-Tag=3
-Rect=131 -2 378 86
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\beast\title.png
-NormalFileUV=0 0 392 100
-
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=5
-Rect=554 0 86 85
+Rect=0 160 100 80
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=返回
+TextTradition=返回
+TextSize=24
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
-
-[CTRL_VERTICAL_LIST_6]
-Type=14
-Tag=6
-Rect=14 87 602 769
-AnchorPos=0 0
-Notes=
-Remark=卡组列表
 
 [CTRL_TEXT_38_DELETE]
 Type=4
@@ -58,8 +44,96 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_7]
 Type=1
 Tag=8
-Rect=274 9 90 56
+Rect=100 164 211 74
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\text_cardgroup.png
-NormalFileUV=0 0 86 54
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_TEXT_8]
+Type=4
+Tag=9
+Rect=112 175 105 48
+AnchorPos=0 0
+Notes=
+Text=队伍编辑
+TextTradition=隊伍編輯
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_LIST_9]
+Type=8
+Tag=10
+Rect=0 247 640 510
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_LEFT]
+Type=2
+Tag=11
+Rect=1 764 70 52
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mail\left1.png
+NormalFileUV=0 0 70 52
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=12
+Rect=567 764 70 52
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\mail\right.png
+NormalFileUV=0 0 70 52
+
+[CTRL_PICTURE_12]
+Type=1
+Tag=13
+Rect=246 774 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=14
+Rect=304 774 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=16
+Rect=362 774 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_BUTTON_110]
+Type=2
+Tag=110
+Rect=535 160 100 80
+AnchorPos=0 0
+Notes=
+Text=拖动阵型
+TextTradition=拖動陣型
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\public\close_click.png
+SelectedFileUV=0 0 100 98

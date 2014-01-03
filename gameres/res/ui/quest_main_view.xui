@@ -1,16 +1,7 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
-
-[CTRL_PICTURE_BG]
-Type=1
-Tag=10
-Rect=1 167 640 780
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\creat_role\gacha_bg0003.png
-NormalFileUV=0 0 480 450
 
 [CTRL_9SLICES_12]
 Type=22
@@ -48,15 +39,6 @@ TextSize=36
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_PIC_LIST_BG]
-Type=1
-Tag=3
-Rect=109 185 369 80
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_QUEST_NAME]
 Type=4

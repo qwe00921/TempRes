@@ -20,6 +20,9 @@ image\card\bai_gu_jing_02.png
 image\ui\common\mask_gray.png
 image\ui\common\mask.png
 
+[temp_bg]
+image\ui\common\bgtoguohao.png
+
 ;boss
 [boss]
 image\fx\pve\boss.png

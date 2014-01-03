@@ -6,6 +6,7 @@ function p.OpenStageMap()
     WriteCon("show 3");
 	p.RegEvent();
 	GetTileMapMgr():OpenMapWorld( "test_world_map1.tmx", true );
+	maininterface.m_bgImage:SetVisible(false);
 end
 
 --注册地图事件
@@ -181,5 +182,6 @@ end
 
 function p.CloseStageMap()
 	GetTileMapMgr():CloseMap();
+	maininterface.m_bgImage:SetVisible(true);
 end
 

@@ -18,18 +18,6 @@ NormalFileUV=0 0 96 76
 SelectFile=.\res\image\ui\drama\skip-click.png
 SelectedFileUV=0 0 96 76
 
-[CTRL_BUTTON_SKILL4]
-Type=2
-Tag=14
-Rect=34 960 110 99
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\xbattleui\skill4.png
-NormalFileUV=0 0 71 64
-
 [CTRL_EXP_POWER]
 Type=9
 Tag=15
