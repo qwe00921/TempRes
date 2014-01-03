@@ -124,8 +124,8 @@ function p.BtnOnclick(uiNode, uiEventType, param)
                 p.timerId = nil;
             end
             p.isActivity = false;
+			after_drama.DoAfterDrama(p.curStageId,p.openView);
             p.CloseUI();
-            after_drama.DoAfterDrama(p.curStageId,p.openView);
         end
     end
 end
