@@ -15,7 +15,7 @@ NormalFileUV=0 0 480 450
 [CTRL_9SLICES_17]
 Type=22
 Tag=27
-Rect=1 480 640 280
+Rect=0 534 639 258
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -25,32 +25,22 @@ NormalFileUV=0 0 192 279
 [CTRL_9SLICES_20]
 Type=22
 Tag=31
-Rect=0 221 639 245
+Rect=0 417 639 98
 AnchorPos=0 0
 Notes=
 Stretch=1
 NormalFile=.\res\image\ui\card\bg_card.png
 NormalFileUV=0 0 192 279
 
-[CTRL_9SLICES_21]
-Type=22
-Tag=29
-Rect=90 275 300 45
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
 [CTRL_INPUT_TEXT_USER_NAME]
 Type=18
 Tag=16
-Rect=91 274 299 46
+Rect=62 442 299 46
 AnchorPos=0 0
 Notes=
 Text=阿斯达名字八个字
 TextTradition=阿斯達名字八個字
-TextSize=24
+TextSize=30
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -59,7 +49,7 @@ Remark=玩家姓名
 [CTRL_BUTTON_RAND_NAME]
 Type=2
 Tag=17
-Rect=446 270 110 54
+Rect=455 438 110 54
 AnchorPos=0 0
 Notes=
 Text=随机姓名
@@ -95,7 +85,7 @@ NormalFileUV=0 0 232 84
 [CTRL_BUTTON_FACE1]
 Type=2
 Tag=24
-Rect=50 558 160 160
+Rect=215 20 160 160
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -112,7 +102,7 @@ DisableFileUV=0 0 157 161
 [CTRL_BUTTON_FACE2]
 Type=2
 Tag=25
-Rect=234 558 160 160
+Rect=261 18 160 160
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -129,7 +119,7 @@ DisableFileUV=0 0 164 165
 [CTRL_BUTTON_FACE3]
 Type=2
 Tag=26
-Rect=416 558 160 160
+Rect=227 28 160 160
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -146,7 +136,7 @@ DisableFileUV=0 0 164 168
 [CTRL_BUTTON_MALE]
 Type=2
 Tag=21
-Rect=206 358 81 81
+Rect=72 35 81 81
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -163,7 +153,7 @@ DisableFileUV=0 0 81 89
 [CTRL_BUTTON_FEMALE]
 Type=2
 Tag=28
-Rect=353 358 81 81
+Rect=117 29 81 81
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -177,34 +167,10 @@ SelectedFileUV=0 0 81 90
 DisableFile=.\res\image\ui_honor\create_role\female.png
 DisableFileUV=0 0 81 90
 
-[CTRL_9SLICES_16]
-Type=22
-Tag=19
-Rect=-2 454 640 60
-AnchorPos=0 0
-Notes=
-Text=请选择头像
-TextTradition=請選擇頭像
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_title2.png
-NormalFileUV=0 0 249 51
-
-[CTRL_9SLICES_19]
-Type=22
-Tag=30
-Rect=-3 197 639 60
-AnchorPos=0 0
-Notes=
-Text=请输入名字和性别
-TextTradition=請輸入名字和性別
-Stretch=1
-NormalFile=.\res\image\ui\public\bg_title2.png
-NormalFileUV=0 0 249 51
-
 [CTRL_PICTURE_SELECT1]
 Type=1
 Tag=20
-Rect=204 356 85 85
+Rect=68 49 85 85
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame_click.png
@@ -213,34 +179,20 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_SELECT2]
 Type=1
 Tag=23
-Rect=47 556 164 164
+Rect=249 27 164 164
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame_click.png
 NormalFileUV=0 0 100 100
 
-[CTRL_TEXT_17]
-Type=4
-Tag=18
-Rect=158 193 325 60
-AnchorPos=0 0
-Notes=
-Text=请确定你的名字与性别
-TextTradition=請確定你的名字與性別
-TextSize=24
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_20]
+[CTRL_TEXT_31]
 Type=4
 Tag=32
-Rect=158 455 325 60
+Rect=33 561 580 199
 AnchorPos=0 0
 Notes=
-Text=请选择头像
-TextTradition=請選擇頭像
-TextSize=24
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+Text=提示性文字
+TextTradition=提示性文字
+TextSize=25
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop

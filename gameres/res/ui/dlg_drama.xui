@@ -32,7 +32,7 @@ Notes=
 [CTRL_PICTURE_L]
 Type=1
 Tag=2
-Rect=-16 11 351 440
+Rect=-16 29 351 440
 AnchorPos=0 0
 Notes=
 
@@ -46,14 +46,14 @@ Notes=
 [CTRL_PICTURE_R]
 Type=1
 Tag=4
-Rect=311 11 350 440
+Rect=311 29 350 440
 AnchorPos=0 0
 Notes=
 
 [CTRL_PICTURE_CONTENT_BG]
 Type=1
 Tag=11
-Rect=6 451 630 494
+Rect=5 467 630 494
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\drama\frame.png
