@@ -26,9 +26,9 @@ end
 function p:Process()
 	if self.result == true then 
 		--w_battle_mgr.GetReuslt();
-		w_battle_mgr.QuitBattle();
-		dlg_userinfo.ShowUI();
-		stageMap_main.OpenWorldMap();
+		--w_battle_mgr.QuitBattle();
+		--dlg_userinfo.ShowUI();
+		--stageMap_main.OpenWorldMap();
 		local lResult = w_battle_mgr.GetReuslt();
 		if lResult == 1 then
 			WriteConWarning( "**MSG_BATTLE_RESULT  Success" );
