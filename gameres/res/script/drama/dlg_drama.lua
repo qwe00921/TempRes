@@ -125,7 +125,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
             end
             p.isActivity = false;
             p.CloseUI();
-            after_drama.DoAfterDrama(p.curStageId);
+            after_drama.DoAfterDrama(p.curStageId,p.openView);
         end
     end
 end
