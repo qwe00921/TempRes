@@ -1,0 +1,24 @@
+[money]
+image\ui\n_battle\money.png  @cut(1,3) @use(0,1)
+
+[money_effect]
+image\ui\n_battle\money.png  @cut(1,3) @time=0.15 @loop
+
+[bluesoul]
+image\ui\n_battle\soul.png  @cut(1,3) @use(0,1) @scale=0.75
+
+[bluesoul_effect]
+image\ui\n_battle\soul.png  @cut(1,3) @scale=0.75 @time=0.15 @loop
+
+[hpball]
+image\ui\n_battle\hp.png  @cut(1,3) @use(0,1) @scale=0.75
+
+[hpball_effect]
+image\ui\n_battle\hp.png  @cut(1,3) @scale=0.75 @time=0.15 @loop
+
+[spball]
+image\ui\n_battle\sp.png  @cut(1,3) @use(0,1) @scale=0.5
+
+[spball_effect]
+image\ui\n_battle\sp.png  @cut(1,3) @scale=0.5 @time=0.15 @loop
+

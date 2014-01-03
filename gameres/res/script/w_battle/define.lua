@@ -4,6 +4,7 @@
 -- purpose:		加载脚本：战斗相关(正式版本)
 --------------------------------------------------------------
 
+DoFile("w_battle/w_drop.lua");
 DoFile("w_battle/w_battle_camp.lua");
 DoFile("w_battle/w_battle_compute.lua");
 DoFile("w_battle/w_battle_mgr.lua");

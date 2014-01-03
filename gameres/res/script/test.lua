@@ -105,6 +105,8 @@ function p.test()
 	
 	--≤‚ ‘ΩŸ’˘
 	--battle_ko.ShowUI();
+	
+	w_battle_pve.ShowUI();
 end
 
 function p.EnterBattle()

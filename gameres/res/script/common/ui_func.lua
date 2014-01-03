@@ -25,6 +25,11 @@ NUIEventType =
 	TE_TOUCH_SELECT_VIEW			= 9,
 	TE_TOUCH_UNSELECT_VIEW			= 10,	
 	TE_TOUCH_ACTIVE_VIEW            = 11,
+	
+	TE_TOUCH_BTN_DRAG_LEFT			= 12,
+	TE_TOUCH_BTN_DRAG_RIGHT			= 13,
+	TE_TOUCH_BTN_DRAG_UP			= 14,
+	TE_TOUCH_BTN_DRAG_DOWN			= 15,
 };
 
 --列表控件的选择模式（默认单选）
@@ -110,6 +115,26 @@ end
 --事件判定：View变为活动项（仅SingleMode有效）
 function IsActiveViewEvent( uiEventType )
 	return uiEventType == NUIEventType.TE_TOUCH_ACTIVE_VIEW;
+end
+
+--事件判定：向左滑动手势
+function IsDragLeft( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_LEFT;
+end
+
+--事件判定：向右滑动手势
+function IsDragRight( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_RIGHT;
+end
+
+--事件判定：向上滑动手势
+function IsDragUp( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_UP;
+end
+
+--事件判定：向下滑动手势
+function IsDragDown( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_DOWN;
 end
 
 --加载特效

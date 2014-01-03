@@ -27,7 +27,7 @@ function p.main()
 		    --显示主界面
 		    --mainui.ShowUI();
 			--maininterface.ShowUI();
-			login_main.ShowUI();
+			--login_main.ShowUI();
         end
 	end
 	
