@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	dlg_drama.lua
 -- author:		
--- purpose:		¾çÇé½çÃæ
+-- purpose:		å‰§æƒ…ç•Œé¢
 --------------------------------------------------------------
 
 dlg_drama = {}
@@ -18,20 +18,27 @@ p.npcPicNodeL = nil;
 p.npcPicNodeM = nil;
 p.npcPicNodeR = nil;
 
-p.contentStr = nil;     --µ±Ç°¶Ô»°ÄÚÈİ
-p.contentStrLn = nil;   --µ±Ç°¶Ô»°ÄÚÈİ³¤¶È
-p.contentIndex = nil;   --µ±Ç°Ëµ»°µÄË÷Òı£¬ÓÃÓÚÌØĞ§
-p.timerId = nil;        --¶¨Ê±Æ÷ID
+p.contentStr = nil;     --å½“å‰å¯¹è¯å†…å®¹
+p.contentStrLn = nil;   --å½“å‰å¯¹è¯å†…å®¹é•¿åº¦
+p.contentIndex = nil;   --å½“å‰è¯´è¯çš„ç´¢å¼•ï¼Œç”¨äºç‰¹æ•ˆ
+p.timerId = nil;        --å®šæ—¶å™¨ID
 p.isActivity = false;
 p.curStageId = 0;
+p.openView =nil;
 
-local act_zoom = "engine_cmb.zoom_in_out"; --ºôÎüĞ§¹û
+local act_zoom = "engine_cmb.zoom_in_out"; --å‘¼å¸æ•ˆæœ
 
-local DIR_LEFT = 1;--Í¼Æ¬ÔÚ×ó
-local DIR_RIGHT = 2;--Í¼Æ¬ÔÚÓÒ
+local DIR_LEFT = 1;--å›¾ç‰‡åœ¨å·¦
+local DIR_RIGHT = 2;--å›¾ç‰‡åœ¨å³
 
---ÏÔÊ¾UI
-function p.ShowUI( stageId, storyId  )
+--æ˜¾ç¤ºUI
+function p.ShowUI( stageId, storyId, openViewId  )
+	
+	if openViewId == nil then
+		openViewId = after_drama_data.FIGHT
+	end
+	p.openView = openViewId;
+	
     if storyId == nil then
     	return;
     else
@@ -41,7 +48,7 @@ function p.ShowUI( stageId, storyId  )
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		p.curStageId = stageId;
-		drama_mgr.LoadDramaInfo( stageId,storyId );
+		drama_mgr.LoadDramaInfo( stageId,storyId,openViewId );
 		return;
 	end
 	
@@ -58,10 +65,10 @@ function p.ShowUI( stageId, storyId  )
 	p.curStageId = stageId;
 	p.Init();
 	p.SetDelegate();
-	drama_mgr.LoadDramaInfo( stageId, storyId );
+	drama_mgr.LoadDramaInfo( stageId, storyId ,openViewId);
 end
 
---³õÊ¼»¯¿Ø¼ş
+--åˆå§‹åŒ–æ§ä»¶
 function p.Init()
     --p.AddMaskImage();
     p.contentNode = GetColorLabel( p.layer, ui.ID_CTRL_COLOR_LABEL_TEXT );
@@ -76,33 +83,33 @@ function p.Init()
     --contentBg:SetPicture( GetPictureByAni("drama.content_bg", 0) );
 end
 
---Ôö¼ÓÃÉ°æ£ºÎ´Ê¹ÓÃ
+--å¢åŠ è’™ç‰ˆï¼šæœªä½¿ç”¨
 function p.AddMaskImage()
 	local maskNode = GetImage( p.layer,ui.ID_CTRL_PICTURE_MASK );
 	maskNode:SetPicture( GetPictureByAni("drama.mask", 0) );
 end
 
---ÉèÖÃÊÂ¼ş
+--è®¾ç½®äº‹ä»¶
 function p.SetDelegate()
-    --ÏÂÒ»¸ö¶Ô»°
+    --ä¸‹ä¸€ä¸ªå¯¹è¯
     local btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CLICK);
     btn:SetLuaDelegate(p.BtnOnclick);
     
-    --Ìø¹ı¾çÇé
+    --è·³è¿‡å‰§æƒ…
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_SKIP);
     btn:SetLuaDelegate(p.BtnOnclick);
     
-    --ÏÂÒ»¸ö¶Ô»°£ºÈ«ÆÁ
+    --ä¸‹ä¸€ä¸ªå¯¹è¯ï¼šå…¨å±
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_BG);
     btn:SetLuaDelegate(p.BtnOnclick);
 end
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.BtnOnclick(uiNode, uiEventType, param)
     local tag = uiNode:GetTag();
     if IsClickEvent( uiEventType ) then
     
-        --ÏÂÒ»¸ö¾çÇé¶Ô»°
+        --ä¸‹ä¸€ä¸ªå‰§æƒ…å¯¹è¯
         if ( ui.ID_CTRL_BUTTON_CLICK == tag ) or (ui.ID_CTRL_BUTTON_BG == tag) then
             if p.timerId ~= nil then
             	KillTimer( p.timerId );
@@ -110,7 +117,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
             end
             drama_mgr.NextDramaInfo();
             
-        --Ìø¹ı¾çÇé    
+        --è·³è¿‡å‰§æƒ…    
         elseif ( ui.ID_CTRL_BUTTON_SKIP == tag ) then  
             if p.timerId ~= nil then
                 KillTimer( p.timerId );
@@ -123,7 +130,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
     end
 end
 
---ÄÚÈİ¶Ô»°ÌØĞ§
+--å†…å®¹å¯¹è¯ç‰¹æ•ˆ
 function p.DoEffectContent()
     if p.contentNode == nil then
     	return ;
@@ -143,7 +150,7 @@ function p.DoEffectContent()
 	end
 end
 
---¸üĞÂ³¡¾°£ºNPCÒÔ¼°¶Ô»°ÄÚÈİµÈ
+--æ›´æ–°åœºæ™¯ï¼šNPCä»¥åŠå¯¹è¯å†…å®¹ç­‰
 function p.ResetUI( dramaInfo )
     p.AddSilentNpcEffect();
 	local bgPic = GetPictureByAni( "drama.bg_"..dramaInfo.picBg, 0);
@@ -153,13 +160,13 @@ function p.ResetUI( dramaInfo )
 	if tonumber(name) ~= nil and tonumber(name) == 0 then
 		name = " ";
 	end
-	if string.find( name, ToUtf8("Ö÷½Ç") ) then
+	if string.find( name, ToUtf8("ä¸»è§’") ) then
 		name = msg_cache.msg_player.Name or dramaInfo.npcName;
 	end
 
     p.npcNameNode:SetText( name );
     
-    --¶Ô»°ÄÚÈİ
+    --å¯¹è¯å†…å®¹
     p.contentStr = dramaInfo.talkText;
     p.contentStrLn = GetCharCountUtf8 ( p.contentStr );
     p.contentIndex = 1;
@@ -167,14 +174,14 @@ function p.ResetUI( dramaInfo )
     	p.timerId = SetTimer( p.DoEffectContent, 0.01f );
     end
 
-    --NPCÍ¼Æ¬ÒÔÌØĞ§¸üĞÂ£º×ó±ßNPC
+    --NPCå›¾ç‰‡ä»¥ç‰¹æ•ˆæ›´æ–°ï¼šå·¦è¾¹NPC
     if tonumber( dramaInfo.picLeft ) ~= nil and tonumber( dramaInfo.picLeft ) ~= 0 then
 		for i = 0, 2, 1 do
 			local npcid = tonumber( dramaInfo.picLeft ) == 99999 and msg_cache.msg_player.Face or dramaInfo.picLeft;
 			local ani = GetAni( "drama."..npcid .. "_" .. i );
 			if ani ~= nil then
 				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
-				bgPic:SetReverse( i == DIR_LEFT );--Í¼Æ¬ÔÚ×ó£¬¿¨ÅÆ±¾Éí³¯Ïò×óÔò·­×ªÍ¼Æ¬
+				bgPic:SetReverse( i == DIR_LEFT );--å›¾ç‰‡åœ¨å·¦ï¼Œå¡ç‰Œæœ¬èº«æœå‘å·¦åˆ™ç¿»è½¬å›¾ç‰‡
 				p.npcPicNodeL:SetVisible( true );
 				p.npcPicNodeL:SetPicture( bgPic );
 				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picLeft ) then
@@ -187,14 +194,14 @@ function p.ResetUI( dramaInfo )
 		p.npcPicNodeL:SetVisible( false );
 	end
 
-     --NPCÍ¼Æ¬ÒÔÌØĞ§¸üĞÂ£ºÓÒ±ßNPC
+     --NPCå›¾ç‰‡ä»¥ç‰¹æ•ˆæ›´æ–°ï¼šå³è¾¹NPC
     if tonumber( dramaInfo.picRight ) ~= nil and tonumber( dramaInfo.picRight ) ~= 0 then
 		for i = 0, 2, 1 do
 			local npcid = tonumber( dramaInfo.picRight ) == 99999 and msg_cache.msg_player.Face or dramaInfo.picRight;
 			local ani = GetAni( "drama."..npcid .. "_" .. i );
 			if ani ~= nil then
 				bgPic = GetPictureByAni( "drama."..npcid .. "_" .. i, 0);
-				bgPic:SetReverse( i == DIR_RIGHT );--Í¼Æ¬ÔÚÓÒ£¬¿¨ÅÆ±¾Éí³¯ÏòÓÒÔò·­×ªÍ¼Æ¬
+				bgPic:SetReverse( i == DIR_RIGHT );--å›¾ç‰‡åœ¨å³ï¼Œå¡ç‰Œæœ¬èº«æœå‘å³åˆ™ç¿»è½¬å›¾ç‰‡
 				p.npcPicNodeR:SetVisible( true );
 				p.npcPicNodeR:SetPicture( bgPic );
 				if tonumber( dramaInfo.npcIdTalk ) == tonumber( dramaInfo.picRight ) then
@@ -208,7 +215,7 @@ function p.ResetUI( dramaInfo )
 	end
 end
 
---Ìí¼ÓNpcÌØĞ§
+--æ·»åŠ Npcç‰¹æ•ˆ
 function p.AddNpcEffect( npcNode )
     npcNode:SetScale(1.01f);
     npcNode:SetMaskColor(ccc4(255,255,255,255));
@@ -218,7 +225,7 @@ function p.AddNpcEffect( npcNode )
 	end
 end
 
---Çå³ıNPCµÄµ±Ç°ÌØĞ§£º¼´²»ÊÇµ±Ç°Ëµ»°NPCµÄÄ¬ÈÏĞ§¹û
+--æ¸…é™¤NPCçš„å½“å‰ç‰¹æ•ˆï¼šå³ä¸æ˜¯å½“å‰è¯´è¯NPCçš„é»˜è®¤æ•ˆæœ
 function p.AddSilentNpcEffect()
     p.npcPicNodeL:SetMaskColor(ccc4(160,160,160,255));
 	p.npcPicNodeM:SetMaskColor(ccc4(160,160,160,255));
@@ -229,7 +236,7 @@ function p.AddSilentNpcEffect()
 	p.npcPicNodeR:DelActionEffect( act_zoom );
 end
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 	    p.isActivity = false;
@@ -237,7 +244,7 @@ function p.HideUI()
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
     if p.layer ~= nil then
 		p.layer:SetVisible(false);

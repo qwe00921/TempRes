@@ -1,26 +1,39 @@
 --------------------------------------------------------------
 -- FileName:    after_drama.lua
 -- author:      hst 2013-10-18
--- purpose:     剧情播放完成接下去要做的事情
+-- purpose:     鍓ф儏鎾斁瀹屾垚鎺ヤ笅鍘昏鍋氱殑浜嬫儏
 --------------------------------------------------------------
 
 after_drama = {}
 local p = after_drama;
-p.action = nil; --需要执行的动作
+p.action = nil; --闇�瑕佹墽琛岀殑鍔ㄤ綔
 p.parameters = {};
 
-BOSS_OUT = 1;       --BOSS出现
-STAGE_CLEAR = 2;    --通关    
+BOSS_OUT = 1;       --BOSS鍑虹幇
+STAGE_CLEAR = 2;    --閫氬叧    
 BATTLE_BEGIN = 3;
 
-function p.DoAfterDrama(stageId)
-	WriteCon("StageID fewafawefaw");
+function p.DoAfterDrama(stageId, openViewId)
+	
+	WriteCon("StageID = "..stageId);
 	maininterface.m_bgImage:SetVisible(false);
-	if E_DEMO_VER == 4 then
-		n_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
-	elseif E_DEMO_VER == 5 then
-		w_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
-	end;
+	if tonumber(stageId) == 0 then
+		if openViewId == after_drama_data.FIGHT then
+			WriteCon("openViewId error ");
+		elseif openViewId == after_drama_data.CHAPTER then
+			stageMap_main.openChapter();
+			WriteCon("openViewId CHAPTER ");
+		elseif openViewId == after_drama_data.STAGE then
+			stageMap_main.openChapter();
+			WriteCon("openViewId STAGE ");
+		end
+	else
+		if E_DEMO_VER == 4 then
+			n_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
+		elseif E_DEMO_VER == 5 then
+			w_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
+		end
+	end
 	p.Clear();
 end
 
@@ -30,6 +43,6 @@ function p.AddAction( action, parameters )
 end
 
 function p.Clear()
-	p.action = nil; --需要执行的动作
+	p.action = nil; --闇�瑕佹墽琛岀殑鍔ㄤ綔
     p.parameters = {};
 end

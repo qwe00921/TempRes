@@ -1,17 +1,23 @@
 --------------------------------------------------------------
 -- FileName: 	drama_mgr.lua
 -- author:		
--- purpose:		¾çÇé¹ÜÀíÆ÷£¨Êı¾İ£©
+-- purpose:		å‰§æƒ…ç®¡ç†å™¨ï¼ˆæ•°æ®ï¼‰
 --------------------------------------------------------------
 
 drama_mgr = {}
 local p = drama_mgr;
-p.dramaList = {};--¾çÇé¶Ô»°ÄÚÈİÁĞ±í
-p.index = nil;--¶Ô»°Î»ÖÃË÷Òı
+p.dramaList = {};--å‰§æƒ…å¯¹è¯å†…å®¹åˆ—è¡¨
+p.index = nil;--å¯¹è¯ä½ç½®ç´¢å¼•
 p.currentStageId = 0;
+p.openView =nil;
 
---ÔØÈë¾çÇé¶Ô»°ÄÚÈİ
-function p.LoadDramaInfo( stageId,dramaId )
+--è½½å…¥å‰§æƒ…å¯¹è¯å†…å®¹
+function p.LoadDramaInfo( stageId,dramaId,openViewId )
+	if openViewId == nil then
+		openViewId = after_drama_data.FIGHT 
+	end
+	p.openView = openViewId;
+	
     if dramaId == nil then
     	return;
     end
@@ -34,13 +40,13 @@ function p.LoadDramaInfo( stageId,dramaId )
     end
 end
 
---ÏÔÊ¾¾çÇéµÄµÚÒ»¸ö¶Ô»°
+--æ˜¾ç¤ºå‰§æƒ…çš„ç¬¬ä¸€ä¸ªå¯¹è¯
 function p.ShowFirstDramaInfo()
 	p.index = 1;
 	p.dramaList[p.index]:ShowPage();
 end
 
---ÏÔÊ¾ÏÂÒ»¸ö¾çÇé¶Ô»°
+--æ˜¾ç¤ºä¸‹ä¸€ä¸ªå‰§æƒ…å¯¹è¯
 function p.NextDramaInfo()
     if (p.index == nil) or (p.dramaList == nil) then return end;
     
@@ -48,7 +54,7 @@ function p.NextDramaInfo()
 	if #p.dramaList < p.index then
 		dlg_drama.CloseUI();
 		p.ClearData();
-		after_drama.DoAfterDrama(p.currentStageId);
+		after_drama.DoAfterDrama(p.currentStageId,p.openView);
 	else
 	   p.dramaList[p.index]:ShowPage();	
 	end
