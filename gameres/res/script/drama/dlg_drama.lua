@@ -251,7 +251,8 @@ function p.CloseUI()
         p.layer:LazyClose();
     	p.layer = nil;
     	p.storyId = nil;
-    	
+    	p.openView =nil;
+
         p.contentNode = nil;
         p.npcNameNode = nil;
         p.bgPicNode   = nil;
