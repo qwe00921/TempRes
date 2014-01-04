@@ -67,16 +67,16 @@ end
 function p:SetSelIndex(pId)
     if self.Position == W_BATTLE_POS_TAG_2 then
        self.selIndex = 1 
-    elseif self.pId == W_BATTLE_POS_TAG_1 then
-	   self.Position = 2
-    elseif self.pId == W_BATTLE_POS_TAG_3 then
-	   self.Position = 3
-    elseif self.pId == W_BATTLE_POS_TAG_5 then
-	   self.Position = 4
-    elseif self.pId == W_BATTLE_POS_TAG_4 then
-	   self.Position = 5
-    elseif self.pId == W_BATTLE_POS_TAG_6 then
-	   self.Position = 6
+    elseif self.Position == W_BATTLE_POS_TAG_1 then
+	   self.selIndex = 2
+    elseif self.Position == W_BATTLE_POS_TAG_3 then
+	   self.selIndex = 3
+    elseif self.Position == W_BATTLE_POS_TAG_5 then
+	   self.selIndex = 4
+    elseif self.Position == W_BATTLE_POS_TAG_4 then
+	   self.selIndex = 5
+    elseif self.Position == W_BATTLE_POS_TAG_6 then
+	   self.selIndex = 6
 	end;
 end
 
@@ -287,9 +287,9 @@ function p:GetFrontPos(targetNode)
     local halfWidthSum = self:GetNode():GetCurAnimRealSize().w/4 + targetNode:GetCurAnimRealSize().w/4;
     
     if self.camp == E_CARD_CAMP_HERO then
-        frontPos.x = frontPos.x + halfWidthSum;
-    else
         frontPos.x = frontPos.x - halfWidthSum;
+    else
+        frontPos.x = frontPos.x + halfWidthSum;
     end
     return frontPos;
 end

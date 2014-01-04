@@ -31,10 +31,10 @@ function p:ctor()
 	self.atkplayerNode = 0;
 	self.IsRevive = false;
 
-	--local batch = battle_show.GetNewBatch(); 
-	self.seqStar = nil;
-	self.seqAtk = nil;
-    self.seqTarget = nil; 
+	local batch = battle_show.GetNewBatch(); 
+	self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
+	self.seqAtk = batch:AddSerialSequence();
+    self.seqTarget = batch:AddSerialSequence(); 
 	--self.seqBullet = batch:AddSerialSequence();	
 	
 end
@@ -72,7 +72,6 @@ function p:start()
 			
 	if latkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 	
-		
 		local distance = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
         local playerNode = self.atkplayerNode;
     
@@ -86,25 +85,18 @@ function p:start()
 		--攻击音乐
 		--local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( playerNode, true );
 		--self.seqStar:AddCommand( cmdAtkBegin );
-		if self.seqStar == nil then
-			local batch = battle_show.GetNewBatch(); 
-			self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
-		end;
-			
-        
-		--向攻击目标移动
-		local cmdMove = JumpMoveTo(atkFighter, originPos, enemyPos, self.seqStar, true);
 
-		--[[
-		self.seqAtk    = batch:AddSerialSequence();        
+		--向攻击目标移动
+		local cmdMove = JumpMoveTo(atkFighter, originPos, enemyPos, self.seqAtk, true);
+		
 		--切换到攻击状态
 		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
-		self.seqAtk:SetWaitEnd(cmdMove);
+		--self.seqAtk:SetWaitEnd(cmdMove);
 		
-		self.seqTarget = batch:AddSerialSequence();	
+		--self.seqTarget = batch:AddSerialSequence();	
 		local cmdHurt = tarFighter:cmdLua("tar_hurt",        self.id,"", self.seqTarget);
 		self.seqTarget:SetWaitEnd( cmdMove );
-		]]--
+		
 		
 	elseif self.atkType == W_BATTLE_DISTANCE_Archer then  --远程攻击
 	    local isBullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
