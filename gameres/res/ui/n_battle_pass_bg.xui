@@ -1,0 +1,22 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_216]
+Type=1
+Tag=216
+Rect=0 0 640 457
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\bg_pass.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_51]
+Type=1
+Tag=51
+Rect=-100 0 105 457
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_wipe.png
+NormalFileUV=0 0 246 464

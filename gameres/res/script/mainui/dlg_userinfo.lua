@@ -123,6 +123,7 @@ function p.RefreshUI(userinfo)
 	--Exp:SetValue( 0, 100, tonumber( userinfo.Exp ) );
 	
 	local pic = GetImage( p.layer, ui.ID_CTRL_PICTURE_FACE);
+	pic:SetVisible( false );
 	--pic:SetPicture( GetPictureByAni("UserImage.Face"..userinfo.Face, 0) );
 	
 	dlg_battlearray.RefreshUI(userinfo.User_Team);

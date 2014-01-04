@@ -485,6 +485,8 @@ end
 
 --°´Å¥½»»¥
 function p.OnBtnClick( uiNode, uiEventType, param )
+	WriteCon( tostring(uiEventType) );
+	
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		local btn = ConverToButton( uiNode );

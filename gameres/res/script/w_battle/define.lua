@@ -31,6 +31,8 @@ DoFile("w_battle/w_battle_round_num.lua");
 DoFile("w_battle/w_battle_atkDamage.lua");
 DoFile("w_battle/w_battle_PVEStaMachMgr.lua");
 DoFile("w_battle/w_battle_PVEStateMachine.lua");
+DoFile("w_battle/w_battle_pass.lua");
+DoFile("w_battle/w_battle_pass_bg.lua");
 
 
 

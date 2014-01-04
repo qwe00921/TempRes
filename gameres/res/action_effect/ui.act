@@ -43,3 +43,10 @@
 [action_point_lack_scale]
 @scaleto(0.5,1.03,1.03)
 @scaleto(0.5,1.0,1.0)
+
+;战斗过场动画
+[w_battle_pass_bg_show]
+@move(0.5,-740,0)
+
+[w_battle_pass_bg_hide]
+@move(0.5,740,0)
