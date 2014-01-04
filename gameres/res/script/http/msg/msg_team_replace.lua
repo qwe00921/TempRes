@@ -36,7 +36,7 @@ function p:Process()
 	if self.result then
 		dlg_card_group_main.UpdateListData( self );
 		
-		dlg_battlearray.UpdateListData( self );
+--		dlg_battlearray.UpdateListData( self );
 	else
 		dlg_msgbox.ShowOK( ToUtf8("ÌבÊ¾"), self.message, nil, dlg_card_group_main.layer );
 	end

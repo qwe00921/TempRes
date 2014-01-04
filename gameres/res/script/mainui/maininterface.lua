@@ -10,7 +10,7 @@ local ui = ui_main_interface
 function p.ShowUI(userinfo)
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		dlg_battlearray.ShowUI();
+--		dlg_battlearray.ShowUI();
 		p.ShowBillboard();
 		PlayMusic_MainUI();
 		
@@ -46,7 +46,7 @@ function p.ShowUI(userinfo)
 	
 	p.ShowMailNum(userinfo);
 	
-	dlg_battlearray.ShowUI();
+--	dlg_battlearray.ShowUI();
 	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
@@ -103,7 +103,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--maininterface.HideUI();
 			--隐藏用户信息
 			dlg_userinfo.HideUI();
-			dlg_battlearray.HideUI();
+--			dlg_battlearray.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========活动========**");
 			p.CloseAllPanel();
@@ -126,7 +126,7 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
-		dlg_battlearray.HideUI();
+--		dlg_battlearray.HideUI();
 		p.HideBillboard();
 	end
 end
@@ -136,7 +136,7 @@ function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
         p.layer = nil;
-		dlg_battlearray.CloseUI();
+--		dlg_battlearray.CloseUI();
 		billboard.CloseUI();
     end
 end

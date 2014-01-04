@@ -2,15 +2,32 @@
 w_battle_pass_bg = {};
 local p = w_battle_pass_bg;
 
+p.masklayer = nil;
 p.layer = nil;
 
 local ui = ui_n_battle_pass_bg;
 
 function p.ShowUI()
 	if p.layer ~= nil then
+		if p.masklayer then
+			p.masklayer:SetVisible( true );
+		end
 		SetTimerOnce( p.ShowAnimation, 0.2 );
 		return;
 	end
+	
+	local masklayer = createNDUIDialog();
+	if masklayer == nil then
+		return false;
+	end
+	masklayer:NoMask();
+	masklayer:Init();
+	masklayer:SetSwallowTouch( true );
+	
+	GetUIRoot():AddChild( masklayer );
+	LoadUI("n_battle_mask.xui", masklayer, nil);
+	
+	p.masklayer = masklayer;
 	
 	local layer = createNDUIDialog();
 	if layer == nil then
@@ -68,11 +85,19 @@ function p.CloseUI()
 		p.layer:LazyClose();
 		p.layer = nil;
 	end
+	
+	if p.masklayer then
+		p.masklayer:LazyClose();
+		p.masklayer = nil;
+	end
 end
 
 function p.HideUI()
 	if p.layer ~= nil then
         p.layer:SetVisible(false);
+	end
+	if p.masklayer ~= nil then
+        p.masklayer:SetVisible(false);
 	end
 end
 

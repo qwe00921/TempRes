@@ -126,7 +126,7 @@ function p.RefreshUI(userinfo)
 	pic:SetVisible( false );
 	--pic:SetPicture( GetPictureByAni("UserImage.Face"..userinfo.Face, 0) );
 	
-	dlg_battlearray.RefreshUI(userinfo.User_Team);
+--	dlg_battlearray.RefreshUI(userinfo.User_Team);
 	
 	--行动力、精力恢复
 	local m_time = tonumber( userinfo.MoveTime );

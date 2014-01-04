@@ -39,6 +39,7 @@ p.BoxScale = false;
 p.objList = {};
 
 p.dropList = {};
+p.tempList = {};
 
 local BTN_INDEX = 1;
 local ATTR_INDEX = 2;
@@ -423,6 +424,7 @@ end
 
 --回合结束后,调用刷新界面,通知UI刷新
 function p.RoundOver()
+	
 end
 
 --本波次战斗结束,通知UI
@@ -432,13 +434,16 @@ end
 	false:失败
 --]]
 function p.FighterOver( winFlag )
-	
+	if winFlag then
+		--过场动画
+		w_battle_pass_bg.ShowUI();
+	end
 end
 
 --调用UI，标识任务结束，pEvent是回调函数，目前不用传参，只有成功时才调用
 function p.MissionOver( pEvent )
 	--UI相关处理
-	
+	p.CloseUI();
 	
 	--回调接口
 	if pEvent then
@@ -493,7 +498,6 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		btn:SetEnabled( false );
 		if ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "**菜单**" );
-			p.testDrop();
 			btn:SetEnabled( true );
 		elseif p.CheckUseItem( tag ) then
 			WriteCon( "**使用物品**" );
@@ -552,25 +556,7 @@ function p.SetAtk( uiNode )
 	end
 end
 
-function p.testDrop()
-	if p.CheckHasDrop then
-		p.testPick();
-		p.CheckHasDrop = false;
-		return;
-	end
-	
-	for i = 1, 30 do
-		local drop = p.dropList[i];
-		if drop == nil then
-			drop = w_drop:new();
-			drop:Init( p.battleLayer, math.random(1,4) );
-			table.insert( p.dropList, drop );
-		end
-		drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[math.random(1,#enemyUIArray)] ) );
-		p.CheckHasDrop = true;
-	end
-end
-
+--===================================掉落======================================--
 --list为掉落的表
 --{{droptype1, num1, position1, param1},{droptype2, num2, position2, param2},……}
 --droptype为掉落类型
@@ -590,18 +576,21 @@ function p.MonsterDrop( list )
 	if list == nil or #list == 0 then
 		return;
 	end
-	
-	local index = 1;
+
 	for i = 1, #list do
 		for j = 1, list[i][2] do
-			local drop = p.dropList[index];
+			local index = p.tempList[1] or 0;
+			local drop = nil;
+			if index ~= 0 then
+				table.remove( p.tempList, 1 );
+				drop = p.dropList[index];
+			end
 			if drop == nil then
 				drop = w_drop:new();
 				drop:Init( p.battleLayer, list[i][1], list[i][4] );
-				p.dropList[index] = drop;
+				table.insert( p.dropList, drop );
 			end
 			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ) );
-			index = index + 1;
 		end
 	end
 end
@@ -637,8 +626,22 @@ function p.Pick( nTimerId )
 				p.boxImage:AddActionEffect( "lancer.box_scaleup" );
 			end
 		end
+		p.AddIndexToTable();
 	end
 	p.Index = p.Index + 1;
+end
+
+function p.AddIndexToTable()
+	local bFlag = false;
+	for i,v in pairs(p.tempList) do
+		if v == p.Index then
+			bFlag = true;
+			break;
+		end
+	end
+	if not bFlag then
+		table.insert( p.tempList, p.Index );
+	end
 end
 
 --包裹缩小
