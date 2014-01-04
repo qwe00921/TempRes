@@ -13,6 +13,7 @@ p.card_team = nil;
 p.team_data = nil;
 p.modify_team_id = nil;
 p.pos_no = nil;
+p.m_list = nil;
 
 local ui = ui_card_group;
 
@@ -150,6 +151,9 @@ function p.ShowTeamList()
 		view:SetId( tonumber(user_teams[i].Team_id) );
 		list:AddView( view );
 	end
+	
+	p.m_list = list;
+	WriteCon(string.format("Now actived view is %d:",n));
 end
 
 --显示单个节点
@@ -189,7 +193,9 @@ function p.SetTeamInfo( view, user_teamData )
 			
 			pic:UseConfig( user_teamData["Pos_card"..i] );
 			pic:SetLookAt(E_LOOKAT_LEFT);
-			pic:Standby("")
+			pic:Standby("");
+			pic:SetEnableSwapDrag(true);
+			pic:SetLuaDelegate(p.OnDragEvent);
 			
 			--[[增加星级显示]]--
 		else
@@ -258,6 +264,25 @@ function p.SetTeamInfo( view, user_teamData )
 	local defLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_TOTAL_DEF );
 	defLabel:SetText( tostring( p.TotalData( user_teamData, "Defence" )) );
 	]]--
+end
+
+function p.OnDragEvent(uiNode, uiEventType, param)
+	
+	if nil ~= p.m_list then
+		local n = p.m_list:GetActiveView();
+		WriteCon(string.format("Now View Index Is %d",n));
+	end
+	
+	if IsDraging(uiEventType) then
+		local pPoint = param;
+		WriteCon(string.format("Now Draging: %d,%d",pPoint.x,pPoint.y));
+	elseif IsDragBegin(uiEventType) then
+		local pPoint = param;
+		WriteCon(string.format("Now Drag Begin: %d,%d",pPoint.x,pPoint.y));
+	elseif IsDragEnd(uiEventType) then
+		local pPoint = param;
+		WriteCon(string.format("Now Drag End: %d,%d",pPoint.x,pPoint.y));
+	end
 end
 
 function p.TotalData( user_teamData, str )
