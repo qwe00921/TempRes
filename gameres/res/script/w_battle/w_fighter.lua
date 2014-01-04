@@ -168,11 +168,30 @@ function p:AddLife(val)
 	end
 end;
 
+--创建飘血数字
+function p:CreateFlyNum(nType)
+	local flynum = fly_num:new();
+	flynum:SetOwnerNode( self.node );
+	flynum:Init(nType);
+	flynum:SetOffset(30,-50);
+	
+	self.node:AddChildZ( flynum:GetNode(), 2 );
+	self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
+	
+	return flynum;
+end
+	
 function p:SubShowLife(val) --需展现的血量
 	self.showlife = self.showlife - val;
 	if self.showlife < 0 then
 		self.showlife = 0;
 	end
+	
+	--掉血动画, 可以支持掉多个
+	local flynum = self:CreateFlyNum(0);
+    if flynum ~= nil then
+        flynum:PlayNum( val );
+    end	
 	
     --判断并显示当前血量    
 	if self:GetId() == w_battle_mgr.PVEShowEnemyID then 
