@@ -3,7 +3,7 @@
 -- author:      hst, 2013年12月13日
 -- purpose:     对战辅助函数
 --------------------------------------------------------------
-
+--[[
 --通过BUFF TYPE 获取ANI
 function GetBuffAniByType( buffType )
     if buffType == nil then
@@ -190,4 +190,4 @@ end
 
 
 
-
+]]--

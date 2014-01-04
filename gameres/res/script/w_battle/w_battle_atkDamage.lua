@@ -9,21 +9,33 @@ local p = w_battle_atkDamage;
 
 
 function p.SimpleDamage(atkFighter,tarFighter)
-    	
-	local lpropRate = p.CalProperty(atkFighter,tarFighter)
 
+--计算属性相克    	
+	local lisElement = p.IsElement(atkFighter,tarFighter);
+	local lpropRate = 1;
+	if lisElement == true then
+		lpropRate = 1.2;
+	end;
 	
+	--计算BUFF加成
+	atkFighter.Buff = 1;	
+	
+	--合击加成
 	local lIsJoinAtk = p.IsJoinAtk(tarFighter); 
 	local lJoinAtkRate = 0;
 	if lIsJoinAtk == true then
 		lJoinAtkRate = 0.5
 	end
 	
+	--计算暴击加成
 	local lIsCrit = p.IsCrit(atkFighter,tarFighter);
-	local lCrit = 0;
+	local lAddCrit = 0;	
+	if lIsCrit == true then
+		lAddCrit = 1;
+	end;
 	
 	
-	local damage = atkFighter.damage * atkFighter.Buff * lpropRate * (1+lCrit + lJoinAtkRate)
+	local damage = atkFighter.damage * atkFighter.Buff * lpropRate * (1+lAddCrit + lJoinAtkRate)
 	             - tarFighter.Defence * tarFighter.Buff;
 --普通攻击伤害 = （人物攻击力 + 装备攻击力）* BUFF百分比加成*属性克制关系加成*（暴击加成+合击加成）
 --           –（对方人物防御值+对方装备防御值）* BUFF百分比加成
@@ -57,13 +69,20 @@ end;
 function p.IsCrit(atkFighter,tarFighter)
 	local lIsCrit = false;
 	
+	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
+    local lrandom = math.random(1,2000);
+	if lrandom < atkFighter.Crit then  --暴击成功
+		lIsCrit = true;
+	end
+		
+	
 	return lIsCrit;
 end;
 
 
---计算属性克制 --金克木, 木克土, 土克水, 水克火, 火克金 ,光暗互克
-function p.CalProperty(atkFighter,tarFighter)
-    local lrate = 0;
+--属性是否相克,只有克制时,才有加成,被克无效果
+function p.IsElement(atkFighter,tarFighter)
+    local lresult = false;
     
 	if     (atkFighter.prop == W_BATTLE_ELEMENT_LIGHT  and tarFighter.prop == W_BATTLE_ELEMENT_DARK)
 		or (atkFighter.prop == W_BATTLE_ELEMENT_DARK   and tarFighter.prop == W_BATTLE_ELEMENT_LIGHT)
@@ -73,10 +92,10 @@ function p.CalProperty(atkFighter,tarFighter)
 		or (atkFighter.prop == W_BATTLE_ELEMENT_WATER	and tarFighter.prop == W_BATTLE_ELEMENT_FIRE )
 		or (atkFighter.prop == W_BATTLE_ELEMENT_FIRE 	and tarFighter.prop == W_BATTLE_PROP_GOLD) then
 		
-		lrate = 0.2
+		lresult = true;
 	end
 		
-	return lrate;
+	return lresult;
 end
 
 

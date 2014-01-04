@@ -31,10 +31,10 @@ function p:ctor()
 	self.atkplayerNode = 0;
 	self.IsRevive = false;
 
-	--local batch = battle_show.GetNewBatch(); 
-	self.seqStar = nil;
-	self.seqAtk = nil;
-    self.seqTarget = nil; 
+	local batch = battle_show.GetNewBatch(); 
+	self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
+	self.seqAtk = batch:AddSerialSequence();
+    self.seqTarget = batch:AddSerialSequence(); 
 	--self.seqBullet = batch:AddSerialSequence();	
 	
 end
@@ -72,7 +72,6 @@ function p:start()
 			
 	if latkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 	
-		
 		local distance = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
         local playerNode = self.atkplayerNode;
     
@@ -86,25 +85,18 @@ function p:start()
 		--攻击音乐
 		--local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( playerNode, true );
 		--self.seqStar:AddCommand( cmdAtkBegin );
-		if self.seqStar == nil then
-			local batch = battle_show.GetNewBatch(); 
-			self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
-		end;
-			
-        
-		--向攻击目标移动
-		local cmdMove = JumpMoveTo(atkFighter, originPos, enemyPos, self.seqStar, true);
 
-		--[[
-		self.seqAtk    = batch:AddSerialSequence();        
+		--向攻击目标移动
+		local cmdMove = JumpMoveTo(atkFighter, originPos, enemyPos, self.seqAtk, true);
+		
 		--切换到攻击状态
 		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
-		self.seqAtk:SetWaitEnd(cmdMove);
+		--self.seqAtk:SetWaitEnd(cmdMove);
 		
-		self.seqTarget = batch:AddSerialSequence();	
+		--self.seqTarget = batch:AddSerialSequence();	
 		local cmdHurt = tarFighter:cmdLua("tar_hurt",        self.id,"", self.seqTarget);
 		self.seqTarget:SetWaitEnd( cmdMove );
-		]]--
+		
 		
 	elseif self.atkType == W_BATTLE_DISTANCE_Archer then  --远程攻击
 	    local isBullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
@@ -191,6 +183,7 @@ function p:atk_end()
 
     --受击后掉血,不用等掉血动画完成
 	--local cmd11 = tarFighter:cmdLua( "fighter_damage",   self.id,"", self.seqTarget );	
+	tarFighter:SubShowLife(self.damage); --掉血动画,及表示的血量减少
 
     --处理攻击方	
 	if self.atkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
@@ -260,24 +253,23 @@ end;
 
 function p:tar_hurtEnd()
 	local atkFighter = self:getAtkFighter();
-	local targetFighter = self:getTarFighter();	
+	local targerFighter = self:getTarFighter();	
 	
-	if targetFighter.beHitTimes == 0 then --受击次数为0时
+	if targerFighter:GetHitTimes() == 0 then --受击次数为0时
 		targerFighter.IsHurt = false;
-	    if targetFighter.showlife > 0 then  --还活着,继续播放站立	
-			targetFighter:standby();
+	    if targerFighter.showlife > 0 then  --还活着,继续播放站立	
+			targerFighter:standby();
 			self:targerTurnEnd();  --受击方流程结束
-		elseif targetFighter.showlife <= 0 then
-            if self.CanRevive == true then  --可恢活
-				local fighter = self:getTarFighter();
-				fighter.isDead = false;
-				fighter.canRevive = false;
+		elseif targerFighter.showlife <= 0 then
+            if self.CanRevive == true then  --可复活
+				targerFighter.isDead = false;
+				targerFighter.canRevive = false;
 				
-				fighter:standby();
+				targerFighter:standby();
 
-				local cmdf = createCommandEffect():AddActionEffect( 0.01, fighter:GetNode(), "lancer_cmb.revive" );
+				local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.revive" );
 				self.seqTarget:AddCommand( cmdf );
-				local cmdC = createCommandEffect():AddActionEffect( 0.01, fighter.m_kShadow, "lancer_cmb.revive" );
+				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
 				self.seqTarget:AddCommand( cmdC );		
 								
 				local cmdRevive =targerFighter:cmdLua("tar_ReviveEnd",  self.id, "", seq);
@@ -298,13 +290,13 @@ function p:tar_hurtEnd()
 				end;			
 			
 			
-				local cmdf = createCommandEffect():AddActionEffect( 0.01, targetFighter.m_kShadow, "lancer_cmb.die" );
+				local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdf );
-				local cmdC = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.die" );
+				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdC );				
 				
-				local cmdDieEnd =targerFighter:cmdLua("tar_dieEnd",  self.id,"", seq);
-				seqDieEnd:SetWaitEnd( cmdDieEnd ); 
+				local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id,"", self.seqTarget);
+				--seqDieEnd:SetWaitEnd( cmdDieEnd ); 
 			end;
 		end;
 	else --还在受其它人打击,本次攻击方发起的受击流程就结束了

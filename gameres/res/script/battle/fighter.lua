@@ -47,14 +47,18 @@ function p:ctor()
 end
 
 --≥ı ºªØ
-function p:Init( idFighter, node, camp )
+function p:Init( idFighter, node, camp, notUseDefHpBar )
 	if idFighter ~= 0 and node ~= nil then
 		self.idFighter = idFighter;
 		self.node = node;
 		self.camp = camp;
 	end
 	
-	self:CreateHpBar();
+	if notUseDefHpBar == true  then
+		--
+	else
+		self:CreateHpBar();
+	end;
 	self:CreateFlyNum();
 	self:CreateFootNode();
 end

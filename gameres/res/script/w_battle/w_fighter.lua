@@ -35,7 +35,7 @@ function p:ctor()
 	self.m_kShadow = nil;
 	self.m_kCurrentBatch = nil;
 	self.flynumGreen = nil;
-	
+	self.IsHurt = false;
 	self.damage = 0;
 	self.Buff = 1;
 	
@@ -47,36 +47,38 @@ end
 
 --初始化（重载）
 function p:Init( idFighter, node, camp )
-	super.Init( self, idFighter, node, camp );
+	super.Init( self, idFighter, node, camp, true );
 	--self.hpbar:GetNode():SetVisible( false );
 	self.tmplife = self.life;
 	self:SetSelIndex(idFighter);  --按2,1,3,5,4,6顺序选择
-	self:CreateHpBar();
-	self:CreateFlyNumGreen();
+
 	self.damage = self.Attack;
 	self.Buff = 1;
 	
 	self.showlife = self.life;  --用来显示的血量
 	self.maxlife = self.life;  --最大血量
 	self.nowlife = self.life; --当前实际血量
+	self.Hp = self.life;
+	self.maxHp = self.life;        
 
-	
+	--self:CreateHpBar();
+	--self:CreateFlyNumGreen();	
 end
 
 --初始化被选择顺序
 function p:SetSelIndex(pId)
     if self.Position == W_BATTLE_POS_TAG_2 then
        self.selIndex = 1 
-    elseif self.pId == W_BATTLE_POS_TAG_1 then
-	   self.Position = 2
-    elseif self.pId == W_BATTLE_POS_TAG_3 then
-	   self.Position = 3
-    elseif self.pId == W_BATTLE_POS_TAG_5 then
-	   self.Position = 4
-    elseif self.pId == W_BATTLE_POS_TAG_4 then
-	   self.Position = 5
-    elseif self.pId == W_BATTLE_POS_TAG_6 then
-	   self.Position = 6
+    elseif self.Position == W_BATTLE_POS_TAG_1 then
+	   self.selIndex = 2
+    elseif self.Position == W_BATTLE_POS_TAG_3 then
+	   self.selIndex = 3
+    elseif self.Position == W_BATTLE_POS_TAG_5 then
+	   self.selIndex = 4
+    elseif self.Position == W_BATTLE_POS_TAG_4 then
+	   self.selIndex = 5
+    elseif self.Position == W_BATTLE_POS_TAG_6 then
+	   self.selIndex = 6
 	end;
 end
 
@@ -166,11 +168,30 @@ function p:AddLife(val)
 	end
 end;
 
+--创建飘血数字
+function p:CreateFlyNum(nType)
+	local flynum = fly_num:new();
+	flynum:SetOwnerNode( self.node );
+	flynum:Init(nType);
+	flynum:SetOffset(30,-50);
+	
+	self.node:AddChildZ( flynum:GetNode(), 2 );
+	self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
+	
+	return flynum;
+end
+	
 function p:SubShowLife(val) --需展现的血量
 	self.showlife = self.showlife - val;
 	if self.showlife < 0 then
 		self.showlife = 0;
 	end
+	
+	--掉血动画, 可以支持掉多个
+	local flynum = self:CreateFlyNum(0);
+    if flynum ~= nil then
+        flynum:PlayNum( val );
+    end	
 	
     --判断并显示当前血量    
 	if self:GetId() == w_battle_mgr.PVEShowEnemyID then 
@@ -287,9 +308,9 @@ function p:GetFrontPos(targetNode)
     local halfWidthSum = self:GetNode():GetCurAnimRealSize().w/4 + targetNode:GetCurAnimRealSize().w/4;
     
     if self.camp == E_CARD_CAMP_HERO then
-        frontPos.x = frontPos.x + halfWidthSum;
-    else
         frontPos.x = frontPos.x - halfWidthSum;
+    else
+        frontPos.x = frontPos.x + halfWidthSum;
     end
     return frontPos;
 end
@@ -356,6 +377,14 @@ function p:cmdLua( cmdtype, num, str, seq )
     return super.cmdLua( self, cmdtype, num, str, seq );
     
 end
+--被攻击的次数
+function p:GetHitTimes()
+	local lCount = 0;
+	if (self.beHitTimes ~= nil) or (self.beHitTimes ~= {}) then
+		lCount = table.maxn(self.beHitTimes);
+	end;
+	return lCount;
+end;
 
 function p:BeHitAdd(pAtkId)
 	self.beHitTimes[#self.beHitTimes + 1] = pAtkId;
@@ -363,7 +392,7 @@ end
 
 function p:BeHitDec(pAtkId)
 	for k,v in pairs(self.beHitTimes) do
-		if v == pId then
+		if v == pAtkId then
 			table.remove(self.beHitTimes,k);
 			break;
 		end;
