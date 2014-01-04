@@ -60,7 +60,6 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_102 == tag or ui.ID_CTRL_BUTTON_4 == tag then
-			--[[
 			uiNode:SetVisible(false);
 			--login_ui.ShowUI();
 			--暂时去除登录界面
@@ -68,8 +67,6 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--maininterface.ShowUI();
 			local uid = GetUID();
 			SendReq("ServerList","List",uid,"");
-			--]]
-			w_battle_pass_bg.ShowUI();
 		end
 	end
 end
