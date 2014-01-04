@@ -271,10 +271,16 @@ function p:AddFighters( uiArray, fighters )
 		f.Defence = tonumber( fighterInfo.Defence);
 		f.atkType = tonumber ( fighterInfo.Damage_type);
 		f.Position = tonumber (fighterInfo.Position);
-        f.buffList = {};
-        
-		--f:Init( uiTag, node, self.idCamp );
+		f.Crit	   = tonumber (fighterInfo.Crit);
 		
+        f.buffList = {};
+         
+		--临时攻击力调整
+		f.Attack = 100;
+		f.Defence = 0;
+		f.life = 200;
+				
+		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();

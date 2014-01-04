@@ -35,7 +35,7 @@ function p:ctor()
 	self.m_kShadow = nil;
 	self.m_kCurrentBatch = nil;
 	self.flynumGreen = nil;
-	
+	self.IsHurt = false;
 	self.damage = 0;
 	self.Buff = 1;
 	
@@ -47,20 +47,22 @@ end
 
 --初始化（重载）
 function p:Init( idFighter, node, camp )
-	super.Init( self, idFighter, node, camp );
+	super.Init( self, idFighter, node, camp, true );
 	--self.hpbar:GetNode():SetVisible( false );
 	self.tmplife = self.life;
 	self:SetSelIndex(idFighter);  --按2,1,3,5,4,6顺序选择
-	self:CreateHpBar();
-	self:CreateFlyNumGreen();
+
 	self.damage = self.Attack;
 	self.Buff = 1;
 	
 	self.showlife = self.life;  --用来显示的血量
 	self.maxlife = self.life;  --最大血量
 	self.nowlife = self.life; --当前实际血量
+	self.Hp = self.life;
+	self.maxHp = self.life;        
 
-	
+	--self:CreateHpBar();
+	--self:CreateFlyNumGreen();	
 end
 
 --初始化被选择顺序
@@ -356,6 +358,14 @@ function p:cmdLua( cmdtype, num, str, seq )
     return super.cmdLua( self, cmdtype, num, str, seq );
     
 end
+--被攻击的次数
+function p:GetHitTimes()
+	local lCount = 0;
+	if (self.beHitTimes ~= nil) or (self.beHitTimes ~= {}) then
+		lCount = table.maxn(self.beHitTimes);
+	end;
+	return lCount;
+end;
 
 function p:BeHitAdd(pAtkId)
 	self.beHitTimes[#self.beHitTimes + 1] = pAtkId;
@@ -363,7 +373,7 @@ end
 
 function p:BeHitDec(pAtkId)
 	for k,v in pairs(self.beHitTimes) do
-		if v == pId then
+		if v == pAtkId then
 			table.remove(self.beHitTimes,k);
 			break;
 		end;

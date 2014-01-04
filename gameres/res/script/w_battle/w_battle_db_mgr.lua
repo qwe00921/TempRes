@@ -129,7 +129,7 @@ p.playerCardList = {
 
 	{
 	element = 0,
-		Sp = 0,
+	Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000724,
 	CardID= 10003,
@@ -163,7 +163,7 @@ p.playerCardList = {
 	},
 	{
 	element = 0,
-		Sp = 0,
+	Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000725,
 	CardID= 10022,

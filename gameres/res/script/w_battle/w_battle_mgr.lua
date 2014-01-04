@@ -102,7 +102,7 @@ function p.SetPVEAtkID(atkID)
    
 
    --默认选择的目标,判定怪物将死
-	if (targetFighter.nowlife < 0) and (p.LockEnemy == false) then
+	if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
 		p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
 		
 		if p.enemyCamp:GetActiveFighterCount() == 1 then
