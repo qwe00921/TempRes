@@ -17,7 +17,7 @@ Remark=隐藏子界面按钮
 [CTRL_BUTTON_MORE]
 Type=2
 Tag=3
-Rect=449 560 100 100
+Rect=234 568 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -34,15 +34,15 @@ DisableFileUV=0 0 80 80
 [CTRL_BUTTON_ACTIVITY]
 Type=2
 Tag=4
-Rect=336 556 100 100
+Rect=13 537 173 70
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=活动按钮
-NormalFile=.\res\image\ui\main_interface\activity.PNG
-NormalFileUV=0 0 100 100
+NormalFile=.\res\image\ui\public\active.png
+NormalFileUV=0 0 173 70
 SelectFile=.\res\image\ui\main_interface\activity_click.PNG
 SelectedFileUV=0 0 100 100
 DisableFile=.\res\image\ui\main_interface\activity.PNG
@@ -51,15 +51,15 @@ DisableFileUV=0 0 100 100
 [CTRL_BUTTON_MAIL]
 Type=2
 Tag=5
-Rect=243 557 100 100
+Rect=453 538 173 70
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=邮件按钮
-NormalFile=.\res\image\ui\main_interface\mail.PNG
-NormalFileUV=0 0 100 100
+NormalFile=.\res\image\ui\public\home_btn_mail1.png
+NormalFileUV=0 0 173 58
 SelectFile=.\res\image\ui\main_interface\mail_click.png
 SelectedFileUV=0 0 100 100
 DisableFile=.\res\image\ui\main_interface\mail.PNG
@@ -68,7 +68,7 @@ DisableFileUV=0 0 100 100
 [CTRL_PICTURE_ACTIVITY_TIPS_BG]
 Type=1
 Tag=7
-Rect=540 560 36 36
+Rect=21 541 36 36
 AnchorPos=0 0
 Notes=
 Remark=活动数量通知背景
@@ -78,7 +78,7 @@ NormalFileUV=0 0 36 36
 [CTRL_PICTURE_MAIL_TIPS_BG]
 Type=1
 Tag=8
-Rect=539 614 36 36
+Rect=584 540 36 36
 AnchorPos=0 0
 Notes=
 Remark=邮件数量通知背景
@@ -88,7 +88,7 @@ NormalFileUV=0 0 36 36
 [CTRL_TEXT_ACTIVITY_TIPS_NUM]
 Type=4
 Tag=9
-Rect=544 560 30 30
+Rect=24 542 30 30
 AnchorPos=0 0
 Notes=
 Text=11
@@ -101,7 +101,7 @@ Remark=活动数量
 [CTRL_TEXT_MAIL_TIPS_NUM]
 Type=4
 Tag=10
-Rect=542 615 30 30
+Rect=587 541 30 30
 AnchorPos=0 0
 Notes=
 Text=11
@@ -114,7 +114,7 @@ Remark=邮件数量
 [CTRL_PICTURE_BILLBOARD_BG]
 Type=1
 Tag=13
-Rect=-2 528 640 52
+Rect=1 670 640 52
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_ui\ad_bg.png
@@ -123,7 +123,7 @@ NormalFileUV=0 0 40 52
 [CTRL_BUTTON_CHA1]
 Type=2
 Tag=18
-Rect=0 165 108 333
+Rect=0 181 108 333
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -135,7 +135,7 @@ NormalFileUV=0 0 108 333
 [CTRL_BUTTON_CHA2]
 Type=2
 Tag=19
-Rect=106 162 108 333
+Rect=106 178 108 333
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -147,7 +147,7 @@ NormalFileUV=0 0 108 333
 [CTRL_BUTTON_CHA3]
 Type=2
 Tag=20
-Rect=212 162 108 333
+Rect=212 178 108 333
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -159,7 +159,7 @@ NormalFileUV=0 0 108 333
 [CTRL_BUTTON_CHA4]
 Type=2
 Tag=21
-Rect=318 162 108 333
+Rect=318 178 108 333
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -171,7 +171,7 @@ NormalFileUV=0 0 108 333
 [CTRL_BUTTON_CHA5]
 Type=2
 Tag=22
-Rect=424 162 108 333
+Rect=424 178 108 333
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -183,7 +183,7 @@ NormalFileUV=0 0 108 333
 [CTRL_BUTTON_CHA6]
 Type=2
 Tag=23
-Rect=530 162 108 333
+Rect=530 178 108 333
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -195,7 +195,7 @@ NormalFileUV=0 0 108 333
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=0 145 640 370
+Rect=0 161 640 370
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\card_show.png
