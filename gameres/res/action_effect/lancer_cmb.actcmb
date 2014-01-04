@@ -98,3 +98,15 @@ lancer.task_map_monster_fx
 [world_map_chapter_fx]
 @type=0 @loop
 lancer.world_map_chapter_fx
+
+
+[monster_drop]
+@type=0
+lancer.monster_drop
+
+[pick_effect]
+@type=0
+lancer.pick_effect_move
+lancer.hide
+;lancer.pick_effect_scale
+

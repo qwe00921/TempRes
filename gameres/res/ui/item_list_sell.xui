@@ -1,0 +1,139 @@
+
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_42]
+Type=1
+Tag=43
+Rect=0 168 640 700
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
+
+[CTRL_BUTTON_RETURN]
+Type=2
+Tag=22
+Rect=1 174 80 64
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_VERTICAL_LIST_VIEW]
+Type=14
+Tag=31
+Rect=7 241 624 617
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_41]
+Type=1
+Tag=42
+Rect=85 174 184 65
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_TEXT_43]
+Type=4
+Tag=44
+Rect=6 176 72 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_11]
+Type=2
+Tag=11
+Rect=527 175 107 62
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_TEXT_12]
+Type=4
+Tag=12
+Rect=536 182 92 47
+AnchorPos=0 0
+Notes=
+Text=排序
+TextTradition=排序
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=98 181 158 47
+AnchorPos=0 0
+Notes=
+Text=仓库
+TextTradition=倉庫
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=278 187 107 40
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=293 191 74 32
+AnchorPos=0 0
+Notes=
+Text=99/99
+TextTradition=99/99
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_16]
+Type=2
+Tag=16
+Rect=402 176 107 61
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=411 182 92 47
+AnchorPos=0 0
+Notes=
+Text=卖出
+TextTradition=賣出
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

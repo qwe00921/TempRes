@@ -13,64 +13,10 @@ Stretch=1
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
-[CTRL_BUTTON_GACHAUI]
-Type=2
-Tag=1
-Rect=0 131 110 82
-AnchorPos=0 0
-Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=扭蛋按钮
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
-
-[CTRL_BUTTON_GIFT_PACKUI]
-Type=2
-Tag=14
-Rect=220 132 110 82
-AnchorPos=0 0
-Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=礼包按钮
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
-
-[CTRL_BUTTON_ITEMUI]
-Type=2
-Tag=2
-Rect=110 131 110 82
-AnchorPos=0 0
-Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具按钮
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
-
 [CTRL_9SLICES_20]
 Type=22
 Tag=25
-Rect=0 212 640 780
+Rect=0 249 640 743
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -80,15 +26,15 @@ NormalFileUV=0 0 640 780
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=4
-Rect=556 2 84 84
+Rect=-3 170 101 80
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=返回按钮
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 DisableFile=.\res\image\ui\quest\button_back.png
@@ -97,7 +43,7 @@ DisableFileUV=0 0 90 90
 [CTRL_TEXT_RMB]
 Type=4
 Tag=7
-Rect=534 155 100 30
+Rect=489 285 100 30
 AnchorPos=0 0
 Notes=
 Text=0
@@ -110,7 +56,7 @@ Remark=元宝数量
 [CTRL_BUTTON_PAY]
 Type=2
 Tag=40
-Rect=347 144 119 58
+Rect=517 187 119 58
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -128,7 +74,7 @@ DisableFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_GACHA]
 Type=14
 Tag=13
-Rect=11 253 620 590
+Rect=11 335 620 590
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -136,7 +82,7 @@ Remark=扭蛋list
 [CTRL_VERTICAL_LIST_SHOP_ITEM]
 Type=14
 Tag=15
-Rect=9 253 620 590
+Rect=9 335 620 590
 AnchorPos=0 0
 Notes=
 Remark=道具list
@@ -144,7 +90,7 @@ Remark=道具list
 [CTRL_VERTICAL_LIST_GIFT_PACK]
 Type=14
 Tag=35
-Rect=9 253 620 590
+Rect=9 323 620 602
 AnchorPos=0 0
 Notes=
 Remark=礼包list
@@ -152,43 +98,70 @@ Remark=礼包list
 [CTRL_PICTURE_21]
 Type=1
 Tag=22
-Rect=382 154 52 28
+Rect=552 197 52 28
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\add.png
 NormalFileUV=0 0 52 28
 
-[CTRL_PICTURE_17]
-Type=1
-Tag=17
-Rect=136 2 368 84
+[CTRL_BUTTON_GACHAUI]
+Type=2
+Tag=1
+Rect=8 258 110 60
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_title.png
-NormalFileUV=0 0 368 84
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=扭蛋按钮
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
 
-[CTRL_PICTURE_22]
-Type=1
-Tag=23
-Rect=277 13 86 54
+[CTRL_BUTTON_GIFT_PACKUI]
+Type=2
+Tag=14
+Rect=228 258 110 60
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\shop.png
-NormalFileUV=0 0 86 54
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼包按钮
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
 
-[CTRL_PICTURE_23]
-Type=1
-Tag=24
-Rect=498 155 30 30
+[CTRL_BUTTON_ITEMUI]
+Type=2
+Tag=2
+Rect=119 258 110 60
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\main_interface\coin.png
-NormalFileUV=0 0 32 32
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具按钮
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
 
 [CTRL_PICTURE_111]
 Type=1
 Tag=111
-Rect=132 153 66 38
+Rect=143 269 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\shop\item.png
@@ -197,7 +170,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_112]
 Type=1
 Tag=112
-Rect=242 154 66 38
+Rect=249 269 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\shop\gift.png
@@ -206,8 +179,74 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_113]
 Type=1
 Tag=113
-Rect=22 153 66 38
+Rect=30 269 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\shop\text_gacha.png
 NormalFileUV=0 0 66 38
+
+[CTRL_TEXT_72]
+Type=4
+Tag=72
+Rect=8 179 79 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_73]
+Type=2
+Tag=73
+Rect=337 258 110 60
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼包按钮
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\public\page_select.png
+SelectedFileUV=0 0 104 78
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_TEXT_75]
+Type=4
+Tag=75
+Rect=353 258 79 60
+AnchorPos=0 0
+Notes=
+Text=物品
+TextTradition=物品
+TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_76]
+Type=1
+Tag=76
+Rect=100 172 225 79
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_TEXT_77]
+Type=4
+Tag=77
+Rect=113 179 107 60
+AnchorPos=0 0
+Notes=
+Text=商城
+TextTradition=商城
+TextSize=35
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

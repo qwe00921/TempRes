@@ -67,7 +67,6 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--maininterface.ShowUI();
 			local uid = GetUID();
 			SendReq("ServerList","List",uid,"");
-
 		end
 	end
 end

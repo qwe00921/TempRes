@@ -78,19 +78,51 @@ function p.ShowCardLevel(msg)
 	end
 	p.cardInfo = msg.cardinfo;
 	
-	local cardPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_CARD);
-	
+	local pCardUpLevelInfo= SelectRowInner( T_CARD_LEVEL, "level", tonumber(p.cardInfo.Level)+1);--卡牌升级所须经验
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
+	--卡牌图片
+	--local cardPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_CARD);
+	--cardPic:SetPicture(GetPictureByAni(pCardInfo.card_pic, 0) );
 	
-	cardPic:SetPicture(GetPictureByAni(pCardInfo.card_pic, 0) );
-	
-	
+	local pCardInfo2= SelectRowInner( T_CARD, "id", p.cardInfo.CardID);
 	local pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", p.cardInfo.Level);
 	
-	--经验
-	local cardExp = GetLabel(p.layer,ui.ID_CTRL_TEXT_EXP);
-	cardExp:SetText(tostring(p.cardInfo.Exp).."/"..tostring(pCardLeveInfo.exp)); 	
+	--卡牌名字 ID_CTRL_TEXT_NAME
+	local pCardName = GetLabel(p.layer,ui.ID_CTRL_TEXT_NAME);
+	pCardName:SetText(tostring(pCardInfo2.Name)); 
 	
+	--卡牌属性 ID_CTRL_PICTURE_CARDNATURE element card_nature
+	local pPicCardNature = GetImage(p.layer, ui.ID_CTRL_PICTURE_26 );
+	if tonumber(pCardInfo2.element) == 1 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
+	elseif tonumber(pCardInfo2.element) == 2 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",1));
+	elseif tonumber(pCardInfo2.element) == 3 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",2));
+	elseif tonumber(pCardInfo2.element) == 4 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",3));
+	elseif tonumber(pCardInfo2.element) == 5 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",4));
+	elseif tonumber(pCardInfo2.element) == 6 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
+	end
+	
+	--经验
+	--local cardExp = GetLabel(p.layer,ui.ID_CTRL_TEXT_EXP);
+	--cardExp:SetText(tostring(p.cardInfo.Exp).."/"..tostring(pCardLeveInfo.exp)); 	
+	--经验条
+	local expBar = GetExp( p.layer, ui.ID_CTRL_EXP_EXPNEED);
+	local expSstartNum = tonumber(p.cardInfo.Exp);
+	local expLeast = 0;
+	
+	expbar_move_effect.showEffect(expBar,expLeast,tonumber(pCardUpLevelInfo.exp),expSstartNum,0);
+	
+	--距离升级经验
+	local upExp = tonumber(pCardUpLevelInfo.exp) - tonumber(p.cardInfo.Exp);
+	local labUpLevel =  GetLabel(p.layer,ui.ID_CTRL_TEXT_LEVELUPNEED);
+	labUpLevel:SetText(tostring(upExp)); 
+	
+
 	--未强化前的等级
 	local cardbeforLevel = GetLabel(p.layer,ui.ID_CTRL_TEXT_21);
 	cardbeforLevel:SetText(tostring(p.beforCardInfo.Level)); 
@@ -126,14 +158,14 @@ function p.ShowCardLevel(msg)
 	--强化后的速度
 	local cardSpeed = GetLabel(p.layer,ui.ID_CTRL_TEXT_SPEED_2);
 	cardSpeed:SetText("+"..tostring(p.cardInfo.add_Speed)); 
-	
+	--[[
 	--未强化前的暴击
 	local cardbeforCrit = GetLabel(p.layer,ui.ID_CTRL_TEXT_CRIT_1);
 	cardbeforCrit:SetText(tostring(p.beforCardInfo.Crit)); 
 	--强化后的暴击
 	local cardCrit = GetLabel(p.layer,ui.ID_CTRL_TEXT_CRIT_2);
 	cardCrit:SetText("+"..tostring(p.cardInfo.add_Speed)); 
-	
+	]]--
 end
 
 

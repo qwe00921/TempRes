@@ -123,9 +123,10 @@ function p.RefreshUI(userinfo)
 	--Exp:SetValue( 0, 100, tonumber( userinfo.Exp ) );
 	
 	local pic = GetImage( p.layer, ui.ID_CTRL_PICTURE_FACE);
-	--pic:SetPicture( GetPictureByAni("UserImage.Face"..userinfo.Face, 0) );
+	pic:SetVisible( false );
+
 	
-	dlg_battlearray.RefreshUI(userinfo.User_Team);
+--	dlg_battlearray.RefreshUI(userinfo.User_Team);
 	
 	--行动力、精力恢复
 	local m_time = tonumber( userinfo.MoveTime );
@@ -183,6 +184,9 @@ function p.OnUpdateInfo()
 	
 	--[[
 	if tonumber(cache.Energy) < tonumber(cache.MaxEnergy) then
+
+	--if tonumber(cache.Energy) < tonumber(cache.MaxEnergy) then
+	if tonumber(cache.Energy) < 3 then
 		p.energy_remain_time = p.energy_remain_time - 1;
 		if p.energy_remain_time <= 0 then
 			p.energy_remain_time = p.energy_time;

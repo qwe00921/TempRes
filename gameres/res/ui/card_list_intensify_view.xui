@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
@@ -303,3 +303,58 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\team1.png
 NormalFileUV=0 0 110 50
+
+[CTRL_TEXT_NUM1]
+Type=4
+Tag=1222
+Rect=27 19 25 25
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM2]
+Type=4
+Tag=1223
+Rect=148 18 25 25
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM3]
+Type=4
+Tag=1224
+Rect=268 21 25 25
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM4]
+Type=4
+Tag=1225
+Rect=391 19 25 25
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM5]
+Type=4
+Tag=1226
+Rect=515 19 25 25
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

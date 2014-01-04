@@ -59,7 +59,7 @@ function p:GetFirstActiveFighterID(pFighterID)
 			if v.selIndex < lminSelId then
 				lminSelId = v.selIndex ;
 				lId = v:GetId();
-				break;
+				--break;
 			end
 		end;
 	end;
@@ -67,6 +67,19 @@ function p:GetFirstActiveFighterID(pFighterID)
 	return lId;
 end;	
 
+--[[
+--查找位置对应的fighter
+function p:FindFighter(pPos)
+	local fighter = nil;
+	for k,v in ipairs(self.fighters) do
+		if (v.Position == pPos) then
+			fighter = v;
+			break;
+		end
+	end
+	return fighter;
+end;
+]]--
 --还有多少存活
 function p:GetActiveFighterCount()
 	local lCount = 0;
@@ -187,8 +200,8 @@ function p:AddAllRandomTimeJumpEffect(bHero)
 end
 
 function p:AddShadows(uiArray, fighters)
-	for i = 1,#fighters do
-	    local fighterInfo = fighters[i];
+	for i = 1,#self.fighters do
+	    local fighterInfo = self.fighters[i];
         local uiTag = uiArray[tonumber( fighterInfo.Position )];
 		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
 		if node == nil then
@@ -237,6 +250,8 @@ function p:AddFighters( uiArray, fighters )
 		
 		local f = w_fighter:new();
 		self.fighters[#self.fighters + 1] = f;
+		--self.fighters[tonumber(fighterInfo.Position)] = f;
+		
 		local pOldPos = node:GetCenterPos();
 
 		if self.idCamp == E_CARD_CAMP_HERO then
@@ -256,16 +271,24 @@ function p:AddFighters( uiArray, fighters )
 		f.Defence = tonumber( fighterInfo.Defence);
 		f.atkType = tonumber ( fighterInfo.Damage_type);
 		f.Position = tonumber (fighterInfo.Position);
+		f.Crit	   = tonumber (fighterInfo.Crit);
+		
         f.buffList = {};
-        
-		f:Init( uiTag, node, self.idCamp );
-		self:SetFighterConfig( f, f.cardId );
+         
+		--临时攻击力调整
+		f.Attack = 100;
+		f.Defence = 0;
+		f.life = 200;
+				
+		--f:Init( uiTag, node, self.idCamp );
+		f:Init( fighterInfo.Position, node, self.idCamp );
+		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();
 		
-        f.idFighter = tonumber( fighterInfo.Position );
-        if self.idCamp == E_CARD_CAMP_ENEMY then
-            f.idFighter = f.idFighter + W_BATTLE_CAMP_CARD_NUM;  --ID待商定
-        end
+        --f.idFighter = tonumber( fighterInfo.Position );
+        --if self.idCamp == E_CARD_CAMP_ENEMY then
+        --    f.idFighter = f.idFighter + W_BATTLE_CAMP_CARD_NUM;  --ID待商定
+        --end
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );

@@ -195,6 +195,9 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_QUEST_LIST then
 		msg = msg_quest_list:new();
 		
+	elseif idmsg == MSG_CHAPTER_LIST then
+		msg = msg_chapter_list:new();
+		
 	elseif idmsg == MSG_STAGE_LIST then
 		msg = msg_stage_list:new();
 		

@@ -29,6 +29,9 @@ p.consumeMoney = 0;
 p.selectCardId = {};
 p.userMoney = 0;
 p.cardListByProf = {};
+p.cardListNode = {};		--所有卡牌节点列表
+p.cardNumListNode = {};
+p.cardEnabled = true;
 function p.ShowUI(baseCardInfo)
 	
 	if baseCardInfo == nil then 
@@ -90,7 +93,7 @@ end
 function p.SetDelegate(layer)
 	local retBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
 	retBtn:SetLuaDelegate(p.OnUIClickEvent);
-
+--[[
 	local cardBtnAll = GetButton(layer, ui.ID_CTRL_BUTTON_ALL);
 	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
 	p.SetBtnCheckedFX( cardBtnAll );
@@ -109,12 +112,15 @@ function p.SetDelegate(layer)
 	
 	local cardBtnPro5 = GetButton(layer, ui.ID_CTRL_BUTTON_PRO5);
 	cardBtnPro5:SetLuaDelegate(p.OnUIClickEvent);
-	
+	]]--update 2014-01-03
 	local sortByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_SORT_BY);
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	
 	local intensifyByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_26);
 	intensifyByBtn:SetLuaDelegate(p.OnUIClickEvent);
+	
+	local clearByBtn = GetButton(layer, ui.ID_CTRL_BUTTON_CLEAR);
+	clearByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	
 end
 
@@ -157,7 +163,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				card_rein.setSelCardList(lCardIdLst);
 				p.CloseUI();
 			end 
-			
+		--[[	
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			p.SetBtnCheckedFX( uiNode );
 			p.ShowCardView(p.cardListInfo);
@@ -176,9 +182,12 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.ShowCardByProfession(PROFESSION_TYPE_4);
 		elseif(ui.ID_CTRL_BUTTON_PRO5 == tag) then --职业5
 			p.SetBtnCheckedFX( uiNode );
-			p.ShowCardByProfession(PROFESSION_TYPE_5);
+			p.ShowCardByProfession(PROFESSION_TYPE_5);]]-- update 2014-01-03
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
 				card_bag_sort.ShowUI(1);
+		elseif(ui.ID_CTRL_BUTTON_CLEAR == tag) then 
+			--清除按钮
+			p.clearDate();
 		end
 	end
 end
@@ -234,11 +243,11 @@ function p.ShowCardList(cardList,msg)
 	local countLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_25);
 	
 	--持有金币
-	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
-	
+	--local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+	--moneyLab:SetText(tostring(msg.money));
 	
 	countLab:SetText(tostring(msg.cardlist_num).."/"..tostring(msg.cardmax));
-	moneyLab:SetText(tostring(msg.money));
+	
 	p.userMoney = msg.money;
 	p.cardListInfo = cardList;
 	
@@ -307,7 +316,7 @@ end;
 function p.ShowCardView(cardList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
-	
+	p.cardListNode = {};
 	if cardList == nil or #cardList <= 0 then
 		WriteCon("ShowCardView():cardList is null");
 		return;
@@ -364,38 +373,44 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local cardLevel = nil;
 	local cardTeam = nil;
 	local cardSelect = nil;
+	local numText = nil;
 	if cardIndex == 1 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S1;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
 		cardLevel = ui_list.ID_CTRL_LEVEL_1;
+		numText = ui_list.ID_CTRL_TEXT_NUM1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S2;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
 		cardLevel = ui_list.ID_CTRL_LEVEL_2;
+		numText = ui_list.ID_CTRL_TEXT_NUM2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S3;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
 		cardLevel = ui_list.ID_CTRL_LEVEL_3;
+		numText = ui_list.ID_CTRL_TEXT_NUM3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
 		cardLevel = ui_list.ID_CTRL_LEVEL_4;
+		numText = ui_list.ID_CTRL_TEXT_NUM4;
 	elseif cardIndex == 5 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S5;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
 		cardLevel = ui_list.ID_CTRL_LEVEL_5;
+		numText = ui_list.ID_CTRL_TEXT_NUM5;
 	end
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	local cardId = tonumber(card.CardID);
 	
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", cardId); --从表中获取卡牌详细信息	
-	cardButton:SetImage( GetPictureByAni(pCardInfo.card_pic, 0) );
+	cardButton:SetImage( GetPictureByAni(pCardInfo.head_pic, 0) );
 	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
 	local cardUniqueId = tonumber(card.UniqueId);
     cardButton:SetId(cardUniqueId);
@@ -429,24 +444,28 @@ function p.ShowCardInfo( view, card, cardIndex )
 	--是否选中图片
 	local cardSelectText = GetImage(view,cardSelect );
 	cardSelectText:SetVisible( false );
+		
+	local num = GetLabel(view,numText);
+	--num.SetVisible( false );
+	
+	p.cardNumListNode[cardUniqueId] = num;
+	
 	local Team_marks = card.Team_marks;
 	p.teamList[cardUniqueId] = Team_marks;
 	
 	p.selectList[cardUniqueId] = cardSelectText;
 	
-	
-	
-	
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
+	p.cardListNode[#p.cardListNode + 1] = cardButton;
 end
 
 --点击卡牌
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	local cardSelectText = p.selectList[cardUniqueId] 
-		
+	local numText = p.cardNumListNode[cardUniqueId];
 	local pCardLeveInfo = nil;
 	
 	for k,v in pairs(p.cardListInfo) do
@@ -462,22 +481,27 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	
 	if cardSelectText:IsVisible() == true then
 		cardSelectText:SetVisible(false);
+		--numText:SetVisible(false);
+		numText:SetText("");
 		for k,v in pairs(p.selectCardId) do
 			if v == cardUniqueId then
 				table.remove(p.selectCardId,k);
 			end
 		end
-		
+		p.setNumFalse();
 		p.selectNum = p.selectNum-1;
 		p.consumeMoney = p.consumeMoney - pCardLeveInfo.feed_money;
 	else
 		if p.selectNum >= 10 then 
 			dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
+			
 		elseif p.teamList[cardUniqueId] ~= 0 then
 			dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_team"),p.OnMsgCallback,p.layer);
 		else
 			cardSelectText:SetVisible(true);
 			p.selectNum = p.selectNum+1;
+			numText:SetText(tostring(p.selectNum));
+			--numText:SetVisible(true);
 			p.selectCardId[#p.selectCardId + 1] = cardUniqueId;
 			
 			p.consumeMoney = p.consumeMoney + pCardLeveInfo.feed_money;
@@ -493,7 +517,63 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
 		moneyLab:SetFontColor(ccc4(255,0,0,255));
 	end
+	if p.cardEnabled == true and p.selectNum >= 10 then 
+		p.setAllCardDisEnable();
+		p.cardEnabled = false;
+	elseif p.cardEnabled == false and p.selectNum < 10 then
+		p.setCardDisEnable();
+		p.cardEnabled = true;
+	end
 	
+end
+
+--设置除选择外的卡牌不可点
+function p.setAllCardDisEnable()
+	for i=1, #p.cardListNode do
+		local cardUniqueId = p.cardListNode[i]:GetId();
+		local uiNode = p.cardListNode[i]
+		for i=1,#p.selectCardId do
+			if tonumber(cardUniqueId) == tonumber(p.selectCardId[i]) then
+				uiNode:SetEnabled(true);
+				break;
+			else
+				uiNode:SetEnabled(false);
+			end
+		end
+		
+	end
+end
+--设置序号更新
+function p.setNumFalse()
+	for k,v in pairs(p.selectCardId) do
+			--WriteCon("k : "..k);
+			local numText = p.cardNumListNode[v];
+			numText:SetText(tostring(k));
+	end
+
+end
+
+
+--设置卡牌可点
+function p.setCardDisEnable()
+	for i=1, #p.cardListNode do
+		local uiNode = p.cardListNode[i]
+		uiNode:SetEnabled(true);
+	end
+end
+
+--清除方法
+function p.clearDate()
+	for k,v in pairs(p.selectCardId) do
+			--WriteCon("k : "..k);
+			local numText = p.cardNumListNode[v];
+			numText:SetText("");
+			local cardSelectText = p.selectList[v] ;
+			cardSelectText:SetVisible(false);
+	end
+	p.selectNum  = 0;
+	p.selectCardId = {};
+	p.setCardDisEnable();
 end
 
 --提示框回调方法
@@ -596,7 +676,7 @@ function p.sortByRule(sortType)
 		WriteCon("========sort by star");
 		table.sort(p.cardListByProf,p.sortByStar);
 	elseif sortType == CARD_BAG_SORT_BY_TIME then
-		WriteCon("========sort by time");
+		WriteCon("========sort by time/Element");
 		table.sort(p.cardListByProf,p.sortByTime);
 	end
 	p.ShowCardView(p.cardListByProf);
@@ -612,8 +692,9 @@ function p.sortByStar(a,b)
 end
 --按时间排序
 function p.sortByTime(a,b)
-	return tonumber(a.Time) < tonumber(b.Time);
+	return tonumber(a.Element) < tonumber(b.Element);
 end
+
 
 
 function p.CloseUI()
@@ -634,7 +715,9 @@ function p.CloseUI()
         card_bag_mgr.ClearData();
 		p.cardListByProf = {};
 		p.userMoney = 0;
-		
+		p.cardListNode={};
+		p.cardNumListNode = {};
+		p.cardEnabled = nil;
     end
 end
 

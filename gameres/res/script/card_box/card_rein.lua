@@ -106,7 +106,7 @@ function p.InitUI(card_info)
 		
 		card_intensify2.CloseUI();	
 		
-		--头像 CTRL_PICTURE_231				
+		--头像 CTRL_PICTURE_231			CTRL_BUTTON_MAIN	
 		local lCardResRowInfo= SelectRowInner( T_CHAR_RES, "card_id", card_info.CardID); --从表中获取卡牌详细信息			
 		local lHeadPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_231);
 		lHeadPic:SetPicture( GetPictureByAni(lCardResRowInfo.head_pic, 0) );		
@@ -114,7 +114,7 @@ function p.InitUI(card_info)
 		--名字 CTRL_TEXT_252
 		local lCardRowInfo= SelectRowInner( T_CARD, "id", card_info.CardID); --从表中获取卡牌详细信息					
 		local lTextName = GetLabel(p.layer, ui.ID_CTRL_TEXT_252);
-		lTextName:SetText(tostring(lCardRowInfo.name));
+		lTextName:SetText(tostring(lCardRowInfo.Name));
 		
 		--当前经验值更新
 		p.nowExp = tonumber(card_info.Exp);
@@ -164,13 +164,13 @@ function p.InitUI(card_info)
 		
 		--队伍 ID_CTRL_PICTURE_TEAM
 		local lPicTeam = GetImage(p.layer, ui.ID_CTRL_PICTURE_TEAM);
-		if card_info.Team_marks == 1 then
+		if tonumber(card_info.Team_marks) == 1 then
 			lPicTeam:SetVisible(true);				
 			lPicTeam:SetPicture( GetPictureByAni("common_ui.teamName", 0) );
-		elseif card_info.Team_marks == 2 then
+		elseif tonumber(card_info.Team_marks) == 2 then
 			lPicTeam:SetVisible(true);				
 			lPicTeam:SetPicture( GetPictureByAni("common_ui.teamName", 1) );
-		elseif card_info.Team_marks == 3 then
+		elseif tonumber(card_info.Team_marks) == 3 then
 			lPicTeam:SetVisible(true);				
 			lPicTeam:SetPicture( GetPictureByAni("common_ui.teamName", 2) );
 		else
@@ -182,8 +182,8 @@ function p.InitUI(card_info)
 		lTextSpeed:SetText(tostring(card_info.Speed));		
 		
 		--暴击 ID_CTRL_TEXT_248
-		local lTextCrit = GetLabel(p.layer, ui.ID_CTRL_TEXT_248);
-		lTextCrit:SetText(tostring(card_info.Crit));
+		--local lTextCrit = GetLabel(p.layer, ui.ID_CTRL_TEXT_248);
+		--lTextCrit:SetText(tostring(card_info.Crit));
 	end
 end	
 
@@ -230,18 +230,23 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	if pIndex > 10 then --正常不超过10
 		return ;
 	end
-
+	WriteCon("SetCardInfoWS"..pIndex.."  LEVELE : "..pCardInfo.Level);
 	local cardLevText = GetLabel(p.layer, ui.ID_CTRL_TEXT_CARDLEVEL1+pIndex-1);
 	cardLevText:SetVisible(true);
 	cardLevText:SetText("LV "..tostring(pCardInfo.Level));
 	
-	local cardLevPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+pIndex-1);
-	cardLevPic:SetVisible(true);	
+	--local cardLevPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+pIndex-1);
+	--cardLevPic:SetVisible(true);	
 		
-	local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+pIndex-1);
+	local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+pIndex-1);
 	local lcardId = tonumber(pCardInfo.CardID);
 	local lCardRowInfo= SelectRowInner( T_CHAR_RES, "card_id", lcardId); --从表中获取卡牌详细信息	
 	cardButton:SetImage( GetPictureByAni(lCardRowInfo.card_pic, 0) );
+	
+	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
+	
+	local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+pIndex-1);
+	cardName:SetText(tostring(lCardInfo.Name));
 	
 	p.selectNum = p.selectNum+1;
 	p.selectCardId[#p.selectCardId + 1] = pCardInfo.UniqueId;
@@ -254,8 +259,9 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	end		
 	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money;	
 	
-	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
-	p.addExp = p.addExp + lCardInfo.feedbase_exp + lCardLeveInfo.feed_exp;
+	
+	
+	p.addExp = p.addExp + lCardInfo.FeedBase_exp + lCardLeveInfo.feed_exp;
 	
 	p.SetExp(pCardInfo);
 end;
@@ -292,11 +298,16 @@ function p.InitAllCardInfo()
 		local cardLevText = GetLabel(p.layer, ui.ID_CTRL_TEXT_CARDLEVEL1+i-1);
 		cardLevText:SetVisible(false);
 		
-		local cardPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+i-1);
-		cardPic:SetVisible(false);	
+		--local cardPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+i-1);
+		--cardPic:SetVisible(false);	
 		
-		local cardBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+i-1);
-		cardBtn:SetImage(GetPictureByAni("common_ui.cardBg", 0));
+		--local cardBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+i-1);
+		--cardBtn:SetImage(GetPictureByAni("common_ui.cardBg", 0));
+		local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+i-1);
+		cardButton:SetImage( GetPictureByAni("common_ui.cardBg", 0) );
+	
+		local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+i-1);
+		cardName:SetText("");
 	end
 	
 end;	

@@ -256,6 +256,8 @@ DoFile("ui/ui_n_battle_mainui.lua");
 DoFile("ui/ui_n_battle_pvp.lua");
 DoFile("ui/ui_n_battle_pve.lua");
 DoFile("ui/ui_n_battle_itemuse.lua");
+DoFile("ui/ui_n_battle_pass.lua");
+DoFile("ui/ui_n_battle_pass_bg.lua");
 
 --卡牌
 DoFile("ui/ui_dlg_card_equip_detail.lua");

@@ -9,22 +9,30 @@ NUIEventType =
 {
 	TE_NONE = 0,
 	
-	TE_TOUCH_CLICK			        = 1, --单击
-	TE_TOUCH_DOUBLE_CLICK	        = 2, --双击
+	TE_TOUCH_CLICK					= 1, --单击
+	TE_TOUCH_DOUBLE_CLICK			= 2, --双击
 	
-	TE_TOUCH_BTN_DRAG_IN		    = 3, --拖入
-	TE_TOUCH_BTN_DRAG_OUT		    = 4, --拖出
-	TE_TOUCH_BTN_DRAG_OUT_COMPLETE  = 5, --拖出完毕
+	TE_TOUCH_BTN_DRAG_IN			= 3, --拖入
+	TE_TOUCH_BTN_DRAG_OUT			= 4, --拖出
+	TE_TOUCH_BTN_DRAG_OUT_COMPLETE	= 5, --拖出完毕
 
 	--edit事件
-	TE_TOUCH_EDIT_RETURN		    = 6,
-	TE_TOUCH_EDIT_TEXT_CHANGE	    = 7,
-	TE_TOUCH_EDIT_INPUT_FINISH      = 8,
-	
-	--选择变化
+	TE_TOUCH_EDIT_RETURN			= 6,
+	TE_TOUCH_EDIT_TEXT_CHANGE		= 7,
+	TE_TOUCH_EDIT_INPUT_FINISH		= 8,
+
+	--选中
 	TE_TOUCH_SELECT_VIEW			= 9,
-	TE_TOUCH_UNSELECT_VIEW			= 10,	
-	TE_TOUCH_ACTIVE_VIEW            = 11,
+	TE_TOUCH_UNSELECT_VIEW			= 10,
+	TE_TOUCH_ACTIVE_VIEW			= 11,
+
+	TE_TOUCH_BTN_DRAG_LEFT			= 12,
+	TE_TOUCH_BTN_DRAG_RIGHT			= 13,
+	TE_TOUCH_BTN_DRAG_UP			= 14,
+	TE_TOUCH_BTN_DRAG_DOWN			= 15,
+	TE_TOUCH_BTN_DRAGING			= 16,
+	TE_TOUCH_BTN_BEGIN			= 17,
+	TE_TOUCH_BTN_END			= 18
 };
 
 --列表控件的选择模式（默认单选）
@@ -110,6 +118,38 @@ end
 --事件判定：View变为活动项（仅SingleMode有效）
 function IsActiveViewEvent( uiEventType )
 	return uiEventType == NUIEventType.TE_TOUCH_ACTIVE_VIEW;
+end
+
+--事件判定：向左滑动手势
+function IsDragLeft( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_LEFT;
+end
+
+--事件判定：向右滑动手势
+function IsDragRight( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_RIGHT;
+end
+
+--事件判定：向上滑动手势
+function IsDragUp( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_UP;
+end
+
+--事件判定：向下滑动手势
+function IsDragDown( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAG_DOWN;
+end
+
+function IsDraging( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_DRAGING;
+end
+
+function IsDragBegin( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_BEGIN;
+end
+
+function IsDragEnd( uiEventType )
+	return uiEventType == NUIEventType.TE_TOUCH_BTN_END;
 end
 
 --加载特效

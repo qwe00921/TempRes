@@ -3,7 +3,7 @@
 -- author:      hst, 2013年12月13日
 -- purpose:     对战辅助函数
 --------------------------------------------------------------
-
+--[[
 --通过BUFF TYPE 获取ANI
 function GetBuffAniByType( buffType )
     if buffType == nil then
@@ -42,7 +42,7 @@ function IsAoeSkillByType( targetType )
 end
 
 --战士从一个点跳跃到另一个点
-function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
+function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq,pIsParallelSeq)
     local fx = "lancer_cmb.begin_battle_jump";
     
     local atkPos = fPos;
@@ -58,9 +58,12 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
     --local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
 
     --self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
-
-    local pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
-    
+	local pCmd = nil;
+	if pIsParallelSeq == true then
+		pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
+	else
+		pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
+    end;
     local varEnv = pCmd:GetVarEnv();
     varEnv:SetFloat( "$1", x );
     varEnv:SetFloat( "$2", y );
@@ -68,6 +71,8 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
     
     return pCmd;
 end
+
+
 
 --获取位置值最小的战士前面的坐标
 function GetBestTargetPos( Hero, TCamp, Targets )
@@ -185,4 +190,4 @@ end
 
 
 
-
+]]--

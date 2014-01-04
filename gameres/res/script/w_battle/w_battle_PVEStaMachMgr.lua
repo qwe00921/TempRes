@@ -13,7 +13,8 @@ end;
 function p.addStateMachine(pStateMachine)
 	p.id = p.id + 1;	
 	p.StateMachineLst[p.id] = pStateMachine;
-	
+
+
 	return p.id;
 	
 end

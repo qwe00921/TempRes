@@ -6,7 +6,7 @@ Height=960
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=8 243 624 115
+Rect=8 243 624 136
 AnchorPos=0 0
 Notes=
 
@@ -152,5 +152,65 @@ Text=物品名称六字
 TextTradition=物品名稱六字
 TextSize=18
 TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_39]
+Type=4
+Tag=39
+Rect=93 248 43 26
+AnchorPos=0 0
+Notes=
+Text=x??
+TextTradition=x??
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_40]
+Type=4
+Tag=40
+Rect=212 248 43 26
+AnchorPos=0 0
+Notes=
+Text=x??
+TextTradition=x??
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_41]
+Type=4
+Tag=41
+Rect=331 248 43 26
+AnchorPos=0 0
+Notes=
+Text=x??
+TextTradition=x??
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_42]
+Type=4
+Tag=42
+Rect=450 248 43 26
+AnchorPos=0 0
+Notes=
+Text=x??
+TextTradition=x??
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_43]
+Type=4
+Tag=43
+Rect=569 248 43 26
+AnchorPos=0 0
+Notes=
+Text=x??
+TextTradition=x??
+TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

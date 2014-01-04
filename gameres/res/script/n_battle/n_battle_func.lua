@@ -41,8 +41,9 @@ function IsAoeSkillByType( targetType )
     end
 end
 
+
 --战士从一个点跳跃到另一个点
-function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
+function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq,pIsParallelSeq)
     local fx = "lancer_cmb.begin_battle_jump";
     
     local atkPos = fPos;
@@ -58,9 +59,12 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
     --local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
 
     --self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
-
-    local pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
-    
+	local pCmd = nil;
+	if pIsParallelSeq == true then
+		pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
+	else
+		pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
+    end;
     local varEnv = pCmd:GetVarEnv();
     varEnv:SetFloat( "$1", x );
     varEnv:SetFloat( "$2", y );

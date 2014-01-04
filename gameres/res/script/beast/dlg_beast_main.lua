@@ -277,7 +277,7 @@ end
 --卡组编辑，节点选择
 function p.OnViewClick( uiNode, uiEventType, param )
 	if p.mainUIFlag then
-		dlg_battlearray.UpdatePosCard( uiNode:GetId() );
+--		dlg_battlearray.UpdatePosCard( uiNode:GetId() );
 	else
 		p.CloseUI();
 		beast_mgr.ClearData();

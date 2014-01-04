@@ -1,0 +1,18 @@
+
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_17]
+Type=1
+Tag=17
+Rect=0 538 640 150
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_18]
+Type=1
+Tag=18
+Rect=245 539 150 150
+AnchorPos=0 0
+Notes=

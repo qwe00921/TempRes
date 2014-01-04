@@ -1,6 +1,4 @@
 
-
-
 w_battle_pve = {};
 local p = w_battle_pve;
 local ui = ui_n_battle_pve;
@@ -33,8 +31,15 @@ p.boxImage = nil;
 p.useitemMask = nil;
 p.itemMask = nil;
 
+p.CheckHasDrop = false;
+p.Index = 1;
+p.BoxScale = false;
+
 --卡牌相关控件列表
 p.objList = {};
+
+p.dropList = {};
+p.tempList = {};
 
 local BTN_INDEX = 1;
 local ATTR_INDEX = 2;
@@ -230,6 +235,7 @@ function p.InitController()
 	
 	--宝箱图片
 	p.boxImage = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_BOX );
+	p.boxImage:SetZOrder(1);
 	
 	--使用物品的遮罩
 	p.useitemMask = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_IMPORTANT );
@@ -248,6 +254,7 @@ function p.GetCardTable( index )
 	local ctrller = GetButton( p.battleLayer, tag[BTN_INDEX] );
 	temp[BTN_INDEX] = ctrller;
 	ctrller:SetLuaDelegate( p.OnBtnClick );
+	ctrller:SetEnableDrag( true );
 	ctrller:SetId( index );
 	
 	ctrller = GetImage( p.battleLayer, tag[ATTR_INDEX] );
@@ -348,6 +355,11 @@ function p.RefreshUI()
 					ctrllers[HPNUM_INDEX]:SetText( string.format( "%d/%d", data.Hp, data.maxHp ) );
 					ctrllers[HPEXP_INDEX]:SetValue( 0, tonumber(data.maxHp), tonumber(data.Hp) );
 					ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber(data.maxSp), tonumber(data.Sp) );
+					
+					local attrpic = GetPictureByAni( "card_element.".. tostring(data.element), 0 );
+					if attrpic then
+						ctrllers[ATTR_INDEX]:SetPicture( attrpic );
+					end
 				else
 					p.SetVisible( ctrllers, false );
 					ctrllers[MASK_INDEX]:SetVisible( true );
@@ -412,6 +424,7 @@ end
 
 --回合结束后,调用刷新界面,通知UI刷新
 function p.RoundOver()
+	
 end
 
 --本波次战斗结束,通知UI
@@ -421,13 +434,16 @@ end
 	false:失败
 --]]
 function p.FighterOver( winFlag )
-	
+	if winFlag then
+		--过场动画
+		w_battle_pass_bg.ShowUI();
+	end
 end
 
 --调用UI，标识任务结束，pEvent是回调函数，目前不用传参，只有成功时才调用
 function p.MissionOver( pEvent )
 	--UI相关处理
-	
+	p.CloseUI();
 	
 	--回调接口
 	if pEvent then
@@ -474,6 +490,8 @@ end
 
 --按钮交互
 function p.OnBtnClick( uiNode, uiEventType, param )
+	WriteCon( tostring(uiEventType) );
+	
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		local btn = ConverToButton( uiNode );
@@ -483,11 +501,19 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			btn:SetEnabled( true );
 		elseif p.CheckUseItem( tag ) then
 			WriteCon( "**使用物品**" );
-			p.UseItem( uiNode );
+			p.UseItem( btn );
 		elseif p.CheckAtkTarget( tag ) then
 			WriteCon( "**攻击**" );
-			p.SetAtk( uiNode );
+			p.SetAtk( btn );
 		end
+	elseif IsDragUp( uiEventType ) then
+		WriteCon("IsDragUp");
+	elseif IsDragLeft( uiEventType ) then
+		WriteCon("IsDragLeft");
+	elseif IsDragRight( uiEventType ) then
+		WriteCon("IsDragRight");
+	elseif IsDragDown( uiEventType ) then
+		WriteCon("IsDragDown");
 	end
 end
 
@@ -518,6 +544,7 @@ function p.SetAtk( uiNode )
 	
 	local flag = w_battle_mgr.SetPVEAtkID( id );
 	if flag then
+		p.itemMask:SetVisible( true );
 		if ctrllers then
 			ctrllers[MASK_INDEX]:SetVisible( true );
 		end
@@ -529,4 +556,97 @@ function p.SetAtk( uiNode )
 	end
 end
 
+--===================================掉落======================================--
+--list为掉落的表
+--{{droptype1, num1, position1, param1},{droptype2, num2, position2, param2},……}
+--droptype为掉落类型
+--[[
+	E_DROP_MONEY = 1;	--金币
+	E_DROP_BLUESOUL = 2;	--蓝魂
+	E_DROP_HPBALL = 3;	--HP球
+	E_DROP_SPBALL = 4;	--SP球
+	E_DROP_ITEM = 5;	--道具
+	E_DROP_CARD = 6;	--卡片
+	E_DROP_EQUIP = 7;	--装备
+--]]
+--num为掉落数量
+--position掉落物品的怪物位置
+--param为额外的参数，当掉落类型为道具、卡片、装备时，表示掉落的类型ID，可以为空
+function p.MonsterDrop( list )
+	if list == nil or #list == 0 then
+		return;
+	end
+
+	for i = 1, #list do
+		for j = 1, list[i][2] do
+			local index = p.tempList[1] or 0;
+			local drop = nil;
+			if index ~= 0 then
+				table.remove( p.tempList, 1 );
+				drop = p.dropList[index];
+			end
+			if drop == nil then
+				drop = w_drop:new();
+				drop:Init( p.battleLayer, list[i][1], list[i][4] );
+				table.insert( p.dropList, drop );
+			end
+			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ) );
+		end
+	end
+end
+
+--注册开始拾取物品倒计时
+function p.BeginPick()
+	if #p.dropList == 0 then
+		return;
+	end
+
+	p.Index = 1;
+	SetTimer(p.Pick , 0.02 );
+end
+
+--按顺序拾取物品
+function p.Pick( nTimerId )
+	local drop = p.dropList[p.Index];
+	
+	if drop == nil then
+		KillTimer( nTimerId );
+		SetTimerOnce( p.reduceBoxImage, 0.3 );
+		return;
+	end
+	
+	if drop:GetImageNode():IsVisible() then
+		if drop:GetType() == E_DROP_HPBALL or drop:GetType() == E_DROP_SPBALL then
+			drop:Pick( GetPlayer( p.battleLayer , heroUIArray[math.random(1, 5)] ) );
+		else
+			drop:Pick( p.boxImage, true );
+			
+			if not p.BoxScale then
+				p.BoxScale = true;
+				p.boxImage:AddActionEffect( "lancer.box_scaleup" );
+			end
+		end
+		p.AddIndexToTable();
+	end
+	p.Index = p.Index + 1;
+end
+
+function p.AddIndexToTable()
+	local bFlag = false;
+	for i,v in pairs(p.tempList) do
+		if v == p.Index then
+			bFlag = true;
+			break;
+		end
+	end
+	if not bFlag then
+		table.insert( p.tempList, p.Index );
+	end
+end
+
+--包裹缩小
+function p.reduceBoxImage()
+	p.boxImage:AddActionEffect( "lancer.box_reduce" );
+	p.BoxScale = false;
+end
 
