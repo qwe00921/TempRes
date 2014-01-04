@@ -13,6 +13,10 @@ p.card_team = nil;
 p.team_data = nil;
 p.modify_team_id = nil;
 p.pos_no = nil;
+p.server_user_team = nil;
+p.nowTeam	= 1;
+p.selTeam = 1;
+p.selTeamPos = 1;
 
 local ui = ui_card_group;
 
@@ -25,6 +29,7 @@ function p.ShowUI()
 		return;
 	end
 	
+	--[[
 	local layer = createNDUIDialog();
     if layer == nil then
         return false;
@@ -36,6 +41,18 @@ function p.ShowUI()
     GetUIRoot():AddDlg( layer );
 	
     LoadDlg("card_group.xui" , layer , nil );
+	]]--
+	
+	local layer = createNDUILayer();
+	if layer == nil then
+		return false;
+	end
+	
+	layer:Init();
+	layer:SetSwallowTouch(false);
+	layer:SetFrameRectFull();
+	GetUIRoot():AddChild(layer);
+	LoadUI("card_group.xui", layer, nil);
 
 	p.layer = layer;
     p.SetDelegate();
@@ -47,6 +64,14 @@ end
 function p.SetDelegate()
 	local backBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_BACK );
 	backBtn:SetLuaDelegate( p.OnBtnClick );
+	
+	local bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
+	bt:SetLuaDelegate( p.OnBtnClick );
+	
+	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
+	bt:SetLuaDelegate( p.OnBtnClick );
+	
+	
 end
 
 --请求数据
@@ -75,18 +100,41 @@ function p.UpdateListData( dataSource )
 	end
 
 	p.SetData( dataSource );
+	if p.user_teams ~= nil then
+		if p.server_user_team == nil then
+			p.server_user_team = p.CopyUserTeam(p.user_teams);
+		end
+	end
 	p.ShowTeamList();
+	
+	local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+	if list == nil then
+		return;
+	end
+	local teamid = tonumber( p.nowTeam ) or 1;
+	if teamid <= 0 then
+		teamid = 0;
+	else
+		teamid = teamid - 1;
+	end
+	list:SetActiveView(teamid);
 end
 
 --处理服务端下发数据，方便调用
 function p.SetData( dataSource )
 	if dataSource ~= nil then
 		p.user_teams = dataSource.user_teams;
+		p.nowTeam = dataSource.nowteam;
 	else
 		p.user_teams = p.source.user_teams;
+		p.nowTeam = p.source.nowteam;
 	end
 	
+	
+	
 	if p.user_teams ~= nil then
+		
+		
 		p.card_team = {};
 		p.team_data = {};
 		for _, v in pairs(p.user_teams) do
@@ -122,6 +170,7 @@ function p.ShowTeamList()
 		return;
 	end
 	
+	list:SetSingleMode(true);
 	local user_teams = p.user_teams or {};
 
 	--local count = list:GetViewCount() or 0;
@@ -150,6 +199,9 @@ function p.ShowTeamList()
 		view:SetId( tonumber(user_teams[i].Team_id) );
 		list:AddView( view );
 	end
+	
+	--local act = list:GetActiveView();
+	--WriteCon("activty:" ..act);
 end
 
 --显示单个节点
@@ -167,9 +219,13 @@ function p.SetTeamInfo( view, user_teamData )
 	for i = 1, 6 do
 		local cardBtn = GetButton( view, ui_card_group_node["ID_CTRL_BUTTON_CHA" .. i] );
 		local levLabel = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_LV" .. i] );
+		local hpLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_HP" .. i] );
+		local speedLabel=GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_SPEED" .. i] );
+		local atkLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_ATTACK" .. i] );
+		local defLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_DEFENCE" .. i] );
 		local pic = GetPlayer ( view, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );--GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
 		
-		cardBtn:SetLuaDelegate( p.OnListBtnClick );
+		cardBtn:SetLuaDelegate( p.OnListItemClick );
 		cardBtn:SetId( i );
 		
 		if tonumber(user_teamData["Pos_unique"..i]) ~= 0 then
@@ -177,6 +233,10 @@ function p.SetTeamInfo( view, user_teamData )
 			cardBtn:SetVisible( true );
 			levLabel:SetVisible( true );
 			pic:SetVisible( true );
+			hpLabel:SetVisible( true );
+			speedLabel:SetVisible( true );
+			atkLabel:SetVisible( true );
+			defLabel:SetVisible( true );
 			
 			--cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			--cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
@@ -184,8 +244,13 @@ function p.SetTeamInfo( view, user_teamData )
 			
 			local data = p.cardlist[user_teamData["Pos_unique"..i]];
 			if data then
-				levLabel:SetText( string.format("Lv %s", data.Level) );
+				levLabel:SetText( string.format("LV%s", data.Level) );
+				hpLabel:SetText( string.format("HP %s", data.Hp) );
+				speedLabel:SetText( string.format(GetStr("card_group_prp_speed"), data.Speed) );
+				atkLabel:SetText( string.format(GetStr("card_group_prp_atk"), data.Attack) );
+				defLabel:SetText( string.format(GetStr("card_group_prp_def"), data.Defence) );
 			end
+			 
 			
 			pic:UseConfig( user_teamData["Pos_card"..i] );
 			pic:SetLookAt(E_LOOKAT_LEFT);
@@ -195,10 +260,14 @@ function p.SetTeamInfo( view, user_teamData )
 		else
 			--cardBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
 			--cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
-			cardBtn:SetVisible( false );
+			--cardBtn:SetVisible( false );
 			
 			levLabel:SetVisible( false );
 			pic:SetVisible( false );
+			hpLabel:SetVisible( false );
+			speedLabel:SetVisible( false );
+			atkLabel:SetVisible( false );
+			defLabel:SetVisible( false );
 		end
 	end
 	
@@ -285,6 +354,12 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("关闭");
 			p.CloseUI();
 			maininterface.BecomeFirstUI();
+		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
+			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+			list:MoveToPrevView();
+		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
+			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+			list:MoveToNextView();
 		end
 	end
 end
@@ -311,6 +386,63 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 		end
 	end
 end
+
+--列表节点的按钮
+function p.OnListItemClick(uiNode, uiEventType, param)
+	
+	local node = uiNode:GetParent();
+	local id = node:GetId();
+	local tag = uiNode:GetTag();
+	if IsClickEvent( uiEventType ) then		
+		p.selTeam = id;
+		p.selTeamPos = uiNode:GetId();
+		local hasRemove = false;
+		if p.user_teams[p.selTeam] and tonumber(p.user_teams[p.selTeam]["Pos_unique"..p.selTeamPos] or 0) ~= 0 then
+			hasRemove = true;
+		end
+		card_bag_mian.ShouReplaceUI(p.OnSelectReplaceCallback, hasRemove);
+	end
+end
+
+--选择卡牌回调
+function p.OnSelectReplaceCallback(cardData)
+	local team = p.user_teams[p.selTeam]
+	if team then
+		local preUni = team["Pos_unique"..p.selTeamPos];
+		local preCardId = team["Pos_card"..p.selTeamPos];
+		local preCard = nil;
+		
+		if tonumber(preUni) ~= 0 then
+			preCard = card_bag_mgr.findCard(preUni);
+		end
+			
+		if cardData == nil then
+			team["Pos_unique"..p.selTeamPos] = "0";
+			team["Pos_card"..p.selTeamPos] = "0";
+			if preCard then
+				preCard.Team_marks = "0";
+			end
+		else
+			team["Pos_unique"..p.selTeamPos] = cardData.UniqueID or cardData.UniqueId;
+			local pos = "Pos_card"..p.selTeamPos;
+			
+			team[pos] = tostring(cardData.CardID);
+			local ps = team[pos];
+			
+			if preCard then
+				preCard.Team_marks = cardData.Team_marks;				
+			end
+			
+			cardData.Team_marks =p.selTeam;
+			
+			p.cardlist[cardData.UniqueID or cardData.UniqueId] = cardData;
+			
+		end
+		p.ShowTeamList();
+	end 
+
+end
+
 
 --显示卡牌
 function p.ShowCardInfo( teamid, index )
@@ -408,6 +540,61 @@ function p.UpdatePosCard( cardId )
 	SendReq( "Team", "UpdateTeamInfo", uid, param );
 end
 
+--保存数据
+function p.SaveData()
+	local needUpload = false;
+	
+	for i = 1,3 do
+		local newTeam = p.user_teams[i];
+		local serverTeam = p.server_user_team[i];
+		for k,v in pairs(newTeam) do
+			if serverTeam[k] == nil or tonumber(v) ~= tonumber(serverTeam[k])then
+				needUpload = true;
+				break;
+			end
+		end
+	end
+	
+	if needUpload == true then
+		p.UploadTeamSetting();
+	end
+end
+
+--更新阵型
+function p.UploadTeamSetting()
+	local uid = GetUID();
+	if uid == nil or uid == 0 then
+		return;
+	end
+	
+	--请求卡组数据
+	local param = "&team_id=".. p.nowTeam;
+	for i = 1,3 do
+		param = param .."&idm"..i.."=";
+		local team = p.user_teams[i];
+		for j = 1, 6 do
+			if j ~= 1 then
+				param = param..","
+			end
+			param = param..team["Pos_unique"..j];
+		end
+	end
+	local p = param;
+	SendReq( "Team", "UpdateTeamInfo", uid, param );
+end
+
+-- 拷贝编数据
+function p.CopyUserTeam(user_teams)
+	if user_teams == nil then
+		return nil;
+	end
+	local lst ={}
+	for i,v in pairs(user_teams) do
+            lst[i] = v;
+    end
+	return lst;
+end
+
 --隐藏UI
 function p.HideUI()
 	if p.layer ~= nil then
@@ -417,16 +604,22 @@ end
 
 --关闭UI
 function p.CloseUI()
+	
+	p.SaveData();
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
 	end
+	
+	p.modify_user_team = nil;
+	card_bag_mian.CloseUI();
+	
 end
 
 function p.UIDisappear()
 	p.CloseUI();
 	dlg_beast_main.CloseUI();
 	dlg_card_attr_base.CloseUI();
-	card_bag_mian.CloseUI();
+	
 end
 

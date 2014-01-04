@@ -64,7 +64,6 @@ p.ID_CTRL_PICTURE_TEAM1				   = 37;
 p.ID_CTRL_TEXT_PET_NAME_2				 = 33;
 p.ID_CTRL_TEXT_PET_NAME_1				 = 31;
 p.ID_CTRL_TEXT_27						       = 27;
-p.ID_CTRL_TEXT_20_DELETE				  = 20;
 p.ID_CTRL_BUTTON_CHA6					    = 177;
 p.ID_CTRL_BUTTON_CHA3					    = 176;
 p.ID_CTRL_BUTTON_CHA5					    = 175;

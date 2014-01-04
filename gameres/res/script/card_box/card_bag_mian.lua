@@ -21,10 +21,17 @@ p.allCardPrice 	= 0;	--出售卡牌总价值
 --p.sellCardList 	= {};	--出售卡牌列表
 p.sellCardNodeList = {}	--出售卡牌节点列表
 p.node = nil;
+p.isReplace = false;
+p.callback = nil;
+p.hasRemove = false;
 
 function p.ShowUI()
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
+		local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
+		if list then
+			list:SetVisible(true);
+		end
 		return;
 	end
     local layer = createNDUIDialog();
@@ -44,15 +51,39 @@ function p.ShowUI()
 	p.Init();
 end
 
+--卡组为替换,移除功能
+function p.ShouReplaceUI(callback, hasRemove)
+	p.isReplace = true;
+	p.callback  = callback;
+	p.hasRemove = hasRemove;
+	p.ShowUI()
+	if p.cardListInfo then
+		p.ShowCardList(p.cardListInfo);
+	else
+		card_bag_mgr.LoadAllCard( p.layer );
+	end
+end
+
 function p.Init()
-	dlg_menu.SetNewUI( p );
+	if p.isReplace ~= true then
+		dlg_menu.SetNewUI( p );
+	end
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
 	
-	local headText = GetLabel(p.layer,ui.ID_CTRL_TEXT_87 );
+	local headText = GetLabel(p.layer,ui.ID_CTRL_TEXT_TITLE );
 	local cardNum = GetLabel(p.layer,ui.ID_CTRL_TEXT_CARD_NUM );
+
+	if p.isReplace == true then
+		headText:SetText(GetStr("card_group_edit_title"));
+		local bt = GetButton(p.layer,ui.ID_CTRL_BUTTON_SELL);
+		bt:SetVisible(false);
+	end
+	
 	--加载卡牌列表数据
-	card_bag_mgr.LoadAllCard( p.layer );
+	if p.isReplace ~= true then
+		card_bag_mgr.LoadAllCard( p.layer );
+	end
 end
 
 function p.SetCardNum(delNum)
@@ -96,6 +127,11 @@ function p.ShowCardList(cardList)
 	
 	p.cardListInfo = cardList;
 	
+	if p.hasRemove  == true then
+		cardNum = cardNum or 0;
+		cardNum = cardNum + 1;
+	end
+	
 	local row = math.ceil(cardNum / 5);
 	WriteCon("row ===== "..row);
 
@@ -112,10 +148,17 @@ function p.ShowCardList(cardList)
 		
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
-			if j <= cardNum then
-				local card = cardList[j];
+			if i == 1 and j == 1 and p.hasRemove  == true then
 				local cardIndex = j - start_index + 1;
-				p.ShowCardInfo( view, card, cardIndex );
+				p.ShowCardInfo( view, nil, cardIndex ,i);
+			elseif j <= cardNum then
+				local lstIndex = j;
+				if p.hasRemove  == true then
+					lstIndex = j -1;
+				end
+				local card = cardList[lstIndex];
+				local cardIndex = j - start_index + 1;
+				p.ShowCardInfo( view, card, cardIndex ,i);
 			end
 		end
 		list:AddView( view );
@@ -128,7 +171,7 @@ function p.ShowCardList(cardList)
 end
 
 --显示单张卡牌
-function p.ShowCardInfo(view, card, cardIndex)
+function p.ShowCardInfo(view, card, cardIndex,row)
 	local cardBtn = nil;
 	local cardLevel = nil;
 	local cardTeam = nil;
@@ -158,8 +201,25 @@ function p.ShowCardInfo(view, card, cardIndex)
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
 		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG5;
 	end
+	
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
+	local cardBoxPic = GetImage(view,cardBoxBg );
+	local cardTeamPic = GetImage(view,cardTeam );
+	local cardLevelText = GetLabel(view,cardLevel );
+	
+	--设置卡牌按钮事件
+	cardButton:SetLuaDelegate(p.OnCardClickEvent);
+	cardButton:RemoveAllChildren(true);
+	
+	
+	if row == 1 and cardIndex == 1 and p.hasRemove  == true then
+		cardButton:SetImage(GetPictureByAni("ui.card_edit_remove",0))
+		 cardButton:SetId(0);
+		cardTeamPic:SetVisible(false);
+		return
+	end
+	
 	local cardId = tonumber(card.CardID);
 	local cardPicTable = SelectRowInner(T_CHAR_RES,"card_id",cardId);
 	if cardPicTable == nil then
@@ -171,11 +231,9 @@ function p.ShowCardInfo(view, card, cardIndex)
  	--WriteCon("cardUniqueId ===== "..cardUniqueId);
     cardButton:SetId(cardUniqueId);
 	--等级
-	local cardLevelText = GetLabel(view,cardLevel );
 	local levelText = "LV "..tostring(card.Level)
 	cardLevelText:SetText(levelText);
 	--队伍
-	local cardTeamPic = GetImage(view,cardTeam );
 	local teamId = tonumber(card.Team_marks)
 	if teamId == 0 then
 		cardTeamPic:SetVisible(false);
@@ -188,7 +246,7 @@ function p.ShowCardInfo(view, card, cardIndex)
 	end
 	
 	--卡牌边框颜色
-	local cardBoxPic = GetImage(view,cardBoxBg );
+	
 	local cardType = tonumber(card.Class)
 	--WriteCon("cardType ===== "..cardType);
 	-- if cardType == 0 then
@@ -209,9 +267,7 @@ function p.ShowCardInfo(view, card, cardIndex)
 		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
 	-- end
 	
-	--设置卡牌按钮事件
-	cardButton:SetLuaDelegate(p.OnCardClickEvent);
-	cardButton:RemoveAllChildren(true);
+	
 	--p.ClearDelList();
 	
 	p.cardListNode[#p.cardListNode + 1] = cardButton;
@@ -226,8 +282,22 @@ end
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
+	
+	--是否处于编辑中
+	if p.isReplace == true then
+		if p.callback then
+			local cardData = nil;
+			for k,v in ipairs(p.cardListInfo) do
+				if tonumber(v.UniqueId) == cardUniqueId or tonumber(v.UniqueID) == cardUniqueId then
+					cardData = v;
+					break
+				end
+			end
+			p.callback(cardData);
+		end
+		p.HideUI();
 	--出售中
-	if p.BatchSellMark == MARK_ON then
+	elseif p.BatchSellMark == MARK_ON then
 		if uiNode:GetChild(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT) == nil then
 			local team = nil;
 			local rareStart = nil;
@@ -399,9 +469,13 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
-			p.CloseUI();
-			maininterface.BecomeFirstUI();
-			maininterface.CloseAllPanel();
+			if p.isReplace == true then
+				p.HideUI();
+			else
+				p.CloseUI();
+				maininterface.BecomeFirstUI();
+				maininterface.CloseAllPanel();
+			end
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then
 			WriteCon("card_bag_sort.ShowUI()");
 			if p.sortBtnMark == MARK_OFF then
@@ -495,6 +569,18 @@ function p.clearSellClick()
 end
 
 
+--隐藏UI
+function p.HideUI()
+	if p.layer ~= nil then
+		p.layer:SetVisible( false );
+		
+		local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
+		if list then
+			list:SetVisible(false);
+		end
+	end
+end
+
 
 function p.CloseUI()
     if p.layer ~= nil then
@@ -520,6 +606,9 @@ function p.ClearData()
 	p.allCardPrice 	= 0;	--出售卡牌总价值
 	p.sellCardNodeList = {}	--出售卡牌节点列表
 	p.node = nil;
+	p.isReplace = false;
+	p.hasRemove = false;
+	p.callback = nil;
 end
 function p.UIDisappear()
 	p.CloseUI();

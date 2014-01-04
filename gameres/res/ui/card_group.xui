@@ -82,7 +82,7 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\mail\left1.png
 NormalFileUV=0 0 70 52
 
-[CTRL_BUTTON_11]
+[CTRL_BUTTON_RIGHT]
 Type=2
 Tag=12
 Rect=567 764 70 52

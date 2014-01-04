@@ -123,7 +123,7 @@ function p.RefreshUI(userinfo)
 	--Exp:SetValue( 0, 100, tonumber( userinfo.Exp ) );
 	
 	local pic = GetImage( p.layer, ui.ID_CTRL_PICTURE_FACE);
-	pic:SetPicture( GetPictureByAni("UserImage.Face"..userinfo.Face, 0) );
+	--pic:SetPicture( GetPictureByAni("UserImage.Face"..userinfo.Face, 0) );
 	
 	dlg_battlearray.RefreshUI(userinfo.User_Team);
 	
@@ -181,6 +181,7 @@ function p.OnUpdateInfo()
 		end
 	end
 	
+	--[[
 	if tonumber(cache.Energy) < tonumber(cache.MaxEnergy) then
 		p.energy_remain_time = p.energy_remain_time - 1;
 		if p.energy_remain_time <= 0 then
@@ -195,6 +196,7 @@ function p.OnUpdateInfo()
 			end
 		end
 	end
+	]]--
 end
 
 

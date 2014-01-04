@@ -27,6 +27,7 @@ function p:Process()
 	msg_cache.msg_card_bag = self;
     WriteConWarning( "** msg_card_bag:Process() called" );
 	card_bag_mgr.RefreshUI(self);
+	card_group_edit.OnNetDelCallback(self);
 	if self.result == true then 
 		--card_bag_mgr.RefreshUI(self.cardlist);
 		card_intensify2.ShowCardList(self.cardlist,self);
