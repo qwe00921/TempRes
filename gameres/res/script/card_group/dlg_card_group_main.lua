@@ -74,6 +74,9 @@ function p.SetDelegate()
 	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
 	bt:SetLuaDelegate( p.OnBtnClick );
 	
+	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_110 );
+	bt:SetLuaDelegate( p.OnBtnClick );
+	
 	
 end
 
@@ -207,6 +210,7 @@ function p.ShowTeamList()
 	--WriteCon("activty:" ..act);
 
 	p.m_list = list;
+	list:SetEnableMove(true);
 	
 
 end
@@ -388,6 +392,15 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			list:MoveToNextView();
+		elseif ui.ID_CTRL_BUTTON_110 == tag then
+			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+			local v = list:GetEnableMove();
+			if v == false then
+				v = true;
+			else 
+				v = false;
+			end
+			list:SetEnableMove(v );
 		end
 	end
 end
@@ -417,6 +430,11 @@ end
 
 --列表节点的按钮
 function p.OnListItemClick(uiNode, uiEventType, param)
+	
+	local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+	if list:GetEnableMove() ~= true then
+		return;
+	end
 	
 	local node = uiNode:GetParent();
 	local id = node:GetId();
@@ -451,19 +469,34 @@ function p.OnSelectReplaceCallback(cardData)
 				preCard.Team_marks = "0";
 			end
 		else
-			team["Pos_unique"..p.selTeamPos] = cardData.UniqueID or cardData.UniqueId;
-			local pos = "Pos_card"..p.selTeamPos;
 			
-			team[pos] = tostring(cardData.CardID);
-			local ps = team[pos];
+			local cardUni = tostring (cardData.UniqueID or cardData.UniqueId);
+			local cardPos = nil;
+			local cardTeam = nil;
+			if tonumber(cardData.Team_marks)~= 0 then
+				cardTeam = p.user_teams[tonumber(cardData.Team_marks)]
+				for i = 1, 6 do
+					if tonumber(cardTeam["Pos_unique"..i]) == tonumber(cardUni) then
+						cardPos = i;
+						break;
+					end
+				end
+			end
+			
+			if cardTeam and cardPos then
+				cardTeam["Pos_unique"..cardPos] = team["Pos_unique"..p.selTeamPos];
+				cardTeam["Pos_card"..cardPos] = team["Pos_card"..p.selTeamPos];
+			end
+		
+			team["Pos_unique"..p.selTeamPos] = cardUni;
+			team["Pos_card"..p.selTeamPos] = tostring(cardData.CardID);
 			
 			if preCard then
 				preCard.Team_marks = cardData.Team_marks;				
 			end
-			
 			cardData.Team_marks =p.selTeam;
 			
-			p.cardlist[cardData.UniqueID or cardData.UniqueId] = cardData;
+			p.cardlist[cardUni] = cardData;
 			
 		end
 		p.ShowTeamList();
@@ -576,6 +609,7 @@ function p.SaveData()
 		local newTeam = p.user_teams[i];
 		local serverTeam = p.server_user_team[i];
 		for k,v in pairs(newTeam) do
+			--WriteCon("team "..i .. "key:" ..k .. "; V=" ..v .."," ..serverTeam[k]);
 			if serverTeam[k] == nil or tonumber(v) ~= tonumber(serverTeam[k])then
 				needUpload = true;
 				break;
@@ -618,7 +652,12 @@ function p.CopyUserTeam(user_teams)
 	end
 	local lst ={}
 	for i,v in pairs(user_teams) do
+		local vtyp = type(v);
+        if (vtyp == "table") then
+            lst[i] = p.CopyUserTeam(v);
+        else
             lst[i] = v;
+        end
     end
 	return lst;
 end
