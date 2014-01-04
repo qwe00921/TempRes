@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_item_list_1 = {};
 local p =  ui_item_list_1;
+p.ID_CTRL_TEXT_43						       = 43;
+p.ID_CTRL_TEXT_42						       = 42;
+p.ID_CTRL_TEXT_41						       = 41;
+p.ID_CTRL_TEXT_40						       = 40;
+p.ID_CTRL_TEXT_39						       = 39;
 p.ID_CTRL_TEXT_21						       = 21;
 p.ID_CTRL_TEXT_19						       = 19;
 p.ID_CTRL_TEXT_18						       = 18;
