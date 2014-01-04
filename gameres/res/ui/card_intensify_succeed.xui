@@ -3,6 +3,15 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_34]
+Type=1
+Tag=36
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
+
 [CTRL_9SLICES_25]
 Type=22
 Tag=27
@@ -12,23 +21,6 @@ Notes=
 Stretch=1
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_CARD]
-Type=1
-Tag=164
-Rect=53 510 122 133
-AnchorPos=0 0
-Notes=
-
-[CTRL_TEXT_EXP]
-Type=4
-Tag=166
-Rect=33 538 172 39
-AnchorPos=0 0
-Notes=
-TextSize=25
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_5]
 Type=4
@@ -95,18 +87,6 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_10]
-Type=4
-Tag=10
-Rect=58 595 100 30
-AnchorPos=0 0
-Notes=
-Text=暴击
-TextTradition=暴擊
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_HP_1]
 Type=4
 Tag=11
@@ -157,16 +137,6 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_CRIT_1]
-Type=4
-Tag=16
-Rect=58 595 100 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_ATTACK_2]
 Type=4
 Tag=17
@@ -191,16 +161,6 @@ TextVerAlign=AlignVerCenter
 Type=4
 Tag=19
 Rect=408 300 100 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_CRIT_2]
-Type=4
-Tag=20
-Rect=58 595 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -362,3 +322,5 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+

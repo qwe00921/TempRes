@@ -303,6 +303,11 @@ function p.InitAllCardInfo()
 		
 		--local cardBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+i-1);
 		--cardBtn:SetImage(GetPictureByAni("common_ui.cardBg", 0));
+		local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+i-1);
+		cardButton:SetImage( GetPictureByAni("common_ui.cardBg", 0) );
+	
+		local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+i-1);
+		cardName:SetText("");
 	end
 	
 end;	

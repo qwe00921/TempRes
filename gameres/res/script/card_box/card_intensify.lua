@@ -717,7 +717,7 @@ function p.CloseUI()
 		p.userMoney = 0;
 		p.cardListNode={};
 		p.cardNumListNode = {};
-		
+		p.cardEnabled = nil;
     end
 end
 
