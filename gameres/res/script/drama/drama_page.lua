@@ -1,29 +1,29 @@
 --------------------------------------------------------------
 -- FileName: 	drama_page.lua
 -- author:		
--- purpose:		¾çÇéÒ³Ãæ£¨¶Ô°×£©
+-- purpose:		å‰§æƒ…é¡µé¢ï¼ˆå¯¹ç™½ï¼‰
 --------------------------------------------------------------
 
 drama_page = {}
 local p = drama_page;
 
-p.storyId = 0;		--ËùÊôstroyId
-p.playIndex = 0;	--²¥·ÅĞòºÅ
+p.storyId = 0;		--æ‰€å±stroyId
+p.playIndex = 0;	--æ’­æ”¾åºå·
 
-p.ani = nil;		--¶¯»­
-p.picBg = nil;		--±³¾°Í¼Æ¬
-p.picLeft = nil;	--×óÍ¼
-p.picRight = nil;	--ÓÒÍ¼
+p.ani = nil;		--åŠ¨ç”»
+p.picBg = nil;		--èƒŒæ™¯å›¾ç‰‡
+p.picLeft = nil;	--å·¦å›¾
+p.picRight = nil;	--å³å›¾
 
-p.npcIdLeft = nil;	--×ó±ßnpcid
-p.npcIdRight = nil;	--ÓÒ±ßnpcid
+p.npcIdLeft = nil;	--å·¦è¾¹npcid
+p.npcIdRight = nil;	--å³è¾¹npcid
 
-p.npcIdTalk = nil;	--µ±Ç°Ëµ»°µÄnpcid
-p.npcName = nil;    --µ±Ç°Ëµ»°µÄNPCÃû³Æ
-p.talkText = nil;	--Ëµ»°ÄÚÈİ
+p.npcIdTalk = nil;	--å½“å‰è¯´è¯çš„npcid
+p.npcName = nil;    --å½“å‰è¯´è¯çš„NPCåç§°
+p.talkText = nil;	--è¯´è¯å†…å®¹
 
 
---´´½¨ĞÂÊµÀı
+--åˆ›å»ºæ–°å®ä¾‹
 function p:new()	
 	o = {}
 	setmetatable( o, self );
@@ -31,15 +31,15 @@ function p:new()
 	o:ctor(); return o;
 end
 
---¹¹Ôìº¯Êı
+--æ„é€ å‡½æ•°
 function p:ctor()
 end
 
---³õÊ¼»¯
+--åˆå§‹åŒ–
 function p:Init()
 end
 
---¼ÓÔØÒ³Ãæ£¨½«iniÖĞµÄĞĞ¼ÇÂ¼¼ÓÔØµ½¶ÔÏóÖĞ£©
+--åŠ è½½é¡µé¢ï¼ˆå°†iniä¸­çš„è¡Œè®°å½•åŠ è½½åˆ°å¯¹è±¡ä¸­ï¼‰
 function p:LoadPage( oDrama )
     self.talkText = oDrama.speak_text;
     self.npcName = oDrama.npc_name;
@@ -52,7 +52,7 @@ function p:LoadPage( oDrama )
     
 end
 
---ÏÔÊ¾Ò³Ãæ£¨¸ù¾İÒ³ÃæÊôĞÔ¼ÓÔØÍ¼Æ¬µÈ½øĞĞÏÔÊ¾£©
+--æ˜¾ç¤ºé¡µé¢ï¼ˆæ ¹æ®é¡µé¢å±æ€§åŠ è½½å›¾ç‰‡ç­‰è¿›è¡Œæ˜¾ç¤ºï¼‰
 function p:ShowPage()
     dlg_drama.ResetUI( self );
 end
