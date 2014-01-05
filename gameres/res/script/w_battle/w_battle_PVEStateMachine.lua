@@ -289,20 +289,22 @@ function p:tar_hurtEnd()
 				self.seqTarget:SetWaitEnd( cmdC ); 
 			else	--怪死了
 				--判断是否要切换怪物目标
-				if p.LockEnemy == true then
-					if(p.PVEEnemyID == lFighterID) then  --当前锁定的怪物已经挂了
-						if p.enemyCamp:GetActiveFighterCount() > 0 then --换个怪物
-							p.PVEEnemyID = p.enemyCamp:GetActiveFighterID(lFighterID); --除此ID外的活的怪物目标
+				targerFighter:Die();  --标识死亡
+				if w_battle_mgr.LockEnemy == true then
+					if(w_battle_mgr.PVEEnemyID == targerFighter:GetId()) then  --当前死掉的怪物是正在被锁定的怪物
+						if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() > 0 then --可换个怪物
+							w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
 							--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
 						else  --没有活着的怪物可选
-						   p.isCanSelFighter = false;
+						   w_battle_mgr.isCanSelFighter = false;
 						end
 					end;
 				else
 					--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 				end;			
-				self:reward();
-			
+				self:reward(); --获得奖励
+				
+				
 				local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdf );
 				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.die" );

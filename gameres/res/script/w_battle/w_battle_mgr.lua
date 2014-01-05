@@ -35,28 +35,7 @@ local BATTLE_PVP = 2;
 p.seqStar = nil;
 
 p.battle_result = false;
---[[
---创建角色后, 按活着的怪物,给个目标
-  p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID();
-  p.LockEnemy = false;
-  p.isCanSelFighter = true;
 
---点选目标后,计算伤害
-atkID,targerID
-
-    --默认选择的目标,判定怪物将死
-	if (hp < damage) and (p.LockEnemy == false) then
-		p.PVEEnemyID = p.enemyCamp:GetActiveFighterID(targerID); --除此外的活的怪物目标
-		
-		if p.enemyCamp:GetActiveFighterCount() == 1 then
-			p.LockEnemy = true;
-		end
-	end
-	
-  end;
-
-
-]]--
 function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
 	GetBattleShow():EnableTick( true );
@@ -97,7 +76,10 @@ function p.SetPVEAtkID(atkID)
 	  return false;
    end;
 
-   
+   if w_battle_mgr.isCanSelFighter == false then  --没有存活的目标可选
+	  WriteCon( "Warning! All targetFighter is Dead!");
+	  return false;  
+   end;
 
    --点选目标后,先计算伤害
    local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter);
@@ -142,21 +124,26 @@ function p.SetPVETargerID(position)
 		return ;
 	end
 	
-	local lfighter = p.enemyCamp:FindFighter(position);
-	--if lfighter.
+	local lfighter = p.enemyCamp:FindFighter(position); --怪连尸体都没了
+	if lfighter == nil then
+		return ;
+	end;
+
+
+--	if p.isCanSelFighter == false then 
+--		return ;
+--	end;
 	
-	p.PVEEnemyID = position;
-	p.PVEShowEnemyID = p.PVEEnemyID;
-	--显示怪物血量
-	p.LockEnemy = true;
-    p.SetLockAction(position);	
-	
+	if lfighter:IsDead() == false then  --怪物未进入了死亡动画中,可作为目标
+		p.PVEEnemyID = position;
+		p.PVEShowEnemyID = p.PVEEnemyID;
+		--显示怪物血量
+		p.LockEnemy = true;
+		p.SetLockAction(position);	
+	end;
 end;	
 
 function p.IninLockAction()
---[[	
-	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
-	lLockPic:SetPicture(nil);
 	
 	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
 	lLockPic:SetPicture(nil);
@@ -172,7 +159,10 @@ function p.IninLockAction()
 	
 	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
 	lLockPic:SetPicture(nil);
-	]]--
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
 end;
 
 function p.GetLockImage(position)
@@ -180,14 +170,14 @@ function p.GetLockImage(position)
 end;
 
 function p.SetLockAction(position)
-   
+   --[[
    if p.LockFagID ~= position then
 		--取消锁定标志
 	   p.IninLockAction()
 	   local lLockPic = p.GetLockImage();		
 	   lLockPic:SetPicture(GetPictureByAni("lancer.battle_targer_mark",0));
    end;
-   
+   ]]--
 end;
 
 --开始战斗表现:pve

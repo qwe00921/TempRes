@@ -51,7 +51,7 @@ end
 
 --获取存活fighters中哪些可成为目标
 --id需与pFighterID不同
-function p:GetFirstActiveFighterID(pFighterID)
+function p:GetFirstActiveFighterID(pFighterID) 
 	local lminSelId=7;  --
 	local lId= nil; --真实的ID
 	for k,v in ipairs(self.fighters) do
@@ -66,6 +66,35 @@ function p:GetFirstActiveFighterID(pFighterID)
 	
 	return lId;
 end;	
+
+--获得当前尸体未消失的怪物
+function p:GetFirstNotDeadFighterID(pFighterID) 
+	local lminSelId=7;  --
+	local lId= nil; --真实的ID
+	for k,v in ipairs(self.fighters) do
+		if ((v.isDead == false) and (v:GetId() ~= pFighterID))then			
+			if v.selIndex < lminSelId then
+				lminSelId = v.selIndex ;
+				lId = v:GetId();
+				--break;
+			end
+		end;
+	end;
+	
+	return lId;
+end;	
+
+
+--获得当前尸体未消失的怪物
+function p:GetNotDeadFighterCount()
+	local lCount = 0;
+	for k,v in ipairs(self.fighters) do
+		if (v.isDead == false) then --尸体还在
+			lCount = lCount + 1;
+		end;
+	end;
+    return lCount;
+end
 
 --[[
 --查找位置对应的fighter
