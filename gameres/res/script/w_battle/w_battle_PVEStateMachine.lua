@@ -69,11 +69,12 @@ function p:start()
 	local atkFighter = self:getAtkFighter();
 	local tarFighter = self:getTarFighter();
     local latkType = self.atkType;
+    local playerNode = self.atkplayerNode;
 			
 	if latkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 	
 		local distance = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
-        local playerNode = self.atkplayerNode;
+       
     
 		--攻击者最初的位置
 		local originPos = playerNode:GetCenterPos();
@@ -184,13 +185,14 @@ function p:atk_end()
     --受击后掉血,不用等掉血动画完成
 	--local cmd11 = tarFighter:cmdLua( "fighter_damage",   self.id,"", self.seqTarget );	
 	tarFighter:SubShowLife(self.damage); --掉血动画,及表示的血量减少
-
+	local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );
+	self.seqAtk:AddCommand( cmd4 );
+	
     --处理攻击方	
 	if self.atkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		
 		    --最初站立动画
-		local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );
-		self.seqAtk:AddCommand( cmd4 );
+
         --返回原来的位置
         local cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, self.seqAtk);
     
