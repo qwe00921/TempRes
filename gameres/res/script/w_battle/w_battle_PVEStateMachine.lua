@@ -1,6 +1,6 @@
 w_battle_PVEStateMachine = {}
 local p = w_battle_PVEStateMachine;
-
+		  
 --PVE的一次战斗的状态机
 
 
@@ -252,6 +252,17 @@ function p:tar_hurt()
 	
 end;
 
+--奖励
+function p:reward()
+	local targerFighter = self:getTarFighter();	
+	local tmpList = { {E_DROP_MONEY, 1, targerFighter.Position},
+					  {E_DROP_BLUESOUL , 2, targerFighter.Position},
+					  {E_DROP_HPBALL , 3, targerFighter.Position},
+					  {E_DROP_SPBALL , 4, targerFighter.Position}
+					}
+	w_battle_pve.MonsterDrop(tmpList)
+	
+end;
 
 function p:tar_hurtEnd()
 	local atkFighter = self:getAtkFighter();
@@ -290,7 +301,7 @@ function p:tar_hurtEnd()
 				else
 					--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 				end;			
-			
+				self:reward();
 			
 				local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdf );
@@ -328,10 +339,13 @@ function p:targerTurnEnd()
 end;
 
 function p:CheckEnd()
-	if (self.atkEnd == true) and (self.targerEnd == true) then
+	if (self.IsAtkTurnEnd == true) and (self.IsTarTurnEnd == true) then
 		self.IsEnd = true;
-		w_battle_atkState:delStateMachine(self.id);
-		self = nil;
+		w_battle_PVEStaMachMgr:delStateMachine(self.id);
+		local atkFighter = self:getAtkFighter();
+		atkFighter.IsTurnEnd = true;
+		w_battle_mgr.CheckHeroTurnEnd();
+		self = nil;		
 	end
 end;
 

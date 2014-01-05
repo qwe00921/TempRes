@@ -65,10 +65,11 @@ function p.starFighter()
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
 	p.isCanSelFighter = true;	
+	w_battle_camp:InitAtkTurnEnd();
 	
-	local batch = battle_show.GetNewBatch(); 
-	p.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
-	--p.SetPVEAtkID(2);
+	--local batch = battle_show.GetNewBatch(); 
+	--p.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
+	
 	
 end;
 
@@ -120,29 +121,71 @@ function p.SetPVEAtkID(atkID)
 	local pStateMachine = w_battle_PVEStateMachine:new();
 	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
 	pStateMachine:init(p.seqStar,id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
-	return false;
+	
+	return true;
+end;					
+
+function p.CheckHeroTurnEnd()
+	if p.heroCamp:CheckAtkTurnEnd() == true then
+		p.heroCamp:InitAtkTurnEnd();
+		w_battle_pve.RoundOver();	
+	end
+	
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
-function p.SetPVETargerID(targerId)
-	if targerId > 6 or targerId < 0 then
+function p.SetPVETargerID(position)
+	if position > 6 or position < 0 then
 	    WriteCon("SetPVEEnemyID id error! id = "..tostring(targetId));	
 		return ;
 	end
-	p.PVEEnemyID = targerId;
+	
+	local lfighter = p.enemyCamp:FindFighter(position);
+	--if lfighter.
+	
+	p.PVEEnemyID = position;
 	p.PVEShowEnemyID = p.PVEEnemyID;
 	--显示怪物血量
 	p.LockEnemy = true;
-    p.SetLockAction(targerId);	
+    p.SetLockAction(position);	
 	
 end;	
 
-function p.SetLockAction(targerId)
-   local lfighter = p.enemyUIArray:FindFighter(targerId);
-   if LockFagID ~= targerId then
+function p.IninLockAction()
+--[[	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	]]--
+end;
+
+function p.GetLockImage(position)
+	
+end;
+
+function p.SetLockAction(position)
+   
+   if p.LockFagID ~= position then
 		--取消锁定标志
+	   p.IninLockAction()
+	   local lLockPic = p.GetLockImage();		
+	   lLockPic:SetPicture(GetPictureByAni("lancer.battle_targer_mark",0));
    end;
-   --设置锁定标志
+   
 end;
 
 --开始战斗表现:pve

@@ -80,6 +80,29 @@ function p:FindFighter(pPos)
 	return fighter;
 end;
 ]]--
+
+--判定攻击方回合是否结束(含受击方动画完成)
+function p:CheckAtkTurnEnd()
+	local lresult = true;
+	for k,v in ipairs(self.fighters) do
+		if v.IsTurnEnd == false then
+			lresult = false;
+			break;
+		end;
+	end;
+	
+	return lresult;
+	
+end;
+
+--初始化攻击方回合标识
+function p:InitAtkTurnEnd()
+	for k,v in ipairs(self.fighters) do
+		 v.IsTurnEnd = false;
+	end;
+
+end;
+
 --还有多少存活
 function p:GetActiveFighterCount()
 	local lCount = 0;

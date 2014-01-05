@@ -42,7 +42,7 @@ function p:ctor()
 	self.showlife = 0;  --用来显示的血量
 	self.maxlife = 0;  --最大血量
 	self.nowlife = 0; --当前实际血量
-	
+	self.IsTurnEnd = false;
 end
 
 --初始化（重载）
@@ -64,6 +64,11 @@ function p:Init( idFighter, node, camp )
 	--self:CreateHpBar();
 	--self:CreateFlyNumGreen();	
 end
+
+--标识死亡,不能再成为目标
+function p:SetIsDie()
+	--self.
+end;
 
 --初始化被选择顺序
 function p:SetSelIndex(pId)

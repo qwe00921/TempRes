@@ -424,7 +424,7 @@ end
 
 --回合结束后,调用刷新界面,通知UI刷新
 function p.RoundOver()
-	
+	p.BeginPick();
 end
 
 --本波次战斗结束,通知UI
@@ -498,7 +498,8 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		btn:SetEnabled( false );
 		if ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "**菜单**" );
-			btn:SetEnabled( true );
+			w_battle_mgr.SetPVETargerID(6);
+			--btn:SetEnabled( true );
 		elseif p.CheckUseItem( tag ) then
 			WriteCon( "**使用物品**" );
 			p.UseItem( btn );
