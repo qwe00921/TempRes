@@ -12,6 +12,8 @@ p.enemyCamp = nil;			--敌对阵营
 p.uiLayer = nil;			--战斗层
 p.heroUIArray = nil;		--玩家阵营站位UITag表
 p.enemyUIArray = nil;		--敌对阵营站位UITag表
+p.enemyUILockArray = nil;   --敌对目标被的锁定标志
+
 
 p.petNode={};       --双方宠物结点
 p.petNameNode={};   --双方宠物名称结点
