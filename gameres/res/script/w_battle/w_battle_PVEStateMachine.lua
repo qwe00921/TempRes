@@ -346,7 +346,22 @@ function p:CheckEnd()
 		w_battle_PVEStaMachMgr:delStateMachine(self.id);
 		local atkFighter = self:getAtkFighter();
 		atkFighter.IsTurnEnd = true;
-		w_battle_mgr.CheckHeroTurnEnd();
+		
+		if self.atkCampType == W_BATTLE_HERO then	
+			if w_battle_mgr.enemyCamp:isAllDead() == false then
+				w_battle_mgr.CheckHeroTurnEnd();	
+			else
+				w_battle_mgr.StepOver(true);
+			end
+			
+		else
+			if w_battle_mgr.heroCamp:isAllDead() == false then
+				w_battle_mgr.CheckEnemyTurnEnd();
+			else
+				w_battle_mgr.StepOver(false);
+			end		
+		end;
+		
 		self = nil;		
 	end
 end;

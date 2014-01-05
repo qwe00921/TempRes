@@ -358,6 +358,10 @@ p.targetCardList = {
 
 }
 
+function p.nextStep()
+	
+end;
+
 --初使化对战数据
 function p.Init( battleDB )
     if battleDB == nil then

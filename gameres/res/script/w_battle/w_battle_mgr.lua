@@ -39,7 +39,9 @@ p.battle_result = false;
 function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
 	GetBattleShow():EnableTick( true );
-	p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	if w_battle_db_mgr.step == 1 then  --第一波才需要英雄跳入
+		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
@@ -106,15 +108,68 @@ function p.SetPVEAtkID(atkID)
 	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
 	pStateMachine:init(p.seqStar,id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
 	
-	return true;
+	return false;
 end;					
 
 function p.CheckHeroTurnEnd()
-	if p.heroCamp:CheckAtkTurnEnd() == true then
-		p.heroCamp:InitAtkTurnEnd();
-		w_battle_pve.RoundOver();	
+	if p.heroCamp:CheckAtkTurnEnd() == true then --英雄的回合结束
+		--进入怪物的回合
+		--进入BUFF结束回合
+		p.StarEnemyTurn()
 	end
 	
+end;
+
+function p.StarEnemyTurn()  --怪物回合开始
+	p.CheckEnemyTurnEnd()
+end;
+
+function p.CheckEnemyTurnEnd() --怪物回合结束
+	p.StarBuffTurn()
+end;
+
+function p.StarBuffTurn()
+	p.CheckBuffTurnEnd()
+end;
+
+function p.CheckBuffTurnEnd()
+	w_battle_pve.RoundOver(p.CheckStepOver);  --拾取掉落奖励,并回调检查波次是否结束
+	p.CheckStepOver()
+end;
+
+function p.CheckStepOver()  --判断波次是否结束
+	if p.enemyCamp:isAllDead() == true then  --只要是怪物死光都算玩家胜利
+		p.enemyCamp = nil;		 --敌对阵营
+		p.PVEEnemyID = nil;      --当前被攻击的敌人ID
+		p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
+		p.StepOver(true)
+	elseif p.heroCamp:isAllDead() == true then --玩家全灭
+	    p.StepOver(false)
+	else
+		p.heroCamp:InitAtkTurnEnd(); --标识玩家的回合
+		w_battle_pve.initUIHero(); --让玩家继续攻击
+	end
+
+	
+end;
+
+function p.StepOver(pIsPass)  --这一波次结束
+
+    if pIsPass == false then  --被怪打死
+		w_battle_pve.FighterOver(false); --提示复活
+	else --把怪打死
+		if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
+			w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
+			w_battle_db_mgr.nextStep();  --数据进入下一波次
+			p.heroCamp:InitAtkTurnEnd();
+			w_battle_pve.FighterOver(true); --过场动画之后,调用starFighter
+		else
+			p.QuitBattle();
+			w_battle_pve.MissionOver();  --任务结束,任务奖励界面
+		end
+	
+	end;
+    
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定

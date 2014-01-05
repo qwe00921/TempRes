@@ -96,6 +96,19 @@ function p:GetNotDeadFighterCount()
     return lCount;
 end
 
+--判断是否所有的全死了
+function p:isAllDead()
+	local lisAllDead = true;
+	for k,v in ipairs(self.fighters) do
+		if (v.isDead == false) then --尸体还在
+			lisAllDead = false;
+			break;
+		end;
+	end;
+	
+	return lisAllDead;
+end;
+
 --[[
 --查找位置对应的fighter
 function p:FindFighter(pPos)
