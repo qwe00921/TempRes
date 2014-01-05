@@ -3,6 +3,27 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_150]
+Type=2
+Tag=150
+Rect=0 827 640 134
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_143]
+Type=2
+Tag=143
+Rect=0 0 640 474
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=用于截取点击事件的，本身无逻辑
+
 [CTRL_PICTURE_10]
 Type=1
 Tag=10
@@ -103,3 +124,117 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
+
+[CTRL_BUTTON_POS1]
+Type=2
+Tag=144
+Rect=0 474 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_POS2]
+Type=2
+Tag=145
+Rect=0 592 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_POS3]
+Type=2
+Tag=146
+Rect=0 709 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_POS4]
+Type=2
+Tag=147
+Rect=319 474 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_POS5]
+Type=2
+Tag=148
+Rect=319 592 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_POS6]
+Type=2
+Tag=149
+Rect=319 709 320 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_POS1]
+Type=1
+Tag=127
+Rect=-1 474 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_POS2]
+Type=1
+Tag=128
+Rect=0 592 319 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_POS3]
+Type=1
+Tag=129
+Rect=0 709 319 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_POS4]
+Type=1
+Tag=130
+Rect=319 474 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_POS5]
+Type=1
+Tag=131
+Rect=319 592 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_POS6]
+Type=1
+Tag=132
+Rect=319 709 320 117
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\shade.png
+NormalFileUV=0 0 1 1

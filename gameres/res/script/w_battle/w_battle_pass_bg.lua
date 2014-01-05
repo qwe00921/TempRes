@@ -64,7 +64,7 @@ end
 
 function p.ShowProcess()
 	--参数需要从w_battle_mgr中取值
-	w_battle_pass.ShowUI( 5, 7 );
+	w_battle_pass.ShowUI( math.max(w_battle_db_mgr.step-1, 1), w_battle_db_mgr.maxStep );
 end
 
 function p.HideAnimation()
@@ -77,7 +77,14 @@ function p.HideAnimation()
 	p.layer:SetVisible( true );
 	p.layer:AddActionEffect( "ui.w_battle_pass_bg_hide" );
 
-	SetTimerOnce( p.CloseUI, 0.7 );
+	SetTimerOnce( p.PassOver, 0.7 );
+end
+
+function p.PassOver()
+	p.CloseUI();
+	
+	w_battle_pve.RefreshUI();
+	w_battle_mgr.starFighter();
 end
 
 function p.CloseUI()    
