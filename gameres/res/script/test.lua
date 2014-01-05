@@ -84,6 +84,9 @@ function p.test()
 	--测试9宫格控件
 --	p.Test9Slices();
 
+	--测试扩展列表
+--	p.TestNDUIScrollContainerExpand();
+
 	--直接进战斗
 	--p.EnterBattle();
 	--x_battle_mgr.EnterBattle();
@@ -384,6 +387,41 @@ function p.TestUIX_ListHorz_SingleMode()
 	--list:SetActiveView(1); --设置序号1的view为当前View
 	--list:MoveToPrevView(); --滚到前一个view
 	--list:MoveToNextView(); --滚到后一个view
+end
+
+function p.TestNDUIScrollContainerExpand()
+	local pList = createNDUIScrollContainerExpand();
+	
+	if nil == pList then
+		WriteConWarning("createNDUIScrollContainerExpand() failed in test");
+		return false;
+	end
+	
+	pList:Init();
+	pList:SetFramePosXY( 00, 100 );
+	pList:SetFrameSize( 600, 120 );
+	pList:SetSizeView(CCSizeMake(180,180));
+	
+	for i = 1,4 do
+		local pView1 = createNDUIScrollViewExpand();
+	
+		if nil == pView1 then
+			WriteConWarning("createNDUIScrollViewExpand() failed in test");
+			return true;
+		end
+		
+		pView1:Init();
+		pView1:SetViewId(i);
+		LoadUI( "test_list_640X960.xui", pView1, nil );
+		
+		pView1:SetTag(i);
+		
+		pList:AddView(pView1);
+	end
+
+	GetUIRoot():AddChild(pList);
+	
+	return true;
 end
 
 --测试纵向列表

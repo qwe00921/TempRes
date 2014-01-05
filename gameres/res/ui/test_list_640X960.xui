@@ -1,0 +1,13 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=3 7 180 128
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\item\1001.png
+NormalFileUV=0 0 64 64
