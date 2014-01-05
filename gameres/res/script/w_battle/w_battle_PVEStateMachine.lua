@@ -87,7 +87,7 @@ function p:start()
 		--self.seqStar:AddCommand( cmdAtkBegin );
 
 		--向攻击目标移动
-		local cmdMove = JumpMoveTo(atkFighter, originPos, enemyPos, self.seqAtk, true);
+		local cmdMove = OnlyMoveTo(atkFighter, originPos, enemyPos, self.seqAtk);
 		
 		--切换到攻击状态
 		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
@@ -192,7 +192,7 @@ function p:atk_end()
 		local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );
 		self.seqAtk:AddCommand( cmd4 );
         --返回原来的位置
-        local cmd5 = JumpMoveTo(atkFighter, self.enemyPos, self.originPos, self.seqAtk, false);
+        local cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, self.seqAtk);
     
 --		local cmdBackRset = createCommandEffect():AddActionEffect( 0, tarFighter:GetPlayerNode(), "lancer.target_hurt_back_reset" );
 --		self.seqAtk:AddCommand( cmdBackRset ); 
