@@ -201,6 +201,15 @@ function p.sortByType(a,b)
 	return tonumber(a.Time) < tonumber(b.Time);
 end
 
+--根据unique获取卡信息
+function p.findCard(UniquedId)
+	for k,v in pairs(p.cardList) do
+		if tonumber(v.UniqueID) == tonumber(UniquedId) or tonumber(v.UniqueId) == tonumber(UniquedId)  then
+				return v;
+		end
+	end
+end
+
 --情空数据
 function p.ClearData()
 	p.layer 		= nil;

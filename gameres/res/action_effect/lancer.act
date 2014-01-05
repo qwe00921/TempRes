@@ -14,6 +14,9 @@
 [begin_battle_jump]
 @jump(0.1, $1, $2, $3, 1) @sinin
 
+[begin_battle_move]
+@move(0.1, $1, $2)
+
 [bullet_rotate]
 @rotate(1,360)
 

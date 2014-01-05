@@ -36,7 +36,7 @@ Notes=
 NormalFile=.\res\image\ui\card\card2.png
 NormalFileUV=0 0 192 108
 
-[CTRL_TEXT_87]
+[CTRL_TEXT_TITLE]
 Type=4
 Tag=87
 Rect=112 172 180 50

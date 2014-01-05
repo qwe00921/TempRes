@@ -12,6 +12,8 @@ p.enemyCamp = nil;			--敌对阵营
 p.uiLayer = nil;			--战斗层
 p.heroUIArray = nil;		--玩家阵营站位UITag表
 p.enemyUIArray = nil;		--敌对阵营站位UITag表
+p.enemyUILockArray = nil;   --敌对目标被的锁定标志
+
 
 p.petNode={};       --双方宠物结点
 p.petNameNode={};   --双方宠物名称结点
@@ -33,42 +35,24 @@ local BATTLE_PVP = 2;
 p.seqStar = nil;
 
 p.battle_result = false;
---[[
---创建角色后, 按活着的怪物,给个目标
-  p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID();
-  p.LockEnemy = false;
-  p.isCanSelFighter = true;
 
---点选目标后,计算伤害
-atkID,targerID
-
-    --默认选择的目标,判定怪物将死
-	if (hp < damage) and (p.LockEnemy == false) then
-		p.PVEEnemyID = p.enemyCamp:GetActiveFighterID(targerID); --除此外的活的怪物目标
-		
-		if p.enemyCamp:GetActiveFighterCount() == 1 then
-			p.LockEnemy = true;
-		end
-	end
-	
-  end;
-
-
-]]--
 function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
 	GetBattleShow():EnableTick( true );
-	p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	if w_battle_db_mgr.step == 1 then  --第一波才需要英雄跳入
+		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
 	p.isCanSelFighter = true;	
+	w_battle_camp:InitAtkTurnEnd();
 	
-	local batch = battle_show.GetNewBatch(); 
-	p.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
-	--p.SetPVEAtkID(2);
+	--local batch = battle_show.GetNewBatch(); 
+	--p.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
+	
 	
 end;
 
@@ -94,7 +78,10 @@ function p.SetPVEAtkID(atkID)
 	  return false;
    end;
 
-   
+   if w_battle_mgr.isCanSelFighter == false then  --没有存活的目标可选
+	  WriteCon( "Warning! All targetFighter is Dead!");
+	  return false;  
+   end;
 
    --点选目标后,先计算伤害
    local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter);
@@ -120,29 +107,132 @@ function p.SetPVEAtkID(atkID)
 	local pStateMachine = w_battle_PVEStateMachine:new();
 	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
 	pStateMachine:init(p.seqStar,id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
+	
 	return false;
+end;					
+
+function p.CheckHeroTurnEnd()
+	if p.heroCamp:CheckAtkTurnEnd() == true then --英雄的回合结束
+		--进入怪物的回合
+		--进入BUFF结束回合
+		p.StarEnemyTurn()
+	end
+	
+end;
+
+function p.StarEnemyTurn()  --怪物回合开始
+	p.CheckEnemyTurnEnd()
+end;
+
+function p.CheckEnemyTurnEnd() --怪物回合结束
+	p.StarBuffTurn()
+end;
+
+function p.StarBuffTurn()
+	p.CheckBuffTurnEnd()
+end;
+
+function p.CheckBuffTurnEnd()
+	w_battle_pve.RoundOver(p.CheckStepOver);  --拾取掉落奖励,并回调检查波次是否结束
+	p.CheckStepOver()
+end;
+
+function p.CheckStepOver()  --判断波次是否结束
+	if p.enemyCamp:isAllDead() == true then  --只要是怪物死光都算玩家胜利
+		p.enemyCamp = nil;		 --敌对阵营
+		p.PVEEnemyID = nil;      --当前被攻击的敌人ID
+		p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
+		p.StepOver(true)
+	elseif p.heroCamp:isAllDead() == true then --玩家全灭
+	    p.StepOver(false)
+	else
+		p.heroCamp:InitAtkTurnEnd(); --标识玩家的回合
+		w_battle_pve.initUIHero(); --让玩家继续攻击
+	end
+
+	
+end;
+
+function p.StepOver(pIsPass)  --这一波次结束
+
+    if pIsPass == false then  --被怪打死
+		w_battle_pve.FighterOver(false); --提示复活
+	else --把怪打死
+		if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
+			w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
+			w_battle_db_mgr.nextStep();  --数据进入下一波次
+			p.heroCamp:InitAtkTurnEnd();
+			w_battle_pve.FighterOver(true); --过场动画之后,调用starFighter
+		else
+			p.QuitBattle();
+			w_battle_pve.MissionOver();  --任务结束,任务奖励界面
+		end
+	
+	end;
+    
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
-function p.SetPVETargerID(targerId)
-	if targerId > 6 or targerId < 0 then
+function p.SetPVETargerID(position)
+	if position > 6 or position < 0 then
 	    WriteCon("SetPVEEnemyID id error! id = "..tostring(targetId));	
 		return ;
 	end
-	p.PVEEnemyID = targerId;
-	p.PVEShowEnemyID = p.PVEEnemyID;
-	--显示怪物血量
-	p.LockEnemy = true;
-    p.SetLockAction(targerId);	
 	
+	local lfighter = p.enemyCamp:FindFighter(position); --怪连尸体都没了
+	if lfighter == nil then
+		return ;
+	end;
+
+
+--	if p.isCanSelFighter == false then 
+--		return ;
+--	end;
+	
+	if lfighter:IsDead() == false then  --怪物未进入了死亡动画中,可作为目标
+		p.PVEEnemyID = position;
+		p.PVEShowEnemyID = p.PVEEnemyID;
+		--显示怪物血量
+		p.LockEnemy = true;
+		p.SetLockAction(position);	
+	end;
 end;	
 
-function p.SetLockAction(targerId)
-   local lfighter = p.enemyUIArray:FindFighter(targerId);
-   if LockFagID ~= targerId then
+function p.IninLockAction()
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
+	lLockPic:SetPicture(nil);
+	
+end;
+
+function p.GetLockImage(position)
+	
+end;
+
+function p.SetLockAction(position)
+   --[[
+   if p.LockFagID ~= position then
 		--取消锁定标志
+	   p.IninLockAction()
+	   local lLockPic = p.GetLockImage();		
+	   lLockPic:SetPicture(GetPictureByAni("lancer.battle_targer_mark",0));
    end;
-   --设置锁定标志
+   ]]--
 end;
 
 --开始战斗表现:pve

@@ -7,6 +7,10 @@
 image\map\battle_bg_pvp.png
 image\map\battle_bg_pve.png
 
+;锁定怪敌时的目标
+[battle_targer_mark]
+image\ui\n_battle\battle_targer_mark.png
+
 ;白骨精
 [bai_gu_jing]
 image\card\bai_gu_jing_130_161.png

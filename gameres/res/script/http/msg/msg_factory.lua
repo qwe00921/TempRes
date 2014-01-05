@@ -209,6 +209,8 @@ function CreateMsg( idmsg )
 		
 	elseif idmsg == MSG_PACK_BOX then 	
 		msg = msg_pack_box:new();
+	elseif idmsg == MSG_PACK_ITEM then 	
+		msg = msg_pack_item:new();
 	elseif idmsg == MSG_MAIL_SEND_MSG or idmsg == MSG_MAIL_GET_MSGS 
 		or idmsg == MSG_MAIL_DEL_MSG or idmsg == MSG_MAIL_GET_MSG_DETAIL 
 		or idmsg == MSG_MAIL_GET_REWARD then 	

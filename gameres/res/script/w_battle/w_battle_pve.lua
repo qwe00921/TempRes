@@ -10,7 +10,7 @@ local enemyUIArray = {
 	ui.ID_CTRL_LEFT_SPRITE_4,
 	ui.ID_CTRL_LEFT_SPRITE_5,
 	ui.ID_CTRL_LEFT_SPRITE_6,
-}
+};
 
 local heroUIArray = {
 	ui.ID_CTRL_RIGHT_SPRITE_1,
@@ -19,7 +19,25 @@ local heroUIArray = {
 	ui.ID_CTRL_RIGHT_SPRITE_4,
 	ui.ID_CTRL_RIGHT_SPRITE_5,
 	ui.ID_CTRL_RIGHT_SPRITE_6,
-}
+};
+
+local targetBtn = {
+	ui.ID_CTRL_BUTTON_TARGET1,
+	ui.ID_CTRL_BUTTON_TARGET2,
+	ui.ID_CTRL_BUTTON_TARGET3,
+	ui.ID_CTRL_BUTTON_TARGET4,
+	ui.ID_CTRL_BUTTON_TARGET5,
+	ui.ID_CTRL_BUTTON_TARGET6,
+};
+
+local targetSecImg = {
+	ui.ID_CTRL_PICTURE_TARGET1,
+	ui.ID_CTRL_PICTURE_TARGET2,
+	ui.ID_CTRL_PICTURE_TARGET3,
+	ui.ID_CTRL_PICTURE_TARGET4,
+	ui.ID_CTRL_PICTURE_TARGET5,
+	ui.ID_CTRL_PICTURE_TARGET6,
+};
 
 p.battleLayer = nil;
 
@@ -53,6 +71,7 @@ local SPEXPBG_INDEX = 9;
 local SPEXP_INDEX = 10;
 local FACE_INDEX = 11;
 local MASK_INDEX = 12;
+local DAMAGE_INDEX = 13;
 
 local objs = {
 	{ 
@@ -68,6 +87,7 @@ local objs = {
 		ui.ID_CTRL_EXP_SP1,
 		ui.ID_CTRL_PICTURE_CHA1,
 		ui.ID_CTRL_PICTURE_115,
+		ui.ID_CTRL_PICTURE_157,
 	},
 	{
 		ui.ID_CTRL_BUTTON_65,
@@ -82,6 +102,7 @@ local objs = {
 		ui.ID_CTRL_EXP_SP2,
 		ui.ID_CTRL_PICTURE_CHA2,
 		ui.ID_CTRL_PICTURE_116,
+		ui.ID_CTRL_PICTURE_158,
 	},
 	{
 		ui.ID_CTRL_BUTTON_66,
@@ -96,6 +117,7 @@ local objs = {
 		ui.ID_CTRL_EXP_SP3,
 		ui.ID_CTRL_PICTURE_CHA3,
 		ui.ID_CTRL_PICTURE_117,
+		ui.ID_CTRL_PICTURE_159,
 	},
 	{
 		ui.ID_CTRL_BUTTON_64,
@@ -110,6 +132,7 @@ local objs = {
 		ui.ID_CTRL_EXP_SP4,
 		ui.ID_CTRL_PICTURE_CHA4,
 		ui.ID_CTRL_PICTURE_118,
+		ui.ID_CTRL_PICTURE_160,
 	},
 	{
 		ui.ID_CTRL_BUTTON_67,
@@ -124,6 +147,7 @@ local objs = {
 		ui.ID_CTRL_EXP_SP5,
 		ui.ID_CTRL_PICTURE_CHA5,
 		ui.ID_CTRL_PICTURE_119,
+		ui.ID_CTRL_PICTURE_161,
 	},
 	{
 		ui.ID_CTRL_BUTTON_68,
@@ -138,6 +162,7 @@ local objs = {
 		ui.ID_CTRL_EXP_SP6,
 		ui.ID_CTRL_PICTURE_CHA6,
 		ui.ID_CTRL_PICTURE_120,
+		ui.ID_CTRL_PICTURE_162,
 	},
 };
 
@@ -229,6 +254,12 @@ function p.InitController()
 		p.useItemList[i] = tItem;
 	end
 	
+	for i = 1,#targetBtn do
+		local btn = GetButton( p.battleLayer, targetBtn[i] );
+		btn:SetId( i );
+		btn:SetLuaDelegate( p.OnBtnClick );
+	end
+	
 	--菜单
 	local menuBtn = GetButton( p.battleLayer, ui.ID_CTRL_BUTTON_75 );
 	menuBtn:SetLuaDelegate( p.OnBtnClick );
@@ -291,6 +322,11 @@ function p.GetCardTable( index )
 	
 	ctrller = GetImage( p.battleLayer, tag[MASK_INDEX] );
 	temp[MASK_INDEX] = ctrller;
+	
+	ctrller = GetImage( p.battleLayer, tag[DAMAGE_INDEX] );
+	temp[DAMAGE_INDEX] = ctrller;
+	ctrller:SetVisible( false );
+	
 	return temp;
 end
 
@@ -367,7 +403,7 @@ function p.RefreshUI()
 			end
 		end
 	end
-	
+	--CTRL_PICTURE_115 486
 	--[[
 	--刷新物品显示
 	local itemList = w_battle_db_mgr.GetItemList();
@@ -386,7 +422,6 @@ function p.RefreshUI()
 				
 				if flag then
 					p.SetVisible( ctrllers, true );
-					
 					
 				else
 					p.SetVisible( ctrllers, false );
@@ -408,6 +443,7 @@ function p.InitBattle()
 	w_battle_mgr.uiLayer = p.battleLayer;
 	w_battle_mgr.heroUIArray = heroUIArray;
 	w_battle_mgr.enemyUIArray = enemyUIArray;
+	w_battle_mgr.enemyUILockArray = targetSecImg;
 	
 	--开始新一波战斗，波次在w_battle_mgr中记录
 	w_battle_mgr.starFighter();
@@ -424,7 +460,7 @@ end
 
 --回合结束后,调用刷新界面,通知UI刷新
 function p.RoundOver()
-	
+	p.BeginPick();
 end
 
 --本波次战斗结束,通知UI
@@ -488,6 +524,15 @@ function p.CheckAtkTarget( tag )
 	return false;
 end
 
+function p.CheckSelectTarget( tag )
+	for _, v in pairs( targetBtn ) do
+		if tag == v then
+			return true;
+		end
+	end
+	return false;
+end
+
 --按钮交互
 function p.OnBtnClick( uiNode, uiEventType, param )
 	WriteCon( tostring(uiEventType) );
@@ -505,6 +550,9 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		elseif p.CheckAtkTarget( tag ) then
 			WriteCon( "**攻击**" );
 			p.SetAtk( btn );
+		elseif p.p.CheckSelectTarget( tag ) then
+			WriteCon( "**选择目标，位置为".. tostring( uiNode:GetId() ) .."**" );
+			w_battle_mgr.SetPVETargerID( uiNode:GetId() );
 		end
 	elseif IsDragUp( uiEventType ) then
 		WriteCon("IsDragUp");
@@ -520,21 +568,33 @@ end
 --使用物品
 function p.UseItem( uiNode )
 	if p.itemMask == nil or p.itemMask:IsVisible() then
+		uiNode:SetEnabled( true );
 		return;
 	end
 	
 	local id = uiNode:GetId() or 0;--物品id
 	if tonumber(id) == 0 then
+		uiNode:SetEnabled( true );
+		return;
+	end
+	
+	local item = w_battle_db_mgr.GetItemByIndex( id );
+	local itemid = 0;
+	if item then
+		itemid = item.itemtype or 0;
+	end
+	
+	if itemid == 0 then
+		uiNode:SetEnabled( true );
 		return;
 	end
 	
 	local tid = w_battle_mgr.GetItemCanUsePlayer( id );
 	if tid ~= nil and type(tid) == "table" and #tid > 0 then
 		p.useitemMask:SetVisible( true );
-		
-	else
-	
+		w_battle_useitem.ShowUI( itemid, tid, id );
 	end
+	uiNode:SetEnabled( true );
 end
 
 --设置攻击
@@ -611,7 +671,8 @@ function p.Pick( nTimerId )
 	
 	if drop == nil then
 		KillTimer( nTimerId );
-		SetTimerOnce( p.reduceBoxImage, 0.3 );
+		SetTimerOnce( p.ReduceBoxImage, 0.3 );
+		SetTimerOnce( p.RefreshUI, 0.3 );
 		return;
 	end
 	
@@ -645,8 +706,37 @@ function p.AddIndexToTable()
 end
 
 --包裹缩小
-function p.reduceBoxImage()
+function p.ReduceBoxImage()
 	p.boxImage:AddActionEffect( "lancer.box_reduce" );
 	p.BoxScale = false;
 end
 
+--==============================================================--
+--更新属性克制关系
+function p.UpdateDamageBufftype( list )
+	for i = 1, 6 do
+		local obj = p.objList[i];
+		if obj ~= nil then
+			local index = 0;
+			for j = 1, #list do
+				if i == list[j][1] then
+					index = j;
+					break;
+				end
+			end
+			if index ~= 0 then
+				obj[DAMAGE_INDEX]:SetVisible( true );
+				local damagetypeindex = 0;
+				if list[j][2] == W_ELEMENT_ADD then
+					damagetypeindex = 1;
+				end
+				local picData = GetPictureByAni( "w_battle_res.damagebufftype", damagetypeindex );
+				if picData then
+					obj[DAMAGE_INDEX]:SetPicture( picData );
+				end
+			else
+				obj[DAMAGE_INDEX]:SetVisible( false );
+			end
+		end
+	end
+end

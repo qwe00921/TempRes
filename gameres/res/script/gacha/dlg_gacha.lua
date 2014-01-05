@@ -10,6 +10,7 @@ local p = dlg_gacha;
 SHOP_GACHA      = 1;
 SHOP_ITEM       = 2;
 SHOP_GIFT_PACK  = 3;
+SHOP_BAG	= 4;
 
 local curPage = SHOP_ITEM;
 
@@ -52,6 +53,8 @@ p.shopPackBtn = nil;
 p.shopData = nil;
 --存放礼包列表信息
 p.giftData = nil;
+--存放背包列表信息
+p.bagData = nil;
 
 p.requestFlag = false;
 
@@ -92,10 +95,19 @@ function p.ShowUI( intent )
 	   p.intent = intent;
 	end
 	
+	--[[
 	layer:Init();	
 	GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_gacha.xui", layer, nil);
 	layer:SetSwallowTouch(false);
+	]]--
+	
+	layer:Init();
+	layer:SetSwallowTouch(false);
+	layer:SetFrameRectFull();
+    
+	GetUIRoot():AddChild(layer);
+	LoadUI("dlg_gacha.xui", layer, nil);
 	
 	p.layer = layer;
 	p.SetDelegate();
@@ -131,6 +143,11 @@ function p.SetDelegate()
     --充值
     local payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_PAY);
     payBtn:SetLuaDelegate(p.OnGachaUIEvent);
+	
+	--持有
+	payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_73);
+    payBtn:SetLuaDelegate(p.OnGachaUIEvent);
+	
     
 	--[[
     --广告列表
@@ -200,7 +217,12 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			end
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_PAY == tag) then --充值按钮
 			WriteCon( "充值按钮" );
-
+			
+		elseif (ui_dlg_gacha.ID_CTRL_BUTTON_73 == tag) then
+			if curPage ~= SHOP_BAG then
+				p.ShowBagData( p.bagData );
+			end
+			
 		elseif ( ui_shop_item_view.ID_CTRL_BUTTON_BUY_L == tag ) then 
 			WriteCon( "商城购买" );
 			local item = p.shopData.list[uiNode:GetId()];
@@ -209,7 +231,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			WriteCon( "礼包购买" );
 			local gift = p.giftData.list[uiNode:GetId()];
 			dlg_buy_num.ShowUI( gift );
-
+		
 		elseif ui_gacha_list_view.ID_CTRL_BUTTON_ONE == tag then
 			--单次扭蛋
 			local id = uiNode:GetParent():GetId();
@@ -376,6 +398,14 @@ function p.ReqGiftPackBuy( giftid )
     SendReq("Shop","AddUserItem",uid, param);
 end
 
+--请求持有(背包)数据
+function p.ReqBag()
+    WriteCon("**请求礼包数据**");
+    local uid = GetUID();
+    if uid == 0 then uid = 100 end; 
+    SendReq("Item","ListItem",uid,"");
+end
+
 function p.ReqStartGacha( gacha_id, charge_type, gacha_type)
 	if p.requestFlag then
 		return;
@@ -492,6 +522,58 @@ function p.ShowGiftPackData( giftdata )
 		p.shopPackList:AddView( view );
     end
 end
+
+--显示持有
+function p.ShowBagData( bagdata )
+	    curPage = SHOP_BAG;
+	
+	if bagdata == nil then
+		p.ReqBag();
+		return;
+	end
+
+	p.shopPackList:SetVisible( true );
+	p.gachaList:SetVisible( false ); 
+	p.shopItemList:SetVisible( false );
+    
+	p.gachaBtn:SetChecked( false );
+    p.shopPackBtn:SetChecked( true );
+	p.shopItmeBtn:SetChecked( false );
+	
+	p.shopPackList:ClearView();
+    
+    --保存信息
+	p.bagdata = bagdata;
+    
+    local itemList = bagdata.user_items;
+    local itemNum = #itemList;
+    
+    local row = math.ceil(itemNum / 5);
+	
+	for i = 1, row do
+		local view = createNDUIXView();
+		view:Init();
+		LoadUI("bag_list.xui",view,nil);
+		local bg = GetUiNode( view, ui_list.ID_CTRL_PICTURE_13);
+        view:SetViewSize( bg:GetFrameSize());
+		
+		local row_index = i;
+		local start_index = (row_index-1)*5+1
+        local end_index = start_index + 4;
+
+		--设置列表项信息，一行5个道具
+		for j = start_index,end_index do
+			if j <= itemNum then
+				local item = itemList[j];
+				local itemIndex = j - start_index + 1;
+				p.ShowBagItemInfo( view, item, itemIndex );
+			end
+		end
+		list:AddView( view );
+	end
+    
+end
+
 
 --隐藏物品项
 function p.HideItemView( view )
@@ -639,6 +721,141 @@ function p.SetItemInfo( view , item , position, index)
 	   lookBtn:SetLuaDelegate( p.OnGiftUIEvent );
 	   lookBtn:SetId( index );
 	end
+end
+
+function p.ShowBagItemInfo( view, item, itemIndex )
+    local itemBtn = nil;
+    local itemNum = nil;
+    local itemName = nil;
+	local equipStarPic = nil;
+	local subTitleBg = nil;
+    local isUse = nil;
+	
+	if itemIndex == 1 then
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM1;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV1
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP1;
+		boxFrame = ui_list.ID_CTRL_PICTURE_91;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG1;
+		--subTitleBg = ui_list.ID_CTRL_PICTURE_22;
+        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME1;
+		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR1;
+	elseif itemIndex == 2 then
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM2;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV2
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP2;
+		boxFrame = ui_list.ID_CTRL_PICTURE_92;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG2;
+		--subTitleBg = ui_list.ID_CTRL_PICTURE_23;
+        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME2;
+		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR2;
+	elseif itemIndex == 3 then
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM3;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV3
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP3;
+		boxFrame = ui_list.ID_CTRL_PICTURE_93;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG3;
+		--subTitleBg = ui_list.ID_CTRL_PICTURE_24;
+        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME3;
+		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR3;
+	elseif itemIndex == 4 then
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM4;
+
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV4
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP4;
+		boxFrame = ui_list.ID_CTRL_PICTURE_94;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG4;
+		--subTitleBg = ui_list.ID_CTRL_PICTURE_25;
+        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME4;
+		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR4;
+	elseif itemIndex == 5 then
+        itemBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
+		boxFrame = ui_list.ID_CTRL_PICTURE_95;
+		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG5;
+        itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM5;
+        isUse = ui_list.ID_CTRL_PICTURE_EQUIP5;
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV5
+	end
+	--显示边框
+	local boxFramePic = GetImage(view,boxFrame);
+	boxFramePic:SetPicture( GetPictureByAni("common_ui.frame", 0) );
+	--显示名字背景图片
+	--local subTitleBgPic = GetImage(view,subTitleBg);
+	--subTitleBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
+
+	local item_id = tonumber(item.Item_id);
+	local itemType = tonumber(item.Item_type);
+	local itemUniqueId = tonumber(item.id);
+	local itemTable = nil;
+	if itemType == 1 or  itemType == 2 or itemType == 3 then
+		itemTable = SelectRowInner(T_EQUIP,"id",item_id);
+	elseif itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
+		itemTable = SelectRowInner(T_ITEM,"id",item_id);
+	end
+	if itemTable == nil then
+		WriteConErr("itemTable error ");
+	end
+
+	--显示物品图片
+	local itemButton = GetButton(view, itemBtn);
+    itemButton:SetImage( GetPictureByAni(itemTable.item_pic,0) );
+	itemButton:SetId(item_id);
+    itemButton:SetUID(itemUniqueId);
+	itemButton:SetXID(itemType);
+	
+	--物品名字
+	--local itemNameText = GetLabel(view,itemName );
+	--itemNameText:SetText(itemTable.name);
+	
+	local itemNumText = GetLabel(view,itemNum );	--物品数量
+	--local equipStarPic = GetImage(view,equipStarPic);	--装备星级
+	local equipLevelText = GetLabel(view,equipLevel);	--装备等级
+	local isUsePic = GetImage(view,isUse);			--是否装备
+	itemNumText:SetVisible( false );
+	--equipStarPic:SetVisible( false );
+	equipLevelText:SetVisible( false );
+	isUsePic:SetVisible( false );
+
+	if itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
+	--普通可叠加物品，显示数量
+		itemNumText:SetVisible(true);
+		itemNumText:SetText("X "..item.Num);
+	--显示数量背景
+		local numBgPic = GetImage(view,numBg);
+		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
+	elseif itemType == 1 or itemType == 2 or itemType == 3 then 
+		--装备，显示星级
+		-- equipStarPic:SetVisible(true);
+		-- local starNum = tonumber(item.Rare);
+		-- if starNum == 0 then
+			-- equipStarPic:SetVisible(false);
+		-- else
+			-- equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
+		-- end
+		--显示装备等级
+		equipLevelText:SetVisible(true);
+		equipLevelText:SetText("LV"..item.Equip_level);
+		--是否装备
+		if item.Is_dress == 1 or item.Is_dress == "1" then
+			isUsePic:SetVisible(true);
+			isUsePic:SetPicture( GetPictureByAni("common_ui.equipUse", 0) );
+		end
+	end
+	
+	--使用按钮
+	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
+	useBtn:SetVisible(false);
+	local useTextPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_26);
+	useTextPic:SetVisible(false);
+	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
+	itemDescribeText:SetText(" ");
+	
+	--设置物品按钮事件
+	itemButton:SetLuaDelegate(p.OnItemClickEvent);
 end
 
 --请求gacha数据回调函数

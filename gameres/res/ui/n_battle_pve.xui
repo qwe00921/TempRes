@@ -363,7 +363,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_IMPORTANT]
 Type=1
 Tag=121
-Rect=0 0 639 958
+Rect=0 0 638 958
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\n_battle\shade.png
@@ -1106,6 +1106,60 @@ Rect=435 719 26 26
 AnchorPos=0 0
 Notes=
 
+[CTRL_PICTURE_157]
+Type=1
+Tag=157
+Rect=80 485 26 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
+NormalFileUV=0 0 41 67
+
+[CTRL_PICTURE_158]
+Type=1
+Tag=158
+Rect=80 602 26 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
+NormalFileUV=0 0 41 67
+
+[CTRL_PICTURE_159]
+Type=1
+Tag=159
+Rect=80 719 26 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
+NormalFileUV=0 0 41 67
+
+[CTRL_PICTURE_160]
+Type=1
+Tag=160
+Rect=400 485 26 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
+NormalFileUV=0 0 41 67
+
+[CTRL_PICTURE_161]
+Type=1
+Tag=161
+Rect=400 602 26 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
+NormalFileUV=0 0 41 67
+
+[CTRL_PICTURE_162]
+Type=1
+Tag=162
+Rect=400 720 26 42
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
+NormalFileUV=0 0 41 67
+
 [CTRL_PICTURE_115]
 Type=1
 Tag=127
@@ -1168,3 +1222,117 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
+
+[CTRL_BUTTON_TARGET1]
+Type=2
+Tag=133
+Rect=127 136 71 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_TARGET2]
+Type=2
+Tag=134
+Rect=106 229 71 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_TARGET3]
+Type=2
+Tag=135
+Rect=131 325 71 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_TARGET4]
+Type=2
+Tag=136
+Rect=32 136 71 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_TARGET5]
+Type=2
+Tag=137
+Rect=11 229 71 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_TARGET6]
+Type=2
+Tag=138
+Rect=34 325 71 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_TARGET1]
+Type=1
+Tag=139
+Rect=169 143 20 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_TARGET2]
+Type=1
+Tag=140
+Rect=148 236 20 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_TARGET3]
+Type=1
+Tag=141
+Rect=170 334 20 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_TARGET4]
+Type=1
+Tag=142
+Rect=71 146 20 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_TARGET5]
+Type=1
+Tag=143
+Rect=50 239 20 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_TARGET6]
+Type=1
+Tag=144
+Rect=72 336 20 20
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
+NormalFileUV=0 0 32 32

@@ -70,19 +70,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_20_DELETE]
-Type=4
-Tag=20
-Rect=499 85 107 33
-AnchorPos=0 0
-Notes=
-Text=出阵人数
-TextTradition=出陣人數
-TextSize=25
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_27]
 Type=4
 Tag=27

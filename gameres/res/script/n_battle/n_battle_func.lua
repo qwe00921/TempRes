@@ -60,11 +60,8 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq,pIsParallelSeq)
 
     --self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
 	local pCmd = nil;
-	if pIsParallelSeq == true then
-		pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
-	else
-		pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
-    end;
+	pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pJumpSeq);
+
     local varEnv = pCmd:GetVarEnv();
     varEnv:SetFloat( "$1", x );
     varEnv:SetFloat( "$2", y );
@@ -72,6 +69,33 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq,pIsParallelSeq)
     
     return pCmd;
 end
+
+function OnlyMoveTo(atkFighter, fPos, tPos, pSeq)
+	local fx = "lancer_cmb.begin_battle_move";
+    
+    local atkPos = fPos;
+    
+    local x = tPos.x - atkPos.x;
+    local y = tPos.y - atkPos.y;
+    local distance = (x ^ 2 + y ^ 2) ^ 0.75;
+    
+    -- calc start offset
+    local startOffset = 0;
+    local offsetX = x * startOffset / distance;
+    local offsetY = y * startOffset / distance;
+    --local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
+
+    --self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
+	local pCmd = nil;
+
+	pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, atkFighter:GetPlayerNode(), fx,pSeq);
+    local varEnv = pCmd:GetVarEnv();
+    varEnv:SetFloat( "$1", x );
+    varEnv:SetFloat( "$2", y );
+    
+    
+    return pCmd;
+end;
 
 --获取位置值最小的战士前面的坐标
 function GetBestTargetPos( Hero, TCamp, Targets )

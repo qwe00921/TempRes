@@ -1,6 +1,6 @@
 w_battle_PVEStateMachine = {}
 local p = w_battle_PVEStateMachine;
-
+		  
 --PVE的一次战斗的状态机
 
 
@@ -69,11 +69,12 @@ function p:start()
 	local atkFighter = self:getAtkFighter();
 	local tarFighter = self:getTarFighter();
     local latkType = self.atkType;
+    local playerNode = self.atkplayerNode;
 			
 	if latkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 	
 		local distance = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
-        local playerNode = self.atkplayerNode;
+       
     
 		--攻击者最初的位置
 		local originPos = playerNode:GetCenterPos();
@@ -87,7 +88,7 @@ function p:start()
 		--self.seqStar:AddCommand( cmdAtkBegin );
 
 		--向攻击目标移动
-		local cmdMove = JumpMoveTo(atkFighter, originPos, enemyPos, self.seqAtk, true);
+		local cmdMove = OnlyMoveTo(atkFighter, originPos, enemyPos, self.seqAtk);
 		
 		--切换到攻击状态
 		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
@@ -184,15 +185,16 @@ function p:atk_end()
     --受击后掉血,不用等掉血动画完成
 	--local cmd11 = tarFighter:cmdLua( "fighter_damage",   self.id,"", self.seqTarget );	
 	tarFighter:SubShowLife(self.damage); --掉血动画,及表示的血量减少
-
+	local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );
+	self.seqAtk:AddCommand( cmd4 );
+	
     --处理攻击方	
 	if self.atkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		
 		    --最初站立动画
-		local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );
-		self.seqAtk:AddCommand( cmd4 );
+
         --返回原来的位置
-        local cmd5 = JumpMoveTo(atkFighter, self.enemyPos, self.originPos, self.seqAtk, false);
+        local cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, self.seqAtk);
     
 --		local cmdBackRset = createCommandEffect():AddActionEffect( 0, tarFighter:GetPlayerNode(), "lancer.target_hurt_back_reset" );
 --		self.seqAtk:AddCommand( cmdBackRset ); 
@@ -250,6 +252,17 @@ function p:tar_hurt()
 	
 end;
 
+--奖励
+function p:reward()
+	local targerFighter = self:getTarFighter();	
+	local tmpList = { {E_DROP_MONEY, 1, targerFighter.Position},
+					  {E_DROP_BLUESOUL , 2, targerFighter.Position},
+					  {E_DROP_HPBALL , 3, targerFighter.Position},
+					  {E_DROP_SPBALL , 4, targerFighter.Position}
+					}
+	w_battle_pve.MonsterDrop(tmpList)
+	
+end;
 
 function p:tar_hurtEnd()
 	local atkFighter = self:getAtkFighter();
@@ -276,20 +289,22 @@ function p:tar_hurtEnd()
 				self.seqTarget:SetWaitEnd( cmdC ); 
 			else	--怪死了
 				--判断是否要切换怪物目标
-				if p.LockEnemy == true then
-					if(p.PVEEnemyID == lFighterID) then  --当前锁定的怪物已经挂了
-						if p.enemyCamp:GetActiveFighterCount() > 0 then --换个怪物
-							p.PVEEnemyID = p.enemyCamp:GetActiveFighterID(lFighterID); --除此ID外的活的怪物目标
+				targerFighter:Die();  --标识死亡
+				if w_battle_mgr.LockEnemy == true then
+					if(w_battle_mgr.PVEEnemyID == targerFighter:GetId()) then  --当前死掉的怪物是正在被锁定的怪物
+						if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() > 0 then --可换个怪物
+							w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
 							--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
 						else  --没有活着的怪物可选
-						   p.isCanSelFighter = false;
+						   w_battle_mgr.isCanSelFighter = false;
 						end
 					end;
 				else
 					--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 				end;			
-			
-			
+				self:reward(); --获得奖励
+				
+				
 				local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdf );
 				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.die" );
@@ -326,10 +341,28 @@ function p:targerTurnEnd()
 end;
 
 function p:CheckEnd()
-	if (self.atkEnd == true) and (self.targerEnd == true) then
+	if (self.IsAtkTurnEnd == true) and (self.IsTarTurnEnd == true) then
 		self.IsEnd = true;
-		w_battle_atkState:delStateMachine(self.id);
-		self = nil;
+		w_battle_PVEStaMachMgr:delStateMachine(self.id);
+		local atkFighter = self:getAtkFighter();
+		atkFighter.IsTurnEnd = true;
+		
+		if self.atkCampType == W_BATTLE_HERO then	
+			if w_battle_mgr.enemyCamp:isAllDead() == false then
+				w_battle_mgr.CheckHeroTurnEnd();	
+			else
+				w_battle_mgr.StepOver(true);
+			end
+			
+		else
+			if w_battle_mgr.heroCamp:isAllDead() == false then
+				w_battle_mgr.CheckEnemyTurnEnd();
+			else
+				w_battle_mgr.StepOver(false);
+			end		
+		end;
+		
+		self = nil;		
 	end
 end;
 
