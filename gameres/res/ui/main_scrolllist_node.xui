@@ -1,0 +1,23 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_89]
+Type=1
+Tag=89
+Rect=0 0 192 135
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\home_win_quest.png
+NormalFileUV=0 0 450 316
+
+[CTRL_BUTTON_108]
+Type=2
+Tag=108
+Rect=0 0 192 135
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
