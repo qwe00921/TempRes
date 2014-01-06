@@ -18,5 +18,5 @@ p.ID_CTRL_PICTURE_MAIL_TIPS_BG		= 8;	--邮件数量通知背景
 p.ID_CTRL_PICTURE_ACTIVITY_TIPS_BG	= 7;	--活动数量通知背景
 p.ID_CTRL_BUTTON_MAIL					    = 5;	--邮件按钮
 p.ID_CTRL_BUTTON_ACTIVITY				 = 4;	--活动按钮
-p.ID_CTRL_BUTTON_MORE					    = 3;	--弹出按钮
 p.ID_CTRL_BUTTON_BG_BTN				   = 11;	--隐藏子界面按钮
+p.ID_CTRL_PICTURE_106					    = 106;
