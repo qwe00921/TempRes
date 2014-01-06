@@ -34,8 +34,8 @@ function p:ctor()
 	local batch = battle_show.GetNewBatch(); 
 	--self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
 	self.seqStar = battle_show.GetDefaultParallelSequence();
-	self.seqAtk = batch:AddSerialSequence();
-    self.seqTarget = batch:AddSerialSequence(); 
+	self.seqAtk = batch:AddParallelSequence();
+    self.seqTarget = batch:AddParallelSequence(); 
 	--self.seqBullet = batch:AddSerialSequence();	
 	
 end
@@ -88,15 +88,16 @@ function p:start()
 		--local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( playerNode, true );
 		--self.seqStar:AddCommand( cmdAtkBegin );
 
-		WriteCon("atk move! id="..tostring(atkFighter:GetId()));
+		--WriteCon("atk move! id="..tostring(atkFighter:GetId()));
 		--向攻击目标移动
 		local cmdMove = OnlyMoveTo(atkFighter, originPos, enemyPos, self.seqStar);
 		
+		--self.seqAtk = batch:AddParallelSequence();
 		--切换到攻击状态
 		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
-		--self.seqAtk:SetWaitEnd(cmdMove);
+		self.seqAtk:SetWaitEnd(cmdMove);
 		
-		--self.seqTarget = batch:AddSerialSequence();	
+		
 		local cmdHurt = tarFighter:cmdLua("tar_hurt",        self.id,"", self.seqTarget);
 		self.seqTarget:SetWaitEnd( cmdMove );
 		
@@ -160,18 +161,21 @@ function p:atk_startAtk()  --攻击
 	local atkFighter = self:getAtkFighter();
 
 	if self.atkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
+		local batch = battle_show.GetNewBatch(); 
+		self.seqAtk = batch:AddParallelSequence();
+		--self.seqAtk = batch:AddSerialSequence();
 		--攻击敌人动画
-		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
+		local cmdAtk = createCommandPlayer():Atk( 0.3, self.atkplayerNode, "" );
 		self.seqAtk:AddCommand( cmdAtk );	
 		
-
+--[[
 		local atkSound = SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );	
 		--受击音乐
 		if atkSound ~= nil then
 			local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( atkSound );
 			self.seqAtk:AddCommand( cmdAtkMusic );
 		end
-		
+	]]--	
 	end;
 	
 	--攻击结束播放受击动作
@@ -286,9 +290,11 @@ function p:tar_hurtEnd()
 				self.seqTarget:AddCommand( cmdf );
 				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
 				self.seqTarget:AddCommand( cmdC );		
-								
-				local cmdRevive =targerFighter:cmdLua("tar_ReviveEnd",  self.id, "", seq);
-				self.seqTarget:SetWaitEnd( cmdC ); 
+				
+				local batch = battle_show.GetNewBatch();
+				local seqDie	= batch:AddParallelSequence();
+				local cmdRevive = targerFighter:cmdLua("tar_ReviveEnd",  self.id, "", seqDie);
+				self.seqRevive:SetWaitEnd( cmdC ); 
 			else	--怪死了
 				--判断是否要切换怪物目标
 				targerFighter:Die();  --标识死亡
@@ -311,9 +317,10 @@ function p:tar_hurtEnd()
 				self.seqTarget:AddCommand( cmdf );
 				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdC );				
-				
-				local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id,"", self.seqTarget);
-				--seqDieEnd:SetWaitEnd( cmdDieEnd ); 
+				local batch = battle_show.GetNewBatch(); 
+				local seqDie	= batch:AddParallelSequence();
+				local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id,"", seqDie);
+				seqDie:SetWaitEnd( cmdC ); 
 			end;
 		end;
 	else --还在受其它人打击,本次攻击方发起的受击流程就结束了
