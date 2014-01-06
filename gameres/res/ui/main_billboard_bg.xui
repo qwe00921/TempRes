@@ -1,0 +1,13 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BILLBOARD_BG]
+Type=1
+Tag=13
+Rect=0 810 640 52
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_ui\ad_bg.png
+NormalFileUV=0 0 40 52

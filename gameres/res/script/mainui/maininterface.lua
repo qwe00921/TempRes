@@ -4,6 +4,9 @@ local p = maininterface;
 
 p.layer = nil;
 p.m_bgImage = nil;
+p.scrollList = nil;
+
+p.billlayer = nil;
 
 local ui = ui_main_interface;
 
@@ -11,11 +14,13 @@ function p.ShowUI(userinfo)
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 --		dlg_battlearray.ShowUI();
+		--p.ShowBattleArray();
 		p.ShowBillboard();
 		PlayMusic_MainUI();
 		
 		p.m_bgImage:SetVisible(true);
 		
+		p.scrollList:SetVisible(true);
 		return;
 	end
 
@@ -46,11 +51,10 @@ function p.ShowUI(userinfo)
 	
 	p.ShowMailNum(userinfo);
 	
---	dlg_battlearray.ShowUI();
-	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
 	--dlg_battlearray.ShowUI();
+	--p.ShowBattleArray();
 	
 	p.ShowBillboardWithInit();
 	PlayMusic_MainUI();
@@ -87,17 +91,19 @@ function p.InitScrollList()
 	end
 	
 	local pList = createNDUIScrollContainerExpand();
-	
+
 	if nil == pList then
 		WriteConWarning("createNDUIScrollContainerExpand() failed in test");
 		return false;
 	end
 	
+	p.scrollList = pList;
+	
 	local posXY = posCtrller:GetFramePos();
 	local size = posCtrller:GetFrameSize();
 
 	pList:Init();
-	pList:SetFramePosXY( posXY.x, posXY.y+60 );
+	pList:SetFramePosXY( posXY.x, posXY.y-200 );
 	pList:SetFrameSize( size.w, size.h );
 	pList:SetSizeView( CCSizeMake( 230, 135 ) );
 	
@@ -113,12 +119,14 @@ function p.InitScrollList()
 		pView1:SetViewId( math.mod(i,3) );
 		LoadUI( "main_scrolllist_node.xui", pView1, nil );
 		
-		local image = GetImage( pView1, ui_main_scrolllist_node.ID_CTRL_PICTURE_89 );
+		--[[local image = GetImage( pView1, ui_main_scrolllist_node.ID_CTRL_PICTURE_89 );
 		if image then
 			image:SetPicture( GetPictureByAni( "ui.mainui_scrolllist", math.mod(i,3) ) );
 		end
+		--]]
 		--pView1:SetTag(i);
 		local btn = GetButton( pView1, ui_main_scrolllist_node.ID_CTRL_BUTTON_108 );
+		btn:SetImage( GetPictureByAni( "ui.mainui_scrolllist", math.mod(i,3) ) );
 		btn:SetLuaDelegate( p.OnTouchImage );
 		btn:SetId( math.mod(i,3) );
 		
@@ -164,8 +172,10 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
+		p.scrollList:SetVisible(false);
+		p.m_bgImage:SetVisible(false);
 --		dlg_battlearray.HideUI();
-		p.HideBillboard();
+		--p.HideBillboard();
 	end
 end
 
@@ -174,9 +184,16 @@ function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
         p.layer = nil;
+		p.scrollList = nil;
+		p.m_bgImage = nil;
 --		dlg_battlearray.CloseUI();
 		billboard.CloseUI();
     end
+	
+	if p.billlayer ~= nil then
+		p.billlayer:LazyClose();
+		p.billlayer:SetVisible( false );
+	end
 end
 
 --重新显示菜单按钮
@@ -201,13 +218,66 @@ function p.ShowMailNum(userinfo)
 	end
 end
 
+--显示阵容界面
+function p.ShowBattleArray( user_team )
+	user_team = user_team or {};
+	if user_team.Formation ~= nil then
+		local formation = user_team.Formation;
+		for i = 1, 6 do
+			local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_CHA" .. i] );
+			if btn ~= nil then
+				btn:SetLuaDelegate( p.OnClickCard );
+				btn:SetId( i );
+				if formation["Pos"..i] ~= nil then
+					btn:SetVisible( true );
+					local cardType = formation["Pos"..i].CardID;
+					local path = SelectRowInner( T_CHAR_RES, "card_id", cardType, "hero_pic" );
+					local picData = nil;
+					if path then
+						picData = GetPictureByAni( path, 0 );
+					end
+					btn:SetImage(picData);
+				else
+					btn:SetVisible( false );
+				end
+			end
+		end
+	end
+end
+
+function p.OnClickCard(uiNode, uiEventType, param)
+	if IsClickEvent(uiEventType) then
+		local id = uiNode:GetId() or 0;
+		local user_team = msg_cache.msg_player.User_Team or {};
+		local formation = user_team.Formation or {};
+		local card = formation["Pos"..id];
+		if card then
+			dlg_card_attr_base.ShowUI( card );
+		end
+	end
+end
+
 --跑马灯显示
 function p.ShowBillboardWithInit()
-	local bg = GetImage( p.layer, ui.ID_CTRL_PICTURE_BILLBOARD_BG);
+	if p.billlayer == nil then
+		local layer = createNDUILayer();
+		if layer == nil then
+			return false;
+		end
+		layer:Init();
+		layer:SetSwallowTouch(false);
+		layer:SetFrameRectFull();
+		
+		GetUIRoot():AddChildZ( layer, -1 );
+		p.billlayer = layer;
+		
+		LoadUI( "main_billboard_bg.xui", layer, nil );
+	end
+	
+	local bg = GetImage( p.billlayer, ui_main_billboard_bg.ID_CTRL_PICTURE_BILLBOARD_BG);
 	local rect = bg:GetFrameRect() or {};
 	local pt = rect.origin or {};
-	WriteCon( pt.x .. " "..pt.y );
-	billboard.ShowUIWithInit(p.layer,pt.x,pt.y) --,nil, pt.y); 
+	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y-222)); 
 end
 
 function p.HideBillboard()

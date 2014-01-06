@@ -7,13 +7,19 @@ local ui = ui_main_btn_list;
 
 p.layer = nil;
 
+local ID_NOTICE = 1;
+local ID_SETTING = 2;
+local ID_RANK = 3;
+local ID_GEN = 4;
 local ID_STRENGTHEN = 5;
 local ID_PET = 6;
+local ID_UNION = 7;
+local ID_FRIEND = 8;
+local ID_PICTORIAL = 9;
 local ID_CARD = 10;
 
-local tValidIndex = { ID_STRENGTHEN, ID_PET, ID_CARD };
-
-local btn_num = 10;
+local tShowIndex = { ID_NOTICE, ID_SETTING, ID_RANK, ID_STRENGTHEN, ID_FRIEND, ID_PICTORIAL };
+local tValidIndex = { ID_STRENGTHEN };
 
 function p.ShowUI()
 	if p.layer ~= nil then
@@ -48,6 +54,7 @@ end
 function p.ShowBtnList()
 	local list = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_2 );
 	if list ~= nil then
+		local btn_num = #tShowIndex;
 		local row = math.ceil(btn_num/4);
 		for i = 1, row do
 			local view = createNDUIXView();
@@ -63,19 +70,19 @@ function p.ShowBtnList()
 						btn:SetVisible( false );
 					end
 				else
-					local pic = GetPictureByAni( "ui.more_action_list", (i-1)*4+j-1);
+					local pic = GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 );
 					if pic then
 						local btn = GetButton( view, ui_main_btn_node["ID_CTRL_BUTTON_BTN_" .. j] );
 						if btn ~= nil then
 							btn:SetVisible( true );
-							btn:SetId( (i-1)*4+j );
-							btn:SetImage( GetPictureByAni( "ui.more_action_list", (i-1)*4+j-1) );
-							btn:SetTouchDownImage( GetPictureByAni( "ui.more_action_list", (i-1)*4+j-1) );
-							btn:SetDisabledImage( GetPictureByAni( "ui.more_action_list", (i-1)*4+j-1) );
+							btn:SetId( tShowIndex[(i-1)*4+j] );
+							btn:SetImage( GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 ) );
+							btn:SetTouchDownImage( GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 ));
+							btn:SetDisabledImage( GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 ));
 							
 							btn:SetLuaDelegate( p.OnBtnClick );
 							
-							btn:SetEnabled( p.CheckEnabledIndex( (i-1)*4+j ) );
+							btn:SetEnabled( p.CheckEnabledIndex( tShowIndex[(i-1)*4+j] ) );
 						end
 					end
 				end
@@ -109,14 +116,14 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId();
 		WriteCon( tostring(id) );
-		if id == ID_PET then
+--[[		if id == ID_PET then
 			dlg_beast_main.ShowUI();
 		end
 		
 		if id == ID_CARD then
 			card_bag_mian.ShowUI();
 		end
-		
+		--]]
 		if id == ID_STRENGTHEN then
 			card_rein.ShowUI();
 		end
