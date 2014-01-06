@@ -1,4 +1,4 @@
-msg_pack_box = msg_base:new();
+msg_pack_item = msg_base:new();
 local p = msg_pack_item;
 local super = msg_base;
 
