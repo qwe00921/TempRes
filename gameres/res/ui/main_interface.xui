@@ -3,6 +3,13 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_106]
+Type=1
+Tag=106
+Rect=0 533 640 279
+AnchorPos=0 0
+Notes=
+
 [CTRL_BUTTON_BG_BTN]
 Type=2
 Tag=11
@@ -13,23 +20,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=隐藏子界面按钮
-
-[CTRL_BUTTON_MORE]
-Type=2
-Tag=3
-Rect=267 525 100 100
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=弹出按钮
-NormalFile=.\res\image\ui\main_interface\more.PNG
-NormalFileUV=0 0 100 100
-SelectFile=.\res\image\ui\main_interface\more_click.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui\main_interface\more.PNG
-DisableFileUV=0 0 80 80
 
 [CTRL_BUTTON_ACTIVITY]
 Type=2
@@ -113,15 +103,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=邮件数量
 
-[CTRL_PICTURE_BILLBOARD_BG]
-Type=1
-Tag=13
-Rect=0 810 640 52
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_ui\ad_bg.png
-NormalFileUV=0 0 40 52
-
 [CTRL_BUTTON_CHA1]
 Type=2
 Tag=18
@@ -202,10 +183,3 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\card_show.png
 NormalFileUV=0 0 640 350
-
-[CTRL_LIST_24]
-Type=8
-Tag=24
-Rect=0 533 640 279
-AnchorPos=0 0
-Notes=

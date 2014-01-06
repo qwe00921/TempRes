@@ -16,6 +16,8 @@ DoFile("ui/ui_main_btn_list.lua")
 DoFile("ui/ui_main_btn_node.lua")
 DoFile("ui/ui_main_battlearray.lua")
 DoFile("ui/ui_main_battlearray_bg.lua")
+DoFile("ui/ui_main_scrolllist_node.lua")
+DoFile("ui/ui_main_billboard_bg.lua")
 DoFile("ui/ui_marquee_led.lua")
 
 --登录界面

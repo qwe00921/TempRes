@@ -38,6 +38,7 @@ LoadAni("w_bullet.ani")
 LoadAni("card_element.ani")
 LoadAni("w_drop.ani")
 LoadAni("w_battle_res.ani")
+LoadAni("card_hero.ani")
 LoadAni_Done()
 
 --加载组合特效

@@ -46,63 +46,63 @@ function p.ShowUI()
 end
 
 function p.SetDelegate()
-	local gashapon = GetButton( p.layer, ui.ID_CTRL_BUTTON_GASHAPON );
-	gashapon:SetLuaDelegate( p.OnBtnClick );
+	--商店
+	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_GASHAPON );
+	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	local pvp = GetButton( p.layer, ui.ID_CTRL_BUTTON_PVP );
-	pvp:SetLuaDelegate( p.OnBtnClick );
+	--菜单
+	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_PVP );
+	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	local bag = GetButton( p.layer, ui.ID_CTRL_BUTTON_BAG );
-	bag:SetLuaDelegate( p.OnBtnClick );
+	--村落
+	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_BAG );
+	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	local card_group = GetButton( p.layer, ui.ID_CTRL_BUTTON_CARD_GROUP );
-	card_group:SetLuaDelegate( p.OnBtnClick );
+	--伙伴
+	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_CARD_GROUP );
+	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	local quest = GetButton( p.layer, ui.ID_CTRL_BUTTON_QUEST );
-	quest:SetLuaDelegate( p.OnBtnClick );
+	--任务
+	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_QUEST );
+	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	local home_page = GetButton( p.layer, ui.ID_CTRL_BUTTON_HOME_PAGE );
-	home_page:SetLuaDelegate( p.OnBtnClick );
+	--主页
+	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_HOME_PAGE );
+	btn:SetLuaDelegate( p.OnBtnClick );
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
-		--maininterface.CloseAllPanel();
-		
+
 		if ui.ID_CTRL_BUTTON_GASHAPON == tag then
 			WriteCon("**========扭蛋========**");
 			dlg_gacha.ShowUI( SHOP_ITEM );
-			--p.SetNewUI( dlg_gacha );
 			maininterface.BecomeBackground();
-			
 		elseif ui.ID_CTRL_BUTTON_PVP == tag then
-			WriteCon("**=======竞技场=======**");
-			--p.CloseLastUI( pNewSingleton );
-			--p.preUI = dlg_gacha;
+			WriteCon("**=======菜单=======**");
+			dlg_btn_list.ShowUI();
+			do return end;
+			
 		elseif ui.ID_CTRL_BUTTON_BAG == tag then
-			WriteCon("**========背包========**");
+			WriteCon("**========村落========**");
+			--[[
+			WriteCon("**========菜单========**");
 			pack_box.ShowUI();
-			--p.SetNewUI( pack_box );
-			--隐藏主UI
-			--maininterface.CloseAllPanel();
-			--maininterface.HideUI();
+			--]]
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
-			WriteCon("**========卡组========**");
-			--card_bag_mian.ShowUI();
+			WriteCon("**========伙伴========**");
 			dlg_card_group_main.ShowUI();
-			--p.SetNewUI( dlg_card_group_main );
+			
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
 			WriteCon("**========任务========**");
 			stageMap_main.OpenWorldMap();
 			PlayMusic_Task(1);
-			--隐藏主UI
-			--maininterface.CloseAllPanel();
+
 			maininterface.HideUI();
 		elseif ui.ID_CTRL_BUTTON_HOME_PAGE == tag then
 			WriteCon("**========主页========**");
 			world_map.CheckToCloseMap();
-			--PlayMusic_MainUI();
 			p.SetNewUI( {} );
 			PlayMusic_MainUI();
 		end
