@@ -32,7 +32,8 @@ function p:ctor()
 	self.IsRevive = false;
 
 	local batch = battle_show.GetNewBatch(); 
-	self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
+	--self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
+	self.seqStar = battle_show.GetDefaultParallelSequence();
 	self.seqAtk = batch:AddSerialSequence();
     self.seqTarget = batch:AddSerialSequence(); 
 	--self.seqBullet = batch:AddSerialSequence();	
@@ -41,8 +42,8 @@ end
 
 
 
-function p:init(seqStar,id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,isJoinAtk)
-	self.seqStar = seqStar;
+function p:init(id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,isJoinAtk)
+	--self.seqStar = seqStar;
 	self.atkId = atkFighter:GetId();
 	self.id = id;	
 	self.targerId = tarFighter:GetId();
@@ -87,8 +88,9 @@ function p:start()
 		--local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( playerNode, true );
 		--self.seqStar:AddCommand( cmdAtkBegin );
 
+		WriteCon("atk move! id="..tostring(atkFighter:GetId()));
 		--向攻击目标移动
-		local cmdMove = OnlyMoveTo(atkFighter, originPos, enemyPos, self.seqAtk);
+		local cmdMove = OnlyMoveTo(atkFighter, originPos, enemyPos, self.seqStar);
 		
 		--切换到攻击状态
 		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
@@ -159,7 +161,7 @@ function p:atk_startAtk()  --攻击
 
 	if self.atkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		--攻击敌人动画
-		local cmdAtk = createCommandPlayer():Atk( 0.3, self.atkplayerNode, "" );
+		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		self.seqAtk:AddCommand( cmdAtk );	
 		
 
