@@ -32,7 +32,7 @@ p.isCanSelFighter = false;  --是否还有可选择的怪物,战斗UI界面点击我方人员时,需先
 
 local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
-p.seqStar = nil;
+--p.seqStar = nil;
 
 p.battle_result = false;
 
@@ -59,6 +59,7 @@ end;
 
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVEAtkID(atkID)
+   WriteCon( "SetPVEAtkID:"..tonumber(atkID));
    local atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
 
    local targerID = w_battle_mgr.PVEEnemyID;
@@ -106,7 +107,7 @@ function p.SetPVEAtkID(atkID)
     --w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	
 	local pStateMachine = w_battle_PVEStateMachine:new();
 	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
-	pStateMachine:init(p.seqStar,id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
+	pStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
 	
 	return false;
 end;					

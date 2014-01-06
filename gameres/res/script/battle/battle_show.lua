@@ -18,7 +18,7 @@ function p.AddActionEffect_ToSequence( duration, node, title, sequence )
 	return cmd;
 end
 
---用默认的串行序列播放Action特效
+--用默认的并行序列播放Action特效
 function p.AddActionEffect_ToParallelSequence( duration, node, title, sequence )
 	local cmd = createCommandEffect():AddActionEffect( duration, node, title );
 	if cmd ~= nil then

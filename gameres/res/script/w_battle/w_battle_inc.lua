@@ -115,3 +115,7 @@ W_BATTLE_POS_TAG_4 = 4;
 W_BATTLE_POS_TAG_5 = 5;
 W_BATTLE_POS_TAG_6 = 6;
 
+--¶¯»­Ê±¼ä
+W_BATTLE_ATKTIME   =  1;
+
+
