@@ -148,7 +148,7 @@ function p.CheckStepOver()  --判断波次是否结束
 	    p.StepOver(false)
 	else
 		p.heroCamp:InitAtkTurnEnd(); --标识玩家的回合
-		w_battle_pve.initUIHero(); --让玩家继续攻击
+		--w_battle_pve.initUIHero(); --让玩家继续攻击
 	end
 
 	
