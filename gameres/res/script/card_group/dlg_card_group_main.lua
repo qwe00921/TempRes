@@ -23,6 +23,13 @@ p.m_list = nil;
 
 local ui = ui_card_group;
 
+--拖动控制
+p.beginDragId = nil;
+p.beginPos = nil;
+p.beginRect = nil;
+p.beginPlayer = nil;
+
+
 function p.ShowUI()
 	dlg_menu.SetNewUI( p );
 	
@@ -61,6 +68,7 @@ function p.ShowUI()
     p.SetDelegate();
 	p.RequestData();
 	PlayMusic_ShopUI();
+	
 end
 
 --设置回调
@@ -203,6 +211,7 @@ function p.ShowTeamList()
 		p.SetTeamInfo( view, user_teams[i] );
 		
 		view:SetId( tonumber(user_teams[i].Team_id) );
+		view:SetTag(i);
 		list:AddView( view );
 	end
 	
@@ -238,6 +247,7 @@ function p.SetTeamInfo( view, user_teamData )
 		
 		cardBtn:SetLuaDelegate( p.OnListItemClick );
 		cardBtn:SetId( i );
+		pic:SetId( i )
 		
 		if tonumber(user_teamData["Pos_unique"..i]) ~= 0 then
 			cardNum = cardNum + 1;
@@ -281,6 +291,8 @@ function p.SetTeamInfo( view, user_teamData )
 			speedLabel:SetVisible( false );
 			atkLabel:SetVisible( false );
 			defLabel:SetVisible( false );
+			pic:SetEnableSwapDrag(true);
+			pic:SetLuaDelegate(p.OnDragEvent);
 		end
 	end
 	
@@ -354,10 +366,64 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 		WriteCon(string.format("Now Draging: %d,%d",pPoint.x,pPoint.y));
 	elseif IsDragBegin(uiEventType) then
 		local pPoint = param;
-		WriteCon(string.format("Now Drag Begin: %d,%d",pPoint.x,pPoint.y));
+		p.beginDragId = uiNode:GetId();
+		p.beginPos = uiNode:GetFramePos();
+		p.beginRect = uiNode:GetScreenRect();
+		p.beginPlayer =  ConverToPlayer(uiNode);
+		WriteCon(string.format("Now Drag Begin : %d,%d,,,,%d,%d ",pPoint.x,pPoint.y,p.beginPos.x,p.beginPos.y));
 	elseif IsDragEnd(uiEventType) then
 		local pPoint = param;
 		WriteCon(string.format("Now Drag End: %d,%d",pPoint.x,pPoint.y));
+		local n = p.m_list:GetActiveView();
+		local cView = p.m_list:GetViewAt(n);
+		local toIndex = 0;
+		local toPlayer = nil;
+		for i =1, 6 do
+			local player = GetPlayer ( cView, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );
+			local id = player:GetId();
+			local rect = player:GetScreenRect();
+			--WriteCon(string.format("Now Drag End id%d: %d,%d,%d,%d",id,i,rect.origin.x,rect.origin.y,rect.size.w,rect.size.h));
+			if id ~= p.beginDragId
+				 and pPoint.x > rect.origin.x and pPoint.x < (rect.origin.x + rect.size.w) 
+				and pPoint.y > rect.origin.y and pPoint.y < (rect.origin.y + rect.size.h) then
+				toIndex = i;
+				toPlayer = player;
+				break;
+			end
+			
+		end
+		
+		if toIndex > 0 then
+			local team = p.user_teams[n+1];
+			local orgUni = team["Pos_unique"..p.beginDragId];
+			local orgCardId = team["Pos_card"..p.beginDragId];
+			team["Pos_unique"..p.beginDragId] = team["Pos_unique"..toIndex]
+			team["Pos_card"..p.beginDragId] = team["Pos_card"..toIndex]
+			team["Pos_unique"..toIndex] = orgUni
+			team["Pos_card"..toIndex] = orgCardId
+			
+			
+			if toPlayer and tonumber(orgUni) ~= 0 and tonumber(orgCardId) ~= 0 then
+				toPlayer:UseConfig(orgCardId );
+				toPlayer:SetLookAt(E_LOOKAT_LEFT);
+				toPlayer:Standby("");
+				toPlayer:SetVisible( true );
+			elseif toPlayer then
+				toPlayer:SetVisible( false );
+			end
+			
+			if p.beginPlayer and tonumber(team["Pos_unique"..p.beginDragId]) ~= 0 and tonumber(team["Pos_card"..p.beginDragId]) ~= 0 then
+				p.beginPlayer:UseConfig(team["Pos_card"..p.beginDragId]);
+				p.beginPlayer:SetLookAt(E_LOOKAT_LEFT);
+				p.beginPlayer:Standby("");
+				p.beginPlayer:SetVisible( true );
+			elseif p.beginPlayer then
+				p.beginPlayer:SetVisible( false );
+			end
+		end
+		
+		uiNode:SetFramePos(p.beginPos);
+		
 	end
 end
 
