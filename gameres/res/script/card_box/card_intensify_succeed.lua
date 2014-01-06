@@ -166,6 +166,28 @@ function p.ShowCardLevel(msg)
 	local cardCrit = GetLabel(p.layer,ui.ID_CTRL_TEXT_CRIT_2);
 	cardCrit:SetText("+"..tostring(p.cardInfo.add_Speed)); 
 	]]--
+	
+	-- get default serial sequence
+	--local sequence = p.GetDefaultSerialSequence();
+
+	-- add hud effect
+	--local cmd = createCommandEffect():AddHudEffect( 2, "sk_test.cardflash" );
+	--if cmd ~= nil then
+	--	sequence:AddCommand( cmd );
+	--end
+	
+	--ÊÇ·ñ±¬»÷³É¹¦msg.is_crit;
+	local pPicIsCrit = GetImage(p.layer, ui.ID_CTRL_PICTURE_SUCCEED);
+	WriteCon("is_crit = " .. tostring(msg.is_crit));
+	if msg.is_crit == true then
+		WriteCon("is_crit = true" );
+		pPicIsCrit:SetPicture(GetPictureByAni("ui.intensify_succeed",0));
+	else
+		WriteCon("is_crit = false" );
+		pPicIsCrit:SetPicture(GetPictureByAni("ui.intensify_succeed",1));
+	end
+	
+	
 end
 
 

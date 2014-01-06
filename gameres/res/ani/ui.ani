@@ -145,4 +145,8 @@ image\ui\card\card_remove.png
 image\ui\main_interface\home_win_arena.png
 image\ui\main_interface\home_win_quest.png
 image\ui\main_interface\home_win_gate.png
+;强化成功
+[intensify_succeed]
+image\ui\main_interface\home_win_arena.png
+image\ui\main_interface\home_win_quest.png
 

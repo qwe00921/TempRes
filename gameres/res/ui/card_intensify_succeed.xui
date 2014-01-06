@@ -323,4 +323,9 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-
+[CTRL_PICTURE_SUCCEED]
+Type=1
+Tag=37
+Rect=148 442 391 84
+AnchorPos=0 0
+Notes=
