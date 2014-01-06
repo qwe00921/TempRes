@@ -16,6 +16,7 @@ p.pos_no = nil;
 
 p.server_user_team = nil;
 p.nowTeam	= 1;
+p.serverTeam = 1;
 p.selTeam = 1;
 p.selTeamPos = 1;
 
@@ -139,9 +140,11 @@ function p.SetData( dataSource )
 	if dataSource ~= nil then
 		p.user_teams = dataSource.user_teams;
 		p.nowTeam = dataSource.nowteam;
+		p.serverTeam = dataSource.nowteam;
 	else
 		p.user_teams = p.source.user_teams;
 		p.nowTeam = p.source.nowteam;
+		p.serverTeam = p.source.nowteam;
 	end
 	
 	
@@ -220,7 +223,16 @@ function p.ShowTeamList()
 
 	p.m_list = list;
 	list:SetEnableMove(true);
+	local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );
+	bg:SetVisible(false);
 	
+	local teamid = tonumber( p.nowTeam ) or 1;
+	if teamid <= 0 then
+		teamid = 0;
+	else
+		teamid = teamid - 1;
+	end
+	list:SetActiveView(teamid);
 
 end
 
@@ -460,11 +472,15 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			list:MoveToNextView();
 		elseif ui.ID_CTRL_BUTTON_110 == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+			local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );
 			local v = list:GetEnableMove();
 			if v == false then
 				v = true;
+				bg:SetVisible(false);
+				
 			else 
 				v = false;
+				bg:SetVisible(true);
 			end
 			list:SetEnableMove(v );
 		end
@@ -514,6 +530,8 @@ function p.OnListItemClick(uiNode, uiEventType, param)
 		end
 		card_bag_mian.ShouReplaceUI(p.OnSelectReplaceCallback, hasRemove);
 	end
+	
+	p.nowTeam = p.m_list:GetActiveView() + 1;
 end
 
 --Ñ¡Ôñ¿¨ÅÆ»Øµ÷
@@ -671,14 +689,20 @@ end
 function p.SaveData()
 	local needUpload = false;
 	
-	for i = 1,3 do
-		local newTeam = p.user_teams[i];
-		local serverTeam = p.server_user_team[i];
-		for k,v in pairs(newTeam) do
-			--WriteCon("team "..i .. "key:" ..k .. "; V=" ..v .."," ..serverTeam[k]);
-			if serverTeam[k] == nil or tonumber(v) ~= tonumber(serverTeam[k])then
-				needUpload = true;
-				break;
+	p.nowTeam = p.m_list:GetActiveView() + 1;
+	
+	if tonumber(p.nowTeam) ~= tonumber(p.serverTeam) then
+		needUpload = true;
+	else 
+		for i = 1,3 do
+			local newTeam = p.user_teams[i];
+			local serverTeam = p.server_user_team[i];
+			for k,v in pairs(newTeam) do
+				--WriteCon("team "..i .. "key:" ..k .. "; V=" ..v .."," ..serverTeam[k]);
+				if serverTeam[k] == nil or tonumber(v) ~= tonumber(serverTeam[k])then
+					needUpload = true;
+					break;
+				end
 			end
 		end
 	end

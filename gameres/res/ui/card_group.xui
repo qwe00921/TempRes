@@ -63,6 +63,15 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_DRAG_BG]
+Type=1
+Tag=1219
+Rect=14 258 611 477
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
 [CTRL_LIST_9]
 Type=8
 Tag=10
@@ -137,3 +146,4 @@ NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
+
