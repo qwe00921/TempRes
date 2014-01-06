@@ -103,7 +103,7 @@ function p.InitScrollList()
 	local size = posCtrller:GetFrameSize();
 
 	pList:Init();
-	pList:SetFramePosXY( posXY.x, posXY.y-200 );
+	pList:SetFramePosXY( posXY.x, posXY.y+90 );
 	pList:SetFrameSize( size.w, size.h );
 	pList:SetSizeView( CCSizeMake( 230, 135 ) );
 	
@@ -139,6 +139,16 @@ end
 
 function p.OnTouchImage(uiNode, uiEventType, param)
 	WriteCon( "dadasdsadsad" );
+	if IsClickEvent( uiEventType ) then
+		local id = uiNode:GetId();
+		if id == 1 then
+			WriteCon("**========ÈÎÎñ========**");
+			stageMap_main.OpenWorldMap();
+			PlayMusic_Task(1);
+
+			maininterface.HideUI();
+		end
+	end
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
