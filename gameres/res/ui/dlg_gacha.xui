@@ -250,3 +250,52 @@ TextSize=35
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_VERTICAL_LIST_BAG]
+Type=14
+Tag=1068
+Rect=9 336 620 590
+AnchorPos=0 0
+Notes=
+Remark=扭蛋list
+
+[CTRL_PICTURE_USE]
+Type=1
+Tag=24
+Rect=22 537 593 114
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\shop\bg_shop.png
+NormalFileUV=0 0 594 208
+
+[CTRL_BUTTON_USE]
+Type=2
+Tag=26
+Rect=496 568 107 53
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_PICTURE_LABEL_USE]
+Type=1
+Tag=27
+Rect=519 576 61 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\text\use.png
+NormalFileUV=0 0 52 28
+
+[CTRL_TEXT_ITEM_INFO]
+Type=4
+Tag=28
+Rect=37 545 455 93
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

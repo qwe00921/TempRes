@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_dlg_gacha = {};
 local p =  ui_dlg_gacha;
+p.ID_CTRL_TEXT_ITEM_INFO				  = 28;
+p.ID_CTRL_PICTURE_LABEL_USE			= 27;
+p.ID_CTRL_BUTTON_USE					     = 26;
+p.ID_CTRL_PICTURE_USE					    = 24;
+p.ID_CTRL_VERTICAL_LIST_BAG			= 1068;	--Å¤µ°list
 p.ID_CTRL_TEXT_77						       = 77;
 p.ID_CTRL_PICTURE_76					     = 76;
 p.ID_CTRL_TEXT_75						       = 75;

@@ -45,9 +45,11 @@ p.gachaIndex = nil;
 p.gachaList = nil;
 p.shopItemList = nil;
 p.shopPackList = nil;
+p.bagList = nil;
 p.gachaBtn = nil;
 p.shopItmeBtn = nil;
 p.shopPackBtn = nil;
+p.bagBtn = nil;
 
 --存放商品列表信息
 p.shopData = nil;
@@ -83,6 +85,7 @@ function p.ShowUI( intent )
 	
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		p.SetBagUseVisible(false)
 		return;
 	end
 	
@@ -119,6 +122,8 @@ function p.ShowUI( intent )
 	elseif intent == SHOP_GIFT_PACK then 
 	   p.ShowGiftPackData();
 	end
+	
+	 p.SetBagUseVisible(false)
 end
 
 --设置事件处理
@@ -139,14 +144,15 @@ function p.SetDelegate()
     --礼包按钮
     p.shopPackBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI);
     p.shopPackBtn:SetLuaDelegate(p.OnGachaUIEvent);
+	
     
     --充值
     local payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_PAY);
     payBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	
 	--持有
-	payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_73);
-    payBtn:SetLuaDelegate(p.OnGachaUIEvent);
+	p.bagBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_73);
+    p.bagBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	
     
 	--[[
@@ -181,6 +187,9 @@ function p.SetDelegate()
     
     --礼包列表
     p.shopPackList = GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_GIFT_PACK);
+	
+	--商城列表
+	p.bagList	= GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_BAG);
 end
 
 function p.OnGiftUIEvent( uiNode, uiEventType, param )
@@ -439,9 +448,12 @@ function p.ShowShopData( shopdata )
     p.shopItemList:SetVisible( true );
     p.gachaList:SetVisible( false ); 
     p.shopPackList:SetVisible( false );
+	p.bagList:SetVisible( false );
+	p.SetBagUseVisible(false);
     
     p.gachaBtn:SetChecked( false );
     p.shopPackBtn:SetChecked( false );
+	p.bagBtn:SetChecked( false );
     p.shopItmeBtn:SetChecked( true );
     
     p.shopItemList:ClearView();
@@ -489,9 +501,12 @@ function p.ShowGiftPackData( giftdata )
 	p.shopPackList:SetVisible( true );
 	p.gachaList:SetVisible( false ); 
 	p.shopItemList:SetVisible( false );
+	p.bagList:SetVisible( false );
+	p.SetBagUseVisible(false);
     
 	p.gachaBtn:SetChecked( false );
     p.shopPackBtn:SetChecked( true );
+	p.bagBtn:SetChecked( false );
 	p.shopItmeBtn:SetChecked( false );
 	
 	p.shopPackList:ClearView();
@@ -532,20 +547,23 @@ function p.ShowBagData( bagdata )
 		return;
 	end
 
-	p.shopPackList:SetVisible( true );
+	p.shopPackList:SetVisible( false );
 	p.gachaList:SetVisible( false ); 
 	p.shopItemList:SetVisible( false );
+	p.bagList:SetVisible( true );
+	p.SetBagUseVisible(false);
     
 	p.gachaBtn:SetChecked( false );
-    p.shopPackBtn:SetChecked( true );
+    p.shopPackBtn:SetChecked( false );
 	p.shopItmeBtn:SetChecked( false );
+	p.bagBtn:SetChecked( true );
 	
-	p.shopPackList:ClearView();
+	p.bagList:ClearView();
     
     --保存信息
 	p.bagdata = bagdata;
     
-    local itemList = bagdata.user_items;
+    local itemList = bagdata.user_items or {};
     local itemNum = #itemList;
     
     local row = math.ceil(itemNum / 5);
@@ -554,7 +572,7 @@ function p.ShowBagData( bagdata )
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("bag_list.xui",view,nil);
-		local bg = GetUiNode( view, ui_list.ID_CTRL_PICTURE_13);
+		local bg = GetUiNode( view, ui_bag_list.ID_CTRL_PICTURE_13);
         view:SetViewSize( bg:GetFrameSize());
 		
 		local row_index = i;
@@ -569,7 +587,7 @@ function p.ShowBagData( bagdata )
 				p.ShowBagItemInfo( view, item, itemIndex );
 			end
 		end
-		list:AddView( view );
+		p.bagList:AddView( view );
 	end
     
 end
@@ -611,6 +629,7 @@ function p.SetItemInfo( view , item , position, index)
 	local priceLabel;
 	local emoneyPic;
 	local linePic;
+	
     
     if position == LEFT then
         name = ui_shop_item_view.ID_CTRL_TEXT_NAME_L;
@@ -730,6 +749,7 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	local equipStarPic = nil;
 	local subTitleBg = nil;
     local isUse = nil;
+	local ui_list = ui_bag_list;
 	
 	if itemIndex == 1 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
@@ -846,16 +866,9 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 		end
 	end
 	
-	--使用按钮
-	local useBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_USE);
-	useBtn:SetVisible(false);
-	local useTextPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_26);
-	useTextPic:SetVisible(false);
-	local itemDescribeText = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_INFO );
-	itemDescribeText:SetText(" ");
-	
 	--设置物品按钮事件
-	itemButton:SetLuaDelegate(p.OnItemClickEvent);
+	itemButton:SetLuaDelegate(p.OnBagItemClickEvent);
+	
 end
 
 --请求gacha数据回调函数
@@ -871,9 +884,12 @@ function p.ShowGachaData( gachadata )
     p.gachaList:SetVisible( true );
     p.shopItemList:SetVisible( false ); 
     p.shopPackList:SetVisible( false );
+	p.bagList:SetVisible( false );
+	p.SetBagUseVisible(false);
     
     p.gachaBtn:SetChecked( true );
     p.shopPackBtn:SetChecked( false );
+	p.bagBtn:SetChecked( false );
     p.shopItmeBtn:SetChecked( false );
     
     p.gachaList:ClearView();
@@ -984,6 +1000,100 @@ function p.SetGachaBtnByCoin(index)
     end 	
 end
 
+--设置"使用"栏不可见
+function p.SetBagUseVisible(visible)
+	local useBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_USE);
+	useBtn:SetVisible(visible);
+	local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
+	useTextPic:SetVisible(visible);
+	local itemDescribeText = GetLabel(p.layer,ui_dlg_gacha.ID_CTRL_TEXT_ITEM_INFO );
+	itemDescribeText:SetVisible(visible);
+	
+	local bg = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_USE);
+	bg:SetVisible(visible);
+	
+end
+
+--点击物品事件
+function p.OnBagItemClickEvent(uiNode, uiEventType, param)
+	local itemId = uiNode:GetId();
+	local itemUniqueId = uiNode:GetUID();
+	local itemType = uiNode:GetXID();
+
+	if itemType == 1 or itemType == 2 or itemType == 3 then
+		pack_box_equip.ShowEquip(itemId,itemUniqueId,itemType);
+		local useBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_USE);
+		useBtn:SetVisible(false);
+		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
+		useTextPic:SetVisible(false);
+		local itemDescribeText = GetLabel(p.layer,ui_dlg_gacha.ID_CTRL_TEXT_ITEM_INFO );
+		itemDescribeText:SetText(" ");
+		local bg = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_USE);
+		bg:SetVisible(false);
+	else
+		local itemDescribeText = GetLabel(p.layer,ui_dlg_gacha.ID_CTRL_TEXT_ITEM_INFO );
+		local itemData = SelectRowInner(T_ITEM,"id",itemId);
+		if itemData == nil then
+			WriteConErr("itemTable error ");
+		end
+		itemDescribeText:SetText(itemData.description);
+	
+		local useBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_USE);
+		useBtn:SetLuaDelegate(p.OnUseItemClickEvent);
+		useBtn:SetVisible(true);
+		useBtn:SetId(itemId);
+		useBtn:SetUID(itemUniqueId);
+		useBtn:SetXID(itemType);
+		
+		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
+		useTextPic:SetVisible(true);
+		itemDescribeText:SetVisible(true);
+		local bg = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_USE);
+		bg:SetVisible(true);
+	end
+	p.SetItemChechedFX(uiNode);
+end
+
+--设置选中物品
+function p.SetItemChechedFX(uiNode)
+	local itemNode = ConverToButton( uiNode );
+	if p.itemBtnNode ~= nil then
+		p.itemBtnNode:RemoveAllChildren(true);
+	end
+	p.ShowSelectEffect(itemNode)
+	p.itemBtnNode = itemNode;
+end
+
+function p.ShowSelectEffect(uiNode)
+	local view = createNDUIXView();
+	view:Init();
+	LoadUI("bag_item_select.xui",view,nil);
+	local bg = GetUiNode( view, ui_bag_item_select.ID_CTRL_PICTURE_1);
+	view:SetViewSize( bg:GetFrameSize());
+	view:SetTag(ui_bag_item_select.ID_CTRL_PICTURE_1);
+	uiNode:AddChild( view );
+end
+
+--点击使用物品事件
+function p.OnUseItemClickEvent(uiNode, uiEventType, param)
+	local tag = uiNode:GetTag();
+	if IsClickEvent(uiEventType) then
+		if(ui.ID_CTRL_BUTTON_USE == tag) then --使用
+			local itemId = uiNode:GetId();
+			local itemUniqueId = uiNode:GetUID();
+			local itemType = uiNode:GetXID();
+			WriteCon("Use itemId = "..itemId);
+			WriteCon("Use itemUniqueId = "..itemUniqueId);
+			WriteCon("Use itemType = "..itemType);
+			if itemId == 0 or itemId == nil then
+				WriteConErr("used Button id error ");
+				return
+			end
+			pack_box_mgr.UseItemEvent(itemId,itemUniqueId,itemType);
+		end
+	end
+end
+
 --设置可见
 function p.HideUI()
 	if p.layer ~= nil then
@@ -1011,9 +1121,11 @@ function p.CloseUI()
 		p.gachaList = nil;
 		p.shopItemList = nil;
 		p.shopPackList = nil;
+		p.bagList	= nil;
 		p.gachaBtn = nil;
 		p.shopItmeBtn = nil;
 		p.shopPackBtn = nil;
+		p.bagBtn = nil;
 
 		--存放商品列表信息
 		p.shopData = nil;
