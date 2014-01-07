@@ -174,3 +174,7 @@ DoFile("card_group/define.lua");
 
 
 DoFile("mainui/effect_num.lua");
+
+
+--村落
+DoFile("country/define.lua");
