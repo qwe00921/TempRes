@@ -550,7 +550,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		elseif p.CheckAtkTarget( tag ) then
 			WriteCon( "**攻击**" );
 			p.SetAtk( btn );
-		elseif p.p.CheckSelectTarget( tag ) then
+		elseif p.CheckSelectTarget( tag ) then
 			WriteCon( "**选择目标，位置为".. tostring( uiNode:GetId() ) .."**" );
 			w_battle_mgr.SetPVETargerID( uiNode:GetId() );
 		end
