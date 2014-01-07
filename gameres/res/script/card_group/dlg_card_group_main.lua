@@ -23,6 +23,9 @@ p.selTeamPos = 1;
 p.m_list = nil;
 p.isAlive = nil;
 
+p.missionId = nil;
+p.stageId = nil;
+
 local ui = ui_card_group;
 
 --拖动控制
@@ -32,7 +35,12 @@ p.beginRect = nil;
 p.beginPlayer = nil;
 
 
-function p.ShowUI()
+function p.ShowUI(missionId,stageId)
+	if missionId ~= nil and stageId ~= nil then
+		p.missionId = missionId;
+		p.stageId = stageId;
+	end
+	
 	dlg_menu.SetNewUI( p );
 	p.isAlive = true;
 	
@@ -463,9 +471,16 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
 		if ui.ID_CTRL_BUTTON_BACK == tag then
-			WriteCon("关闭");
-			p.CloseUI();
-			maininterface.BecomeFirstUI();
+			if (p.missionId ~= nil and p.stageId ~= nil) then
+				p.CloseUI();
+				quest_team_item.ShowUI(p.missionId,p.stageId)
+				p.missionId = nil;
+				p.stageId = nil;
+			else
+				WriteCon("关闭");
+				p.CloseUI();
+				maininterface.BecomeFirstUI();
+			end
 		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			list:MoveToPrevView();
@@ -766,7 +781,6 @@ end
 
 --关闭UI
 function p.CloseUI()
-	
 	if p.isAlive ~= true then
 		return;
 	end

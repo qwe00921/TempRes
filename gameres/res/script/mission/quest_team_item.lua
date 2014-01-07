@@ -246,7 +246,7 @@ function p.ShowItemList(itemData)
 					WriteConErr("cardPicTable error ");
 				end
 				itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-				itemName:SetText(itemTable.name);
+				itemName:SetText(itemTable.Name);
 			end
 		end
 
@@ -258,7 +258,7 @@ function p.SetDelegate(layer)
 	btnReturn:SetLuaDelegate(p.OnBtnClick);
 	
 	local fightBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIGHT );
-	btnReturn:SetLuaDelegate(p.OnBtnClick);
+	fightBtn:SetLuaDelegate(p.OnBtnClick);
 end
 
 function p.OnBtnClick(uiNode,uiEventType,param)
@@ -281,8 +281,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif (ui_team.ID_CTRL_BUTTON_BG == tag or ui_team.ID_CTRL_BUTTON_EDIT == tag) then
 			local nowTeamId = uiNode:GetId();
 			WriteCon("nowTeamId == "..nowTeamId);
-			dlg_card_group_main.ShowUI()
+			dlg_card_group_main.ShowUI(p.missionId,p.stageId,1)
 			p.CloseUI();
+			p.stageId = nil;
 		--物品编辑
 		elseif (ui_item.ID_CTRL_BUTTON_BG == tag or ui_item.ID_CTRL_BUTTON_ITEM_EDIT == tag) then
 			WriteConErr("item edit view");
