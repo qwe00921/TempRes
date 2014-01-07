@@ -1,0 +1,132 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_9SLICES_12]
+Type=22
+Tag=12
+Rect=3 169 640 790
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_BTN_TETURN]
+Type=2
+Tag=2
+Rect=5 184 100 80
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\public\close2_click.png
+SelectedFileUV=0 0 68 68
+
+[CTRL_TEXT_RETURN]
+Type=4
+Tag=48
+Rect=11 193 88 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=36
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BTN_HARD]
+Type=2
+Tag=9
+Rect=474 176 160 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_TEAM_EDIT]
+Type=2
+Tag=8
+Rect=0 320 637 260
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_LIST_TEAM]
+Type=8
+Tag=7
+Rect=1 284 637 240
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ITEM]
+Type=1
+Tag=10
+Rect=1 524 637 230
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_FIGHT]
+Type=2
+Tag=11
+Rect=271 773 107 53
+AnchorPos=0 0
+Notes=
+Text=进入战斗
+TextTradition=進入戰斗
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_TEXT_POWER_V]
+Type=4
+Tag=227
+Rect=193 773 59 51
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffff00
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_POWER]
+Type=4
+Tag=13
+Rect=79 773 114 51
+AnchorPos=0 0
+Notes=
+Text=消耗体力:
+TextTradition=消耗體力:
+TextSize=24
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_LIST_ITEM]
+Type=8
+Tag=199
+Rect=1 524 637 230
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_QUEST_NAME]
+Type=4
+Tag=64
+Rect=128 203 317 40
+AnchorPos=0 0
+Notes=
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter

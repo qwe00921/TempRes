@@ -21,3 +21,4 @@ DoFile("mission/dlg_dungeon_result.lua");
 DoFile("mission/quest_main.lua");
 DoFile("mission/quest_reward.lua");
 DoFile("mission/expbar_move_effect.lua");
+DoFile("mission/quest_team_item.lua");

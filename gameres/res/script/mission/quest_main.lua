@@ -122,28 +122,38 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 				dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
 				return
 			end
+			--p.HideUI()
 			
-			maininterface.m_bgImage:SetVisible(false);
-			if p.missionList["M"..missionId] then
-				local storyId = p.missionList["M"..missionId].begin_story;
-				WriteCon("storyId = "..storyId);
-				if tonumber(storyId) ~= 0 then
-					dlg_drama.ShowUI( missionId , storyId);
-				else
-				   if E_DEMO_VER == 4 then
-					n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
-				   else	
-					w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
-				   end;
-				end
-			else
-				if E_DEMO_VER== 4 then
-				  n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
-				else
-				  w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
-				end;
-			end
-			p.CloseUI();
+			p.showTeamItem(missionId)
+			
+			--local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST);
+			--missionListTable:SetVisible(false);
+			--missionListTable:RemoveView();
+			--p.layer:RemoveView(missionListTable);
+
+			--quest_team_item.ShowUI(missionId,power);
+			
+			-- maininterface.m_bgImage:SetVisible(false);
+			-- if p.missionList["M"..missionId] then
+				-- local storyId = p.missionList["M"..missionId].begin_story;
+				-- WriteCon("storyId = "..storyId);
+				-- if tonumber(storyId) ~= 0 then
+					-- dlg_drama.ShowUI( missionId , storyId);
+				-- else
+				   -- if E_DEMO_VER == 4 then
+					-- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				   -- else	
+					-- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				   -- end;
+				-- end
+			-- else
+				-- if E_DEMO_VER== 4 then
+				  -- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				-- else
+				  -- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				-- end;
+			-- end
+			-- p.CloseUI();
 		end
 	end
 end
@@ -264,10 +274,13 @@ function p.setMissionInfo(misId,view)
 			rewardGroupTable[#rewardGroupTable + 1] = v;
 		end
 	end
-	
-	
 --	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
 	
+end
+
+function p.showTeamItem(missionId)
+	quest_team_item.ShowUI(missionId,p.stageId);
+	p.CloseUI()
 end
 
 --隐藏UI

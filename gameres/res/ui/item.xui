@@ -3,38 +3,36 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_31]
-Type=1
-Tag=34
-Rect=0 550 637 220
-AnchorPos=0 0
-Notes=
-
-[CTRL_EXP_EXP]
-Type=9
-Tag=33
-Rect=133 958 324 34
+[CTRL_BUTTON_BG]
+Type=2
+Tag=40
+Rect=0 0 637 230
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
-NormalFileUV=0 0 176 28
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=34
+Rect=0 0 637 230
+AnchorPos=0 0
+Notes=
 
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=9 576 622 182
+Rect=5 28 630 200
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\beast_bg.png
 NormalFileUV=0 0 590 264
 
-[CTRL_BUTTON_21]
+[CTRL_BUTTON_ITEM_EDIT]
 Type=2
 Tag=22
-Rect=9 556 148 65
+Rect=9 8 148 65
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -43,19 +41,29 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
-[CTRL_PICTURE_22]
+[CTRL_PICTURE_EDIT]
 Type=1
 Tag=23
-Rect=30 564 107 40
+Rect=30 16 107 40
+AnchorPos=0 0
+Notes=
+
+[CTRL_TEXT_EDIT]
+Type=4
+Tag=39
+Rect=30 16 107 40
 AnchorPos=0 0
 Notes=
 Text=道具编辑
 TextTradition=道具編輯
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 
 [CTRL_PICTURE_ITEM1]
 Type=1
 Tag=26
-Rect=18 623 120 120
+Rect=18 75 120 120
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -64,7 +72,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_ITEM2]
 Type=1
 Tag=27
-Rect=138 623 120 120
+Rect=138 75 120 120
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -73,7 +81,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_ITEM3]
 Type=1
 Tag=29
-Rect=258 623 120 120
+Rect=258 75 120 120
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -82,7 +90,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_ITEM4]
 Type=1
 Tag=30
-Rect=378 623 120 120
+Rect=378 75 120 120
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -91,52 +99,52 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_ITEM5]
 Type=1
 Tag=31
-Rect=498 623 120 120
+Rect=498 75 120 120
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_19]
+[CTRL_PICTURE_1]
 Type=1
 Tag=19
-Rect=23 716 107 22
+Rect=23 195 107 22
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_21]
+[CTRL_PICTURE_2]
 Type=1
 Tag=21
-Rect=144 716 107 22
+Rect=144 195 107 22
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_23]
+[CTRL_PICTURE_3]
 Type=1
 Tag=24
-Rect=265 716 107 22
+Rect=265 195 107 22
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_24]
+[CTRL_PICTURE_4]
 Type=1
 Tag=25
-Rect=386 716 107 22
+Rect=386 195 107 22
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_25]
+[CTRL_PICTURE_5]
 Type=1
 Tag=28
-Rect=507 716 107 22
+Rect=507 195 107 22
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_lv.png
@@ -145,49 +153,54 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_ITEMNAME1]
 Type=4
 Tag=32
-Rect=37 716 82 21
+Rect=31 195 100 21
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=14
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_ITEMNAME2]
 Type=4
 Tag=35
-Rect=157 716 82 21
+Rect=147 195 100 21
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=14
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_ITEMNAME3]
 Type=4
 Tag=36
-Rect=277 716 82 21
+Rect=267 195 100 21
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=14
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
 [CTRL_TEXT_ITEMNAME4]
 Type=4
 Tag=37
-Rect=397 716 82 21
+Rect=387 195 100 21
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=14
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_ITMENAME5]
+[CTRL_TEXT_ITEMNAME5]
 Type=4
 Tag=38
-Rect=517 716 82 21
+Rect=507 195 100 21
 AnchorPos=0 0
 Notes=
-TextSize=10
+TextSize=14
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

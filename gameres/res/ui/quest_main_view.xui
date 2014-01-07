@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -67,6 +67,6 @@ TextVerAlign=AlignVerCenter
 [CTRL_VERTICAL_LIST]
 Type=14
 Tag=5
-Rect=1 267 636 600
+Rect=1 267 636 400
 AnchorPos=0 0
 Notes=
