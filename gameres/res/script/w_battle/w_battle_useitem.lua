@@ -7,6 +7,7 @@ local ui = ui_n_battle_itemuse;
 p.layer = nil;
 p.itemid = nil;
 p.index = nil;
+p.posList = nil;
 
 local role = {
 	{ ui.ID_CTRL_BUTTON_TARGET1, ui.CTRL_PICTURE_TARGET1},
@@ -17,13 +18,13 @@ local role = {
 	{ ui.ID_CTRL_BUTTON_TARGET6, ui.CTRL_PICTURE_TARGET6},
 };
 
-function p.ShowUI( itemid, posList, index )
+function p.ShowUI( itemid, index )
 	p.itemid = itemid;
 	p.index = index;
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		p.RefreshUI( posList );
+		p.RefreshUI( );
 		return;
 	end
 	
@@ -45,7 +46,7 @@ function p.ShowUI( itemid, posList, index )
 	p.layer = layer;
 	
 	p.SetDelegate();
-	p.RefreshUI( posList );
+	p.RefreshUI( );
 end
 
 function p.SetDelegate()
@@ -55,23 +56,49 @@ function p.SetDelegate()
 	end
 end
 
-function p.RefreshUI( posList )
+function p.RefreshUI( )
 	local itempic = GetImage( p.layer , ui.ID_CTRL_PICTURE_ITEMPIC );
-	if itempic then
-		
+	local picData = GetPictureByAni( SelectCell( T_ITEM, p.itemid, "item_pic" ) or "", 0 );
+	if itempic and picData then
+		itempic:SetPicture( picData );
 	end
 	
 	local itemname = GetLabel( p.layer, ui.ID_CTRL_TEXT_ITEMNAME );
+	itemname:SetText( SelectCell( T_ITEM, p.itemid, "name" ) or "" );
 	
 	local iteminfo = GetLabel( p.layer, ui.ID_CTRL_TEXT_ITEMINFO );
+	iteminfo:SetText( SelectCell( T_ITEM, p.itemid, "description" ) or "" );
 	
 	local itemnum = GetLabel( p.layer, ui.ID_CTRL_TEXT_17 );
 	
-	p.ShowCanUseItemRole( posList );
+	local itemList = w_battle_db_mgr.GetItemList() or {};
+	local item = itemList[p.index] or {};
+	if itemnum and item then
+		itemnum:SetText( tostring( item.Num ) );
+	end
+	
+	p.ShowCanUseItemRole();
 end
 
-function p.ShowCanUseItemRole( posList )
-	
+function p.ShowCanUseItemRole()
+	p.posList = w_battle_mgr.GetItemCanUsePlayer( id );
+	for i = 1, 6 do
+		local btn = GetButton( p.layer, role[i][1] );
+		if btn then
+			btn:SetLuaDelegate( p.OnBtnClick );
+			btn:SetId( i );
+		end
+		
+		local image = GetImage( p.layer, role[i][2] );
+		local bflag = false;
+		for _, v in pairs( p.posList ) do
+			if v == i then
+				bflag = true;
+				break;
+			end
+		end
+		image:SetVisible( bflag );
+	end
 end
 
 function p.HideUI()
@@ -84,7 +111,19 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.itemid = nil;
+		p.index = nil;
+		p.posList = nil;
 	end
+end
+
+function p.CheckUseItem( tag )
+	for i = 1, 6 do
+		if tag == role[i][1] then
+			return true;
+		end
+	end
+	return false;
 end
 
 --按钮交互
@@ -95,7 +134,19 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			WriteCon( "**关闭物品使用菜单**" );
 			p.HideUI();
 			p.CloseUI();
+		elseif p.CheckUseItem( tag ) then
+			WriteCon( "指定使用物品" );
+			p.UseItem( uiNode:GetId() );
 		end
 	end
 end
 
+function p.UseItem( index )
+	p.posList = w_battle_mgr.GetItemCanUsePlayer( id );
+	for _, v in pairs(p.posList) do
+		if v == index then
+			w_battle_mgr.UseItem( p.index, index );
+			break;
+		end
+	end
+end
