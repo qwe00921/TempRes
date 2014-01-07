@@ -143,7 +143,7 @@ end;
 
 --获得某个物品可使用的玩家列表
 function p.GetItemCanUsePlayer(pItemPos)
-	local lPlayer = {}
+	local lPlayer = {1,2,4}
 	
 	return lPlayer;
 end;
