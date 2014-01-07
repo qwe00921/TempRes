@@ -15,7 +15,7 @@ NormalFileUV=0 0 640 960
 [CTRL_9SLICES_25]
 Type=22
 Tag=27
-Rect=38 105 565 245
+Rect=38 105 565 189
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -61,32 +61,6 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_8]
-Type=4
-Tag=8
-Rect=108 267 100 30
-AnchorPos=0 0
-Notes=
-Text=防御
-TextTradition=防御
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_9]
-Type=4
-Tag=9
-Rect=108 300 100 30
-AnchorPos=0 0
-Notes=
-Text=速度
-TextTradition=速度
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_HP_1]
 Type=4
 Tag=11
@@ -117,50 +91,10 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_DEFENCE_1]
-Type=4
-Tag=14
-Rect=258 267 100 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_SPEED_1]
-Type=4
-Tag=15
-Rect=258 300 100 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_TEXT_ATTACK_2]
 Type=4
 Tag=17
 Rect=408 234 100 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_DEFENCE_2]
-Type=4
-Tag=18
-Rect=408 267 100 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_SPEED_2]
-Type=4
-Tag=19
-Rect=408 300 100 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -197,7 +131,7 @@ Notes=
 [CTRL_BUTTON_INTENSIFY]
 Type=2
 Tag=24
-Rect=493 827 130 64
+Rect=466 835 130 64
 AnchorPos=0 0
 Notes=
 Text=继续强化
@@ -213,7 +147,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=25
-Rect=495 827 130 64
+Rect=361 836 130 64
 AnchorPos=0 0
 Notes=
 Text=skip
@@ -236,19 +170,10 @@ Notes=
 NormalFile=.\res\image\ui\card\magic_circle_n_s.png
 NormalFileUV=0 0 640 640
 
-[CTRL_PICTURE_26]
-Type=1
-Tag=28
-Rect=216 63 24 24
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\n_battle\nature4.png
-NormalFileUV=0 0 24 24
-
 [CTRL_TEXT_NAME]
 Type=4
 Tag=29
-Rect=244 58 181 36
+Rect=230 58 181 36
 AnchorPos=0 0
 Notes=
 Text=角色名字很多字
@@ -261,7 +186,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_28]
 Type=4
 Tag=30
-Rect=173 362 107 31
+Rect=173 326 107 31
 AnchorPos=0 0
 Notes=
 Text=距升级
@@ -274,7 +199,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LEVELUPNEED]
 Type=4
 Tag=31
-Rect=388 364 79 27
+Rect=388 328 79 27
 AnchorPos=0 0
 Notes=
 Text=99999
@@ -287,7 +212,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_EXP_EXPNEED]
 Type=9
 Tag=32
-Rect=132 405 422 34
+Rect=109 369 422 34
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -299,7 +224,7 @@ NormalFileUV=0 0 176 28
 [CTRL_9SLICES_32]
 Type=22
 Tag=33
-Rect=140 407 406 31
+Rect=117 371 406 31
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -309,14 +234,14 @@ NormalFileUV=0 0 176 28
 [CTRL_SPRITE_33]
 Type=19
 Tag=34
-Rect=262 571 116 115
+Rect=265 571 116 115
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_35]
 Type=4
 Tag=35
-Rect=111 724 449 85
+Rect=110 724 449 85
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -326,6 +251,6 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_SUCCEED]
 Type=1
 Tag=37
-Rect=148 442 391 84
+Rect=122 431 391 84
 AnchorPos=0 0
 Notes=

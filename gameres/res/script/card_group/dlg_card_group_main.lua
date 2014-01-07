@@ -21,6 +21,7 @@ p.selTeam = 1;
 p.selTeamPos = 1;
 
 p.m_list = nil;
+p.isAlive = nil;
 
 local ui = ui_card_group;
 
@@ -33,6 +34,7 @@ p.beginPlayer = nil;
 
 function p.ShowUI()
 	dlg_menu.SetNewUI( p );
+	p.isAlive = true;
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -761,6 +763,12 @@ end
 
 --¹Ø±ÕUI
 function p.CloseUI()
+	
+	if p.isAlive ~= true then
+		return;
+	end
+	
+	p.isAlive = nil;
 	
 	p.SaveData();
 	if p.layer ~= nil then

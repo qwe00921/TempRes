@@ -95,11 +95,14 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			dlg_card_group_main.ShowUI();
 			
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
-			WriteCon("**========ÈÎÎñ========**");
+			WriteCon("**========¿¨ÅÆ========**");
+			--[[
 			stageMap_main.OpenWorldMap();
 			PlayMusic_Task(1);
 
 			maininterface.HideUI();
+			--]]
+			card_bag_mian.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_HOME_PAGE == tag then
 			WriteCon("**========Ö÷Ò³========**");
 			world_map.CheckToCloseMap();

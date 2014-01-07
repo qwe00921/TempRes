@@ -53,11 +53,15 @@ p.CheckHasDrop = false;
 p.Index = 1;
 p.BoxScale = false;
 
+p.pickCallBack = nil;
+
 --卡牌相关控件列表
 p.objList = {};
 
 p.dropList = {};
 p.tempList = {};
+
+p.CanUseItem = true;
 
 local BTN_INDEX = 1;
 local ATTR_INDEX = 2;
@@ -390,11 +394,17 @@ function p.RefreshUI()
 					
 					ctrllers[HPNUM_INDEX]:SetText( string.format( "%d/%d", data.Hp, data.maxHp ) );
 					ctrllers[HPEXP_INDEX]:SetValue( 0, tonumber(data.maxHp), tonumber(data.Hp) );
+					
 					ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber(data.maxSp), tonumber(data.Sp) );
 					
 					local attrpic = GetPictureByAni( "card_element.".. tostring(data.element), 0 );
 					if attrpic then
 						ctrllers[ATTR_INDEX]:SetPicture( attrpic );
+					end
+					
+					if tonumber(data.Hp) == 0 then
+						ctrllers[MASK_INDEX]:SetVisible( true );
+						ctrllers[BTN_INDEX]:SetVisible( false );
 					end
 				else
 					p.SetVisible( ctrllers, false );
@@ -404,32 +414,30 @@ function p.RefreshUI()
 		end
 	end
 	--CTRL_PICTURE_115 486
-	--[[
 	--刷新物品显示
 	local itemList = w_battle_db_mgr.GetItemList();
 	if itemList ~= nil then
 		for i = 1, 5 do
 			local ctrllers = p.useItemList[i];
-			if ctrllers then
-				local flag = false;
-				--检测该位置上是否有卡牌
-				for _, v in pairs( itemList ) do
-					if tonumber(v.Position) and tonumber(v.Position) == i then
-						flag = true;
-						break;
-					end
-				end
-				
-				if flag then
+			local item = itemList[i];
+			if ctrllers ~= nil then
+				if item ~= nil then
 					p.SetVisible( ctrllers, true );
 					
+					local name = SelectCell( T_ITEM, item.ItemType, "name" );	
+					item[ITEM_NAME_INDEX]:SetText( name );
+					
+					local path = SelectCell( T_ITEM, item.ItemType, "item_pic" ) or "";
+					local picData = GetPictureByAni( path, 0 );
+					if picData then
+						item[ITEM_IMAGE_INDEX]:SetPicture( picData );
+					end
 				else
 					p.SetVisible( ctrllers, false );
 				end
 			end
 		end
 	end
-	--]]
 end
 
 function p.SetVisible( ctrllers, bValue )
@@ -458,8 +466,20 @@ function p.SetHp( maxHp, curHp, name )
 	p.targetName:SetText( name );
 end
 
---回合结束后,调用刷新界面,通知UI刷新
-function p.RoundOver()
+--新回合开始，刷新UI
+function p.RoundStar()
+	p.CanUseItem = true;
+	p.itemMask:SetVisible( false );
+	p.useitemMask:SetVisible( false );
+	
+	p.RefreshUI();
+	--p.BeginPick();
+end
+
+--拾取阶段开始
+function p.PickStep( pCallBack )
+	p.pickCallBack = pCallBack;
+	
 	p.BeginPick();
 end
 
@@ -500,8 +520,28 @@ function p.CloseUI()
 	if p.battleLayer ~= nil then	
 		p.battleLayer:LazyClose();
 		p.battleLayer = nil;
-        p.pBgImage = nil;
-        p.battleType = W_BATTLE_PVE;
+
+		p.battleType = W_BATTLE_PVE;
+
+		p.targetHp = nil;
+		p.targetName = nil;
+		p.boxImage = nil;
+		p.useitemMask = nil;
+		p.itemMask = nil;
+
+		p.CheckHasDrop = false;
+		p.Index = 1;
+		p.BoxScale = false;
+
+		p.pickCallBack = nil;
+
+		--卡牌相关控件列表
+		p.objList = {};
+
+		p.dropList = {};
+		p.tempList = {};
+		
+		p.CanUseItem = true;
 	end
 	GetBattleShow():EnableTick( false );
 end
@@ -567,18 +607,23 @@ end
 
 --使用物品
 function p.UseItem( uiNode )
+	if not p.CanUseItem then
+		return;
+	end
+	
 	if p.itemMask == nil or p.itemMask:IsVisible() then
 		uiNode:SetEnabled( true );
 		return;
 	end
 	
-	local id = uiNode:GetId() or 0;--物品id
+	local id = uiNode:GetId() or 0;--索引位置
 	if tonumber(id) == 0 then
 		uiNode:SetEnabled( true );
 		return;
 	end
 	
-	local item = w_battle_db_mgr.GetItemByIndex( id );
+	local itemList = w_battle_db_mgr.GetItemList() or {};
+	local item = itemList[id] or {};
 	local itemid = 0;
 	if item then
 		itemid = item.itemtype or 0;
@@ -592,7 +637,7 @@ function p.UseItem( uiNode )
 	local tid = w_battle_mgr.GetItemCanUsePlayer( id );
 	if tid ~= nil and type(tid) == "table" and #tid > 0 then
 		p.useitemMask:SetVisible( true );
-		w_battle_useitem.ShowUI( itemid, tid, id );
+		w_battle_useitem.ShowUI( itemid, id );
 	end
 	uiNode:SetEnabled( true );
 end
@@ -603,6 +648,9 @@ function p.SetAtk( uiNode )
 	local ctrllers = p.objList[id];
 	
 	local flag = w_battle_mgr.SetPVEAtkID( id );
+	if p.CanUseItem then
+		p.CanUseItem = not flag;
+	end
 	if flag then
 		p.itemMask:SetVisible( true );
 		if ctrllers then
@@ -658,7 +706,11 @@ end
 --注册开始拾取物品倒计时
 function p.BeginPick()
 	if #p.dropList == 0 then
-		return;
+		if p.pickCallBack then
+			p.pickCallBack();
+			p.pickCallBack = nil;
+		end
+		do return end;
 	end
 
 	p.Index = 1;
@@ -672,8 +724,13 @@ function p.Pick( nTimerId )
 	if drop == nil then
 		KillTimer( nTimerId );
 		SetTimerOnce( p.ReduceBoxImage, 0.3 );
-		SetTimerOnce( p.RefreshUI, 0.3 );
-		return;
+		
+		if p.pickCallBack then
+			p.pickCallBack();
+			p.pickCallBack = nil;
+		end
+		
+		do return end;
 	end
 	
 	if drop:GetImageNode():IsVisible() then
