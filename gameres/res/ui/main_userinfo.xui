@@ -131,30 +131,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=等级数值
 
-[CTRL_PICTURE_FACE]
-Type=1
-Tag=53
-Rect=261 3 115 130
-AnchorPos=0 0
-Notes=
-Remark=头像
-NormalFile=.\res\image\ui\main_interface\user_face.PNG
-NormalFileUV=0 0 115 130
-
-[CTRL_PROGRESSBAR_ENERGY]
-Type=9
-Tag=68
-Rect=226 126 190 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=精力条
-NormalFile=.\res\image\ui\main_interface\energy_progressbar.PNG
-NormalFileUV=0 0 190 30
-
 [CTRL_TEXT_NAME]
 Type=4
 Tag=54
