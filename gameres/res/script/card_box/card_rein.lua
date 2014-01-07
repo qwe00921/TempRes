@@ -240,13 +240,13 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	
 	
 	
-	local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+pIndex-1);
+	local cardButton = GetImage(p.layer, ui.ID_CTRL_BUTTON_CHA1+pIndex-1);
 	local lcardId = tonumber(pCardInfo.CardID);
 	local lCardRowInfo= SelectRowInner( T_CHAR_RES, "card_id", lcardId); --从表中获取卡牌详细信息	
 	
 	
 	--cardButton:SetImage( GetPictureByAni("n_battle.attack_"..lcardId,0) );
-	cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
+	cardButton:SetPicture( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
 	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
 	
 	local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+pIndex-1);
@@ -307,8 +307,8 @@ function p.InitAllCardInfo()
 		
 		--local cardBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+i-1);
 		--cardBtn:SetImage(GetPictureByAni("common_ui.cardBg", 0));
-		local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+i-1);
-		cardButton:SetImage( GetPictureByAni("common_ui.cardBg", 0) );
+		local cardButton = GetImage(p.layer, ui.ID_CTRL_BUTTON_CHA1+i-1);
+		cardButton:SetPicture(GetPictureByAni("common_ui.cardBg", 0) );
 	
 		local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+i-1);
 		cardName:SetText("");

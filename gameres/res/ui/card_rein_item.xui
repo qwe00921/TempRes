@@ -3,10 +3,11 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_103]
+
+[CTRL_PICTURE_112]
 Type=1
-Tag=105
-Rect=0 155 640 715
+Tag=127
+Rect=-1 159 641 706
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg.png
@@ -205,10 +206,10 @@ TextColor=0xffe631
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_HP1]
+[CTRL_TEXT_ATTRIBUTE2NAME]
 Type=4
 Tag=234
-Rect=164 279 54 27
+Rect=400 348 54 27
 AnchorPos=0 0
 Notes=
 Text=生命
@@ -218,23 +219,10 @@ TextColor=0xfe546c
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_ATTACK1]
-Type=4
-Tag=235
-Rect=164 314 54 27
-AnchorPos=0 0
-Notes=
-Text=攻击
-TextTradition=攻擊
-TextSize=20
-TextColor=0xde97fd
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_EXP_CARDADD]
 Type=9
 Tag=752
-Rect=363 247 260 22
+Rect=175 302 260 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -243,10 +231,10 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\main_interface\exp1.png
 NormalFileUV=0 0 188 32
 
-[CTRL_EXP_CARDEXP]
+[CTRL_EXP_EQUIPEXP]
 Type=9
 Tag=236
-Rect=363 247 260 22
+Rect=174 302 260 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -255,7 +243,7 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\main_interface\exp2.png
 NormalFileUV=0 0 188 32
 
-[CTRL_TEXT_DEFENCE1]
+[CTRL_TEXT_ATTRIBUTE1NAME]
 Type=4
 Tag=237
 Rect=164 348 54 27
@@ -268,45 +256,19 @@ TextColor=0x8bff93
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_TEAM1]
-Type=4
-Tag=238
-Rect=360 279 54 27
-AnchorPos=0 0
-Notes=
-Text=队伍
-TextTradition=隊伍
-TextSize=20
-TextColor=0xffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_SPEED1]
-Type=4
-Tag=239
-Rect=360 314 54 27
-AnchorPos=0 0
-Notes=
-Text=速度
-TextTradition=速度
-TextSize=20
-TextColor=0x6ca0fe
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
 [CTRL_PICTURE_241]
 Type=1
 Tag=241
-Rect=355 244 275 27
+Rect=166 299 275 27
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
 NormalFileUV=0 0 176 28
 
-[CTRL_TEXT_HP]
+[CTRL_TEXT_ATTRIBUTE2]
 Type=4
 Tag=242
-Rect=220 279 113 27
+Rect=456 348 113 27
 AnchorPos=0 0
 Notes=
 Text=9999(999↑)
@@ -329,20 +291,7 @@ TextColor=0xffe631
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_ATTACK]
-Type=4
-Tag=244
-Rect=220 314 113 27
-AnchorPos=0 0
-Notes=
-Text=攻击
-TextTradition=攻擊
-TextSize=20
-TextColor=0xde97fd
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_DEFENCE]
+[CTRL_TEXT_ATTRIBUTE]
 Type=4
 Tag=245
 Rect=220 348 113 27
@@ -354,28 +303,6 @@ TextSize=20
 TextColor=0x8bff93
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-
-[CTRL_TEXT_247]
-Type=4
-Tag=247
-Rect=422 314 113 27
-AnchorPos=0 0
-Notes=
-Text=速度
-TextTradition=速度
-TextSize=20
-TextColor=0x6ca0fe
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_TEAM]
-Type=1
-Tag=250
-Rect=422 274 89 40
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
 
 [CTRL_PICTURE_251]
 Type=1
@@ -399,130 +326,19 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_BUTTON_CARD1]
-Type=2
-Tag=48
-Rect=11 470 116 62
+[CTRL_PICTURE_75]
+Type=1
+Tag=82
+Rect=266 515 107 38
 AnchorPos=0 0
 Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_BUTTON_CARD2]
-Type=2
-Tag=49
-Rect=135 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_BUTTON_CARD3]
-Type=2
-Tag=50
-Rect=259 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_BUTTON_CARD4]
-Type=2
-Tag=51
-Rect=382 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD5]
-Type=2
-Tag=52
-Rect=507 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD6]
-Type=2
-Tag=53
-Rect=11 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD7]
-Type=2
-Tag=54
-Rect=135 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD8]
-Type=2
-Tag=55
-Rect=259 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD9]
-Type=2
-Tag=56
-Rect=382 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD10]
-Type=2
-Tag=57
-Rect=507 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_EXP]
 Type=4
 Tag=74
-Rect=407 247 177 19
+Rect=218 301 177 19
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -540,94 +356,14 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_SPRITE_75]
-Type=19
-Tag=75
-Rect=34 249 95 95
+[CTRL_PICTURE_76]
+Type=1
+Tag=83
+Rect=390 515 107 38
 AnchorPos=0 0
 Notes=
-
-[CTRL_BUTTON_CARD_CHOOSE]
-Type=2
-Tag=58
-Rect=0 229 639 162
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\card\intensify.png
-NormalFileUV=0 0 640 162
-
-[CTRL_SPRITE_76]
-Type=19
-Tag=76
-Rect=24 401 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_77]
-Type=19
-Tag=77
-Rect=148 401 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_78]
-Type=19
-Tag=78
-Rect=272 401 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_79]
-Type=19
-Tag=79
-Rect=396 401 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_80]
-Type=19
-Tag=80
-Rect=520 401 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_67]
-Type=19
-Tag=67
-Rect=25 559 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_68]
-Type=19
-Tag=68
-Rect=148 559 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_69]
-Type=19
-Tag=69
-Rect=271 559 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_70]
-Type=19
-Tag=70
-Rect=394 559 95 95
-AnchorPos=0 0
-Notes=
-
-[CTRL_SPRITE_71]
-Type=19
-Tag=71
-Rect=517 559 95 95
-AnchorPos=0 0
-Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
 
 [CTRL_PICTURE_72]
 Type=1
@@ -651,6 +387,15 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_74]
+Type=1
+Tag=81
+Rect=142 515 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
 [CTRL_TEXT_CARDLEVEL2]
 Type=4
 Tag=131
@@ -661,6 +406,15 @@ TextSize=10
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_87]
+Type=1
+Tag=85
+Rect=142 678 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_CARDLEVEL3]
 Type=4
@@ -673,6 +427,15 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_86]
+Type=1
+Tag=73
+Rect=18 677 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
 [CTRL_TEXT_CARDLEVEL4]
 Type=4
 Tag=133
@@ -684,6 +447,24 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_77]
+Type=1
+Tag=84
+Rect=514 515 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_PICTURE_88]
+Type=1
+Tag=86
+Rect=266 678 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
 [CTRL_TEXT_CARDLEVEL5]
 Type=4
 Tag=134
@@ -694,6 +475,24 @@ TextSize=10
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_89]
+Type=1
+Tag=87
+Rect=390 678 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_PICTURE_90]
+Type=1
+Tag=88
+Rect=514 678 107 38
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_CARDLEVEL6]
 Type=4
@@ -749,42 +548,6 @@ TextSize=10
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_PICTURE_74]
-Type=1
-Tag=81
-Rect=142 515 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_75]
-Type=1
-Tag=82
-Rect=266 515 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_76]
-Type=1
-Tag=83
-Rect=390 515 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_77]
-Type=1
-Tag=84
-Rect=514 515 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_NAME1]
 Type=4
@@ -916,51 +679,6 @@ TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_PICTURE_86]
-Type=1
-Tag=73
-Rect=18 677 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_87]
-Type=1
-Tag=85
-Rect=142 678 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_88]
-Type=1
-Tag=86
-Rect=266 678 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_89]
-Type=1
-Tag=87
-Rect=390 678 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_90]
-Type=1
-Tag=88
-Rect=514 678 107 38
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
 [CTRL_9SLICES_101]
 Type=22
 Tag=103
@@ -974,7 +692,7 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_102]
 Type=4
 Tag=104
-Rect=113 161 216 60
+Rect=113 163 216 60
 AnchorPos=0 0
 Notes=
 Text=请选择卡牌与素材
@@ -984,10 +702,99 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_PICTURE_101]
+Type=1
+Tag=117
+Rect=28 241 107 107
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_CARD_CHOOSE]
+Type=2
+Tag=58
+Rect=-2 228 639 162
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\card\intensify.png
+NormalFileUV=0 0 640 162
+
+[CTRL_PICTURE_ATTIBUTE1]
+Type=1
+Tag=105
+Rect=23 407 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ATTIBUTE2]
+Type=1
+Tag=118
+Rect=147 407 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ATTRIBUTE3]
+Type=1
+Tag=119
+Rect=271 407 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_ATTRIBUTE4]
+Type=1
+Tag=120
+Rect=395 407 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_106]
+Type=1
+Tag=121
+Rect=519 407 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_107]
+Type=1
+Tag=122
+Rect=22 568 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_108]
+Type=1
+Tag=123
+Rect=268 568 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_109]
+Type=1
+Tag=124
+Rect=145 568 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_110]
+Type=1
+Tag=125
+Rect=391 568 97 97
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_111]
+Type=1
+Tag=126
+Rect=519 568 97 97
+AnchorPos=0 0
+Notes=
+
 [CTRL_BUTTON_CHA1]
 Type=2
 Tag=106
-Rect=17 402 107 111
+Rect=21 404 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -997,7 +804,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA2]
 Type=2
 Tag=107
-Rect=141 402 107 111
+Rect=145 404 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1007,7 +814,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA3]
 Type=2
 Tag=108
-Rect=265 402 107 111
+Rect=269 404 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1017,7 +824,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA4]
 Type=2
 Tag=109
-Rect=389 402 107 111
+Rect=393 404 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1027,7 +834,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA5]
 Type=2
 Tag=110
-Rect=513 402 107 111
+Rect=517 404 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1037,7 +844,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA6]
 Type=2
 Tag=111
-Rect=15 556 107 111
+Rect=19 558 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1047,7 +854,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA7]
 Type=2
 Tag=112
-Rect=140 556 107 111
+Rect=144 558 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1057,7 +864,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA8]
 Type=2
 Tag=113
-Rect=265 556 107 111
+Rect=269 558 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1067,7 +874,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA9]
 Type=2
 Tag=114
-Rect=390 556 107 111
+Rect=393 558 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1077,7 +884,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CHA10]
 Type=2
 Tag=115
-Rect=515 556 107 111
+Rect=517 558 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10

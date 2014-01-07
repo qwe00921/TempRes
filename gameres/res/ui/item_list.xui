@@ -46,9 +46,70 @@ Tag=44
 Rect=6 171 72 60
 AnchorPos=0 0
 Notes=
-Text=返回 
-TextTradition=返回 
+Text=返回
+TextTradition=返回
 TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_74]
+Type=2
+Tag=74
+Rect=528 172 100 64
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_BUTTON_75]
+Type=2
+Tag=75
+Rect=419 173 100 64
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_TEXT_76]
+Type=4
+Tag=76
+Rect=535 179 89 49
+AnchorPos=0 0
+Notes=
+Text=排序
+TextTradition=排序
+TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_77]
+Type=4
+Tag=77
+Rect=421 179 96 49
+AnchorPos=0 0
+Notes=
+Text=物品编辑
+TextTradition=物品編輯
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_79]
+Type=4
+Tag=79
+Rect=94 171 161 60
+AnchorPos=0 0
+Notes=
+TextSize=30
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

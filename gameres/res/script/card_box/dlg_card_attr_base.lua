@@ -186,14 +186,14 @@ function p.SetDelegate(layer)
 	--卡牌Type type =1平衡型（各属性均衡成长）type =2耐力型（HP成长+10%，攻击成长-10%）type=3破坏型（攻击成长+10%，防御成长-10%）type=4守护型（防御成长+10%，攻击成长-10%）
 
 	local pLabCardType = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_TYPE);
-	WriteCon("type = ".. tostring(pCardInfo2.type));
-	if tonumber(pCardInfo2.type) == 1 then
+	WriteCon("type = ".. tostring(p.cardInfo.type));
+	if tonumber(p.cardInfo.type) == 1 then
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type1"));
-	elseif tonumber(pCardInfo2.type) == 2 then
+	elseif tonumber(p.cardInfo.type) == 2 then
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type2"));
-	elseif tonumber(pCardInfo2.type) == 3 then
+	elseif tonumber(p.cardInfo.type) == 3 then
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type3"));
-	elseif tonumber(pCardInfo2.type) == 4 then
+	elseif tonumber(p.cardInfo.type) == 4 then
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type4"));
 	else
 		pLabCardType:SetText(GetStr("card_type")..tostring("  "));

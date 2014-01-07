@@ -1,0 +1,320 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_42]
+Type=1
+Tag=43
+Rect=0 170 640 700
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960
+
+[CTRL_BUTTON_RETURN]
+Type=2
+Tag=22
+Rect=1 172 80 64
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_VERTICAL_LIST_VIEW]
+Type=14
+Tag=31
+Rect=7 290 624 454
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_41]
+Type=1
+Tag=42
+Rect=85 173 184 65
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_TEXT_43]
+Type=4
+Tag=44
+Rect=6 173 72 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_74]
+Type=2
+Tag=74
+Rect=537 174 100 64
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_TEXT_76]
+Type=4
+Tag=76
+Rect=544 181 89 49
+AnchorPos=0 0
+Notes=
+Text=排序
+TextTradition=排序
+TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_79]
+Type=4
+Tag=79
+Rect=94 173 161 60
+AnchorPos=0 0
+Notes=
+TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_11]
+Type=4
+Tag=11
+Rect=285 201 107 29
+AnchorPos=0 0
+Notes=
+Text=99/99
+TextTradition=99/99
+TextSize=25
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_13]
+Type=2
+Tag=13
+Rect=3 237 107 50
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_BUTTON_14]
+Type=2
+Tag=14
+Rect=111 237 107 50
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_BUTTON_15]
+Type=2
+Tag=15
+Rect=219 237 107 50
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_TEXT_17]
+Type=4
+Tag=17
+Rect=15 244 86 35
+AnchorPos=0 0
+Notes=
+Text=全部
+TextTradition=全部
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_18]
+Type=4
+Tag=18
+Rect=122 244 86 35
+AnchorPos=0 0
+Notes=
+Text=武器
+TextTradition=武器
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=231 244 86 35
+AnchorPos=0 0
+Notes=
+Text=防具
+TextTradition=防具
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_9SLICES_21]
+Type=22
+Tag=21
+Rect=0 750 640 122
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_9SLICES_23]
+Type=22
+Tag=23
+Rect=162 763 274 28
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\quest\txt_bg.png
+NormalFileUV=0 0 122 38
+
+[CTRL_9SLICES_24]
+Type=22
+Tag=24
+Rect=162 797 274 28
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\quest\txt_bg.png
+NormalFileUV=0 0 122 38
+
+[CTRL_9SLICES_25]
+Type=22
+Tag=25
+Rect=162 831 274 28
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\quest\txt_bg.png
+NormalFileUV=0 0 122 38
+
+[CTRL_BUTTON_26]
+Type=2
+Tag=26
+Rect=483 768 137 86
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_TEXT_27]
+Type=4
+Tag=27
+Rect=20 760 127 34
+AnchorPos=0 0
+Notes=
+Text=金币消耗
+TextTradition=金幣消耗
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_28]
+Type=4
+Tag=28
+Rect=20 794 127 34
+AnchorPos=0 0
+Notes=
+Text=金币持有
+TextTradition=金幣持有
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_29]
+Type=4
+Tag=29
+Rect=20 828 127 34
+AnchorPos=0 0
+Notes=
+Text=素材数目
+TextTradition=素材數目
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_30]
+Type=4
+Tag=30
+Rect=499 781 107 60
+AnchorPos=0 0
+Notes=
+Text=开始强化
+TextTradition=開始強化
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_31]
+Type=4
+Tag=32
+Rect=240 760 127 34
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_32]
+Type=4
+Tag=33
+Rect=240 795 127 34
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_33]
+Type=4
+Tag=34
+Rect=240 830 127 34
+AnchorPos=0 0
+Notes=
+Text=99999
+TextTradition=99999
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
