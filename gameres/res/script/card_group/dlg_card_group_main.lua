@@ -555,32 +555,35 @@ function p.OnSelectReplaceCallback(cardData)
 				preCard.Team_marks = "0";
 			end
 		else
+		
+			--是否在同组
 			
 			local cardUni = tostring (cardData.UniqueID or cardData.UniqueId);
 			local cardPos = nil;
-			local cardTeam = nil;
-			if tonumber(cardData.Team_marks)~= 0 then
-				cardTeam = p.user_teams[tonumber(cardData.Team_marks)]
-				for i = 1, 6 do
-					if tonumber(cardTeam["Pos_unique"..i]) == tonumber(cardUni) then
-						cardPos = i;
-						break;
-					end
+			for i = 1, 6 do
+				if tonumber(team["Pos_unique"..i]) == tonumber(cardUni) then
+					cardPos = i;
+					break;
 				end
 			end
 			
-			if cardTeam and cardPos then
-				cardTeam["Pos_unique"..cardPos] = team["Pos_unique"..p.selTeamPos];
-				cardTeam["Pos_card"..cardPos] = team["Pos_card"..p.selTeamPos];
+			--同组则交换,不同组则直接给本组赋值
+			if cardPos then
+				team["Pos_unique"..cardPos] = team["Pos_unique"..p.selTeamPos];
+				team["Pos_card"..cardPos] = team["Pos_card"..p.selTeamPos];
 			end
 		
 			team["Pos_unique"..p.selTeamPos] = cardUni;
 			team["Pos_card"..p.selTeamPos] = tostring(cardData.CardID);
 			
-			if preCard then
-				preCard.Team_marks = cardData.Team_marks;				
+			if tonumber(cardData.Team_marks) == 0 
+				or tonumber(cardData.Team_marks) > tonumber(p.selTeam) then
+				cardData.Team_marks = tostring(p.selTeam)
 			end
-			cardData.Team_marks =p.selTeam;
+			if preCard and cardPos == nil then
+				preCard.Team_marks = "0";				
+			end
+			
 			
 			p.cardlist[cardUni] = cardData;
 			
