@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -1286,53 +1286,53 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_TARGET1]
 Type=1
 Tag=139
-Rect=169 143 20 20
+Rect=175 170 20 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
+NormalFileUV=0 0 66 66
 
 [CTRL_PICTURE_TARGET2]
 Type=1
 Tag=140
-Rect=148 236 20 20
+Rect=155 261 20 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
+NormalFileUV=0 0 66 66
 
 [CTRL_PICTURE_TARGET3]
 Type=1
 Tag=141
-Rect=170 334 20 20
+Rect=180 358 20 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
+NormalFileUV=0 0 66 66
 
 [CTRL_PICTURE_TARGET4]
 Type=1
 Tag=142
-Rect=71 146 20 20
+Rect=80 171 20 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
+NormalFileUV=0 0 66 66
 
 [CTRL_PICTURE_TARGET5]
 Type=1
 Tag=143
-Rect=50 239 20 20
+Rect=60 261 20 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
+NormalFileUV=0 0 66 66
 
 [CTRL_PICTURE_TARGET6]
 Type=1
 Tag=144
-Rect=72 336 20 20
+Rect=84 355 20 20
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\n_battle\battle_karma_icon.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
+NormalFileUV=0 0 66 66
