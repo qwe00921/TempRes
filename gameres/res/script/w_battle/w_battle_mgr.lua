@@ -34,7 +34,9 @@ local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
 --p.seqStar = nil;
 
-p.battle_result = false;
+p.batchIsFinish = true;
+p.battle_batch  = nil;
+
 
 function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
@@ -111,6 +113,34 @@ function p.SetPVEAtkID(atkID)
 	
 	return false;
 end;					
+
+
+
+function p.GetBattleBatch()
+	if p.batchIsFinish == true then
+		p.batchIsFinish = false;			
+		p.battle_batch = p.newBatch();
+	end
+	
+	return p.battle_batch;
+end;
+
+function p.newBatch()
+	local battleShow = GetBattleShow();
+	if battleShow == nil then
+		WriteCon( "w_battle getBattleShow() failed");
+		return nil;
+	end
+	
+   	RegCallBack_BattleShowFinished(p.BatchCallBack);
+	
+	local seqBatch = battleShow:AddSequenceBatch();
+	return seqBatch;
+end;
+
+function p.BatchCallBack()
+	p.batchIsFinish = true;
+end;
 
 function p.CheckHeroTurnEnd()
 	if p.heroCamp:CheckAtkTurnEnd() == true then --英雄的回合结束

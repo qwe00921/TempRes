@@ -115,7 +115,7 @@ W_BATTLE_POS_TAG_4 = 4;
 W_BATTLE_POS_TAG_5 = 5;
 W_BATTLE_POS_TAG_6 = 6;
 
---动画时间
-W_BATTLE_ATKTIME   =  1;
+--动画攻击时间
+W_BATTLE_ATKTIME   =  0.3;
 
 

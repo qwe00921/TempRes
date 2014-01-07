@@ -30,14 +30,14 @@ function p:ctor()
 	self.isJoinAtk = false;
 	self.atkplayerNode = 0;
 	self.IsRevive = false;
-
+--[[
 	local batch = battle_show.GetNewBatch(); 
 	--self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
 	self.seqStar = battle_show.GetDefaultParallelSequence();
 	self.seqAtk = batch:AddParallelSequence();
     self.seqTarget = batch:AddParallelSequence(); 
 	--self.seqBullet = batch:AddSerialSequence();	
-	
+	]]--
 end
 
 
@@ -61,6 +61,11 @@ function p:init(id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,
     --攻击目标的位置
     self.enemyPos = tarFighter:GetFrontPos(self.atkplayerNode);	
 
+	
+	local batch = w_battle_mgr.GetBattleBatch(); 
+	self.seqStar = batch:AddSerialSequence();
+	self.seqAtk = batch:AddSerialSequence();
+	self.seqTarget = batch:AddSerialSequence(); 
 	
 	self:start();
 
@@ -94,6 +99,7 @@ function p:start()
 		
 		--self.seqAtk = batch:AddParallelSequence();
 		--切换到攻击状态
+		
 		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
 		self.seqAtk:SetWaitEnd(cmdMove);
 		
@@ -106,8 +112,9 @@ function p:start()
 	    local isBullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
 		local bulletAni;
 		if isBullet == N_BATTLE_BULLET_1 then --有弹道
-			local cmdAtk = createCommandPlayer():Atk( 0.3, playerNode, "" );
-			self.seqAtk:AddCommand( cmdAtk ); --攻击动作
+			local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, playerNode, "" );
+			self.seqStar:AddCommand( cmdAtk ); --攻击动作
+			
 			
 			local atkSound = SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );	
 			--受击音乐
@@ -115,8 +122,8 @@ function p:start()
 				local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( atkSound );
 				self.seqAtk:AddCommand( cmdAtkMusic );
 			end			
-			
-			local bulletAni = "n_bullet."..tostring( atkFighter.cardId );
+			self.seqAtk:SetWaitEnd(cmdAtk);
+			local bulletAni = "w_bullet."..tostring( atkFighter.cardId );
 			
 			local deg = atkFighter:GetAngleByFighter( tarFighter );
 			local bullet = w_bullet:new();
@@ -136,17 +143,23 @@ function p:start()
 			self.seqTarget:SetWaitEnd( cmdAtk );
 			
 		else  --没弹道
-			local cmdAtk = createCommandPlayer():Atk( 0.3, playerNode, "" );
-			self.seqAtk:AddCommand( cmdAtk ); --攻击动作
+			local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, playerNode, "" );
+			self.seqStar:AddCommand( cmdAtk ); --攻击动作
 			
 			local atkSound = SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );	
 			--受击音乐
 			if atkSound ~= nil then
 				local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( atkSound );
 				self.seqAtk:AddCommand( cmdAtkMusic );
+				self.seqAtk:SetWaitEnd(cmdAtk);
+				atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
+				
+			else
+				atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
+				self.seqAtk:SetWaitEnd(cmdAtk);
 			end
 			
-			atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
+			
 			
 			tarFighter:cmdLua("tar_hurt",  self.id, "", self.seqTarget);
 			self.seqTarget:SetWaitEnd( cmdAtk );
@@ -161,11 +174,11 @@ function p:atk_startAtk()  --攻击
 	local atkFighter = self:getAtkFighter();
 
 	if self.atkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
-		local batch = battle_show.GetNewBatch(); 
-		self.seqAtk = batch:AddParallelSequence();
+		--local batch = battle_show.GetNewBatch(); 
+		--self.seqAtk = batch:AddParallelSequence();
 		--self.seqAtk = batch:AddSerialSequence();
 		--攻击敌人动画
-		local cmdAtk = createCommandPlayer():Atk( 0.3, self.atkplayerNode, "" );
+		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		self.seqAtk:AddCommand( cmdAtk );	
 		
 --[[

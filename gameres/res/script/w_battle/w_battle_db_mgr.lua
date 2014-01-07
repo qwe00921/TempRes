@@ -499,6 +499,10 @@ function p.GetRewardData()
 	return p.rewardData;
 end
 
+function p.GetItemList()
+	return p.ItemList;
+end;
+
 --获取攻方卡牌列表
 function p.GetPlayerCardList()
 	return p.playerCardList;
