@@ -315,6 +315,7 @@ function p:tar_hurtEnd()
 					if(w_battle_mgr.PVEEnemyID == targerFighter:GetId()) then  --当前死掉的怪物是正在被锁定的怪物
 						if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() > 0 then --可换个怪物
 							w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
+							w_battle_mgr.SetLockAction(w_battle_mgr.PVEEnemyID);
 							--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
 						else  --没有活着的怪物可选
 						   w_battle_mgr.isCanSelFighter = false;

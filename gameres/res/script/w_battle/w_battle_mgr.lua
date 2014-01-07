@@ -40,6 +40,7 @@ p.battle_batch  = nil;
 
 function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
+	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
 	if w_battle_db_mgr.step == 1 then  --第一波才需要英雄跳入
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
@@ -57,6 +58,7 @@ function p.starFighter()
 	
 	
 end;
+
 
 
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
@@ -229,41 +231,25 @@ function p.SetPVETargerID(position)
 	end;
 end;	
 
-function p.IninLockAction()
-	
-	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
-	lLockPic:SetPicture(nil);
-	
-	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
-	lLockPic:SetPicture(nil);
-	
-	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
-	lLockPic:SetPicture(nil);
-	
-	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
-	lLockPic:SetPicture(nil);
-	
-	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
-	lLockPic:SetPicture(nil);
-	
-	local lLockPic = GetImage(p.uiLayer, w_battle_pve.ui.ID_CTRL_BUTTON_CARD_CHOOSE);	
-	lLockPic:SetPicture(nil);
-	
-end;
-
-function p.GetLockImage(position)
-	
+function p.InitLockAction()
+	for i=1, #p.enemyUILockArray do
+    	local ltag = p.enemyUILockArray[i];
+		local lLockPic = GetImage(p.uiLayer, ltag);	    
+		lLockPic:SetVisible(false);
+	end
 end;
 
 function p.SetLockAction(position)
-   --[[
+
    if p.LockFagID ~= position then
 		--取消锁定标志
-	   p.IninLockAction()
-	   local lLockPic = p.GetLockImage();		
-	   lLockPic:SetPicture(GetPictureByAni("lancer.battle_targer_mark",0));
+	   p.InitLockAction()
+	   local ltag = p.enemyUILockArray[position];
+	   local lLockPic = GetImage(p.uiLayer, ltag);	    
+	   --local lLockPic = p.GetLockImage();		
+	   lLockPic:SetVisible(true);
    end;
-   ]]--
+
 end;
 
 --开始战斗表现:pve
