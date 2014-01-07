@@ -137,7 +137,7 @@ function p.RefreshUI(userinfo)
 	if userinfo.Move < userinfo.MaxMove then
 		timeText:SetText( ToUtf8( TimeToStr( p.move_remain_time ) ) );
 	else
-		timeText:SetText( ToUtf8( "恢复时间" ) );
+		timeText:SetText( "恢复时间" );
 	end
 	
 	local energy = tonumber(userinfo.Energy) or 0;
@@ -163,7 +163,6 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_ADD_EMONEY == tag then
 			WriteCon("**========充值========**");
-			
 		end
 	end
 end
@@ -194,7 +193,7 @@ function p.OnUpdateInfo()
 		if cache.Move < cache.MaxMove then
 			timeText:SetText( ToUtf8( TimeToStr( p.move_remain_time ) ) );
 		else
-			timeText:SetText( ToUtf8( "恢复时间" ) );
+			timeText:SetText(  "恢复时间"  );
 		end
 	end
 
