@@ -90,6 +90,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			WriteCon("**========²Ëµ¥========**");
 			pack_box.ShowUI();
 			--]]
+			country_main.ShowUI();
+			
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
 			WriteCon("**========»ï°é========**");
 			dlg_card_group_main.ShowUI();
