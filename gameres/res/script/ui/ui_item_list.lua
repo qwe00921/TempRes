@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_item_list = {};
 local p =  ui_item_list;
+p.ID_CTRL_TEXT_79						       = 79;
+p.ID_CTRL_TEXT_77						       = 77;
+p.ID_CTRL_TEXT_76						       = 76;
+p.ID_CTRL_BUTTON_75					      = 75;
+p.ID_CTRL_BUTTON_74					      = 74;
 p.ID_CTRL_TEXT_43						       = 44;
 p.ID_CTRL_PICTURE_41					     = 42;
 p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
