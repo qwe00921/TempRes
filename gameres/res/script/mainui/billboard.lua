@@ -116,7 +116,7 @@ function p.SplitMessage()
      	for i=1,#temp_tips do
      		local start_time = tonumber(temp_tips[i].start_time);
      		local end_time = tonumber(temp_tips[i].end_time);
-     		if (cur_time > start_time and cur_time < end_time) then
+     		if start_time and end_time and (cur_time > start_time and cur_time < end_time) then
      			p.message_tips[#p.message_tips + 1] = temp_tips[i];
      		end
      	end
