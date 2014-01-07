@@ -372,7 +372,7 @@ function p:CheckEnd()
 		
 		if self.atkCampType == W_BATTLE_HERO then	
 			if w_battle_mgr.enemyCamp:isAllDead() == false then
-				w_battle_mgr.CheckHeroTurnEnd();	
+				w_battle_mgr.CheckHeroTurnIsEnd();	
 			else
 				w_battle_mgr.StepOver(true);
 			end

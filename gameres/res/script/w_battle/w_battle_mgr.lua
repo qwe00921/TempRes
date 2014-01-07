@@ -36,25 +36,21 @@ local BATTLE_PVP = 2;
 
 p.batchIsFinish = true;
 p.battle_batch  = nil;
-
+p.battleTurnVal = nil;
 
 function p.starFighter()
 	w_battle_PVEStaMachMgr.init();
 	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
-	if w_battle_db_mgr.step == 1 then  --第一波才需要英雄跳入
-		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
-	end;
+	p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
 	p.isCanSelFighter = true;	
-	w_battle_camp:InitAtkTurnEnd();
-	
-	--local batch = battle_show.GetNewBatch(); 
-	--p.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画
+
+	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 	
 	
 end;
@@ -113,7 +109,7 @@ function p.SetPVEAtkID(atkID)
 	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
 	pStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
 	
-	return false;
+	return true;
 end;					
 
 
@@ -144,46 +140,122 @@ function p.BatchCallBack()
 	p.batchIsFinish = true;
 end;
 
-function p.CheckHeroTurnEnd()
+
+--获得某个物品可使用的玩家列表
+function p.GetItemCanUsePlayer(pItemPos)
+	local lPlayer = {1,2,4}
+	
+	return lPlayer;
+end;
+
+
+--使用某个物品
+function p.UseItem(pItemPos, pHeroPos)
+	
+	w_battle_useitem.RefreshUI()  --物品使用完后,调用刷新UI, UI会内部调用p.GetItemCanUsePlayer
+end;
+
+--我方BUFF阶断
+function p.HeroBuffStarTurn()
+	p.HeroBuffTurnEnd();  --直接判定我方BUFF结束
+end;
+
+--检查是否所有的BUFF都播放完毕
+function p.CheckHeroBuffIsEnd()
+   	
+end;
+
+--我方BUFF结束
+function p.HeroBuffTurnEnd()
+	if p.heroCamp:isAllDead() == true then  --我方全死
+	  p.FightLose();	
+	else 	
+	  --我方还有人活着
+	  w_battle_pve.RoundStar();  --UI界面全亮起来
+	  p.heroCamp:InitAtkTurnEnd(); --标识玩家的回合
+	  --我方使用物品阶断
+	  --   当选中一个物品后,得到这个物品可使用的玩家列表,调用w_battle_useitem.RefreshUI()
+	  --我方行动阶断,只要出现攻击就等于进入这个阶断
+	end
+end;
+
+--检查我方行动是否结束
+function p.CheckHeroTurnIsEnd()
 	if p.heroCamp:CheckAtkTurnEnd() == true then --英雄的回合结束
-		--进入怪物的回合
-		--进入BUFF结束回合
-		p.StarEnemyTurn()
+		p.HeroTurnEnd()
 	end
 	
 end;
 
-function p.StarEnemyTurn()  --怪物回合开始
-	p.CheckEnemyTurnEnd()
+--我方行动结束
+function p.HeroTurnEnd()
+	p.battleTurnVal = W_BATTLE_TURN_HEROEND 
+	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
 end;
 
-function p.CheckEnemyTurnEnd() --怪物回合结束
-	p.StarBuffTurn()
+--敌方BUFF开始
+function p.EnemyBuffStarTurn()
+   p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
 end;
 
-function p.StarBuffTurn()
-	p.CheckBuffTurnEnd()
+--检查敌方BUFF是否结束
+function p.CheckEnemyBuffTurnIsEnd()
+	
 end;
 
-function p.CheckBuffTurnEnd()
-	w_battle_pve.RoundOver(p.CheckStepOver);  --拾取掉落奖励,并回调检查波次是否结束
-	p.CheckStepOver()
+--敌方BUFF结束
+function p.EnemyBuffTurnEnd()
+	p.battleTurnVal = W_BATTLE_TURN_ENEMYBUFFEND 
+	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
+	--p.EnemyStarTurn()
 end;
 
-function p.CheckStepOver()  --判断波次是否结束
-	if p.enemyCamp:isAllDead() == true then  --只要是怪物死光都算玩家胜利
-		p.enemyCamp = nil;		 --敌对阵营
-		p.PVEEnemyID = nil;      --当前被攻击的敌人ID
-		p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
-		p.StepOver(true)
-	elseif p.heroCamp:isAllDead() == true then --玩家全灭
-	    p.StepOver(false)
+
+
+--敌方回合开始
+function p.EnemyStarTurn()  --怪物回合开始
+	p.EnemyTurnEnd() --暂时判定敌方回合结束
+end;
+
+--检查敌方回合是否结束
+function p.CheckEnemyTurnIsEnd() 
+	
+end;
+
+--敌方回合结束
+function p.EnemyTurnEnd()
+
+	p.HeroBuffStarTurn();
+end;
+
+--敌方是否全挂
+function p.CheckEnemyAllDied()
+	if p.enemyCamp:isAllDead() == true then 	--怪物死光了, 波次结束 or 战斗结束
+		p.FightWin();
+	else	
+		if p.battleTurnVal == W_BATTLE_TURN_HEROEND then --当前是我方行动刚结束后的拾取
+			p.EnemyBuffStarTurn() 
+		elseif p.battleTurnVal == W_BATTLE_TURN_ENEMYBUFFEND then --当前是敌方BUFF结束后的拾取
+		    p.EnemyStarTurn()
+		end
+	end
+end;
+
+--战斗胜利
+function p.FightWin()  
+	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
+		w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
+		w_battle_db_mgr.nextStep();  --数据进入下一波次
+		w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 	else
-		p.heroCamp:InitAtkTurnEnd(); --标识玩家的回合
-		--w_battle_pve.initUIHero(); --让玩家继续攻击
+		p.QuitBattle();
+		w_battle_pve.MissionOver();  --任务结束,任务奖励界面
 	end
+end;
 
-	
+--战斗失败
+function p.FightLose()  
+	--没有续打,只有失败界面
 end;
 
 function p.StepOver(pIsPass)  --这一波次结束
@@ -191,15 +263,7 @@ function p.StepOver(pIsPass)  --这一波次结束
     if pIsPass == false then  --被怪打死
 		w_battle_pve.FighterOver(false); --提示复活
 	else --把怪打死
-		if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
-			w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
-			w_battle_db_mgr.nextStep();  --数据进入下一波次
-			p.heroCamp:InitAtkTurnEnd();
-			w_battle_pve.FighterOver(true); --过场动画之后,调用starFighter
-		else
-			p.QuitBattle();
-			w_battle_pve.MissionOver();  --任务结束,任务奖励界面
-		end
+		
 	
 	end;
     
