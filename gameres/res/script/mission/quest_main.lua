@@ -219,7 +219,7 @@ function p.loadMissionList(missionStartId)
 			
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
 			local missionTable = SelectRowInner(T_MISSION,"id",misId);
-			local text = p.missionList[misKey]["fight_num"].."/"..missionTable["fight_limit"]
+			local text = p.missionList[misKey]["fight_num"].."/"..missionTable["fight_num"]
 			timesText:SetText(text);
 			
 			local misHead = GetImage(view, uiList.ID_CTRL_PICTURE_NEW);
@@ -255,12 +255,12 @@ function p.setMissionInfo(misId,view)
 		WriteCon("missionTable error");
 		return;
 	end
-	misName:SetText(missionTable.mission_name);
+	misName:SetText(missionTable.name);
 	--misStep:SetText(missionTable.);
 	misPower:SetText(missionTable.move_cost);
-	misMoney:SetText(missionTable.reward_money);
-	misExp:SetText(missionTable.reward_exp);
-	--misGhost:SetText(missionTable.);
+	misMoney:SetText(missionTable.money);
+	misExp:SetText(missionTable.exp);
+	misGhost:SetText(missionTable.soul);
 
 	local rewardId = missionTable.reward_id;
 	local rewardTable = SelectRowList(T_MISSION_REWARD,"reward_id",rewardId);
