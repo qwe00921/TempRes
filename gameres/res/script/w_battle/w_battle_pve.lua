@@ -765,8 +765,10 @@ end
 
 --°ü¹üËõÐ¡
 function p.ReduceBoxImage()
-	p.boxImage:AddActionEffect( "lancer.box_reduce" );
-	p.BoxScale = false;
+	if p.boxImage ~= nil then
+		p.boxImage:AddActionEffect( "lancer.box_reduce" );
+		p.BoxScale = false;
+	end;
 end
 
 --==============================================================--

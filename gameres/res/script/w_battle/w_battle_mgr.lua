@@ -38,11 +38,34 @@ p.batchIsFinish = true;
 p.battle_batch  = nil;
 p.battleTurnVal = nil;
 
+function p.init()
+	--p.heroCamp = nil;			--玩家阵营
+	p.enemyCamp = nil;			--敌对阵营
+	--p.uiLayer = nil;			--战斗层
+	--p.heroUIArray = nil;		--玩家阵营站位UITag表
+	--p.enemyUIArray = nil;		--敌对阵营站位UITag表
+	--p.enemyUILockArray = nil;   --敌对目标被的锁定标志
+	
+	p.PVEEnemyID = nil;   --当前被攻击的敌人ID
+	p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
+	p.LockEnemy = false; --敌人是否被锁定攻击
+	p.LockFagID = nil;  --之前的锁定标志
+	
+	p.batchIsFinish = true;
+	p.battle_batch  = nil;
+	p.battleTurnVal = nil;
+end;
+
+
 function p.starFighter()
+	p.init();
 	w_battle_PVEStaMachMgr.init();
 	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
-	p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	if w_battle_db_mgr.step == 1 then  --只有第一波才需要进场动画
+		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	end;
+	
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
@@ -246,10 +269,11 @@ function p.FightWin()
 	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
 		w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
 		w_battle_db_mgr.nextStep();  --数据进入下一波次
+		--w_battle_mgr.enemyCamp:free();
 		w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 	else
-		p.QuitBattle();
 		w_battle_pve.MissionOver();  --任务结束,任务奖励界面
+		p.QuitBattle();
 	end
 end;
 

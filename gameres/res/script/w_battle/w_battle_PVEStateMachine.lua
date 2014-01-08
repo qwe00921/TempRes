@@ -304,8 +304,10 @@ function p:tar_hurtEnd()
 				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
 				self.seqTarget:AddCommand( cmdC );		
 				
-				local batch = battle_show.GetNewBatch();
-				local seqDie	= batch:AddParallelSequence();
+				--local batch = battle_show.GetNewBatch();
+				--local seqDie	= batch:AddParallelSequence();
+				local batch = w_battle_mgr.GetBattleBatch(); 
+				local seqDie = batch:AddSerialSequence();
 				local cmdRevive = targerFighter:cmdLua("tar_ReviveEnd",  self.id, "", seqDie);
 				self.seqRevive:SetWaitEnd( cmdC ); 
 			else	--怪死了
@@ -331,8 +333,10 @@ function p:tar_hurtEnd()
 				self.seqTarget:AddCommand( cmdf );
 				local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdC );				
-				local batch = battle_show.GetNewBatch(); 
-				local seqDie	= batch:AddParallelSequence();
+				--local batch = battle_show.GetNewBatch(); 
+				--local seqDie	= batch:AddParallelSequence();
+				local batch = w_battle_mgr.GetBattleBatch(); 
+				local seqDie = batch:AddSerialSequence();
 				local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id,"", seqDie);
 				seqDie:SetWaitEnd( cmdC ); 
 			end;
@@ -374,7 +378,8 @@ function p:CheckEnd()
 			if w_battle_mgr.enemyCamp:isAllDead() == false then --还有尸体存在
 				w_battle_mgr.CheckHeroTurnIsEnd();	
 			else  --没有尸体了
-				w_battle_mgr.FightWin();
+				--w_battle_mgr.FightWin();
+				w_battle_pve.PickStep(w_battle_mgr.FightWin); 
 			end
 			
 		else

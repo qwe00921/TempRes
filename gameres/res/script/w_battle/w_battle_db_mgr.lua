@@ -21,7 +21,7 @@ p.roundBuffEffectData = nil; --BUFF特效数据
 p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
 p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
-p.maxStep = 10;  --
+p.maxStep = 2;  --
   
 p.playerCardList = {
 	{
