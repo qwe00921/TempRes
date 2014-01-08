@@ -162,6 +162,10 @@ DoFile("ui/ui_equip_item_view.lua")
 DoFile("ui/ui_dlg_card_equip_select.lua")
 DoFile("ui/ui_card_equip_select_view.lua")  
 DoFile("ui/ui_dlg_item_sell.lua")
+DoFile("ui/ui_equip_room.lua")
+DoFile("ui/ui_equip_room_list.lua")
+DoFile("ui/ui_equip_bag_sort_view.lua")
+
 
 --卡牌仓库
 DoFile("ui/ui_dlg_card_depot.lua")
