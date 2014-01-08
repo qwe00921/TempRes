@@ -232,7 +232,6 @@ function p.loadMissionList(missionStartId)
 				misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 2));
 			end
 			
-			
 			missionListTable:AddView(view);
 		end
 		misId = misId - p.missionIdGap;
@@ -276,6 +275,9 @@ function p.setMissionInfo(misId,view)
 	end
 --	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
 	
+	local rewardBtn = GetButton(view, uiList.ID_CTRL_BUTTON_REWARD);
+	rewardBtn:SetLuaDelegate()
+	rewardBtn:SetId(misId);
 end
 
 function p.showTeamItem(missionId)

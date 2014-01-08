@@ -2,10 +2,10 @@
 
 country_main = {};
 local p = country_main;
+local ui = ui_country;
 
 p.layer = nil;
 
-local ui = ui_country;
 
 function p.ShowUI()
 	if p.layer ~= nil then
@@ -35,12 +35,39 @@ function p.ShowUI()
 	p.SetDelegate();
 end
 
-function p.InitController()
+function p.InitController() 
+	local storeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_STORE_LV);
+	local equipName = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_LV);
+	local mergeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_MERGE_LV);
+	local produceName = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_LV);
+	local homeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_HOME_LV);
 	
+	local storeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_STORE_TIME);
+	local equipTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_TIME);
+	local mergeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_MERGE_TIME);
+	local produceTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_ITEM);
+	local homeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_HOME_TIME);
 end
 
 function p.SetDelegate()
-	
+	local mountainBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_MOUNTAIN );
+	mountainBtn:SetLuaDelegate(p.OnBtnClick);
+	local fieldBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIELD );
+	fieldBtn:SetLuaDelegate(p.OnBtnClick);
+	local treeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_TREE );
+	treeBtn:SetLuaDelegate(p.OnBtnClick);
+	local riverBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIVER );
+	riverBtn:SetLuaDelegate(p.OnBtnClick);
+	local homeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_HOME );
+	homeBtn:SetLuaDelegate(p.OnBtnClick);
+	local produceBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_PRODUCE );
+	produceBtn:SetLuaDelegate(p.OnBtnClick);
+	local mergeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_MERGE );
+	mergeBtn:SetLuaDelegate(p.OnBtnClick);
+	local equipBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_EQUIP );
+	equipBtn:SetLuaDelegate(p.OnBtnClick);
+	local storeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_STORE );
+	storeBtn:SetLuaDelegate(p.OnBtnClick);
 end
 
 function p.HideUI()

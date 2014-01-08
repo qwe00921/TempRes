@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -215,6 +215,16 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
+[CTRL_BUTTON_REWARD]
+Type=2
+Tag=38
+Rect=408 82 186 57
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
 [CTRL_PICTURE_REWARD_BG1]
 Type=1
 Tag=100
@@ -239,8 +249,8 @@ Tag=39
 Rect=539 81 60 60
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\getitem.png
-NormalFileUV=0 0 72 84
+NormalFile=.\res\image\ui\quest\item-list.png
+NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_REWARD1]
 Type=1
@@ -263,11 +273,11 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_REWARD3]
 Type=1
 Tag=40
-Rect=539 81 60 60
+Rect=539 81 60 70
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
+NormalFile=.\res\image\ui\quest\getitem.png
+NormalFileUV=0 0 72 84
 
 [CTRL_PICTURE_39]
 Type=1
