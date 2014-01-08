@@ -218,7 +218,7 @@ function p.ShowItemList(itemData)
 		local itemName5 = GetLabel(view, ui_item.ID_CTRL_TEXT_ITEMNAME5);
 		if itemData ~= nil then
 			local itemNum = #itemData
-			WriteConErr("itemNum == "..#itemData);
+			--WriteConErr("itemNum == "..#itemData);
 			local itemPic = nil;
 			local itemName = nil;
 			for i = 1,#itemData do
@@ -239,14 +239,14 @@ function p.ShowItemList(itemData)
 					itemName = itemName5
 				end
 				itemId = tonumber(itemData[i].Item_id)
-				WriteConErr("itemId == "..itemId);
+				--WriteConErr("itemId == "..itemId);
 				
 				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
 				if itemTable == nil then
 					WriteConErr("cardPicTable error ");
 				end
 				itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-				itemName:SetText(itemTable.Name);
+				itemName:SetText(itemTable.name);
 			end
 		end
 
