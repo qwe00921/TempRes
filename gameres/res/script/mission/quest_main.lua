@@ -122,28 +122,38 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 				dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
 				return
 			end
+			--p.HideUI()
 			
-			maininterface.m_bgImage:SetVisible(false);
-			if p.missionList["M"..missionId] then
-				local storyId = p.missionList["M"..missionId].begin_story;
-				WriteCon("storyId = "..storyId);
-				if tonumber(storyId) ~= 0 then
-					dlg_drama.ShowUI( missionId , storyId);
-				else
-				   if E_DEMO_VER == 4 then
-					n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
-				   else	
-					w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
-				   end;
-				end
-			else
-				if E_DEMO_VER== 4 then
-				  n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
-				else
-				  w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
-				end;
-			end
-			p.CloseUI();
+			p.showTeamItem(missionId)
+			
+			--local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST);
+			--missionListTable:SetVisible(false);
+			--missionListTable:RemoveView();
+			--p.layer:RemoveView(missionListTable);
+
+			--quest_team_item.ShowUI(missionId,power);
+			
+			-- maininterface.m_bgImage:SetVisible(false);
+			-- if p.missionList["M"..missionId] then
+				-- local storyId = p.missionList["M"..missionId].begin_story;
+				-- WriteCon("storyId = "..storyId);
+				-- if tonumber(storyId) ~= 0 then
+					-- dlg_drama.ShowUI( missionId , storyId);
+				-- else
+				   -- if E_DEMO_VER == 4 then
+					-- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				   -- else	
+					-- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				   -- end;
+				-- end
+			-- else
+				-- if E_DEMO_VER== 4 then
+				  -- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				-- else
+				  -- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				-- end;
+			-- end
+			-- p.CloseUI();
 		end
 	end
 end
@@ -209,7 +219,7 @@ function p.loadMissionList(missionStartId)
 			
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
 			local missionTable = SelectRowInner(T_MISSION,"id",misId);
-			local text = p.missionList[misKey]["fight_num"].."/"..missionTable["fight_limit"]
+			local text = p.missionList[misKey]["fight_num"].."/"..missionTable["fight_num"]
 			timesText:SetText(text);
 			
 			local misHead = GetImage(view, uiList.ID_CTRL_PICTURE_NEW);
@@ -245,12 +255,12 @@ function p.setMissionInfo(misId,view)
 		WriteCon("missionTable error");
 		return;
 	end
-	misName:SetText(missionTable.mission_name);
+	misName:SetText(missionTable.name);
 	--misStep:SetText(missionTable.);
 	misPower:SetText(missionTable.move_cost);
-	misMoney:SetText(missionTable.reward_money);
-	misExp:SetText(missionTable.reward_exp);
-	--misGhost:SetText(missionTable.);
+	misMoney:SetText(missionTable.money);
+	misExp:SetText(missionTable.exp);
+	misGhost:SetText(missionTable.soul);
 
 	local rewardId = missionTable.reward_id;
 	local rewardTable = SelectRowList(T_MISSION_REWARD,"reward_id",rewardId);
@@ -264,10 +274,13 @@ function p.setMissionInfo(misId,view)
 			rewardGroupTable[#rewardGroupTable + 1] = v;
 		end
 	end
-	
-	
 --	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
 	
+end
+
+function p.showTeamItem(missionId)
+	quest_team_item.ShowUI(missionId,p.stageId);
+	p.CloseUI()
 end
 
 --隐藏UI

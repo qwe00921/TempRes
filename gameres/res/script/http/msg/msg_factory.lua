@@ -201,6 +201,9 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_STAGE_LIST then
 		msg = msg_stage_list:new();
 		
+	elseif idmsg == MSG_TEAM_ITEM then
+		msg = msg_team_item:new();
+		
 	elseif idmsg == MSG_PLAYER_CREATEROLE then
 		msg = msg_createrole:new();
 		

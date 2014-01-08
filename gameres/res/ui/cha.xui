@@ -3,59 +3,57 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_31]
-Type=1
-Tag=34
-Rect=0 259 637 262
-AnchorPos=0 0
-Notes=
-
-[CTRL_EXP_EXP]
-Type=9
-Tag=33
-Rect=133 958 324 34
+[CTRL_BUTTON_BG]
+Type=2
+Tag=55
+Rect=0 0 637 240
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
-NormalFileUV=0 0 176 28
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=34
+Rect=0 0 637 240
+AnchorPos=0 0
+Notes=
 
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=8 284 622 229
+Rect=8 25 622 210
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\beast\beast_bg.png
 NormalFileUV=0 0 590 264
 
-[CTRL_BUTTON_21]
-Type=2
-Tag=22
-Rect=8 264 148 65
+[CTRL_PICTURE_EDIT]
+Type=1
+Tag=23
+Rect=29 13 107 40
 AnchorPos=0 0
 Notes=
-TextSize=10
+
+[CTRL_BUTTON_EDIT]
+Type=2
+Tag=22
+Rect=8 5 148 65
+AnchorPos=0 0
+Notes=
+Text=队伍编辑
+TextTradition=隊伍編輯
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
-[CTRL_PICTURE_22]
-Type=1
-Tag=23
-Rect=29 272 107 40
-AnchorPos=0 0
-Notes=
-Text=队伍编辑
-TextTradition=隊伍編輯
-
-[CTRL_PICTURE_23]
+[CTRL_PICTURE_TEAM_NUM]
 Type=1
 Tag=24
-Rect=521 267 107 49
+Rect=521 8 107 49
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\team1.png
@@ -64,7 +62,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_CHA1]
 Type=1
 Tag=26
-Rect=27 401 90 90
+Rect=27 124 90 90
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -73,7 +71,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_CHA2]
 Type=1
 Tag=27
-Rect=126 401 90 90
+Rect=126 124 90 90
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -82,7 +80,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_CHA3]
 Type=1
 Tag=29
-Rect=225 401 90 90
+Rect=225 124 90 90
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -91,7 +89,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_CHA4]
 Type=1
 Tag=30
-Rect=324 401 90 90
+Rect=324 124 90 90
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -100,7 +98,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_CHA5]
 Type=1
 Tag=31
-Rect=423 401 90 90
+Rect=423 124 90 90
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
@@ -109,80 +107,80 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_CHA6]
 Type=1
 Tag=32
-Rect=522 401 90 90
+Rect=522 124 90 90
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\item_less.png
 NormalFileUV=0 0 100 100
 
-[CTRL_TEXT_32]
+[CTRL_TEXT_ATTACK]
 Type=4
 Tag=35
-Rect=23 349 93 36
+Rect=29 73 106 36
 AnchorPos=0 0
 Notes=
-Text=攻击总值
-TextTradition=攻擊總值
-TextSize=24
+Text=攻击总值:
+TextTradition=攻擊總值:
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_33]
+[CTRL_TEXT_ATTACK_V]
 Type=4
 Tag=36
-Rect=116 349 79 36
+Rect=127 73 79 36
 AnchorPos=0 0
 Notes=
-Text=999999
-TextTradition=999999
-TextSize=24
-TextHorAlign=AlignHorCenter
+Text=0
+TextTradition=0
+TextSize=20
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_34]
+[CTRL_TEXT_DEFENSE]
 Type=4
 Tag=37
-Rect=228 349 92 36
+Rect=225 73 106 36
 AnchorPos=0 0
 Notes=
-Text=攻击总值
-TextTradition=攻擊總值
-TextSize=24
+Text=防御总值:
+TextTradition=防御總值:
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_35]
+[CTRL_TEXT_DEFENSE_V]
 Type=4
 Tag=38
-Rect=319 349 77 36
+Rect=322 73 77 36
 AnchorPos=0 0
 Notes=
-Text=999999
-TextTradition=999999
-TextSize=24
-TextHorAlign=AlignHorCenter
+Text=0
+TextTradition=0
+TextSize=20
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_36]
+[CTRL_TEXT_HP]
 Type=4
 Tag=39
-Rect=432 349 94 36
+Rect=425 73 94 36
 AnchorPos=0 0
 Notes=
-Text=攻击总值
-TextTradition=攻擊總值
-TextSize=24
+Text=HP总值:
+TextTradition=HP總值:
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 
-[CTRL_TEXT_37]
+[CTRL_TEXT_HP_V]
 Type=4
 Tag=40
-Rect=525 349 83 36
+Rect=508 73 83 36
 AnchorPos=0 0
 Notes=
-Text=999999
-TextTradition=999999
-TextSize=24
-TextHorAlign=AlignHorCenter
+Text=0
+TextTradition=0
+TextSize=20
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter

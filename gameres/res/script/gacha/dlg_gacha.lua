@@ -1044,6 +1044,7 @@ function p.OnBagItemClickEvent(uiNode, uiEventType, param)
 		useBtn:SetId(itemId);
 		useBtn:SetUID(itemUniqueId);
 		useBtn:SetXID(itemType);
+		useBtn:SetZOrder(9999);
 		
 		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
 		useTextPic:SetVisible(true);
@@ -1078,7 +1079,7 @@ end
 function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui.ID_CTRL_BUTTON_USE == tag) then --使用
+		if(ui_dlg_gacha.ID_CTRL_BUTTON_USE == tag) then --使用
 			local itemId = uiNode:GetId();
 			local itemUniqueId = uiNode:GetUID();
 			local itemType = uiNode:GetXID();
