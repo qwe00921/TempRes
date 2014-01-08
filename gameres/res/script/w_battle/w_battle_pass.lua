@@ -11,6 +11,9 @@ p.TimerId = nil;
 p.fromNum = nil;
 p.totalNum = nil;
 
+p.passTime = 0.875f;
+p.addValue = 1;
+
 local ui = ui_n_battle_pass;
 
 function p.ShowUI( nFrom, nTotal )
@@ -66,13 +69,15 @@ function p.StartTimer()
 		KillTimer( p.TimerId );
 		p.TimerId = nil;
 	end
+	local totalValue = math.min( math.floor( 1/p.totalNum*100 ), 100 );
+	p.addValue = totalValue*0.05/p.passTime;
 	
 	p.TimerId = SetTimer( p.updateExp, 0.05 );
 end
 
 function p.updateExp()
 	local value = p.pExp:GetProcess();
-	value = math.min( value + 1, 100 );
+	value = math.min( value + p.addValue, 100 );
 	local maxValue = math.min( math.floor( (p.fromNum+1)/p.totalNum*100 ), 100);
 	p.pExp:SetValue( 0, 100, value );
 	if value >= maxValue then
