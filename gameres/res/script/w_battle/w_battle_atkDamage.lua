@@ -70,7 +70,7 @@ function p.IsCrit(atkFighter,tarFighter)
 	local lIsCrit = false;
 	
 	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
-    local lrandom = math.random(1,2000);
+    local lrandom = math.random(1,1000);
 	if lrandom < atkFighter.Crit then  --±©»÷³É¹¦
 		lIsCrit = true;
 	end
