@@ -108,8 +108,6 @@ Tag=16
 Rect=167 692 118 38
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_PIC_PRODUCE_HEAD_BG]
 Type=1
@@ -117,8 +115,6 @@ Tag=15
 Rect=1 539 118 38
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_PIC_MERGE_HEAD_BG]
 Type=1
@@ -126,8 +122,6 @@ Tag=14
 Rect=117 518 118 38
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_PIC_EQUIP_HEAD_BG]
 Type=1
@@ -135,26 +129,20 @@ Tag=12
 Rect=202 396 118 38
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_PIC_STORE_HEAD_BG]
 Type=1
 Tag=30
-Rect=457 441 118 38
+Rect=448 441 132 38
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_PIC_HOME_ITEM_BG]
 Type=1
 Tag=24
-Rect=172 661 107 29
+Rect=172 661 107 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PIC_PRODUCE_ITEM_BG]
 Type=1
@@ -162,8 +150,6 @@ Tag=23
 Rect=4 504 107 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PIC_MERGE_TIME_BG]
 Type=1
@@ -171,26 +157,20 @@ Tag=21
 Rect=120 485 107 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PIC_EQUIP_ITEM_BG]
 Type=1
 Tag=22
-Rect=207 366 107 29
+Rect=207 366 107 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_PIC_STORE_ITEM_BG]
 Type=1
 Tag=31
-Rect=464 409 107 29
+Rect=464 409 107 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_HOME_LV]
 Type=4
@@ -198,8 +178,6 @@ Tag=19
 Rect=174 696 107 27
 AnchorPos=0 0
 Notes=
-Text=住宅 LV:
-TextTradition=住宅 LV:
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -211,8 +189,6 @@ Tag=18
 Rect=3 543 112 27
 AnchorPos=0 0
 Notes=
-Text=生产屋LV:
-TextTradition=生產屋LV:
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -224,8 +200,6 @@ Tag=17
 Rect=123 522 107 27
 AnchorPos=0 0
 Notes=
-Text=融合屋LV:
-TextTradition=融合屋LV:
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -237,8 +211,6 @@ Tag=11
 Rect=209 399 107 27
 AnchorPos=0 0
 Notes=
-Text=装备屋LV:
-TextTradition=裝備屋LV:
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -247,11 +219,9 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_STORE_LV]
 Type=4
 Tag=29
-Rect=463 445 115 27
+Rect=451 445 127 27
 AnchorPos=0 0
 Notes=
-Text=材料仓库LV:
-TextTradition=材料倉庫LV:
 TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -274,8 +244,6 @@ Tag=33
 Rect=9 504 107 30
 AnchorPos=0 0
 Notes=
-Text=xx:xx:xx
-TextTradition=xx:xx:xx
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -287,8 +255,6 @@ Tag=34
 Rect=121 485 107 30
 AnchorPos=0 0
 Notes=
-Text=xx:xx:xx
-TextTradition=xx:xx:xx
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -308,10 +274,85 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_STORE_TIME]
 Type=4
 Tag=37
-Rect=467 407 107 30
+Rect=459 407 115 30
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+
+[CTRL_BUTTON_RETURN]
+Type=2
+Tag=56
+Rect=188 202 107 53
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=20
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_EXP_HOME]
+Type=9
+Tag=32
+Rect=173 661 107 30
+AnchorPos=0 0
+Notes=
+TextSize=14
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_PRODUCE]
+Type=9
+Tag=38
+Rect=4 505 107 30
+AnchorPos=0 0
+Notes=
+TextSize=14
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_MERGE]
+Type=9
+Tag=39
+Rect=120 482 107 30
+AnchorPos=0 0
+Notes=
+TextSize=14
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_EQUIP]
+Type=9
+Tag=40
+Rect=208 364 107 30
+AnchorPos=0 0
+Notes=
+TextSize=14
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_EXP_STORE]
+Type=9
+Tag=41
+Rect=463 406 107 30
+AnchorPos=0 0
+Notes=
+TextSize=14
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
+NormalFileUV=0 0 176 28

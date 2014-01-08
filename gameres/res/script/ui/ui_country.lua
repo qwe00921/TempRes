@@ -4,6 +4,12 @@
 --------------------------------------------------------------
 ui_country = {};
 local p =  ui_country;
+p.ID_CTRL_EXP_STORE					      = 41;
+p.ID_CTRL_EXP_EQUIP					      = 40;
+p.ID_CTRL_EXP_MERGE					      = 39;
+p.ID_CTRL_EXP_PRODUCE					    = 38;
+p.ID_CTRL_EXP_HOME					       = 32;
+p.ID_CTRL_BUTTON_RETURN				   = 56;
 p.ID_CTRL_TEXT_STORE_TIME				 = 37;
 p.ID_CTRL_TEXT_EQUIP_TIME				 = 36;
 p.ID_CTRL_TEXT_MERGE_TIME				 = 34;
