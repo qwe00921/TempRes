@@ -56,9 +56,9 @@ function p.IsJoinAtk(tarFighter)
 	
 	if tarFighter.JoinAtkTime == nil then
 		tarFighter.JoinAtkTime = lNowTime;
-    elseif lNowTime - tarFighter.HitTime <= W_BATTLE_JOINATK_TIME then
+    elseif lNowTime - tarFighter.JoinAtkTime <= W_BATTLE_JOINATK_TIME then
 	   lIsResult = true; 
-    elseif lNowTime - tarFighter.HitTime > W_BATTLE_JOINATK_TIME then	
+    elseif lNowTime - tarFighter.JoinAtkTime > W_BATTLE_JOINATK_TIME then	
 	   tarFighter.JoinAtkTime = lNowTime;	
 	end
 	
