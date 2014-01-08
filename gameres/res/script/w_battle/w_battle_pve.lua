@@ -377,6 +377,7 @@ function p.RefreshUI()
 				if flag then
 					p.SetVisible( ctrllers, true );
 					ctrllers[MASK_INDEX]:SetVisible( false );
+					ctrllers[BTN_INDEX]:SetEnabled( true );
 					local data = cardList[index];
 					
 					local path = SelectRowInner( T_CHAR_RES, "card_id", data.CardID, "head_pic" );
@@ -708,7 +709,7 @@ function p.BeginPick()
 	if #p.dropList == 0 then
 		if p.pickCallBack then
 			p.pickCallBack();
-			p.pickCallBack = nil;
+			--p.pickCallBack = nil;
 		end
 		do return end;
 	end
@@ -727,7 +728,7 @@ function p.Pick( nTimerId )
 		
 		if p.pickCallBack then
 			p.pickCallBack();
-			p.pickCallBack = nil;
+			--p.pickCallBack = nil;
 		end
 		
 		do return end;
