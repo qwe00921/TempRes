@@ -117,7 +117,7 @@ function p.RefreshUI(userinfo)
 	local Exp = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_EXP );
 	Exp:SetValue( 0, tonumber( userinfo.MaxExp ), tonumber( userinfo.Exp ) );
 	
-	maininterface.ShowBattleArray( userinfo.User_Team );
+	maininterface.ShowBattleArray( userinfo.User_Team ,tonumber(userinfo.CardTeam) or 1 );
 	
 	--行动力、精力恢复
 	--local m_time = 20;

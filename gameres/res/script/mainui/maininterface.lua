@@ -229,17 +229,19 @@ function p.ShowMailNum(userinfo)
 end
 
 --œ‘ æ’Û»›ΩÁ√Ê
-function p.ShowBattleArray( user_team )
+function p.ShowBattleArray( user_team, pos )
 	user_team = user_team or {};
-	if user_team.Formation ~= nil then
-		local formation = user_team.Formation;
+	if user_team["Formation"..pos] ~= nil then
+		local formation = user_team["Formation"..pos];
 		for i = 1, 6 do
 			local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_CHA" .. i] );
-			if btn ~= nil then
+			local nature = GetImage( p.layer, ui["ID_CTRL_PICTURE_NATURE" .. i] );
+			if btn ~= nil and nature ~= nil then
 				btn:SetLuaDelegate( p.OnClickCard );
 				btn:SetId( i );
 				if formation["Pos"..i] ~= nil then
 					btn:SetVisible( true );
+					nature:SetVisible( true );
 					local cardType = formation["Pos"..i].CardID;
 					local path = SelectRowInner( T_CHAR_RES, "card_id", cardType, "hero_pic" );
 					local picData = nil;
@@ -247,8 +249,13 @@ function p.ShowBattleArray( user_team )
 						picData = GetPictureByAni( path, 0 );
 					end
 					btn:SetImage(picData);
+					
+					local element = formation["Pos"..i].element;
+					local attrpic = GetPictureByAni( "card_element.".. tostring(element), 0 );
+					nature:SetPicture( attrpic );
 				else
 					btn:SetVisible( false );
+					nature:SetVisible( false );
 				end
 			end
 		end
@@ -259,7 +266,8 @@ function p.OnClickCard(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId() or 0;
 		local user_team = msg_cache.msg_player.User_Team or {};
-		local formation = user_team.Formation or {};
+		local cardTeam = tonumber(msg_cache.msg_player.CardTeam) or 1;
+		local formation = user_team["Formation"..cardTeam] or {};
 		local card = formation["Pos"..id];
 		if card then
 			dlg_card_attr_base.ShowUI( card );
