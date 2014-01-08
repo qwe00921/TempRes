@@ -709,6 +709,10 @@ end
 function p.SaveData()
 	local needUpload = false;
 	
+	if p.m_list == nil then
+		return;
+	end
+	
 	p.nowTeam = p.m_list:GetActiveView() + 1;
 	
 	if tonumber(p.nowTeam) ~= tonumber(p.serverTeam) then

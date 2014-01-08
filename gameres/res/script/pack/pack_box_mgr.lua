@@ -192,8 +192,9 @@ end
 
 function p.reOpenPackBox()
 	pack_box_equip.CloseUI();
-	pack_box.CloseUI();
-	pack_box.ShowUI();
+	--pack_box.CloseUI();
+	--pack_box.ShowUI();
+	dlg_gacha.ShowUI(4);
 end
 
 function p.getItemInfoTable(uniqueid)
