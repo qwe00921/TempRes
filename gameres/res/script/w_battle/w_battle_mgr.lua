@@ -257,7 +257,7 @@ end;
 function p.FightLose()  
 	--没有续打,只有失败界面
 end;
-
+--[[
 function p.StepOver(pIsPass)  --这一波次结束
 
     if pIsPass == false then  --被怪打死
@@ -268,7 +268,7 @@ function p.StepOver(pIsPass)  --这一波次结束
 	end;
     
 end;
-
+]]--
 --战斗界面选择怪物目标,选择后怪物就被锁定
 function p.SetPVETargerID(position)
 	if position > 6 or position < 0 then

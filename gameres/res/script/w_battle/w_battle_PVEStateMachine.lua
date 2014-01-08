@@ -364,24 +364,24 @@ function p:targerTurnEnd()
 end;
 
 function p:CheckEnd()
-	if (self.IsAtkTurnEnd == true) and (self.IsTarTurnEnd == true) then
+	if (self.IsAtkTurnEnd == true) and (self.IsTarTurnEnd == true) then --受击 和打击变了
 		self.IsEnd = true;
 		w_battle_PVEStaMachMgr:delStateMachine(self.id);
 		local atkFighter = self:getAtkFighter();
 		atkFighter.IsTurnEnd = true;
 		
 		if self.atkCampType == W_BATTLE_HERO then	
-			if w_battle_mgr.enemyCamp:isAllDead() == false then
+			if w_battle_mgr.enemyCamp:isAllDead() == false then --还有尸体存在
 				w_battle_mgr.CheckHeroTurnIsEnd();	
-			else
-				w_battle_mgr.StepOver(true);
+			else  --没有尸体了
+				w_battle_mgr.FightWin();
 			end
 			
 		else
 			if w_battle_mgr.heroCamp:isAllDead() == false then
 				w_battle_mgr.CheckEnemyTurnEnd();
 			else
-				w_battle_mgr.StepOver(false);
+				w_battle_mgr.FightLose();
 			end		
 		end;
 		
