@@ -1,11 +1,8 @@
-
-
 country_main = {};
 local p = country_main;
 local ui = ui_country;
 
 p.layer = nil;
-
 
 function p.ShowUI()
 	if p.layer ~= nil then
@@ -28,11 +25,13 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	
+	--设置代理
+	p.SetDelegate();
+	
 	--初始化控件
 	p.InitController();
 	
-	--设置代理
-	p.SetDelegate();
+
 end
 
 function p.InitController() 
@@ -47,7 +46,18 @@ function p.InitController()
 	local mergeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_MERGE_TIME);
 	local produceTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_ITEM);
 	local homeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_HOME_TIME);
+	
+	local uid = GetUID();
+	local param = "";
+	SendReq("Build","GetUserBuilds",uid,param);
 end
+
+function p.ShowCount(backData)
+		WriteConErr("missionTable error");
+
+
+end
+
 
 function p.SetDelegate()
 	local mountainBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_MOUNTAIN );

@@ -123,3 +123,5 @@ DoFile("http/msg/msg_card_equip_msg.lua");
 --卡组编辑
 DoFile("http/msg/msg_team_replace.lua");
 
+--村庄
+DoFile("http/msg/msg_count_data.lua");

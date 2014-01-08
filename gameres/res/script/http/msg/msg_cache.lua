@@ -46,3 +46,4 @@ p.msg_shop_buy_result = nil;
 p.msg_collect = nil;
 p.msg_achievement = nil;
 p.msg_server_list = nil;
+p.msg_count_data = nil;
