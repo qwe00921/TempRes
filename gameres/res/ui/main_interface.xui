@@ -183,3 +183,57 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\card_show.png
 NormalFileUV=0 0 640 350
+
+[CTRL_PICTURE_NATURE1]
+Type=1
+Tag=16
+Rect=71 479 33 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\nature4.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_NATURE2]
+Type=1
+Tag=17
+Rect=178 479 33 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\nature4.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_NATURE3]
+Type=1
+Tag=24
+Rect=284 479 33 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\nature4.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_NATURE4]
+Type=1
+Tag=26
+Rect=391 479 33 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\nature4.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_NATURE5]
+Type=1
+Tag=27
+Rect=497 479 33 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\nature4.png
+NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_NATURE6]
+Type=1
+Tag=28
+Rect=604 479 33 33
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\n_battle\nature4.png
+NormalFileUV=0 0 24 24
