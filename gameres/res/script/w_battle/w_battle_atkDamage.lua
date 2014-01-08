@@ -21,7 +21,7 @@ function p.SimpleDamage(atkFighter,tarFighter)
 	atkFighter.Buff = 1;	
 	
 	--合击加成
-	local lIsJoinAtk = p.IsJoinAtk(tarFighter); 
+	local lIsJoinAtk = p.IsJoinAtk(atkFighter,tarFighter); 
 	local lJoinAtkRate = 0;
 	if lIsJoinAtk == true then
 		lJoinAtkRate = 0.5
@@ -49,17 +49,19 @@ end
 
 
 --是否合击
-function p.IsJoinAtk(tarFighter)
+function p.IsJoinAtk(atkFighter,tarFighter)
 
 	local lIsResult = false;
 	local lNowTime = os.time();
 	
 	if tarFighter.JoinAtkTime == nil then
 		tarFighter.JoinAtkTime = lNowTime;
+		tarFighter.firstID = atkFighter:GetId();
     elseif lNowTime - tarFighter.JoinAtkTime <= W_BATTLE_JOINATK_TIME then
 	   lIsResult = true; 
     elseif lNowTime - tarFighter.JoinAtkTime > W_BATTLE_JOINATK_TIME then	
 	   tarFighter.JoinAtkTime = lNowTime;	
+	   tarFighter.firstID = atkFighter:GetId();
 	end
 	
 	return lIsResult;

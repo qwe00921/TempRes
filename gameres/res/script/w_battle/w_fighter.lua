@@ -43,7 +43,7 @@ function p:ctor()
 	self.maxlife = 0;  --最大血量
 	self.nowlife = 0; --当前实际血量
 	self.IsTurnEnd = false;
-
+	self.firstID = nil; --合击判定的第一下
 end
 
 --初始化（重载）

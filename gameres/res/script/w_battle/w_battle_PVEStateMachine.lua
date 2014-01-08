@@ -262,6 +262,14 @@ function p:tar_hurt()
 		local cmdHurt = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
 		self.seqTarget:AddCommand( cmdHurd );
 
+		local lfirstID = targerFighter.firstID;
+		local latkID = atkFighter:GetId();
+		if self.isJoinAtk == true then
+			if(lfirstID ~= latkID) then
+			--合击的动画
+				WriteCon("JoinAtk flash");
+			end;
+		end;
 	    --受击动画无限播
 		--local cmdHurtAll = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
 		--self.seqTarget:AddCommand( cmdHurtAll );
