@@ -106,7 +106,6 @@ function p.InitController()
 	uiNodeT.timeBar[3] = mergeBar;
 	uiNodeT.timeBar[4] = homeBar;
 	uiNodeT.timeBar[5] = storeBar;
-	time_bar.ShowTimeBar(produceBar,0,30,20)
 	--请求数据
 	local uid = GetUID();
 	local param = "";
@@ -133,22 +132,23 @@ function p.ShowCountry(backData)
 	end
 	if openViewNum > 0 then
 		WriteCon("openViewNum == "..openViewNum);
+		--显示新开建筑
 		--p.showNewBuild(openViewT)
 	else
+		--显示村庄信息
 		p.showCountryBuild(buildInfo)
 	end
 end
 
 function p.showCountryBuild(buildInfo)
 	WriteCon("showCountryBuild");
-
 	--local buildNum = 0;
 	-- for k,v in pairs(buildInfo) do 
 		-- buildNum = buildNum + 1;
 	-- end
-	for i = 1, 9 do
-		--显示名字，等级
+	for i = 1, 5 do
 		if buildInfo["B"..i] then
+			--显示名字，等级
 			local headText = uiNodeT.textNameT[i]..(buildInfo["B"..i].build_level);
 			if uiNodeT.headT[i] then
 				uiNodeT.headT[i]:SetText(headText);
@@ -157,8 +157,39 @@ function p.showCountryBuild(buildInfo)
 			uiNodeT.headBoxT[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
 			--是否在升级
 			if tonumber(buildInfo["B"..i].is_upgrade) == 1 then
+				--显示背景图
 				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
-				local Countdown = buildInfo["B"..i].upgrade_time;
+				--剩余时间
+				local countDownTime = tonumber(buildInfo["B"..i].upgrade_time);
+				local nowTime = os.time();
+				local lastTime = countDownTime - nowTime;
+				--local lastTime = 100;
+				--升级所需时间
+				local nextLV = tonumber(buildInfo["B"..i].upgrade_level)
+				--local nextLV = 3;
+				local upbuildTable =  SelectRowList(T_BUILDING,"type",i);
+				if upbuildTable == nil then
+					WriteConErr("upbuildTable is nil ");
+				end
+				local timeNeed = nil;
+				for k,v in pairs(upbuildTable) do
+					if tonumber(v.level) == nextLV then
+						timeNeed = tonumber(v.upgrade_time)*60
+					end
+				end
+				WriteCon("timeNeed == "..timeNeed);
+				--时间条和文本节点
+				local timeBar = uiNodeT.timeBar[i];
+				timeBar:SetNoText()
+				local timeTextNode = uiNodeT.timeTextT[i]
+				--显示时间条
+				time_bar.ShowTimeBar(0,timeNeed,lastTime,timeBar,timeTextNode) 
+			
+			--是否刚升级完
+			elseif tonumber(buildInfo["B"..i].update) == 1 then
+				--显示背景图
+				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
+				uiNodeT.timeTextT[i]:SetText("升级完成！");
 			end
 		end
 	end
@@ -213,6 +244,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		if (ui.ID_CTRL_BUTTON_RETURN == tag) then
 			WriteCon("return");
 			p.CloseUI();
+			time_bar.ClearData()
 			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
 		end
