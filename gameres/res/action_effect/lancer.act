@@ -15,10 +15,18 @@
 @jump(0.1, $1, $2, $3, 1) @sinin
 
 [begin_battle_move]
-@move(1, $1, $2)
+@move(5, $1, $2)
 
 [bullet_rotate]
 @rotate(1,360)
+
+[ishurt]
+@move(0.1, 2, 0)
+@move(0.1, -4, 0)
+@move(0.1, 0, 2)
+@move(0.1, 2, 0)
+@move(0.1, 0, 2)
+@move(0.1, 0, -4)
 
 ;震屏
 [shake02]
@@ -51,6 +59,10 @@
 ;淡出
 [fadeout3]
 @fadeout(3)
+
+;快速淡入
+[fadein0]
+@fadein(0.01)
 
 ;显示
 [show]

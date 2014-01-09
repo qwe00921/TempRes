@@ -20,7 +20,7 @@ p.layer = nil;
 p.cardListInfo = nil;
 p.curBtnNode = nil;
 p.sortByRuleV = nil;
-p.baseCardInfo = nil;
+p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
 
 p.selectList = {};
 p.teamList = {};
@@ -209,13 +209,16 @@ function p.sortByBtnEvent(sortType)
 	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SORT_BY);
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
+		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
+		sortByBtn:SetText(GetStr("equip_level"));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
+		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
+		sortByBtn:SetText(GetStr("equip_rule"));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
 	elseif(sortType == CARD_BAG_SORT_BY_TIME) then 
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
+		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
+		sortByBtn:SetText(GetStr("card_element"));		
 		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
 	end
 	p.sortByRule(sortType)

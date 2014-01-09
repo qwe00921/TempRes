@@ -46,6 +46,11 @@ function p:ctor()
     self.isBoss = false;
 end
 
+--释放
+function p:free()
+	self:FreeFootNode();
+end;
+
 --初始化
 function p:Init( idFighter, node, camp, notUseDefHpBar )
 	if idFighter ~= 0 and node ~= nil then
@@ -105,6 +110,12 @@ function p:CreateFootNode()
 		self.node:AddChildZ( self.footNode, 1 );
 	end
 end
+
+function p:FreeFootNode()
+	if self.footNode ~= nil then
+		self.node:RemoveChild( self.footNode,true );
+	end
+end;
 
 --设置fighter图像
 function p:SetFighterPic()

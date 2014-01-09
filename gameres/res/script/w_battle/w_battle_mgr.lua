@@ -38,11 +38,34 @@ p.batchIsFinish = true;
 p.battle_batch  = nil;
 p.battleTurnVal = nil;
 
+function p.init()
+	--p.heroCamp = nil;			--玩家阵营
+	p.enemyCamp = nil;			--敌对阵营
+	--p.uiLayer = nil;			--战斗层
+	--p.heroUIArray = nil;		--玩家阵营站位UITag表
+	--p.enemyUIArray = nil;		--敌对阵营站位UITag表
+	--p.enemyUILockArray = nil;   --敌对目标被的锁定标志
+	
+	p.PVEEnemyID = nil;   --当前被攻击的敌人ID
+	p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
+	p.LockEnemy = false; --敌人是否被锁定攻击
+	p.LockFagID = nil;  --之前的锁定标志
+	
+	p.batchIsFinish = true;
+	p.battle_batch  = nil;
+	p.battleTurnVal = nil;
+end;
+
+
 function p.starFighter()
+	p.init();
 	w_battle_PVEStaMachMgr.init();
 	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
-	p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	if w_battle_db_mgr.step == 1 then  --只有第一波才需要进场动画
+		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+	end;
+	
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
@@ -93,14 +116,12 @@ function p.SetPVEAtkID(atkID)
 	if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
 		p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
 		
-		if p.enemyCamp:GetActiveFighterCount() == 1 then
-			p.LockEnemy = true;
-		end
+		
 	end
 	
    --受击次数先累加,攻击方动画播完后,再减一
     targetFighter:BeHitAdd(atkID);  
-    
+
 	--攻击某个人物
      --w_battle_atk.SelOver(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	--选择结束阶断
 	
@@ -246,10 +267,11 @@ function p.FightWin()
 	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
 		w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
 		w_battle_db_mgr.nextStep();  --数据进入下一波次
+		--w_battle_mgr.enemyCamp:free();
 		w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 	else
-		p.QuitBattle();
 		w_battle_pve.MissionOver();  --任务结束,任务奖励界面
+		p.QuitBattle();
 	end
 end;
 
@@ -794,10 +816,10 @@ function p.QuitBattle()
 	--w_battle_mainui.CloseUI();
 
 	--game_main.EnterWorldMap();
-	dlg_menu.ShowUI();
-	dlg_userinfo.ShowUI();
+	--dlg_menu.ShowUI();
+	--dlg_userinfo.ShowUI();
 		
-	hud.FadeIn();
+	--hud.FadeIn();
 	
 	--音乐
 	PlayMusic_Task();

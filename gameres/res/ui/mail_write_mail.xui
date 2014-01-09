@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_245]
 Type=1
 Tag=245
-Rect=0 0 640 860
+Rect=0 160 640 663
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg.png
@@ -15,16 +15,16 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_16]
 Type=1
 Tag=16
-Rect=136 0 368 84
+Rect=104 166 253 63
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_title.png
-NormalFileUV=0 0 368 84
+NormalFile=.\res\image\ui\quest\quest_title2.png
+NormalFileUV=0 0 640 160
 
 [CTRL_BUTTON_SEND]
 Type=2
 Tag=158
-Rect=204 771 232 84
+Rect=204 741 232 84
 AnchorPos=0 0
 Notes=
 Text=发送
@@ -38,7 +38,7 @@ NormalFileUV=0 0 232 84
 [CTRL_9SLICES_17]
 Type=22
 Tag=17
-Rect=138 94 464 60
+Rect=146 242 464 43
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -48,21 +48,21 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=560 0 80 78
+Rect=0 165 100 64
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 
 [CTRL_9SLICES_18]
 Type=22
 Tag=18
-Rect=142 174 464 60
+Rect=145 294 464 43
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -72,7 +72,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_LABEL_RECIEVER]
 Type=4
 Tag=209
-Rect=25 98 88 50
+Rect=30 236 88 50
 AnchorPos=0 0
 Notes=
 Text=收件人:
@@ -85,7 +85,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=25 185 89 43
+Rect=31 295 89 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -98,7 +98,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_INPUT_TEXT_RECIEVER]
 Type=18
 Tag=270
-Rect=138 94 466 60
+Rect=146 241 466 44
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -108,7 +108,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_INPUT_TEXT_TITLE]
 Type=18
 Tag=271
-Rect=138 171 472 66
+Rect=144 297 472 41
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -118,7 +118,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_FRIENDS]
 Type=2
 Tag=95
-Rect=562 113 30 26
+Rect=567 251 30 26
 AnchorPos=0 0
 Notes=
 Text=V
@@ -132,7 +132,7 @@ NormalFileUV=0 0 30 26
 [CTRL_9SLICES_19]
 Type=22
 Tag=19
-Rect=32 264 576 496
+Rect=32 346 576 388
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -142,7 +142,7 @@ NormalFileUV=0 0 50 50
 [CTRL_INPUT_CONTENT]
 Type=18
 Tag=296
-Rect=44 277 553 473
+Rect=44 357 553 361
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -152,8 +152,21 @@ TextVerAlign=AlignTop
 [CTRL_PICTURE_32]
 Type=1
 Tag=32
-Rect=276 14 89 51
+Rect=116 174 89 51
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\mail\writemail.png
 NormalFileUV=0 0 66 38
+
+[CTRL_TEXT_43]
+Type=4
+Tag=43
+Rect=10 176 79 40
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

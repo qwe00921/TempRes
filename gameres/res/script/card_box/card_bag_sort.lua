@@ -80,14 +80,22 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
+		if p.id == 0 then
+			card_bag_mian.sortBtnMark = MARK_OFF;
+		elseif p.id == 1 then
+			card_intensify.sortBtnMark = MARK_OFF;
+		end
 		p.id = nil;
-		card_bag_mian.sortBtnMark = MARK_OFF;
     end
 end
 
 function p.HideUI()
 	if p.layer ~= nil then
         p.layer:SetVisible(false);
-		card_bag_mian.sortBtnMark = MARK_OFF;
+		if p.id == 0 then
+			card_bag_mian.sortBtnMark = MARK_OFF;
+		elseif p.id == 1 then
+			card_intensify.sortBtnMark = MARK_OFF;
+		end
 	end
 end

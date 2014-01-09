@@ -516,7 +516,7 @@ function p.ShowCardInfo( view, itemInfo, cardIndex ,dataListIndex)
 	bt:SetId(dataListIndex);
 	
 	--显示卡牌图片
-	local aniIndex = "item."..itemInfo.Item_id;
+	local aniIndex = "item."..itemInfo.equip_id;
 	imgV:SetPicture( GetPictureByAni(aniIndex, 0) );
 	
 	--显示等级
@@ -635,9 +635,10 @@ function p.divideItems()
 	end
 	p.groupItems = p.groupItems or {};
 	for i = 1, #p.allItems do
-		local t = tonumber(p.allItems[i].Item_type);
-			p.groupItems[t] = p.groupItems[t] or {};
-			p.groupItems[t][#p.groupItems[t] + 1] = p.allItems[i];
+		local t = tonumber(p.allItems[i].equip_type);
+		WriteCon("p.groupItems[t] = "..t);
+		p.groupItems[t] = p.groupItems[t] or {};
+		p.groupItems[t][#p.groupItems[t] + 1] = p.allItems[i];
 	end
 	
 end
@@ -648,9 +649,9 @@ function p.PasreCardDetail(cardUid, itemInfo, dressId)
 	--item.cardId 	= cardInfo.CardID;
 	item.cardUid 	= cardUid;
   --item.cardName	= "xxx"
-	item.itemId 	= itemInfo.Item_id;
+	item.itemId 	= itemInfo.equip_id;
 	item.itemUid	= itemInfo.id;
-	item.itemType	= itemInfo.Item_type;
+	item.itemType	= itemInfo.equip_type;
 	item.itemLevel 	= itemInfo.Equip_level;
 	item.itemExp	= itemInfo.Equip_exp;
 	item.itemRank	= itemInfo.Rare

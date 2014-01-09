@@ -29,7 +29,7 @@ NormalFileUV=0 0 232 84
 [CTRL_9SLICES_32]
 Type=22
 Tag=32
-Rect=165 120 438 48
+Rect=163 249 438 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -39,21 +39,21 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=556 0 84 84
+Rect=0 160 100 67
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 
 [CTRL_9SLICES_33]
 Type=22
 Tag=33
-Rect=173 180 430 48
+Rect=173 304 430 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -63,7 +63,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_36]
 Type=22
 Tag=36
-Rect=150 241 451 48
+Rect=157 353 451 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -73,7 +73,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_209]
 Type=4
 Tag=209
-Rect=37 118 88 50
+Rect=37 249 88 50
 AnchorPos=0 0
 Notes=
 Text=发件人:
@@ -86,7 +86,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=37 245 89 43
+Rect=40 358 89 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -99,7 +99,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_9SLICES_37]
 Type=22
 Tag=37
-Rect=40 308 565 300
+Rect=40 409 565 224
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -123,7 +123,7 @@ NormalFileUV=0 0 232 84
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=168 121 436 48
+Rect=167 251 436 48
 AnchorPos=0 0
 Notes=
 Text=系统消息
@@ -136,7 +136,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=153 242 445 48
+Rect=156 355 445 48
 AnchorPos=0 0
 Notes=
 Text=服务器维护补偿礼包
@@ -149,7 +149,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=36 181 104 50
+Rect=40 304 104 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
@@ -162,7 +162,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=180 181 427 48
+Rect=179 304 427 48
 AnchorPos=0 0
 Notes=
 Text=2014-05-21 19:33:33
@@ -175,7 +175,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_CONTENT]
 Type=4
 Tag=460
-Rect=43 317 559 289
+Rect=44 413 559 217
 AnchorPos=0 0
 Notes=
 Text=亲爱的玩家,由于昨天服务器
@@ -366,11 +366,11 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_31]
 Type=1
 Tag=31
-Rect=136 0 368 84
+Rect=102 158 277 69
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_title.png
-NormalFileUV=0 0 368 84
+NormalFile=.\res\image\ui\quest\quest_title2.png
+NormalFileUV=0 0 640 160
 
 [CTRL_TEXT_164_DELETE]
 Type=4
@@ -442,8 +442,21 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_104]
 Type=1
 Tag=104
-Rect=277 13 86 54
+Rect=110 169 86 54
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
+
+[CTRL_TEXT_78]
+Type=4
+Tag=78
+Rect=12 173 76 39
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

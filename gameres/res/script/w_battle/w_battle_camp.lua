@@ -231,6 +231,7 @@ function p.AddEnemyFightersJumpEffect()
 	local pNewPos = CCPointMake(x,y);	
 	
 	local batch = battle_show.GetNewBatch();
+	node:AddActionEffect("lancer.fadein0");
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
 	g_EnemyIndex = g_EnemyIndex + 1;
@@ -343,7 +344,7 @@ function p:AddFighters( uiArray, fighters )
 		--临时攻击力调整
 		f.Attack = 100;
 		f.Defence = 0;
-		f.life = 200;
+		f.life = 300;
 				
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );

@@ -27,3 +27,5 @@ DoFile("item/dlg_item_sell.lua");
 --¿¨ÅÆ×°±¸
 DoFile("item/dlg_card_equip_detail.lua");
 DoFile("item/card_equip_select_list.lua");
+DoFile("item/equip_room.lua");
+DoFile("item/equip_bag_sort.lua");

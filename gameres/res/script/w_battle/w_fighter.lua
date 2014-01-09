@@ -35,7 +35,6 @@ function p:ctor()
 	self.m_kShadow = nil;
 	self.m_kCurrentBatch = nil;
 	self.flynumGreen = nil;
-	self.IsHurt = false;
 	self.damage = 0;
 	self.Buff = 1;
 	
@@ -43,7 +42,8 @@ function p:ctor()
 	self.maxlife = 0;  --最大血量
 	self.nowlife = 0; --当前实际血量
 	self.IsTurnEnd = false;
-
+	self.firstID = nil; --合击判定的第一下
+	
 end
 
 --初始化（重载）

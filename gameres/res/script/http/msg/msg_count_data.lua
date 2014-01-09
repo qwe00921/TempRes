@@ -23,5 +23,5 @@ function p:Process()
 	msg_cache.msg_count_data = self;
 	
 	WriteConWarning( "** msg_count_data:Process() called" );
-	country_main.ShowCount(self);
+	country_main.ShowCountry(self);
 end

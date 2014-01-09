@@ -76,3 +76,7 @@ image\ui\public\money.png
 ;元宝图片
 [coin]
 image\ui\public\emoney.png
+
+;村庄建筑名字框
+[countNameBox]
+image\ui\quest\quest_title.png
