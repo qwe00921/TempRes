@@ -21,7 +21,7 @@ p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
 p.sortByRuleV = nil;
 p.cardListByProf = {};
 p.curBtnNode = nil;
-
+p.newEquip = {};
 --显示UI
 function p.ShowUI(card)
     
@@ -92,6 +92,8 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 		end				
 	end
 end
+
+
 
 --按职业显示卡牌
 function p.ShowCardByProfession(profType)
@@ -174,6 +176,7 @@ function p.refreshList(lst)
 		WriteCon("refreshList():cardList is null");
 		return;
 	end
+	p.newEquip = lst;
 	WriteCon("cardCount ===== "..#lst);
 	local cardNum = #lst;
 	local row = math.ceil(cardNum / 4);
@@ -261,6 +264,10 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	
+end
+function p.OnItemClickEvent(uiNode, uiEventType, param)
+	local equipOne = p.newEquip[uiNode:GetId()];
+	dlg_card_equip_detail.ShowUI(equipOne);
 end
 
 
