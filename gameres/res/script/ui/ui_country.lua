@@ -4,9 +4,9 @@
 --------------------------------------------------------------
 ui_country = {};
 local p =  ui_country;
-p.ID_CTRL_TEXT_39						       = 44;
-p.ID_CTRL_PICTURE_38					     = 43;
-p.ID_CTRL_9SLICES_37					     = 42;
+p.ID_CTRL_TEXT_UPDUILD				    = 44;
+p.ID_CTRL_PICTURE_UPBUILD				 = 43;
+p.ID_CTRL_9SLICES_UPBUILD_BG			= 42;
 p.ID_CTRL_EXP_STORE					      = 41;
 p.ID_CTRL_EXP_EQUIP					      = 40;
 p.ID_CTRL_EXP_MERGE					      = 39;

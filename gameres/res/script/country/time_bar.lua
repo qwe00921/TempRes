@@ -60,7 +60,9 @@ end
 
 
 function p.ClearData()
-	KillTimer( moveTimer );
+	if moveTimer then
+		KillTimer( moveTimer );
+	end
 	p.leastTime = nil;
 	p.maxTime = nil;
 	p.lastTime = nil;

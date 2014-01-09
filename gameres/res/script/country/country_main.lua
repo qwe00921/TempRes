@@ -37,15 +37,15 @@ end
 function p.InitController()
 	--名字
 	uiNodeT.textNameT = {}
-	uiNodeT.textNameT[1] = "生产屋LV:";
-	uiNodeT.textNameT[2] = "装备屋LV:";
-	uiNodeT.textNameT[3] = "融合屋LV:";
-	uiNodeT.textNameT[4] = "住宅LV:";
-	uiNodeT.textNameT[5] = "材料仓库LV:";
-	uiNodeT.textNameT[6] = "河流LV:";
-	uiNodeT.textNameT[7] = "农田LV:";
-	uiNodeT.textNameT[8] = "矿山LV:";
-	uiNodeT.textNameT[9] = "森林LV:";
+	uiNodeT.textNameT[1] = "生产屋";
+	uiNodeT.textNameT[2] = "装备屋";
+	uiNodeT.textNameT[3] = "融合屋";
+	uiNodeT.textNameT[4] = "住宅";
+	uiNodeT.textNameT[5] = "材料仓库";
+	uiNodeT.textNameT[6] = "河流";
+	uiNodeT.textNameT[7] = "农田";
+	uiNodeT.textNameT[8] = "矿山";
+	uiNodeT.textNameT[9] = "森林";
 	--名字，等级
 	local produceName = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_LV);
 	local equipName = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_LV);
@@ -106,6 +106,8 @@ function p.InitController()
 	uiNodeT.timeBar[3] = mergeBar;
 	uiNodeT.timeBar[4] = homeBar;
 	uiNodeT.timeBar[5] = storeBar;
+	--隐藏提示界面
+	p.hideUpBuildView()
 	--请求数据
 	local uid = GetUID();
 	local param = "";
@@ -149,7 +151,7 @@ function p.showCountryBuild(buildInfo)
 	for i = 1, 5 do
 		if buildInfo["B"..i] then
 			--显示名字，等级
-			local headText = uiNodeT.textNameT[i]..(buildInfo["B"..i].build_level);
+			local headText = uiNodeT.textNameT[i].."LV:"..(buildInfo["B"..i].build_level);
 			if uiNodeT.headT[i] then
 				uiNodeT.headT[i]:SetText(headText);
 			end
@@ -190,11 +192,33 @@ function p.showCountryBuild(buildInfo)
 				--显示背景图
 				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
 				uiNodeT.timeTextT[i]:SetText("升级完成！");
+				local uplevel = buildInfo["B"..i].build_level
+				p.showUpBuildView(i,uplevel)
 			end
 		end
 	end
 end
 
+function p.showUpBuildView(i,uplevel)
+	local upBuildBg = Get9SlicesImage(p.layer,ui.ID_CTRL_9SLICES_UPBUILD_BG);
+	upBuildBg:SetVisible(true);
+	local upBuildHead = GetImage(p.layer,ui.ID_CTRL_PICTURE_UPBUILD);
+	upBuildHead:SetVisible(true);
+	local uiBuildText = GetLabel(p.layer,ui.ID_CTRL_TEXT_UPDUILD);
+	uiBuildText:SetVisible(true);
+	local text = "尊敬的主人，您的"..(uiNodeT.textNameT[i]).."已经成功升级到"..uplevel.."级了哦!"
+	uiBuildText:SetText(text)
+	
+	--SetTimerOnce(p.hideUpBuildView, 3);
+end
+function p.hideUpBuildView()
+	local upBuildBg = Get9SlicesImage(p.layer,ui.ID_CTRL_9SLICES_UPBUILD_BG);
+	upBuildBg:SetVisible(false);
+	local upBuildHead = GetImage(p.layer,ui.ID_CTRL_PICTURE_UPBUILD);
+	upBuildHead:SetVisible(false);
+	local uiBuildText = GetLabel(p.layer,ui.ID_CTRL_TEXT_UPDUILD);
+	uiBuildText:SetVisible(false);
+end
 
 --打开 开放建筑界面
 function p.showNewBuild(openViewT)
@@ -240,6 +264,7 @@ end
 
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
+		p.hideUpBuildView()
 		local tag = uiNode:GetTag();
 		if (ui.ID_CTRL_BUTTON_RETURN == tag) then
 			WriteCon("return");
