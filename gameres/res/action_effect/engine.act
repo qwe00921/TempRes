@@ -17,6 +17,20 @@
 @scaleto(0.03, 0.99, 0.99)
 @scaleto(0.06, 1.0, 1.0)
 
+[fly_entry_from_l]
+@move(0.01, -550, -0)
+@show
+@move(0.3, 550, 0)
+
+[fly_entry_from_r]
+@move(0.01, 550, -0)
+@show
+@move(0.3, -550, 0)
+
+[fly_bg_entry_from_l]
+@idle(0.16)
+@move(0.3, 320, 400)
+
 ;关闭对话框效果
 [close_dlg]
 @scaleto(0.15,0.1,0.1)

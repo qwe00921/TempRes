@@ -223,13 +223,13 @@ function p.loadMissionList(missionStartId)
 			timesText:SetText(text);
 			
 			local misHead = GetImage(view, uiList.ID_CTRL_PICTURE_NEW);
-			local evaluate = tonumber(p.missionList[misKey]["High_score"]);
+			local evaluate = tonumber(p.missionList[misKey]["score"]);
 			if evaluate == 0 then
-				misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 0));
+				misHead:SetPicture( GetPictureByAni("common_ui.evaluate_0", 0));
+			--elseif evaluate == 1 then
+				--misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 1));
 			elseif evaluate == 1 then
-				misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 1));
-			elseif evaluate == 2 then
-				misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 2));
+				misHead:SetPicture( GetPictureByAni("common_ui.evaluate_2", 0));
 			end
 			
 			missionListTable:AddView(view);

@@ -3,6 +3,11 @@ local p = country_main;
 local ui = ui_country;
 
 p.layer = nil;
+p.openViewTypeT = {};
+p.openTypeNum = 1;
+p.openViewT = {};
+p.countInfoT = {};
+
 local uiNodeT = {}
 
 function p.ShowUI()
@@ -37,15 +42,15 @@ end
 function p.InitController()
 	--名字
 	uiNodeT.textNameT = {}
-	uiNodeT.textNameT[1] = "生产屋LV:";
-	uiNodeT.textNameT[2] = "装备屋LV:";
-	uiNodeT.textNameT[3] = "融合屋LV:";
-	uiNodeT.textNameT[4] = "住宅LV:";
-	uiNodeT.textNameT[5] = "材料仓库LV:";
-	uiNodeT.textNameT[6] = "河流LV:";
-	uiNodeT.textNameT[7] = "农田LV:";
-	uiNodeT.textNameT[8] = "矿山LV:";
-	uiNodeT.textNameT[9] = "森林LV:";
+	uiNodeT.textNameT[1] = "生产屋";
+	uiNodeT.textNameT[2] = "装备屋";
+	uiNodeT.textNameT[3] = "融合屋";
+	uiNodeT.textNameT[4] = "住宅";
+	uiNodeT.textNameT[5] = "材料仓库";
+	uiNodeT.textNameT[6] = "河流";
+	uiNodeT.textNameT[7] = "农田";
+	uiNodeT.textNameT[8] = "矿山";
+	uiNodeT.textNameT[9] = "森林";
 	--名字，等级
 	local produceName = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_LV);
 	local equipName = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_LV);
@@ -106,7 +111,8 @@ function p.InitController()
 	uiNodeT.timeBar[3] = mergeBar;
 	uiNodeT.timeBar[4] = homeBar;
 	uiNodeT.timeBar[5] = storeBar;
-	time_bar.ShowTimeBar(produceBar,0,30,20)
+	--隐藏提示界面
+	p.hideUpBuildView()
 	--请求数据
 	local uid = GetUID();
 	local param = "";
@@ -118,38 +124,67 @@ function p.ShowCountry(backData)
 		dlg_msgbox.ShowOK("错误提示","玩家数据错误。",nil,p.layer);
 		return;
 	end
-	local buildInfo = backData.builds;
-	if buildInfo == nil then
+	p.countInfoT = backData.builds;
+	if p.countInfoT == nil then
 		dlg_msgbox.ShowOK("错误提示","无村庄数据",nil,p.layer);
 		return
 	end
 	--是否有新开启的建筑
-	local openViewT = backData.openani;
+	--p.openViewT = backData.openani;
+	p.openViewT["P1"] = 1;
+	p.openViewT["P3"] = 3;
+	p.openViewT["P7"] = 7;
 	local openViewNum = 0;	
-	if openViewT ~= nil then
-		for k,v in pairs(openViewT) do
+	if p.openViewT ~= nil then
+		for k,v in pairs(p.openViewT) do
 			openViewNum = openViewNum + 1;
 		end
 	end
 	if openViewNum > 0 then
 		WriteCon("openViewNum == "..openViewNum);
-		--p.showNewBuild(openViewT)
+		--显示新开建筑
+		p.showNewBuild(p.openViewT);
 	else
-		p.showCountryBuild(buildInfo)
+		--显示村庄信息
+		p.showCountryBuild(p.countInfoT)
 	end
+end
+
+--打开 开放建筑界面
+function p.showNewBuild(openViewT)
+
+	--WriteCon("p.openTypeNum == "..p.openTypeNum);
+	--local keyNum = p.openTypeNum
+	if p.openTypeNum <= 9 then
+		for i = p.openTypeNum,9 do
+			WriteCon("p.openTypeNum == "..p.openTypeNum);
+			if openViewT["P"..i] then
+				WriteCon("showNewBuild");
+				p.openTypeNum = i
+				open_build.ShowUI(i)
+				break;
+			else
+				p.openTypeNum = i + 1;
+			end
+			if i == 9 then
+				p.showCountryBuild(p.countInfoT)
+			end
+		end
+	end
+	--p.showCountryBuild(buildInfo)
+	
 end
 
 function p.showCountryBuild(buildInfo)
 	WriteCon("showCountryBuild");
-
 	--local buildNum = 0;
 	-- for k,v in pairs(buildInfo) do 
 		-- buildNum = buildNum + 1;
 	-- end
-	for i = 1, 9 do
-		--显示名字，等级
+	for i = 1, 5 do
 		if buildInfo["B"..i] then
-			local headText = uiNodeT.textNameT[i]..(buildInfo["B"..i].build_level);
+			--显示名字，等级
+			local headText = uiNodeT.textNameT[i].."LV:"..(buildInfo["B"..i].build_level);
 			if uiNodeT.headT[i] then
 				uiNodeT.headT[i]:SetText(headText);
 			end
@@ -157,17 +192,65 @@ function p.showCountryBuild(buildInfo)
 			uiNodeT.headBoxT[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
 			--是否在升级
 			if tonumber(buildInfo["B"..i].is_upgrade) == 1 then
+				--显示背景图
 				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
-				local Countdown = buildInfo["B"..i].upgrade_time;
+				--剩余时间
+				local countDownTime = tonumber(buildInfo["B"..i].upgrade_time);
+				local nowTime = os.time();
+				local lastTime = countDownTime - nowTime;
+				--local lastTime = 100;
+				--升级所需时间
+				local nextLV = tonumber(buildInfo["B"..i].upgrade_level)
+				--local nextLV = 3;
+				local upbuildTable =  SelectRowList(T_BUILDING,"type",i);
+				if upbuildTable == nil then
+					WriteConErr("upbuildTable is nil ");
+				end
+				local timeNeed = nil;
+				for k,v in pairs(upbuildTable) do
+					if tonumber(v.level) == nextLV then
+						timeNeed = tonumber(v.upgrade_time)*60
+					end
+				end
+				WriteCon("timeNeed == "..timeNeed);
+				--时间条和文本节点
+				local timeBar = uiNodeT.timeBar[i];
+				timeBar:SetNoText()
+				local timeTextNode = uiNodeT.timeTextT[i]
+				--显示时间条
+				time_bar.ShowTimeBar(0,timeNeed,lastTime,timeBar,timeTextNode) 
+			
+			--是否刚升级完
+			elseif tonumber(buildInfo["B"..i].update) == 1 then
+				--显示背景图
+				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
+				uiNodeT.timeTextT[i]:SetText("升级完成！");
+				local uplevel = buildInfo["B"..i].build_level
+				p.showUpBuildView(i,uplevel)
 			end
 		end
 	end
 end
 
-
---打开 开放建筑界面
-function p.showNewBuild(openViewT)
-	WriteCon("showNewBuild");
+function p.showUpBuildView(i,uplevel)
+	local upBuildBg = Get9SlicesImage(p.layer,ui.ID_CTRL_9SLICES_UPBUILD_BG);
+	upBuildBg:SetVisible(true);
+	local upBuildHead = GetImage(p.layer,ui.ID_CTRL_PICTURE_UPBUILD);
+	upBuildHead:SetVisible(true);
+	local uiBuildText = GetLabel(p.layer,ui.ID_CTRL_TEXT_UPDUILD);
+	uiBuildText:SetVisible(true);
+	local text = "尊敬的主人，您的"..(uiNodeT.textNameT[i]).."已经成功升级到"..uplevel.."级了哦!"
+	uiBuildText:SetText(text)
+	
+	--SetTimerOnce(p.hideUpBuildView, 3);
+end
+function p.hideUpBuildView()
+	local upBuildBg = Get9SlicesImage(p.layer,ui.ID_CTRL_9SLICES_UPBUILD_BG);
+	upBuildBg:SetVisible(false);
+	local upBuildHead = GetImage(p.layer,ui.ID_CTRL_PICTURE_UPBUILD);
+	upBuildHead:SetVisible(false);
+	local uiBuildText = GetLabel(p.layer,ui.ID_CTRL_TEXT_UPDUILD);
+	uiBuildText:SetVisible(false);
 end
 
 function p.SetDelegate()
@@ -209,10 +292,12 @@ end
 
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
+		p.hideUpBuildView()
 		local tag = uiNode:GetTag();
 		if (ui.ID_CTRL_BUTTON_RETURN == tag) then
 			WriteCon("return");
 			p.CloseUI();
+			time_bar.ClearData()
 			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
 		end
@@ -229,5 +314,12 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.ClearData()
 	end
+end
+function p.ClearData()
+	p.openViewTypeT = {};
+	p.openTypeNum = 1;
+	p.openViewT = {};
+	p.countInfoT = {};
 end

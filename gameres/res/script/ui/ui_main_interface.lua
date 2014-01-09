@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
+p.ID_CTRL_PICTURE_24					     = 31;
+p.ID_CTRL_PICTURE_23					     = 30;
+p.ID_CTRL_PICTURE_22					     = 29;
 p.ID_CTRL_PICTURE_NATURE6				 = 28;
 p.ID_CTRL_PICTURE_NATURE5				 = 27;
 p.ID_CTRL_PICTURE_NATURE4				 = 26;

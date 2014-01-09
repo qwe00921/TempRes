@@ -177,7 +177,7 @@ function p.ShowItem(  )
 	--µÈ¼¶
 	--local lv_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_11 );
     local lv_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_LEVEL );
-    lv_value:SetText( item.itemLevel or "0");
+    lv_value:SetText( tostring(item.itemLevel) or "0");
 	
 	--¹¥»÷
 	--local atk_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );

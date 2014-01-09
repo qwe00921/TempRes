@@ -68,21 +68,21 @@ end
 function p.ShowPackageUpgrade(pacageItem, callback)
 	if pacageItem then
 		local item = {};
-		item.itemId 	= pacageItem.Item_id;
+		item.itemId 	= pacageItem.equip_id;
 		item.itemUid	= pacageItem.id;
-		item.itemType	= pacageItem.Item_type;
-		item.itemLevel 	= pacageItem.Equip_level;
-		item.itemExp	= pacageItem.Equip_exp;
-		item.itemRank	= pacageItem.Rare
-		item.attrType	= pacageItem.Attribute_type;
-		item.attrValue	= pacageItem.Attribute_value;
+		item.itemType	= pacageItem.equip_type;
+		item.itemLevel 	= pacageItem.equip_level;
+		item.itemExp	= pacageItem.equip_exp;
+		item.itemRank	= pacageItem.rare
+		item.attrType	= pacageItem.attribute_type1;
+		item.attrValue	= pacageItem.attribute_value1;
 		item.attrGrow	= pacageItem.Attribute_grow or 0;
-		item.exType1 	= pacageItem.Extra_type1;
-		item.exValue1 	= pacageItem.Extra_value1;
-		item.exType2 	= pacageItem.Extra_type2;
-		item.exValue2 	= pacageItem.Extra_value2;
-		item.exType3	= pacageItem.Extra_type3;
-		item.exValue3	= pacageItem.Extra_value3;
+		item.exType1 	= pacageItem.attribute_type2;
+		item.exValue1 	= pacageItem.attribute_value2;
+		--item.exType2 	= pacageItem.Extra_type2;
+		--item.exValue2 	= pacageItem.Extra_value2;
+		--item.exType3	= pacageItem.Extra_type3;
+		--item.exValue3	= pacageItem.Extra_value3;
 		p.ShowUI(p.INTENT_UPGRADE,nil,nil,item);
 		p.upgradeCallback = callback;
 	end
@@ -141,6 +141,9 @@ function p.SetDelegate(layer)
 		str = GetStr("card_equip_upgrade");
 		local bt = GetButton(layer, ui.ID_CTRL_BUTTON_UPGRADE);
 		bt:SetLuaDelegate(p.OnUIClickEvent);
+		bt:SetZOrder(9999);
+		WriteCon("=====card_equip_upgrade");
+		
 	end
 	
 	local lv = GetLabel(p.layer, ui.ID_CTRL_TEXT_HEAD);
@@ -188,6 +191,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.tabIndex = 3
 			p.refreshTab();
 		elseif ui.ID_CTRL_BUTTON_UPGRADE == tag then
+			WriteCon("=====ID_CTRL_BUTTON_UPGRADE");
 			p.upgrade();
 			
 		end
@@ -205,16 +209,22 @@ end
 function p.upgrade()
 	
 	--判断当前装备等级是不是已是限制等级
-	local playerLevel 	= tonumber(msg_cache.msg_player.level);
+	local playerLevel 	= tonumber(msg_cache.msg_player.Level);
 	local playerEquipLimit		= p.SelectPlayerEquipLimit(playerLevel)
 	
 	if playerEquipLimit then
+		
 		local itemLevel = tonumber(p.upgradeItem.itemLevel or 1);
+		--WriteCon("=====itemLevel,plevel" .. itemLevel .. ","..playerLevel);
 		if itemLevel >= tonumber(playerEquipLimit) then
-			local str = string.format(GetStr("card_equip_up_money_short"), playerEquipLimit, p.upgradeItem.itemLevel or "1")
+			WriteCon("=====itemLevel");
+			local str = string.format(GetStr("card_equip_up_lvl_limit"), playerEquipLimit, p.upgradeItem.itemLevel or "1")
 			dlg_msgbox.ShowOK("",str,p.OnMsgCallback);
 			return;
 		end
+	else
+		WriteCon("=====playerEquipLimit");
+			
 	end
 	
 	--判断用户金钱够不够
@@ -233,7 +243,7 @@ function p.upgrade()
 					ids = ids .. ",";
 				end
 				ids = ids .. equip.id;
-				if equip and tonumber(equip.Rare) >= 5 then
+				if equip and tonumber(equip.rare) >= 5 then
 					has5Rank = true;
 				end
 			end
@@ -307,8 +317,8 @@ function p.refreshEquipUpgradeInfo()
 		local item = lst[i];
 		if item.isSelected == true then
 			selNum = selNum+1;
-			local levelConfig 	= p.SelectEquipConfig(item.Equip_level);
-			local itemConfig 	= p.SelectItem(item.Item_id);
+			local levelConfig 	= p.SelectEquipConfig(item.equip_level);
+			local itemConfig 	= p.SelectItem(item.equip_id);
 			
 			if itemConfig then
 				gainExp  = gainExp + tonumber(itemConfig.exp);
@@ -406,7 +416,7 @@ function p.refreshEquipUpgradeInfo()
 	if itemConfig then
 		labelV = GetLabel( p.layer, ui.ID_CTR_PRE_ITEM_ATTR_VALUE);
 		local attr1 = tonumber(p.upgradeItem.attrValue)
-		local attr2 = attr1 + (tonumber(nextLeve) - tonumber(p.upgradeItem.itemLevel)) *tonumber(itemConfig.attribute_grow) ;
+		local attr2 = attr1 + (tonumber(nextLeve) - tonumber(p.upgradeItem.itemLevel)) *tonumber(itemConfig.attribute_grow1) ;
 		local str =  string.format("%d => %d", attr1, attr2);
 		labelV:SetText(str or "");
 	end
@@ -520,19 +530,19 @@ function p.ShowCardInfo( view, itemInfo, cardIndex ,dataListIndex)
 	imgV:SetPicture( GetPictureByAni(aniIndex, 0) );
 	
 	--显示等级
-	lvV:SetText("LV." .. (itemInfo.Equip_level or "1"));
+	lvV:SetText("LV." .. (itemInfo.equip_level or "1"));
 	--显示星级
-	if itemInfo.Rare and itemInfo.Rare ~= "0" then
-		rankV:SetText(itemInfo.Rare .. GetStr("card_equip_rand_txt"));
+	if itemInfo.rare and itemInfo.rare ~= "0" then
+		rankV:SetText(itemInfo.rare .. GetStr("card_equip_rand_txt"));
 	end
 	
 	--是否已装备
-	if itemInfo.Is_dress == "1" then
+	if itemInfo.Is_dress == 1 or itemInfo.Is_dress == "1" then
 		drsV:SetVisible(true);
 	end
 	
 	--名称
-	local str = p.SelectItemName(itemInfo.Item_id)
+	local str = p.SelectItemName(itemInfo.equip_id)
 	nmV:SetText(str or "");
 	
 	--是否已选择
@@ -572,7 +582,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	
 	if p.intent == p.INTENT_ADD 
 		or p.intent == p.INTENT_UPDATE then
-		--local item = p.SelectItem(equip.Item_id);
+		--local item = p.SelectItem(equip.equip_id);
 		local preItemUid = nil 
 		if p.upgradeItem then
 			preItemUid = p.upgradeItem.itemUid;
@@ -587,7 +597,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 			equip.isSelected = false;
 			p.selectNum = p.selectNum-1;
 		else
-			if equip.Is_dress == "1" then
+			if equip.Is_dress == 1 or equip.Is_dress == "1" then
 				dlg_msgbox.ShowOK("",GetStr("card_equip_up_dressed"),p.OnMsgCallback);
 				return;
 			elseif p.selectNum >= 10 then 
@@ -652,18 +662,18 @@ function p.PasreCardDetail(cardUid, itemInfo, dressId)
 	item.itemId 	= itemInfo.equip_id;
 	item.itemUid	= itemInfo.id;
 	item.itemType	= itemInfo.equip_type;
-	item.itemLevel 	= itemInfo.Equip_level;
-	item.itemExp	= itemInfo.Equip_exp;
-	item.itemRank	= itemInfo.Rare
-	item.attrType	= itemInfo.Attribute_type;
-	item.attrValue	= itemInfo.Attribute_value;
-	item.attrGrow	= itemInfo.Attribute_grow;
-	item.exType1 	= itemInfo.Extra_type1;
-	item.exValue1 	= itemInfo.Extra_value1;
-	item.exType2 	= itemInfo.Extra_type2;
-	item.exValue2 	= itemInfo.Extra_value2;
-	item.exType3	= itemInfo.Extra_type3;
-	item.exValue3	= itemInfo.Extra_value3;
+	item.itemLevel 	= itemInfo.equip_level;
+	item.itemExp	= itemInfo.equip_exp;
+	item.itemRank	= itemInfo.rare 
+	item.attrType	= itemInfo.attribute_type1;
+	item.attrValue	= itemInfo.attribute_value2;
+	item.attrGrow	= nil --itemInfo.Attribute_grow;
+	item.exType1 	= itemInfo.attribute_type2;
+	item.exValue1 	= itemInfo.attribute_value2;
+	--item.exType2 	= itemInfo.attribute_type2;
+	--item.exValue2 	= itemInfo.attribute_value2;
+	--item.exType3	= nil --itemInfo.Extra_type3;
+	--item.exValue3	= nil --itemInfo.Extra_value3;
 	item.preItemUid	=	dressId--穿戴装备id
 	return item;
 end
@@ -727,12 +737,13 @@ end
 
 --读取装备等级表配置信息
 function p.SelectEquipConfig(level)
+	
 	local itemTable = SelectRowList(T_EQUIP_LEVEL,"equip_level",level);
 	if #itemTable >= 1 then
 		local item = itemTable[1];
 		return item;
 	else
-		WriteConErr("itemTable error ");
+		WriteConErr("equip_level itemTable error ");
 	end
 end
 
@@ -745,10 +756,10 @@ function p.SelectEquipCofig4Exp(level)
 end
 
 function p.SelectPlayerEquipLimit(playerLevel)
-	local itemTable = SelectRowList(T_PLAYER_LEVEL,"level",level);
+	local itemTable = SelectRowList(T_PLAYER_LEVEL,"level",playerLevel);
 	if #itemTable >= 1 then
 		local item = itemTable[1];
-		return item.pet_upgrade_limit;
+		return item.equip_upgrade_limit;
 	else
 		WriteConErr("itemTable error ");
 	end
@@ -801,9 +812,9 @@ if p.layer == nil then --or p.layer:IsVisible() ~= true then
 	
 	if msg.result == true then
 		if msg.base_card_new_info then
-			p.upgradeItem.itemLevel = msg.base_card_new_info.Equip_level;
-			p.upgradeItem.itemExp	= msg.base_card_new_info.Equip_exp;
-			p.upgradeItem.attrValue = msg.base_card_new_info.Attribute_value;
+			p.upgradeItem.itemLevel = msg.base_card_new_info.equip_level;
+			p.upgradeItem.itemExp	= msg.base_card_new_info.equip_exp;
+			p.upgradeItem.attrValue = msg.base_card_new_info.attribute_value1;
 		end
 		dlg_msgbox.ShowYesNo(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_upgrade_suc"),p.OnResult);
 	else

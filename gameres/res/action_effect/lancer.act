@@ -15,10 +15,18 @@
 @jump(0.1, $1, $2, $3, 1) @sinin
 
 [begin_battle_move]
-@move(0.3, $1, $2)
+@move(5, $1, $2)
 
 [bullet_rotate]
 @rotate(1,360)
+
+[ishurt]
+@move(0.1, 2, 0)
+@move(0.1, -4, 0)
+@move(0.1, 0, 2)
+@move(0.1, 2, 0)
+@move(0.1, 0, 2)
+@move(0.1, 0, -4)
 
 ;ΥπΖΑ
 [shake02]
