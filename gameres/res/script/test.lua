@@ -98,7 +98,7 @@ function p.test()
     --测试剧情
 	--dlg_drama.ShowUI(2);
 	
-	p.testFly();
+	--p.testFly();
 	
 	--测试创建角色
 	--dlg_createrole.ShowUI();
