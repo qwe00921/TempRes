@@ -3,6 +3,11 @@ local p = country_main;
 local ui = ui_country;
 
 p.layer = nil;
+p.openViewTypeT = {};
+p.openTypeNum = 1;
+p.openViewT = {};
+p.countInfoT = {};
+
 local uiNodeT = {}
 
 function p.ShowUI()
@@ -119,27 +124,55 @@ function p.ShowCountry(backData)
 		dlg_msgbox.ShowOK("错误提示","玩家数据错误。",nil,p.layer);
 		return;
 	end
-	local buildInfo = backData.builds;
-	if buildInfo == nil then
+	p.countInfoT = backData.builds;
+	if p.countInfoT == nil then
 		dlg_msgbox.ShowOK("错误提示","无村庄数据",nil,p.layer);
 		return
 	end
 	--是否有新开启的建筑
-	local openViewT = backData.openani;
+	--p.openViewT = backData.openani;
+	p.openViewT["P1"] = 1;
+	p.openViewT["P3"] = 3;
+	p.openViewT["P7"] = 7;
 	local openViewNum = 0;	
-	if openViewT ~= nil then
-		for k,v in pairs(openViewT) do
+	if p.openViewT ~= nil then
+		for k,v in pairs(p.openViewT) do
 			openViewNum = openViewNum + 1;
 		end
 	end
 	if openViewNum > 0 then
 		WriteCon("openViewNum == "..openViewNum);
 		--显示新开建筑
-		--p.showNewBuild(openViewT)
+		p.showNewBuild(p.openViewT);
 	else
 		--显示村庄信息
-		p.showCountryBuild(buildInfo)
+		p.showCountryBuild(p.countInfoT)
 	end
+end
+
+--打开 开放建筑界面
+function p.showNewBuild(openViewT)
+
+	--WriteCon("p.openTypeNum == "..p.openTypeNum);
+	--local keyNum = p.openTypeNum
+	if p.openTypeNum <= 9 then
+		for i = p.openTypeNum,9 do
+			WriteCon("p.openTypeNum == "..p.openTypeNum);
+			if openViewT["P"..i] then
+				WriteCon("showNewBuild");
+				p.openTypeNum = i
+				open_build.ShowUI(i)
+				break;
+			else
+				p.openTypeNum = i + 1;
+			end
+			if i == 9 then
+				p.showCountryBuild(p.countInfoT)
+			end
+		end
+	end
+	--p.showCountryBuild(buildInfo)
+	
 end
 
 function p.showCountryBuild(buildInfo)
@@ -220,11 +253,6 @@ function p.hideUpBuildView()
 	uiBuildText:SetVisible(false);
 end
 
---打开 开放建筑界面
-function p.showNewBuild(openViewT)
-	WriteCon("showNewBuild");
-end
-
 function p.SetDelegate()
 	--建筑按钮
 	local produceBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_PRODUCE );
@@ -286,5 +314,12 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.ClearData()
 	end
+end
+function p.ClearData()
+	p.openViewTypeT = {};
+	p.openTypeNum = 1;
+	p.openViewT = {};
+	p.countInfoT = {};
 end
