@@ -356,3 +356,35 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
 NormalFileUV=0 0 176 28
+
+[CTRL_9SLICES_37]
+Type=22
+Tag=42
+Rect=0 0 640 130
+AnchorPos=0 0
+Notes=
+Stretch=1
+NormalFile=.\res\image\ui\quest\quest_title2.png
+NormalFileUV=0 0 640 160
+
+[CTRL_PICTURE_38]
+Type=1
+Tag=43
+Rect=11 10 110 110
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\card_icon\u10000_f.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_39]
+Type=4
+Tag=44
+Rect=139 22 487 91
+AnchorPos=0 0
+Notes=
+Text=剧情文字
+TextTradition=劇情文字
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop

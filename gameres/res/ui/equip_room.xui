@@ -40,8 +40,8 @@ Tag=42
 Rect=85 174 184 65
 AnchorPos=0 0
 Notes=
-Text= 装备屋
-TextTradition= 裝備屋
+Text=装备屋
+TextTradition=裝備屋
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
