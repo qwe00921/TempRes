@@ -96,3 +96,5 @@ T_SKILL_SOUND  = LoadTable("skill_sound.ini");
 --卡牌普通攻击音效
 T_CARD_ATK_SOUND  = LoadTable("card_atk_sound.ini");
 
+--村庄
+T_BUILDING		= LoadTable("building.ini");

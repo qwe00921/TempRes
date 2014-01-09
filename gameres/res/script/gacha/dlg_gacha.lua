@@ -1091,6 +1091,7 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 				return
 			end
 			pack_box_mgr.UseItemEvent(itemId,itemUniqueId,itemType);
+			p.SetBagUseVisible(false)
 		end
 	end
 end
