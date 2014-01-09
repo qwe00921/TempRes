@@ -381,6 +381,12 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 	if nil ~= p.m_list then
 		local n = p.m_list:GetActiveView();
 		WriteCon(string.format("Now View Index Is %d",n));
+		local v = p.m_list:GetEnableMove(); --处于滚动状态不响应
+		if(v== true) then
+			return;
+		end
+	else
+		return;
 	end
 	
 	if IsDraging(uiEventType) then

@@ -74,7 +74,7 @@ function p.SetDelegate(layer)
 	
 	--¿¨ÅÆÃû×Ö
 	local pLableName = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_CARDNAME);
-	pLableName:SetText(pCardInfo2.Name);
+	pLableName:SetText(pCardInfo2.name);
 	--¿¨ÅÆÐÇ¼¶ ID_CTRL_PICTURE_CARDSTAR Rare
 	local pPicCardStar = GetImage( layer, ui_dlg_card_attr_base.ID_CTRL_PICTURE_CARDSTAR );
 	if p.cardInfo.Rare == 1 then
