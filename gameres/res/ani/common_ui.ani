@@ -19,10 +19,10 @@ image\ui\quest\easy.png
 image\ui\quest\normal.png
 
 ;任务评价
-[evaluate]
+[evaluate_0]
 image\ui\quest\new.png
-image\ui\quest\easy.png
-image\ui\quest\normal.png
+[evaluate_2]
+image\ui\quest\perfect.png
 
 ;装备星级	by:xmk
 [equipStar]
