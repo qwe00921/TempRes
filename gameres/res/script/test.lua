@@ -85,7 +85,7 @@ function p.test()
 --	p.Test9Slices();
 
 	--测试扩展列表
---	p.TestNDUIScrollContainerExpand();
+	--p.TestNDUIScrollContainerExpand();
 
 	--直接进战斗
 	--p.EnterBattle();
@@ -97,6 +97,8 @@ function p.test()
     
     --测试剧情
 	--dlg_drama.ShowUI(2);
+	
+	p.testFly();
 	
 	--测试创建角色
 	--dlg_createrole.ShowUI();
@@ -111,6 +113,23 @@ function p.test()
 	
 	--w_battle_pve.ShowUI();
 	--w_battle_pass_bg.ShowUI();
+end
+
+function p.testFly()
+	WriteCon("feafa");
+	local pLayer = createNDUIDialog();
+
+	pLayer:Init();
+	pLayer:SetSwallowTouch(true);
+	pLayer:SetFrameRectFull();	
+	
+	LoadDlg("test_fly.xui", pLayer, nil);
+	
+	if nil == pLayer then
+		WriteConWarning("NILNILNIL");
+	end
+	
+	GetUIRoot():AddDlg(pLayer);
 end
 
 function p.EnterBattle()
@@ -413,7 +432,9 @@ function p.TestNDUIScrollContainerExpand()
 		pView1:Init();
 		pView1:SetViewId(i);
 		LoadUI( "test_list_640X960.xui", pView1, nil );
-		
+
+		local pButton = GetButton( pView1, ui_test_list.ID_CTRL_BUTTON_2 );		
+		pButton:SetLuaDelegate(p.TestBB);
 		pView1:SetTag(i);
 		
 		pList:AddView(pView1);
@@ -422,6 +443,10 @@ function p.TestNDUIScrollContainerExpand()
 	GetUIRoot():AddChild(pList);
 	
 	return true;
+end
+
+function p.TestBB(uiNode, uiEventType, param)
+	WriteCon("feafae");
 end
 
 --测试纵向列表
