@@ -116,14 +116,12 @@ function p.SetPVEAtkID(atkID)
 	if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
 		p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
 		
-		if p.enemyCamp:GetActiveFighterCount() == 1 then
-			p.LockEnemy = true;
-		end
+		
 	end
 	
    --受击次数先累加,攻击方动画播完后,再减一
     targetFighter:BeHitAdd(atkID);  
-    
+
 	--攻击某个人物
      --w_battle_atk.SelOver(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	--选择结束阶断
 	
@@ -818,10 +816,10 @@ function p.QuitBattle()
 	--w_battle_mainui.CloseUI();
 
 	--game_main.EnterWorldMap();
-	dlg_menu.ShowUI();
-	dlg_userinfo.ShowUI();
+	--dlg_menu.ShowUI();
+	--dlg_userinfo.ShowUI();
 		
-	hud.FadeIn();
+	--hud.FadeIn();
 	
 	--音乐
 	PlayMusic_Task();

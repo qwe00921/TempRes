@@ -344,7 +344,7 @@ function p:AddFighters( uiArray, fighters )
 		--临时攻击力调整
 		f.Attack = 100;
 		f.Defence = 0;
-		f.life = 200;
+		f.life = 300;
 				
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
