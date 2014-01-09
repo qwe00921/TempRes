@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_mail_main = {};
 local p =  ui_mail_main;
+p.ID_CTRL_TEXT_28						       = 28;
 p.ID_CTRL_PICTURE_27					     = 27;
 p.ID_CTRL_PICTURE_26					     = 26;
 p.ID_CTRL_PICTURE_25					     = 25;

@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_106]
 Type=1
 Tag=106
-Rect=0 533 640 279
+Rect=-6 507 640 245
 AnchorPos=0 0
 Notes=
 
@@ -237,3 +237,30 @@ AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\n_battle\nature4.png
 NormalFileUV=0 0 24 24
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=29
+Rect=268 776 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=30
+Rect=305 776 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=31
+Rect=342 776 32 32
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
