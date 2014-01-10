@@ -282,3 +282,7 @@ DoFile("ui/ui_card_group_select_pet.lua");
 
 --村落
 DoFile("ui/ui_country.lua");
+DoFile("ui/ui_country_levelup_top.lua");
+
+--测试（以后要删除）
+DoFile("ui/ui_test_fly.lua");

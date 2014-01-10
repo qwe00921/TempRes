@@ -15,10 +15,18 @@
 @jump(0.1, $1, $2, $3, 1) @sinin
 
 [begin_battle_move]
-@move(0.3, $1, $2)
+@move(5, $1, $2)
 
 [bullet_rotate]
 @rotate(1,360)
+
+[ishurt]
+@move(0.1, 2, 0)
+@move(0.1, -4, 0)
+@move(0.1, 0, 2)
+@move(0.1, 2, 0)
+@move(0.1, 0, 2)
+@move(0.1, 0, -4)
 
 ;震屏
 [shake02]
@@ -200,4 +208,15 @@
 
 [box_reduce]
 @scaleto(0.2,1,1)
+
+
+;村落采集动画
+[country_collect_1]
+@jump(0.1,-20, 20, 15,1)
+[country_collect_2]
+@jump(0.1,-20,-20, 15,1)
+[country_collect_3]
+@jump(0.1, 20, 20, 15,1)
+[country_collect_4]
+@jump(0.1, 20,-20, 15,1)
 

@@ -40,6 +40,8 @@ Tag=42
 Rect=85 174 184 65
 AnchorPos=0 0
 Notes=
+Text=装备屋
+TextTradition=裝備屋
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -140,15 +142,3 @@ TextVerAlign=AlignVerCenter
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
-[CTRL_TEXT_188]
-Type=4
-Tag=188
-Rect=89 178 100 53
-AnchorPos=0 0
-Notes=
-Text=装备屋
-TextTradition=裝備屋
-TextSize=30
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
