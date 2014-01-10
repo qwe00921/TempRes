@@ -99,3 +99,14 @@ image\ui\country\locate_mount.png
 ;森林
 [countyOpenForest]
 image\ui\country\locate_forest.png
+
+[buildBoxPic]
+image\ui\country\facility_item.png
+image\ui\country\facility_item.png
+image\ui\country\facility_sphere.png
+image\ui\country\facility_sphere.png
+image\ui\country\facility_sphere.png
+image\ui\country\locate_lake.png
+image\ui\country\locate_field.png
+image\ui\country\locate_mount.png
+image\ui\country\locate_forest.png

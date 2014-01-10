@@ -1,0 +1,16 @@
+
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_21]
+Type=2
+Tag=21
+Rect=0 0 85 85
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
