@@ -10,7 +10,7 @@ local p = dlg_gacha;
 SHOP_GACHA      = 1;
 SHOP_ITEM       = 2;
 SHOP_GIFT_PACK  = 3;
-SHOP_BAG	= 4;
+SHOP_BAG		= 4;
 
 local curPage = SHOP_ITEM;
 
@@ -80,7 +80,7 @@ function TimeToStr( timeNum )
 end
 
 --œ‘ æUI
-function p.ShowUI( intent )
+function p.ShowUI( intent ,reload)
 	dlg_menu.SetNewUI( p );
 	
     if p.layer ~= nil then
@@ -121,6 +121,8 @@ function p.ShowUI( intent )
 	   p.ShowShopData();
 	elseif intent == SHOP_GIFT_PACK then 
 	   p.ShowGiftPackData();
+	elseif intent == SHOP_BAG then
+	   p.ShowBagData();
 	end
 	
 	 p.SetBagUseVisible(false)
@@ -1091,6 +1093,7 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 				return
 			end
 			pack_box_mgr.UseItemEvent(itemId,itemUniqueId,itemType);
+			p.SetBagUseVisible(false)
 		end
 	end
 end

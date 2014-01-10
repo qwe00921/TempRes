@@ -30,6 +30,7 @@ function p:ctor()
 	self.isJoinAtk = false;
 	self.atkplayerNode = 0;
 	self.IsRevive = false;
+	
 --[[
 	local batch = battle_show.GetNewBatch(); 
 	--self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
@@ -54,6 +55,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,
 	self.isCrit = isCrit;
 	self.isJoinAtk = isJoinAtk;
 	self.atkplayerNode = atkFighter:GetPlayerNode();
+	
 
     --攻击者最初的位置
     self.originPos = self.atkplayerNode:GetCenterPos();
@@ -66,6 +68,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,
 	self.seqStar = batch:AddSerialSequence();
 	self.seqAtk = batch:AddSerialSequence();
 	self.seqTarget = batch:AddSerialSequence(); 
+	
 	
 	self:start();
 
@@ -100,11 +103,11 @@ function p:start()
 		--self.seqAtk = batch:AddParallelSequence();
 		--切换到攻击状态
 		
-		local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
-		self.seqAtk:SetWaitEnd(cmdMove);
+		--local cmdAtk = atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
+		--self.seqAtk:SetWaitEnd(cmdMove);
 		
 		
-		local cmdHurt = tarFighter:cmdLua("tar_hurt",        self.id,"", self.seqTarget);
+		local cmdHurt = tarFighter:cmdLua("tar_hurtBegin",        self.id,"", self.seqTarget);
 		self.seqTarget:SetWaitEnd( cmdMove );
 		
 		
@@ -136,11 +139,12 @@ function p:start()
 			local bullet3 = bullet:cmdSetVisible( false, self.seqAtk );
 			--seqBullet:SetWaitEnd( cmdAtk );
 			
-			--切换到攻击状态
-			atkFighter:cmdLua( "atk_startAtk",  self.id,  "", self.seqAtk );
-
-			tarFighter:cmdLua("tar_hurt",        self.id, "", self.seqTarget);
+			tarFighter:cmdLua("tar_hurtBegin",        self.id, "", self.seqTarget);
 			self.seqTarget:SetWaitEnd( cmdAtk );
+
+			--切换到攻击状态
+			--atkFighter:cmdLua( "atk_startAtk",  self.id,  "", self.seqAtk );
+			--self.seqAtk:SetWaitEnd(cmdAtk);
 			
 		else  --没弹道
 			local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, playerNode, "" );
@@ -149,20 +153,18 @@ function p:start()
 			local atkSound = SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );	
 			--受击音乐
 			if atkSound ~= nil then
-				local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( atkSound );
-				self.seqAtk:AddCommand( cmdAtkMusic );
-				self.seqAtk:SetWaitEnd(cmdAtk);
-				atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
-				
-			else
-				atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
-				self.seqAtk:SetWaitEnd(cmdAtk);
-			end
-			
-			
-			
-			tarFighter:cmdLua("tar_hurt",  self.id, "", self.seqTarget);
+				--local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( atkSound );
+				--self.seqAtk:AddCommand( cmdAtkMusic );
+			end;	
+
+			tarFighter:cmdLua("tar_hurtBegin",  self.id, "", self.seqTarget);
 			self.seqTarget:SetWaitEnd( cmdAtk );
+			
+			--atkFighter:cmdLua( "atk_startAtk",   self.id,"", self.seqAtk );
+			--self.seqAtk:SetWaitEnd(cmdAtk);
+			
+			
+
 		end
 
 	end
@@ -172,12 +174,16 @@ end
 
 function p:atk_startAtk()  --攻击
 	local atkFighter = self:getAtkFighter();
+	local tarFighter = self:getTarFighter();
 
+	
 	if self.atkType == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		--local batch = battle_show.GetNewBatch(); 
 		--self.seqAtk = batch:AddParallelSequence();
 		--self.seqAtk = batch:AddSerialSequence();
 		--攻击敌人动画
+		
+		
 		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		self.seqAtk:AddCommand( cmdAtk );	
 		
@@ -202,7 +208,6 @@ function p:atk_end()
 
 
     --受击后掉血,不用等掉血动画完成
-	--local cmd11 = tarFighter:cmdLua( "fighter_damage",   self.id,"", self.seqTarget );	
 	tarFighter:SubShowLife(self.damage); --掉血动画,及表示的血量减少
 	local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );
 	self.seqAtk:AddCommand( cmd4 );
@@ -217,8 +222,6 @@ function p:atk_end()
     
 --		local cmdBackRset = createCommandEffect():AddActionEffect( 0, tarFighter:GetPlayerNode(), "lancer.target_hurt_back_reset" );
 --		self.seqAtk:AddCommand( cmdBackRset ); 
-		
-		--local cmdClearPic = atkFighter:cmdLua( "ClearAllFighterPic",  0, self.id, seqAtk );
 	end;
 
 	--标识攻击方的攻击完成了
@@ -229,8 +232,11 @@ function p:atk_end()
 	--受击次数减一	
 	tarFighter:BeHitDec(atkFighter:GetId()); 
 	
-	self:tar_hurtEnd();
-
+	if tarFighter:GetHitTimes() == 0 then --受击次数为0时
+		tarFighter.IsHurt = false;
+	else
+		self:targerTurnEnd();  --受击方流程结束,此时可能还在 tar_hurt状态动画中
+	end;
 
 end
 
@@ -249,34 +255,58 @@ function p:atk_standby()
 	
 end;
 
-function p:tar_hurt()
+
+
+function p:tar_hurtBegin()
 
 
 	local atkFighter = self:getAtkFighter();
 	local targerFighter = self:getTarFighter();
 
 
-    if targerFighter.IsHurt == false then
+    if (targerFighter.IsHurt == false) then
 		targerFighter.IsHurt = true;  --标识受击中
 		--受击动画播放一次
 		local cmdHurt = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
-		self.seqTarget:AddCommand( cmdHurd );
-
-		local lfirstID = targerFighter.firstID;
-		local latkID = atkFighter:GetId();
-		if self.isJoinAtk == true then
-			if(lfirstID ~= latkID) then
-			--合击的动画
-				WriteCon("JoinAtk flash");
-			end;
-		end;
-	    --受击动画无限播
-		--local cmdHurtAll = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
-		--self.seqTarget:AddCommand( cmdHurtAll );
-
-        
+		self.seqTarget:AddCommand( cmdHurt );
+		
+		local cmdHurt = battle_show.AddActionEffect_ToSequence( 0, targerFighter:GetPlayerNode(), "lancer.ishurt", self.seqTarget);
+		
+		local batch = w_battle_mgr.GetBattleBatch();
+		self.seqHurt = batch:AddSerialSequence();
+		
+		local cmdIshurt = atkFighter:cmdLua( "tar_hurt",   self.id,"", self.seqHurt );
+		self.seqHurt:SetWaitEnd(cmdHurt); 
 	end;
 	
+	local lfirstID = targerFighter.firstID;
+	local latkID = atkFighter:GetId();
+	if self.isJoinAtk == true then
+		if(lfirstID ~= latkID) then
+		--合击的动画
+			WriteCon("JoinAtk flash");
+		end;
+	end;
+	
+	self:atk_startAtk();
+	
+end;
+
+function p:tar_hurt()
+	local atkFighter = self:getAtkFighter();
+	local targerFighter = self:getTarFighter();
+	
+	if targerFighter.IsHurt == true then
+		local cmdHurt = battle_show.AddActionEffect_ToSequence( 0, targerFighter:GetPlayerNode(), "lancer.ishurt", self.seqTarget);
+		
+		local batch = w_battle_mgr.GetBattleBatch();
+		self.seqHurt = batch:AddSerialSequence();
+		
+		local cmdIshurt = atkFighter:cmdLua( "tar_hurt",   self.id,"", self.seqHurt );
+		self.seqHurt:SetWaitEnd(cmdHurt); 
+	else
+		self:tar_hurtEnd();
+	end
 end;
 
 --奖励
@@ -291,15 +321,16 @@ function p:reward()
 	
 end;
 
+--只有受伤结束时才调用
 function p:tar_hurtEnd()
 	local atkFighter = self:getAtkFighter();
 	local targerFighter = self:getTarFighter();	
 	
-	if targerFighter:GetHitTimes() == 0 then --受击次数为0时
-		targerFighter.IsHurt = false;
+	--if targerFighter:GetHitTimes() == 0 then --受击次数为0时
+	--	targerFighter.IsHurt = false;
 	    if targerFighter.showlife > 0 then  --还活着,继续播放站立	
 			targerFighter:standby();
-			self:targerTurnEnd();  --受击方流程结束
+			
 		elseif targerFighter.showlife <= 0 then
             if self.CanRevive == true then  --可复活
 				targerFighter.isDead = false;
@@ -332,6 +363,10 @@ function p:tar_hurtEnd()
 						end
 					end;
 				else
+					if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() == 1 then
+						w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
+						w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID);
+					end
 					--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 				end;			
 				self:reward(); --获得奖励
@@ -349,10 +384,10 @@ function p:tar_hurtEnd()
 				seqDie:SetWaitEnd( cmdC ); 
 			end;
 		end;
-	else --还在受其它人打击,本次攻击方发起的受击流程就结束了
-		self:targerTurnEnd();  --受击方流程结束
-	end;
-
+	--else --还在受其它人打击,本次攻击方发起的受击流程就结束了
+	--	self:targerTurnEnd();  --受击方流程结束
+	--end;
+	self:targerTurnEnd();  --受击方流程结束
 end;
 
 function p:tar_ReviveEnd()
@@ -403,45 +438,6 @@ function p:CheckEnd()
 end;
 
 
---[[
-function p:atk_hurt()    	
-	local batch = battle_show.GetNewBatch(); 
-	local seqAtk    = batch:AddSerialSequence();
-    local seqTarget = batch:AddSerialSequence();
-		
-	local atkFighter = self:getAtkFighter();	
-	
-	--show的体力值减少,飘血
-	atkFighter:atk_damage(self.damage);
-    	
-
-	
-	--cmdAtk:SetDelay(0.2f); --设置攻击延迟
-     local playerNode = self.atkplayerNode;
-    
-	
-    --	
-	
-    --最初站立动画
-    local cmd4 = createCommandPlayer():Standby( 0.01, playerNode, "" );
-    seqAtk:AddCommand( cmd4 );
-    
-
-    --返回原来的位置
-    local cmd5 = JumpMoveTo(atkFighter, enemyPos, originPos, seqAtk, false);
-
-    
-
-    
-    local cmdAtkEnd = createCommandInstant_Misc():SetZOrderAtTop( atkFighter:GetNode(), false );
-    seqAtk:AddCommand( cmdAtkEnd );
-    
-	--攻击方动画播完, 攻击顺列次数减1,减为0时,判断是否继续站立还是阵亡.
-	--将cmd命的执行压入seqAtk顺序执行
-	atkFighter:cmdLua( "atk_hurt",  targetFighter:GetId(), "", seqAtk );
-
-end
-]]--
 function p:getFighter(pId,pCampType)
 	local lFighter = nil;
 	if pCampType == W_BATTLE_HERO then

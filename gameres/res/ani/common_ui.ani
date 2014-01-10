@@ -19,10 +19,10 @@ image\ui\quest\easy.png
 image\ui\quest\normal.png
 
 ;任务评价
-[evaluate]
+[evaluate_0]
 image\ui\quest\new.png
-image\ui\quest\easy.png
-image\ui\quest\normal.png
+[evaluate_2]
+image\ui\quest\perfect.png
 
 ;装备星级	by:xmk
 [equipStar]
@@ -80,3 +80,22 @@ image\ui\public\emoney.png
 ;村庄建筑名字框
 [countNameBox]
 image\ui\quest\quest_title.png
+
+;调和屋
+[countyOpenMerge]
+image\ui\country\facility_item.png
+;宝玉
+[countyOpenFacility]
+image\ui\country\facility_sphere.png
+;河川
+[countyOpenLake]
+image\ui\country\locate_lake.png
+;田地
+[countyOpenField]
+image\ui\country\locate_field.png
+;山丘
+[countyOpenMount]
+image\ui\country\locate_mount.png
+;森林
+[countyOpenForest]
+image\ui\country\locate_forest.png

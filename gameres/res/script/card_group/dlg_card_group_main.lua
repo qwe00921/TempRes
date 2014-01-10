@@ -26,6 +26,7 @@ p.isAlive = nil;
 p.missionId = nil;
 p.stageId = nil;
 
+
 local ui = ui_card_group;
 
 --拖动控制
@@ -77,6 +78,7 @@ function p.ShowUI(missionId,stageId)
 
 	p.layer = layer;
     p.SetDelegate();
+	p.ShowTeamList();
 	p.RequestData();
 	PlayMusic_ShopUI();
 	
@@ -198,7 +200,7 @@ function p.ShowTeamList()
 	end
 	
 	list:SetSingleMode(true);
-	local user_teams = p.user_teams or {};
+	local user_teams = p.user_teams or {{},{},{}};
 
 	--local count = list:GetViewCount() or 0;
 	--if count > 0 then
@@ -212,7 +214,7 @@ function p.ShowTeamList()
 	--end
 	
 	list:ClearView();
-
+	p.listViewCach = {};
 	for i = 1, #user_teams do
 		local view = createNDUIXView();
         view:Init();
@@ -223,9 +225,10 @@ function p.ShowTeamList()
 		
 		p.SetTeamInfo( view, user_teams[i] );
 		
-		view:SetId( tonumber(user_teams[i].Team_id) );
+		view:SetId( tonumber(user_teams[i].Team_id or "0") );
 		view:SetTag(i);
 		list:AddView( view );
+		
 	end
 	
 	--local act = list:GetActiveView();
@@ -267,11 +270,15 @@ function p.SetTeamInfo( view, user_teamData )
 		local defLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_DEFENCE" .. i] );
 		local pic = GetPlayer ( view, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );--GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
 		
+		local pPicCardNature = GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_TYPE_"..i] );
+		
+		
+		
 		cardBtn:SetLuaDelegate( p.OnListItemClick );
 		cardBtn:SetId( i );
 		pic:SetId( i )
 		
-		if tonumber(user_teamData["Pos_unique"..i]) ~= 0 then
+		if user_teamData["Pos_unique"..i] and tonumber(user_teamData["Pos_unique"..i]) ~= 0 then
 			cardNum = cardNum + 1;
 			cardBtn:SetVisible( true );
 			levLabel:SetVisible( true );
@@ -287,11 +294,24 @@ function p.SetTeamInfo( view, user_teamData )
 			
 			local data = p.cardlist[user_teamData["Pos_unique"..i]];
 			if data then
-				levLabel:SetText( string.format("LV%s", data.Level) );
-				hpLabel:SetText( string.format("HP %s", data.Hp) );
+				levLabel:SetText( string.format("%s", data.Level) );
+				hpLabel:SetText( string.format("%s", data.Hp) );
 				speedLabel:SetText( string.format(GetStr("card_group_prp_speed"), data.Speed) );
 				atkLabel:SetText( string.format(GetStr("card_group_prp_atk"), data.Attack) );
 				defLabel:SetText( string.format(GetStr("card_group_prp_def"), data.Defence) );
+				if tonumber(data.element) == 1 then
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
+				elseif tonumber(data.element) == 2 then
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",1));
+				elseif tonumber(data.element) == 3 then
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",2));
+				elseif tonumber(data.element) == 4 then
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",3));
+				elseif tonumber(data.element) == 5 then
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",4));
+				elseif tonumber(data.element) == 6 then
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
+				end
 			end
 			 
 			
@@ -300,6 +320,8 @@ function p.SetTeamInfo( view, user_teamData )
 			pic:Standby("");
 			pic:SetEnableSwapDrag(true);
 			pic:SetLuaDelegate(p.OnDragEvent);
+			
+			
 			
 			--[[增加星级显示]]--
 		else
@@ -381,6 +403,12 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 	if nil ~= p.m_list then
 		local n = p.m_list:GetActiveView();
 		WriteCon(string.format("Now View Index Is %d",n));
+		local v = p.m_list:GetEnableMove(); --处于滚动状态不响应
+		if(v== true) then
+			return;
+		end
+	else
+		return;
 	end
 	
 	if IsDraging(uiEventType) then
@@ -430,6 +458,7 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 				toPlayer:SetLookAt(E_LOOKAT_LEFT);
 				toPlayer:Standby("");
 				toPlayer:SetVisible( true );
+				
 			elseif toPlayer then
 				toPlayer:SetVisible( false );
 			end
@@ -445,6 +474,10 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 		end
 		
 		uiNode:SetFramePos(p.beginPos);
+		
+		if toIndex > 0 then
+			p.SetTeamInfo( cView,  p.user_teams[n+1] )
+		end
 		
 	end
 end
@@ -799,6 +832,7 @@ function p.CloseUI()
 	
 	p.modify_user_team = nil;
 	card_bag_mian.CloseUI();
+	p.user_teams = nil;
 	
 end
 

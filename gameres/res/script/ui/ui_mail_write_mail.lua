@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_mail_write_mail = {};
 local p =  ui_mail_write_mail;
+p.ID_CTRL_TEXT_43						       = 43;
 p.ID_CTRL_PICTURE_32					     = 32;
 p.ID_CTRL_INPUT_CONTENT				   = 296;
 p.ID_CTRL_9SLICES_19					     = 19;

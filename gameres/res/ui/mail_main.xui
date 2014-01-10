@@ -17,7 +17,7 @@ Remark=隐藏子界面按钮
 [CTRL_MAIN_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 640 860
+Rect=0 160 640 686
 AnchorPos=0 0
 Notes=
 Remark=背景
@@ -27,70 +27,70 @@ NormalFileUV=0 0 640 960
 [CTRL_BUTTON_WRITE]
 Type=2
 Tag=166
-Rect=330 91 107 80
+Rect=328 238 107 46
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_SYS]
 Type=2
 Tag=94
-Rect=9 91 107 80
+Rect=1 238 107 46
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_USER]
 Type=2
 Tag=95
-Rect=116 91 107 80
+Rect=110 238 107 46
 AnchorPos=0 0
 Notes=
 TextSize=8
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=154
-Rect=555 0 84 84
+Rect=0 165 100 67
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 
 [CTRL_PICTURE_36]
 Type=1
 Tag=36
-Rect=136 1 368 84
+Rect=109 165 266 66
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\bg_title.png
-NormalFileUV=0 0 368 84
+NormalFile=.\res\image\ui\quest\quest_title2.png
+NormalFileUV=0 0 640 160
 
 [CTRL_TEXT_164_DELETE]
 Type=4
@@ -107,22 +107,22 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_GM]
 Type=2
 Tag=165
-Rect=223 91 107 80
+Rect=219 238 107 46
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\page.png
-NormalFileUV=0 0 104 78
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\page_select.png
 SelectedFileUV=0 0 104 78
 
 [CTRL_9SLICES_38]
 Type=22
 Tag=38
-Rect=0 171 640 692
+Rect=0 285 640 560
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -132,14 +132,14 @@ NormalFileUV=0 0 640 780
 [CTRL_VERTICAL_LIST_MAIN]
 Type=14
 Tag=157
-Rect=22 201 602 577
+Rect=22 302 602 476
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_SELECT_ALL]
 Type=2
 Tag=158
-Rect=24 798 110 54
+Rect=24 788 110 54
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -152,7 +152,7 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_DEL]
 Type=2
 Tag=159
-Rect=149 798 110 54
+Rect=149 788 110 54
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -165,7 +165,7 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_PRE_PAGE]
 Type=2
 Tag=160
-Rect=346 799 70 52
+Rect=346 789 70 52
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -180,7 +180,7 @@ SelectedFileUV=0 0 70 52
 [CTRL_TEXT_PAGE_INFO]
 Type=4
 Tag=161
-Rect=422 804 125 43
+Rect=422 794 125 43
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -190,7 +190,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_NEXT_PAGE]
 Type=2
 Tag=162
-Rect=553 799 70 52
+Rect=553 789 70 52
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -205,7 +205,7 @@ SelectedFileUV=0 0 70 52
 [CTRL_PICTURE_SYS_BG]
 Type=1
 Tag=39
-Rect=83 90 36 36
+Rect=80 224 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_txt3.png
@@ -214,7 +214,7 @@ NormalFileUV=0 0 36 36
 [CTRL_TEXT_SYS_UNREAD]
 Type=4
 Tag=284
-Rect=80 89 45 33
+Rect=75 225 45 33
 AnchorPos=0 0
 Notes=
 Text=99
@@ -227,7 +227,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_USER_BG]
 Type=1
 Tag=40
-Rect=189 90 36 36
+Rect=188 225 36 36
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_txt3.png
@@ -236,7 +236,7 @@ NormalFileUV=0 0 36 36
 [CTRL_TEXT_USER_UNREAD]
 Type=4
 Tag=285
-Rect=184 89 45 33
+Rect=181 223 45 33
 AnchorPos=0 0
 Notes=
 Text=99
@@ -249,7 +249,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_21]
 Type=1
 Tag=21
-Rect=30 116 66 38
+Rect=19 242 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\mail\system.png
@@ -258,7 +258,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_22]
 Type=1
 Tag=22
-Rect=137 116 66 38
+Rect=128 242 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\mail\person.png
@@ -267,7 +267,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=242 116 66 38
+Rect=237 242 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\mail\GM.png
@@ -276,7 +276,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=352 116 66 38
+Rect=346 242 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\mail\writemail.png
@@ -285,7 +285,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=44 803 66 38
+Rect=44 796 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\all.png
@@ -294,7 +294,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_26]
 Type=1
 Tag=26
-Rect=171 802 66 38
+Rect=171 796 66 38
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\mail\delete.png
@@ -303,8 +303,21 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_27]
 Type=1
 Tag=27
-Rect=277 13 86 54
+Rect=122 174 86 54
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
+
+[CTRL_TEXT_28]
+Type=4
+Tag=28
+Rect=0 168 107 60
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

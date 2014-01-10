@@ -6,14 +6,14 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 620 224
+Rect=0 0 612 182
 AnchorPos=0 0
 Notes=
 
 [CTRL_9SLICES_BGINFO]
 Type=22
 Tag=26
-Rect=193 27 400 166
+Rect=193 19 400 148
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -23,7 +23,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_18]
 Type=22
 Tag=21
-Rect=14 5 594 208
+Rect=11 2 594 177
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -33,7 +33,7 @@ NormalFileUV=0 0 594 208
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=5
-Rect=220 139 365 49
+Rect=220 112 365 49
 AnchorPos=0 0
 Notes=
 Text=道具说明道具说明道具说明道具说明道具说明道具说明道具说明
@@ -46,7 +46,7 @@ TextVerAlign=AlignTop
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=6
-Rect=208 35 166 41
+Rect=208 25 166 41
 AnchorPos=0 0
 Notes=
 Text=小型体力药剂
@@ -59,7 +59,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_BUY_L]
 Type=2
 Tag=10
-Rect=32 136 136 56
+Rect=32 116 136 56
 AnchorPos=0 0
 Notes=
 Text=购买
@@ -78,14 +78,14 @@ DisableFileUV=0 0 136 60
 [CTRL_PICTURE_11]
 Type=1
 Tag=11
-Rect=50 26 100 100
+Rect=50 12 100 100
 AnchorPos=0 0
 Notes=
 
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=12
-Rect=283 96 79 25
+Rect=283 79 79 25
 AnchorPos=0 0
 Notes=
 Text=20000
@@ -98,7 +98,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=35
-Rect=405 45 183 37
+Rect=405 35 183 37
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
@@ -111,7 +111,7 @@ TextVerAlign=AlignTop
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=37
-Rect=510 96 73 25
+Rect=510 79 73 25
 AnchorPos=0 0
 Notes=
 Text=50000
@@ -124,7 +124,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=50 26 100 100
+Rect=50 12 100 100
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\frame.png
@@ -133,7 +133,7 @@ NormalFileUV=0 0 100 100
 [CTRL_TEXT_28]
 Type=4
 Tag=28
-Rect=207 96 57 25
+Rect=207 79 57 25
 AnchorPos=0 0
 Notes=
 Text=现价
@@ -146,7 +146,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_29]
 Type=1
 Tag=29
-Rect=256 93 30 30
+Rect=256 76 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\coin.png
@@ -155,7 +155,7 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_30]
 Type=4
 Tag=30
-Rect=431 96 57 25
+Rect=431 79 57 25
 AnchorPos=0 0
 Notes=
 Text=原价
@@ -168,7 +168,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_31]
 Type=1
 Tag=31
-Rect=483 93 30 30
+Rect=483 76 30 30
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\main_interface\coin.png
@@ -177,7 +177,7 @@ NormalFileUV=0 0 32 32
 [CTRL_PICTURE_27]
 Type=1
 Tag=27
-Rect=487 104 94 6
+Rect=487 87 94 6
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\shop\deletelilne.png

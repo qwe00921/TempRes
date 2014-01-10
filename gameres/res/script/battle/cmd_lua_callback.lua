@@ -63,6 +63,11 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		if lstateMachine ~= nil then
 			lstateMachine:atk_standby();
 		end;
+	elseif cmdtype == "tar_hurtBegin" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_PVEStaMachMgr.getStateMachine(num);
+		if lstateMachine ~= nil then
+			lstateMachine:tar_hurtBegin();
+		end;		
 	elseif cmdtype == "tar_hurt" and E_DEMO_VER == 5 then
 		local lstateMachine = w_battle_PVEStaMachMgr.getStateMachine(num);
 		if lstateMachine ~= nil then

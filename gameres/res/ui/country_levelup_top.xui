@@ -1,0 +1,35 @@
+
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_CLOSE]
+Type=2
+Tag=4
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_PICTURE_BUILD]
+Type=1
+Tag=14
+Rect=258 234 125 125
+AnchorPos=0 0
+Notes=
+
+[CTRL_SPRITE_KAI]
+Type=19
+Tag=15
+Rect=158 426 107 107
+AnchorPos=0 0
+Notes=
+
+[CTRL_SPRITE_FANG]
+Type=19
+Tag=16
+Rect=376 426 107 107
+AnchorPos=0 0
+Notes=

@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -200,7 +200,7 @@ Stretch=1
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_55]
+[CTRL_PICTURE_TYPE_1]
 Type=1
 Tag=55
 Rect=51 145 24 24
@@ -272,7 +272,7 @@ Stretch=1
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_62]
+[CTRL_PICTURE_TYPE_4]
 Type=1
 Tag=62
 Rect=322 143 24 24
@@ -281,7 +281,7 @@ Notes=
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
-[CTRL_PICTURE_63]
+[CTRL_PICTURE_TYPE_2]
 Type=1
 Tag=63
 Rect=186 266 24 24
@@ -290,16 +290,16 @@ Notes=
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
-[CTRL_PICTURE_64]
+[CTRL_PICTURE_TYPE_5]
 Type=1
 Tag=65
-Rect=452 264 24 24
+Rect=453 265 24 24
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
-[CTRL_PICTURE_65]
+[CTRL_PICTURE_TYPE_6]
 Type=1
 Tag=66
 Rect=311 399 24 24
@@ -308,7 +308,7 @@ Notes=
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
-[CTRL_PICTURE_66]
+[CTRL_PICTURE_TYPE_3]
 Type=1
 Tag=67
 Rect=50 399 24 24
