@@ -20,6 +20,8 @@ function p.ShowUI()
 		return;
 	end
 	
+	dlg_userinfo.HideUI();
+	dlg_menu.HideUI();
 	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
@@ -318,6 +320,17 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			country_collect.Collect( E_COLLECT_RIVER );
 		elseif ui.ID_CTRL_BUTTON_FIELD == tag then
 			country_collect.Collect( E_COLLECT_FIELD );
+		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
+			WriteCon("PRODUCE");
+			country_building.ShowUI()
+		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
+			WriteCon("EQUIP");
+		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
+			WriteCon("MERGE");
+		elseif ui.ID_CTRL_BUTTON_HOME == tag then
+			WriteCon("HOME");
+		elseif ui.ID_CTRL_BUTTON_STORE == tag then
+			WriteCon("STORE");
 		end
 	end
 end
@@ -333,6 +346,8 @@ function p.CloseUI()
 		p.layer:LazyClose();
 		p.layer = nil;
 		p.ClearData()
+		dlg_userinfo.ShowUI();
+		dlg_menu.ShowUI();
 	end
 end
 function p.ClearData()
