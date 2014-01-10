@@ -98,3 +98,13 @@ T_CARD_ATK_SOUND  = LoadTable("card_atk_sound.ini");
 
 --村庄
 T_BUILDING		= LoadTable("building.ini");
+
+--采集掉落数据
+T_MATERIAL_DROP	= LoadTable("material_drop.ini");
+
+--材料表
+T_MATERIAL		= LoadTable("material.ini");
+
+--合成表
+T_DRUG_MIX		= LoadTable("drug_mix.ini");
+

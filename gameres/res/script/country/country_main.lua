@@ -13,6 +13,10 @@ local uiNodeT = {}
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		
+		--开启拾取队列计时器
+		country_collect.StartTick();
+		country_collect.SetLayer( p.layer );
 		return;
 	end
 	
@@ -37,6 +41,9 @@ function p.ShowUI()
 	--初始化控件
 	p.InitController();
 	
+	--开启拾取队列计时器
+	country_collect.StartTick();
+	country_collect.SetLayer( p.layer );
 end
 
 function p.InitController()
@@ -300,6 +307,17 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			time_bar.ClearData()
 			maininterface.BecomeFirstUI();
 			maininterface.CloseAllPanel();
+			
+			--注销采集倒计时
+			country_collect.EndTick();
+		elseif ui.ID_CTRL_BUTTON_MOUNTAIN == tag then
+			country_collect.Collect( E_COLLECT_MOUNTAIN );
+		elseif ui.ID_CTRL_BUTTON_TREE == tag then
+			country_collect.Collect( E_COLLECT_TREE );
+		elseif ui.ID_CTRL_BUTTON_RIVER == tag then
+			country_collect.Collect( E_COLLECT_RIVER );
+		elseif ui.ID_CTRL_BUTTON_FIELD == tag then
+			country_collect.Collect( E_COLLECT_FIELD );
 		end
 	end
 end
