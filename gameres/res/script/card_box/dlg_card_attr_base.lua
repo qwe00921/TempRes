@@ -74,7 +74,7 @@ function p.SetDelegate(layer)
 	
 	--¿¨ÅÆÃû×Ö
 	local pLableName = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_CARDNAME);
-	pLableName:SetText(pCardInfo2.Name);
+	pLableName:SetText(pCardInfo2.name);
 	--¿¨ÅÆÐÇ¼¶ ID_CTRL_PICTURE_CARDSTAR Rare
 	local pPicCardStar = GetImage( layer, ui_dlg_card_attr_base.ID_CTRL_PICTURE_CARDSTAR );
 	if p.cardInfo.Rare == 1 then
@@ -135,8 +135,8 @@ function p.SetDelegate(layer)
 	--×°±¸Í¼Æ¬
 	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
 	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
-		--local aniIndex = "item."..p.equip1.itemInfo.Item_id;
-		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip1.itemInfo.Item_id); 
+		--local aniIndex = "item."..p.equip1.itemInfo.equip_id;
+		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip1.itemInfo.equip_id); 
 		pEquipPic1:SetPicture( GetPictureByAni(pEquipInfo.item_pic,0) );
 		pLableEquip1:SetText(pEquipInfo.name);
 	else
@@ -145,8 +145,8 @@ function p.SetDelegate(layer)
 	
 	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
 	if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
-		--local aniIndex = "item."..p.equip2.itemInfo.Item_id;
-		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip2.itemInfo.Item_id); 
+		--local aniIndex = "item."..p.equip2.itemInfo.equip_id;
+		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip2.itemInfo.equip_id); 
 		pEquipPic2:SetPicture( GetPictureByAni(pEquipInfo.item_pic,0) );
 		pLableEquip2:SetText(pEquipInfo.name);
 	else
@@ -155,8 +155,8 @@ function p.SetDelegate(layer)
 	
 	local pEquipPic3 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_3);
 	if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
-		--local aniIndex = "item."..p.equip3.itemInfo.Item_id;
-		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip2.itemInfo.Item_id); 
+		--local aniIndex = "item."..p.equip3.itemInfo.equip_id;
+		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip2.itemInfo.equip_id); 
 		pEquipPic3:SetPicture( GetPictureByAni(pEquipInfo.item_pic,0) );
 		pLableEquip3:SetText(pEquipInfo.name);
 	else
@@ -378,21 +378,21 @@ function p.PasreCardDetail(cardInfo, equip, pos)
 	item.cardId 	= cardInfo.CardID;
 	item.cardUid 	= cardInfo.UniqueId;
   --item.cardName	= "xxx"
-	item.itemId 	= itemInfo.Item_id;
-	item.itemUid	= equip.equipId;
+	item.itemId 	= itemInfo.equip_id;
+	item.itemUid	= itemInfo.id;
 	item.itemType	= pos;
-	item.itemLevel 	= itemInfo.Equip_level;
-	item.itemExp	= itemInfo.Equip_exp;
-	item.itemRank	= itemInfo.Rare
-	item.attrType	= itemInfo.Attribute_type;
-	item.attrValue	= itemInfo.Attribute_value;
+	item.itemLevel 	= itemInfo.equip_level;
+	item.itemExp	= itemInfo.equip_exp;
+	item.itemRank	= itemInfo.rare
+	item.attrType	= itemInfo.attribute_type1;
+	item.attrValue	= itemInfo.attribute_value1;
 	item.attrGrow	= itemInfo.Attribute_grow;
-	item.exType1 	= itemInfo.Extra_type1;
-	item.exValue1 	= itemInfo.Extra_value1;
-	item.exType2 	= itemInfo.Extra_type2;
-	item.exValue2 	= itemInfo.Extra_value2;
-	item.exType3	= itemInfo.Extra_type3;
-	item.exValue3	= itemInfo.Extra_value3;
+	item.exType1 	= itemInfo.attribute_type2;
+	item.exValue1 	= itemInfo.attribute_value2;
+	--item.exType2 	= itemInfo.Extra_type2;
+	--item.exValue2 	= itemInfo.Extra_value2;
+	--item.exType3	= itemInfo.Extra_type3;
+	--item.exValue3	= itemInfo.Extra_value3;
 	--preItemUid="xxxx"  --´©´÷×°±¸id
 	return item;
 end

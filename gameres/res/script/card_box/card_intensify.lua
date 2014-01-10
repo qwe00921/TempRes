@@ -327,7 +327,9 @@ function p.ShowCardView(cardList)
 	local cardNum = #cardList;
 	
 	local row = math.ceil(cardNum / 5);
-	
+	if #p.cardListNode ~= 0 then
+		p.cardListNode = {};
+	end
 	for i = 1, row do
 		local view = createNDUIXView();
 		view:Init();
@@ -461,6 +463,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
+	
 	p.cardListNode[#p.cardListNode + 1] = cardButton;
 end
 

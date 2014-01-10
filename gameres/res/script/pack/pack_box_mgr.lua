@@ -180,6 +180,10 @@ end
 
 --出售装备回调
 function p.sellEquipCallBack(self)
+	if p.layer == nil then --or p.layer:IsVisible() ~= true then
+		return;
+	end
+	
 	local uid = GetUID();
 	if self.result == true then 
 		dlg_msgbox.ShowOK("确认提示框","出售成功。",p.reOpenPackBox(),p.layer);

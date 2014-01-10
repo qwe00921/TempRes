@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_264]
 Type=1
 Tag=264
-Rect=0 153 640 715
+Rect=0 160 640 715
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg.png
@@ -15,7 +15,7 @@ NormalFileUV=0 0 640 960
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=0 155 120 80
+Rect=0 168 120 80
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -30,7 +30,7 @@ NormalFileUV=0 0 100 80
 [CTRL_PICTURE_41]
 Type=1
 Tag=41
-Rect=390 200 107 35
+Rect=390 213 107 35
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
@@ -39,14 +39,14 @@ NormalFileUV=0 0 50 50
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=8 239 620 466
+Rect=8 252 620 466
 AnchorPos=0 0
 Notes=
 
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=518 155 120 80
+Rect=518 168 120 80
 AnchorPos=0 0
 Notes=
 Text=筛选
@@ -63,7 +63,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_9SLICES_29]
 Type=22
 Tag=47
-Rect=0 712 640 139
+Rect=0 725 640 139
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -73,7 +73,7 @@ NormalFileUV=0 0 640 338
 [CTRL_9SLICES_24]
 Type=22
 Tag=40
-Rect=2 712 640 148
+Rect=2 725 640 148
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -83,7 +83,7 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_25]
 Type=4
 Tag=32
-Rect=405 201 80 32
+Rect=405 214 80 32
 AnchorPos=0 0
 Notes=
 Text=99/99
@@ -96,7 +96,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_26]
 Type=2
 Tag=33
-Rect=437 739 174 84
+Rect=437 752 174 84
 AnchorPos=0 0
 Notes=
 Text=确认选择
@@ -111,7 +111,7 @@ NormalFileUV=0 0 100 80
 [CTRL_9SLICES_26]
 Type=22
 Tag=45
-Rect=168 722 220 37
+Rect=168 735 220 37
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -121,7 +121,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_27]
 Type=22
 Tag=44
-Rect=168 769 220 37
+Rect=168 782 220 37
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -131,7 +131,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_27]
 Type=4
 Tag=34
-Rect=42 726 107 30
+Rect=42 739 107 30
 AnchorPos=0 0
 Notes=
 Text=素材数
@@ -144,7 +144,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_30]
 Type=4
 Tag=37
-Rect=173 725 211 30
+Rect=173 738 211 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -154,7 +154,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_32]
 Type=4
 Tag=39
-Rect=173 773 211 30
+Rect=173 786 211 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -164,7 +164,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_TEXT_59]
 Type=4
 Tag=59
-Rect=42 773 107 30
+Rect=42 786 107 30
 AnchorPos=0 0
 Notes=
 Text=消耗
@@ -177,7 +177,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_9SLICES_30]
 Type=22
 Tag=42
-Rect=125 157 235 75
+Rect=125 170 235 75
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -187,7 +187,7 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_33]
 Type=4
 Tag=43
-Rect=134 167 207 54
+Rect=134 180 207 54
 AnchorPos=0 0
 Notes=
 Text=请选择强化素材
@@ -200,7 +200,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_PICTURE_31]
 Type=1
 Tag=48
-Rect=390 158 107 40
+Rect=390 171 107 40
 AnchorPos=0 0
 Notes=
 NormalFile=.\res\image\ui\card\card2.png
@@ -209,7 +209,7 @@ NormalFileUV=0 0 192 108
 [CTRL_TEXT_34]
 Type=4
 Tag=49
-Rect=400 163 89 30
+Rect=400 176 89 30
 AnchorPos=0 0
 Notes=
 Text=星灵数量
@@ -222,7 +222,7 @@ TextVerAlign=AlignVerCenter
 [CTRL_BUTTON_CLEAR]
 Type=2
 Tag=27
-Rect=38 812 122 36
+Rect=38 825 122 36
 AnchorPos=0 0
 Notes=
 Text=清除选择
