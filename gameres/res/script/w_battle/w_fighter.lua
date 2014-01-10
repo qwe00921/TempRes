@@ -22,8 +22,8 @@ end
 --构造函数
 function p:ctor()
     super.ctor(self);
-	self.beHitTimes	= {}
-	--self.beHitTimes = 0;  --受击次数
+	self.beHitTimes	= {}  --受击次数
+	self.beTarTimes = {}  --成为目标未攻击的队列
     self.IsHurt = false;	
 	self.JoinAtkTime = nil;
 	self.HitTime = 0;
@@ -392,10 +392,33 @@ function p:BeHitAdd(pAtkId)
 	self.beHitTimes[#self.beHitTimes + 1] = pAtkId;
 end
 
+
 function p:BeHitDec(pAtkId)
 	for k,v in pairs(self.beHitTimes) do
 		if v == pAtkId then
 			table.remove(self.beHitTimes,k);
+			break;
+		end;
+	end;
+end
+
+--成为目标的次数
+function p:GetTargerTimes()
+	local lCount = 0;
+	if (self.beTarTimes ~= nil) or (self.beTarTimes ~= {}) then
+		lCount = table.maxn(self.beTarTimes);
+	end;
+	return lCount;
+end;
+
+function p:BeTarTimesAdd(pAtkId)
+	self.beTarTimes[#self.beTarTimes + 1] = pAtkId;
+end
+
+function p:BeTarTimesDec(pAtkId)
+	for k,v in pairs(self.beTarTimes) do
+		if v == pAtkId then
+			table.remove(self.beTarTimes,k);
 			break;
 		end;
 	end;

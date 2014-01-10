@@ -9,6 +9,8 @@ Tag=1
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\country\mytown_base.png
 NormalFileUV=0 0 640 809
 
@@ -21,6 +23,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_FIELD]
 Type=2
@@ -31,6 +35,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_TREE]
 Type=2
@@ -41,6 +47,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_RIVER]
 Type=2
@@ -51,6 +59,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_HOME]
 Type=2
@@ -61,6 +71,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_PRODUCE]
 Type=2
@@ -71,6 +83,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_MERGE]
 Type=2
@@ -81,6 +95,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_EQUIP]
 Type=2
@@ -91,6 +107,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_STORE]
 Type=2
@@ -101,6 +119,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_HOME_HEAD_BG]
 Type=1
@@ -108,6 +128,8 @@ Tag=16
 Rect=167 692 118 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_PRODUCE_HEAD_BG]
 Type=1
@@ -115,6 +137,8 @@ Tag=15
 Rect=1 539 118 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_MERGE_HEAD_BG]
 Type=1
@@ -122,6 +146,8 @@ Tag=14
 Rect=117 518 118 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_EQUIP_HEAD_BG]
 Type=1
@@ -129,6 +155,8 @@ Tag=12
 Rect=202 396 118 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_STORE_HEAD_BG]
 Type=1
@@ -136,6 +164,8 @@ Tag=30
 Rect=448 441 132 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_HOME_ITEM_BG]
 Type=1
@@ -143,6 +173,8 @@ Tag=24
 Rect=172 661 107 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_PRODUCE_ITEM_BG]
 Type=1
@@ -150,6 +182,8 @@ Tag=23
 Rect=4 504 107 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_MERGE_TIME_BG]
 Type=1
@@ -157,6 +191,8 @@ Tag=21
 Rect=120 485 107 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_EQUIP_ITEM_BG]
 Type=1
@@ -164,6 +200,8 @@ Tag=22
 Rect=207 366 107 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PIC_STORE_ITEM_BG]
 Type=1
@@ -171,6 +209,8 @@ Tag=31
 Rect=464 409 107 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HOME_LV]
 Type=4
@@ -182,6 +222,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_PRODUCE_LV]
 Type=4
@@ -193,6 +235,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_MERGE_LV]
 Type=4
@@ -204,6 +248,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EQUIP_LV]
 Type=4
@@ -215,6 +261,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_STORE_LV]
 Type=4
@@ -226,6 +274,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HOME_TIME]
 Type=4
@@ -237,6 +287,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_PRODUCE_ITEM]
 Type=4
@@ -248,6 +300,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_MERGE_TIME]
 Type=4
@@ -259,6 +313,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EQUIP_TIME]
 Type=4
@@ -270,6 +326,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_STORE_TIME]
 Type=4
@@ -281,11 +339,13 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=56
-Rect=188 202 107 53
+Rect=13 41 107 53
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -294,6 +354,8 @@ TextSize=20
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
@@ -306,6 +368,8 @@ Notes=
 TextSize=14
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -318,6 +382,8 @@ Notes=
 TextSize=14
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -330,6 +396,8 @@ Notes=
 TextSize=14
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -342,6 +410,8 @@ Notes=
 TextSize=14
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -354,35 +424,43 @@ Notes=
 TextSize=14
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
 NormalFileUV=0 0 176 28
 
 [CTRL_9SLICES_UPBUILD_BG]
 Type=22
 Tag=42
-Rect=0 165 640 130
+Rect=0 4 640 130
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title2.png
 NormalFileUV=0 0 640 160
 
 [CTRL_PICTURE_UPBUILD]
 Type=1
 Tag=43
-Rect=11 175 110 110
+Rect=11 14 110 110
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\card_icon\u10000_f.png
 NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_UPDUILD]
 Type=4
 Tag=44
-Rect=139 187 487 91
+Rect=139 26 487 91
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0

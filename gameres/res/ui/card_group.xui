@@ -9,6 +9,8 @@ Tag=7
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
@@ -24,6 +26,8 @@ TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=2
+UIClsoeType=2
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
@@ -40,6 +44,8 @@ TextTradition=卡組
 TextSize=37
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_7]
 Type=1
@@ -47,6 +53,8 @@ Tag=8
 Rect=100 164 211 74
 AnchorPos=0 0
 Notes=
+UIOpenType=2
+UIClsoeType=2
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -62,6 +70,8 @@ TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=2
+UIClsoeType=2
 
 [CTRL_PICTURE_DRAG_BG]
 Type=1
@@ -69,6 +79,8 @@ Tag=1219
 Rect=14 258 611 477
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
@@ -78,6 +90,8 @@ Tag=10
 Rect=0 247 640 510
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_LEFT]
 Type=2
@@ -88,6 +102,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\mail\left1.png
 NormalFileUV=0 0 70 52
 
@@ -100,6 +116,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\mail\right.png
 NormalFileUV=0 0 70 52
 
@@ -109,6 +127,8 @@ Tag=13
 Rect=246 774 32 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
 NormalFileUV=0 0 32 32
 
@@ -118,6 +138,8 @@ Tag=14
 Rect=304 774 32 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
 NormalFileUV=0 0 32 32
 
@@ -127,6 +149,8 @@ Tag=16
 Rect=362 774 32 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
 NormalFileUV=0 0 32 32
 
@@ -142,8 +166,9 @@ TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
-
