@@ -234,8 +234,10 @@ end
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
-	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.cardID); --从表中获取卡牌详细信息	
+	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
 	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
+	
+	WriteCon("card_id = "..p.cardInfo.CardID);
 	
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();

@@ -114,7 +114,7 @@ function p.InitUI(card_info)
 		--名字 CTRL_TEXT_252
 		local lCardRowInfo= SelectRowInner( T_CARD, "id", card_info.CardID); --从表中获取卡牌详细信息					
 		local lTextName = GetLabel(p.layer, ui.ID_CTRL_TEXT_252);
-		lTextName:SetText(tostring(lCardRowInfo.Name));
+		lTextName:SetText(tostring(lCardRowInfo.name));
 		
 		--当前经验值更新
 		p.nowExp = tonumber(card_info.Exp);
@@ -250,7 +250,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
 	
 	local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+pIndex-1);
-	cardName:SetText(tostring(lCardInfo.Name));
+	cardName:SetText(tostring(lCardInfo.name));
 	
 	p.selectNum = p.selectNum+1;
 	p.selectCardId[#p.selectCardId + 1] = pCardInfo.UniqueId;
@@ -265,7 +265,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	
 	
 	
-	p.addExp = p.addExp + lCardInfo.FeedBase_exp + lCardLeveInfo.feed_exp;
+	p.addExp = p.addExp + lCardInfo.feedBase_exp + lCardLeveInfo.feed_exp;
 	
 	p.SetExp(pCardInfo);
 end;
@@ -299,18 +299,23 @@ function p.InitAllCardInfo()
 		
 	local i;
 	for i=1,10 do
-		local cardLevText = GetLabel(p.layer, ui.ID_CTRL_TEXT_CARDLEVEL1+i-1);
-		cardLevText:SetVisible(false);
 		
+		local tLevel= "ID_CTRL_TEXT_CARDLEVEL"..tostring(i);--按钮
+		local btCard= "ID_CTRL_BUTTON_CHA"..tostring(i);--装备图
+		local tName = "ID_CTRL_TEXT_NAME"..tostring(i);--装备图背景
+		
+		local cardLevText = GetLabel(p.layer, ui[tLevel]);
+		cardLevText:SetVisible(false);
+		WriteCon("~~~~~   i = "..i);
 		--local cardPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+i-1);
 		--cardPic:SetVisible(false);	
 		
 		--local cardBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+i-1);
 		--cardBtn:SetImage(GetPictureByAni("common_ui.cardBg", 0));
-		local cardButton = GetImage(p.layer, ui.ID_CTRL_BUTTON_CHA1+i-1);
+		local cardButton = GetImage(p.layer, ui[btCard]);
 		cardButton:SetPicture(GetPictureByAni("common_ui.cardBg", 0) );
 	
-		local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+i-1);
+		local cardName = GetLabel(p.layer,ui[tName]);
 		cardName:SetText("");
 	end
 	

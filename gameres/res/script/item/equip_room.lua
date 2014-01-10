@@ -161,7 +161,7 @@ function p.ShowInfo(msg)
 	p.cardListByProf  = msg.equipment_info;
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
-	labRoomNum:SetText(tostring(#p.equlip_list).."/"..msg.equip_room_limit); 	
+	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
 	p.refreshList(msg.equipment_info);
 	
 end

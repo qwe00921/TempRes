@@ -25,6 +25,7 @@ p.equipListNode = {};
 p.equipEnabled = true;
 p.cardListByProf = {};
 p.isDress = {};
+p.equipLevel = {};
 ---------显示UI----------
 function p.ShowUI( msg )
     if msg == nil then
@@ -55,7 +56,7 @@ end
 function p.ShowInfo()
 	
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
-	labRoomNum:SetText(tostring(#p.equlip_list).."/"..p.countNum ); 	
+	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(p.countNum) ); 	
 	p.refreshList(p.equlip_list);
 	
 end
@@ -81,6 +82,7 @@ function p.refreshList(lst)
 		p.allEquipId = {};
 		p.equipListNode = {};
 		p.isDress = {};
+		p.equipLevel = {};
 	end
 		
 	WriteCon("cardCount ===== "..#lst);
@@ -128,7 +130,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备
 	local nmTagStr  = "ID_CTRL_TEXT_NUM_"..indexStr; --是否选中
 
-	
+	WriteCon("btTagStr = "..btTagStr);
 	local bt 	= GetButton(view, ui_list[btTagStr]);
 	local imgV= GetImage(view, ui_list[imgBdTagStr]);
 	local imgBdV	= GetImage(view, ui_list[imgTagStr]);
@@ -136,14 +138,15 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	local drsV	= GetLabel(view, ui_list[drsTagStr]);
 	local nmV	= GetLabel(view, ui_list[nmTagStr]);
 	
+	
 	drsV:SetVisible( false );
+	
 	
 	--按钮设置事件
 	bt:SetLuaDelegate(p.OnItemClickEvent);
 	bt:RemoveAllChildren(true);
-	bt:SetId(equip.id);
 	bt:SetVisible(true);
-	
+	bt:SetId(tonumber(equip.id));
 	
 	
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", equip.equip_id); --从表中获取卡牌详细信息	
@@ -155,7 +158,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	--显示等级
-	lvV:SetText("LV." .. (equip.Equip_level or "1"));
+	lvV:SetText("LV." .. (tostring(equip.equip_level) or "1"));
 	lvV:SetVisible(true);
 	--是否已装备
 	if tonumber(equip.Is_dress) == 1 then
@@ -164,6 +167,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	p.allNumText[equip.id] = nmV;
 	p.allEquipId[equip.id] = equip.equip_id;
 	p.equipListNode[#p.equipListNode + 1] = bt;
+	p.equipLevel[equip.id] = equip.equip_level;
 	
 	
 end
@@ -173,7 +177,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipSelectText = p.allNumText[equipId] ;
 	local equipIde = p.allEquipId[equipId];
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", equipIde); --从表中获取卡牌详细信息	
-
+	local pEquipLevel = tonumber(p.equipLevel[equipId]);
 	if p.isDress[equipId] ~=1 then
 		if equipSelectText:IsVisible() == true then
 			equipSelectText:SetText("");
@@ -184,7 +188,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 					table.remove(p.selectList,k);
 				end
 			end
-			p.consumeMoney = p.consumeMoney - pEquipInfo.sell_price;
+			p.consumeMoney = p.consumeMoney - pEquipInfo.sell_price-(pEquipLevel*pEquipLevel);
 			p.setNumFalse();
 			p.selectNum = p.selectNum-1;
 		else
@@ -193,7 +197,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 				p.selectList[#p.selectList + 1] = equipId;
 				p.selectNum = p.selectNum + 1;
 				equipSelectText:SetText(tostring(p.selectNum));
-				p.consumeMoney = p.consumeMoney + pEquipInfo.sell_price;
+				p.consumeMoney = p.consumeMoney + pEquipInfo.sell_price+(pEquipLevel*pEquipLevel);
 			end
 		end
 	else
@@ -207,10 +211,10 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipSellMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_SELL_GOLD);
 	equipSellMoney:SetText(tostring(p.consumeMoney)); 
 		
-	if p.equipEnabled == true and p.selectNum >= 10 then 
+	if p.equipEnabled == true and tonumber(p.selectNum) >= 10 then 
 		p.setAllCardDisEnable();
 		p.equipEnabled = false;
-	elseif p.equipEnabled == false and p.selectNum < 10 then
+	elseif p.equipEnabled == false and tonumber(p.selectNum) < 10 then
 		p.setCardDisEnable();
 		p.equipEnabled = true;
 	end
@@ -526,6 +530,8 @@ function p.CloseUI()
 		p.allEquipId = {};
 		p.equipListNode = {};
 		p.cardListByProf = {};
+		p.isDress = {};
+		p.equipLevel = {};
 		
     end
 end

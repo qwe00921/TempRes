@@ -523,10 +523,10 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
 		moneyLab:SetFontColor(ccc4(255,0,0,255));
 	end
-	if p.cardEnabled == true and p.selectNum >= 10 then 
+	if p.cardEnabled == true and tonumber(p.selectNum) >= 10 then 
 		p.setAllCardDisEnable();
 		p.cardEnabled = false;
-	elseif p.cardEnabled == false and p.selectNum < 10 then
+	elseif p.cardEnabled == false and tonumber(p.selectNum) < 10 then
 		p.setCardDisEnable();
 		p.cardEnabled = true;
 	end
