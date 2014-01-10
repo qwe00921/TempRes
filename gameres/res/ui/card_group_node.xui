@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -9,6 +9,8 @@ Tag=64
 Rect=9 6 621 508
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_CHA1]
 Type=2
@@ -19,6 +21,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_CHA4]
 Type=2
@@ -29,6 +33,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_CHA2]
 Type=2
@@ -39,6 +45,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_CHA5]
 Type=2
@@ -49,6 +57,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_CHA3]
 Type=2
@@ -59,6 +69,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_CHA6]
 Type=2
@@ -69,6 +81,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_27]
 Type=4
@@ -82,6 +96,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_PET_NAME_1]
 Type=4
@@ -95,6 +111,8 @@ TextSize=21
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_PET_NAME_2]
 Type=4
@@ -108,6 +126,8 @@ TextSize=21
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_TEAM1]
 Type=1
@@ -115,6 +135,8 @@ Tag=37
 Rect=502 23 107 49
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team1.png
 NormalFileUV=0 0 110 50
 
@@ -124,6 +146,8 @@ Tag=38
 Rect=503 21 110 50
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team2.png
 NormalFileUV=0 0 110 50
 
@@ -133,6 +157,8 @@ Tag=39
 Rect=503 20 110 50
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team3.png
 NormalFileUV=0 0 110 50
 
@@ -142,6 +168,8 @@ Tag=48
 Rect=74 126 107 57
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\unit_table.png
 NormalFileUV=0 0 194 104
 
@@ -151,6 +179,8 @@ Tag=49
 Rect=345 125 107 57
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\unit_table.png
 NormalFileUV=0 0 194 104
 
@@ -160,6 +190,8 @@ Tag=50
 Rect=209 246 107 57
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\unit_table.png
 NormalFileUV=0 0 194 104
 
@@ -169,6 +201,8 @@ Tag=51
 Rect=475 247 107 57
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\unit_table.png
 NormalFileUV=0 0 194 104
 
@@ -178,6 +212,8 @@ Tag=52
 Rect=74 379 107 57
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\unit_table.png
 NormalFileUV=0 0 194 104
 
@@ -187,6 +223,8 @@ Tag=53
 Rect=335 380 107 57
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\unit_table.png
 NormalFileUV=0 0 194 104
 
@@ -197,6 +235,8 @@ Rect=35 169 184 59
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -206,21 +246,25 @@ Tag=55
 Rect=51 145 24 24
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
 [CTRL_TEXT_LV1]
 Type=4
 Tag=14
-Rect=44 178 34 18
+Rect=61 178 17 18
 AnchorPos=0 0
 Notes=
-Text=LV99
-TextTradition=LV99
+Text=99
+TextTradition=99
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_57]
 Type=22
@@ -229,6 +273,8 @@ Rect=308 167 180 59
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -239,6 +285,8 @@ Rect=172 290 180 59
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -249,6 +297,8 @@ Rect=427 288 180 59
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -259,6 +309,8 @@ Rect=37 422 180 59
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -269,6 +321,8 @@ Rect=298 423 180 59
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -278,6 +332,8 @@ Tag=62
 Rect=322 143 24 24
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
@@ -287,6 +343,8 @@ Tag=63
 Rect=186 266 24 24
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
@@ -296,6 +354,8 @@ Tag=65
 Rect=453 265 24 24
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
@@ -305,6 +365,8 @@ Tag=66
 Rect=311 399 24 24
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
@@ -314,190 +376,220 @@ Tag=67
 Rect=50 399 24 24
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
 [CTRL_TEXT_HP1]
 Type=4
 Tag=68
-Rect=86 178 59 18
+Rect=109 178 36 18
 AnchorPos=0 0
 Notes=
-Text=HP 6666
-TextTradition=HP 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SPEED1]
 Type=4
 Tag=69
-Rect=151 178 59 18
+Rect=175 178 35 18
 AnchorPos=0 0
 Notes=
-Text=速 6666
-TextTradition=速 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ATTACK1]
 Type=4
 Tag=70
-Rect=58 200 59 18
+Rect=81 200 36 18
 AnchorPos=0 0
 Notes=
-Text=攻 6666
-TextTradition=攻 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_DEFENCE1]
 Type=4
 Tag=71
-Rect=129 200 59 18
+Rect=151 200 37 18
 AnchorPos=0 0
 Notes=
-Text=防 6666
-TextTradition=防 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_LV2]
 Type=4
 Tag=74
-Rect=181 299 34 18
+Rect=196 299 19 18
 AnchorPos=0 0
 Notes=
-Text=LV99
-TextTradition=LV99
+Text=99
+TextTradition=99
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_LV3]
 Type=4
 Tag=75
-Rect=46 431 34 18
+Rect=62 431 18 18
 AnchorPos=0 0
 Notes=
-Text=LV99
-TextTradition=LV99
+Text=99
+TextTradition=99
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_LV4]
 Type=4
 Tag=76
-Rect=318 176 34 18
+Rect=333 176 19 18
 AnchorPos=0 0
 Notes=
-Text=LV99
-TextTradition=LV99
+Text=99
+TextTradition=99
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_LV5]
 Type=4
 Tag=77
-Rect=436 297 34 18
+Rect=451 297 19 18
 AnchorPos=0 0
 Notes=
-Text=LV99
-TextTradition=LV99
+Text=99
+TextTradition=99
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_LV6]
 Type=4
 Tag=78
-Rect=306 431 34 18
+Rect=321 431 19 18
 AnchorPos=0 0
 Notes=
-Text=LV99
-TextTradition=LV99
+Text=99
+TextTradition=99
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP2]
 Type=4
 Tag=79
-Rect=219 299 59 18
+Rect=239 299 39 18
 AnchorPos=0 0
 Notes=
-Text=HP 6666
-TextTradition=HP 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP3]
 Type=4
 Tag=80
-Rect=86 431 59 18
+Rect=110 431 35 18
 AnchorPos=0 0
 Notes=
-Text=HP 6666
-TextTradition=HP 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP4]
 Type=4
 Tag=81
-Rect=356 176 59 18
+Rect=381 176 34 18
 AnchorPos=0 0
 Notes=
-Text=HP 6666
-TextTradition=HP 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP5]
 Type=4
 Tag=82
-Rect=475 297 59 18
+Rect=494 297 40 18
 AnchorPos=0 0
 Notes=
-Text=HP 6666
-TextTradition=HP 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP6]
 Type=4
 Tag=83
-Rect=345 431 59 18
+Rect=364 431 40 18
 AnchorPos=0 0
 Notes=
-Text=HP 6666
-TextTradition=HP 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_CHA1]
 Type=19
@@ -505,6 +597,8 @@ Tag=42
 Rect=80 56 95 95
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_CHA4]
 Type=19
@@ -512,6 +606,8 @@ Tag=43
 Rect=351 54 95 95
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_CHA2]
 Type=19
@@ -519,6 +615,8 @@ Tag=44
 Rect=215 178 95 95
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_CHA5]
 Type=19
@@ -526,6 +624,8 @@ Tag=45
 Rect=481 178 95 95
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_CHA6]
 Type=19
@@ -533,6 +633,8 @@ Tag=46
 Rect=341 311 95 95
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_CHA3]
 Type=19
@@ -540,198 +642,680 @@ Tag=47
 Rect=80 312 95 95
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SPEED4]
 Type=4
 Tag=84
-Rect=420 176 59 18
+Rect=444 176 35 18
 AnchorPos=0 0
 Notes=
-Text=速 6666
-TextTradition=速 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SPEED2]
 Type=4
 Tag=85
-Rect=283 299 59 18
+Rect=305 299 37 18
 AnchorPos=0 0
 Notes=
-Text=速 6666
-TextTradition=速 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SPEED3]
 Type=4
 Tag=86
-Rect=149 431 59 18
+Rect=172 431 36 18
 AnchorPos=0 0
 Notes=
-Text=速 6666
-TextTradition=速 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SPEED6]
 Type=4
 Tag=87
-Rect=410 431 59 18
+Rect=433 431 36 18
 AnchorPos=0 0
 Notes=
-Text=速 6666
-TextTradition=速 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SPEED5]
 Type=4
 Tag=88
-Rect=539 297 59 18
+Rect=562 297 36 18
 AnchorPos=0 0
 Notes=
-Text=速 6666
-TextTradition=速 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ATTACK4]
 Type=4
 Tag=89
-Rect=329 199 59 18
+Rect=355 199 33 18
 AnchorPos=0 0
 Notes=
-Text=攻 6666
-TextTradition=攻 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ATTACK2]
 Type=4
 Tag=90
-Rect=195 320 59 18
+Rect=218 320 36 18
 AnchorPos=0 0
 Notes=
-Text=攻 6666
-TextTradition=攻 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ATTACK3]
 Type=4
 Tag=91
-Rect=61 453 59 18
+Rect=80 453 40 18
 AnchorPos=0 0
 Notes=
-Text=攻 6666
-TextTradition=攻 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ATTACK6]
 Type=4
 Tag=92
-Rect=324 453 59 18
+Rect=346 453 37 18
 AnchorPos=0 0
 Notes=
-Text=攻 6666
-TextTradition=攻 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ATTACK5]
 Type=4
 Tag=93
-Rect=455 318 59 18
+Rect=477 318 37 18
 AnchorPos=0 0
 Notes=
-Text=攻 6666
-TextTradition=攻 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_DEFENCE4]
 Type=4
 Tag=94
-Rect=405 199 59 18
+Rect=429 199 35 18
 AnchorPos=0 0
 Notes=
-Text=防 6666
-TextTradition=防 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_DEFENCE2]
 Type=4
 Tag=95
-Rect=271 320 59 18
+Rect=292 320 38 18
 AnchorPos=0 0
 Notes=
-Text=防 6666
-TextTradition=防 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_DEFENCE5]
 Type=4
 Tag=96
-Rect=527 318 59 18
+Rect=552 318 34 18
 AnchorPos=0 0
 Notes=
-Text=防 6666
-TextTradition=防 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_DEFENCE3]
 Type=4
 Tag=97
-Rect=129 453 59 18
+Rect=153 453 35 18
 AnchorPos=0 0
 Notes=
-Text=防 6666
-TextTradition=防 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_DEFENCE6]
 Type=4
 Tag=98
-Rect=389 453 59 18
+Rect=408 453 40 18
 AnchorPos=0 0
 Notes=
-Text=防 6666
-TextTradition=防 6666
+Text=6666
+TextTradition=6666
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_122]
+Type=4
+Tag=122
+Rect=42 177 21 20
+AnchorPos=0 0
+Notes=
+Text=LV
+TextTradition=LV
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_123]
+Type=4
+Tag=123
+Rect=43 430 21 20
+AnchorPos=0 0
+Notes=
+Text=LV
+TextTradition=LV
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_124]
+Type=4
+Tag=124
+Rect=304 430 21 20
+AnchorPos=0 0
+Notes=
+Text=LV
+TextTradition=LV
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_125]
+Type=4
+Tag=125
+Rect=315 175 21 20
+AnchorPos=0 0
+Notes=
+Text=LV
+TextTradition=LV
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_126]
+Type=4
+Tag=126
+Rect=179 298 21 20
+AnchorPos=0 0
+Notes=
+Text=LV
+TextTradition=LV
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_127]
+Type=4
+Tag=127
+Rect=434 296 21 20
+AnchorPos=0 0
+Notes=
+Text=LV
+TextTradition=LV
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_128]
+Type=4
+Tag=128
+Rect=88 177 21 20
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_129]
+Type=4
+Tag=129
+Rect=360 175 21 20
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_130]
+Type=4
+Tag=130
+Rect=218 298 21 20
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_131]
+Type=4
+Tag=131
+Rect=473 296 21 20
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_132]
+Type=4
+Tag=132
+Rect=343 430 21 20
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_133]
+Type=4
+Tag=133
+Rect=89 430 21 20
+AnchorPos=0 0
+Notes=
+Text=HP
+TextTradition=HP
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_134]
+Type=4
+Tag=134
+Rect=154 177 21 20
+AnchorPos=0 0
+Notes=
+Text=速
+TextTradition=速
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_135]
+Type=4
+Tag=135
+Rect=423 175 21 20
+AnchorPos=0 0
+Notes=
+Text=速
+TextTradition=速
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_136]
+Type=4
+Tag=136
+Rect=284 298 21 20
+AnchorPos=0 0
+Notes=
+Text=速
+TextTradition=速
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_137]
+Type=4
+Tag=137
+Rect=542 296 21 20
+AnchorPos=0 0
+Notes=
+Text=速
+TextTradition=速
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_138]
+Type=4
+Tag=138
+Rect=154 430 21 20
+AnchorPos=0 0
+Notes=
+Text=速
+TextTradition=速
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_139]
+Type=4
+Tag=139
+Rect=414 430 21 20
+AnchorPos=0 0
+Notes=
+Text=速
+TextTradition=速
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_140]
+Type=4
+Tag=140
+Rect=60 199 21 20
+AnchorPos=0 0
+Notes=
+Text=攻
+TextTradition=攻
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_141]
+Type=4
+Tag=141
+Rect=334 198 21 20
+AnchorPos=0 0
+Notes=
+Text=攻
+TextTradition=攻
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_142]
+Type=4
+Tag=142
+Rect=197 319 21 20
+AnchorPos=0 0
+Notes=
+Text=攻
+TextTradition=攻
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_143]
+Type=4
+Tag=143
+Rect=456 317 21 20
+AnchorPos=0 0
+Notes=
+Text=攻
+TextTradition=攻
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_144]
+Type=4
+Tag=144
+Rect=59 452 21 20
+AnchorPos=0 0
+Notes=
+Text=攻
+TextTradition=攻
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_145]
+Type=4
+Tag=145
+Rect=325 452 21 20
+AnchorPos=0 0
+Notes=
+Text=攻
+TextTradition=攻
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_146]
+Type=4
+Tag=146
+Rect=130 199 21 20
+AnchorPos=0 0
+Notes=
+Text=防
+TextTradition=防
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_147]
+Type=4
+Tag=147
+Rect=408 198 21 20
+AnchorPos=0 0
+Notes=
+Text=防
+TextTradition=防
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_148]
+Type=4
+Tag=148
+Rect=271 320 21 20
+AnchorPos=0 0
+Notes=
+Text=防
+TextTradition=防
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_149]
+Type=4
+Tag=149
+Rect=531 317 21 20
+AnchorPos=0 0
+Notes=
+Text=防
+TextTradition=防
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_150]
+Type=4
+Tag=150
+Rect=132 452 21 20
+AnchorPos=0 0
+Notes=
+Text=防
+TextTradition=防
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_151]
+Type=4
+Tag=151
+Rect=387 452 21 20
+AnchorPos=0 0
+Notes=
+Text=防
+TextTradition=防
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
