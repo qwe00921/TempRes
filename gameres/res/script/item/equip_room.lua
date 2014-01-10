@@ -262,9 +262,34 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 end
 
+--组装装备详细界面所需的数据(统一字段名)
+function p.PasreCardDetail(itemInfo)
+	local item = {};
+	--item.cardId 	= cardInfo.CardID;
+	--item.cardUid 	= ;
+  --item.cardName	= "xxx"
+	item.itemId 	= itemInfo.equip_id;
+	item.itemUid	= itemInfo.id;
+	item.itemType	= itemInfo.equip_type;
+	item.itemLevel 	= itemInfo.equip_level;
+	item.itemExp	= itemInfo.equip_exp;
+	item.itemRank	= itemInfo.rare 
+	item.attrType	= itemInfo.attribute_type1;
+	item.attrValue	= itemInfo.attribute_value2;
+	item.attrGrow	= nil --itemInfo.Attribute_grow;
+	item.exType1 	= itemInfo.attribute_type2;
+	item.exValue1 	= itemInfo.attribute_value2;
+	--item.exType2 	= itemInfo.attribute_type2;
+	--item.exValue2 	= itemInfo.attribute_value2;
+	--item.exType3	= nil --itemInfo.Extra_type3;
+	--item.exValue3	= nil --itemInfo.Extra_value3;
+	--item.preItemUid	=	dressId--穿戴装备id
+	return item;
+end
+
 function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipOne = p.newEquip[uiNode:GetId()];
-	dlg_card_equip_detail.ShowUI(equipOne);
+	dlg_card_equip_detail.ShowUI(p.PasreCardDetail(equipOne));
 end
 
 
