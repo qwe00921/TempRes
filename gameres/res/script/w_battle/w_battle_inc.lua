@@ -36,44 +36,44 @@ W_BATTLE_ROUND_STAGE_ATK = 3;--互殴
 W_BATTLE_ROUND_STAGE_CLEARING = 4;--结算
 
 --buff
-N_BUFF_TYPE_0 = 0;--没BUFF
-N_BUFF_TYPE_1 = 1;--晕眩
-N_BUFF_TYPE_2 = 2;--冰冻
-N_BUFF_TYPE_3 = 3;--缠绕
-N_BUFF_TYPE_4 = 4;--中毒
-N_BUFF_TYPE_5 = 5;--燃烧
-N_BUFF_TYPE_6 = 6;
-N_BUFF_TYPE_7 = 7;
-N_BUFF_TYPE_8 = 8;
-N_BUFF_TYPE_9 = 9;--恢复
+W_BUFF_TYPE_0 = 0;--没BUFF
+W_BUFF_TYPE_1 = 1;--晕眩
+W_BUFF_TYPE_2 = 2;--冰冻
+W_BUFF_TYPE_3 = 3;--缠绕
+W_BUFF_TYPE_4 = 4;--中毒
+W_BUFF_TYPE_5 = 5;--燃烧
+W_BUFF_TYPE_6 = 6;
+W_BUFF_TYPE_7 = 7;
+W_BUFF_TYPE_8 = 8;
+W_BUFF_TYPE_9 = 9;--恢复
 
-N_BUFF_TYPE_101 = 101;--攻击增强
-N_BUFF_TYPE_102 = 102;--防御增强
-N_BUFF_TYPE_103 = 103;--暴击增强
+W_BUFF_TYPE_101 = 101;--攻击增强
+W_BUFF_TYPE_102 = 102;--防御增强
+W_BUFF_TYPE_103 = 103;--暴击增强
 
-N_BUFF_TYPE_201 = 201;--攻击减弱
-N_BUFF_TYPE_202 = 202;--防御减弱
-N_BUFF_TYPE_203 = 203;--暴击减弱
+W_BUFF_TYPE_201 = 201;--攻击减弱
+W_BUFF_TYPE_202 = 202;--防御减弱
+W_BUFF_TYPE_203 = 203;--暴击减弱
 
-N_BUFF_TYPE_301 = 301;--复活
+W_BUFF_TYPE_301 = 301;--复活
 
 --skill type
-N_SKILL_TYPE_1 = 1;--主动伤害技能
-N_SKILL_TYPE_2 = 2;--主动恢复技能
-N_SKILL_TYPE_3 = 3;--属性加成技能
-N_SKILL_TYPE_4 = 4;--被动触发技
-N_SKILL_TYPE_5 = 5;--主动复活技能
+W_SKILL_TYPE_1 = 1;--主动伤害技能
+W_SKILL_TYPE_2 = 2;--主动恢复技能
+W_SKILL_TYPE_3 = 3;--属性加成技能
+W_SKILL_TYPE_4 = 4;--被动触发技
+W_SKILL_TYPE_5 = 5;--主动复活技能
 
 --技能攻击目标
-N_SKILL_TARGET_TYPE_1 = 1;--敌方单体
-N_SKILL_TARGET_TYPE_2 = 2;--敌方群体：远程攻击位置：中间
-N_SKILL_TARGET_TYPE_3 = 3;--敌方直线：
-N_SKILL_TARGET_TYPE_4 = 4;--敌方横排: 远程攻击位置：中间
-N_SKILL_TARGET_TYPE_5 = 5;--敌方穿越
+W_SKILL_TARGET_TYPE_1 = 1;--敌方单体
+W_SKILL_TARGET_TYPE_2 = 2;--敌方群体：远程攻击位置：中间
+W_SKILL_TARGET_TYPE_3 = 3;--敌方直线：
+W_SKILL_TARGET_TYPE_4 = 4;--敌方横排: 远程攻击位置：中间
+W_SKILL_TARGET_TYPE_5 = 5;--敌方穿越
 
-N_SKILL_TARGET_TYPE_11 = 11;--自己
-N_SKILL_TARGET_TYPE_12 = 12;--己方群体
-N_SKILL_TARGET_TYPE_13 = 13;--己方随机一个已死亡单位
+W_SKILL_TARGET_TYPE_11 = 11;--自己
+W_SKILL_TARGET_TYPE_12 = 12;--己方群体
+W_SKILL_TARGET_TYPE_13 = 13;--己方随机一个已死亡单位
 
 W_BATTLE_DISTANCE_NoArcher = 1;--近战攻击
 W_BATTLE_DISTANCE_Archer = 2;--远程攻击
@@ -105,7 +105,7 @@ W_BATTLE_ELEMENT_DARK  = 7; --暗
 
 
 --合击时间的间隔
-W_BATTLE_JOINATK_TIME = 30000; 
+W_BATTLE_JOINATK_TIME = 30; 
 
 --站位标置
 W_BATTLE_POS_TAG_1 = 1;

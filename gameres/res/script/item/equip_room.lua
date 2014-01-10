@@ -15,13 +15,14 @@ equip_room = {}
 local p = equip_room;
 local ui = ui_equip_room;
 local ui_list = ui_equip_room_list;
-p.equlip_list = {};
-p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
 
+p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
+p.equlip_list = {};
 p.sortByRuleV = nil;
 p.cardListByProf = {};
 p.curBtnNode = nil;
-
+p.newEquip = {};
+p.msg = nil;
 --显示UI
 function p.ShowUI(card)
     
@@ -76,9 +77,9 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
 		elseif (ui.ID_CTRL_BUTTON_SELL == tag) then --卖出
-			
+			equip_sell.ShowUI(p.msg);
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --排序
-			equip_bag_sort.ShowUI();
+			equip_bag_sort.ShowUI(1);
 		elseif (ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			p.SetBtnCheckedFX( uiNode );
 			p.refreshList(p.equlip_list);
@@ -92,6 +93,8 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 		end				
 	end
 end
+
+
 
 --按职业显示卡牌
 function p.ShowCardByProfession(profType)
@@ -156,9 +159,9 @@ function p.ShowInfo(msg)
 	end
 	p.equlip_list = msg.equipment_info;
 	p.cardListByProf  = msg.equipment_info;
-	
+	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
-	labRoomNum:SetText(tostring(#p.equlip_list).."/"..msg.equip_room_limit); 	
+	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
 	p.refreshList(msg.equipment_info);
 	
 end
@@ -166,7 +169,6 @@ end
 --显示列表
 function p.refreshList(lst)
 	
-	WriteCon("refreshList()");
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 
@@ -174,7 +176,7 @@ function p.refreshList(lst)
 		WriteCon("refreshList():cardList is null");
 		return;
 	end
-	WriteCon("cardCount ===== "..#lst);
+	p.newEquip = lst;
 	local cardNum = #lst;
 	local row = math.ceil(cardNum / 4);
 	WriteCon("row ===== "..row);
@@ -209,9 +211,6 @@ end
 --显示单张卡牌
 function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
-	WriteCon("index ===== "..index);
-	
-	WriteCon("equip.equip_id ===== "..equip.equip_id);
 	
 	local indexStr = tostring(index);
 	local btTagStr 	= "ID_CTRL_BUTTON_ITEM_"..indexStr;--按钮
@@ -250,7 +249,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	lvV:SetText("LV." .. (equip.Equip_level or "1"));
 	lvV:SetVisible(true);
 	--是否已装备
-	if equip.Is_dress == "1" then
+	if tonumber(equip.Is_dress) == 1 then
 		drsV:SetVisible(true);
 	end
 	
@@ -261,6 +260,36 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	
+end
+
+--组装装备详细界面所需的数据(统一字段名)
+function p.PasreCardDetail(itemInfo)
+	local item = {};
+	--item.cardId 	= cardInfo.CardID;
+	--item.cardUid 	= ;
+  --item.cardName	= "xxx"
+	item.itemId 	= itemInfo.equip_id;
+	item.itemUid	= itemInfo.id;
+	item.itemType	= itemInfo.equip_type;
+	item.itemLevel 	= itemInfo.equip_level;
+	item.itemExp	= itemInfo.equip_exp;
+	item.itemRank	= itemInfo.rare 
+	item.attrType	= itemInfo.attribute_type1;
+	item.attrValue	= itemInfo.attribute_value2;
+	item.attrGrow	= nil --itemInfo.Attribute_grow;
+	item.exType1 	= itemInfo.attribute_type2;
+	item.exValue1 	= itemInfo.attribute_value2;
+	--item.exType2 	= itemInfo.attribute_type2;
+	--item.exValue2 	= itemInfo.attribute_value2;
+	--item.exType3	= nil --itemInfo.Extra_type3;
+	--item.exValue3	= nil --itemInfo.Extra_value3;
+	--item.preItemUid	=	dressId--穿戴装备id
+	return item;
+end
+
+function p.OnItemClickEvent(uiNode, uiEventType, param)
+	local equipOne = p.newEquip[uiNode:GetId()];
+	dlg_card_equip_detail.ShowUI(p.PasreCardDetail(equipOne));
 end
 
 
@@ -307,9 +336,7 @@ function p.InitViewUI(view)
 			nmBgTagStr= ui_list.ID_CTRL_PICTURE_NM_BG_4;
 			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_4;
 		end
-		
-		WriteCon("*************  "..btTagStr);
-		
+				
 		local bt = GetButton(view,btTagStr);
 		bt:SetVisible(false);
 		
@@ -405,6 +432,13 @@ function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
         p.layer = nil;
+		p.equlip_list = {};
+		p.sortByRuleV = nil;
+		p.cardListByProf = {};
+		p.curBtnNode = nil;
+		p.newEquip = {};
+		p.msg = nil;
+
     end
 
 end

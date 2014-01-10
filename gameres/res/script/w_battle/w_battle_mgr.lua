@@ -37,6 +37,9 @@ local BATTLE_PVP = 2;
 p.batchIsFinish = true;
 p.battle_batch  = nil;
 p.battleTurnVal = nil;
+p.AtkList = {}  --在攻击队列
+
+
 
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
@@ -119,8 +122,12 @@ function p.SetPVEAtkID(atkID)
 		
 	end
 	
-   --受击次数先累加,攻击方动画播完后,再减一
-    targetFighter:BeHitAdd(atkID);  
+	--成为目标,未攻击
+	targetFighter:BeTarTimesAdd(atkID);
+	p.AtkAdd(atkID);
+   
+    --受击次数先累加,攻击方动画播完后,再减一
+    
 
 	--攻击某个人物
      --w_battle_atk.SelOver(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	--选择结束阶断
@@ -336,6 +343,29 @@ function p.SetLockAction(position)
 	   lLockPic:SetVisible(true);
    end;
 
+end;
+
+
+--处于攻击过程中的队列
+function p.AtkAdd(pAtkId)
+	p.AtkList[#p.AtkList + 1] = pAtkId;	
+end;
+
+function p.AtkDec(pAtkId)
+	for k,v in pairs(p.AtkList) do
+		if v == pAtkId then
+			table.remove(p.AtkList,k);
+			break;
+		end;
+	end;
+end;
+
+function p.CheckAtkListIsNull()
+	local lres = false;
+	if (p.AtkList == nil) or (#p.AtkList == 0)  then
+		lres = true;
+	end;
+	return lres;
 end;
 
 --开始战斗表现:pve

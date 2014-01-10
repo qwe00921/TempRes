@@ -1,7 +1,9 @@
 equip_bag_sort = {}
 local p = equip_bag_sort;
 local ui = ui_equip_bag_sort_view;
-function p.ShowUI()
+
+p.id = nil;
+function p.ShowUI(id)
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
@@ -10,7 +12,7 @@ function p.ShowUI()
 	if layer == nil then
 		return false;
 	end
-	
+	p.id = id;
 	layer:NoMask();
 	layer:Init(layer);
 	layer:SetSwallowTouch(false);
@@ -20,8 +22,12 @@ function p.ShowUI()
 	
 	p.layer = layer;
 	p.SetDelegate();
+	if p.id == 1 then
+		equip_room.sortBtnMark = MARK_ON;
+	elseif p.id == 2 then
+		equip_sell.sortBtnMark = MARK_ON;
+	end
 	
-	equip_room.sortBtnMark = MARK_ON;
 end
 
 function p.SetDelegate()
@@ -38,11 +44,21 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_SOTR_LEVEL == tag then
 			WriteCon("**========byLevelBtn========**");
-			equip_room.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
 			
+			
+			if p.id == 1 then
+				equip_room.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			elseif p.id == 2 then
+				equip_sell.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			end
+	
 		elseif ui.ID_CTRL_BUTTON_SORT_STAR == tag then
 			WriteCon("**=======byStarBtn=======**");
-			equip_room.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			if p.id == 1 then
+				equip_room.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			elseif p.id == 2 then
+				equip_sell.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			end
 		end
 		p.CloseUI();
 	end
@@ -52,13 +68,22 @@ function p.CloseUI()
     if p.layer ~= nil then
         p.layer:LazyClose();
         p.layer = nil;
-		equip_room.sortBtnMark = MARK_OFF;
+		p.id = nil;
+		if p.id == 1 then
+			equip_room.sortBtnMark = MARK_OFF;
+		elseif p.id == 2 then
+			equip_sell.sortBtnMark = MARK_OFF;
+		end
     end
 end
 
 function p.HideUI()
 	if p.layer ~= nil then
         p.layer:SetVisible(false);
-		equip_room.sortBtnMark = MARK_OFF;
+		if p.id == 1 then
+			equip_room.sortBtnMark = MARK_OFF;
+		elseif p.id == 2 then
+			equip_sell.sortBtnMark = MARK_OFF;
+		end
 	end
 end

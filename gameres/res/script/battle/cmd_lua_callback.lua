@@ -16,8 +16,8 @@ local p = cmd_lua_callback;
 --		str			字串参数2
 ---------------------------------------------------
 function p.CmdLuaHandler( cmdtype, id, num, str )
-	local str = string.format( "p.CmdLuaHandler(): cmdtype=%s, id=%d, num=%f, str=%s", cmdtype, id, num, str );
-	WriteCon( str );
+	--local str = string.format( "p.CmdLuaHandler(): cmdtype=%s, id=%d, num=%f, str=%s", cmdtype, id, num, str );
+	--WriteCon( str );
 
 	--查找fighter
 	local fighter = nil;
@@ -29,14 +29,14 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		fighter = battle_mgr.FindFighter(id);
 	elseif E_DEMO_VER == 4 then    
         fighter = n_battle_mgr.FindFighter(id);
-	elseif E_DEMO_VER == 5 then    
-		fighter = w_battle_mgr.FindFighter(id);
 	end
 	
-	if fighter == nil and (E_DEMO_VER ~= 4) or (E_DEMO_VER ~= 5) then
+	
+	if fighter == nil and (E_DEMO_VER ~= 4) and (E_DEMO_VER ~= 5) then
 		WriteCon( "find fighter failed: id="..id);
 		return;
 	end
+	
 
 	--执行具体命令
 	if cmdtype == "fighter_damage" then

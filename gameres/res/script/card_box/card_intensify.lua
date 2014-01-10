@@ -327,7 +327,9 @@ function p.ShowCardView(cardList)
 	local cardNum = #cardList;
 	
 	local row = math.ceil(cardNum / 5);
-	
+	if #p.cardListNode ~= 0 then
+		p.cardListNode = {};
+	end
 	for i = 1, row do
 		local view = createNDUIXView();
 		view:Init();
@@ -461,6 +463,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
+	
 	p.cardListNode[#p.cardListNode + 1] = cardButton;
 end
 
@@ -520,10 +523,10 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
 		moneyLab:SetFontColor(ccc4(255,0,0,255));
 	end
-	if p.cardEnabled == true and p.selectNum >= 10 then 
+	if p.cardEnabled == true and tonumber(p.selectNum) >= 10 then 
 		p.setAllCardDisEnable();
 		p.cardEnabled = false;
-	elseif p.cardEnabled == false and p.selectNum < 10 then
+	elseif p.cardEnabled == false and tonumber(p.selectNum) < 10 then
 		p.setCardDisEnable();
 		p.cardEnabled = true;
 	end

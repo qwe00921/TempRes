@@ -23,5 +23,6 @@ end
 function p:Process()
 	msg_cache.msg_pack_equip_sell = self;
     WriteConWarning( "** msg_pack_equip_sell:Process() called" );
-	pack_box_mgr.sellEquipCallBack(self)
+	pack_box_mgr.sellEquipCallBack(self);
+	equip_sell.sellResult(self);
 end
