@@ -180,7 +180,7 @@ function p.SetData( dataSource )
 	if p.source.cardlist ~= nil then
 		p.cardlist = {};
 		for _, v in pairs(p.source.cardlist) do
-			p.cardlist[v.UniqueID] = v;
+			p.cardlist[v.UniqueID or v.UniqueId] = v;
 		end
 	end
 	
@@ -292,13 +292,13 @@ function p.SetTeamInfo( view, user_teamData )
 			--cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			--cardBtn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			
-			local data = p.cardlist[user_teamData["Pos_unique"..i]];
+			local data = p.cardlist[tonumber(user_teamData["Pos_unique"..i])];
 			if data then
-				levLabel:SetText( string.format("%s", data.Level) );
-				hpLabel:SetText( string.format("%s", data.Hp) );
-				speedLabel:SetText( string.format(GetStr("card_group_prp_speed"), data.Speed) );
-				atkLabel:SetText( string.format(GetStr("card_group_prp_atk"), data.Attack) );
-				defLabel:SetText( string.format(GetStr("card_group_prp_def"), data.Defence) );
+				levLabel:SetText( string.format("%s", tostring(data.Level)) );
+				hpLabel:SetText( string.format("%s", tostring(data.Hp)) );
+				speedLabel:SetText( string.format(GetStr("card_group_prp_speed"), tostring(data.Speed)) );
+				atkLabel:SetText( string.format(GetStr("card_group_prp_atk"), tostring(data.Attack)) );
+				defLabel:SetText( string.format(GetStr("card_group_prp_def"), tostring(data.Defence)) );
 				if tonumber(data.element) == 1 then
 					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
 				elseif tonumber(data.element) == 2 then
@@ -315,7 +315,7 @@ function p.SetTeamInfo( view, user_teamData )
 			end
 			 
 			
-			pic:UseConfig( user_teamData["Pos_card"..i] );
+			pic:UseConfig( tostring(user_teamData["Pos_card"..i]) );
 			pic:SetLookAt(E_LOOKAT_LEFT);
 			pic:Standby("");
 			pic:SetEnableSwapDrag(true);
@@ -454,7 +454,7 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 			
 			
 			if toPlayer and tonumber(orgUni) ~= 0 and tonumber(orgCardId) ~= 0 then
-				toPlayer:UseConfig(orgCardId );
+				toPlayer:UseConfig(tostring(orgCardId) );
 				toPlayer:SetLookAt(E_LOOKAT_LEFT);
 				toPlayer:Standby("");
 				toPlayer:SetVisible( true );
@@ -464,7 +464,7 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 			end
 			
 			if p.beginPlayer and tonumber(team["Pos_unique"..p.beginDragId]) ~= 0 and tonumber(team["Pos_card"..p.beginDragId]) ~= 0 then
-				p.beginPlayer:UseConfig(team["Pos_card"..p.beginDragId]);
+				p.beginPlayer:UseConfig(tostring(team["Pos_card"..p.beginDragId]));
 				p.beginPlayer:SetLookAt(E_LOOKAT_LEFT);
 				p.beginPlayer:Standby("");
 				p.beginPlayer:SetVisible( true );
@@ -571,7 +571,7 @@ function p.OnListItemClick(uiNode, uiEventType, param)
 	local node = uiNode:GetParent();
 	local id = node:GetId();
 	local tag = uiNode:GetTag();
-	if IsClickEvent( uiEventType ) then		
+	if IsClickEvent( uiEventType ) and p.user_teams ~= nil then		
 		p.selTeam = id;
 		p.selTeamPos = uiNode:GetId();
 		local hasRemove = false;
@@ -742,7 +742,7 @@ end
 function p.SaveData()
 	local needUpload = false;
 	
-	if p.m_list == nil then
+	if p.m_list == nil or p.user_teams == nil then
 		return;
 	end
 	

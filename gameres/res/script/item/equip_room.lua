@@ -246,7 +246,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	--显示等级
-	lvV:SetText("LV." .. (equip.Equip_level or "1"));
+	lvV:SetText("LV." .. (tostring(equip.equip_level) or "1"));
 	lvV:SetVisible(true);
 	--是否已装备
 	if tonumber(equip.Is_dress) == 1 then
@@ -275,10 +275,11 @@ function p.PasreCardDetail(itemInfo)
 	item.itemExp	= itemInfo.equip_exp;
 	item.itemRank	= itemInfo.rare 
 	item.attrType	= itemInfo.attribute_type1;
-	item.attrValue	= itemInfo.attribute_value2;
+	item.attrValue	= itemInfo.attribute_value1;
 	item.attrGrow	= nil --itemInfo.Attribute_grow;
 	item.exType1 	= itemInfo.attribute_type2;
 	item.exValue1 	= itemInfo.attribute_value2;
+	item.isDress	= itemInfo.Is_dress
 	--item.exType2 	= itemInfo.attribute_type2;
 	--item.exValue2 	= itemInfo.attribute_value2;
 	--item.exType3	= nil --itemInfo.Extra_type3;
@@ -289,7 +290,7 @@ end
 
 function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipOne = p.newEquip[uiNode:GetId()];
-	dlg_card_equip_detail.ShowUI(p.PasreCardDetail(equipOne));
+	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.LoadEquipData);
 end
 
 

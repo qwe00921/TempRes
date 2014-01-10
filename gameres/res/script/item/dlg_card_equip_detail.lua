@@ -11,6 +11,7 @@ local p = dlg_card_equip_detail;
 
 p.SHOW_ALL = 1; --显示
 p.SHOW_DRESS = 2;  -- 显示穿戴
+p.SHOW_EQUIP_ROOM = 3; --显示装备屋装备
 
 p.layer = nil;
 p.item = nil;
@@ -20,6 +21,7 @@ p.cardInfo = nil;
 p.equip = nil;
 --p.itemCommInfo = nil;
 p.dressEquip = nil;
+p.callback = nil;
 
 --[[
 		---以下为p.equip的字段
@@ -49,7 +51,7 @@ local ui = ui_dlg_card_equip_detail
 
 
 ---------显示UI----------
-function p.ShowUI( equip )
+function p.ShowUI( equip ,callback)
 	p.equip = equip;
 	
 	if p.layer ~= nil then
@@ -74,6 +76,7 @@ function p.ShowUI( equip )
 	--p.LoadEquipDetail(itemId);
 	
 	WriteConErr("ShowUI4CardEquip2  ");
+	p.callback = callback;
 	
 	p.ShowItem();
 end
@@ -89,6 +92,11 @@ function p.ShowUI4Dress(equip)
 	p.ShowUI(equip );
 end
 
+function p.ShouUI4EquipRoom(equip,callback)
+	p.showType = p.SHOW_EQUIP_ROOM 
+	p.ShowUI(equip ,callback);
+end
+
 --设置事件处理
 function p.SetDelegate(layer)
 	if p.showType and p.showType == p.SHOW_DRESS then
@@ -98,11 +106,42 @@ function p.SetDelegate(layer)
 		local pBtn01 = GetButton(layer,ui.ID_CTRL_BUTTON_UPGRADE);
 		pBtn01:SetVisible(false);
 		
-		local upgradeLb = GetLabel( p.layer,ui.ID_CTRL_TEXT_LABEL_CHANGE );
-		upgradeLb:SetVisible(false);
 		
 		local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
 		pBtn03:SetVisible(false);
+		
+		local btn3Lb = GetLabel( p.layer,ui.ID_CTRL_TEXT_UNLOAD );
+		btn3Lb:SetVisible(false);
+		
+	elseif p.showType == p.SHOW_EQUIP_ROOM then
+		
+		if  p.equip and p.equip.isDress ~= 1 then
+			local upgradeLb = GetLabel( p.layer,ui.ID_CTRL_TEXT_UPGRADE );
+			upgradeLb:SetVisible(false);
+			local pBtn01 = GetButton(layer,ui.ID_CTRL_BUTTON_UPGRADE);
+			pBtn01:SetVisible(false);
+		
+			local upgradeLb = GetLabel( p.layer,ui.ID_CTRL_TEXT_INSTALL);
+			upgradeLb:SetText(GetStr("card_equip_bt_upgrade"));
+			
+			local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
+			pBtn03:SetVisible(false);
+			local btn3Lb = GetLabel( p.layer,ui.ID_CTRL_TEXT_UNLOAD );
+			btn3Lb:SetVisible(false);
+			
+		elseif p.equip then
+			
+			local bt = GetButton(layer,ui.ID_CTRL_BUTTON_UPGRADE);
+			bt:SetLuaDelegate(p.OnUIEvent);
+		
+			local lb = GetLabel(layer,ui.ID_CTRL_TEXT_INSTALL);
+			lb:SetVisible(false);
+			local pBtn02 = GetButton(layer,ui.ID_CTRL_BUTTON_CHANGE);
+			pBtn02:SetVisible(false);
+			
+			local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
+			pBtn03:SetLuaDelegate(p.OnUIEvent);
+		end
 		
 	else
 		
@@ -110,7 +149,7 @@ function p.SetDelegate(layer)
 		pBtn01:SetLuaDelegate(p.OnUIEvent);
 		
 		local upgradeLb = GetLabel( p.layer,ui.ID_CTRL_TEXT_INSTALL);
-		upgradeLb:SetVisible(false);
+		upgradeLb:SetText(GetStr("card_equip_change"));
 		
 		local pBtn03 = GetButton(layer,ui.ID_CTRL_BUTTON_UNLOAD);
 		pBtn03:SetLuaDelegate(p.OnUIEvent);
@@ -229,6 +268,9 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 			--dlg_equip_upgrade.ShowUI( p.item );
 			if p.showType == p.SHOW_DRESS then
 				p.sendDress();
+			elseif p.showType == p.SHOW_EQUIP_ROOM then
+				card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
+				p.CloseUI(); 
 			else
 				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPDATE , p.equip.cardUid, p.equip.itemType, p.equip)
 				p.CloseUI(); 
@@ -238,8 +280,13 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 		elseif (ui.ID_CTRL_BUTTON_UNLOAD == tag) then
 			p.sendUnDress();
 		elseif ui.ID_CTRL_BUTTON_UPGRADE == tag then
-			card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardUid, p.equip.itemType, p.equip)
-			p.CloseUI(); 
+			if p.showType == p.SHOW_EQUIP_ROOM then
+				card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
+				p.CloseUI(); 
+			else
+				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardUid, p.equip.itemType, p.equip)
+				p.CloseUI(); 
+			end
 		end		
 	end
 end
@@ -403,7 +450,7 @@ function p.sendUnDress()
 		return ;
 	end;
 	local pos = p.equip.ItemType
-	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",equip.itemUid, equip.cardUid,tostring(equip.itemType));
+	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",tostring(equip.itemUid), tostring(equip.cardUid),tostring(equip.itemType));
 	
 	WriteConErr("send req ");
 	SendReq("Equip","TakeoffEquipment",uid,param);	
@@ -432,7 +479,7 @@ function p.OnUnDress(msg)
 	end
 	
 	if msg.result == true then
-		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_dress_suc"),p.OnOk);
+		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_undress_suc"),p.OnOk);
 	else
 		local str = p.GetNetResultError(msg);
 		if str then
@@ -446,8 +493,17 @@ end
 
 function p.OnOk()
 	p.CloseUI();
-	card_equip_select_list.CloseUI();
-	dlg_card_attr_base.RefreshCardDetail();
+	
+	if p.callback then
+		p.callback();
+		p.callback = nil;
+	else
+		card_equip_select_list.CloseUI();
+		dlg_card_attr_base.RefreshCardDetail();
+	end
+
+
+	
 end
 
 function p.GetNetResultError(msg)
