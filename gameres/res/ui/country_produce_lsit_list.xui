@@ -1,0 +1,106 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=7
+Rect=19 272 602 143
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\quest_list2.png
+NormalFileUV=0 0 602 167
+
+[CTRL_PICTURE_8]
+Type=1
+Tag=8
+Rect=53 296 100 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=49 293 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\item-list.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=10
+Rect=155 348 412 5
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\line.png
+NormalFileUV=0 0 567 4
+
+[CTRL_TEXT_ITEMNAME]
+Type=4
+Tag=12
+Rect=160 297 135 46
+AnchorPos=0 0
+Notes=
+Text=道具名称
+TextTradition=道具名稱
+TextSize=25
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_13]
+Type=4
+Tag=13
+Rect=164 357 314 38
+AnchorPos=0 0
+Notes=
+Text=物品介绍
+TextTradition=物品介紹
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_14]
+Type=4
+Tag=14
+Rect=461 305 84 30
+AnchorPos=0 0
+Notes=
+Text=持有数量
+TextTradition=持有數量
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_15]
+Type=4
+Tag=15
+Rect=549 305 37 30
+AnchorPos=0 0
+Notes=
+Text=99
+TextTradition=99
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
