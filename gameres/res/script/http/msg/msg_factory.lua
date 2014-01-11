@@ -264,6 +264,10 @@ function CreateMsg( idmsg )
 	or idmsg ==  MSG_CARD_EQUIPMENT_LIST	then
 		msg = msg_card_equip_msg:new();
 		msg:SetIdMsg(idmsg);
+	elseif idmsg == MSG_PLAYER_UPDATE then --玩家数据变更
+		msg = msg_player_update:new();
+	elseif idmsg == MSG_COLLECT_MATERIALLIST then--请求材料列表
+		msg = msg_collect_materiallist:new();
 	end
 
 	

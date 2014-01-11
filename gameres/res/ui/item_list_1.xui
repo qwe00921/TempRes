@@ -3,97 +3,179 @@
 Width=640
 Height=960
 
-[CTRL_VERTICAL_LIST_VIEW]
-Type=14
-Tag=31
-Rect=8 243 624 136
+[CTRL_PICTURE_BG]
+Type=1
+Tag=23
+Rect=0 0 624 136
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_ITEM1]
+Type=2
+Tag=22
+Rect=21 7 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_ITEM2]
+Type=2
+Tag=24
+Rect=140 7 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_ITEM3]
+Type=2
+Tag=25
+Rect=259 7 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_ITEM4]
+Type=2
+Tag=26
+Rect=378 7 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_ITEM5]
+Type=2
+Tag=27
+Rect=497 7 100 100
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM1]
 Type=1
 Tag=6
-Rect=29 250 100 100
+Rect=21 7 100 100
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM2]
 Type=1
 Tag=7
-Rect=148 250 100 100
+Rect=140 7 100 100
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM3]
 Type=1
 Tag=8
-Rect=267 250 100 100
+Rect=259 7 100 100
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM4]
 Type=1
 Tag=9
-Rect=386 250 100 100
+Rect=378 7 100 100
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM5]
 Type=1
 Tag=10
-Rect=505 250 100 100
+Rect=497 7 100 100
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_PICTURE_11]
+[CTRL_PICTURE_ITEMNAMEBG1]
 Type=1
 Tag=11
-Rect=30 349 88 18
+Rect=22 106 88 18
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_12]
+[CTRL_PICTURE_ITEMNAMEBG2]
 Type=1
 Tag=12
-Rect=150 349 88 18
+Rect=142 106 88 18
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_13]
+[CTRL_PICTURE_ITEMNAMEBG3]
 Type=1
 Tag=13
-Rect=270 349 88 18
+Rect=262 106 88 18
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_14]
+[CTRL_PICTURE_ITEMNAMEBG4]
 Type=1
 Tag=14
-Rect=390 349 88 18
+Rect=382 106 88 18
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_PICTURE_15]
+[CTRL_PICTURE_ITEMNAMEBG5]
 Type=1
 Tag=15
-Rect=510 349 88 18
+Rect=502 106 88 18
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
 [CTRL_TEXT_ITEMNAME1]
 Type=4
 Tag=16
-Rect=22 349 107 23
+Rect=14 106 107 23
 AnchorPos=0 0
 Notes=
 Text=物品名称六字
@@ -102,11 +184,13 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_17]
+[CTRL_TEXT_ITEMNAME2]
 Type=4
 Tag=17
-Rect=142 349 107 23
+Rect=134 106 107 23
 AnchorPos=0 0
 Notes=
 Text=物品名称六字
@@ -115,11 +199,13 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_18]
+[CTRL_TEXT_ITEMNAME3]
 Type=4
 Tag=18
-Rect=262 349 107 23
+Rect=254 106 107 23
 AnchorPos=0 0
 Notes=
 Text=物品名称六字
@@ -128,11 +214,13 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_19]
+[CTRL_TEXT_ITEMNAME4]
 Type=4
 Tag=19
-Rect=382 349 107 23
+Rect=374 106 107 23
 AnchorPos=0 0
 Notes=
 Text=物品名称六字
@@ -141,11 +229,13 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_21]
+[CTRL_TEXT_ITEMNAME5]
 Type=4
 Tag=21
-Rect=502 349 107 23
+Rect=494 106 107 23
 AnchorPos=0 0
 Notes=
 Text=物品名称六字
@@ -154,11 +244,13 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_39]
+[CTRL_TEXT_ITEMNUM1]
 Type=4
 Tag=39
-Rect=93 248 43 26
+Rect=85 5 43 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -166,11 +258,13 @@ TextTradition=x??
 TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_40]
+[CTRL_TEXT_ITEMNUM2]
 Type=4
 Tag=40
-Rect=212 248 43 26
+Rect=204 5 43 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -178,11 +272,13 @@ TextTradition=x??
 TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_41]
+[CTRL_TEXT_ITEMNUM3]
 Type=4
 Tag=41
-Rect=331 248 43 26
+Rect=323 5 43 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -190,11 +286,13 @@ TextTradition=x??
 TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_42]
+[CTRL_TEXT_ITEMNUM4]
 Type=4
 Tag=42
-Rect=450 248 43 26
+Rect=442 5 43 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -202,11 +300,13 @@ TextTradition=x??
 TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_TEXT_43]
+[CTRL_TEXT_ITEMNUM5]
 Type=4
 Tag=43
-Rect=569 248 43 26
+Rect=561 5 43 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -214,3 +314,5 @@ TextTradition=x??
 TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

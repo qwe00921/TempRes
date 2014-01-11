@@ -332,6 +332,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("HOME");
 		elseif ui.ID_CTRL_BUTTON_STORE == tag then
 			WriteCon("STORE");
+			country_storage.ShowUI();
 		end
 	end
 end

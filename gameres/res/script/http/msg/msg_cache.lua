@@ -47,3 +47,4 @@ p.msg_collect = nil;
 p.msg_achievement = nil;
 p.msg_server_list = nil;
 p.msg_count_data = nil;
+p.msg_material_list = nil;

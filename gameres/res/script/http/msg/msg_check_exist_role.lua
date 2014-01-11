@@ -43,8 +43,8 @@ end
 function p:Process()
 	msg_cache.msg_player = self.user;
 	WriteConWarning( "** msg_check_exist_role:Process() called" );
-	--mainui.RefreshUI( self );
-	
+	--msg_cache.msg_player = msg_cache.msg_player or {};
+
 	if self.result == true then
 		maininterface.ShowUI(self.user);
 	else

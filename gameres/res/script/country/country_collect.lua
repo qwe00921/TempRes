@@ -9,6 +9,7 @@ p.layer = nil;
 p.collectList = {};
 p.tickId = nil;
 p.isBusy = false;
+p.SendToServer = false;
 p.collectResult = {};
 
 E_COLLECT_MOUNTAIN = 1;
@@ -374,6 +375,7 @@ function p.EndTick()
 	p.isBusy = false;
 	p.collectResult = {};
 	p.layer = nil;
+	p.SendToServer = false;
 end
 
 --增加拾取操作队列
@@ -389,6 +391,32 @@ function p.Collect( collectType )
 		table.insert( p.collectList, 1, "CollectField" );
 	end
 end
+
+--发送采集结果请求
+function p.SendCollectMsg()
+	--已经发送采集结果
+	if p.SendToServer then
+		WriteCon( "已发送过" );
+		return false;
+	end
+	
+	if TableLength( p.collectResult ) == 0 then
+		WriteCon( "没采集数据" );
+		return false;
+	end
+	
+	p.SendToServer = true;
+	
+	return true;
+end
 --==================================================================--
 
-
+--==================================================================--
+--发送采集结果消息回调
+function p.SendResultCallBack()
+	p.SendToServer = false;
+	
+	--材料仓库请求数据
+	country_storage.RequestData();
+end
+--==================================================================--
