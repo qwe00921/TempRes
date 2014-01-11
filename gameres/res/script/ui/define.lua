@@ -289,6 +289,7 @@ DoFile("ui/ui_country_levelup_btn.lua");
 --村落  材料仓库
 DoFile("ui/ui_item_list.lua");
 DoFile("ui/ui_item_list_1.lua");
+DoFile("ui/ui_pubulic_item_num.lua");
 
 
 --测试（以后要删除）
