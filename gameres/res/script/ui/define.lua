@@ -274,6 +274,8 @@ DoFile("ui/ui_n_battle_pass_bg.lua");
 DoFile("ui/ui_dlg_card_equip_detail.lua");
 DoFile("ui/ui_card_equip_select_list.lua");
 DoFile("ui/ui_card_equip_select_list_item.lua");
+DoFile("ui/ui_card_rein_item.lua");
+DoFile("ui/ui_equip_change_list.lua");
 
 --卡牌编辑
 DoFile("ui/ui_card_group.lua");

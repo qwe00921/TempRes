@@ -81,15 +81,15 @@ function p.ShowUI( equip ,callback)
 	p.ShowItem();
 end
 
-function p.ShowUI4CardEquip(equip)
+function p.ShowUI4CardEquip(equip,callback)
 	WriteConErr("ShowUI4CardEquip  ");
 	p.showType = p.SHOW_ALL;
-	p.ShowUI(equip );
+	p.ShowUI(equip ,callback);
 end
 
-function p.ShowUI4Dress(equip)
+function p.ShowUI4Dress(equip,callback)
 	p.showType = p.SHOW_DRESS
-	p.ShowUI(equip );
+	p.ShowUI(equip ,callback);
 end
 
 function p.ShouUI4EquipRoom(equip,callback)
@@ -272,10 +272,15 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 				card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
 				p.CloseUI(); 
 			else
-				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPDATE , p.equip.cardUid, p.equip.itemType, p.equip)
+				equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
+				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPDATE , p.equip.cardUid, p.equip.itemType, p.equip)
 				p.CloseUI(); 
 			end
         elseif ( ui.ID_CTRL_BUTTON_CLOSE == tag ) then  
+			if p.callback then
+				p.callback(false);
+				p.callback = nil;
+			end
             p.CloseUI(); 
 		elseif (ui.ID_CTRL_BUTTON_UNLOAD == tag) then
 			p.sendUnDress();
@@ -284,7 +289,8 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 				card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
 				p.CloseUI(); 
 			else
-				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardUid, p.equip.itemType, p.equip)
+				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardUid, p.equip.itemType, p.equip)
+				equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
 				p.CloseUI(); 
 			end
 		end		
@@ -495,10 +501,10 @@ function p.OnOk()
 	p.CloseUI();
 	
 	if p.callback then
-		p.callback();
+		p.callback(true);
 		p.callback = nil;
 	else
-		card_equip_select_list.CloseUI();
+		--card_equip_select_list.CloseUI();
 		dlg_card_attr_base.RefreshCardDetail();
 	end
 

@@ -44,6 +44,7 @@ function p:Process()
 		dlg_card_equip_detail.OnUnDress(self);
 	elseif self.idMsg == MSG_CARD_EQUIPMENT_LIST then
 		card_equip_select_list.OnLoadList(self);
+		equip_dress_select.OnLoadList(self);
 		equip_room.ShowInfo(self);
 		equip_sell.update(self);
 	elseif   self.idMsg ==  MSG_CARD_EQUIPMENT_UPGRADE then

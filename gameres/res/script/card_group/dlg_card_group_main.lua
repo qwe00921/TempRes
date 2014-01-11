@@ -524,13 +524,16 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );
 			local v = list:GetEnableMove();
+			local bt = ConverToButton(uiNode);
 			if v == false then
 				v = true;
 				bg:SetVisible(false);
-				
+				bt:SetText(GetStr("card_group_drag"));
 			else 
 				v = false;
 				bg:SetVisible(true);
+				bt:SetText(GetStr("card_group_drag_cancel"));
+				
 			end
 			list:SetEnableMove(v );
 		end

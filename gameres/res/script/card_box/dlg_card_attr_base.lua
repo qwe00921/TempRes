@@ -272,10 +272,11 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
 			if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip1, "1");
-				dlg_card_equip_detail.ShowUI4CardEquip(item);
+				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback);
 			else
 				
-				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 1, nil);
+				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 1, p.showEquipDetailCallback, nil)
+				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 1, nil);
 			end
 			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
@@ -283,7 +284,8 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 				local item = p.PasreCardDetail(p.cardInfo, p.equip2, "2");
 				dlg_card_equip_detail.ShowUI4CardEquip(item);
 			else
-				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 2, nil);
+				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
+				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 2, nil);
 			end
 			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
@@ -291,7 +293,8 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 				local item = p.PasreCardDetail(p.cardInfo, p.equip3, "3");
 				dlg_card_equip_detail.ShowUI4CardEquip(item);
 			else
-				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
+				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
+				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
 			end
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_REPLACE == tag then
 			--替换，显示星灵列表
@@ -402,6 +405,12 @@ end
 --重新重新卡的信息
 function p.RefreshCardDetail()
 	p.LoadCardDetail(p.cardInfo.UniqueId);
+end
+
+function p.showEquipDetailCallback(changed)
+	if changed == true then
+		p.RefreshCardDetail();
+	end
 end
 
 ---------------------------------------网络-----------------------------------------------------------
