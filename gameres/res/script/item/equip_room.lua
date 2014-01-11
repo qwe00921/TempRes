@@ -24,7 +24,7 @@ p.curBtnNode = nil;
 p.newEquip = {};
 p.msg = nil;
 --œ‘ æUI
-function p.ShowUI(card)
+function p.ShowUI()
     
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -42,6 +42,7 @@ function p.ShowUI(card)
     LoadDlg("equip_room.xui", layer, nil);
 	
 	p.layer = layer;
+	p.card = card;
 	p.card = card;
 	p.SetDelegate();
 	p.LoadEquipData();

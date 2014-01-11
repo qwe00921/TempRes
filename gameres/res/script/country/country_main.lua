@@ -324,6 +324,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("PRODUCE");
 			country_building.ShowUI()
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
+			equip_room.ShowUI();
 			WriteCon("EQUIP");
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
 			WriteCon("MERGE");
