@@ -12,6 +12,19 @@ p.numText = nil;
 p.materialList = nil;
 p.showListType = E_LIST_TYPE_ALL;
 p.btnList = {};
+p.curItem = nil;
+
+--p.selectItem = false;
+
+p.itemCtrllers = {};
+
+local BGIMAGE_INDEX = 1;
+local ITEMIMAGE_INDEX = 2;
+local NAMETEXT_INDEX = 3;
+local INFOTEXT_INDEX = 4;
+local SELLBTN_INDEX = 5;
+local SELLTEXT_INDEX = 6;
+local HIDEBTN_INDEX = 7;
 
 local ui = ui_item_list;
 
@@ -23,18 +36,19 @@ function p.ShowUI()
 		return;
 	end
 	
-	local layer = createNDUILayer();
+	local layer = createNDUIDialog();
 	if layer == nil then
 		return false;
 	end
 	
+	layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddChild(layer);
+	GetUIRoot():AddDlg(layer);
 
-	LoadUI( "item_list.xui" , layer, nil );
+	LoadDlg( "item_list.xui" , layer, nil );
 	
 	p.layer = layer;
 	
@@ -80,6 +94,44 @@ end
 function p.InitController()
 	p.numText = GetLabel( p.layer, ui.ID_CTRL_TEXT_16 );
 	p.materialList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_VIEW );
+	
+	local ctrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_112 );	
+	p.itemCtrllers[BGIMAGE_INDEX] = ctrller;
+	ctrller:SetZOrder(9999);
+
+	ctrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_113 );
+	p.itemCtrllers[ITEMIMAGE_INDEX] = ctrller;
+	ctrller:SetZOrder(9999);
+
+	ctrller = GetLabel( p.layer, ui.ID_CTRL_TEXT_114 );
+	p.itemCtrllers[NAMETEXT_INDEX] = ctrller;
+	ctrller:SetZOrder(9999);
+
+	ctrller = GetLabel( p.layer, ui.ID_CTRL_TEXT_115 );
+	p.itemCtrllers[INFOTEXT_INDEX] = ctrller;
+	ctrller:SetZOrder(9999);
+
+	ctrller = GetButton( p.layer, ui.ID_CTRL_BUTTON_116 );
+	p.itemCtrllers[SELLBTN_INDEX] = ctrller;
+	ctrller:SetLuaDelegate( p.OnBtnClick );
+	ctrller:SetZOrder(9999);
+
+	ctrller = GetLabel( p.layer, ui.ID_CTRL_TEXT_117 );
+	p.itemCtrllers[SELLTEXT_INDEX] = ctrller;
+	ctrller:SetZOrder(9999);
+
+	ctrller = GetButton( p.layer, ui.ID_CTRL_BUTTON_118 );
+	p.itemCtrllers[HIDEBTN_INDEX] = ctrller;
+	ctrller:SetLuaDelegate( p.OnBtnClick );
+	ctrller:SetZOrder(9999);
+	
+	p.SetCtrllersVisible( p.itemCtrllers, false );
+end
+
+function p.SetCtrllersVisible( ctrllers, bFlag )
+	for i,v in pairs( ctrllers ) do
+		v:SetVisible( bFlag );
+	end
 end
 
 function p.RequestData()
@@ -187,6 +239,7 @@ function p.RefreshUI( dataSource )
 end
 
 function p.OnBtnClick( uiNode, uiEventType, param )
+	WriteCon("asdasdasd");
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_RETURN == tag then
@@ -230,22 +283,62 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			else
 				p.RequestData();
 			end
+		elseif ui.ID_CTRL_BUTTON_118 == tag then
+			WriteCon( "隐藏物品信息框" );
+			p.SetCtrllersVisible( p.itemCtrllers, false );
+--			p.selectItem = false;
+		elseif ui.ID_CTRL_BUTTON_116 == tag then
+			WriteCon( "卖出" );
+			p.SetCtrllersVisible( p.itemCtrllers, false );
+			country_storage_sell.ShowUI( p.curItem );
 		end
 	end
 end
 
 --点击物品
 function p.OnItemClick( uiNode, uiEventType, param )
+--	if p.selectItem then
+--		return;
+--	end
+	
 	if IsClickEvent( uiEventType ) then
 		local id = uiNode:GetId();
 		WriteCon( "itemIndex:".. tostring(id) );
 		
-		local dataSource = msg_cache.msg_material_list or {};
-		local data = dataSource[id];
+		local source = msg_cache.msg_material_list or {};
+		local materials = source.Material or {};
+		
+		local index = 0;
+		for i, v in pairs( materials ) do
+			if v.id == id then
+				index = i;
+				break;
+			end
+		end
+		local data = materials[index];
+		
 		if data then
-			
+			p.ShowSelectItem( data );
 		end
 	end
+end
+
+function p.ShowSelectItem( data )
+	if #p.itemCtrllers == 0 then
+		return;
+	end
+--	p.selectItem = true;
+	p.SetCtrllersVisible( p.itemCtrllers, true );
+	p.curItem = data;
+	
+	local path = SelectCell( T_MATERIAL, data.material_id, "item_pic" );
+	local picData = GetPictureByAni( path, 0 );
+	if picData then
+		p.itemCtrllers[ITEMIMAGE_INDEX]:SetPicture( picData );
+	end
+	
+	p.itemCtrllers[NAMETEXT_INDEX]:SetText( SelectCell( T_MATERIAL, data.material_id, "name" ) );
+	p.itemCtrllers[INFOTEXT_INDEX]:SetText( SelectCell( T_MATERIAL, data.material_id, "description" ) );
 end
 
 function p.SetBtnHighLight( tag )
@@ -272,6 +365,8 @@ function p.CloseUI()
 		p.numText = nil;
 		p.materialList = nil;
 		p.showListType = E_LIST_TYPE_ALL;
+--		p.selectItem = false;
+		p.curItem = nil;
 		dlg_userinfo.HideUI();
 	end
 end

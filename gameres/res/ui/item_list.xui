@@ -232,3 +232,92 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_BUTTON_118]
+Type=2
+Tag=118
+Rect=13 503 621 140
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_112]
+Type=1
+Tag=112
+Rect=13 503 621 140
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\bg_shop.png
+NormalFileUV=0 0 594 208
+
+[CTRL_PICTURE_113]
+Type=1
+Tag=113
+Rect=29 522 100 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_114]
+Type=4
+Tag=114
+Rect=151 525 177 30
+AnchorPos=0 0
+Notes=
+Text=物品名字
+TextTradition=物品名字
+TextSize=20
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_115]
+Type=4
+Tag=115
+Rect=150 569 462 49
+AnchorPos=0 0
+Notes=
+Text=物品说明物品说明物品说明物品说明物品说明物品说明
+TextTradition=物品說明物品說明物品說明物品說明物品說明物品說明
+TextSize=21
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_116]
+Type=2
+Tag=116
+Rect=505 509 99 48
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_TEXT_117]
+Type=4
+Tag=117
+Rect=518 517 72 32
+AnchorPos=0 0
+Notes=
+Text=卖出
+TextTradition=賣出
+TextSize=25
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
