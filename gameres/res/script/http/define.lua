@@ -25,6 +25,9 @@ DoFile("http/msg/msg_item_treasure.lua");
 DoFile("http/msg/msg_pack_equip_sell.lua");
 
 DoFile("http/msg/msg_maininterface.lua");
+
+DoFile("http/msg/msg_player_update.lua");
+
 DoFile("http/msg/msg_createrole.lua")
 DoFile("http/msg/msg_check_exist_role.lua")
 
@@ -125,3 +128,4 @@ DoFile("http/msg/msg_team_replace.lua");
 
 --村庄
 DoFile("http/msg/msg_count_data.lua");
+DoFile("http/msg/msg_collect_materiallist.lua");

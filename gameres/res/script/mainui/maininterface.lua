@@ -312,7 +312,7 @@ end
 function p.BecomeFirstUI()
 	WriteCon("**BecomeFirstUI**");
 	dlg_userinfo.ShowUI();
-	 p.ShowBillboard()
+	p.ShowBillboard();
 end
 function p.BecomeBackground()
 	p.HideBillboard()
