@@ -28,6 +28,8 @@ function p.ShowUI(id)
 		equip_sell.sortBtnMark = MARK_ON;
 	elseif p.id == 3 then
 		equip_dress_select.sortBtnMark = MARK_ON;
+	elseif p.id == 4 then
+		equip_rein_select.sortBtnMark = MARK_ON;
 	end
 	
 end
@@ -54,6 +56,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				equip_sell.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
 			elseif p.id == 3 then
 				equip_dress_select.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			elseif p.id == 4 then
+				equip_rein_select.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
 			end
 	
 		elseif ui.ID_CTRL_BUTTON_SORT_STAR == tag then
@@ -64,6 +68,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				equip_sell.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			elseif p.id == 3 then
 				equip_dress_select.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			elseif p.id == 4 then
+				equip_rein_select.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			end
 		end
 		p.CloseUI();
@@ -81,6 +87,8 @@ function p.CloseUI()
 			equip_sell.sortBtnMark = MARK_OFF;
 		elseif p.id == 3 then
 			equip_dress_select.sortBtnMark = MARK_OFF;
+		elseif p.id == 4 then
+			equip_rein_select.sortBtnMark = MARK_OFF;
 		end
     end
 end
@@ -94,6 +102,8 @@ function p.HideUI()
 			equip_sell.sortBtnMark = MARK_OFF;
 		elseif p.id == 3 then
 			equip_dress_select.sortBtnMark = MARK_OFF;
+		elseif p.id == 4 then
+			equip_rein_select.sortBtnMark = MARK_OFF;
 		end
 	end
 end

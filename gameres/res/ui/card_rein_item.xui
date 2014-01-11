@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -149,7 +149,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_30]
+[CTRL_TEXT_GAIN_EXP]
 Type=4
 Tag=37
 Rect=173 745 211 30
@@ -162,7 +162,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_31]
+[CTRL_TEXT_USER_MONEY]
 Type=4
 Tag=38
 Rect=173 816 211 30
@@ -175,7 +175,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_32]
+[CTRL_TEXT_FEE_MONEY]
 Type=4
 Tag=39
 Rect=173 780 211 30
@@ -247,8 +247,6 @@ Tag=234
 Rect=400 348 54 27
 AnchorPos=0 0
 Notes=
-Text=生命
-TextTradition=生命
 TextSize=20
 TextColor=0xfe546c
 TextHorAlign=AlignHorCenter
@@ -316,8 +314,6 @@ Tag=242
 Rect=456 348 113 27
 AnchorPos=0 0
 Notes=
-Text=9999(999↑)
-TextTradition=9999(999↑)
 TextSize=20
 TextColor=0xfe546c
 TextHorAlign=AlignLeft
@@ -343,7 +339,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTRIBUTE]
 Type=4
 Tag=245
-Rect=220 348 113 27
+Rect=220 347 113 27
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -366,14 +362,12 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
-[CTRL_TEXT_252]
+[CTRL_TEXT_NAME]
 Type=4
 Tag=252
 Rect=14 359 143 20
 AnchorPos=0 0
 Notes=
-Text=八个字八个字八个
-TextTradition=八個字八個字八個
 TextSize=18
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -445,8 +439,6 @@ Tag=130
 Rect=23 533 51 13
 AnchorPos=0 0
 Notes=
-Text=LV 10
-TextTradition=LV 10
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -654,8 +646,6 @@ Tag=93
 Rect=24 519 89 13
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -669,8 +659,6 @@ Tag=94
 Rect=148 519 89 13
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -684,8 +672,6 @@ Tag=95
 Rect=272 519 89 13
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -699,8 +685,6 @@ Tag=96
 Rect=396 519 89 13
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -714,8 +698,6 @@ Tag=97
 Rect=520 519 89 13
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -729,8 +711,6 @@ Tag=98
 Rect=23 679 89 17
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -744,8 +724,6 @@ Tag=99
 Rect=147 680 89 17
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -759,8 +737,6 @@ Tag=100
 Rect=271 680 89 17
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -774,8 +750,6 @@ Tag=101
 Rect=395 680 89 17
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -789,8 +763,6 @@ Tag=102
 Rect=519 680 89 17
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
 TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -825,7 +797,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_101]
+[CTRL_PICTURE_HEAD]
 Type=1
 Tag=117
 Rect=28 241 107 107

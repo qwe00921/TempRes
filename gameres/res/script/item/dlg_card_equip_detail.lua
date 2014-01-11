@@ -290,7 +290,9 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 				p.CloseUI(); 
 			else
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardUid, p.equip.itemType, p.equip)
-				equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
+				
+				--equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
+				equip_rein_list.ShowUI(p.equip);
 				p.CloseUI(); 
 			end
 		end		

@@ -6,6 +6,7 @@
 
 test = {}
 local p = test;
+pLayer = nil
 
 function p.test()
 --	SetDebugDraw(true);
@@ -97,7 +98,7 @@ function p.test()
     
     --测试剧情
 	--dlg_drama.ShowUI(2);
-	
+
 	--p.testFly();
 	
 	--测试创建角色
@@ -117,19 +118,33 @@ end
 
 function p.testFly()
 	WriteCon("feafa");
-	local pLayer = createNDUIDialog();
+	pLayer = createNDUIDialog();
 
 	pLayer:Init();
 	pLayer:SetSwallowTouch(true);
-	pLayer:SetFrameRectFull();	
-	
+	pLayer:SetFrameRectFull();
 	LoadDlg("test_fly.xui", pLayer, nil);
+	
+	local pButton = GetButton(pLayer,ui_test_fly.ID_CTRL_BUTTON_2);
+	
+	if nil == pButton then
+		return false;
+	end
+	
+	pButton:SetLuaDelegate(p.OnTestType);
 	
 	if nil == pLayer then
 		WriteConWarning("NILNILNIL");
 	end
 	
 	GetUIRoot():AddDlg(pLayer);
+	
+	return true;
+end
+
+function p.OnTestType(uiNode, uiEventType, param)
+	WriteCon("feafaw");
+	pLayer:LazyClose();
 end
 
 function p.EnterBattle()

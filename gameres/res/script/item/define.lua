@@ -31,3 +31,6 @@ DoFile("item/equip_room.lua");
 DoFile("item/equip_bag_sort.lua");
 DoFile("item/equip_sell.lua");
 DoFile("item/equip_dress_select.lua");
+DoFile("item/equip_rein_list.lua");
+DoFile("item/equip_rein_select.lua");
+

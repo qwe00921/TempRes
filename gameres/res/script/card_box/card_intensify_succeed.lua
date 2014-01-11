@@ -89,7 +89,7 @@ function p.ShowCardLevel(msg)
 	
 	--¿¨ÅÆÃû×Ö ID_CTRL_TEXT_NAME
 	local pCardName = GetLabel(p.layer,ui.ID_CTRL_TEXT_NAME);
-	pCardName:SetText(tostring(pCardInfo2.Name)); 
+	pCardName:SetText(tostring(pCardInfo2.name)); 
 	
 	--¿¨ÅÆÊôÐÔ ID_CTRL_PICTURE_CARDNATURE element card_nature
 	local pPicCardNature = GetImage(p.layer, ui.ID_CTRL_PICTURE_26 );

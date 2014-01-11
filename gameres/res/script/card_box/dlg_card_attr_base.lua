@@ -123,14 +123,10 @@ function p.SetDelegate(layer)
     bt:SetLuaDelegate(p.OnUIEventEvolution);
 	bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2);
     bt:SetLuaDelegate(p.OnUIEventEvolution);
-	bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3);
-    bt:SetLuaDelegate(p.OnUIEventEvolution);
 		
 	--ID_CTRL_TEXT_EQUIP1 T_EQUIP 装备名称
 	local pLableEquip1 = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_EQUIP1);
 	local pLableEquip2 = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_EQUIP2);
-	local pLableEquip3 = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_EQUIP3);
-	
 	
 	--装备图片
 	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
@@ -153,15 +149,6 @@ function p.SetDelegate(layer)
 		pEquipPic2:SetPicture(nil);
 	end
 	
-	local pEquipPic3 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_3);
-	if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
-		--local aniIndex = "item."..p.equip3.itemInfo.equip_id;
-		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip2.itemInfo.equip_id); 
-		pEquipPic3:SetPicture( GetPictureByAni(pEquipInfo.item_pic,0) );
-		pLableEquip3:SetText(pEquipInfo.name);
-	else
-		pEquipPic3:SetPicture(nil);
-	end
 	
 	--卡牌等级
 	local pLabCardGrad = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_GRADE);
@@ -247,7 +234,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			--卡牌强化
 			card_intensify2.OnSendReq();
 			card_rein.ShowUI(p.cardInfo);
-			p.CloseUI();
+			--p.CloseUI();
 			
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_SALE == tag then
 			--卡牌卖出
@@ -287,7 +274,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 2, nil);
 			end
-			
+		--[[	
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
 			if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip3, "3");
@@ -296,6 +283,10 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
 			end
+
+				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
+			end]]--
+
 		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_REPLACE == tag then
 			--替换，显示星灵列表
 			card_bag_mian.ShowUI( true, p.mainUIFlag );
@@ -371,7 +362,7 @@ function p.CloseUI()
 		p.cardDetail = {}
 		p.equip1 = {};
 		p.equip2 = {};
-		p.equip3 = {};
+		--p.equip3 = {};
 		expbar_move_effect.ClearData();
     end
 end
@@ -443,14 +434,14 @@ function p.OnLoadCardDetail(msg)
 		p.cardDetail = msg.card_info or {};
 		p.equip1 = {};
 		p.equip2 = {};
-		p.equip3 = {};
+		--p.equip3 = {};
 		if msg.card_info then
 			p.equip1.equipId = msg.card_info.Item_id1;
 			p.equip1.itemInfo = msg.item1_info;
 			p.equip2.equipId = msg.card_info.Item_id2;
 			p.equip2.itemInfo = msg.item2_info;
-			p.equip3.equipId = msg.card_info.Item_id3;
-			p.equip3.itemInfo = msg.item3_info;
+			--p.equip3.equipId = msg.card_info.Item_id3;
+			--p.equip3.itemInfo = msg.item3_info;
 		end
 		
 		p.SetDelegate();
