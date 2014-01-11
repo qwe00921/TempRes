@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -13,6 +13,146 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
+
+[CTRL_BUTTON_CARD1]
+Type=2
+Tag=48
+Rect=11 470 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_BUTTON_CARD2]
+Type=2
+Tag=49
+Rect=135 470 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_BUTTON_CARD3]
+Type=2
+Tag=50
+Rect=259 470 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_BUTTON_CARD4]
+Type=2
+Tag=51
+Rect=382 470 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_PICTURE_CARD5]
+Type=2
+Tag=52
+Rect=507 470 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_PICTURE_CARD6]
+Type=2
+Tag=53
+Rect=11 632 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_PICTURE_CARD7]
+Type=2
+Tag=54
+Rect=135 632 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_PICTURE_CARD8]
+Type=2
+Tag=55
+Rect=259 632 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_PICTURE_CARD9]
+Type=2
+Tag=56
+Rect=382 632 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
+
+[CTRL_PICTURE_CARD10]
+Type=2
+Tag=57
+Rect=507 632 116 62
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\unit_table.png
+NormalFileUV=0 0 194 104
 
 [CTRL_PICTURE_72]
 Type=1
@@ -325,17 +465,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card\card2.png
 NormalFileUV=0 0 192 108
 
-[CTRL_PICTURE_231]
-Type=1
-Tag=231
-Rect=28 240 110 110
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
-
 [CTRL_TEXT_LEVEL1]
 Type=4
 Tag=233
@@ -561,146 +690,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
-
-[CTRL_BUTTON_CARD1]
-Type=2
-Tag=48
-Rect=11 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_BUTTON_CARD2]
-Type=2
-Tag=49
-Rect=135 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_BUTTON_CARD3]
-Type=2
-Tag=50
-Rect=259 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_BUTTON_CARD4]
-Type=2
-Tag=51
-Rect=382 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD5]
-Type=2
-Tag=52
-Rect=507 470 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD6]
-Type=2
-Tag=53
-Rect=11 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD7]
-Type=2
-Tag=54
-Rect=135 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD8]
-Type=2
-Tag=55
-Rect=259 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD9]
-Type=2
-Tag=56
-Rect=382 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
-
-[CTRL_PICTURE_CARD10]
-Type=2
-Tag=57
-Rect=507 632 116 62
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\unit_table.png
-NormalFileUV=0 0 194 104
 
 [CTRL_TEXT_EXP]
 Type=4
@@ -1249,7 +1238,7 @@ NormalFileUV=0 0 194 104
 [CTRL_SPRITE_75]
 Type=19
 Tag=75
-Rect=35 239 95 95
+Rect=40 241 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1273,7 +1262,7 @@ UIClsoeType=0
 [CTRL_BUTTON_MAIN]
 Type=2
 Tag=116
-Rect=31 237 107 111
+Rect=32 238 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1282,10 +1271,21 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_231]
+Type=1
+Tag=231
+Rect=34 239 101 101
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\item_less.png
+NormalFileUV=0 0 100 100
+
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=1 228 639 162
+Rect=-2 233 639 162
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1293,3 +1293,14 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_186]
+Type=1
+Tag=186
+Rect=0 400 636 316
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
