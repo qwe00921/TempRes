@@ -97,13 +97,19 @@ function p.InitUI(card_info)
 	p.baseCardInfo = p.copyTab(card_info);  --表的COPY
 	p.InitAllCardInfo(); --初始化所有卡牌
 	p.ShowCardCost();
+	local selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
+	local dontBtn = GetImage(p.layer, ui.ID_CTRL_PICTURE_186);
+	local txtlab = GetLabel(p.layer, ui.ID_CTRL_TEXT_416);
 	if card_info == nil then --挡板的设置
-		local selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
+		--selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
 		selBtn:SetVisible(true);
+		--dontBtn = GetImage(p.layer, ui.ID_CTRL_PICTURE_186);
+		dontBtn:SetVisible(true);
 	else
-		local selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
+		--selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
 		selBtn:SetVisible(false);		
-		
+		dontBtn:SetVisible(false);
+		txtlab:SetText("");
 		card_intensify2.CloseUI();	
 		
 		--头像 CTRL_PICTURE_231			CTRL_BUTTON_MAIN	 GetPictureByAni("w_battle.intensify_"..lcardId,0) 
