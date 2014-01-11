@@ -4,7 +4,7 @@
 --------------------------------------------------------------
 ui_equip_room = {};
 local p =  ui_equip_room;
-p.ID_CTRL_TEXT_188					       = 188;
+p.ID_CTRL_TEXT_112					       = 112;
 p.ID_CTRL_BUTTON_ARMOR				    = 20;
 p.ID_CTRL_BUTTON_WEAPON				   = 19;
 p.ID_CTRL_BUTTON_ALL					     = 18;
