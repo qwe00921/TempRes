@@ -35,6 +35,26 @@ NUIEventType =
 	TE_TOUCH_BTN_END			= 18
 };
 
+UILoadType =
+{
+	UI_LT_DEFAULT = 0,
+	UI_LT_SCALE = 1,
+	UI_LT_LEFTFLY = 2,
+	UI_LT_RIGHTFLY = 3,
+	UI_LT_TOPFLY = 4,
+	UI_LT_BOTTOMFLY = 5
+};
+
+UICloseType =
+{
+	UI_CT_DEFAULT = 0,
+	UI_CT_SCALE = 1,
+	UI_CT_LEFTFLY = 2,
+	UI_CT_RIGHTFLY = 3,
+	UI_CT_TOPFLY = 4,
+	UI_CT_BOTTOMFLY = 5
+};
+
 --列表控件的选择模式（默认单选）
 E_LIST_SEL_NONE = 0;
 E_LIST_SEL_SINGLE = 1;
