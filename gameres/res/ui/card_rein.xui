@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -1165,7 +1165,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA1]
-Type=1
+Type=2
 Tag=106
 Rect=17 402 107 111
 AnchorPos=0 0
@@ -1174,7 +1174,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA2]
-Type=1
+Type=2
 Tag=107
 Rect=141 402 107 111
 AnchorPos=0 0
@@ -1183,7 +1183,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA3]
-Type=1
+Type=2
 Tag=108
 Rect=265 402 107 111
 AnchorPos=0 0
@@ -1192,7 +1192,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA4]
-Type=1
+Type=2
 Tag=109
 Rect=389 402 107 111
 AnchorPos=0 0
@@ -1201,7 +1201,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA5]
-Type=1
+Type=2
 Tag=110
 Rect=513 402 107 111
 AnchorPos=0 0
@@ -1210,7 +1210,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA6]
-Type=1
+Type=2
 Tag=111
 Rect=15 556 107 111
 AnchorPos=0 0
@@ -1219,7 +1219,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA7]
-Type=1
+Type=2
 Tag=112
 Rect=140 556 107 111
 AnchorPos=0 0
@@ -1228,7 +1228,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA8]
-Type=1
+Type=2
 Tag=113
 Rect=265 556 107 111
 AnchorPos=0 0
@@ -1237,7 +1237,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA9]
-Type=1
+Type=2
 Tag=114
 Rect=390 556 107 111
 AnchorPos=0 0
@@ -1246,7 +1246,7 @@ UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CHA10]
-Type=1
+Type=2
 Tag=115
 Rect=515 556 107 111
 AnchorPos=0 0
