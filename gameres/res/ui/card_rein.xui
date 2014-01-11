@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -811,8 +811,6 @@ Tag=130
 Rect=23 533 51 13
 AnchorPos=0 0
 Notes=
-Text=LV 10
-TextTradition=LV 10
 TextSize=17
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter

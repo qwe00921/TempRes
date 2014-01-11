@@ -132,18 +132,19 @@ function p.InitUI(card_info)
 		lCardExp:SetProcess(tonumber(card_info.Exp));
 		lCardExp:SetNoText();
 				
-		p.SetExp(card_info);
+		--p.SetExp(card_info);
 		--local pCardUpLevelInfo= SelectRowInner( T_CARD_LEVEL, "level", tonumber(p.cardInfo.Level)+1);
 		--local expSstartNum = tonumber(card_info.Exp);
 		--local expLeast = 0;
 		--expbar_move_effect.showEffect(lCardExp,expLeast,tonumber(pCardUpLevelInfo.exp),expSstartNum,0);
-		--[[
-		--经验值 ID_CTRL_TEXT_EXP
-		local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", card_info.Level);
-		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
-		lTextExp:SetText(tostring(card_info.Exp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
 		
-
+		--经验值 ID_CTRL_TEXT_EXP
+		--local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", card_info.Level);
+		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
+		lTextExp:SetText(tostring(card_info.Exp).."/"..tostring(lCardLeveInfo.exp));
+		WriteCon("Exp = "..tostring(card_info.Exp));
+		WriteCon("lCardLeveInfo.Exp = "..tostring(lCardLeveInfo.Exp));
+--[[
 		--加上经验后的经验条
 		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDADD);
 		local laddAllExp = tonumber(card_info.Exp) + p.addExp;
@@ -214,7 +215,7 @@ end;
 function p.ShowCardCost()
 	
 	local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);
-	cardCount:SetText(tostring(p.selectNum).."/10"); 
+	cardCount:SetText(tostring(p.addExp)); 
 	
 	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_32);
 	cardMoney:SetText(tostring(p.consumeMoney)); 
@@ -271,16 +272,16 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	
 	p.addExp = p.addExp + lCardInfo.feedBase_exp + lCardLeveInfo.feed_exp;
 	
-	p.SetExp(pCardInfo);
+	--p.SetExp(pCardInfo);
 end;
-
+--经验条
 function p.SetExp(card_info)
 
 	
 	--经验值 ID_CTRL_TEXT_EXP
 	local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", card_info.Level);
-	local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
-	lTextExp:SetText(tostring(p.nowExp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
+	--local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
+	--lTextExp:SetText(tostring(p.nowExp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
 	
 	--[[--经验值条 ID_CTRL_EXP_CARDEXP
 	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
