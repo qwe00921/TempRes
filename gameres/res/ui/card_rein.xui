@@ -1261,6 +1261,15 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_186]
+Type=1
+Tag=999
+Rect=2 398 636 357
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
@@ -1272,14 +1281,3 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_186]
-Type=1
-Tag=186
-Rect=0 400 636 316
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\bg4.png
-NormalFileUV=0 0 1 1

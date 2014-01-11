@@ -86,7 +86,7 @@ function p.copyTab(ori_tab)
 end
 
 function p.InitUI(card_info)
-
+	
 	if card_info ~= nil then
 		if card_info.UniqueID ~= nil then
 			card_info.UniqueId = tonumber(card_info.UniqueID); --属性缺少
@@ -97,25 +97,20 @@ function p.InitUI(card_info)
 	p.baseCardInfo = p.copyTab(card_info);  --表的COPY
 	p.InitAllCardInfo(); --初始化所有卡牌
 	p.ShowCardCost();
-	local selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
-	local dontBtn = GetImage(p.layer, ui.ID_CTRL_PICTURE_186);
+	local dontimg = GetImage(p.layer, ui.ID_CTRL_PICTURE_186);
 	local txtlab = GetLabel(p.layer, ui.ID_CTRL_TEXT_416);
 	if card_info == nil then --挡板的设置
-		--selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
-		selBtn:SetVisible(true);
-		--dontBtn = GetImage(p.layer, ui.ID_CTRL_PICTURE_186);
-		dontBtn:SetVisible(true);
+		
+		dontimg:SetPicture(GetPictureByAni("ui.ui_bg",0));
 	else
-		--selBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD_CHOOSE);
-		selBtn:SetVisible(false);		
-		dontBtn:SetVisible(false);
+			
+		dontimg:SetVisible(false);
+		
 		txtlab:SetText("");
 		card_intensify2.CloseUI();	
-		
 		--头像 CTRL_PICTURE_231			CTRL_BUTTON_MAIN	 GetPictureByAni("w_battle.intensify_"..lcardId,0) 
 		local lCardResRowInfo= SelectRowInner( T_CHAR_RES, "card_id", card_info.CardID); --从表中获取卡牌详细信息			
-		local lHeadPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_231);
-		--lHeadPic:SetPicture( GetPictureByAni(lCardResRowInfo.head_pic, 0) );	
+		local lHeadPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_231);	
 		lHeadPic:SetPicture(GetPictureByAni("w_battle.intensify_"..card_info.CardID,0));
 			
 		--名字 CTRL_TEXT_252
@@ -137,30 +132,11 @@ function p.InitUI(card_info)
 		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
 		lCardExp:SetProcess(tonumber(card_info.Exp));
 		lCardExp:SetNoText();
-				
-		--p.SetExp(card_info);
-		--local pCardUpLevelInfo= SelectRowInner( T_CARD_LEVEL, "level", tonumber(p.cardInfo.Level)+1);
-		--local expSstartNum = tonumber(card_info.Exp);
-		--local expLeast = 0;
-		--expbar_move_effect.showEffect(lCardExp,expLeast,tonumber(pCardUpLevelInfo.exp),expSstartNum,0);
-		
+			
 		--经验值 ID_CTRL_TEXT_EXP
-		--local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "card_level", card_info.Level);
 		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
 		lTextExp:SetText(tostring(card_info.Exp).."/"..tostring(lCardLeveInfo.exp));
-		WriteCon("Exp = "..tostring(card_info.Exp));
-		WriteCon("lCardLeveInfo.Exp = "..tostring(lCardLeveInfo.Exp));
---[[
-		--加上经验后的经验条
-		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDADD);
-		local laddAllExp = tonumber(card_info.Exp) + p.addExp;
-		if laddAllExp > tonumber(lCardLeveInfo.exp) then
-			laddAllExp = tonumber(lCardLeveInfo.exp)
-		end;
-		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
-		lCardExp:SetProcess(tonumber(laddAllExp));
-		lCardExp:SetNoText();
-		]]--
+
 		--生命值 ID_CTRL_TEXT_HP
 		local lTextHP = GetLabel(p.layer, ui.ID_CTRL_TEXT_HP);
 		lTextHP:SetText(tostring(card_info.Hp));
@@ -192,9 +168,6 @@ function p.InitUI(card_info)
 		local lTextSpeed = GetLabel(p.layer, ui.ID_CTRL_TEXT_247);
 		lTextSpeed:SetText(tostring(card_info.Speed));		
 		
-		--暴击 ID_CTRL_TEXT_248
-		--local lTextCrit = GetLabel(p.layer, ui.ID_CTRL_TEXT_248);
-		--lTextCrit:SetText(tostring(card_info.Crit));
 	end
 end	
 
@@ -245,17 +218,11 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	local cardLevText = GetLabel(p.layer, ui.ID_CTRL_TEXT_CARDLEVEL1+pIndex-1);
 	cardLevText:SetVisible(true);
 	cardLevText:SetText("LV "..tostring(pCardInfo.Level));
-	
-	--local cardLevPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+pIndex-1);
-	--cardLevPic:SetVisible(true);	
-	
-	
-	
+			
 	local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+pIndex-1);
 	local lcardId = tonumber(pCardInfo.CardID);
 	local lCardRowInfo= SelectRowInner( T_CHAR_RES, "card_id", lcardId); --从表中获取卡牌详细信息	
-	
-	
+		
 	--cardButton:SetImage( GetPictureByAni("n_battle.attack_"..lcardId,0) );
 	cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
 	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
@@ -273,38 +240,10 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", pCardInfo.Level);
 	end		
 	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money;	
-	
-	
-	
+			
 	p.addExp = p.addExp + lCardInfo.feedBase_exp + lCardLeveInfo.feed_exp;
 	
-	--p.SetExp(pCardInfo);
 end;
---经验条
-function p.SetExp(card_info)
-
-	
-	--经验值 ID_CTRL_TEXT_EXP
-	local lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", card_info.Level);
-	--local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
-	--lTextExp:SetText(tostring(p.nowExp).."( +"..tostring(p.addExp).." ) ".."/"..tostring(lCardLeveInfo.exp));
-	
-	--[[--经验值条 ID_CTRL_EXP_CARDEXP
-	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDEXP);
-	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
-	lCardExp:SetProcess(tonumber(p.nowExp));
-	lCardExp:SetNoText();--]]
-
- --累加后的经验条	
-	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_CARDADD);
-	local laddAllExp = p.nowExp + p.addExp;
-	if laddAllExp > tonumber(lCardLeveInfo.exp) then
-		laddAllExp = tonumber(lCardLeveInfo.exp)
-	end;
-	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
-	lCardExp:SetProcess(tonumber(laddAllExp));
-	lCardExp:SetNoText();	
-end;	
 
 function p.InitAllCardInfo()
 		
@@ -312,19 +251,10 @@ function p.InitAllCardInfo()
 	for i=1,10 do
 		
 		local tLevel= "ID_CTRL_TEXT_CARDLEVEL"..tostring(i);--按钮
-		--local btCard= "ID_CTRL_BUTTON_CHA"..tostring(i);--装备图
 		local tName = "ID_CTRL_TEXT_NAME"..tostring(i);--装备图背景
 		
 		local cardLevText = GetLabel(p.layer, ui[tLevel]);
 		cardLevText:SetVisible(false);
-		WriteCon("~~~~~   i = "..i);
-		--local cardPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_111+i-1);
-		--cardPic:SetVisible(false);	
-		
-		--local cardBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_CARD1+i-1);
-		--cardBtn:SetImage(GetPictureByAni("common_ui.cardBg", 0));
-		--local cardButton = GetImage(p.layer, ui[btCard]);
-		--cardButton:SetPicture(GetPictureByAni("common_ui.cardBg", 0) );
 	
 		local cardName = GetLabel(p.layer,ui[tName]);
 		cardName:SetText("");
@@ -405,13 +335,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			else
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
 			end;
-		--[[elseif((ui.ID_CTRL_BUTTON_CHA1 <= tag) and (ui.ID_CTRL_PICTURE_CHA10 >= tag)) then --卡牌点击
-			--if p.baseCardInfo ~= nil then
-				WriteCon("111111111111  ");
-				card_intensify.ShowUI(p.baseCardInfo);  
-			--else
-				--未选择需强化的卡牌
-			--end;]]--
+		
 		end;
 	end
 end		

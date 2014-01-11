@@ -118,7 +118,9 @@ image\ui\main_interface\union.PNG
 image\ui\main_interface\friend.PNG
 image\ui\main_interface\pictorialial.PNG
 image\ui\main_interface\card.PNG
-
+;±≥æ∞
+[ui_bg]
+image\ui\main_interface\bg4.png
 ;’Û»›œ‘ æ»± °∞¥≈•≈‰÷√
 [default_card_btn]
 image\ui\main_interface\cha_less.png

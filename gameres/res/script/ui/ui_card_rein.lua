@@ -4,8 +4,8 @@
 --------------------------------------------------------------
 ui_card_rein = {};
 local p =  ui_card_rein;
-p.ID_CTRL_PICTURE_186					    = 186;
 p.ID_CTRL_BUTTON_CARD_CHOOSE			= 58;
+p.ID_CTRL_PICTURE_186					    = 999;
 p.ID_CTRL_TEXT_416					       = 416;
 p.ID_CTRL_PICTURE_231					    = 231;
 p.ID_CTRL_TEXT_252					       = 252;
