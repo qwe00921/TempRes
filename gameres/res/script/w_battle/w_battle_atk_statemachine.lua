@@ -100,11 +100,11 @@ function p:startsing()
     	local cmdSingMusic = createCommandSoundMusicVideo():PlaySoundByName( self.singSound );
         self.seqStar:AddCommand( cmdSingMusic );
     
-	    local cmd1 = createCommandEffect():AddFgEffect( 0.1, self.atkFighter:GetNode(), self.sing );
+	    local cmd1 = createCommandEffect():AddFgEffect( 0.5, self.atkFighter:GetNode(), self.sing );
 		self.seqStar:AddCommand( cmd1 );
 		
 		local cmdAtk = self.atkFighter:cmdLua("atk_start",  self.id,"", self.seqAtk);
-		self.seqAtk:SetWaitEnd( cmdMove );
+		self.seqAtk:SetWaitEnd( cmd1 );
 	else
 		p:atk_start();
     end;					
@@ -188,7 +188,11 @@ function p:atk_startAtk()
 				for pos=1,#self.targetLst do
 					tarFighter = (self.targetLst)[pos];
 					local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
-					self.seqStar:AddCommand( cmd11 );
+					local batch = w_battle_mgr.GetBattleBatch(); 
+					local seqTemp = batch:AddSerialSequence();
+					seqTemp:AddCommand( cmd11 );					
+					
+					--self.seqStar:AddCommand( cmd11 );
 				end;			
 			else
 				local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
