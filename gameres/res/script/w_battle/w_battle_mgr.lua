@@ -227,7 +227,7 @@ function p.SetPVESkillAtkID(atkID)
 	end;
 	
 	
-	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
+--	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
 	--lStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);
 	lStateMachine:aoeinit(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);	
 	
