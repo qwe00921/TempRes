@@ -193,9 +193,11 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	end
 end
 
-function p.uiBuild()
-	--local typeID = 
-
+function p.upBuild()
+	local typeID = 1
+	local uid = GetUID();
+	local param = "build_type="..typeID;
+	SendReq("Build","UpBuild",uid,param);
 end
 
 --隐藏UI
