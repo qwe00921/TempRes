@@ -15,6 +15,13 @@ function SendReq( cmd, action, uid, param )
 	http_busy = true;
 end
 
+function SendPost(cmd)
+	PostRequest(cmd);
+	
+	SetTimerOnce( OnTimerCheckBusy, 1.0f );
+	http_busy = true;
+end
+
 --ºÏ≤È «∑Ò√¶
 function OnTimerCheckBusy()
 	if http_busy then
