@@ -364,7 +364,7 @@ function p:AddFighters( uiArray, fighters )
 		f.atkType = tonumber ( fighterInfo.Damage_type);
 		f.Position = tonumber (fighterInfo.Position);
 		f.Crit	   = tonumber (fighterInfo.Crit);
-		
+		f.Skill	   = tonumber (fighterInfo.Skill);
         f.buffList = {};
          
 		--临时攻击力调整

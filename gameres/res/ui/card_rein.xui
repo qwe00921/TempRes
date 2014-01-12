@@ -320,7 +320,7 @@ NormalFileUV=0 0 192 108
 [CTRL_BUTTON_START]
 Type=2
 Tag=33
-Rect=440 757 174 63
+Rect=440 754 174 63
 AnchorPos=0 0
 Notes=
 Text=开始强化
@@ -332,6 +332,8 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_blue.png
 NormalFileUV=0 0 232 84
+DisableFile=.\res\image\ui\public\button_blue_unclick.png
+DisableFileUV=0 0 232 84
 
 [CTRL_9SLICES_26]
 Type=22
@@ -513,7 +515,7 @@ UIClsoeType=0
 [CTRL_EXP_CARDADD]
 Type=9
 Tag=752
-Rect=363 247 260 22
+Rect=426 247 197 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -527,7 +529,7 @@ NormalFileUV=0 0 188 32
 [CTRL_EXP_CARDEXP]
 Type=9
 Tag=236
-Rect=363 247 260 22
+Rect=427 247 196 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -586,7 +588,7 @@ UIClsoeType=0
 [CTRL_PICTURE_241]
 Type=1
 Tag=241
-Rect=355 244 275 27
+Rect=423 244 205 27
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -684,7 +686,7 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_EXP]
 Type=4
 Tag=74
-Rect=407 247 177 19
+Rect=438 247 177 19
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -790,7 +792,7 @@ Tag=130
 Rect=23 533 51 13
 AnchorPos=0 0
 Notes=
-TextSize=17
+TextSize=10
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -914,81 +916,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_NAME1]
-Type=4
-Tag=93
-Rect=24 519 89 13
-AnchorPos=0 0
-Notes=
-Text=角色名称
-TextTradition=角色名稱
-TextSize=16
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NAME2]
-Type=4
-Tag=94
-Rect=148 519 89 13
-AnchorPos=0 0
-Notes=
-Text=角色名称
-TextTradition=角色名稱
-TextSize=16
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NAME3]
-Type=4
-Tag=95
-Rect=272 519 89 13
-AnchorPos=0 0
-Notes=
-Text=角色名称
-TextTradition=角色名稱
-TextSize=16
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NAME4]
-Type=4
-Tag=96
-Rect=396 519 89 13
-AnchorPos=0 0
-Notes=
-Text=角色名称
-TextTradition=角色名稱
-TextSize=16
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NAME5]
-Type=4
-Tag=97
-Rect=520 519 89 13
-AnchorPos=0 0
-Notes=
-Text=角色名称
-TextTradition=角色名稱
-TextSize=16
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_NAME6]
 Type=4
 Tag=98
@@ -997,7 +924,7 @@ AnchorPos=0 0
 Notes=
 Text=角色名称
 TextTradition=角色名稱
-TextSize=16
+TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -1012,7 +939,7 @@ AnchorPos=0 0
 Notes=
 Text=角色名称
 TextTradition=角色名稱
-TextSize=16
+TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -1027,7 +954,7 @@ AnchorPos=0 0
 Notes=
 Text=角色名称
 TextTradition=角色名稱
-TextSize=16
+TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -1042,7 +969,7 @@ AnchorPos=0 0
 Notes=
 Text=角色名称
 TextTradition=角色名稱
-TextSize=16
+TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -1057,7 +984,7 @@ AnchorPos=0 0
 Notes=
 Text=角色名称
 TextTradition=角色名稱
-TextSize=16
+TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -1079,14 +1006,14 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_102]
 Type=4
 Tag=104
-Rect=113 161 216 60
+Rect=120 161 216 60
 AnchorPos=0 0
 Notes=
-Text=请选择卡牌与素材
-TextTradition=請選擇卡牌與素材
+Text=强化界面
+TextTradition=強化界面
 TextSize=25
 TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -1261,23 +1188,134 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_186]
-Type=1
-Tag=999
-Rect=2 398 636 357
+[CTRL_TEXT_103]
+Type=4
+Tag=116
+Rect=361 244 54 27
 AnchorPos=0 0
 Notes=
+Text=队伍
+TextTradition=隊伍
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=0 229 639 162
+Rect=0 228 638 162
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_226]
+Type=1
+Tag=226
+Rect=175 767 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\money.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_227]
+Type=1
+Tag=227
+Rect=175 802 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\money.png
+NormalFileUV=0 0 32 32
+
+[CTRL_TEXT_NAME1]
+Type=4
+Tag=93
+Rect=24 517 89 17
+AnchorPos=0 0
+Notes=
+Text=角色名称
+TextTradition=角色名稱
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME2]
+Type=4
+Tag=94
+Rect=148 519 89 17
+AnchorPos=0 0
+Notes=
+Text=角色名称
+TextTradition=角色名稱
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME3]
+Type=4
+Tag=95
+Rect=272 519 89 17
+AnchorPos=0 0
+Notes=
+Text=角色名称
+TextTradition=角色名稱
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME4]
+Type=4
+Tag=96
+Rect=396 519 89 17
+AnchorPos=0 0
+Notes=
+Text=角色名称
+TextTradition=角色名稱
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME5]
+Type=4
+Tag=97
+Rect=520 519 89 17
+AnchorPos=0 0
+Notes=
+Text=角色名称
+TextTradition=角色名稱
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_186]
+Type=1
+Tag=999
+Rect=0 396 635 322
+AnchorPos=0 0
+Notes=
 UIOpenType=0
 UIClsoeType=0
