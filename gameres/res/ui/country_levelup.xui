@@ -130,13 +130,10 @@ NormalFileUV=0 0 102 102
 [CTRL_TEXT_UP1]
 Type=4
 Tag=34
-Rect=242 343 158 34
+Rect=242 358 158 34
 AnchorPos=0 0
 Notes=
-Text=升级1
-TextTradition=升級1
 TextSize=18
-TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -145,13 +142,22 @@ UIClsoeType=0
 [CTRL_TEXT_UP2]
 Type=4
 Tag=35
-Rect=241 381 158 34
+Rect=225 491 188 34
 AnchorPos=0 0
 Notes=
-Text=升级2
-TextTradition=升級2
 TextSize=18
-TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_UP3]
+Type=4
+Tag=57
+Rect=226 458 185 33
+AnchorPos=0 0
+Notes=
+TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -216,3 +222,17 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\country\arrow_right.png
 NormalFileUV=0 0 25 26
+
+[CTRL_TEXT_BUILD_LV]
+Type=4
+Tag=39
+Z_Order=1
+Rect=262 649 107 28
+AnchorPos=0 0
+Notes=
+TextSize=30
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

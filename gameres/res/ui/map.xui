@@ -9,58 +9,10 @@ Tag=1
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\map\chapter.PNG
 NormalFileUV=0 0 640 1136
-
-[CTRL_BUTTON_CHAPTER2]
-Type=2
-Tag=2
-Rect=421 621 143 136
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_CHAPTER3]
-Type=2
-Tag=3
-Rect=102 499 143 136
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_CHAPTER4]
-Type=2
-Tag=4
-Rect=444 377 143 136
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_CHAPTER5]
-Type=2
-Tag=5
-Rect=112 261 143 136
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_CHAPTER6]
-Type=2
-Tag=6
-Rect=412 118 143 136
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 
 [CTRL_BUTTON_CHAPTER1]
 Type=2
@@ -71,62 +23,136 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_PICTURE_9]
+[CTRL_BUTTON_CHAPTER2]
+Type=2
+Tag=2
+Rect=421 621 143 136
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER3]
+Type=2
+Tag=3
+Rect=102 499 143 136
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER4]
+Type=2
+Tag=4
+Rect=444 377 143 136
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER5]
+Type=2
+Tag=5
+Rect=112 261 143 136
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER6]
+Type=2
+Tag=6
+Rect=412 118 143 136
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
 Rect=138 697 145 51
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_10]
+[CTRL_PICTURE_HEAD2]
 Type=1
 Tag=10
 Rect=420 571 145 51
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_11]
+[CTRL_PICTURE_HEAD3]
 Type=1
 Tag=11
 Rect=100 450 145 51
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_12]
+[CTRL_PICTURE_HEAD4]
 Type=1
 Tag=12
 Rect=440 326 145 51
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_14]
+[CTRL_PICTURE_HEAD5]
 Type=1
 Tag=14
 Rect=110 212 145 51
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_PICTURE_17]
+[CTRL_PICTURE_HEAD6]
 Type=1
 Tag=17
 Rect=413 67 145 51
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_TEXT_CHAPTERNAME1]
+[CTRL_TEXT_CHAPTER1]
 Type=4
 Tag=18
 Rect=147 704 123 34
@@ -135,6 +161,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CHAPTER2]
 Type=4
@@ -145,6 +173,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CHAPTER3]
 Type=4
@@ -155,6 +185,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CHAPTER4]
 Type=4
@@ -165,6 +197,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CHAPTER5]
 Type=4
@@ -175,6 +209,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CHAPTER6]
 Type=4
@@ -185,3 +221,5 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
