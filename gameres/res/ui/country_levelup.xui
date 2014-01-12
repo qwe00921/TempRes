@@ -28,7 +28,7 @@ NormalFileUV=0 0 1 1
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=1 170 80 64
+Rect=1 155 80 64
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -42,7 +42,7 @@ NormalFileUV=0 0 100 80
 [CTRL_TEXT_RETURN]
 Type=4
 Tag=44
-Rect=6 171 72 60
+Rect=6 156 72 60
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -57,7 +57,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD]
 Type=1
 Tag=42
-Rect=85 171 184 65
+Rect=85 156 184 65
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -68,7 +68,7 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_HEAD]
 Type=4
 Tag=6
-Rect=91 172 119 60
+Rect=91 157 119 60
 AnchorPos=0 0
 Notes=
 Text=建筑升级
@@ -130,13 +130,10 @@ NormalFileUV=0 0 102 102
 [CTRL_TEXT_UP1]
 Type=4
 Tag=34
-Rect=242 343 158 34
+Rect=242 358 158 34
 AnchorPos=0 0
 Notes=
-Text=升级1
-TextTradition=升級1
 TextSize=18
-TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -145,30 +142,49 @@ UIClsoeType=0
 [CTRL_TEXT_UP2]
 Type=4
 Tag=35
-Rect=241 381 158 34
+Rect=225 491 188 34
 AnchorPos=0 0
 Notes=
-Text=升级2
-TextTradition=升級2
 TextSize=18
-TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_LIST_BUILD]
-Type=8
-Tag=56
-Rect=0 538 640 150
+[CTRL_TEXT_UP3]
+Type=4
+Tag=57
+Rect=226 458 185 33
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_BUILD]
+Type=1
+Tag=83
+Rect=60 538 520 150
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_MIDDLE]
+[CTRL_PICTURE_MID_POS]
+Type=1
+Tag=17
+Rect=246 540 145 145
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_BOX]
 Type=1
 Tag=49
+Z_Order=1
 Rect=172 509 292 208
 AnchorPos=0 0
 Notes=
@@ -180,6 +196,7 @@ NormalFileUV=0 0 292 208
 [CTRL_BUTTON_LEFT]
 Type=2
 Tag=50
+Z_Order=1
 Rect=181 601 23 23
 AnchorPos=0 0
 Notes=
@@ -194,6 +211,7 @@ NormalFileUV=0 0 23 23
 [CTRL_BUTTON_RIGHT]
 Type=2
 Tag=51
+Z_Order=1
 Rect=427 600 25 25
 AnchorPos=0 0
 Notes=
@@ -204,3 +222,17 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\country\arrow_right.png
 NormalFileUV=0 0 25 26
+
+[CTRL_TEXT_BUILD_LV]
+Type=4
+Tag=39
+Z_Order=1
+Rect=262 649 107 28
+AnchorPos=0 0
+Notes=
+TextSize=30
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

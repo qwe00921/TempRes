@@ -360,7 +360,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local cardId = tonumber(card.CardID);
 	
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", cardId); --从表中获取卡牌详细信息	
-	cardButton:SetImage( GetPictureByAni(pCardInfo.card_pic, 0) );
+	cardButton:SetImage( GetPictureByAni(pCardInfo.head_pic, 0) );
 	--cardButton:SetImage( GetPictureByAni("card.card_101",0) );
 	local cardUniqueId = tonumber(card.UniqueId);
     cardButton:SetId(cardUniqueId);

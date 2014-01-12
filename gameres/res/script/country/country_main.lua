@@ -6,7 +6,7 @@ p.layer = nil;
 p.openViewTypeT = {};
 p.openTypeNum = 1;
 p.openViewT = {};
-p.countInfoT = {};
+p.countryInfoT = {};
 
 local uiNodeT = {}
 
@@ -133,16 +133,16 @@ function p.ShowCountry(backData)
 		dlg_msgbox.ShowOK("错误提示","玩家数据错误。",nil,p.layer);
 		return;
 	end
-	p.countInfoT = backData.builds;
-	if p.countInfoT == nil then
+	p.countryInfoT = backData.builds;
+	if p.countryInfoT == nil then
 		dlg_msgbox.ShowOK("错误提示","无村庄数据",nil,p.layer);
 		return
 	end
 	--是否有新开启的建筑
-	--p.openViewT = backData.openani;
-	p.openViewT["P1"] = 1;
-	p.openViewT["P3"] = 3;
-	p.openViewT["P7"] = 7;
+	p.openViewT = backData.openani;
+	-- p.openViewT["P1"] = 1;
+	-- p.openViewT["P3"] = 3;
+	-- p.openViewT["P7"] = 7;
 	local openViewNum = 0;	
 	if p.openViewT ~= nil then
 		for k,v in pairs(p.openViewT) do
@@ -155,7 +155,7 @@ function p.ShowCountry(backData)
 		p.showNewBuild(p.openViewT);
 	else
 		--显示村庄信息
-		p.showCountryBuild(p.countInfoT)
+		p.showCountryBuild(p.countryInfoT)
 	end
 end
 
@@ -176,7 +176,7 @@ function p.showNewBuild(openViewT)
 				p.openTypeNum = i + 1;
 			end
 			if i == 9 then
-				p.showCountryBuild(p.countInfoT)
+				p.showCountryBuild(p.countryInfoT)
 			end
 		end
 	end
@@ -322,8 +322,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			country_collect.Collect( E_COLLECT_FIELD );
 		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
 			WriteCon("PRODUCE");
-			country_building.ShowUI()
+			country_building.ShowUI(p.countryInfoT)
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
+			equip_room.ShowUI();
 			WriteCon("EQUIP");
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
 			WriteCon("MERGE");
@@ -331,6 +332,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("HOME");
 		elseif ui.ID_CTRL_BUTTON_STORE == tag then
 			WriteCon("STORE");
+			country_storage.ShowUI();
 		end
 	end
 end
@@ -354,5 +356,5 @@ function p.ClearData()
 	p.openViewTypeT = {};
 	p.openTypeNum = 1;
 	p.openViewT = {};
-	p.countInfoT = {};
+	p.countryInfoT = {};
 end

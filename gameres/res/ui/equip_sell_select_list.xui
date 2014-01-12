@@ -1,0 +1,260 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=15
+Z_Order=-1
+Rect=0 0 639 155
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_ITEM_1]
+Type=2
+Tag=59
+Rect=18 7 136 140
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_PICTURE_IMAGE_1]
+Type=1
+Tag=169
+Rect=32 13 105 105
+AnchorPos=0 0
+Notes=
+
+[CTRL_BUTTON_ITEM_2]
+Type=2
+Tag=171
+Rect=172 7 136 140
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_BUTTON_ITEM_3]
+Type=2
+Tag=172
+Rect=329 7 136 140
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_BUTTON_ITEM_4]
+Type=2
+Tag=173
+Rect=480 7 136 140
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+
+[CTRL_PICTURE_IMAGE_2]
+Type=1
+Tag=175
+Rect=183 13 105 105
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_IMAGE_3]
+Type=1
+Tag=176
+Rect=344 13 105 105
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_IMAGE_4]
+Type=1
+Tag=177
+Rect=493 12 105 105
+AnchorPos=0 0
+Notes=
+
+[CTRL_PICTURE_BD_1]
+Type=1
+Tag=31
+Rect=32 10 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_BD_2]
+Type=1
+Tag=32
+Rect=184 10 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_BD_3]
+Type=1
+Tag=33
+Rect=344 10 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_PICTURE_BD_4]
+Type=1
+Tag=34
+Rect=494 10 107 107
+AnchorPos=0 0
+Notes=
+NormalFile=.\res\image\ui\public\frame.png
+NormalFileUV=0 0 100 100
+
+[CTRL_TEXT_DRESSED_1]
+Type=4
+Tag=190
+Rect=36 16 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DRESSED_4]
+Type=4
+Tag=191
+Rect=498 17 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DRESSED_3]
+Type=4
+Tag=192
+Rect=348 19 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_DRESSED_2]
+Type=4
+Tag=193
+Rect=187 19 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV_1]
+Type=4
+Tag=194
+Rect=61 117 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV_4]
+Type=4
+Tag=195
+Rect=529 117 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV_3]
+Type=4
+Tag=196
+Rect=376 117 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_LV_2]
+Type=4
+Tag=197
+Rect=211 117 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM_1]
+Type=4
+Tag=115
+Rect=111 10 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM_2]
+Type=4
+Tag=116
+Rect=264 10 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM_3]
+Type=4
+Tag=117
+Rect=424 10 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+
+[CTRL_TEXT_NUM_4]
+Type=4
+Tag=118
+Rect=574 10 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter

@@ -65,6 +65,11 @@ function p.ShowUI(intent , cardUid, selectType, upgradeItem)
 	
 end
 
+function p.ShowEquipRoomUpgrade(pacageItem, callback)
+	p.ShowUI(p.INTENT_UPGRADE,nil,nil,pacageItem);
+	p.upgradeCallback = callback;
+end
+
 function p.ShowPackageUpgrade(pacageItem, callback)
 	if pacageItem then
 		local item = {};
@@ -666,7 +671,7 @@ function p.PasreCardDetail(cardUid, itemInfo, dressId)
 	item.itemExp	= itemInfo.equip_exp;
 	item.itemRank	= itemInfo.rare 
 	item.attrType	= itemInfo.attribute_type1;
-	item.attrValue	= itemInfo.attribute_value2;
+	item.attrValue	= itemInfo.attribute_value1;
 	item.attrGrow	= nil --itemInfo.Attribute_grow;
 	item.exType1 	= itemInfo.attribute_type2;
 	item.exValue1 	= itemInfo.attribute_value2;

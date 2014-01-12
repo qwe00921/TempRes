@@ -91,6 +91,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			pack_box.ShowUI();
 			--]]
 			country_main.ShowUI();
+			--equip_room.ShowUI();
 			
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
 			WriteCon("**========»ï°é========**");

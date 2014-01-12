@@ -34,6 +34,7 @@ DoFile("ui/ui_quest_reward_view.lua")
 DoFile("ui/ui_quest_team_item.lua")
 DoFile("ui/ui_cha.lua")
 DoFile("ui/ui_item.lua")
+DoFile("ui/ui_map1.lua")
 
 --背包
 DoFile("ui/ui_bag_main.lua")
@@ -165,6 +166,9 @@ DoFile("ui/ui_dlg_item_sell.lua")
 DoFile("ui/ui_equip_room.lua")
 DoFile("ui/ui_equip_room_list.lua")
 DoFile("ui/ui_equip_bag_sort_view.lua")
+DoFile("ui/ui_equip_sell_list.lua")
+DoFile("ui/ui_equip_sell_select_list.lua")
+DoFile("ui/ui_equip_rein_select.lua")
 
 
 --卡牌仓库
@@ -272,6 +276,8 @@ DoFile("ui/ui_n_battle_pass_bg.lua");
 DoFile("ui/ui_dlg_card_equip_detail.lua");
 DoFile("ui/ui_card_equip_select_list.lua");
 DoFile("ui/ui_card_equip_select_list_item.lua");
+DoFile("ui/ui_card_rein_item.lua");
+DoFile("ui/ui_equip_change_list.lua");
 
 --卡牌编辑
 DoFile("ui/ui_card_group.lua");
@@ -281,6 +287,14 @@ DoFile("ui/ui_card_group_select_pet.lua");
 --村落
 DoFile("ui/ui_country.lua");
 DoFile("ui/ui_country_levelup_top.lua");
+DoFile("ui/ui_country_levelup.lua");
+DoFile("ui/ui_country_levelup_btn.lua");
+
+--村落  材料仓库
+DoFile("ui/ui_item_list.lua");
+DoFile("ui/ui_item_list_1.lua");
+DoFile("ui/ui_pubulic_item_num.lua");
+
 
 --测试（以后要删除）
 DoFile("ui/ui_test_fly.lua");
