@@ -141,7 +141,7 @@ end;
 
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVESkillAtkID(atkID)
-   WriteCon( "SetPVEAtkID:"..tonumber(atkID));
+   WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
    local atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
 
    local targerID = w_battle_mgr.PVEEnemyID;
@@ -193,19 +193,23 @@ function p.SetPVESkillAtkID(atkID)
 	local latkCap = p.heroCamp;
 	local ltargetCamp = p.enemyCamp;
 	local lStateMachine = nil;
+	local isAoe = false;
 	
 	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
 			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
-			lStateMachine = w_battle_PVEStateMachine:new();
+			lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+			lStateMachine.turnState = W_BATTLE_TURN;  --行动中
 		elseif( (targetType == W_SKILL_TARGET_TYPE_2) or (targetType == W_SKILL_TARGET_TYPE_3)	or (targetType == W_SKILL_TARGET_TYPE_4)) then
 		--群体, 近战冲到屏幕中间, 远程站原地
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
 			ltargetCamp:SubLife(damage); --所有已存活的人扣减生命
 			ltargetCamp:BeTarTimesAdd(atkID) --所有已存活的人成为目标
-			lStateMachine = w_battle_skillstatemachine:new();
+			lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+			lStateMachine.turnState = W_BATTLE_TURN;  --行动中
+			isAoe = true;
 		else
 			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
 			return false;
@@ -229,7 +233,7 @@ function p.SetPVESkillAtkID(atkID)
 	
 --	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
 	--lStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);
-	lStateMachine:aoeinit(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);	
+	lStateMachine:init(atkID,atkFighter,W_BATTLE_HERO,targetFighter, W_BATTLE_ENEMY,damage,lIsCrit,lIsJoinAtk,true,skillID,isAoe);	
 	
 	return true;
 end;					
@@ -987,7 +991,7 @@ function p.clearDate()
 end
 
 function p.GetScreenCenterPos()
-	local cNode = GetImage( p.uiLayer,ui.ID_CTRL_PICTURE_CENTER );
+	local cNode = GetImage( p.uiLayer, ui_n_battle_pve.ID_CTRL_PICTURE_CENTER );
 	return cNode:GetCenterPos();
 end
 
@@ -1002,7 +1006,6 @@ function p.checkTurnEnd()
 				else  --所有敌人全死了
 					w_battle_pve.PickStep(w_battle_mgr.FightWin); --捡东西
 				end
-
 		else
 			if p.heroCamp:isAllDead() == false then
 				p.CheckEnemyTurnIsEnd();

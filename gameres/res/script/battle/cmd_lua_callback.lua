@@ -41,17 +41,17 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 	--÷¥––æﬂÃÂ√¸¡Ó
 	if cmdtype == "fighter_damage" then
 		fighter:SetLifeDamage(num);
+	elseif cmdtype == "atk_start"  and E_DEMO_VER == 5 then
+	    local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
+		if lstateMachine ~= nil then
+			lstateMachine:atk_start();
+		end;
 	elseif cmdtype == "atk_startAtk"  and E_DEMO_VER == 5 then
 	    local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
 		if lstateMachine ~= nil then
 			lstateMachine:atk_startAtk();
 		end;
     elseif cmdtype == "atk_end" and E_DEMO_VER == 5 then
-		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
-		if lstateMachine ~= nil then
-			lstateMachine:atk_end();
-		end;
-	elseif cmdtype == "atk_end" and E_DEMO_VER == 5 then
 		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
 		if lstateMachine ~= nil then
 			lstateMachine:atk_end();
