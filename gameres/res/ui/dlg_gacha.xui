@@ -10,6 +10,8 @@ Rect=0 0 640 870
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
@@ -20,6 +22,8 @@ Rect=0 249 640 743
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_frame.png
 NormalFileUV=0 0 640 780
 
@@ -33,6 +37,8 @@ TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=返回按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
@@ -52,6 +58,8 @@ TextSize=20
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=元宝数量
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_PAY]
 Type=2
@@ -64,6 +72,8 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=充值按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_click.png
 NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui\public\button_click.png
@@ -78,6 +88,8 @@ Rect=11 335 620 590
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_VERTICAL_LIST_SHOP_ITEM]
 Type=14
@@ -86,6 +98,8 @@ Rect=9 335 620 590
 AnchorPos=0 0
 Notes=
 Remark=道具list
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_VERTICAL_LIST_GIFT_PACK]
 Type=14
@@ -94,6 +108,8 @@ Rect=9 323 620 602
 AnchorPos=0 0
 Notes=
 Remark=礼包list
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_21]
 Type=1
@@ -101,6 +117,8 @@ Tag=22
 Rect=552 197 52 28
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\add.png
 NormalFileUV=0 0 52 28
 
@@ -115,10 +133,12 @@ TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=扭蛋按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
@@ -133,10 +153,12 @@ TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=礼包按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
@@ -151,10 +173,12 @@ TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=道具按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
@@ -164,6 +188,8 @@ Tag=111
 Rect=142 269 66 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\item.png
 NormalFileUV=0 0 66 38
 
@@ -173,6 +199,8 @@ Tag=112
 Rect=249 269 66 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\gift.png
 NormalFileUV=0 0 66 38
 
@@ -182,6 +210,8 @@ Tag=113
 Rect=30 269 66 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\text_gacha.png
 NormalFileUV=0 0 66 38
 
@@ -197,6 +227,8 @@ TextSize=30
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_73]
 Type=2
@@ -209,17 +241,19 @@ TextColor=0xece39d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=礼包按钮
-NormalFile=.\res\image\ui\public\button_public.png
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\page_select.png
-SelectedFileUV=0 0 104 78
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
 [CTRL_TEXT_75]
 Type=4
 Tag=75
-Rect=353 258 79 60
+Rect=355 257 79 60
 AnchorPos=0 0
 Notes=
 Text=持有
@@ -228,6 +262,8 @@ TextSize=30
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_76]
 Type=1
@@ -235,6 +271,8 @@ Tag=76
 Rect=100 172 225 79
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -250,6 +288,8 @@ TextSize=35
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_VERTICAL_LIST_BAG]
 Type=14
@@ -258,44 +298,54 @@ Rect=9 336 620 590
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_USE]
 Type=1
 Tag=24
-Rect=22 537 593 114
+Rect=81 382 479 197
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\bg_shop.png
 NormalFileUV=0 0 594 208
 
 [CTRL_BUTTON_USE]
 Type=2
 Tag=26
-Rect=496 568 107 53
+Rect=253 513 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
 [CTRL_PICTURE_LABEL_USE]
 Type=1
 Tag=27
-Rect=519 576 61 32
+Rect=276 521 61 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\text\use.png
 NormalFileUV=0 0 52 28
 
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=28
-Rect=37 545 455 93
+Rect=121 397 398 103
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
