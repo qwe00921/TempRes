@@ -109,6 +109,31 @@ function p:isAllDead()
 	return lisAllDead;
 end;
 
+--扣血
+function p:SubLife(damage)
+	for k,v in ipairs(self.fighters) do
+		if (v.isDead == false) then --尸体还在
+			v:SubLife(damage)
+			break;
+		end;
+	end;
+end;
+
+function p:BeTarTimesAdd(atkID)
+	for k,v in ipairs(self.fighters) do
+		if (v.Hp > 0) then --未死
+			v:BeTarTimesAdd(atkID)
+			break;
+		end;
+	end;
+end;
+
+--受击数减一
+function p:BeTarTimesDec(atkID)
+	for k,v in pairs(self.fighters) do
+		v:BeTarTimesDec(atkID);
+	end;
+end;
 --[[
 --查找位置对应的fighter
 function p:FindFighter(pPos)
@@ -123,6 +148,7 @@ function p:FindFighter(pPos)
 end;
 ]]--
 
+--[[
 --判定攻击方回合是否结束(含受击方动画完成)
 function p:CheckAtkTurnEnd()
 	local lresult = true;
@@ -144,7 +170,7 @@ function p:InitAtkTurnEnd()
 	end;
 
 end;
-
+]]--
 --还有多少存活
 function p:GetActiveFighterCount()
 	local lCount = 0;

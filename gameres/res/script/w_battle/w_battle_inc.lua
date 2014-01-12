@@ -40,12 +40,12 @@ W_BUFF_TYPE_0 = 0;--没BUFF
 W_BUFF_TYPE_1 = 1;--晕眩
 W_BUFF_TYPE_2 = 2;--冰冻
 W_BUFF_TYPE_3 = 3;--缠绕
-W_BUFF_TYPE_4 = 4;--中毒
-W_BUFF_TYPE_5 = 5;--燃烧
-W_BUFF_TYPE_6 = 6;
-W_BUFF_TYPE_7 = 7;
+W_BUFF_TYPE_4 = 4;--麻痹
+W_BUFF_TYPE_5 = 5;--石化
+W_BUFF_TYPE_6 = 6;--中毒 Hp总值x%
+W_BUFF_TYPE_7 = 7;--燃烧 Hp总值x%
 W_BUFF_TYPE_8 = 8;
-W_BUFF_TYPE_9 = 9;--恢复
+W_BUFF_TYPE_9 = 9;--恢复 Hp总值x%
 
 W_BUFF_TYPE_101 = 101;--攻击增强
 W_BUFF_TYPE_102 = 102;--防御增强
@@ -118,8 +118,7 @@ W_BATTLE_POS_TAG_6 = 6;
 --动画攻击时间
 W_BATTLE_ATKTIME   =  1;
 
---战斗的阶断
-W_BATTLE_TURN_HEROEND = 1;
-W_BATTLE_TURN_ENEMYBUFFEND = 2;
-
-
+--行动状态
+W_BATTLE_NOT_TURN = 0;  --未行动
+W_BATTLE_TURN     = 1;  --行动中 
+W_BATTLE_TURNEND  = 2;  --已行动

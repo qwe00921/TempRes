@@ -175,7 +175,7 @@ function p:CreateFlyNum(nType)
 	local flynum = fly_num:new();
 	flynum:SetOwnerNode( self.node );
 	flynum:Init(nType);
-	flynum:SetOffset(30,-50);
+	flynum:SetOffset(30,-30);
 	
 	self.node:AddChildZ( flynum:GetNode(), 2 );
 	self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
@@ -184,9 +184,9 @@ function p:CreateFlyNum(nType)
 end
 	
 function p:SubShowLife(val) --需展现的血量
-	self.showlife = self.showlife - val;
-	if self.showlife < 0 then
-		self.showlife = 0;
+	self.Hp = self.Hp - val;
+	if self.Hp < 0 then
+		self.Hp = 0;
 	end
 	
 	--掉血动画, 可以支持掉多个
@@ -202,9 +202,9 @@ function p:SubShowLife(val) --需展现的血量
 end;
 
 function p:AddShowLife(val) --需展现的血量
-	self.showlife = self.showlife + val;
-	if self.showlife > self.maxlife then
-		self.showlife =  self.maxlife;
+	self.Hp = self.Hp + val;
+	if self.Hp > self.maxlife then
+		self.Hp =  self.maxlife;
 	end
 	
 end;
