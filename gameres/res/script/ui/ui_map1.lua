@@ -1,9 +1,10 @@
 --------------------------------------------------------------
--- FileName:  map.lua
+-- FileName:  map1.lua
 -- author: 此文件為自動生成，沒有作者。有問題請 @郭浩
 --------------------------------------------------------------
-ui_map = {};
-local p =  ui_map;
+ui_map1 = {};
+local p =  ui_map1;
+p.ID_CTRL_BUTTON_RETURN				   = 23;
 p.ID_CTRL_TEXT_CHAPTER6				   = 24;
 p.ID_CTRL_TEXT_CHAPTER5				   = 22;
 p.ID_CTRL_TEXT_CHAPTER4				   = 21;

@@ -23,5 +23,5 @@ function p:Process()
 	msg_cache.msg_stage_list = self;
 	
 	WriteConWarning( "** msg_stage_list:Process() called" );
-	stageMap_1.addAllStage(self.stages);
+	stageMap_1.addAllStage(self);
 end

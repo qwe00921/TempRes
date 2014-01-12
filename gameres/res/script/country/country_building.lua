@@ -184,16 +184,19 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			p.CloseUI()
 		elseif ui.ID_CTRL_BUTTON_UP == tag then
 			WriteCon( "BUTTON_UP" );
+			p.upBuild();
 		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
 			WriteCon( "BUTTON_LEFT" );
 		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
 			WriteCon( "BUTTON_RIGHT" );
-
 		end
 	end
-
 end
 
+function p.uiBuild()
+	--local typeID = 
+
+end
 
 --隐藏UI
 function p.HideUI()

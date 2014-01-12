@@ -38,10 +38,10 @@ end
 function p.openChapter()
 	--打开世界地图
 	WriteCon("to stageMap_main");
-	stageMap_1.OpenStageMap();
+	stageMap_1.ShowUI();
 end
 
 --关闭UI
 function p.CloseWorldMap()
-	stageMap_1.CloseStageMap();
+	stageMap_1.CloseUI();
 end

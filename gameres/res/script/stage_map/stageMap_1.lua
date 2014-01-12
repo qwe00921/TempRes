@@ -1,187 +1,160 @@
 stageMap_1 = {}
 local p = stageMap_1;
+local ui = ui_map1;
+local uiNodeT = {};
 
 
-function p.OpenStageMap()
-    WriteCon("show 3");
-	p.RegEvent();
-	GetTileMapMgr():OpenMapWorld( "test_world_map1.tmx", true );
-	maininterface.m_bgImage:SetVisible(false);
-end
-
---注册地图事件
-function p.RegEvent()
-	RegTileMapCallBack( "click_empty", 	    p.OnClickEmpty );
-	RegTileMapCallBack( "click_obj", 	    p.OnClickObj );
-	RegTileMapCallBack( "loadmap_begin",    p.OnLoadMapBegin );
-	RegTileMapCallBack( "loadmap_end", 	    p.OnLoadMapEnd );
-	--RegTileMapCallBack( "player_jump_done", nil );
-end
-
---点空地
-function p.OnClickEmpty()
-    WriteCon("OnClickEmpty");
-end
---点物件
-function p.OnClickObj( tileObj, isTouchDown, objType, tileX, tileY )
-	--只处理down事件，不处理up事件
-	if isTouchDown then
-		WriteCon("OnClickObj: objType="..objType..", tileX="..tileX..", tileY="..tileY..",tag="..tileObj:GetTag());
-		local Stage_id = tileObj:GetId();
-		if Stage_id == nil then 
-			WriteCon("show Stage_id error ");
-			return 
-		end
-		tileObj:AddActionEffect("lancer_cmb.world_map_chapter_fx");
-		p.CloseStageMap()
-		WriteCon("show stageMap == "..Stage_id);
-		quest_main.ShowUI(Stage_id);
+p.layer = nil;
+function p.ShowUI()
+	--maininterface.m_bgImage:SetVisible(false);
+	dlg_userinfo.HideUI();
+	dlg_menu.HideUI();
+	if p.layer ~= nil then 
+		p.layer:SetVisible(true);
+		return;
 	end
-end
-
---开始加载地图
-function p.OnLoadMapBegin(idMap, bWorldMap)
-    WriteCon("OnLoadMapBegin: idMap="..idMap..",bWorldMap="..tostring(bWorldMap));
-end
-
---结束加载地图
-function p.OnLoadMapEnd(idMap, bWorldMap)
-    WriteCon("OnLoadMapEnd: idMap="..idMap..",bWorldMap="..tostring(bWorldMap));
-	--设置允许拖动的方向
-	GetTileMap():SetMoveDir( true, true ); --horz,vert
 	
-	-- 获取世界地图数据
-	p.getStageMapData();
-	--p.addAllStage()
+	local layer = createNDUIDialog();
+	if layer == nil then
+		return false;
+	end
+	
+	layer:NoMask();
+	layer:Init();
+	layer:SetSwallowTouch(false);
+	
+	GetUIRoot():AddDlg(layer);
+	LoadUI("map1.xui",layer,nil);
+	
+	p.layer = layer;
+	p.SetDelegate(layer);
+	
+	p.Init()
+	
 end
 
--- 获取世界地图数据
-function p.getStageMapData()
+function p.Init()
+	local stageName1 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER1);
+	local stageName2 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER2);
+	local stageName3 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER3);
+	local stageName4 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER4);
+	local stageName5 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER5);
+	local stageName6 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER6);
+	uiNodeT.stageName = {}
+	uiNodeT.stageName[1] = stageName1;
+	uiNodeT.stageName[2] = stageName2;
+	uiNodeT.stageName[3] = stageName3;
+	uiNodeT.stageName[4] = stageName4;
+	uiNodeT.stageName[5] = stageName5;
+	uiNodeT.stageName[6] = stageName6;
+
+	local stageNameBg1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_HEAD1);
+	local stageNameBg2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_HEAD2);
+	local stageNameBg3 = GetImage(p.layer, ui.ID_CTRL_PICTURE_HEAD3);
+	local stageNameBg4 = GetImage(p.layer, ui.ID_CTRL_PICTURE_HEAD4);
+	local stageNameBg5 = GetImage(p.layer, ui.ID_CTRL_PICTURE_HEAD5);
+	local stageNameBg6 = GetImage(p.layer, ui.ID_CTRL_PICTURE_HEAD6);
+	uiNodeT.stageNameBg = {}
+	uiNodeT.stageNameBg[1] = stageNameBg1;
+	uiNodeT.stageNameBg[2] = stageNameBg2;
+	uiNodeT.stageNameBg[3] = stageNameBg3;
+	uiNodeT.stageNameBg[4] = stageNameBg4;
+	uiNodeT.stageNameBg[5] = stageNameBg5;
+	uiNodeT.stageNameBg[6] = stageNameBg6;
+	
 	WriteCon("send stageMap request");
 	local uid = GetUID();
 	local param = "";
 	SendReq("Mission","StageList",uid,param);
 end
 
---加载地图章节
-function p.addAllStage(stageData)
-	if stageData == nil then
+function p.addAllStage(callBackData)
+	if callBackData.result == false then
+		dlg_msgbox.ShowOK("错误提示","玩家数据错误。",nil,p.layer);
+		return
+	end
+	local stageListInif = callBackData.stages;
+	if stageListInif == nil then
 		dlg_msgbox.ShowOK("错误提示","玩家数据错误，请联系开发人员。",nil,p.layer);
 		return;
 	end
-	local stageListInif = stageData;
-	--获取前景层
-	local fgLayer = GetTileMap():FindFgLayer();
-	if fgLayer == nil then return end;
-	
-	local stageList = SelectRowList( T_STAGE );
-	
 
-	for i = 1, #stageList do
-		local pic = GetPictureByAni("map.stage_"..i, 0);
-		--local titleText = stageList[i].stage_name;
-		local titleText = ""
-		local stageId = tonumber( stageList[i].stage_id );
-		local stageName = "stage_"..i;
-		local isUnlock = false;
-		if stageListInif["S"..stageId] then
-			isUnlock = true;
-		end
-		local pos_x = tonumber(stageList[i].pos_x)
-		local pos_y = tonumber(stageList[i].pos_y)
-		local offset_x = tonumber(stageList[i].offset_x)
-		local offset_y = tonumber(stageList[i].offset_y)
-		
-		p.AddStageObj( fgLayer, 
-			pos_x, pos_y,offset_x,offset_y, 
-			pic, titleText, stageId, stageName, isUnlock );
-	end
-end
-
---添加物件
-function p.AddStageObj( fgLayer, tileX, tileY, offsetX, offsetY, 
-							pic, titleText, stageId, stageName, isUnlock)
-
-	--添加物件
-	local obj = fgLayer:AddTileObj( 100, tileX, tileY );
-	
-	if obj ~= nil then
-		--设置图片和绘制偏移
-		obj:SetPicture( pic );
-		obj:SetDrawingOffset( offsetX, offsetY );
-		obj:SetId( stageId );
-		obj:SetName( stageName );
-		
-		--设置物件所在区域
-		local objPos = obj:GetFramePos();
-        local picSize = UISize( pic:GetSize());
-		picSize.w = picSize.w * 1.1f;
-		picSize.h = picSize.h * 1.1f;
-        local rect = CCRectMake( 
-            objPos.x - 0.5f * picSize.w, 
-            objPos.y - 0.5f * picSize.h,
-            picSize.w, picSize.h );
-        obj:SetFrameRect( rect );
-		
-		--判断是否解锁
-		obj:SetEnabled( isUnlock );
-		
-		if not isUnlock then
-			--如果未解锁则，播放表现效果：锁特效、灰色蒙版
-            -- obj:SetMaskColor( ccc4(80,80,80,255) );
-            
-            -- local imageNode = createNDUIImage();
-            -- imageNode:Init();
-            -- obj:AddChild(imageNode);
-            -- local pos = imageNode:GetFramePos();
-            -- imageNode:SetFramePosXY(pos.x + picSize.w * 0.5f, pos.y + picSize.h * 0.5f);
-            --imageNode:AddFgEffect("ui.map_lock");
-			obj:SetVisible(false)
-        else
-			--如果已经解锁，播放表现效果
-            --p.AddEffect( obj );
-		end
-		
-		--增加标题
-		local title = createNDUILabel();
-		if title ~= nil then
-			title:Init();
-			title:SetFontSize( FontSize(20));
-			title:SetFrameSize(picSize.w,picSize.h);
-			title:SetText(titleText);
-			title:SetFramePosXY( 0, -obj:GetFrameSize().h * 0.3f );
-			obj:AddChild(title);
-			if isUnlock then
-				title:SetFontColor( ccc4(255,153,51,255));
-			else
-				title:SetFontColor( ccc4(255,0,102,255));
-			end
-		else
-			WriteConErr( "create label err");
+	for i = 1, 9 do
+		if stageListInif["S10"..i] then
+			uiNodeT.stageNameBg[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
+			local stageId = tonumber(stageListInif["S10"..i])
+			local stageTable = SelectRowInner(T_STAGE,"stage_id",stageId);
+			uiNodeT.stageName[i]:SetText(stageTable.stage_name);
+			uiNodeT.stageBtn[i]:SetId(stageId);
+			uiNodeT.stageBtn[i]:SetLuaDelegate(p.OnBtnClick);
 		end
 	end
 end
 
---特效增加
-function p.AddEffect( obj )
-	if obj ~= nil then
-		obj:AddActionEffect( p.GetStageActionTitle() ); 
+function p.openQusetView(uiNode)
+	local stageId = uiNode:GetId();
+	if stageId == nil then 
+		WriteCon("show stageId error ");
+		return 
+	end
+	p.CloseUI()
+	WriteCon("show stageMap == "..stageId);
+	quest_main.ShowUI(stageId);
+end
+
+function p.SetDelegate(layer)
+	local btnReturn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
+	btnReturn:SetLuaDelegate(p.OnBtnClick);
+	
+	local stageBtn1 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER1 );
+	--stageBtn1:SetLuaDelegate(p.OnBtnClick);
+	local stageBtn2 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER2 );
+	--stageBtn2:SetLuaDelegate(p.OnBtnClick);
+	local stageBtn3 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER3 );
+	--stageBtn3:SetLuaDelegate(p.OnBtnClick);
+	local stageBtn4 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER4 );
+	--stageBtn4:SetLuaDelegate(p.OnBtnClick);
+	local stageBtn5 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER5 );
+	--stageBtn5:SetLuaDelegate(p.OnBtnClick);
+	local stageBtn6 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER6 );
+	--stageBtn6:SetLuaDelegate(p.OnBtnClick);
+	
+	uiNodeT.stageBtn = {}
+	uiNodeT.stageBtn[1] = stageBtn1;
+	uiNodeT.stageBtn[2] = stageBtn2;
+	uiNodeT.stageBtn[3] = stageBtn3;
+	uiNodeT.stageBtn[4] = stageBtn4;
+	uiNodeT.stageBtn[5] = stageBtn5;
+	uiNodeT.stageBtn[6] = stageBtn6;
+end
+
+function p.OnBtnClick(uiNode,uiEventType,param)
+	if IsClickEvent(uiEventType) then
+		local tag = uiNode:GetTag();
+		if (ui.ID_CTRL_BUTTON_RETURN == tag) then
+			p.CloseUI();
+			maininterface.ShowUI();
+			dlg_userinfo.ShowUI();
+			dlg_menu.ShowUI();
+		elseif (ui.ID_CTRL_BUTTON_CHAPTER1 == tag) then
+			p.openQusetView(uiNode)
+		elseif(ui.ID_CTRL_BUTTON_CHAPTER2 == tag) then
+			p.openQusetView(uiNode)
+		elseif(ui.ID_CTRL_BUTTON_CHAPTER3 == tag) then
+			p.openQusetView(uiNode)
+		elseif(ui.ID_CTRL_BUTTON_CHAPTER4 == tag) then
+			p.openQusetView(uiNode)
+		elseif(ui.ID_CTRL_BUTTON_CHAPTER5 == tag) then
+			p.openQusetView(uiNode)
+		elseif(ui.ID_CTRL_BUTTON_CHAPTER6 == tag) then
+			p.openQusetView(uiNode)
+		end
 	end
 end
 
---取action特效名称
-function p.GetStageActionTitle()
-	if useMoveEffect then
-		--上下移动
-		return "ui_cmb.common_move"; 
-	else
-		--缩放
-		return "lancer_cmb.world_map_chapter_fx"; 
+function p.CloseUI()
+	if p.layer ~= nil then
+		p.layer:LazyClose();
+		p.layer = nil;
 	end
 end
-
-function p.CloseStageMap()
-	GetTileMapMgr():CloseMap();
-	maininterface.m_bgImage:SetVisible(true);
-end
-
