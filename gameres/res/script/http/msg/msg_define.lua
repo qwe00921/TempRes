@@ -28,6 +28,7 @@ MSG_TEAM_ITEM			= 133;
 
 --´å×¯
 MSG_COUNT_DATA			= 140;
+MSG_COUNTRY_UPBUILD 	= 141;
 
 --µØÍ¼(200)
 MSG_MAP_START 			= 200;

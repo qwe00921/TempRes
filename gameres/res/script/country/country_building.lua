@@ -14,6 +14,8 @@ p.upNeedHome = nil;
 
 function p.ShowUI(countryInfo)
 	dlg_menu.SetNewUI( p );
+	dlg_userinfo.ShowUI();
+	dlg_menu.ShowUI();
 	if countryInfo == nil then
 		WriteConErr("countryInfo error");
 		return
@@ -50,8 +52,8 @@ function p.Init()
 	p.upNeedHome = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP3);
 	p.buildLevel = GetLabel(p.layer, ui.ID_CTRL_TEXT_BUILD_LV);
 	
-	
-	p.getBuildInfo(1)
+	local typeId = p.getNowType()
+	p.getBuildInfo(typeId)
 	
 end
 
@@ -111,10 +113,11 @@ function p.InitScrollList()
 	local posXY = posCtrller:GetFramePos();
 	local size = posCtrller:GetFrameSize();
 	bList:Init();
+	bList:SetLuaDelegate( p.OnTouchList );
 	bList:SetFramePosXY( posXY.x, posXY.y+33 );
 	bList:SetFrameSize( size.w, size.h );
 	bList:SetSizeView( CCSizeMake(216,100) );
-	for i = 1,18 do
+	for i = 1,9 do
 		local bView = createNDUIScrollViewExpand();
 		if bView == nil then
 			WriteConErr("createNDUIScrollViewExpand() error");
@@ -126,11 +129,28 @@ function p.InitScrollList()
 
 		local btn = GetButton( bView, ui_country_levelup_btn.ID_CTRL_BUTTON_21 );
 		btn:SetImage( GetPictureByAni( "common_ui.buildBoxPic", math.mod(i,9) ) );
-		btn:SetLuaDelegate( p.OnTouchImage );
-		btn:SetId( math.mod(i,9) );
+		--btn:SetLuaDelegate( p.OnTouchImage );
+		btn:SetId( math.mod(i,9));
 		bList:AddView(bView);
 	end
 	p.layer:AddChild( bList );
+end
+
+function p.OnTouchList(uiNode,uiEventType,param)
+	local typeId = p.getNowType()
+	p.getBuildInfo(typeId)
+	
+end
+
+function p.getNowType()
+	local indexId = p.scrollList:GetCurrentIndex()
+	
+	indexId = indexId+2
+	if	indexId == 10 then
+		indexId = 1 
+	end
+	WriteConErr("indexId ==== "..indexId);
+	return indexId
 end
 
 function p.OnTouchImage(uiNode, uiEventType, param)
@@ -196,10 +216,44 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 end
 
 function p.upBuild()
-	local typeID = 1
+	local typeID = p.getNowType()
+	local upIng = nil;
+	for k,v in pairs(p.countryInfoT) do
+		if k == "B"..typeID then
+			nowBuildLv = tonumber(v.build_level);
+			upIng = v.is_upgrade
+		end
+	end
+	
+	if tonumber(upIng) == 1 then
+		dlg_msgbox.ShowOK("提示","此建筑正在升级。",nil,p.layer);
+		return
+	end
+	local isHaveUPing = nil;
+	for k,v in pairs(p.countryInfoT) do
+		local isupgrade = tonumber(v.is_upgrade)
+		if isupgrade == 1 then
+			isHaveUPing = 1 
+		end
+	end
+	if isHaveUPing == 1 then
+		dlg_msgbox.ShowOK("提示","已有建筑在升级。",nil,p.layer);
+		return
+	end
+	
 	local uid = GetUID();
 	local param = "build_type="..typeID;
 	SendReq("Build","UpBuild",uid,param);
+end
+
+function p.uiBuildCallBack(backData)
+	WriteCon( "uiBuildCallBack ok" );
+	if backData.result == false then
+		dlg_msgbox.ShowOK("错误提示","非法数据",nil,p.layer);
+		return
+	end
+	dlg_msgbox.ShowOK("提示","开始升级。",nil,p.layer);
+
 end
 
 --隐藏UI
@@ -214,6 +268,8 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		dlg_userinfo.ShowUI();
+		dlg_menu.ShowUI();
 	end
 end
 function p.UIDisappear()
