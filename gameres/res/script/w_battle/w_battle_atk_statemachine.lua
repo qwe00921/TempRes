@@ -269,8 +269,8 @@ function p:atk_startAtk()
 			end;			
 
 			
-			self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqAtk ); 
-
+			self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqTarget ); 
+			self.seqTarget:SetWaitEnd( cmdAtk );
 		end
 	end;
 

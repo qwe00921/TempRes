@@ -20,7 +20,7 @@ p.petNameNode={};   --双方宠物名称结点
 
 p.imageMask = nil			--增加蒙版特效
 p.PVEEnemyID = nil;   --当前被攻击的敌人ID
-p.PVEHeroID  = nil;  --当前被攻击的英雄ID
+--p.PVEHeroID  = nil;  --当前被攻击的英雄ID
 p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
 p.LockEnemy = false; --敌人是否被锁定攻击
 p.LockFagID = nil;  --之前的锁定标志
@@ -49,7 +49,7 @@ function p.init()
 	--p.enemyUILockArray = nil;   --敌对目标被的锁定标志
 	
 	p.PVEEnemyID = nil;   --当前被攻击的敌人ID
-	p.PVEHeroID = nil;
+	--p.PVEHeroID = nil;
 	p.PVEShowEnemyID = nil;  --当前显示血量的敌人ID
 	p.LockEnemy = false; --敌人是否被锁定攻击
 	p.LockFagID = nil;  --之前的锁定标志
@@ -72,7 +72,7 @@ function p.starFighter()
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
-	p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(nil);
+	--p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
 	p.isCanSelFighter = true;	
@@ -136,7 +136,7 @@ end;
 
 ]]--
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
-function p.SetPVEAtkID(atkID,IsMonster)
+function p.SetPVEAtkID(atkID,IsMonster,targetID)
     WriteCon( "SetPVEAtkID:"..tonumber(atkID));
     if p.battleIsStart ~= true then
 		WriteCon( "Warning! Battle not Start");
@@ -152,9 +152,9 @@ function p.SetPVEAtkID(atkID,IsMonster)
    
     local atkCampType = nil;
 	local targetCampType = nil;
-    local targerID = nil;
+    --local targerID = nil;
     if IsMonster == true then
-		targerID = w_battle_mgr.PVEHeroID;
+		--targerID = w_battle_mgr.PVEHeroID;
 		atkCampType = W_BATTLE_ENEMY;
 		targetCampType = W_BATTLE_HERO;
     else
@@ -218,15 +218,19 @@ end;
 
 
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
-function p.SetPVESkillAtkID(atkID, IsMonster)
+function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
-    local atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
+	local atkFighter = nil;
+	if IsMonster == true then
+		atkFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( atkID ) );
+	else
+		atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
+	end;
+
     local atkCampType = nil;
 	local targetCampType = nil;	
     
-	local targerID = nil;
     if IsMonster == true then
-		targerID = w_battle_mgr.PVEHeroID;
 		atkCampType = W_BATTLE_ENEMY;
 		targetCampType = W_BATTLE_HERO;
     else
@@ -234,6 +238,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster)
 		atkCampType = W_BATTLE_HERO;
 		targetCampType = W_BATTLE_ENEMY;
     end;
+	
     if targerID == nil then
       WriteCon( "Error! SetPVEAtkID targerID is nil");
 	  return false;
@@ -463,16 +468,40 @@ end;
 
 
 
+function p.EnemyUseSkill()
+	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
+	local lnum = math.random(1,100);	
+	if lnum > 30 then
+		return false
+	else
+		return true;
+	end
+	
+end;
+
 --敌方回合开始
 function p.EnemyStarTurn()  --怪物回合开始
 	WriteCon( "EnemyStarTurn");	
-	p.PVEHeroID = 2;
-	for k,v in ipairs(p.enemyCamp.fighters) do 
-		p.SetPVEAtkID(p.enemyCamp.fighters[4]:GetId(), true)
-		--p.SetPVESkillAtkID(p.enemyCamp.fighters[1]:GetId(),true)
-		break;
-	end
 	
+	for k,v in ipairs(p.enemyCamp.fighters) do 
+		local latkFighter = v;
+		local lTargetFighter = p.getEnemyTarget(v)
+		if lTargetFighter == nil then
+			break;
+		end
+		
+		if lTargetFighter.Skill == 0 then
+			p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());	
+		else
+			--if p.EnemyUseSkill() == true then
+			--	p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
+			--	break;
+			--else
+				p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());		
+				break;
+			--end
+		end
+	end;
 	--p.EnemyTurnEnd() --暂时判定敌方回合结束
 end;
 
@@ -1140,5 +1169,51 @@ function p.checkTurnEnd()
 			end		
 		end;	
 	end;
+	
+end
+
+function p.getEnemyTarget(atkFighter)
+	local lTargetFighter = nil;
+	
+	--取属性相克的
+	local lFighterLst =  p.heroCamp:GetElementFighter(atkFighter); --获得能克制的玩家列表
+	if #lFighterLst == 0 then
+		lFighterLst = p.heroCamp:GetHeroFighter()
+	end
+	
+	if #lFighterLst == 0 then
+		return nil;
+	end;
+
+    --取血量最少的	
+	lTargetFighter = lFighterLst[1];
+	lTargetFightetLst = {}
+	for k,v in ipairs(lFighterLst) do 
+		if v.nowlife <= lTargetFighter.nowlife then
+     		 if v.nowlife < lTargetFighter.nowlife then
+				lTargetFightetLst = {}	
+				lTargetFighter = v; 
+			 end;
+	    	 table.insert(lTargetFightetLst,v)
+		end
+	end
+	
+	--取位置最小的
+	--local lPos = 7;
+	lTargetFighter = lFighterLst[1];
+    if #lTargetFightetLst > 0 then
+		for k,v in ipairs(lTargetFightetLst) do 
+			if lTargetFighter:GetId() > v:GetId() then
+				lTargetFighter = v;
+			end
+		end
+	end
+
+    return lTargetFighter;
+end
+
+--获得克制的玩家英雄
+function p.getElemtHeroLst(atkFighter)
+	
 	
 end

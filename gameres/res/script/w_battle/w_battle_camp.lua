@@ -86,6 +86,27 @@ function p:GetFirstActiveFighterPos(pFighterID)
 	return lId;
 end;	
 
+--获得属性相克的玩家列表
+function p:GetElementFighter(pAtkFighter)
+	local lLst = {}
+	for k,v in ipairs(self.fighters) do
+		if (v.nowlife > 0) and (w_battle_atkDamage.IsElement(pAtkFighter,v) == true) then
+			table.insert(lLst,v);
+		end;
+	end;
+	return lLst;
+end;
+
+--获得体力>0的玩家列表
+function p:GetHeroFighter()
+	local lLst = {}
+	for k,v in ipairs(self.fighters) do
+		if v.nowlife > 0 then
+			table.insert(lLst,v);
+		end;
+	end;
+	return lLst;
+end;
 
 
 --获得当前尸体未消失的怪物
@@ -386,12 +407,13 @@ function p:AddFighters( uiArray, fighters )
 		f.Position = tonumber (fighterInfo.Position);
 		f.Crit	   = tonumber (fighterInfo.Crit);
 		f.Skill	   = tonumber (fighterInfo.Skill);
+		f.element  = tonumber (fighterInfo.element);
         f.buffList = {};
          
 		--临时攻击力调整
-		f.Attack = 10;
-		f.Defence = 0;
-		f.life = 300;
+		--f.Attack = 10;
+		--f.Defence = 0;
+		--f.life = 300;
 				
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );

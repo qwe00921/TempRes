@@ -151,13 +151,13 @@ end;
 function p.IsElement(atkFighter,tarFighter)
     local lresult = false;
     
-	if     (atkFighter.prop == W_BATTLE_ELEMENT_LIGHT  and tarFighter.prop == W_BATTLE_ELEMENT_DARK)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_DARK   and tarFighter.prop == W_BATTLE_ELEMENT_LIGHT)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_GOLD 	and tarFighter.prop == W_BATTLE_ELEMENT_WOOD )	
-		or (atkFighter.prop == W_BATTLE_ELEMENT_WOOD 	and tarFighter.prop == W_BATTLE_ELEMENT_EARTH)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_EARTH	and tarFighter.prop == W_BATTLE_ELEMENT_WATER)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_WATER	and tarFighter.prop == W_BATTLE_ELEMENT_FIRE )
-		or (atkFighter.prop == W_BATTLE_ELEMENT_FIRE 	and tarFighter.prop == W_BATTLE_PROP_GOLD) then
+	if     ((atkFighter.element == W_BATTLE_ELEMENT_LIGHT)   and (tarFighter.element == W_BATTLE_ELEMENT_DARK) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_DARK)    and (tarFighter.element == W_BATTLE_ELEMENT_LIGHT) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_GOLD)    and (tarFighter.element == W_BATTLE_ELEMENT_WOOD ) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_WOOD)    and (tarFighter.element == W_BATTLE_ELEMENT_EARTH) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_EARTH)   and (tarFighter.element == W_BATTLE_ELEMENT_WATER) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_WATER)   and (tarFighter.element == W_BATTLE_ELEMENT_FIRE ) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_FIRE)    and (tarFighter.element == W_BATTLE_ELEMENT_GOLD) ) then
 		
 		lresult = true;
 	end
