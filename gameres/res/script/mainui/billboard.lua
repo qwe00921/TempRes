@@ -154,34 +154,42 @@ function p.ShowUserMessage()
     local rare = tonumber(p.message_user[1].Rare);
     local level = tonumber(p.message_user[1].Level);
     local text = nil;
-    
-    if p.EVENT_MESSAGE_TYPE_PET_CARD_INFY == type then
-    	-- 宠物卡片强化事件
-    	text = string.format(GetStr("bill_board_message_skill"),user_id,card_id,level);
-    elseif p.EVENT_MESSAGE_TYPE_PET_CARD_EVOLVE == type then
-    	-- 宠物卡片进化
-        text = string.format(GetStr("bill_board_message_evolve"),user_id,card_id,level);
-    elseif p.EVENT_MESSAGE_TYPE_PET_CARD_FUSE == type then
-    	-- 宠物卡牌融合
-        text = string.format(GetStr("bill_board_message_fuse"),user_id,rare,card_id);
-    elseif p.EVENT_MESSAGE_TYPE_SKILL == type then
-    	-- 玩家技能强化
-        text = string.format(GetStr("bill_board_message_skill"),user_id,card_id,level);
-    elseif p.EVENT_MESSAGE_TYPE_PET_EQUIP == type then
-    	-- 卡牌装备强化
-        text = string.format(GetStr("bill_board_message_equip"),user_id,card_id,level);
-    elseif p.EVENT_MESSAGE_TYPE_GACHA == type then
-    	-- 扭蛋
-        text = string.format(GetStr("bill_board_message_gacha"),user_id,rare,card_id);
-	elseif p.EVENT_MESSAGE_TYPE_PET_SKILL == type then
-		-- 宠物技能强化
-		 text = string.format(GetStr("bill_board_message_pet_skill"),user_id,card_id,level);
-    end
+	
+	
+    local msg = p.SelectTabeMsg(type, rare,level);
+	
+	if msg == nil then
+		if p.EVENT_MESSAGE_TYPE_PET_CARD_INFY == type then
+			-- 宠物卡片强化事件
+			text = string.format(GetStr("bill_board_message_skill"),user_id,card_id,level);
+		elseif p.EVENT_MESSAGE_TYPE_PET_CARD_EVOLVE == type then
+			-- 宠物卡片进化
+			text = string.format(GetStr("bill_board_message_evolve"),user_id,card_id,level);
+		elseif p.EVENT_MESSAGE_TYPE_PET_CARD_FUSE == type then
+			-- 宠物卡牌融合
+			text = string.format(GetStr("bill_board_message_fuse"),user_id,rare,card_id);
+		elseif p.EVENT_MESSAGE_TYPE_SKILL == type then
+			-- 玩家技能强化
+			text = string.format(GetStr("bill_board_message_skill"),user_id,card_id,level);
+		elseif p.EVENT_MESSAGE_TYPE_PET_EQUIP == type then
+			-- 卡牌装备强化
+			text = string.format(GetStr("bill_board_message_equip"),user_id,card_id,level);
+		elseif p.EVENT_MESSAGE_TYPE_GACHA == type then
+			-- 扭蛋
+			text = string.format(GetStr("bill_board_message_gacha"),user_id,rare,card_id);
+		elseif p.EVENT_MESSAGE_TYPE_PET_SKILL == type then
+			-- 宠物技能强化
+			text = string.format(GetStr("bill_board_message_pet_skill"),user_id,card_id,level);
+		end
+	else
+		text = string.format(msg,user_id,card_id,level);
+	end
 
     if text ~= nil then
         p.title:RunText(text);
         table.remove(p.message_user,1);
     end
+	
 end
 
 -- 显示tips
@@ -243,4 +251,20 @@ function p.CloseUI()
         p.message_user = {};
         p.message_tips = {};
     end
+end
+
+function p.SelectTabeMsg(mtype, rare,level)
+	local itemTable = SelectRowList(T_EVENT_MESSAGE,"type",tostring(mtype));
+	local text = nil;
+	if #itemTable >= 1 then
+		for k,v in pairs(itemTable) do
+			if tonumber(v.rare) == tonumber(rare) and tonumber(v.level) == tonumber(level) then
+				text = v.message;
+			end
+		end
+		
+	else
+		WriteConErr("itemTable error ");
+	end
+	return text;
 end
