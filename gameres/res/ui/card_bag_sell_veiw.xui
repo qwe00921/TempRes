@@ -3,6 +3,17 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_20]
+Type=1
+Tag=20
+Rect=0 754 640 91
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
 [CTRL_PICTURE_BG]
 Type=1
 Tag=83
@@ -10,6 +21,8 @@ Rect=0 757 634 89
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame_item.png
 NormalFileUV=0 0 100 100
 
@@ -25,6 +38,8 @@ TextSize=24
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_click.png
 NormalFileUV=0 0 110 54
 
@@ -40,6 +55,8 @@ TextSize=24
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
@@ -55,6 +72,8 @@ TextSize=16
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_MONEY]
 Type=1
@@ -62,6 +81,8 @@ Tag=89
 Rect=493 761 30 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\coin.png
 NormalFileUV=0 0 30 30
 
@@ -77,6 +98,8 @@ TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_89]
 Type=4
@@ -90,6 +113,8 @@ TextSize=16
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SELL_NUM]
 Type=4
@@ -103,3 +128,5 @@ TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

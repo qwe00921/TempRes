@@ -12,3 +12,4 @@ p.ID_CTRL_TEXT_86						       = 88;
 p.ID_CTRL_BUTTON_SELL					    = 85;
 p.ID_CTRL_BUTTON_CLEAR				    = 84;
 p.ID_CTRL_PICTURE_BG					     = 83;
+p.ID_CTRL_PICTURE_20					     = 20;
