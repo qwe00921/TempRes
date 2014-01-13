@@ -13,6 +13,7 @@ p.buildLevel = nil;
 p.upNeedHome = nil;
 
 function p.ShowUI(countryInfo)
+	dlg_menu.SetNewUI( p );
 	if countryInfo == nil then
 		WriteConErr("countryInfo error");
 		return
@@ -182,6 +183,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		local tag = uiNode:GetTag();
 		if (ui.ID_CTRL_BUTTON_RETURN == tag) then
 			p.CloseUI()
+			country_main.ShowUI()
 		elseif ui.ID_CTRL_BUTTON_UP == tag then
 			WriteCon( "BUTTON_UP" );
 			p.upBuild();
@@ -213,4 +215,7 @@ function p.CloseUI()
 		p.layer:LazyClose();
 		p.layer = nil;
 	end
+end
+function p.UIDisappear()
+	p.CloseUI();
 end
