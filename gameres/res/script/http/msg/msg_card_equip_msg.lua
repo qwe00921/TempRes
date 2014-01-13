@@ -43,7 +43,7 @@ function p:Process()
 	elseif self.idMsg == MSG_CARD_EQUIPMENT_UNINSTALL then --¿¨°æ×°±¸Ð¶ÏÂ
 		dlg_card_equip_detail.OnUnDress(self);
 	elseif self.idMsg == MSG_CARD_EQUIPMENT_LIST then
-		card_equip_select_list.OnLoadList(self);
+		--card_equip_select_list.OnLoadList(self);
 		equip_dress_select.OnLoadList(self);
 		equip_room.ShowInfo(self);
 		equip_rein_select.ShowInfo(self);

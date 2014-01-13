@@ -15,10 +15,13 @@ p.nowExp = 0;
 p.item = ni;
 
 local ui = ui_card_rein_item;
+p.callback = nil;
+p.isReined = nil;
 
-function p.ShowUI(item)
+function p.ShowUI(item,callback)
 	
 	p.item = item;
+	p.callback = callback
 	
 	if p.item == nil then
 		return;
@@ -125,7 +128,7 @@ function p.InitUI(item)
 	lTextLev:SetText( tostring(item.itemLevel) );
 	
 	--当前的经验值条 ID_CTRL_EXP_CARDEXP
-	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", item.itemLevel);
+	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.itemLevel));
 	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_EQUIPEXP);
 	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
 	lCardExp:SetProcess(tonumber(item.itemExp));
@@ -145,6 +148,7 @@ function p.refreshItemList()
 	
 	local lCount=0;
 	--local lNum = #(p.itemListInfo)
+	p.itemListInfo = p.itemListInfo or {};
 	for i=1,10 do
 		local lcardInfo = p.itemListInfo[i] or {};
 		lCount = lCount + 1;
@@ -162,6 +166,7 @@ function p.ShowCardCost()
 	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_FEE_MONEY);
 	cardMoney:SetText(tostring(p.consumeMoney)); 
 	
+	p.userMoney = tonumber(msg_cache.msg_player.Money or 0);
 	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_USER_MONEY);
 	moneyLab:SetText(tostring(p.userMoney));	
 	
@@ -178,28 +183,32 @@ function p.SetCardInfo(pIndex,item)  --pIndex从1开始
 		return ;
 	end
 	
-	local pEquipInfo= SelectRowInner( T_EQUIP, "id", item.equip_id) or {};
+	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(item.equip_id)) or {};
 	
 	local cardLevText = GetLabel(p.layer, ui["ID_CTRL_TEXT_CARDLEVEL"..pIndex]);
 	cardLevText:SetVisible(true);
-	cardLevText:SetText("LV "..(tostring(item.equip_level or "")));
+	cardLevText:SetText((tostring(item.equip_level or "")));
 			
-	local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+pIndex-1);
+	local cardButton = GetButton(p.layer, ui["ID_CTRL_BUTTON_CHA"..pIndex]);
 		
 	--cardButton:SetImage( GetPictureByAni("n_battle.attack_"..lcardId,0) );
 	
-	cardButton:SetImage( GetPictureByAni(pEquipInfo.item_pic or "",0)  );
+	if pEquipInfo.item_pic then
 	
+		cardButton:SetImage( GetPictureByAni(pEquipInfo.item_pic or "",0)  );
+	else
+		cardButton:SetImage(nil);
+	end
 	
-	local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+pIndex-1);
+	local cardName = GetLabel(p.layer, ui["ID_CTRL_TEXT_NAME"..pIndex]);
 	cardName:SetText(tostring(pEquipInfo.name or ""));
 	
 
 	local lCardLeveInfo;
 	if item.equip_level == 0 then
-		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "equip_level", "1");
+		lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", "1");
 	else
-		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "equip_level", tostring(item.equip_level));
+		lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.equip_level));
 	end	
 	
 	if lCardLeveInfo then
@@ -234,7 +243,6 @@ end
 
 function p.CloseUI()
     if p.layer ~= nil then
-		card_intensify2.CloseUI();
 	    p.layer:LazyClose();
         p.layer = nil;	
 		p.baseCardInfo = nil;
@@ -244,6 +252,13 @@ function p.CloseUI()
 		p.nowExp = 0;
 		p.addExp = 0;
     end
+	
+	if p.callback then
+		p.callback(p.isReined);
+	end
+	p.callback = nil;
+	p.isReined = nil
+	
 end
 
 function p.SetDelegate(layer)
@@ -283,6 +298,29 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		end;
 	end
 end		
+
+function p.ShowPackageUpgrade(pacageItem, callback)
+	if pacageItem then
+		local item = {};
+		item.itemId 	= pacageItem.equip_id;
+		item.itemUid	= pacageItem.id;
+		item.itemType	= pacageItem.equip_type;
+		item.itemLevel 	= pacageItem.equip_level;
+		item.itemExp	= pacageItem.equip_exp;
+		item.itemRank	= pacageItem.rare
+		item.attrType	= pacageItem.attribute_type1;
+		item.attrValue	= pacageItem.attribute_value1;
+		item.attrGrow	= pacageItem.Attribute_grow or 0;
+		item.exType1 	= pacageItem.attribute_type2;
+		item.exValue1 	= pacageItem.attribute_value2;
+		--item.exType2 	= pacageItem.Extra_type2;
+		--item.exValue2 	= pacageItem.Extra_value2;
+		--item.exType3	= pacageItem.Extra_type3;
+		--item.exValue3	= pacageItem.Extra_value3;
+		p.ShowUI(item,callback);
+	end
+end
+
 
 
 function p.upgrade()
@@ -396,8 +434,9 @@ if p.layer == nil then --or p.layer:IsVisible() ~= true then
 			p.item.attrValue = msg.base_card_new_info.attribute_value1;
 			p.itemListInfo = nil;
 			p.InitUI(p.item);
+			p.refreshItemList();
 		end
-		dlg_msgbox.ShowYesNo(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_upgrade_suc"));
+		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_upgrade_suc"));
 		
 	else
 		local str = dlg_card_equip_detail.GetNetResultError(msg);

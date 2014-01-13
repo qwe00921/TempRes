@@ -34,6 +34,7 @@ p.cardListByProf = {};
 p.isDress = {};
 p.equipLevel = {};
 p.callback = nil;
+p.isChanged = nil;
 
 --显示UI
 function p.ShowUI(selectList,callback)
@@ -98,11 +99,7 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
-			local cb = p.callback;
-			p.CloseUI();
-			if cb then
-				cb(false,nil);
-			end
+			p.CloseUI(true);
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --排序
 			equip_bag_sort.ShowUI(4);
 		elseif (ui.ID_CTRL_BUTTON_ALL == tag) then --全部
@@ -130,11 +127,12 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 					rtn[#rtn+1] = v;
 				end
 			end
-		
-			local cb = p.callback;
-			p.CloseUI();
-			if cb then
-				cb(true,rtn);
+			
+			local cb = p.callback
+			local change = p.isChanged;
+			p.CloseUI()
+			if (cb) then
+				cb(change,rtn);
 			end
 			
 		end				
@@ -292,7 +290,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:SetId(tonumber(equip.id));
 	
 	
-	local pEquipInfo= SelectRowInner( T_EQUIP, "id", equip.equip_id); --从表中获取卡牌详细信息	
+	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(equip.equip_id)); --从表中获取卡牌详细信息	
 	
 	--显示卡牌图片 背景图
 	imgV:SetPicture( GetPictureByAni(pEquipInfo.item_pic, 0) );
@@ -368,6 +366,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 				end
 			end
 		end
+		p.isChanged = true;
 	else
 		dlg_msgbox.ShowOK(GetStr("equip_sell_title"),GetStr("equip_is_dress"),p.OnOkCallback,p.layer);
 	end
@@ -553,7 +552,7 @@ end
 function p.sortByStar(a,b)
 	return tonumber(a.rare) < tonumber(b.rare);
 end
-function p.CloseUI()
+function p.CloseUI(isGoBack)
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
         p.layer = nil;
@@ -567,13 +566,20 @@ function p.CloseUI()
 		p.msg = nil;
 		p.countNum = nil;
 		p.allNumText={};
-		p.selectList = {};
+		
 		p.consumeMoney = 0;
 		
 		p.equipListNode = {};
 		p.isDress = {};
 		p.equipLevel = {};
+		
+	if isGoBack and p.callback then
+		p.callback(false);
+	end
+	
+	p.selectList = {};
 	p.callback = nil;
+	p.isChanged = nil;
 
 end
 
