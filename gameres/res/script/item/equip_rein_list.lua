@@ -17,10 +17,12 @@ p.item = ni;
 local ui = ui_card_rein_item;
 p.callback = nil;
 p.isReined = nil;
+p.reinedItem = nil;
 
 function p.ShowUI(item,callback)
 	
 	p.item = item;
+	p.reinedItem = {};
 	p.callback = callback
 	
 	if p.item == nil then
@@ -99,6 +101,7 @@ function p.InitUI(item)
 	local lCardRowInfo= SelectRowInner( T_EQUIP, "id",item.itemId); --从表中获取卡牌详细信息					
 	local lTextName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME);
 	lTextName:SetText(tostring(lCardRowInfo.name));
+	p.reinedItem.name = tostring(lCardRowInfo.name);
 	
 	--武器主要属性值
 	local labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_ATTRIBUTE1NAME);
@@ -107,6 +110,7 @@ function p.InitUI(item)
 	
 	labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_ATTRIBUTE);
 	labelV:SetText(tostring(item.attrValue));
+	p.reinedItem.attrValue = item.attrValue
 	
 	--武器属性值2
 	local labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_ATTRIBUTE2NAME);
@@ -116,16 +120,19 @@ function p.InitUI(item)
 	
 		labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_ATTRIBUTE2);
 		labelV:SetText(tostring(item.exValue1));
+		p.reinedItem.exValue1 = item.exValue1
 	end
 	
 	
 		
 	--当前经验值更新
 	p.nowExp = tonumber(item.itemExp);
+	p.reinedItem.itemExp = item.itemExp;
 		
 	--等级 ID_CTRL_TEXT_LEVEL		
 	local lTextLev = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL);
 	lTextLev:SetText( tostring(item.itemLevel) );
+	p.reinedItem.itemLevel = item.itemLevel
 	
 	--当前的经验值条 ID_CTRL_EXP_CARDEXP
 	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.itemLevel));
@@ -137,6 +144,7 @@ function p.InitUI(item)
 	--经验值 ID_CTRL_TEXT_EXP
 	local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
 	lTextExp:SetText(tostring(item.itemExp).."/"..tostring(lCardLeveInfo.exp));
+	
 	
 	p.ShowCardCost();
 
@@ -294,7 +302,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
 			p.upgrade();
-		
+			equip_rein_result.ShowUI(p.item, p.reinedItem);
 		end;
 	end
 end		
@@ -429,6 +437,14 @@ if p.layer == nil then --or p.layer:IsVisible() ~= true then
 	
 	if msg.result == true then
 		if msg.base_card_new_info then
+			p.reinedItem.itemLevel = msg.base_card_new_info.equip_level or p.item.itemLevel;
+			p.reinedItem.itemExp	= msg.base_card_new_info.equip_exp or p.item.itemExp;
+			p.reinedItem.attrValue = msg.base_card_new_info.attribute_value1 or p.item.attrValue;
+			p.reinedItem.exValue1  = msg.base_card_new_info.attribute_value2 or p.item.exValue1;
+		end
+		--dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_upgrade_suc"));
+		equip_rein_result.ShowUI(p.item, p.reinedItem);
+		if msg.base_card_new_info then
 			p.item.itemLevel = msg.base_card_new_info.equip_level;
 			p.item.itemExp	= msg.base_card_new_info.equip_exp;
 			p.item.attrValue = msg.base_card_new_info.attribute_value1;
@@ -436,7 +452,6 @@ if p.layer == nil then --or p.layer:IsVisible() ~= true then
 			p.InitUI(p.item);
 			p.refreshItemList();
 		end
-		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_upgrade_suc"));
 		
 	else
 		local str = dlg_card_equip_detail.GetNetResultError(msg);

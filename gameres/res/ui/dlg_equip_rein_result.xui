@@ -1,0 +1,325 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_9SLICES_18]
+Type=22
+Tag=33
+Rect=74 152 476 483
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
+[CTRL_9SLICES_19]
+Type=22
+Tag=32
+Rect=69 141 487 500
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg_frame2.png
+NormalFileUV=0 0 640 376
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=17
+Rect=170 176 279 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV_LABEL]
+Type=4
+Tag=18
+Rect=90 232 50 30
+AnchorPos=0 0
+Notes=
+Text=LV.
+TextTradition=LV.
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV_PRE]
+Type=4
+Tag=22
+Rect=145 232 66 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_BACK]
+Type=2
+Tag=28
+Rect=244 562 110 54
+AnchorPos=0 0
+Notes=
+Text=SKIP
+TextTradition=SKIP
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+SelectFile=.\res\image\ui\public\button_click.png
+SelectedFileUV=0 0 110 54
+DisableFile=.\res\image\ui\common\btn_2_disable.png
+DisableFileUV=0 0 136 60
+
+[CTRL_TEXT_29_DELETE]
+Type=4
+Tag=29
+Rect=640 40 326 40
+AnchorPos=0 0
+Notes=
+Text=获得   星卡片
+TextTradition=獲得   星卡片
+TextSize=30
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_EQUIP]
+Type=1
+Tag=35
+Rect=246 415 110 110
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV_ARROW]
+Type=4
+Tag=52
+Rect=213 232 28 30
+AnchorPos=0 0
+Notes=
+Text=>>
+TextTradition=>>
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV_NOW]
+Type=4
+Tag=53
+Rect=245 232 66 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_PRE_1]
+Type=4
+Tag=54
+Rect=145 279 66 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_LABEL_1]
+Type=4
+Tag=55
+Rect=89 279 50 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_ARROW_1]
+Type=4
+Tag=56
+Rect=213 279 28 30
+AnchorPos=0 0
+Notes=
+Text=>>
+TextTradition=>>
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_NOW_1]
+Type=4
+Tag=57
+Rect=246 279 66 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_LABEL_2]
+Type=4
+Tag=58
+Rect=328 278 50 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_PRE_2]
+Type=4
+Tag=59
+Rect=378 278 66 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_NOW_2]
+Type=4
+Tag=60
+Rect=475 277 66 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATR_ARROW_2]
+Type=4
+Tag=61
+Rect=446 277 28 30
+AnchorPos=0 0
+Notes=
+Text=>>
+TextTradition=>>
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_EFFECT]
+Type=4
+Tag=62
+Rect=245 345 107 26
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ADD]
+Type=9
+Tag=63
+Rect=178 319 260 22
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp1.png
+NormalFileUV=0 0 188 32
+
+[CTRL_TEXT_ITEM_EXP]
+Type=9
+Tag=64
+Rect=178 319 260 22
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp2.png
+NormalFileUV=0 0 188 32
+
+[CTRL_PICTURE_BLOOD]
+Type=1
+Tag=65
+Rect=170 317 275 27
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=66
+Rect=219 319 177 19
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_EFFECT_2]
+Type=4
+Tag=67
+Rect=246 441 107 26
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

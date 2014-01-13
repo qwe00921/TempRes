@@ -135,10 +135,11 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 				cb(change,rtn);
 			end
 			
+			
+			
 		end				
 	end
 end
-
 
 
 --按职业显示卡牌
