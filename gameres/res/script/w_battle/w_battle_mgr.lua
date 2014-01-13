@@ -36,10 +36,8 @@ local BATTLE_PVP = 2;
 
 p.batchIsFinish = true;
 p.battle_batch  = nil;
-p.battleTurnVal = nil;
-p.AtkList = {}  --在攻击队列
-
-
+p.atkCampType = nil;
+p.battleIsStart = false;
 
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
@@ -56,28 +54,28 @@ function p.init()
 	
 	p.batchIsFinish = true;
 	p.battle_batch  = nil;
-	p.battleTurnVal = nil;
+	p.atkCampType = nil;
+	p.battleIsStart = true;
 end;
 
 
 function p.starFighter()
 	p.init();
-	w_battle_PVEStaMachMgr.init();
+--	w_battle_PVEStaMachMgr.init();
 	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
 	if w_battle_db_mgr.step == 1 then  --只有第一波才需要进场动画
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
 	end;
-	
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
 	p.isCanSelFighter = true;	
-
+	p.atkCampType = W_BATTLE_HERO;
+	w_battle_machinemgr.init();
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
-	
 	
 end;
 
@@ -86,6 +84,11 @@ end;
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVEAtkID(atkID)
    WriteCon( "SetPVEAtkID:"..tonumber(atkID));
+   if p.battleIsStart ~= true then
+		WriteCon( "Warning! Battle not Start");
+		return false;
+   end;
+
    local atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
 
    local targerID = w_battle_mgr.PVEEnemyID;
@@ -118,24 +121,119 @@ function p.SetPVEAtkID(atkID)
    --默认选择的目标,判定怪物将死
 	if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
 		p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
-		
-		
 	end
 	
 	--成为目标,未攻击
 	targetFighter:BeTarTimesAdd(atkID);
-	p.AtkAdd(atkID);
-   
-    --受击次数先累加,攻击方动画播完后,再减一
-    
-
-	--攻击某个人物
-     --w_battle_atk.SelOver(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	--选择结束阶断
 	
-    --w_battle_atk.AtkPVE_NPC(atkFighter,targetFighter,batch,damage,lIsJoinAtk,lIsCrit);	
-	local pStateMachine = w_battle_PVEStateMachine:new();
-	local id = w_battle_PVEStaMachMgr.addStateMachine(pStateMachine);
-	pStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk);
+	--p.AtkAdd(atkID);
+    --受击次数先累加,攻击方动画播完后,再减一
+	--local lStateMachine = w_battle_PVEStateMachine:new();
+	--local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
+	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+	lStateMachine.turnState = W_BATTLE_TURN;  --行动中
+	lStateMachine:init(atkID,atkFighter,W_BATTLE_HERO,targetFighter, W_BATTLE_ENEMY,damage,lIsCrit,lIsJoinAtk);
+	
+	return true;
+end;					
+
+
+
+--攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
+function p.SetPVESkillAtkID(atkID)
+   WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
+   local atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
+
+   local targerID = w_battle_mgr.PVEEnemyID;
+   if targerID == nil then
+      WriteCon( "Error! SetPVEAtkID targerID is nil");
+	  return false;
+   end; 
+
+   if atkFighter == nil then
+      WriteCon( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
+	  return false;
+   end;
+
+   local targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targerID ) );
+   if targetFighter == nil then
+      WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targerID));
+	  return false;
+   end;
+
+   if w_battle_mgr.isCanSelFighter == false then  --没有存活的目标可选
+	  WriteCon( "Warning! All targetFighter is Dead!");
+	  return false;  
+   end;
+
+   local skillID = atkFighter.Skill;
+
+   local distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--远程与近战的判断;	
+   local targetType   = tonumber( SelectCell( T_SKILL, skillID, "Target_type" ) );
+   local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
+
+    if (distanceRes == nil) then
+		WriteCon( "Error! Skil distance Config is Error! skill="..tostring(skillID));
+		return false;
+    end;
+
+    if (targetType == nil) then
+		WriteCon( "Error! Skil Target_type Config is Error! skill="..tostring(skillID));
+		return false;
+    end;
+   
+    if (skillType == nil) then
+		WriteCon( "Error! Skil Skill_type Config is Error! skill="..tostring(skillID));
+		return false;
+	end;
+
+	--已开始攻击,但攻击未开始
+	--p.AtkAdd(atkID);
+	    
+	local latkCap = p.heroCamp;
+	local ltargetCamp = p.enemyCamp;
+	local lStateMachine = nil;
+	local isAoe = false;
+	
+	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
+		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
+			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
+			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
+			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
+			lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+			lStateMachine.turnState = W_BATTLE_TURN;  --行动中
+		elseif( (targetType == W_SKILL_TARGET_TYPE_2) or (targetType == W_SKILL_TARGET_TYPE_3)	or (targetType == W_SKILL_TARGET_TYPE_4)) then
+		--群体, 近战冲到屏幕中间, 远程站原地
+			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
+			ltargetCamp:SubLife(damage); --所有已存活的人扣减生命
+			ltargetCamp:BeTarTimesAdd(atkID) --所有已存活的人成为目标
+			lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+			lStateMachine.turnState = W_BATTLE_TURN;  --行动中
+			isAoe = true;
+		else
+			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
+			return false;
+		end
+		
+		if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
+			p.PVEEnemyID = ltargetCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
+		end
+	else --主动恢复 or 加BUFF or 复活,   复活只在物品中使用
+		--主动恢复或加BUFF技能类技能,不论是否群体都 站原地
+		if (targetType == W_SKILL_TARGET_TYPE_11) then --自己
+			--targetFighter:AddLife();
+		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --已方群体
+		
+		else
+			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
+			return false;
+		end
+	end;
+	
+	
+--	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
+	--lStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);
+	lStateMachine:init(atkID,atkFighter,W_BATTLE_HERO,targetFighter, W_BATTLE_ENEMY,damage,lIsCrit,lIsJoinAtk,true,skillID,isAoe);	
 	
 	return true;
 end;					
@@ -185,22 +283,25 @@ end;
 
 --我方BUFF阶断
 function p.HeroBuffStarTurn()
+	WriteCon( "HeroBuffStarTurn");
+	p.atkCampType = W_BATTLE_HERO;
 	p.HeroBuffTurnEnd();  --直接判定我方BUFF结束
 end;
 
 --检查是否所有的BUFF都播放完毕
 function p.CheckHeroBuffIsEnd()
-   	
+  
 end;
 
 --我方BUFF结束
 function p.HeroBuffTurnEnd()
+	WriteCon( "HeroBuffTurnEnd");	
 	if p.heroCamp:isAllDead() == true then  --我方全死
 	  p.FightLose();	
 	else 	
 	  --我方还有人活着
 	  w_battle_pve.RoundStar();  --UI界面全亮起来
-	  p.heroCamp:InitAtkTurnEnd(); --标识玩家的回合
+	  w_battle_machinemgr.InitAtkTurnEnd(); --标识玩家的回合
 	  --我方使用物品阶断
 	  --   当选中一个物品后,得到这个物品可使用的玩家列表,调用w_battle_useitem.RefreshUI()
 	  --我方行动阶断,只要出现攻击就等于进入这个阶断
@@ -209,20 +310,22 @@ end;
 
 --检查我方行动是否结束
 function p.CheckHeroTurnIsEnd()
-	if p.heroCamp:CheckAtkTurnEnd() == true then --英雄的回合结束
+	--if p.heroCamp:CheckAtkTurnEnd() == true then --英雄的回合结束
 		p.HeroTurnEnd()
-	end
+	--end
 	
 end;
 
 --我方行动结束
 function p.HeroTurnEnd()
-	p.battleTurnVal = W_BATTLE_TURN_HEROEND 
+	WriteCon( "HeroTurnEnd");	
 	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
 end;
 
 --敌方BUFF开始
 function p.EnemyBuffStarTurn()
+	WriteCon( "EnemyBuffStarTurn");	
+   p.atkCampType = W_BATTLE_ENEMY;
    p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
 end;
 
@@ -233,7 +336,8 @@ end;
 
 --敌方BUFF结束
 function p.EnemyBuffTurnEnd()
-	p.battleTurnVal = W_BATTLE_TURN_ENEMYBUFFEND 
+	WriteCon( "EnemyBuffTurnEnd");	
+	p.atkCampType = W_BATTLE_ENEMY 
 	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
 	--p.EnemyStarTurn()
 end;
@@ -242,17 +346,18 @@ end;
 
 --敌方回合开始
 function p.EnemyStarTurn()  --怪物回合开始
+	WriteCon( "EnemyStarTurn");	
 	p.EnemyTurnEnd() --暂时判定敌方回合结束
 end;
 
 --检查敌方回合是否结束
 function p.CheckEnemyTurnIsEnd() 
-	
+	p.EnemyTurnEnd();
 end;
 
 --敌方回合结束
 function p.EnemyTurnEnd()
-
+	WriteCon( "EnemyTurnEnd");	
 	p.HeroBuffStarTurn();
 end;
 
@@ -261,9 +366,9 @@ function p.CheckEnemyAllDied()
 	if p.enemyCamp:isAllDead() == true then 	--怪物死光了, 波次结束 or 战斗结束
 		p.FightWin();
 	else	
-		if p.battleTurnVal == W_BATTLE_TURN_HEROEND then --当前是我方行动刚结束后的拾取
+		if p.atkCampType == W_BATTLE_HERO then --当前是我方行动刚结束后的拾取
 			p.EnemyBuffStarTurn() 
-		elseif p.battleTurnVal == W_BATTLE_TURN_ENEMYBUFFEND then --当前是敌方BUFF结束后的拾取
+		elseif p.atkCampType == W_BATTLE_ENEMY then --当前是敌方BUFF结束后的拾取
 		    p.EnemyStarTurn()
 		end
 	end
@@ -345,7 +450,7 @@ function p.SetLockAction(position)
 
 end;
 
-
+--[[
 --处于攻击过程中的队列
 function p.AtkAdd(pAtkId)
 	p.AtkList[#p.AtkList + 1] = pAtkId;	
@@ -367,7 +472,7 @@ function p.CheckAtkListIsNull()
 	end;
 	return lres;
 end;
-
+]]--
 --开始战斗表现:pve
 function p.play_pve( targetId )
     WriteCon("-----------------Enter the pve mission id = "..targetId);
@@ -881,5 +986,33 @@ function p.clearDate()
     p.petNameNode={};   
     p.imageMask = nil          
     p.isBattleEnd = false;
+	p.battleIsStart = false;
     w_battle_show.DestroyAll();
+end
+
+function p.GetScreenCenterPos()
+	local cNode = GetImage( p.uiLayer, ui_n_battle_pve.ID_CTRL_PICTURE_CENTER );
+	return cNode:GetCenterPos();
+end
+
+function p.checkTurnEnd()
+	--受击状态机全行动完成了且未在行动中, 攻击状态机没有处于行动中的
+	if (w_battle_machinemgr.checkAllTargetMachineEnd() == true) and (w_battle_machinemgr.checkAllAtkMachineHasTurn() == false) then
+		if p.atkCampType == W_BATTLE_HERO then	
+				if p.enemyCamp:isAllDead() == false then --还有活着的敌人
+					if w_battle_machinemgr.checkAllAtkMachineHasNotTurn() == false then  --不存在未行动的人
+						p.HeroTurnEnd();  --所有英雄均已行动  
+					end;
+				else  --所有敌人全死了
+					w_battle_pve.PickStep(w_battle_mgr.FightWin); --捡东西
+				end
+		else
+			if p.heroCamp:isAllDead() == false then
+				p.CheckEnemyTurnIsEnd();
+			else
+				p.FightLose();
+			end		
+		end;	
+	end;
+	
 end

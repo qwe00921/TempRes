@@ -20,7 +20,8 @@ function p.ShowUI(stageId)
 	p.stageId  = stageId;
 	--获取missionId初始值
 	p.GetMissionId();
-	
+	dlg_userinfo.ShowUI();
+	dlg_menu.ShowUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -81,7 +82,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		if (ui.ID_CTRL_BTN_TETURN == tag) then
 			WriteCon("return");
 			p.CloseUI();
-			stageMap_1.OpenStageMap();
+			stageMap_1.ShowUI();
 		elseif (ui.ID_CTRL_BTN_HARD == tag) then
 			local missionStartId = nil;
 			if difficultKey == EASY then
@@ -228,7 +229,7 @@ function p.loadMissionList(missionStartId)
 				misHead:SetPicture( GetPictureByAni("common_ui.evaluate_0", 0));
 			--elseif evaluate == 1 then
 				--misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 1));
-			elseif evaluate == 1 then
+			elseif evaluate == 2 then
 				misHead:SetPicture( GetPictureByAni("common_ui.evaluate_2", 0));
 			end
 			

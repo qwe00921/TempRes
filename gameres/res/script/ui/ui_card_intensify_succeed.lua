@@ -5,7 +5,6 @@
 ui_card_intensify_succeed = {};
 local p =  ui_card_intensify_succeed;
 p.ID_CTRL_PICTURE_SUCCEED				 = 37;
-p.ID_CTRL_TEXT_35						       = 35;
 p.ID_CTRL_SPRITE_33					      = 34;
 p.ID_CTRL_9SLICES_32					     = 33;
 p.ID_CTRL_EXP_EXPNEED					    = 32;
@@ -33,4 +32,5 @@ p.ID_CTRL_TEXT_7						        = 7;
 p.ID_CTRL_TEXT_6						        = 6;
 p.ID_CTRL_TEXT_5						        = 5;
 p.ID_CTRL_9SLICES_25					     = 27;
+p.ID_CTRL_TEXT_35						       = 35;
 p.ID_CTRL_PICTURE_34					     = 36;

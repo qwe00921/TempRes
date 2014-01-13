@@ -1,8 +1,6 @@
-w_battle_PVEStateMachine = {}
+w_battle_PVEStateMachine = {}  --单体伤害状态机
 local p = w_battle_PVEStateMachine;
 		  
---PVE的一次战斗的状态机
-
 
 --创建新实例
 function p:new()	
@@ -31,20 +29,12 @@ function p:ctor()
 	self.atkplayerNode = 0;
 	self.IsRevive = false;
 	self.IsSkill  = false;
---[[
-	local batch = battle_show.GetNewBatch(); 
-	--self.seqStar = batch:AddParallelSequence(); --战斗开始的并行动画;
-	self.seqStar = battle_show.GetDefaultParallelSequence();
-	self.seqAtk = batch:AddParallelSequence();
-    self.seqTarget = batch:AddParallelSequence(); 
-	--self.seqBullet = batch:AddSerialSequence();	
-	]]--
+
 end
 
 
 
 function p:init(id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,isJoinAtk,isSkill,skillID)
-	--self.seqStar = seqStar;
 	self.atkId = atkFighter:GetId();
 	self.id = id;	
 	self.targerId = tarFighter:GetId();
@@ -58,17 +48,14 @@ function p:init(id,atkFighter,atkCampType,tarFighter, atkCampType,damage,isCrit,
 	self.IsSkill = isSkill; --是否属于技能
 
 	if self.IsSkill == true then
-		self.distanceRes = tonumber( SelectCell( T_SKILL_RES, SkillId, "distance" ) );--远程与近战的判断;	
-		--self.atkSound = T_SKILL_SOUND;
+		self.distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--远程与近战的判断;	
 		self.targetType   = tonumber( SelectCell( T_SKILL, skillID, "Target_type" ) );
 		self.skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
 		self.singSound = SelectCell( T_SKILL_SOUND, skillID, "sing_sound" );
 		self.hurtSound = SelectCell( T_SKILL_SOUND, skillID, "hurt_sound" );
-		--self.is_bullet = 
+		self.isBullet = tonumber( SelectCell( T_SKILL_RES, SkillId, "is_bullet" ) );
 	else
-		--self.atkType = atkFighter:GetAtkType(); 	
 		self.distanceRes = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
-		--self.distanceRes = self.atkType;
 		self.atkSound =  SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );	
 		self.is_bullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
 	end
@@ -211,7 +198,6 @@ function p:atk_end()
 	local atkFighter = self:getAtkFighter();
 	local tarFighter = self:getTarFighter();
 
-
     --受击后掉血,不用等掉血动画完成
 	tarFighter:SubShowLife(self.damage); --掉血动画,及表示的血量减少
 	local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );
@@ -261,7 +247,6 @@ end;
 
 
 function p:tar_hurtBegin()
-
 
 	local atkFighter = self:getAtkFighter();
 	local targerFighter = self:getTarFighter();
@@ -334,10 +319,10 @@ function p:tar_hurtEnd()
 	
 	--if targerFighter:GetHitTimes() == 0 then --受击次数为0时
 	--	targerFighter.IsHurt = false;
-	    if (targerFighter.showlife > 0) or (targerFighter:GetTargerTimes() > 0 ) then  --还活着,或者成为目标未攻击的人数不为0,继续播放站立	
+	    if (targerFighter.Hp > 0) or (targerFighter:GetTargerTimes() > 0 ) then  --还活着,或者成为目标未攻击的人数不为0,继续播放站立	
 			targerFighter:standby();
 			self:targerTurnEnd();  --受击方流程结束
-		elseif targerFighter.showlife <= 0 then
+		elseif targerFighter.Hp <= 0 then
             if self.CanRevive == true then  --可复活
 				targerFighter.isDead = false;
 				targerFighter.canRevive = false;

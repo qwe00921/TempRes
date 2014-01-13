@@ -148,7 +148,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_9SLICES_210]
 Type=22
 Tag=210
-Rect=415 617 224 202
+Rect=415 684 224 135
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -201,7 +201,7 @@ UIClsoeType=0
 [CTRL_EQUIP_PIC_1]
 Type=1
 Tag=303
-Rect=427 633 50 50
+Rect=427 695 50 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -210,7 +210,7 @@ UIClsoeType=0
 [CTRL_EQUIP_PIC_2]
 Type=1
 Tag=305
-Rect=427 695 50 50
+Rect=427 757 50 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -219,7 +219,7 @@ UIClsoeType=0
 [CTRL_BUTTON_EQUIP_1]
 Type=2
 Tag=1142
-Rect=427 634 50 50
+Rect=427 696 50 50
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -235,7 +235,7 @@ SelectedFileUV=0 0 100 100
 [CTRL_BUTTON_EQUIP_2]
 Type=2
 Tag=1143
-Rect=427 696 50 50
+Rect=427 758 50 50
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -251,7 +251,7 @@ SelectedFileUV=0 0 100 100
 [CTRL_TEXT_EQUIP1]
 Type=4
 Tag=220
-Rect=483 640 144 34
+Rect=483 702 144 34
 AnchorPos=0 0
 Notes=
 Text=装备名称七个字
@@ -266,7 +266,7 @@ UIClsoeType=0
 [CTRL_TEXT_EQUIP2]
 Type=4
 Tag=221
-Rect=484 703 144 34
+Rect=484 765 144 34
 AnchorPos=0 0
 Notes=
 Text=装备名称七个字

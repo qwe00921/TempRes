@@ -86,8 +86,10 @@ function OnlyMoveTo(atkFighter, fPos, tPos, pSeq)
     --local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
 
     --self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
-	local pCmd = nil;
-	pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pSeq);
+	--local pCmd = nil;
+	local pCmd =	createCommandEffect():AddActionEffect( 0, atkFighter:GetPlayerNode(), fx );
+	pSeq:AddCommand( pCmd );
+	--pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pSeq);
 	--pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, atkFighter:GetPlayerNode(), fx,pSeq);
     local varEnv = pCmd:GetVarEnv();
     varEnv:SetFloat( "$1", x );
