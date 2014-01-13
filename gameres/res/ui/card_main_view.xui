@@ -54,8 +54,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=2
+UIClsoeType=2
 
 [CTRL_PICTURE_92]
 Type=1
@@ -63,8 +63,8 @@ Tag=92
 Rect=318 165 107 30
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\card\card2.png
 NormalFileUV=0 0 192 108
 
@@ -80,8 +80,8 @@ TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_PICTURE_91]
 Type=1
@@ -106,8 +106,8 @@ TextSize=24
 TextColor=0xe3dca1
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_BUTTON_SELL]
 Type=2

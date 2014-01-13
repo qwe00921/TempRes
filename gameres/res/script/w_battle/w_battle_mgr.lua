@@ -131,8 +131,10 @@ function p.SetPVEAtkID(atkID)
 	--local lStateMachine = w_battle_PVEStateMachine:new();
 	--local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
 	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+	local damageLst = {};
+	damageLst[1] = damage;
 	lStateMachine.turnState = W_BATTLE_TURN;  --行动中
-	lStateMachine:init(atkID,atkFighter,W_BATTLE_HERO,targetFighter, W_BATTLE_ENEMY,damage,lIsCrit,lIsJoinAtk);
+	lStateMachine:init(atkID,atkFighter,W_BATTLE_HERO,targetFighter, W_BATTLE_ENEMY,damageLst,lIsCrit,lIsJoinAtk);
 	
 	return true;
 end;					
@@ -194,21 +196,25 @@ function p.SetPVESkillAtkID(atkID)
 	local ltargetCamp = p.enemyCamp;
 	local lStateMachine = nil;
 	local isAoe = false;
+	local damageLst = {};
 	
+	lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+	lStateMachine.turnState = W_BATTLE_TURN;  --行动中		
+
 	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
+			damageLst[1] = damage;
 			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
-			lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
-			lStateMachine.turnState = W_BATTLE_TURN;  --行动中
 		elseif( (targetType == W_SKILL_TARGET_TYPE_2) or (targetType == W_SKILL_TARGET_TYPE_3)	or (targetType == W_SKILL_TARGET_TYPE_4)) then
 		--群体, 近战冲到屏幕中间, 远程站原地
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
 			ltargetCamp:SubLife(damage); --所有已存活的人扣减生命
 			ltargetCamp:BeTarTimesAdd(atkID) --所有已存活的人成为目标
-			lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
-			lStateMachine.turnState = W_BATTLE_TURN;  --行动中
+			for pos=1,6 do
+				damageLst[pos] = damage
+			end
 			isAoe = true;
 		else
 			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
@@ -220,10 +226,19 @@ function p.SetPVESkillAtkID(atkID)
 		end
 	else --主动恢复 or 加BUFF or 复活,   复活只在物品中使用
 		--主动恢复或加BUFF技能类技能,不论是否群体都 站原地
-		if (targetType == W_SKILL_TARGET_TYPE_11) then --自己
-			--targetFighter:AddLife();
-		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --已方群体
+		local damage = 0;
+		if skillType == 2 then  --恢复类的有加血
+			damage = w_battle_atkDamage.SkillBuffDamage(skillID,atkFighter);
+			
+			for pos=1,6 do
+				damageLst[pos] = damage
+			end		
+		end;
 		
+		if (targetType == W_SKILL_TARGET_TYPE_11) then --自己
+			targetFighter = atkFighter;
+		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --已方群体
+			isAoe = true;
 		else
 			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
 			return false;
@@ -233,7 +248,7 @@ function p.SetPVESkillAtkID(atkID)
 	
 --	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
 	--lStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);
-	lStateMachine:init(atkID,atkFighter,W_BATTLE_HERO,targetFighter, W_BATTLE_ENEMY,damage,lIsCrit,lIsJoinAtk,true,skillID,isAoe);	
+	lStateMachine:init(atkID,atkFighter,W_BATTLE_HERO,targetFighter, W_BATTLE_ENEMY,damageLst,lIsCrit,lIsJoinAtk,true,skillID,isAoe);	
 	
 	return true;
 end;					
