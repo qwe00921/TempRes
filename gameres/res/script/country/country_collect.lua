@@ -407,6 +407,8 @@ function p.SendCollectMsg()
 	
 	p.SendToServer = true;
 	
+	local str = FormatTableToJson( p.collectResult );
+	
 	return true;
 end
 --==================================================================--
@@ -415,6 +417,7 @@ end
 --发送采集结果消息回调
 function p.SendResultCallBack()
 	p.SendToServer = false;
+	p.collectResult = {};
 	
 	--材料仓库请求数据
 	country_storage.RequestData();

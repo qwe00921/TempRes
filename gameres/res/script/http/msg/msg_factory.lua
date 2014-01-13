@@ -271,6 +271,10 @@ function CreateMsg( idmsg )
 		msg = msg_player_update:new();
 	elseif idmsg == MSG_COLLECT_MATERIALLIST then--请求材料列表
 		msg = msg_collect_materiallist:new();
+	elseif idmsg == MSG_BATTLE_ITEM then
+		msg = msg_battle_item:new();
+	elseif idmsg == MSG_COLLECT_SELL then
+		msg = msg_collect_sell:new();
 	end
 
 	
