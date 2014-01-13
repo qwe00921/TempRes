@@ -18,8 +18,8 @@ function p:ctor()
 	self.turnState = W_BATTLE_NOT_TURN;
 	self.atkId = 0;
 	self.id = 0;	
-	self.tarList = 0;
-	
+	--self.tarList = 0;
+	self.targetLst = {};
 	--self.atkCampType = 0;
 	--self.tarCampType = 0;
 	--self.atkType = 0; 
@@ -57,7 +57,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damage,isCrit,
 		self.hurtSound = SelectCell( T_SKILL_SOUND, skillID, "hurt_sound" );
 		self.sing = SelectCell( T_SKILL_RES, skillID, "sing_effect" );
         self.hurt = SelectCell( T_SKILL_RES, skillID, "hurt_effect" );
-		self.isBullet = tonumber( SelectCell( T_SKILL_RES, skillID, "is_bullet" ) );
+		self.is_bullet = tonumber( SelectCell( T_SKILL_RES, skillID, "is_bullet" ) );
 	else
 		self.distanceRes = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
 		self.atkSound =  SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );	
@@ -80,6 +80,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damage,isCrit,
 		end;
 	else
 	    self.enemyPos = tarFighter:GetFrontPos(self.atkplayerNode);	
+		self.targetLst[1] = tarFighter;
 	end
     --攻击目标的位置
 
@@ -106,7 +107,7 @@ function p:startsing()
 		local cmdAtk = self.atkFighter:cmdLua("atk_start",  self.id,"", self.seqAtk);
 		self.seqAtk:SetWaitEnd( cmd1 );
 	else
-		p:atk_start();
+		self:atk_start();
     end;					
 
 	
@@ -134,7 +135,7 @@ function p:atk_startAtk()
 	local atkFighter = self.atkFighter;
 	local tarFighter = self.targetFighter;
 	
-	if self.isAoe == true then
+--	if self.isAoe == true then
 		for pos=1,#self.targetLst do
 			tarFighter = (self.targetLst)[pos];
 			--成为目标未攻击的队列减少
@@ -152,11 +153,11 @@ function p:atk_startAtk()
 				end;
 			end;	
 			
-				--受击
+			--受击
 			local  ltargetMachine = w_battle_machinemgr.getTarStateMachine(self.tarCampType, tarFighter:GetId());
 			ltargetMachine:setInHurt(self.atkFighter);	
 		end
-	else
+--[[	else
 		--成为目标未攻击的队列减少
 		tarFighter:BeTarTimesDec(atkFighter:GetId());
 		
@@ -174,17 +175,16 @@ function p:atk_startAtk()
 
 		--受击
 		local  ltargetMachine = w_battle_machinemgr.getTarStateMachine(self.tarCampType, tarFighter:GetId());
-		--ltargetMachine.init()
 		ltargetMachine:setInHurt(self.atkFighter);	
     end;
-		
+	]]--	
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		--攻击敌人动画
 		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		self.seqAtk:AddCommand( cmdAtk );	
 	
 		if self.IsSkill == true then	--技能受击特效
-			if self.isAoe == true then
+			--if self.isAoe == true then
 				for pos=1,#self.targetLst do
 					tarFighter = (self.targetLst)[pos];
 					local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
@@ -194,17 +194,14 @@ function p:atk_startAtk()
 					
 					--self.seqStar:AddCommand( cmd11 );
 				end;			
-			else
+			--[[else
 				local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
 				self.seqAtk:AddCommand( cmd11 );
-			end;
+			end;]]--
 		end;		
 		--攻击结束播放受击动作
 		self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqAtk ); 
     else
-		local isBullet = self.is_bullet 
-		local bulletAni;
-		
 		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, playerNode, "" );
 		self.seqStar:AddCommand( cmdAtk ); --攻击动作
 		
@@ -215,8 +212,7 @@ function p:atk_startAtk()
 			self.seqAtk:AddCommand( cmdAtkMusic );
 		end			
 
-		if isBullet == N_BATTLE_BULLET_1 then --有弹道
-			self.seqAtk:SetWaitEnd(cmdAtk);
+		if self.is_bullet == W_BATTLE_BULLET_1 then --有弹道
 			local bulletAni = "w_bullet."..tostring( atkFighter.cardId );
 			
 			local deg = atkFighter:GetAngleByFighter( tarFighter );
@@ -229,13 +225,17 @@ function p:atk_startAtk()
 			bulletend = bullet:cmdShoot( atkFighter, tarFighter, self.seqAtk, false );
 			local bullet3 = bullet:cmdSetVisible( false, self.seqAtk );
 			--seqBullet:SetWaitEnd( cmdAtk );
+			if self.IsSkill == true then  --技能有受击光效
+				local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );			
+				self.seqAtk:AddCommand(cmd11);
+			end;
 			
 			atkFighter:cmdLua("atk_end",        self.id, "", self.seqTarget);
 			self.seqTarget:SetWaitEnd( cmdAtk );
 		else  --没弹道
 			--攻击结束
 			if self.IsSkill == true then	--技能受击特效
-				if self.isAoe == true then
+			--	if self.isAoe == true then
 					
 					for pos=1,#self.targetLst do
 						tarFighter = (self.targetLst)[pos];
@@ -244,10 +244,11 @@ function p:atk_startAtk()
 						local seqTemp = batch:AddSerialSequence();
 						seqTemp:AddCommand( cmd11 );
 					end;			
-				else
+			--[[	else
 					local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
 					self.seqAtk:AddCommand( cmd11 );
 				end;
+				]]--
 			end;			
 			
 			
@@ -284,6 +285,7 @@ function p:atk_end()
 	else
 		tarFighter = self.targetFighter;	
 		--受击后掉血,不用等掉血动画完成
+		self.damage = 100;
 		tarFighter:SubShowLife(self.damage); --掉血动画,及表示的血量减少	
 		--受击次数减一	
 		tarFighter:BeHitDec(atkFighter:GetId()); 
