@@ -256,10 +256,14 @@ function p.InitAllCardInfo()
 		
 		local tLevel= "ID_CTRL_TEXT_CARDLEVEL"..tostring(i);--按钮
 		local tName = "ID_CTRL_TEXT_NAME"..tostring(i);--装备图背景
+		local lCardPic 	= "ID_CTRL_BUTTON_CHA"..tostring(i);--cardpic
 		
 		local cardLevText = GetLabel(p.layer, ui[tLevel]);
 		cardLevText:SetVisible(false);
-	
+
+		local cardButton = GetButton(p.layer, ui[lCardPic]); 
+		cardButton:SetImage(nil);
+		
 		local cardName = GetLabel(p.layer,ui[tName]);
 		cardName:SetText("");
 	end
