@@ -15,8 +15,8 @@ function SendReq( cmd, action, uid, param )
 	http_busy = true;
 end
 
-function SendPost(cmd)
-	PostRequest(cmd);
+function SendPost(cmd, action, uid, param,data)
+	PostRequest(cmd, action, uid, param,data);
 	
 	SetTimerOnce( OnTimerCheckBusy, 1.0f );
 	http_busy = true;

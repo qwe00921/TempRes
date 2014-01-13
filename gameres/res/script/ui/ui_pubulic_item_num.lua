@@ -4,6 +4,18 @@
 --------------------------------------------------------------
 ui_pubulic_item_num = {};
 local p =  ui_pubulic_item_num;
+p.ID_CTRL_PICTURE_101					    = 101;
+p.ID_CTRL_PICTURE_100					    = 100;
+p.ID_CTRL_PICTURE_99					     = 99;
+p.ID_CTRL_BUTTON_97					      = 97;
+p.ID_CTRL_BUTTON_96					      = 96;
+p.ID_CTRL_BUTTON_95					      = 95;
+p.ID_CTRL_TEXT_18						       = 20;
+p.ID_CTRL_PICTURE_94					     = 94;
+p.ID_CTRL_BUTTON_17					      = 19;
+p.ID_CTRL_BUTTON_16					      = 18;
+p.ID_CTRL_TEXT_15						       = 17;
+p.ID_CTRL_TEXT_14						       = 16;
 p.ID_CTRL_BUTTON_15					      = 15;
 p.ID_CTRL_9SLICES_14					     = 14;
 p.ID_CTRL_TEXT_13						       = 13;

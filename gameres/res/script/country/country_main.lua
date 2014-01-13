@@ -11,6 +11,7 @@ p.countryInfoT = {};
 local uiNodeT = {}
 
 function p.ShowUI()
+	dlg_menu.SetNewUI( p );
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		
@@ -21,7 +22,6 @@ function p.ShowUI()
 	end
 	
 	dlg_userinfo.HideUI();
-	dlg_menu.HideUI();
 	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
@@ -322,6 +322,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			country_collect.Collect( E_COLLECT_FIELD );
 		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
 			WriteCon("PRODUCE");
+			p.HideUI()
 			country_building.ShowUI(p.countryInfoT)
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
 			equip_room.ShowUI();
@@ -349,7 +350,7 @@ function p.CloseUI()
 		p.layer = nil;
 		p.ClearData()
 		dlg_userinfo.ShowUI();
-		dlg_menu.ShowUI();
+		--dlg_menu.ShowUI();
 	end
 end
 function p.ClearData()
@@ -357,4 +358,9 @@ function p.ClearData()
 	p.openTypeNum = 1;
 	p.openViewT = {};
 	p.countryInfoT = {};
+	time_bar.ClearData()
+
+end
+function p.UIDisappear()
+	p.CloseUI();
 end

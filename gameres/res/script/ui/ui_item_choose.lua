@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_item_choose = {};
 local p =  ui_item_choose;
+p.ID_CTRL_TEXT_NUM5					      = 37;
+p.ID_CTRL_TEXT_NUM4					      = 36;
+p.ID_CTRL_TEXT_NUM3					      = 35;
+p.ID_CTRL_TEXT_NUM2					      = 34;
+p.ID_CTRL_TEXT_NUM1					      = 33;
 p.ID_CTRL_TEXT_ITEMNAME5				  = 32;
 p.ID_CTRL_TEXT_ITEMNAME4				  = 31;
 p.ID_CTRL_TEXT_ITEMNAME3				  = 30;

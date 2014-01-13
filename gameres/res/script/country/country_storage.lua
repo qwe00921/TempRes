@@ -144,7 +144,7 @@ function p.RequestData()
     if uid == 0 or uid == nil then
         return ;
     end
-	--召唤兽数据请求
+	--材料仓库材料列表
     SendReq("Collect", "Material", uid, "");
 end
 
@@ -218,7 +218,7 @@ function p.RefreshUI( dataSource )
 			
 			if flag then
 				itemName:SetText( SelectCell( T_MATERIAL, data.material_id, "name" ) or "" );
-				itemNum:SetText( tostring(data.num) or "" );
+				itemNum:SetText( tostring("X " .. data.num) or "" );
 				
 				local path = SelectCell( T_MATERIAL, data.material_id, "item_pic" );
 				local picData = nil;
@@ -246,7 +246,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			p.CloseUI()
 		elseif ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "物品编辑" );
-			
+			item_choose.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_11 == tag then
 			if p.showListType == E_LIST_TYPE_ALL then
 				return;
