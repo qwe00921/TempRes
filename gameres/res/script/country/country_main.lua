@@ -358,6 +358,8 @@ function p.ClearData()
 	p.openTypeNum = 1;
 	p.openViewT = {};
 	p.countryInfoT = {};
+	time_bar.ClearData()
+
 end
 function p.UIDisappear()
 	p.CloseUI();

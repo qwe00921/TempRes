@@ -255,6 +255,9 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_COUNT_DATA then
 		msg = msg_count_data:new();
 	
+	elseif idmsg == MSG_COUNTRY_UPBUILD then
+		msg = msg_country_upbuild:new();
+		
 	elseif idmsg == MSG_CARD_ROLE_DETAIL then --卡牌角色详细
 		msg = msg_card_detail:new();
 	elseif idmsg == MSG_CARD_EQUIPMENT_DETAIL	 --卡版装备详细

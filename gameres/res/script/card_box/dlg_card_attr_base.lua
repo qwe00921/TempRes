@@ -45,7 +45,7 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
 	p.layer = layer;
     p.SetDelegate(layer);
-	
+	dlg_menu.HideUI();
 	cardInfo.UniqueId = cardInfo.UniqueId or cardInfo.UniqueID;
 	
 	p.LoadCardDetail(cardInfo.UniqueId);
@@ -229,8 +229,10 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
 		if ui_dlg_card_attr_base.ID_CTRL_BUTTON_BACK == tag then
+			dlg_menu.ShowUI();
 			p.CloseUI();
 		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_INTENSIFY == tag then
+			dlg_menu.ShowUI();
 			--¿¨ÅÆÇ¿»¯
 			card_intensify2.OnSendReq();
 			card_rein.ShowUI(p.cardInfo);
