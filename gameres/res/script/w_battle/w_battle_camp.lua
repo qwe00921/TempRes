@@ -67,6 +67,27 @@ function p:GetFirstActiveFighterID(pFighterID)
 	return lId;
 end;	
 
+--获取存活fighters中哪些可成为目标
+--id需与pFighterID不同
+--以pos从1-6排序
+function p:GetFirstActiveFighterPos(pFighterID) 
+	local lminSelId=7;  --
+	local lId= nil; --真实的ID
+	for k,v in ipairs(self.fighters) do
+		if ((v.nowlife > 0) and (v:GetId() ~= pFighterID))then
+			if v:GetId() < lminSelId then
+				lminSelId = v.selIndex ;
+				lId = v:GetId();
+				--break;
+			end
+		end;
+	end;
+	
+	return lId;
+end;	
+
+
+
 --获得当前尸体未消失的怪物
 function p:GetFirstNotDeadFighterID(pFighterID) 
 	local lminSelId=7;  --
@@ -368,7 +389,7 @@ function p:AddFighters( uiArray, fighters )
         f.buffList = {};
          
 		--临时攻击力调整
-		f.Attack = 100;
+		f.Attack = 10;
 		f.Defence = 0;
 		f.life = 300;
 				

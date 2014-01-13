@@ -164,17 +164,16 @@ end;
 function p:atk_start()
 	local atkFighter = self.atkFighter;
 	local tarFighter = self.targetFighter;
-    local playerNode = self.atkplayerNode;
 
-		if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
-			--向攻击目标移动
-			local cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, self.seqStar);
-			
-			local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", self.seqTarget);
-			self.seqTarget:SetWaitEnd( cmdMove );
-		elseif self.distanceRes == W_BATTLE_DISTANCE_Archer then  --远程攻击
-			self:atk_startAtk();
-		end;
+	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
+		--向攻击目标移动
+		local cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, self.seqStar);
+		
+		local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", self.seqTarget);
+		self.seqTarget:SetWaitEnd( cmdMove );
+	elseif self.distanceRes == W_BATTLE_DISTANCE_Archer then  --远程攻击
+		self:atk_startAtk();
+	end;
 end
 
 --近战: 攻击的同时受击
@@ -225,7 +224,7 @@ function p:atk_startAtk()
 		--攻击结束播放受击动作
 		self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqAtk ); 
     else
-		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, playerNode, "" );
+		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		self.seqStar:AddCommand( cmdAtk ); --攻击动作
 		
 		local atkSound = self.atkSound;
@@ -254,7 +253,7 @@ function p:atk_startAtk()
 			end;
 			
 			atkFighter:cmdLua("atk_end",        self.id, "", self.seqTarget);
-			self.seqTarget:SetWaitEnd( cmdAtk );
+			self.seqTarget:SetWaitEnd( bulletend );
 		else  --没弹道
 			--攻击结束
 			if self.IsSkill == true then	--技能受击特效
@@ -268,6 +267,7 @@ function p:atk_startAtk()
 					seqTemp:AddCommand( cmd11 );
 				end;			
 			end;			
+
 			
 			self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqAtk ); 
 
