@@ -464,6 +464,11 @@ function p.ShowCardInfo( view, card, cardIndex )
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
 	
+	if tonumber(card.Item_id1) ~= 0 or tonumber(card.Item_id2) ~= 0 then
+		cardButton:SetEnabled(false);
+	end
+	
+	
 	p.cardListNode[#p.cardListNode + 1] = cardButton;
 end
 

@@ -43,7 +43,7 @@ function p:ctor()
 	self.nowlife = 0; --当前实际血量
 	self.IsTurnEnd = false;
 	self.firstID = nil; --合击判定的第一下
-	
+	self.SkillBuff = {}  --中的BUFF列表
 end
 
 --初始化（重载）
@@ -190,7 +190,7 @@ function p:SubShowLife(val) --需展现的血量
 	end
 	
 	--掉血动画, 可以支持掉多个
-	local flynum = self:CreateFlyNum(0);
+	local flynum = self:CreateFlyNum(2);
     if flynum ~= nil then
         flynum:PlayNum( val );
     end	
@@ -207,7 +207,23 @@ function p:AddShowLife(val) --需展现的血量
 		self.Hp =  self.maxlife;
 	end
 	
+	--掉血动画, 可以支持掉多个
+	local flynum = self:CreateFlyNum(1);
+    if flynum ~= nil then
+        flynum:PlayNum( val );
+    end	
+	
+    --判断并显示当前血量    
+	if self:GetId() == w_battle_mgr.PVEShowEnemyID then 
+		--设置UI界面的血量
+	end;
 end;
+
+function p:AddSkillBuff(skillID)
+	local lRecord = {skillID = skillID, times = 10}
+	table.insert(self.SkillBuff, lRecord);
+end;
+
 
 
 function p:SubTmpLifeHeal( val )

@@ -157,7 +157,7 @@ NormalFileUV=0 0 194 104
 [CTRL_PICTURE_72]
 Type=1
 Tag=72
-Rect=18 515 107 38
+Rect=11 515 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -168,7 +168,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_74]
 Type=1
 Tag=81
-Rect=142 515 107 38
+Rect=134 515 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -179,7 +179,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_75]
 Type=1
 Tag=82
-Rect=266 515 107 38
+Rect=257 515 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -190,7 +190,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_76]
 Type=1
 Tag=83
-Rect=390 515 107 38
+Rect=380 515 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -201,7 +201,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_77]
 Type=1
 Tag=84
-Rect=514 515 107 38
+Rect=503 515 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -212,7 +212,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_86]
 Type=1
 Tag=73
-Rect=18 677 107 38
+Rect=8 677 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -223,7 +223,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_87]
 Type=1
 Tag=85
-Rect=142 678 107 38
+Rect=133 678 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -234,7 +234,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_88]
 Type=1
 Tag=86
-Rect=266 678 107 38
+Rect=258 678 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -245,7 +245,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_89]
 Type=1
 Tag=87
-Rect=390 678 107 38
+Rect=383 678 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -256,7 +256,7 @@ NormalFileUV=0 0 192 68
 [CTRL_PICTURE_90]
 Type=1
 Tag=88
-Rect=514 678 107 38
+Rect=508 678 120 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -288,8 +288,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=2
+UIClsoeType=2
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -312,8 +312,8 @@ Rect=0 719 640 128
 AnchorPos=0 0
 Notes=
 Stretch=1
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\card\card2.png
 NormalFileUV=0 0 192 108
 
@@ -328,8 +328,8 @@ TextTradition=開始強化
 TextSize=30
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\public\button_blue.png
 NormalFileUV=0 0 232 84
 DisableFile=.\res\image\ui\public\button_blue_unclick.png
@@ -342,8 +342,8 @@ Rect=168 764 220 37
 AnchorPos=0 0
 Notes=
 Stretch=1
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -354,8 +354,8 @@ Rect=168 729 220 37
 AnchorPos=0 0
 Notes=
 Stretch=1
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -366,8 +366,8 @@ Rect=168 800 220 37
 AnchorPos=0 0
 Notes=
 Stretch=1
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -383,8 +383,8 @@ TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_TEXT_28]
 Type=4
@@ -398,8 +398,8 @@ TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_TEXT_30]
 Type=4
@@ -411,8 +411,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_TEXT_31]
 Type=4
@@ -424,8 +424,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_TEXT_32]
 Type=4
@@ -437,8 +437,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_TEXT_59]
 Type=4
@@ -452,8 +452,8 @@ TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 
 [CTRL_9SLICES_230]
 Type=22
@@ -470,7 +470,7 @@ NormalFileUV=0 0 192 108
 [CTRL_TEXT_LEVEL1]
 Type=4
 Tag=233
-Rect=164 243 54 27
+Rect=184 243 54 27
 AnchorPos=0 0
 Notes=
 Text=等级
@@ -485,7 +485,7 @@ UIClsoeType=0
 [CTRL_TEXT_HP1]
 Type=4
 Tag=234
-Rect=164 279 54 27
+Rect=184 279 54 27
 AnchorPos=0 0
 Notes=
 Text=生命
@@ -500,7 +500,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK1]
 Type=4
 Tag=235
-Rect=164 314 54 27
+Rect=184 314 54 27
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -543,7 +543,7 @@ NormalFileUV=0 0 188 32
 [CTRL_TEXT_DEFENCE1]
 Type=4
 Tag=237
-Rect=164 348 54 27
+Rect=184 348 54 27
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -599,7 +599,7 @@ NormalFileUV=0 0 176 28
 [CTRL_TEXT_HP]
 Type=4
 Tag=242
-Rect=220 279 113 27
+Rect=240 279 113 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -612,7 +612,7 @@ UIClsoeType=0
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=243
-Rect=220 243 113 27
+Rect=240 243 113 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -625,7 +625,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK]
 Type=4
 Tag=244
-Rect=220 314 113 27
+Rect=240 314 113 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -638,7 +638,7 @@ UIClsoeType=0
 [CTRL_TEXT_DEFENCE]
 Type=4
 Tag=245
-Rect=220 348 113 27
+Rect=240 348 113 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -789,7 +789,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL1]
 Type=4
 Tag=130
-Rect=23 533 51 13
+Rect=15 533 51 13
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -802,7 +802,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL2]
 Type=4
 Tag=131
-Rect=149 530 51 19
+Rect=139 530 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -815,7 +815,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL3]
 Type=4
 Tag=132
-Rect=271 530 51 19
+Rect=261 530 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -828,7 +828,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL4]
 Type=4
 Tag=133
-Rect=395 530 51 19
+Rect=384 530 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -841,7 +841,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL5]
 Type=4
 Tag=134
-Rect=520 530 51 19
+Rect=509 530 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -854,7 +854,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL6]
 Type=4
 Tag=135
-Rect=23 691 51 19
+Rect=13 691 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -867,7 +867,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL7]
 Type=4
 Tag=136
-Rect=147 691 51 19
+Rect=137 691 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -880,7 +880,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL8]
 Type=4
 Tag=137
-Rect=271 691 51 19
+Rect=263 691 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -893,7 +893,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL9]
 Type=4
 Tag=138
-Rect=395 691 51 19
+Rect=388 691 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -906,7 +906,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL10]
 Type=4
 Tag=139
-Rect=519 692 51 19
+Rect=513 692 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -919,7 +919,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME6]
 Type=4
 Tag=98
-Rect=23 679 89 17
+Rect=13 679 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -934,7 +934,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME7]
 Type=4
 Tag=99
-Rect=147 680 89 17
+Rect=138 680 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -949,7 +949,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME8]
 Type=4
 Tag=100
-Rect=271 680 89 17
+Rect=263 680 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -964,7 +964,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME9]
 Type=4
 Tag=101
-Rect=395 680 89 17
+Rect=388 680 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -979,7 +979,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME10]
 Type=4
 Tag=102
-Rect=519 680 89 17
+Rect=513 680 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -998,8 +998,8 @@ Rect=105 159 240 68
 AnchorPos=0 0
 Notes=
 Stretch=1
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=2
+UIClsoeType=2
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -1015,8 +1015,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=2
+UIClsoeType=2
 
 [CTRL_BUTTON_CHA1]
 Type=2
@@ -1141,7 +1141,7 @@ UIClsoeType=0
 [CTRL_BUTTON_101]
 Type=2
 Tag=117
-Rect=22 311 116 62
+Rect=36 311 116 62
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -1155,7 +1155,7 @@ NormalFileUV=0 0 194 104
 [CTRL_TEXT_252]
 Type=4
 Tag=252
-Rect=14 359 143 20
+Rect=15 359 158 20
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -1168,7 +1168,7 @@ UIClsoeType=0
 [CTRL_PICTURE_231]
 Type=1
 Tag=231
-Rect=34 239 101 101
+Rect=44 239 101 101
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1177,7 +1177,7 @@ UIClsoeType=0
 [CTRL_TEXT_416]
 Type=4
 Tag=416
-Rect=15 262 139 50
+Rect=25 262 139 50
 AnchorPos=0 0
 Notes=
 Text=请选择强化卡牌
@@ -1205,7 +1205,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=0 228 638 162
+Rect=0 229 638 162
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1220,8 +1220,8 @@ Tag=226
 Rect=175 767 32 32
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\main_interface\money.png
 NormalFileUV=0 0 32 32
 
@@ -1231,19 +1231,19 @@ Tag=227
 Rect=175 802 32 32
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
+UIOpenType=3
+UIClsoeType=3
 NormalFile=.\res\image\ui\main_interface\money.png
 NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_NAME1]
 Type=4
 Tag=93
-Rect=24 517 89 17
+Rect=14 517 112 17
 AnchorPos=0 0
 Notes=
-Text=角色名称
-TextTradition=角色名稱
+Text=角色名称一二三四
+TextTradition=角色名稱一二三四
 TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -1254,7 +1254,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME2]
 Type=4
 Tag=94
-Rect=148 519 89 17
+Rect=138 519 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -1269,7 +1269,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME3]
 Type=4
 Tag=95
-Rect=272 519 89 17
+Rect=262 519 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -1284,7 +1284,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME4]
 Type=4
 Tag=96
-Rect=396 519 89 17
+Rect=385 519 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -1299,7 +1299,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME5]
 Type=4
 Tag=97
-Rect=520 519 89 17
+Rect=509 519 112 17
 AnchorPos=0 0
 Notes=
 Text=角色名称
@@ -1314,7 +1314,7 @@ UIClsoeType=0
 [CTRL_PICTURE_186]
 Type=1
 Tag=999
-Rect=0 396 635 322
+Rect=0 396 640 322
 AnchorPos=0 0
 Notes=
 UIOpenType=0

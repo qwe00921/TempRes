@@ -61,11 +61,16 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		if lstateMachine ~= nil then
 			lstateMachine:atk_moveback();
 		end;
---[[	elseif cmdtype == "tar_hurtBegin" and E_DEMO_VER == 5 then
-		local lstateMachine = w_battle_machinemgr.getTarStateMachine(str,num);
+    elseif cmdtype == "atk_startBuff" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
 		if lstateMachine ~= nil then
-			lstateMachine:tar_hurtBegin();
-		end;		]]--
+			lstateMachine:atk_startBuff();
+		end;
+	elseif cmdtype == "atk_BuffEnd" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
+		if lstateMachine ~= nil then
+			lstateMachine:atk_BuffEnd();
+		end;		
 	elseif cmdtype == "tar_hurt" and E_DEMO_VER == 5 then
 		local lstateMachine = w_battle_machinemgr.getTarStateMachine(str,num);
 		if lstateMachine ~= nil then

@@ -229,7 +229,7 @@ function p.loadMissionList(missionStartId)
 				misHead:SetPicture( GetPictureByAni("common_ui.evaluate_0", 0));
 			--elseif evaluate == 1 then
 				--misHead:SetPicture( GetPictureByAni("common_ui.evaluate", 1));
-			elseif evaluate == 1 then
+			elseif evaluate == 2 then
 				misHead:SetPicture( GetPictureByAni("common_ui.evaluate_2", 0));
 			end
 			

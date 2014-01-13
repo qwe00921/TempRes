@@ -89,6 +89,12 @@ function p.SkillDamage(skillID,atkFighter,tarFighter)
 	
 end
 
+function p.SkillBuffDamage(skillID, atkFighter)
+  local damage_percent   = tonumber( SelectCell( T_SKILL, skillID, "damage_percent" ) )/100;	
+  local	damage= atkFighter.damage * (1 + damage_percent)	
+
+  return damage;
+end;
 
 --BUFF…À∫¶
 function p.buffDamage(skillID,atkFighter,tarFighter)

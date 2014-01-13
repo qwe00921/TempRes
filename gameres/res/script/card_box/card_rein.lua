@@ -214,12 +214,16 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	if pIndex > 10 then --正常不超过10
 		return ;
 	end
+	local lLevelStr 	= "ID_CTRL_TEXT_CARDLEVEL"..pIndex;--等级
+	local lCardPic 	= "ID_CTRL_BUTTON_CHA"..pIndex;--cardpic
+	local lCardName 	= "ID_CTRL_TEXT_NAME"..pIndex;--cardpic
+	
 	WriteCon("SetCardInfoWS"..pIndex.."  LEVELE : "..pCardInfo.Level);
-	local cardLevText = GetLabel(p.layer, ui.ID_CTRL_TEXT_CARDLEVEL1+pIndex-1);
+	local cardLevText = GetLabel(p.layer, ui[lLevelStr]);
 	cardLevText:SetVisible(true);
 	cardLevText:SetText("LV "..tostring(pCardInfo.Level));
 			
-	local cardButton = GetButton(p.layer, ui.ID_CTRL_BUTTON_CHA1+pIndex-1);
+	local cardButton = GetButton(p.layer, ui[lCardPic]);
 	local lcardId = tonumber(pCardInfo.CardID);
 	local lCardRowInfo= SelectRowInner( T_CHAR_RES, "card_id", lcardId); --从表中获取卡牌详细信息	
 		
@@ -227,7 +231,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
 	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
 	
-	local cardName = GetLabel(p.layer, ui.ID_CTRL_TEXT_NAME1+pIndex-1);
+	local cardName = GetLabel(p.layer, ui[lCardName]);
 	cardName:SetText(tostring(lCardInfo.name));
 	
 	p.selectNum = p.selectNum+1;
@@ -252,10 +256,14 @@ function p.InitAllCardInfo()
 		
 		local tLevel= "ID_CTRL_TEXT_CARDLEVEL"..tostring(i);--按钮
 		local tName = "ID_CTRL_TEXT_NAME"..tostring(i);--装备图背景
+		local lCardPic 	= "ID_CTRL_BUTTON_CHA"..tostring(i);--cardpic
 		
 		local cardLevText = GetLabel(p.layer, ui[tLevel]);
 		cardLevText:SetVisible(false);
-	
+
+		local cardButton = GetButton(p.layer, ui[lCardPic]); 
+		cardButton:SetImage(nil);
+		
 		local cardName = GetLabel(p.layer,ui[tName]);
 		cardName:SetText("");
 	end
