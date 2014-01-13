@@ -24,6 +24,7 @@ p.node = nil;
 p.isReplace = false;
 p.callback = nil;
 p.hasRemove = false;
+p.cardListInfoSell = {}
 
 function p.ShowUI()
 	if p.layer ~= nil then 
@@ -124,9 +125,9 @@ function p.ShowCardList(cardList)
 			cardNumText:SetText(countText);
 		end
 	end
-	
-	p.cardListInfo = cardList;
-	
+	if p.BatchSellMark == MARK_OFF then
+		p.cardListInfo = cardList;
+	end
 	if p.hasRemove  == true then
 		cardNum = cardNum or 0;
 		cardNum = cardNum + 1;
@@ -498,6 +499,7 @@ function p.sellBtnEvent()
 		p.BatchSellMark = MARK_ON;
 		btn:SetText("取消");
 		card_bag_sell.ShowUI();
+		p.selectCardList()
 		p.setTeamCardDisEnable()
 		
 	elseif p.BatchSellMark == MARK_ON then
@@ -508,6 +510,32 @@ function p.sellBtnEvent()
 		card_bag_sell.CloseUI() 
 		p.ShowCardList(p.cardListInfo)
 	end
+end
+
+function p.selectCardList()
+	p.cardListInfoSell = {}
+	local Item_Id1 = nil;
+	local Item_Id2 = nil;
+	local Item_Id3 = nil;
+	local Gem1 = nil;
+	local Gem2 = nil;
+	local Gem3 = nil;
+
+	for k,v in pairs(p.cardListInfo) do
+		Item_Id1 = v.Item_Id1;
+		Item_Id2 = v.Item_Id2;
+		Item_Id3 = v.Item_Id3;
+		Gem1 = v.Gem1;
+		Gem2 = v.Gem2;
+		Gem3 = v.Gem3;
+		if tonumber(Item_Id1) > 0 or tonumber(Item_Id2) > 0 or tonumber(Item_Id3) > 0 
+				or tonumber(Gem1) > 0 or tonumber(Gem2) > 0 or tonumber(Gem3) > 0 then
+			WriteCon("selectCardList =="..k);
+		else
+			p.cardListInfoSell[#p.cardListInfoSell+1] = v
+		end
+	end
+	p.ShowCardList(p.cardListInfoSell)
 end
 
 --安规则排序按钮
@@ -609,6 +637,7 @@ function p.ClearData()
 	p.isReplace = false;
 	p.hasRemove = false;
 	p.callback = nil;
+	p.cardListInfoSell = {}
 end
 function p.UIDisappear()
 	p.CloseUI();
