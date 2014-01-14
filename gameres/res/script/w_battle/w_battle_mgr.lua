@@ -39,6 +39,12 @@ p.batchIsFinish = true;
 p.battle_batch  = nil;
 p.atkCampType = nil;
 p.battleIsStart = false;
+p.AtkTimes  = 0;
+p.SkillTimes= 0;
+p.CritTimes = 0;
+p.JoinAtkTimes = 0;
+p.MoreDamageTimes = 0;
+
 
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
@@ -58,6 +64,13 @@ function p.init()
 	p.battle_batch  = nil;
 	p.atkCampType = nil;
 	p.battleIsStart = true;
+
+	p.AtkTimes  = 0;
+	p.SkillTimes= 0;
+	p.CritTimes = 0;
+	p.JoinAtkTimes = 0;
+	p.MoreDamageTimes = 0;	
+	
 end;
 
 
@@ -193,7 +206,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
     end;
 
    --点选目标后,先计算伤害
-   local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter);
+   local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter,IsMonster);
    targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
    
     if IsMonster ~= true then
@@ -209,8 +222,13 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
 	local damageLst = {};
 	damageLst[1] = damage;
+	local lCritLst = {}
+	lCritLst[1] = lIsCrit;
+	local lJoinAtkLst = {}
+	lJoinAtkLst[1] = lIsJoinAtk;
+	
 	lStateMachine.turnState = W_BATTLE_TURN;  --行动中
-	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lIsCrit,lIsJoinAtk);
+	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lCritLst,lJoinAtkLst,false);
 	
 	return true;
 end;					
@@ -304,6 +322,9 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	local lStateMachine = nil;
 	local isAoe = false;
 	local damageLst = {};
+	local lCritLst = {}
+	local lJoinAtkLst = {}
+	
 	
 	lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
 	lStateMachine.turnState = W_BATTLE_TURN;  --行动中		
@@ -312,6 +333,8 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
 			damageLst[1] = damage;
+			lCritLst[1] = lIsCrit;
+			lJoinAtkLst[1] = lIsJoinAtk;
 			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
 		elseif( (targetType == W_SKILL_TARGET_TYPE_2) or (targetType == W_SKILL_TARGET_TYPE_3)	or (targetType == W_SKILL_TARGET_TYPE_4)) then
@@ -321,6 +344,8 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 			ltargetCamp:BeTarTimesAdd(atkID) --所有已存活的人成为目标
 			for pos=1,6 do
 				damageLst[pos] = damage
+				lCritLst[pos] = false;
+				lJoinAtkLst[pos] = false;
 			end
 			isAoe = true;
 		else
@@ -357,7 +382,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	
 --	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
 	--lStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);
-	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lIsCrit,lIsJoinAtk,true,skillID,isAoe);	
+	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lCritLst ,lJoinAtkLst,true,skillID,isAoe);	
 	
 	return true;
 end;					
@@ -1212,8 +1237,24 @@ function p.getEnemyTarget(atkFighter)
     return lTargetFighter;
 end
 
---获得克制的玩家英雄
-function p.getElemtHeroLst(atkFighter)
+function p.calAtkTimes(IsSkill,lIsCrit,lIsJoinAtk,lisMoredamage)
+	if IsSkill == false then
+		p.AtkTimes = p.AtkTimes + 1;
+    else
+		p.SkillTimes = p.SkillTimes + 1;
+	end; 
+
+	if lIsCrit == true then
+		p.CritTimes = p.CritTimes + 1;
+	end;
 	
+	if lIsJoinAtk == true then
+		p.JoinAtkTimes = p.JoinAtkTimes + 1; 
+	end;
 	
+	if lisMoredamage == true then
+		p.MoreDamageTimes = p.MoreDamageTimes + 1;
+	end
+
 end
+

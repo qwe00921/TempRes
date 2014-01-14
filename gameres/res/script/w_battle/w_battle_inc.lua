@@ -124,3 +124,10 @@ W_BATTLE_ENEMYTIME = 0.7;
 W_BATTLE_NOT_TURN = 0;  --未行动
 W_BATTLE_TURN     = 1;  --行动中 
 W_BATTLE_TURNEND  = 2;  --已行动
+
+--掉落
+W_DROP_ATKTYPE1  = 1;  --普攻
+W_DROP_ATKTYPE2  = 1;  --技能
+W_DROP_ATKTYPE3  = 1;  --暴击
+W_DROP_ATKTYPE4  = 1;  --合击
+W_DROP_ATKTYPE5  = 1;  --超量
