@@ -325,6 +325,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			p.HideUI()
 			country_building.ShowUI(p.countryInfoT)
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
+			p.HideUI()
 			equip_room.ShowUI();
 			WriteCon("EQUIP");
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then

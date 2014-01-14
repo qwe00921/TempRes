@@ -43,7 +43,7 @@ function p.ShowUI( msg )
     if layer == nil then
         return false;
     end
-    
+    layer:NoMask();
     layer:Init();
     GetUIRoot():AddDlg( layer );
     LoadDlg("equip_sell_list.xui", layer, nil);
