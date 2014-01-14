@@ -13,9 +13,9 @@ p.buildLevel = nil;
 p.upNeedHome = nil;
 
 function p.ShowUI(countryInfo)
-	dlg_menu.SetNewUI( p );
-	dlg_userinfo.ShowUI();
 	dlg_menu.ShowUI();
+	dlg_menu.SetNewUI( p );
+	dlg_userinfo.ShowUI( );
 	if countryInfo == nil then
 		WriteConErr("countryInfo error");
 		return
@@ -267,8 +267,6 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
-		dlg_userinfo.ShowUI();
-		dlg_menu.ShowUI();
 	end
 end
 function p.UIDisappear()
