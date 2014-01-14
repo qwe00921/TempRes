@@ -342,6 +342,7 @@ function p.GetItemTable( index )
 	local ctrller = GetButton( p.battleLayer, tag[ITEM_BTN_INDEX] );
 	temp[ITEM_BTN_INDEX] = ctrller;
 	ctrller:SetLuaDelegate( p.OnBtnClick );
+	ctrller:SetId( index );
 	
 	ctrller = GetLabel( p.battleLayer, tag[ITEM_NAME_INDEX] );
 	temp[ITEM_NAME_INDEX] = ctrller;
@@ -427,7 +428,6 @@ function p.RefreshUI()
 					
 					local name = SelectCell( T_MATERIAL, item.item_id, "name" );	
 					ctrllers[ITEM_NAME_INDEX]:SetText( name );
-					
 					local path = SelectCell( T_MATERIAL, item.item_id, "item_pic" ) or "";
 					local picData = GetPictureByAni( path, 0 );
 					if picData then
@@ -628,7 +628,7 @@ function p.UseItem( uiNode )
 	local item = itemList[id] or {};
 	local itemid = 0;
 	if item then
-		itemid = item.itemtype or 0;
+		itemid = item.item_id or 0;
 	end
 	
 	if itemid == 0 then
