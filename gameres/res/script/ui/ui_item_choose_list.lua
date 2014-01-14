@@ -4,9 +4,6 @@
 --------------------------------------------------------------
 ui_item_choose_list = {};
 local p =  ui_item_choose_list;
-p.ID_CTRL_TEXT_16						       = 16;
-p.ID_CTRL_TEXT_15						       = 15;
-p.ID_CTRL_PICTURE_14					     = 14;
 p.ID_CTRL_TEXT_79						       = 79;
 p.ID_CTRL_TEXT_43						       = 44;
 p.ID_CTRL_PICTURE_41					     = 42;

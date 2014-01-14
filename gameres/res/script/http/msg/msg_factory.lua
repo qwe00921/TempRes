@@ -275,6 +275,8 @@ function CreateMsg( idmsg )
 		msg = msg_battle_item:new();
 	elseif idmsg == MSG_COLLECT_SELL then
 		msg = msg_collect_sell:new();
+	elseif idmsg == MSG_SETBATTLE_ITEM then
+		msg = msg_setbattleitem:new();
 	end
 
 	
