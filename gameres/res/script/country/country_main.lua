@@ -139,10 +139,10 @@ function p.ShowCountry(backData)
 		return
 	end
 	--是否有新开启的建筑
-	p.openViewT = backData.openani;
-	-- p.openViewT["P1"] = 1;
-	-- p.openViewT["P3"] = 3;
-	-- p.openViewT["P7"] = 7;
+	--p.openViewT = backData.openani;
+	p.openViewT["P1"] = 1;
+	p.openViewT["P3"] = 3;
+	p.openViewT["P7"] = 7;
 	local openViewNum = 0;	
 	if p.openViewT ~= nil then
 		for k,v in pairs(p.openViewT) do
@@ -205,8 +205,8 @@ function p.showCountryBuild(buildInfo)
 				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
 				--剩余时间
 				local countDownTime = tonumber(buildInfo["B"..i].upgrade_time);
-				local nowTime = os.time();
-				local lastTime = countDownTime - nowTime;
+				--local nowTime = os.time();
+				--local lastTime = countDownTime - nowTime;
 				--local lastTime = 100;
 				--升级所需时间
 				local nextLV = tonumber(buildInfo["B"..i].upgrade_level)
@@ -227,7 +227,7 @@ function p.showCountryBuild(buildInfo)
 				timeBar:SetNoText()
 				local timeTextNode = uiNodeT.timeTextT[i]
 				--显示时间条
-				time_bar.ShowTimeBar(0,timeNeed,lastTime,timeBar,timeTextNode) 
+				time_bar.ShowTimeBar(0,timeNeed,countDownTime,timeBar,timeTextNode) 
 			
 			--是否刚升级完
 			elseif tonumber(buildInfo["B"..i].update) == 1 then

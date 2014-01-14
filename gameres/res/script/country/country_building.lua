@@ -216,11 +216,15 @@ end
 function p.uiBuildCallBack(backData)
 	WriteCon( "uiBuildCallBack ok" );
 	if backData.result == false then
-		dlg_msgbox.ShowOK("错误提示","非法数据",nil,p.layer);
+		dlg_msgbox.ShowOK("错误提示",backData.message,nil,p.layer);
 		return
 	end
 	dlg_msgbox.ShowOK("提示","开始升级。",nil,p.layer);
 
+	local upBuildTypeId = tonumber(backData.build.build_type);
+	
+	p.countryInfoT["B"..upBuildTypeId] = backData.build;
+	p.ShowUI(p.countryInfoT);
 end
 
 function p.OnTouchImage(uiNode, uiEventType, param)

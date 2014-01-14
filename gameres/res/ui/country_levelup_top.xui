@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -12,6 +12,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_BUILD]
 Type=1
@@ -19,6 +21,8 @@ Tag=14
 Rect=258 234 125 125
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_KAI]
 Type=19
@@ -26,6 +30,8 @@ Tag=15
 Rect=158 426 107 107
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_SPRITE_FANG]
 Type=19
@@ -33,3 +39,23 @@ Tag=16
 Rect=376 426 107 107
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_KAI]
+Type=1
+Tag=33
+Rect=158 426 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_FANG]
+Type=1
+Tag=34
+Rect=376 426 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

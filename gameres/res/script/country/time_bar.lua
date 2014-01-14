@@ -4,35 +4,41 @@ local moveTimer = nil;
 
 p.leastTime = nil;
 p.maxTime = nil;
-p.lastTime = nil;
+p.upbulidTime = nil;
 p.node = nil;
 p.TextNode = nil;
+--p.lastTime = nil;
 
-function p.ShowTimeBar(leastTime,maxTime,lastTime,uiNode,timeTextNode) 
+function p.ShowTimeBar(leastTime,maxTime,upbulidTime,uiNode,timeTextNode) 
 	p.node = uiNode;
 	p.leastTime = leastTime;
 	p.maxTime = maxTime;
-	p.lastTime = lastTime;
+	p.upbulidTime = upbulidTime;
 	p.TextNode = timeTextNode;
 		--WriteCon("rewardTable hour"..hour);
 
 	p.timeMoveInit()
-	moveTimer = SetTimer( p.showMoveTime, 1 );
+	moveTimer = SetTimer( p.showMoveTime, 0.1 );
 end
 
 function p.timeMoveInit()
-	p.node:SetValue( p.leastTime,p.maxTime,p.lastTime);
-	p.setTimeText(p.lastTime)
+	
+	local nowTime = os.time();
+	local lastTime = p.upbulidTime - nowTime;
+
+	p.node:SetValue( p.leastTime,p.maxTime,lastTime);
+	p.setTimeText(lastTime)
 end
  
 function p.showMoveTime()
-	p.lastTime = p.lastTime - 1;
-	p.node:SetValue( p.leastTime,p.maxTime,p.lastTime);
-	if p.lastTime == 0 then
+	local nowTime = os.time();
+	local lastTime = p.upbulidTime - nowTime;
+	p.node:SetValue( p.leastTime,p.maxTime,lastTime);
+	if lastTime <= 0 then
 		p.TextNode:SetText("升级完成！");
 		p.ClearData()
 	else
-		p.setTimeText(p.lastTime)
+		p.setTimeText(lastTime)
 	end
 
 end
@@ -65,7 +71,7 @@ function p.ClearData()
 	end
 	p.leastTime = nil;
 	p.maxTime = nil;
-	p.lastTime = nil;
+	p.upbulidTime = nil;
 	p.node = nil;
 	p.TextNode = nil;
 end
