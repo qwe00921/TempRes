@@ -58,6 +58,16 @@ function p.Init()
 	
 	local buildPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_BUILD)
 	buildPic:SetPicture( GetPictureByAni(indexPic,0));
+	
+	local kaiPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_KAI);
+	local fangPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_FANG);
+	kaiPic:SetPicture( GetPictureByAni("common_ui.country_open",0));
+	fangPic:SetPicture( GetPictureByAni("common_ui.country_open",1));
+	kaiPic:SetScale(0);
+	fangPic:SetScale(0);
+	kaiPic:AddActionEffect( "ui.country_open" );
+	fangPic:AddActionEffect( "ui.country_open" );
+	
 end
 
 function p.SetDelegate(layer)

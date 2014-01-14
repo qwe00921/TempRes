@@ -25,7 +25,9 @@ p.newEquip = {};
 p.msg = nil;
 --ÏÔÊ¾UI
 function p.ShowUI()
-    
+    dlg_menu.ShowUI();
+	dlg_menu.SetNewUI( p );
+	dlg_userinfo.ShowUI( );
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
@@ -35,7 +37,7 @@ function p.ShowUI()
     if layer == nil then
         return false;
     end
-	
+	layer:NoMask();
 	layer:Init();
 	
 	GetUIRoot():AddDlg(layer);
@@ -77,6 +79,7 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
+			country_main.ShowUI();
 		elseif (ui.ID_CTRL_BUTTON_SELL == tag) then --Âô³ö
 			equip_sell.ShowUI(p.msg);
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --ÅÅÐò

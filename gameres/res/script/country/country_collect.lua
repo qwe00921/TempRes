@@ -16,6 +16,11 @@ E_COLLECT_MOUNTAIN = 1;
 E_COLLECT_TREE = 2;
 E_COLLECT_RIVER = 3;
 E_COLLECT_FIELD = 4;
+E_COLLECT_HOME = 5;
+
+local DROP_TYPE_MATERIAL = 1;	--材料
+local DROP_TYPE_MONEY = 4;	--金币
+local DROP_TYPE_SOUL = 5;	--蓝魂
 
 --==================================================================--
 --取table长度，包含哈希部分以及数组部分
@@ -36,7 +41,7 @@ function FormatTableToJson( tTemp )
 	local bFlag = table.getn( tTemp ) == TableLength( tTemp );
 	local str = bFlag and "[" or "{";
 	for key, value in pairs( tTemp ) do
-		local connectStr = bFlag and "" or tostring( key ).. ":";
+		local connectStr = bFlag and "" or "\"" .. tostring( key ).. "\"" ..":";
 		if type( value ) == "table" then
 			str = str ..  connectStr .. FormatTableToJson( value ) .. ",";
 		else
@@ -59,14 +64,18 @@ function p.AddToTable( sourceTable, addTable )
 	addTable.id = addTable.id or 0;
 	addTable.num = addTable.num or 0;
 	
-	for i = 1, #sourceTable do
-		local t = sourceTable[i];
-		t.id = t.id or 0;
-		t.num = t.num or 0;
-		
-		if t.id == addTable.id then
-			t.num = t.num + addTable.num;
-			break;
+	if #sourceTable == 0 then
+		table.insert( sourceTable, addTable );
+	else
+		for i = 1, #sourceTable do
+			local t = sourceTable[i];
+			t.id = tonumber(t.id) or 0;
+			t.num = tonumber(t.num) or 0;
+
+			if t.id == addTable.id then
+				t.num = t.num + addTable.num;
+				break;
+			end
 		end
 	end
 end
@@ -112,10 +121,18 @@ function p.RandomCollectItem( collectType )
 		
 		resultTable = p.collectResult.Farm;
 		buildType = 7;
+	elseif E_COLLECT_HOME == collectType then
+		p.collectResult.Home = p.collectResult.Home or {};
+		p.collectResult.Home.times = p.collectResult.Home.times or 0;
+		p.collectResult.Home.Gold = p.collectResult.Home.Gold or 0;
+		p.collectResult.Home.Soul = p.collectResult.Home.Soul or 0;
+		p.collectResult.Home.Material = p.collectResult.Home.Material or {};
+		
+		resultTable = p.collectResult.Home;
+		buildType = 4;
 	end
 	
 	if resultTable ~= nil and buildType ~= 0 then
-		resultTable.times = resultTable.times + 1;
 		local cache = msg_cache.msg_count_data or {};
 		local builds = cache.builds or {};
 		local build = builds["B".. buildType];
@@ -136,6 +153,7 @@ function p.RandomCollectItem( collectType )
 			end
 			
 			if total ~= 0 then
+				resultTable.times = resultTable.times + 1;
 				--每次固定随机3次掉落
 				for i = 1, 3 do
 					local rand = math.random( 1, total );
@@ -150,13 +168,13 @@ function p.RandomCollectItem( collectType )
 					if index ~= 0 then
 						local drop_type = tonumber(temp[index].drop_type) or 0;
 						if drop_type ~= 0 then
-							if drop_type == 1 then
-								p.AddToTable( resultTable.Material, { id = temp[index].drop_id or 0, num = 1 } );
-								table.insert( collectTable, { type = "material", id = tonumber(temp[index].drop_id), num = tonumber(temp[index].drop_num) } );
-							elseif drop_type == 2 then
+							if drop_type == DROP_TYPE_MATERIAL then
+								p.AddToTable( resultTable.Material, { id = tonumber(temp[index].material_id) or 0, num = 1 } );
+								table.insert( collectTable, { type = "material", id = tonumber(temp[index].material_id), num = tonumber(temp[index].drop_num) } );
+							elseif drop_type == DROP_TYPE_MONEY then
 								resultTable.Gold = resultTable.Gold + 1;
 								table.insert( collectTable, { type = "gold", id = 0 } );
-							elseif drop_type == 3 then
+							elseif drop_type == DROP_TYPE_SOUL then
 								resultTable.Soul = resultTable.Soul + 1;
 								table.insert( collectTable, { type = "soul", id = 0 } );
 							end
@@ -291,6 +309,28 @@ function p.CollectField( beginEvent, endEvent )
 	p.CollectDone( node, collectTable, beginEvent, endEvent );
 end
 
+--采集房屋
+function p.CollectHome( beginEvent, endEvent )
+	if p.layer == nil then
+		return;
+	end
+	
+	local cache = msg_cache.msg_count_data or {};
+	local times = cache.times or {};
+	local collectTimes = tonumber(times.Home) or 0;
+	
+	p.collectResult.Home = p.collectResult.Home or {};
+	p.collectResult.Home.times = p.collectResult.Home.times or 0;
+	if p.collectResult.Home.times + 1 > collectTimes then
+		return;
+	end
+	
+	local collectTable = p.RandomCollectItem( E_COLLECT_HOME );
+	
+	local node = GetButton( p.layer, ui_country.ID_CTRL_BUTTON_FIELD );
+	p.CollectDone( node, collectTable, beginEvent, endEvent );
+end
+
 --通用采集流程
 function p.CollectDone( node, collectTable, beginEvent, endEvent )
 	if node == nil then
@@ -389,6 +429,8 @@ function p.Collect( collectType )
 		table.insert( p.collectList, 1, "CollectRiver" );
 	elseif E_COLLECT_FIELD == collectType then
 		table.insert( p.collectList, 1, "CollectField" );
+	elseif E_COLLECT_HOME == collectType then
+		table.insert( p.collectList, 1, "CollectHome" );
 	end
 end
 
@@ -407,8 +449,15 @@ function p.SendCollectMsg()
 	
 	p.SendToServer = true;
 	
-	local str = FormatTableToJson( p.collectResult );
+	local uid = GetUID();
+	if uid == nil or uid == 0 then
+		return;
+	end
 	
+	local str = FormatTableToJson( p.collectResult );
+	WriteCon( str );
+	
+	SendPost("Collect", "Pick", uid, "", str);	
 	return true;
 end
 --==================================================================--

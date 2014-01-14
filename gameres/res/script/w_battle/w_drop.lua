@@ -3,10 +3,10 @@
 w_drop = {};
 local p = w_drop;
 
-E_DROP_MONEY = 1;
-E_DROP_BLUESOUL = 2;
-E_DROP_HPBALL = 3;
-E_DROP_SPBALL = 4;
+E_DROP_HPBALL = 1;
+E_DROP_SPBALL = 2;
+E_DROP_MONEY = 3;
+E_DROP_BLUESOUL = 4;
 E_DROP_ITEM = 5;
 E_DROP_CARD = 6;
 E_DROP_EQUIP = 7;

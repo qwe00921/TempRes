@@ -50,3 +50,8 @@
 
 [w_battle_pass_bg_hide]
 @move(0.5,740,0)
+
+[country_open]
+@scaleto(0.3,1.5,1.5)
+@scaleto(0.3,1,1)
+

@@ -209,12 +209,15 @@ function p.RefreshUI( dataSource )
 			local itemNum = GetLabel( view, ui_item_list_1["ID_CTRL_TEXT_ITEMNUM" .. j] );
 			local itemDelegate = GetButton( view, ui_item_list_1["ID_CTRL_BUTTON_ITEM" .. j] );
 			
+			local mask = GetImage( view, ui_item_list_1["ID_CTRL_PICTURE_MASK" .. j] );
+			
 			local flag = data ~= nil;
 			itemPic:SetVisible( flag );
 			itemNameBG:SetVisible( flag );
 			itemName:SetVisible( flag );
 			itemNum:SetVisible( flag );
 			itemDelegate:SetVisible( flag );
+			mask:SetVisible( false );
 			
 			if flag then
 				itemName:SetText( SelectCell( T_MATERIAL, data.material_id, "name" ) or "" );

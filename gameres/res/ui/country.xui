@@ -277,71 +277,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_HOME_TIME]
-Type=4
-Tag=35
-Rect=174 663 107 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_PRODUCE_ITEM]
-Type=4
-Tag=33
-Rect=9 504 107 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_MERGE_TIME]
-Type=4
-Tag=34
-Rect=121 485 107 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_EQUIP_TIME]
-Type=4
-Tag=36
-Rect=210 365 107 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_STORE_TIME]
-Type=4
-Tag=37
-Rect=459 407 115 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=56
@@ -428,6 +363,71 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\exp_progressbar.png
 NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_HOME_TIME]
+Type=4
+Tag=35
+Rect=174 663 107 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_PRODUCE_ITEM]
+Type=4
+Tag=33
+Rect=9 504 107 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_MERGE_TIME]
+Type=4
+Tag=34
+Rect=121 485 107 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_EQUIP_TIME]
+Type=4
+Tag=36
+Rect=210 365 107 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_STORE_TIME]
+Type=4
+Tag=37
+Rect=459 407 115 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_UPBUILD_BG]
 Type=22

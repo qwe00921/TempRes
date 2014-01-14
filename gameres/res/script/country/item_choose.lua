@@ -10,6 +10,9 @@ p.battle_items = {};
 p.edit = false;--判断是否编辑过
 p.curNode = nil;
 
+p.missionId = nil;
+p.stageId = nil;
+		
 local ui = ui_item_choose;
 
 local MAX_NUM = 10;--一类药水最大数量
@@ -35,8 +38,12 @@ function p.GetBattleItem( index )
 	return battle_item;
 end
 
-function p.ShowUI( battle_items )
+function p.ShowUI( battle_items,missionId,stageId )
 	p.battle_items = battle_items;
+	if missionId ~= nil and stageId ~= nil then
+		p.missionId = missionId;
+		p.stageId = stageId;
+	end
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -121,7 +128,10 @@ function p.RefreshUI( battle_items )
 		return;
 	end
 	
-	p.battle_items = battle_items;
+	if battle_items ~= nil then
+		p.battle_items = battle_items;
+	end
+	
 	--按照位置排序，固定为1-5
 	table.sort( p.battle_items, function( a, b ) return tonumber(a.location) < tonumber(b.location); end );
 
@@ -157,11 +167,21 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_RETURN == tag then
 			WriteCon( "关闭" );
+			if p.edit then
+				p.SendEditResult();
+			end
+			if (p.missionId ~= nil and p.stageId ~= nil) then
+				quest_team_item.ShowUI(p.missionId,p.stageId)
+				p.missionId = nil;
+				p.stageId = nil;
+			end
 			p.CloseUI();
 		elseif ui.ID_CTRL_BUTTON_8 == tag then
 			WriteCon( "填满" );
+			p.FullData();
 		elseif ui.ID_CTRL_BUTTON_9 == tag then
 			WriteCon( "清空" );
+			p.ClearAllData();
 		end
 	end
 end
@@ -170,9 +190,11 @@ function p.OnItemClick( uiNode, uiEventType, param )
 	if IsClickEvent( uiEventType ) then
 		local id = uiNode:GetId() or 0;
 		WriteCon( "asdasdasdasd" );
-		p.curNode = uiNode;
-		
-		
+		local item = p.battle_items[id];
+		if item then
+			p.curNode = uiNode;
+			item_choose_list.ShowUI( tonumber(item.item_id) );
+		end
 	end
 end
 
@@ -184,15 +206,11 @@ end
 
 function p.CloseUI()
 	if p.layer ~= nil then
-		if p.edit then
-			p.SendEditResult();
-			p.edit = false;
-		end
-		
 		p.layer:LazyClose();
 		p.layer = nil;
 		p.battle_items = {};
 		p.itemCtrllers = {};
+		p.edit = false;
 	end
 end
 
@@ -225,3 +243,134 @@ function p.SendEditResult()
 	SendReq( "Mission", "SetBattleItem", uid, param );
 end
 
+function p.CheckEnabled( id )
+	for i,v in pairs(p.battle_items) do
+		if v.item_id == id then
+			return false;
+		end
+	end	
+	return true;
+end
+
+--清空所有
+function p.ClearAllData()
+	p.edit = true;
+	
+	p.battle_items = {};
+	for i = 1, 5 do
+		local battle_item = {};
+		battle_item.item_id = 0;
+		battle_item.num = 0;
+		battle_item.location = i;
+		
+		p.battle_items[i] = battle_item;
+		
+		local ctrllers = p.itemCtrllers[i];
+		local btn = ctrllers[BTN_INDEX];
+		if btn then
+			p.curNode = btn;
+		end
+		p.ChooseItemCallBack( 0, 0 );
+	end
+end
+
+function p.GetMaterialData( sourceTable, itemid )
+	for i = 1, #sourceTable do
+		local item = sourceTable[i];
+		if tonumber(itemid) == tonumber(item.material_id) then
+			return item;
+		end
+	end
+	return nil;
+end
+
+--填满操作
+function p.FullData()
+	local cache = msg_cache.msg_material_list or {};
+	local materials = cache.Material;
+	if materials == nil then
+		return;
+	end
+	
+	for i = 1, #p.battle_items do
+		local itemid = p.battle_items[i].item_id;
+		local item = p.GetMaterialData( materials, itemid );
+		if item ~= nil then
+			
+			local ctrllers = p.itemCtrllers[i];
+			local btn = ctrllers[BTN_INDEX];
+			if btn then
+				p.curNode = btn;
+			end
+			p.ChooseItemCallBack( itemid, math.min( MAX_NUM, tonumber(item.num) ) );
+		end
+	end
+end
+
+--移除操作
+function p.ClearPostion()
+	if p.curNode == nil then
+		return;
+	end
+	
+	p.edit = true;
+	
+	local id = p.curNode:GetId();
+	local battle_item = p.battle_items[id] or {};
+	battle_item.item_id = 0;
+	battle_item.num = 0;
+	p.battle_items[id] = battle_item;
+	
+	local ctrllers = p.itemCtrllers[id];
+	ctrllers[NAME_INDEX]:SetVisible( false );
+	ctrllers[NAMEBG_INDEX]:SetVisible( false );
+	ctrllers[NUM_INDEX]:SetVisible( false );
+	ctrllers[BTN_INDEX]:SetImage( nil );
+	
+	p.curNode = nil;
+end
+
+function p.ChooseItemCallBack( itemid, num )
+	if p.curNode == nil then
+		return;
+	end
+	
+	p.edit = true;
+	
+	local id = p.curNode:GetId();
+	local battle_item = p.battle_items[id] or {};
+	battle_item.item_id = itemid;
+	battle_item.num = num;
+	p.battle_items[id] = battle_item;
+	
+	if itemid ~= 0 and num ~= 0 then
+		local ctrllers = p.itemCtrllers[id];
+		ctrllers[NAME_INDEX]:SetVisible( true );
+		ctrllers[NAMEBG_INDEX]:SetVisible( true );
+		ctrllers[BTN_INDEX]:SetVisible( true );
+		ctrllers[NUM_INDEX]:SetVisible( true );
+		
+		ctrllers[NAME_INDEX]:SetText( SelectCell( T_MATERIAL, itemid, "name" ) );
+		ctrllers[NUM_INDEX]:SetText( tostring("X " .. num ) );
+		
+		local path = SelectCell( T_MATERIAL, itemid, "item_pic" );
+		if path then
+			local picData = GetPictureByAni( path, 0 );
+			if picData then
+				ctrllers[BTN_INDEX]:SetImage( picData );
+			end
+		end
+	else
+		local ctrllers = p.itemCtrllers[id];
+		ctrllers[NAME_INDEX]:SetVisible( false );
+		ctrllers[NAMEBG_INDEX]:SetVisible( false );
+		ctrllers[NUM_INDEX]:SetVisible( false );
+		ctrllers[BTN_INDEX]:SetImage( nil );
+	end
+	
+	p.curNode = nil;
+end
+
+function p.SetBattleCallBack()
+	country_storage.RequestData();
+end

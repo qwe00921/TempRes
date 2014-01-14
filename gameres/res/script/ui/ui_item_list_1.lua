@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_item_list_1 = {};
 local p =  ui_item_list_1;
+p.ID_CTRL_PICTURE_MASK5				   = 357;
+p.ID_CTRL_PICTURE_MASK4				   = 356;
+p.ID_CTRL_PICTURE_MASK3				   = 355;
+p.ID_CTRL_PICTURE_MASK2				   = 354;
+p.ID_CTRL_PICTURE_MASK1				   = 187;
 p.ID_CTRL_TEXT_ITEMNUM5				   = 43;
 p.ID_CTRL_TEXT_ITEMNUM4				   = 42;
 p.ID_CTRL_TEXT_ITEMNUM3				   = 41;

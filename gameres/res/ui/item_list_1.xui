@@ -321,3 +321,58 @@ TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_MASK1]
+Type=1
+Tag=187
+Rect=22 7 100 119
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_MASK2]
+Type=1
+Tag=354
+Rect=139 7 100 119
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_MASK3]
+Type=1
+Tag=355
+Rect=258 7 100 119
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_MASK4]
+Type=1
+Tag=356
+Rect=378 7 100 119
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_MASK5]
+Type=1
+Tag=357
+Rect=497 7 100 119
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\shade.png
+NormalFileUV=0 0 1 1

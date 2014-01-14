@@ -5,6 +5,7 @@
 --------------------------------------------------------------
 dlg_card_attr_base = {}
 local p = dlg_card_attr_base;
+local ui = ui_dlg_card_attr_base;
 p.layer = nil;
 p.cardInfo = nil;
 p.cardDetail = nil;
@@ -44,14 +45,14 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 	GetUIRoot():AddDlg( layer );
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
 	p.layer = layer;
-    p.SetDelegate(layer);
+    p.SetDelegate();
 	dlg_menu.HideUI();
 	cardInfo.UniqueId = cardInfo.UniqueId or cardInfo.UniqueID;
 	
 	p.LoadCardDetail(cardInfo.UniqueId);
 end
 
-function p.SetDelegate(layer)
+function p.SetDelegate()
 	layer = layer or p.layer;
 	
 	
@@ -60,23 +61,21 @@ function p.SetDelegate(layer)
 	local pCardUpLevelInfo= SelectRowInner( T_CARD_LEVEL, "level", tonumber(p.cardInfo.Level)+1);
 	
 	--缘份
-	local pLabLuckIntro = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_LUCK_INTRO);
+	local pLabLuckIntro = GetLabel(p.layer,ui.ID_CTRL_LUCK_INTRO);
 	pLabLuckIntro:SetText(pCardInfo.luck_intro);
-	
-	
 	
 	--------------------------------------------------------------------------
 	--卡牌图片
-	local pImgCardPic = GetImage(layer, ui_dlg_card_attr_base.ID_CTRL_CARD_PICTURE); --卡牌图片控件
+	local pImgCardPic = GetImage(p.layer, ui.ID_CTRL_CARD_PICTURE); --卡牌图片控件
 	local pImage = GetPictureByAni(pCardInfo.card_pic,0)--卡牌图片
 	pImgCardPic:SetPicture(pImage);
 	
 	
 	--卡牌名字
-	local pLableName = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_CARDNAME);
+	local pLableName = GetLabel(p.layer,ui.ID_CTRL_TEXT_CARDNAME);
 	pLableName:SetText(pCardInfo2.name);
 	--卡牌星级 ID_CTRL_PICTURE_CARDSTAR Rare
-	local pPicCardStar = GetImage( layer, ui_dlg_card_attr_base.ID_CTRL_PICTURE_CARDSTAR );
+	local pPicCardStar = GetImage( p.layer, ui.ID_CTRL_PICTURE_CARDSTAR );
 	if p.cardInfo.Rare == 1 then
 		pPicCardStar:SetPicture(GetPictureByAni("ui.card_star",0));
 	elseif p.cardInfo.Rare == 2 then
@@ -94,7 +93,7 @@ function p.SetDelegate(layer)
 	end	
 	 
 	--卡牌属性 ID_CTRL_PICTURE_CARDNATURE element card_nature
-	local pPicCardNature = GetImage( layer, ui_dlg_card_attr_base.ID_CTRL_PICTURE_CARDNATURE );
+	local pPicCardNature = GetImage( p.layer, ui.ID_CTRL_PICTURE_CARDNATURE );
 	if tonumber(pCardInfo2.element) == 1 then
 		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
 	elseif tonumber(pCardInfo2.element) == 2 then
@@ -109,27 +108,26 @@ function p.SetDelegate(layer)
 		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
 	end
 	
-	
 	--返回
-    local pBtnBack = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_BACK);
+    local pBtnBack = GetButton(p.layer,ui.ID_CTRL_BUTTON_BACK);
     pBtnBack:SetLuaDelegate(p.OnUIEventEvolution);
 	
 	--强化
-	local pBtnIntensify = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BTN_INTENSIFY);
+	local pBtnIntensify = GetButton(p.layer,ui.ID_CTRL_BTN_INTENSIFY);
     pBtnIntensify:SetLuaDelegate(p.OnUIEventEvolution);
 	
 	--装备按钮
-	local bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1);
+	local bt = GetButton(p.layer,ui.ID_CTRL_BUTTON_EQUIP_1);
     bt:SetLuaDelegate(p.OnUIEventEvolution);
-	bt = GetButton(layer,ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2);
+	bt = GetButton(p.layer,ui.ID_CTRL_BUTTON_EQUIP_2);
     bt:SetLuaDelegate(p.OnUIEventEvolution);
 		
 	--ID_CTRL_TEXT_EQUIP1 T_EQUIP 装备名称
-	local pLableEquip1 = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_EQUIP1);
-	local pLableEquip2 = GetLabel(layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_EQUIP2);
+	local pLableEquip1 = GetLabel(p.layer,ui.ID_CTRL_TEXT_EQUIP1);
+	local pLableEquip2 = GetLabel(p.layer,ui.ID_CTRL_TEXT_EQUIP2);
 	
 	--装备图片
-	local pEquipPic1 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_1);
+	local pEquipPic1 = GetImage(p.layer,ui.ID_CTRL_EQUIP_PIC_1);
 	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 		--local aniIndex = "item."..p.equip1.itemInfo.equip_id;
 		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip1.itemInfo.equip_id); 
@@ -139,7 +137,7 @@ function p.SetDelegate(layer)
 		pEquipPic1:SetPicture(nil);
 	end
 	
-	local pEquipPic2 = GetImage(p.layer,ui_dlg_card_attr_base.ID_CTRL_EQUIP_PIC_2);
+	local pEquipPic2 = GetImage(p.layer,ui.ID_CTRL_EQUIP_PIC_2);
 	if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
 		--local aniIndex = "item."..p.equip2.itemInfo.equip_id;
 		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip2.itemInfo.equip_id); 
@@ -149,30 +147,29 @@ function p.SetDelegate(layer)
 		pEquipPic2:SetPicture(nil);
 	end
 	
-	
 	--卡牌等级
-	local pLabCardGrad = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_GRADE);
+	local pLabCardGrad = GetLabel(p.layer,ui.ID_CTRL_CARD_GRADE);
 	pLabCardGrad:SetText(GetStr("card_level")..tostring("  ")..tostring(p.cardInfo.Level));
 	
 	--卡牌HP
-	local pLabCardHP = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_HP);
+	local pLabCardHP = GetLabel(p.layer,ui.ID_CTRL_CARD_HP);
 	pLabCardHP:SetText(GetStr("card_hp")..tostring("  ")..tostring(p.cardInfo.Hp));
 	
 	--卡牌攻击
-	local pLabCardAttack = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_ATTACK);
+	local pLabCardAttack = GetLabel(p.layer,ui.ID_CTRL_CARD_ATTACK);
 	pLabCardAttack:SetText(GetStr("card_attack")..tostring("  ")..tostring(p.cardInfo.Attack));
 	
 	--卡牌速度
-	local pLabCardSpeed = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_SPEED);
+	local pLabCardSpeed = GetLabel(p.layer,ui.ID_CTRL_CARD_SPEED);
 	pLabCardSpeed:SetText(GetStr("card_speed")..tostring("  ")..tostring(p.cardInfo.Speed));
 	
 	--卡牌防御
-	local pLabCardDefense = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_CARD_DEFENSE);
+	local pLabCardDefense = GetLabel(p.layer,ui.ID_CTRL_CARD_DEFENSE);
 	pLabCardDefense:SetText(GetStr("card_defence")..tostring("  ")..tostring(p.cardInfo.Defence));
 	
 	--卡牌Type type =1平衡型（各属性均衡成长）type =2耐力型（HP成长+10%，攻击成长-10%）type=3破坏型（攻击成长+10%，防御成长-10%）type=4守护型（防御成长+10%，攻击成长-10%）
 
-	local pLabCardType = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_TYPE);
+	local pLabCardType = GetLabel(p.layer,ui.ID_CTRL_TEXT_TYPE);
 	WriteCon("type = ".. tostring(p.cardInfo.type));
 	if tonumber(p.cardInfo.type) == 1 then
 		pLabCardType:SetText(GetStr("card_type")..tostring("  ")..GetStr("card_type1"));
@@ -186,13 +183,13 @@ function p.SetDelegate(layer)
 		pLabCardType:SetText(GetStr("card_type")..tostring("  "));
 	end
 	--距离升级的经验是多少
-	local pLabCardUpExp = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_LEVELUPEXP);
+	local pLabCardUpExp = GetLabel(p.layer,ui.ID_CTRL_TEXT_LEVELUPEXP);
 	
 	local upExp = tonumber(pCardUpLevelInfo.exp)-tonumber(p.cardInfo.Exp);
 	pLabCardUpExp:SetText(GetStr("card_up_level")..tostring("  ")..tostring(upExp));
 	
-	local pLabSkillName = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_TEXT_SKILLNAME);
-	local pLabSkillInfo = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
+	local pLabSkillName = GetLabel(p.layer,ui.ID_CTRL_TEXT_SKILLNAME);
+	local pLabSkillInfo = GetLabel(p.layer,ui.ID_CTRL_DOWER_INTRO);
 	--技能
 	if  tonumber(pCardInfo2.skill) ~= 0 and  pCardInfo2.skill ~= nil then
 		WriteCon("pCardInfo2.skill = "..tostring(pCardInfo2.skill));
@@ -202,19 +199,14 @@ function p.SetDelegate(layer)
 	end
 	
 	--经验条
-	local expBar = GetExp( p.layer, ui_dlg_card_attr_base.ID_CTRL_EXP_44 );
+	local expBar = GetExp( p.layer, ui.ID_CTRL_EXP_44 );
 	local expSstartNum = tonumber(p.cardInfo.Exp);
 	local expLeast = 0;
 	expbar_move_effect.showEffect(expBar,expLeast,tonumber(pCardUpLevelInfo.exp),expSstartNum,0);
 	-------------------------------------------------------------------------------------------------
-	--local T_ITEM     = LoadTable( "item.ini" );
+	
 	local pCardInfo= nil;
-	
-	--local cardInfo = msg.cardInfo;
-	
-	
-	
-	
+			
 end
 
 
@@ -222,23 +214,28 @@ end
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	
 	local pCardInfo= SelectRowInner( T_CHAR_RES, "card_id", p.cardInfo.CardID); --从表中获取卡牌详细信息	
-	local pLabDowerIntro = GetLabel(p.layer,ui_dlg_card_attr_base.ID_CTRL_DOWER_INTRO);
-	
+	local pLabDowerIntro = GetLabel(p.layer,ui.ID_CTRL_DOWER_INTRO);
+	local pCardRare= SelectRowInner( T_CARD_LEVEL_LIMIT, "star", p.cardInfo.Rare); --从表中获取卡牌详细信息	
 	WriteCon("card_id = "..p.cardInfo.CardID);
 	
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
-		if ui_dlg_card_attr_base.ID_CTRL_BUTTON_BACK == tag then
+		if ui.ID_CTRL_BUTTON_BACK == tag then
 			dlg_menu.ShowUI();
 			p.CloseUI();
-		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_INTENSIFY == tag then
-			dlg_menu.ShowUI();
-			--卡牌强化
-			card_intensify2.OnSendReq();
-			card_rein.ShowUI(p.cardInfo);
-			--p.CloseUI();
-			
-		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_SALE == tag then
+		elseif ui.ID_CTRL_BTN_INTENSIFY == tag then
+			--卡牌星级上限 tonumber( p.baseCardInfo.Level) >= tonumber(pCardLevelMax.level_limit) then
+			if tonumber( p.cardInfo.Level) >= tonumber(pCardRare.level_limit) then
+				dlg_msgbox.ShowOK(GetStr("card_box_intensify"),tostring(p.cardInfo.Rare)..GetStr("card_intensify_no_level1")..tostring(pCardRare.level_limit)..GetStr("card_intensify_no_level2"),p.OnMsgCallback,p.layer);
+			else
+				dlg_menu.ShowUI();
+				--卡牌强化
+				card_intensify2.OnSendReq();
+				card_rein.ShowUI(p.cardInfo);
+				--p.CloseUI();
+			end
+					
+		elseif ui.ID_CTRL_BTN_SALE == tag then
 			--卡牌卖出
 			if p.cardInfo.Item_Id1 ~= 0 or  p.cardInfo.Gem1 ~= 0 then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_sale_isitem"),p.OnMsgCallback,p.layer);
@@ -248,17 +245,13 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 					dlg_msgbox.ShowYesNo(GetStr("card_caption"),GetStr("card_sale_rare")..tostring(p.cardInfo.Price)..GetStr("card_sale_sure"),p.OnMsgBoxCallback,p.layer);
 			else	
 				dlg_msgbox.ShowYesNo(GetStr("card_caption"),GetStr("card_sale_money_a")..tostring(p.cardInfo.Price)..GetStr("card_sale_money")..GetStr("card_sale_sure"),p.OnMsgBoxCallback,p.layer);
-				--卖出卡牌
-				
-				--卖出后回调的窗口
-				--p.SaleKO(); 
-				
+							
 			end
 			
-		elseif ui_dlg_card_attr_base.ID_CTRL_BTN_ARRT == tag then
+		elseif ui.ID_CTRL_BTN_ARRT == tag then
 			--卡牌详细
 			dlg_card_attr.ShowUI(p.cardInfo.CardID);
-		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_1 == tag then
+		elseif ui.ID_CTRL_BUTTON_EQUIP_1 == tag then
 			if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip1, "1");
 				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback);
@@ -268,28 +261,15 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 1, nil);
 			end
 			
-		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_2 == tag then
+		elseif ui.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip2, "2");
 				dlg_card_equip_detail.ShowUI4CardEquip(item);
 			else
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
-				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 2, nil);
-			end
-		--[[	
-		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_EQUIP_3 == tag then
-			if p.equip3 and tonumber(p.equip3.equipId) ~= 0 and p.equip3.itemInfo then
-				local item = p.PasreCardDetail(p.cardInfo, p.equip3, "3");
-				dlg_card_equip_detail.ShowUI4CardEquip(item);
-			else
-				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
-				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
 			end
 
-				card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 3, nil);
-			end]]--
-
-		elseif ui_dlg_card_attr_base.ID_CTRL_BUTTON_REPLACE == tag then
+		elseif ui.ID_CTRL_BUTTON_REPLACE == tag then
 			--替换，显示星灵列表
 			card_bag_mian.ShowUI( true, p.mainUIFlag );
 			p.CloseUI();
@@ -427,11 +407,9 @@ function p.LoadCardDetail(cardUniqueId)
 end
 --网络返回卡详细信息
 function p.OnLoadCardDetail(msg)
-	
 	if p.layer == nil then --or p.layer:IsVisible() ~= true then
 		return;
 	end
-	
 	if msg.result == true then
 		p.cardDetail = msg.card_info or {};
 		p.equip1 = {};
@@ -445,7 +423,7 @@ function p.OnLoadCardDetail(msg)
 			--p.equip3.equipId = msg.card_info.Item_id3;
 			--p.equip3.itemInfo = msg.item3_info;
 		end
-		
+		p.cardInfo  = msg.card_info;
 		p.SetDelegate();
 	else
 		--local str = mail_main.GetNetResultError(msg);
@@ -456,39 +434,7 @@ function p.OnLoadCardDetail(msg)
 		--end
 		--TODO...
 	end
-	--[[ 数据结构
-		card_info: {
-		UniqueID: "10000272",
-		UserID: "123456",
-		CardID: "101",
-		Race: "1",
-		Class: "2",
-		Level: "1",
-		Level_max: "60",
-		Exp: "0",
-		Damage_type: "1",
-		Bind: "0",
-		Team_marks: "0",
-		Signature: "0",
-		Rare: "2",
-		Rare_max: "6",
-		Hp: "400",
-		Attack: "200",
-		Defence: "90",
-		Speed: "5",
-		Skill: "0",
-		Crit: "10",
-		Item_id1: "33450",
-		Item_id2: "0",
-		Item_id3: "33452",
-		Gem1: "0",
-			Gem2: "0",
-		Gem3: "0",
-		Price: "0",
-		Time: "2013-11-30 13:51:45",
-		Source: "0"
-		}
-		]]--
+
 end
 
 function p.UIDisappear()

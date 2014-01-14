@@ -359,6 +359,15 @@ p.targetCardList = {
 
 }
 
+
+p.ItemList = {
+	{item_id = 101001, num = 9, location = 1},
+	{item_id = 101003, num = 5, location = 2},
+	{item_id = 101026, num = 6, location = 3},
+	{item_id = 101004, num = 0, location = 4},
+	{item_id = 101005, num = 0, location = 5},
+}
+
 function p.nextStep()
 	
 end;

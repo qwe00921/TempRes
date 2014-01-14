@@ -18,7 +18,6 @@ function p.ShowUI(missionId,stageId)
 	end
 	p.stageId = stageId;
 	p.missionId = missionId;
-
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -266,8 +265,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		local tag = uiNode:GetTag();
 		--返回
 		if ( ui.ID_CTRL_BTN_TETURN == tag) then
-			p.CloseUI();
+			WriteCon("p.stageId == "..p.stageId);
 			quest_main.ShowUI(p.stageId);
+			p.CloseUI();
 		--战斗
 		elseif (ui.ID_CTRL_BUTTON_FIGHT == tag) then
 			p.CloseUI();
@@ -281,12 +281,14 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif (ui_team.ID_CTRL_BUTTON_BG == tag or ui_team.ID_CTRL_BUTTON_EDIT == tag) then
 			local nowTeamId = uiNode:GetId();
 			WriteCon("nowTeamId == "..nowTeamId);
-			dlg_card_group_main.ShowUI(p.missionId,p.stageId,1)
+			dlg_card_group_main.ShowUI(p.missionId,p.stageId)
 			p.CloseUI();
-			p.stageId = nil;
+			--p.stageId = nil;
 		--物品编辑
 		elseif (ui_item.ID_CTRL_BUTTON_BG == tag or ui_item.ID_CTRL_BUTTON_ITEM_EDIT == tag) then
 			WriteConErr("item edit view");
+			item_choose.ShowUI( p.itemListData,p.missionId,p.stageId );
+			p.CloseUI();
 		end
 	end
 end
@@ -303,5 +305,14 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.ClearData()
 	end
+end
+
+function p.ClearData()
+	p.stageId = nil;
+	p.missionId = nil;
+	p.teamListData = {};
+	p.itemListData = {};
+	p.teamTableView = nil;
 end
