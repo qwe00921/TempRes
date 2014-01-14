@@ -302,7 +302,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --Ç¿»¯
 			p.upgrade();
-			equip_rein_result.ShowUI(p.item, p.reinedItem);
+			--equip_rein_result.ShowUI(p.item, p.reinedItem);
 		end;
 	end
 end		

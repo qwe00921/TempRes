@@ -439,7 +439,7 @@ function p.sendDress()
 		return ;
 	end;
 	
-	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",equip.itemUid, equip.cardUid,tostring(equip.itemType));
+	local param = string.format("&item_unique_id=%s&card_unique_id=%s&item_position=%s",tostring(equip.itemUid), tostring(equip.cardUid),tostring(equip.itemType));
 	--param = param .. "" .. 
 	if equip.preItemUid then
 		param = param .. "&item_unique_id_old=" ..equip.preItemUid;
