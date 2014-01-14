@@ -313,7 +313,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			--注销采集倒计时
 			country_collect.EndTick();
 		elseif ui.ID_CTRL_BUTTON_MOUNTAIN == tag then
-			country_collect.Collect( E_COLLECT_MOUNTAIN );
+			--country_collect.Collect( E_COLLECT_MOUNTAIN );
 		elseif ui.ID_CTRL_BUTTON_TREE == tag then
 			country_collect.Collect( E_COLLECT_TREE );
 		elseif ui.ID_CTRL_BUTTON_RIVER == tag then
@@ -331,6 +331,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("MERGE");
 		elseif ui.ID_CTRL_BUTTON_HOME == tag then
 			WriteCon("HOME");
+			country_collect.Collect( E_COLLECT_HOME );
 		elseif ui.ID_CTRL_BUTTON_STORE == tag then
 			WriteCon("STORE");
 			country_storage.ShowUI();

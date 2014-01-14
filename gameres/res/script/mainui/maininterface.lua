@@ -251,6 +251,7 @@ function p.ShowBattleArray( user_team, pos )
 					btn:SetImage(picData);
 					
 					local element = formation["Pos"..i].element;
+					WriteCon( "element  " .. tostring(element) );
 					local attrpic = GetPictureByAni( "card_element.".. tostring(element), 0 );
 					nature:SetPicture( attrpic );
 				else

@@ -128,6 +128,7 @@ DoFile("http/msg/msg_team_replace.lua");
 
 --村庄
 DoFile("http/msg/msg_count_data.lua");
+DoFile("http/msg/msg_collect_pick.lua");
 DoFile("http/msg/msg_collect_materiallist.lua");
 DoFile("http/msg/msg_collect_sell.lua");
 
