@@ -197,7 +197,7 @@ function p.CollectAnimation( node, result )
 	
 	local image = createNDUIImage();
 	image:Init();
-	image:SetFramePosXY(math.random(size.w*0.3,size.w*0.7),math.random(size.h*0.3,size.h*0.7));
+	image:SetFramePosXY(size.w/2, size.h/2);
 	image:SetFrameSize(24 , 24);
 	image:SetVisible( false );
 
@@ -327,7 +327,7 @@ function p.CollectHome( beginEvent, endEvent )
 	
 	local collectTable = p.RandomCollectItem( E_COLLECT_HOME );
 	
-	local node = GetButton( p.layer, ui_country.ID_CTRL_BUTTON_FIELD );
+	local node = GetButton( p.layer, ui_country.ID_CTRL_BUTTON_HOME );
 	p.CollectDone( node, collectTable, beginEvent, endEvent );
 end
 
