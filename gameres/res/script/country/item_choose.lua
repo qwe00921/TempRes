@@ -121,7 +121,10 @@ function p.RefreshUI( battle_items )
 		return;
 	end
 	
-	p.battle_items = battle_items;
+	if battle_items ~= nil then
+		p.battle_items = battle_items;
+	end
+	
 	--按照位置排序，固定为1-5
 	table.sort( p.battle_items, function( a, b ) return tonumber(a.location) < tonumber(b.location); end );
 
