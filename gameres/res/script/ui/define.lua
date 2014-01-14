@@ -169,6 +169,7 @@ DoFile("ui/ui_equip_bag_sort_view.lua")
 DoFile("ui/ui_equip_sell_list.lua")
 DoFile("ui/ui_equip_sell_select_list.lua")
 DoFile("ui/ui_equip_rein_select.lua")
+DoFile("ui/ui_dlg_equip_rein_result.lua")
 
 
 --卡牌仓库
@@ -294,6 +295,8 @@ DoFile("ui/ui_country_levelup_btn.lua");
 DoFile("ui/ui_item_list.lua");
 DoFile("ui/ui_item_list_1.lua");
 DoFile("ui/ui_pubulic_item_num.lua");
+DoFile("ui/ui_item_choose.lua");
+DoFile("ui/ui_item_choose_list.lua");
 
 
 --测试（以后要删除）

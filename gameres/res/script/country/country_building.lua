@@ -13,7 +13,9 @@ p.buildLevel = nil;
 p.upNeedHome = nil;
 
 function p.ShowUI(countryInfo)
+	dlg_menu.ShowUI();
 	dlg_menu.SetNewUI( p );
+	dlg_userinfo.ShowUI( );
 	if countryInfo == nil then
 		WriteConErr("countryInfo error");
 		return
@@ -43,6 +45,45 @@ function p.ShowUI(countryInfo)
 	
 	p.Init()
 end
+--初始化建筑
+function p.InitScrollList()
+	local posCtrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_BUILD );
+	local bList = createNDUIScrollContainerExpand();
+	if nil == bList then
+		WriteConErr("createNDUIScrollContainerExpand() error");
+		return false;
+	end
+	p.scrollList = bList;
+	local posXY = posCtrller:GetFramePos();
+	local size = posCtrller:GetFrameSize();
+	bList:Init();
+	bList:SetLuaDelegate( p.OnTouchList );
+	bList:SetFramePosXY( posXY.x, posXY.y+33 );
+	bList:SetFrameSize( size.w, size.h );
+	bList:SetSizeView( CCSizeMake(216,100) );
+	for i = 1,9 do
+		local bView = createNDUIScrollViewExpand();
+		if bView == nil then
+			WriteConErr("createNDUIScrollViewExpand() error");
+			return true;
+		end
+		bView:Init();
+		bView:SetViewId(math.mod(i,9));
+		LoadUI( "country_levelup_btn.xui", bView, nil );
+
+		local btn = GetButton( bView, ui_country_levelup_btn.ID_CTRL_BUTTON_21 );
+		btn:SetImage( GetPictureByAni( "common_ui.buildBoxPic", math.mod(i,9) ) );
+		--btn:SetLuaDelegate( p.OnTouchImage );
+		btn:SetId( math.mod(i,9));
+		bList:AddView(bView);
+	end
+	p.layer:AddChild( bList );
+end
+
+function p.OnTouchList(uiNode,uiEventType,param)
+	local typeId = p.getNowType()
+	p.getBuildInfo(typeId)
+end
 
 function p.Init()
 	p.upNeedTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP1);
@@ -50,29 +91,34 @@ function p.Init()
 	p.upNeedHome = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP3);
 	p.buildLevel = GetLabel(p.layer, ui.ID_CTRL_TEXT_BUILD_LV);
 	
-	
-	p.getBuildInfo(1)
+	local typeId = p.getNowType()
+	p.getBuildInfo(typeId)
 	
 end
-
+--获取当前建筑TYPE
+function p.getNowType()
+	local indexId = p.scrollList:GetCurrentIndex()
+	
+	indexId = indexId+2
+	if	indexId == 10 then
+		indexId = 1 
+	end
+	WriteConErr("indexId ==== "..indexId);
+	return indexId
+end
 function p.getBuildInfo(typeId)
 	local nowBuildLv = nil;
 	local upIng = nil;
 	for k,v in pairs(p.countryInfoT) do
 		if k == "B"..typeId then
 			nowBuildLv = tonumber(v.build_level);
-			upIng = v.is_upgrade
+			upIng = tonumber(v.is_upgrade);
 		end
 	end
-	p.getBuildNeedTable(typeId,nowBuildLv)
+	p.getBuildNeedTable(typeId,nowBuildLv,upIng)
 end
--- "build_type": 2,
--- "build_level": 1,
--- "is_upgrade": 0,
--- "upgrade_time": 0,
--- "upgrade_level": 0,
--- "update": 0
-function p.getBuildNeedTable(typeId,nowLevel)
+
+function p.getBuildNeedTable(typeId,nowLevel,upIng)
 	local buildTable =  SelectRowList(T_BUILDING,"type",typeId);
 	if buildTable == nil then
 		WriteConErr("upbuildTable is nil ");
@@ -93,74 +139,15 @@ function p.getBuildNeedTable(typeId,nowLevel)
 			playLvNeed = v.player_level_limit;
 		end
 	end
-
-	p.upNeedTime:SetText("建造需要时间:"..timeNeed);
-	p.upNeed:SetText("金币:"..moneyNeed.."  蓝魂:"..soulNeed);
-	p.upNeedHome:SetText("住宅:"..homeLvNeed);
-	p.buildLevel:SetText("LV"..nowLevel);
-end
-
-function p.InitScrollList()
-	local posCtrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_BUILD );
-	local bList = createNDUIScrollContainerExpand();
-	if nil == bList then
-		WriteConErr("createNDUIScrollContainerExpand() error");
-		return false;
-	end
-	p.scrollList = bList;
-	local posXY = posCtrller:GetFramePos();
-	local size = posCtrller:GetFrameSize();
-	bList:Init();
-	bList:SetFramePosXY( posXY.x, posXY.y+33 );
-	bList:SetFrameSize( size.w, size.h );
-	bList:SetSizeView( CCSizeMake(216,100) );
-	for i = 1,18 do
-		local bView = createNDUIScrollViewExpand();
-		if bView == nil then
-			WriteConErr("createNDUIScrollViewExpand() error");
-			return true;
-		end
-		bView:Init();
-		bView:SetViewId(math.mod(i,9));
-		LoadUI( "country_levelup_btn.xui", bView, nil );
-
-		local btn = GetButton( bView, ui_country_levelup_btn.ID_CTRL_BUTTON_21 );
-		btn:SetImage( GetPictureByAni( "common_ui.buildBoxPic", math.mod(i,9) ) );
-		btn:SetLuaDelegate( p.OnTouchImage );
-		btn:SetId( math.mod(i,9) );
-		bList:AddView(bView);
-	end
-	p.layer:AddChild( bList );
-end
-
-function p.OnTouchImage(uiNode, uiEventType, param)
-	if IsClickEvent( uiEventType ) then
-		local id = uiNode:GetId();
-		if id == 0 then
-			WriteCon("**========produceBtn========**");
-			-- stageMap_main.OpenWorldMap();
-			-- PlayMusic_Task(1);
-
-			-- maininterface.HideUI();
-		-- end
-	-- end
-		elseif id == 1 then
-			WriteCon("**========equipBtn========**");
-		elseif id == 2 then
-			WriteCon("**========mergeBtn========**");
-		elseif id == 3 then
-			WriteCon("**========homeBtn========**");
-		elseif id == 4 then
-			WriteCon("**========storeBtn========**");
-		elseif id == 5 then
-			WriteCon("**========riverBtn========**");
-		elseif id == 6 then
-			WriteCon("**========fieldBtn========**");
-		elseif id == 7 then
-			WriteCon("**========mountainBtn========**");
-		elseif id == 8 then
-			WriteCon("**========treeBtn========**");
-		end
+	if upIng == 0 then
+		p.upNeedTime:SetText("建造需要时间:"..timeNeed);
+		p.upNeed:SetText("金币:"..moneyNeed.."  蓝魂:"..soulNeed);
+		p.upNeedHome:SetText("住宅:"..homeLvNeed);
+		p.buildLevel:SetText("LV"..nowLevel);
+	elseif upIng == 1 then
+		p.upNeed:SetText("升级中");
+		p.upNeedHome:SetText(" ");
+		p.buildLevel:SetText(" ");
 	end
 end
 
@@ -196,11 +183,77 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 end
 
 function p.upBuild()
-	local typeID = 1
+	local typeID = p.getNowType()
+	local upIng = nil;
+	for k,v in pairs(p.countryInfoT) do
+		if k == "B"..typeID then
+			nowBuildLv = tonumber(v.build_level);
+			upIng = v.is_upgrade
+		end
+	end
+	
+	if tonumber(upIng) == 1 then
+		dlg_msgbox.ShowOK("提示","此建筑正在升级。",nil,p.layer);
+		return
+	end
+	local isHaveUPing = nil;
+	for k,v in pairs(p.countryInfoT) do
+		local isupgrade = tonumber(v.is_upgrade)
+		if isupgrade == 1 then
+			isHaveUPing = 1 
+		end
+	end
+	if isHaveUPing == 1 then
+		dlg_msgbox.ShowOK("提示","已有建筑在升级。",nil,p.layer);
+		return
+	end
+	
 	local uid = GetUID();
 	local param = "build_type="..typeID;
 	SendReq("Build","UpBuild",uid,param);
 end
+
+function p.uiBuildCallBack(backData)
+	WriteCon( "uiBuildCallBack ok" );
+	if backData.result == false then
+		dlg_msgbox.ShowOK("错误提示","非法数据",nil,p.layer);
+		return
+	end
+	dlg_msgbox.ShowOK("提示","开始升级。",nil,p.layer);
+
+end
+
+function p.OnTouchImage(uiNode, uiEventType, param)
+	if IsClickEvent( uiEventType ) then
+		local id = uiNode:GetId();
+		if id == 0 then
+			WriteCon("**========produceBtn========**");
+			-- stageMap_main.OpenWorldMap();
+			-- PlayMusic_Task(1);
+
+			-- maininterface.HideUI();
+		-- end
+	-- end
+		elseif id == 1 then
+			WriteCon("**========equipBtn========**");
+		elseif id == 2 then
+			WriteCon("**========mergeBtn========**");
+		elseif id == 3 then
+			WriteCon("**========homeBtn========**");
+		elseif id == 4 then
+			WriteCon("**========storeBtn========**");
+		elseif id == 5 then
+			WriteCon("**========riverBtn========**");
+		elseif id == 6 then
+			WriteCon("**========fieldBtn========**");
+		elseif id == 7 then
+			WriteCon("**========mountainBtn========**");
+		elseif id == 8 then
+			WriteCon("**========treeBtn========**");
+		end
+	end
+end
+
 
 --隐藏UI
 function p.HideUI()
@@ -219,3 +272,9 @@ end
 function p.UIDisappear()
 	p.CloseUI();
 end
+-- "build_type": 2,
+-- "build_level": 1,
+-- "is_upgrade": 0,
+-- "upgrade_time": 0,
+-- "upgrade_level": 0,
+-- "update": 0

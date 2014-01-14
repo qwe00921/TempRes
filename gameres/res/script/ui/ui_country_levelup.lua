@@ -22,4 +22,3 @@ p.ID_CTRL_PICTURE_HEAD				    = 42;
 p.ID_CTRL_TEXT_RETURN					    = 44;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_PICTURE_MARK				    = 54;
-p.ID_CTRL_PICTURE_BG					     = 55;

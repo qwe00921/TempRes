@@ -117,6 +117,8 @@ W_BATTLE_POS_TAG_6 = 6;
 
 --动画攻击时间
 W_BATTLE_ATKTIME   =  1;
+--怪物延迟时间攻击
+W_BATTLE_ENEMYTIME = 0.7;
 
 --行动状态
 W_BATTLE_NOT_TURN = 0;  --未行动

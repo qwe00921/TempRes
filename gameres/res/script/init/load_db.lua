@@ -107,4 +107,3 @@ T_MATERIAL		= LoadTable("material.ini");
 
 --合成表
 T_DRUG_MIX		= LoadTable("drug_mix.ini");
-

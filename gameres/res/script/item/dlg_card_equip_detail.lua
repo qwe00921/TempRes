@@ -269,7 +269,8 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 			if p.showType == p.SHOW_DRESS then
 				p.sendDress();
 			elseif p.showType == p.SHOW_EQUIP_ROOM then
-				card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
+				equip_rein_list.ShowUI(p.equip,p.callback);
+				--card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
 				p.CloseUI(); 
 			else
 				equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
@@ -285,16 +286,16 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 		elseif (ui.ID_CTRL_BUTTON_UNLOAD == tag) then
 			p.sendUnDress();
 		elseif ui.ID_CTRL_BUTTON_UPGRADE == tag then
-			if p.showType == p.SHOW_EQUIP_ROOM then
-				card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
-				p.CloseUI(); 
-			else
+			--if p.showType == p.SHOW_EQUIP_ROOM then
+				--card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
+				--p.CloseUI(); 
+			--else
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPGRADE , p.equip.cardUid, p.equip.itemType, p.equip)
 				
 				--equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
-				equip_rein_list.ShowUI(p.equip);
+				equip_rein_list.ShowUI(p.equip,p.callback);
 				p.CloseUI(); 
-			end
+			--end
 		end		
 	end
 end

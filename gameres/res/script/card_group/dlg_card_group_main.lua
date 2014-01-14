@@ -443,7 +443,7 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 			
 		end
 		
-		if toIndex > 0 then
+		if toIndex > 0 and p.beginDragId then
 			local team = p.user_teams[n+1];
 			local orgUni = team["Pos_unique"..p.beginDragId];
 			local orgCardId = team["Pos_card"..p.beginDragId];
@@ -473,7 +473,9 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 			end
 		end
 		
-		uiNode:SetFramePos(p.beginPos);
+		if p.beginPos then
+			uiNode:SetFramePos(p.beginPos);
+		end
 		
 		if toIndex > 0 then
 			p.SetTeamInfo( cView,  p.user_teams[n+1] )

@@ -29,6 +29,7 @@ function p:Process()
 	
 	if self.result then
 		country_storage.RefreshUI( self );
+		item_choose.RefreshUI();
 	else
 	
 	end
