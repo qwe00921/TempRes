@@ -306,7 +306,8 @@ function p.SetDelegate(layer)
 	closeBtn:SetLuaDelegate(p.OnUIClickEvent);
 
 	for i=1,10 do
-		local lCardBtn = GetButton(layer, ui.ID_CTRL_BUTTON_CHA1+i-1);
+		local lCardPic 	= "ID_CTRL_BUTTON_CHA"..tostring(i);--cardpic
+		local lCardBtn = GetButton(layer, ui[lCardPic]);
 		lCardBtn:SetLuaDelegate(p.OnButtonEvent);
 	end
 end
@@ -314,7 +315,16 @@ end
 function p.OnButtonEvent(uiNode, uiEventType, param)
 	WriteCon("OnUIClickEvent....");	
 	if IsClickEvent(uiEventType) then
-		card_intensify.ShowUI(p.baseCardInfo);  
+		if p.baseCardInfo ~= nil then
+			local pCardRare= SelectRowInner( T_CARD_LEVEL_LIMIT, "star",p.baseCardInfo.Rare); --从表中获取卡牌详细信息	
+			if tonumber( p.baseCardInfo.Level) >= tonumber(pCardRare.level_limit) then
+				dlg_msgbox.ShowOK(GetStr("card_box_intensify"),tostring(p.baseCardInfo.Rare)..GetStr("card_intensify_no_level1")..tostring(pCardRare.level_limit)..GetStr("card_intensify_no_level2"),p.OnMsgCallback,p.layer);
+			else
+				card_intensify.ShowUI(p.baseCardInfo); 
+			end
+			
+		end
+		
 	end
 end
 
@@ -327,6 +337,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
+			dlg_menu.HideUI();
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化

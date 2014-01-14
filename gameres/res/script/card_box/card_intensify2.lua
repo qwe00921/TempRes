@@ -405,7 +405,26 @@ end
 --点击卡牌
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
-	p.OnSendCardDetail(cardUniqueId);	
+	local card = nil;
+	--卡牌星级上限
+	--p.cardListInfo
+	for i = 1 , #p.cardListInfo do
+		if p.cardListInfo[i].UniqueId == cardUniqueId then
+			card = p.cardListInfo[i];
+		end
+	end	
+		
+	local pCardRare= SelectRowInner( T_CARD_LEVEL_LIMIT, "star",card.Rare); --从表中获取卡牌详细信息	
+	
+	if tonumber( card.Level) >= tonumber(pCardRare.level_limit) then
+		dlg_msgbox.ShowOK(GetStr("card_box_intensify"),tostring(card.Rare)..GetStr("card_intensify_no_level1")..tostring(pCardRare.level_limit)..GetStr("card_intensify_no_level2"),p.OnMsgCallback,p.layer);
+	else
+		
+		p.OnSendCardDetail(cardUniqueId);	
+	end
+	
+	
+	
 end
 
 function p.OnSendCardDetail(cardUniqueId)
