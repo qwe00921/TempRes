@@ -425,13 +425,13 @@ function p.RefreshUI()
 				if item ~= nil then
 					p.SetVisible( ctrllers, true );
 					
-					local name = SelectCell( T_ITEM, item.ItemType, "name" );	
-					item[ITEM_NAME_INDEX]:SetText( name );
+					local name = SelectCell( T_MATERIAL, item.item_id, "name" );	
+					ctrllers[ITEM_NAME_INDEX]:SetText( name );
 					
-					local path = SelectCell( T_ITEM, item.ItemType, "item_pic" ) or "";
+					local path = SelectCell( T_MATERIAL, item.item_id, "item_pic" ) or "";
 					local picData = GetPictureByAni( path, 0 );
 					if picData then
-						item[ITEM_IMAGE_INDEX]:SetPicture( picData );
+						ctrllers[ITEM_IMAGE_INDEX]:SetPicture( picData );
 					end
 				else
 					p.SetVisible( ctrllers, false );
@@ -601,6 +601,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		WriteCon("IsDragLeft");
 	elseif IsDragRight( uiEventType ) then
 		WriteCon("IsDragRight");
+		w_battle_mgr.SetPVESkillAtkID( id );
 	elseif IsDragDown( uiEventType ) then
 		WriteCon("IsDragDown");
 	end
