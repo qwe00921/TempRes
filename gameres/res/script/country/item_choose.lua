@@ -10,6 +10,9 @@ p.battle_items = {};
 p.edit = false;--判断是否编辑过
 p.curNode = nil;
 
+p.missionId = nil;
+p.stageId = nil;
+		
 local ui = ui_item_choose;
 
 local MAX_NUM = 10;--一类药水最大数量
@@ -35,8 +38,12 @@ function p.GetBattleItem( index )
 	return battle_item;
 end
 
-function p.ShowUI( battle_items )
+function p.ShowUI( battle_items,missionId,stageId )
 	p.battle_items = battle_items;
+	if missionId ~= nil and stageId ~= nil then
+		p.missionId = missionId;
+		p.stageId = stageId;
+	end
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -163,7 +170,11 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			if p.edit then
 				p.SendEditResult();
 			end
-			
+			if (p.missionId ~= nil and p.stageId ~= nil) then
+				quest_team_item.ShowUI(p.missionId,p.stageId)
+				p.missionId = nil;
+				p.stageId = nil;
+			end
 			p.CloseUI();
 		elseif ui.ID_CTRL_BUTTON_8 == tag then
 			WriteCon( "填满" );
