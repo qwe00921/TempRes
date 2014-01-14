@@ -139,10 +139,10 @@ function p.ShowCountry(backData)
 		return
 	end
 	--是否有新开启的建筑
-	--p.openViewT = backData.openani;
-	p.openViewT["P1"] = 1;
-	p.openViewT["P3"] = 3;
-	p.openViewT["P7"] = 7;
+	p.openViewT = backData.openani;
+	-- p.openViewT["P1"] = 1;
+	-- p.openViewT["P3"] = 3;
+	-- p.openViewT["P7"] = 7;
 	local openViewNum = 0;	
 	if p.openViewT ~= nil then
 		for k,v in pairs(p.openViewT) do
