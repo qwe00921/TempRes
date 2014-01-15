@@ -276,12 +276,14 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			p.CloseUI();
 		--战斗
 		elseif (ui.ID_CTRL_BUTTON_FIGHT == tag) then
+			local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
+			WriteCon("nowTeamId == "..nowTeamId);
 			p.CloseUI();
 			maininterface.m_bgImage:SetVisible(false);
 			if E_DEMO_VER== 4 then
-				 n_battle_mgr.EnterBattle( N_BATTLE_PVE, p.missionId );--进入战斗PVE
+				 n_battle_mgr.EnterBattle( N_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
 			else
-				w_battle_mgr.EnterBattle( W_BATTLE_PVE, p.missionId );--进入战斗PVE
+				w_battle_mgr.EnterBattle( W_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
 			end
 		--队伍编辑
 		elseif (ui_team.ID_CTRL_BUTTON_BG == tag or ui_team.ID_CTRL_BUTTON_EDIT == tag) then
