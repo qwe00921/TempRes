@@ -756,19 +756,43 @@ function p.SendStartPVPReq( targetId )
 end
 
 --战斗阶段->加载->请求
-function p.SendStartPVEReq( targetId )
+function p.SendStartPVEReq( targetId, teamid )
     --local TID = 101011;
     local UID = GetUID();
     if UID == 0 or UID == nil then
         return ;
     end;
-    local param = string.format("&missionID=%d", targetId);
+    --local param = string.format("&missionID=%d&teamid=%d", targetId,teamid);
+	local param = string.format("&missionID=%d", targetId,teamid);
     SendReq("Fight","StartPvC",UID,param);
 end
 
+--进入战斗
+function p.EnterBattle( battleType, missionId,teamid )
+	WriteCon( "w_battle_mgr.EnterBattle()" );
+	--p.SendStartPVEReq( missionId,teamid);
+	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
+	p.battle_result = math.random(0,1);
+	p.battle_result = 1;
+	p.SendResult(missionId, p.battle_result);
+end
+
+
 --战斗阶段PVP->加载->响应
 function p.ReceiveStartPVPRes( msg )
+    dlg_menu.CloseUI();
+    dlg_userinfo.CloseUI();
     w_battle_db_mgr.Init( msg );
+	
+	--enter PVP
+	--w_battle_pvp.ShowUI( battleType, missionId );	
+	--w_battle_mainui.ShowUI();
+	w_battle_pve.ShowUI();
+	
+	--音乐
+	PlayMusic_Battle();	
+	--[[
+   
     local UCardList = w_battle_db_mgr.GetPlayerCardList();
     local TCardList = w_battle_db_mgr.GetTargetCardList();
     local TPetList = w_battle_db_mgr.GetTargetPetList();
@@ -790,7 +814,7 @@ function p.ReceiveStartPVPRes( msg )
     p.ReSetPetNodePos();
     
     w_battle_pvp.ReadyGo();
-    p.ShowRoundNum();
+    p.ShowRoundNum(); ]]--
 end
 
 --战斗阶段PVE->加载->响应
@@ -1179,31 +1203,6 @@ function p.GetReuslt()
 	return p.battle_result;
 end;
 
---进入战斗
-function p.EnterBattle( battleType, missionId )
-	WriteCon( "w_battle_mgr.EnterBattle()" );
-
-	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
-	p.battle_result = math.random(0,1);
-	p.battle_result = 1;
-	p.SendResult("101011", p.battle_result);
-
-	--隐藏按钮
---[[
-    dlg_menu.CloseUI();
-    dlg_userinfo.CloseUI();
-    
-	
-	--enter PVP
-	w_battle_pvp.ShowUI( battleType, missionId );	
-	w_battle_mainui.ShowUI();
-	
-	--音乐
-	PlayMusic_Battle();
-	
-	isActive = true;
-	]]--
-end
 
 --退出战斗
 function p.QuitBattle()
