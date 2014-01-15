@@ -139,7 +139,7 @@ function p:tar_hurtEnd()
 				
 			end;
 			
-			self:reward(); --获得奖励
+			--self:reward(); --获得奖励
 			
 			local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
 			self.seqTarget:AddCommand( cmdf );

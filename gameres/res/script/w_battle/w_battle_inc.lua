@@ -127,7 +127,23 @@ W_BATTLE_TURNEND  = 2;  --已行动
 
 --掉落
 W_DROP_ATKTYPE1  = 1;  --普攻
-W_DROP_ATKTYPE2  = 1;  --技能
-W_DROP_ATKTYPE3  = 1;  --暴击
-W_DROP_ATKTYPE4  = 1;  --合击
-W_DROP_ATKTYPE5  = 1;  --超量
+W_DROP_ATKTYPE2  = 2;  --技能
+W_DROP_ATKTYPE3  = 3;  --暴击
+W_DROP_ATKTYPE4  = 4;  --合击
+W_DROP_ATKTYPE5  = 5;  --超量
+
+
+--战斗物品使用
+W_MATERIAL_TYPE1 = 1;   --药水类型
+W_MATERIAL_TYPE2 = 2;   --材料类型
+
+--药水类型
+W_MATERIAL_SUBTYPE1 = 1; --恢复类
+W_MATERIAL_SUBTYPE2 = 2; --解状态类
+W_MATERIAL_SUBTYPE3 = 3; --属性类
+
+--物品目标
+W_MATERIAL_TARGET1  = 1;  --单个目标
+W_MATERIAL_TARGET2  = 2;  --全体目标
+
+W_BATTLE_REVIVAL     = 9999; --复活状态

@@ -510,7 +510,20 @@ function p.GetRewardData()
 end
 
 function p.GetItemList()
+	table.sort( p.ItemList, function(a,b) return a.location<b.location; end );
 	return p.ItemList;
+end;
+
+function p.GetItemid(pPos)
+	local lid = nil;
+	for k,v in ipairs(p.ItemList) do
+		if(v.location == pPos) then
+			lid = v.item_id;
+			break;
+		end;
+	end
+	
+	return lid;
 end;
 
 --获取攻方卡牌列表
