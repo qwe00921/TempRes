@@ -94,7 +94,7 @@ function p.test()
 	--n_battle_mgr.EnterBattle( N_BATTLE_PVE, 101011 );
 	--n_battle_mgr.EnterBattle( N_BATTLE_PVP, 10002 );
 --	--≤‚ ‘utf8◊”¥Æ
---	p.TestUtf8String();
+--	  p.TestUtf8String();
     
     --≤‚ ‘æÁ«È
 	--dlg_drama.ShowUI(2);
