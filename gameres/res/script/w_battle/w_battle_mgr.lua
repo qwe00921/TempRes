@@ -1186,7 +1186,7 @@ function p.EnterBattle( battleType, missionId )
 	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);
 	p.battle_result = 1;
-	p.SendResult(missionId, p.battle_result);
+	p.SendResult("101011", p.battle_result);
 
 	--隐藏按钮
 --[[
