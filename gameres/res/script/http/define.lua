@@ -134,5 +134,6 @@ DoFile("http/msg/msg_collect_sell.lua");
 
 DoFile("http/msg/msg_battle_item.lua");
 DoFile("http/msg/msg_setbattleitem.lua");
+DoFile("http/msg/msg_collect_synthesis.lua");
 
 DoFile("http/msg/msg_country_upbuild.lua");

@@ -3,6 +3,18 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_17]
+Type=2
+Tag=17
+Rect=0 0 602 143
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_6]
 Type=1
 Tag=7
@@ -100,6 +112,32 @@ Text=99
 TextTradition=99
 TextSize=20
 TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_MASK]
+Type=1
+Tag=18
+Rect=33 24 100 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\shade.png
+NormalFileUV=0 0 1 1
+
+[CTRL_TEXT_19]
+Type=4
+Tag=19
+Rect=35 100 99 26
+AnchorPos=0 0
+Notes=
+Text=素材不足
+TextTradition=素材不足
+TextSize=15
+TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
