@@ -3,6 +3,17 @@
 Width=960
 Height=640
 
+[CTRL_PICTURE_183]
+Type=1
+Tag=183
+Rect=81 182 520 385
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
 [CTRL_9SLICES_18]
 Type=22
 Tag=20
@@ -17,7 +28,7 @@ NormalFileUV=0 0 640 376
 [CTRL_9SLICES_19]
 Type=22
 Tag=21
-Rect=97 402 473 98
+Rect=227 345 362 65
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -37,7 +48,7 @@ UIClsoeType=0
 [CTRL_9SLICES_21]
 Type=22
 Tag=23
-Rect=222 280 346 104
+Rect=227 418 362 84
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -61,7 +72,7 @@ UIClsoeType=0
 [CTRL_TEXT_DES]
 Type=4
 Tag=5
-Rect=227 285 334 96
+Rect=237 425 334 70
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -127,12 +138,12 @@ UIClsoeType=0
 [CTRL_TEXT_9]
 Type=4
 Tag=10
-Rect=89 408 118 40
+Rect=229 265 97 40
 AnchorPos=0 0
 Notes=
-Text=装备等级：
-TextTradition=裝備等級：
-TextSize=15
+Text=装备等级
+TextTradition=裝備等級
+TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -174,23 +185,10 @@ SelectedFileUV=0 0 136 60
 DisableFile=.\res\image\ui\common\btn_2_disable.png
 DisableFileUV=0 0 136 60
 
-[CTRL_TEXT_TYP]
-Type=4
-Tag=1328
-Rect=307 416 122 20
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_ATTR]
 Type=4
 Tag=1330
-Rect=435 417 131 20
+Rect=254 357 117 40
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -203,7 +201,7 @@ UIClsoeType=0
 [CTRL_TEXT_1331]
 Type=4
 Tag=1331
-Rect=89 449 118 48
+Rect=114 94 118 48
 AnchorPos=0 0
 Notes=
 Text=附加属性：
@@ -218,7 +216,7 @@ UIClsoeType=0
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=1335
-Rect=213 409 89 37
+Rect=317 267 89 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -231,7 +229,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTR_EX_3]
 Type=4
 Tag=1336
-Rect=329 455 117 37
+Rect=354 100 117 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -244,7 +242,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTR_EX_2]
 Type=4
 Tag=1337
-Rect=450 455 115 37
+Rect=476 100 115 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -257,20 +255,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTR_EX_1]
 Type=4
 Tag=1338
-Rect=215 455 110 37
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_CARD_NAME]
-Type=4
-Tag=1339
-Rect=272 27 127 37
+Rect=240 100 110 37
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -335,3 +320,123 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_259]
+Type=22
+Tag=259
+Rect=94 441 124 57
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_TEXT_260]
+Type=4
+Tag=260
+Rect=411 264 97 42
+AnchorPos=0 0
+Notes=
+Text=装备类型
+TextTradition=裝備類型
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_TYP]
+Type=4
+Tag=1328
+Rect=502 270 81 31
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ATTR2]
+Type=4
+Tag=261
+Rect=443 357 117 40
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_262]
+Type=4
+Tag=262
+Rect=227 310 97 30
+AnchorPos=0 0
+Notes=
+Text=装备经验
+TextTradition=裝備經驗
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_EXP_263]
+Type=9
+Tag=263
+Rect=333 310 234 30
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
+NormalFileUV=0 0 176 28
+
+[CTRL_PICTURE_264]
+Type=1
+Tag=264
+Rect=336 312 229 26
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
+NormalFileUV=0 0 176 28
+
+[CTRL_TEXT_CARD_NAME]
+Type=4
+Tag=1339
+Rect=102 450 108 37
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_265]
+Type=4
+Tag=265
+Rect=95 410 82 27
+AnchorPos=0 0
+Notes=
+Text=装备者
+TextTradition=裝備者
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
