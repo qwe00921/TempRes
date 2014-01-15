@@ -264,7 +264,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip2, "2");
-				dlg_card_equip_detail.ShowUI4CardEquip(item);
+				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback);
 			else
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
 			end
@@ -424,6 +424,7 @@ function p.OnLoadCardDetail(msg)
 			--p.equip3.itemInfo = msg.item3_info;
 		end
 		p.cardInfo  = msg.card_info;
+		p.cardInfo.UniqueId = p.cardInfo.UniqueId or p.cardInfo.UniqueID
 		p.SetDelegate();
 	else
 		--local str = mail_main.GetNetResultError(msg);
