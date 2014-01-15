@@ -1,6 +1,6 @@
 time_bar = {}
 local p = time_bar;
-local moveTimer = nil;
+p.moveTimer = nil;
 
 p.leastTime = nil;
 p.maxTime = nil;
@@ -18,7 +18,7 @@ function p.ShowTimeBar(leastTime,maxTime,upbulidTime,uiNode,timeTextNode)
 		--WriteCon("rewardTable hour"..hour);
 
 	p.timeMoveInit()
-	moveTimer = SetTimer( p.showMoveTime, 0.1 );
+	p.moveTimer = SetTimer( p.showMoveTime, 0.1 );
 end
 
 function p.timeMoveInit()
@@ -33,7 +33,7 @@ end
 function p.showMoveTime()
 	local nowTime = os.time();
 	if p.upbulidTime == nil then
-		p.ClearData()
+		--p.ClearData()
 		return
 	end
 	local lastTime = p.upbulidTime - nowTime;
@@ -70,8 +70,8 @@ end
 
 
 function p.ClearData()
-	if moveTimer then
-		KillTimer( moveTimer );
+	if p.moveTimer then
+		KillTimer( p.moveTimer );
 	end
 	p.leastTime = nil;
 	p.maxTime = nil;
