@@ -32,6 +32,10 @@ end
  
 function p.showMoveTime()
 	local nowTime = os.time();
+	if p.upbulidTime == nil then
+		p.ClearData()
+		return
+	end
 	local lastTime = p.upbulidTime - nowTime;
 	p.node:SetValue( p.leastTime,p.maxTime,lastTime);
 	if lastTime <= 0 then

@@ -103,7 +103,7 @@ function p.getNowType()
 	if	indexId == 10 then
 		indexId = 1 
 	end
-	WriteConErr("indexId ==== "..indexId);
+	WriteCon("indexId ==== "..indexId);
 	return indexId
 end
 function p.getBuildInfo(typeId)
@@ -145,6 +145,7 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		p.upNeedHome:SetText("住宅:"..homeLvNeed);
 		p.buildLevel:SetText("LV"..nowLevel);
 	elseif upIng == 1 then
+		p.upNeedTime:SetText("建造需要时间:"..timeNeed);
 		p.upNeed:SetText("升级中");
 		p.upNeedHome:SetText(" ");
 		p.buildLevel:SetText(" ");
