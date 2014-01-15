@@ -12,6 +12,7 @@ p.curNode = nil;
 
 p.missionId = nil;
 p.stageId = nil;
+p.nowTeamId = nil;
 		
 local ui = ui_item_choose;
 
@@ -38,11 +39,12 @@ function p.GetBattleItem( index )
 	return battle_item;
 end
 
-function p.ShowUI( battle_items,missionId,stageId )
+function p.ShowUI( battle_items,missionId,stageId,nowTeamId )
 	p.battle_items = battle_items;
 	if missionId ~= nil and stageId ~= nil then
 		p.missionId = missionId;
 		p.stageId = stageId;
+		p.nowTeamId = nowTeamId;
 	end
 	
 	if p.layer ~= nil then
@@ -171,7 +173,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 				p.SendEditResult();
 			end
 			if (p.missionId ~= nil and p.stageId ~= nil) then
-				quest_team_item.ShowUI(p.missionId,p.stageId)
+				quest_team_item.ShowUI(p.missionId,p.stageId,p.nowTeamId)
 				p.missionId = nil;
 				p.stageId = nil;
 			end

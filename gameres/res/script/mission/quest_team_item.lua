@@ -292,8 +292,11 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			--p.stageId = nil;
 		--物品编辑
 		elseif (ui_item.ID_CTRL_BUTTON_BG == tag or ui_item.ID_CTRL_BUTTON_ITEM_EDIT == tag) then
-			WriteConErr("item edit view");
-			item_choose.ShowUI( p.itemListData,p.missionId,p.stageId );
+			WriteCon("item edit view");
+			local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
+			--local nowTeamId = uiNode:GetId();
+			WriteCon("nowTeamId == "..nowTeamId);
+			item_choose.ShowUI( p.itemListData,p.missionId,p.stageId,nowTeamId );
 			p.CloseUI();
 		end
 	end
