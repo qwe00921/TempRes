@@ -321,9 +321,11 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif ui.ID_CTRL_BUTTON_FIELD == tag then
 			country_collect.Collect( E_COLLECT_FIELD );
 		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
-			WriteCon("PRODUCE");
-			p.HideUI()
-			country_building.ShowUI(p.countryInfoT)
+			if p.countryInfoT["B1"] then
+				WriteCon("PRODUCE");
+				p.HideUI()
+				country_building.ShowUI(p.countryInfoT)
+			end
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
 			p.HideUI()
 			equip_room.ShowUI();

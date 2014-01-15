@@ -148,7 +148,7 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		p.upNeedTime:SetText("建造需要时间:"..timeNeed);
 		p.upNeed:SetText("升级中");
 		p.upNeedHome:SetText(" ");
-		p.buildLevel:SetText(" ");
+		p.buildLevel:SetText("LV"..nowLevel);
 	end
 end
 
@@ -225,7 +225,12 @@ function p.uiBuildCallBack(backData)
 	local upBuildTypeId = tonumber(backData.build.build_type);
 	
 	p.countryInfoT["B"..upBuildTypeId] = backData.build;
-	p.ShowUI(p.countryInfoT);
+	p.reShowUI();
+end
+
+function p.reShowUI()
+	local typeId = p.getNowType()
+	p.getBuildInfo(typeId)
 end
 
 function p.OnTouchImage(uiNode, uiEventType, param)

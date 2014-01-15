@@ -418,14 +418,71 @@ end;
 
 --获得某个物品可使用的玩家列表
 function p.GetItemCanUsePlayer(pItemPos)
-	local lPlayer = {1,2,4}
+	local lPlayer = {};
+
+    local lid = w_battle_db_mgr.GetItemid(pItemPos)
+	local ltype = tonumber(SelectCell( T_MATERIAL, lid, "type" ));
+	if ltype ~= W_MATERIAL_TARGET1 then --不是药水类型
+		return nil;
+	end
+	
+	local subtype = tonumber(SelectCell( T_MATERIAL, lid, "subtype" ));
+	local effect_type = tonumber(SelectCell( T_MATERIAL, lid, "effect_type" ));
+	local effect_value = tonumber(SelectCell( T_MATERIAL, lid, "effect_value" ));
+	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_targer" ));
+	if effect_targer == W_MATERIAL_TARGET2 then  --群体的
+		for k,v in ipairs(p.heroCamp.fighters) do
+			lPlayer[#lPlayer + 1 ] = v.Position;
+		end
+	elseif effect_targer == W_MATERIAL_TARGET1 then --单体的
+		if subtype == W_MATERIAL_SUBTYPE1 then  --HP>0的
+				for k,v in ipairs(p.heroCamp.fighters) do
+					if (v.nowlife > 0) and (v.nowlife < v.maxHp) then
+						lPlayer[#lPlayer + 1 ] = v.Position;
+					end
+				end
+			
+		elseif subtype == W_MATERIAL_SUBTYPE2 then --中相应状态的才可用
+			for k,v in ipairs(p.heroCamp.fighters) do
+				if effect_type == W_BATTLE_REVIVAL then --复活物品
+					if(v.nowlife == 0) then
+						lPlayer[#lPlayer + 1 ] = v.Position;	
+					end
+				else  --解状态的BUFF
+					if v:HasBuff(effect_type) == true then
+						lPlayer[#lPlayer + 1 ] = v.Position;	
+					end
+				end;
+			end
+		
+		elseif subtype == W_MATERIAL_SUBTYPE3 then --所有未死亡的,均可用
+			for k,v in ipairs(p.heroCamp.fighters) do
+				if v.nowlife > 0  then
+					lPlayer[#lPlayer + 1 ] = v.Position;
+				end
+			end
+		end
+	
+	end
 	
 	return lPlayer;
 end;
 
-
 --使用某个物品
 function p.UseItem(pItemPos, pHeroPos)
+	local lid = w_battle_db_mgr.GetItemid(pItemPos)
+	
+	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_targer" ));
+	if effect_targer == W_MATERIAL_TARGET2 then  --群体的
+		for k,v in ipairs(p.heroCamp.fighters) do
+			v:UseItem(lid);
+		end;
+	else
+		local fighter = p.heroCamp:FindFighter(pHeroPos);
+		if fighter~= nil then
+			fighter:UseItem(lid);
+		end
+	end
 	
 	w_battle_useitem.RefreshUI()  --物品使用完后,调用刷新UI, UI会内部调用p.GetItemCanUsePlayer
 end;

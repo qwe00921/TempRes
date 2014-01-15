@@ -249,7 +249,10 @@ function p.setMissionInfo(misId,view)
 	local misReward1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG1);
 	local misReward2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG2);
 	local misReward3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG3);
-	
+	local misRewardT = {}
+	misRewardT[1] = misReward1;
+	misRewardT[2] = misReward2;
+	misRewardT[3] = misReward3;
 	local missionTable = SelectRowInner(T_MISSION,"id",misId);
 	if 	missionTable == nil then
 		WriteCon("missionTable error");
@@ -274,11 +277,35 @@ function p.setMissionInfo(misId,view)
 			rewardGroupTable[#rewardGroupTable + 1] = v;
 		end
 	end
+	for i = 1,#rewardGroupTable do
+		if rewardGroupTable[i].drop_type == 1 then
+		
+		elseif rewardGroupTable[i].drop_type == 2 then
+		elseif rewardGroupTable[i].drop_type == 3 then
+		elseif rewardGroupTable[i].drop_type == 4 then
+		elseif rewardGroupTable[i].drop_type == 5 then
+		elseif rewardGroupTable[i].drop_type == 6 then
+		elseif rewardGroupTable[i].drop_type == 7 then
+		elseif rewardGroupTable[i].drop_type == 8 then
+		elseif rewardGroupTable[i].drop_type == 9 then
+		
+		end
+		--misRewardT[i]:SetPicture( GetPictureByAni("common_ui.evaluate_0", 0));
+	end
 --	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
 	
 	local rewardBtn = GetButton(view, uiList.ID_CTRL_BUTTON_REWARD);
-	rewardBtn:SetLuaDelegate()
+	rewardBtn:SetLuaDelegate(p.OnRewardBtnClick)
 	rewardBtn:SetId(misId);
+end
+
+function p.OnRewardBtnClick(uiNode,uiEventType,param)
+	if IsClickEvent(uiEventType) then
+		local tag = uiNode:GetTag();
+		if ( uiList.ID_CTRL_BUTTON_REWARD == tag) then
+			WriteCon("OnRewardBtnClick");
+		end
+	end
 end
 
 function p.showTeamItem(missionId)
