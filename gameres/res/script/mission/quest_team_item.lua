@@ -7,17 +7,19 @@ local ui_item = ui_item;
 p.layer = nil;
 p.stageId = nil;
 p.missionId = nil;
+p.nowTeamId = nil;
 p.teamListData = {};
 p.itemListData = {};
 p.teamTableView = nil;
 
-function p.ShowUI(missionId,stageId)
+function p.ShowUI(missionId,stageId,nowTeamId)
 	if missionId == nil or stageId == nil then
 		WriteConErr("param errer");
 		return
 	end
 	p.stageId = stageId;
 	p.missionId = missionId;
+	p.nowTeamId = nowTeamId or 1;
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -124,8 +126,10 @@ function p.ShowTeamList(teamData)
 	-- else
 		-- teamid = teamid - 1;
 	-- end
-	teamTable:SetActiveView(0);
-	--list:SetActiveView(teamid);
+	--teamTable:SetActiveView(0);
+	
+	local id = tonumber(p.nowTeamId) - 1
+	teamTable:SetActiveView(id);
 
 	p.teamTableView = teamTable;
 end
@@ -258,6 +262,8 @@ function p.SetDelegate(layer)
 	
 	local fightBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIGHT );
 	fightBtn:SetLuaDelegate(p.OnBtnClick);
+	--list:MoveToPrevView();
+	--list:MoveToNextView();
 end
 
 function p.OnBtnClick(uiNode,uiEventType,param)
@@ -281,7 +287,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif (ui_team.ID_CTRL_BUTTON_BG == tag or ui_team.ID_CTRL_BUTTON_EDIT == tag) then
 			local nowTeamId = uiNode:GetId();
 			WriteCon("nowTeamId == "..nowTeamId);
-			dlg_card_group_main.ShowUI(p.missionId,p.stageId)
+			dlg_card_group_main.ShowUI(p.missionId,p.stageId,nowTeamId)
 			p.CloseUI();
 			--p.stageId = nil;
 		--物品编辑
