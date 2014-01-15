@@ -368,6 +368,21 @@ p.ItemList = {
 	{item_id = 101005, num = 0, location = 5},
 }
 
+p.Reward= {
+	item= {
+		item_id= 111001,
+		item_type= 3,
+		num= 1
+	},
+	mission_id= 101011,
+	result= 1,
+	difficulty= 1,
+	exp= 100,
+	money= 20,
+	soul= 100,
+	story= 0
+}
+
 function p.nextStep()
 	
 end;

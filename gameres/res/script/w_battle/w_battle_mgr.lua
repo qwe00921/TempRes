@@ -471,16 +471,26 @@ end;
 --使用某个物品
 function p.UseItem(pItemPos, pHeroPos)
 	local lid = w_battle_db_mgr.GetItemid(pItemPos)
+	local effect_skill = SelectCell( T_MATERIAL_RES, lid, "effect" );  --技能光效
+	local batch = w_battle_mgr.GetBattleBatch(); 
 	
 	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_targer" ));
 	if effect_targer == W_MATERIAL_TARGET2 then  --群体的
 		for k,v in ipairs(p.heroCamp.fighters) do
-			v:UseItem(lid);
+			if v:UseItem(lid) == true then
+				cmdBuff = createCommandEffect():AddFgEffect( 0.5, v:GetNode(), effect_skill );
+				local seqTemp = batch:AddSerialSequence();
+				seqTemp:AddCommand( cmdBuff );
+			end;		
 		end;
 	else
 		local fighter = p.heroCamp:FindFighter(pHeroPos);
 		if fighter~= nil then
-			fighter:UseItem(lid);
+			if fighter:UseItem(lid) == true then
+				cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
+				local seqTemp = batch:AddSerialSequence();
+				seqTemp:AddCommand( cmdBuff );		
+			end;
 		end
 	end
 	
@@ -1138,13 +1148,28 @@ function p.CheckBattleLose()
 	return false;
 end
 
+function p.GetBattleUseItem()
+	local post_data= { 
+	                    {id="101001", num=1},
+	                    {id="101002", num=2},
+	                  };
+	return post_data;
+end;
+
 function p.SendResult(missionID,result)
 	local uid = GetUID();
 	--uid = 10002;
 	if uid ~= nil and uid > 0 then
 		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
-		local param = string.format("&missionID=%d&result=%d&money=0&soul=0", tonumber(missionID), tonumber(result));
-		SendReq("Fight","PvEReward",uid,param);
+		--local param = string.format("&missionID=%d&result=%d&money=0&soul=0", tonumber(missionID), tonumber(result));
+		local param = {missionID = tonumber(missionID),
+		               result = tonumber(result),
+		               money  = 0,
+					   soul   = 0,
+					   post_data = p.GetBattleUseItem()
+					   }
+					
+		SendPost("Fight","PvEReward",uid,"",FormatTableToJson(param));
 		--card_intensify_succeed.ShowUI(p.baseCardInfo);
 		--p.ClearData();
 	end
