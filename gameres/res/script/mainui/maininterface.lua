@@ -218,13 +218,14 @@ end
 function p.ShowMailNum(userinfo)
 	local bg = GetImage( p.layer, ui.ID_CTRL_PICTURE_MAIL_TIPS_BG );
 	local mailNum = GetLabel( p.layer, ui.ID_CTRL_TEXT_MAIL_TIPS_NUM );
-	if userinfo == nil or userinfo.Email_num == 0 then
-		mailNum:SetVisible( false );
-		bg:SetVisible( false );
-	else
+	local num = tonumber(userinfo.MailNum) or 0;
+	if num ~= 0 then
 		mailNum:SetVisible( true );
 		bg:SetVisible( true );
-		mailNum:SetText( userinfo.Email_num or 0 );
+		mailNum:SetText( tostring(num) );
+	else
+		mailNum:SetVisible( false );
+		bg:SetVisible( false );
 	end
 end
 
