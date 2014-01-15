@@ -297,6 +297,9 @@ DoFile("ui/ui_item_list_1.lua");
 DoFile("ui/ui_pubulic_item_num.lua");
 DoFile("ui/ui_item_choose.lua");
 DoFile("ui/ui_item_choose_list.lua");
+DoFile("ui/ui_country_produce_list.lua");
+DoFile("ui/ui_country_produce_lsit_list.lua");
+DoFile("ui/ui_item_produce.lua");
 
 
 --测试（以后要删除）
