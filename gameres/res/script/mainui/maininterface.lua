@@ -162,7 +162,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			maininterface.CloseAllPanel();
 			--maininterface.HideUI();
 			--隐藏用户信息
-			dlg_userinfo.HideUI();
+			--dlg_userinfo.HideUI();
 --			dlg_battlearray.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========活动========**");
@@ -319,4 +319,5 @@ end
 function p.BecomeBackground()
 	p.HideBillboard()
 end
+
 

@@ -50,10 +50,10 @@ function p.ShowUI( battle_items,missionId,stageId,nowTeamId )
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		if battle_items ~= nil then
-			local flag = country_collect.SendCollectMsg();
-			if not flag then
-				country_storage.RequestData();
-			end
+--			local flag = country_collect.SendCollectMsg();
+--			if not flag then
+			country_storage.RequestData();
+--			end
 		else
 			p.RequestBattleItem();
 		end
@@ -80,10 +80,10 @@ function p.ShowUI( battle_items,missionId,stageId,nowTeamId )
 	p.InitController();
 	
 	if battle_items ~= nil then
-		local flag = country_collect.SendCollectMsg();
-		if not flag then
-			country_storage.RequestData();
-		end
+--		local flag = country_collect.SendCollectMsg();
+--		if not flag then
+		country_storage.RequestData();
+--		end
 	else
 		p.RequestBattleItem();
 	end

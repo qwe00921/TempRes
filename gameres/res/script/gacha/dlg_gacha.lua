@@ -125,7 +125,9 @@ function p.ShowUI( intent ,reload)
 	   p.ShowBagData();
 	end
 	
-	 p.SetBagUseVisible(false)
+	p.SetBagUseVisible(false);
+	
+	gNotify:RegisterEvent( "msg_player", "Emoney", p, p.UpdateRmb );
 end
 
 --设置事件处理
@@ -1106,6 +1108,8 @@ function p.HideUI()
 end
 
 function p.CloseUI()
+	gNotify:UnregisterAllEvent( "msg_player", p );
+	
 	if p.layer ~= nil then
 		if p.idTimerRefresh then
 			KillTimer( p.idTimerRefresh );
