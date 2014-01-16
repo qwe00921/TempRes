@@ -424,14 +424,19 @@ function p.sortByRule(sortType)
 	p.refreshList(p.cardListByProf);
 end
 
+--按装备号排序
+function p.sortById(a,b)
+	return tonumber(a.equip_id) > tonumber(b.equip_id);
+end
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.equip_level) < tonumber(b.equip_level);
+	return tonumber(a.equip_level) > tonumber(b.equip_level);
 end
 
 --按星级排序
 function p.sortByStar(a,b)
-	return tonumber(a.rare) < tonumber(b.rare);
+	--return tonumber(a.rare) < tonumber(b.rare);
+	return tonumber(a.rare) < tonumber(b.rare) or ( tonumber(a.rare) == tonumber(b.rare) and tonumber(a.equip_id) < tonumber(b.equip_id));
 end
 function p.CloseUI()
 	if p.layer ~= nil then

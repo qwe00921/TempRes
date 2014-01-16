@@ -360,15 +360,20 @@ function p.ShowCardView(cardList)
 	for k,v in pairs(p.selectCardId) do
 		for i = 1,cardNum do 
 			local card = cardList[i];
-			if card.UniqueId == v then
-				
-				p.selectList[v]:SetVisible(true);
-				
-			end
+				if card.UniqueId == v then
+					p.selectList[v]:SetVisible(true);
+				end
 		end
 		
-		
 	end
+	
+	if  tonumber(p.selectNum) >= 10 then 
+		p.setAllCardDisEnable();
+	elseif tonumber(p.selectNum) < 10 then
+		p.setCardDisEnable();
+	end
+	
+	p.setNumFalse();
 	
 end
 --显示单张卡牌
@@ -478,9 +483,10 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardSelectText = p.selectList[cardUniqueId] 
 	local numText = p.cardNumListNode[cardUniqueId];
 	local pCardLeveInfo = nil;
-	
+	local card = nil;
 	for k,v in pairs(p.cardListInfo) do
 		if v.UniqueId == cardUniqueId then
+			card = v;
 			if v.Level == 0 then
 				pCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", 1);
 			else
@@ -501,7 +507,7 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		end
 		p.setNumFalse();
 		p.selectNum = p.selectNum-1;
-		p.consumeMoney = p.consumeMoney - pCardLeveInfo.feed_money;
+		p.consumeMoney = p.consumeMoney - pCardLeveInfo.feed_money - tonumber(card.Level)*tonumber(card.Level);
 	else
 		if p.selectNum >= 10 then 
 			dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
@@ -515,7 +521,7 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 			--numText:SetVisible(true);
 			p.selectCardId[#p.selectCardId + 1] = cardUniqueId;
 			
-			p.consumeMoney = p.consumeMoney + pCardLeveInfo.feed_money;
+			p.consumeMoney = p.consumeMoney + pCardLeveInfo.feed_money + tonumber(card.Level)*tonumber(card.Level);
 		end
 	end
 	local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);
@@ -693,6 +699,7 @@ function p.sortByRule(sortType)
 	if sortType == nil or p.cardListByProf == nil then 
 		return
 	end
+	--table.sort(p.cardListByProf,p.sortByCardId);
 	if sortType == CARD_BAG_SORT_BY_LEVEL then
 		WriteCon("========sort by level");
 		table.sort(p.cardListByProf,p.sortByLevel);
@@ -703,7 +710,15 @@ function p.sortByRule(sortType)
 		WriteCon("========sort by time/Element");
 		table.sort(p.cardListByProf,p.sortByTime);
 	end
+	for k,v in pairs(p.cardListByProf) do
+		WriteCon("CardID = "..tostring(v.CardID));
+	end
 	p.ShowCardView(p.cardListByProf);
+end
+
+--按卡号排序
+function p.sortByCardId(a,b)
+	return tonumber(a.CardID) < tonumber(b.CardID);
 end
 
 --按等级排序
@@ -712,14 +727,12 @@ function p.sortByLevel(a,b)
 end
 --按星级排序
 function p.sortByStar(a,b)
-	return tonumber(a.Rare) < tonumber(b.Rare);
+	return tonumber(a.Rare) < tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 --按时间排序
 function p.sortByTime(a,b)
 	return tonumber(a.Element) < tonumber(b.Element);
 end
-
-
 
 function p.CloseUI()
     if p.layer ~= nil then
