@@ -4,16 +4,11 @@
 --------------------------------------------------------------
 ui_item = {};
 local p =  ui_item;
-p.ID_CTRL_TEXT_55						       = 55;
-p.ID_CTRL_TEXT_54						       = 54;
-p.ID_CTRL_TEXT_53						       = 53;
-p.ID_CTRL_TEXT_52						       = 52;
-p.ID_CTRL_TEXT_51						       = 51;
-p.ID_CTRL_TEXT_50						       = 50;
-p.ID_CTRL_TEXT_49						       = 49;
-p.ID_CTRL_TEXT_48						       = 48;
-p.ID_CTRL_TEXT_47						       = 47;
-p.ID_CTRL_TEXT_46						       = 46;
+p.ID_CTRL_TEXT_NUM5					      = 50;
+p.ID_CTRL_TEXT_NUM4					      = 49;
+p.ID_CTRL_TEXT_NUM3					      = 48;
+p.ID_CTRL_TEXT_NUM2					      = 47;
+p.ID_CTRL_TEXT_NUM1					      = 46;
 p.ID_CTRL_TEXT_ITEMNAME5				  = 38;
 p.ID_CTRL_TEXT_ITEMNAME4				  = 37;
 p.ID_CTRL_TEXT_ITEMNAME3				  = 36;

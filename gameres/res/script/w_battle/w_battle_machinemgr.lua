@@ -5,7 +5,7 @@ p.targetHeroMachineLst = {}; --受击者状态机列表
 p.targetEnemyMachineLst = {}; --受击者状态机列表
 
 p.atkMachineLst = {}; 
-
+p.atkEnemyMachineLst = {};
 
 
 
@@ -17,7 +17,7 @@ function p.init()
 	p.targetHeroMachineLst = {}; 
 	p.targetEnemyMachineLst = {};
 	p.atkMachineLst = {}; 
-
+    p.atkEnemyMachineLst = {};
     --受击者状态机,默认的状态都是结束,所以不用判断是否存在
 	for pos=1,6 do
 		local lTargetHeroMachine = w_battle_target_statemachine:new();
@@ -29,18 +29,24 @@ function p.init()
 		p.targetEnemyMachineLst[pos] = lTargetEnemyMachine;
 		
 	end;
-
+--[[
 	local camp = nil;
 	if w_battle_mgr.atkCampType == W_BATTLE_HERO then
 		camp = w_battle_mgr.heroCamp;
 	else
 		camp = w_battle_mgr.enemyCamp;
 	end
-	
-	for pos=1,#(camp.fighters) do
+	]]
+	for k,v in ipairs(w_battle_mgr.heroCamp.fighters) do
 		local lAtkMachine = w_battle_atk_statemachine:new();
-		p.atkMachineLst[pos] = lAtkMachine;
+		p.atkMachineLst[v:GetId()] = lAtkMachine;
 	end;
+	
+	for k,v in ipairs(w_battle_mgr.enemyCamp.fighters) do
+		local lAtkMachine = w_battle_atk_statemachine:new();
+		p.atkEnemyMachineLst[v:GetId()] = lAtkMachine;
+	end;
+	
 end;
 
 
@@ -67,7 +73,12 @@ end
 
 --获得攻击者状态机
 function p.getAtkStateMachine(pos)
-	local latkMachineLst = p.atkMachineLst;
+	local latkMachineLst =	{};
+	if w_battle_mgr.atkCampType == W_BATTLE_HERO then
+		latkMachineLst = p.atkMachineLst;
+	else
+		latkMachineLst = p.atkEnemyMachineLst;
+	end;
 	return latkMachineLst[pos];
 end;
 

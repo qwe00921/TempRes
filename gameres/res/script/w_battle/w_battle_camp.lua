@@ -67,6 +67,59 @@ function p:GetFirstActiveFighterID(pFighterID)
 	return lId;
 end;	
 
+--获取存活fighters中哪些可成为目标
+--id需与pFighterID不同
+--以pos从1-6排序
+function p:GetFirstActiveFighterPos(pFighterID) 
+	local lminSelId=7;  --
+	local lId= nil; --真实的ID
+	for k,v in ipairs(self.fighters) do
+		if ((v.nowlife > 0) and (v:GetId() ~= pFighterID))then
+			if v:GetId() < lminSelId then
+				lminSelId = v.selIndex ;
+				lId = v:GetId();
+				--break;
+			end
+		end;
+	end;
+	
+	return lId;
+end;	
+
+--传入攻击者,获得属性加成的玩家列表
+function p:GetElementFighter(pAtkFighter)
+	local lLst = {}
+	for k,v in ipairs(self.fighters) do
+		if (v.nowlife > 0) and (w_battle_atkDamage.IsElement(pAtkFighter,v) == true) then
+			table.insert(lLst,v);
+		end;
+	end;
+	return lLst;
+end;
+
+--传入受击者,获得哪些攻击有属性加成的位置
+function p:GetElementAtkFighter(pTarFighter)
+	local lLst = {}
+	for k,v in ipairs(self.fighters) do
+		if (v.nowlife > 0) and (w_battle_atkDamage.IsElement(v,pTarFighter) == true) then
+			table.insert(lLst,v:GetId());
+		end;
+	end;
+	return lLst;
+
+end;
+--获得体力>0的玩家列表
+function p:GetHeroFighter()
+	local lLst = {}
+	for k,v in ipairs(self.fighters) do
+		if v.nowlife > 0 then
+			table.insert(lLst,v);
+		end;
+	end;
+	return lLst;
+end;
+
+
 --获得当前尸体未消失的怪物
 function p:GetFirstNotDeadFighterID(pFighterID) 
 	local lminSelId=7;  --
@@ -355,7 +408,7 @@ function p:AddFighters( uiArray, fighters )
 		
 		--战士属性
         f.life = tonumber( fighterInfo.Hp );
-        f.lifeMax = tonumber( fighterInfo.Hp );
+        --f.lifeMax = tonumber( fighterInfo.Hp );
         f.level = tonumber( fighterInfo.Level );
         f.uniqueId = tonumber( fighterInfo.UniqueId );
         f.cardId = tonumber( fighterInfo.CardID );
@@ -365,15 +418,18 @@ function p:AddFighters( uiArray, fighters )
 		f.Position = tonumber (fighterInfo.Position);
 		f.Crit	   = tonumber (fighterInfo.Crit);
 		f.Skill	   = tonumber (fighterInfo.Skill);
+		f.element  = tonumber (fighterInfo.element);
         f.buffList = {};
          
 		--临时攻击力调整
-		f.Attack = 100;
-		f.Defence = 0;
-		f.life = 300;
+		--f.Attack = 10;
+		--f.Defence = 0;
+		--f.life = 300;
 				
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
+		f.Hp = f.Hp - 10;
+		f.nowlife = f.Hp;
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();
 		

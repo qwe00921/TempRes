@@ -38,8 +38,6 @@ function p:ctor()
 	self.damage = 0;
 	self.Buff = 1;
 	
-	self.showlife = 0;  --用来显示的血量
-	self.maxlife = 0;  --最大血量
 	self.nowlife = 0; --当前实际血量
 	self.IsTurnEnd = false;
 	self.firstID = nil; --合击判定的第一下
@@ -56,8 +54,6 @@ function p:Init( idFighter, node, camp )
 	self.damage = self.Attack;
 	self.Buff = 1;
 	
-	self.showlife = self.life;  --用来显示的血量
-	self.maxlife = self.life;  --最大血量
 	self.nowlife = self.life; --当前实际血量
 	self.Hp = self.life;
 	self.maxHp = self.life;        
@@ -165,8 +161,8 @@ end;
 
 function p:AddLife(val)
 	self.nowlife = self.nowlife + val;
-	if self.nowlife > self.maxlife then
-		self.nowlife = self.maxlife;
+	if self.nowlife > self.maxHp then
+		self.nowlife = self.maxHp;
 	end
 end;
 
@@ -203,8 +199,8 @@ end;
 
 function p:AddShowLife(val) --需展现的血量
 	self.Hp = self.Hp + val;
-	if self.Hp > self.maxlife then
-		self.Hp =  self.maxlife;
+	if self.Hp > self.maxHp then
+		self.Hp =  self.maxHp;
 	end
 	
 	--掉血动画, 可以支持掉多个
@@ -439,3 +435,63 @@ function p:BeTarTimesDec(pAtkId)
 		end;
 	end;
 end
+
+function p:UseItem(pId)
+	local lResult = true;
+	local subtype = tonumber(SelectCell( T_MATERIAL, pId, "subtype" ));
+	local effect_type = tonumber(SelectCell( T_MATERIAL, pId, "effect_type" ));
+	local effect_value = tonumber(SelectCell( T_MATERIAL, pId, "effect_value" ));
+
+	if subtype == W_MATERIAL_SUBTYPE1 then  --HP>0的
+		if self:IsAlive() == true then
+			self.nowlife = self.nowlife + effect_value;
+			if self.nowlife > self.maxHp then
+				self.nowlife = self.maxHp;
+			end		
+			self.Hp = self.nowlife;
+		else
+			lResult = false;
+		end
+	elseif subtype == W_MATERIAL_SUBTYPE2 then --中相应状态的才可用
+		if effect_type == W_BATTLE_REVIVAL then --复活物品
+			if(self:IsDead() == true) then
+				self.isDead = false;
+				self.nowlife = math.mod(self.maxHp * effect_value / 100);
+				self.Hp = self.nowlife;
+			end
+		else  --解状态的BUFF
+			self:RemoveBuff(effect_type);
+		end;
+	elseif subtype == W_MATERIAL_SUBTYPE3 then --所有未死亡的,均可用
+		self:AddBuff(effect_type,effect_value) --上BUFF状态及回合数
+	end
+	
+	return lResult;
+end
+
+function p:HasBuff(effect_type)
+	local lRes = false;
+	for k,v in ipairs(self.SkillBuff) do
+		if (v.effecttype == effect_type) then
+			lRes = true;
+			break;
+		end
+	end
+	
+	return lRes;
+end;
+
+function p:AddBuff(effect_type,effect_value)
+	local skillRecord = {effecttype = effect_type, effectval = effect_value};
+	table.insert(self.SkillBuff, skillRecord);
+end;
+
+function p:RemoveBuff(effect_type)
+	for i= #self.SkillBuff,1, -1 do
+		local skillRecord = self.SkillBuff[i];
+		if skillRecord.effecttype == effect_type then
+			table.remove(self.SkillBuff, i);
+		end
+	end
+end;
+

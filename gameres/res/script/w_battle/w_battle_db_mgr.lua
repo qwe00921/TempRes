@@ -22,10 +22,12 @@ p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
 p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
+
+
   
 p.playerCardList = {
 	{
-	element = 0,
+	element = 1,
 	UniqueId= 10000721,
 	CardID= 10017,
 	Level= 1,
@@ -39,8 +41,8 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 150,
-	maxHp= 150,
+	Hp= 230,
+	maxHp= 240,
 	Attack= 30,
 	Defence= 1,
 	Speed= 26,
@@ -59,7 +61,7 @@ p.playerCardList = {
 	maxSp = 100;
 	},
 	{
-	element = 0,
+	element = 2,
 	UniqueId= 10000722,
 	CardID= 10012,
 	Level= 1,
@@ -73,8 +75,8 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 150,
-	maxHp= 150,
+	Hp= 190,
+	maxHp= 200,
 	Attack= 30,
 	Defence= 2,
 	Speed= 23,
@@ -94,7 +96,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 0,
+	element = 3,
 	UniqueId= 10000723,
 	CardID= 10021,
 	Level= 1,
@@ -108,8 +110,8 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 150,
-	maxHp= 150,
+	Hp= 190,
+	maxHp= 200,
 	Attack= 30,
 	Defence= 1,
 	Speed= 35,
@@ -129,7 +131,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 0,
+	element = 4,
 	Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000724,
@@ -145,7 +147,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 300,
+	Hp= 290,
 	maxHp= 300,
 	Attack= 30,
 	Defence= 2,
@@ -179,7 +181,7 @@ p.playerCardList = {
 	Team_marks= 1,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 300,
+	Hp= 290,
 	maxHp= 300,
 	Attack= 30,
 	Defence= 1,
@@ -200,23 +202,23 @@ p.playerCardList = {
 
 p.targetCardList = {
 	{
-	element = 0,
-	UniqueId= 2,
-	CardID= 10001,
+	element = 1,
+	UniqueId= 7,
+	CardID= 10012,
 	Level= 10,
 	Race= 0,
-	Class= 4,
+	Class= 2,
 	Damage_type= 1,
 	Exp= 0,
 	Rare= 5,
 	Rare_max= 5,
-	Hp= 280,
-	maxHp= 280,
+	Hp= 100,
+	maxHp= 100,
 	Attack= 70,
-	Defence= 10,
-	Speed= 31,
-	Skill= 0,
-	Crit= 6,
+	Defence= 20,
+	Speed= 23,
+	Skill= 1001,
+	Crit= 3,
 	Item_Id1= 0,
 	Item_Id2= 0,
 	Item_Id3= 0,
@@ -224,9 +226,10 @@ p.targetCardList = {
 	Gem2= 0,
 	Gem3= 0,
 	Position= 1
-	},
+	},	
+	
 	{
-	element = 0,
+	element = 2,
 	UniqueId= 3,
 	CardID= 10003,
 	Level= 10,
@@ -241,7 +244,7 @@ p.targetCardList = {
 	Attack= 70,
 	Defence= 10,
 	Speed= 32,
-	Skill= 0,
+	Skill= 1001,
 	Crit= 8,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -252,7 +255,7 @@ p.targetCardList = {
 	Position= 2
 	},
 	{
-	element = 0,
+	element = 3,
 	UniqueId= 4,
 	CardID= 10004,
 	Level= 10,
@@ -267,7 +270,7 @@ p.targetCardList = {
 	Attack= 70,
 	Defence= 10,
 	Speed= 20,
-	Skill= 0,
+	Skill= 1001,
 	Crit= 1,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -278,7 +281,7 @@ p.targetCardList = {
 	Position= 3
 	},
 	{
-	element = 0,
+	element = 4,
 	UniqueId= 5,
 	CardID= 10005,
 	Level= 10,
@@ -293,7 +296,7 @@ p.targetCardList = {
 	Attack= 70,
 	Defence= 10,
 	Speed= 23,
-	Skill= 0,
+	Skill= 1001,
 	Crit= 1,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -319,7 +322,7 @@ p.targetCardList = {
 	Attack= 70,
 	Defence= 10,
 	Speed= 34,
-	Skill= 0,
+	Skill= 1001,
 	Crit= 4,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -330,23 +333,23 @@ p.targetCardList = {
 	Position= 5
 	},
 	{
-	element = 0,
-	UniqueId= 7,
-	CardID= 10012,
+	element = 5,
+	UniqueId= 2,
+	CardID= 10001,
 	Level= 10,
 	Race= 0,
-	Class= 2,
+	Class= 4,
 	Damage_type= 1,
 	Exp= 0,
 	Rare= 5,
 	Rare_max= 5,
-	Hp= 100,
-	maxHp= 100,
+	Hp= 280,
+	maxHp= 280,
 	Attack= 70,
-	Defence= 20,
-	Speed= 23,
-	Skill= 0,
-	Crit= 3,
+	Defence= 10,
+	Speed= 31,
+	Skill= 1001,
+	Crit= 6,
 	Item_Id1= 0,
 	Item_Id2= 0,
 	Item_Id3= 0,
@@ -354,8 +357,32 @@ p.targetCardList = {
 	Gem2= 0,
 	Gem3= 0,
 	Position= 6
-	}
+	},
 
+}
+
+
+p.ItemList = {
+	{item_id = 101001, num = 9, location = 1},
+	{item_id = 101003, num = 5, location = 2},
+	{item_id = 101026, num = 6, location = 3},
+	{item_id = 101004, num = 0, location = 4},
+	{item_id = 101005, num = 0, location = 5},
+}
+
+p.Reward= {
+	item= {
+		item_id= 111001,
+		item_type= 3,
+		num= 1
+	},
+	mission_id= 101011,
+	result= 1,
+	difficulty= 1,
+	exp= 100,
+	money= 20,
+	soul= 100,
+	story= 0
 }
 
 function p.nextStep()
@@ -367,7 +394,8 @@ function p.Init( battleDB )
     if battleDB == nil then
     	WriteConWarning( "battle db is nill!" );
     end
-    p.playerCardList = battleDB.fightinfo.Player;
+   --[[
+	p.playerCardList = battleDB.fightinfo.Player;
     p.targetCardList = battleDB.fightinfo.Target;
     p.roundData = battleDB.fightinfo.RoundData;
     p.battleResult = battleDB.fightinfo.BattleResult;
@@ -379,7 +407,7 @@ function p.Init( battleDB )
     p.roundBuffData = battleDB.fightinfo.BuffList;
     p.roundBuffEffectData = battleDB.fightinfo.BuffEffect;
     p.rewardData = battleDB.fightinfo.Reward;
-
+]]--
     --dump_obj( p.playerPetList );
 end
 
@@ -500,7 +528,20 @@ function p.GetRewardData()
 end
 
 function p.GetItemList()
+	table.sort( p.ItemList, function(a,b) return a.location<b.location; end );
 	return p.ItemList;
+end;
+
+function p.GetItemid(pPos)
+	local lid = nil;
+	for k,v in ipairs(p.ItemList) do
+		if(v.location == pPos) then
+			lid = v.item_id;
+			break;
+		end;
+	end
+	
+	return lid;
 end;
 
 --获取攻方卡牌列表

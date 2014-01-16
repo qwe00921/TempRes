@@ -8,7 +8,7 @@ w_battle_atkDamage = {}
 local p = w_battle_atkDamage;
 
 
-function p.SimpleDamage(atkFighter,tarFighter)
+function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 
 --计算属性相克    	
 	local lisElement = p.IsElement(atkFighter,tarFighter);
@@ -21,7 +21,10 @@ function p.SimpleDamage(atkFighter,tarFighter)
 	atkFighter.Buff = 1;	
 	
 	--合击加成
-	local lIsJoinAtk = p.IsJoinAtk(atkFighter,tarFighter); 
+	local lIsJoinAtk = false
+	if IsMonster ~= true then
+		lIsJoinAtk = p.IsJoinAtk(atkFighter,tarFighter); 
+	end;
 	local lJoinAtkRate = 0;
 	if lIsJoinAtk == true then
 		lJoinAtkRate = 0.5
@@ -151,18 +154,125 @@ end;
 function p.IsElement(atkFighter,tarFighter)
     local lresult = false;
     
-	if     (atkFighter.prop == W_BATTLE_ELEMENT_LIGHT  and tarFighter.prop == W_BATTLE_ELEMENT_DARK)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_DARK   and tarFighter.prop == W_BATTLE_ELEMENT_LIGHT)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_GOLD 	and tarFighter.prop == W_BATTLE_ELEMENT_WOOD )	
-		or (atkFighter.prop == W_BATTLE_ELEMENT_WOOD 	and tarFighter.prop == W_BATTLE_ELEMENT_EARTH)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_EARTH	and tarFighter.prop == W_BATTLE_ELEMENT_WATER)
-		or (atkFighter.prop == W_BATTLE_ELEMENT_WATER	and tarFighter.prop == W_BATTLE_ELEMENT_FIRE )
-		or (atkFighter.prop == W_BATTLE_ELEMENT_FIRE 	and tarFighter.prop == W_BATTLE_PROP_GOLD) then
+	if     ((atkFighter.element == W_BATTLE_ELEMENT_LIGHT)   and (tarFighter.element == W_BATTLE_ELEMENT_DARK) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_DARK)    and (tarFighter.element == W_BATTLE_ELEMENT_LIGHT) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_GOLD)    and (tarFighter.element == W_BATTLE_ELEMENT_WOOD ) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_WOOD)    and (tarFighter.element == W_BATTLE_ELEMENT_EARTH) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_EARTH)   and (tarFighter.element == W_BATTLE_ELEMENT_WATER) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_WATER)   and (tarFighter.element == W_BATTLE_ELEMENT_FIRE ) )
+		or ((atkFighter.element == W_BATTLE_ELEMENT_FIRE)    and (tarFighter.element == W_BATTLE_ELEMENT_GOLD) ) then
 		
 		lresult = true;
 	end
 		
 	return lresult;
+end
+
+function p.getRandom()
+	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
+	local lnum = math.random(1,100);	
+	return lnum;
+end;
+
+function p.getdropitemNum(pTab)
+	local lrandomNum = p.getRandom();
+	
+	local lpro1 = 0;
+	local lnum1 = 0;
+	if pTab.probility1 ~= "" then
+		lpro1 = tonumber(pTab.probility1)
+		lnum1 = tonumber(pTab.drop_num1);	
+	end;
+	
+	local lpro2 = 0;
+	local lnum2 = 0;
+	if pTab.probility2 ~= "" then
+		lpro2 = tonumber(pTab.probility2) + lpro1;
+		lnum2 = tonumber(pTab.drop_num2);	
+    end;
+	
+	local lpro3 = 0;
+	local lnum3 = 0;
+	if pTab.probility3 ~= "" then
+		lpro3 = tonumber(pTab.probility3) + lpro2;
+		lnum3 = tonumber(pTab.drop_num3);	
+    end;
+	
+	
+	if (pTab.probility1 ~= "") and (lrandomNum <= lpro1) then
+		return tonumber(pTab.drop_num1);
+	elseif (pTab.probility2 ~= "") and (lrandomNum > lpro1) and (lrandomNum <= lpro2) then
+		return tonumber(pTab.drop_num2);
+	elseif (pTab.probility3 ~= "") and (lrandomNum > lpro2) and (lrandomNum <= lpro3) then
+		return tonumber(pTab.drop_num3);
+	else
+		return 0
+	end
+	
+end;
+
+
+function p.getDropItem(dropList, pos, atktype)
+	local lhpnum = 0;
+	local lspnum = 0;
+	local lmoneynum = 0;
+	local lbluesoulnum = 0;
+	local ldropTab = SelectRowList( T_DROP_POBILITY, "attack_type",  atktype);		
+	for k,v in pairs(ldropTab) do
+		if tonumber(v.drop_type) == E_DROP_HPBALL then
+			lhpnum = p.getdropitemNum(v);
+		elseif tonumber(v.drop_type) == E_DROP_SPBALL then
+			lspnum = p.getdropitemNum(v);
+		elseif tonumber(v.drop_type) == E_DROP_MONEY then
+			lmoneynum = p.getdropitemNum(v);
+		elseif tonumber(v.drop_type) == E_DROP_BLUESOUL then
+			lbluesoulnum = p.getdropitemNum(v);
+		end
+	end
+	
+	if lhpnum > 0 then
+		dropList[#dropList + 1] = {E_DROP_HPBALL , lhpnum, pos};
+	end
+	
+	if lspnum > 0 then
+		dropList[#dropList + 1] = {E_DROP_SPBALL , lspnum, pos};
+	end
+	
+	if lmoneynum > 0 then
+		dropList[#dropList + 1] = {E_DROP_MONEY , lmoneynum, pos};
+	end
+
+	if lbluesoulnum > 0 then
+		dropList[#dropList + 1] = {E_DROP_BLUESOUL , lbluesoulnum, pos};
+	end	
+
+	
+end;
+
+
+function p.getitem(pos, IsSkill, lIsCrit,lIsJoinAtk,lisMoredamage)
+	
+	local dropList = {}
+	if IsSkill == false then
+		p.getDropItem(dropList, pos, W_DROP_ATKTYPE1)
+    else
+		p.getDropItem(dropList, pos, W_DROP_ATKTYPE2)
+	end; 
+
+	if lIsCrit == true then
+		p.getDropItem(dropList, pos, W_DROP_ATKTYPE3)
+	end;
+	
+	if lIsJoinAtk == true then
+		p.getDropItem(dropList, pos, W_DROP_ATKTYPE4)
+	end;
+	
+	if lisMoredamage == true then
+		p.getDropItem(dropList, pos, W_DROP_ATKTYPE5)
+	end
+	
+	w_battle_pve.MonsterDrop(dropList)
+	
 end
 
 

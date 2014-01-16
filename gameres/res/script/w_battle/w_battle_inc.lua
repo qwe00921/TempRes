@@ -117,8 +117,33 @@ W_BATTLE_POS_TAG_6 = 6;
 
 --动画攻击时间
 W_BATTLE_ATKTIME   =  1;
+--怪物延迟时间攻击
+W_BATTLE_ENEMYTIME = 0.7;
 
 --行动状态
 W_BATTLE_NOT_TURN = 0;  --未行动
 W_BATTLE_TURN     = 1;  --行动中 
 W_BATTLE_TURNEND  = 2;  --已行动
+
+--掉落
+W_DROP_ATKTYPE1  = 1;  --普攻
+W_DROP_ATKTYPE2  = 2;  --技能
+W_DROP_ATKTYPE3  = 3;  --暴击
+W_DROP_ATKTYPE4  = 4;  --合击
+W_DROP_ATKTYPE5  = 5;  --超量
+
+
+--战斗物品使用
+W_MATERIAL_TYPE1 = 1;   --药水类型
+W_MATERIAL_TYPE2 = 2;   --材料类型
+
+--药水类型
+W_MATERIAL_SUBTYPE1 = 1; --恢复类
+W_MATERIAL_SUBTYPE2 = 2; --解状态类
+W_MATERIAL_SUBTYPE3 = 3; --属性类
+
+--物品目标
+W_MATERIAL_TARGET1  = 1;  --单个目标
+W_MATERIAL_TARGET2  = 2;  --全体目标
+
+W_BATTLE_REVIVAL     = 9999; --复活状态

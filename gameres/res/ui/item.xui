@@ -247,14 +247,12 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_46]
+[CTRL_TEXT_NUM1]
 Type=4
 Tag=46
 Rect=103 80 31 25
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
 TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -262,14 +260,12 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_47]
+[CTRL_TEXT_NUM2]
 Type=4
 Tag=47
 Rect=223 80 31 25
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
 TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -277,14 +273,12 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_48]
+[CTRL_TEXT_NUM3]
 Type=4
 Tag=48
 Rect=343 80 31 25
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
 TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -292,14 +286,12 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_49]
+[CTRL_TEXT_NUM4]
 Type=4
 Tag=49
 Rect=459 80 35 25
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
 TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -307,89 +299,12 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_50]
+[CTRL_TEXT_NUM5]
 Type=4
 Tag=50
 Rect=584 80 30 25
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
-TextSize=25
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_51]
-Type=4
-Tag=51
-Rect=83 78 20 25
-AnchorPos=0 0
-Notes=
-Text=x
-TextTradition=x
-TextSize=25
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_52]
-Type=4
-Tag=52
-Rect=203 78 20 25
-AnchorPos=0 0
-Notes=
-Text=x
-TextTradition=x
-TextSize=25
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_53]
-Type=4
-Tag=53
-Rect=323 78 20 25
-AnchorPos=0 0
-Notes=
-Text=x
-TextTradition=x
-TextSize=25
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_54]
-Type=4
-Tag=54
-Rect=443 78 20 25
-AnchorPos=0 0
-Notes=
-Text=x
-TextTradition=x
-TextSize=25
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_55]
-Type=4
-Tag=55
-Rect=564 78 20 25
-AnchorPos=0 0
-Notes=
-Text=x
-TextTradition=x
 TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter

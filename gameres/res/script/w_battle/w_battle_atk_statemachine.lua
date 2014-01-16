@@ -25,8 +25,8 @@ function p:ctor()
 	--self.tarCampType = 0;
 	--self.atkType = 0; 
 	--self.damage = 0;
-	self.isCrit = false;
-	self.isJoinAtk = false;
+	self.critLst = {};
+	self.joinAtkLst = {};
 	self.atkplayerNode = 0;
 	self.IsRevive = false;
 	self.IsSkill  = false;
@@ -35,7 +35,7 @@ end
 
 
 
-function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,isCrit,isJoinAtk,isSkill,skillID,isAoe)
+function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,critLst,joinAtkLst,isSkill,skillID,isAoe)
 	self.atkId = atkFighter:GetId();
 	self.id = atkFighter:GetId();	
 	self.targerId = tarFighter:GetId();
@@ -45,8 +45,8 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,isCr
 	self.tarCampType = tarCampType;
 	
 	self.damageLst = damageLst;	
-	self.isCrit = isCrit;
-	self.isJoinAtk = isJoinAtk;
+	self.critLst = critLst;
+	self.joinAtkLst = joinAtkLst;
 	self.atkplayerNode = atkFighter:GetPlayerNode();
 	self.IsSkill = isSkill; --是否属于技能
     self.isAoe = isAoe;
@@ -164,17 +164,16 @@ end;
 function p:atk_start()
 	local atkFighter = self.atkFighter;
 	local tarFighter = self.targetFighter;
-    local playerNode = self.atkplayerNode;
 
-		if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
-			--向攻击目标移动
-			local cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, self.seqStar);
-			
-			local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", self.seqTarget);
-			self.seqTarget:SetWaitEnd( cmdMove );
-		elseif self.distanceRes == W_BATTLE_DISTANCE_Archer then  --远程攻击
-			self:atk_startAtk();
-		end;
+	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
+		--向攻击目标移动
+		local cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, self.seqStar);
+		
+		local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", self.seqTarget);
+		self.seqTarget:SetWaitEnd( cmdMove );
+	elseif self.distanceRes == W_BATTLE_DISTANCE_Archer then  --远程攻击
+		self:atk_startAtk();
+	end;
 end
 
 --近战: 攻击的同时受击
@@ -193,15 +192,6 @@ function p:atk_startAtk()
 		
 		--攻击队列增加
 		tarFighter:BeHitAdd(atkFighter:GetId());  
-		
-		local lfirstID = tarFighter.firstID;
-		local latkID = atkFighter:GetId();
-		if self.isJoinAtk == true then
-			if(lfirstID ~= latkID) then
-			--合击的动画
-				WriteCon("JoinAtk flash");
-			end;
-		end;	
 		
 		--受击
 		local  ltargetMachine = w_battle_machinemgr.getTarStateMachine(self.tarCampType, tarFighter:GetId());
@@ -225,7 +215,7 @@ function p:atk_startAtk()
 		--攻击结束播放受击动作
 		self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqAtk ); 
     else
-		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, playerNode, "" );
+		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		self.seqStar:AddCommand( cmdAtk ); --攻击动作
 		
 		local atkSound = self.atkSound;
@@ -254,7 +244,7 @@ function p:atk_startAtk()
 			end;
 			
 			atkFighter:cmdLua("atk_end",        self.id, "", self.seqTarget);
-			self.seqTarget:SetWaitEnd( cmdAtk );
+			self.seqTarget:SetWaitEnd( bulletend );
 		else  --没弹道
 			--攻击结束
 			if self.IsSkill == true then	--技能受击特效
@@ -268,31 +258,63 @@ function p:atk_startAtk()
 					seqTemp:AddCommand( cmd11 );
 				end;			
 			end;			
-			
-			self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqAtk ); 
 
+			
+			self.atkFighter:cmdLua( "atk_end",  self.id, "", self.seqTarget ); 
+			self.seqTarget:SetWaitEnd( cmdAtk );
 		end
 	end;
 
 end
 
+
+
 function p:atk_end()
 	local atkFighter = self.atkFighter;
 	local tarFighter = nil;
-    
+   
+		
 	--for pos=1,#self.targetLst do
 	--	tarFighter = (self.targetLst)[pos];
 	for k,v in pairs(self.targetLst) do
 		tarFighter = v;
 		--受击后掉血,不用等掉血动画完成
 		local ldamage = (self.damageLst)[k];
+		local lisMoredamage = false;  --超量击杀
+		if tarFighter.Hp <= 0 then
+			lisMoredamage = true;
+		end;
 		tarFighter:SubShowLife(ldamage); --掉血动画,及表示的血量减少	
+		
+		local lIsJoinAtk = self.joinAtkLst[k]
+		if lIsJoinAtk== true then
+			local lfirstID = tarFighter.firstID;
+			local latkID = atkFighter:GetId();
+			if(lfirstID ~= latkID) then
+			--合击的动画
+				WriteCon("JoinAtk flash");
+			else
+				lIsJoinAtk = false;
+			end;
+		end;
+		
+		local lIsCrit = self.critLst[k];	--是否暴击
+		if self.atkCampType == W_BATTLE_HERO then
+			--掉落物品的表现
+			w_battle_atkDamage.getitem(tarFighter.Position ,self.IsSkill, lIsCrit,lIsJoinAtk,lisMoredamage); 
+			
+			--统计各项次数
+			w_battle_mgr.calAtkTimes(self.IsSkill,lIsCrit,lIsJoinAtk,lisMoredamage)
+		end
+		
 		--受击次数减一	
 		tarFighter:BeHitDec(atkFighter:GetId()); 
 		
 		if tarFighter:GetHitTimes() == 0 then --受击次数为0时
 			tarFighter.IsHurt = false;
 		end;
+		
+
 	end;
 
 	local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );	

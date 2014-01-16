@@ -37,7 +37,6 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		return;
 	end
 	
-
 	--Ö´ĞĞ¾ßÌåÃüÁî
 	if cmdtype == "fighter_damage" then
 		fighter:SetLifeDamage(num);
@@ -180,7 +179,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
         fighter.skillbar:SetLife(fighter.skillbar.life);
      elseif cmdtype == "update_team_rage" then
         card_battle_mgr.UpdateTeamRage( fighter.camp, num );
-        
+	elseif cmdtype == "equip_rein_effect" then
+		equip_rein_result.equip_rein_effect_finish();
 	else
 		--
 	end

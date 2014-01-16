@@ -11,6 +11,7 @@ p.countryInfoT = {};
 local uiNodeT = {}
 
 function p.ShowUI()
+	dlg_menu.SetNewUI( p );
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		
@@ -21,7 +22,6 @@ function p.ShowUI()
 	end
 	
 	dlg_userinfo.HideUI();
-	dlg_menu.HideUI();
 	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
@@ -205,8 +205,8 @@ function p.showCountryBuild(buildInfo)
 				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
 				--剩余时间
 				local countDownTime = tonumber(buildInfo["B"..i].upgrade_time);
-				local nowTime = os.time();
-				local lastTime = countDownTime - nowTime;
+				--local nowTime = os.time();
+				--local lastTime = countDownTime - nowTime;
 				--local lastTime = 100;
 				--升级所需时间
 				local nextLV = tonumber(buildInfo["B"..i].upgrade_level)
@@ -227,7 +227,7 @@ function p.showCountryBuild(buildInfo)
 				timeBar:SetNoText()
 				local timeTextNode = uiNodeT.timeTextT[i]
 				--显示时间条
-				time_bar.ShowTimeBar(0,timeNeed,lastTime,timeBar,timeTextNode) 
+				time_bar.ShowTimeBar(0,timeNeed,countDownTime,timeBar,timeTextNode) 
 			
 			--是否刚升级完
 			elseif tonumber(buildInfo["B"..i].update) == 1 then
@@ -313,7 +313,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			--注销采集倒计时
 			country_collect.EndTick();
 		elseif ui.ID_CTRL_BUTTON_MOUNTAIN == tag then
-			country_collect.Collect( E_COLLECT_MOUNTAIN );
+			--country_collect.Collect( E_COLLECT_MOUNTAIN );
 		elseif ui.ID_CTRL_BUTTON_TREE == tag then
 			country_collect.Collect( E_COLLECT_TREE );
 		elseif ui.ID_CTRL_BUTTON_RIVER == tag then
@@ -321,15 +321,21 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif ui.ID_CTRL_BUTTON_FIELD == tag then
 			country_collect.Collect( E_COLLECT_FIELD );
 		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
-			WriteCon("PRODUCE");
-			country_building.ShowUI(p.countryInfoT)
+			if p.countryInfoT["B1"] then
+				WriteCon("PRODUCE");
+				p.HideUI()
+				country_building.ShowUI(p.countryInfoT)
+			end
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
+			p.HideUI()
 			equip_room.ShowUI();
 			WriteCon("EQUIP");
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
 			WriteCon("MERGE");
+			country_mixhouse.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_HOME == tag then
 			WriteCon("HOME");
+			country_collect.Collect( E_COLLECT_HOME );
 		elseif ui.ID_CTRL_BUTTON_STORE == tag then
 			WriteCon("STORE");
 			country_storage.ShowUI();
@@ -349,7 +355,7 @@ function p.CloseUI()
 		p.layer = nil;
 		p.ClearData()
 		dlg_userinfo.ShowUI();
-		dlg_menu.ShowUI();
+		--dlg_menu.ShowUI();
 	end
 end
 function p.ClearData()
@@ -357,4 +363,9 @@ function p.ClearData()
 	p.openTypeNum = 1;
 	p.openViewT = {};
 	p.countryInfoT = {};
+	time_bar.ClearData()
+
+end
+function p.UIDisappear()
+	p.CloseUI();
 end

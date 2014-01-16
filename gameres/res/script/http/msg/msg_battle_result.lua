@@ -4,7 +4,7 @@ msg_battle_result = msg_base:new();
 local p = msg_battle_result;
 local super = msg_base;
 
---´´ÐÂÊµÀý
+--åˆ›æ–°å®žä¾‹
 function p:new()
 	o = {}
 	setmetatable( o, self );
@@ -13,7 +13,7 @@ function p:new()
 	return o;
 end
 
---¹¹Ôìº¯Êý
+--æž„é€ å‡½æ•°
 function p:ctor()
 	super.ctor(self);
 	self.idMsg = MSG_BATTLE_RESULT;
@@ -25,13 +25,13 @@ end
 
 function p:Process()
 	if self.result == true then 
-		w_battle_mgr.QuitBattle();
-		local lResult = w_battle_mgr.GetReuslt();
-		if lResult == 1 then
-		--	quest_reward.tempShowUI();
-			dlg_userinfo.ShowUI();
-			stageMap_main.OpenWorldMap();
-		end;
+		--w_battle_mgr.QuitBattle();
+		--local lResult = w_battle_mgr.GetReuslt();
+		--if lResult == 1 then
+			quest_reward.ShowUI(self.Reward);
+		--	dlg_userinfo.ShowUI();
+		--	stageMap_main.OpenWorldMap();
+		--end;
 	
 	else
 		WriteConWarning( "**MSG_BATTLE_RESULT  error" );

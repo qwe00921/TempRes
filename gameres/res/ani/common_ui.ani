@@ -110,3 +110,7 @@ image\ui\country\locate_lake.png
 image\ui\country\locate_field.png
 image\ui\country\locate_mount.png
 image\ui\country\locate_forest.png
+
+[country_open]
+image\ui\country\LiberationMountain_193x202.png
+image\ui\country\LiberationMountain_202x202.png

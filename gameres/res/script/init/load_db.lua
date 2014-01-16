@@ -105,6 +105,13 @@ T_MATERIAL_DROP	= LoadTable("material_drop.ini");
 --材料表
 T_MATERIAL		= LoadTable("material.ini");
 
+T_MATERIAL_RES  = LoadTable("material_res.ini");
+
 --合成表
 T_DRUG_MIX		= LoadTable("drug_mix.ini");
 
+--掉落机率表
+T_DROP_POBILITY = LoadTable("battle_drop_pobility.ini");
+
+--掉落数据表
+T_DROP_VAL		= LoadTable("battle_drop_value.ini");

@@ -342,6 +342,7 @@ function p.GetItemTable( index )
 	local ctrller = GetButton( p.battleLayer, tag[ITEM_BTN_INDEX] );
 	temp[ITEM_BTN_INDEX] = ctrller;
 	ctrller:SetLuaDelegate( p.OnBtnClick );
+	ctrller:SetId( index );
 	
 	ctrller = GetLabel( p.battleLayer, tag[ITEM_NAME_INDEX] );
 	temp[ITEM_NAME_INDEX] = ctrller;
@@ -425,13 +426,12 @@ function p.RefreshUI()
 				if item ~= nil then
 					p.SetVisible( ctrllers, true );
 					
-					local name = SelectCell( T_ITEM, item.ItemType, "name" );	
-					item[ITEM_NAME_INDEX]:SetText( name );
-					
-					local path = SelectCell( T_ITEM, item.ItemType, "item_pic" ) or "";
+					local name = SelectCell( T_MATERIAL, item.item_id, "name" );	
+					ctrllers[ITEM_NAME_INDEX]:SetText( name );
+					local path = SelectCell( T_MATERIAL, item.item_id, "item_pic" ) or "";
 					local picData = GetPictureByAni( path, 0 );
 					if picData then
-						item[ITEM_IMAGE_INDEX]:SetPicture( picData );
+						ctrllers[ITEM_IMAGE_INDEX]:SetPicture( picData );
 					end
 				else
 					p.SetVisible( ctrllers, false );
@@ -601,6 +601,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		WriteCon("IsDragLeft");
 	elseif IsDragRight( uiEventType ) then
 		WriteCon("IsDragRight");
+		w_battle_mgr.SetPVESkillAtkID( id );
 	elseif IsDragDown( uiEventType ) then
 		WriteCon("IsDragDown");
 	end
@@ -627,7 +628,7 @@ function p.UseItem( uiNode )
 	local item = itemList[id] or {};
 	local itemid = 0;
 	if item then
-		itemid = item.itemtype or 0;
+		itemid = item.item_id or 0;
 	end
 	
 	if itemid == 0 then
@@ -779,17 +780,19 @@ function p.UpdateDamageBufftype( list )
 		if obj ~= nil then
 			local index = 0;
 			for j = 1, #list do
-				if i == list[j][1] then
+				--if i == list[j][1] then
+				if i == list[j] then
 					index = j;
 					break;
 				end
 			end
+				
 			if index ~= 0 then
 				obj[DAMAGE_INDEX]:SetVisible( true );
 				local damagetypeindex = 0;
-				if list[j][2] == W_ELEMENT_ADD then
+				--if list[j][2] == W_ELEMENT_ADD then
 					damagetypeindex = 1;
-				end
+				--end
 				local picData = GetPictureByAni( "w_battle_res.damagebufftype", damagetypeindex );
 				if picData then
 					obj[DAMAGE_INDEX]:SetPicture( picData );

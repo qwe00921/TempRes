@@ -255,6 +255,9 @@ function CreateMsg( idmsg )
 	elseif idmsg == MSG_COUNT_DATA then
 		msg = msg_count_data:new();
 	
+	elseif idmsg == MSG_COUNTRY_UPBUILD then
+		msg = msg_country_upbuild:new();
+		
 	elseif idmsg == MSG_CARD_ROLE_DETAIL then --卡牌角色详细
 		msg = msg_card_detail:new();
 	elseif idmsg == MSG_CARD_EQUIPMENT_DETAIL	 --卡版装备详细
@@ -268,6 +271,16 @@ function CreateMsg( idmsg )
 		msg = msg_player_update:new();
 	elseif idmsg == MSG_COLLECT_MATERIALLIST then--请求材料列表
 		msg = msg_collect_materiallist:new();
+	elseif idmsg == MSG_BATTLE_ITEM then
+		msg = msg_battle_item:new();
+	elseif idmsg == MSG_COLLECT_SELL then
+		msg = msg_collect_sell:new();
+	elseif idmsg == MSG_SETBATTLE_ITEM then
+		msg = msg_setbattleitem:new();
+	elseif idmsg == MSG_COLLECT_PICK then
+		msg = msg_collect_pick:new();
+	elseif idmsg == MSG_COLLECT_SYNTHESIS then
+		msg = msg_collect_synthesis:new();
 	end
 
 	

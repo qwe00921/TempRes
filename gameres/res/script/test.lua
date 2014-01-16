@@ -94,7 +94,7 @@ function p.test()
 	--n_battle_mgr.EnterBattle( N_BATTLE_PVE, 101011 );
 	--n_battle_mgr.EnterBattle( N_BATTLE_PVP, 10002 );
 --	--≤‚ ‘utf8◊”¥Æ
---	p.TestUtf8String();
+--	  p.TestUtf8String();
     
     --≤‚ ‘æÁ«È
 	--dlg_drama.ShowUI(2);
@@ -118,7 +118,7 @@ function p.test()
 end
 
 function p.testPost()
-	SendPost("command=Gacha&action=Start&user_id=112&gacha_id=2&charge_type=1&gacha_type=1&R=80&V=77&MachineType=WIN32");
+	SendPost("Team","GetTeamsInfo",122655,"&missionID=101061&result=1&money=0&soul=0","feawfeawfawefawefawe");
 end
 
 function p.testFly()

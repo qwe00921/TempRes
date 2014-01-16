@@ -524,14 +524,14 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_32);
 	cardMoney:SetText(tostring(p.consumeMoney)); 
 	
-	if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
-		local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
-		moneyLab:SetFontColor(ccc4(255,0,0,255));
-	end
-	if p.cardEnabled == true and tonumber(p.selectNum) >= 10 then 
+	--if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
+		--local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+		--moneyLab:SetFontColor(ccc4(255,0,0,255));
+	--end
+	if  tonumber(p.selectNum) >= 10 then 
 		p.setAllCardDisEnable();
 		p.cardEnabled = false;
-	elseif p.cardEnabled == false and tonumber(p.selectNum) < 10 then
+	elseif tonumber(p.selectNum) < 10 then
 		p.setCardDisEnable();
 		p.cardEnabled = true;
 	end
@@ -569,7 +569,14 @@ end
 function p.setCardDisEnable()
 	for i=1, #p.cardListNode do
 		local uiNode = p.cardListNode[i]
-		uiNode:SetEnabled(true);
+		for j=1,#p.cardListInfo do
+			if tonumber(p.cardListInfo[i].Item_id1) ~= 0 or tonumber(p.cardListInfo[i].Item_id2) ~= 0 then
+				uiNode:SetEnabled(false);
+			else
+				uiNode:SetEnabled(true);
+			end
+		end
+		
 	end
 end
 
@@ -585,6 +592,12 @@ function p.clearDate()
 	p.selectNum  = 0;
 	p.selectCardId = {};
 	p.setCardDisEnable();
+	p.consumeMoney = 0;
+	local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);
+	cardCount:SetText(tostring(p.selectNum).."/10"); 
+	
+	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_32);
+	cardMoney:SetText(tostring(p.consumeMoney)); 
 end
 
 --提示框回调方法
@@ -737,4 +750,7 @@ function p.ClearData()
 	p.selectCardId = {};
 	p.cardListInfo = nil;
 	p.cardListByProf = {};
+	consumeMoney = 0;
+	
+	
 end
