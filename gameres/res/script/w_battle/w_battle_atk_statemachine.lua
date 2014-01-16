@@ -144,6 +144,7 @@ function p:atk_startBuff()
 		if self.skillType == 2 then --加血类
 			local ldamage = (self.damageLst)[k];
 			tarFighter:AddShowLife(ldamage); --加血动画,及表示的血量减少				
+			tarFighter:AddLife(ldamage);
 		else
 			tarFighter:AddSkillBuff(self.skillID);
 		end;
@@ -285,6 +286,17 @@ function p:atk_end()
 			lisMoredamage = true;
 		end;
 		tarFighter:SubShowLife(ldamage); --掉血动画,及表示的血量减少	
+		if self.atkCampType == W_BATTLE_HERO then
+			if w_battle_mgr.LockEnemy ~= true then --未锁定,要更新血量
+				w_battle_pve.SetHp(tarFighter); --更新血量	
+			else
+				if tarFighter:GetId() == w_battle_mgr.PVEEnemyID then
+					w_battle_pve.SetHp(tarFighter); --更新血量	
+				end
+			end;	
+		else
+			w_battle_pve.SetHeroCardAttr(tarFighter:GetId(), tarFighter);
+		end;
 		
 		local lIsJoinAtk = self.joinAtkLst[k]
 		if lIsJoinAtk== true then

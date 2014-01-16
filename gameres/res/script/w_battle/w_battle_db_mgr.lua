@@ -23,7 +23,356 @@ p.rewardData = nil;
 p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
 
+p.enemyStepList = {
+	{
+	{
+	element = 1,
+	UniqueId= 10000721,
+	CardID= 10017,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 1,
+	Damage_type= 1,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 230,
+	maxHp= 240,
+	Attack= 30,
+	Defence= 1,
+	Speed= 26,
+	Skill= 1001,
+	Crit= 5,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 1,
+	Sp = 0,
+	maxSp = 100;
+	},
+	{
+	element = 2,
+	UniqueId= 10000722,
+	CardID= 10012,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 2,
+	Damage_type= 1,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 190,
+	maxHp= 200,
+	Attack= 30,
+	Defence= 2,
+	Speed= 23,
+	Skill= 1006,
+	Crit= 3,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 2,
+	Sp = 0,
+	maxSp = 100
+	},
 
+	{
+	element = 3,
+	UniqueId= 10000723,
+	CardID= 10021,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 3,
+	Damage_type= 2,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 190,
+	maxHp= 200,
+	Attack= 30,
+	Defence= 1,
+	Speed= 35,
+	Skill= 1008,
+	Crit= 12,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 3,
+	Sp = 0,
+	maxSp = 100,
+	},
+
+	{
+	element = 4,
+	Sp = 0,
+	maxSp = 100,
+	UniqueId= 10000724,
+	CardID= 10003,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 4,
+	Damage_type= 2,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 290,
+	maxHp= 300,
+	Attack= 30,
+	Defence= 2,
+	Speed= 32,
+	Skill= 1002,
+	Crit= 8,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 4
+	},
+	{
+	element = 0,
+	Sp = 0,
+	maxSp = 100,
+	UniqueId= 10000725,
+	CardID= 10022,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 5,
+	Damage_type= 2,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 1,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 290,
+	maxHp= 300,
+	Attack= 30,
+	Defence= 1,
+	Speed= 41,
+	Skill= 1003,
+	Crit= 10,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 5
+	}
+	},
+{
+	{
+	element = 1,
+	UniqueId= 10000721,
+	CardID= 10017,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 1,
+	Damage_type= 1,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 230,
+	maxHp= 240,
+	Attack= 30,
+	Defence= 1,
+	Speed= 26,
+	Skill= 1001,
+	Crit= 5,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 1,
+	Sp = 0,
+	maxSp = 100;
+	},
+	{
+	element = 2,
+	UniqueId= 10000722,
+	CardID= 10012,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 2,
+	Damage_type= 1,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 190,
+	maxHp= 200,
+	Attack= 30,
+	Defence= 2,
+	Speed= 23,
+	Skill= 1006,
+	Crit= 3,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 2,
+	Sp = 0,
+	maxSp = 100
+	},
+
+	{
+	element = 3,
+	UniqueId= 10000723,
+	CardID= 10021,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 3,
+	Damage_type= 2,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 190,
+	maxHp= 200,
+	Attack= 30,
+	Defence= 1,
+	Speed= 35,
+	Skill= 1008,
+	Crit= 12,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 3,
+	Sp = 0,
+	maxSp = 100,
+	},
+
+	{
+	element = 4,
+	Sp = 0,
+	maxSp = 100,
+	UniqueId= 10000724,
+	CardID= 10003,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 4,
+	Damage_type= 2,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 0,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 290,
+	maxHp= 300,
+	Attack= 30,
+	Defence= 2,
+	Speed= 32,
+	Skill= 1002,
+	Crit= 8,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 4
+	},
+	{
+	element = 0,
+	Sp = 0,
+	maxSp = 100,
+	UniqueId= 10000725,
+	CardID= 10022,
+	Level= 1,
+	Level_max= 0,
+	Race= 0,
+	Class= 5,
+	Damage_type= 2,
+	Exp= 0,
+	Time= 1386594904,
+	Bind= 0,
+	Team_marks= 1,
+	Rare= 1,
+	Rare_max= 0,
+	Hp= 290,
+	maxHp= 300,
+	Attack= 30,
+	Defence= 1,
+	Speed= 41,
+	Skill= 1003,
+	Crit= 10,
+	Item_Id1= 0,
+	Item_Id2= 0,
+	Item_Id3= 0,
+	Gem1= 0,
+	Gem2= 0,
+	Gem3= 0,
+	Price= 0,
+	Source= 0,
+	Position= 5
+	}
+}
+}
   
 p.playerCardList = {
 	{
@@ -199,6 +548,7 @@ p.playerCardList = {
 	Position= 5
 	}
 }
+
 
 p.targetCardList = {
 	{
@@ -385,8 +735,34 @@ p.Reward= {
 	story= 0
 }
 
+p.Drop = { {id=1,step=2,group_id=4},
+			{id=9,step=3,group_id=5},
+           }
+
+p.StepDrop = {}
+
 function p.nextStep()
-	
+	p.step = p.step + 1;
+	p.targetCardList = p.enemyStepList[p.step];
+	p.StepDrop = {};
+	if p.Drop ~= nil then
+		for i=1, #p.Drop do
+			local dropItem = p.Drop[i];
+			if dropItem.step == p.step then
+				p.StepDrop[#p.StepDrop + 1] = dropItem.group_id;
+			end;
+		end;
+	end;
+end;
+
+function p.initFighterDB(fighterInfo)
+	fighterInfo.maxHp = fighterInfo.Hp;
+	fighterInfo.maxSp = 100;
+	fighterInfo.Sp = 0;	
+	if fighterInfo.Position == nil then
+		fighterInfo.Position = fighterInfo.position;
+		fighterInfo.position = nil;
+	end;
 end;
 
 --初使化对战数据
@@ -394,21 +770,58 @@ function p.Init( battleDB )
     if battleDB == nil then
     	WriteConWarning( "battle db is nill!" );
     end
-   --[[
-	p.playerCardList = battleDB.fightinfo.Player;
-    p.targetCardList = battleDB.fightinfo.Target;
-    p.roundData = battleDB.fightinfo.RoundData;
-    p.battleResult = battleDB.fightinfo.BattleResult;
+
+	--携带的物品列表
+	p.ItemList = battleDB.fightinfo.Item;
+
+    --掉落的物品
+	p.Drop = battleDB.fightinfo.Drop;
+
+	--玩家列表
+	p.playerCardList = battleDB.fightinfo.Player; 
+	for i=1,#p.playerCardList do
+		p.initFighterDB(p.playerCardList[i]);
+	end;
+	
+	--怪物列表
+	p.maxStep = #(battleDB.fightinfo.Target);
+	p.enemyStepList = {}
+	for i=1,p.maxStep do
+	   local lTargetLst = battleDB.fightinfo.Target[i]; 
+	   local lenemyList = {}
+	   if lTargetLst.pos1 ~= nil then
+			p.initFighterDB(lTargetLst.pos1);
+			lenemyList[#lenemyList + 1] = lTargetLst.pos1
+	   end;
+	   if lTargetLst.pos2 ~= nil then
+			p.initFighterDB(lTargetLst.pos2);
+			lenemyList[#lenemyList + 1] = lTargetLst.pos2
+	   end;
+	   if lTargetLst.pos3 ~= nil then
+			p.initFighterDB(lTargetLst.pos3);
+			
+			lenemyList[#lenemyList + 1] = lTargetLst.pos3
+	   end;	
+	   if lTargetLst.pos4 ~= nil then
+			p.initFighterDB(lTargetLst.pos4);
+			lenemyList[#lenemyList + 1] = lTargetLst.pos4
+	   end;
+	   if lTargetLst.pos5 ~= nil then
+			p.initFighterDB(lTargetLst.pos5);
+			lenemyList[#lenemyList + 1] = lTargetLst.pos5
+	   end;
+	   if lTargetLst.pos6 ~= nil then
+			p.initFighterDB(lTargetLst.pos6);
+			lenemyList[#lenemyList + 1] = lTargetLst.pos6
+	   end;	
+	   p.enemyStepList[i] = lenemyList;
+	end
+	
+	p.step = 0;
+	p.nextStep();
+	--p.targetCardList = enemyStepList[p.step];
+   
     
-    p.playerPetList = battleDB.fightinfo.PlayerPet; 
-    p.targetPetList = battleDB.fightinfo.TargetPet;
-    p.roundPetData = battleDB.fightinfo.PetRoundData;
-    
-    p.roundBuffData = battleDB.fightinfo.BuffList;
-    p.roundBuffEffectData = battleDB.fightinfo.BuffEffect;
-    p.rewardData = battleDB.fightinfo.Reward;
-]]--
-    --dump_obj( p.playerPetList );
 end
 
 --获取指定回合对战数据

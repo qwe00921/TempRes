@@ -181,6 +181,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
         card_battle_mgr.UpdateTeamRage( fighter.camp, num );
 	elseif cmdtype == "equip_rein_effect" then
 		equip_rein_result.equip_rein_effect_finish();
+	elseif cmdtype == "PickEnd" then
+		w_battle_mgr.PickItem( id, num );
 	else
 		--
 	end

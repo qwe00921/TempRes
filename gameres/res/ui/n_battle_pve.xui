@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -9,6 +9,8 @@ Tag=82
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_BG1]
 Type=1
@@ -16,6 +18,8 @@ Tag=217
 Rect=0 828 640 400
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg2.png
 NormalFileUV=0 0 640 338
 
@@ -25,6 +29,8 @@ Tag=6
 Rect=127 136 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LEFT_SPRITE_2]
 Type=19
@@ -32,6 +38,8 @@ Tag=5
 Rect=105 230 70 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LEFT_SPRITE_3]
 Type=19
@@ -39,6 +47,8 @@ Tag=2
 Rect=130 325 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LEFT_SPRITE_4]
 Type=19
@@ -46,6 +56,8 @@ Tag=3
 Rect=31 136 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LEFT_SPRITE_5]
 Type=19
@@ -53,6 +65,8 @@ Tag=4
 Rect=11 230 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_CENTER]
 Type=1
@@ -60,6 +74,8 @@ Tag=12
 Rect=290 244 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LEFT_SPRITE_6]
 Type=19
@@ -67,6 +83,8 @@ Tag=16
 Rect=34 325 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM1]
 Type=2
@@ -77,6 +95,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM2]
 Type=2
@@ -87,6 +107,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM3]
 Type=2
@@ -97,6 +119,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM4]
 Type=2
@@ -107,6 +131,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM5]
 Type=2
@@ -117,6 +143,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_70]
 Type=1
@@ -124,6 +152,8 @@ Tag=70
 Rect=3 832 125 125
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_71]
 Type=1
@@ -131,6 +161,8 @@ Tag=71
 Rect=130 832 125 125
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_72]
 Type=1
@@ -138,6 +170,8 @@ Tag=72
 Rect=257 832 125 125
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_73]
 Type=1
@@ -145,6 +179,8 @@ Tag=73
 Rect=384 832 125 125
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_74]
 Type=1
@@ -152,6 +188,8 @@ Tag=74
 Rect=511 832 125 125
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_75]
 Type=2
@@ -162,6 +200,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
@@ -171,6 +211,8 @@ Tag=84
 Rect=457 20 50 50
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\material_thum.png
 NormalFileUV=0 0 102 102
 
@@ -186,6 +228,8 @@ TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_328]
 Type=1
@@ -193,6 +237,8 @@ Tag=328
 Rect=13 929 107 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -202,6 +248,8 @@ Tag=329
 Rect=140 929 107 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -211,6 +259,8 @@ Tag=330
 Rect=267 929 107 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -220,6 +270,8 @@ Tag=331
 Rect=394 929 107 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -229,6 +281,8 @@ Tag=332
 Rect=521 929 107 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -241,6 +295,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM2]
 Type=4
@@ -251,6 +307,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM3]
 Type=4
@@ -261,6 +319,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM4]
 Type=4
@@ -271,6 +331,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM5]
 Type=4
@@ -281,6 +343,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_338]
 Type=1
@@ -288,6 +352,8 @@ Tag=338
 Rect=2 833 126 127
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -297,6 +363,8 @@ Tag=339
 Rect=129 833 126 127
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -306,6 +374,8 @@ Tag=340
 Rect=256 833 126 127
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -315,6 +385,8 @@ Tag=341
 Rect=383 833 126 127
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -324,6 +396,8 @@ Tag=342
 Rect=511 833 126 127
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -336,6 +410,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -345,13 +421,15 @@ Tag=209
 Rect=-27 434 693 48
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
 [CTRL_TEXT_365]
 Type=4
 Tag=365
-Rect=14 417 107 26
+Rect=48 417 107 26
 AnchorPos=0 0
 Notes=
 Text=目标名字
@@ -359,6 +437,19 @@ TextTradition=目標名字
 TextSize=21
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_140]
+Type=1
+Tag=145
+Rect=20 420 24 24
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\nature1.png
+NormalFileUV=0 0 24 24
 
 [CTRL_PICTURE_IMPORTANT]
 Type=1
@@ -366,6 +457,8 @@ Tag=121
 Rect=0 0 638 958
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -375,6 +468,8 @@ Tag=11
 Rect=559 230 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_RIGHT_SPRITE_4]
 Type=19
@@ -382,6 +477,8 @@ Tag=10
 Rect=540 136 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_RIGHT_SPRITE_3]
 Type=19
@@ -389,6 +486,8 @@ Tag=7
 Rect=440 325 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_RIGHT_SPRITE_2]
 Type=19
@@ -396,6 +495,8 @@ Tag=8
 Rect=466 230 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_RIGHT_SPRITE_1]
 Type=19
@@ -403,6 +504,8 @@ Tag=9
 Rect=444 136 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_RIGHT_SPRITE_6]
 Type=19
@@ -410,6 +513,8 @@ Tag=18
 Rect=536 325 71 90
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_62]
 Type=1
@@ -417,6 +522,8 @@ Tag=62
 Rect=0 477 641 350
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg2.png
 NormalFileUV=0 0 640 338
 
@@ -429,6 +536,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_64]
 Type=2
@@ -439,6 +548,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_65]
 Type=2
@@ -449,6 +560,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_66]
 Type=2
@@ -459,6 +572,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_67]
 Type=2
@@ -469,6 +584,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_68]
 Type=2
@@ -479,6 +596,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_CHA1]
 Type=1
@@ -486,6 +605,8 @@ Tag=76
 Rect=8 481 103 103
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_CHA4]
 Type=1
@@ -493,6 +614,8 @@ Tag=77
 Rect=329 481 103 103
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_CHA2]
 Type=1
@@ -500,6 +623,8 @@ Tag=78
 Rect=8 600 103 103
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_CHA5]
 Type=1
@@ -507,6 +632,8 @@ Tag=79
 Rect=329 599 103 103
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_CHA3]
 Type=1
@@ -514,6 +641,8 @@ Tag=80
 Rect=8 716 103 103
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_CHA6]
 Type=1
@@ -521,6 +650,8 @@ Tag=81
 Rect=329 717 103 103
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME1]
 Type=4
@@ -533,6 +664,8 @@ TextTradition=一二三四五六七
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME4]
 Type=4
@@ -545,6 +678,8 @@ TextTradition=一二三四五六七
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME2]
 Type=4
@@ -557,6 +692,8 @@ TextTradition=一二三四五六七
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME5]
 Type=4
@@ -569,6 +706,8 @@ TextTradition=一二三四五六七
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME3]
 Type=4
@@ -581,6 +720,8 @@ TextTradition=一二三四五六七
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME6]
 Type=4
@@ -593,6 +734,8 @@ TextTradition=一二三四五六七
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_90]
 Type=4
@@ -605,6 +748,8 @@ TextTradition=HP
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_91]
 Type=4
@@ -617,6 +762,8 @@ TextTradition=HP
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_92]
 Type=4
@@ -629,6 +776,8 @@ TextTradition=HP
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_93]
 Type=4
@@ -641,6 +790,8 @@ TextTradition=HP
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_94]
 Type=4
@@ -653,6 +804,8 @@ TextTradition=HP
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_95]
 Type=4
@@ -665,6 +818,8 @@ TextTradition=HP
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP1]
 Type=4
@@ -677,6 +832,8 @@ TextTradition=99999/99999
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP4]
 Type=4
@@ -689,6 +846,8 @@ TextTradition=99999/99999
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP2]
 Type=4
@@ -701,6 +860,8 @@ TextTradition=99999/99999
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP5]
 Type=4
@@ -713,6 +874,8 @@ TextTradition=99999/99999
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP6]
 Type=4
@@ -725,6 +888,8 @@ TextTradition=99999/99999
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_HP3]
 Type=4
@@ -737,6 +902,8 @@ TextTradition=99999/99999
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_HP1]
 Type=9
@@ -747,6 +914,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -759,6 +928,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -771,6 +942,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -785,6 +958,8 @@ TextTradition=sp
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_HP5]
 Type=9
@@ -795,6 +970,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -807,6 +984,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -819,6 +998,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -831,6 +1012,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -845,6 +1028,8 @@ TextTradition=sp
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_SP6]
 Type=9
@@ -855,6 +1040,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -869,6 +1056,8 @@ TextTradition=sp
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_SP2]
 Type=9
@@ -879,6 +1068,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -893,6 +1084,8 @@ TextTradition=sp
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_SP5]
 Type=9
@@ -903,6 +1096,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -917,6 +1112,8 @@ TextTradition=sp
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_SP1]
 Type=9
@@ -927,6 +1124,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -941,6 +1140,8 @@ TextTradition=sp
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_SP4]
 Type=9
@@ -951,6 +1152,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -960,6 +1163,8 @@ Tag=195
 Rect=105 520 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -969,6 +1174,8 @@ Tag=196
 Rect=425 520 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -978,6 +1185,8 @@ Tag=197
 Rect=425 555 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -987,6 +1196,8 @@ Tag=198
 Rect=105 555 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -996,6 +1207,8 @@ Tag=199
 Rect=105 638 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1005,6 +1218,8 @@ Tag=200
 Rect=105 672 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1014,6 +1229,8 @@ Tag=201
 Rect=426 638 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1023,6 +1240,8 @@ Tag=202
 Rect=426 673 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1032,6 +1251,8 @@ Tag=203
 Rect=106 756 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1041,6 +1262,8 @@ Tag=204
 Rect=106 793 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1050,6 +1273,8 @@ Tag=205
 Rect=425 756 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1059,6 +1284,8 @@ Tag=206
 Rect=425 793 193 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rage_bg1.png
 NormalFileUV=0 0 202 22
 
@@ -1068,6 +1295,8 @@ Tag=211
 Rect=115 482 26 26
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
@@ -1077,6 +1306,8 @@ Tag=212
 Rect=436 483 26 26
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NATURE2]
 Type=1
@@ -1084,6 +1315,8 @@ Tag=213
 Rect=115 601 26 26
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NATURE5]
 Type=1
@@ -1091,6 +1324,8 @@ Tag=214
 Rect=436 601 26 26
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NATURE3]
 Type=1
@@ -1098,6 +1333,8 @@ Tag=215
 Rect=115 719 26 26
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NATURE6]
 Type=1
@@ -1105,6 +1342,8 @@ Tag=216
 Rect=435 719 26 26
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_157]
 Type=1
@@ -1112,6 +1351,8 @@ Tag=157
 Rect=80 485 26 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
 NormalFileUV=0 0 41 67
 
@@ -1121,6 +1362,8 @@ Tag=158
 Rect=80 602 26 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
 NormalFileUV=0 0 41 67
 
@@ -1130,6 +1373,8 @@ Tag=159
 Rect=80 719 26 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
 NormalFileUV=0 0 41 67
 
@@ -1139,6 +1384,8 @@ Tag=160
 Rect=400 485 26 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
 NormalFileUV=0 0 41 67
 
@@ -1148,6 +1395,8 @@ Tag=161
 Rect=400 602 26 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
 NormalFileUV=0 0 41 67
 
@@ -1157,6 +1406,8 @@ Tag=162
 Rect=400 720 26 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
 NormalFileUV=0 0 41 67
 
@@ -1166,6 +1417,8 @@ Tag=127
 Rect=-1 474 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -1175,6 +1428,8 @@ Tag=128
 Rect=0 592 319 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -1184,6 +1439,8 @@ Tag=129
 Rect=0 709 319 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -1193,6 +1450,8 @@ Tag=130
 Rect=319 474 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -1202,6 +1461,8 @@ Tag=131
 Rect=319 592 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -1211,6 +1472,8 @@ Tag=132
 Rect=319 709 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -1220,6 +1483,8 @@ Tag=172
 Rect=6 832 628 628
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -1232,6 +1497,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_TARGET2]
 Type=2
@@ -1242,6 +1509,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_TARGET3]
 Type=2
@@ -1252,6 +1521,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_TARGET4]
 Type=2
@@ -1262,6 +1533,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_TARGET5]
 Type=2
@@ -1272,6 +1545,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_TARGET6]
 Type=2
@@ -1282,6 +1557,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_TARGET1]
 Type=1
@@ -1289,6 +1566,8 @@ Tag=139
 Rect=175 170 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
 NormalFileUV=0 0 66 66
 
@@ -1298,6 +1577,8 @@ Tag=140
 Rect=155 261 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
 NormalFileUV=0 0 66 66
 
@@ -1307,6 +1588,8 @@ Tag=141
 Rect=180 358 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
 NormalFileUV=0 0 66 66
 
@@ -1316,6 +1599,8 @@ Tag=142
 Rect=80 171 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
 NormalFileUV=0 0 66 66
 
@@ -1325,6 +1610,8 @@ Tag=143
 Rect=60 261 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
 NormalFileUV=0 0 66 66
 
@@ -1334,5 +1621,7 @@ Tag=144
 Rect=84 355 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
 NormalFileUV=0 0 66 66

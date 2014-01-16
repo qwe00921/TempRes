@@ -419,6 +419,7 @@ function p:AddFighters( uiArray, fighters )
 		f.Crit	   = tonumber (fighterInfo.Crit);
 		f.Skill	   = tonumber (fighterInfo.Skill);
 		f.element  = tonumber (fighterInfo.element);
+		f.CardID   = tonumber (fighterInfo.CardID);
         f.buffList = {};
          
 		--临时攻击力调整
@@ -428,7 +429,7 @@ function p:AddFighters( uiArray, fighters )
 				
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
-		f.Hp = f.Hp - 10;
+		--f.Hp = f.Hp - 10;
 		f.nowlife = f.Hp;
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();
