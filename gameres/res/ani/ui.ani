@@ -139,6 +139,10 @@ image\ui\public\money.png
 [emoney]
 image\ui\public\emoney.png
 
+;À¶»ê
+[soul]
+image\ui\public\soul.png
+
 ;ÒÆ³ý
 [card_edit_remove]
 image\ui\main_interface\clear.png

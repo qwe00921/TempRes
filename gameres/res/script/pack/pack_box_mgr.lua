@@ -116,7 +116,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		SendReq("Item","UseQuickItem",uid,param);
 	elseif itemId == 3001 then
 		SendReq("Item","UseStorageItem",uid,param);
-	elseif itemType == 5 then
+	elseif itemType == 7 then
 		local itemTable = p.GetItemByID( itemUniqueId );
 		if itemTable then
 			local level_limit = tonumber(itemTable.Level_limit) or 0;
@@ -128,7 +128,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 			end
 		end
 		SendReq("Item","UseGiftItem",uid,param);
-	elseif itemType == 6 then
+	elseif itemType == 8 then
 		SendReq("Item","UseTreasureItem",uid,param);
 	else
 		WriteConErr("used item id error ");

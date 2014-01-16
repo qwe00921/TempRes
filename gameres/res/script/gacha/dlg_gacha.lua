@@ -815,18 +815,30 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	local itemType = tonumber(item.Item_type);
 	local itemUniqueId = tonumber(item.id);
 	local itemTable = nil;
-	if itemType == 1 or  itemType == 2 or itemType == 3 then
+	if itemType == 2 then
 		itemTable = SelectRowInner(T_EQUIP,"id",item_id);
-	elseif itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
+	--elseif itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
+	else
 		itemTable = SelectRowInner(T_ITEM,"id",item_id);
 	end
 	if itemTable == nil then
 		WriteConErr("itemTable error ");
 	end
+	
+	local aniIndex = "item."..item_id;
+	if rtype == 2 then
+			aniIndex = "card_icon."..item_id;
+	elseif rtype == 4 then
+			aniIndex = "ui.emoney"
+	elseif rtype == 6 then
+			aniIndex = "ui.money"
+	elseif rtype == 5 then
+			aniIndex = "ui.soul"
+	end
 
 	--显示物品图片
 	local itemButton = GetButton(view, itemBtn);
-    itemButton:SetImage( GetPictureByAni(itemTable.item_pic,0) );
+    itemButton:SetImage( GetPictureByAni(aniIndex,0) );
 	itemButton:SetId(item_id);
     itemButton:SetUID(itemUniqueId);
 	itemButton:SetXID(itemType);
@@ -851,7 +863,7 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	--显示数量背景
 		local numBgPic = GetImage(view,numBg);
 		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
-	elseif itemType == 1 or itemType == 2 or itemType == 3 then 
+	elseif itemType == 3 then 
 		--装备，显示星级
 		-- equipStarPic:SetVisible(true);
 		-- local starNum = tonumber(item.Rare);
@@ -1024,7 +1036,7 @@ function p.OnBagItemClickEvent(uiNode, uiEventType, param)
 	local itemUniqueId = uiNode:GetUID();
 	local itemType = uiNode:GetXID();
 
-	if itemType == 1 or itemType == 2 or itemType == 3 then
+	if itemType == 3 then
 		pack_box_equip.ShowEquip(itemId,itemUniqueId,itemType);
 		local useBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_USE);
 		useBtn:SetVisible(false);
