@@ -35,7 +35,7 @@ function p:Process()
 	dlg_gacha.RequestCallBack();
 	if self.result then
 		dlg_gacha_result.ShowUI(self);
-		dlg_gacha.UpdateRmb( self.emoney );
+--		dlg_gacha.UpdateRmb( self.emoney );
 	else
 		dlg_msgbox.ShowOK( ToUtf8("ÌבÊ¾"), self.message, nil, dlg_gacha.layer );
 	end
