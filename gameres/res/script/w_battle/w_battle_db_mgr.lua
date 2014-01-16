@@ -61,7 +61,7 @@ p.playerCardList = {
 	maxSp = 100;
 	},
 	{
-	element = 1,
+	element = 2,
 	UniqueId= 10000722,
 	CardID= 10012,
 	Level= 1,
@@ -96,7 +96,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 1,
+	element = 3,
 	UniqueId= 10000723,
 	CardID= 10021,
 	Level= 1,
@@ -131,7 +131,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 1,
+	element = 4,
 	Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000724,
@@ -202,7 +202,7 @@ p.playerCardList = {
 
 p.targetCardList = {
 	{
-	element = 0,
+	element = 1,
 	UniqueId= 7,
 	CardID= 10012,
 	Level= 10,
@@ -229,7 +229,7 @@ p.targetCardList = {
 	},	
 	
 	{
-	element = 0,
+	element = 2,
 	UniqueId= 3,
 	CardID= 10003,
 	Level= 10,
@@ -255,7 +255,7 @@ p.targetCardList = {
 	Position= 2
 	},
 	{
-	element = 0,
+	element = 3,
 	UniqueId= 4,
 	CardID= 10004,
 	Level= 10,
@@ -281,7 +281,7 @@ p.targetCardList = {
 	Position= 3
 	},
 	{
-	element = 0,
+	element = 4,
 	UniqueId= 5,
 	CardID= 10005,
 	Level= 10,
@@ -333,7 +333,7 @@ p.targetCardList = {
 	Position= 5
 	},
 	{
-	element = 4,
+	element = 5,
 	UniqueId= 2,
 	CardID= 10001,
 	Level= 10,

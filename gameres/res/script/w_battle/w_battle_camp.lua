@@ -97,12 +97,12 @@ function p:GetElementFighter(pAtkFighter)
 	return lLst;
 end;
 
---传入受击者,获得哪些攻击有属性加成
+--传入受击者,获得哪些攻击有属性加成的位置
 function p:GetElementAtkFighter(pTarFighter)
 	local lLst = {}
 	for k,v in ipairs(self.fighters) do
 		if (v.nowlife > 0) and (w_battle_atkDamage.IsElement(v,pTarFighter) == true) then
-			table.insert(lLst,v);
+			table.insert(lLst,v:GetId());
 		end;
 	end;
 	return lLst;
