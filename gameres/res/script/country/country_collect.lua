@@ -421,6 +421,10 @@ end
 --增加拾取操作队列
 function p.Collect( collectType )
 	WriteCon( tostring(collectType) );
+	
+	--有采集操作，等待post
+	SetWaitForPost( p.SendCollectMsg );
+	
 	if E_COLLECT_MOUNTAIN == collectType then
 		table.insert( p.collectList, 1, "CollectMountain" );
 	elseif E_COLLECT_TREE == collectType then
@@ -451,7 +455,7 @@ function p.SendCollectMsg()
 	
 	local uid = GetUID();
 	if uid == nil or uid == 0 then
-		return;
+		return false;
 	end
 	
 	local str = FormatTableToJson( p.collectResult );
@@ -464,11 +468,13 @@ end
 
 --==================================================================--
 --发送采集结果消息回调
-function p.SendResultCallBack()
+function p.SendResultCallBack( bFlag )
 	p.SendToServer = false;
-	p.collectResult = {};
+	if bFlag then
+		p.collectResult = {};
+	end
 	
 	--材料仓库请求数据
-	country_storage.RequestData();
+	--country_storage.RequestData();
 end
 --==================================================================--

@@ -356,7 +356,7 @@ function p.CloseUI()
 		p.layer:LazyClose();
 		p.layer = nil;
 		p.ClearData()
-		dlg_userinfo.ShowUI();
+		--dlg_userinfo.ShowUI();
 		--dlg_menu.ShowUI();
 	end
 end
@@ -370,4 +370,9 @@ function p.ClearData()
 end
 function p.UIDisappear()
 	p.CloseUI();
+	maininterface.BecomeFirstUI();
+	maininterface.CloseAllPanel();
+	
+	--注销采集倒计时
+	country_collect.EndTick();
 end

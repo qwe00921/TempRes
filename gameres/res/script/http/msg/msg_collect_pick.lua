@@ -23,10 +23,12 @@ end
 function p:Process()
 	WriteConWarning( "** msg_collect_pick:Process() called" );
 	
+	PostBack();
 	if self.result then
-		country_collect.SendResultCallBack();
+		country_collect.SendResultCallBack( true );
 	else
-		dlg_msgbox.ShowOK( ToUtf8("提示") , self.message , nil, country_main.layer );
+		--dlg_msgbox.ShowOK( ToUtf8("提示") , self.message , nil, country_main.layer );
+		country_collect.SendResultCallBack( false );
 	end
 end
 

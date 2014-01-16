@@ -58,10 +58,10 @@ function p.ShowUI()
 	--³õÊ¼»¯¿Ø¼þ
 	p.InitController();
 	
-	local flag = country_collect.SendCollectMsg();
-	if not flag then
-		p.RequestData();
-	end
+--	local flag = country_collect.SendCollectMsg();
+--	if not flag then
+	p.RequestData();
+--	end
 	local user = msg_cache.msg_player;
 	dlg_userinfo.ShowUI( user );
 end
