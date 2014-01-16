@@ -495,3 +495,19 @@ function p:RemoveBuff(effect_type)
 	end
 end;
 
+function p:UseHpBall()
+	local addHp = self.maxHp * 5/100;
+	self.Hp = self.Hp +addHp;
+	if self.Hp > self.maxHp then
+		self.Hp = self.maxHp;
+	end
+	self.nowlife = self.Hp;
+end;
+
+function p:UseSpBall()
+	self.Sp = self.Sp + 5;
+	if Self.Sp > self.maxSp then
+		Self.Sp = Self.maxSp;
+	end
+end;
+

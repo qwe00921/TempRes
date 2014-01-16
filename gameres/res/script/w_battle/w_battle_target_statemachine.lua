@@ -139,11 +139,12 @@ function p:tar_hurtEnd()
 				
 			end;
 			
-			--self:reward(); --»ñµÃ½±Àø
+			--[[
 			if targerFighter.m_kShadow ~= nil then
 				local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
 				self.seqTarget:AddCommand( cmdf );
 			end;
+			]]--
 			local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.die" );
 			self.seqTarget:AddCommand( cmdC );				
 			--local batch = battle_show.GetNewBatch(); 
