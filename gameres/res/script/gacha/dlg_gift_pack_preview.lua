@@ -73,7 +73,7 @@ function p.Init( item )
 			--local itemid = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id" ..i) );
 			--local itemnum = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num" ..i) );
 			local itemtype = itemList[i][1];
-			local itemid = itemList[i][2];
+			local itemid = tostring(itemList[i][2]);
 			local itemnum = itemList[i][3];
 			
 			--WriteCon( "aaa"..tostring(itemtype) .. " "..tostring(itemid).. " "..tostring(itemnum));
@@ -82,19 +82,22 @@ function p.Init( item )
 				--显示名字
 				local itemname;
 				local pictureData;
-				if itemtype == 1 then
+				if itemtype == 2 then
 					itemname = SelectCell( T_CARD, itemid, "name" );
 					pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "head_pic" ), 0 );
 					--pictureData = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id" , itemid, "card_pic" ), 0 );
-				elseif itemtype == 2 then
+				elseif itemtype == 1 then
 					itemname = SelectCell( T_ITEM, itemid, "name" );
 					pictureData = GetPictureByAni( SelectCell( T_ITEM, itemid, "item_pic" ), 0 );
-				elseif itemtype == 3 then
+				elseif itemtype == 6 then
 					itemname = ToUtf8("宝石");
 					pictureData = GetPictureByAni( "item.item_emoney", 0 );
 				elseif itemtype == 4 then
 					itemname = ToUtf8("金币");
 					pictureData = GetPictureByAni( "item.item_money", 0 );
+				else
+					itemname = SelectCell( T_ITEM, itemid, "name" );
+					pictureData = GetPictureByAni( SelectCell( T_ITEM, itemid, "item_pic" ), 0 );
 				end
 				
 				--local itemname = SelectCell( T_ITEM, itemid, "name" );

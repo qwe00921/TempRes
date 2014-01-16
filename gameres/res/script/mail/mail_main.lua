@@ -519,18 +519,24 @@ function p.SetItemInfo4Sys( view, item )
 		local picV = GetImage(view,ui_item_sys[picTagName]);
 		
 		if stRe == p.MAIL_REWARD_UNGET and picV and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 and rewrad.rewordType then
-			--rewrad.rewordId = "10002";
+			rewrad.rewordId = "10002";
 			local rtype = tonumber(rewrad.rewordType);
 			local aniIndex = "item."..rewrad.rewordId;
-			if rtype == 2  or rtype == 3 then
+			if rtype == 2 then
 				aniIndex = "card_icon."..rewrad.rewordId;
 			elseif rtype == 4 then
 				aniIndex = "ui.emoney"
-			elseif rtype == 5 then
+			elseif rtype == 6 then
 				aniIndex = "ui.money"
+			elseif rtype == 5 then
+				aniIndex = "ui.soul"
 			end
-			
-			picV:SetPicture( GetPictureByAni(aniIndex,0) );
+			--local aniIndex = p.GetPicAni(rewrad.rewordType, rewrad.rewordId);
+			if aniIndex then
+				picV:SetPicture( GetPictureByAni(aniIndex,0) );
+			else
+				picV:SetPicture(nil);
+			end 
 			
 		else
 			picV:SetVisible(false);
@@ -816,23 +822,25 @@ function p.GetNetResultError(msg)
 	local str = nil;
 	if msg and msg.callback_msg and msg.callback_msg.msg_id then
 		local errCode = tonumber(msg.callback_msg.msg_id);
-		
-		if errCode == p.NET_CODE_LEVEL_NOT_ENOUGH then
-			str = GetStr("mail_result_level_not_enough");
-		elseif errCode == p.NET_CODE_REWARD_NOT_GOT then
-			str = GetStr("mail_result_reward_not_got");
-		elseif errCode == p.NET_CODE_MAIL_NOT_EXIST then
-			str = GetStr("mail_result_mail_not_exist");
-		elseif errCode == p.NET_CODE_NO_USER_OR_MAIL_TYPE or errCode == p.NET_CODE_RECEIVER_NOT_EXIST then
-			str = GetStr("mail_result_reciever_not_exist");
-		elseif errCode == p.NET_CODE_REWARD_HAS_BEEN_TOKEN then
-			str = GetStr("mail_result_has_been_gained");
-		elseif errCode == p.NET_CODE_NO_REWARD then
-			str = GetStr("mail_result_no_reward");
-		elseif errCode == p.NET_CODE_NO_ENOUGH_ITEM_SPACE then
-			str = GetStr("mail_result_no_enough_space");
-		else
-			str = msg.callback_msg.msg.."("..msg.callback_msg.msg_id..")";
+		str = GetStr("mail_reslut_err_" .. msg.callback_msg.msg_id);
+		if str == nil then
+			if errCode == p.NET_CODE_LEVEL_NOT_ENOUGH then
+				str = GetStr("mail_result_level_not_enough");
+			elseif errCode == p.NET_CODE_REWARD_NOT_GOT then
+				str = GetStr("mail_result_reward_not_got");
+			elseif errCode == p.NET_CODE_MAIL_NOT_EXIST then
+				str = GetStr("mail_result_mail_not_exist");
+			elseif errCode == p.NET_CODE_NO_USER_OR_MAIL_TYPE or errCode == p.NET_CODE_RECEIVER_NOT_EXIST then
+				str = GetStr("mail_result_reciever_not_exist");
+			elseif errCode == p.NET_CODE_REWARD_HAS_BEEN_TOKEN then
+				str = GetStr("mail_result_has_been_gained");
+			elseif errCode == p.NET_CODE_NO_REWARD then
+				str = GetStr("mail_result_no_reward");
+			elseif errCode == p.NET_CODE_NO_ENOUGH_ITEM_SPACE then
+				str = GetStr("mail_result_no_enough_space");
+			else
+				str = msg.callback_msg.msg.."("..msg.callback_msg.msg_id..")";
+			end
 		end
 	end
 	
@@ -849,6 +857,33 @@ function p.UIDisappear()
 --	dlg_battlearray.ShowUI();
 end
 
+
+--[[
+function p.GetPicAni(iType, iId)
+	
+	iType = tonumber(iType);
+	local aniIndex = nil;
+	
+	if iType == 1 then
+		aniIndex = SelectCell( T_MATERIAL, tostring(iId), "head_pic" );
+	elseif iType == 2 then
+		aniIndex = SelectCell( T_CHAR_RES, tostring(iId), "head_pic" ); 
+	elseif iType == 3 then
+		local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(iId)); 
+		if pEquipInfo then
+			aniIndex = pEquipInfo.item_pic;
+		end
+	elseif iType == 4 then
+		aniIndex = "ui.emoney"
+	elseif iType == 5 then
+		aniIndex = "ui.money"6
+	else 
+		aniIndex = SelectCell( T_ITEM, tostring(iId), "item_pic" ); 
+	end
+	return aniIndex;
+end
+
+]]--
 
 
 

@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -10,6 +10,8 @@ Rect=0 184 640 445
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_frame2.png
 NormalFileUV=0 0 640 376
 
@@ -19,12 +21,12 @@ Tag=2
 Rect=150 208 339 40
 AnchorPos=0 0
 Notes=
-Text=礼包内容预览
-TextTradition=禮包內容預覽
 TextSize=35
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_OK]
 Type=2
@@ -35,6 +37,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui\public\button_click.png
@@ -46,6 +50,8 @@ Tag=4
 Rect=273 566 76 40
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\ok.png
 NormalFileUV=0 0 76 40
 
@@ -55,6 +61,8 @@ Tag=5
 Rect=64 273 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_6]
 Type=1
@@ -62,6 +70,8 @@ Tag=6
 Rect=355 273 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_7]
 Type=1
@@ -69,6 +79,8 @@ Tag=7
 Rect=64 366 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_8]
 Type=1
@@ -76,6 +88,8 @@ Tag=8
 Rect=355 366 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_9]
 Type=1
@@ -83,6 +97,8 @@ Tag=9
 Rect=64 458 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_10]
 Type=1
@@ -90,6 +106,8 @@ Tag=10
 Rect=355 458 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME1]
 Type=4
@@ -97,12 +115,12 @@ Tag=11
 Rect=155 278 160 30
 AnchorPos=0 0
 Notes=
-Text=我是道具名称
-TextTradition=我是道具名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME2]
 Type=4
@@ -110,12 +128,12 @@ Tag=16
 Rect=445 278 160 30
 AnchorPos=0 0
 Notes=
-Text=我是道具名称
-TextTradition=我是道具名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME3]
 Type=4
@@ -123,25 +141,25 @@ Tag=17
 Rect=155 373 160 30
 AnchorPos=0 0
 Notes=
-Text=我是道具名称
-TextTradition=我是道具名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME4]
 Type=4
 Tag=18
-Rect=445 373 160 30
+Rect=443 372 160 30
 AnchorPos=0 0
 Notes=
-Text=我是道具名称
-TextTradition=我是道具名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME5]
 Type=4
@@ -149,12 +167,12 @@ Tag=19
 Rect=155 463 160 30
 AnchorPos=0 0
 Notes=
-Text=我是道具名称
-TextTradition=我是道具名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME6]
 Type=4
@@ -162,12 +180,12 @@ Tag=20
 Rect=445 463 160 30
 AnchorPos=0 0
 Notes=
-Text=我是道具名称
-TextTradition=我是道具名稱
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_21]
 Type=4
@@ -181,6 +199,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_22]
 Type=4
@@ -194,6 +214,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_23]
 Type=4
@@ -207,6 +229,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_24]
 Type=4
@@ -220,6 +244,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_25]
 Type=4
@@ -233,6 +259,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_26]
 Type=4
@@ -246,6 +274,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM1]
 Type=4
@@ -257,6 +287,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM2]
 Type=4
@@ -268,6 +300,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM3]
 Type=4
@@ -279,6 +313,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM4]
 Type=4
@@ -290,6 +326,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM5]
 Type=4
@@ -301,6 +339,8 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM6]
 Type=4
@@ -312,3 +352,5 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

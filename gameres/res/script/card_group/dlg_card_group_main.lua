@@ -317,6 +317,8 @@ function p.SetTeamInfo( view, user_teamData )
 					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",4));
 				elseif tonumber(data.element) == 6 then
 					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
+				else
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
 				end
 			end
 			 
@@ -334,7 +336,7 @@ function p.SetTeamInfo( view, user_teamData )
 			--cardBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
 			--cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
 			--cardBtn:SetVisible( false );
-			
+			pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
 			levLabel:SetVisible( false );
 			pic:SetVisible( false );
 			hpLabel:SetVisible( false );
