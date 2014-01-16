@@ -243,7 +243,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	else
 		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", pCardInfo.Level);
 	end		
-	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money;	
+	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money + tonumber(pCardInfo.Level)*tonumber(pCardInfo.Level);	
 			
 	p.addExp = p.addExp + lCardInfo.feedBase_exp + lCardLeveInfo.feed_exp;
 	
@@ -341,24 +341,34 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
-			local param = "";
-			for k,v in pairs(p.selectCardId) do
-				if k == #p.selectCardId then
-					param = param..tostring(v);
-				else
-					param = param..tostring(v)..",";
-				end
-			end
-			if param ~= "" then
-				p.OnSendReqIntensify(param);
+			if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_money"),p.OnMsgCallback,p.layer);
 			else
-				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
-			end;
+				local param = "";
+				for k,v in pairs(p.selectCardId) do
+					if k == #p.selectCardId then
+						param = param..tostring(v);
+					else
+						param = param..tostring(v)..",";
+					end
+				end
+				if param ~= "" then
+					p.OnSendReqIntensify(param);
+				else
+					dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
+				end;
+			end
+			
+			
 		
 		end;
 	end
 end		
+
+function p.OnMsgCallback()
 	
+end
+
 function p.OnSendReqIntensify(msg)
 	local uid = GetUID();
 	--uid = 10002;

@@ -186,7 +186,7 @@ function p.SetDelegate()
 	local pLabCardUpExp = GetLabel(p.layer,ui.ID_CTRL_TEXT_LEVELUPEXP);
 	
 	local upExp = tonumber(pCardUpLevelInfo.exp)-tonumber(p.cardInfo.Exp);
-	pLabCardUpExp:SetText(GetStr("card_up_level")..tostring("  ")..tostring(upExp));
+	pLabCardUpExp:SetText(GetStr("card_up_level").." "..tostring(p.cardInfo.Exp).."/"..tostring(pCardUpLevelInfo.exp));
 	
 	local pLabSkillName = GetLabel(p.layer,ui.ID_CTRL_TEXT_SKILLNAME);
 	local pLabSkillInfo = GetLabel(p.layer,ui.ID_CTRL_DOWER_INTRO);
