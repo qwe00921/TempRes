@@ -113,7 +113,7 @@ function p:Drop(pTargetNode)
 end
 
 --ʰȡ
-function p:Pick(pTargetNode, cmdtype)
+function p:Pick( pTargetNode, pos )
 	if pTargetNode == nil then
 		return;
 	end
@@ -125,10 +125,24 @@ function p:Pick(pTargetNode, cmdtype)
 	local x = targetPoint.x - orignPoint.x + targetSize.w/2;
 	local y = targetPoint.y - orignPoint.y + targetSize.h/2;
 	
-	local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.pick_effect" );
+	--local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.pick_effect" );
+	local cmd = createCommandEffect():AddActionEffect( 0, self.imageNode, "lancer_cmb.pick_effect" );
+	local batch = w_battle_mgr.GetBattleBatch(); 
+	local seqTemp = batch:AddSerialSequence();
+	seqTemp:AddCommand( cmd );
+	
 	local varEnv = cmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
 	varEnv:SetFloat( "$2", y );
+	
+	if pos ~= nil then
+		local seqLua = batch:AddSerialSequence();
+		local cmdLua = createCommandLua():SetCmd( "PickEnd", pTargetNode:GetTag(), self.nType, "" );
+		if cmdLua ~= nil then
+			seqLua:AddCommand( cmdLua );
+		end
+		seqLua:SetWaitEnd( cmd );
+	end
 
 	return cmd;
 end
