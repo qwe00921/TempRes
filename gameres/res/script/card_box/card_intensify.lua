@@ -1,6 +1,6 @@
 CARD_BAG_SORT_BY_LEVEL	= 1001;
 CARD_BAG_SORT_BY_STAR	= 1002;
-CARD_BAG_SORT_BY_TIME = 1003;
+CARD_BAG_SORT_BY_TIME = 1004;
 
 PROFESSION_TYPE_1 = 2001;
 PROFESSION_TYPE_2 = 2002;
@@ -706,7 +706,7 @@ function p.sortByRule(sortType)
 	elseif sortType == CARD_BAG_SORT_BY_STAR then
 		WriteCon("========sort by star");
 		table.sort(p.cardListByProf,p.sortByStar);
-	else
+	elseif sortType == CARD_BAG_SORT_BY_TIME then
 		WriteCon("========sort by time/Element");
 		table.sort(p.cardListByProf,p.sortByTime);
 	end

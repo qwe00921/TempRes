@@ -69,7 +69,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			if p.id == 0 then
 				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			elseif p.id == 1 then
-				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
+				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
 			end
 		end
 		p.CloseUI();
