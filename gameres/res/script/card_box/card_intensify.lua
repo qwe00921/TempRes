@@ -699,18 +699,16 @@ function p.sortByRule(sortType)
 	if sortType == nil or p.cardListByProf == nil then 
 		return
 	end
+	WriteCon("sortByRule sortType = "..sortType);
 	if sortType == CARD_BAG_SORT_BY_LEVEL then
 		WriteCon("========sort by level");
 		table.sort(p.cardListByProf,p.sortByLevel);
 	elseif sortType == CARD_BAG_SORT_BY_STAR then
 		WriteCon("========sort by star");
 		table.sort(p.cardListByProf,p.sortByStar);
-	elseif sortType == CARD_BAG_SORT_BY_TIME then
+	else
 		WriteCon("========sort by time/Element");
 		table.sort(p.cardListByProf,p.sortByTime);
-	end
-	for k,v in pairs(p.cardListByProf) do
-		WriteCon("CardID = "..tostring(v.CardID));
 	end
 	p.ShowCardView(p.cardListByProf);
 end
@@ -725,7 +723,7 @@ function p.sortByStar(a,b)
 end
 --∞¥ ±º‰≈≈–Ú
 function p.sortByTime(a,b)
-	return tonumber(a.Element) < tonumber(b.Element);
+	return tonumber(a.element) < tonumber(b.element);
 end
 
 function p.CloseUI()
