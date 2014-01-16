@@ -166,8 +166,12 @@ function p.ShowInfo(msg)
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
-	p.refreshList(msg.equipment_info);
 	
+	
+	local tetCrit = GetLabel(p.layer, ui.ID_CTRL_TEXT_CRIT); 
+	tetCrit:SetText(GetStr("equip_intensify_crit")..tostring(msg.crit_prob).."%"); 	
+	
+	p.refreshList(msg.equipment_info);
 end
 
 --œ‘ æ¡–±Ì
