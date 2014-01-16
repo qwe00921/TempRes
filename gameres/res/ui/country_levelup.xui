@@ -119,7 +119,7 @@ NormalFileUV=0 0 102 102
 [CTRL_TEXT_UP1]
 Type=4
 Tag=34
-Rect=242 306 158 34
+Rect=214 306 216 34
 AnchorPos=0 0
 Notes=
 TextSize=18
