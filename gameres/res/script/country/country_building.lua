@@ -129,8 +129,9 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 	local timeNeed = nil;
 	local homeLvNeed = nil;
 	local playLvNeed = nil;
+	local nextLv = nowLevel + 1;
 	for k,v in pairs(buildTable) do
-		if tonumber(v.level) == tonumber(nowLevel) then
+		if tonumber(v.level) == tonumber(nextLv) then
 			desText = v.description;
 			moneyNeed = v.cost_money
 			soulNeed = v.cost_soul
