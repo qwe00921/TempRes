@@ -22,6 +22,8 @@ p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
 p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
+
+
   
 p.playerCardList = {
 	{
@@ -39,7 +41,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 240,
+	Hp= 230,
 	maxHp= 240,
 	Attack= 30,
 	Defence= 1,
@@ -73,7 +75,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 200,
+	Hp= 190,
 	maxHp= 200,
 	Attack= 30,
 	Defence= 2,
@@ -108,7 +110,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 200,
+	Hp= 190,
 	maxHp= 200,
 	Attack= 30,
 	Defence= 1,
@@ -145,7 +147,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 300,
+	Hp= 290,
 	maxHp= 300,
 	Attack= 30,
 	Defence= 2,
@@ -179,7 +181,7 @@ p.playerCardList = {
 	Team_marks= 1,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 300,
+	Hp= 290,
 	maxHp= 300,
 	Attack= 30,
 	Defence= 1,
@@ -392,7 +394,8 @@ function p.Init( battleDB )
     if battleDB == nil then
     	WriteConWarning( "battle db is nill!" );
     end
-    p.playerCardList = battleDB.fightinfo.Player;
+   --[[
+	p.playerCardList = battleDB.fightinfo.Player;
     p.targetCardList = battleDB.fightinfo.Target;
     p.roundData = battleDB.fightinfo.RoundData;
     p.battleResult = battleDB.fightinfo.BattleResult;
@@ -404,7 +407,7 @@ function p.Init( battleDB )
     p.roundBuffData = battleDB.fightinfo.BuffList;
     p.roundBuffEffectData = battleDB.fightinfo.BuffEffect;
     p.rewardData = battleDB.fightinfo.Reward;
-
+]]--
     --dump_obj( p.playerPetList );
 end
 

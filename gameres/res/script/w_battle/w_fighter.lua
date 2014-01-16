@@ -471,6 +471,13 @@ end
 
 function p:HasBuff(effect_type)
 	local lRes = false;
+	for k,v in ipairs(self.SkillBuff) do
+		if (v.effecttype == effect_type) then
+			lRes = true;
+			break;
+		end
+	end
+	
 	return lRes;
 end;
 

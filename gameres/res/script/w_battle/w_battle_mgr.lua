@@ -426,10 +426,10 @@ function p.GetItemCanUsePlayer(pItemPos)
 		return nil;
 	end
 	
-	local subtype = tonumber(SelectCell( T_MATERIAL, lid, "subtype" ));
+	local subtype = tonumber(SelectCell( T_MATERIAL, lid, "sub_type" ));
 	local effect_type = tonumber(SelectCell( T_MATERIAL, lid, "effect_type" ));
 	local effect_value = tonumber(SelectCell( T_MATERIAL, lid, "effect_value" ));
-	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_targer" ));
+	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_target" ));
 	if effect_targer == W_MATERIAL_TARGET2 then  --群体的
 		for k,v in ipairs(p.heroCamp.fighters) do
 			lPlayer[#lPlayer + 1 ] = v.Position;
@@ -470,26 +470,35 @@ end;
 
 --使用某个物品
 function p.UseItem(pItemPos, pHeroPos)
+	local leffectflag = true;
 	local lid = w_battle_db_mgr.GetItemid(pItemPos)
 	local effect_skill = SelectCell( T_MATERIAL_RES, lid, "effect" );  --技能光效
 	local batch = w_battle_mgr.GetBattleBatch(); 
+	if (effect_skill == nil) or (effect_skill == {}) then
+		leffectflag = false;
+		WriteCon( "material_res.ini config failed id="..tostring(lid));
+	end;
 	
-	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_targer" ));
+	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_target" ));
 	if effect_targer == W_MATERIAL_TARGET2 then  --群体的
 		for k,v in ipairs(p.heroCamp.fighters) do
 			if v:UseItem(lid) == true then
-				cmdBuff = createCommandEffect():AddFgEffect( 0.5, v:GetNode(), effect_skill );
-				local seqTemp = batch:AddSerialSequence();
-				seqTemp:AddCommand( cmdBuff );
+				if leffectflag == false then
+					cmdBuff = createCommandEffect():AddFgEffect( 0.5, v:GetNode(), effect_skill );
+					local seqTemp = batch:AddSerialSequence();
+					seqTemp:AddCommand( cmdBuff );
+				end;
 			end;		
 		end;
 	else
 		local fighter = p.heroCamp:FindFighter(pHeroPos);
 		if fighter~= nil then
 			if fighter:UseItem(lid) == true then
-				cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
-				local seqTemp = batch:AddSerialSequence();
-				seqTemp:AddCommand( cmdBuff );		
+				if leffectflag == false then
+					cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
+					local seqTemp = batch:AddSerialSequence();
+					seqTemp:AddCommand( cmdBuff );		
+				end;
 			end;
 		end
 	end
@@ -574,7 +583,8 @@ end;
 --敌方回合开始
 function p.EnemyStarTurn()  --怪物回合开始
 	WriteCon( "EnemyStarTurn");	
-	
+	p.EnemyTurnEnd() --暂时判定敌方回合结束
+	--[[
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
 		local lTargetFighter = p.getEnemyTarget(v)
@@ -585,15 +595,16 @@ function p.EnemyStarTurn()  --怪物回合开始
 		if lTargetFighter.Skill == 0 then
 			p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());	
 		else
-			--if p.EnemyUseSkill() == true then
-			--	p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
+			if p.EnemyUseSkill() == true then
+				p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
 			--	break;
-			--else
+			else
 				p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());		
-				break;
-			--end
+			--	break;
+			end
 		end
 	end;
+	]]--
 	--p.EnemyTurnEnd() --暂时判定敌方回合结束
 end;
 
@@ -662,7 +673,7 @@ function p.SetPVETargerID(position)
 		return ;
 	end;
 
-
+	
 --	if p.isCanSelFighter == false then 
 --		return ;
 --	end;
@@ -693,6 +704,9 @@ function p.SetLockAction(position)
 	   local lLockPic = GetImage(p.uiLayer, ltag);	    
 	   --local lLockPic = p.GetLockImage();		
 	   lLockPic:SetVisible(true);
+	   local targetFighter = p.enemyCamp:FindFighter(position);
+	   local lElementLst = p.heroCamp:GetElementAtkFighter(targetFighter);
+	   w_battle_pve.UpdateDamageBufftype(lElementLst);
    end;
 
 end;
@@ -762,19 +776,20 @@ function p.SendStartPVEReq( targetId, teamid )
     if UID == 0 or UID == nil then
         return ;
     end;
-    --local param = string.format("&missionID=%d&teamid=%d", targetId,teamid);
-	local param = string.format("&missionID=%d", targetId,teamid);
+    local param = string.format("&missionID=%d&teamID=%d", targetId,teamid);
+	--local param = string.format("&missionID=%d", targetId,teamid);
     SendReq("Fight","StartPvC",UID,param);
 end
 
 --进入战斗
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
-	--p.SendStartPVEReq( missionId,teamid);
-	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
+	p.SendStartPVEReq( missionId,teamid);
+--[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);
 	p.battle_result = 1;
 	p.SendResult(missionId, p.battle_result);
+	]]--
 end
 
 
@@ -1087,7 +1102,7 @@ function p.createHeroCamp( fighters )
 	p.heroCamp = w_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
-	p.heroCamp:AddShadows( p.heroUIArray, fighters );
+	--p.heroCamp:AddShadows( p.heroUIArray, fighters );
 	p.heroCamp:AddAllRandomTimeJumpEffect(true);
 end
 
@@ -1096,7 +1111,7 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp = w_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
-	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
+	--p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
 	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 end
 
