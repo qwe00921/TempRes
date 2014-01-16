@@ -3,18 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_9SLICES_BG]
-Type=22
-Tag=18
-Rect=0 0 640 870
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_9SLICES_20]
 Type=22
 Tag=25
@@ -49,7 +37,7 @@ DisableFileUV=0 0 90 90
 [CTRL_TEXT_RMB]
 Type=4
 Tag=7
-Rect=489 285 100 30
+Rect=640 7 100 30
 AnchorPos=0 0
 Notes=
 Text=0
@@ -84,7 +72,7 @@ DisableFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_GACHA]
 Type=14
 Tag=13
-Rect=11 335 620 590
+Rect=11 335 620 494
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -94,7 +82,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_SHOP_ITEM]
 Type=14
 Tag=15
-Rect=9 335 620 590
+Rect=9 335 620 491
 AnchorPos=0 0
 Notes=
 Remark=道具list
@@ -104,7 +92,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_GIFT_PACK]
 Type=14
 Tag=35
-Rect=9 323 620 602
+Rect=9 332 620 494
 AnchorPos=0 0
 Notes=
 Remark=礼包list
@@ -294,7 +282,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_BAG]
 Type=14
 Tag=1068
-Rect=9 336 620 590
+Rect=9 336 620 493
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
