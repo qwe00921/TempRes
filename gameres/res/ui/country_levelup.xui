@@ -131,7 +131,7 @@ UIClsoeType=0
 [CTRL_TEXT_UP2]
 Type=4
 Tag=35
-Rect=225 439 188 34
+Rect=202 439 239 34
 AnchorPos=0 0
 Notes=
 TextSize=18
