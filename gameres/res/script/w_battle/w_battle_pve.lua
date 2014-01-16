@@ -780,17 +780,19 @@ function p.UpdateDamageBufftype( list )
 		if obj ~= nil then
 			local index = 0;
 			for j = 1, #list do
-				if i == list[j][1] then
+				--if i == list[j][1] then
+				if i == list[j] then
 					index = j;
 					break;
 				end
 			end
+				
 			if index ~= 0 then
 				obj[DAMAGE_INDEX]:SetVisible( true );
 				local damagetypeindex = 0;
-				if list[j][2] == W_ELEMENT_ADD then
+				--if list[j][2] == W_ELEMENT_ADD then
 					damagetypeindex = 1;
-				end
+				--end
 				local picData = GetPictureByAni( "w_battle_res.damagebufftype", damagetypeindex );
 				if picData then
 					obj[DAMAGE_INDEX]:SetPicture( picData );

@@ -332,6 +332,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("EQUIP");
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
 			WriteCon("MERGE");
+			country_mixhouse.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_HOME == tag then
 			WriteCon("HOME");
 			country_collect.Collect( E_COLLECT_HOME );

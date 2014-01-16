@@ -25,6 +25,7 @@ p.isAlive = nil;
 
 p.missionId = nil;
 p.stageId = nil;
+p.missionTeamID = nil;
 
 
 local ui = ui_card_group;
@@ -36,10 +37,11 @@ p.beginRect = nil;
 p.beginPlayer = nil;
 
 
-function p.ShowUI(missionId,stageId)
+function p.ShowUI(missionId,stageId,missionTeamId)
 	if missionId ~= nil and stageId ~= nil then
 		p.missionId = missionId;
 		p.stageId = stageId;
+		p.missionTeamID = missionTeamId;
 	end
 	
 	dlg_menu.SetNewUI( p );
@@ -143,6 +145,10 @@ function p.UpdateListData( dataSource )
 		teamid = 0;
 	else
 		teamid = teamid - 1;
+	end
+	if p.missionTeamID ~= nil then
+		teamid = p.missionTeamID - 1
+		p.missionTeamID = nil;
 	end
 	list:SetActiveView(teamid);
 end
@@ -507,8 +513,9 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		if ui.ID_CTRL_BUTTON_BACK == tag then
 			if (p.missionId ~= nil and p.stageId ~= nil) then
+				local id = p.m_list:GetActiveView() + 1
 				p.CloseUI();
-				quest_team_item.ShowUI(p.missionId,p.stageId)
+				quest_team_item.ShowUI(p.missionId,p.stageId,id)
 				p.missionId = nil;
 				p.stageId = nil;
 			else

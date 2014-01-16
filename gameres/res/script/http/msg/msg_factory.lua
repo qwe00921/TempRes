@@ -279,6 +279,8 @@ function CreateMsg( idmsg )
 		msg = msg_setbattleitem:new();
 	elseif idmsg == MSG_COLLECT_PICK then
 		msg = msg_collect_pick:new();
+	elseif idmsg == MSG_COLLECT_SYNTHESIS then
+		msg = msg_collect_synthesis:new();
 	end
 
 	

@@ -437,6 +437,7 @@ function p:BeTarTimesDec(pAtkId)
 end
 
 function p:UseItem(pId)
+	local lResult = true;
 	local subtype = tonumber(SelectCell( T_MATERIAL, pId, "subtype" ));
 	local effect_type = tonumber(SelectCell( T_MATERIAL, pId, "effect_type" ));
 	local effect_value = tonumber(SelectCell( T_MATERIAL, pId, "effect_value" ));
@@ -448,6 +449,8 @@ function p:UseItem(pId)
 				self.nowlife = self.maxHp;
 			end		
 			self.Hp = self.nowlife;
+		else
+			lResult = false;
 		end
 	elseif subtype == W_MATERIAL_SUBTYPE2 then --中相应状态的才可用
 		if effect_type == W_BATTLE_REVIVAL then --复活物品
@@ -463,18 +466,32 @@ function p:UseItem(pId)
 		self:AddBuff(effect_type,effect_value) --上BUFF状态及回合数
 	end
 	
+	return lResult;
 end
 
 function p:HasBuff(effect_type)
 	local lRes = false;
+	for k,v in ipairs(self.SkillBuff) do
+		if (v.effecttype == effect_type) then
+			lRes = true;
+			break;
+		end
+	end
+	
 	return lRes;
 end;
 
 function p:AddBuff(effect_type,effect_value)
-
+	local skillRecord = {effecttype = effect_type, effectval = effect_value};
+	table.insert(self.SkillBuff, skillRecord);
 end;
 
 function p:RemoveBuff(effect_type)
-	
+	for i= #self.SkillBuff,1, -1 do
+		local skillRecord = self.SkillBuff[i];
+		if skillRecord.effecttype == effect_type then
+			table.remove(self.SkillBuff, i);
+		end
+	end
 end;
 

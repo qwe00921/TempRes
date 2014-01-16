@@ -140,12 +140,12 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		end
 	end
 	if upIng == 0 then
-		p.upNeedTime:SetText("建造需要时间:"..timeNeed);
+		p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
 		p.upNeed:SetText("金币:"..moneyNeed.."  蓝魂:"..soulNeed);
 		p.upNeedHome:SetText("住宅:"..homeLvNeed);
 		p.buildLevel:SetText("LV"..nowLevel);
 	elseif upIng == 1 then
-		p.upNeedTime:SetText("建造需要时间:"..timeNeed);
+		p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
 		p.upNeed:SetText("升级中");
 		p.upNeedHome:SetText(" ");
 		p.buildLevel:SetText("LV"..nowLevel);

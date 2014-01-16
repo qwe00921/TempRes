@@ -22,6 +22,8 @@ p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
 p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
+
+
   
 p.playerCardList = {
 	{
@@ -39,7 +41,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 240,
+	Hp= 230,
 	maxHp= 240,
 	Attack= 30,
 	Defence= 1,
@@ -59,7 +61,7 @@ p.playerCardList = {
 	maxSp = 100;
 	},
 	{
-	element = 1,
+	element = 2,
 	UniqueId= 10000722,
 	CardID= 10012,
 	Level= 1,
@@ -73,7 +75,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 200,
+	Hp= 190,
 	maxHp= 200,
 	Attack= 30,
 	Defence= 2,
@@ -94,7 +96,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 1,
+	element = 3,
 	UniqueId= 10000723,
 	CardID= 10021,
 	Level= 1,
@@ -108,7 +110,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 200,
+	Hp= 190,
 	maxHp= 200,
 	Attack= 30,
 	Defence= 1,
@@ -129,7 +131,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 1,
+	element = 4,
 	Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000724,
@@ -145,7 +147,7 @@ p.playerCardList = {
 	Team_marks= 0,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 300,
+	Hp= 290,
 	maxHp= 300,
 	Attack= 30,
 	Defence= 2,
@@ -179,7 +181,7 @@ p.playerCardList = {
 	Team_marks= 1,
 	Rare= 1,
 	Rare_max= 0,
-	Hp= 300,
+	Hp= 290,
 	maxHp= 300,
 	Attack= 30,
 	Defence= 1,
@@ -200,7 +202,7 @@ p.playerCardList = {
 
 p.targetCardList = {
 	{
-	element = 0,
+	element = 1,
 	UniqueId= 7,
 	CardID= 10012,
 	Level= 10,
@@ -227,7 +229,7 @@ p.targetCardList = {
 	},	
 	
 	{
-	element = 0,
+	element = 2,
 	UniqueId= 3,
 	CardID= 10003,
 	Level= 10,
@@ -253,7 +255,7 @@ p.targetCardList = {
 	Position= 2
 	},
 	{
-	element = 0,
+	element = 3,
 	UniqueId= 4,
 	CardID= 10004,
 	Level= 10,
@@ -279,7 +281,7 @@ p.targetCardList = {
 	Position= 3
 	},
 	{
-	element = 0,
+	element = 4,
 	UniqueId= 5,
 	CardID= 10005,
 	Level= 10,
@@ -331,7 +333,7 @@ p.targetCardList = {
 	Position= 5
 	},
 	{
-	element = 4,
+	element = 5,
 	UniqueId= 2,
 	CardID= 10001,
 	Level= 10,
@@ -368,6 +370,21 @@ p.ItemList = {
 	{item_id = 101005, num = 0, location = 5},
 }
 
+p.Reward= {
+	item= {
+		item_id= 111001,
+		item_type= 3,
+		num= 1
+	},
+	mission_id= 101011,
+	result= 1,
+	difficulty= 1,
+	exp= 100,
+	money= 20,
+	soul= 100,
+	story= 0
+}
+
 function p.nextStep()
 	
 end;
@@ -377,7 +394,8 @@ function p.Init( battleDB )
     if battleDB == nil then
     	WriteConWarning( "battle db is nill!" );
     end
-    p.playerCardList = battleDB.fightinfo.Player;
+   --[[
+	p.playerCardList = battleDB.fightinfo.Player;
     p.targetCardList = battleDB.fightinfo.Target;
     p.roundData = battleDB.fightinfo.RoundData;
     p.battleResult = battleDB.fightinfo.BattleResult;
@@ -389,7 +407,7 @@ function p.Init( battleDB )
     p.roundBuffData = battleDB.fightinfo.BuffList;
     p.roundBuffEffectData = battleDB.fightinfo.BuffEffect;
     p.rewardData = battleDB.fightinfo.Reward;
-
+]]--
     --dump_obj( p.playerPetList );
 end
 

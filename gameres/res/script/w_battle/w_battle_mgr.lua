@@ -1,35 +1,35 @@
 --------------------------------------------------------------
 -- FileName: 	w_battle_mgr.lua
 -- author:		zhangwq, 2013/06/20
--- purpose:		Õ½¶·¹ÜÀíÆ÷£¨µ¥ÊµÀı£©demo v2.0
+-- purpose:		æˆ˜æ–—ç®¡ç†å™¨ï¼ˆå•å®ä¾‹ï¼‰demo v2.0
 --------------------------------------------------------------
 
 w_battle_mgr = {}
 local p = w_battle_mgr;
 
-p.heroCamp = nil;			--Íæ¼ÒÕóÓª
-p.enemyCamp = nil;			--µĞ¶ÔÕóÓª
-p.uiLayer = nil;			--Õ½¶·²ã
-p.heroUIArray = nil;		--Íæ¼ÒÕóÓªÕ¾Î»UITag±í
-p.enemyUIArray = nil;		--µĞ¶ÔÕóÓªÕ¾Î»UITag±í
-p.enemyUILockArray = nil;   --µĞ¶ÔÄ¿±ê±»µÄËø¶¨±êÖ¾
+p.heroCamp = nil;			--ç©å®¶é˜µè¥
+p.enemyCamp = nil;			--æ•Œå¯¹é˜µè¥
+p.uiLayer = nil;			--æˆ˜æ–—å±‚
+p.heroUIArray = nil;		--ç©å®¶é˜µè¥ç«™ä½UITagè¡¨
+p.enemyUIArray = nil;		--æ•Œå¯¹é˜µè¥ç«™ä½UITagè¡¨
+p.enemyUILockArray = nil;   --æ•Œå¯¹ç›®æ ‡è¢«çš„é”å®šæ ‡å¿—
 
 
-p.petNode={};       --Ë«·½³èÎï½áµã
-p.petNameNode={};   --Ë«·½³èÎïÃû³Æ½áµã
+p.petNode={};       --åŒæ–¹å® ç‰©ç»“ç‚¹
+p.petNameNode={};   --åŒæ–¹å® ç‰©åç§°ç»“ç‚¹
 
-p.imageMask = nil			--Ôö¼ÓÃÉ°æÌØĞ§
-p.PVEEnemyID = nil;   --µ±Ç°±»¹¥»÷µÄµĞÈËID
---p.PVEHeroID  = nil;  --µ±Ç°±»¹¥»÷µÄÓ¢ĞÛID
-p.PVEShowEnemyID = nil;  --µ±Ç°ÏÔÊ¾ÑªÁ¿µÄµĞÈËID
-p.LockEnemy = false; --µĞÈËÊÇ·ñ±»Ëø¶¨¹¥»÷
-p.LockFagID = nil;  --Ö®Ç°µÄËø¶¨±êÖ¾
+p.imageMask = nil			--å¢åŠ è’™ç‰ˆç‰¹æ•ˆ
+p.PVEEnemyID = nil;   --å½“å‰è¢«æ”»å‡»çš„æ•ŒäººID
+--p.PVEHeroID  = nil;  --å½“å‰è¢«æ”»å‡»çš„è‹±é›„ID
+p.PVEShowEnemyID = nil;  --å½“å‰æ˜¾ç¤ºè¡€é‡çš„æ•ŒäººID
+p.LockEnemy = false; --æ•Œäººæ˜¯å¦è¢«é”å®šæ”»å‡»
+p.LockFagID = nil;  --ä¹‹å‰çš„é”å®šæ ‡å¿—
 
 local isPVE = false;
 local isActive = false;
-local useParallelBatch = true; --ÊÇ·ñ.Ê¹ÓÃ²¢ĞĞÅú´Î
+local useParallelBatch = true; --æ˜¯å¦.ä½¿ç”¨å¹¶è¡Œæ‰¹æ¬¡
 p.isBattleEnd = false;
-p.isCanSelFighter = false;  --ÊÇ·ñ»¹ÓĞ¿ÉÑ¡ÔñµÄ¹ÖÎï,Õ½¶·UI½çÃæµã»÷ÎÒ·½ÈËÔ±Ê±,ĞèÏÈÅĞ¶Ï´Ë±äÀí,ÔÙ´¦Àíµã»÷
+p.isCanSelFighter = false;  --æ˜¯å¦è¿˜æœ‰å¯é€‰æ‹©çš„æ€ªç‰©,æˆ˜æ–—UIç•Œé¢ç‚¹å‡»æˆ‘æ–¹äººå‘˜æ—¶,éœ€å…ˆåˆ¤æ–­æ­¤å˜ç†,å†å¤„ç†ç‚¹å‡»
 
 local BATTLE_PVE = 1;
 local BATTLE_PVP = 2;
@@ -47,18 +47,18 @@ p.MoreDamageTimes = 0;
 
 
 function p.init()
-	--p.heroCamp = nil;			--Íæ¼ÒÕóÓª
-	p.enemyCamp = nil;			--µĞ¶ÔÕóÓª
-	--p.uiLayer = nil;			--Õ½¶·²ã
-	--p.heroUIArray = nil;		--Íæ¼ÒÕóÓªÕ¾Î»UITag±í
-	--p.enemyUIArray = nil;		--µĞ¶ÔÕóÓªÕ¾Î»UITag±í
-	--p.enemyUILockArray = nil;   --µĞ¶ÔÄ¿±ê±»µÄËø¶¨±êÖ¾
+	--p.heroCamp = nil;			--ç©å®¶é˜µè¥
+	p.enemyCamp = nil;			--æ•Œå¯¹é˜µè¥
+	--p.uiLayer = nil;			--æˆ˜æ–—å±‚
+	--p.heroUIArray = nil;		--ç©å®¶é˜µè¥ç«™ä½UITagè¡¨
+	--p.enemyUIArray = nil;		--æ•Œå¯¹é˜µè¥ç«™ä½UITagè¡¨
+	--p.enemyUILockArray = nil;   --æ•Œå¯¹ç›®æ ‡è¢«çš„é”å®šæ ‡å¿—
 	
-	p.PVEEnemyID = nil;   --µ±Ç°±»¹¥»÷µÄµĞÈËID
+	p.PVEEnemyID = nil;   --å½“å‰è¢«æ”»å‡»çš„æ•ŒäººID
 	--p.PVEHeroID = nil;
-	p.PVEShowEnemyID = nil;  --µ±Ç°ÏÔÊ¾ÑªÁ¿µÄµĞÈËID
-	p.LockEnemy = false; --µĞÈËÊÇ·ñ±»Ëø¶¨¹¥»÷
-	p.LockFagID = nil;  --Ö®Ç°µÄËø¶¨±êÖ¾
+	p.PVEShowEnemyID = nil;  --å½“å‰æ˜¾ç¤ºè¡€é‡çš„æ•ŒäººID
+	p.LockEnemy = false; --æ•Œäººæ˜¯å¦è¢«é”å®šæ”»å‡»
+	p.LockFagID = nil;  --ä¹‹å‰çš„é”å®šæ ‡å¿—
 	
 	p.batchIsFinish = true;
 	p.battle_batch  = nil;
@@ -79,11 +79,11 @@ function p.starFighter()
 --	w_battle_PVEStaMachMgr.init();
 	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
-	if w_battle_db_mgr.step == 1 then  --Ö»ÓĞµÚÒ»²¨²ÅĞèÒª½ø³¡¶¯»­
+	if w_battle_db_mgr.step == 1 then  --åªæœ‰ç¬¬ä¸€æ³¢æ‰éœ€è¦è¿›åœºåŠ¨ç”»
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
 	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
-	--°´»î×ÅµÄ¹ÖÎï,¸ø¸öÄ¿±ê
+	--æŒ‰æ´»ç€çš„æ€ªç‰©,ç»™ä¸ªç›®æ ‡
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	--p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
@@ -91,11 +91,11 @@ function p.starFighter()
 	p.isCanSelFighter = true;	
 	p.atkCampType = W_BATTLE_HERO;
 	w_battle_machinemgr.init();
-	p.HeroBuffStarTurn();  --ÎÒ·½BUFF¿ªÊ¼½×¶Ï
+	p.HeroBuffStarTurn();  --æˆ‘æ–¹BUFFå¼€å§‹é˜¶æ–­
 	
 end;
 --[[
---¹ÖÎï¹¥»÷
+--æ€ªç‰©æ”»å‡»
 function p.SetPVEMonsterAtk(atkID)
    WriteCon( "SetPVEMonsterAtk ID:"..tonumber(atkID));
    if p.battleIsStart ~= true then
@@ -123,24 +123,24 @@ function p.SetPVEMonsterAtk(atkID)
    end;
 
 
-   --µãÑ¡Ä¿±êºó,ÏÈ¼ÆËãÉËº¦
+   --ç‚¹é€‰ç›®æ ‡å,å…ˆè®¡ç®—ä¼¤å®³
    local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter);
-   targetFighter:SubLife(damage); --¿ÛµôÉúÃü,µ«±íÏÖ²»Òª¿Û
+   targetFighter:SubLife(damage); --æ‰£æ‰ç”Ÿå‘½,ä½†è¡¨ç°ä¸è¦æ‰£
    
 
-   --Ä¬ÈÏÑ¡ÔñµÄÄ¿±ê,ÅĞ¶¨¹ÖÎï½«ËÀ
+   --é»˜è®¤é€‰æ‹©çš„ç›®æ ‡,åˆ¤å®šæ€ªç‰©å°†æ­»
 	if targetFighter.nowlife <= 0 then
-		p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(targerID); --Ñ¡ÔñÏÂ¸önowHP > 0»îµÄ¹ÖÎïÄ¿±ê
+		p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(targerID); --é€‰æ‹©ä¸‹ä¸ªnowHP > 0æ´»çš„æ€ªç‰©ç›®æ ‡
 	end;
 	
 	
-	--³ÉÎªÄ¿±ê,Î´¹¥»÷
+	--æˆä¸ºç›®æ ‡,æœªæ”»å‡»
 	targetFighter:BeTarTimesAdd(atkID);
 
 	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
 	local damageLst = {};
 	damageLst[1] = damage;
-	lStateMachine.turnState = W_BATTLE_TURN;  --ĞĞ¶¯ÖĞ
+	lStateMachine.turnState = W_BATTLE_TURN;  --è¡ŒåŠ¨ä¸­
 	lStateMachine:init(atkID,atkFighter,W_BATTLE_ENEMY,targetFighter, W_BATTLE_HERO,damageLst,lIsCrit,lIsJoinAtk);
 	
 	--return true;	
@@ -148,7 +148,7 @@ function p.SetPVEMonsterAtk(atkID)
 end;
 
 ]]--
---¹¥»÷·½ÊÇ×Ô¼º,ÊÜ»÷·½IDÖ®Ç°ÒÑÑ¡»ò×Ô¶¯Ñ¡Ôñ,¸øÕ½¶·Ö÷½çÃæµ÷ÓÃ
+--æ”»å‡»æ–¹æ˜¯è‡ªå·±,å—å‡»æ–¹IDä¹‹å‰å·²é€‰æˆ–è‡ªåŠ¨é€‰æ‹©,ç»™æˆ˜æ–—ä¸»ç•Œé¢è°ƒç”¨
 function p.SetPVEAtkID(atkID,IsMonster,targetID)
     WriteCon( "SetPVEAtkID:"..tonumber(atkID));
     if p.battleIsStart ~= true then
@@ -199,24 +199,24 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
    end;
 
 	if IsMonster ~= true then
-	   if w_battle_mgr.isCanSelFighter == false then  --Ã»ÓĞ´æ»îµÄÄ¿±ê¿ÉÑ¡
+	   if w_battle_mgr.isCanSelFighter == false then  --æ²¡æœ‰å­˜æ´»çš„ç›®æ ‡å¯é€‰
 		  WriteCon( "Warning! All targetFighter is Dead!");
 		  return false;  
 	   end;
     end;
 
-   --µãÑ¡Ä¿±êºó,ÏÈ¼ÆËãÉËº¦
+   --ç‚¹é€‰ç›®æ ‡å,å…ˆè®¡ç®—ä¼¤å®³
    local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter,IsMonster);
-   targetFighter:SubLife(damage); --¿ÛµôÉúÃü,µ«±íÏÖ²»Òª¿Û
+   targetFighter:SubLife(damage); --æ‰£æ‰ç”Ÿå‘½,ä½†è¡¨ç°ä¸è¦æ‰£
    
     if IsMonster ~= true then
-	   --Ä¬ÈÏÑ¡ÔñµÄÄ¿±ê,ÅĞ¶¨¹ÖÎï½«ËÀ
+	   --é»˜è®¤é€‰æ‹©çš„ç›®æ ‡,åˆ¤å®šæ€ªç‰©å°†æ­»
 		if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
-			p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --Ñ¡ÔñÏÂ¸önowHP > 0»îµÄ¹ÖÎïÄ¿±ê
+			p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --é€‰æ‹©ä¸‹ä¸ªnowHP > 0æ´»çš„æ€ªç‰©ç›®æ ‡
 		end
 	end;
 	
-	--³ÉÎªÄ¿±ê,Î´¹¥»÷
+	--æˆä¸ºç›®æ ‡,æœªæ”»å‡»
 	targetFighter:BeTarTimesAdd(atkID);
 
 	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
@@ -227,7 +227,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	local lJoinAtkLst = {}
 	lJoinAtkLst[1] = lIsJoinAtk;
 	
-	lStateMachine.turnState = W_BATTLE_TURN;  --ĞĞ¶¯ÖĞ
+	lStateMachine.turnState = W_BATTLE_TURN;  --è¡ŒåŠ¨ä¸­
 	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lCritLst,lJoinAtkLst,false);
 	
 	return true;
@@ -235,7 +235,7 @@ end;
 
 
 
---¹¥»÷·½ÊÇ×Ô¼º,ÊÜ»÷·½IDÖ®Ç°ÒÑÑ¡»ò×Ô¶¯Ñ¡Ôñ,¸øÕ½¶·Ö÷½çÃæµ÷ÓÃ
+--æ”»å‡»æ–¹æ˜¯è‡ªå·±,å—å‡»æ–¹IDä¹‹å‰å·²é€‰æˆ–è‡ªåŠ¨é€‰æ‹©,ç»™æˆ˜æ–—ä¸»ç•Œé¢è°ƒç”¨
 function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
 	local atkFighter = nil;
@@ -279,7 +279,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
     end;
 
     if IsMonster ~= true then
-	   if w_battle_mgr.isCanSelFighter == false then  --Ã»ÓĞ´æ»îµÄÄ¿±ê¿ÉÑ¡
+	   if w_battle_mgr.isCanSelFighter == false then  --æ²¡æœ‰å­˜æ´»çš„ç›®æ ‡å¯é€‰
 		  WriteCon( "Warning! All targetFighter is Dead!");
 		  return false;  
 	   end;
@@ -287,7 +287,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 
    local skillID = atkFighter.Skill;
 
-   local distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--Ô¶³ÌÓë½üÕ½µÄÅĞ¶Ï;	
+   local distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--è¿œç¨‹ä¸è¿‘æˆ˜çš„åˆ¤æ–­;	
    local targetType   = tonumber( SelectCell( T_SKILL, skillID, "Target_type" ) );
    local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
 
@@ -306,7 +306,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		return false;
 	end;
 
-	--ÒÑ¿ªÊ¼¹¥»÷,µ«¹¥»÷Î´¿ªÊ¼
+	--å·²å¼€å§‹æ”»å‡»,ä½†æ”»å‡»æœªå¼€å§‹
 	--p.AtkAdd(atkID);
 	    
 	local latkCap = nil;
@@ -327,21 +327,21 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	
 	
 	lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
-	lStateMachine.turnState = W_BATTLE_TURN;  --ĞĞ¶¯ÖĞ		
+	lStateMachine.turnState = W_BATTLE_TURN;  --è¡ŒåŠ¨ä¸­		
 
-	if (skillType == W_SKILL_TYPE_1)  then -- Ö÷¶¯ÉËº¦µÄ
-		if (targetType == W_SKILL_TARGET_TYPE_1) then --µ¥Ìå
+	if (skillType == W_SKILL_TYPE_1)  then -- ä¸»åŠ¨ä¼¤å®³çš„
+		if (targetType == W_SKILL_TARGET_TYPE_1) then --å•ä½“
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
 			damageLst[1] = damage;
 			lCritLst[1] = lIsCrit;
 			lJoinAtkLst[1] = lIsJoinAtk;
-			targetFighter:SubLife(damage); --¿ÛµôÉúÃü,µ«±íÏÖ²»Òª¿Û
-			targetFighter:BeTarTimesAdd(atkID); --³ÉÎªÄ¿±ê,Î´¹¥»÷
+			targetFighter:SubLife(damage); --æ‰£æ‰ç”Ÿå‘½,ä½†è¡¨ç°ä¸è¦æ‰£
+			targetFighter:BeTarTimesAdd(atkID); --æˆä¸ºç›®æ ‡,æœªæ”»å‡»
 		elseif( (targetType == W_SKILL_TARGET_TYPE_2) or (targetType == W_SKILL_TARGET_TYPE_3)	or (targetType == W_SKILL_TARGET_TYPE_4)) then
-		--ÈºÌå, ½üÕ½³åµ½ÆÁÄ»ÖĞ¼ä, Ô¶³ÌÕ¾Ô­µØ
+		--ç¾¤ä½“, è¿‘æˆ˜å†²åˆ°å±å¹•ä¸­é—´, è¿œç¨‹ç«™åŸåœ°
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
-			ltargetCamp:SubLife(damage); --ËùÓĞÒÑ´æ»îµÄÈË¿Û¼õÉúÃü
-			ltargetCamp:BeTarTimesAdd(atkID) --ËùÓĞÒÑ´æ»îµÄÈË³ÉÎªÄ¿±ê
+			ltargetCamp:SubLife(damage); --æ‰€æœ‰å·²å­˜æ´»çš„äººæ‰£å‡ç”Ÿå‘½
+			ltargetCamp:BeTarTimesAdd(atkID) --æ‰€æœ‰å·²å­˜æ´»çš„äººæˆä¸ºç›®æ ‡
 			for pos=1,6 do
 				damageLst[pos] = damage
 				lCritLst[pos] = false;
@@ -355,13 +355,13 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 
 		if IsMonster ~= true then
 			if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
-				p.PVEEnemyID = ltargetCamp:GetFirstActiveFighterID(targerID); --Ñ¡ÔñÏÂ¸önowHP > 0»îµÄ¹ÖÎïÄ¿±ê
+				p.PVEEnemyID = ltargetCamp:GetFirstActiveFighterID(targerID); --é€‰æ‹©ä¸‹ä¸ªnowHP > 0æ´»çš„æ€ªç‰©ç›®æ ‡
 			end
 		end;
-	else --Ö÷¶¯»Ö¸´ or ¼ÓBUFF or ¸´»î,   ¸´»îÖ»ÔÚÎïÆ·ÖĞÊ¹ÓÃ
-		--Ö÷¶¯»Ö¸´»ò¼ÓBUFF¼¼ÄÜÀà¼¼ÄÜ,²»ÂÛÊÇ·ñÈºÌå¶¼ Õ¾Ô­µØ
+	else --ä¸»åŠ¨æ¢å¤ or åŠ BUFF or å¤æ´»,   å¤æ´»åªåœ¨ç‰©å“ä¸­ä½¿ç”¨
+		--ä¸»åŠ¨æ¢å¤æˆ–åŠ BUFFæŠ€èƒ½ç±»æŠ€èƒ½,ä¸è®ºæ˜¯å¦ç¾¤ä½“éƒ½ ç«™åŸåœ°
 		local damage = 0;
-		if skillType == 2 then  --»Ö¸´ÀàµÄÓĞ¼ÓÑª
+		if skillType == 2 then  --æ¢å¤ç±»çš„æœ‰åŠ è¡€
 			damage = w_battle_atkDamage.SkillBuffDamage(skillID,atkFighter);
 			
 			for pos=1,6 do
@@ -369,9 +369,9 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 			end		
 		end;
 		
-		if (targetType == W_SKILL_TARGET_TYPE_11) then --×Ô¼º
+		if (targetType == W_SKILL_TARGET_TYPE_11) then --è‡ªå·±
 			targetFighter = atkFighter;
-		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --ÒÑ·½ÈºÌå
+		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --å·²æ–¹ç¾¤ä½“
 			isAoe = true;
 		else
 			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
@@ -416,46 +416,46 @@ function p.BatchCallBack()
 end;
 
 
---»ñµÃÄ³¸öÎïÆ·¿ÉÊ¹ÓÃµÄÍæ¼ÒÁĞ±í
+--è·å¾—æŸä¸ªç‰©å“å¯ä½¿ç”¨çš„ç©å®¶åˆ—è¡¨
 function p.GetItemCanUsePlayer(pItemPos)
 	local lPlayer = {};
 
     local lid = w_battle_db_mgr.GetItemid(pItemPos)
 	local ltype = tonumber(SelectCell( T_MATERIAL, lid, "type" ));
-	if ltype ~= W_MATERIAL_TARGET1 then --²»ÊÇÒ©Ë®ÀàĞÍ
+	if ltype ~= W_MATERIAL_TARGET1 then --ä¸æ˜¯è¯æ°´ç±»å‹
 		return nil;
 	end
 	
-	local subtype = tonumber(SelectCell( T_MATERIAL, lid, "subtype" ));
+	local subtype = tonumber(SelectCell( T_MATERIAL, lid, "sub_type" ));
 	local effect_type = tonumber(SelectCell( T_MATERIAL, lid, "effect_type" ));
 	local effect_value = tonumber(SelectCell( T_MATERIAL, lid, "effect_value" ));
-	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_targer" ));
-	if effect_targer == W_MATERIAL_TARGET2 then  --ÈºÌåµÄ
+	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_target" ));
+	if effect_targer == W_MATERIAL_TARGET2 then  --ç¾¤ä½“çš„
 		for k,v in ipairs(p.heroCamp.fighters) do
 			lPlayer[#lPlayer + 1 ] = v.Position;
 		end
-	elseif effect_targer == W_MATERIAL_TARGET1 then --µ¥ÌåµÄ
-		if subtype == W_MATERIAL_SUBTYPE1 then  --HP>0µÄ
+	elseif effect_targer == W_MATERIAL_TARGET1 then --å•ä½“çš„
+		if subtype == W_MATERIAL_SUBTYPE1 then  --HP>0çš„
 				for k,v in ipairs(p.heroCamp.fighters) do
 					if (v.nowlife > 0) and (v.nowlife < v.maxHp) then
 						lPlayer[#lPlayer + 1 ] = v.Position;
 					end
 				end
 			
-		elseif subtype == W_MATERIAL_SUBTYPE2 then --ÖĞÏàÓ¦×´Ì¬µÄ²Å¿ÉÓÃ
+		elseif subtype == W_MATERIAL_SUBTYPE2 then --ä¸­ç›¸åº”çŠ¶æ€çš„æ‰å¯ç”¨
 			for k,v in ipairs(p.heroCamp.fighters) do
-				if effect_type == W_BATTLE_REVIVAL then --¸´»îÎïÆ·
+				if effect_type == W_BATTLE_REVIVAL then --å¤æ´»ç‰©å“
 					if(v.nowlife == 0) then
 						lPlayer[#lPlayer + 1 ] = v.Position;	
 					end
-				else  --½â×´Ì¬µÄBUFF
+				else  --è§£çŠ¶æ€çš„BUFF
 					if v:HasBuff(effect_type) == true then
 						lPlayer[#lPlayer + 1 ] = v.Position;	
 					end
 				end;
 			end
 		
-		elseif subtype == W_MATERIAL_SUBTYPE3 then --ËùÓĞÎ´ËÀÍöµÄ,¾ù¿ÉÓÃ
+		elseif subtype == W_MATERIAL_SUBTYPE3 then --æ‰€æœ‰æœªæ­»äº¡çš„,å‡å¯ç”¨
 			for k,v in ipairs(p.heroCamp.fighters) do
 				if v.nowlife > 0  then
 					lPlayer[#lPlayer + 1 ] = v.Position;
@@ -468,83 +468,102 @@ function p.GetItemCanUsePlayer(pItemPos)
 	return lPlayer;
 end;
 
---Ê¹ÓÃÄ³¸öÎïÆ·
+--ä½¿ç”¨æŸä¸ªç‰©å“
 function p.UseItem(pItemPos, pHeroPos)
+	local leffectflag = true;
 	local lid = w_battle_db_mgr.GetItemid(pItemPos)
+	local effect_skill = SelectCell( T_MATERIAL_RES, lid, "effect" );  --æŠ€èƒ½å…‰æ•ˆ
+	local batch = w_battle_mgr.GetBattleBatch(); 
+	if (effect_skill == nil) or (effect_skill == {}) then
+		leffectflag = false;
+		WriteCon( "material_res.ini config failed id="..tostring(lid));
+	end;
 	
-	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_targer" ));
-	if effect_targer == W_MATERIAL_TARGET2 then  --ÈºÌåµÄ
+	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_target" ));
+	if effect_targer == W_MATERIAL_TARGET2 then  --ç¾¤ä½“çš„
 		for k,v in ipairs(p.heroCamp.fighters) do
-			v:UseItem(lid);
+			if v:UseItem(lid) == true then
+				if leffectflag == false then
+					cmdBuff = createCommandEffect():AddFgEffect( 0.5, v:GetNode(), effect_skill );
+					local seqTemp = batch:AddSerialSequence();
+					seqTemp:AddCommand( cmdBuff );
+				end;
+			end;		
 		end;
 	else
 		local fighter = p.heroCamp:FindFighter(pHeroPos);
 		if fighter~= nil then
-			fighter:UseItem(lid);
+			if fighter:UseItem(lid) == true then
+				if leffectflag == false then
+					cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
+					local seqTemp = batch:AddSerialSequence();
+					seqTemp:AddCommand( cmdBuff );		
+				end;
+			end;
 		end
 	end
 	
-	w_battle_useitem.RefreshUI()  --ÎïÆ·Ê¹ÓÃÍêºó,µ÷ÓÃË¢ĞÂUI, UI»áÄÚ²¿µ÷ÓÃp.GetItemCanUsePlayer
+	w_battle_useitem.RefreshUI()  --ç‰©å“ä½¿ç”¨å®Œå,è°ƒç”¨åˆ·æ–°UI, UIä¼šå†…éƒ¨è°ƒç”¨p.GetItemCanUsePlayer
 end;
 
---ÎÒ·½BUFF½×¶Ï
+--æˆ‘æ–¹BUFFé˜¶æ–­
 function p.HeroBuffStarTurn()
 	WriteCon( "HeroBuffStarTurn");
 	p.atkCampType = W_BATTLE_HERO;
-	p.HeroBuffTurnEnd();  --Ö±½ÓÅĞ¶¨ÎÒ·½BUFF½áÊø
+	p.HeroBuffTurnEnd();  --ç›´æ¥åˆ¤å®šæˆ‘æ–¹BUFFç»“æŸ
 end;
 
---¼ì²éÊÇ·ñËùÓĞµÄBUFF¶¼²¥·ÅÍê±Ï
+--æ£€æŸ¥æ˜¯å¦æ‰€æœ‰çš„BUFFéƒ½æ’­æ”¾å®Œæ¯•
 function p.CheckHeroBuffIsEnd()
   
 end;
 
---ÎÒ·½BUFF½áÊø
+--æˆ‘æ–¹BUFFç»“æŸ
 function p.HeroBuffTurnEnd()
 	WriteCon( "HeroBuffTurnEnd");	
-	if p.heroCamp:isAllDead() == true then  --ÎÒ·½È«ËÀ
+	if p.heroCamp:isAllDead() == true then  --æˆ‘æ–¹å…¨æ­»
 	  p.FightLose();	
 	else 	
-	  --ÎÒ·½»¹ÓĞÈË»î×Å
-	  w_battle_pve.RoundStar();  --UI½çÃæÈ«ÁÁÆğÀ´
-	  w_battle_machinemgr.InitAtkTurnEnd(); --±êÊ¶Íæ¼ÒµÄ»ØºÏ
-	  --ÎÒ·½Ê¹ÓÃÎïÆ·½×¶Ï
-	  --   µ±Ñ¡ÖĞÒ»¸öÎïÆ·ºó,µÃµ½Õâ¸öÎïÆ·¿ÉÊ¹ÓÃµÄÍæ¼ÒÁĞ±í,µ÷ÓÃw_battle_useitem.RefreshUI()
-	  --ÎÒ·½ĞĞ¶¯½×¶Ï,Ö»Òª³öÏÖ¹¥»÷¾ÍµÈÓÚ½øÈëÕâ¸ö½×¶Ï
+	  --æˆ‘æ–¹è¿˜æœ‰äººæ´»ç€
+	  w_battle_pve.RoundStar();  --UIç•Œé¢å…¨äº®èµ·æ¥
+	  w_battle_machinemgr.InitAtkTurnEnd(); --æ ‡è¯†ç©å®¶çš„å›åˆ
+	  --æˆ‘æ–¹ä½¿ç”¨ç‰©å“é˜¶æ–­
+	  --   å½“é€‰ä¸­ä¸€ä¸ªç‰©å“å,å¾—åˆ°è¿™ä¸ªç‰©å“å¯ä½¿ç”¨çš„ç©å®¶åˆ—è¡¨,è°ƒç”¨w_battle_useitem.RefreshUI()
+	  --æˆ‘æ–¹è¡ŒåŠ¨é˜¶æ–­,åªè¦å‡ºç°æ”»å‡»å°±ç­‰äºè¿›å…¥è¿™ä¸ªé˜¶æ–­
 	end
 end;
 
---¼ì²éÎÒ·½ĞĞ¶¯ÊÇ·ñ½áÊø
+--æ£€æŸ¥æˆ‘æ–¹è¡ŒåŠ¨æ˜¯å¦ç»“æŸ
 function p.CheckHeroTurnIsEnd()
-	--if p.heroCamp:CheckAtkTurnEnd() == true then --Ó¢ĞÛµÄ»ØºÏ½áÊø
+	--if p.heroCamp:CheckAtkTurnEnd() == true then --è‹±é›„çš„å›åˆç»“æŸ
 		p.HeroTurnEnd()
 	--end
 	
 end;
 
---ÎÒ·½ĞĞ¶¯½áÊø
+--æˆ‘æ–¹è¡ŒåŠ¨ç»“æŸ
 function p.HeroTurnEnd()
 	WriteCon( "HeroTurnEnd");	
-	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --Ê°È¡µôÂä½±Àø,²¢»Øµ÷¼ì²éµĞ·½ÊÇ·ñÈ«ËÀ
+	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --æ‹¾å–æ‰è½å¥–åŠ±,å¹¶å›è°ƒæ£€æŸ¥æ•Œæ–¹æ˜¯å¦å…¨æ­»
 end;
 
---µĞ·½BUFF¿ªÊ¼
+--æ•Œæ–¹BUFFå¼€å§‹
 function p.EnemyBuffStarTurn()
 	WriteCon( "EnemyBuffStarTurn");	
    p.atkCampType = W_BATTLE_ENEMY;
-   p.EnemyBuffTurnEnd();  --ÏÈÔİÊ±ÅĞ¶¨BUFFÍê³É
+   p.EnemyBuffTurnEnd();  --å…ˆæš‚æ—¶åˆ¤å®šBUFFå®Œæˆ
 end;
 
---¼ì²éµĞ·½BUFFÊÇ·ñ½áÊø
+--æ£€æŸ¥æ•Œæ–¹BUFFæ˜¯å¦ç»“æŸ
 function p.CheckEnemyBuffTurnIsEnd()
 	
 end;
 
---µĞ·½BUFF½áÊø
+--æ•Œæ–¹BUFFç»“æŸ
 function p.EnemyBuffTurnEnd()
 	WriteCon( "EnemyBuffTurnEnd");	
 	p.atkCampType = W_BATTLE_ENEMY 
-	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --Ê°È¡µôÂä½±Àø,²¢»Øµ÷¼ì²éµĞ·½ÊÇ·ñÈ«ËÀ
+	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --æ‹¾å–æ‰è½å¥–åŠ±,å¹¶å›è°ƒæ£€æŸ¥æ•Œæ–¹æ˜¯å¦å…¨æ­»
 	--p.EnemyStarTurn()
 end;
 
@@ -561,10 +580,11 @@ function p.EnemyUseSkill()
 	
 end;
 
---µĞ·½»ØºÏ¿ªÊ¼
-function p.EnemyStarTurn()  --¹ÖÎï»ØºÏ¿ªÊ¼
+--æ•Œæ–¹å›åˆå¼€å§‹
+function p.EnemyStarTurn()  --æ€ªç‰©å›åˆå¼€å§‹
 	WriteCon( "EnemyStarTurn");	
-	
+	p.EnemyTurnEnd() --æš‚æ—¶åˆ¤å®šæ•Œæ–¹å›åˆç»“æŸ
+	--[[
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
 		local lTargetFighter = p.getEnemyTarget(v)
@@ -575,92 +595,93 @@ function p.EnemyStarTurn()  --¹ÖÎï»ØºÏ¿ªÊ¼
 		if lTargetFighter.Skill == 0 then
 			p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());	
 		else
-			--if p.EnemyUseSkill() == true then
-			--	p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
+			if p.EnemyUseSkill() == true then
+				p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
 			--	break;
-			--else
+			else
 				p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());		
-				break;
-			--end
+			--	break;
+			end
 		end
 	end;
-	--p.EnemyTurnEnd() --ÔİÊ±ÅĞ¶¨µĞ·½»ØºÏ½áÊø
+	]]--
+	--p.EnemyTurnEnd() --æš‚æ—¶åˆ¤å®šæ•Œæ–¹å›åˆç»“æŸ
 end;
 
---¼ì²éµĞ·½»ØºÏÊÇ·ñ½áÊø
+--æ£€æŸ¥æ•Œæ–¹å›åˆæ˜¯å¦ç»“æŸ
 function p.CheckEnemyTurnIsEnd() 
 	p.EnemyTurnEnd();
 end;
 
---µĞ·½»ØºÏ½áÊø
+--æ•Œæ–¹å›åˆç»“æŸ
 function p.EnemyTurnEnd()
 	WriteCon( "EnemyTurnEnd");	
 	p.HeroBuffStarTurn();
 end;
 
---µĞ·½ÊÇ·ñÈ«¹Ò
+--æ•Œæ–¹æ˜¯å¦å…¨æŒ‚
 function p.CheckEnemyAllDied()
-	if p.enemyCamp:isAllDead() == true then 	--¹ÖÎïËÀ¹âÁË, ²¨´Î½áÊø or Õ½¶·½áÊø
+	if p.enemyCamp:isAllDead() == true then 	--æ€ªç‰©æ­»å…‰äº†, æ³¢æ¬¡ç»“æŸ or æˆ˜æ–—ç»“æŸ
 		p.FightWin();
 	else	
-		if p.atkCampType == W_BATTLE_HERO then --µ±Ç°ÊÇÎÒ·½ĞĞ¶¯¸Õ½áÊøºóµÄÊ°È¡
+		if p.atkCampType == W_BATTLE_HERO then --å½“å‰æ˜¯æˆ‘æ–¹è¡ŒåŠ¨åˆšç»“æŸåçš„æ‹¾å–
 			p.EnemyBuffStarTurn() 
-		elseif p.atkCampType == W_BATTLE_ENEMY then --µ±Ç°ÊÇµĞ·½BUFF½áÊøºóµÄÊ°È¡
+		elseif p.atkCampType == W_BATTLE_ENEMY then --å½“å‰æ˜¯æ•Œæ–¹BUFFç»“æŸåçš„æ‹¾å–
 		    p.EnemyStarTurn()
 		end
 	end
 end;
 
---Õ½¶·Ê¤Àû
+--æˆ˜æ–—èƒœåˆ©
 function p.FightWin()  
 	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
 		w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
-		w_battle_db_mgr.nextStep();  --Êı¾İ½øÈëÏÂÒ»²¨´Î
+		w_battle_db_mgr.nextStep();  --æ•°æ®è¿›å…¥ä¸‹ä¸€æ³¢æ¬¡
 		--w_battle_mgr.enemyCamp:free();
-		w_battle_pve.FighterOver(true); --¹ı³¡¶¯»­Ö®ºó,UIµ÷ÓÃstarFighter
+		w_battle_pve.FighterOver(true); --è¿‡åœºåŠ¨ç”»ä¹‹å,UIè°ƒç”¨starFighter
 	else
-		w_battle_pve.MissionOver();  --ÈÎÎñ½áÊø,ÈÎÎñ½±Àø½çÃæ
+		w_battle_pve.MissionOver();  --ä»»åŠ¡ç»“æŸ,ä»»åŠ¡å¥–åŠ±ç•Œé¢
 		p.QuitBattle();
 	end
 end;
 
---Õ½¶·Ê§°Ü
+--æˆ˜æ–—å¤±è´¥
 function p.FightLose()  
-	--Ã»ÓĞĞø´ò,Ö»ÓĞÊ§°Ü½çÃæ
+	--æ²¡æœ‰ç»­æ‰“,åªæœ‰å¤±è´¥ç•Œé¢
 end;
 --[[
-function p.StepOver(pIsPass)  --ÕâÒ»²¨´Î½áÊø
+function p.StepOver(pIsPass)  --è¿™ä¸€æ³¢æ¬¡ç»“æŸ
 
-    if pIsPass == false then  --±»¹Ö´òËÀ
-		w_battle_pve.FighterOver(false); --ÌáÊ¾¸´»î
-	else --°Ñ¹Ö´òËÀ
+    if pIsPass == false then  --è¢«æ€ªæ‰“æ­»
+		w_battle_pve.FighterOver(false); --æç¤ºå¤æ´»
+	else --æŠŠæ€ªæ‰“æ­»
 		
 	
 	end;
     
 end;
 ]]--
---Õ½¶·½çÃæÑ¡Ôñ¹ÖÎïÄ¿±ê,Ñ¡Ôñºó¹ÖÎï¾Í±»Ëø¶¨
+--æˆ˜æ–—ç•Œé¢é€‰æ‹©æ€ªç‰©ç›®æ ‡,é€‰æ‹©åæ€ªç‰©å°±è¢«é”å®š
 function p.SetPVETargerID(position)
 	if position > 6 or position < 0 then
 	    WriteCon("SetPVEEnemyID id error! id = "..tostring(targetId));	
 		return ;
 	end
 	
-	local lfighter = p.enemyCamp:FindFighter(position); --¹ÖÁ¬Ê¬Ìå¶¼Ã»ÁË
+	local lfighter = p.enemyCamp:FindFighter(position); --æ€ªè¿å°¸ä½“éƒ½æ²¡äº†
 	if lfighter == nil then
 		return ;
 	end;
 
-
+	
 --	if p.isCanSelFighter == false then 
 --		return ;
 --	end;
 	
-	if lfighter:IsDead() == false then  --¹ÖÎïÎ´½øÈëÁËËÀÍö¶¯»­ÖĞ,¿É×÷ÎªÄ¿±ê
+	if lfighter:IsDead() == false then  --æ€ªç‰©æœªè¿›å…¥äº†æ­»äº¡åŠ¨ç”»ä¸­,å¯ä½œä¸ºç›®æ ‡
 		p.PVEEnemyID = position;
 		p.PVEShowEnemyID = p.PVEEnemyID;
-		--ÏÔÊ¾¹ÖÎïÑªÁ¿
+		--æ˜¾ç¤ºæ€ªç‰©è¡€é‡
 		p.LockEnemy = true;
 		p.SetLockAction(position);	
 	end;
@@ -677,18 +698,21 @@ end;
 function p.SetLockAction(position)
 
    if p.LockFagID ~= position then
-		--È¡ÏûËø¶¨±êÖ¾
+		--å–æ¶ˆé”å®šæ ‡å¿—
 	   p.InitLockAction()
 	   local ltag = p.enemyUILockArray[position];
 	   local lLockPic = GetImage(p.uiLayer, ltag);	    
 	   --local lLockPic = p.GetLockImage();		
 	   lLockPic:SetVisible(true);
+	   local targetFighter = p.enemyCamp:FindFighter(position);
+	   local lElementLst = p.heroCamp:GetElementAtkFighter(targetFighter);
+	   w_battle_pve.UpdateDamageBufftype(lElementLst);
    end;
 
 end;
 
 --[[
---´¦ÓÚ¹¥»÷¹ı³ÌÖĞµÄ¶ÓÁĞ
+--å¤„äºæ”»å‡»è¿‡ç¨‹ä¸­çš„é˜Ÿåˆ—
 function p.AtkAdd(pAtkId)
 	p.AtkList[#p.AtkList + 1] = pAtkId;	
 end;
@@ -710,7 +734,7 @@ function p.CheckAtkListIsNull()
 	return lres;
 end;
 ]]--
---¿ªÊ¼Õ½¶·±íÏÖ:pve
+--å¼€å§‹æˆ˜æ–—è¡¨ç°:pve
 function p.play_pve( targetId )
     WriteCon("-----------------Enter the pve mission id = "..targetId);
 	isPVE = true;	
@@ -719,7 +743,7 @@ function p.play_pve( targetId )
     p.SendStartPVEReq( targetId );
 end
 
---¿ªÊ¼Õ½¶·±íÏÖ:pvp
+--å¼€å§‹æˆ˜æ–—è¡¨ç°:pvp
 function p.play_pvp( targetId )
     WriteCon("-----------------Enter the pvp Tuser id = "..targetId);
     isPVE = false;
@@ -728,14 +752,14 @@ function p.play_pvp( targetId )
     p.SendStartPVPReq( targetId );
 end
 
---ÏÔÊ¾»ØºÏÊı
+--æ˜¾ç¤ºå›åˆæ•°
 function p.ShowRoundNum()
     --local roundNum = w_battle_stage.GetRoundNum();
     --w_battle_mainui.ShowRoundNum( roundNum );
     w_battle_show.DoEffectShowTurnNum();
 end
 
---Õ½¶·½×¶Î->¼ÓÔØ->ÇëÇó
+--æˆ˜æ–—é˜¶æ®µ->åŠ è½½->è¯·æ±‚
 function p.SendStartPVPReq( targetId )
     local UID = GetUID();
     if UID == 0 or UID == nil then
@@ -745,20 +769,45 @@ function p.SendStartPVPReq( targetId )
     SendReq("Fight","StartPvP",UID,param);
 end
 
---Õ½¶·½×¶Î->¼ÓÔØ->ÇëÇó
-function p.SendStartPVEReq( targetId )
+--æˆ˜æ–—é˜¶æ®µ->åŠ è½½->è¯·æ±‚
+function p.SendStartPVEReq( targetId, teamid )
     --local TID = 101011;
     local UID = GetUID();
     if UID == 0 or UID == nil then
         return ;
     end;
-    local param = string.format("&missionID=%d", targetId);
+    local param = string.format("&missionID=%d&teamID=%d", targetId,teamid);
+	--local param = string.format("&missionID=%d", targetId,teamid);
     SendReq("Fight","StartPvC",UID,param);
 end
 
---Õ½¶·½×¶ÎPVP->¼ÓÔØ->ÏìÓ¦
+--è¿›å…¥æˆ˜æ–—
+function p.EnterBattle( battleType, missionId,teamid )
+	WriteCon( "w_battle_mgr.EnterBattle()" );
+	p.SendStartPVEReq( missionId,teamid);
+--[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
+	p.battle_result = math.random(0,1);
+	p.battle_result = 1;
+	p.SendResult(missionId, p.battle_result);
+	]]--
+end
+
+
+--æˆ˜æ–—é˜¶æ®µPVP->åŠ è½½->å“åº”
 function p.ReceiveStartPVPRes( msg )
+    dlg_menu.CloseUI();
+    dlg_userinfo.CloseUI();
     w_battle_db_mgr.Init( msg );
+	
+	--enter PVP
+	--w_battle_pvp.ShowUI( battleType, missionId );	
+	--w_battle_mainui.ShowUI();
+	w_battle_pve.ShowUI();
+	
+	--éŸ³ä¹
+	PlayMusic_Battle();	
+	--[[
+   
     local UCardList = w_battle_db_mgr.GetPlayerCardList();
     local TCardList = w_battle_db_mgr.GetTargetCardList();
     local TPetList = w_battle_db_mgr.GetTargetPetList();
@@ -769,7 +818,7 @@ function p.ReceiveStartPVPRes( msg )
     end
     p.createHeroCamp( UCardList );
     p.createEnemyCamp( TCardList );
-	--°´»î×ÅµÄ¹ÖÎï,¸ø¸öÄ¿±ê
+	--æŒ‰æ´»ç€çš„æ€ªç‰©,ç»™ä¸ªç›®æ ‡
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
@@ -780,20 +829,20 @@ function p.ReceiveStartPVPRes( msg )
     p.ReSetPetNodePos();
     
     w_battle_pvp.ReadyGo();
-    p.ShowRoundNum();
+    p.ShowRoundNum(); ]]--
 end
 
---Õ½¶·½×¶ÎPVE->¼ÓÔØ->ÏìÓ¦
+--æˆ˜æ–—é˜¶æ®µPVE->åŠ è½½->å“åº”
 function p.ReceiveStartPVERes( msg )
 	p.ReceiveStartPVPRes( msg );
 end
 
---Õ½¶·½×¶Î->ÓÀ¾ÃBUFF±íÏÖ
+--æˆ˜æ–—é˜¶æ®µ->æ°¸ä¹…BUFFè¡¨ç°
 function p.EnterBattle_Stage_Permanent_Buff()
 	w_battle_mainui.OnBattleShowFinished();
 end
 
---½øÈë»ØºÏ½×¶Î->ÕÙ»½ÊŞ±íÏÖ
+--è¿›å…¥å›åˆé˜¶æ®µ->å¬å”¤å…½è¡¨ç°
 function p.EnterBattle_RoundStage_Pet()
     local rounds = w_battle_stage.GetRoundNum();
     local petData = w_battle_db_mgr.GetPetRoundDB( rounds );
@@ -804,7 +853,7 @@ function p.EnterBattle_RoundStage_Pet()
     end
 end
 
---½øÈë»ØºÏ½×¶Î->BUFF±íÏÖ
+--è¿›å…¥å›åˆé˜¶æ®µ->BUFFè¡¨ç°
 function p.EnterBattle_RoundStage_Buff()
     local rounds = w_battle_stage.GetRoundNum();
     local buffEffectData = w_battle_db_mgr.GetBuffEffectRoundDB( rounds );
@@ -815,7 +864,7 @@ function p.EnterBattle_RoundStage_Buff()
     end
 end
 
---¸üĞÂÕ½Ê¿ÉíÉÏµÄBUFF
+--æ›´æ–°æˆ˜å£«èº«ä¸Šçš„BUFF
 function p.UpdateFighterBuff()
 	local heroes = p.heroCamp:GetAliveFighters();
 	p.DelFighterBuff( heroes );
@@ -823,7 +872,7 @@ function p.UpdateFighterBuff()
 	p.DelFighterBuff( enemies );
 end
 
---¸üĞÂÕ½Ê¿ÉíÉÏµÄBUFF
+--æ›´æ–°æˆ˜å£«èº«ä¸Šçš„BUFF
 function p.DelFighterBuff( fighters )
 	if fighters ~= nil and #fighters >0 then
         for key, fighter in ipairs(fighters) do
@@ -840,7 +889,7 @@ function p.DelFighterBuff( fighters )
     end
 end
 
---½øÈë»ØºÏ½×¶Î->»¥Å¹
+--è¿›å…¥å›åˆé˜¶æ®µ->äº’æ®´
 function p.EnterBattle_RoundStage_Atk()
     local rounds = w_battle_stage.GetRoundNum();
     local atkData = w_battle_db_mgr.GetRoundDB( rounds );
@@ -851,19 +900,19 @@ function p.EnterBattle_RoundStage_Atk()
     end
 end
 
---½øÈë»ØºÏ½×¶Î->ÇåËã
+--è¿›å…¥å›åˆé˜¶æ®µ->æ¸…ç®—
 function p.EnterBattle_RoundStage_Clearing()
     if not p.CheckBattleWin() then
          p.CheckBattleLose();
     end
-    --½øÈëÏÂÒ»¸ö»ØºÏ
+    --è¿›å…¥ä¸‹ä¸€ä¸ªå›åˆ
     w_battle_stage.NextRound();
     p.ShowRoundNum();
     p.UpdatePetRage();
     w_battle_mainui.OnBattleShowFinished();
 end
 
---È¡Õ½¶·²ã
+--å–æˆ˜æ–—å±‚
 function p:GetBattleLayer()
 	if not isPVE then
 		return w_battle_pvp.battleLayer;
@@ -871,7 +920,7 @@ function p:GetBattleLayer()
 	return nil;
 end
 
---´´½¨³èÎï
+--åˆ›å»ºå® ç‰©
 function p.createPet( petList, camp )
 	if petList == nil or #petList < 0 then
         return false;
@@ -913,7 +962,7 @@ function p.createPet( petList, camp )
     end
 end
 
---¸üĞÂ³èÎïÅ­Æø
+--æ›´æ–°å® ç‰©æ€’æ°”
 function p.UpdatePetRage()
     local UPetList = w_battle_db_mgr.GetPlayerPetList();
     local TPetList = w_battle_db_mgr.GetTargetPetList();
@@ -934,7 +983,7 @@ function p.UpdatePetRage()
     
 end
 
---»ñÈ¡³èÎï½áµã
+--è·å–å® ç‰©ç»“ç‚¹
 function p.GetPetNode( posId, camp )
 	if posId == nil or camp == nil then
 		return false;
@@ -952,7 +1001,7 @@ function p.GetPetNode( posId, camp )
 	end
 end 
 
---»ñÈ¡³èÎïÃû³Æ½áµã
+--è·å–å® ç‰©åç§°ç»“ç‚¹
 function p.GetPetNameNode( posId, camp )
     if posId == nil or camp == nil then
         return false;
@@ -970,7 +1019,7 @@ function p.GetPetNameNode( posId, camp )
     end
 end
 
---ÉèÖÃ³èÎï¼°Ãû³Æ½áµãÎ»ÖÃ
+--è®¾ç½®å® ç‰©åŠåç§°ç»“ç‚¹ä½ç½®
 function p.ReSetPetNodePos()
 	local ln = #p.petNode;
 	local ln2 = #p.petNameNode;
@@ -994,7 +1043,7 @@ function p.ReSetPetNodePos()
     end
 end
 
---Ìí¼ÓÃÉ°æÍ¼Æ¬
+--æ·»åŠ è’™ç‰ˆå›¾ç‰‡
 function p.AddMaskImage()
 	if p.imageMask == nil then
 		p.imageMask = createNDUIImage();
@@ -1010,7 +1059,7 @@ function p.AddMaskImage()
 	end
 end
 
---ÏÔÊ¾ÃÉ°æ
+--æ˜¾ç¤ºè’™ç‰ˆ
 function p.ShowMaskImage()
 	if p.imageMask ~= nil then
 		--p.imageMask:SetVisible(true);
@@ -1018,7 +1067,7 @@ function p.ShowMaskImage()
 	end
 end
 
---²»ÏÔÊ¾ÃÉ°æ
+--ä¸æ˜¾ç¤ºè’™ç‰ˆ
 function p.HideMaskImage()
 	if p.imageMask ~= nil then
 		--p.imageMask:SetVisible(false);
@@ -1027,51 +1076,51 @@ function p.HideMaskImage()
 end
 
 --[[
---È¡boss
+--å–boss
 function p.GetBoss()
 	return p.enemyCamp:GetFirstFighter();
 end
 --]]
 
---ÊÇ·ñactive
+--æ˜¯å¦active
 function p.IsActive()
     return isActive;
 end
 
---È¡µÚÒ»¸öhero
+--å–ç¬¬ä¸€ä¸ªhero
 function p.GetFirstHero()
 	return p.heroCamp:GetFirstFighter();
 end
 
---È¡µÚÒ»¸öenemy
+--å–ç¬¬ä¸€ä¸ªenemy
 function p.GetFirstEnemy()
 	return p.enemyCamp:GetFirstFighter();
 end
 
---´´½¨Íæ¼ÒÕóÓª
+--åˆ›å»ºç©å®¶é˜µè¥
 function p.createHeroCamp( fighters )
 	p.heroCamp = w_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
-	p.heroCamp:AddShadows( p.heroUIArray, fighters );
+	--p.heroCamp:AddShadows( p.heroUIArray, fighters );
 	p.heroCamp:AddAllRandomTimeJumpEffect(true);
 end
 
---´´½¨µĞ¶ÔÕóÓª
+--åˆ›å»ºæ•Œå¯¹é˜µè¥
 function p.createEnemyCamp( fighters )
 	p.enemyCamp = w_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
-	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
+	--p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
 	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 end
 
---²âÊÔPVP
+--æµ‹è¯•PVP
 function p.TestPVP()
 
 end
 
---²âÊÔËæ»ú´òÒ»´Î(PVP)
+--æµ‹è¯•éšæœºæ‰“ä¸€æ¬¡(PVP)
 function p.JumpToPoint( pSeq,Pos )
 	local batch = battle_show.GetNewBatch();
 	local f1 = p.heroCamp:GetRandomFighter();
@@ -1083,7 +1132,7 @@ function p.JumpToPoint( pSeq,Pos )
 
 end
 
---²éÕÒfighter
+--æŸ¥æ‰¾fighter
 function p.FindFighter(id)
 	local f = p.heroCamp:FindFighter(id);
 	if f == nil then
@@ -1092,14 +1141,14 @@ function p.FindFighter(id)
 	return f;
 end
 
---Õ½¶·Ê¤Àû
+--æˆ˜æ–—èƒœåˆ©
 function p.OnBattleWin()
 	--GetBattleShow():Stop();
 	p.isBattleEnd = true;
 	SetTimerOnce( p.OpenBattleWin, 1.0f );
 end
 
---´ò¿ªÕ½¶·Ê¤Àû½çÃæ
+--æ‰“å¼€æˆ˜æ–—èƒœåˆ©ç•Œé¢
 function p.OpenBattleWin()
 	PlayEffectSoundByName( "battle_win.mp3" );
 	w_battle_ko.CloseUI();
@@ -1107,20 +1156,20 @@ function p.OpenBattleWin()
 	quest_reward.ShowUI( w_battle_db_mgr.GetRewardData() );
 end
 
---Õ½¶·Ê§°Ü
+--æˆ˜æ–—å¤±è´¥
 function p.OnBattleLose()
 	--GetBattleShow():Stop();
 	p.isBattleEnd = true;
 	SetTimerOnce( p.OpenBattleLose, 2.0f );
 end
 
---´ò¿ªÕ½¶·Ê§°Ü½çÃæ
+--æ‰“å¼€æˆ˜æ–—å¤±è´¥ç•Œé¢
 function p.OpenBattleLose()
 	--dlg_battle_lose.ShowUI();
 	quest_reward.ShowUI( w_battle_db_mgr.GetRewardData() );
 end
 
---¼ì²éÊÇ·ñÕ½¶·Ê¤Àû
+--æ£€æŸ¥æ˜¯å¦æˆ˜æ–—èƒœåˆ©
 function p.CheckBattleWin()
 	if p.enemyCamp:IsAllFighterDead() then
 		p.OnBattleWin();
@@ -1129,7 +1178,7 @@ function p.CheckBattleWin()
 	return false;
 end
 
---¼ì²éÊÇ·ñÕ½¶·Ê§°Ü
+--æ£€æŸ¥æ˜¯å¦æˆ˜æ–—å¤±è´¥
 function p.CheckBattleLose()
 	if p.heroCamp:IsAllFighterDead() then
 		p.OnBattleLose();
@@ -1138,13 +1187,28 @@ function p.CheckBattleLose()
 	return false;
 end
 
+function p.GetBattleUseItem()
+	local post_data= { 
+	                    {id="101001", num=1},
+	                    {id="101002", num=2},
+	                  };
+	return post_data;
+end;
+
 function p.SendResult(missionID,result)
 	local uid = GetUID();
 	--uid = 10002;
 	if uid ~= nil and uid > 0 then
-		--Ä£¿é  Action idm = ËÇÁÏ¿¨ÅÆunique_ID (1000125,10000123) 
-		local param = string.format("&missionID=%d&result=%d&money=0&soul=0", tonumber(missionID), tonumber(result));
-		SendReq("Fight","PvEReward",uid,param);
+		--æ¨¡å—  Action idm = é¥²æ–™å¡ç‰Œunique_ID (1000125,10000123) 
+		--local param = string.format("&missionID=%d&result=%d&money=0&soul=0", tonumber(missionID), tonumber(result));
+		local param = {missionID = tonumber(missionID),
+		               result = tonumber(result),
+		               money  = 0,
+					   soul   = 0,
+					   post_data = p.GetBattleUseItem()
+					   }
+					
+		SendPost("Fight","PvEReward",uid,"",FormatTableToJson(param));
 		--card_intensify_succeed.ShowUI(p.baseCardInfo);
 		--p.ClearData();
 	end
@@ -1154,33 +1218,8 @@ function p.GetReuslt()
 	return p.battle_result;
 end;
 
---½øÈëÕ½¶·
-function p.EnterBattle( battleType, missionId )
-	WriteCon( "w_battle_mgr.EnterBattle()" );
 
-	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
-	p.battle_result = math.random(0,1);
-	p.battle_result = 1;
-	p.SendResult(missionId, p.battle_result);
-
-	--Òş²Ø°´Å¥
---[[
-    dlg_menu.CloseUI();
-    dlg_userinfo.CloseUI();
-    
-	
-	--enter PVP
-	w_battle_pvp.ShowUI( battleType, missionId );	
-	w_battle_mainui.ShowUI();
-	
-	--ÒôÀÖ
-	PlayMusic_Battle();
-	
-	isActive = true;
-	]]--
-end
-
---ÍË³öÕ½¶·
+--é€€å‡ºæˆ˜æ–—
 function p.QuitBattle()
 	--WriteCon( "w_battle_mgr.QuitBattle()" );
 
@@ -1193,14 +1232,14 @@ function p.QuitBattle()
 		
 	--hud.FadeIn();
 	
-	--ÒôÀÖ
+	--éŸ³ä¹
 	PlayMusic_Task();
 	
 	isActive = false;
 	p.clearDate();
 end
 
---¼ì²éÕ½¶·½áÊø
+--æ£€æŸ¥æˆ˜æ–—ç»“æŸ
 function p.IsBattleEnd()
 	if p.heroCamp:IsAllFighterDead() then
 		return true;
@@ -1233,15 +1272,15 @@ function p.GetScreenCenterPos()
 end
 
 function p.checkTurnEnd()
-	--ÊÜ»÷×´Ì¬»úÈ«ĞĞ¶¯Íê³ÉÁËÇÒÎ´ÔÚĞĞ¶¯ÖĞ, ¹¥»÷×´Ì¬»úÃ»ÓĞ´¦ÓÚĞĞ¶¯ÖĞµÄ
+	--å—å‡»çŠ¶æ€æœºå…¨è¡ŒåŠ¨å®Œæˆäº†ä¸”æœªåœ¨è¡ŒåŠ¨ä¸­, æ”»å‡»çŠ¶æ€æœºæ²¡æœ‰å¤„äºè¡ŒåŠ¨ä¸­çš„
 	if (w_battle_machinemgr.checkAllTargetMachineEnd() == true) and (w_battle_machinemgr.checkAllAtkMachineHasTurn() == false) then
 		if p.atkCampType == W_BATTLE_HERO then	
-			if p.enemyCamp:isAllDead() == false then --»¹ÓĞ»î×ÅµÄµĞÈË
-				if w_battle_machinemgr.checkAllAtkMachineHasNotTurn() == false then  --²»´æÔÚÎ´ĞĞ¶¯µÄÈË
-					p.HeroTurnEnd();  --ËùÓĞÓ¢ĞÛ¾ùÒÑĞĞ¶¯  
+			if p.enemyCamp:isAllDead() == false then --è¿˜æœ‰æ´»ç€çš„æ•Œäºº
+				if w_battle_machinemgr.checkAllAtkMachineHasNotTurn() == false then  --ä¸å­˜åœ¨æœªè¡ŒåŠ¨çš„äºº
+					p.HeroTurnEnd();  --æ‰€æœ‰è‹±é›„å‡å·²è¡ŒåŠ¨  
 				end;
-			else  --ËùÓĞµĞÈËÈ«ËÀÁË
-				w_battle_pve.PickStep(w_battle_mgr.FightWin); --¼ñ¶«Î÷
+			else  --æ‰€æœ‰æ•Œäººå…¨æ­»äº†
+				w_battle_pve.PickStep(w_battle_mgr.FightWin); --æ¡ä¸œè¥¿
 			end
 		else
 			if p.heroCamp:isAllDead() == false then
@@ -1257,8 +1296,8 @@ end
 function p.getEnemyTarget(atkFighter)
 	local lTargetFighter = nil;
 	
-	--È¡ÊôĞÔÏà¿ËµÄ
-	local lFighterLst =  p.heroCamp:GetElementFighter(atkFighter); --»ñµÃÄÜ¿ËÖÆµÄÍæ¼ÒÁĞ±í
+	--å–å±æ€§ç›¸å…‹çš„
+	local lFighterLst =  p.heroCamp:GetElementFighter(atkFighter); --è·å¾—èƒ½å…‹åˆ¶çš„ç©å®¶åˆ—è¡¨
 	if #lFighterLst == 0 then
 		lFighterLst = p.heroCamp:GetHeroFighter()
 	end
@@ -1267,7 +1306,7 @@ function p.getEnemyTarget(atkFighter)
 		return nil;
 	end;
 
-    --È¡ÑªÁ¿×îÉÙµÄ	
+    --å–è¡€é‡æœ€å°‘çš„	
 	lTargetFighter = lFighterLst[1];
 	lTargetFightetLst = {}
 	for k,v in ipairs(lFighterLst) do 
@@ -1280,7 +1319,7 @@ function p.getEnemyTarget(atkFighter)
 		end
 	end
 	
-	--È¡Î»ÖÃ×îĞ¡µÄ
+	--å–ä½ç½®æœ€å°çš„
 	--local lPos = 7;
 	lTargetFighter = lFighterLst[1];
     if #lTargetFightetLst > 0 then

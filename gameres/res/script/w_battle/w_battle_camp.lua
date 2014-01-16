@@ -86,7 +86,7 @@ function p:GetFirstActiveFighterPos(pFighterID)
 	return lId;
 end;	
 
---获得属性相克的玩家列表
+--传入攻击者,获得属性加成的玩家列表
 function p:GetElementFighter(pAtkFighter)
 	local lLst = {}
 	for k,v in ipairs(self.fighters) do
@@ -97,6 +97,17 @@ function p:GetElementFighter(pAtkFighter)
 	return lLst;
 end;
 
+--传入受击者,获得哪些攻击有属性加成的位置
+function p:GetElementAtkFighter(pTarFighter)
+	local lLst = {}
+	for k,v in ipairs(self.fighters) do
+		if (v.nowlife > 0) and (w_battle_atkDamage.IsElement(v,pTarFighter) == true) then
+			table.insert(lLst,v:GetId());
+		end;
+	end;
+	return lLst;
+
+end;
 --获得体力>0的玩家列表
 function p:GetHeroFighter()
 	local lLst = {}
@@ -397,7 +408,7 @@ function p:AddFighters( uiArray, fighters )
 		
 		--战士属性
         f.life = tonumber( fighterInfo.Hp );
-        f.lifeMax = tonumber( fighterInfo.Hp );
+        --f.lifeMax = tonumber( fighterInfo.Hp );
         f.level = tonumber( fighterInfo.Level );
         f.uniqueId = tonumber( fighterInfo.UniqueId );
         f.cardId = tonumber( fighterInfo.CardID );
@@ -417,6 +428,8 @@ function p:AddFighters( uiArray, fighters )
 				
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
+		f.Hp = f.Hp - 10;
+		f.nowlife = f.Hp;
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();
 		
