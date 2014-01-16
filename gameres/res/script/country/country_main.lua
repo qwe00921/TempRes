@@ -1,3 +1,5 @@
+NOW_COUNTRY_NUM = 9
+
 country_main = {};
 local p = country_main;
 local ui = ui_country;
@@ -164,8 +166,8 @@ function p.showNewBuild(openViewT)
 
 	--WriteCon("p.openTypeNum == "..p.openTypeNum);
 	--local keyNum = p.openTypeNum
-	if p.openTypeNum <= 9 then
-		for i = p.openTypeNum,9 do
+	if p.openTypeNum <= NOW_COUNTRY_NUM then
+		for i = p.openTypeNum,100 do
 			WriteCon("p.openTypeNum == "..p.openTypeNum);
 			if openViewT["P"..i] then
 				WriteCon("showNewBuild");
@@ -175,7 +177,7 @@ function p.showNewBuild(openViewT)
 			else
 				p.openTypeNum = i + 1;
 			end
-			if i == 9 then
+			if i == 100 then
 				p.showCountryBuild(p.countryInfoT)
 			end
 		end
