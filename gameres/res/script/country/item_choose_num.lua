@@ -79,7 +79,7 @@ end
 
 function p.InitControlelr()
 	local title = GetLabel( p.layer, ui.ID_CTRL_TEXT_6 );
-	title:SetText( "Ò©Æ·ÅäÖÃ" );
+	title:SetText( "è¯å“é…ç½®" );
 	
 	local itemPic = GetImage( p.layer, ui.ID_CTRL_PICTURE_8 );
 	local path = SelectCell( T_MATERIAL, p.item.material_id, "item_pic" );
@@ -118,7 +118,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		elseif ui.ID_CTRL_BUTTON_96 == tag then
 			p.AddNum( 5 );
 		elseif ui.ID_CTRL_BUTTON_97 == tag then
-			p.AddNum( 999999 ); --±íÊ¾×î´ó
+			p.AddNum( 999999 ); --è¡¨ç¤ºæœ€å¤§
 		end
 	end
 end

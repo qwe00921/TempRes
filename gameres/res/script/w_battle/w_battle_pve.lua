@@ -45,6 +45,7 @@ p.battleType = W_BATTLE_PVE;
 
 p.targetHp = nil;
 p.targetName = nil;
+p.targetAttr = nil;
 p.boxImage = nil;
 p.useitemMask = nil;
 p.itemMask = nil;
@@ -247,6 +248,7 @@ end
 function p.InitController()
 	p.targetHp = GetExp( p.battleLayer, ui.ID_CTRL_EXP_HP );
 	p.targetName = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_365 );
+	p.targetAttr = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_140 );
 	
 	for i = 1, 6 do
 		local tCard = p.GetCardTable( i );
@@ -459,12 +461,45 @@ function p.InitBattle()
 end
 
 --设置目标的名字以及血条显示
-function p.SetHp( maxHp, curHp, name )
-	if p.targetHp == nil then
-		p.targetHp = GetExp( p.battleLayer, ui.ID_CTRL_EXP_HP );
+function p.SetHp( fighter )
+	p.targetHp = p.targetHp or GetExp( p.battleLayer, ui.ID_CTRL_EXP_HP );
+	p.targetName = p.targetName or GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_365 );
+	p.targetAttr = p.targetAttr or GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_140 );
+
+	p.targetHp:SetValue( 0, tonumber( fighter.maxHp ), tonumber( fighter.Hp ) );
+	
+	p.targetName:SetText( "" );
+	local cardID = fighter.CardID or 0;
+	if cardID ~= 0 then
+		local name = SelectCell( T_CARD, cardID, "name" );
+		p.targetName:SetText( tostring(name) );
 	end
-	p.targetHp:SetValue( 0, tonumber( maxHp ), tonumber( curHp ) );
-	p.targetName:SetText( name );
+	
+	local element = fighter.element or 0;
+	local attrpic = GetPictureByAni( "card_element.".. tostring(element), 0 );
+	if attrpic then
+		p.targetAttr:SetPicture( attrpic );
+	end
+end
+
+--设置玩家卡牌属性
+function p.SetHeroCardAttr( pos, fighter )
+	if pos == nil or fighter == nil then
+		return;
+	end
+	
+	local ctrllers = p.objList[pos];
+	if ctrllers ~= nil then
+		ctrllers[HPEXP_INDEX]:SetValue( 0, tonumber( fighter.maxHp ), tonumber( fighter.Hp ) );
+		ctrllers[HPTEXT_INDEX]:SetText( string.format( "%d/%d", tonumber( fighter.Hp ), tonumber( fighter.maxHp ) ) );
+		
+		if tonumber(fighter.Hp) == 0 then
+			ctrllers[MASK_INDEX]:SetVisible( true );
+			ctrllers[BTN_INDEX]:SetVisible( false );
+		end
+		
+		ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber( fighter.maxSp ), tonumber( fighter.Sp ) );
+	end
 end
 
 --新回合开始，刷新UI
@@ -526,6 +561,7 @@ function p.CloseUI()
 
 		p.targetHp = nil;
 		p.targetName = nil;
+		p.targetAttr = nil;
 		p.boxImage = nil;
 		p.useitemMask = nil;
 		p.itemMask = nil;
@@ -737,9 +773,10 @@ function p.Pick( nTimerId )
 	
 	if drop:GetImageNode():IsVisible() then
 		if drop:GetType() == E_DROP_HPBALL or drop:GetType() == E_DROP_SPBALL then
-			drop:Pick( GetPlayer( p.battleLayer , heroUIArray[math.random(1, 5)] ) );
+			local pos = math.random(1, 5);
+			drop:Pick( GetPlayer( p.battleLayer , heroUIArray[pos] ), pos );
 		else
-			drop:Pick( p.boxImage, true );
+			drop:Pick( p.boxImage );
 			
 			if not p.BoxScale then
 				p.BoxScale = true;

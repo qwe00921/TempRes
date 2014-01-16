@@ -3,6 +3,17 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_141]
+Type=1
+Tag=141
+Rect=0 187 640 440
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg2.png
+NormalFileUV=0 0 640 338
+
 [CTRL_9SLICES_1]
 Type=22
 Tag=1

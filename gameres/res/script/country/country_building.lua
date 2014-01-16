@@ -6,6 +6,9 @@ local ui = ui_country_levelup;
 p.layer = nil;
 p.scrollList = nil;
 p.countryInfoT = nil;
+p.buildNum = 0;
+p.typeIndexT = {};
+p.nextTyep = 1;
 
 p.upNeedTime = nil;
 p.upNeed = nil;
@@ -21,6 +24,11 @@ function p.ShowUI(countryInfo)
 		return
 	end
 	p.countryInfoT = countryInfo;
+	
+	for _,_ in pairs(countryInfo) do
+		p.buildNum = p.buildNum + 1;
+	end
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -61,25 +69,43 @@ function p.InitScrollList()
 	bList:SetFramePosXY( posXY.x, posXY.y+33 );
 	bList:SetFrameSize( size.w, size.h );
 	bList:SetSizeView( CCSizeMake(216,100) );
-	for i = 1,9 do
+	for i = 1,p.buildNum do
 		local bView = createNDUIScrollViewExpand();
 		if bView == nil then
 			WriteConErr("createNDUIScrollViewExpand() error");
 			return true;
 		end
 		bView:Init();
-		bView:SetViewId(math.mod(i,9));
+		--bView:SetViewId(i+10);
 		LoadUI( "country_levelup_btn.xui", bView, nil );
 
+		if p.nextTyep <= 9 then
+			for j = p.nextTyep,10 do
+				if p.countryInfoT["B"..j] then
+					p.typeIndexT["L"..i] = p.countryInfoT["B"..j].build_type
+					p.nextTyep = j + 1
+					break;
+				end
+			end
+		end
+
+		-- for k,v in pairs(p.typeIndexT) do
+			-- WriteCon(k.." == "..v);
+		-- end
+		-- WriteConErr("====================="..(p.typeIndexT["L"..i]));
+		
 		local btn = GetButton( bView, ui_country_levelup_btn.ID_CTRL_BUTTON_21 );
-		btn:SetImage( GetPictureByAni( "common_ui.buildBoxPic", math.mod(i,9) ) );
+		btn:SetImage( GetPictureByAni( "common_ui.buildBoxPic", tonumber(p.typeIndexT["L"..i])-1 ) );
 		--btn:SetLuaDelegate( p.OnTouchImage );
-		btn:SetId( math.mod(i,9));
+		--btn:SetId(tonumber(p.typeIndexT["L"..i])-1);
+		
 		bList:AddView(bView);
 	end
 	p.layer:AddChild( bList );
 end
 
+--L1 l2 L3 L4
+--4567
 function p.OnTouchList(uiNode,uiEventType,param)
 	local typeId = p.getNowType()
 	p.getBuildInfo(typeId)
@@ -98,13 +124,14 @@ end
 --获取当前建筑TYPE
 function p.getNowType()
 	local indexId = p.scrollList:GetCurrentIndex()
-	
-	indexId = indexId+2
-	if	indexId == 10 then
-		indexId = 1 
-	end
-	WriteCon("indexId ==== "..indexId);
-	return indexId
+
+	indexId = indexId + 1;
+	local nowType = tonumber(p.typeIndexT["L"..indexId])
+	-- if	indexId == 10 then
+		-- indexId = 1 
+	-- end
+	WriteCon("nowType ==== "..nowType);
+	return nowType
 end
 function p.getBuildInfo(typeId)
 	local nowBuildLv = nil;
@@ -129,26 +156,38 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 	local timeNeed = nil;
 	local homeLvNeed = nil;
 	local playLvNeed = nil;
-	for k,v in pairs(buildTable) do
-		if tonumber(v.level) == tonumber(nowLevel) then
-			desText = v.description;
-			moneyNeed = v.cost_money
-			soulNeed = v.cost_soul
-			timeNeed = v.upgrade_time;
-			homeLvNeed = v.house_level_limit;
-			playLvNeed = v.player_level_limit;
+	local nextLv = nowLevel + 1;
+	local upBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_UP );
+	if nextLv <= #buildTable then
+		for k,v in pairs(buildTable) do
+			if tonumber(v.level) == tonumber(nextLv) then
+				desText = v.description;
+				moneyNeed = v.cost_money
+				soulNeed = v.cost_soul
+				timeNeed = v.upgrade_time;
+				homeLvNeed = v.house_level_limit;
+				playLvNeed = v.player_level_limit;
+			end
 		end
-	end
-	if upIng == 0 then
-		p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
-		p.upNeed:SetText("金币:"..moneyNeed.."  蓝魂:"..soulNeed);
-		p.upNeedHome:SetText("住宅:"..homeLvNeed);
-		p.buildLevel:SetText("LV"..nowLevel);
-	elseif upIng == 1 then
-		p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
-		p.upNeed:SetText("升级中");
+		
+		if upIng == 0 then
+			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
+			p.upNeed:SetText("金币:"..moneyNeed.."  蓝魂:"..soulNeed);
+			p.upNeedHome:SetText("住宅:"..homeLvNeed);
+			p.buildLevel:SetText("LV"..nowLevel);
+		elseif upIng == 1 then
+			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
+			p.upNeed:SetText("升级中");
+			p.upNeedHome:SetText(" ");
+			p.buildLevel:SetText("LV"..nowLevel);
+		end
+		upBtn:SetVisible(true);
+	else
+		p.upNeedTime:SetText("已到达最高等级");
+		p.upNeed:SetText(" ");
 		p.upNeedHome:SetText(" ");
-		p.buildLevel:SetText("LV"..nowLevel);
+		p.buildLevel:SetText("LV MAX");
+		upBtn:SetVisible(false);
 	end
 end
 
@@ -236,31 +275,7 @@ end
 function p.OnTouchImage(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		local id = uiNode:GetId();
-		if id == 0 then
-			WriteCon("**========produceBtn========**");
-			-- stageMap_main.OpenWorldMap();
-			-- PlayMusic_Task(1);
-
-			-- maininterface.HideUI();
-		-- end
-	-- end
-		elseif id == 1 then
-			WriteCon("**========equipBtn========**");
-		elseif id == 2 then
-			WriteCon("**========mergeBtn========**");
-		elseif id == 3 then
-			WriteCon("**========homeBtn========**");
-		elseif id == 4 then
-			WriteCon("**========storeBtn========**");
-		elseif id == 5 then
-			WriteCon("**========riverBtn========**");
-		elseif id == 6 then
-			WriteCon("**========fieldBtn========**");
-		elseif id == 7 then
-			WriteCon("**========mountainBtn========**");
-		elseif id == 8 then
-			WriteCon("**========treeBtn========**");
-		end
+		WriteCon("**========produceBtn========**");
 	end
 end
 
@@ -277,8 +292,22 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.ClearData()
 	end
 end
+function p.ClearData()
+	p.scrollList = nil;
+	p.countryInfoT = nil;
+	p.buildNum = 0;
+	p.typeIndexT = {};
+	p.nextTyep = 1;
+
+	p.upNeedTime = nil;
+	p.upNeed = nil;
+	p.buildLevel = nil;
+	p.upNeedHome = nil;
+end
+
 function p.UIDisappear()
 	p.CloseUI();
 end

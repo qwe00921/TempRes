@@ -51,10 +51,10 @@ function p.ShowUI()
 	p.SetDelegate();
 	--p.InitController();
 	
-	local flag = country_collect.SendCollectMsg();
-	if not flag then
-		p.SendRequestMaterial();
-	end
+--	local flag = country_collect.SendCollectMsg();
+--	if not flag then
+	p.SendRequestMaterial();
+--	end
 end
 
 function p.SendRequestMaterial()

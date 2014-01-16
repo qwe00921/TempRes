@@ -3,17 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_42]
-Type=1
-Tag=43
-Rect=0 168 640 700
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
@@ -114,7 +103,7 @@ NormalFileUV=0 0 100 80
 [CTRL_BUTTON_ALL]
 Type=2
 Tag=18
-Rect=4 241 90 50
+Rect=4 241 90 55
 AnchorPos=0 0
 Notes=
 Text=全部
@@ -127,11 +116,13 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 
 [CTRL_BUTTON_WEAPON]
 Type=2
 Tag=19
-Rect=96 241 90 50
+Rect=96 241 90 55
 AnchorPos=0 0
 Notes=
 Text=武器
@@ -142,13 +133,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
+NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 
 [CTRL_BUTTON_ARMOR]
 Type=2
 Tag=20
-Rect=188 241 90 50
+Rect=188 241 90 55
 AnchorPos=0 0
 Notes=
 Text=防具
@@ -159,8 +152,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
+NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 
 [CTRL_TEXT_112]
 Type=4
@@ -172,6 +167,18 @@ Text=装备屋
 TextTradition=裝備屋
 TextSize=30
 TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CRIT]
+Type=4
+Tag=69
+Rect=289 246 342 42
+AnchorPos=0 0
+Notes=
+TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0

@@ -206,7 +206,7 @@ function p.BuySuccessResult( msg )
     p.CloseUI();
 	
 	--更新代币信息
-	dlg_gacha.UpdateRmb( msg.user_coin );
+	--dlg_gacha.UpdateRmb( msg.user_coin );
 	
 	if msg~= nil and msg.list ~= nil then
 		local item_id = msg.list.item_id or 0 ;

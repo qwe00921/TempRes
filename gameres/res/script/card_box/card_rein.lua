@@ -17,7 +17,9 @@ function p.ShowUI(card_info)
 	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
-		p.InitUI(card_info);
+		if card_info~= nil then
+			p.InitUI(card_info);
+		end
 		return;
 	end
 	
@@ -243,7 +245,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	else
 		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", pCardInfo.Level);
 	end		
-	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money;	
+	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money + tonumber(pCardInfo.Level)*tonumber(pCardInfo.Level);	
 			
 	p.addExp = p.addExp + lCardInfo.feedBase_exp + lCardLeveInfo.feed_exp;
 	
@@ -321,6 +323,7 @@ function p.OnButtonEvent(uiNode, uiEventType, param)
 				dlg_msgbox.ShowOK(GetStr("card_box_intensify"),tostring(p.baseCardInfo.Rare)..GetStr("card_intensify_no_level1")..tostring(pCardRare.level_limit)..GetStr("card_intensify_no_level2"),p.OnMsgCallback,p.layer);
 			else
 				card_intensify.ShowUI(p.baseCardInfo); 
+				p.HideUI();
 			end
 			
 		end
@@ -338,27 +341,38 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 			dlg_menu.HideUI();
+			dlg_card_attr_base.ShowUI();
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
-			local param = "";
-			for k,v in pairs(p.selectCardId) do
-				if k == #p.selectCardId then
-					param = param..tostring(v);
-				else
-					param = param..tostring(v)..",";
-				end
-			end
-			if param ~= "" then
-				p.OnSendReqIntensify(param);
+			if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_money"),p.OnMsgCallback,p.layer);
 			else
-				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
-			end;
+				local param = "";
+				for k,v in pairs(p.selectCardId) do
+					if k == #p.selectCardId then
+						param = param..tostring(v);
+					else
+						param = param..tostring(v)..",";
+					end
+				end
+				if param ~= "" then
+					p.OnSendReqIntensify(param);
+				else
+					dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
+				end;
+			end
+			
+			
 		
 		end;
 	end
 end		
+
+function p.OnMsgCallback()
 	
+end
+
 function p.OnSendReqIntensify(msg)
 	local uid = GetUID();
 	--uid = 10002;
@@ -367,6 +381,7 @@ function p.OnSendReqIntensify(msg)
 		local param = string.format("&card_id=%d&idm="..msg, tonumber(p.baseCardInfo.UniqueId));
 		SendReq("Card","Feedwould",uid,param);
 		card_intensify_succeed.ShowUI(p.baseCardInfo);
+		p.HideUI();
 		p.ClearData();
 	end
 end

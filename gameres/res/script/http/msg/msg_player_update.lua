@@ -32,6 +32,10 @@ function p:Process()
 		end
 		
 		dlg_userinfo.RefreshUI( msg_cache.msg_player );
+		
+		for key, value in pairs( self.user ) do
+			gNotify:TriggerEvent( "msg_player", key );
+		end
 	end
 end
 

@@ -27,6 +27,7 @@ p.hasRemove = false;
 p.cardListInfoSell = {}
 
 function p.ShowUI()
+	maininterface.HideUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
@@ -474,8 +475,6 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				p.HideUI();
 			else
 				p.CloseUI();
-				maininterface.BecomeFirstUI();
-				maininterface.CloseAllPanel();
 			end
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then
 			WriteCon("card_bag_sort.ShowUI()");
@@ -621,6 +620,7 @@ function p.CloseUI()
         card_bag_mgr.ClearData();
 		card_bag_sort.CloseUI();
 		card_bag_sell.CloseUI()
+		maininterface.ShowUI();
     end
 end
 

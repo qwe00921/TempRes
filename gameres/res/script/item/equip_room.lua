@@ -79,8 +79,10 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
+			dlg_userinfo.ShowUI( );
 			country_main.ShowUI();
 		elseif (ui.ID_CTRL_BUTTON_SELL == tag) then --卖出
+			p.HideUI();
 			equip_sell.ShowUI(p.msg);
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --排序
 			equip_bag_sort.ShowUI(1);
@@ -166,8 +168,12 @@ function p.ShowInfo(msg)
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
-	p.refreshList(msg.equipment_info);
 	
+	
+	local tetCrit = GetLabel(p.layer, ui.ID_CTRL_TEXT_CRIT); 
+	tetCrit:SetText(GetStr("equip_intensify_crit")..tostring(msg.crit_prob).."%"); 	
+	
+	p.refreshList(msg.equipment_info);
 end
 
 --显示列表
@@ -423,16 +429,23 @@ function p.sortByRule(sortType)
 	end
 	p.refreshList(p.cardListByProf);
 end
-
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.equip_level) < tonumber(b.equip_level);
+	return tonumber(a.equip_level) > tonumber(b.equip_level);
 end
 
 --按星级排序
 function p.sortByStar(a,b)
-	return tonumber(a.rare) < tonumber(b.rare);
+	--return tonumber(a.rare) < tonumber(b.rare);
+	return tonumber(a.rare) < tonumber(b.rare) or ( tonumber(a.rare) == tonumber(b.rare) and tonumber(a.equip_id) < tonumber(b.equip_id));
 end
+
+function p.HideUI()
+	if p.layer ~= nil then
+		p.layer:SetVisible( false );
+	end
+end
+
 function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
