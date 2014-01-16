@@ -773,7 +773,8 @@ function p.Pick( nTimerId )
 	
 	if drop:GetImageNode():IsVisible() then
 		if drop:GetType() == E_DROP_HPBALL or drop:GetType() == E_DROP_SPBALL then
-			drop:Pick( GetPlayer( p.battleLayer , heroUIArray[math.random(1, 5)] ), pos );
+			local pos = math.random(1, 5);
+			drop:Pick( GetPlayer( p.battleLayer , heroUIArray[pos] ), pos );
 		else
 			drop:Pick( p.boxImage );
 			

@@ -85,6 +85,8 @@ function p.starFighter()
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
+	local lEnemyFighter = p.enemyCamp:FindFighter(p.PVEEnemyID);
+	w_battle_pve.SetHp(lEnemyFighter);
 	--p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
@@ -475,7 +477,7 @@ function p.UseItem(pItemPos, pHeroPos)
 	local effect_skill = SelectCell( T_MATERIAL_RES, lid, "effect" );  --技能光效
 	local batch = w_battle_mgr.GetBattleBatch(); 
 	if (effect_skill == nil) or (effect_skill == {}) then
-		leffectflag = false;
+		effect_skill = "skill_effect.hurt_add_hp";
 		WriteCon( "material_res.ini config failed id="..tostring(lid));
 	end;
 	
@@ -483,22 +485,21 @@ function p.UseItem(pItemPos, pHeroPos)
 	if effect_targer == W_MATERIAL_TARGET2 then  --群体的
 		for k,v in ipairs(p.heroCamp.fighters) do
 			if v:UseItem(lid) == true then
-				if leffectflag == false then
-					cmdBuff = createCommandEffect():AddFgEffect( 0.5, v:GetNode(), effect_skill );
-					local seqTemp = batch:AddSerialSequence();
-					seqTemp:AddCommand( cmdBuff );
-				end;
+				cmdBuff = createCommandEffect():AddFgEffect( 0.5, v:GetNode(), effect_skill );
+				local seqTemp = batch:AddSerialSequence();
+				seqTemp:AddCommand( cmdBuff );
+				
+				w_battle_pve.SetHeroCardAttr(v:GetId(), v);
 			end;		
 		end;
 	else
 		local fighter = p.heroCamp:FindFighter(pHeroPos);
 		if fighter~= nil then
 			if fighter:UseItem(lid) == true then
-				if leffectflag == false then
-					cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
-					local seqTemp = batch:AddSerialSequence();
-					seqTemp:AddCommand( cmdBuff );		
-				end;
+				cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
+				local seqTemp = batch:AddSerialSequence();
+				seqTemp:AddCommand( cmdBuff );		
+				w_battle_pve.SetHeroCardAttr(v:GetId(), v);
 			end;
 		end
 	end
@@ -635,7 +636,7 @@ end;
 --战斗胜利
 function p.FightWin()  
 	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
-		w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
+		--w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
 		w_battle_db_mgr.nextStep();  --数据进入下一波次
 		--w_battle_mgr.enemyCamp:free();
 		w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
@@ -705,6 +706,7 @@ function p.SetLockAction(position)
 	   --local lLockPic = p.GetLockImage();		
 	   lLockPic:SetVisible(true);
 	   local targetFighter = p.enemyCamp:FindFighter(position);
+	   w_battle_pve.SetHp(targetFighter); --更新血量
 	   local lElementLst = p.heroCamp:GetElementAtkFighter(targetFighter);
 	   w_battle_pve.UpdateDamageBufftype(lElementLst);
    end;
@@ -1353,4 +1355,21 @@ function p.calAtkTimes(IsSkill,lIsCrit,lIsJoinAtk,lisMoredamage)
 	end
 
 end
+
+--捡到Hp,或是Sp
+function p.PickItem(pos, itemtype)
+	local heroFighter = p.heroCamp:FindFighter(pos);
+	if heroFighter ~= nil then
+		if itemtype == E_DROP_HPBALL then
+			heroFighter:UseHpBall();
+			w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
+		elseif itemtype == E_DROP_SPBALL then
+			heroFigheter:UseSpBall();
+			w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
+		end
+	end
+	
+end
+
+
 
