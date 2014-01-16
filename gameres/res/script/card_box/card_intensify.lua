@@ -699,7 +699,6 @@ function p.sortByRule(sortType)
 	if sortType == nil or p.cardListByProf == nil then 
 		return
 	end
-	--table.sort(p.cardListByProf,p.sortByCardId);
 	if sortType == CARD_BAG_SORT_BY_LEVEL then
 		WriteCon("========sort by level");
 		table.sort(p.cardListByProf,p.sortByLevel);
@@ -716,14 +715,9 @@ function p.sortByRule(sortType)
 	p.ShowCardView(p.cardListByProf);
 end
 
---按卡号排序
-function p.sortByCardId(a,b)
-	return tonumber(a.CardID) < tonumber(b.CardID);
-end
-
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.Level) < tonumber(b.Level);
+	return tonumber(a.Level) > tonumber(b.Level);
 end
 --按星级排序
 function p.sortByStar(a,b)

@@ -423,11 +423,6 @@ function p.sortByRule(sortType)
 	end
 	p.refreshList(p.cardListByProf);
 end
-
---按装备号排序
-function p.sortById(a,b)
-	return tonumber(a.equip_id) > tonumber(b.equip_id);
-end
 --按等级排序
 function p.sortByLevel(a,b)
 	return tonumber(a.equip_level) > tonumber(b.equip_level);

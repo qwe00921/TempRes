@@ -342,7 +342,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			card_intensify2.ShowUI(p.baseCardInfo);
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
 			if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
-				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);
+				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_money"),p.OnMsgCallback,p.layer);
 			else
 				local param = "";
 				for k,v in pairs(p.selectCardId) do

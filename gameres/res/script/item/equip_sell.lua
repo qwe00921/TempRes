@@ -76,7 +76,7 @@ function p.refreshList(lst)
 		WriteCon("refreshList():cardList is null");
 		return;
 	end
-		
+	
 	if p.allNumText ~= nil then
 		p.allNumText = {};
 		p.allEquipId = {};
@@ -84,7 +84,7 @@ function p.refreshList(lst)
 		p.isDress = {};
 		p.equipLevel = {};
 	end
-		
+	
 	WriteCon("cardCount ===== "..#lst);
 	local cardNum = #lst;
 	local row = math.ceil(cardNum / 4);
@@ -115,7 +115,13 @@ function p.refreshList(lst)
 		list:AddView( view );
 	end
 	
-		
+	if  tonumber(p.selectNum) >= 10 then 
+		p.setAllCardDisEnable();
+	elseif tonumber(p.selectNum) < 10 then
+		p.setCardDisEnable();
+	end
+	p.setNumFalse();
+	
 end
 
 --显示单张卡牌
@@ -164,9 +170,12 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	if tonumber(equip.Is_dress) == 1 then
 		drsV:SetVisible(true);
 	end
+	--选中序号
 	p.allNumText[equip.id] = nmV;
 	p.allEquipId[equip.id] = equip.equip_id;
+	--图片按钮
 	p.equipListNode[#p.equipListNode + 1] = bt;
+	--装备等级
 	p.equipLevel[equip.id] = equip.equip_level;
 	
 	
@@ -211,35 +220,16 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipSellMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_SELL_GOLD);
 	equipSellMoney:SetText(tostring(p.consumeMoney)); 
 		
-	if p.equipEnabled == true and tonumber(p.selectNum) >= 10 then 
+	if  tonumber(p.selectNum) >= 10 then 
 		p.setAllCardDisEnable();
-		p.equipEnabled = false;
-	elseif p.equipEnabled == false and tonumber(p.selectNum) < 10 then
+	elseif tonumber(p.selectNum) < 10 then
 		p.setCardDisEnable();
-		p.equipEnabled = true;
 	end
 end
 
 function p.OnOkCallback()
 	WriteCon("equip_is_dress");
 end
---设置除选择外的卡牌不可点
-function p.setAllCardDisEnable()
-	for i=1, #p.equipListNode do
-		local id = p.equipListNode[i]:GetId();
-		local uiNode = p.equipListNode[i]
-		for i=1,#p.selectList do
-			if tonumber(id) == tonumber(p.selectList[i]) then
-				uiNode:SetEnabled(true);
-				break;
-			else
-				uiNode:SetEnabled(false);
-			end
-		end
-		
-	end
-end
-
 	
 --按规则排序按钮
 function p.sortByBtnEvent(sortType)
@@ -279,12 +269,13 @@ function p.sortByRule(sortType)
 end
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.equip_level) < tonumber(b.equip_level);
+	return tonumber(a.equip_level) > tonumber(b.equip_level);
 end
 
 --按星级排序
 function p.sortByStar(a,b)
-	return tonumber(a.rare) < tonumber(b.rare);
+	--return tonumber(a.rare) < tonumber(b.rare);
+	return tonumber(a.rare) < tonumber(b.rare) or ( tonumber(a.rare) == tonumber(b.rare) and tonumber(a.equip_id) < tonumber(b.equip_id));
 end
 --清除方法
 function p.clearDate()
@@ -295,7 +286,6 @@ function p.clearDate()
 			--WriteCon("k : "..k);
 			local numText = p.allNumText[v];
 			numText:SetText("");
-			numText:SetVisible(false);
 	end
 	p.selectNum  = 0;
 	p.selectList = {};
@@ -310,6 +300,23 @@ function p.clearDate()
 	
 end
 
+--设置除选择外的卡牌不可点
+function p.setAllCardDisEnable()
+	for i=1, #p.equipListNode do
+		local id = p.equipListNode[i]:GetId();
+		local uiNode = p.equipListNode[i]
+		for i=1,#p.selectList do
+			if tonumber(id) == tonumber(p.selectList[i]) then
+				uiNode:SetEnabled(true);
+				break;
+			else
+				uiNode:SetEnabled(false);
+			end
+		end
+		
+	end
+end
+
 --设置卡牌可点
 function p.setCardDisEnable()
 	for i=1, #p.equipListNode do
@@ -317,12 +324,14 @@ function p.setCardDisEnable()
 		uiNode:SetEnabled(true);
 	end
 end
+	
 --设置序号更新
 function p.setNumFalse()
 	for k,v in pairs(p.selectList) do
 			--WriteCon("k : "..k);
 			local numText = p.allNumText[v];
 			numText:SetText(tostring(k));
+			numText:SetVisible(true);
 	end
 
 end
