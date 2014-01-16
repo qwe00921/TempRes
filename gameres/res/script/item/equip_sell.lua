@@ -422,7 +422,8 @@ function p.OnUIEvent(uiNode, uiEventType, param)
         --确认出售
         if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then
 			
-            p.CloseUI();           
+            p.CloseUI();   
+			equip_room.ShowUI();        
         elseif ( ui.ID_CTRL_BUTTON_ORDER == tag ) then
             
 			equip_bag_sort.ShowUI(2);

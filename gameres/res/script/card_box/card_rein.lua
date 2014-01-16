@@ -17,7 +17,9 @@ function p.ShowUI(card_info)
 	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
-		p.InitUI(card_info);
+		if card_info~= nil then
+			p.InitUI(card_info);
+		end
 		return;
 	end
 	
@@ -321,6 +323,7 @@ function p.OnButtonEvent(uiNode, uiEventType, param)
 				dlg_msgbox.ShowOK(GetStr("card_box_intensify"),tostring(p.baseCardInfo.Rare)..GetStr("card_intensify_no_level1")..tostring(pCardRare.level_limit)..GetStr("card_intensify_no_level2"),p.OnMsgCallback,p.layer);
 			else
 				card_intensify.ShowUI(p.baseCardInfo); 
+				p.HideUI();
 			end
 			
 		end
@@ -338,6 +341,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 			dlg_menu.HideUI();
+			dlg_card_attr_base.ShowUI();
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
@@ -377,6 +381,7 @@ function p.OnSendReqIntensify(msg)
 		local param = string.format("&card_id=%d&idm="..msg, tonumber(p.baseCardInfo.UniqueId));
 		SendReq("Card","Feedwould",uid,param);
 		card_intensify_succeed.ShowUI(p.baseCardInfo);
+		p.HideUI();
 		p.ClearData();
 	end
 end

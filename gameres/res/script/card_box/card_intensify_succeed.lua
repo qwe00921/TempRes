@@ -51,8 +51,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_BACK == tag) then --·µ»Ø
-			
-			card_intensify.CloseUI();
+			card_rein.ShowUI();
 			card_intensify2.OnSendReq();
 			card_rein.GetRefreshCardUI();
 			p.CloseUI();

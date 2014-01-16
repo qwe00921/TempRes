@@ -79,8 +79,10 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
+			dlg_userinfo.ShowUI( );
 			country_main.ShowUI();
 		elseif (ui.ID_CTRL_BUTTON_SELL == tag) then --Âô³ö
+			p.HideUI();
 			equip_sell.ShowUI(p.msg);
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --ÅÅÐò
 			equip_bag_sort.ShowUI(1);
@@ -437,6 +439,13 @@ function p.sortByStar(a,b)
 	--return tonumber(a.rare) < tonumber(b.rare);
 	return tonumber(a.rare) < tonumber(b.rare) or ( tonumber(a.rare) == tonumber(b.rare) and tonumber(a.equip_id) < tonumber(b.equip_id));
 end
+
+function p.HideUI()
+	if p.layer ~= nil then
+		p.layer:SetVisible( false );
+	end
+end
+
 function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();

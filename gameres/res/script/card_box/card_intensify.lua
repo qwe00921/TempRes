@@ -160,6 +160,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				for k,v in pairs(p.selectCardId) do
 					table.insert(lCardIdLst, v);
 				end;
+				card_rein.ShowUI();
 				card_rein.setSelCardList(lCardIdLst);
 				p.CloseUI();
 			end 

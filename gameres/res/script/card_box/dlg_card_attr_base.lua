@@ -15,23 +15,8 @@ p.mainUIFlag = false;
 
 --id «UniqueId
 function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
-	WriteCon(cardInfo.CardID.."************");
 	
-	if groupFlag ~= nil then
-		p.groupFlag = groupFlag;
-	end
-	
-	if mainUIFlag ~= nil then
-		p.mainUIFlag = mainUIFlag;
-		WriteCon( "asdasdasdasdasdasdsa " );
-		dlg_menu.SetNewUI( p );
-	end
-	
-	if cardInfo == nil then
-		return;
-	end
-	p.cardInfo = cardInfo;
-	 if p.layer ~= nil then
+	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
 	end
@@ -40,6 +25,20 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
         return false;
     end
 	
+	
+	if groupFlag ~= nil then
+		p.groupFlag = groupFlag;
+	end
+	
+	if mainUIFlag ~= nil then
+		p.mainUIFlag = mainUIFlag;
+		dlg_menu.SetNewUI( p );
+	end
+	
+	if cardInfo == nil then
+		return;
+	end
+	p.cardInfo = cardInfo;
 	--layer:NoMask();
 	layer:Init();	
 	GetUIRoot():AddDlg( layer );
@@ -232,7 +231,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 				--ø®≈∆«øªØ
 				card_intensify2.OnSendReq();
 				card_rein.ShowUI(p.cardInfo);
-				--p.CloseUI();
+				p.HideUI();
 			end
 					
 		elseif ui.ID_CTRL_BTN_SALE == tag then
