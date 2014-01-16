@@ -166,6 +166,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 --			dlg_battlearray.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========»î¶¯========**");
+			dlg_drama.ShowUI(0,1,10);
+			maininterface.HideUI();
 			p.CloseAllPanel();
 		elseif ui.ID_CTRL_BUTTON_BG_BTN == tag then
 			p.CloseAllPanel();

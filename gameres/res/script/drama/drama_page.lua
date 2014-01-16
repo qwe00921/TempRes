@@ -21,7 +21,7 @@ p.npcIdRight = nil;	--右边npcid
 p.npcIdTalk = nil;	--当前说话的npcid
 p.npcName = nil;    --当前说话的NPC名称
 p.talkText = nil;	--说话内容
-
+p.fontSize = 20;
 
 --创建新实例
 function p:new()	
@@ -43,6 +43,7 @@ end
 function p:LoadPage( oDrama )
     self.talkText = oDrama.speak_text;
     self.npcName = oDrama.npc_name;
+	self.fontSize = tonumber(oDrama.font_size);
     
     self.picBg = oDrama.bg_pic;      
     self.picLeft = oDrama.npc_left_id;       

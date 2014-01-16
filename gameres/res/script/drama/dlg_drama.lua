@@ -25,6 +25,7 @@ p.timerId = nil;        --定时器ID
 p.isActivity = false;
 p.curStageId = 0;
 p.openView =nil;
+p.fontSize = 20;
 
 local act_zoom = "engine_cmb.zoom_in_out"; --呼吸效果
 
@@ -72,6 +73,8 @@ end
 function p.Init()
     --p.AddMaskImage();
     p.contentNode = GetColorLabel( p.layer, ui.ID_CTRL_COLOR_LABEL_TEXT );
+	p.contentNode:SetHorzAlign( 0 );
+	p.contentNode:SetVertAlign( 1 );
     p.npcNameNode = GetLabel( p.layer, ui.ID_CTRL_TEXT_NPC_NAME );
     p.bgPicNode = GetImage( p.layer,ui.ID_CTRL_PICTURE_BG );
     
@@ -138,10 +141,9 @@ function p.DoEffectContent()
 	
 	local strText = GetSubStringUtf8( p.contentStr, p.contentIndex );
 	--WriteCon(strText);
+	WriteCon(string.format("Font Size %d",p.fontSize));
+	p.contentNode:SetFontSize(p.fontSize);
 	p.contentNode:SetText(strText);
-	
-	--p.contentNode:SetHorzAlign( 0 );
-	--p.contentNode:SetVertAlign( 0 );
 
 	p.contentIndex = p.contentIndex + 1;
 	if p.contentIndex > p.contentStrLn and p.timerId ~= nil then
@@ -168,10 +170,11 @@ function p.ResetUI( dramaInfo )
     
     --对话内容
     p.contentStr = dramaInfo.talkText;
+	p.fontSize = dramaInfo.fontSize;
     p.contentStrLn = GetCharCountUtf8 ( p.contentStr );
     p.contentIndex = 1;
     if p.contentStr ~= nil and p.contentStrLn > 1 then
-    	p.timerId = SetTimer( p.DoEffectContent, 0.01f );
+    	p.timerId = SetTimer( p.DoEffectContent, 0.04f );
     end
 
     --NPC图片以特效更新：左边NPC

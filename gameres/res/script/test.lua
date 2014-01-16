@@ -97,7 +97,7 @@ function p.test()
 --	  p.TestUtf8String();
     
     --≤‚ ‘æÁ«È
-	--dlg_drama.ShowUI(2);
+--	dlg_drama.ShowUI(0,1,10);
 
 	--p.testFly();
 	
