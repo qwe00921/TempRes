@@ -6,18 +6,18 @@ Height=960
 [CTRL_PICTURE_21]
 Type=1
 Tag=21
-Rect=136 0 368 84
+Rect=89 160 187 67
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_title.png
-NormalFileUV=0 0 368 84
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
 
 [CTRL_9SLICES_WRITEBG]
 Type=22
 Tag=28
-Rect=32 235 593 420
+Rect=32 329 593 326
 AnchorPos=0 0
 Notes=
 Remark=意见填写底背景，显示状态：提交问题
@@ -44,7 +44,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE_LABEL]
 Type=4
 Tag=289
-Rect=35 160 107 60
+Rect=25 291 107 33
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -58,7 +58,7 @@ UIClsoeType=0
 [CTRL_INPUT_TEXT_TITLE]
 Type=18
 Tag=290
-Rect=138 162 479 59
+Rect=136 291 479 32
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -70,7 +70,7 @@ UIClsoeType=0
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=292
-Rect=555 0 84 84
+Rect=1 160 83 66
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -78,15 +78,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 
 [CTRL_CHAT_TEXT_QUESTION]
 Type=18
 Tag=293
-Rect=30 239 592 384
+Rect=30 326 592 297
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -112,7 +112,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ASK]
 Type=2
 Tag=296
-Rect=29 88 125 61
+Rect=4 228 125 61
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -129,7 +129,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_BUTTON_ANSWER]
 Type=2
 Tag=35
-Rect=177 88 125 61
+Rect=140 228 125 61
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -171,7 +171,7 @@ NormalFileUV=0 0 102 28
 [CTRL_9SLICES_QUESTIONBG]
 Type=22
 Tag=23
-Rect=31 150 585 276
+Rect=34 331 585 176
 AnchorPos=0 0
 Notes=
 Remark=客服问题底背景，显示状态：提交问题
@@ -184,7 +184,7 @@ NormalFileUV=0 0 50 50
 [CTRL_VERTICAL_LIST]
 Type=14
 Tag=37
-Rect=29 155 594 216
+Rect=23 341 594 117
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -193,7 +193,7 @@ UIClsoeType=0
 [CTRL_BUTTON_PAGE_PRE]
 Type=2
 Tag=104
-Rect=195 376 60 48
+Rect=200 454 60 48
 AnchorPos=0 0
 Notes=
 Text=<<
@@ -212,7 +212,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_BUTTON_PAGE_NEXT]
 Type=2
 Tag=105
-Rect=376 374 60 48
+Rect=380 454 60 48
 AnchorPos=0 0
 Notes=
 Text=>>
@@ -231,7 +231,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_TEXT_PAGE_INFO]
 Type=4
 Tag=106
-Rect=262 376 107 41
+Rect=267 458 107 41
 AnchorPos=0 0
 Notes=
 Text=1/3
@@ -245,7 +245,7 @@ UIClsoeType=0
 [CTRL_9SLICES_ANSWERBG]
 Type=22
 Tag=24
-Rect=33 439 585 423
+Rect=33 520 585 342
 AnchorPos=0 0
 Notes=
 Remark=客服反馈底背景，显示状态：提交问题
@@ -258,7 +258,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_GMBG]
 Type=22
 Tag=25
-Rect=55 504 536 154
+Rect=52 616 536 92
 AnchorPos=0 0
 Notes=
 Remark=gm回复底背景，显示状态：提交问题
@@ -271,7 +271,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_GM_LABEL]
 Type=4
 Tag=107
-Rect=59 446 107 49
+Rect=56 550 107 49
 AnchorPos=0 0
 Notes=
 Text=客服[GM]
@@ -285,7 +285,7 @@ UIClsoeType=0
 [CTRL_TEXT_GM_TIME]
 Type=4
 Tag=108
-Rect=358 447 230 50
+Rect=355 551 230 50
 AnchorPos=0 0
 Notes=
 Text=09-10 20:39:30
@@ -299,7 +299,7 @@ UIClsoeType=0
 [CTRL_9SLICES_USERBG]
 Type=22
 Tag=27
-Rect=63 723 536 131
+Rect=63 770 536 84
 AnchorPos=0 0
 Notes=
 Remark=玩家回复底背景，显示状态：提交问题
@@ -312,7 +312,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_GM_CONTENT]
 Type=4
 Tag=110
-Rect=60 507 524 148
+Rect=58 620 524 86
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -324,7 +324,7 @@ UIClsoeType=0
 [CTRL_TEXT_USER_LABEL]
 Type=4
 Tag=111
-Rect=64 669 107 49
+Rect=55 714 107 49
 AnchorPos=0 0
 Notes=
 Text=小红帽
@@ -338,7 +338,7 @@ UIClsoeType=0
 [CTRL_TEXT_USER_TIME]
 Type=4
 Tag=113
-Rect=365 670 230 50
+Rect=356 715 230 50
 AnchorPos=0 0
 Notes=
 Text=09-10 20:39:30
@@ -352,7 +352,7 @@ UIClsoeType=0
 [CTRL_TEXT_USER_CONTENT]
 Type=4
 Tag=114
-Rect=69 728 524 124
+Rect=69 775 524 77
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -364,7 +364,7 @@ UIClsoeType=0
 [CTRL_TEXT_26]
 Type=4
 Tag=26
-Rect=60 507 524 148
+Rect=57 622 524 83
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -376,7 +376,7 @@ UIClsoeType=0
 [CTRL_9SLICES_TITLE]
 Type=22
 Tag=29
-Rect=124 154 499 61
+Rect=115 331 499 61
 AnchorPos=0 0
 Notes=
 Remark=gm回复底背景，显示状态：提交问题
@@ -389,7 +389,7 @@ NormalFileUV=0 0 50 50
 [CTRL_PICTURE_154]
 Type=1
 Tag=154
-Rect=274 18 86 49
+Rect=103 169 86 49
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -400,7 +400,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_129]
 Type=1
 Tag=129
-Rect=40 100 102 28
+Rect=16 240 102 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -411,10 +411,25 @@ NormalFileUV=0 0 102 28
 [CTRL_PICTURE_130]
 Type=1
 Tag=130
-Rect=188 100 102 28
+Rect=154 240 102 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\mail\answer.png
 NormalFileUV=0 0 102 28
+
+[CTRL_TEXT_257]
+Type=4
+Tag=257
+Rect=16 179 57 26
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

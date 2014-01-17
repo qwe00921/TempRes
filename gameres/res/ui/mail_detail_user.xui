@@ -3,17 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_245]
-Type=1
-Tag=245
-Rect=0 0 640 860
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_BUTTON_REPLY]
 Type=2
 Tag=158
@@ -35,7 +24,7 @@ SelectedFileUV=0 0 232 84
 [CTRL_9SLICES_18]
 Type=22
 Tag=18
-Rect=121 210 475 48
+Rect=129 317 475 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -47,7 +36,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_16]
 Type=22
 Tag=16
-Rect=140 91 426 48
+Rect=148 213 426 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -59,7 +48,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=538 -7 100 98
+Rect=-1 146 100 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -67,15 +56,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\close.png
-NormalFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 
 [CTRL_9SLICES_19]
 Type=22
 Tag=19
-Rect=31 279 572 172
+Rect=34 373 572 130
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -87,7 +76,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_17]
 Type=22
 Tag=17
-Rect=151 148 414 48
+Rect=159 264 414 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -99,7 +88,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_209]
 Type=4
 Tag=209
-Rect=26 91 88 50
+Rect=34 213 88 50
 AnchorPos=0 0
 Notes=
 Text=发件人:
@@ -114,7 +103,7 @@ UIClsoeType=0
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=28 214 75 43
+Rect=36 321 75 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -145,7 +134,7 @@ NormalFileUV=0 0 232 84
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=142 92 456 48
+Rect=150 214 456 48
 AnchorPos=0 0
 Notes=
 Text=广告小天使
@@ -160,7 +149,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=118 212 450 48
+Rect=126 319 450 48
 AnchorPos=0 0
 Notes=
 Text=服务器维护补偿礼包
@@ -175,7 +164,7 @@ UIClsoeType=0
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=30 149 96 50
+Rect=38 265 96 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
@@ -190,7 +179,7 @@ UIClsoeType=0
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=153 150 445 48
+Rect=161 266 445 48
 AnchorPos=0 0
 Notes=
 Text=2014-05-21 19:33:33
@@ -205,7 +194,7 @@ UIClsoeType=0
 [CTRL_TEXT_CONTENT]
 Type=4
 Tag=460
-Rect=37 286 564 154
+Rect=40 380 564 115
 AnchorPos=0 0
 Notes=
 Text=你好,我是大灰狼,你好,你好.
@@ -220,13 +209,13 @@ UIClsoeType=0
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=136 0 368 84
+Rect=104 145 177 62
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_title.png
-NormalFileUV=0 0 368 84
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_164_DELETE]
 Type=4
@@ -245,7 +234,7 @@ UIClsoeType=0
 [CTRL_PICTURE_22]
 Type=1
 Tag=22
-Rect=34 466 570 280
+Rect=34 511 570 238
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -256,7 +245,7 @@ NormalFileUV=0 0 566 280
 [CTRL_VERTICAL_LIST]
 Type=14
 Tag=32
-Rect=39 527 553 211
+Rect=39 565 553 176
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -265,10 +254,25 @@ UIClsoeType=0
 [CTRL_PICTURE_124]
 Type=1
 Tag=124
-Rect=277 12 86 54
+Rect=109 150 86 54
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
+
+[CTRL_TEXT_149]
+Type=4
+Tag=149
+Rect=19 159 62 32
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

@@ -16,18 +16,6 @@ Remark=隐藏子界面按钮
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_MAIN_PICTURE_BG]
-Type=1
-Tag=1
-Rect=0 160 640 686
-AnchorPos=0 0
-Notes=
-Remark=背景
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_BUTTON_WRITE]
 Type=2
 Tag=166
