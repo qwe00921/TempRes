@@ -329,8 +329,10 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
 			if p.countryInfoT["B1"] then
 				WriteCon("PRODUCE");
-				--p.HideUI()
+				maininterface.ShowUI();
 				country_building.ShowUI(p.countryInfoT)
+				--p.HideUI()
+				p.CloseUI();
 			end
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
 			--p.HideUI()
@@ -364,7 +366,7 @@ function p.CloseUI()
 		p.layer = nil;
 		p.ClearData()
 		dlg_userinfo.ShowUI();
-		maininterface.ShowUI();
+		--maininterface.ShowUI();
 	end
 end
 function p.ClearData()
@@ -380,7 +382,8 @@ function p.UIDisappear()
 	country_building.CloseUI();
 	maininterface.BecomeFirstUI();
 	maininterface.CloseAllPanel();
-	
+	maininterface.ShowUI();
+
 	--注销采集倒计时
 	country_collect.EndTick();
 end

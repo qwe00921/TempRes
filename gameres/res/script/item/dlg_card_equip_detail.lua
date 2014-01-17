@@ -23,6 +23,8 @@ p.equip = nil;
 p.dressEquip = nil;
 p.callback = nil;
 
+p.redirectCallback = nil; --当
+
 --[[
 		---以下为p.equip的字段
 	p.item{
@@ -51,7 +53,7 @@ local ui = ui_dlg_card_equip_detail
 
 
 ---------显示UI----------
-function p.ShowUI( equip ,callback)
+function p.ShowUI( equip ,callback, redirectCallback)
 	p.equip = equip;
 	
 	if p.layer ~= nil then
@@ -77,24 +79,25 @@ function p.ShowUI( equip ,callback)
 	
 	WriteConErr("ShowUI4CardEquip2  ");
 	p.callback = callback;
+	p.redirectCallback = redirectCallback;
 	
 	p.ShowItem();
 end
 
-function p.ShowUI4CardEquip(equip,callback)
+function p.ShowUI4CardEquip(equip,callback,redirectCallback)
 	WriteConErr("ShowUI4CardEquip  ");
 	p.showType = p.SHOW_ALL;
-	p.ShowUI(equip ,callback);
+	p.ShowUI(equip ,callback,redirectCallback);
 end
 
-function p.ShowUI4Dress(equip,callback)
+function p.ShowUI4Dress(equip,callback,redirectCallback)
 	p.showType = p.SHOW_DRESS
-	p.ShowUI(equip ,callback);
+	p.ShowUI(equip ,callback,redirectCallback);
 end
 
-function p.ShouUI4EquipRoom(equip,callback)
+function p.ShouUI4EquipRoom(equip,callback,redirectCallback)
 	p.showType = p.SHOW_EQUIP_ROOM 
-	p.ShowUI(equip ,callback);
+	p.ShowUI(equip ,callback,redirectCallback);
 end
 
 --设置事件处理
@@ -271,10 +274,16 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 			elseif p.showType == p.SHOW_EQUIP_ROOM then
 				equip_rein_list.ShowUI(p.equip,p.callback);
 				--card_equip_select_list.ShowEquipRoomUpgrade( p.equip,p.callback);
+				if (p.redirectCallback) then
+					p.redirectCallback();
+				end
 				p.CloseUI(); 
 			else
 				equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_UPDATE , p.equip.cardUid, p.equip.itemType, p.equip)
+				if (p.redirectCallback) then
+					p.redirectCallback();
+				end
 				p.CloseUI(); 
 			end
         elseif ( ui.ID_CTRL_BUTTON_CLOSE == tag ) then  
@@ -294,6 +303,9 @@ function p.OnUIEvent(uiNode, uiEventType, param)
 				
 				--equip_dress_select.ShowUI(p.equip.cardUid, p.equip.itemType,  p.callback, p.equip)
 				equip_rein_list.ShowUI(p.equip,p.callback);
+				if (p.redirectCallback) then
+					p.redirectCallback();
+				end
 				p.CloseUI(); 
 			--end
 		end		
