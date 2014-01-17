@@ -105,7 +105,7 @@ W_BATTLE_ELEMENT_DARK  = 7; --暗
 
 
 --合击时间的间隔
-W_BATTLE_JOINATK_TIME = 30; 
+W_BATTLE_JOINATK_TIME = 3; 
 
 --站位标置
 W_BATTLE_POS_TAG_1 = 1;
@@ -116,7 +116,7 @@ W_BATTLE_POS_TAG_5 = 5;
 W_BATTLE_POS_TAG_6 = 6;
 
 --动画攻击时间
-W_BATTLE_ATKTIME   =  1;
+W_BATTLE_ATKTIME   =  0.5;
 --怪物延迟时间攻击
 W_BATTLE_ENEMYTIME = 0.7;
 
