@@ -16,9 +16,9 @@ p.buildLevel = nil;
 p.upNeedHome = nil;
 
 function p.ShowUI(countryInfo)
-	dlg_menu.ShowUI();
-	dlg_menu.SetNewUI( p );
+	--dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
+	--maininterface.HideUI();
 	if countryInfo == nil then
 		WriteConErr("countryInfo error");
 		return
@@ -211,6 +211,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		if (ui.ID_CTRL_BUTTON_RETURN == tag) then
 			p.CloseUI()
 			country_main.ShowUI()
+			dlg_userinfo.HideUI( );
 		elseif ui.ID_CTRL_BUTTON_UP == tag then
 			WriteCon( "BUTTON_UP" );
 			p.upBuild();
@@ -293,6 +294,7 @@ function p.CloseUI()
 		p.layer:LazyClose();
 		p.layer = nil;
 		p.ClearData()
+		--dlg_userinfo.HideUI( );
 	end
 end
 function p.ClearData()
@@ -308,9 +310,9 @@ function p.ClearData()
 	p.upNeedHome = nil;
 end
 
-function p.UIDisappear()
-	p.CloseUI();
-end
+-- function p.UIDisappear()
+	-- p.CloseUI();
+-- end
 -- "build_type": 2,
 -- "build_level": 1,
 -- "is_upgrade": 0,
