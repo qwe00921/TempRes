@@ -230,6 +230,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		if ui.ID_CTRL_BUTTON_RETURN == tag then
 			WriteCon( "¹Ø±Õ" );
 			p.CloseUI();
+			country_main.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_14 == tag then
 			WriteCon( "É¸Ñ¡" );
 			if p.showSort then

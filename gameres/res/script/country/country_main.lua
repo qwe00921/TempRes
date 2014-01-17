@@ -23,8 +23,8 @@ function p.ShowUI()
 		p.layer:SetVisible( true );
 		
 		--开启拾取队列计时器
-		country_collect.StartTick();
-		country_collect.SetLayer( p.layer );
+		--country_collect.StartTick();
+		--country_collect.SetLayer( p.layer );
 		return;
 	end
 	
@@ -52,6 +52,8 @@ function p.ShowUI()
 	--开启拾取队列计时器
 	country_collect.StartTick();
 	country_collect.SetLayer( p.layer );
+	
+	maininterface.HideUI();
 end
 
 function p.InitController()
@@ -337,12 +339,14 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
 			WriteCon("MERGE");
 			country_mixhouse.ShowUI();
+			p.HideUI();
 		elseif ui.ID_CTRL_BUTTON_HOME == tag then
 			WriteCon("HOME");
 			country_collect.Collect( E_COLLECT_HOME );
 		elseif ui.ID_CTRL_BUTTON_STORE == tag then
 			WriteCon("STORE");
 			country_storage.ShowUI();
+			p.HideUI();
 		end
 	end
 end

@@ -106,9 +106,11 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_RETURN == tag then
 			p.CloseUI();
+			item_choose_list.ShowUI( item_choose_list.itemid );
 		elseif ui.ID_CTRL_BUTTON_15 == tag then
 			p.ChooseNumCallBack();
 			p.CloseUI();
+			--item_choose_list.ShowUI( item_choose_list.itemid );
 		elseif ui.ID_CTRL_BUTTON_16 == tag then
 			p.AddNum( -1 );
 		elseif ui.ID_CTRL_BUTTON_17 == tag then

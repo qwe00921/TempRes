@@ -106,6 +106,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 				country_storage.RequestData();
 			end
 			p.CloseUI();
+			country_storage.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_15 == tag then
 			p.SellItem();
 		elseif ui.ID_CTRL_BUTTON_16 == tag then
