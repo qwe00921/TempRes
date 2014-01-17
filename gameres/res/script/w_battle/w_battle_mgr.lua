@@ -246,6 +246,10 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		atkFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( atkID ) );
 	else
 		atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
+		if atkFighter.Sp < 100 then
+			WriteCon( "Sp<100");
+			return false;
+		end
 	end;
 
     local atkCampType = nil;
@@ -597,14 +601,14 @@ function p.EnemyStarTurn()  --怪物回合开始
 			local ltargetID = lTargetFighter:GetId();
 			if latkFighter.Skill == 0 then
 				p.SetPVEAtkID(latkFighter:GetId(), true, ltargetID);	
-				break;
+				--break;
 			else
 				if p.EnemyUseSkill() == true then
 					p.SetPVESkillAtkID(latkFighter:GetId(), true, ltargetID);		
-					break;
+					--break;
 				else
 					p.SetPVEAtkID(latkFighter:GetId(), true, ltargetID);		
-					break;
+					--break;
 				end
 			end
 		end;
@@ -640,13 +644,11 @@ end;
 --战斗胜利
 function p.FightWin()  
 	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
-		--w_battle_db_mgr.step = w_battle_db_mgr.step + 1;	
 		w_battle_db_mgr.nextStep();  --数据进入下一波次
 		--w_battle_mgr.enemyCamp:free();
 		w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 	else
-		w_battle_pve.MissionOver(p.SendResult);  --任务结束,任务奖励界面
-		p.QuitBattle();
+		w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
 	end
 end;
 
@@ -802,8 +804,8 @@ end
 
 --战斗阶段PVP->加载->响应
 function p.ReceiveStartPVPRes( msg )
-    p.SendResult(1)	;
-	--[[
+   -- p.SendResult(1)	;
+	
     dlg_menu.CloseUI();
     dlg_userinfo.CloseUI();
     w_battle_db_mgr.Init( msg );
@@ -812,7 +814,7 @@ function p.ReceiveStartPVPRes( msg )
 	
 	--音乐
 	PlayMusic_Battle();	
-]]--
+
 end
 
 --战斗阶段PVE->加载->响应
@@ -1170,6 +1172,11 @@ function p.CheckBattleLose()
 	return false;
 end
 
+function p.MissionWin()
+	p.QuitBattle();
+	p.SendResult(1);		
+end;
+
 
 function p.SendResult(result)
 	local uid = GetUID();
@@ -1209,9 +1216,9 @@ function p.QuitBattle()
 	--hud.FadeIn();
 	
 	--音乐
-	PlayMusic_Task();
+	--PlayMusic_Task();
 	
-	isActive = false;
+	--isActive = false;
 	p.clearDate();
 end
 
@@ -1239,7 +1246,7 @@ function p.clearDate()
     p.imageMask = nil          
     p.isBattleEnd = false;
 	p.battleIsStart = false;
-    w_battle_show.DestroyAll();
+    --w_battle_show.DestroyAll();
 end
 
 function p.GetScreenCenterPos()

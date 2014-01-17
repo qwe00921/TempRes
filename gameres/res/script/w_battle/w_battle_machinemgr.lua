@@ -117,8 +117,15 @@ end;
 --判断所有攻击状态机处于行动中,若有行动中的,返回true
 function p.checkAllAtkMachineHasTurn()	
 	local lres = false;
-	for pos=1,#(p.atkMachineLst) do
-		local lMachine = p.atkMachineLst[pos];
+	local latkMachineLst = nil;
+	if w_battle_mgr.atkCampType == W_BATTLE_HERO then
+		latkMachineLst = p.atkMachineLst;
+	else
+		latkMachineLst = p.atkEnemyMachineLst;
+	end;
+	
+	for pos=1,#(latkMachineLst) do
+		local lMachine = latkMachineLst[pos];
 		if lMachine.turnState == W_BATTLE_TURN  then --行动中
 			lres = true;
 			break;
@@ -129,9 +136,10 @@ function p.checkAllAtkMachineHasTurn()
 	return lres;
 end
 
---判断所有攻击状态机是否有未行动的,有未行动的返回true
+--判断所有攻击状态机是否有未行动的,有未行动的返回true,只有我方人员才需要此判断
 function p.checkAllAtkMachineHasNotTurn()
 	local lres = false;
+	
 	for pos=1,#(p.atkMachineLst) do
 		local lMachine = p.atkMachineLst[pos];
 		local lheroFighter = w_battle_mgr.heroCamp:FindFighter(pos);
