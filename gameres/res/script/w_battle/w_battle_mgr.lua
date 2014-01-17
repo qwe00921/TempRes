@@ -802,41 +802,17 @@ end
 
 --战斗阶段PVP->加载->响应
 function p.ReceiveStartPVPRes( msg )
+    p.SendResult(1)	;
+	--[[
     dlg_menu.CloseUI();
     dlg_userinfo.CloseUI();
     w_battle_db_mgr.Init( msg );
 	
-	--enter PVP
-	--w_battle_pvp.ShowUI( battleType, missionId );	
-	--w_battle_mainui.ShowUI();
 	w_battle_pve.ShowUI();
 	
 	--音乐
 	PlayMusic_Battle();	
-	--[[
-   
-    local UCardList = w_battle_db_mgr.GetPlayerCardList();
-    local TCardList = w_battle_db_mgr.GetTargetCardList();
-    local TPetList = w_battle_db_mgr.GetTargetPetList();
-    local UPetList = w_battle_db_mgr.GetPlayerPetList();
-    if UCardList == nil or TCardList == nil or #UCardList == 0 or #TCardList == 0 then
-    	WriteConErr(" battle data err! ");
-    	return false;
-    end
-    p.createHeroCamp( UCardList );
-    p.createEnemyCamp( TCardList );
-	--按活着的怪物,给个目标
-    p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
-	p.PVEShowEnemyID = p.PVEEnemyID; 
-	p.LockEnemy = false;
-	p.isCanSelFighter = true;	
-	    
-    p.createPet( UPetList, E_CARD_CAMP_HERO );
-    p.createPet( TPetList, E_CARD_CAMP_ENEMY );
-    p.ReSetPetNodePos();
-    
-    w_battle_pvp.ReadyGo();
-    p.ShowRoundNum(); ]]--
+]]--
 end
 
 --战斗阶段PVE->加载->响应
