@@ -18,7 +18,7 @@ NormalFileUV=0 0 640 338
 [CTRL_9SLICES_19]
 Type=22
 Tag=32
-Rect=69 141 487 500
+Rect=69 143 487 500
 AnchorPos=0 0
 Notes=
 Stretch=1

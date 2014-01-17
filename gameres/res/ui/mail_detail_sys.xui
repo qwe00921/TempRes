@@ -3,15 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_245]
-Type=1
-Tag=245
-Rect=0 0 640 860
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_BUTTON_DEL]
 Type=2
 Tag=158
@@ -23,6 +14,8 @@ TextTradition=刪除郵件
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_red.png
 NormalFileUV=0 0 232 84
 
@@ -33,6 +26,8 @@ Rect=163 249 438 48
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -45,6 +40,8 @@ Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close_click.png
@@ -57,6 +54,8 @@ Rect=173 304 430 48
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -67,6 +66,8 @@ Rect=157 353 451 48
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -82,6 +83,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_212]
 Type=4
@@ -95,6 +98,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_37]
 Type=22
@@ -103,6 +108,8 @@ Rect=40 409 565 224
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -117,6 +124,8 @@ TextTradition=領取獎勵
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_blue.png
 NormalFileUV=0 0 232 84
 
@@ -132,6 +141,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_TITLE]
 Type=4
@@ -145,6 +156,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_458]
 Type=4
@@ -158,6 +171,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_TIME]
 Type=4
@@ -171,6 +186,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CONTENT]
 Type=4
@@ -184,6 +201,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_1]
 Type=1
@@ -191,6 +210,8 @@ Tag=461
 Rect=49 642 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_5]
 Type=1
@@ -198,6 +219,8 @@ Tag=462
 Rect=428 642 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_4]
 Type=1
@@ -205,6 +228,8 @@ Tag=463
 Rect=335 642 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_3]
 Type=1
@@ -212,6 +237,8 @@ Tag=464
 Rect=237 642 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_2]
 Type=1
@@ -219,6 +246,8 @@ Tag=465
 Rect=142 642 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_6]
 Type=1
@@ -226,6 +255,8 @@ Tag=466
 Rect=526 642 80 80
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NUM_1]
 Type=4
@@ -238,6 +269,8 @@ TextTradition=X3
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NUM_5]
 Type=4
@@ -250,6 +283,8 @@ TextTradition=X3
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NUM_2]
 Type=4
@@ -262,6 +297,8 @@ TextTradition=X3
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NUM_3]
 Type=4
@@ -274,6 +311,8 @@ TextTradition=X3
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NUM_4]
 Type=4
@@ -286,6 +325,8 @@ TextTradition=X3
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NUM_6]
 Type=4
@@ -298,6 +339,8 @@ TextTradition=X3
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NAME_1]
 Type=4
@@ -310,6 +353,8 @@ TextTradition=寶石
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NAME_2]
 Type=4
@@ -322,6 +367,8 @@ TextTradition=寶石
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NAME_3]
 Type=4
@@ -332,6 +379,8 @@ Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NAME_4]
 Type=4
@@ -342,6 +391,8 @@ Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NAME_5]
 Type=4
@@ -352,6 +403,8 @@ Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NAME_6]
 Type=4
@@ -362,6 +415,8 @@ Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_31]
 Type=1
@@ -369,6 +424,8 @@ Tag=31
 Rect=102 158 277 69
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title2.png
 NormalFileUV=0 0 640 160
 
@@ -384,6 +441,8 @@ TextSize=30
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_BG_1]
 Type=1
@@ -391,6 +450,8 @@ Tag=38
 Rect=48 641 82 82
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -400,6 +461,8 @@ Tag=39
 Rect=141 641 82 82
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -409,6 +472,8 @@ Tag=40
 Rect=236 641 82 82
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -418,6 +483,8 @@ Tag=41
 Rect=334 642 82 82
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -427,6 +494,8 @@ Tag=42
 Rect=427 641 82 82
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -436,6 +505,8 @@ Tag=43
 Rect=525 641 82 82
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -445,6 +516,8 @@ Tag=104
 Rect=110 169 86 54
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
 
@@ -460,3 +533,5 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
