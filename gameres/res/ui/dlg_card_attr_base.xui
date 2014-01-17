@@ -3,17 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_295]
-Type=1
-Tag=295
-Rect=-1 151 639 960
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_CARD_PICTURE]
 Type=1
 Tag=300
@@ -26,7 +15,7 @@ UIClsoeType=0
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=299
-Rect=0 154 100 80
+Rect=0 156 100 80
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -131,7 +120,7 @@ UIClsoeType=0
 [CTRL_BTN_INTENSIFY]
 Type=2
 Tag=321
-Rect=539 154 100 80
+Rect=539 156 100 80
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -175,7 +164,7 @@ UIClsoeType=0
 [CTRL_PICTURE_100]
 Type=1
 Tag=100
-Rect=565 179 52 28
+Rect=565 181 52 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -186,7 +175,7 @@ NormalFileUV=0 0 52 28
 [CTRL_TEXT_218]
 Type=4
 Tag=218
-Rect=13 164 75 60
+Rect=13 166 75 60
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -360,7 +349,7 @@ UIClsoeType=0
 [CTRL_PICTURE_65]
 Type=1
 Tag=65
-Rect=101 157 240 83
+Rect=101 158 240 83
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -371,7 +360,7 @@ NormalFileUV=0 0 192 68
 [CTRL_TEXT_CARDNAME]
 Type=4
 Tag=66
-Rect=113 165 210 31
+Rect=113 166 210 31
 AnchorPos=0 0
 Notes=
 Text=卡牌名字很多字
@@ -386,7 +375,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARDSTAR]
 Type=1
 Tag=67
-Rect=151 204 157 22
+Rect=151 205 157 22
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -397,7 +386,7 @@ NormalFileUV=0 0 252 36
 [CTRL_PICTURE_CARDNATURE]
 Type=1
 Tag=68
-Rect=118 203 24 24
+Rect=118 204 24 24
 AnchorPos=0 0
 Notes=
 UIOpenType=0

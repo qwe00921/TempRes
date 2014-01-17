@@ -449,7 +449,7 @@ function p.OnCallback()
 	
 	WriteCon("OnCallback!");
 	p.LoadEquipData();
-	
+	p.clearDate();	
 end
 --确认卖出对话框 后发送请求
 function p.OnMsgBoxCallback(result)
