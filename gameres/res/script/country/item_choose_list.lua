@@ -141,6 +141,7 @@ function p.OnItemClick( uiNode, uiEventType, param )
 			end
 		end
 		if item then
+			p.HideUI();
 			item_choose_num.ShowUI( item, p.ChooseNumCallBack );
 		end
 	end
@@ -149,12 +150,14 @@ end
 function p.ChooseNumCallBack( itemid, num )
 	item_choose.ChooseItemCallBack( itemid, num )
 	p.CloseUI();
+	item_choose.ShowUI(item_choose.battle_items, item_choose.missionId, item_choose.stageId, item_choose.nowTeamId);
 end
 
 function p.RemovePostion( uiNode, uiEventType, param )
 	if IsClickEvent( uiEventType ) then
 		item_choose.ClearPostion();
 		p.CloseUI();
+		item_choose.ShowUI(item_choose.battle_items, item_choose.missionId, item_choose.stageId, item_choose.nowTeamId);
 	end
 end
 
@@ -163,6 +166,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_RETURN == tag then
 			p.CloseUI();
+			item_choose.ShowUI(item_choose.battle_items, item_choose.missionId, item_choose.stageId, item_choose.nowTeamId);
 		end
 	end
 end

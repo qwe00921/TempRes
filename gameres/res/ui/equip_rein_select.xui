@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_42]
 Type=1
 Tag=43
-Rect=0 168 640 700
+Rect=0 772 640 96
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -163,7 +163,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CLEAN]
 Type=2
 Tag=1207
-Rect=23 795 147 50
+Rect=23 803 147 50
 AnchorPos=0 0
 Notes=
 Text=清除选择
@@ -180,7 +180,7 @@ NormalFileUV=0 0 100 80
 [CTRL_BUTTON_OK]
 Type=2
 Tag=1208
-Rect=196 793 106 50
+Rect=196 801 106 50
 AnchorPos=0 0
 Notes=
 Text=确定
@@ -197,7 +197,7 @@ NormalFileUV=0 0 100 80
 [CTRL_TEXT_1209]
 Type=4
 Tag=1209
-Rect=363 767 107 45
+Rect=363 775 107 45
 AnchorPos=0 0
 Notes=
 Text=消耗金币
@@ -211,7 +211,7 @@ UIClsoeType=0
 [CTRL_TEXT_MONEY]
 Type=4
 Tag=1211
-Rect=474 765 107 45
+Rect=474 773 107 45
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -223,7 +223,7 @@ UIClsoeType=0
 [CTRL_TEXT_1329]
 Type=4
 Tag=1329
-Rect=362 800 107 45
+Rect=362 808 107 45
 AnchorPos=0 0
 Notes=
 Text=选择装备
@@ -237,7 +237,7 @@ UIClsoeType=0
 [CTRL_TEXT_EQUIP_SEL_NUM]
 Type=4
 Tag=1330
-Rect=475 799 107 45
+Rect=475 807 107 45
 AnchorPos=0 0
 Notes=
 TextSize=15

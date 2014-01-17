@@ -176,6 +176,8 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 				quest_team_item.ShowUI(p.missionId,p.stageId,p.nowTeamId)
 				p.missionId = nil;
 				p.stageId = nil;
+			else
+				country_storage.ShowUI();
 			end
 			p.CloseUI();
 		elseif ui.ID_CTRL_BUTTON_8 == tag then
@@ -196,6 +198,7 @@ function p.OnItemClick( uiNode, uiEventType, param )
 		if item then
 			p.curNode = uiNode;
 			item_choose_list.ShowUI( tonumber(item.item_id) );
+			p.HideUI();
 		end
 	end
 end

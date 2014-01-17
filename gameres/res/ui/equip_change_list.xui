@@ -1,18 +1,7 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
-
-[CTRL_PICTURE_42]
-Type=1
-Tag=43
-Rect=0 157 640 711
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_RETURN]
 Type=2

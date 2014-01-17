@@ -64,6 +64,7 @@ function p.ShowUI()
 --	end
 	local user = msg_cache.msg_player;
 	dlg_userinfo.ShowUI( user );
+	
 end
 
 function p.SetDelegate()
@@ -247,9 +248,11 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_RETURN == tag then
 			p.CloseUI()
+			country_main.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "ÎïÆ·±à¼­" );
 			item_choose.ShowUI();
+			p.HideUI();
 		elseif ui.ID_CTRL_BUTTON_11 == tag then
 			if p.showListType == E_LIST_TYPE_ALL then
 				return;
@@ -294,6 +297,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			WriteCon( "Âô³ö" );
 			p.SetCtrllersVisible( p.itemCtrllers, false );
 			country_storage_sell.ShowUI( p.curItem );
+			p.HideUI();
 		end
 	end
 end
@@ -357,7 +361,7 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
-		dlg_userinfo.HideUI();
+		--dlg_userinfo.HideUI();
 	end
 end
 

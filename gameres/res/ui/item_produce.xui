@@ -10,8 +10,6 @@ Rect=9 239 621 139
 AnchorPos=0 0
 Notes=
 Stretch=1
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -24,8 +22,6 @@ Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -35,8 +31,6 @@ Tag=42
 Rect=85 171 184 65
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -52,8 +46,6 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_6]
 Type=4
@@ -67,8 +59,6 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_BUTTON_ITEM1]
 Type=2
@@ -79,8 +69,6 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_17]
 Type=1
@@ -88,8 +76,6 @@ Tag=17
 Rect=31 254 107 107
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\quest\item-list.png
 NormalFileUV=0 0 100 100
 
@@ -99,8 +85,6 @@ Tag=23
 Rect=31 335 107 19
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -116,8 +100,6 @@ TextSize=16
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_33]
 Type=1
@@ -125,8 +107,6 @@ Tag=33
 Rect=138 306 400 4
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\quest\line.png
 NormalFileUV=0 0 567 4
 
@@ -142,8 +122,6 @@ TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_35]
 Type=4
@@ -157,8 +135,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_36]
 Type=4
@@ -172,8 +148,6 @@ TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_37]
 Type=4
@@ -187,8 +161,6 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_9SLICES_38]
 Type=22
@@ -197,8 +169,6 @@ Rect=10 390 621 464
 AnchorPos=0 0
 Notes=
 Stretch=1
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -214,8 +184,6 @@ TextSize=18
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_BUTTON_8]
 Type=2
@@ -226,8 +194,6 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -243,8 +209,6 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_40]
 Type=4
@@ -258,8 +222,6 @@ TextSize=18
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_41]
 Type=4
@@ -273,8 +235,6 @@ TextSize=18
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_42]
 Type=1
@@ -282,8 +242,6 @@ Tag=43
 Rect=47 467 60 60
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_43]
 Type=1
@@ -291,8 +249,6 @@ Tag=45
 Rect=47 593 60 60
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_44]
 Type=1
@@ -300,8 +256,6 @@ Tag=46
 Rect=47 530 60 60
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_45]
 Type=1
@@ -309,8 +263,6 @@ Tag=47
 Rect=47 656 60 60
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_46]
 Type=4
@@ -319,11 +271,8 @@ Rect=183 480 200 34
 AnchorPos=0 0
 Notes=
 TextSize=18
-TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_47]
 Type=4
@@ -335,8 +284,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_48]
 Type=4
@@ -348,8 +295,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_49]
 Type=4
@@ -361,8 +306,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_50]
 Type=4
@@ -376,8 +319,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_51]
 Type=4
@@ -391,8 +332,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_52]
 Type=4
@@ -406,8 +345,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_53]
 Type=4
@@ -421,8 +358,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_54]
 Type=4
@@ -436,8 +371,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_55]
 Type=4
@@ -451,8 +384,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_56]
 Type=4
@@ -466,8 +397,6 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_57]
 Type=4
@@ -481,13 +410,11 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_58]
 Type=4
 Tag=60
-Rect=223 726 200 34
+Rect=106 733 200 34
 AnchorPos=0 0
 Notes=
 Text=消耗金币???????
@@ -496,5 +423,16 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+
+[CTRL_TEXT_59]
+Type=4
+Tag=61
+Rect=361 733 200 34
+AnchorPos=0 0
+Notes=
+Text=消耗魂???????
+TextTradition=消耗魂???????
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
