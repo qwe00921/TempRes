@@ -590,7 +590,12 @@ function p.OnListItemClick(uiNode, uiEventType, param)
 		p.selTeamPos = uiNode:GetId();
 		local hasRemove = false;
 		if p.user_teams[p.selTeam] and tonumber(p.user_teams[p.selTeam]["Pos_unique"..p.selTeamPos] or 0) ~= 0 then
-			hasRemove = true;
+			for i = 1,6 do
+				if i ~= p.selTeamPos and tonumber(p.user_teams[p.selTeam]["Pos_unique"..i] or 0) ~= 0 then
+					hasRemove = true;
+					break
+				end
+			end
 		end
 		card_bag_mian.ShouReplaceUI(p.OnSelectReplaceCallback, hasRemove);
 	end
