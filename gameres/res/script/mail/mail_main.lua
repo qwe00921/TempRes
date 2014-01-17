@@ -48,6 +48,7 @@ local ui_item_sys = ui_mail_list_item_sys
 local ui_item_usr = ui_mail_list_item_user
 
 function p.ShowUI(isReloadNet)
+	maininterface.HideUI();
 	dlg_menu.SetNewUI( p );
 	
 	if p.layer ~= nil then
@@ -110,6 +111,7 @@ function p.CloseUI()
 		p.curListTypeTag = nil;
 		p.msgs = {}
 		p.subLayer = nil;
+		maininterface.ShowUI();
     end
 end
 
