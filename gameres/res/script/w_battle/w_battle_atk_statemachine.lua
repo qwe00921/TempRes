@@ -206,10 +206,10 @@ function p:atk_startAtk()
 		if tarFighter.IsHurt == false then --未受击
 			--受击
 			local  ltargetMachine = w_battle_machinemgr.getTarStateMachine(self.tarCampType, tarFighter:GetId());
-			if ltargetMachine:IsEnd() == true then --处于待机状态
+			--if ltargetMachine:IsEnd() == true then --处于待机状态
 				WriteCon( "atkFighter atkid="..tostring(atkFighter:GetId()).." target inhurt tarid="..tostring(tarFighter:GetId()) );
 				ltargetMachine:setInHurt(self.atkFighter);	
-			end;
+			--end;
 		end;
 	end
 
@@ -381,8 +381,7 @@ function p:atkTurnEnd()
 	
 	--已行动的人结束行动了
 	--w_battle_mgr.AtkDec(atkFighter:GetId());	
-	
-	WriteCon( "atkTurnEnd atkid:"..tostring(atkFighter:GetId()));
+	--WriteCon( "atkTurnEnd atkid:"..tostring(atkFighter:GetId()));
 	w_battle_mgr.checkTurnEnd();
 end;
 

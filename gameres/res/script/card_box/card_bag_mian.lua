@@ -474,6 +474,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			if p.isReplace == true then
 				p.HideUI();
+				dlg_card_group_main.OnSelectReplaceCallback(nil,true);
 			else
 				p.CloseUI();
 			end

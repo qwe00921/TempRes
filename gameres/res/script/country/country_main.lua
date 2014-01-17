@@ -13,7 +13,12 @@ p.countryInfoT = {};
 local uiNodeT = {}
 
 function p.ShowUI()
+	if country_building then
+		country_building.CloseUI()
+	end
+	
 	dlg_menu.SetNewUI( p );
+	dlg_userinfo.HideUI();
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		
@@ -23,7 +28,6 @@ function p.ShowUI()
 		return;
 	end
 	
-	dlg_userinfo.HideUI();
 	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
@@ -309,8 +313,6 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("return");
 			p.CloseUI();
 			time_bar.ClearData()
-			maininterface.BecomeFirstUI();
-			maininterface.CloseAllPanel();
 			
 			--注销采集倒计时
 			country_collect.EndTick();
@@ -325,7 +327,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
 			if p.countryInfoT["B1"] then
 				WriteCon("PRODUCE");
-				p.HideUI()
+				--p.HideUI()
 				country_building.ShowUI(p.countryInfoT)
 			end
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
@@ -357,8 +359,8 @@ function p.CloseUI()
 		p.layer:LazyClose();
 		p.layer = nil;
 		p.ClearData()
-		--dlg_userinfo.ShowUI();
-		--dlg_menu.ShowUI();
+		dlg_userinfo.ShowUI();
+		maininterface.ShowUI();
 	end
 end
 function p.ClearData()
@@ -371,6 +373,7 @@ function p.ClearData()
 end
 function p.UIDisappear()
 	p.CloseUI();
+	country_building.CloseUI();
 	maininterface.BecomeFirstUI();
 	maininterface.CloseAllPanel();
 	
