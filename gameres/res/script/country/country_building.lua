@@ -18,7 +18,7 @@ p.upNeedHome = nil;
 function p.ShowUI(countryInfo)
 	--dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
-	--maininterface.HideUI();
+	maininterface.HideUI();
 	if countryInfo == nil then
 		WriteConErr("countryInfo error");
 		return
