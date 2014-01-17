@@ -31,10 +31,9 @@ local act_zoom = "engine_cmb.zoom_in_out"; --呼吸效果
 
 local DIR_LEFT = 1;--图片在左
 local DIR_RIGHT = 2;--图片在右
-
 --显示UI
 function p.ShowUI( stageId, storyId, openViewId  )
-	
+											--参数 openViewId 详见 after_drama_data.lua
 	if openViewId == nil then
 		openViewId = after_drama_data.FIGHT
 	end

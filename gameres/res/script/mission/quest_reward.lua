@@ -1,11 +1,23 @@
+ITEM_TYPE_MATERIAL = 1;		--material
+ITEM_TYPE_CARD = 2;			--char_res
+ITEM_TYPE_EQUIP = 3;			--equip
+ITEM_TYPE_MONEY = 4;
+ITEM_TYPE_BLUESOUL = 5;
+ITEM_TYPE_EMONEY = 6;
+ITEM_TYPE_GIFT = 7;			--item
+ITEM_TYPE_TREASURE = 8;		--item
+ITEM_TYPE_OTHER = 9;			--item
+ITEM_TYPE_SHOP = 10;			--item
+
+
 quest_reward = {}
 local p = quest_reward;
+local ui_list = ui_quest_reward_view1;
+local ui = ui_quest_reward_view;
 
 p.layer = nil;
-local ui = ui_quest_reward_view;
-local expLeast = nil;
-local expMax = nil;
-local expNow = nil;
+p.viewId = 0;
+p.rewardDataT =nil;
 
 function p.ShowUI(rewardData)
 	if rewardData == nil then
@@ -44,18 +56,38 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
 		if(ui.ID_CTRL_BUTTON_BG == tag) then
-			WriteCon("OK BUTTON");
-			if E_DEMO_VER == 4 then
-				n_battle_mgr.QuitBattle();
-			elseif E_DEMO_VER == 5 then
-				w_battle_mgr.QuitBattle();
-			end;
-			p.CloseUI();
-			dlg_userinfo.ShowUI();
-			stageMap_main.OpenWorldMap();
+			if p.viewId < 2 then
+				WriteCon("p.viewId =="..p.viewId);
+				p.viewId = p.viewId + 1;
+				p.getRewardList(p.rewardDataT)
+			else
+				WriteCon("OK BUTTON");
+				if E_DEMO_VER == 4 then
+					n_battle_mgr.QuitBattle();
+				elseif E_DEMO_VER == 5 then
+					w_battle_mgr.QuitBattle();
+				end;
+				p.isShowPlot()
+			end
 		end
 	end
 end
+
+--是否显示剧情
+function p.isShowPlot()
+	local storyId = tonumber(p.rewardDataT.story)
+	if storyId == 0 then
+		p.CloseUI();
+		dlg_userinfo.ShowUI();
+		stageMap_main.OpenWorldMap();
+	else
+		p.CloseUI();
+		dlg_drama.ShowUI(0,storyId,after_drama_data.CHAPTER)
+		WriteCon("OK BUTTON");
+	end
+
+end
+
 
 function p.ShowQuestRewardView(rewardData)
 	for k,v in pairs(rewardData) do
@@ -63,6 +95,7 @@ function p.ShowQuestRewardView(rewardData)
 			WriteConErr("v =="..v);
 		end
 	end
+	p.rewardDataT = rewardData;
 	local missionId = tonumber(rewardData.mission_id);
 		WriteConErr("missionId =="..missionId);
 	--章节名
@@ -85,35 +118,117 @@ function p.ShowQuestRewardView(rewardData)
 	missionSoul:SetText(tostring(soulText));
 	--经验
 	local missionExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP_V);
-	local getExp = tonumber(rewardData.exp) or 0
+	local getExp = tonumber(rewardData.addExp) or 0
 	missionExp:SetText(tostring(getExp));
 	
-	getExp = 99
-	expMax = 1820;
-	expNow = 1720;
-	level = 31;
-	--expMax = tonumber(rewardData.)
-	--expNow = tonumber(rewardData.)
-	--levelNow = tonumber(rewardData.level)
-	
-	--升级所需经验
-	-- local expUpNeed = expMax - expNow - tonumber(getExp);
-	-- if expUpNeed < 0 then
-		-- expUpNeed = 0
-	-- end
-	-- p.setExpUpNeed(expUpNeed)
-	
-	-- local expBar = p.setExpBar()
-	-- local expStartNum = expNow;
-	-- local expEndNum = expNow + tonumber(getExp);
-	-- expbar_move_effect.showEffect(expBar,expLeast,expMax,expStartNum,expEndNum)
-	
-	
-	
+	local expMax = tonumber(rewardData.maxExp)
+	local expNow = tonumber(rewardData.exp)
+	local level = tonumber(rewardData.level)
+
 	local expBar = p.setExpBar()
 	expbar_move_effect.showEffect(expBar,0,expMax,expNow,getExp,level)
-
+	
+	p.getRewardList(rewardData)
+	
+	
 end
+
+function p.getRewardList(rewardData)
+	if p.viewId == 0 then
+		p.rewardListT = rewardData.item
+	elseif p.viewId == 1 then
+		p.rewardListT = rewardData.equip
+	elseif p.viewId == 2 then
+		p.rewardListT = rewardData.card
+	end
+	p.showRewardList(p.rewardListT)
+end
+
+function p.showRewardList(rewardList)
+	local rewardListT = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST_ITEMANDCHA);
+	rewardListT:ClearView();
+	
+	if rewardList == nil or #rewardList <= 0 then
+		return
+	end
+	
+	local rewardNum = #rewardList
+	WriteCon("rewardNum ===== "..rewardNum);
+	
+	local row = math.ceil(rewardNum/6);
+	WriteCon("row ===== "..row);
+	
+	for i = 1,row do
+		local view = createNDUIXView();
+		view:Init();
+		LoadUI("quest_reward_view1.xui",view,nil);
+		local bg = GetUiNode( view, ui_list.ID_CTRL_PICTURE_80);
+        view:SetViewSize( bg:GetFrameSize());
+		
+		local row_index = i;
+		local start_index = (row_index-1)*6+1
+        local end_index = start_index + 5;
+		
+		--设置列表信息，一行6个物品
+		for j = start_index,end_index do
+			if j <= rewardNum then
+				local reward = rewardList[j];
+				local rewardIndex = j - start_index + 1;
+				p.ShowRewardInfo( view, reward, rewardIndex );
+			end
+		end
+		list:AddView( view );
+	end
+end
+
+function p.ShowRewardInfo( view, reward, rewardIndex )
+	local rewardPic = nil;
+	local rewardNumText = nil;
+	
+	if cardIndex == 1 then
+		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM1;
+		rewardNumText = ui_list.ID_CTRL_TEXT_NUM1;
+	elseif cardIndex == 2 then
+		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM2;
+		rewardNumText = ui_list.ID_CTRL_TEXT_NUM2;
+	elseif cardIndex == 3 then
+		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM3;
+		rewardNumText = ui_list.ID_CTRL_TEXT_NUM3;
+	elseif cardIndex == 4 then
+		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM4;
+		rewardNumText = ui_list.ID_CTRL_TEXT_NUM4;
+	elseif cardIndex == 5 then
+		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM5;
+		rewardNumText = ui_list.ID_CTRL_TEXT_NUM5;
+	elseif cardIndex == 6 then
+		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM6;
+		rewardNumText = ui_list.ID_CTRL_TEXT_NUM6;
+	end
+	
+	local rewardType = tonumber(reward.item_type);
+	local rewardId = tonumber(reward.item_id);
+	local rewardNum = tonumber(reward.num);
+	
+	local picIndex = nil;
+	local rewardT = nil
+	if rewardType == ITEM_TYPE_MATERIAL then
+		rewardT = SelectRowInner(T_MATERIAL,"id",rewardId);
+		picIndex = rewardT.item_pic;
+		rewardNumText:SetText(tostring(rewardNum));
+	elseif rewardType == ITEM_TYPE_CARD then
+		rewardT = SelectRowInner(T_CHAR_RES,"card_id",rewardId);
+		picIndex = rewardT.hero_pic;
+	elseif rewardType == ITEM_TYPE_EQUIP then
+		rewardT = SelectRowInner(T_EQUIP,"id",rewardId);
+		picIndex = rewardT.item_pic;
+	elseif rewardType == ITEM_TYPE_GIFT or rewardType == ITEM_TYPE_TREASURE or rewardType == ITEM_TYPE_OTHER or rewardType == ITEM_TYPE_SHOP then
+		rewardT = SelectRowInner(T_ITEM,"id",rewardId);
+		picIndex = rewardT.item_pic;
+	end
+	
+	rewardPic:SetPicture( GetPictureByAni(picIndex,0));
+end
+
 
 function p.setExpUpNeed(needExp)
 	local needExpText = GetLabel(p.layer, ui.ID_CTRL_TEXT_NEED_EXP_V);
@@ -138,7 +253,9 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.viewId = 0;
 		expbar_move_effect.ClearData();
+		p.rewardDataT =nil;
 	end
 end
 

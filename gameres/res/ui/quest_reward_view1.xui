@@ -9,13 +9,8 @@ Tag=80
 Rect=5 5 592 88
 AnchorPos=0 0
 Notes=
-
-[CTRL_PICTURE_ITEM2]
-Type=1
-Tag=19
-Rect=117 15 70 70
-AnchorPos=0 0
-Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM1]
 Type=1
@@ -23,31 +18,122 @@ Tag=9
 Rect=18 15 70 70
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_PICTURE_38]
+[CTRL_PICTURE_ITEM2]
+Type=1
+Tag=19
+Rect=117 15 70 70
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_ITEM3]
 Type=1
 Tag=40
 Rect=216 15 70 70
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_PICTURE_39]
+[CTRL_PICTURE_ITEM4]
 Type=1
 Tag=41
 Rect=315 15 70 70
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_PICTURE_40]
+[CTRL_PICTURE_ITEM5]
 Type=1
 Tag=42
 Rect=414 15 70 70
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
-[CTRL_PICTURE_41]
+[CTRL_PICTURE_ITEM6]
 Type=1
 Tag=43
 Rect=513 15 70 70
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NUM1]
+Type=4
+Tag=99
+Rect=47 55 40 28
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NUM2]
+Type=4
+Tag=100
+Rect=146 55 40 28
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NUM3]
+Type=4
+Tag=101
+Rect=245 55 40 28
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NUM4]
+Type=4
+Tag=102
+Rect=344 55 40 28
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NUM5]
+Type=4
+Tag=103
+Rect=443 55 40 28
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NUM6]
+Type=4
+Tag=104
+Rect=542 55 40 28
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
