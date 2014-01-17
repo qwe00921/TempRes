@@ -369,7 +369,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		end
 		p.isChanged = true;
 	else
-		dlg_msgbox.ShowOK(GetStr("equip_sell_title"),GetStr("equip_is_dress"),p.OnOkCallback,p.layer);
+		dlg_msgbox.ShowOK(GetStr("card_equip_up_select"),GetStr("card_equip_up_select_dressed"),p.OnOkCallback,p.layer);
 	end
 	
 	
