@@ -225,6 +225,8 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			if card_bag_mian.layer ~= nil then
 				WriteCon("card_bag_mian.layer ~= nil ");
 				card_bag_mian.ShowUI();
+			else 
+				maininterface.ShowUI();
 			end
 			
 		elseif ui.ID_CTRL_BTN_INTENSIFY == tag then

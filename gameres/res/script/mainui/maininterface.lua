@@ -275,6 +275,7 @@ function p.OnClickCard(uiNode, uiEventType, param)
 		local card = formation["Pos"..id];
 		if card then
 			dlg_card_attr_base.ShowUI( card );
+			maininterface.HideUI();
 		end
 	end
 end
