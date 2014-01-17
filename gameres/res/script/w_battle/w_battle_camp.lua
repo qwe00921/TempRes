@@ -412,7 +412,7 @@ function p:AddFighters( uiArray, fighters )
         f.level = tonumber( fighterInfo.Level );
         f.uniqueId = tonumber( fighterInfo.UniqueId );
         f.cardId = tonumber( fighterInfo.CardID );
-		f.Attack = tonumber( fighterInfo.Attack);
+		f.Attack = tonumber( fighterInfo.Attack) * 10;
 		f.Defence = tonumber( fighterInfo.Defence);
 		f.atkType = tonumber ( fighterInfo.Damage_type);
 		f.Position = tonumber (fighterInfo.Position);
@@ -423,6 +423,7 @@ function p:AddFighters( uiArray, fighters )
 		f.Sp = 0;
 		f.maxSp = 100;
         f.buffList = {};
+		
          
 		--临时攻击力调整
 		--f.Attack = 10;

@@ -174,12 +174,12 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 		atkCampType = W_BATTLE_ENEMY;
 		targetCampType = W_BATTLE_HERO;
     else
-		targerID = w_battle_mgr.PVEEnemyID;
+		targetID = w_battle_mgr.PVEEnemyID;
 		atkCampType = W_BATTLE_HERO;
 		targetCampType = W_BATTLE_ENEMY;
     end;
 
-   if targerID == nil then
+   if targetID == nil then
       WriteCon( "Error! SetPVEAtkID targerID is nil");
 	  return false;
    end; 
@@ -191,13 +191,13 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 
 	local targetFighter = nil;
 	if IsMonster == true then
-		targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( targerID ) );	
+		targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( targetID ) );	
 	else
-		targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targerID ) );	
+		targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targetID ) );	
 	end
 
    if targetFighter == nil then
-      WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targerID));
+      WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targetID));
 	  return false;
    end;
 
@@ -255,12 +255,12 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		atkCampType = W_BATTLE_ENEMY;
 		targetCampType = W_BATTLE_HERO;
     else
-		targerID = w_battle_mgr.PVEEnemyID;
+		targetID = w_battle_mgr.PVEEnemyID;
 		atkCampType = W_BATTLE_HERO;
 		targetCampType = W_BATTLE_ENEMY;
     end;
 	
-    if targerID == nil then
+    if targetID == nil then
       WriteCon( "Error! SetPVEAtkID targerID is nil");
 	  return false;
     end; 
@@ -272,12 +272,12 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 
     local targetFighter = nil;
     if IsMonster == true then
-       targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( targerID ) );
+       targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( targetID ) );
     else
-	   targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targerID ) );
+	   targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targetID ) );
     end;
     if targetFighter == nil then
-       WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targerID));
+       WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targetID));
 	   return false;
     end;
 
@@ -589,20 +589,21 @@ function p.EnemyStarTurn()  --怪物回合开始
 	
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
-		local lTargetFighter = p.getEnemyTarget(v)
-		if lTargetFighter == nil then
-			break;
-		end
-		if lTargetFighter.nowlife >= 0 then
-			if lTargetFighter.Skill == 0 then
-				p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());	
+		if latkFighter.nowlife > 0 then
+			local lTargetFighter = p.getEnemyTarget(v)
+			if lTargetFighter == nil then
+				break;
+			end
+			local ltargetID = lTargetFighter:GetId();
+			if latkFighter.Skill == 0 then
+				p.SetPVEAtkID(latkFighter:GetId(), true, ltargetID);	
 				break;
 			else
 				if p.EnemyUseSkill() == true then
-					p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
+					p.SetPVESkillAtkID(latkFighter:GetId(), true, ltargetID);		
 					break;
 				else
-					p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());		
+					p.SetPVEAtkID(latkFighter:GetId(), true, ltargetID);		
 					break;
 				end
 			end
@@ -1322,8 +1323,8 @@ function p.getEnemyTarget(atkFighter)
 	
 	--取位置最小的
 	--local lPos = 7;
-	lTargetFighter = lFighterLst[1];
     if #lTargetFightetLst > 0 then
+		lTargetFighter = lTargetFightetLst[1];
 		for k,v in ipairs(lTargetFightetLst) do 
 			if lTargetFighter:GetId() > v:GetId() then
 				lTargetFighter = v;

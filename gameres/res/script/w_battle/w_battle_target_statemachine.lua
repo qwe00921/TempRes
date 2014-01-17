@@ -102,6 +102,14 @@ function p:tar_hurtEnd()
 	local batch = w_battle_mgr.GetBattleBatch();
 	local seqTarget = batch:AddSerialSequence();
 	local seqHurt = batch:AddSerialSequence();
+    if self:IsEnd() then  --已结束
+		return ;
+	end;
+	
+	if targerFighter.IsHurt == true then  --又进入了受击状态
+		return ;
+	end;
+	
 			
 	if (targerFighter.Hp > 0) or (targerFighter:GetTargerTimes() > 0 ) then  --还活着,或者成为目标未攻击的人数不为0,继续播放站立	
 		targerFighter:standby();
