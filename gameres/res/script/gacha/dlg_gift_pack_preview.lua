@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	dlg_gift_pack_preview.lua
 -- author:		zjj, 2013/09/11
--- purpose:		Àñ°üÔ¤ÀÀ¡¢¹ºÂò³É¹¦½çÃæ
+-- purpose:		ç¤¼åŒ…é¢„è§ˆã€è´­ä¹°æˆåŠŸç•Œé¢
 --------------------------------------------------------------
 
 dlg_gift_pack_preview = {}
@@ -25,7 +25,7 @@ p.nodeTag = {
 	{ui_dlg_gift_pack_preview.ID_CTRL_PICTURE_10, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME6, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_26, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM6},
 };
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI( item )
     
     if p.layer ~= nil then
@@ -62,7 +62,7 @@ function p.Init( item )
 		local itemid = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id" ..i) );
 		local itemnum = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num" ..i) );
 		--WriteCon( tostring(itemtype) .. " "..tostring(itemid).. " "..tostring(itemnum));
-		--¹ıÂËÀñ°üÖĞÎïÆ·µÄÊıÁ¿
+		--è¿‡æ»¤ç¤¼åŒ…ä¸­ç‰©å“çš„æ•°é‡
 		if itemtype ~= 0 then
 			table.insert( itemList, {itemtype, itemid, itemnum} );
 		end
@@ -79,7 +79,8 @@ function p.Init( item )
 			--WriteCon( "aaa"..tostring(itemtype) .. " "..tostring(itemid).. " "..tostring(itemnum));
 			
 			if itemtype ~= 0 then
-				--ÏÔÊ¾Ãû×Ö
+				--[[
+				--æ˜¾ç¤ºåå­—
 				local itemname;
 				local pictureData;
 				if itemtype == 2 then
@@ -90,25 +91,28 @@ function p.Init( item )
 					itemname = SelectCell( T_ITEM, itemid, "name" );
 					pictureData = GetPictureByAni( SelectCell( T_ITEM, itemid, "item_pic" ), 0 );
 				elseif itemtype == 6 then
-					itemname = ToUtf8("±¦Ê¯");
+					itemname = ToUtf8("å®çŸ³");
 					pictureData = GetPictureByAni( "item.item_emoney", 0 );
 				elseif itemtype == 4 then
-					itemname = ToUtf8("½ğ±Ò");
+					itemname = ToUtf8("é‡‘å¸");
 					pictureData = GetPictureByAni( "item.item_money", 0 );
 				else
 					itemname = SelectCell( T_ITEM, itemid, "name" );
 					pictureData = GetPictureByAni( SelectCell( T_ITEM, itemid, "item_pic" ), 0 );
 				end
+				--]]
+				local itemname = GetItemName( itemid, itemtype );
+				local pictureData = GetItemPic( itemid, itemtype );
 				
 				--local itemname = SelectCell( T_ITEM, itemid, "name" );
 				local nameLab = GetLabel( p.layer, p.nodeTag[i][NAME_INDEX] );
 				nameLab:SetText( tostring(itemname) );
 				
-				--ÏÔÊ¾ÊıÁ¿
+				--æ˜¾ç¤ºæ•°é‡
 				local numLab = GetLabel( p.layer, p.nodeTag[i][NUM_INDEX] );
 				numLab:SetText( tostring(itemnum) );
 				
-				--Í¼Æ¬ÏÔÊ¾
+				--å›¾ç‰‡æ˜¾ç¤º
 				local picture = GetImage( p.layer, p.nodeTag[i][PIC_INDEX] );
 				if picture and pictureData then
 					picture:SetPicture( pictureData );
@@ -119,7 +123,7 @@ function p.Init( item )
 	
 	if #itemList+1 <= 6 then
 		for i = #itemList+1, 6 do
-			--Àñ°üÖĞÎïÆ·ÊıÁ¿Îª0£¬Òş²Ø¶ÔÓ¦µÄ¿Ø¼ş
+			--ç¤¼åŒ…ä¸­ç‰©å“æ•°é‡ä¸º0ï¼Œéšè—å¯¹åº”çš„æ§ä»¶
 			for _, tag in pairs(p.nodeTag[i]) do
 				local node = GetUiNode( p.layer,  tag);
 				if node then
@@ -138,73 +142,73 @@ function p.Init( item )
     local row_item6_num = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num6"));
 
     if row_item1_num ~= 0 then
-        --Ãû³Æ 
+        --åç§° 
         local row_item1_id = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id1"));
         local row_name = SelectCell( T_ITEM, row_item1_id, "name" );
         local nameLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME1 );
         nameLab:SetText( tostring( row_name));
-        --ÊıÁ¿
+        --æ•°é‡
         local numLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM1 );
         local row_num =  tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num1"));
         numLab:SetText( tostring( row_item1_num ));
     end
     
     if row_item2_num ~= 0 then
-        --Ãû³Æ 
+        --åç§° 
         local row_item2_id = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id2"));
         local row_name = SelectCell( T_ITEM, row_item2_id, "name" );
         local nameLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME2 );
         nameLab:SetText( tostring( row_name));
-        --ÊıÁ¿
+        --æ•°é‡
         local numLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM2 );
         local row_num =  tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num2"));
         numLab:SetText( tostring( row_item2_num ));
     end  
       
 	if row_item3_num ~= 0 then
-        --Ãû³Æ 
+        --åç§° 
         local row_item3_id = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id3"));
         local row_name = SelectCell( T_ITEM, row_item3_id, "name" );
         local nameLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME3 );
         nameLab:SetText( tostring( row_name));
-        --ÊıÁ¿
+        --æ•°é‡
         local numLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM3 );
         local row_num =  tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num3"));
         numLab:SetText( tostring( row_item3_num ));
     end
     
     if row_item4_num ~= 0 then
-        --Ãû³Æ 
+        --åç§° 
         local row_item4_id = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id4"));
         WriteCon("--------"..row_item4_id );
         local row_name = SelectCell( T_ITEM, row_item4_id, "name" );
         local nameLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME4 );
         nameLab:SetText( tostring( row_name));
-        --ÊıÁ¿
+        --æ•°é‡
         local numLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM4 );
         local row_num =  tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num4"));
         numLab:SetText( tostring( row_item4_num ));
     end
         
    if row_item5_num ~= 0 then
-        --Ãû³Æ 
+        --åç§° 
         local row_item5_id = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id5"));
         local row_name = SelectCell( T_ITEM, row_item5_id, "name" );
         local nameLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME5 );
         nameLab:SetText( tostring( row_name));
-        --ÊıÁ¿
+        --æ•°é‡
         local numLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM5 );
         local row_num =  tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num5"));
         numLab:SetText( tostring( row_item5_num ));
     end
         
     if row_item6_num ~= 0 then
-        --Ãû³Æ 
+        --åç§° 
         local row_item6_id = tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_id6"));
         local row_name = SelectCell( T_ITEM, row_item6_id, "name" );
         local nameLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NAME6 );
         nameLab:SetText( tostring( row_name));
-        --ÊıÁ¿
+        --æ•°é‡
         local numLab = GetLabel( p.layer, ui_dlg_gift_pack_preview.ID_CTRL_TEXT_NUM6 );
         local row_num =  tonumber( SelectRowInner( T_GIFT, "gift_id", item.item_id , "reward_num6"));
         numLab:SetText( tostring( row_item6_num ));
@@ -213,7 +217,7 @@ function p.Init( item )
 end
 
 
---ÉèÖÃÊÂ¼ş´¦Àí
+--è®¾ç½®äº‹ä»¶å¤„ç†
 function p.SetDelegate()
     local okBtn =  GetButton(p.layer,ui_dlg_gift_pack_preview.ID_CTRL_BUTTON_OK);
     okBtn:SetLuaDelegate(p.OnGitfPreviewUIEvent);
@@ -224,7 +228,7 @@ end
 function p.OnGitfPreviewUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
-	    --È·¶¨
+	    --ç¡®å®š
 		if( ui_dlg_gift_pack_preview.ID_CTRL_BUTTON_OK == tag ) then
 		    p.CloseUI();
 		end
@@ -232,7 +236,7 @@ function p.OnGitfPreviewUIEvent(uiNode, uiEventType, param)
 end
 
 
---ÉèÖÃ¿É¼û
+--è®¾ç½®å¯è§
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );

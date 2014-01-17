@@ -6,6 +6,7 @@
 
 --加载所有UI
 DoFile("ui/define.lua");
+DoFile("GlobalConfig.lua");
 
 --测试用
 DoFile("test.lua");

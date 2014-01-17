@@ -21,6 +21,8 @@ function p.ShowUI(userinfo)
 		p.m_bgImage:SetVisible(true);
 		
 		p.scrollList:SetVisible(true);
+		
+		GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
 		return;
 	end
 

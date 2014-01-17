@@ -85,7 +85,9 @@ function p.ShowUI( intent ,reload)
 	
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		p.SetBagUseVisible(false)
+		p.SetBagUseVisible(false);
+		
+		maininterface.HideUI();
 		return;
 	end
 	
@@ -105,6 +107,7 @@ function p.ShowUI( intent ,reload)
 	layer:SetSwallowTouch(false);
 	]]--
 	
+	layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
@@ -126,6 +129,8 @@ function p.ShowUI( intent ,reload)
 	end
 	
 	p.SetBagUseVisible(false);
+	
+	maininterface.HideUI();
 	
 	gNotify:RegisterEvent( "msg_player", "Emoney", p, p.UpdateRmb );
 end
@@ -666,7 +671,8 @@ function p.SetItemInfo( view , item , position, index)
     --名称
     local nameLab = GetLabel( view , name );
     --local row_name = SelectRowInner( T_SHOP, "item_id", item.item_id , "name"  );
-	local row_name = SelectCell( T_ITEM, item.item_id, "name" );
+	--local row_name = SelectCell( T_ITEM, item.item_id, "name" );
+	local row_name = GetItemName( item.item_id, G_ITEMTYPE_SHOP );
     nameLab:SetText(  row_name );
     
     --限制
@@ -733,7 +739,8 @@ function p.SetItemInfo( view , item , position, index)
 	
 	--道具图片
 	local image = GetImage( view, picture );
-	local imageData = GetPictureByAni( SelectCell( T_ITEM, item.item_id , "item_pic" ) ,0 );
+	--local imageData = GetPictureByAni( SelectCell( T_ITEM, item.item_id , "item_pic" ) ,0 );
+	local imageData = GetItemPic( item.item_id, G_ITEMTYPE_SHOP );
 	if image and imageData then
 		image:SetPicture( imageData );
 	end
@@ -1167,6 +1174,8 @@ function p.CloseUI()
 		p.useTicketSign = 0;
 
 		p.requestFlag = false;
+		
+		maininterface.ShowUI();
     end
 end
 
