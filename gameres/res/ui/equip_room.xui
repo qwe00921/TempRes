@@ -60,7 +60,7 @@ NormalFileUV=0 0 100 80
 [CTRL_PICTURE_14]
 Type=1
 Tag=14
-Rect=278 187 107 40
+Rect=281 187 107 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -71,7 +71,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_NUM]
 Type=4
 Tag=15
-Rect=293 191 74 32
+Rect=296 191 74 32
 AnchorPos=0 0
 Notes=
 Text=99/99
@@ -161,6 +161,18 @@ Text=装备屋
 TextTradition=裝備屋
 TextSize=30
 TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CRIT]
+Type=4
+Tag=12
+Rect=307 246 297 43
+AnchorPos=0 0
+Notes=
+TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
