@@ -340,7 +340,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
-			dlg_menu.HideUI();
+			--dlg_menu.HideUI();
 			dlg_card_attr_base.ShowUI();
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
