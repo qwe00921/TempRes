@@ -491,7 +491,7 @@ function p.SetHeroCardAttr( pos, fighter )
 	local ctrllers = p.objList[pos];
 	if ctrllers ~= nil then
 		ctrllers[HPEXP_INDEX]:SetValue( 0, tonumber( fighter.maxHp ), tonumber( fighter.Hp ) );
-		ctrllers[HPTEXT_INDEX]:SetText( string.format( "%d/%d", tonumber( fighter.Hp ), tonumber( fighter.maxHp ) ) );
+		ctrllers[HPNUM_INDEX]:SetText( string.format( "%d/%d", tonumber( fighter.Hp ), tonumber( fighter.maxHp ) ) );
 		
 		if tonumber(fighter.Hp) == 0 then
 			ctrllers[MASK_INDEX]:SetVisible( true );
@@ -630,6 +630,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		elseif p.CheckSelectTarget( tag ) then
 			WriteCon( "**选择目标，位置为".. tostring( uiNode:GetId() ) .."**" );
 			w_battle_mgr.SetPVETargerID( uiNode:GetId() );
+			btn:SetEnabled( true );
 		end
 	elseif IsDragUp( uiEventType ) then
 		WriteCon("IsDragUp");
