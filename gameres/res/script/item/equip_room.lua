@@ -25,8 +25,8 @@ p.newEquip = {};
 p.msg = nil;
 --ÏÔÊ¾UI
 function p.ShowUI()
-    dlg_menu.ShowUI();
-	dlg_menu.SetNewUI( p );
+   -- dlg_menu.ShowUI();
+	--dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -39,6 +39,8 @@ function p.ShowUI()
     end
 	layer:NoMask();
 	layer:Init();
+	layer:SetSwallowTouch(true);
+	layer:SetFrameRectFull();
 	
 	GetUIRoot():AddDlg(layer);
     LoadDlg("equip_room.xui", layer, nil);
@@ -79,8 +81,9 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
-			dlg_userinfo.ShowUI( );
-			country_main.ShowUI();
+			--dlg_userinfo.ShowUI( );
+			dlg_userinfo.HideUI();
+			--country_main.ShowUI();
 		elseif (ui.ID_CTRL_BUTTON_SELL == tag) then --Âô³ö
 			p.HideUI();
 			equip_sell.ShowUI(p.msg);
