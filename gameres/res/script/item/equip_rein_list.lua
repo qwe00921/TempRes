@@ -261,6 +261,7 @@ function p.CloseUI()
 		p.consumeMoney = 0;
 		p.nowExp = 0;
 		p.addExp = 0;
+		equip_rein_select.CloseUI();
     end
 	
 	if p.callback then
@@ -289,6 +290,7 @@ end
 function p.OnButtonEvent(uiNode, uiEventType, param)
 	WriteCon("OnUIClickEvent....");	
 	if IsClickEvent(uiEventType) then
+		p.HideUI();
 		equip_rein_select.ShowUI(p.itemListInfo,p.OnSelectCallback);
 	end
 end
@@ -468,13 +470,20 @@ end
 
 
 
-function p.OnSelectCallback(isOk,lst)
-	if isOk ~= true then
-		return;
+function p.OnSelectCallback(isChanged,lst)
+	
+	if p.layer ~= nil then 
+		p.layer:SetVisible(true);
+		
 	end
 	
-	p.itemListInfo = lst or {};
-	p.refreshItemList()
+	if isChanged == true then
+		p.itemListInfo = lst or {};
+		p.refreshItemList()
+	
+	end
+	
+	
 end
 
 
