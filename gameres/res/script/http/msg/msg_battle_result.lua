@@ -9,7 +9,7 @@ function p:new()
 	o = {}
 	setmetatable( o, self );
     self.__index = self;
-    o:ctor();
+    o:ctor();	
 	return o;
 end
 
@@ -28,7 +28,9 @@ function p:Process()
 		--w_battle_mgr.QuitBattle();
 		--local lResult = w_battle_mgr.GetReuslt();
 		--if lResult == 1 then
+
 			quest_reward.ShowUI(self.Reward);
+
 		--	dlg_userinfo.ShowUI();
 		--	stageMap_main.OpenWorldMap();
 		--end;
