@@ -23,6 +23,7 @@ p.rewardData = nil;
 p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
 
+
 p.enemyStepList = {
 	{
 	{
@@ -711,7 +712,7 @@ p.targetCardList = {
 
 }
 
-
+p.useItemData= {}
 p.ItemList = {
 	{item_id = 101001, num = 9, location = 1},
 	{item_id = 101003, num = 5, location = 2},
@@ -740,6 +741,44 @@ p.Drop = { {id=1,step=2,group_id=4},
            }
 
 p.StepDrop = {}
+
+function p.initUseItem(pItemList)
+	for k,v in ipairs(pItemList) do
+		p.useItemData[k] = 0;
+	end
+end;
+
+function p.CalUseItem(pPos)
+	if p.useItemData[pPos] ~= nil then
+		p.useItemData[pPos] = p.useItemData[pPos] +1
+	end;
+end;
+
+function p.GetItemId(pos)
+	local litemID = nil;
+	for k,v in ipairs(p.ItemList) do
+		if v.location == pos then
+			litemID = v.item_id;
+			break;
+		end
+	end
+	return litemID;
+end;
+
+function p.GetBattleItem()
+	local itemLst = {}
+	if p.useItemData ~= {} then
+		for k,v in ipairs(p.useItemData) do
+			if v ~= 0 then
+				local item_id = p.GetItemId(k);
+				local lnum = v;
+				local lRecord = {id=item_id, num=num}
+				itemLst[#itemLst + 1] = lRecord
+			end
+		end;
+	end
+	return itemLst;
+end;
 
 function p.nextStep()
 	p.step = p.step + 1;
@@ -770,13 +809,15 @@ function p.Init( battleDB )
     if battleDB == nil then
     	WriteConWarning( "battle db is nill!" );
     end
-
+	
+	p.useItemData = {}
 	--携带的物品列表
 	p.ItemList = battleDB.fightinfo.Item;
-
+    p.initUseItem(p.ItemList);
+	
     --掉落的物品
 	p.Drop = battleDB.fightinfo.Drop;
-
+    
 	--玩家列表
 	p.playerCardList = battleDB.fightinfo.Player; 
 	for i=1,#p.playerCardList do

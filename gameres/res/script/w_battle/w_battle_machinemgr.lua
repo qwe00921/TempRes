@@ -49,7 +49,7 @@ function p.init()
 	
 end;
 
-
+--[[
 function p.setInHurt(camp,pos)
 	local lTargetMachine = nil;
 	if camp == W_BATTLE_HERO then
@@ -60,7 +60,7 @@ function p.setInHurt(camp,pos)
 	
 	lTargetMachine:setInHurt();  --设为受伤,状态机内部自动解除受伤,并处理后续
 end;
-
+]]--
 
 --获得受击者状态机
 function p.getTarStateMachine(camp,pos)

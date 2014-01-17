@@ -420,6 +420,8 @@ function p:AddFighters( uiArray, fighters )
 		f.Skill	   = tonumber (fighterInfo.Skill);
 		f.element  = tonumber (fighterInfo.element);
 		f.CardID   = tonumber (fighterInfo.CardID);
+		f.Sp = 0;
+		f.maxSp = 100;
         f.buffList = {};
          
 		--临时攻击力调整

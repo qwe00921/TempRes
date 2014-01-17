@@ -329,7 +329,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 				country_building.ShowUI(p.countryInfoT)
 			end
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
-			p.HideUI()
+			--p.HideUI()
 			equip_room.ShowUI();
 			WriteCon("EQUIP");
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
@@ -346,6 +346,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 end
 
 function p.HideUI()
+	WriteCon("country_main.HideUI");
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 	end

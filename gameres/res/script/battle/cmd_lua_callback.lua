@@ -16,8 +16,8 @@ local p = cmd_lua_callback;
 --		str			×Ö´®²ÎÊý2
 ---------------------------------------------------
 function p.CmdLuaHandler( cmdtype, id, num, str )
-	--local str = string.format( "p.CmdLuaHandler(): cmdtype=%s, id=%d, num=%f, str=%s", cmdtype, id, num, str );
-	--WriteCon( str );
+--	local str = string.format( "p.CmdLuaHandler(): cmdtype=%s, id=%d, num=%f, str=%s", cmdtype, id, num, str );
+--	WriteCon( str );
 
 	--²éÕÒfighter
 	local fighter = nil;

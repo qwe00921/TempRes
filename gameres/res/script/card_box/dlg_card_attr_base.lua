@@ -222,6 +222,11 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		if ui.ID_CTRL_BUTTON_BACK == tag then
 			dlg_menu.ShowUI();
 			p.CloseUI();
+			if card_bag_mian.layer ~= nil then
+				WriteCon("card_bag_mian.layer ~= nil ");
+				card_bag_mian.ShowUI();
+			end
+			
 		elseif ui.ID_CTRL_BTN_INTENSIFY == tag then
 			--¿¨ÅÆĞÇ¼¶ÉÏÏŞ tonumber( p.baseCardInfo.Level) >= tonumber(pCardLevelMax.level_limit) then
 			if tonumber( p.cardInfo.Level) >= tonumber(pCardRare.level_limit) then

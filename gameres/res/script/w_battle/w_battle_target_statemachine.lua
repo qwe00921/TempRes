@@ -37,27 +37,29 @@ function p:setInHurt(atkFighter)
 	self.atkFighter = atkFighter;
 	local targerFighter = self.tarFighter;
 	--WriteCon( " targetTurn start tarid="..tostring(targerFighter:GetId()));
-	self.IsTurnEnd = false;
+	
 	--已成为目标,未攻击
 	--targerFighter:BeTarTimesDec(atkFighter:GetId()); 
-	
-    	
-	
     if (targerFighter.IsHurt == false) then --进入受击标识
 		WriteCon( "targetTurn Start id="..tostring(targerFighter:GetId()));
+		self.IsTurnEnd = false;
 		targerFighter.IsHurt = true;  --标识受击中
 		local batch = w_battle_mgr.GetBattleBatch();
-		self.seqTarget = batch:AddSerialSequence();
-		self.seqHurt = batch:AddSerialSequence();
+		local seqTarget = batch:AddSerialSequence();
+		local seqHurt = batch:AddSerialSequence();
 		
 		--受击动画播放一次
 		local cmdHurt = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
-		self.seqTarget:AddCommand( cmdHurt );
+		seqTarget:AddCommand( cmdHurt );
 		
-		local cmdHurt = battle_show.AddActionEffect_ToSequence( 0, targerFighter:GetPlayerNode(), "lancer.ishurt", self.seqTarget);
+		--local cmdHurt = battle_show.AddActionEffect_ToSequence( 0, targerFighter:GetPlayerNode(), "lancer.ishurt", self.seqTarget);
+        local cmdHurt = createCommandEffect():AddActionEffect( 0.35, targerFighter:GetPlayerNode(), "lancer.ishurt" );
+		seqTarget:AddCommand( cmdHurt );		
 		
-		local cmdIshurt = atkFighter:cmdLua( "tar_hurt",   self.id, tostring(W_BATTLE_ENEMY), self.seqHurt );
-		self.seqHurt:SetWaitEnd(cmdHurt); 
+		local cmdIshurt = targerFighter:cmdLua( "tar_hurt",   self.id, tostring(self.camp), seqHurt );
+		seqHurt:SetWaitEnd(cmdHurt); 
+	else
+		WriteCon( "targetTurn InHurt now atkid="..tostring(atkFighter:GetId()));
 	end;
 
 end;
@@ -67,15 +69,18 @@ function p:tar_hurt()
 	local targerFighter = self.tarFighter;
 	
 	if targerFighter.IsHurt == true then
-		local cmdHurt = battle_show.AddActionEffect_ToSequence( 0, targerFighter:GetPlayerNode(), "lancer.ishurt", self.seqTarget);
-		
 		local batch = w_battle_mgr.GetBattleBatch();
-		self.seqHurt = batch:AddSerialSequence();
+		local seqTarget = batch:AddSerialSequence();
+		local seqHurt = batch:AddSerialSequence();
 		
-		local cmdIshurt = atkFighter:cmdLua( "tar_hurt",   self.id, tostring(W_BATTLE_ENEMY), self.seqHurt );
-		self.seqHurt:SetWaitEnd(cmdHurt); 
+ 		local cmdHurt = createCommandEffect():AddActionEffect( 0.35, targerFighter:GetPlayerNode(), "lancer.ishurt" );
+		seqTarget:AddCommand( cmdHurt );
+		
+		local cmdIshurt = targerFighter:cmdLua( "tar_hurt",   self.id, tostring(self.camp), seqHurt );
+		seqHurt:SetWaitEnd(cmdHurt); 
 	else
-		self:tar_hurtEnd();
+		WriteCon( "targetTurn tar_hurt to end tarid="..tostring(targerFighter:GetId()));
+        self:tar_hurtEnd();
 	end
 end;
 
@@ -94,10 +99,20 @@ end;
 --只有受伤结束时才调用
 function p:tar_hurtEnd()
 	local targerFighter = self.tarFighter;	
-	
+	local batch = w_battle_mgr.GetBattleBatch();
+	local seqTarget = batch:AddSerialSequence();
+	local seqHurt = batch:AddSerialSequence();
+			
 	if (targerFighter.Hp > 0) or (targerFighter:GetTargerTimes() > 0 ) then  --还活着,或者成为目标未攻击的人数不为0,继续播放站立	
 		targerFighter:standby();
+		--if (targerFighter.Hp > 0) then
+			WriteCon( "targetTurn standby id="..tostring(targerFighter:GetId()));
+		--elseif targerFighter:GetTargerTimes() > 0 then
+		--	WriteCon( "targetTurn Die but GetTargerTimes> 0 id="..tostring(targerFighter:GetId()));
+		--end;
 		self:targerTurnEnd();  --受击方流程结束
+	elseif (targerFighter:GetHitTimes() ~= 0) then
+		WriteCon( "**********Error! targetTurn GetHitTimes~=0 need die id="..tostring(targerFighter:GetId()));
 	elseif targerFighter.Hp <= 0 then
 		if self.canRevive == true then  --可复活
 			targerFighter.isDead = false;
@@ -106,19 +121,24 @@ function p:tar_hurtEnd()
 			targerFighter:standby();
 
 			local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.revive" );
-			self.seqTarget:AddCommand( cmdf );
+			seqTarget:AddCommand( cmdf );
 			local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
-			self.seqTarget:AddCommand( cmdC );		
+			seqTarget:AddCommand( cmdC );		
 			
-			local batch = w_battle_mgr.GetBattleBatch(); 
+			--local batch = w_battle_mgr.GetBattleBatch(); 
 			local seqDie = batch:AddSerialSequence();
-			local cmdRevive = targerFighter:cmdLua("tar_ReviveEnd",  self.id, tostring(W_BATTLE_ENEMY), seqDie);
-			self.seqRevive:SetWaitEnd( cmdC ); 
+			local cmdRevive = targerFighter:cmdLua("tar_ReviveEnd",  self.id, tostring(self.camp), seqDie);
+			seqDie:SetWaitEnd( cmdC ); 
 		else	--怪死了
 			--判断是否要切换怪物目标
+			if targerFighter.isDead == true then
+				WriteCon( "*********************Error! tar_hurtEnd can not in die double  tarid="..tostring(targerFighter:GetId()) );	
+				return ;
+			end;
 			targerFighter:Die();  --标识死亡
+			WriteCon( "tar_hurtEnd tar_die tarid="..tostring(targerFighter:GetId()) );
 			if(self.camp == W_BATTLE_ENEMY) then  --受击的是怪物
-				if w_battle_mgr.LockEnemy == true then
+				if w_battle_mgr.LockEnemy == true then  --锁定目标
 					if(w_battle_mgr.PVEEnemyID == targerFighter:GetId()) then  --当前死掉的怪物是正在被锁定的怪物
 						if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() > 0 then --可换个怪物
 							w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
@@ -128,10 +148,16 @@ function p:tar_hurtEnd()
 						   w_battle_mgr.isCanSelFighter = false;
 						end
 					end;
-				else
-					if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() == 1 then
+				else --未锁定目标
+					local lcount = w_battle_mgr.enemyCamp:GetNotDeadFighterCount();
+					if lcount == 1 then
 						w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
 						w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID);
+					elseif lcount > 1 then						
+						local lFighter = w_battle_mgr.enemyCamp:FindFighter(w_battle_mgr.PVEEnemyID);
+						if lFighter ~= nil then
+							w_battle_pve.SetHp(lFighter);
+						end;
 					end
 					--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 				end;		
@@ -145,13 +171,10 @@ function p:tar_hurtEnd()
 				self.seqTarget:AddCommand( cmdf );
 			end;
 			]]--
-			local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.die" );
-			self.seqTarget:AddCommand( cmdC );				
-			--local batch = battle_show.GetNewBatch(); 
-			--local seqDie	= batch:AddParallelSequence();
-			local batch = w_battle_mgr.GetBattleBatch(); 
+			local cmdC = createCommandEffect():AddActionEffect( 3, targerFighter:GetNode(), "lancer_cmb.die" );
+			seqTarget:AddCommand( cmdC );				
 			local seqDie = batch:AddSerialSequence();
-			local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(W_BATTLE_ENEMY), seqDie);
+			local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);
 			seqDie:SetWaitEnd( cmdC ); 
 		end;
 	end;
@@ -166,6 +189,8 @@ function p:tar_ReviveEnd()
 end;
 
 function p:tar_dieEnd() 
+	local tarFighter = self.tarFighter;
+	WriteCon( "tar_dieEnd tarid="..tostring(tarFighter:GetId()).." self.atkFighter id="..tostring(self.atkFighter:GetId()) );
 	self:targerTurnEnd();
 end;
 

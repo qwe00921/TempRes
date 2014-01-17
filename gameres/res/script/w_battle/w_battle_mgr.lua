@@ -44,6 +44,7 @@ p.SkillTimes= 0;
 p.CritTimes = 0;
 p.JoinAtkTimes = 0;
 p.MoreDamageTimes = 0;
+p.missionID = nil;
 
 
 function p.init()
@@ -217,7 +218,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 			p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(targerID); --选择下个nowHP > 0活的怪物目标
 		end
 	end;
-	
+				 
 	--成为目标,未攻击
 	targetFighter:BeTarTimesAdd(atkID);
 
@@ -503,7 +504,7 @@ function p.UseItem(pItemPos, pHeroPos)
 			end;
 		end
 	end
-	
+	w_battle_db_mgr.CalUseItem(pPos)
 	w_battle_useitem.RefreshUI()  --物品使用完后,调用刷新UI, UI会内部调用p.GetItemCanUsePlayer
 end;
 
@@ -584,28 +585,30 @@ end;
 --敌方回合开始
 function p.EnemyStarTurn()  --怪物回合开始
 	WriteCon( "EnemyStarTurn");	
-	p.EnemyTurnEnd() --暂时判定敌方回合结束
-	--[[
+	--p.EnemyTurnEnd() --暂时判定敌方回合结束
+	
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
 		local lTargetFighter = p.getEnemyTarget(v)
 		if lTargetFighter == nil then
 			break;
 		end
-		
-		if lTargetFighter.Skill == 0 then
-			p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());	
-		else
-			if p.EnemyUseSkill() == true then
-				p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
-			--	break;
+		if lTargetFighter.nowlife >= 0 then
+			if lTargetFighter.Skill == 0 then
+				p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());	
+				break;
 			else
-				p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());		
-			--	break;
+				if p.EnemyUseSkill() == true then
+					p.SetPVESkillAtkID(v:GetId(), true, lTargetFighter:GetId());		
+					break;
+				else
+					p.SetPVEAtkID(v:GetId(), true, lTargetFighter:GetId());		
+					break;
+				end
 			end
-		end
+		end;
 	end;
-	]]--
+	
 	--p.EnemyTurnEnd() --暂时判定敌方回合结束
 end;
 
@@ -641,7 +644,7 @@ function p.FightWin()
 		--w_battle_mgr.enemyCamp:free();
 		w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 	else
-		w_battle_pve.MissionOver();  --任务结束,任务奖励界面
+		w_battle_pve.MissionOver(p.SendResult);  --任务结束,任务奖励界面
 		p.QuitBattle();
 	end
 end;
@@ -786,6 +789,7 @@ end
 --进入战斗
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
+	p.missionID = missionId;
 	p.SendStartPVEReq( missionId,teamid);
 --[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);
@@ -1189,28 +1193,21 @@ function p.CheckBattleLose()
 	return false;
 end
 
-function p.GetBattleUseItem()
-	local post_data= { 
-	                    {id="101001", num=1},
-	                    {id="101002", num=2},
-	                  };
-	return post_data;
-end;
 
-function p.SendResult(missionID,result)
+function p.SendResult(result)
 	local uid = GetUID();
 	--uid = 10002;
 	if uid ~= nil and uid > 0 then
 		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
 		--local param = string.format("&missionID=%d&result=%d&money=0&soul=0", tonumber(missionID), tonumber(result));
-		local param = {missionID = tonumber(missionID),
+		local param = {missionID = tonumber(p.missionID),
 		               result = tonumber(result),
 		               money  = 0,
 					   soul   = 0,
-					   post_data = p.GetBattleUseItem()
+					   post_data = w_battle_db_mgr.GetBattleItem()
 					   }
-					
-		SendPost("Fight","PvEReward",uid,"",FormatTableToJson(param));
+		local lstr = FormatTableToJson(param);		
+		SendPost("Fight","PvEReward",uid,"",lstr);
 		--card_intensify_succeed.ShowUI(p.baseCardInfo);
 		--p.ClearData();
 	end
@@ -1285,7 +1282,9 @@ function p.checkTurnEnd()
 				w_battle_pve.PickStep(w_battle_mgr.FightWin); --捡东西
 			end
 		else
+			--WriteCon( "**********Error ! Enemy checkTurnEnd************ ");
 			if p.heroCamp:isAllDead() == false then
+				  --需检查怪物有未行动的
 				p.EnemyTurnEnd();
 			else
 				p.FightLose();
@@ -1358,16 +1357,18 @@ end
 
 --捡到Hp,或是Sp
 function p.PickItem(pos, itemtype)
-	local heroFighter = p.heroCamp:FindFighter(pos);
-	if heroFighter ~= nil then
-		if itemtype == E_DROP_HPBALL then
-			heroFighter:UseHpBall();
-			w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
-		elseif itemtype == E_DROP_SPBALL then
-			heroFigheter:UseSpBall();
-			w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
+	if p.HeroCamp ~= nil then
+		local heroFighter = p.heroCamp:FindFighter(pos);
+		if heroFighter ~= nil then
+			if itemtype == E_DROP_HPBALL then
+				heroFighter:UseHpBall();
+				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
+			elseif itemtype == E_DROP_SPBALL then
+				heroFigheter:UseSpBall();
+				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
+			end
 		end
-	end
+	end;
 	
 end
 
