@@ -11,11 +11,7 @@ function p.ShowUI(rewardData)
 	if rewardData == nil then
 		WriteConErr("rewardData error");
 	end
-	
 	dlg_userinfo.ShowUI();
-	expLeast = 0;
-	expMax = tonumber(msg_cache.msg_player.MaxExp);
-	expNow = tonumber(msg_cache.msg_player.Exp);
 
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
@@ -62,10 +58,17 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 end
 
 function p.ShowQuestRewardView(rewardData)
+	for k,v in pairs(rewardData) do
+		if k == "mission_id" then
+			WriteConErr("v =="..v);
+		end
+	end
 	local missionId = tonumber(rewardData.mission_id);
+		WriteConErr("missionId =="..missionId);
 	--章节名
 	local chapterName = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER);
 	local stageId = math.floor(missionId/1000)
+		WriteConErr("stageId =="..stageId);
 	local stageT = SelectRowInner(T_STAGE,"stage_id",stageId);
 	chapterName:SetText(stageT.stage_name);
 	--任务名
@@ -82,20 +85,46 @@ function p.ShowQuestRewardView(rewardData)
 	missionSoul:SetText(tostring(soulText));
 	--经验
 	local missionExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP_V);
-	local expText = tonumber(rewardData.exp) or "0"
-	missionExp:SetText(tostring(expText));
+	local getExp = tonumber(rewardData.exp) or 0
+	missionExp:SetText(tostring(getExp));
+	
+	getExp = 99
+	expMax = 1820;
+	expNow = 1720;
+	level = 31;
+	--expMax = tonumber(rewardData.)
+	--expNow = tonumber(rewardData.)
+	--levelNow = tonumber(rewardData.level)
 	
 	--升级所需经验
-	local needExpText = GetLabel(p.layer, ui.ID_CTRL_TEXT_NEED_EXP_V);
-	local expUpNeed = expMax - expNow - tonumber(expText);
-	needExpText:SetText(tostring(expUpNeed))
+	-- local expUpNeed = expMax - expNow - tonumber(getExp);
+	-- if expUpNeed < 0 then
+		-- expUpNeed = 0
+	-- end
+	-- p.setExpUpNeed(expUpNeed)
 	
-	local expBar = GetExp( p.layer, ui.ID_CTRL_EXP_EXP );
-	local expStartNum = expNow;
-	local expEndNum = expNow + tonumber(expText);
-	expbar_move_effect.showEffect(expBar,expLeast,expMax,expStartNum,expEndNum)
+	-- local expBar = p.setExpBar()
+	-- local expStartNum = expNow;
+	-- local expEndNum = expNow + tonumber(getExp);
+	-- expbar_move_effect.showEffect(expBar,expLeast,expMax,expStartNum,expEndNum)
 	
+	
+	
+	local expBar = p.setExpBar()
+	expbar_move_effect.showEffect(expBar,0,expMax,expNow,getExp,level)
+
 end
+
+function p.setExpUpNeed(needExp)
+	local needExpText = GetLabel(p.layer, ui.ID_CTRL_TEXT_NEED_EXP_V);
+	needExpText:SetText(tostring(needExp))
+end
+
+function p.setExpBar()
+	local expBar = GetExp( p.layer, ui.ID_CTRL_EXP_EXP );
+	return expBar
+end
+
 
 --隐藏UI
 function p.HideUI()
