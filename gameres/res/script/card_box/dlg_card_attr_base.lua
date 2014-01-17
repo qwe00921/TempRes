@@ -260,9 +260,9 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_EQUIP_1 == tag then
 			if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip1, "1");
-				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback);
+				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback,p.HideUI);
 			else
-				
+				p.HideUI();
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 1, p.showEquipDetailCallback, nil)
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 1, nil);
 			end
@@ -270,8 +270,9 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip2, "2");
-				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback);
+				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback,p.HideUI);
 			else
+				p.HideUI();
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
 			end
 
@@ -390,6 +391,10 @@ function p.showEquipDetailCallback(changed)
 	if changed == true then
 		p.RefreshCardDetail();
 	end
+	if p.layer ~= nil then
+		p.layer:SetVisible( true );
+		return;
+	end
 end
 
 ---------------------------------------ÍøÂç-----------------------------------------------------------
@@ -446,4 +451,6 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+	equip_dress_select.CloseUI();
+	equip_rein_list.CloseUI();
 end

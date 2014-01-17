@@ -73,15 +73,16 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --∑µªÿ
-			if p.dataChanged == true then
-				
-				if p.callback then
-					p.callback(false);
-					p.CloseUI();
-				end
-			else
+			--if p.dataChanged == true then
+				local callback = p.callback;
+				local chg = p.dataChanged;
 				p.CloseUI();
-			end
+				if callback then
+					callback(chg);
+				end
+			--else
+			--	p.CloseUI();
+			--end
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --≈≈–Ú
 			equip_bag_sort.ShowUI(3);
 		end
