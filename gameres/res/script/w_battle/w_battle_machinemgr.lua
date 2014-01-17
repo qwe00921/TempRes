@@ -134,10 +134,13 @@ function p.checkAllAtkMachineHasNotTurn()
 	local lres = false;
 	for pos=1,#(p.atkMachineLst) do
 		local lMachine = p.atkMachineLst[pos];
-		if lMachine.turnState == W_BATTLE_NOT_TURN  then --未行动
-			lres = true;
-			break;
-		end
+		local lheroFighter = w_battle_mgr.heroCamp:FindFighter(pos);
+		if (lheroFighter ~= nil) and (lheroFighter.nowlife > 0) then
+			if lMachine.turnState == W_BATTLE_NOT_TURN  then --未行动
+				lres = true;
+				break;
+			end
+		end;
 	end
 	
 	return lres;
