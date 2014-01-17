@@ -358,9 +358,12 @@ function p.GetItemTable( index )
 	return temp;
 end
 
-function p.RefreshUI()
+function p.RefreshUI(pIsRoundStar)
 	--Ë¢ÐÂ¿¨ÅÆÏÔÊ¾
 	local cardList = w_battle_db_mgr.GetPlayerCardList();
+	if pIsRoundStar == true then
+		cardList = w_battle_mgr.heroCamp.fighters;
+	end;
 	if cardList ~= nil then
 		for i = 1, 6 do
 			local ctrllers = p.objList[i];
@@ -508,7 +511,8 @@ function p.RoundStar()
 	p.itemMask:SetVisible( false );
 	p.useitemMask:SetVisible( false );
 	
-	p.RefreshUI();
+	
+	p.RefreshUI(true);
 	--p.BeginPick();
 end
 

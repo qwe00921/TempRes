@@ -131,6 +131,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
+			card_rein.ShowUI();
 		elseif(ui.ID_CTRL_BUTTON_26 == tag) then --强化
 			WriteCon("OnUIClickEvent....   intensify");
 			local pCardLevelMax= SelectRowInner( T_CARD_LEVEL_LIMIT, "star", p.baseCardInfo.Rare); --从表中获取卡牌详细信息	

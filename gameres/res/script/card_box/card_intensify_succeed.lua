@@ -8,6 +8,8 @@ p.layer = nil;
 p.beforCardInfo = nil;
 p.cardInfo = nil;
 function p.ShowUI(beforCardInfo)
+	--dlg_userinfo.ShowUI( );
+	dlg_userinfo.HideUI();
 	if beforCardInfo == nil then 
 		return;
 	end
@@ -51,12 +53,14 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_BACK == tag) then --返回
+			dlg_userinfo.ShowUI( );
 			card_rein.ShowUI();
 			card_intensify2.OnSendReq();
 			card_rein.GetRefreshCardUI();
 			p.CloseUI();
-		elseif(ui.ID_CTRL_BUTTON_INTENSIFY == tag) then --强化
 			
+		elseif(ui.ID_CTRL_BUTTON_INTENSIFY == tag) then --强化
+			dlg_userinfo.ShowUI( );
 			--card_intensify.ShowUI(p.cardInfo);
 			card_intensify2.OnSendReq();
 			card_rein.GetRefreshCardUI();
