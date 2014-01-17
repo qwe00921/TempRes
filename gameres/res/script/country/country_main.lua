@@ -315,7 +315,8 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon("return");
 			p.CloseUI();
 			time_bar.ClearData()
-			
+			maininterface.ShowUI();
+
 			--注销采集倒计时
 			country_collect.EndTick();
 		elseif ui.ID_CTRL_BUTTON_MOUNTAIN == tag then

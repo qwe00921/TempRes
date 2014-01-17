@@ -111,6 +111,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			world_map.CheckToCloseMap();
 			p.SetNewUI( {} );
 			PlayMusic_MainUI();
+			maininterface.ShowUI();
+
 		end
 		maininterface.CloseAllPanel();
 	end
