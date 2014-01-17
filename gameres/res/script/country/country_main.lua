@@ -329,8 +329,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif ui.ID_CTRL_BUTTON_PRODUCE == tag then
 			if p.countryInfoT["B1"] then
 				WriteCon("PRODUCE");
-				--p.HideUI()
 				country_building.ShowUI(p.countryInfoT)
+				--p.HideUI()
+				p.CloseUI();
 			end
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
 			--p.HideUI()

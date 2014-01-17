@@ -47,9 +47,9 @@ function p.showMoveTime()
 
 end
 
-function p.setTimeText(lastTime)
+function p.setTimeText(lastTime)	
 	local hour = math.floor(lastTime/3600)
-	local minute = math.floor(lastTime/60)
+	local minute = math.floor(lastTime/60) - hour*60
 	local seconds = math.mod(lastTime,60)
 	local hourText = hour;
 	local minuteText = minute;

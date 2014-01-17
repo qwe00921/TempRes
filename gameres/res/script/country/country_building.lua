@@ -104,8 +104,7 @@ function p.InitScrollList()
 	p.layer:AddChild( bList );
 end
 
---L1 l2 L3 L4
---4567
+
 function p.OnTouchList(uiNode,uiEventType,param)
 	local typeId = p.getNowType()
 	p.getBuildInfo(typeId)
