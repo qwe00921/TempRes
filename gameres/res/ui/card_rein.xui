@@ -1,18 +1,7 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
-
-[CTRL_PICTURE_103]
-Type=1
-Tag=105
-Rect=0 155 640 696
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_CARD1]
 Type=2
@@ -296,7 +285,7 @@ NormalFileUV=0 0 100 80
 [CTRL_9SLICES_29]
 Type=22
 Tag=47
-Rect=0 732 640 119
+Rect=0 724 640 120
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -308,7 +297,7 @@ NormalFileUV=0 0 640 338
 [CTRL_9SLICES_24]
 Type=22
 Tag=40
-Rect=0 719 640 128
+Rect=0 720 639 128
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -1194,8 +1183,8 @@ Tag=116
 Rect=361 244 54 27
 AnchorPos=0 0
 Notes=
-Text=队伍
-TextTradition=隊伍
+Text=经验
+TextTradition=經驗
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

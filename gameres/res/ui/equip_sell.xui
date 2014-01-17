@@ -3,15 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_42]
-Type=1
-Tag=43
-Rect=0 168 640 700
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
@@ -21,6 +12,8 @@ Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -30,6 +23,8 @@ Tag=31
 Rect=7 295 624 563
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_41]
 Type=1
@@ -37,6 +32,8 @@ Tag=42
 Rect=85 174 184 65
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -52,6 +49,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_11]
 Type=2
@@ -62,6 +61,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -77,6 +78,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_13]
 Type=4
@@ -90,6 +93,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_14]
 Type=1
@@ -97,6 +102,8 @@ Tag=14
 Rect=278 187 107 40
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -112,6 +119,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_16]
 Type=2
@@ -122,6 +131,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -137,6 +148,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_13]
 Type=2
@@ -147,6 +160,8 @@ Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -159,6 +174,8 @@ Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -171,6 +188,8 @@ Notes=
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_public.png
 NormalFileUV=0 0 100 80
 
@@ -186,6 +205,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_18]
 Type=4
@@ -199,6 +220,8 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_19]
 Type=4
@@ -212,3 +235,5 @@ TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

@@ -158,6 +158,15 @@ function p.ShowUserMessage()
 	
     local msg = p.SelectTabeMsg(type, rare,level);
 	
+	local name = nil;
+	if rare == 0 then
+		name = SelectCell( T_CARD, tostring(card_id), "name" );
+	elseif rare == 4 then
+		name = SelectCell( T_EQUIP, tostring(card_id), "name" );
+	end
+	
+	card_id = name or card_id;
+	
 	if msg == nil then
 		if p.EVENT_MESSAGE_TYPE_PET_CARD_INFY == type then
 			-- 宠物卡片强化事件

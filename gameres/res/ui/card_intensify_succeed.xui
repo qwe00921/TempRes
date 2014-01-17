@@ -3,21 +3,10 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_34]
-Type=1
-Tag=36
-Rect=0 1 640 960
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_TEXT_35]
 Type=4
 Tag=35
-Rect=111 730 449 85
+Rect=112 708 449 85
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -245,7 +234,7 @@ UIClsoeType=0
 [CTRL_BUTTON_INTENSIFY]
 Type=2
 Tag=24
-Rect=511 786 130 64
+Rect=502 765 130 64
 AnchorPos=0 0
 Notes=
 Text=继续强化
@@ -263,7 +252,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=25
-Rect=510 784 130 64
+Rect=502 764 130 64
 AnchorPos=0 0
 Notes=
 Text=skip
