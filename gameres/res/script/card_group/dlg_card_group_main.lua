@@ -597,6 +597,7 @@ function p.OnListItemClick(uiNode, uiEventType, param)
 				end
 			end
 		end
+		p.HideUI();
 		card_bag_mian.ShouReplaceUI(p.OnSelectReplaceCallback, hasRemove);
 	end
 	
@@ -604,7 +605,17 @@ function p.OnListItemClick(uiNode, uiEventType, param)
 end
 
 --Ñ¡Ôñ¿¨ÅÆ»Øµ÷
-function p.OnSelectReplaceCallback(cardData)
+function p.OnSelectReplaceCallback(cardData,unchanged)
+	
+	if p.layer ~= nil then
+		p.layer:SetVisible( true );
+	end
+	
+	if unchanged == true then
+		return
+	end
+	
+
 	local team = p.user_teams[p.selTeam]
 	if team then
 		local preUni = team["Pos_unique"..p.selTeamPos];

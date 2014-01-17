@@ -136,14 +136,16 @@ function p.InitUI(item)
 	
 	--当前的经验值条 ID_CTRL_EXP_CARDEXP
 	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.itemLevel));
-	local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_EQUIPEXP);
-	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
-	lCardExp:SetProcess(tonumber(item.itemExp));
-	lCardExp:SetNoText();
+	if lCardLeveInfo then
+		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_EQUIPEXP);
+		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
+		lCardExp:SetProcess(tonumber(item.itemExp));
+		lCardExp:SetNoText();
 			
 	--经验值 ID_CTRL_TEXT_EXP
-	local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
-	lTextExp:SetText(tostring(item.itemExp).."/"..tostring(lCardLeveInfo.exp));
+		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
+		lTextExp:SetText(tostring(item.itemExp).."/"..tostring(lCardLeveInfo.exp));
+	end
 	
 	
 	p.ShowCardCost();
