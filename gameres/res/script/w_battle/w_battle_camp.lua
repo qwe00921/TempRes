@@ -412,7 +412,7 @@ function p:AddFighters( uiArray, fighters )
         f.level = tonumber( fighterInfo.Level );
         f.uniqueId = tonumber( fighterInfo.UniqueId );
         f.cardId = tonumber( fighterInfo.CardID );
-		f.Attack = tonumber( fighterInfo.Attack) * 10;
+		f.Attack = tonumber( fighterInfo.Attack);
 		f.Defence = tonumber( fighterInfo.Defence);
 		f.atkType = tonumber ( fighterInfo.Damage_type);
 		f.Position = tonumber (fighterInfo.Position);
