@@ -320,7 +320,7 @@ function p:atk_end()
 		end;
 		
 		local lIsCrit = self.critLst[k];	--ÊÇ·ñ±©»÷
-		tarFighter:ShowCrit();
+		--tarFighter:ShowCrit();
 		if lIsCrit == true then
 			tarFighter:ShowCrit();
 		end;

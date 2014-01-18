@@ -110,11 +110,11 @@ function p:CreateFlyNumGreen()
 end
 
 --±©»÷/ºÏ»÷ÎÄ×Ö
-function p:CreateLab()
+function p:CreateLab(fx)
 	local flyLab = w_flyLab:new();
     flyLab:SetOwnerNode( self.node );
     flyLab:Init();
-    flyLab:SetOffset(30,-20);
+    flyLab:SetOffset(fx,-20);
     self.node:AddChildZ( flyLab:GetNode(), 3 );
 	return flyLab;
     --self.flynumGreen = flynum;
@@ -122,12 +122,12 @@ end;
 
 
 function p:ShowCrit()
-	local lab = self:CreateLab()
+	local lab = self:CreateLab(0)
 	lab:PlayLab(1);
 end;
 
 function p:ShowSpeak()
-	local lab = self:CreateLab()
+	local lab = self:CreateLab(30)
 	lab:PlayLab(2);
 end;
 
