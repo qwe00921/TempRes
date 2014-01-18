@@ -147,3 +147,4 @@ W_MATERIAL_TARGET1  = 1;  --单个目标
 W_MATERIAL_TARGET2  = 2;  --全体目标
 
 W_BATTLE_REVIVAL     = 9999; --复活状态
+W_BATTLE_DELAYTIME   = 0.5;  --相隔0.5秒出手

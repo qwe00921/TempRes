@@ -83,14 +83,33 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		self.targetLst[1] = tarFighter;
 	end
     --攻击目标的位置
+	if self.atkCampType == W_BATTLE_ENEMY then --攻击方是怪物,先出手延迟
+		self:startDelay();
+	else
+		self:atk_startsing();
+	end
 
-	self:startsing();
+	
 	--self:start();
 
 end;
 
+function p:startDelay()
+	local batch = w_battle_mgr.GetBattleBatch(); 
+	local seqStar = batch:AddSerialSequence();
+	local seqAtk = batch:AddSerialSequence();	
+	local atkFighter = self.atkFighter
+    	
+	
+	local cmdStandby = createCommandPlayer():Standby( atkFighter.delayTime, self.atkplayerNode, "" );
+	seqStar:AddCommand( cmdStandby );	
+	
+	local cmdAtk = self.atkFighter:cmdLua("atk_startsing",  self.id,"", seqAtk);
+	seqAtk:SetWaitEnd( cmdStandby );
+end;
+
 --吟唱
-function p:startsing()
+function p:atk_startsing()
 	if self.IsSkill == true then
 		local batch = w_battle_mgr.GetBattleBatch(); 
 		local seqStar = batch:AddSerialSequence();

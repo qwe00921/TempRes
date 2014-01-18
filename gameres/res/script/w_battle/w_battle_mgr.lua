@@ -624,7 +624,7 @@ end;
 function p.EnemyStarTurn()  --怪物回合开始
 	WriteCon( "EnemyStarTurn");	
 	--p.EnemyTurnEnd() --暂时判定敌方回合结束
-	
+	lcount = 0;
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
 		if latkFighter.nowlife > 0 then
@@ -633,6 +633,8 @@ function p.EnemyStarTurn()  --怪物回合开始
 				break;
 			end
 			local ltargetID = lTargetFighter:GetId();
+			lcount = lcount + 1;
+			latkFighter.delayTime = W_BATTLE_DELAYTIME * lcount;
 			if latkFighter.Skill == 0 then
 				p.SetPVEAtkID(latkFighter:GetId(), true, ltargetID);	
 				--break;
