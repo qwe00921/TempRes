@@ -280,8 +280,9 @@ function p.AddHeroFightersJumpEffect()
 	
 	local x = pOldPos.x - 220;
 	local y = pOldPos.y;
-
+	
 	local pNewPos = CCPointMake(x,y);	
+	pFighter:SaveOldPos(pNewPos);
 	
 	local batch = battle_show.GetNewBatch();
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
@@ -308,6 +309,7 @@ function p.AddEnemyFightersJumpEffect()
 	local y = pOldPos.y;
 
 	local pNewPos = CCPointMake(x,y);	
+	pFighter:SaveOldPos(pNewPos);
 	
 	local batch = battle_show.GetNewBatch();
 	node:AddActionEffect("lancer.fadein0");
@@ -398,14 +400,14 @@ function p:AddFighters( uiArray, fighters )
 		--self.fighters[tonumber(fighterInfo.Position)] = f;
 		
 		local pOldPos = node:GetCenterPos();
-
+        
+		--有跳入动作
 		if self.idCamp == E_CARD_CAMP_HERO then
 			pOldPos.x = pOldPos.x + 220;
 		elseif self.idCamp == E_CARD_CAMP_ENEMY then
 			pOldPos.x = pOldPos.x - 220;
 		end
 		node:SetCenterPos(pOldPos);
-		
 		--战士属性
         f.life = tonumber( fighterInfo.Hp );
         --f.lifeMax = tonumber( fighterInfo.Hp );
@@ -426,22 +428,11 @@ function p:AddFighters( uiArray, fighters )
         f.buffList = {};
 		
          
-		--临时攻击力调整
-		--f.Attack = 10;
-		--f.Defence = 0;
-		--f.life = 300;
-				
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
-		--f.Hp = f.Hp - 10;
 		f.nowlife = f.Hp;
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();
-		
-        --f.idFighter = tonumber( fighterInfo.Position );
-        --if self.idCamp == E_CARD_CAMP_ENEMY then
-        --    f.idFighter = f.idFighter + W_BATTLE_CAMP_CARD_NUM;  --ID待商定
-        --end
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );

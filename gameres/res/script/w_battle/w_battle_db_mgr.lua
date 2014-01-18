@@ -736,8 +736,9 @@ p.Reward= {
 	story= 0
 }
 
-p.Drop = { {id=1,step=2,group_id=4},
-			{id=9,step=3,group_id=5},
+p.Drop = { {id=1,step=2,group_id=2},
+			{id=9,step=3,group_id=3},
+			{id=9,step=3,group_id=1},
            }
 
 p.StepDrop = {}

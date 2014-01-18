@@ -36,6 +36,8 @@ end;
 function p:setInHurt(atkFighter)
 	self.atkFighter = atkFighter;
 	local targerFighter = self.tarFighter;
+	--self.playNode = targerFighter:GetNode()
+	--self.oldPos = self.playNode:GetCenterPos()
 	--WriteCon( " targetTurn start tarid="..tostring(targerFighter:GetId()));
 	
 	--已成为目标,未攻击
@@ -67,12 +69,10 @@ end;
 function p:tar_hurt() 
 	local atkFighter = self.atkFighter;
 	local targerFighter = self.tarFighter;
-	
+	local batch = w_battle_mgr.GetBattleBatch();
+	local seqTarget = batch:AddSerialSequence();
+	local seqHurt = batch:AddSerialSequence();	
 	if targerFighter.IsHurt == true then
-		local batch = w_battle_mgr.GetBattleBatch();
-		local seqTarget = batch:AddSerialSequence();
-		local seqHurt = batch:AddSerialSequence();
-		
  		local cmdHurt = createCommandEffect():AddActionEffect( 0.35, targerFighter:GetPlayerNode(), "lancer.ishurt" );
 		seqTarget:AddCommand( cmdHurt );
 		
@@ -80,7 +80,13 @@ function p:tar_hurt()
 		seqHurt:SetWaitEnd(cmdHurt); 
 	else
 		WriteCon( "targetTurn tar_hurt to end tarid="..tostring(targerFighter:GetId()));
-        self:tar_hurtEnd();
+		local lPlayerNode = targerFighter:GetPlayerNode();
+		local moveback = OnlyMoveTo(targerFighter, lPlayerNode:GetCenterPos(), targerFighter.oldPos, seqTarget,true);
+		
+		local cmdIshurt = targerFighter:cmdLua( "tar_hurtEnd",   self.id, tostring(self.camp), seqHurt );
+		seqHurt:SetWaitEnd(moveback); 
+		
+        --self:tar_hurtEnd();
 	end
 end;
 

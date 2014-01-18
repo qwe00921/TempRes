@@ -116,7 +116,7 @@ W_BATTLE_POS_TAG_5 = 5;
 W_BATTLE_POS_TAG_6 = 6;
 
 --动画攻击时间
-W_BATTLE_ATKTIME   =  0.5;
+W_BATTLE_ATKTIME   =  3;
 --怪物延迟时间攻击
 W_BATTLE_ENEMYTIME = 0.7;
 

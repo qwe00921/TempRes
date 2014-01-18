@@ -70,9 +70,11 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq,pIsParallelSeq)
     return pCmd;
 end
 
-function OnlyMoveTo(atkFighter, fPos, tPos, pSeq)
+function OnlyMoveTo(atkFighter, fPos, tPos, pSeq, pIsBack)
 	local fx = "lancer_cmb.begin_battle_move";
-    
+	if pIsBack == true then
+		fx = "lancer_cmb.hurt_end_move";
+	end
     local atkPos = fPos;
     
     local x = tPos.x - atkPos.x;

@@ -46,6 +46,8 @@ p.JoinAtkTimes = 0;
 p.MoreDamageTimes = 0;
 p.missionID = nil;
 p.EnemyBuffDie = false;
+p.hpballval = 0;  --hp球恢复
+p.spballval = 0;  --sp球恢复
 
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
@@ -71,7 +73,8 @@ function p.init()
 	p.CritTimes = 0;
 	p.JoinAtkTimes = 0;
 	p.MoreDamageTimes = 0;	
-	
+	p.hpballval = tonumber(SelectRowInner(T_DROP_VAL,"drop_type",1,"value") );
+	p.spballval = tonumber(SelectRowInner(T_DROP_VAL,"drop_type",2,"value") );
 end;
 
 
@@ -1378,10 +1381,10 @@ function p.PickItem(pos, itemtype)
 		local heroFighter = p.heroCamp:FindFighter(pos);
 		if heroFighter ~= nil then
 			if itemtype == E_DROP_HPBALL then
-				heroFighter:UseHpBall();
+				heroFighter:UseHpBall(p.hpballval);
 				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			elseif itemtype == E_DROP_SPBALL then
-				heroFigheter:UseSpBall();
+				heroFigheter:UseSpBall(p.spballval);
 				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			end
 		end

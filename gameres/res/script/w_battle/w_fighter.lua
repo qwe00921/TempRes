@@ -495,8 +495,8 @@ function p:RemoveBuff(effect_type)
 	end
 end;
 
-function p:UseHpBall()
-	local addHp = self.maxHp * 5/100;
+function p:UseHpBall(pVal)
+	local addHp = math.modf(self.maxHp * pVal / 100);
 	self.Hp = self.Hp +addHp;
 	if self.Hp > self.maxHp then
 		self.Hp = self.maxHp;
@@ -504,10 +504,20 @@ function p:UseHpBall()
 	self.nowlife = self.Hp;
 end;
 
-function p:UseSpBall()
-	self.Sp = self.Sp + 5;
+function p:UseSpBall(pVal)
+	self.Sp = self.Sp + pVal;
 	if Self.Sp > self.maxSp then
 		Self.Sp = Self.maxSp;
 	end
 end;
 
+function p:SetOldPos()
+	if self.oldPos ~= nil then
+		local lNode = self:GetPlayerNode();
+		lNode:SetCenterPos( self.oldPos);
+	end;
+end
+
+function p:SaveOldPos(pos)
+	self.oldPos = pos;
+end
