@@ -45,7 +45,7 @@ p.CritTimes = 0;
 p.JoinAtkTimes = 0;
 p.MoreDamageTimes = 0;
 p.missionID = nil;
-
+p.EnemyBuffDie = false;
 
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
@@ -189,6 +189,12 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	  return false;
    end;
 
+	if atkFighter.Sp == 100 then
+		if IsMonster ~= true then
+			return p.SetPVESkillAtkID(atkID);
+		end;
+	end;
+
 	local targetFighter = nil;
 	if IsMonster == true then
 		targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( targetID ) );	
@@ -331,7 +337,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	local damageLst = {};
 	local lCritLst = {}
 	local lJoinAtkLst = {}
-	
+	local ltargetLst = {}
 	
 	lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
 	lStateMachine.turnState = W_BATTLE_TURN;  --行动中		
@@ -344,16 +350,22 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 			lJoinAtkLst[1] = lIsJoinAtk;
 			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
+			ltargetLst[1] = targetFighter;
 		elseif( (targetType == W_SKILL_TARGET_TYPE_2) or (targetType == W_SKILL_TARGET_TYPE_3)	or (targetType == W_SKILL_TARGET_TYPE_4)) then
 		--群体, 近战冲到屏幕中间, 远程站原地
-			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
-			ltargetCamp:SubLife(damage); --所有已存活的人扣减生命
-			ltargetCamp:BeTarTimesAdd(atkID) --所有已存活的人成为目标
-			for pos=1,6 do
-				damageLst[pos] = damage
-				lCritLst[pos] = false;
-				lJoinAtkLst[pos] = false;
-			end
+		    for k,v in ipairs(ltargetCamp.fighters) do
+				targetFighter = v;
+				if targetFighter.Hp > 0 then
+					local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
+					targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
+					targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
+					
+					damageLst[#ltargetLst + 1] = damage
+					lCritLst[#ltargetLst + 1] = false;
+					lJoinAtkLst[#ltargetLst + 1] = lIsJoinAtk;
+					ltargetLst[#ltargetLst + 1] = targetFighter
+				end;
+			end;
 			isAoe = true;
 		else
 			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
@@ -370,15 +382,26 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		local damage = 0;
 		if skillType == 2 then  --恢复类的有加血
 			damage = w_battle_atkDamage.SkillBuffDamage(skillID,atkFighter);
-			
-			for pos=1,6 do
-				damageLst[pos] = damage
-			end		
+			for k,v in ipairs(latkCap.fighters) do
+				targetFighter = v;
+				if targetFighter.Hp > 0 then
+					damageLst[#ltargetLst + 1] = damage
+					ltargetLst[#ltargetLst + 1] = targetFighter
+				end;
+			end;
 		end;
 		
 		if (targetType == W_SKILL_TARGET_TYPE_11) then --自己
 			targetFighter = atkFighter;
+			ltargetLst[1] = targetFighter;
 		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --已方群体
+			for k,v in ipairs(latkCap.fighters) do
+				targetFighter = v;
+				if targetFighter.Hp > 0 then
+					--damageLst[#ltargetLst + 1] = damage
+					ltargetLst[#ltargetLst + 1] = targetFighter
+				end;
+			end;				
 			isAoe = true;
 		else
 			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
@@ -386,10 +409,13 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		end
 	end;
 	
-	
+	atkFighter.Sp = 0 ;
+	if IsMonster ~= true then
+		w_battle_pve.SetHeroCardAttr(atkID, atkFighter);
+	end;
 --	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
 	--lStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);
-	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lCritLst ,lJoinAtkLst,true,skillID,isAoe);	
+	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lCritLst ,lJoinAtkLst,true,skillID,isAoe,ltargetLst);	
 	
 	return true;
 end;					
@@ -557,6 +583,7 @@ end;
 function p.EnemyBuffStarTurn()
 	WriteCon( "EnemyBuffStarTurn");	
    p.atkCampType = W_BATTLE_ENEMY;
+   p.EnemyBuffDie = false;
    p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
 end;
 
@@ -569,15 +596,19 @@ end;
 function p.EnemyBuffTurnEnd()
 	WriteCon( "EnemyBuffTurnEnd");	
 	p.atkCampType = W_BATTLE_ENEMY 
-	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
+	if p.EnemyBuffDie == true then --有死亡发生
+		w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
+	else
+	   p.CheckEnemyAllDied();
+	end;
 	--p.EnemyStarTurn()
 end;
 
 
 
-function p.EnemyUseSkill()
-	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
-	local lnum = math.random(1,100);	
+function p.EnemyUseSkill(lseed)
+	local lnum = w_battle_atkDamage.getRandom(lseed,100);
+	--WriteCon( "Monster Skill Random num:"..tostring(lnum));		
 	if lnum > 30 then
 		return false
 	else
@@ -603,7 +634,7 @@ function p.EnemyStarTurn()  --怪物回合开始
 				p.SetPVEAtkID(latkFighter:GetId(), true, ltargetID);	
 				--break;
 			else
-				if p.EnemyUseSkill() == true then
+				if p.EnemyUseSkill(k) == true then
 					p.SetPVESkillAtkID(latkFighter:GetId(), true, ltargetID);		
 					--break;
 				else
@@ -655,6 +686,8 @@ end;
 --战斗失败
 function p.FightLose()  
 	--没有续打,只有失败界面
+	p.QuitBattle()
+	p.SendResult(0);
 end;
 --[[
 function p.StepOver(pIsPass)  --这一波次结束
@@ -1356,5 +1389,8 @@ function p.PickItem(pos, itemtype)
 	
 end
 
-
+function p.getHeroFighterLst()
+	return p.heroCamp.fighters;
+	
+end
 

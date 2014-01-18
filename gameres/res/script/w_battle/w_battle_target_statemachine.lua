@@ -87,13 +87,13 @@ end;
 --奖励
 function p:reward()
 	local targerFighter = self.tarFighter;	
-	local tmpList = { {E_DROP_MONEY, 1, targerFighter.Position},
-					  {E_DROP_BLUESOUL , 2, targerFighter.Position},
-					  {E_DROP_HPBALL , 3, targerFighter.Position},
-					  {E_DROP_SPBALL , 4, targerFighter.Position}
-					}
+	local tmpList = {}
+	if targerFighter.dropLst ~= nil then
+		for k,v in ipairs(targerFighter.dropLst) do
+			tmpList[#tmpList + 1] = {v.dropType, 1, targerFighter.Position, v.id};
+		end
+	end;
 	w_battle_pve.MonsterDrop(tmpList)
-	
 end;
 
 --只有受伤结束时才调用
@@ -120,7 +120,8 @@ function p:tar_hurtEnd()
 		--end;
 		self:targerTurnEnd();  --受击方流程结束
 	elseif (targerFighter:GetHitTimes() ~= 0) then
-		WriteCon( "**********Error! targetTurn GetHitTimes~=0 need die id="..tostring(targerFighter:GetId()));
+		WriteCon( "**********Wring! targetTurn GetHitTimes~=0 need die id="..tostring(targerFighter:GetId()));
+		targerFighter:standby();
 	elseif targerFighter.Hp <= 0 then
 		if self.canRevive == true then  --可复活
 			targerFighter.isDead = false;
@@ -140,12 +141,13 @@ function p:tar_hurtEnd()
 		else	--怪死了
 			--判断是否要切换怪物目标
 			if targerFighter.isDead == true then
-				WriteCon( "*********************Error! tar_hurtEnd can not in die double  tarid="..tostring(targerFighter:GetId()) );	
+				WriteCon( "*********************Wring! tar_hurtEnd can not in die double  tarid="..tostring(targerFighter:GetId()) );	
 				return ;
 			end;
 			targerFighter:Die();  --标识死亡
 			WriteCon( "tar_hurtEnd tar_die tarid="..tostring(targerFighter:GetId()) );
 			if(self.camp == W_BATTLE_ENEMY) then  --受击的是怪物
+			    self:reward(); --怪物死亡掉装备
 				if w_battle_mgr.LockEnemy == true then  --锁定目标
 					if(w_battle_mgr.PVEEnemyID == targerFighter:GetId()) then  --当前死掉的怪物是正在被锁定的怪物
 						if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() > 0 then --可换个怪物
@@ -179,7 +181,7 @@ function p:tar_hurtEnd()
 				self.seqTarget:AddCommand( cmdf );
 			end;
 			]]--
-			local cmdC = createCommandEffect():AddActionEffect( 3, targerFighter:GetNode(), "lancer_cmb.die" );
+			local cmdC = createCommandEffect():AddActionEffect( 1, targerFighter:GetNode(), "lancer_cmb.die" );
 			seqTarget:AddCommand( cmdC );				
 			local seqDie = batch:AddSerialSequence();
 			local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);

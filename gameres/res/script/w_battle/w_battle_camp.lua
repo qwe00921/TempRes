@@ -420,8 +420,9 @@ function p:AddFighters( uiArray, fighters )
 		f.Skill	   = tonumber (fighterInfo.Skill);
 		f.element  = tonumber (fighterInfo.element);
 		f.CardID   = tonumber (fighterInfo.CardID);
-		f.Sp = 0;
-		f.maxSp = 100;
+		f.Sp = tonumber(fighterInfo.Sp);
+		f.maxSp = tonumber(fighterInfo.maxSp);
+		f.dropLst = fighterInfo.dropLst; --掉落的物品列表
         f.buffList = {};
 		
          
