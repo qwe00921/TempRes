@@ -307,18 +307,23 @@ function p:atk_end()
 		end;
 		
 		local lIsJoinAtk = self.joinAtkLst[k]
+		--tarFighter:ShowSpeak();
 		if lIsJoinAtk== true then
 			local lfirstID = tarFighter.firstID;
 			local latkID = atkFighter:GetId();
 			if(lfirstID ~= latkID) then
 			--合击的动画
-				WriteCon("JoinAtk flash");
+				tarFighter:ShowSpeak();
 			else
 				lIsJoinAtk = false;
 			end;
 		end;
 		
 		local lIsCrit = self.critLst[k];	--是否暴击
+		tarFighter:ShowCrit();
+		if lIsCrit == true then
+			tarFighter:ShowCrit();
+		end;
 		if self.atkCampType == W_BATTLE_HERO then
 			--掉落物品的表现
 			w_battle_atkDamage.getitem(tarFighter.Position ,self.IsSkill, lIsCrit,lIsJoinAtk,lisMoredamage); 
