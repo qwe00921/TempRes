@@ -736,9 +736,9 @@ p.Reward= {
 	story= 0
 }
 
-p.Drop = { {id=1,step=2,group_id=2},
-			{id=9,step=3,group_id=3},
-			{id=9,step=3,group_id=1},
+p.Drop = { {id=1,step=1,group_id=2},
+			{id=9,step=1,group_id=3},
+			{id=9,step=2,group_id=1},
            }
 
 p.StepDrop = {}
@@ -784,14 +784,63 @@ end;
 function p.nextStep()
 	p.step = p.step + 1;
 	p.targetCardList = p.enemyStepList[p.step];
-	p.StepDrop = {};
+	--p.StepDrop = {};
+	
+
+    local StepDropTab = {}  
+	if (w_battle_mgr.MissionDropTab ~= nil) and (#w_battle_mgr.MissionDropTab > 0) then
+		for k,v in ipairs(w_battle_mgr.MissionDropTab) do  --取这一波次可能掉落的物品
+			if tonumber(v.step) == p.step then
+				StepDropTab[#StepDropTab + 1] = v;
+			end
+		end;	
+	end;
+	
+	
+	
 	if p.Drop ~= nil then
+		local EquipDrop = {};
+		local ItemDrop = {};
+		local CardDrop = {};
 		for i=1, #p.Drop do
 			local dropItem = p.Drop[i];
-			if dropItem.step == p.step then
-				p.StepDrop[#p.StepDrop + 1] = dropItem.group_id;
+			if dropItem.step == p.step then  --取出服务端下发的某个波次要掉落的groupid
+				for k,v in ipairs(StepDropTab) do  --取出本地的这个次波可能掉落的东西
+					if(tonumber(v.drop_group_id) == dropItem.group_id) then  --
+						EquipDrop[#EquipDrop + 1] = tonumber(v.equip_drop1)
+						EquipDrop[#EquipDrop + 1] = tonumber(v.equip_drop2)
+						ItemDrop[#ItemDrop +1] = tonumber(v.item_drop1)
+						ItemDrop[#ItemDrop +1] = tonumber(v.item_drop2)
+						CardDrop[#CardDrop + 1] = tonumber(v.card_drop1)
+						CardDrop[#CardDrop + 1] = tonumber(v.card_drop2)
+					end;
+				end
+				--p.StepDrop[#p.StepDrop + 1] = dropItem.group_id;
+				--SelectRowList();
 			end;
 		end;
+
+		local monsterMax = #p.targetCardList;
+		for k,v in ipairs(EquipDrop) do
+			local itemid = v;
+			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
+			local lCardInfo = p.targetCardList[lrandom];
+			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_EQUIP, id = itemid};
+		end
+		
+		for k,v in ipairs(ItemDrop) do
+			local itemid = v;
+			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
+			local lCardInfo = p.targetCardList[lrandom];
+			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_CARD, id = itemid};
+		end
+		
+		for k,v in ipairs(CardDrop) do
+			local itemid = v;
+			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
+			local lCardInfo = p.targetCardList[lrandom];
+			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_EQUIP, id = itemid};
+		end
 	end;
 end;
 
@@ -799,7 +848,7 @@ function p.initFighterDB(fighterInfo,IsHero)
 	fighterInfo.maxHp = fighterInfo.Hp;
 	fighterInfo.maxSp = 100;
 	fighterInfo.Sp = 0;	
-	
+	fighterInfo.dropLst = {}; --掉落的物品列表
 	if fighterInfo.Position == nil then
 		fighterInfo.Position = fighterInfo.position;
 		fighterInfo.position = nil;

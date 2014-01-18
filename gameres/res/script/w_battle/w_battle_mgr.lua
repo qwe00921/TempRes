@@ -48,6 +48,7 @@ p.missionID = nil;
 p.EnemyBuffDie = false;
 p.hpballval = 0;  --hp球恢复
 p.spballval = 0;  --sp球恢复
+p.MissionDropTab = {};
 
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
@@ -823,6 +824,7 @@ function p.SendStartPVEReq( targetId, teamid )
         return ;
     end;
     local param = string.format("&missionID=%d&teamID=%d", targetId,teamid);
+	
 	--local param = string.format("&missionID=%d", targetId,teamid);
     SendReq("Fight","StartPvC",UID,param);
 end
@@ -846,7 +848,10 @@ function p.ReceiveStartPVPRes( msg )
 	
     dlg_menu.CloseUI();
     dlg_userinfo.CloseUI();
+	p.MissionDropTab = SelectRowList(T_MONSTER_DROP,"mission_id",p.missionID);
     w_battle_db_mgr.Init( msg );
+	
+		
 	
 	w_battle_pve.ShowUI();
 	
