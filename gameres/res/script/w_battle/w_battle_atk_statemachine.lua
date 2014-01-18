@@ -35,7 +35,7 @@ end
 
 
 
-function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,critLst,joinAtkLst,isSkill,skillID,isAoe)
+function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,critLst,joinAtkLst,isSkill,skillID,isAoe,targetLst)
 	self.atkId = atkFighter:GetId();
 	self.id = atkFighter:GetId();	
 	self.targerId = tarFighter:GetId();
@@ -76,32 +76,40 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		else  --远程,在自己位置上,没有目标
 			self.enemyPos = nil;
 		end;
-		if w_battle_mgr.atkCampType == W_BATTLE_ENEMY then
-			if self.skillType == 1 then --攻击类
-				self.targetLst = w_battle_mgr.heroCamp.fighters;
-			else --恢复BUFF类
-				self.targetLst = w_battle_mgr.enemyCamp.fighters;
-			end;
-		else
-			if self.skillType == 1 then --攻击类
-				self.targetLst = w_battle_mgr.enemyCamp.fighters;
-			else  --恢复类
-				self.targetLst = w_battle_mgr.heroCamp.fighters;
-			end;
-		end;
+		self.targetLst = targetLst;
 	else
 	    self.enemyPos = tarFighter:GetFrontPos(self.atkplayerNode);	
+		self.targetLst = {}
 		self.targetLst[1] = tarFighter;
 	end
     --攻击目标的位置
+	if self.atkCampType == W_BATTLE_ENEMY then --攻击方是怪物,先出手延迟
+		self:startDelay();
+	else
+		self:atk_startsing();
+	end
 
-	self:startsing();
+	
 	--self:start();
 
 end;
 
+function p:startDelay()
+	local batch = w_battle_mgr.GetBattleBatch(); 
+	local seqStar = batch:AddSerialSequence();
+	local seqAtk = batch:AddSerialSequence();	
+	local atkFighter = self.atkFighter
+    	
+	
+	local cmdStandby = createCommandPlayer():Standby( atkFighter.delayTime, self.atkplayerNode, "" );
+	seqStar:AddCommand( cmdStandby );	
+	
+	local cmdAtk = self.atkFighter:cmdLua("atk_startsing",  self.id,"", seqAtk);
+	seqAtk:SetWaitEnd( cmdStandby );
+end;
+
 --吟唱
-function p:startsing()
+function p:atk_startsing()
 	if self.IsSkill == true then
 		local batch = w_battle_mgr.GetBattleBatch(); 
 		local seqStar = batch:AddSerialSequence();
@@ -297,6 +305,9 @@ function p:atk_end()
 		tarFighter = v;
 		--受击后掉血,不用等掉血动画完成
 		local ldamage = (self.damageLst)[k];
+		if ldamage == nil then
+			WriteCon(" position ="..tostring(tarFighter.Position).." k="..tostring(k));
+		end;
 		local lisMoredamage = false;  --超量击杀
 		if tarFighter.Hp <= 0 then
 			lisMoredamage = true;
@@ -315,18 +326,23 @@ function p:atk_end()
 		end;
 		
 		local lIsJoinAtk = self.joinAtkLst[k]
+		--tarFighter:ShowSpeak();
 		if lIsJoinAtk== true then
 			local lfirstID = tarFighter.firstID;
 			local latkID = atkFighter:GetId();
 			if(lfirstID ~= latkID) then
 			--合击的动画
-				WriteCon("JoinAtk flash");
+				tarFighter:ShowSpeak();
 			else
 				lIsJoinAtk = false;
 			end;
 		end;
 		
 		local lIsCrit = self.critLst[k];	--是否暴击
+		--tarFighter:ShowCrit();
+		if lIsCrit == true then
+			tarFighter:ShowCrit();
+		end;
 		if self.atkCampType == W_BATTLE_HERO then
 			--掉落物品的表现
 			w_battle_atkDamage.getitem(tarFighter.Position ,self.IsSkill, lIsCrit,lIsJoinAtk,lisMoredamage); 

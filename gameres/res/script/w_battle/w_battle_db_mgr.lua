@@ -736,8 +736,9 @@ p.Reward= {
 	story= 0
 }
 
-p.Drop = { {id=1,step=2,group_id=4},
-			{id=9,step=3,group_id=5},
+p.Drop = { {id=1,step=2,group_id=2},
+			{id=9,step=3,group_id=3},
+			{id=9,step=3,group_id=1},
            }
 
 p.StepDrop = {}
@@ -794,14 +795,27 @@ function p.nextStep()
 	end;
 end;
 
-function p.initFighterDB(fighterInfo)
+function p.initFighterDB(fighterInfo,IsHero)
 	fighterInfo.maxHp = fighterInfo.Hp;
 	fighterInfo.maxSp = 100;
 	fighterInfo.Sp = 0;	
+	
 	if fighterInfo.Position == nil then
 		fighterInfo.Position = fighterInfo.position;
 		fighterInfo.position = nil;
 	end;
+	--[[
+	--临时代码
+	if IsHero == true then
+		if fighterInfo.Damage_type == 1 then 
+			fighterInfo.Sp = 100;	
+			fighterInfo.Skill = 1004;
+		else
+			fighterInfo.Sp = 100;	
+			fighterInfo.Skill = 1003;
+		end;
+	end;
+	]]--
 end;
 
 --初使化对战数据
@@ -821,7 +835,7 @@ function p.Init( battleDB )
 	--玩家列表
 	p.playerCardList = battleDB.fightinfo.Player; 
 	for i=1,#p.playerCardList do
-		p.initFighterDB(p.playerCardList[i]);
+		p.initFighterDB(p.playerCardList[i],true);
 	end;
 	
 	--怪物列表

@@ -15,6 +15,10 @@ lancer.begin_battle_jump
 @type=0
 lancer.begin_battle_move
 
+[hurt_end_move]
+@type=0
+lancer.hurt_end_move
+
 ;ΥπΖΑ
 [shake]
 @type=0

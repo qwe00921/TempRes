@@ -85,7 +85,7 @@ function p:CreateFlyNum(nType)
     local flynum = w_fly_num:new();
     flynum:SetOwnerNode( self.node );
     flynum:Init(nType);
-    flynum:SetOffset(30,-50);
+    flynum:SetOffset(30,-20);
     
     self.node:AddChildZ( flynum:GetNode(), 2 );
     self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
@@ -104,10 +104,32 @@ function p:CreateFlyNumGreen()
     local flynum = w_fly_num_green:new();
     flynum:SetOwnerNode( self.node );
     flynum:Init();
-    flynum:SetOffset(30,-50);
+    flynum:SetOffset(30,-20);
     self.node:AddChildZ( flynum:GetNode(), 3 );
     self.flynumGreen = flynum;
 end
+
+--暴击/合击文字
+function p:CreateLab(fx)
+	local flyLab = w_flyLab:new();
+    flyLab:SetOwnerNode( self.node );
+    flyLab:Init();
+    flyLab:SetOffset(fx,-20);
+    self.node:AddChildZ( flyLab:GetNode(), 3 );
+	return flyLab;
+    --self.flynumGreen = flynum;
+end;
+
+
+function p:ShowCrit()
+	local lab = self:CreateLab(0)
+	lab:PlayLab(1);
+end;
+
+function p:ShowSpeak()
+	local lab = self:CreateLab(30)
+	lab:PlayLab(2);
+end;
 
 --创建血条
 function p:CreateHpBar()
@@ -128,7 +150,7 @@ function p:SetLifeAdd( num )
     end
     self:SetLife( self.life );
     --self.tmplife = self.life;
-    self.flynumGreen:PlayNum( num );
+    self:CreateFlyNumGreen( num );
 end
 
 --临时生命值
@@ -495,8 +517,8 @@ function p:RemoveBuff(effect_type)
 	end
 end;
 
-function p:UseHpBall()
-	local addHp = self.maxHp * 5/100;
+function p:UseHpBall(pVal)
+	local addHp = math.modf(self.maxHp * pVal / 100);
 	self.Hp = self.Hp +addHp;
 	if self.Hp > self.maxHp then
 		self.Hp = self.maxHp;
@@ -504,10 +526,20 @@ function p:UseHpBall()
 	self.nowlife = self.Hp;
 end;
 
-function p:UseSpBall()
-	self.Sp = self.Sp + 5;
+function p:UseSpBall(pVal)
+	self.Sp = self.Sp + pVal;
 	if Self.Sp > self.maxSp then
 		Self.Sp = Self.maxSp;
 	end
 end;
 
+function p:SetOldPos()
+	if self.oldPos ~= nil then
+		local lNode = self:GetPlayerNode();
+		lNode:SetCenterPos( self.oldPos);
+	end;
+end
+
+function p:SaveOldPos(pos)
+	self.oldPos = pos;
+end

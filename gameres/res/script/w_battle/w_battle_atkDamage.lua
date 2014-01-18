@@ -135,16 +135,16 @@ function p.IsJoinAtk(atkFighter,tarFighter)
 	return lIsResult;
 end;
 
+
+
 --判定是否出现暴击
 function p.IsCrit(atkFighter,tarFighter)
 	local lIsCrit = false;
 	
-	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
-    local lrandom = math.random(1,1000);
+    local lrandom = p.getRandom(2,1000);
 	if lrandom < atkFighter.Crit then  --暴击成功
 		lIsCrit = true;
 	end
-		
 	
 	return lIsCrit;
 end;
@@ -168,14 +168,23 @@ function p.IsElement(atkFighter,tarFighter)
 	return lresult;
 end
 
-function p.getRandom()
-	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
-	local lnum = math.random(1,100);	
+--传入质数,随机计算
+function p.getRandom(seed,maxnum)
+	local ptab= {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,49};
+	local lseednum = ptab[seed];
+	local lallseed = tonumber(tostring(os.time()):reverse():sub(1, 6)) + lseednum * 10000;
+	
+	math.randomseed(lallseed) 
+	local lnum = math.random(1,maxnum);
+	local lnum = math.random(1,maxnum);
+	local lnum = math.random(1,maxnum);
+	local lnum = math.random(1,maxnum);
 	return lnum;
 end;
 
-function p.getdropitemNum(pTab)
-	local lrandomNum = p.getRandom();
+function p.getdropitemNum(pTab,seed)
+	local lrandomNum = p.getRandom(seed,100);
+	--WriteCon("dropitemnum seed="..tostring(seed).." num="..tostring(lrandomNum));
 	
 	local lpro1 = 0;
 	local lnum1 = 0;
@@ -220,30 +229,34 @@ function p.getDropItem(dropList, pos, atktype)
 	local ldropTab = SelectRowList( T_DROP_POBILITY, "attack_type",  atktype);		
 	for k,v in pairs(ldropTab) do
 		if tonumber(v.drop_type) == E_DROP_HPBALL then
-			lhpnum = p.getdropitemNum(v);
+			lhpnum = p.getdropitemNum(v,pos );
 		elseif tonumber(v.drop_type) == E_DROP_SPBALL then
-			lspnum = p.getdropitemNum(v);
+			lspnum = p.getdropitemNum(v,pos + 1);
 		elseif tonumber(v.drop_type) == E_DROP_MONEY then
-			lmoneynum = p.getdropitemNum(v);
+			lmoneynum = p.getdropitemNum(v,pos + 2);
 		elseif tonumber(v.drop_type) == E_DROP_BLUESOUL then
-			lbluesoulnum = p.getdropitemNum(v);
+			lbluesoulnum = p.getdropitemNum(v,pos + 3) ;
 		end
 	end
 	
 	if lhpnum > 0 then
 		dropList[#dropList + 1] = {E_DROP_HPBALL , lhpnum, pos};
+	--	WriteCon("Hp ="..tostring(lhpnum));
 	end
 	
 	if lspnum > 0 then
 		dropList[#dropList + 1] = {E_DROP_SPBALL , lspnum, pos};
+	--	WriteCon("Sp ="..tostring(lspnum));
 	end
 	
 	if lmoneynum > 0 then
 		dropList[#dropList + 1] = {E_DROP_MONEY , lmoneynum, pos};
+	--	WriteCon("Moneynum ="..tostring(lmoneynum));
 	end
 
 	if lbluesoulnum > 0 then
 		dropList[#dropList + 1] = {E_DROP_BLUESOUL , lbluesoulnum, pos};
+	--	WriteCon("bluesoul ="..tostring(lbluesoulnum));
 	end	
 
 	
