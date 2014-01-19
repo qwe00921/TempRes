@@ -17,7 +17,7 @@ local ui = ui_quest_reward_view;
 
 p.layer = nil;
 p.viewId = 0;
-p.rewardDataT =nil;
+p.rewardDataT ={};
 
 function p.ShowUI(rewardData)
 	if rewardData == nil then
@@ -135,11 +135,11 @@ end
 
 function p.getRewardList(rewardData)
 	if p.viewId == 0 then
-		p.rewardListT = rewardData.item
+		p.rewardListT = rewardData.rewarditems.item
 	elseif p.viewId == 1 then
-		p.rewardListT = rewardData.equip
+		p.rewardListT = rewardData.rewarditems.equip
 	elseif p.viewId == 2 then
-		p.rewardListT = rewardData.card
+		p.rewardListT = rewardData.rewarditems.card
 	end
 	p.showRewardList(p.rewardListT)
 end
@@ -182,33 +182,38 @@ function p.showRewardList(rewardList)
 end
 
 function p.ShowRewardInfo( view, reward, rewardIndex )
-	local rewardPic = nil;
-	local rewardNumText = nil;
-	
-	if cardIndex == 1 then
-		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM1;
-		rewardNumText = ui_list.ID_CTRL_TEXT_NUM1;
-	elseif cardIndex == 2 then
-		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM2;
-		rewardNumText = ui_list.ID_CTRL_TEXT_NUM2;
-	elseif cardIndex == 3 then
-		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM3;
-		rewardNumText = ui_list.ID_CTRL_TEXT_NUM3;
-	elseif cardIndex == 4 then
-		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM4;
-		rewardNumText = ui_list.ID_CTRL_TEXT_NUM4;
-	elseif cardIndex == 5 then
-		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM5;
-		rewardNumText = ui_list.ID_CTRL_TEXT_NUM5;
-	elseif cardIndex == 6 then
-		rewardPic = ui_list.ID_CTRL_PICTURE_ITEM6;
-		rewardNumText = ui_list.ID_CTRL_TEXT_NUM6;
+	local rewardPicIndex = nil;
+	local rewardNumIndex = nil;
+	WriteCon("rewardIndex ===== "..rewardIndex);
+
+	if rewardIndex == 1 then
+		rewardPicIndex = ui_list.ID_CTRL_PICTURE_ITEM1;
+		rewardNumIndex = ui_list.ID_CTRL_TEXT_NUM1;
+	elseif rewardIndex == 2 then
+		rewardPicIndex = ui_list.ID_CTRL_PICTURE_ITEM2;
+		rewardNumIndex = ui_list.ID_CTRL_TEXT_NUM2;
+	elseif rewardIndex == 3 then
+		rewardPicIndex = ui_list.ID_CTRL_PICTURE_ITEM3;
+		rewardNumIndex = ui_list.ID_CTRL_TEXT_NUM3;
+	elseif rewardIndex == 4 then
+		rewardPicIndex = ui_list.ID_CTRL_PICTURE_ITEM4;
+		rewardNumIndex = ui_list.ID_CTRL_TEXT_NUM4;
+	elseif rewardIndex == 5 then
+		rewardPicIndex = ui_list.ID_CTRL_PICTURE_ITEM5;
+		rewardNumIndex = ui_list.ID_CTRL_TEXT_NUM5;
+	elseif rewardIndex == 6 then
+		rewardPicIndex = ui_list.ID_CTRL_PICTURE_ITEM6;
+		rewardNumIndex = ui_list.ID_CTRL_TEXT_NUM6;
 	end
+	local rewardPic = GetImage(view,rewardPicIndex );
+	local rewardNumText = GetLabel(view,rewardNumIndex );
 	
 	local rewardType = tonumber(reward.item_type);
 	local rewardId = tonumber(reward.item_id);
 	local rewardNum = tonumber(reward.num);
-	
+	WriteCon("rewardType ===== "..rewardType);
+	WriteCon("rewardId ===== "..rewardId);
+
 	local picIndex = nil;
 	local rewardT = nil
 	if rewardType == ITEM_TYPE_MATERIAL then

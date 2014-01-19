@@ -42,8 +42,8 @@ function p.showEffect(expBar,leastNum,maxNum,startNum,getExp,nowLevel)
 	p.nowNum = p.startNum;
 
 	p.moveEffectInit()
-	SetTimerOnce(p.effect,0.5)
-
+	--SetTimerOnce(p.effect,0.5)
+	p.effect()
 end
 
 function p.getAddNum(Num)
@@ -67,6 +67,10 @@ end
 
 function p.showMoveEffect()
 	if p.nowNum == nil or p.endNum == nil then
+		if moveEffect then
+			KillTimer( moveEffect );
+		end		
+		WriteCon("p============");
 		return
 	end
 	
@@ -88,10 +92,8 @@ function p.showMoveEffect()
 end
 
 function p.overEffect()
-	if moveEffect then
-		KillTimer( moveEffect );
-	end
-
+	KillTimer( moveEffect );
+	moveEffect = nil;
 	if p.isUpLevel then
 		p.nowNum = 0;
 		p.nowLevel = p.nowLevel + 1;
@@ -137,6 +139,5 @@ function p.ClearData()
 	p.endNum = nil;
 	p.addNum = nil;
 	p.NextLevel = nil;
-	moveEffect = nil;
 
 end
