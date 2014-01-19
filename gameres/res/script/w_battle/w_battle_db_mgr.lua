@@ -854,7 +854,7 @@ function p.initFighterDB(fighterInfo,IsHero)
 		fighterInfo.position = nil;
 	end;
 	
-	fighterInfo.Crit = 1000;
+	--fighterInfo.Crit = 1000;
 	--¡Ÿ ±¥˙¬Î
 	if IsHero == true then
 		--if fighterInfo.Damage_type == 1 then 
