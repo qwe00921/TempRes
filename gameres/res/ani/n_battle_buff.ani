@@ -1,38 +1,50 @@
+;晕眩
 [buff_type_1]
-image\battle_buff\1.png @cut(1,1) @stay @scale=0.3 @offset(0,-30)
+image\battle_buff\1.png @cut(1,1) @stay @scale=0.6 @offset(0,-30)
 
+;冰冻
 [buff_type_2]
-image\battle_buff\2.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\2.png @cut(1,1) @stay @scale=0.6
 
+;缠绕
 [buff_type_3]
-image\battle_buff\3.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\3.png @cut(1,1) @stay @scale=0.6
 
+;中毒
 [buff_type_4]
-image\battle_buff\4.png @cut(1,1) @stay @scale=0.3 @offset(0,30)
+image\battle_buff\4.png @cut(1,1) @stay @scale=0.6 @offset(0,30)
 
+;火烧
 [buff_type_5]
-image\battle_buff\5.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\5.png @cut(1,1) @stay @scale=0.6
 
+;回复
 [buff_type_9]
-image\battle_buff\9.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\9.png @cut(1,1) @stay @scale=0.6
 
+;攻击up
 [buff_type_101]
-image\battle_buff\101.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\101.png @cut(1,1) @stay @scale=0.6
 
+;防御up
 [buff_type_102]
-image\battle_buff\102.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\102.png @cut(1,1) @stay @scale=0.6
 
+;暴击up
 [buff_type_103]
-image\battle_buff\103.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\103.png @cut(1,1) @stay @scale=0.6
 
+;攻击减弱
 [buff_type_201]
-image\battle_buff\201.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\201.png @cut(1,1) @stay @scale=0.6
 
+;防御减弱
 [buff_type_202]
-image\battle_buff\202.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\202.png @cut(1,1) @stay @scale=0.6
 
+;暴击减弱
 [buff_type_203]
-image\battle_buff\203.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\203.png @cut(1,1) @stay @scale=0.6
 
 [buff_type_301]
-image\battle_buff\203.png @cut(1,1) @stay @scale=0.3
+image\battle_buff\203.png @cut(1,1) @stay @scale=0.6

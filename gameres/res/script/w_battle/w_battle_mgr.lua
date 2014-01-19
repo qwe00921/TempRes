@@ -342,19 +342,28 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	local lCritLst = {}
 	local lJoinAtkLst = {}
 	local ltargetLst = {}
-	
+	local lHasBufLst = {}
 	lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
 	lStateMachine.turnState = W_BATTLE_TURN;  --行动中		
-
+	--计算BUFF的机率
+	local lbuffProbability = tonumber( SelectCell( T_SKILL, skillID, "probability" ) );--远程与近战的判断;	
 	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
+			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
+			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
+			local lnum = w_battle_atkDamage.getRandom(1,100);
+			if lnum <= lbuffProbability then
+				lHasBufLst[1] = true
+			else
+				lHasBufLst[1] = false;
+			end;
+			
 			damageLst[1] = damage;
 			lCritLst[1] = lIsCrit;
 			lJoinAtkLst[1] = lIsJoinAtk;
-			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
-			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
 			ltargetLst[1] = targetFighter;
+
 		elseif( (targetType == W_SKILL_TARGET_TYPE_2) or (targetType == W_SKILL_TARGET_TYPE_3)	or (targetType == W_SKILL_TARGET_TYPE_4)) then
 		--群体, 近战冲到屏幕中间, 远程站原地
 		    for k,v in ipairs(ltargetCamp.fighters) do
@@ -363,11 +372,19 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 					local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
 					targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 					targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
-					
+
+					local lnum = w_battle_atkDamage.getRandom(k,100);
+					if lnum <= lbuffProbability then
+						lHasBufLst[#ltargetLst + 1] = true
+					else
+						lHasBufLst[#ltargetLst + 1] = false;
+					end;
+										
 					damageLst[#ltargetLst + 1] = damage
 					lCritLst[#ltargetLst + 1] = false;
 					lJoinAtkLst[#ltargetLst + 1] = lIsJoinAtk;
 					ltargetLst[#ltargetLst + 1] = targetFighter
+					
 				end;
 			end;
 			isAoe = true;
@@ -419,7 +436,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	end;
 --	local id = w_battle_PVEStaMachMgr.addStateMachine(lStateMachine);
 	--lStateMachine:init(id,atkFighter,atkCampType,targetFighter, W_BATTLE_HERO,damage,lIsCrit,lIsJoinAtk,true,skillID);
-	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lCritLst ,lJoinAtkLst,true,skillID,isAoe,ltargetLst);	
+	lStateMachine:init(atkID,atkFighter,atkCampType,targetFighter, targetCampType,damageLst,lCritLst ,lJoinAtkLst,true,skillID,isAoe,ltargetLst,lHasBufLst);	
 	
 	return true;
 end;					
@@ -1217,6 +1234,7 @@ end
 
 function p.MissionWin()
 	p.QuitBattle();
+	dlg_userinfo.ShowUI();
 	p.SendResult(1);		
 end;
 
@@ -1259,7 +1277,7 @@ function p.QuitBattle()
 	--hud.FadeIn();
 	
 	--音乐
-	--PlayMusic_Task();
+	PlayMusic_Task();
 	
 	--isActive = false;
 	p.clearDate();
@@ -1404,3 +1422,10 @@ function p.getHeroFighterLst()
 	
 end
 
+function p.GetBuffAni(skillID)
+	local lBuffAni = nil;
+	local buff_type = tonumber(SelectCell(T_SKILL,skillID,"buff_type"));
+	lBuffAni = "n_battle_buff.buff_type_"..tostring(buff_type); 
+	return lBuffAni;
+	
+end

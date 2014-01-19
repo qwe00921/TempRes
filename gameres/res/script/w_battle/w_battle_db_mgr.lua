@@ -853,18 +853,20 @@ function p.initFighterDB(fighterInfo,IsHero)
 		fighterInfo.Position = fighterInfo.position;
 		fighterInfo.position = nil;
 	end;
-	--[[
+	
+	fighterInfo.Crit = 1000;
 	--临时代码
 	if IsHero == true then
-		if fighterInfo.Damage_type == 1 then 
-			fighterInfo.Sp = 100;	
-			fighterInfo.Skill = 1004;
-		else
-			fighterInfo.Sp = 100;	
-			fighterInfo.Skill = 1003;
-		end;
+		--if fighterInfo.Damage_type == 1 then 
+			--fighterInfo.Sp = 100;	
+			fighterInfo.Skill = 1001;
+--			fighterInfo.Attack = fighterInfo.Attack *10;
+		--else
+		--	fighterInfo.Sp = 100;	
+	--		fighterInfo.Skill = 1003;
+		--end;
 	end;
-	]]--
+	
 end;
 
 --初使化对战数据

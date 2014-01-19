@@ -141,7 +141,7 @@ end;
 function p.IsCrit(atkFighter,tarFighter)
 	local lIsCrit = false;
 	
-    local lrandom = p.getRandom(2,1000);
+    local lrandom = p.getRandom(atkFighter:GetId(),1000);
 	if lrandom < atkFighter.Crit then  --±©»÷³É¹¦
 		lIsCrit = true;
 	end

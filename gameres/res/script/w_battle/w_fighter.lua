@@ -237,8 +237,10 @@ function p:AddShowLife(val) --需展现的血量
 	end;
 end;
 
-function p:AddSkillBuff(skillID)
-	local lRecord = {skillID = skillID, times = 10}
+function p:AddSkillBuff(pSkillID)
+	local lwork_time = tonumber(SelectCell(T_SKILL,pSkillID,"work_time"))
+	local lbuff_param = tonumber(SelectCell(T_SKILL,pSkillID,"buff_param"))
+	local lRecord = {skillID = pSkillID, work_time = lwork_time, buff_param=lbuff_param}
 	table.insert(self.SkillBuff, lRecord);
 end;
 
