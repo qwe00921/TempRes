@@ -1,5 +1,5 @@
 ;----------------------------------------
-; AniÌØĞ§£¨¿¨ÅÆÕ½¶·×¨ÓÃ£©
+; Aniç‰¹æ•ˆï¼ˆå¡ç‰Œæˆ˜æ–—ä¸“ç”¨ï¼‰
 ;----------------------------------------
 
 [test]
@@ -37,11 +37,11 @@ image\ui\card_battle_main_ui\hp_bar.png
 
 
 
-;¶ÔÕ½»ØºÏÊı
+;å¯¹æˆ˜å›åˆæ•°
 [turn_num]
 image\ui\card_battle_main_ui\num_yellow.png @cut(4,3) @use(0,9)
 
-;¶ÔÕ½¼ıÍ·
+;å¯¹æˆ˜ç®­å¤´
 [select_card_icon]
 ;image\ui\card_battle_main_ui\arrows_normal.png @cut(1,1) @stay
 sk\battle\battle_select_target_single.png @cut(1,1) @stay @offset(0,-80)

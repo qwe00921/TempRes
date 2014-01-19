@@ -1,11 +1,11 @@
 ;----------------------------------------
-; AniÌØĞ§£¨UI×¨ÓÃ£©
+; Aniç‰¹æ•ˆï¼ˆUIä¸“ç”¨ï¼‰
 ;----------------------------------------
 
 [test]
 image\effect\baoj01.png @cut(2,5)
 
-;{-------ĞÇ¼¶ÆÀ¼ÛĞ§¹û
+;{-------æ˜Ÿçº§è¯„ä»·æ•ˆæœ
 [star_fx_1]
 image\fx\star\star05.png @cut(1,1) @time=0.025
 
@@ -13,38 +13,38 @@ image\fx\star\star05.png @cut(1,1) @time=0.025
 image\fx\star\star05.png @cut(1,1) @stay
 ;}------------
 
-;¿¨ÅÆ±ß¿òÌØĞ§-ºì
+;å¡ç‰Œè¾¹æ¡†ç‰¹æ•ˆ-çº¢
 [card_select_fx]
 image\ui\boss_out\fx.png @cut(1,4) @time=0.2 @scale=0.6 @loop
 
-;µÀ¾ßÑ¡Ôñ½çÃæ¹´Ñ¡°´Å¥
+;é“å…·é€‰æ‹©ç•Œé¢å‹¾é€‰æŒ‰é’®
 [item_check_btn]
 image\ui\equip\checkbtn.png
 image\ui\equip\uncheckbtn.png
 
-;ÈÎÎñµØÍ¼´«ËÍµã
+;ä»»åŠ¡åœ°å›¾ä¼ é€ç‚¹
 [mission_potter]
 image\ui\mission\porter.png @cut(1,8) @time=0.2 @scale=1.3 @offset(0,-35) @loop
 
-;ÏÂÒ»¸öµØÍ¼
+;ä¸‹ä¸€ä¸ªåœ°å›¾
 [next_map]
 image\map_base\next_map.png
 
 [loading]
 image\ui\common\loading.png
-;Å¤µ°½çÃæ°´Å¥
+;æ‰­è›‹ç•Œé¢æŒ‰é’®
 [gacha_btn]
 image\ui\gacha\gacha_btn.png
 image\ui\gacha\gacha_btn.png
 image\ui\gacha\ten_gacha_btn.png
 image\ui\gacha\gacha_btn.png
 image\ui\gacha\ten_gacha_btn.png
-;Å¤µ°Í¼±ê
+;æ‰­è›‹å›¾æ ‡
 [gacha_icon]
 image\ui\gacha\gacha_pt.png
 image\ui\gacha\gacha_zj.png
 image\ui\gacha\gacha_gj.png
-;Å¤µ°¹ã¸æ
+;æ‰­è›‹å¹¿å‘Š
 [gacha_ad]
 image\ui\gacha\gacha_ad01.png
 image\ui\gacha\gacha_ad02.png
@@ -52,7 +52,7 @@ image\ui\gacha\gacha_ad03.png
 image\ui\gacha\gacha_ad04.png
 image\ui\gacha\gacha_ad05.png
 
-;¿¨ÅÆĞÇ¼¶
+;å¡ç‰Œæ˜Ÿçº§
 [card_star]
 image\ui\public\star1.png
 image\ui\public\star2.png
@@ -62,7 +62,7 @@ image\ui\public\star5.png
 image\ui\public\star6.png
 image\ui\public\star7.png
 
-;¿¨ÅÆÊôĞÔ
+;å¡ç‰Œå±æ€§
 [card_nature]
 image\ui\n_battle\nature1.png
 image\ui\n_battle\nature2.png
@@ -74,11 +74,11 @@ image\ui\n_battle\nature6.png
 [map_lock]
 \image\ui\word_map\lock.png @cut(1,1) @scale=0.2 @loop
 
-;¿¨Æ¬¶ÔÃæ¶ÓÎéÃû³Æ±³¾°
+;å¡ç‰‡å¯¹é¢é˜Ÿä¼åç§°èƒŒæ™¯
 [gruop_name_bg]
 image\ui\common\card_team_title_bg_1.png
 
-;³É¾ÍÊı×Ö½Ç±ê
+;æˆå°±æ•°å­—è§’æ ‡
 [achievement_corner_num]
 image\ui\achievement\1.png
 image\ui\achievement\2.png
@@ -91,7 +91,7 @@ image\ui\achievement\8.png
 image\ui\achievement\9.png
 image\ui\achievement\n.png
 
-;¿¨×é½çÃæ¶ÓÎéÃû³ÆÍ¼Æ¬
+;å¡ç»„ç•Œé¢é˜Ÿä¼åç§°å›¾ç‰‡
 [gruop_name_pic]
 image\ui\font\z_k_z.png
 image\ui\font\d_2_k_z.png
@@ -102,11 +102,11 @@ image\ui\font\d_6_k_z.png
 image\ui\font\d_7_k_z.png
 
 
-;µÇÂ½½çÃæµã»÷¿ªÊ¼°´Å¥¶¯»­
+;ç™»é™†ç•Œé¢ç‚¹å‡»å¼€å§‹æŒ‰é’®åŠ¨ç”»
 [TapToStart]
 image\ui_honor\login\Taptostart.png @cut(8, 1) @time=0.3 @loop @scale=0.5
 
-;µ¯³ö°´Å¥ÁĞ±íÅäÖÃ
+;å¼¹å‡ºæŒ‰é’®åˆ—è¡¨é…ç½®
 [more_action_list]
 image\ui\main_interface\notice.PNG
 image\ui\main_interface\setting.PNG
@@ -118,32 +118,32 @@ image\ui\main_interface\union.PNG
 image\ui\main_interface\friend.PNG
 image\ui\main_interface\pictorialial.PNG
 image\ui\main_interface\card.PNG
-;±³¾°
+;èƒŒæ™¯
 [ui_bg]
 image\ui\main_interface\bg4.png
-;ÕóÈİÏÔÊ¾È±Ê¡°´Å¥ÅäÖÃ
+;é˜µå®¹æ˜¾ç¤ºç¼ºçœæŒ‰é’®é…ç½®
 [default_card_btn]
 image\ui\main_interface\cha_less.png
 image\ui\main_interface\cha_less_click.png
 
-;ÕÙ»½ÊŞÈ±Ê¡°´Å¥ÏÔÊ¾
+;å¬å”¤å…½ç¼ºçœæŒ‰é’®æ˜¾ç¤º
 [default_pet_btn]
 image\ui\main_interface\pet_less.png
 image\ui\main_interface\pet_less_click.png
 
-;½ğ±Ò
+;é‡‘å¸
 [money]
 image\ui\public\money.png
 
-;±¦Ê¯
+;å®çŸ³
 [emoney]
 image\ui\public\emoney.png
 
-;À¶»ê
+;è“é­‚
 [soul]
 image\ui\public\soul.png
 
-;ÒÆ³ı
+;ç§»é™¤
 [card_edit_remove]
 image\ui\main_interface\clear.png
 
@@ -151,7 +151,7 @@ image\ui\main_interface\clear.png
 image\ui\main_interface\home_win_arena.png
 image\ui\main_interface\home_win_quest.png
 image\ui\main_interface\home_win_gate.png
-;Ç¿»¯³É¹¦
+;å¼ºåŒ–æˆåŠŸ
 [intensify_succeed]
 image\ui\main_interface\home_win_arena.png
 image\ui\main_interface\home_win_quest.png

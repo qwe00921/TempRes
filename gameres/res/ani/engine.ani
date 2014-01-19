@@ -1,22 +1,22 @@
 ;----------------------------------------
-; AniÌØĞ§£¨ÒıÇæ×¨ÓÃ£©
+; Aniç‰¹æ•ˆï¼ˆå¼•æ“ä¸“ç”¨ï¼‰
 ;----------------------------------------
 
 [test]
 image\effect\baoj01.png @cut(2,5)
 
-;¶Ô»°¿òµ×²ãÃÉ°æ
+;å¯¹è¯æ¡†åº•å±‚è’™ç‰ˆ
 [dlg_mask]
 image\ui\common\mask.png @alpha=0.5
 
-;ViewÃÉ°æ
+;Viewè’™ç‰ˆ
 [view_mask]
 image\ui\common\mask.png @alpha=0.3
 
-;ViewÑ¡Ôñ±ß¿ò
+;Viewé€‰æ‹©è¾¹æ¡†
 [view_select]
 image\ui\common\border.png @stretch
 
-;µØÍ¼ÃÉ°æ
+;åœ°å›¾è’™ç‰ˆ
 [tile_map_mask]
 image\ui\common\map_mask.png

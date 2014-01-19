@@ -1,76 +1,76 @@
 ;-------------------------------------------------------------------------------
-;ÊÔÌØĞ§ÅäÖÃ£¨Ë«¿Ì×ÊÔ´£©
+;è¯•ç‰¹æ•ˆé…ç½®ï¼ˆåŒåˆ»èµ„æºï¼‰
 ;-------------------------------------------------------------------------------
 
-;Õ½¶·½á¹û¡ª¡ª»ñµÃ
+;æˆ˜æ–—ç»“æœâ€”â€”è·å¾—
 [getsomething]
 sk\effect\mission\get_effect.png @cut(1,1) @time=0.004
 
-;»ñÈ¡¿¨Æ¬ÎÄ×Ö
+;è·å–å¡ç‰‡æ–‡å­—
 [getcardfont]
 sk\effect\mission\summon_drop0006.png @cut(29,1) @time=0.1
 
-;ÈÎÎñÌáÊ¾
+;ä»»åŠ¡æç¤º
 [hint]
 sk\effect\mission\randam_event.png @cut(1,3) @time=0.2
 
-;¿ªÏä×Ó
+;å¼€ç®±å­
 [openbox01]
 sk\effect\mission\treasure_box0012.png @cut(1,12) @time=0.1
 
-;¿ªÏä×Ó2
+;å¼€ç®±å­2
 [openbox02]
 sk\effect\mission\treasure_box0014.png @cut(1,12) @time=0.1
 
-;Ïä×Óµ¯³öÎïÆ·
+;ç®±å­å¼¹å‡ºç‰©å“
 [boxitem]
 sk\item\item_0003.png @cut(1,1) @time=1
 
-;Ïä×Óµ¯³öÎïÆ·
+;ç®±å­å¼¹å‡ºç‰©å“
 [boxitem2]
 sk\item\item_0003.png @cut(1,1) @time=0.1
 
-;Ïä×ÓĞÇĞÇĞ§¹û
+;ç®±å­æ˜Ÿæ˜Ÿæ•ˆæœ
 [boxtreasure]
 sk\effect\sugoroku\treasure_box0011.png @cut(1,12) @time=0.1
 
-;¹¥»÷
+;æ”»å‡»
 [atk01]
 sk\effect\battle\attack\0004-2.png @cut(1,4) @time=0.1
 
-;¹¥»÷
+;æ”»å‡»
 [atk02]
 sk\effect\battle\attack\0014-2.png @cut(1,5) @time=0.1
 
-;¹¥»÷
+;æ”»å‡»
 [atk03]
 sk\effect\battle\attack\1005.png @cut(1,6) @time=0.1
 
-;¹¥»÷
+;æ”»å‡»
 [atk04]
 sk\effect\battle\attack\1010.png @cut(1,11) @time=0.1
 
-;×Ô¶¯
+;è‡ªåŠ¨
 [auto01]
 sk\effect\battle\auto\0001-2.png @cut(1,10) @time=0.1
 
-;×Ô¶¯
+;è‡ªåŠ¨
 [auto02]
 sk\effect\battle\auto\0003-2.png @cut(1,10) @time=0.1
 
-;×Ô¶¯
+;è‡ªåŠ¨
 [auto03]
 sk\effect\battle\auto\0005-2.png @cut(1,10) @time=0.1
 
-;ÃüÁî
+;å‘½ä»¤
 [cmd01]
 sk\effect\battle\command\0_0002_L.png @cut(2,13) @time=0.1
 
-;ÃüÁî
+;å‘½ä»¤
 [cmd02]
 sk\effect\battle\command\0_0002_S.png @cut(1,15) @time=0.1
 
-;ÃüÁî
+;å‘½ä»¤
 [cmd03]
 sk\effect\battle\command\2007.png @cut(1,12) @time=0.1
 
@@ -78,11 +78,11 @@ sk\effect\battle\command\2007.png @cut(1,12) @time=0.1
 [vs]
 sk\effect\battle\etc\intro0002-2.png @cut(1,18) @time=0.1
 
-;ÕÙ»½
+;å¬å”¤
 [sm01]
 sk\effect\battle\summon\front_01.png @cut(1,15) @time=0.1
 
-;ÕÙ»½
+;å¬å”¤
 [sm02]
 sk\effect\battle\summon\front_cure.png @cut(1,15) @time=0.1
 
@@ -90,93 +90,93 @@ sk\effect\battle\summon\front_cure.png @cut(1,15) @time=0.1
 [touch]
 sk\effect\gacha\common\2002.png @cut(1,11) @time=0.1
 
-;Å¤µ°
+;æ‰­è›‹
 [gacha]
 sk\effect\gacha\free\0015.png @cut(1,14) @time=0.15
 
-;µÇÂ½ÌáÊ¾
+;ç™»é™†æç¤º
 [login]
 sk\effect\home\login_stamp.png @cut(1,24) @time=0.15
 
-;ÏÂ¸öµØÍ¼
+;ä¸‹ä¸ªåœ°å›¾
 [nextmap]
 image\fx\check_point.png @cut(4,8) @time=0.1
 
 
-;÷»×Óall
+;éª°å­all
 [diceall]
 sk\effect\sugoroku\dice_all.png @cut(1,16) @time=0.1
 
-;÷»×Ó0
+;éª°å­0
 [dice0]
 ;image\fx\dice\dice0.png @cut(4,3,10) @time=0.1 @scale=0.6
 image\fx\dice\dice_rolling.png @cut(3,3) @time=0.1 @scale=0.6
 
-;÷»×Ó1
+;éª°å­1
 [dice1]
 image\fx\dice\dice1.png  @time=1 @scale=0.6
 
-;÷»×Ó2
+;éª°å­2
 [dice2]
 image\fx\dice\dice2.png @time=1 @scale=0.6
 
-;÷»×Ó3
+;éª°å­3
 [dice3]
 image\fx\dice\dice3.png @time=1 @scale=0.6
 
-;÷»×Ó4
+;éª°å­4
 [dice4]
 image\fx\dice\dice4.png @time=1 @scale=0.6
 
-;÷»×Ó5
+;éª°å­5
 [dice5]
 image\fx\dice\dice5.png @time=1 @scale=0.6
 
-;÷»×Ó6
+;éª°å­6
 [dice6]
 image\fx\dice\dice6.png @time=1 @scale=0.6
 
-;÷»×ÓALL
+;éª°å­ALL
 [dice7]
 image\fx\dice\all.png @time=1 @scale=0.6
 
-;»ñÈ¡¿¨ÅÆ
+;è·å–å¡ç‰Œ
 [cardget]
 sk\effect\card_drop\card_drop0004.png @cut(1,15) @time=0.1
 
-;¿¨Æ¬ÉÁË¸
+;å¡ç‰‡é—ªçƒ
 [cardflash]
 sk\effect\card_drop\card_drop0009.png @cut(1,4) @time=0.1
 
-;¿¨Æ¬ĞÇĞÇĞ§¹û
+;å¡ç‰‡æ˜Ÿæ˜Ÿæ•ˆæœ
 [cardstar]
 sk\effect\card_drop\card_drop0006.png @cut(1,9) @time=0.15 @scale=0.5
 
-;¿¨Æ¬¿ò
+;å¡ç‰‡æ¡†
 [cardborder]
 sk\effect\card_drop\flm_image_1.png @cut(1,1) @time=2 @scale=2
 
-;ÃÃ×Ó¿¨Æ¬
+;å¦¹å­å¡ç‰‡
 [cardgirl]
 sk\effect\card_drop\chara_card_0602_M.png @cut(1,1) @time=2 @scale=1
 
-;ÃÃ×Ó¿¨Æ¬
+;å¦¹å­å¡ç‰‡
 [cardgirl2]
 sk\effect\card_drop\chara_card_0602_M.png @cut(1,1) @time=0.025 @scale=1
 
-;ÃÃ×Ó¿¨Æ¬
+;å¦¹å­å¡ç‰‡
 [cardgirl3]
 sk\effect\card_drop\chara_card_0602_M.png @cut(1,1) @time=0.0832
 
-;²âÊÔÀ­Éì
+;æµ‹è¯•æ‹‰ä¼¸
 [testsize]
 sk\effect\card_drop\card_drop0009.png @cut(1,4) @time=0.1 @size(400,600)
 
-;Í·¶¥¹â±ê²âÊÔ
+;å¤´é¡¶å…‰æ ‡æµ‹è¯•
 [testtoken_arrow]
 sk\effect\sugoroku\token_arrow.png @cut(1,10) @time=0.075 @loop=10
 
-;²âÊÔÖ¸¶¨Ö¡·¶Î§
+;æµ‹è¯•æŒ‡å®šå¸§èŒƒå›´
 [testuse]
 sk\effect\battle\etc\intro0002-2.png @cut(1,18) @use(0,3) @time=0.1
 
@@ -184,10 +184,10 @@ sk\effect\battle\etc\intro0002-2.png @cut(1,18) @use(0,3) @time=0.1
 sk\chara_card\chara_card_0604_S.png
 sk\chara_card\chara_card_0745_S.png
 
-;µÈ¼¶ÌáÉı
+;ç­‰çº§æå‡
 [levelup]
 sk\effect\succession\0007.png @cut(1,16) @time=0.1 @offset(0,-100)
 
-;²âÊÔÍ£ÁôÊ±¼ä
+;æµ‹è¯•åœç•™æ—¶é—´
 [test_stay_time]
 sk\effect\battle\attack\0004-2.png @cut(1,4) @time=0.1 @stay(5.5)

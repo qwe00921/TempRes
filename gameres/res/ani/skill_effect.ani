@@ -8,7 +8,7 @@ image\skill\3_hurt.png @cut(2,7) @use(1,10) @time=0.1
 image\skill\single_cure.png @cut(3,8) @use(1,20) @time=0.04
 
 
-;¼¼ÄÜÃû³ÆÌØĞ§
+;æŠ€èƒ½åç§°ç‰¹æ•ˆ
 [name_1001]
 image\skill_name\1001.png @cut(1,1) @stay
 

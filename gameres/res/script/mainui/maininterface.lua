@@ -22,7 +22,7 @@ function p.ShowUI(userinfo)
 		
 		p.scrollList:SetVisible(true);
 		
-		GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
+		--GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
 		return;
 	end
 

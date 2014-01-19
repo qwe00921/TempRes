@@ -1,6 +1,6 @@
 ;----------------------------------------
-; LancerÏîÄ¿Demo×ÊÔ´ÅäÖÃ
-; ×éºÏÌØĞ§
+; Lanceré¡¹ç›®Demoèµ„æºé…ç½®
+; ç»„åˆç‰¹æ•ˆ
 ;----------------------------------------
 
 [foot_fx]
@@ -23,30 +23,30 @@ lancer.bar_fx_1 @scale=1 	@offset(0,80)
 
 lancer.bar_fx_2 @scale=1 	@offset(0,80)
 
-;Óöµ½BOSS¶¯»­Ğ§¹û
+;é‡åˆ°BOSSåŠ¨ç”»æ•ˆæœ
 [boss_fx]
 @type=0
 lancer.boss_fx      @scale=1 @offset(-25,-40) @delay=1.0
 lancer.boss_fx_loop @scale=1 @offset(-25,-40)
 
-;Ïä×ÓĞ§¹û
+;ç®±å­æ•ˆæœ
 [open_box_fx]
 @type=0 @delay=0.8
 lancer.open_box_fx_2
 lancer.open_box_fx_3
 
-;Ïä×Ó³ö¿¨ÅÆĞ§¹û
+;ç®±å­å‡ºå¡ç‰Œæ•ˆæœ
 [open_box_card_fx]
 @type=1 @delay=1.3
 lancer.boss_card @scale=0.4
 lancer.card_border_fx @scale=0.8
 
-;³ö¿¨ÅÆ¹âĞ§
+;å‡ºå¡ç‰Œå…‰æ•ˆ
 [open_box_glow_fx]
 @type=1 @delay=1.3
 lancer.open_box_glow_fx @scale=1 @offset(-18,4)
 
-;¸ÇÕÂĞ§¹û
+;ç›–ç« æ•ˆæœ
 [stamp_fx]
 @type=0
 lancer.stamp_fx_1 @scale=1.5 @delay=1.8 	 
@@ -54,7 +54,7 @@ lancer.stamp_fx_1 @scale=1.36
 lancer.stamp_fx_1 @scale=1.08
 lancer.stamp_fx_2 @scale=0.5
 
-;°×¹Ç¾«¿¨ÅÆÌØĞ§
+;ç™½éª¨ç²¾å¡ç‰Œç‰¹æ•ˆ
 [BGJ_card_fx]
 @type=1
 lancer.BGJ_card @scale=1
@@ -62,7 +62,7 @@ lancer.BGJ_card @scale=1
 lancer.BGJ_card_border_fx @scale=1
 
 
-;¸ÇÕÂĞ§¹û-°×¹Ç¾«
+;ç›–ç« æ•ˆæœ-ç™½éª¨ç²¾
 [BGJ_stamp_fx]
 @type=0
 lancer.stamp_fx_1 @scale=1.5 @delay=0.6
@@ -70,37 +70,37 @@ lancer.stamp_fx_1 @scale=1.36
 lancer.stamp_fx_1 @scale=1.08
 lancer.stamp_fx_2 @scale=0.5
 
-;boss¼¼ÄÜºó¹û:1+2
+;bossæŠ€èƒ½åæœ:1+2
 [boss_skill_result]
 @type=0
 lancer.boss_skill_result01
 lancer.boss_skill_result02
 
-;boss¼¼ÄÜºó¹û:
+;bossæŠ€èƒ½åæœ:
 [boss_skill_result_2]
 @type=1
 lancer.boss_skill_result03
 lancer.boss_skill_result04
 
-;Áú¾í·ç¼¼ÄÜ
+;é¾™å·é£æŠ€èƒ½
 [hero_skill_tornado]
 @type=1
 lancer.hero_bullet6
 lancer.hero_bullet7
 
-;Õ½¶·¿ªÊ¼
+;æˆ˜æ–—å¼€å§‹
 [enter_battle]
 @type=0 @delay=0.1
 lancer.enter_battle
 
-;{------------ĞÂ¿ªÏä×Ó¶¯»­--------------------------------
-;Ïä×ÓĞ§¹û
+;{------------æ–°å¼€ç®±å­åŠ¨ç”»--------------------------------
+;ç®±å­æ•ˆæœ
 [open_box_fx_new]
 @type=0 @delay=0.8
 lancer.open_box_fx_n2
 lancer.open_box_fx_n3
 
-;ĞÇĞÇÉÁÉÁ¹âĞ§
+;æ˜Ÿæ˜Ÿé—ªé—ªå…‰æ•ˆ
 [open_box_star_fx]
 @type=1 @delay=1.3
 lancer.open_box_star_fx @scale=1 @offset(-18,4)
@@ -110,9 +110,9 @@ lancer.open_box_star_fx @scale=1 @offset(-18,4)
 lancer.open_box_emerald
 ;}--------------------------------------------------------
 ;{--------------------------------------------------------
-;ÈÎÎñÖ÷½çÃæÏà¹ØÌØĞ§
+;ä»»åŠ¡ä¸»ç•Œé¢ç›¸å…³ç‰¹æ•ˆ
 
-;Ïä×Ó¹âĞ§
+;ç®±å­å…‰æ•ˆ
 [mission_box_fx]
 @type=1 @delay=5.0 @loop
 lancer.mission_box_fx 
@@ -120,7 +120,7 @@ lancer.mission_box_fx
 ;}--------------------------------------------------------
 
 
-;½ÇÉ«Ñ¡Ôñ¶¯»­
+;è§’è‰²é€‰æ‹©åŠ¨ç”»
 [player_bg_eft]
 @type=0 @loop
 lancer.player_bg_aperture @scale=1

@@ -1,24 +1,24 @@
 ;----------------------------------------
-; LancerÏîÄ¿Demo×ÊÔ´ÅäÖÃ
+; Lanceré¡¹ç›®Demoèµ„æºé…ç½®
 ;----------------------------------------
 
-;Õ½³¡±³¾°
+;æˆ˜åœºèƒŒæ™¯
 [battle_bg]
 image\map\battle_bg_pvp.png
 image\map\battle_bg_pve.png
 
-;Ëø¶¨¹ÖµĞÊ±µÄÄ¿±ê
+;é”å®šæ€ªæ•Œæ—¶çš„ç›®æ ‡
 [battle_targer_mark]
 image\ui\n_battle\battle_targer_mark.png
 
-;°×¹Ç¾«
+;ç™½éª¨ç²¾
 [bai_gu_jing]
 image\card\bai_gu_jing_130_161.png
 image\card\bai_gu_jing_no_foot.png
 image\card\bai_gu_jing.png
 image\card\bai_gu_jing_02.png
 
-;»ÒÉ«ÃÉ°æ
+;ç°è‰²è’™ç‰ˆ
 [mask]
 ;image\ui\card_get\bk2.png
 image\ui\common\mask_gray.png
@@ -32,11 +32,11 @@ image\ui\common\bgtoguohao.png
 image\fx\pve\boss.png
 image\fx\pve\boss_fx.png
 
-;½Åµ×¹âĞ§
+;è„šåº•å…‰æ•ˆ
 [foot_fx]
 image\fx\pve\foot_fx.png @cut(1,1) @scale=0.5 @time=0.15 @offset(5,40)
 
-;µØÍ¼ÔªËØ
+;åœ°å›¾å…ƒç´ 
 [mapitem]
 image\map_base\card.png
 image\map_base\box.png
@@ -50,15 +50,15 @@ image\map_base\start_point.png
 [card]
 image\ui\card_get\card1.png @scale=1 @loop
 
-;¿¨ÅÆ±ß¿òÌØĞ§-ºì
+;å¡ç‰Œè¾¹æ¡†ç‰¹æ•ˆ-çº¢
 [card_border_fx]
 image\ui\boss_out\fx.png @cut(1,4) @time=0.2 @loop
 
-;boss¿¨ÅÆ
+;bosså¡ç‰Œ
 [boss_card]
 image\card\boss_card.png @cut(1,1) @loop
 
-;BOSS¿¨ÅÆÖĞµÄBOSS¶¯»­
+;BOSSå¡ç‰Œä¸­çš„BOSSåŠ¨ç”»
 [boss_fx]
 image\ui\boss_out\boss_action.png @cut(1,5) @time=0.5
 [boss_fx_loop]
@@ -71,86 +71,86 @@ image\ui\boss_out\boss_bar.png @cut(1,2) @use(0,1) @time=0.05
 [bar_fx_2]
 image\ui\boss_out\boss_bar.png @cut(1,2) @use(1,2) @time=0.05 @loop
 
-;¿ªÏä×Ó¶¯»­µÚÒ»Ö¡
+;å¼€ç®±å­åŠ¨ç”»ç¬¬ä¸€å¸§
 [open_box_fx_1]
 image\ui\open_box\box.png @cut(1,3) @use(0,1)	@scale=1	@looptime=1
 
-;¿ªÏä×Ó¶¯»­
+;å¼€ç®±å­åŠ¨ç”»
 [open_box_fx_2]
 image\ui\open_box\box.png @cut(1,3) @scale=1	@time=0.2
 
-;¿ªÏä×Ó¶¯»­×îºóÒ»Ö¡
+;å¼€ç®±å­åŠ¨ç”»æœ€åä¸€å¸§
 [open_box_fx_3]
 image\ui\open_box\box.png @cut(1,3) @use(2,1)	@scale=1	@time=0.2	@loop
 
-;¿ªÏä½ğ¹âĞ§¹û
+;å¼€ç®±é‡‘å…‰æ•ˆæœ
 [open_box_glow_fx]
 image\ui\open_box\mask.png @cut(1,1) @loop
 
-;»ñµÃ×ÖÑù£¬ÓÃÓÚÊµÏÖÓ¡ÕÂĞ§¹û
+;è·å¾—å­—æ ·ï¼Œç”¨äºå®ç°å°ç« æ•ˆæœ
 [stamp_fx_1]
 image\ui\open_box\get.png @cut(1,1) @time=0.025
 [stamp_fx_2]
 image\ui\open_box\get.png @cut(1,1) @stay
 
-;¿¨ÅÆ±ß¿òÌØĞ§-°×¹Ç¾«
+;å¡ç‰Œè¾¹æ¡†ç‰¹æ•ˆ-ç™½éª¨ç²¾
 [BGJ_card_border_fx]
 image\ui\card_get\fx.png @cut(1,4) @time=0.2 @loop
 
-;°×¹Ç¾«¿¨ÅÆ
+;ç™½éª¨ç²¾å¡ç‰Œ
 [BGJ_card]
 image\ui\card_get\card1.png @cut(1,1) @loop
 
-;Õ½¶·¿ªÆô¹âĞ§¹û
+;æˆ˜æ–—å¼€å¯å…‰æ•ˆæœ
 [enter_battle]
 image\fx\pve\thunder_0.5.png @cut(4,2) @scale=2.0 @time=0.125
 ;image\fx\pve\battle_begin.png @cut(7,1,7) @scale=0.5 @time=0.18
 
 ;-----------------------------------------------------
-;bossÆÕÍ¨¹¥»÷ºó¹û
+;bossæ™®é€šæ”»å‡»åæœ
 [boss_atk_result]
 image\fx\pve\boss_atk_result.png @cut(3,4) @time=0.07
 
-;boss¼¼ÄÜºó¹û1
+;bossæŠ€èƒ½åæœ1
 [boss_skill_result01]
 image\fx\pve\boss_skill_result01.png @cut(4,4) @time=0.1 @offset(0,15)
 
-;boss¼¼ÄÜ½á¹û2
+;bossæŠ€èƒ½ç»“æœ2
 [boss_skill_result02]
 image\fx\pve\boss_skill_result02.png @cut(2,7) @time=0.1 @offset(0,15)
 
-;boss¼¼ÄÜ[ÂúÆÁÏÂÓêµ×²¿ÌØĞ§]
+;bossæŠ€èƒ½[æ»¡å±ä¸‹é›¨åº•éƒ¨ç‰¹æ•ˆ]
 [boss_skill_result03]
 image\fx\pve\boss_skill_result03.png @cut(9,1) @time=0.3 @offset(150,350)
 
-;boss¼¼ÄÜ[ÂúÆÁÏÂÓê]
+;bossæŠ€èƒ½[æ»¡å±ä¸‹é›¨]
 [boss_skill_result04]
 image\fx\pve\boss_skill_result04.png @cut(9,1) @time=0.3 @offset(150,120)
 
-;boss¼¼ÄÜ[ÂúÆÁÏÂÓêÊÜ»÷ÌØĞ§]
+;bossæŠ€èƒ½[æ»¡å±ä¸‹é›¨å—å‡»ç‰¹æ•ˆ]
 [boss_skill_result05]
 image\fx\pve\boss_skill_result05.png @cut(2,5,7) @time=0.07 @time=0.3
 ;-----------------------------------------------------
 
-;heroÆÕÍ¨¹¥»÷ÌØĞ§
+;heroæ™®é€šæ”»å‡»ç‰¹æ•ˆ
 [hero_atk_fire]
 image\fx\pve\hero_skill_fire.png @cut(2,4) @time=0.08 @offset(0,-60)
 
 
 ;-----------------------------------------------------
-;heroÆÕÍ¨¹¥»÷ºó¹û
+;heroæ™®é€šæ”»å‡»åæœ
 [hero_atk_result]
 image\fx\pve\hero_atk_result.png @cut(3,6) @time=0.05 @scale=1.3
 
-;heroÆÕÍ¨¹¥»÷ºó¹û
+;heroæ™®é€šæ”»å‡»åæœ
 [hero_atk_result_fire]
 image\fx\pve\hero_skill_result2.png @cut(2,4,7) @time=0.1 @offset(0,50)
 
-;hero¼¼ÄÜ½á¹û
+;heroæŠ€èƒ½ç»“æœ
 [hero_skill_result]
 image\fx\pve\hero_skill_result.png @cut(3,4,7) @time=0.1 @scale=2 @offset(0,50)
 
-;hero¼¼ÄÜ½á¹û-Áú¾í·ç
+;heroæŠ€èƒ½ç»“æœ-é¾™å·é£
 [hero_skill_tornado]
 image\fx\pve\hero_skill_tornado3.png @cut(2,4,6) @time=0.1 @offset(0,50)
 
@@ -158,45 +158,45 @@ image\fx\pve\hero_skill_tornado3.png @cut(2,4,6) @time=0.1 @offset(0,50)
 
 
 ;-----------------------------------------------------
-;heroµÄ×Óµ¯ÌØĞ§
+;heroçš„å­å¼¹ç‰¹æ•ˆ
 [hero_bullet_test]
 image\fx\pve\hero_skill.png @cut(1,5)
 
-;heroµÄ×Óµ¯ÌØĞ§
+;heroçš„å­å¼¹ç‰¹æ•ˆ
 [hero_bullet1]
 image\fx\pve\hero_skill.png @cut(1,5) @time=0.08 @offset(0,-20)
 
-;heroµÄ×Óµ¯ÌØĞ§
+;heroçš„å­å¼¹ç‰¹æ•ˆ
 [hero_bullet2]
 image\fx\pve\hero_skill.png @cut(1,5) @time=0.08 @offset(-30,-20)
 
-;heroµÄ×Óµ¯ÌØĞ§
+;heroçš„å­å¼¹ç‰¹æ•ˆ
 [hero_bullet3]
 image\fx\pve\hero_skill.png @cut(1,5) @time=0.08 @offset(-30,-10)
 
-;heroµÄ×Óµ¯ÌØĞ§
+;heroçš„å­å¼¹ç‰¹æ•ˆ
 [hero_bullet4]
 image\fx\pve\hero_skill.png @cut(1,5) @time=0.08 @offset(-30,10)
 
-;heroµÄ×Óµ¯ÌØĞ§
+;heroçš„å­å¼¹ç‰¹æ•ˆ
 [hero_bullet5]
 image\fx\pve\hero_skill.png @cut(1,5) @time=0.08 @offset(-30,10)
 
-;heroµÄÁú¾í·ç
+;heroçš„é¾™å·é£
 [hero_bullet6]
 image\fx\pve\hero_skill_tornado1.png @cut(2,5) @time=0.08 @offset(-10,-10)
 
-;heroµÄÁú¾í·ç±³¾°
+;heroçš„é¾™å·é£èƒŒæ™¯
 [hero_bullet7]
 image\fx\pve\hero_skill_tornado2.png @cut(1,7) @time=0.08 @offset(-30,200)
 
 ;-----------------------------------------------------
-;Í¸Ã÷ÌùÍ¼
+;é€æ˜è´´å›¾
 [power_process]
 image\xbattleui\ko_alpha.png
 image\ui\x_battle_main_ui\pet_skill.png
 
-;heroÑªÌõ
+;heroè¡€æ¡
 [hpbar]
 ;image\ui\pve\hpbar_bk.png (1,0,81,11)
 ;image\ui\pve\hpbar.png 
@@ -209,63 +209,63 @@ image\xbattleui\ko_alpha.png
 lj\hpbar_bk_v2.png
 lj\hpbar_v2.png
 
-x_fighter½Åµ×ÒõÓ°
+x_fighterè„šåº•é˜´å½±
 [shadow]
 image\fx\battle\shadow_01.png
 
-;fighter½Åµ×¹âĞ§
+;fighterè„šåº•å…‰æ•ˆ
 [fighter_foot_fx]
 image\fx\pve\fighter_foot_fx.png @cut(6,5) @time=0.25
 
 ;{-----------------------------------------------------
-;¿ªÏä×Ó-ĞÂ (µÚÒ»Ö¡)
+;å¼€ç®±å­-æ–° (ç¬¬ä¸€å¸§)
 [open_box_fx_n1]
 image\ui\open_box\box.png	@cut(1,3)	@use(0,1)	@looptime=1
 
-;¿ªÏä×Ó-ĞÂ (Ö¡¶¯»­)
+;å¼€ç®±å­-æ–° (å¸§åŠ¨ç”»)
 [open_box_fx_n2]
 image\ui\open_box\box.png	@cut(1,3)  	@use(0,3)	@time=0.2
 
-;¿ªÏä×Ó-ĞÂ (×îºóÒ»Ö¡)
+;å¼€ç®±å­-æ–° (æœ€åä¸€å¸§)
 [open_box_fx_n3]
 image\ui\open_box\box.png 	@cut(1,3) 	@use(2,1)	@time=0.2	@loop
 
-;¿ªÏä×Ó-ĞÂ¹âĞ§
+;å¼€ç®±å­-æ–°å…‰æ•ˆ
 [open_box_star_fx]
 image\ui\open_box\star.png 	@cut(2,3) @offset(20,0) @time=0.15 @loop
 
-;¿ªÏä×Ó-»ñµÃ±¦Ê¯
+;å¼€ç®±å­-è·å¾—å®çŸ³
 [open_box_emerald]
 image\ui\open_box\emerald.png @cut(1,6) @loop
 
-;¶ÔÕ½½Åµ×¹âĞ§
+;å¯¹æˆ˜è„šåº•å…‰æ•ˆ
 [foot_fx_01]
 image\fx\mission\foot_fx_01.png @cut(5,6,25) @offset(-5,60)	@loop
 
-;¶ÔÕ½½Åµ×¹âĞ§
+;å¯¹æˆ˜è„šåº•å…‰æ•ˆ
 [foot_fx_02]
 image\fx\mission\foot_fx_02.png @cut(5,6,25) @offset(-5,60)	@loop
 
-;¶ÔÕ½½Åµ×¹âĞ§
+;å¯¹æˆ˜è„šåº•å…‰æ•ˆ
 [foot_fx_03]
 image\fx\mission\foot_fx_03.png @cut(1,4) @offset(-24,51)	@loop
 ;}-----------------------------------------------------
 
 ;{-----------------------------------------------------
-;ÈÎÎñÖ÷½çÃæÏà¹ØÌØĞ§
+;ä»»åŠ¡ä¸»ç•Œé¢ç›¸å…³ç‰¹æ•ˆ
 
-;Ïä×Ó¹âĞ§
+;ç®±å­å…‰æ•ˆ
 [mission_box_fx]
 image\map_base\box_fx.png @cut(1,5) @time=0.1 @scale=1.1 @offset(-4,-5)
 
-;¿¨ÅÆµ×²¿¹âĞ§
+;å¡ç‰Œåº•éƒ¨å…‰æ•ˆ
 [mission_card_fg_fx]
 image\map_base\card_fg_fx.png @cut(1,5) @time=0.4 @offset(-3,-15) @loop
 
 [mission_card_bg_fx]
 image\map_base\card_bg_fx.png @cut(1,5) @time=0.4 @offset(-3,3) @loop
 
-;bossÌØĞ§
+;bossç‰¹æ•ˆ
 [mission_boss_fx]
 image\map_base\boss_fx.png @cut(1,8) @time=0.4 @scale=0.8 @offset(-8,-20) @loop
 
@@ -275,7 +275,7 @@ image\map_base\boss_fx.png @cut(1,8) @time=0.4 @scale=0.8 @offset(-8,-20) @loop
 sk\effect\card_drop\card_drop0009.png @cut(1,4) @time=0.2 @size(240,300)	
 
 
-;½ÇÉ«±³¾°
+;è§’è‰²èƒŒæ™¯
 [player_bg]
 image\ui\player\player_male_01.png
 image\ui\player\player_male_01.png
@@ -285,20 +285,20 @@ image\ui\player\player_female_01.png
 image\ui\player\player_female_02.png
 image\ui\player\player_female_03.png
 
-;½ÇÉ«Ñ¡Ôñ°´Å¥
+;è§’è‰²é€‰æ‹©æŒ‰é’®
 [player_select_bg]
 image\ui\player\common_ui_select_normal.png
 image\ui\player\common_ui_select_select.png
 
-;ÓÃ»§Ãû±³¾°
+;ç”¨æˆ·åèƒŒæ™¯
 [player_username_bg]
 image\ui\player\common_ui_input_bg.png
 
-;½ÇÉ«Ñ¡Ôñ¹âĞ§
+;è§’è‰²é€‰æ‹©å…‰æ•ˆ
 [player_bg_aperture]
 image\ui\player\empty.png @cut(1,1) @time=0.05 @scale=0.6
 
-;¼¼ÄÜËéÆ¬ºÏ³ÉÍ¼±ê£¬ÁÙÊ±
+;æŠ€èƒ½ç¢ç‰‡åˆæˆå›¾æ ‡ï¼Œä¸´æ—¶
 [skill_piece_icon]
 image\ui\skillpiece_combo\piece01.png
 image\ui\skillpiece_combo\piece02.png
@@ -308,7 +308,7 @@ image\ui\skillpiece_combo\piece05.png
 image\ui\skillpiece_combo\piece06.png
 image\ui\skillpiece_combo\piece07.png
 
-;Ç¿»¯ÎïÆ·Í¼±ê
+;å¼ºåŒ–ç‰©å“å›¾æ ‡
 [item_icon]
 image\ui\equip\item1.png
 image\ui\equip\item2.png
@@ -320,12 +320,12 @@ image\ui\boss_out\fx.png @cut(1,4) @time=0.2 @scale=0.5 @loop
 [busy]
 lj\effect\busy1.png @cut(4,4) @time=0.05 @scale=0.5 @loop
 
-;ÔâÓö»õ±Ò
+;é­é‡è´§å¸
 [encounter_money]
 image\ui\encounter_money\money101.png
 image\ui\encounter_money\money_bg.png
 
-;ÔâÓöÎïÆ·
+;é­é‡ç‰©å“
 [encounter_goods]
 image\ui\encounter_goods\goods101.png
 image\ui\card_get\card_bg.png

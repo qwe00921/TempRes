@@ -1,93 +1,93 @@
 ;-------------------------------------------------------------------------------
-;²âÊÔÌØĞ§ÅäÖÃ£¨LJ£©
+;æµ‹è¯•ç‰¹æ•ˆé…ç½®ï¼ˆLJï¼‰
 ;-------------------------------------------------------------------------------
 
-;Îä½«
+;æ­¦å°†
 [button_func_generals]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;±³°ü
+;èƒŒåŒ…
 [button_func_backpack]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;Ç¿»¯
+;å¼ºåŒ–
 [button_func_enhance]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;Õó·¨
+;é˜µæ³•
 [button_func_formation]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;½«ĞÇ
+;å°†æ˜Ÿ
 [button_func_star]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;¾üÍÅ
+;å†›å›¢
 [button_func_corp]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;×øÆï
+;åéª‘
 [button_func_horse]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;½±Àø
+;å¥–åŠ±
 [button_func_award]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;ÖúÊÖ
+;åŠ©æ‰‹
 [button_func_assist]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;ÈÎÎñ
+;ä»»åŠ¡
 [button_func_task]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;ÉèÖÃ
+;è®¾ç½®
 [button_func_setting]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;ºÃÓÑ
+;å¥½å‹
 [button_func_friend]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;»î¶¯
+;æ´»åŠ¨
 [button_func_activity]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;ÓÊ¼ş
+;é‚®ä»¶
 [button_func_mail]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;¾º¼¼
+;ç«æŠ€
 [button_func_tournament]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;Õ÷ÊÕ
+;å¾æ”¶
 [button_func_levy]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;¼Àìë
+;ç¥­ç¥€
 [button_func_worship]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)
 
-;Õ¼ĞÇ
+;å æ˜Ÿ
 [button_func_astrology]
 image00\Res00\button_function.png (0,0,80,80)
 (0,240,80,80)

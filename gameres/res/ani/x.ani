@@ -1,13 +1,13 @@
 ;------------------------------------------------
-; demo 2.0 ÌØĞ§ÅäÖÃ
+; demo 2.0 ç‰¹æ•ˆé…ç½®
 ;------------------------------------------------
 
-;Õ½³¡±³¾°
+;æˆ˜åœºèƒŒæ™¯
 [battle_bg]
 lj\map\map01.png	;for pve
 lj\map\map01.png	;for pvp
 
-;{----------ÓÎÏ·½ÇÉ«¶¯»­ÅäÖÃ---------------
+;{----------æ¸¸æˆè§’è‰²åŠ¨ç”»é…ç½®---------------
 ;warriorfemale
 [warriorfemale_attack]
 lj\chara\2warriorfemale\attack.png @cut(1,4) @reverse
@@ -32,7 +32,7 @@ lj\chara\2warriorfemale\walk.png @cut(1,12) @time=0.20 @reverse @loop
 
 
 
-;Å®¹­¼ıÊÖ
+;å¥³å¼“ç®­æ‰‹
 [archerfemale_attack]
 lj\chara\4archerfemale\attack.png @cut(1,4) @reverse
 
@@ -128,7 +128,7 @@ lj\chara\57daqiao\walk.png @cut(1,4) @time=0.20 @reverse @loop
 
 ;}------------------------------------------
 
-;{----------·ÉÁú¶¯»­ÅäÖÃ---------------
+;{----------é£é¾™åŠ¨ç”»é…ç½®---------------
 [fly_dragon_attack]
 image\pet\fly_dragon\atk.png    @cut(1,3)  @time=0.15   @offset(20,0) @stay @scale=1.8
 
@@ -148,12 +148,12 @@ image\pet\fly_dragon\standby.png  @cut(1,2)  @time=0.3   @offset(0,-0) @stay @sc
 image\pet\fly_dragon\standby.png @cut(1,2) @time=0.3   @loop @scale=1.8
 ;}-------------------------------------
 
-;{----------boss¶¯»­ÅäÖÃ---------------
+;{----------bossåŠ¨ç”»é…ç½®---------------
 [boss_standby]
 image\pet\boss\standby.png @cut(1,3) @time=0.3   @loop
 ;}-------------------------------------
 
-;{----------¼¼ÄÜÅäÖÃ---------------
+;{----------æŠ€èƒ½é…ç½®---------------
 [feilong]
 lj\effect\skill\feilong.png @cut(1,9) @time=0.12  @offset(0,-50)
 
@@ -209,7 +209,7 @@ image\fx\pet_blue_devil\fx_ultimate_skill.png @cut(1,5) @time=0.15 @offset(0,-60
 
 ;}-------------------------------------
 
-;{----------ÍÚ¿ó³è¶¯»­ÅäÖÃ---------------
+;{----------æŒ–çŸ¿å® åŠ¨ç”»é…ç½®---------------
 [mining_attack]
 image\pet\mining\atk.png @cut(1,5)    @time=0.15   @offset(0,-0) @stay
 
@@ -229,7 +229,7 @@ image\pet\mining\hurt.png @cut(1,2)    @time=0.15  @offset(-5,-0) @stay
 image\pet\mining\standby.png @cut(1,2) @time=0.3  @loop
 ;}-------------------------------------
 
-;{----------À¶Ä§¹í¶¯»­ÅäÖÃ---------------
+;{----------è“é­”é¬¼åŠ¨ç”»é…ç½®---------------
 [blue_devil_attack]
 image\pet\blue_devil\atk.png @cut(1,5)     @time=0.15    @offset(0,-14) @stay
 
@@ -252,7 +252,7 @@ image\pet\blue_devil\hurt.png @cut(1,3)    @time=0.15    @offset(-10,-2) @stay
 image\pet\blue_devil\standby.png @cut(1,6) @time=0.3    @loop
 ;}-------------------------------------
 
-;{--------¼¼ÄÜÃû³ÆÁÙÊ±ÌØĞ§--------------
+;{--------æŠ€èƒ½åç§°ä¸´æ—¶ç‰¹æ•ˆ--------------
 
 [skill_name_fx]
 sk\effect\card_drop\card_drop0004.png @cut(1,15) @time=0.1 @stay

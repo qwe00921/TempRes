@@ -1,11 +1,11 @@
-;剧情说话内容背景
+;鍓ф儏璇磋瘽鍐呭鑳屾櫙
 [content_bg]
 image\drama_bg\1.png
 
 [mask]
 image\drama_bg\mask.png
 
-;剧情背景图片
+;鍓ф儏鑳屾櫙鍥剧墖
 [bg_1]
 image\drama_bg\1.png
 [bg_2]
@@ -39,10 +39,10 @@ image\drama_bg\1.png
 [bg_16]
 image\drama_bg\1.png
 
-;NPC对话图片
-;卡牌本身朝左_1
-;卡牌本身朝右_2
-;卡牌本身无朝向_0
+;NPC瀵硅瘽鍥剧墖
+;鍗＄墝鏈韩鏈濆乏_1
+;鍗＄墝鏈韩鏈濆彸_2
+;鍗＄墝鏈韩鏃犳湞鍚慱0
 
 [10008_1]
 image\npc\10008.png
@@ -120,10 +120,10 @@ image\npc\10904.png
 image\npc\10963.png
 
 
-;主角对话图片
-;卡牌本身朝左_1
-;卡牌本身朝右_2
-;卡牌本身无朝向_0
+;涓昏瀵硅瘽鍥剧墖
+;鍗＄墝鏈韩鏈濆乏_1
+;鍗＄墝鏈韩鏈濆彸_2
+;鍗＄墝鏈韩鏃犳湞鍚慱0
 
 [10_2]
 image\npc\10487.png

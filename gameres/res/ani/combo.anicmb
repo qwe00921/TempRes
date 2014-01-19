@@ -1,8 +1,8 @@
 ;------------------------------------------------------------------------------------------------------------------
-;×éºÏÌØĞ§ÅäÖÃ
+;ç»„åˆç‰¹æ•ˆé…ç½®
 ;------------------------------------------------------------------------------------------------------------------
 
-;»ñµÃ
+;è·å¾—
 [getsome]
 @type=0
 sk_test.getsomething @scale=2.4
@@ -18,7 +18,7 @@ sk_test.getsomething @scale=0.4
 sk_test.getsomething @scale=0.4
 sk_test.getsomething @scale=0.4
 
-;¿ªÏä×Ó
+;å¼€ç®±å­
 [openbox]
 @type=1
 sk_test.openbox01
@@ -26,70 +26,70 @@ sk_test.openbox02 @delay=1.2
 sk_test.boxtreasure @delay=1.3 
 sk_test.boxitem  @delay=1.3 @offset(0,-50) @scale=0.5
 
-;Ò¡³ö÷»×Ó1
+;æ‘‡å‡ºéª°å­1
 [playdice1]
 @type=0
 sk_test.dice0
 sk_test.dice1
 
-;Ò¡³ö÷»×Ó2
+;æ‘‡å‡ºéª°å­2
 [playdice2]
 @type=0
 sk_test.dice0
 sk_test.dice2
 
-;Ò¡³ö÷»×Ó3
+;æ‘‡å‡ºéª°å­3
 [playdice3]
 @type=0
 sk_test.dice0
 sk_test.dice3
 
-;Ò¡³ö÷»×Ó4
+;æ‘‡å‡ºéª°å­4
 [playdice4]
 @type=0
 sk_test.dice0
 sk_test.dice4
 
-;Ò¡³ö÷»×Ó5
+;æ‘‡å‡ºéª°å­5
 [playdice5]
 @type=0
 sk_test.dice0
 sk_test.dice5
 
-;Ò¡³ö÷»×Ó6
+;æ‘‡å‡ºéª°å­6
 [playdice6]
 @type=0
 sk_test.dice0
 sk_test.dice6
 
-;Ò¡³ö÷»×Ó7
+;æ‘‡å‡ºéª°å­7
 [playdice7]
 @type=0
 sk_test.dice0
 sk_test.dice7
 
-;²âÊÔ¸÷ÖÖmodĞŞ¸Ä
+;æµ‹è¯•å„ç§modä¿®æ”¹
 [test]
 @type=0 @scale=2 @offset(200,0) @delay=2
 sk_test.dice0 @scale=1.5 @offset(100,200)
 sk_test.dice6 @scale=1.5 @offset(100,200)
 
-;²âÊÔÍ¬Ê±²¥·Å
+;æµ‹è¯•åŒæ—¶æ’­æ”¾
 [testall]
 @type=1
 sk_test.atk04
 sk_test.vs
 
-;²âÊÔ¿¨Æ¬×éºÏÌØĞ§£¨Í¬Ê±²¥·Å£©
+;æµ‹è¯•å¡ç‰‡ç»„åˆç‰¹æ•ˆï¼ˆåŒæ—¶æ’­æ”¾ï¼‰
 [cardtest]
 @type=1
-sk_test.cardget 	@offset(0,-170)		;»ñÈ¡¿¨Æ¬ÌáÊ¾ÎÄ×Ö
-sk_test.cardborder 	@scale=1			;¿¨Æ¬À¶É«±ß¿ò
-sk_test.cardgirl	@scale=0.5			;ÃÃ×Ó
-sk_test.cardflash 	@scale=1			;Á÷¹âĞ§¹û£¨ÉÁË¸£©
-sk_test.cardstar 	@scale=0.5			;ĞÇĞÇĞ§¹û
+sk_test.cardget 	@offset(0,-170)		;è·å–å¡ç‰‡æç¤ºæ–‡å­—
+sk_test.cardborder 	@scale=1			;å¡ç‰‡è“è‰²è¾¹æ¡†
+sk_test.cardgirl	@scale=0.5			;å¦¹å­
+sk_test.cardflash 	@scale=1			;æµå…‰æ•ˆæœï¼ˆé—ªçƒï¼‰
+sk_test.cardstar 	@scale=0.5			;æ˜Ÿæ˜Ÿæ•ˆæœ
 
-;²âÊÔÌØĞ§×éºÏ£º¿¨Æ¬ÒÆ¶¯Ğ§¹û
+;æµ‹è¯•ç‰¹æ•ˆç»„åˆï¼šå¡ç‰‡ç§»åŠ¨æ•ˆæœ
 [cardmove]
 @type=0 @scale=0.5 @loop
 sk_test.cardgirl2 @offset(0,-300)
@@ -109,7 +109,7 @@ sk_test.cardgirl2 @offset(0,0) @scale=1.15
 sk_test.cardgirl2 @offset(0,0) @scale=1.2
 sk_test.cardgirl  @offset(0,0) @scale=1.2
 
-;²âÊÔalpha(0~100)£¬Ö±½ÓÉèÖÃ
+;æµ‹è¯•alpha(0~100)ï¼Œç›´æ¥è®¾ç½®
 [testalpha]
 @type=0
 sk_test.cardgirl3 @alpha=0.0
@@ -125,7 +125,7 @@ sk_test.cardgirl3 @alpha=0.9
 sk_test.cardgirl3 @alpha=1.0
 
 
-;²âÊÔHSL£¨ĞŞ¸ÄÁÁ¶È£¬Ö±½ÓÉèÖÃĞ§¹ûÍ»Ø££¬»áÓĞÉÁË¸£©
+;æµ‹è¯•HSLï¼ˆä¿®æ”¹äº®åº¦ï¼Œç›´æ¥è®¾ç½®æ•ˆæœçªå…€ï¼Œä¼šæœ‰é—ªçƒï¼‰
 [testlum]
 @type=0
 sk_test.cardgirl3 @hsl(0,0,90)
@@ -137,20 +137,20 @@ sk_test.cardgirl3 @hsl(0,0,40)
 sk_test.cardgirl3 @hsl(0,0,30)
 sk_test.cardgirl3 @hsl(0,0,20)
 
-;²âÊÔHSL£¨ĞŞ¸ÄÁÁ¶È£¬ÔöÁ¿£©
+;æµ‹è¯•HSLï¼ˆä¿®æ”¹äº®åº¦ï¼Œå¢é‡ï¼‰
 [testlum2]
 @type=0
-sk_test.cardgirl @hsl+(0,0,-1) ;Ã¿Ò»Ö¡ÁÁ¶È¼õÉÙ1
+sk_test.cardgirl @hsl+(0,0,-1) ;æ¯ä¸€å¸§äº®åº¦å‡å°‘1
 
 
-;²âÊÔHSL£¨ĞŞ¸Ä±¥ºÍ¶È£¬ÔöÁ¿ÉèÖÃ£©
-;ÓĞÎÊÌâ£¬ÉĞÎ´Ö§³Ö£¡
+;æµ‹è¯•HSLï¼ˆä¿®æ”¹é¥±å’Œåº¦ï¼Œå¢é‡è®¾ç½®ï¼‰
+;æœ‰é—®é¢˜ï¼Œå°šæœªæ”¯æŒï¼
 [testsat]
 @type=0
-sk_test.cardgirl @hsl+(0,-1,0) ;Ã¿Ò»Ö¡¼õÉÙ±¥ºÍ¶È1
+sk_test.cardgirl @hsl+(0,-1,0) ;æ¯ä¸€å¸§å‡å°‘é¥±å’Œåº¦1
 
 
-;×Óµ¯
+;å­å¼¹
 [bullet]
 @type=0 @loop
 effect.bullet @scale=1
@@ -162,7 +162,7 @@ effect.bullet @scale=1.075
 effect.bullet @scale=1.055
 effect.bullet @scale=1.025
 
-;Ö§³ÖÍ¼Æ¬×éºÏ
+;æ”¯æŒå›¾ç‰‡ç»„åˆ
 [piccmb]
 @type=0 @loop
 effect.piccmb @offset(0,0)   @scale=1
