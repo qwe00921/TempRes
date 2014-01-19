@@ -3,17 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_BG]
-Type=1
-Tag=1
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\mytown_base.png
-NormalFileUV=0 0 640 809
-
 [CTRL_BUTTON_MOUNTAIN]
 Type=2
 Tag=2

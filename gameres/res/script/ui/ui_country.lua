@@ -42,4 +42,3 @@ p.ID_CTRL_BUTTON_RIVER				    = 10;
 p.ID_CTRL_BUTTON_TREE					    = 9;
 p.ID_CTRL_BUTTON_FIELD				    = 8;
 p.ID_CTRL_BUTTON_MOUNTAIN				 = 2;
-p.ID_CTRL_PICTURE_BG					     = 1;

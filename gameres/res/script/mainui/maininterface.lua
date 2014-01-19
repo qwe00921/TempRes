@@ -18,8 +18,9 @@ function p.ShowUI(userinfo)
 		p.ShowBillboard();
 		PlayMusic_MainUI();
 		
+		local pic = GetPictureByAni("lancer.temp_bg", 0); 
+		p.m_bgImage:SetPicture( pic );
 		p.m_bgImage:SetVisible(true);
-		
 		p.scrollList:SetVisible(true);
 		
 		--GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
@@ -37,11 +38,11 @@ function p.ShowUI(userinfo)
 
 	p.m_bgImage = createNDUIImage();
 	p.m_bgImage:Init();
-	p.m_bgImage:SetFrameRectFull();
 	GetUIRoot():AddChildZ(p.m_bgImage,-99);
 		
 	local pic = GetPictureByAni("lancer.temp_bg", 0); 
 	p.m_bgImage:SetPicture( pic );
+	p.m_bgImage:SetFrameRectByPictrue(pic);
 	
 	GetUIRoot():AddChild(layer);
 	LoadUI("main_interface.xui", layer, nil);
@@ -168,7 +169,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 --			dlg_battlearray.HideUI();
 		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========»î¶¯========**");
-			dlg_drama.ShowUI(0,1,10);
+			country_main.ShowUI();
 			maininterface.HideUI();
 			p.CloseAllPanel();
 		elseif ui.ID_CTRL_BUTTON_BG_BTN == tag then
@@ -187,7 +188,7 @@ function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 		p.scrollList:SetVisible(false);
-		p.m_bgImage:SetVisible(false);
+		--p.m_bgImage:SetVisible(false);
 --		dlg_battlearray.HideUI();
 		--p.HideBillboard();
 	end
@@ -199,7 +200,7 @@ function p.CloseUI()
 	    p.layer:LazyClose();
         p.layer = nil;
 		p.scrollList = nil;
-		p.m_bgImage = nil;
+		--p.m_bgImage = nil;
 --		dlg_battlearray.CloseUI();
 		billboard.CloseUI();
     end
