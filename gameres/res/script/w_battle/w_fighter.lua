@@ -42,6 +42,7 @@ function p:ctor()
 	self.IsTurnEnd = false;
 	self.firstID = nil; --合击判定的第一下
 	self.SkillBuff = {}  --中的BUFF列表
+	self.canRevive = false;
 end
 
 --初始化（重载）
@@ -57,7 +58,7 @@ function p:Init( idFighter, node, camp )
 	self.nowlife = self.life; --当前实际血量
 	self.Hp = self.life;
 	self.maxHp = self.life;        
-
+    self.HasTurn = true;  --没有中其它BUFF
 	--self:CreateHpBar();
 	--self:CreateFlyNumGreen();	
 end
@@ -240,7 +241,8 @@ end;
 function p:AddSkillBuff(pSkillID)
 	local lwork_time = tonumber(SelectCell(T_SKILL,pSkillID,"work_time"))
 	local lbuff_param = tonumber(SelectCell(T_SKILL,pSkillID,"buff_param"))
-	local lRecord = {skillID = pSkillID, work_time = lwork_time, buff_param=lbuff_param}
+	local lbuff_type = tonumber(SelectCell(T_SKILL,pSkillID,"buff_type"))
+	local lRecord = {buff_type = lbuff_type, work_time = lwork_time, buff_param=lbuff_param}
 	table.insert(self.SkillBuff, lRecord);
 end;
 
@@ -493,10 +495,10 @@ function p:UseItem(pId)
 	return lResult;
 end
 
-function p:HasBuff(effect_type)
+function p:HasBuff(buff)
 	local lRes = false;
 	for k,v in ipairs(self.SkillBuff) do
-		if (v.effecttype == effect_type) then
+		if (v.buff_type == buff) then
 			lRes = true;
 			break;
 		end
@@ -505,16 +507,21 @@ function p:HasBuff(effect_type)
 	return lRes;
 end;
 
-function p:AddBuff(effect_type,effect_value)
-	local skillRecord = {effecttype = effect_type, effectval = effect_value};
+--BUFF类型,参数
+function p:AddBuff(buff, work,param)
+	--local skillRecord = {effecttype = effect_type, effectval = effect_value};
+	local skillRecord = {buff_type = tonumber(effect_type), work_time = tonumber(work), buff_param = tonumber(param)};
 	table.insert(self.SkillBuff, skillRecord);
 end;
 
-function p:RemoveBuff(effect_type)
+function p:RemoveBuff(val)
 	for i= #self.SkillBuff,1, -1 do
 		local skillRecord = self.SkillBuff[i];
-		if skillRecord.effecttype == effect_type then
+		if skillRecord.buff_type == val then
 			table.remove(self.SkillBuff, i);
+			if val == W_BUFF_TYPE_301 then  --死亡只扣一次BUFF
+				break;
+			end
 		end
 	end
 end;

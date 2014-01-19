@@ -159,7 +159,7 @@ function p.checkAllAtkMachineIsTurnEnd()
 	local lres = true;
 	for pos=1,#(p.atkMachineLst) do
 		local lMachine = p.atkMachineLst[pos];
-		if lMachine.turnState == W_BATTLE_TURNEND  then --未行动
+		if lMachine.turnState == W_BATTLE_TURNEND  then --已行动
 			lres = false;
 			break;
 		end
@@ -172,5 +172,12 @@ function p.InitAtkTurnEnd()
 	for pos=1,#(p.atkMachineLst) do
 		local lMachine = p.atkMachineLst[pos];
 		lMachine.turnState = W_BATTLE_NOT_TURN;   --未行动
+		
+		local lheroFighter = w_battle_mgr.heroCamp:FindFighter(pos);
+		if (lheroFighter ~= nil) and (lheroFighter.nowlife > 0) then
+			if lheroFighter.HasTurn == false then
+				lMachine.turnState = W_BATTLE_TURNEND;
+			end;
+		end;
 	end
 end

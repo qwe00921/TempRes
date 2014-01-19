@@ -862,7 +862,7 @@ function p.initFighterDB(fighterInfo,IsHero)
 			fighterInfo.Skill = 1001;
 --			fighterInfo.Attack = fighterInfo.Attack *10;
 		--else
-		--	fighterInfo.Sp = 100;	
+	--		fighterInfo.Sp = 100;	
 	--		fighterInfo.Skill = 1003;
 		--end;
 	end;

@@ -563,7 +563,8 @@ end;
 function p.HeroBuffStarTurn()
 	WriteCon( "HeroBuffStarTurn");
 	p.atkCampType = W_BATTLE_HERO;
-	p.HeroBuffTurnEnd();  --直接判定我方BUFF结束
+	calBuff(W_BATTLE_HERO,p.HeroBuffTurnEnd);
+	--p.HeroBuffTurnEnd();  --直接判定我方BUFF结束
 end;
 
 --检查是否所有的BUFF都播放完毕
@@ -575,14 +576,15 @@ end;
 function p.HeroBuffTurnEnd()
 	WriteCon( "HeroBuffTurnEnd");	
 	if p.heroCamp:isAllDead() == true then  --我方全死
-	  p.FightLose();	
-	else 	
-	  --我方还有人活着
-	  w_battle_pve.RoundStar();  --UI界面全亮起来
-	  w_battle_machinemgr.InitAtkTurnEnd(); --标识玩家的回合
-	  --我方使用物品阶断
-	  --   当选中一个物品后,得到这个物品可使用的玩家列表,调用w_battle_useitem.RefreshUI()
-	  --我方行动阶断,只要出现攻击就等于进入这个阶断
+        p.FightLose();	
+	elseif p.heroCamp:HasTurn() == true then -- 有可以行动的
+		 w_battle_pve.RoundStar();  --UI界面全亮起来
+		 w_battle_machinemgr.InitAtkTurnEnd(); --标识玩家的回合
+		--我方使用物品阶断
+		--   当选中一个物品后,得到这个物品可使用的玩家列表,调用w_battle_useitem.RefreshUI()
+        --我方行动阶断,只要出现攻击就等于进入这个阶断
+ 	else  --无人可行动
+		p.HeroTurnEnd();
 	end
 end;
 
@@ -605,8 +607,99 @@ function p.EnemyBuffStarTurn()
 	WriteCon( "EnemyBuffStarTurn");	
    p.atkCampType = W_BATTLE_ENEMY;
    p.EnemyBuffDie = false;
-   p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
+   calBuff(W_BATTLE_ENEMY,p.EnemyBuffTurnEnd);
+   --p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
 end;
+
+function calBuff(campType,pEvent)
+	local fighterLst;
+	if campType == W_BATTLE_HERO then
+		fighterLst = p.heroCamp.fighters;
+	else
+		fighterLst = p.enemyCamp.fighters;
+	end;
+	local fighterDieLst = {}
+	for k,v in ipairs(fighterLst) do
+		local fighter = v;
+		if (fighter.Hp > 0) then
+			for i=#fighter.SkillBuff,1,-1 do --BUFF时间到了
+				local buff = fighter.SkillBuff[i];
+				if buff.work_time == 0 then
+					table.remove(fighter.SkillBuff,i);
+				end
+			end;
+			
+			for i,buffInfo in ipairs(fighter.SkillBuff) do
+				buffInfo.work_time = buffInfo.work_time - 1;
+				if    (buffInfo.buff_type == W_BUFF_TYPE_1)    --不能行动的BUFF
+					or  (buffInfo.buff_type == W_BUFF_TYPE_2)
+					or  (buffInfo.buff_type == W_BUFF_TYPE_3)
+					or  (buffInfo.buff_type == W_BUFF_TYPE_4) 
+					or  (buffInfo.buff_type == W_BUFF_TYPE_5) then 
+					fighter.HasTurn = false; --不能行动
+				elseif (buffInfo.buff_type == W_BUFF_TYPE_6) or  (buffInfo.buff_type == W_BUFF_TYPE_7) then --扣血BUFF
+				    local lhp = math.modf(fighter.maxHp * buffInfo.buff_param / 100 )
+					fighter.SubShowLife(lhp);
+					fighter.SubLife(lhp);
+					if fighter.Hp <= 0 then  --死亡
+                        fighterDieLst[#fighterDieLst + 1] = fighter; --加入死亡列表							
+						local machine = w_battle_machinemgr.getAtkStateMachine(fighter.Position);
+						machine.turnState = W_BATTLE_TURNEND; 
+						break;
+					end
+				elseif buffInfo.buff_type == W_BUFF_TYPE_9 then  --加血BUFF
+					local lhp = math.modf(fighter.maxHp * buffInfo.buff_param / 100 )
+					fighter.AddLife(lhp);
+					fighter.AddShowLife(lhp);
+				end
+			end
+		end
+    end
+
+	if (#fighterDieLst > 0) then
+		local camp = nil;
+		
+		if (campType == W_BATTLE_ENEMY) then
+			p.EnemyBuffDie = true;
+			camp = W_BATTLE_ENEMY
+		else
+			camp = W_BATTLE_HERO
+		end;
+		local cmdDie = nil;
+		for k,v in ipairs(fighterDieLst) do
+			local lfighter = v;
+			if lfighter.canRevive == true then
+				cmdDie = p.setFighterRevive(lfighter)
+			else
+				local lact = p.setFighterDie(lfighter,camp);
+				if lact ~= nil then
+					cmdDie = lact;
+				end
+			end
+		end	
+		if cmdDie ~= nil then
+			local batch = w_battle_mgr.GetBattleBatch(); 
+			local seqDie = batch:AddSerialSequence();
+			local cmdBuffEnd = createCommandLua():SetCmd( "buffEnd", 0, 0, "" );
+			if cmdBuffEnd ~= nil then
+				seqDie:AddCommand( cmdBuffEnd );
+				seqDie:SetWaitEnd(cmdDie);
+			end	
+		end
+	else
+		pEvent();
+	end;
+	
+end;	
+
+function p.BuffEnd()
+	if p.atkCampType == W_BATTLE_HERO then
+		p.HeroBuffTurnEnd();
+	else
+		p.EnemyBuffTurnEnd();
+	end
+end;
+
 
 --检查敌方BUFF是否结束
 function p.CheckEnemyBuffTurnIsEnd()
@@ -645,7 +738,7 @@ function p.EnemyStarTurn()  --怪物回合开始
 	lcount = 0;
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
-		if latkFighter.nowlife > 0 then
+		if (latkFighter.nowlife > 0) and (latkFighter.HasTurn == true) then --可以行动且活着
 			local lTargetFighter = p.getEnemyTarget(v)
 			if lTargetFighter == nil then
 				break;
@@ -690,7 +783,11 @@ function p.CheckEnemyAllDied()
 		if p.atkCampType == W_BATTLE_HERO then --当前是我方行动刚结束后的拾取
 			p.EnemyBuffStarTurn() 
 		elseif p.atkCampType == W_BATTLE_ENEMY then --当前是敌方BUFF结束后的拾取
-		    p.EnemyStarTurn()
+			if p.enemyCamp:HasTurn() then  --有行动回合
+				p.EnemyStarTurn()
+			else
+				p.EnemyTurnEnd();
+			end;
 		end
 	end
 end;
@@ -1429,3 +1526,89 @@ function p.GetBuffAni(skillID)
 	return lBuffAni;
 	
 end
+
+function p.setFighterRevive(targerFighter)
+	local batch = w_battle_mgr.GetBattleBatch();
+	local seqTarget = batch:AddSerialSequence();
+	local seqHurt = batch:AddSerialSequence();	
+	
+	targerFighter.isDead = false;
+	targerFighter.canRevive = false;
+	targetFighter:RemoveBuff(W_BUFF_TYPE_301)
+	
+	targerFighter:standby();
+
+	local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.revive" );
+	seqTarget:AddCommand( cmdf );
+	local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
+	seqTarget:AddCommand( cmdC );		
+
+	return cmdc
+end;
+
+function p.reward(targerFighter)
+	local tmpList = {}
+	if targerFighter.dropLst ~= nil then
+		for k,v in ipairs(targerFighter.dropLst) do
+			tmpList[#tmpList + 1] = {v.dropType, 1, targerFighter.Position, v.id};
+		end
+	end;
+	if #tmpList > 0 then
+		w_battle_pve.MonsterDrop(tmpList)	
+	end;
+end;
+
+function p.setFighterDie(targerFighter,camp)
+	--判断是否要切换怪物目标
+	if targerFighter.isDead == true then
+		WriteCon( "*********************Wring! tar_hurtEnd can not in die double  tarid="..tostring(targerFighter:GetId()) );	
+		return ;
+	end;
+
+	local batch = w_battle_mgr.GetBattleBatch();
+	local seqTarget = batch:AddSerialSequence();
+	local seqHurt = batch:AddSerialSequence();	
+
+	targerFighter:Die();  --标识死亡
+	WriteCon( "tar_hurtEnd tar_die tarid="..tostring(targerFighter:GetId()) );
+	if(camp == W_BATTLE_ENEMY) then  --受击的是怪物
+		p.reward(targerFighter); --怪物死亡掉装备
+		if w_battle_mgr.LockEnemy == true then  --锁定目标
+			if(w_battle_mgr.PVEEnemyID == targerFighter:GetId()) then  --当前死掉的怪物是正在被锁定的怪物
+				if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() > 0 then --可换个怪物
+					w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
+					w_battle_mgr.SetLockAction(w_battle_mgr.PVEEnemyID);
+					--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
+				else  --没有活着的怪物可选
+				   w_battle_mgr.isCanSelFighter = false;
+				end
+			end;
+		else --未锁定目标
+			local lcount = w_battle_mgr.enemyCamp:GetNotDeadFighterCount();
+			if lcount == 1 then
+				w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
+				w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID);
+			elseif lcount > 1 then						
+				local lFighter = w_battle_mgr.enemyCamp:FindFighter(w_battle_mgr.PVEEnemyID);
+				if lFighter ~= nil then
+					w_battle_pve.SetHp(lFighter);
+				end;
+			end
+			--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
+		end;		
+	else  --受击的是玩家,在攻击时就已选择了全部目标无需处理
+		
+	end;
+	
+	--[[
+	if targerFighter.m_kShadow ~= nil then
+		local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
+		self.seqTarget:AddCommand( cmdf );
+	end;
+	]]--
+	local cmdC = createCommandEffect():AddActionEffect( 1, targerFighter:GetNode(), "lancer_cmb.die" );
+	seqTarget:AddCommand( cmdC );	
+	return cmdC			
+end
+
+
