@@ -336,20 +336,28 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 				p.CloseUI();
 			end
 		elseif ui.ID_CTRL_BUTTON_EQUIP == tag then
-			--p.HideUI()
-			equip_room.ShowUI();
-			WriteCon("EQUIP");
+			if p.countryInfoT["B2"] then
+				--p.HideUI()
+				equip_room.ShowUI();
+				WriteCon("EQUIP");
+			end
 		elseif ui.ID_CTRL_BUTTON_MERGE == tag then
-			WriteCon("MERGE");
-			country_mixhouse.ShowUI();
-			p.HideUI();
+			if p.countryInfoT["B3"] then
+				WriteCon("MERGE");
+				country_mixhouse.ShowUI();
+				p.HideUI();
+			end
 		elseif ui.ID_CTRL_BUTTON_HOME == tag then
-			WriteCon("HOME");
-			country_collect.Collect( E_COLLECT_HOME );
+			if p.countryInfoT["B4"] then
+				WriteCon("HOME");
+				country_collect.Collect( E_COLLECT_HOME );
+			end
 		elseif ui.ID_CTRL_BUTTON_STORE == tag then
-			WriteCon("STORE");
-			country_storage.ShowUI();
-			p.HideUI();
+			if p.countryInfoT["B5"] then
+				WriteCon("STORE");
+				country_storage.ShowUI();
+				p.HideUI();
+			end
 		end
 	end
 end
