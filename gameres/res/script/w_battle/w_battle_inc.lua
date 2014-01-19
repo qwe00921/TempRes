@@ -105,7 +105,7 @@ W_BATTLE_ELEMENT_DARK  = 7; --暗
 
 
 --合击时间的间隔
-W_BATTLE_JOINATK_TIME = 3; 
+W_BATTLE_JOINATK_TIME = 1; 
 
 --站位标置
 W_BATTLE_POS_TAG_1 = 1;

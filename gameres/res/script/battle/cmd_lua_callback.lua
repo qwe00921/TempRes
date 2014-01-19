@@ -40,7 +40,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 	--÷¥––æﬂÃÂ√¸¡Ó
 	if cmdtype == "fighter_damage" then
 		fighter:SetLifeDamage(num);
-		
+	elseif cmdtype == "buffEnd"  and E_DEMO_VER == 5 then
+		w_battle_mgr.BuffEnd();
 	elseif cmdtype == "atk_startsing"  and E_DEMO_VER == 5 then
 	    local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
 		if lstateMachine ~= nil then

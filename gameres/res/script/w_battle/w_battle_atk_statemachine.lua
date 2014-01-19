@@ -35,7 +35,7 @@ end
 
 
 
-function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,critLst,joinAtkLst,isSkill,skillID,isAoe,targetLst)
+function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,critLst,joinAtkLst,isSkill,skillID,isAoe,targetLst,HasBuffLst)
 	self.atkId = atkFighter:GetId();
 	self.id = atkFighter:GetId();	
 	self.targerId = tarFighter:GetId();
@@ -60,6 +60,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		self.sing = SelectCell( T_SKILL_RES, skillID, "sing_effect" );
         self.hurt = SelectCell( T_SKILL_RES, skillID, "hurt_effect" );
 		self.is_bullet = tonumber( SelectCell( T_SKILL_RES, skillID, "is_bullet" ) );
+		self.HasBuffLst = HasBuffLst;
 		--self.bufftype = tonumber(SelectCell( T_SKILL, skillID, "buff_type" ) );
 	else
 		self.distanceRes = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
@@ -226,13 +227,16 @@ function p:atk_startAtk()
 		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		seqAtk:AddCommand( cmdAtk );	
 	
+		local cmd11 = nil;
 		if self.IsSkill == true then	--技能受击特效
 			for k,v in pairs(self.targetLst) do
 				tarFighter = v;
-				local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
+				
+				cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
 				local batch = w_battle_mgr.GetBattleBatch(); 
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmd11 );					
+				
 			end;			
 		end;		
 		--攻击结束播放受击动作
@@ -297,7 +301,11 @@ end
 function p:atk_end()
 	local atkFighter = self.atkFighter;
 	local tarFighter = nil;
-
+	local batch = w_battle_mgr.GetBattleBatch(); 
+--	local seqStar = batch:AddSerialSequence();
+	local seqAtk = batch:AddSerialSequence();
+--	local seqMusic = batch:AddSerialSequence();
+--	local seqTarget = batch:AddSerialSequence(); 
 		
 	--for pos=1,#self.targetLst do
 	--	tarFighter = (self.targetLst)[pos];
@@ -348,8 +356,22 @@ function p:atk_end()
 			w_battle_atkDamage.getitem(tarFighter.Position ,self.IsSkill, lIsCrit,lIsJoinAtk,lisMoredamage); 
 			
 			--统计各项次数
-			w_battle_mgr.calAtkTimes(self.IsSkill,lIsCrit,lIsJoinAtk,lisMoredamage)
+			--w_battle_mgr.calAtkTimes(self.IsSkill,lIsCrit,lIsJoinAtk,lisMoredamage)
 		end
+		
+        --中BUFF动画		
+		if self.IsSkill == true then
+			local lhasBuff = self.HasBuffLst[k]; --是否中BUFF
+			if lhasBuff == true then
+				local buffAni = w_battle_mgr.GetBuffAni(self.skillID);
+				local cmdBuff = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), buffAni );
+				
+				local batch = w_battle_mgr.GetBattleBatch(); 
+				local seqBuff = batch:AddSerialSequence();
+				seqBuff:AddCommand( cmdBuff );
+				tarFighter:AddSkillBuff(self.skillID);
+			end;
+		end;
 		
 		--受击次数减一	
 		tarFighter:BeHitDec(atkFighter:GetId()); 
@@ -363,11 +385,7 @@ function p:atk_end()
 
 	end;
 	
-	local batch = w_battle_mgr.GetBattleBatch(); 
---	local seqStar = batch:AddSerialSequence();
-	local seqAtk = batch:AddSerialSequence();
---	local seqMusic = batch:AddSerialSequence();
---	local seqTarget = batch:AddSerialSequence();   
+  
 	local cmd4 = createCommandPlayer():Standby( 0.01, self.atkplayerNode, "" );	
 	seqAtk:AddCommand( cmd4 );
 	atkFighter:standby();	

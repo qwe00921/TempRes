@@ -115,3 +115,6 @@ T_DROP_POBILITY = LoadTable("battle_drop_pobility.ini");
 
 --掉落数据表
 T_DROP_VAL		= LoadTable("battle_drop_value.ini");
+
+--任务掉落物品
+T_MONSTER_DROP	= LoadTable("monster_drop.ini");

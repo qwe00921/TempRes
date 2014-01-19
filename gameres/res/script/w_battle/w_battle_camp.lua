@@ -149,6 +149,18 @@ function p:GetNotDeadFighterCount()
     return lCount;
 end
 
+function p:HasTurn()
+	local lHasTurn = false;
+	for k,v in ipairs(self.fighters) do
+		if (v.HasTurn == true) then --可以行动
+			lHasTurn = true;
+			break;
+		end;
+	end;
+	
+	return lHasTurn;
+end;
+
 --判断是否所有的全死了
 function p:isAllDead()
 	local lisAllDead = true;

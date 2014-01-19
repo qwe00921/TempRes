@@ -129,70 +129,22 @@ function p:tar_hurtEnd()
 		WriteCon( "**********Wring! targetTurn GetHitTimes~=0 need die id="..tostring(targerFighter:GetId()));
 		targerFighter:standby();
 	elseif targerFighter.Hp <= 0 then
-		if self.canRevive == true then  --可复活
-			targerFighter.isDead = false;
-			targerFighter.canRevive = false;
-			
-			targerFighter:standby();
-
-			local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.revive" );
-			seqTarget:AddCommand( cmdf );
-			local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
-			seqTarget:AddCommand( cmdC );		
-			
-			--local batch = w_battle_mgr.GetBattleBatch(); 
+		if targerFighter.canRevive == true then --复活
+			local cmdC = w_battle_mgr.setFighterRevive(targerFighter);
+			local batch = w_battle_mgr.GetBattleBatch(); 
 			local seqDie = batch:AddSerialSequence();
-			local cmdRevive = targerFighter:cmdLua("tar_ReviveEnd",  self.id, tostring(self.camp), seqDie);
+			local cmdDieEnd = targerFighter:cmdLua("tar_ReviveEnd",  self.id, tostring(self.camp), seqDie);
 			seqDie:SetWaitEnd( cmdC ); 
-		else	--怪死了
-			--判断是否要切换怪物目标
-			if targerFighter.isDead == true then
-				WriteCon( "*********************Wring! tar_hurtEnd can not in die double  tarid="..tostring(targerFighter:GetId()) );	
-				return ;
-			end;
-			targerFighter:Die();  --标识死亡
-			WriteCon( "tar_hurtEnd tar_die tarid="..tostring(targerFighter:GetId()) );
-			if(self.camp == W_BATTLE_ENEMY) then  --受击的是怪物
-			    self:reward(); --怪物死亡掉装备
-				if w_battle_mgr.LockEnemy == true then  --锁定目标
-					if(w_battle_mgr.PVEEnemyID == targerFighter:GetId()) then  --当前死掉的怪物是正在被锁定的怪物
-						if w_battle_mgr.enemyCamp:GetNotDeadFighterCount() > 0 then --可换个怪物
-							w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
-							w_battle_mgr.SetLockAction(w_battle_mgr.PVEEnemyID);
-							--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
-						else  --没有活着的怪物可选
-						   w_battle_mgr.isCanSelFighter = false;
-						end
-					end;
-				else --未锁定目标
-					local lcount = w_battle_mgr.enemyCamp:GetNotDeadFighterCount();
-					if lcount == 1 then
-						w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstNotDeadFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标
-						w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID);
-					elseif lcount > 1 then						
-						local lFighter = w_battle_mgr.enemyCamp:FindFighter(w_battle_mgr.PVEEnemyID);
-						if lFighter ~= nil then
-							w_battle_pve.SetHp(lFighter);
-						end;
-					end
-					--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
-				end;		
-			else  --受击的是玩家,在攻击时就已选择了全部目标无需处理
-				
-			end;
 			
-			--[[
-			if targerFighter.m_kShadow ~= nil then
-				local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
-				self.seqTarget:AddCommand( cmdf );
+		else  --死了
+			local cmdC = w_battle_mgr.setFighterDie(targerFighter);
+			if cmdC ~= nil then	
+				local batch = w_battle_mgr.GetBattleBatch(); 			
+				local seqDie = batch:AddSerialSequence();
+				local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);
+				seqDie:SetWaitEnd( cmdC ); 
 			end;
-			]]--
-			local cmdC = createCommandEffect():AddActionEffect( 1, targerFighter:GetNode(), "lancer_cmb.die" );
-			seqTarget:AddCommand( cmdC );				
-			local seqDie = batch:AddSerialSequence();
-			local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);
-			seqDie:SetWaitEnd( cmdC ); 
-		end;
+		end;		
 	end;
 
 	
