@@ -555,7 +555,7 @@ function p.UseItem(pItemPos, pHeroPos)
 				cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmdBuff );		
-				w_battle_pve.SetHeroCardAttr(v:GetId(), v);
+				w_battle_pve.SetHeroCardAttr(fighter:GetId(), fighter);
 			end;
 		end
 	end

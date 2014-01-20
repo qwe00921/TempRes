@@ -681,11 +681,11 @@ p.targetCardList = {
 
 p.useItemData= {}
 p.ItemList = {
-	{item_id = 101001, num = 9, location = 1},
-	{item_id = 101003, num = 5, location = 2},
-	{item_id = 101026, num = 6, location = 3},
-	{item_id = 101004, num = 0, location = 4},
-	{item_id = 101005, num = 0, location = 5},
+	{item_id = 101001, num = 0, location = 1},
+	{item_id = 101001, num = 0, location = 2},
+	{item_id = 101001, num = 0, location = 3},
+	{item_id = 101001, num = 0, location = 4},
+	{item_id = 101001, num = 0, location = 5},
 }
 
 p.Reward= {
@@ -839,6 +839,26 @@ function p.initFighterDB(fighterInfo,IsHero)
 	
 end;
 
+function p.initItem(pItemLst)
+	--local litemLst = {}
+	p.ItemList = {}
+	for i=1,5 do
+		local lrecord = {item_id = 101001, num = 0, location = i}
+		p.ItemList[i] = lrecord;
+	end
+	
+	for k,v in ipairs(pItemLst) do
+		local pos = v.location;
+		if pos > 0 then
+			local lrecord = p.ItemList[pos];
+			lrecord.item_id = v.item_id
+			lrecord.num = v.num 
+			lrecord.location = v.location
+		end;
+	end
+	--return litemLst;
+end;
+
 --初使化对战数据
 function p.Init( battleDB )
     if battleDB == nil then
@@ -846,15 +866,20 @@ function p.Init( battleDB )
     end
 	
 	p.useItemData = {}
+	
 	--携带的物品列表
-	p.ItemList = battleDB.fightinfo.Item;
+	if battleDB.fightinfo.Item ~= nil then
+		p.initItem(battleDB.fightinfo.Item);
+	else
+		p.ItemList = {};
+	end;
     p.initUseItem(p.ItemList);
 	
     --掉落的物品
 	p.Drop = battleDB.fightinfo.Drop;
     
 	--玩家列表
-	--p.playerCardList = battleDB.fightinfo.Player; 
+	p.playerCardList = battleDB.fightinfo.Player; 
 	for i=1,#p.playerCardList do
 		p.initFighterDB(p.playerCardList[i],true);
 	end;

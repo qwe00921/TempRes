@@ -548,7 +548,7 @@ end
 
 function p:UseItem(pId)
 	local lResult = true;
-	local subtype = tonumber(SelectCell( T_MATERIAL, pId, "subtype" ));
+	local subtype = tonumber(SelectCell( T_MATERIAL, pId, "sub_type" ));
 	local effect_type = tonumber(SelectCell( T_MATERIAL, pId, "effect_type" ));
 	local effect_value = tonumber(SelectCell( T_MATERIAL, pId, "effect_value" ));
 

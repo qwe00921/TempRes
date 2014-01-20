@@ -691,7 +691,7 @@ function p.UseItem( uiNode )
 	end
 	
 	local tid = w_battle_mgr.GetItemCanUsePlayer( id );
-	if tid ~= nil and type(tid) == "table" and #tid > 0 then
+	if tid ~= nil and type(tid) == "table" then
 		p.useitemMask:SetVisible( true );
 		w_battle_useitem.ShowUI( itemid, id );
 	end
