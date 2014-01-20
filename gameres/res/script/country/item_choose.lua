@@ -18,7 +18,7 @@ p.tempMaterial = {};
 		
 local ui = ui_item_choose;
 
-local MAX_NUM = 10;--一类药水最大数量
+local MAX_NUM = 5;--一类药水最大数量
 
 local NAME_INDEX = 1;
 local NAMEBG_INDEX = 2;
@@ -51,6 +51,7 @@ function p.ShowUI( battle_items,missionId,stageId,nowTeamId )
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		--[[
 		if battle_items ~= nil then
 --			local flag = country_collect.SendCollectMsg();
 --			if not flag then
@@ -59,6 +60,7 @@ function p.ShowUI( battle_items,missionId,stageId,nowTeamId )
 		else
 			p.RequestBattleItem();
 		end
+		--]]
 		return;
 	end
 	
@@ -330,6 +332,18 @@ function p.ClearPostion()
 	battle_item.item_id = tonumber(battle_item.item_id) or 0;
 	battle_item.num = tonumber(battle_item.num) or 0;
 	
+	local cache = msg_cache.msg_material_list or {};
+	local materials = cache.Material;
+	if materials == nil then
+		return;
+	end
+	
+	local item = p.GetMaterialData( materials, battle_item.item_id );
+	if item == nil then
+		table.insert( materials, { id = 0, user_id = GetUID() or 0, material_id = tonumber(battle_item.item_id), num = 0} );
+		--WriteConErr( tostring(materials[#materials].material_id) );
+	end
+	
 	p.tempMaterial[battle_item.item_id] = p.tempMaterial[battle_item.item_id] or 0;
 	p.tempMaterial[battle_item.item_id] = p.tempMaterial[battle_item.item_id] + battle_item.num;
 	
@@ -372,6 +386,8 @@ function p.ChooseItemCallBack( itemid, num )
 		local serverNum = tonumber(item.num) or 0;
 		local clientNum = p.tempMaterial[tonumber(itemid)] or 0;
 		num = math.min(num, clientNum+serverNum);
+	else
+		table.insert( materials, { id = 0, user_id = GetUID() or 0, material_id = tonumber(itemid), num = 0} );
 	end
 	
 	p.tempMaterial[tonumber(itemid)] = p.tempMaterial[tonumber(itemid)] or 0;
