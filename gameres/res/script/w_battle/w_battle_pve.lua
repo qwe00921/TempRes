@@ -729,7 +729,7 @@ end
 	E_DROP_BLUESOUL = 2;	--蓝魂
 	E_DROP_HPBALL = 3;	--HP球
 	E_DROP_SPBALL = 4;	--SP球
-	E_DROP_ITEM = 5;	--道具
+	E_DROP_MATERIAL = 5;	--道具
 	E_DROP_CARD = 6;	--卡片
 	E_DROP_EQUIP = 7;	--装备
 --]]
@@ -754,7 +754,7 @@ function p.MonsterDrop( list )
 				drop:Init( p.battleLayer, list[i][1], list[i][4] );
 				table.insert( p.dropList, drop );
 			end
-			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ) );
+			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ), list[i][4] );
 		end
 	end
 end
