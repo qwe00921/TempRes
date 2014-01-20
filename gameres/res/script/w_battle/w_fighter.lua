@@ -548,17 +548,21 @@ end
 
 function p:UseItem(pId)
 	local lResult = true;
-	local subtype = tonumber(SelectCell( T_MATERIAL, pId, "subtype" ));
+	local subtype = tonumber(SelectCell( T_MATERIAL, pId, "sub_type" ));
 	local effect_type = tonumber(SelectCell( T_MATERIAL, pId, "effect_type" ));
 	local effect_value = tonumber(SelectCell( T_MATERIAL, pId, "effect_value" ));
 
 	if subtype == W_MATERIAL_SUBTYPE1 then  --HP>0µÄ
 		if self:IsAlive() == true then
-			self.nowlife = self.nowlife + effect_value;
-			if self.nowlife > self.maxHp then
-				self.nowlife = self.maxHp;
-			end		
-			self.Hp = self.nowlife;
+			local lval = 0
+			if effect_type == 1 then
+				lval = math.modf(self.maxHp * effect_value / 100);
+			elseif effect_type == 2 then
+				lval = effect_value;
+			end;
+			
+			self:AddLife(lval);
+			self:AddShowLife(lval);
 		else
 			lResult = false;
 		end
@@ -614,7 +618,7 @@ function p:RemoveBuff(val)
 end;
 
 function p:UseHpBall(pVal)
---[[	local addHp = math.modf(self.maxHp * pVal / 100);
+	local addHp = math.modf(self.maxHp * pVal / 100);
 	self.Hp = self.Hp +addHp;
 	if self.Hp > self.maxHp then
 		self.Hp = self.maxHp;
@@ -624,7 +628,13 @@ function p:UseHpBall(pVal)
 	if self.nowlife > self.maxHp then
 		self.nowlife = self.maxHp 
 	end 
-	]]--
+	w_battle_mgr.HpBallNum = w_battle_mgr.HpBallNum - 1
+	if w_battle_mgr.HpBallNum < 0 then
+		WriteCon("Error HpBallNum < 0");
+	else
+		WriteCon("HpBallNum ="..tostring(w_battle_mgr.HpBallNum));
+	end
+	w_battle_mgr.checkPickEnd();
 end;
 
 function p:UseSpBall(pVal)
@@ -632,6 +642,13 @@ function p:UseSpBall(pVal)
 	if self.Sp > self.maxSp then
 		self.Sp = self.maxSp;
 	end
+	w_battle_mgr.SpBallNum = w_battle_mgr.SpBallNum - 1
+	if w_battle_mgr.SpBallNum < 0 then
+		WriteCon("Error SpBallNum < 0");
+	else
+		WriteCon("SpBallNum ="..tostring(w_battle_mgr.SpBallNum));
+	end
+	w_battle_mgr.checkPickEnd();
 end;
 
 function p:SetOldPos()

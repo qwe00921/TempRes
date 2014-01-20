@@ -223,17 +223,18 @@ function p.ShowUI()
 		return;
 	end
 
-	local layer = createCardBattleUILayer();
+	local layer = createNDUIDialog();
     if layer == nil then
         return false;
     end
 
+	layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
-	GetUIRoot():AddChild( layer );
+	GetUIRoot():AddDlg( layer );
 
-    LoadUI("n_battle_pve.xui", layer, nil);
+    LoadDlg("n_battle_pve.xui", layer, nil);
 
 	layer:SetFramePosXY(0,0);
 	p.battleLayer = layer;
@@ -691,7 +692,7 @@ function p.UseItem( uiNode )
 	end
 	
 	local tid = w_battle_mgr.GetItemCanUsePlayer( id );
-	if tid ~= nil and type(tid) == "table" and #tid > 0 then
+	if tid ~= nil and type(tid) == "table" then
 		p.useitemMask:SetVisible( true );
 		w_battle_useitem.ShowUI( itemid, id );
 	end
@@ -729,18 +730,19 @@ end
 --{{droptype1, num1, position1, param1},{droptype2, num2, position2, param2},……}
 --droptype为掉落类型
 --[[
-	E_DROP_MONEY = 1;	--金币
-	E_DROP_BLUESOUL = 2;	--蓝魂
-	E_DROP_HPBALL = 3;	--HP球
-	E_DROP_SPBALL = 4;	--SP球
-	E_DROP_MATERIAL = 5;	--道具
-	E_DROP_CARD = 6;	--卡片
-	E_DROP_EQUIP = 7;	--装备
+	E_DROP_HPBALL = 1;
+	E_DROP_SPBALL = 2;
+	E_DROP_MONEY = 3;
+	E_DROP_BLUESOUL = 4;
+	E_DROP_MATERIAL = 5;
+	E_DROP_CARD = 6;
+	E_DROP_EQUIP = 7;
 --]]
 --num为掉落数量
 --position掉落物品的怪物位置
 --param为额外的参数，当掉落类型为道具、卡片、装备时，表示掉落的类型ID，可以为空
 function p.MonsterDrop( list )
+	--WriteConWarning( FormatTableToJson(list) );
 	if list == nil or #list == 0 then
 		return;
 	end
@@ -755,9 +757,9 @@ function p.MonsterDrop( list )
 			end
 			if drop == nil then
 				drop = w_drop:new();
-				drop:Init( p.battleLayer, list[i][1], list[i][4] );
 				table.insert( p.dropList, drop );
 			end
+			drop:Init( p.battleLayer, list[i][1], list[i][4] );
 			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ), list[i][4] );
 		end
 	end

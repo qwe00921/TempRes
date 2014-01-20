@@ -51,6 +51,15 @@ p.spballval = 0;  --sp球恢复
 p.MissionDropTab = {};
 p.buffTimerID = nil;
 
+p.HpBallNum = 0;
+p.SpBallNum = 0;
+p.IsPickEnd = false;
+p.PickEndEvent = nil;
+
+p.dropHpBall = 0;
+p.dropSpBall = 0;
+
+
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
 	p.enemyCamp = nil;			--敌对阵营
@@ -77,6 +86,11 @@ function p.init()
 	p.MoreDamageTimes = 0;	
 	p.hpballval = tonumber(SelectRowInner(T_DROP_VAL,"drop_type",1,"value") );
 	p.spballval = tonumber(SelectRowInner(T_DROP_VAL,"drop_type",2,"value") );
+	
+	p.HpBallNum = 0;
+	p.SpBallNum = 0;
+	p.IsPickEnd = false;
+	p.PickEndEvent = nil;
 end;
 
 
@@ -198,7 +212,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 
 	if atkFighter.Sp == 100 then
 		if IsMonster ~= true then
-			return p.SetPVESkillAtkID(atkID);
+		--	return p.SetPVESkillAtkID(atkID);
 		end;
 	end;
 
@@ -278,12 +292,12 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
     end;
 	
     if targetID == nil then
-      WriteCon( "Error! SetPVEAtkID targerID is nil");
+      WriteCon( "Error! SetPVESkillAtkID targerID is nil");
 	  return false;
     end; 
 
     if atkFighter == nil then
-      WriteCon( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
+      WriteCon( "Error! SetPVESkillAtkID atkFighter is nil! id:"..tostring(atkID));
 	  return false;
     end;
 
@@ -294,7 +308,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	   targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targetID ) );
     end;
     if targetFighter == nil then
-       WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targetID));
+       WriteCon( "Error! SetPVESkillAtkID targetFighter is nil! id:"..tostring(targetID));
 	   return false;
     end;
 
@@ -555,7 +569,7 @@ function p.UseItem(pItemPos, pHeroPos)
 				cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmdBuff );		
-				w_battle_pve.SetHeroCardAttr(v:GetId(), v);
+				w_battle_pve.SetHeroCardAttr(fighter:GetId(), fighter);
 			end;
 		end
 	end
@@ -603,7 +617,11 @@ end;
 --我方行动结束
 function p.HeroTurnEnd()
 	WriteCon( "HeroTurnEnd");	
-	w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
+	p.PickEndEvent = p.CheckEnemyAllDied;
+	p.IsPickEnd = false;
+	p.dropHpBall = 0;
+	p.dropSpBall = 0;
+	w_battle_pve.PickStep(p.CanPickEnd);  --拾取掉落奖励,并回调检查敌方是否全死
 end;
 
 --敌方BUFF开始
@@ -720,7 +738,11 @@ function p.EnemyBuffTurnEnd()
 	WriteCon( "EnemyBuffTurnEnd");	
 	p.atkCampType = W_BATTLE_ENEMY 
 	if p.EnemyBuffDie == true then --有死亡发生
-		w_battle_pve.PickStep(p.CheckEnemyAllDied);  --拾取掉落奖励,并回调检查敌方是否全死
+		p.PickEndEvent = p.CheckEnemyAllDied;
+		p.IsPickEnd = false;
+		p.dropHpBall = 0;
+		p.dropSpBall = 0;
+		w_battle_pve.PickStep(p.CanPickEnd);  --拾取掉落奖励,并回调检查敌方是否全死
 	else
 	   p.CheckEnemyAllDied();
 	end;
@@ -1435,7 +1457,11 @@ function p.checkTurnEnd()
 					p.HeroTurnEnd();  --所有英雄均已行动  
 				end;
 			else  --所有敌人全死了
-				w_battle_pve.PickStep(w_battle_mgr.FightWin); --捡东西
+				p.PickEndEvent = p.FightWin;
+				p.IsPickEnd = false;
+				p.dropHpBall = 0;
+				p.dropSpBall = 0;
+				w_battle_pve.PickStep(p.CanPickEnd); --捡东西
 			end
 		else
 			--WriteCon( "**********Error ! Enemy checkTurnEnd************ ");
@@ -1648,3 +1674,32 @@ function p.UpdateBuff()
 	--updateCampBuff(p.heroCamp);
 end
 
+function p.AddBall(ltype,num)
+	if ltype == E_DROP_HPBALL then
+		p.HpBallNum = p.HpBallNum + num;
+		local lst = string.format("HpBallNumAdd=%d HpBallNum=%d", num,p.HpBallNum)
+		WriteCon(lst);
+	elseif ltype == E_DROP_SPBALL then
+		p.SpBallNum = p.SpBallNum + num
+		local lst = string.format("SpBallNumAdd=%d SpBallNum=%d", num,p.SpBallNum)
+		WriteCon(lst);
+	end;
+end;
+
+function p.CanPickEnd()
+	p.IsPickEnd	= true;
+	p.checkPickEnd()
+end;
+
+function p.checkPickEnd()
+	local lresult = false;
+	if (p.IsPickEnd == true) and (p.HpBallNum <= 0) and (p.SpBallNum <= 0) then
+		lresult = true
+	end
+    if lresult == true then
+		if p.PickEndEvent ~= nil then
+			p.PickEndEvent();
+		end;
+	end;
+	
+end

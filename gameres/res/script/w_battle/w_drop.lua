@@ -145,6 +145,13 @@ function p:Pick( pTargetNode, pos )
 			seqLua:AddCommand( cmdLua );
 		end
 		seqLua:SetWaitEnd( cmd );
+		if self.nType == E_DROP_HPBALL then
+			w_battle_mgr.dropHpBall = w_battle_mgr.dropHpBall + 1
+			WriteCon("drop.lua HpBallNum="..tostring(w_battle_mgr.dropHpBall))
+		elseif self.nType == E_DROP_SPBALL then
+			w_battle_mgr.dropSpBall = w_battle_mgr.dropSpBall + 1
+			WriteCon("drop.lua SpBallNum="..tostring(w_battle_mgr.dropSpBall))
+		end
 	end
 
 	return cmd;

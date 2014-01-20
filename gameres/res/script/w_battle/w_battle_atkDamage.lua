@@ -241,11 +241,13 @@ function p.getDropItem(dropList, pos, atktype)
 	
 	if lhpnum > 0 then
 		dropList[#dropList + 1] = {E_DROP_HPBALL , lhpnum, pos};
+		w_battle_mgr.AddBall(E_DROP_HPBALL,lhpnum);
 	--	WriteCon("Hp ="..tostring(lhpnum));
 	end
 	
 	if lspnum > 0 then
 		dropList[#dropList + 1] = {E_DROP_SPBALL , lspnum, pos};
+		w_battle_mgr.AddBall(E_DROP_SPBALL,lspnum);
 	--	WriteCon("Sp ="..tostring(lspnum));
 	end
 	
