@@ -143,3 +143,27 @@ lancer.show
 lancer.country_collect_4
 lancer.fadeout
 
+[country_collect_5]
+@type=0
+lancer.show
+lancer.country_collect_5
+lancer.fadeout
+
+[country_collect_6]
+@type=0
+lancer.show
+lancer.country_collect_6
+lancer.fadeout
+
+[country_collect_7]
+@type=0
+lancer.show
+lancer.country_collect_7
+lancer.fadeout
+
+[country_collect_8]
+@type=0
+lancer.show
+lancer.country_collect_8
+lancer.fadeout
+

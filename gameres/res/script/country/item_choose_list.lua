@@ -57,8 +57,10 @@ function p.ShowItems()
 	for i = 1, #materials do
 		local material = materials[i];
 		local material_id = material.material_id or 0;
+		local num = tonumber(material.num) or 0;
+		local clientNum = item_choose.tempMaterial[tonumber(material_id)] or 0;
 		local nType = tonumber( SelectCell( T_MATERIAL, material_id, "type" ) ) or 0;
-		if nType == 1 then
+		if nType == 1 and num + clientNum > 0 then
 			table.insert( p.itemList, material );
 		end
 	end

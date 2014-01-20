@@ -698,6 +698,10 @@ function p.UseItem( uiNode )
 	uiNode:SetEnabled( true );
 end
 
+function p.EndUseItem()
+	p.useitemMask:SetVisible( false );	
+end
+
 --…Ë÷√π•ª˜
 function p.SetAtk( uiNode )
 	local id = uiNode:GetId();

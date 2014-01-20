@@ -10,12 +10,12 @@ p.index = nil;
 p.posList = nil;
 
 local role = {
-	{ ui.ID_CTRL_BUTTON_TARGET1, ui.CTRL_PICTURE_TARGET1},
-	{ ui.ID_CTRL_BUTTON_TARGET2, ui.CTRL_PICTURE_TARGET2},
-	{ ui.ID_CTRL_BUTTON_TARGET3, ui.CTRL_PICTURE_TARGET3},
-	{ ui.ID_CTRL_BUTTON_TARGET4, ui.CTRL_PICTURE_TARGET4},
-	{ ui.ID_CTRL_BUTTON_TARGET5, ui.CTRL_PICTURE_TARGET5},
-	{ ui.ID_CTRL_BUTTON_TARGET6, ui.CTRL_PICTURE_TARGET6},
+	{ ui.ID_CTRL_BUTTON_POS1, ui.ID_CTRL_PICTURE_POS1 },
+	{ ui.ID_CTRL_BUTTON_POS2, ui.ID_CTRL_PICTURE_POS2 },
+	{ ui.ID_CTRL_BUTTON_POS3, ui.ID_CTRL_PICTURE_POS3 },
+	{ ui.ID_CTRL_BUTTON_POS4, ui.ID_CTRL_PICTURE_POS4 },
+	{ ui.ID_CTRL_BUTTON_POS5, ui.ID_CTRL_PICTURE_POS5 },
+	{ ui.ID_CTRL_BUTTON_POS6, ui.ID_CTRL_PICTURE_POS6 },
 };
 
 function p.ShowUI( itemid, index )
@@ -58,30 +58,30 @@ end
 
 function p.RefreshUI( )
 	local itempic = GetImage( p.layer , ui.ID_CTRL_PICTURE_ITEMPIC );
-	local picData = GetPictureByAni( SelectCell( T_ITEM, p.itemid, "item_pic" ) or "", 0 );
+	local picData = GetPictureByAni( SelectCell( T_MATERIAL, p.itemid, "item_pic" ) or "", 0 );
 	if itempic and picData then
 		itempic:SetPicture( picData );
 	end
 	
 	local itemname = GetLabel( p.layer, ui.ID_CTRL_TEXT_ITEMNAME );
-	itemname:SetText( SelectCell( T_ITEM, p.itemid, "name" ) or "" );
+	itemname:SetText( SelectCell( T_MATERIAL, p.itemid, "name" ) or "" );
 	
 	local iteminfo = GetLabel( p.layer, ui.ID_CTRL_TEXT_ITEMINFO );
-	iteminfo:SetText( SelectCell( T_ITEM, p.itemid, "description" ) or "" );
+	iteminfo:SetText( SelectCell( T_MATERIAL, p.itemid, "description" ) or "" );
 	
 	local itemnum = GetLabel( p.layer, ui.ID_CTRL_TEXT_17 );
 	
 	local itemList = w_battle_db_mgr.GetItemList() or {};
 	local item = itemList[p.index] or {};
 	if itemnum and item then
-		itemnum:SetText( tostring( item.Num ) );
+		itemnum:SetText( tostring( item.num ) );
 	end
 	
 	p.ShowCanUseItemRole();
 end
 
 function p.ShowCanUseItemRole()
-	p.posList = w_battle_mgr.GetItemCanUsePlayer( id );
+	p.posList = w_battle_mgr.GetItemCanUsePlayer( p.index );
 	for i = 1, 6 do
 		local btn = GetButton( p.layer, role[i][1] );
 		if btn then
@@ -90,11 +90,13 @@ function p.ShowCanUseItemRole()
 		end
 		
 		local image = GetImage( p.layer, role[i][2] );
-		local bflag = false;
-		for _, v in pairs( p.posList ) do
-			if v == i then
-				bflag = true;
-				break;
+		local bflag = true;
+		if p.posList ~= nil then
+			for _, v in pairs( p.posList ) do
+				if v == i then
+					bflag = false;
+					break;
+				end
 			end
 		end
 		image:SetVisible( bflag );
@@ -134,6 +136,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			WriteCon( "**关闭物品使用菜单**" );
 			p.HideUI();
 			p.CloseUI();
+			w_battle_pve.EndUseItem();
 		elseif p.CheckUseItem( tag ) then
 			WriteCon( "指定使用物品" );
 			p.UseItem( uiNode:GetId() );
@@ -142,11 +145,13 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 end
 
 function p.UseItem( index )
-	p.posList = w_battle_mgr.GetItemCanUsePlayer( id );
-	for _, v in pairs(p.posList) do
-		if v == index then
-			w_battle_mgr.UseItem( p.index, index );
-			break;
+	p.posList = w_battle_mgr.GetItemCanUsePlayer( p.index );
+	if p.posList ~= nil then
+		for _, v in pairs(p.posList) do
+			if v == index then
+				w_battle_mgr.UseItem( p.index, index );
+				break;
+			end
 		end
 	end
 end
