@@ -137,7 +137,7 @@ function p:Pick( pTargetNode, pos )
 	
 	if pos ~= nil then
 		local seqLua = batch:AddSerialSequence();
-		local cmdLua = createCommandLua():SetCmd( "PickEnd", pTargetNode:GetTag(), self.nType, "" );
+		local cmdLua = createCommandLua():SetCmd( "PickEnd", pos, self.nType, "" );
 		if cmdLua ~= nil then
 			seqLua:AddCommand( cmdLua );
 		end

@@ -64,6 +64,10 @@ p.tempList = {};
 
 p.CanUseItem = true;
 
+p.heroList = nil;
+p.sortList = nil;
+p.firstHp = true;
+
 local BTN_INDEX = 1;
 local ATTR_INDEX = 2;
 local NAME_INDEX = 3;
@@ -381,9 +385,18 @@ function p.RefreshUI(pIsRoundStar)
 				end
 				
 				if flag then
+					local isVisible = ctrllers[DAMAGE_INDEX]:IsVisible();
+					
 					p.SetVisible( ctrllers, true );
 					ctrllers[MASK_INDEX]:SetVisible( false );
 					ctrllers[BTN_INDEX]:SetEnabled( true );
+					
+					if pIsRoundStar then
+						ctrllers[DAMAGE_INDEX]:SetVisible( isVisible );
+					else
+						ctrllers[DAMAGE_INDEX]:SetVisible( false );
+					end
+					
 					local data = cardList[index];
 					
 					local path = SelectRowInner( T_CHAR_RES, "card_id", data.CardID, "head_pic" );
@@ -409,7 +422,7 @@ function p.RefreshUI(pIsRoundStar)
 						ctrllers[ATTR_INDEX]:SetPicture( attrpic );
 					end
 					
-					if tonumber(data.Hp) == 0 then
+					if not (tonumber(data.Hp) > 0 and data.HasTurn) then
 						ctrllers[MASK_INDEX]:SetVisible( true );
 						ctrllers[BTN_INDEX]:SetVisible( false );
 					end
@@ -428,7 +441,7 @@ function p.RefreshUI(pIsRoundStar)
 			local ctrllers = p.useItemList[i];
 			local item = itemList[i];
 			if ctrllers ~= nil then
-				if item ~= nil then
+				if item ~= nil and item.item_id ~= 0 and item.num ~= 0 then
 					p.SetVisible( ctrllers, true );
 					
 					local name = SelectCell( T_MATERIAL, item.item_id, "name" );	
@@ -496,7 +509,7 @@ function p.SetHeroCardAttr( pos, fighter )
 		ctrllers[HPEXP_INDEX]:SetValue( 0, tonumber( fighter.maxHp ), tonumber( fighter.Hp ) );
 		ctrllers[HPNUM_INDEX]:SetText( string.format( "%d/%d", tonumber( fighter.Hp ), tonumber( fighter.maxHp ) ) );
 		
-		if tonumber(fighter.Hp) == 0 then
+		if tonumber(fighter.Hp) <= 0 then
 			ctrllers[MASK_INDEX]:SetVisible( true );
 			ctrllers[BTN_INDEX]:SetVisible( false );
 		end
@@ -755,8 +768,9 @@ function p.BeginPick()
 		end
 		do return end;
 	end
-
+	
 	p.Index = 1;
+	p.firstHp = true;
 	SetTimer(p.Pick , 0.02 );
 end
 
@@ -771,14 +785,51 @@ function p.Pick( nTimerId )
 		if p.pickCallBack then
 			p.pickCallBack();
 			--p.pickCallBack = nil;
+			p.sortList = nil;
+			p.firstHp = true;
 		end
 		
 		do return end;
 	end
 	
+	p.heroList = p.heroList or w_battle_mgr.getHeroFighterLst();
+	if p.sortList == nil then
+		p.sortList = CopyTable( p.heroList );
+	end
+	
+	local aliveList = {};
+	local hurtList = {};
+	for i = 1, #p.sortList do
+		local temp = p.sortList[i];
+		if temp.Hp ~= 0 then
+			table.insert( aliveList, temp );
+		end
+		if temp.Hp > 0 and temp.Hp < temp.maxHp then
+			table.insert( hurtList, temp );
+		end
+	end
+	table.sort( hurtList, function (a, b) return a.Hp < b.Hp end );
+
 	if drop:GetImageNode():IsVisible() then
-		if drop:GetType() == E_DROP_HPBALL or drop:GetType() == E_DROP_SPBALL then
-			local pos = math.random(1, 5);
+		if drop:GetType() == E_DROP_HPBALL then
+			if #hurtList == 0 then
+				local rand = #aliveList ~= 0 and math.random(1, #aliveList) or math.random(1, #p.heroList);
+				local pos = #aliveList ~= 0 and aliveList[rand].Position or p.heroList[rand].Position;
+				drop:Pick( GetPlayer( p.battleLayer , heroUIArray[pos] ), pos );
+			else
+				local rand = math.random( 1, #hurtList );
+				if p.firstHp then
+					p.firstHp = false;
+					rand = 1;
+				end
+				local pos = hurtList[rand].Position;
+				
+				drop:Pick( GetPlayer( p.battleLayer , heroUIArray[pos] ), pos );
+			end
+		elseif drop:GetType() == E_DROP_SPBALL then
+			local rand = #aliveList ~= 0 and math.random(1, #aliveList) or math.random(1, #p.heroList);
+			local pos = #aliveList ~= 0 and aliveList[rand].Position or p.heroList[rand].Position;
+			
 			drop:Pick( GetPlayer( p.battleLayer , heroUIArray[pos] ), pos );
 		else
 			drop:Pick( p.boxImage );
