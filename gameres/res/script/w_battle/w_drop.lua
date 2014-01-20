@@ -108,9 +108,10 @@ function p:Drop(pTargetNode, param)
 
 	local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.monster_drop" );
 	local varEnv = cmd:GetVarEnv();
-	varEnv:SetFloat( "$1", math.random(-30, 30) );
-	varEnv:SetFloat( "$2", math.random( -5, 5 ) );
-	varEnv:SetFloat( "$3", math.random( 10, 30) );
+	varEnv:SetFloat( "$1", math.random(-40, 40) );
+	varEnv:SetFloat( "$2", math.random(-10, 10) );
+	--varEnv:SetFloat( "$3", math.random( 10, 30) );
+	varEnv:SetFloat( "$3", math.random(40,70) );
 	
 	return cmd;
 end

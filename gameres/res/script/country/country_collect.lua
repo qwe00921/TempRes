@@ -204,7 +204,8 @@ function p.CollectAnimation( node, result )
 	local picData = nil;
 	
 	if result.type == "material" then
-		picData = GetPictureByAni( "w_drop.hpball", 0 );
+		--picData = GetPictureByAni( "w_drop.hpball", 0 );
+		picData = GetItemPic( result.id, G_ITEMTYPE_MATERIAL );
 	elseif result.type == "gold" then
 		picData = GetPictureByAni( "w_drop.money", 0 );
 	elseif result.type == "soul" then
