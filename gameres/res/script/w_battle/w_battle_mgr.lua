@@ -212,7 +212,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 
 	if atkFighter.Sp == 100 then
 		if IsMonster ~= true then
-			return p.SetPVESkillAtkID(atkID);
+		--	return p.SetPVESkillAtkID(atkID);
 		end;
 	end;
 
@@ -292,12 +292,12 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
     end;
 	
     if targetID == nil then
-      WriteCon( "Error! SetPVEAtkID targerID is nil");
+      WriteCon( "Error! SetPVESkillAtkID targerID is nil");
 	  return false;
     end; 
 
     if atkFighter == nil then
-      WriteCon( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
+      WriteCon( "Error! SetPVESkillAtkID atkFighter is nil! id:"..tostring(atkID));
 	  return false;
     end;
 
@@ -308,7 +308,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	   targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targetID ) );
     end;
     if targetFighter == nil then
-       WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targetID));
+       WriteCon( "Error! SetPVESkillAtkID targetFighter is nil! id:"..tostring(targetID));
 	   return false;
     end;
 
