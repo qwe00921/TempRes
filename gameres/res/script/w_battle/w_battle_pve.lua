@@ -742,7 +742,7 @@ end
 --position掉落物品的怪物位置
 --param为额外的参数，当掉落类型为道具、卡片、装备时，表示掉落的类型ID，可以为空
 function p.MonsterDrop( list )
-	WriteConWarning( FormatTableToJson(list) );
+	--WriteConWarning( FormatTableToJson(list) );
 	if list == nil or #list == 0 then
 		return;
 	end
@@ -757,9 +757,9 @@ function p.MonsterDrop( list )
 			end
 			if drop == nil then
 				drop = w_drop:new();
-				drop:Init( p.battleLayer, list[i][1], list[i][4] );
 				table.insert( p.dropList, drop );
 			end
+			drop:Init( p.battleLayer, list[i][1], list[i][4] );
 			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ), list[i][4] );
 		end
 	end
