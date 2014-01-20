@@ -177,7 +177,7 @@ function p.showRewardList(rewardList)
 				p.ShowRewardInfo( view, reward, rewardIndex );
 			end
 		end
-		list:AddView( view );
+		rewardListT:AddView( view );
 	end
 end
 
@@ -222,7 +222,7 @@ function p.ShowRewardInfo( view, reward, rewardIndex )
 		rewardNumText:SetText(tostring(rewardNum));
 	elseif rewardType == ITEM_TYPE_CARD then
 		rewardT = SelectRowInner(T_CHAR_RES,"card_id",rewardId);
-		picIndex = rewardT.hero_pic;
+		picIndex = rewardT.head_pic;
 	elseif rewardType == ITEM_TYPE_EQUIP then
 		rewardT = SelectRowInner(T_EQUIP,"id",rewardId);
 		picIndex = rewardT.item_pic;

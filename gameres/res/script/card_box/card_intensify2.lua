@@ -435,7 +435,8 @@ function p.OnSendCardDetail(cardUniqueId)
 	end;
 	
 	local param = string.format("&card_unique_id=%s",cardUniqueId)
-	SendReq("Equip","CardDetailShow",uid,param);		
+	SendReq("Equip","CardDetailShow",uid,param);
+	card_rein.ShowUI();
 	card_rein.ClearSelData();	
 end;	
 

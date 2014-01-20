@@ -18,4 +18,3 @@ p.ID_CTRL_BUTTON_PRO3					    = 28;
 p.ID_CTRL_BUTTON_PRO2					    = 26;
 p.ID_CTRL_BUTTON_PRO1					    = 25;
 p.ID_CTRL_BUTTON_ALL					     = 24;
-p.ID_CTRL_PICTURE_236					    = 236;

@@ -7,7 +7,7 @@ E_DROP_HPBALL = 1;
 E_DROP_SPBALL = 2;
 E_DROP_MONEY = 3;
 E_DROP_BLUESOUL = 4;
-E_DROP_ITEM = 5;
+E_DROP_MATERIAL = 5;
 E_DROP_CARD = 6;
 E_DROP_EQUIP = 7;
 
@@ -60,7 +60,7 @@ function p:InitImageNode()
 	end
 end
 
-function p:Drop(pTargetNode)
+function p:Drop(pTargetNode, param)
 	if self.parentNode == nil or pTargetNode == nil then
 		return;
 	end
@@ -79,9 +79,12 @@ function p:Drop(pTargetNode)
 	elseif self.nType == E_DROP_SPBALL then
 		imageData = GetPictureByAni( "w_drop.spball", 0 );
 		effectName = "w_drop.spball_effect";
-	elseif self.nType == E_DROP_ITEM then
+	elseif self.nType == E_DROP_MATERIAL then--µôÂäµÄÎª²ÄÁÏ
+		imageData = GetItemPic( param, G_ITEMTYPE_MATERIAL );
 	elseif self.nType == E_DROP_CARD then
+		imageData = GetItemPic( param, G_ITEMTYPE_CARD );
 	elseif self.nType == E_DROP_EQUIP then
+		imageData = GetItemPic( param, G_ITEMTYPE_EQUIP );
 	end
 	
 	if imageData == nil then
@@ -137,7 +140,7 @@ function p:Pick( pTargetNode, pos )
 	
 	if pos ~= nil then
 		local seqLua = batch:AddSerialSequence();
-		local cmdLua = createCommandLua():SetCmd( "PickEnd", pTargetNode:GetTag(), self.nType, "" );
+		local cmdLua = createCommandLua():SetCmd( "PickEnd", pos, self.nType, "" );
 		if cmdLua ~= nil then
 			seqLua:AddCommand( cmdLua );
 		end

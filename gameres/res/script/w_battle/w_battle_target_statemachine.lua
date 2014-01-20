@@ -137,7 +137,7 @@ function p:tar_hurtEnd()
 			seqDie:SetWaitEnd( cmdC ); 
 			
 		else  --À¿¡À
-			local cmdC = w_battle_mgr.setFighterDie(targerFighter);
+			local cmdC = w_battle_mgr.setFighterDie(targerFighter,self.camp);
 			if cmdC ~= nil then	
 				local batch = w_battle_mgr.GetBattleBatch(); 			
 				local seqDie = batch:AddSerialSequence();

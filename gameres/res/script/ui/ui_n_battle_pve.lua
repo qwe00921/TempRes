@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_n_battle_pve = {};
 local p =  ui_n_battle_pve;
+p.ID_CTRL_SKILL_ROLE					     = 210;
+p.ID_CTRL_SKILL_NAME					     = 208;
+p.ID_CTRL_SKILL_BG					       = 207;
 p.ID_CTRL_PICTURE_TARGET6				 = 144;
 p.ID_CTRL_PICTURE_TARGET5				 = 143;
 p.ID_CTRL_PICTURE_TARGET4				 = 142;

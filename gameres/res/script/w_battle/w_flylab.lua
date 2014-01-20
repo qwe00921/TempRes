@@ -72,7 +72,7 @@ function p:PlayLab( ltype )
 	else
 		lPicture = GetPictureByAni("effect.speak",0);
 	end
-    self.imageNode:SetScale(1.0f);
+    --self.imageNode:SetScale(1.0f);
     self.imageNode:SetPicture( lPicture );
     self.imageNode:ResizeToFitPicture();
     self.imageNode:SetScale(0.7f);

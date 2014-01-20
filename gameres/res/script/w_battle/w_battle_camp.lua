@@ -409,7 +409,7 @@ function p:AddFighters( uiArray, fighters )
 		
 		local f = w_fighter:new();
 		self.fighters[#self.fighters + 1] = f;
-		--self.fighters[tonumber(fighterInfo.Position)] = f;
+		--self.fighters[tonumber(fighterInfo.Position)] = f;%
 		
 		local pOldPos = node:GetCenterPos();
         

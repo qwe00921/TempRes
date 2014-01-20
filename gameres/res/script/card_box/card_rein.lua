@@ -14,7 +14,7 @@ p.nowExp = 0;
 local ui = ui_card_rein;
 
 function p.ShowUI(card_info)
-	
+	maininterface.HideUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		if card_info~= nil then
@@ -114,7 +114,8 @@ function p.InitUI(card_info)
 		local lCardResRowInfo= SelectRowInner( T_CHAR_RES, "card_id", card_info.CardID); --从表中获取卡牌详细信息			
 		local lHeadPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_231);	
 		lHeadPic:SetPicture(GetPictureByAni("w_battle.intensify_"..card_info.CardID,0));
-			
+		lHeadPic:SetScaleX(GetUIScale());
+		--lHeadPic:SetScaleX(2.0);
 		--名字 CTRL_TEXT_252
 		local lCardRowInfo= SelectRowInner( T_CARD, "id", card_info.CardID); --从表中获取卡牌详细信息					
 		local lTextName = GetLabel(p.layer, ui.ID_CTRL_TEXT_252);
@@ -231,6 +232,8 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 		
 	--cardButton:SetImage( GetPictureByAni("n_battle.attack_"..lcardId,0) );
 	cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
+	cardButton:SetScaleX(GetUIScale());
+	--cardButton:SetScaleX(2.0);
 	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
 	
 	local cardName = GetLabel(p.layer, ui[lCardName]);
@@ -341,9 +344,16 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 			--dlg_menu.HideUI();
-			dlg_card_attr_base.ShowUI();
+			if dlg_card_attr_base.layer ~= nil then
+				WriteCon("card_bag_mian.layer ~= nil ");
+				dlg_card_attr_base.ShowUI();
+			else 
+				maininterface.ShowUI();
+			end
+			
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
+			p.HideUI();
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
 			if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_money"),p.OnMsgCallback,p.layer);

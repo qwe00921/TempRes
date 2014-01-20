@@ -623,21 +623,25 @@ function calBuff(campType,pEvent)
 		local fighter = v;
 		if (fighter.Hp > 0) then
 			for i=#fighter.SkillBuff,1,-1 do --BUFF时间到了
-				local buff = fighter.SkillBuff[i];
-				if buff.work_time == 0 then
+				local buffInfo = fighter.SkillBuff[i];
+				if buffInfo.buff_time == 0 then
 					table.remove(fighter.SkillBuff,i);
 				end
 			end;
+			fighter.Buff = 1;
+			fighter.HasTurn = true; --先设置可以行动
 			
 			for i,buffInfo in ipairs(fighter.SkillBuff) do
-				buffInfo.work_time = buffInfo.work_time - 1;
+				buffInfo.buff_time = buffInfo.buff_time - 1;
 				if    (buffInfo.buff_type == W_BUFF_TYPE_1)    --不能行动的BUFF
 					or  (buffInfo.buff_type == W_BUFF_TYPE_2)
 					or  (buffInfo.buff_type == W_BUFF_TYPE_3)
 					or  (buffInfo.buff_type == W_BUFF_TYPE_4) 
 					or  (buffInfo.buff_type == W_BUFF_TYPE_5) then 
 					fighter.HasTurn = false; --不能行动
-				elseif (buffInfo.buff_type == W_BUFF_TYPE_6) or  (buffInfo.buff_type == W_BUFF_TYPE_7) then --扣血BUFF
+				elseif (buffInfo.buff_type == W_BUFF_TYPE_6) 
+				    or  (buffInfo.buff_type == W_BUFF_TYPE_7)  
+					or  (buffInfo.buff_type == W_BUFF_TYPE_8) then --扣血BUFF
 				    local lhp = math.modf(fighter.maxHp * buffInfo.buff_param / 100 )
 					fighter.SubShowLife(lhp);
 					fighter.SubLife(lhp);
@@ -947,6 +951,7 @@ end
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
 	p.missionID = missionId;
+	
 	p.SendStartPVEReq( missionId,teamid);
 --[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);
@@ -960,8 +965,8 @@ end
 function p.ReceiveStartPVPRes( msg )
    -- p.SendResult(1)	;
 	
-    dlg_menu.CloseUI();
-    dlg_userinfo.CloseUI();
+    dlg_menu.HideUI();
+    dlg_userinfo.HideUI();
 	p.MissionDropTab = SelectRowList(T_MONSTER_DROP,"mission_id",p.missionID);
     w_battle_db_mgr.Init( msg );
 	
@@ -1331,7 +1336,6 @@ end
 
 function p.MissionWin()
 	p.QuitBattle();
-	dlg_userinfo.ShowUI();
 	p.SendResult(1);		
 end;
 
@@ -1378,6 +1382,9 @@ function p.QuitBattle()
 	
 	--isActive = false;
 	p.clearDate();
+	dlg_menu.ShowUI();
+    dlg_userinfo.HideUI();
+
 end
 
 --检查战斗结束
@@ -1499,14 +1506,14 @@ end
 
 --捡到Hp,或是Sp
 function p.PickItem(pos, itemtype)
-	if p.HeroCamp ~= nil then
+	if p.heroCamp ~= nil then
 		local heroFighter = p.heroCamp:FindFighter(pos);
 		if heroFighter ~= nil then
 			if itemtype == E_DROP_HPBALL then
 				heroFighter:UseHpBall(p.hpballval);
 				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			elseif itemtype == E_DROP_SPBALL then
-				heroFigheter:UseSpBall(p.spballval);
+				heroFighter:UseSpBall(p.spballval);
 				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			end
 		end

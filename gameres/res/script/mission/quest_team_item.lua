@@ -219,37 +219,52 @@ function p.ShowItemList(itemData)
 		local itemName3 = GetLabel(view, ui_item.ID_CTRL_TEXT_ITEMNAME3);
 		local itemName4 = GetLabel(view, ui_item.ID_CTRL_TEXT_ITEMNAME4);
 		local itemName5 = GetLabel(view, ui_item.ID_CTRL_TEXT_ITEMNAME5);
+		local itemNum1 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM1);
+		local itemNum2 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM2);
+		local itemNum3 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM3);
+		local itemNum4 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM4);
+		local itemNum5 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM5);
+		
 		if itemData ~= nil then
 			local itemNum = #itemData
 			--WriteConErr("itemNum == "..#itemData);
 			local itemPic = nil;
 			local itemName = nil;
+			local itemNUm = nil;
 			for i = 1,#itemData do
-				if i == 1 then
+				if tonumber(itemData[i].location) == 1 then
 					itemPic = itemPic1
 					itemName = itemName1
-				elseif i == 2 then
+					itemNUm = itemNum1
+				elseif tonumber(itemData[i].location) == 2 then
 					itemPic = itemPic2
 					itemName = itemName2
-				elseif i == 3 then
+					itemNUm = itemNum2
+				elseif tonumber(itemData[i].location) == 3 then
 					itemPic = itemPic3
 					itemName = itemName3
-				elseif i == 4 then
+					itemNUm = itemNum3
+				elseif tonumber(itemData[i].location) == 4 then
 					itemPic = itemPic4
 					itemName = itemName4
-				elseif i == 5 then
+					itemNUm = itemNum4
+				elseif tonumber(itemData[i].location) == 5 then
 					itemPic = itemPic5
 					itemName = itemName5
+					itemNUm = itemNum5
 				end
-				itemId = tonumber(itemData[i].Item_id)
-				--WriteConErr("itemId == "..itemId);
-				
-				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
-				if itemTable == nil then
-					WriteConErr("cardPicTable error ");
+				itemId = tonumber(itemData[i].item_id)
+				if itemId > 0 then
+					itemNUm:SetText(tostring(itemData[i].num));
+					WriteConErr("itemId == "..itemId);
+					
+					local itemTable = SelectRowInner(T_MATERIAL,"id",itemId);
+					if itemTable == nil then
+						WriteConErr("cardPicTable error ");
+					end
+					itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+					itemName:SetText(itemTable.name);
 				end
-				itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-				itemName:SetText(itemTable.name);
 			end
 		end
 
