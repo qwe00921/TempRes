@@ -1625,3 +1625,30 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_target_mark.png
 NormalFileUV=0 0 66 66
+
+[CTRL_SKILL_BG]
+Type=19
+Tag=207
+Rect=14 85 620 326
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_SKILL_NAME]
+Type=19
+Tag=208
+Rect=23 334 200 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_SKILL_ROLE]
+Type=19
+Tag=210
+Rect=504 95 107 300
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

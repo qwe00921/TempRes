@@ -623,11 +623,13 @@ function calBuff(campType,pEvent)
 		local fighter = v;
 		if (fighter.Hp > 0) then
 			for i=#fighter.SkillBuff,1,-1 do --BUFF时间到了
-				local buff = fighter.SkillBuff[i];
-				if buff.buff_time == 0 then
+				local buffInfo = fighter.SkillBuff[i];
+				if buffInfo.buff_time == 0 then
 					table.remove(fighter.SkillBuff,i);
 				end
 			end;
+			fighter.Buff = 1;
+			fighter.HasTurn = true; --先设置可以行动
 			
 			for i,buffInfo in ipairs(fighter.SkillBuff) do
 				buffInfo.buff_time = buffInfo.buff_time - 1;
