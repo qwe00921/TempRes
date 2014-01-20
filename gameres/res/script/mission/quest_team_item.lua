@@ -253,18 +253,18 @@ function p.ShowItemList(itemData)
 					itemName = itemName5
 					itemNUm = itemNum5
 				end
-				itemNUm:SetText(tostring(itemData[i].num));
-
 				itemId = tonumber(itemData[i].item_id)
-				WriteConErr("itemId == "..itemId);
-				
-				local itemTable = SelectRowInner(T_MATERIAL,"id",itemId);
-				if itemTable == nil then
-					WriteConErr("cardPicTable error ");
+				if itemId > 0 then
+					itemNUm:SetText(tostring(itemData[i].num));
+					WriteConErr("itemId == "..itemId);
+					
+					local itemTable = SelectRowInner(T_MATERIAL,"id",itemId);
+					if itemTable == nil then
+						WriteConErr("cardPicTable error ");
+					end
+					itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
+					itemName:SetText(itemTable.name);
 				end
-				itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
-				itemName:SetText(itemTable.name);
-				
 			end
 		end
 
