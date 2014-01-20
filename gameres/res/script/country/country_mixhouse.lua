@@ -19,6 +19,9 @@ p.ChooseType = CHOOSE_TYPE_ALL;
 local ui = ui_country_produce_list;
 
 function p.ShowUI()
+	
+	--dlg_menu.SetNewUI( p );
+	
 	if p.layer ~= nil then
 		--合成屋界面，特殊处理userinfo，生成msg_player副本，金钱值需要计算临时数据
 		local user = CopyTable(msg_cache.msg_player);
@@ -39,7 +42,7 @@ function p.ShowUI()
 	
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(true);
+	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
 	
 	GetUIRoot():AddDlg(layer);
@@ -380,6 +383,14 @@ function p.MixCallBack( bFlag )
 		local user = msg_cache.msg_player;
 		dlg_userinfo.ShowUI( user );
 	end
+end
+
+function p.UIDisappear()
+	p.CloseUI();
+	
+	country_mix.CloseUI();
+	--country_mix_sort.CloseUI();
+	--maininterface.BecomeFirstUI();
 end
 
 

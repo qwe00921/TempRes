@@ -645,4 +645,5 @@ function p.ClearData()
 end
 function p.UIDisappear()
 	p.CloseUI();
+	maininterface.BecomeFirstUI();
 end

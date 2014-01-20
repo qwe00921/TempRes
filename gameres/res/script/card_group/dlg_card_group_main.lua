@@ -877,5 +877,6 @@ function p.UIDisappear()
 	dlg_beast_main.CloseUI();
 	dlg_card_attr_base.CloseUI();
 	
+	maininterface.BecomeFirstUI();
 end
 

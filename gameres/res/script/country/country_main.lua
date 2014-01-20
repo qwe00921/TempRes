@@ -392,6 +392,9 @@ end
 function p.UIDisappear()
 	p.CloseUI();
 	country_building.CloseUI();
+	country_storage.UIDisappear();
+	country_mixhouse.UIDisappear();
+	
 	maininterface.BecomeFirstUI();
 	maininterface.CloseAllPanel();
 	maininterface.ShowUI();
