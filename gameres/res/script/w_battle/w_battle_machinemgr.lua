@@ -39,28 +39,17 @@ function p.init()
 	]]
 	for k,v in ipairs(w_battle_mgr.heroCamp.fighters) do
 		local lAtkMachine = w_battle_atk_statemachine:new();
-		p.atkMachineLst[v:GetId()] = lAtkMachine;
+		lAtkMachine.id = v.Position;
+		p.atkMachineLst[#p.atkMachineLst + 1] = lAtkMachine;
 	end;
 	
 	for k,v in ipairs(w_battle_mgr.enemyCamp.fighters) do
 		local lAtkMachine = w_battle_atk_statemachine:new();
-		p.atkEnemyMachineLst[v:GetId()] = lAtkMachine;
+		lAtkMachine.id = v.Position;
+		p.atkEnemyMachineLst[#p.atkEnemyMachineLst + 1] = lAtkMachine;
 	end;
 	
 end;
-
---[[
-function p.setInHurt(camp,pos)
-	local lTargetMachine = nil;
-	if camp == W_BATTLE_HERO then
-		lTargetMachine = p.targetHeroMachineLst[pos] 
-	else
-		lTargetMachine = p.targetEnemyMachineLst[pos] 
-	end
-	
-	lTargetMachine:setInHurt();  --设为受伤,状态机内部自动解除受伤,并处理后续
-end;
-]]--
 
 --获得受击者状态机
 function p.getTarStateMachine(camp,pos)
@@ -79,7 +68,14 @@ function p.getAtkStateMachine(pos)
 	else
 		latkMachineLst = p.atkEnemyMachineLst;
 	end;
-	return latkMachineLst[pos];
+
+	local latkMachine = nil;
+	for k,v in ipairs(latkMachineLst) do
+		if v.id == pos then
+			latkMachine = v;
+		end;
+	end;
+	return latkMachine;
 end;
 
 
@@ -111,6 +107,9 @@ function p.checkAllTargetMachineEnd()
 			end;
 		end
 	end	
+	if lres == true then
+		WriteCon("all targetMachine finish");
+	end
 	return lres;
 end;
 
@@ -124,8 +123,8 @@ function p.checkAllAtkMachineHasTurn()
 		latkMachineLst = p.atkEnemyMachineLst;
 	end;
 	
-	for pos=1,#(latkMachineLst) do
-		local lMachine = latkMachineLst[pos];
+	for k,v in ipairs(latkMachineLst) do
+		local lMachine = v
 		if lMachine.turnState == W_BATTLE_TURN  then --行动中
 			lres = true;
 			break;
@@ -139,10 +138,19 @@ end
 --判断所有攻击状态机是否有未行动的,有未行动的返回true,只有我方人员才需要此判断
 function p.checkAllAtkMachineHasNotTurn()
 	local lres = false;
+	local latkMachineLst = nil;
+	local camp = nil;
+	if w_battle_mgr.atkCampType == W_BATTLE_HERO then
+		latkMachineLst = p.atkMachineLst;
+		camp = w_battle_mgr.heroCamp; 
+	else
+		latkMachineLst = p.atkEnemyMachineLst;
+		camp = w_battle_mgr.EnemyCamp;
+	end;
 	
-	for pos=1,#(p.atkMachineLst) do
-		local lMachine = p.atkMachineLst[pos];
-		local lheroFighter = w_battle_mgr.heroCamp:FindFighter(pos);
+	for k,v in ipairs(latkMachineLst) do
+		local lMachine = v
+		local lheroFighter = w_battle_mgr.heroCamp:FindFighter(v.id);
 		if (lheroFighter ~= nil) and (lheroFighter.nowlife > 0) then
 			if lMachine.turnState == W_BATTLE_NOT_TURN  then --未行动
 				lres = true;
@@ -151,14 +159,20 @@ function p.checkAllAtkMachineHasNotTurn()
 		end;
 	end
 	
+	if lres == true then
+		WriteCon("atk has not turn")
+	else
+		WriteCon("atk all is turn end")
+	end
+	
 	return lres;
 end
-
+--[[
 --判断所有攻击状态机是否都已未行动的,若都行动了,返回true
 function p.checkAllAtkMachineIsTurnEnd()
 	local lres = true;
-	for pos=1,#(p.atkMachineLst) do
-		local lMachine = p.atkMachineLst[pos];
+	for k,v in ipairs(p.atkMachineLst) do
+		local lMachine = v
 		if lMachine.turnState == W_BATTLE_TURNEND  then --已行动
 			lres = false;
 			break;
@@ -167,17 +181,35 @@ function p.checkAllAtkMachineIsTurnEnd()
 	
 	return lres;
 end
-
-function p.InitAtkTurnEnd()
-	for pos=1,#(p.atkMachineLst) do
-		local lMachine = p.atkMachineLst[pos];
+]]--
+function p.InitAtkTurnEnd(fightcamp)
+	--for pos=1,#(p.atkMachineLst) do
+	
+	if fightcamp == W_BATTLE_HERO then
+		camp = w_battle_mgr.heroCamp;
+		latkMachineLst = p.atkMachineLst;
+	else
+		camp = w_battle_mgr.enemyCamp;
+		latkMachineLst = p.atkEnemyMachineLst;
+	end;
+		
+	for k,v in ipairs(latkMachineLst) do		
+		local lMachine = v
 		lMachine.turnState = W_BATTLE_NOT_TURN;   --未行动
 		
-		local lheroFighter = w_battle_mgr.heroCamp:FindFighter(pos);
-		if (lheroFighter ~= nil) and (lheroFighter.nowlife > 0) then
-			if lheroFighter.HasTurn == false then
-				lMachine.turnState = W_BATTLE_TURNEND;
+		local lFighter = camp:FindFighter(v.id);
+		if (lFighter ~= nil) then
+			if lFighter.nowlife > 0 then
+				if lFighter.HasTurn == false then
+					lMachine.turnState = W_BATTLE_TURNEND;
+				end;
+				
+				if lFighter.nowlife ~= lFighter.Hp then
+					local str = string.format("id=%d, Hp=%d nowLife=%d",lFighter:GetId(), lFighter.Hp,lFighter.nowlife)
+					WriteCon(str);
+				end;
 			end;
 		end;
 	end
 end
+
