@@ -14,7 +14,7 @@ p.nowExp = 0;
 local ui = ui_card_rein;
 
 function p.ShowUI(card_info)
-	
+	maininterface.HideUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		if card_info~= nil then
@@ -341,7 +341,13 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
 			--dlg_menu.HideUI();
-			dlg_card_attr_base.ShowUI();
+			if dlg_card_attr_base.layer ~= nil then
+				WriteCon("card_bag_mian.layer ~= nil ");
+				dlg_card_attr_base.ShowUI();
+			else 
+				maininterface.ShowUI();
+			end
+			
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
