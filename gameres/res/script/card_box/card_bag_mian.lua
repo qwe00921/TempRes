@@ -27,6 +27,9 @@ p.hasRemove = false;
 p.cardListInfoSell = {}
 
 function p.ShowUI()
+	if p.isReplace ~= true then
+		dlg_menu.SetNewUI( p );
+	end
 	maininterface.HideUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
@@ -67,9 +70,7 @@ function p.ShouReplaceUI(callback, hasRemove)
 end
 
 function p.Init()
-	if p.isReplace ~= true then
-		dlg_menu.SetNewUI( p );
-	end
+
 	cardNumLimit = msg_cache.msg_player.CardMax
 	WriteCon("cardNumLimit========="..cardNumLimit);
 	
@@ -476,6 +477,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				p.HideUI();
 				dlg_card_group_main.OnSelectReplaceCallback(nil,true);
 			else
+				maininterface.ShowUI();
 				p.CloseUI();
 			end
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then
@@ -622,7 +624,7 @@ function p.CloseUI()
         card_bag_mgr.ClearData();
 		card_bag_sort.CloseUI();
 		card_bag_sell.CloseUI()
-		maininterface.ShowUI();
+		--maininterface.ShowUI();
     end
 end
 
