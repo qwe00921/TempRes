@@ -1181,6 +1181,8 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+	
+	maininterface.BecomeFirstUI();
 end
 
 function p.UpdateRmb( emoney )

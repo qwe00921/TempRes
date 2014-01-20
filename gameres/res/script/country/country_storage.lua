@@ -29,6 +29,8 @@ local HIDEBTN_INDEX = 7;
 local ui = ui_item_list;
 
 function p.ShowUI()
+	--dlg_menu.SetNewUI( p );
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		local user = msg_cache.msg_player;
@@ -43,7 +45,7 @@ function p.ShowUI()
 	
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(true);
+	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
 	
 	GetUIRoot():AddDlg(layer);
@@ -385,4 +387,15 @@ function p.CloseUI()
 		p.curItem = nil;
 		dlg_userinfo.HideUI();
 	end
+end
+
+function p.UIDisappear()
+	p.CloseUI();
+	item_choose.CloseUI();
+	item_choose_list.CloseUI();
+	item_choose_num.CloseUI();
+	
+	country_storage_sell.CloseUI();
+	
+	--maininterface.BecomeFirstUI();
 end

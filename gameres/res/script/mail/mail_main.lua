@@ -33,6 +33,9 @@ p.NET_CODE_RECEIVER_NOT_EXIST		=10012     --发送邮件，接收方不存在(网络定义)
 p.PAGE_SIZE = 6; --每页数量
 
 p.layer = nil;
+
+p.bottomLayer = nil;
+
 p.curListTypeTag = nil;
 p.m_kCheckMail = nil;
 p.isShowed = true;
@@ -44,6 +47,7 @@ p.selIds = nil;
 p.subLayer = nil;
 
 local ui = ui_mail_main
+local ui_bottom = ui_mail_main_delete
 local ui_item_sys = ui_mail_list_item_sys
 local ui_item_usr = ui_mail_list_item_user
 
@@ -64,6 +68,10 @@ function p.ShowUI(isReloadNet)
 		end
 		p.ShowList(p.curListTypeTag);
 		PlayMusic_ShopUI();
+		
+		if p.bottomLayer then
+			p.bottomLayer:SetVisible( true );
+		end
 		return;
 	end
 	
@@ -81,6 +89,21 @@ function p.ShowUI(isReloadNet)
 	LoadUI("mail_main.xui", layer, nil);
     
 	p.layer = layer;
+	
+	
+	local bottomLayer = createNDUILayer();
+	if bottomLayer == nil then
+		return false;
+	end
+	
+	bottomLayer:Init();
+	bottomLayer:SetSwallowTouch(false);
+	bottomLayer:SetFrameRectFull();
+	GetUIRoot():AddChild(bottomLayer);
+	LoadUI("mail_main_delete.xui", bottomLayer, nil);
+	p.bottomLayer = bottomLayer;
+	
+	
 	
 	maininterface.HideUI();
 	
@@ -104,6 +127,10 @@ function p.HideUI()
 			list:SetVisible(false);
 		end
 	end
+	
+	if p.bottomLayer then
+		p.bottomLayer:SetVisible( false ); 
+	end
 end
 
 --关闭UI
@@ -116,6 +143,12 @@ function p.CloseUI()
 		p.subLayer = nil;
 		maininterface.ShowUI();
     end
+	
+		if p.bottomLayer ~= nil then
+			 p.bottomLayer:LazyClose();
+			p.bottomLayer = nil;
+			
+		end
 end
 
 --设置按钮
@@ -131,16 +164,16 @@ function p.SetDelegate()
 	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_GM );
 	p.SetBtn( bt );
 	
-	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT_PAGE );
+	bt = GetButton( p.bottomLayer, ui_bottom.ID_CTRL_BUTTON_NEXT_PAGE );
 	p.SetBtn( bt );
 	
-	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_PRE_PAGE );
+	bt = GetButton( p.bottomLayer, ui_bottom.ID_CTRL_BUTTON_PRE_PAGE );
 	p.SetBtn( bt );
 	
-	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_DEL );
+	bt = GetButton( p.bottomLayer, ui_bottom.ID_CTRL_BUTTON_DEL );
 	p.SetBtn( bt );
 	
-	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_SELECT_ALL );
+	bt = GetButton( p.bottomLayer, ui_bottom.ID_CTRL_BUTTON_SELECT_ALL );
 	p.SetBtn( bt );
 	
 	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_GO_BACK );
@@ -187,14 +220,14 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			else
 				p.ShowList(p.MAIL_TYPE_USER);
 			end
-		elseif ui.ID_CTRL_BUTTON_SELECT_ALL == tag then
+		elseif ui_bottom.ID_CTRL_BUTTON_SELECT_ALL == tag then
 			p.SelectAllItem();
-		elseif ui.ID_CTRL_BUTTON_DEL == tag then
+		elseif ui_bottom.ID_CTRL_BUTTON_DEL == tag then
 			--dlg_msgbox.ShowOK(GetStr("mail_tip_title"), GetStr("mail_tip_del_empty"),nil);
 			p.DelMail();
-		elseif ui.ID_CTRL_BUTTON_NEXT_PAGE == tag then
+		elseif ui_bottom.ID_CTRL_BUTTON_NEXT_PAGE == tag then
 			p.NextPage();
-		elseif ui.ID_CTRL_BUTTON_PRE_PAGE == tag then
+		elseif ui_bottom.ID_CTRL_BUTTON_PRE_PAGE == tag then
 			p.PrePage();
 		end
 	end
@@ -331,7 +364,7 @@ function p.RefreshPageInfo()
 	
 	local lst = p.msgs[p.curListTypeTag];
 	if lst and lst.curPage and tonumber(lst.curPage) > 0 then
-		local v = GetLabel( p.layer, ui.ID_CTRL_TEXT_PAGE_INFO);
+		local v = GetLabel( p.bottomLayer, ui_bottom.ID_CTRL_TEXT_PAGE_INFO);
 		if v and p.curListTypeTag == p.MAIL_TYPE_SYS and p.msgs.sysTotal and tonumber(p.msgs.sysTotal) > 0 then
 			local totlaPage = math.ceil(tonumber(p.msgs.sysTotal)/p.PAGE_SIZE);
 			v:SetText(tostring(lst.curPage) .. "/" .. tostring(totlaPage));
