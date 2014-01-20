@@ -231,7 +231,7 @@ function p.ShowUI()
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
-	GetRunningScene():AddChild( layer );
+	GetUIRoot():AddChild( layer );
 
     LoadUI("n_battle_pve.xui", layer, nil);
 
