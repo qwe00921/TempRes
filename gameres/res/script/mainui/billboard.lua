@@ -53,6 +53,7 @@ function p.ShowUI()
 		
         p.title:SetScrollSpeed(tonumber( GetStr( "message_speed" )));
         p.layer:AddChild(p.title);
+		p.layer:SetEnableDragging(false);
         
    end
    p.LoadMessage();
@@ -99,7 +100,7 @@ end
 -- 拆分消息
 function p.SplitMessage()
     
-    for i=1,#p.message do
+    for i = 1,#p.message do
         local type = tonumber(p.message[i].TypeId);
         if p.EVENT_MESSAGE_TYPE_SYSTEM == type then
             --系统消息
@@ -139,7 +140,7 @@ end
 
 -- 显示系统消息
 function p.ShowSysMessage()
-	
+	p.title:setEnableDragging(false);
    -- p.title:RunText(string.format("%s%s","<#ff0000ff>","my my my msg"));--p.message_sys[1].Message));
 	p.title:RunText(string.format("%s%s","<#ff0000ff>",p.message_sys[1].Message));
     table.remove(p.message_sys,1);
