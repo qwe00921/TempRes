@@ -479,4 +479,6 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+	
+	maininterface.BecomeFirstUI();
 end

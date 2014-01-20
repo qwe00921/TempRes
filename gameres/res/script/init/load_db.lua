@@ -72,6 +72,9 @@ T_GIFT        = LoadTable( "gift.ini");
 --剧情
 T_STORY_INFO  = LoadTable( "story_info.ini");
 
+--新手引导
+T_ROOKIE_GUIDE  = LoadTable( "rookie_guide_conf.ini");
+
 --召唤兽表
 T_PET			= LoadTable( "Pet.ini" );
 

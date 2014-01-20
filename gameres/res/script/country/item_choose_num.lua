@@ -9,7 +9,7 @@ p.callback = nil;
 
 local ui = ui_pubulic_item_num;
 
-local MAX_NUM = 10;
+local MAX_NUM = 5;
 
 function p.ShowUI( item, callback )
 	p.item = item;
@@ -95,10 +95,15 @@ function p.InitControlelr()
 	descText:SetText( SelectCell( T_MATERIAL, p.item.material_id, "description" ) );
 	
 	local hasNum = GetLabel( p.layer, ui.ID_CTRL_TEXT_15 );
-	hasNum:SetText( tostring(p.item.num) );
+	
+	local num = tonumber(p.item.num);
+	local addNum = item_choose.tempMaterial[tonumber(p.item.material_id)] or 0;
+	num = num + addNum;
+	
+	hasNum:SetText( tostring(num) );
 	
 	p.numText = GetLabel( p.layer, ui.ID_CTRL_TEXT_18 );
-	p.numText:SetText( tostring( math.min( 1, tonumber( p.item.num ) ) ) );
+	p.numText:SetText( tostring( math.min( 1, tonumber( num ) ) ) );
 end
 
 function p.OnBtnClick( uiNode, uiEventType, param )
@@ -128,6 +133,9 @@ end
 function p.AddNum( num )
 	if num == 999999 then
 		num = tonumber( p.item.num );
+		local addNum = item_choose.tempMaterial[tonumber(p.item.material_id)] or 0;
+		num = num + addNum;
+		
 		num = math.min( num, MAX_NUM );
 	else
 		local curNum = tonumber( p.numText:GetText() );
@@ -135,7 +143,8 @@ function p.AddNum( num )
 		num = math.max( 0, num);
 		num = math.min( num, MAX_NUM );
 	end
-	p.numText:SetText( tostring( math.min( tonumber( p.item.num ),  num ) ) );
+	local addNum = item_choose.tempMaterial[tonumber(p.item.material_id)] or 0;
+	p.numText:SetText( tostring( math.min( tonumber( p.item.num )+addNum,  num ) ) );
 end
 
 function p.ChooseNumCallBack()

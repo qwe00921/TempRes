@@ -49,6 +49,7 @@ p.EnemyBuffDie = false;
 p.hpballval = 0;  --hp球恢复
 p.spballval = 0;  --sp球恢复
 p.MissionDropTab = {};
+p.buffTimerID = nil;
 
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
@@ -98,6 +99,8 @@ function p.starFighter()
 	p.isCanSelFighter = true;	
 	p.atkCampType = W_BATTLE_HERO;
 	w_battle_machinemgr.init();
+	
+	p.buffTimerID = SetTimer(p.UpdateBuff, W_SHOWBUFF_STATE );  --设置显示BUFF的时间
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 	
 end;
@@ -221,7 +224,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
    --点选目标后,先计算伤害
    local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter,IsMonster);
    targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
-   
+
     if IsMonster ~= true then
 	   --默认选择的目标,判定怪物将死
 		if (targetFighter.nowlife <= 0) and (p.LockEnemy == false) then
@@ -346,7 +349,8 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
 	lStateMachine.turnState = W_BATTLE_TURN;  --行动中		
 	--计算BUFF的机率
-	local lbuffProbability = tonumber( SelectCell( T_SKILL, skillID, "probability" ) );--远程与近战的判断;	
+	local lbuffProbability = tonumber( SelectCell( T_SKILL, skillID, "buff_probability" ) );
+	--远程与近战的判断;	
 	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
@@ -579,7 +583,7 @@ function p.HeroBuffTurnEnd()
         p.FightLose();	
 	elseif p.heroCamp:HasTurn() == true then -- 有可以行动的
 		 w_battle_pve.RoundStar();  --UI界面全亮起来
-		 w_battle_machinemgr.InitAtkTurnEnd(); --标识玩家的回合
+		 w_battle_machinemgr.InitAtkTurnEnd(W_BATTLE_HERO); --标识玩家的回合
 		--我方使用物品阶断
 		--   当选中一个物品后,得到这个物品可使用的玩家列表,调用w_battle_useitem.RefreshUI()
         --我方行动阶断,只要出现攻击就等于进入这个阶断
@@ -607,6 +611,7 @@ function p.EnemyBuffStarTurn()
 	WriteCon( "EnemyBuffStarTurn");	
    p.atkCampType = W_BATTLE_ENEMY;
    p.EnemyBuffDie = false;
+   w_battle_machinemgr.InitAtkTurnEnd(W_BATTLE_ENEMY); 
    calBuff(W_BATTLE_ENEMY,p.EnemyBuffTurnEnd);
    --p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
 end;
@@ -798,6 +803,7 @@ end;
 
 --战斗胜利
 function p.FightWin()  
+	KillTimer(p.buffTimerID);
 	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
 		w_battle_db_mgr.nextStep();  --数据进入下一波次
 		--w_battle_mgr.enemyCamp:free();
@@ -809,6 +815,7 @@ end;
 
 --战斗失败
 function p.FightLose()  
+	KillTimer(p.buffTimerID);
 	--没有续打,只有失败界面
 	p.QuitBattle()
 	p.SendResult(0);
@@ -1529,7 +1536,7 @@ end
 function p.GetBuffAni(skillID)
 	local lBuffAni = nil;
 	local buff_type = tonumber(SelectCell(T_SKILL,skillID,"buff_type"));
-	lBuffAni = "n_battle_buff.buff_type_"..tostring(buff_type); 
+	lBuffAni = "n_battle_buff.buff_type_act"..tostring(buff_type); 
 	return lBuffAni;
 	
 end
@@ -1618,4 +1625,26 @@ function p.setFighterDie(targerFighter,camp)
 	return cmdC			
 end
 
+function updateCampBuff(camp)
+	for k,v in ipairs(p.enemyCamp.fighters) do
+		if(v.Hp > 0) then
+			if #v.SkillBuff > 0 then
+				for i=v.BuffIndex, #v.SkillBuff do  --设置一个BUFF
+					local buffInfo = v.SkillBuff[i]
+					v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
+					v.BuffIndex = v.BuffIndex + 1;
+					if v.BuffIndex > #v.SkillBuff then
+						v.BuffIndex = 1;
+					end
+					break;
+				end
+			end
+		end;
+	end
+end
+
+function p.UpdateBuff()
+	--updateCampBuff(p.enemyCamp);
+	--updateCampBuff(p.heroCamp);
+end
 

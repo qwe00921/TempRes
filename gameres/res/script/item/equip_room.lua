@@ -170,13 +170,21 @@ function p.ShowInfo(msg)
 	p.cardListByProf  = msg.equipment_info;
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
-	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
 	
+	if p.equlip_list == nil then
+		labRoomNum:SetText("0/"..tostring(msg.equip_room_limit)); 
+	else
+		
+		labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 		
+	end
 	
 	local tetCrit = GetLabel(p.layer, ui.ID_CTRL_TEXT_CRIT); 
 	tetCrit:SetText(GetStr("equip_intensify_crit")..tostring(msg.crit_prob).."%"); 	
 	
-	p.refreshList(msg.equipment_info);
+	if msg.equipment_info ~= nil then
+		p.refreshList(msg.equipment_info);
+	end
+	
 end
 
 --œ‘ æ¡–±Ì

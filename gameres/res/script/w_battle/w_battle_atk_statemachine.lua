@@ -37,7 +37,7 @@ end
 
 function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,critLst,joinAtkLst,isSkill,skillID,isAoe,targetLst,HasBuffLst)
 	self.atkId = atkFighter:GetId();
-	self.id = atkFighter:GetId();	
+	--self.id = atkFighter:GetId();	
 	self.targerId = tarFighter:GetId();
 	self.atkFighter = atkFighter;
 	self.targetFighter = tarFighter;

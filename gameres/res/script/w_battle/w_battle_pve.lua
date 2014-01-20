@@ -231,7 +231,7 @@ function p.ShowUI()
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
-	GetRunningScene():AddChild( layer );
+	GetUIRoot():AddChild( layer );
 
     LoadUI("n_battle_pve.xui", layer, nil);
 
@@ -696,6 +696,10 @@ function p.UseItem( uiNode )
 		w_battle_useitem.ShowUI( itemid, id );
 	end
 	uiNode:SetEnabled( true );
+end
+
+function p.EndUseItem()
+	p.useitemMask:SetVisible( false );	
 end
 
 --…Ë÷√π•ª˜

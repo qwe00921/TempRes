@@ -197,10 +197,10 @@
 @scaleto(0.6,1,1)
 
 [monster_drop]
-@jump(0.1, $1, $2, $3, 1) @sinin
+@jump(0.2, $1, $2, $3, 1) @sinin
 
 [pick_effect_move]
-@move(0.4, $1, $2)
+@move(1, $1, $2)
 
 
 ;[pick_effect_scale]
@@ -215,11 +215,19 @@
 
 ;村落采集动画
 [country_collect_1]
-@jump(0.5,-20, 20, 30,2)
+@jump(0.5,-30, 70, 60,2)
 [country_collect_2]
-@jump(0.5,-20,-20, 30,3)
+@jump(0.5,30, 70, 60,2)
 [country_collect_3]
-@jump(0.5, 20, 20, 30,4)
+@jump(0.5,30, 70, 60,2)
 [country_collect_4]
-@jump(0.5, 20,-20, 30,5)
+@jump(0.5,-30, 70, 60,2)
+[country_collect_5]
+@jump(0.6,-50, 50, 100,2)
+[country_collect_6]
+@jump(0.6,50, 100, 100,2)
+[country_collect_7]
+@jump(0.6,50, 50, 100,2)
+[country_collect_8]
+@jump(0.6,-50, 100, 100,2)
 

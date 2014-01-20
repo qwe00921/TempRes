@@ -453,4 +453,5 @@ function p.UIDisappear()
 	p.CloseUI();
 	equip_dress_select.CloseUI();
 	equip_rein_list.CloseUI();
+	maininterface.BecomeFirstUI();
 end

@@ -867,9 +867,9 @@ function p.CloseUI()
 	p.modify_user_team = nil;
 	card_bag_mian.CloseUI();
 	p.user_teams = nil;
-	
-	maininterface.ShowUI();
-	
+	if (p.missionId == nil and p.stageId == nil) then
+		maininterface.ShowUI();
+	end
 end
 
 function p.UIDisappear()
@@ -877,5 +877,6 @@ function p.UIDisappear()
 	dlg_beast_main.CloseUI();
 	dlg_card_attr_base.CloseUI();
 	
+	maininterface.BecomeFirstUI();
 end
 
