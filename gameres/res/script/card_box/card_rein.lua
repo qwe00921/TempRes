@@ -114,7 +114,8 @@ function p.InitUI(card_info)
 		local lCardResRowInfo= SelectRowInner( T_CHAR_RES, "card_id", card_info.CardID); --从表中获取卡牌详细信息			
 		local lHeadPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_231);	
 		lHeadPic:SetPicture(GetPictureByAni("w_battle.intensify_"..card_info.CardID,0));
-			
+		lHeadPic:SetScaleX(GetUIScale());
+		--lHeadPic:SetScaleX(2.0);
 		--名字 CTRL_TEXT_252
 		local lCardRowInfo= SelectRowInner( T_CARD, "id", card_info.CardID); --从表中获取卡牌详细信息					
 		local lTextName = GetLabel(p.layer, ui.ID_CTRL_TEXT_252);
@@ -231,6 +232,8 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 		
 	--cardButton:SetImage( GetPictureByAni("n_battle.attack_"..lcardId,0) );
 	cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
+	cardButton:SetScaleX(GetUIScale());
+	--cardButton:SetScaleX(2.0);
 	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
 	
 	local cardName = GetLabel(p.layer, ui[lCardName]);
