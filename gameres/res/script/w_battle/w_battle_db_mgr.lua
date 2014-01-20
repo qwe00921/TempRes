@@ -22,7 +22,7 @@ p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
 p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
-
+p.IsDebug = false;
 
 p.enemyStepList = {
 	{
@@ -856,15 +856,19 @@ function p.initFighterDB(fighterInfo,IsHero)
 	
 	--fighterInfo.Crit = 1000;
 	--临时代码
-	if IsHero == true then
-		--if fighterInfo.Damage_type == 1 then 
-			--fighterInfo.Sp = 100;	
-			fighterInfo.Skill = 1001;
---			fighterInfo.Attack = fighterInfo.Attack *10;
-		--else
-	--		fighterInfo.Sp = 100;	
-	--		fighterInfo.Skill = 1003;
-		--end;
+	if p.IsDebug == true then
+		if IsHero == true then
+			if fighterInfo.Damage_type == 1 then 
+				--fighterInfo.Attack = fighterInfo.Attack - 10;
+				--if fighterInfo.Position == 1 then
+					fighterInfo.Skill = 1008;
+					fighterInfo.Sp = 100;	
+				--elseif fighterInfo.Position == 2 then
+					fighterInfo.Skill = 1008;
+					fighterInfo.Sp = 100
+				--end;
+			end;
+		end;
 	end;
 	
 end;

@@ -7,6 +7,8 @@ image\skill\3_hurt.png @cut(2,7) @use(1,10) @time=0.1
 [hurt_add_hp]
 image\skill\single_cure.png @cut(3,8) @use(1,20) @time=0.04
 
+[hurt_11]
+image\skill\11.png @cut(2,4) @use(1,8) @scale=0.8  @offset(-35,0)  @time=0.045
 
 ;技能名称特效
 [name_1001]
@@ -29,3 +31,6 @@ image\skill_name\1006.png @cut(1,1) @stay
 
 [name_1007]
 image\skill_name\1007.png @cut(1,1) @stay
+
+
+

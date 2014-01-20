@@ -231,8 +231,9 @@ function p:atk_startAtk()
 		if self.IsSkill == true then	--技能受击特效
 			for k,v in pairs(self.targetLst) do
 				tarFighter = v;
-				
-				cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
+				local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode,self.hurt)
+				--local lPlayNode = tarFighter:GetPlayerNode()
+				cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.hurt );
 				local batch = w_battle_mgr.GetBattleBatch(); 
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmd11 );					

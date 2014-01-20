@@ -44,7 +44,7 @@ W_BUFF_TYPE_4 = 4;--麻痹
 W_BUFF_TYPE_5 = 5;--石化
 W_BUFF_TYPE_6 = 6;--中毒 Hp总值x%
 W_BUFF_TYPE_7 = 7;--燃烧 Hp总值x%
-W_BUFF_TYPE_8 = 8;
+W_BUFF_TYPE_8 = 8;--诅咒
 W_BUFF_TYPE_9 = 9;--恢复 Hp总值x%
 
 W_BUFF_TYPE_101 = 101;--攻击增强

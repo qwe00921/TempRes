@@ -239,10 +239,10 @@ function p:AddShowLife(val) --需展现的血量
 end;
 
 function p:AddSkillBuff(pSkillID)
-	local lwork_time = tonumber(SelectCell(T_SKILL,pSkillID,"work_time"))
+	local lwork_time = tonumber(SelectCell(T_SKILL,pSkillID,"buff_time"))
 	local lbuff_param = tonumber(SelectCell(T_SKILL,pSkillID,"buff_param"))
 	local lbuff_type = tonumber(SelectCell(T_SKILL,pSkillID,"buff_type"))
-	local lRecord = {buff_type = lbuff_type, work_time = lwork_time, buff_param=lbuff_param}
+	local lRecord = {buff_type = lbuff_type, buff_time = lwork_time, buff_param=lbuff_param}
 	table.insert(self.SkillBuff, lRecord);
 end;
 
@@ -354,6 +354,36 @@ function p:GetFrontPos(targetNode)
     end
     return frontPos;
 end
+
+
+function p:GetAtkImageNode(atkNode,ani)
+	local halfWidthSum = self:GetNode():GetCurAnimRealSize().w/4 + atkNode:GetCurAnimRealSize().w/4;
+    
+    if self.camp == E_CARD_CAMP_HERO then
+		halfWidthSum = halfWidthSum * -1
+    end
+	
+
+	local imageNode = createNDRole();
+	imageNode:Init();
+	             
+	local cSize = self:GetNode():GetFrameSize();					
+	local x = cSize.w / 2;	
+	local y = cSize.h / 2;
+	local lnewPos = CCPointMake(x,y)
+    --播放动画
+    imageNode:SetVisible( true );
+	imageNode:SetFramePos(lnewPos);
+	
+	self.node:AddChildZ( imageNode, 3 );
+	
+	if self.camp == E_CARD_CAMP_HERO then	
+		imageNode:SetLookAt( E_LOOKAT_RIGHT );
+	else
+		imageNode:SetLookAt( E_LOOKAT_LEFT );
+	end
+	return imageNode;
+end;
 
 function p:SetShadow(kShadow)
 	self.m_kShadow = kShadow;
@@ -510,7 +540,10 @@ end;
 --BUFF类型,参数
 function p:AddBuff(buff, work,param)
 	--local skillRecord = {effecttype = effect_type, effectval = effect_value};
-	local skillRecord = {buff_type = tonumber(effect_type), work_time = tonumber(work), buff_param = tonumber(param)};
+	if param == nil then
+		param = 0;
+	end
+	local skillRecord = {buff_type = tonumber(effect_type), buff_time = tonumber(work), buff_param = tonumber(param)};
 	table.insert(self.SkillBuff, skillRecord);
 end;
 

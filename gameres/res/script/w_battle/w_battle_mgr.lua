@@ -430,7 +430,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		end
 	end;
 	
-	atkFighter.Sp = 0 ;
+	--atkFighter.Sp = 0 ;
 	if IsMonster ~= true then
 		w_battle_pve.SetHeroCardAttr(atkID, atkFighter);
 	end;
@@ -624,20 +624,22 @@ function calBuff(campType,pEvent)
 		if (fighter.Hp > 0) then
 			for i=#fighter.SkillBuff,1,-1 do --BUFF时间到了
 				local buff = fighter.SkillBuff[i];
-				if buff.work_time == 0 then
+				if buff.buff_time == 0 then
 					table.remove(fighter.SkillBuff,i);
 				end
 			end;
 			
 			for i,buffInfo in ipairs(fighter.SkillBuff) do
-				buffInfo.work_time = buffInfo.work_time - 1;
+				buffInfo.buff_time = buffInfo.buff_time - 1;
 				if    (buffInfo.buff_type == W_BUFF_TYPE_1)    --不能行动的BUFF
 					or  (buffInfo.buff_type == W_BUFF_TYPE_2)
 					or  (buffInfo.buff_type == W_BUFF_TYPE_3)
 					or  (buffInfo.buff_type == W_BUFF_TYPE_4) 
 					or  (buffInfo.buff_type == W_BUFF_TYPE_5) then 
 					fighter.HasTurn = false; --不能行动
-				elseif (buffInfo.buff_type == W_BUFF_TYPE_6) or  (buffInfo.buff_type == W_BUFF_TYPE_7) then --扣血BUFF
+				elseif (buffInfo.buff_type == W_BUFF_TYPE_6) 
+				    or  (buffInfo.buff_type == W_BUFF_TYPE_7)  
+					or  (buffInfo.buff_type == W_BUFF_TYPE_8) then --扣血BUFF
 				    local lhp = math.modf(fighter.maxHp * buffInfo.buff_param / 100 )
 					fighter.SubShowLife(lhp);
 					fighter.SubLife(lhp);
@@ -947,6 +949,7 @@ end
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
 	p.missionID = missionId;
+	
 	p.SendStartPVEReq( missionId,teamid);
 --[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);

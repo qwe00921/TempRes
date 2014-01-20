@@ -10,13 +10,25 @@ image\battle_buff\2.png @cut(1,1) @stay @scale=0.6
 [buff_type_3]
 image\battle_buff\3.png @cut(1,1) @stay @scale=0.6
 
-;中毒
+;麻痹
 [buff_type_4]
-image\battle_buff\4.png @cut(1,1) @stay @scale=0.6 @offset(0,30)
+image\battle_buff\4.png @cut(1,1) @stay @scale=0.6
 
-;火烧
+;石化
 [buff_type_5]
 image\battle_buff\5.png @cut(1,1) @stay @scale=0.6
+
+;中毒
+[buff_type_6]
+image\battle_buff\6.png @cut(1,1) @stay @scale=0.6 @offset(0,30)
+
+;火烧
+[buff_type_7]
+image\battle_buff\7.png @cut(1,1) @stay @scale=0.6 @offset(0,30)
+
+;诅咒
+[buff_type_8]
+image\battle_buff\8.png @cut(1,1) @stay @scale=0.6
 
 ;回复
 [buff_type_9]
