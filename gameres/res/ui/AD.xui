@@ -1,0 +1,30 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_32]
+Type=1
+Tag=32
+Rect=2 814 639 40
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\ad_bg.png
+NormalFileUV=0 0 40 52
+
+[CTRL_TEXT_33]
+Type=4
+Tag=33
+Rect=0 815 640 30
+AnchorPos=0 0
+Notes=
+Text=跑马灯
+TextTradition=跑馬燈
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

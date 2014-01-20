@@ -330,6 +330,8 @@ function p.SetTeamInfo( view, user_teamData )
 			pic:Standby("");
 			pic:SetEnableSwapDrag(true);
 			pic:SetLuaDelegate(p.OnDragEvent);
+			pic:SetScaleX(GetUIScale());
+			--pic.SetScaleY(2.0);
 			
 			
 			

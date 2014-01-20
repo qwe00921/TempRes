@@ -16,7 +16,7 @@ function p.ShowUI()
 	if country_building then
 		country_building.CloseUI()
 	end
-	
+	maininterface.HideUI();
 	dlg_menu.SetNewUI( p );
 	dlg_userinfo.HideUI();
 	if p.layer ~= nil then
@@ -57,7 +57,6 @@ function p.ShowUI()
 	country_collect.StartTick();
 	country_collect.SetLayer( p.layer );
 	
-	maininterface.HideUI();
 end
 
 function p.InitController()
