@@ -350,6 +350,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			
 		elseif(ui.ID_CTRL_BUTTON_CARD_CHOOSE == tag) or (ui.ID_CTRL_BUTTON_CHOOSE_BG == tag) then --选择卡牌
 			card_intensify2.ShowUI(p.baseCardInfo);
+			p.HideUI();
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
 			if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_money"),p.OnMsgCallback,p.layer);
