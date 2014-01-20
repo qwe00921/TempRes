@@ -618,7 +618,7 @@ function p:RemoveBuff(val)
 end;
 
 function p:UseHpBall(pVal)
---[[	local addHp = math.modf(self.maxHp * pVal / 100);
+	local addHp = math.modf(self.maxHp * pVal / 100);
 	self.Hp = self.Hp +addHp;
 	if self.Hp > self.maxHp then
 		self.Hp = self.maxHp;
@@ -628,7 +628,8 @@ function p:UseHpBall(pVal)
 	if self.nowlife > self.maxHp then
 		self.nowlife = self.maxHp 
 	end 
-	]]--
+	w_battle_mgr.HpBallNum = w_battle_mgr.HpBallNum - 1
+	w_battle_mgr.checkPickEnd();
 end;
 
 function p:UseSpBall(pVal)
@@ -636,6 +637,8 @@ function p:UseSpBall(pVal)
 	if self.Sp > self.maxSp then
 		self.Sp = self.maxSp;
 	end
+	w_battle_mgr.SpBallNum = w_battle_mgr.SpBallNum - 1
+	w_battle_mgr.checkPickEnd();
 end;
 
 function p:SetOldPos()
