@@ -219,52 +219,37 @@ function p.ShowItemList(itemData)
 		local itemName3 = GetLabel(view, ui_item.ID_CTRL_TEXT_ITEMNAME3);
 		local itemName4 = GetLabel(view, ui_item.ID_CTRL_TEXT_ITEMNAME4);
 		local itemName5 = GetLabel(view, ui_item.ID_CTRL_TEXT_ITEMNAME5);
-		local itemNum1 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM1);
-		local itemNum2 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM2);
-		local itemNum3 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM3);
-		local itemNum4 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM4);
-		local itemNum5 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM5);
-		
 		if itemData ~= nil then
 			local itemNum = #itemData
 			--WriteConErr("itemNum == "..#itemData);
 			local itemPic = nil;
 			local itemName = nil;
-			local itemNUm = nil;
 			for i = 1,#itemData do
-				if tonumber(itemData[i].location) == 1 then
+				if i == 1 then
 					itemPic = itemPic1
 					itemName = itemName1
-					itemNUm = itemNum1
-				elseif tonumber(itemData[i].location) == 2 then
+				elseif i == 2 then
 					itemPic = itemPic2
 					itemName = itemName2
-					itemNUm = itemNum2
-				elseif tonumber(itemData[i].location) == 3 then
+				elseif i == 3 then
 					itemPic = itemPic3
 					itemName = itemName3
-					itemNUm = itemNum3
-				elseif tonumber(itemData[i].location) == 4 then
+				elseif i == 4 then
 					itemPic = itemPic4
 					itemName = itemName4
-					itemNUm = itemNum4
-				elseif tonumber(itemData[i].location) == 5 then
+				elseif i == 5 then
 					itemPic = itemPic5
 					itemName = itemName5
-					itemNUm = itemNum5
 				end
-				itemNUm:SetText(tostring(itemData[i].num));
-
-				itemId = tonumber(itemData[i].item_id)
-				WriteConErr("itemId == "..itemId);
+				itemId = tonumber(itemData[i].Item_id)
+				--WriteConErr("itemId == "..itemId);
 				
-				local itemTable = SelectRowInner(T_MATERIAL,"id",itemId);
+				local itemTable = SelectRowInner(T_ITEM,"id",itemId);
 				if itemTable == nil then
 					WriteConErr("cardPicTable error ");
 				end
 				itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
 				itemName:SetText(itemTable.name);
-				
 			end
 		end
 
