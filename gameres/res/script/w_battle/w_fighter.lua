@@ -43,6 +43,8 @@ function p:ctor()
 	self.firstID = nil; --合击判定的第一下
 	self.SkillBuff = {}  --中的BUFF列表
 	self.canRevive = false;
+	self.BuffNode = nil;
+	self.BuffIndex = 1;
 end
 
 --初始化（重载）
@@ -59,6 +61,7 @@ function p:Init( idFighter, node, camp )
 	self.Hp = self.life;
 	self.maxHp = self.life;        
     self.HasTurn = true;  --没有中其它BUFF
+	self:InitBuffNode();
 	--self:CreateHpBar();
 	--self:CreateFlyNumGreen();	
 end
@@ -180,12 +183,22 @@ function p:SubLife(val)  --当前实际血量
 	if self.nowlife < 0 then
 		self.nowlife = 0;
 	end
+	if self.camp == E_CARD_CAMP_HERO then
+		local str = string.format("id=%d nowlife=%d val=%d", self:GetId(),self.nowlife,val);
+		WriteCon(str);
+	end
+
 end;
 
 function p:AddLife(val)
 	self.nowlife = self.nowlife + val;
 	if self.nowlife > self.maxHp then
 		self.nowlife = self.maxHp;
+	end
+	
+	if self.camp == E_CARD_CAMP_HERO then
+		local str = string.format("id=%d nowlife=%d addval=%d", self:GetId(),self.nowlife,val);
+		WriteCon(str);
 	end
 end;
 
@@ -214,10 +227,12 @@ function p:SubShowLife(val) --需展现的血量
         flynum:PlayNum( val );
     end	
 	
-    --判断并显示当前血量    
-	if self:GetId() == w_battle_mgr.PVEShowEnemyID then 
-		--设置UI界面的血量
-	end;
+	if self.camp == E_CARD_CAMP_HERO then
+		local str = string.format("id=%d Hp=%d val=%d", self:GetId(),self.Hp,val);
+		WriteCon(str);
+	end	
+	
+    
 end;
 
 function p:AddShowLife(val) --需展现的血量
@@ -232,10 +247,10 @@ function p:AddShowLife(val) --需展现的血量
         flynum:PlayNum( val );
     end	
 	
-    --判断并显示当前血量    
-	if self:GetId() == w_battle_mgr.PVEShowEnemyID then 
-		--设置UI界面的血量
-	end;
+	if self.camp == E_CARD_CAMP_HERO then
+		local str = string.format("id=%d Hp=%d addval=%d", self:GetId(),self.Hp,val);
+		WriteCon(str);
+	end
 end;
 
 function p:AddSkillBuff(pSkillID)
@@ -355,14 +370,13 @@ function p:GetFrontPos(targetNode)
     return frontPos;
 end
 
-
+--近战攻击特效
 function p:GetAtkImageNode(atkNode,ani)
 
 	local imageNode = createNDRole();
 	imageNode:Init();
 	             
 	local cSize = self:GetNode():GetFrameSize();					
-	--local x = cSize.w / 2;	
 	local y = cSize.h / 2;
 	if self.camp == E_CARD_CAMP_HERO then	
 		x = 0
@@ -371,10 +385,8 @@ function p:GetAtkImageNode(atkNode,ani)
 	end
 	
 	local lnewPos = CCPointMake(x,y)
-
     --播放动画
     imageNode:SetVisible( true );
-
 	
 	self.node:AddChildZ( imageNode, 3 );
 	imageNode:SetFramePos(lnewPos);	
@@ -384,6 +396,47 @@ function p:GetAtkImageNode(atkNode,ani)
 		imageNode:SetLookAt( E_LOOKAT_LEFT );
 	end
 	return imageNode;
+end;
+
+--BUFF状态
+function p:InitBuffNode()
+	local imageNode = createNDRole();
+	imageNode:Init();
+	             
+	local cSize = self:GetNode():GetFrameSize();					
+	local y = 0;
+	local x = cSize.w/2;		
+	
+	local lnewPos = CCPointMake(x,y)
+    --播放动画
+    imageNode:SetVisible( false );
+	
+	self.node:AddChildZ( imageNode, E_BATTLE_Z_NORMAL );
+	imageNode:SetFramePos(lnewPos);	
+    if self.camp == E_CARD_CAMP_HERO then	
+		imageNode:SetLookAt( E_LOOKAT_LEFT );
+	else
+		imageNode:SetLookAt( E_LOOKAT_RIGHT );
+	end
+	self.BuffNode = imageNode;
+end;
+
+function p:SetBuffNode(lBuffType)
+	if lBuffType == 0 then
+		self.BuffNode:SetVisible(false)
+		return ;
+	else
+		self.BuffNode:SetVisible(true);
+	end
+	
+	local lBuffAni = "n_battle_buff.buff_type_"..tostring(lBuffType); 
+
+--	self.BuffNode:SetPicture(GetPictureByAni(lBuffAni,0));
+	local cmdBuff = createCommandEffect():AddFgEffect( 0, self.BuffNode, lBuffAni );
+	local batch = w_battle_mgr.GetBattleBatch(); 
+	local seqBuff = batch:AddSerialSequence();
+	seqBuff:AddCommand(cmdBuff);
+	
 end;
 
 function p:SetShadow(kShadow)
@@ -561,12 +614,17 @@ function p:RemoveBuff(val)
 end;
 
 function p:UseHpBall(pVal)
-	local addHp = math.modf(self.maxHp * pVal / 100);
+--[[	local addHp = math.modf(self.maxHp * pVal / 100);
 	self.Hp = self.Hp +addHp;
 	if self.Hp > self.maxHp then
 		self.Hp = self.maxHp;
 	end
-	self.nowlife = self.Hp;
+	
+	self.nowlife = self.nowlife + addHp;
+	if self.nowlife > self.maxHp then
+		self.nowlife = self.maxHp 
+	end 
+	]]--
 end;
 
 function p:UseSpBall(pVal)

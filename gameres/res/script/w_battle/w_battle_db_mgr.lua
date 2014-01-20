@@ -376,40 +376,7 @@ p.enemyStepList = {
 }
   
 p.playerCardList = {
-	{
-	element = 1,
-	UniqueId= 10000721,
-	CardID= 10017,
-	Level= 1,
-	Level_max= 0,
-	Race= 0,
-	Class= 1,
-	Damage_type= 1,
-	Exp= 0,
-	Time= 1386594904,
-	Bind= 0,
-	Team_marks= 0,
-	Rare= 1,
-	Rare_max= 0,
-	Hp= 230,
-	maxHp= 240,
-	Attack= 30,
-	Defence= 1,
-	Speed= 26,
-	Skill= 1001,
-	Crit= 5,
-	Item_Id1= 0,
-	Item_Id2= 0,
-	Item_Id3= 0,
-	Gem1= 0,
-	Gem2= 0,
-	Gem3= 0,
-	Price= 0,
-	Source= 0,
-	Position= 1,
-	Sp = 0,
-	maxSp = 100;
-	},
+	
 	{
 	element = 2,
 	UniqueId= 10000722,
@@ -859,13 +826,13 @@ function p.initFighterDB(fighterInfo,IsHero)
 		if IsHero == true then
 			if fighterInfo.Damage_type == 1 then 
 				--fighterInfo.Attack = fighterInfo.Attack - 10;
-				--if fighterInfo.Position == 1 then
+				if fighterInfo.Position == 1 then
 					fighterInfo.Skill = 1001;
 					fighterInfo.Sp = 100;	
-				--elseif fighterInfo.Position == 2 then
-					--fighterInfo.Skill = 1001;
-					--fighterInfo.Sp = 100
-				--end;
+				elseif fighterInfo.Position == 2 then
+					fighterInfo.Skill = 1007;
+					fighterInfo.Sp = 100
+				end;
 			end;
 		end;
 	end;
@@ -887,7 +854,7 @@ function p.Init( battleDB )
 	p.Drop = battleDB.fightinfo.Drop;
     
 	--Íæ¼ÒÁÐ±í
-	p.playerCardList = battleDB.fightinfo.Player; 
+	--p.playerCardList = battleDB.fightinfo.Player; 
 	for i=1,#p.playerCardList do
 		p.initFighterDB(p.playerCardList[i],true);
 	end;
