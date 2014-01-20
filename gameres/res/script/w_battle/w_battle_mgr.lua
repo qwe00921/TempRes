@@ -1504,14 +1504,14 @@ end
 
 --捡到Hp,或是Sp
 function p.PickItem(pos, itemtype)
-	if p.HeroCamp ~= nil then
+	if p.heroCamp ~= nil then
 		local heroFighter = p.heroCamp:FindFighter(pos);
 		if heroFighter ~= nil then
 			if itemtype == E_DROP_HPBALL then
 				heroFighter:UseHpBall(p.hpballval);
 				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			elseif itemtype == E_DROP_SPBALL then
-				heroFigheter:UseSpBall(p.spballval);
+				heroFighter:UseSpBall(p.spballval);
 				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			end
 		end

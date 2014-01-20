@@ -571,8 +571,8 @@ end;
 
 function p:UseSpBall(pVal)
 	self.Sp = self.Sp + pVal;
-	if Self.Sp > self.maxSp then
-		Self.Sp = Self.maxSp;
+	if self.Sp > self.maxSp then
+		self.Sp = self.maxSp;
 	end
 end;
 
