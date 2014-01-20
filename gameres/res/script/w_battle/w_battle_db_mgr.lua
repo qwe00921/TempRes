@@ -823,9 +823,10 @@ function p.initFighterDB(fighterInfo,IsHero)
 	--fighterInfo.Crit = 1000;
 	--¡Ÿ ±¥˙¬Î
 	if p.IsDebug == true then
+		fighterInfo.Attack = fighterInfo.Attack * 5;
 		if IsHero == true then
 			if fighterInfo.Damage_type == 1 then 
-				--fighterInfo.Attack = fighterInfo.Attack - 10;
+		--		fighterInfo.Attack = fighterInfo.Attack - 10;
 				if fighterInfo.Position == 1 then
 					fighterInfo.Skill = 1001;
 					fighterInfo.Sp = 100;	

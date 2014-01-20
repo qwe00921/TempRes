@@ -56,6 +56,10 @@ p.SpBallNum = 0;
 p.IsPickEnd = false;
 p.PickEndEvent = nil;
 
+p.dropHpBall = 0;
+p.dropSpBall = 0;
+
+
 function p.init()
 	--p.heroCamp = nil;			--玩家阵营
 	p.enemyCamp = nil;			--敌对阵营
@@ -615,6 +619,8 @@ function p.HeroTurnEnd()
 	WriteCon( "HeroTurnEnd");	
 	p.PickEndEvent = p.CheckEnemyAllDied;
 	p.IsPickEnd = false;
+	p.dropHpBall = 0;
+	p.dropSpBall = 0;
 	w_battle_pve.PickStep(p.CanPickEnd);  --拾取掉落奖励,并回调检查敌方是否全死
 end;
 
@@ -734,6 +740,8 @@ function p.EnemyBuffTurnEnd()
 	if p.EnemyBuffDie == true then --有死亡发生
 		p.PickEndEvent = p.CheckEnemyAllDied;
 		p.IsPickEnd = false;
+		p.dropHpBall = 0;
+		p.dropSpBall = 0;
 		w_battle_pve.PickStep(p.CanPickEnd);  --拾取掉落奖励,并回调检查敌方是否全死
 	else
 	   p.CheckEnemyAllDied();
@@ -1451,6 +1459,8 @@ function p.checkTurnEnd()
 			else  --所有敌人全死了
 				p.PickEndEvent = p.FightWin;
 				p.IsPickEnd = false;
+				p.dropHpBall = 0;
+				p.dropSpBall = 0;
 				w_battle_pve.PickStep(p.CanPickEnd); --捡东西
 			end
 		else
@@ -1667,8 +1677,12 @@ end
 function p.AddBall(ltype,num)
 	if ltype == E_DROP_HPBALL then
 		p.HpBallNum = p.HpBallNum + num;
+		local lst = string.format("HpBallNumAdd=%d HpBallNum=%d", num,p.HpBallNum)
+		WriteCon(lst);
 	elseif ltype == E_DROP_SPBALL then
 		p.SpBallNum = p.SpBallNum + num
+		local lst = string.format("SpBallNumAdd=%d SpBallNum=%d", num,p.SpBallNum)
+		WriteCon(lst);
 	end;
 end;
 
@@ -1679,7 +1693,7 @@ end;
 
 function p.checkPickEnd()
 	local lresult = false;
-	if (p.IsPickEnd == true) and (p.HpBallNum == 0) and (p.SpBallNum == 0) then
+	if (p.IsPickEnd == true) and (p.HpBallNum <= 0) and (p.SpBallNum <= 0) then
 		lresult = true
 	end
     if lresult == true then
