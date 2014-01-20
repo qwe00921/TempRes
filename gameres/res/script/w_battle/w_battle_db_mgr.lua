@@ -736,7 +736,8 @@ p.Reward= {
 	story= 0
 }
 
-p.Drop = { {id=1,step=1,group_id=1},
+p.Drop = { {id=1,step=1,group_id=2},
+			{id=9,step=1,group_id=3},
 			{id=9,step=2,group_id=1},
            }
 
@@ -831,14 +832,14 @@ function p.nextStep()
 			local itemid = v;
 			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
 			local lCardInfo = p.targetCardList[lrandom];
-			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_MATERIAL, id = itemid};
+			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_CARD, id = itemid};
 		end
-
+		
 		for k,v in ipairs(CardDrop) do
 			local itemid = v;
 			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
 			local lCardInfo = p.targetCardList[lrandom];
-			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_CARD, id = itemid};
+			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_EQUIP, id = itemid};
 		end
 	end;
 end;
@@ -860,11 +861,11 @@ function p.initFighterDB(fighterInfo,IsHero)
 			if fighterInfo.Damage_type == 1 then 
 				--fighterInfo.Attack = fighterInfo.Attack - 10;
 				--if fighterInfo.Position == 1 then
-					fighterInfo.Skill = 1001;
+					fighterInfo.Skill = 1008;
 					fighterInfo.Sp = 100;	
 				--elseif fighterInfo.Position == 2 then
-					--fighterInfo.Skill = 1001;
-					--fighterInfo.Sp = 100
+					fighterInfo.Skill = 1008;
+					fighterInfo.Sp = 100
 				--end;
 			end;
 		end;

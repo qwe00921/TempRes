@@ -27,3 +27,5 @@ p.ID_CTRL_VERTICAL_LIST_GACHA			= 13;	--扭蛋list
 p.ID_CTRL_BUTTON_PAY					     = 40;	--充值按钮
 p.ID_CTRL_TEXT_RMB					       = 7;	--元宝数量
 p.ID_CTRL_BUTTON_BACK					    = 4;	--返回按钮
+p.ID_CTRL_9SLICES_20					     = 25;
+p.ID_CTRL_9SLICES_BG					     = 18;
