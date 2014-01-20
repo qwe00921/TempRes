@@ -430,7 +430,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		end
 	end;
 	
-	--atkFighter.Sp = 0 ;
+	atkFighter.Sp = 0 ;
 	if IsMonster ~= true then
 		w_battle_pve.SetHeroCardAttr(atkID, atkFighter);
 	end;
