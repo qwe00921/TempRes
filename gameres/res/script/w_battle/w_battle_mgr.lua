@@ -963,8 +963,8 @@ end
 function p.ReceiveStartPVPRes( msg )
    -- p.SendResult(1)	;
 	
-    dlg_menu.CloseUI();
-    dlg_userinfo.CloseUI();
+    dlg_menu.HideUI();
+    dlg_userinfo.HideUI();
 	p.MissionDropTab = SelectRowList(T_MONSTER_DROP,"mission_id",p.missionID);
     w_battle_db_mgr.Init( msg );
 	
@@ -1334,7 +1334,6 @@ end
 
 function p.MissionWin()
 	p.QuitBattle();
-	dlg_userinfo.ShowUI();
 	p.SendResult(1);		
 end;
 
@@ -1381,6 +1380,9 @@ function p.QuitBattle()
 	
 	--isActive = false;
 	p.clearDate();
+	dlg_menu.ShowUI();
+    dlg_userinfo.HideUI();
+
 end
 
 --检查战斗结束
