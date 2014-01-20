@@ -228,9 +228,9 @@ function p:atk_startAtk()
 		seqAtk:AddCommand( cmdAtk );	
 	
 		local cmd11 = nil;
-		if self.IsSkill == true then	--技能受击特效
-			for k,v in pairs(self.targetLst) do
-				tarFighter = v;
+		if self.IsSkill == true then	--近战技能只有攻击,  受击特效
+			--for k,v in pairs(self.targetLst) do
+			--	tarFighter = v;
 				local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode,self.hurt)
 				--local lPlayNode = tarFighter:GetPlayerNode()
 				cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.hurt );
@@ -238,7 +238,7 @@ function p:atk_startAtk()
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmd11 );					
 				
-			end;			
+			--end;			
 		end;		
 		--攻击结束播放受击动作
 		self.atkFighter:cmdLua( "atk_end",  self.id, "", seqAtkEnd ); 

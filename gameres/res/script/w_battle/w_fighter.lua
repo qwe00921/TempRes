@@ -357,26 +357,27 @@ end
 
 
 function p:GetAtkImageNode(atkNode,ani)
-	local halfWidthSum = self:GetNode():GetCurAnimRealSize().w/4 + atkNode:GetCurAnimRealSize().w/4;
-    
-    if self.camp == E_CARD_CAMP_HERO then
-		halfWidthSum = halfWidthSum * -1
-    end
-	
 
 	local imageNode = createNDRole();
 	imageNode:Init();
 	             
 	local cSize = self:GetNode():GetFrameSize();					
-	local x = cSize.w / 2;	
+	--local x = cSize.w / 2;	
 	local y = cSize.h / 2;
+	if self.camp == E_CARD_CAMP_HERO then	
+		x = 0
+	else
+		x = cSize.w;
+	end
+	
 	local lnewPos = CCPointMake(x,y)
+
     --²¥·Å¶¯»­
     imageNode:SetVisible( true );
-	imageNode:SetFramePos(lnewPos);
+
 	
 	self.node:AddChildZ( imageNode, 3 );
-	
+	imageNode:SetFramePos(lnewPos);	
 	if self.camp == E_CARD_CAMP_HERO then	
 		imageNode:SetLookAt( E_LOOKAT_RIGHT );
 	else
@@ -570,8 +571,8 @@ end;
 
 function p:UseSpBall(pVal)
 	self.Sp = self.Sp + pVal;
-	if Self.Sp > self.maxSp then
-		Self.Sp = Self.maxSp;
+	if self.Sp > self.maxSp then
+		self.Sp = self.maxSp;
 	end
 end;
 
