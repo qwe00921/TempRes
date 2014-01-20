@@ -223,17 +223,18 @@ function p.ShowUI()
 		return;
 	end
 
-	local layer = createNDUILayer();
+	local layer = createNDUIDialog();
     if layer == nil then
         return false;
     end
 
+	layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
-	GetUIRoot():AddChild( layer );
+	GetUIRoot():AddDlg( layer );
 
-    LoadUI("n_battle_pve.xui", layer, nil);
+    LoadDlg("n_battle_pve.xui", layer, nil);
 
 	layer:SetFramePosXY(0,0);
 	p.battleLayer = layer;
