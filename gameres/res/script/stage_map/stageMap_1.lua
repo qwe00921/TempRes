@@ -6,9 +6,12 @@ local uiNodeT = {};
 
 p.layer = nil;
 function p.ShowUI()
+	if p.isReplace ~= true then
+		dlg_menu.SetNewUI( p );
+	end
 	--maininterface.m_bgImage:SetVisible(false);
 	dlg_userinfo.HideUI();
-	dlg_menu.HideUI();
+	--dlg_menu.HideUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -135,7 +138,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			p.CloseUI();
 			maininterface.ShowUI();
 			dlg_userinfo.ShowUI();
-			dlg_menu.ShowUI();
+			--dlg_menu.ShowUI();
 		elseif (ui.ID_CTRL_BUTTON_CHAPTER1 == tag) then
 			p.openQusetView(uiNode)
 		elseif(ui.ID_CTRL_BUTTON_CHAPTER2 == tag) then
@@ -156,5 +159,9 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		dlg_userinfo.ShowUI();
 	end
+end
+function p.UIDisappear()
+	p.CloseUI();
 end
