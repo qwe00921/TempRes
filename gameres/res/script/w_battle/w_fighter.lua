@@ -554,11 +554,15 @@ function p:UseItem(pId)
 
 	if subtype == W_MATERIAL_SUBTYPE1 then  --HP>0µÄ
 		if self:IsAlive() == true then
-			self.nowlife = self.nowlife + effect_value;
-			if self.nowlife > self.maxHp then
-				self.nowlife = self.maxHp;
-			end		
-			self.Hp = self.nowlife;
+			local lval = 0
+			if effect_type == 1 then
+				lval = math.modf(self.maxHp * effect_value / 100);
+			elseif effect_type == 2 then
+				lval = effect_value;
+			end;
+			
+			self:AddLife(lval);
+			self:AddShowLife(lval);
 		else
 			lResult = false;
 		end
