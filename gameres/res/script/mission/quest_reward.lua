@@ -1,13 +1,13 @@
-ITEM_TYPE_MATERIAL = 1;		--material
-ITEM_TYPE_CARD = 2;			--char_res
-ITEM_TYPE_EQUIP = 3;			--equip
-ITEM_TYPE_MONEY = 4;
-ITEM_TYPE_BLUESOUL = 5;
-ITEM_TYPE_EMONEY = 6;
-ITEM_TYPE_GIFT = 7;			--item
-ITEM_TYPE_TREASURE = 8;		--item
-ITEM_TYPE_OTHER = 9;			--item
-ITEM_TYPE_SHOP = 10;			--item
+QUEST_ITEM_TYPE_MATERIAL = 1;		--material
+QUEST_ITEM_TYPE_CARD = 2;			--char_res
+QUEST_ITEM_TYPE_EQUIP = 3;			--equip
+QUEST_ITEM_TYPE_MONEY = 4;
+QUEST_ITEM_TYPE_BLUESOUL = 5;
+QUEST_ITEM_TYPE_EMONEY = 6;
+QUEST_ITEM_TYPE_GIFT = 7;			--item
+QUEST_ITEM_TYPE_TREASURE = 8;		--item
+QUEST_ITEM_TYPE_OTHER = 9;			--item
+QUEST_ITEM_TYPE_SHOP = 10;			--item
 
 
 quest_reward = {}
@@ -216,17 +216,17 @@ function p.ShowRewardInfo( view, reward, rewardIndex )
 
 	local picIndex = nil;
 	local rewardT = nil
-	if rewardType == ITEM_TYPE_MATERIAL then
+	if rewardType == QUEST_ITEM_TYPE_MATERIAL then
 		rewardT = SelectRowInner(T_MATERIAL,"id",rewardId);
 		picIndex = rewardT.item_pic;
 		rewardNumText:SetText(tostring(rewardNum));
-	elseif rewardType == ITEM_TYPE_CARD then
+	elseif rewardType == QUEST_ITEM_TYPE_CARD then
 		rewardT = SelectRowInner(T_CHAR_RES,"card_id",rewardId);
 		picIndex = rewardT.head_pic;
-	elseif rewardType == ITEM_TYPE_EQUIP then
+	elseif rewardType == QUEST_ITEM_TYPE_EQUIP then
 		rewardT = SelectRowInner(T_EQUIP,"id",rewardId);
 		picIndex = rewardT.item_pic;
-	elseif rewardType == ITEM_TYPE_GIFT or rewardType == ITEM_TYPE_TREASURE or rewardType == ITEM_TYPE_OTHER or rewardType == ITEM_TYPE_SHOP then
+	elseif rewardType == QUEST_ITEM_TYPE_GIFT or rewardType == QUEST_ITEM_TYPE_TREASURE or rewardType == QUEST_ITEM_TYPE_OTHER or rewardType == QUEST_ITEM_TYPE_SHOP then
 		rewardT = SelectRowInner(T_ITEM,"id",rewardId);
 		picIndex = rewardT.item_pic;
 	end
@@ -236,6 +236,9 @@ end
 
 
 function p.setExpUpNeed(needExp)
+	if p.layer == nil then 
+		return;
+	end
 	local needExpText = GetLabel(p.layer, ui.ID_CTRL_TEXT_NEED_EXP_V);
 	needExpText:SetText(tostring(needExp))
 end

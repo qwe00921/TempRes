@@ -136,11 +136,6 @@ function p.SetCtrllersVisible( ctrllers, bFlag )
 end
 
 function p.RequestData()
-	if p.layer == nil then
-		--UI不存在，不请求数据
-		return;
-	end
-	
 	local uid = GetUID();
     if uid == 0 or uid == nil then
         return ;
@@ -151,16 +146,30 @@ end
 
 --刷新列表数据
 function p.RefreshUI( dataSource )
+	if p.layer == nil then
+		return;
+	end
+	
 	local dataList = nil;
 	if p.showListType == E_LIST_TYPE_ALL then
-		dataList = dataSource.Material;
+		local temp = {};
+		if dataSource.Material ~= nil then
+			for i = 1, #dataSource.Material do
+				local materialId = tonumber(dataSource.Material[i].material_id) or 0;
+				local num = tonumber(dataSource.Material[i].num) or 0;
+				if materialId ~= 0 and num ~= 0 then
+					table.insert( temp, dataSource.Material[i] );
+				end
+			end
+		end
+		dataList = temp;
 	elseif p.showListType == E_LIST_TYPE_POTION then
 		local temp = {};
 		if dataSource.Material ~= nil then
 			for i = 1, #dataSource.Material do
 				local materialId = dataSource.Material[i].material_id or 0;
 				local materialType = tonumber(SelectCell( T_MATERIAL, materialId, "type" )) or 0;
-				if materialType == 1 then
+				if materialType == 1 and tonumber(dataSource.Material[i].num) ~= 0 then
 					table.insert( temp, dataSource.Material[i] );
 				end
 			end
@@ -172,7 +181,7 @@ function p.RefreshUI( dataSource )
 			for i = 1, #dataSource.Material do
 				local materialId = dataSource.Material[i].material_id or 0;
 				local materialType = tonumber(SelectCell( T_MATERIAL, materialId, "type" )) or 0;
-				if materialType == 2 then
+				if materialType == 2 and tonumber(dataSource.Material[i].num) ~= 0 then
 					table.insert( temp, dataSource.Material[i] );
 				end
 			end
@@ -180,7 +189,7 @@ function p.RefreshUI( dataSource )
 		dataList = temp;
 	end
 	
-	if p.layer == nil or dataList == nil then
+	if dataList == nil then
 		return;
 	end
 

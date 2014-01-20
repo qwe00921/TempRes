@@ -13,6 +13,8 @@ p.curNode = nil;
 p.missionId = nil;
 p.stageId = nil;
 p.nowTeamId = nil;
+
+p.tempMaterial = {};
 		
 local ui = ui_item_choose;
 
@@ -171,15 +173,16 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			WriteCon( "¹Ø±Õ" );
 			if p.edit then
 				p.SendEditResult();
-			end
-			if (p.missionId ~= nil and p.stageId ~= nil) then
-				quest_team_item.ShowUI(p.missionId,p.stageId,p.nowTeamId)
-				p.missionId = nil;
-				p.stageId = nil;
 			else
-				country_storage.ShowUI();
+				if (p.missionId ~= nil and p.stageId ~= nil) then
+					quest_team_item.ShowUI(p.missionId,p.stageId,p.nowTeamId)
+					p.missionId = nil;
+					p.stageId = nil;
+				else
+					country_storage.ShowUI();
+				end	
 			end
-			p.CloseUI();
+			p.CloseUI();		
 		elseif ui.ID_CTRL_BUTTON_8 == tag then
 			WriteCon( "ÌîÂú" );
 			p.FullData();
@@ -216,6 +219,7 @@ function p.CloseUI()
 		p.battle_items = {};
 		p.itemCtrllers = {};
 		p.edit = false;
+		p.tempMaterial = {};
 	end
 end
 
@@ -261,15 +265,16 @@ end
 function p.ClearAllData()
 	p.edit = true;
 	
-	p.battle_items = {};
+	--p.battle_items = {};
 	for i = 1, 5 do
+		--[[
 		local battle_item = {};
 		battle_item.item_id = 0;
 		battle_item.num = 0;
 		battle_item.location = i;
 		
 		p.battle_items[i] = battle_item;
-		
+		--]]
 		local ctrllers = p.itemCtrllers[i];
 		local btn = ctrllers[BTN_INDEX];
 		if btn then
@@ -322,6 +327,12 @@ function p.ClearPostion()
 	
 	local id = p.curNode:GetId();
 	local battle_item = p.battle_items[id] or {};
+	battle_item.item_id = tonumber(battle_item.item_id) or 0;
+	battle_item.num = tonumber(battle_item.num) or 0;
+	
+	p.tempMaterial[battle_item.item_id] = p.tempMaterial[battle_item.item_id] or 0;
+	p.tempMaterial[battle_item.item_id] = p.tempMaterial[battle_item.item_id] + battle_item.num;
+	
 	battle_item.item_id = 0;
 	battle_item.num = 0;
 	p.battle_items[id] = battle_item;
@@ -344,6 +355,28 @@ function p.ChooseItemCallBack( itemid, num )
 	
 	local id = p.curNode:GetId();
 	local battle_item = p.battle_items[id] or {};
+	battle_item.item_id = tonumber(battle_item.item_id) or 0;
+	battle_item.num = tonumber(battle_item.num) or 0;
+	
+	p.tempMaterial[battle_item.item_id] = p.tempMaterial[battle_item.item_id] or 0;
+	p.tempMaterial[battle_item.item_id] = p.tempMaterial[battle_item.item_id] + battle_item.num;
+	
+	local cache = msg_cache.msg_material_list or {};
+	local materials = cache.Material;
+	if materials == nil then
+		return;
+	end
+	
+	local item = p.GetMaterialData( materials, itemid );
+	if item ~= nil then
+		local serverNum = tonumber(item.num) or 0;
+		local clientNum = p.tempMaterial[tonumber(itemid)] or 0;
+		num = math.min(num, clientNum+serverNum);
+	end
+	
+	p.tempMaterial[tonumber(itemid)] = p.tempMaterial[tonumber(itemid)] or 0;
+	p.tempMaterial[tonumber(itemid)] = p.tempMaterial[tonumber(itemid)] - num;
+
 	battle_item.item_id = itemid;
 	battle_item.num = num;
 	p.battle_items[id] = battle_item;
@@ -377,5 +410,12 @@ function p.ChooseItemCallBack( itemid, num )
 end
 
 function p.SetBattleCallBack()
-	country_storage.RequestData();
+	if (p.missionId ~= nil and p.stageId ~= nil) then
+		quest_team_item.ShowUI(p.missionId,p.stageId,p.nowTeamId)
+		p.missionId = nil;
+		p.stageId = nil;
+	else
+		country_storage.RequestData();
+		country_storage.ShowUI();
+	end
 end

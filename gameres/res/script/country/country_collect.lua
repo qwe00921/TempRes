@@ -204,7 +204,8 @@ function p.CollectAnimation( node, result )
 	local picData = nil;
 	
 	if result.type == "material" then
-		picData = GetPictureByAni( "w_drop.hpball", 0 );
+		--picData = GetPictureByAni( "w_drop.hpball", 0 );
+		picData = GetItemPic( result.id, G_ITEMTYPE_MATERIAL );
 	elseif result.type == "gold" then
 		picData = GetPictureByAni( "w_drop.money", 0 );
 	elseif result.type == "soul" then
@@ -215,7 +216,7 @@ function p.CollectAnimation( node, result )
 	end
 	
 	node:AddChild( image );
-	local effectName = "lancer_cmb.country_collect_" .. math.random( 1, 4 );
+	local effectName = "lancer_cmb.country_collect_" .. math.random( 1, 8 );
 	image:AddActionEffect(effectName);
 end
 --==================================================================--

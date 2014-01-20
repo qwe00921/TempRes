@@ -190,7 +190,7 @@ function p.sortByLevel(a,b)
 end
 --按星级排序
 function p.sortByStar(a,b)
-	return tonumber(a.Rare) > tonumber(b.Rare);
+	return tonumber(a.Rare) < tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 --按属性排序
 function p.sortByTime(a,b)

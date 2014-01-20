@@ -6,21 +6,25 @@ Height=960
 [CTRL_BUTTON_BG]
 Type=2
 Tag=21
-Rect=0 0 640 960
+Rect=0 0 640 870
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_BG]
 Type=1
 Tag=28
-Rect=0 168 640 780
+Rect=0 168 640 700
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg.png
 NormalFileUV=0 0 640 960
 
@@ -30,6 +34,8 @@ Tag=23
 Rect=0 171 279 68
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -45,6 +51,8 @@ TextSize=35
 TextColor=0xfefd92
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CHAPTER]
 Type=4
@@ -58,6 +66,8 @@ TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_MISSION_NAME]
 Type=4
@@ -71,6 +81,8 @@ TextSize=32
 TextColor=0xfdfdde
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_MONEY]
 Type=1
@@ -78,6 +90,8 @@ Tag=29
 Rect=161 349 32 32
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\money.png
 NormalFileUV=0 0 32 32
 
@@ -92,6 +106,8 @@ TextTradition=獲得金幣
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_MONEY_V]
 Type=4
@@ -102,6 +118,8 @@ Notes=
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_GHO]
 Type=1
@@ -109,6 +127,8 @@ Tag=30
 Rect=156 391 43 43
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\karma_thum.png
 NormalFileUV=0 0 102 102
 
@@ -123,6 +143,8 @@ TextTradition=獲得魂
 TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SOUL_V]
 Type=4
@@ -133,6 +155,8 @@ Notes=
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EXP]
 Type=4
@@ -145,6 +169,8 @@ TextTradition=獲得經驗
 TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EXP_V]
 Type=4
@@ -155,6 +181,8 @@ Notes=
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_EXP_EXP]
 Type=9
@@ -165,6 +193,8 @@ Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
 NormalFileUV=0 0 176 28
 
@@ -174,6 +204,8 @@ Tag=34
 Rect=167 495 310 27
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
 NormalFileUV=0 0 176 28
 
@@ -188,6 +220,8 @@ TextTradition=距離下一等級經驗
 TextSize=24
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NEED_EXP_V]
 Type=4
@@ -198,6 +232,8 @@ Notes=
 TextSize=24
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_36]
 Type=1
@@ -205,6 +241,8 @@ Tag=38
 Rect=5 574 279 68
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
@@ -220,10 +258,14 @@ TextSize=35
 TextColor=0xfefd92
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_VERTICAL_LIST_ITEMANDCHA]
 Type=14
 Tag=40
-Rect=22 655 604 300
+Rect=22 655 604 200
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0

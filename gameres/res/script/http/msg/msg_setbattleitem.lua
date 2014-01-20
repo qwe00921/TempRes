@@ -29,7 +29,8 @@ function p:Process()
 	if self.result then
 		item_choose.SetBattleCallBack( self );
 	else
-		dlg_msgbox.ShowOK( ToUtf8("提示"), self.message, nil, item_choose.layer );
+		item_choose.SetBattleCallBack();
+		dlg_msgbox.ShowOK( ToUtf8("提示"), self.message, nil, GetUIRoot() );
 	end
 end
 

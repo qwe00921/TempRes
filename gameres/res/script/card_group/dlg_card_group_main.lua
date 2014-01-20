@@ -867,9 +867,9 @@ function p.CloseUI()
 	p.modify_user_team = nil;
 	card_bag_mian.CloseUI();
 	p.user_teams = nil;
-	
-	maininterface.ShowUI();
-	
+	if (p.missionId == nil and p.stageId == nil) then
+		maininterface.ShowUI();
+	end
 end
 
 function p.UIDisappear()
