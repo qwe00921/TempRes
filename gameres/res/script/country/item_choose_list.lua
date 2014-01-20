@@ -107,7 +107,10 @@ function p.ShowItems()
 					view:AddChildZ( btn, 9 );
 				else
 					itemName:SetText( SelectCell( T_MATERIAL, item.material_id, "name" ) or "" );
-					itemNum:SetText( tostring("X " .. item.num) or "" );
+					
+					local clientNum = item_choose.tempMaterial[tonumber(item.material_id)] or 0;
+					
+					itemNum:SetText( tostring("X " .. math.max(tonumber(item.num)+clientNum, 0)) or "" );
 					
 					local path = SelectCell( T_MATERIAL, item.material_id, "item_pic" );
 					local picData = nil;
