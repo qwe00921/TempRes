@@ -236,6 +236,9 @@ end
 
 
 function p.setExpUpNeed(needExp)
+	if p.layer == nil then 
+		return;
+	end
 	local needExpText = GetLabel(p.layer, ui.ID_CTRL_TEXT_NEED_EXP_V);
 	needExpText:SetText(tostring(needExp))
 end
