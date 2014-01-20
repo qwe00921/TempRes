@@ -223,7 +223,7 @@ function p.ShowUI()
 		return;
 	end
 
-	local layer = createCardBattleUILayer();
+	local layer = createNDUILayer();
     if layer == nil then
         return false;
     end
