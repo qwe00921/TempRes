@@ -57,9 +57,11 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		self.skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
 		self.singSound = SelectCell( T_SKILL_SOUND, skillID, "sing_sound" );
 		self.hurtSound = SelectCell( T_SKILL_SOUND, skillID, "hurt_sound" );
+		self.atkeffect = SelectCell( T_SKILL_RES, skillID, "attack_effect" );
 		self.sing = SelectCell( T_SKILL_RES, skillID, "sing_effect" );
-        self.hurt = SelectCell( T_SKILL_RES, skillID, "hurt_effect" );
+        self.hurt = SelectCell( T_SKILL_RES, skillID, "target_effect" );
 		self.is_bullet = tonumber( SelectCell( T_SKILL_RES, skillID, "is_bullet" ) );
+		self.bulleteffect = SelectCell( T_SKILL_RES, skillID, "bullet_effect" );
 		self.HasBuffLst = HasBuffLst;
 		--self.bufftype = tonumber(SelectCell( T_SKILL, skillID, "buff_type" ) );
 	else
@@ -90,10 +92,6 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 	else
 		self:atk_startsing();
 	end
-
-	
-	--self:start();
-
 end;
 
 function p:startDelay()
@@ -233,9 +231,9 @@ function p:atk_startAtk()
 		if self.IsSkill == true then	--近战技能只有攻击,  受击特效
 			--for k,v in pairs(self.targetLst) do
 			--	tarFighter = v;
-				local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode,self.hurt)
+				local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode)
 				--local lPlayNode = tarFighter:GetPlayerNode()
-				cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.hurt );
+				cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.atkeffect );
 				local batch = w_battle_mgr.GetBattleBatch(); 
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmd11 );					
@@ -365,13 +363,15 @@ function p:atk_end()
         --中BUFF动画		
 		if self.IsSkill == true then
 			local lhasBuff = self.HasBuffLst[k]; --是否中BUFF
-			if lhasBuff == true then
+			if lhasBuff == true then --中BUFF特效暂时没有
+				--[[
 				local buffAni = w_battle_mgr.GetBuffAni(self.skillID);
 				local cmdBuff = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), buffAni );
 				
 				local batch = w_battle_mgr.GetBattleBatch(); 
 				local seqBuff = batch:AddSerialSequence();
 				seqBuff:AddCommand( cmdBuff );
+				]]--
 				tarFighter:AddSkillBuff(self.skillID);
 			end;
 		end;

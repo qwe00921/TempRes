@@ -581,7 +581,7 @@ end;
 function p.HeroBuffStarTurn()
 	WriteCon( "HeroBuffStarTurn");
 	p.atkCampType = W_BATTLE_HERO;
-	calBuff(W_BATTLE_HERO,p.HeroBuffTurnEnd);
+	calBuff(W_BATTLE_HERO);
 	--p.HeroBuffTurnEnd();  --直接判定我方BUFF结束
 end;
 
@@ -630,11 +630,11 @@ function p.EnemyBuffStarTurn()
    p.atkCampType = W_BATTLE_ENEMY;
    p.EnemyBuffDie = false;
    w_battle_machinemgr.InitAtkTurnEnd(W_BATTLE_ENEMY); 
-   calBuff(W_BATTLE_ENEMY,p.EnemyBuffTurnEnd);
+   calBuff(W_BATTLE_ENEMY);
    --p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
 end;
 
-function calBuff(campType,pEvent)
+function calBuff(campType)
 	local fighterLst;
 	if campType == W_BATTLE_HERO then
 		fighterLst = p.heroCamp.fighters;
@@ -653,7 +653,11 @@ function calBuff(campType,pEvent)
 			end;
 			fighter.Buff = 1;
 			fighter.HasTurn = true; --先设置可以行动
-			
+		end;
+	end;	
+
+	w_battle_machinemgr.starBuffStateMachine();
+--[[			
 			for i,buffInfo in ipairs(fighter.SkillBuff) do
 				buffInfo.buff_time = buffInfo.buff_time - 1;
 				if    (buffInfo.buff_type == W_BUFF_TYPE_1)    --不能行动的BUFF
@@ -681,8 +685,9 @@ function calBuff(campType,pEvent)
 				end
 			end
 		end
-    end
-
+		]]--
+   
+--[[
 	if (#fighterDieLst > 0) then
 		local camp = nil;
 		
@@ -716,16 +721,19 @@ function calBuff(campType,pEvent)
 	else
 		pEvent();
 	end;
-	
+	]]--
 end;	
 
-function p.BuffEnd()
-	if p.atkCampType == W_BATTLE_HERO then
-		p.HeroBuffTurnEnd();
-	else
-		p.EnemyBuffTurnEnd();
-	end
+function p.checkBuffEnd()
+	if w_battle_machinemgr.allBuffEnd() == true then
+		if p.atkCampType == W_BATTLE_HERO then
+			p.HeroBuffTurnEnd();
+		else
+			p.EnemyBuffTurnEnd();
+		end	
+	end;
 end;
+
 
 
 --检查敌方BUFF是否结束
@@ -1411,8 +1419,8 @@ function p.QuitBattle()
 	
 	--isActive = false;
 	p.clearDate();
-	dlg_menu.ShowUI();
-    dlg_userinfo.HideUI();
+	--dlg_menu.ShowUI();
+    --dlg_userinfo.HideUI();
 
 end
 
@@ -1702,3 +1710,4 @@ function p.checkPickEnd()
 	end;
 	
 end
+

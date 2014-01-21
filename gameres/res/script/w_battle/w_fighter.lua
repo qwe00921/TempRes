@@ -209,7 +209,7 @@ function p:CreateFlyNum(nType)
 	local flynum = fly_num:new();
 	flynum:SetOwnerNode( self.node );
 	flynum:Init(nType);
-	flynum:SetOffset(30,-30);
+	flynum:SetOffset(30,30);
 	
 	self.node:AddChildZ( flynum:GetNode(), 2 );
 	self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
@@ -374,7 +374,7 @@ function p:GetFrontPos(targetNode)
 end
 
 --近战攻击特效
-function p:GetAtkImageNode(atkNode,ani)
+function p:GetAtkImageNode(atkNode)
 
 	local imageNode = createNDRole();
 	imageNode:Init();
