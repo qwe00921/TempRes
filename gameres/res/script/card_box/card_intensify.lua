@@ -157,6 +157,21 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				--p.CloseUI();
 				]]--
 				--update by csd 2013-12-18
+				
+				for k,v in pairs(p.selectCardId) do
+					for i = 1,#p.cardListInfo do 
+						local card = p.cardListInfo[i];
+							if card.UniqueId == v then
+								
+								if tonumber(card.Rare) >= 4 then
+									dlg_msgbox.ShowYesNo(GetStr("card_caption"),GetStr("card_intensify_rare"),p.OkCallback,p.layer);
+									return;
+								end
+							end
+					end
+					
+				end
+				
 				local lCardIdLst = {}
 				for k,v in pairs(p.selectCardId) do
 					table.insert(lCardIdLst, v);
@@ -194,6 +209,21 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	end
 end
 
+function p.OkCallback(result)
+	if result == true then
+		local lCardIdLst = {}
+		for k,v in pairs(p.selectCardId) do
+			table.insert(lCardIdLst, v);
+		end;
+		card_rein.ShowUI();
+		card_rein.setSelCardList(lCardIdLst);
+		p.CloseUI();
+		
+	end
+	
+	
+	
+end
 --确认强化为TRUE
 function p.OnMsgBoxCallback(result)
 	if result == true then
