@@ -1,0 +1,218 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_216]
+Type=1
+Tag=216
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_9SLICES_52]
+Type=22
+Tag=52
+Rect=17 122 601 362
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_BUTTON_66]
+Type=2
+Tag=66
+Rect=-2 17 107 67
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_PICTURE_67]
+Type=1
+Tag=67
+Rect=107 16 208 73
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_TEXT_78]
+Type=4
+Tag=78
+Rect=13 28 80 43
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_45]
+Type=4
+Tag=45
+Rect=122 28 80 43
+AnchorPos=0 0
+Notes=
+Text=设定
+TextTradition=設定
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_46]
+Type=2
+Tag=46
+Rect=146 242 120 80
+AnchorPos=0 0
+Notes=
+Text=关闭
+TextTradition=關閉
+TextSize=35
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
+
+[CTRL_BUTTON_55]
+Type=2
+Tag=55
+Rect=338 242 120 80
+AnchorPos=0 0
+Notes=
+Text=开启
+TextTradition=開啟
+TextSize=35
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
+
+[CTRL_BUTTON_56]
+Type=2
+Tag=56
+Rect=146 376 120 80
+AnchorPos=0 0
+Notes=
+Text=关闭
+TextTradition=關閉
+TextSize=35
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
+
+[CTRL_BUTTON_57]
+Type=2
+Tag=57
+Rect=340 376 120 80
+AnchorPos=0 0
+Notes=
+Text=开启
+TextTradition=開啟
+TextSize=35
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
+
+[CTRL_TEXT_58]
+Type=4
+Tag=58
+Rect=31 131 107 41
+AnchorPos=0 0
+Notes=
+Text=声音
+TextTradition=聲音
+TextSize=35
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_59]
+Type=4
+Tag=59
+Rect=35 170 359 32
+AnchorPos=0 0
+Notes=
+Text=在这里可以调整背景音乐和音效
+TextTradition=在這里可以調整背景音樂和音效
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_60]
+Type=4
+Tag=60
+Rect=32 213 107 29
+AnchorPos=0 0
+Notes=
+Text=背景声音
+TextTradition=背景聲音
+TextSize=25
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_61]
+Type=4
+Tag=61
+Rect=38 336 107 29
+AnchorPos=0 0
+Notes=
+Text=音效
+TextTradition=音效
+TextSize=25
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
