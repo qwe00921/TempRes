@@ -108,6 +108,8 @@ function p.CanGachaAgain()
 		else
 			p.againBtn:SetEnabled( false );
 		end
+	else
+		p.againBtn:SetVisible( false );
 	end
 	--[[
     if dlg_gacha.charge_type == "3" then  --如果使用代币

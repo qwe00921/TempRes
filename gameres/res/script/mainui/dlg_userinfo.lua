@@ -137,7 +137,7 @@ function p.RefreshUI(userinfo)
 	if userinfo.Move < userinfo.MaxMove then
 		timeText:SetText( ToUtf8( TimeToStr( p.move_remain_time ) ) );
 	else
-		timeText:SetText( "恢复时间" );
+		timeText:SetText( "当前体力值已满" );
 	end
 	
 	local energy = tonumber(userinfo.Energy) or 0;
@@ -193,7 +193,7 @@ function p.OnUpdateInfo()
 		if cache.Move < cache.MaxMove then
 			timeText:SetText( ToUtf8( TimeToStr( p.move_remain_time ) ) );
 		else
-			timeText:SetText(  "恢复时间"  );
+			timeText:SetText(  "当前体力值已满"  );
 		end
 	end
 

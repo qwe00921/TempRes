@@ -37,7 +37,7 @@ NormalFileUV=0 0 590 264
 
 [CTRL_BUTTON_ITEM_EDIT]
 Type=2
-Tag=22
+Tag=122
 Rect=9 8 148 65
 AnchorPos=0 0
 Notes=
