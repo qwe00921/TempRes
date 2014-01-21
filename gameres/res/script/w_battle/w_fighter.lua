@@ -374,7 +374,7 @@ function p:GetFrontPos(targetNode)
 end
 
 --近战攻击特效
-function p:GetAtkImageNode(atkNode,ani)
+function p:GetAtkImageNode(atkNode)
 
 	local imageNode = createNDRole();
 	imageNode:Init();
