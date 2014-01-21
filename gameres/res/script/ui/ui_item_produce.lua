@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_item_produce = {};
 local p =  ui_item_produce;
+p.ID_CTRL_TEXT_59						       = 61;
 p.ID_CTRL_TEXT_58						       = 60;
 p.ID_CTRL_TEXT_57						       = 59;
 p.ID_CTRL_TEXT_56						       = 58;

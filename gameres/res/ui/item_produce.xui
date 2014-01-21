@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -220,7 +220,7 @@ UIClsoeType=0
 [CTRL_BUTTON_8]
 Type=2
 Tag=8
-Rect=269 771 107 69
+Rect=269 771 107 70
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -230,6 +230,10 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
+DisableFile=.\res\image\ui\quest\button_public_unclick.png
+DisableFileUV=0 0 100 80
 
 [CTRL_TEXT_15]
 Type=4
