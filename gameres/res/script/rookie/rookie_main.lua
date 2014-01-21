@@ -4,58 +4,73 @@
 rookie_main = {};
 local p = rookie_main;
 
-p.layer = nil;
-p.faceImage = nil;
-p.colorLabel = nil;
-
-local ui = ui_learning;
-
-function p.ShowUI( step )
-	if p.layer ~= nil then
-		p.layer:SetVisible( true );
-		p.ShowLearningStep( step );
-		return;
-	end
-	
-	local layer = createNDUIDialog();
-	if layer == nil then
-		return false;
-	end
-	
-	layer:NoMask();
-	layer:Init();
-	layer:SetSwallowTouch( true );
-	
-	GetUIRoot():AddDlg( layer );
-	LoadDlg("learning.xui", layer, nil);
-	
-	p.layer = layer;
-	
-	p.InitControllers();
-	
-	p.ShowLearningStep( step );
-end
-
-function p.InitControllers()
-	p.faceImage = GetImage( p.layer, ui.ID_CTRL_PICTURE_51 );
-	p.colorLabel = GetColorLabel( p.layer, ui.ID_CTRL_COLOR_LABEL_52 );
-end
-
+--进入新手引导
 function p.ShowLearningStep( step )
-	
-end
-
-function p.CloseUI()
-	if p.layer ~= nil then
-		p.layer:LazyClose();
-		p.layer = nil;
-		p.faceImage = nil;
-		p.colorLabel = nil;
+	if step == 1 then
+		
+	elseif step == 2 then
+		
+	elseif step == 3 then
+		
+	elseif step == 4 then
+		
+	elseif step == 5 then
+		
+	elseif step == 6 then
+		
+	elseif step == 7 then
+		
+	elseif step == 8 then
+		
+	elseif step == 9 then
+		
+	elseif step == 10 then
+		
+	elseif step == 11 then
+		
+	elseif step == 12 then
+		
+	elseif step == 13 then
+		
+	elseif step == 14 then
+		
 	end
 end
 
-function p.HideUI()
-	if p.layer ~= nil then
-		p.layer:SetVisible( false );
+--点击高亮区域回调
+function p.MaskTouchCallBack( step )
+	if step == 1 then
+		
+	elseif step == 2 then
+		
+	elseif step == 3 then
+		
+	elseif step == 4 then
+		
+	elseif step == 5 then
+		
+	elseif step == 6 then
+		
+	elseif step == 7 then
+		
+	elseif step == 8 then
+		
+	elseif step == 9 then
+		
+	elseif step == 10 then
+		
+	elseif step == 11 then
+		
+	elseif step == 12 then
+		
+	elseif step == 13 then
+		
+	elseif step == 14 then
+		
 	end
+end
+
+--获取高亮区域
+function p.GetHighLightRect( step )
+	return CCRectMake( 0, 0, 0, 0 );
 end
