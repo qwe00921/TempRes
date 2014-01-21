@@ -259,7 +259,7 @@ function p.setMissionInfo(misId,view)
 		return;
 	end
 	misName:SetText(missionTable.name);
-	--misStep:SetText(missionTable.);
+	misStep:SetText(missionTable.step);
 	misPower:SetText(missionTable.move_cost);
 	misMoney:SetText(missionTable.money);
 	misExp:SetText(missionTable.exp);

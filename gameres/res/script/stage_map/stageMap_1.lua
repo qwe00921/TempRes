@@ -73,7 +73,7 @@ end
 
 function p.addAllStage(callBackData)
 	if callBackData.result == false then
-		dlg_msgbox.ShowOK("错误提示","玩家数据错误。",nil,p.layer);
+		dlg_msgbox.ShowOK(callBackData.message,nil,p.layer);
 		return
 	end
 	local stageListInif = callBackData.stages;

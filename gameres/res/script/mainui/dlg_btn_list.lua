@@ -115,7 +115,8 @@ end
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId();
-		WriteCon( tostring(id) );
+		WriteCon( tostring(id) );		
+		p.CloseUI();
 --[[		if id == ID_PET then
 			dlg_beast_main.ShowUI();
 		end
