@@ -329,8 +329,12 @@ function p.CloseUI()
 end
 
 function p.SelectImage(id)
-	local aniIndex = "item."..id;
-	return GetPictureByAni(aniIndex,0);
+	
+	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(id)); 
+	if pEquipInfo then
+		return GetPictureByAni(pEquipInfo.item_pic,0);
+	end
+	
 end
 
 function p.SelectItemName(id)

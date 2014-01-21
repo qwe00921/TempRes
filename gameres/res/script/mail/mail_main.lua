@@ -194,7 +194,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		if ui.ID_CTRL_BUTTON_GO_BACK == tag then
 			WriteCon("**========·µ»Ø========**");
 			p.CloseUI();
-			maininterface.ShowUI();
+			maininterface.BecomeFirstUI();
+			--maininterface.ShowUI();
 			dlg_userinfo.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_WRITE == tag then
 			WriteCon("**========Ð´ÐÅ========**");

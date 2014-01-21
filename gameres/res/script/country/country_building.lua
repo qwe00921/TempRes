@@ -11,11 +11,20 @@ p.typeIndexT = {};
 p.nextTyep = 1;
 
 p.upNeedTime = nil;
-p.upNeed = nil;
+p.upNeedMoney = nil;
+p.upNeedSoul = nil;
 p.buildLevel = nil;
 p.upNeedHome = nil;
 
+p.nowPlayMoney = nil;
+p.nowPlaySoul = nil;
+p.nowProduceLevel = nil;
 function p.ShowUI(countryInfo)
+	p.nowPlayMoney = tonumber(msg_cache.msg_player.Money);
+	p.nowPlaySoul = tonumber(msg_cache.msg_player.BlueSoul);
+	WriteCon("p.nowPlayMoney == "..p.nowPlayMoney);
+	WriteCon("p.nowPlaySoul == "..p.nowPlaySoul);
+
 	--dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
 	maininterface.HideUI();
@@ -112,9 +121,11 @@ end
 
 function p.Init()
 	p.upNeedTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP1);
-	p.upNeed = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP2);
+	p.upNeedMoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP2);
+	p.upNeedSoul = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP4);
 	p.upNeedHome = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP3);
 	p.buildLevel = GetLabel(p.layer, ui.ID_CTRL_TEXT_BUILD_LV);
+	p.bulidDescription = GetLabel(p.layer,ui.ID_CTRL_TEXT_DESCRIPTION);
 	
 	local typeId = p.getNowType()
 	p.getBuildInfo(typeId)
@@ -139,6 +150,9 @@ function p.getBuildInfo(typeId)
 		if k == "B"..typeId then
 			nowBuildLv = tonumber(v.build_level);
 			upIng = tonumber(v.is_upgrade);
+			if typeId == 1 then
+				p.nowProduceLevel = nowBuildLv;
+			end
 		end
 	end
 	p.getBuildNeedTable(typeId,nowBuildLv,upIng)
@@ -171,22 +185,42 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		
 		if upIng == 0 then
 			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
-			p.upNeed:SetText("金币:"..moneyNeed.."  蓝魂:"..soulNeed);
-			p.upNeedHome:SetText("住宅:"..homeLvNeed);
+			p.upNeedMoney:SetText("金币:"..moneyNeed);
+			p.SetTextColour(p.upNeedMoney,tonumber(p.nowPlayMoney),tonumber(moneyNeed))
+			
+			p.upNeedSoul:SetText("蓝魂:"..soulNeed);
+			p.SetTextColour(p.upNeedSoul,tonumber(p.nowPlaySoul),tonumber(soulNeed))
+			
+			p.upNeedHome:SetText("生产屋:"..homeLvNeed);
+			p.SetTextColour(p.upNeedHome,tonumber(p.nowProduceLevel),tonumber(homeLvNeed))
+
 			p.buildLevel:SetText("LV"..nowLevel);
+			p.bulidDescription:SetText(desText);
 		elseif upIng == 1 then
 			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
-			p.upNeed:SetText("升级中");
-			p.upNeedHome:SetText(" ");
+			p.upNeedMoney:SetText(" ");
+			p.upNeedSoul:SetText(" ");
+			p.upNeedHome:SetText("升级中");
 			p.buildLevel:SetText("LV"..nowLevel);
+			p.bulidDescription:SetText(desText);
 		end
 		upBtn:SetVisible(true);
 	else
 		p.upNeedTime:SetText("已到达最高等级");
-		p.upNeed:SetText(" ");
+		p.upNeedMoney:SetText(" ");
+		p.upNeedSoul:SetText(" ");
 		p.upNeedHome:SetText(" ");
 		p.buildLevel:SetText("LV MAX");
 		upBtn:SetVisible(false);
+		p.bulidDescription:SetText(desText);
+	end
+end
+
+function p.SetTextColour(uiNode,haveNum,needNum)
+	if haveNum < needNum then
+		uiNode:SetFontColor(ccc4(255,0,0,255))
+	else
+		uiNode:SetFontColor(ccc4(0,0,0,255))
 	end
 end
 
@@ -304,9 +338,14 @@ function p.ClearData()
 	p.nextTyep = 1;
 
 	p.upNeedTime = nil;
-	p.upNeed = nil;
+	p.upNeedMoney = nil;
+	p.upNeedSoul = nil;
 	p.buildLevel = nil;
 	p.upNeedHome = nil;
+
+	p.nowPlayMoney = nil;
+	p.nowPlaySoul = nil;
+	p.nowProduceLevel = nil;
 end
 
 -- function p.UIDisappear()
