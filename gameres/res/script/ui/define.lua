@@ -303,6 +303,9 @@ DoFile("ui/ui_country_produce_list.lua");
 DoFile("ui/ui_country_produce_lsit_list.lua");
 DoFile("ui/ui_item_produce.lua");
 
+--新手引导
+DoFile("ui/ui_learning.lua");
 
 --测试（以后要删除）
 DoFile("ui/ui_test_fly.lua");
+

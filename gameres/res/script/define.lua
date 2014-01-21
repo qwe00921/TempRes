@@ -184,3 +184,6 @@ DoFile("country/define.lua");
 --客户端数据更新通知UI
 DoFile("notify/define.lua");
 
+--新手引导
+DoFile("rookie/define.lua");
+
