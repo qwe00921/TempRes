@@ -27,19 +27,19 @@ function p.ShowUI( nFrom, nTotal )
 		return;
 	end
 	
-	local layer = createNDUIDialog();
+	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
 	end
 	
-	layer:NoMask();
+	--layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch( false );
     
 	layer:SetVisible( false );
 	
 	GetUIRoot():AddChild( layer );
-	LoadUI("n_battle_pass.xui", layer, nil);
+	LoadDlg("n_battle_pass.xui", layer, nil);
 	
 	layer:SetVisible( true );
 	

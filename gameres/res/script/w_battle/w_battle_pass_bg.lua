@@ -16,35 +16,35 @@ function p.ShowUI()
 		return;
 	end
 	
-	local masklayer = createNDUIDialog();
-	if masklayer == nil then
-		return false;
-	end
-	masklayer:NoMask();
-	masklayer:Init();
-	masklayer:SetSwallowTouch( true );
-	
-	GetUIRoot():AddChild( masklayer );
-	LoadUI("n_battle_mask.xui", masklayer, nil);
-	
-	p.masklayer = masklayer;
-	
-	local layer = createNDUIDialog();
+	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
 	end
 	
-	layer:NoMask();
+	--layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch( false );
     
 	layer:SetVisible( false );
 	
 	GetUIRoot():AddChild( layer );
-	LoadUI("n_battle_pass_bg.xui", layer, nil);
+	LoadDlg("n_battle_pass_bg.xui", layer, nil);
 	
 	p.layer = layer;
-
+	
+	local masklayer = createNDUILayer();
+	if masklayer == nil then
+		return false;
+	end
+	--masklayer:NoMask();
+	masklayer:Init();
+	masklayer:SetSwallowTouch( true );
+	
+	GetUIRoot():AddChild( masklayer );
+	LoadDlg("n_battle_mask.xui", masklayer, nil);
+	
+	p.masklayer = masklayer;
+	
 	SetTimerOnce( p.ShowAnimation, 0.2 );
 end
 
