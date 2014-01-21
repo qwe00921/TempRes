@@ -36,6 +36,7 @@ function p.ShowUI( msg )
 	p.cardListByProf  = msg.equipment_info;
     if p.layer ~= nil then
         p.layer:SetVisible( true );
+		equip_sell_statistics.layer:SetVisible( true );
         return ;
     end
     
@@ -544,7 +545,10 @@ end
 function p.HideUI()
     if p.layer ~= nil then
         p.layer:SetVisible( false );
-    end
+    end 
+	if equip_sell_statistics.layer ~= nil then
+		 equip_sell_statistics.layer:SetVisible( false );
+    end 
 end
 --¹Ø±ÕUI
 function p.CloseUI()    
