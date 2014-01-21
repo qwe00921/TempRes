@@ -51,13 +51,22 @@ function p.ShowUI( msg )
     p.SetDelegate(layer);
     p.layer = layer;    
 	p.ShowInfo();
+	equip_sell_statistics.ShowUI();
 end
 
 function p.ShowInfo()
 	
-	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
-	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(p.countNum) ); 	
-	p.refreshList(p.equlip_list);
+	if p.equlip_list ~= nil then
+		
+		local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
+		labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(p.countNum) ); 	
+		p.refreshList(p.equlip_list);
+	else
+		local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
+		labRoomNum:SetText("0/"..tostring(p.countNum) ); 	
+		p.refreshList(p.equlip_list);
+	end
+	
 	
 end
 
@@ -197,32 +206,38 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 					table.remove(p.selectList,k);
 				end
 			end
-			p.consumeMoney = p.consumeMoney - pEquipInfo.sell_price-(pEquipLevel*pEquipLevel);
-			p.setNumFalse();
-			p.selectNum = p.selectNum-1;
+			
+			if p.selectNum ~= 0 then
+				p.selectNum = p.selectNum-1;
+				p.consumeMoney = p.consumeMoney - pEquipInfo.sellprice-(pEquipLevel*pEquipLevel);
+				p.setNumFalse();
+			end
+			
 		else
 			if p.selectNum < 10 then
 				equipSelectText:SetVisible(true);
 				p.selectList[#p.selectList + 1] = equipId;
 				p.selectNum = p.selectNum + 1;
 				equipSelectText:SetText(tostring(p.selectNum));
-				p.consumeMoney = p.consumeMoney + pEquipInfo.sell_price+(pEquipLevel*pEquipLevel);
+				p.consumeMoney = p.consumeMoney + pEquipInfo.sellprice+(pEquipLevel*pEquipLevel);
 			end
 		end
 	else
 		dlg_msgbox.ShowOK(GetStr("equip_sell_title"),GetStr("equip_is_dress"),p.OnOkCallback,p.layer);
 	end
 	
-	
+	--[[
 	local equipCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_MATTER_NUM);
 	equipCount:SetText(tostring(p.selectNum).."/10"); 
 	
 	local equipSellMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_SELL_GOLD);
 	equipSellMoney:SetText(tostring(p.consumeMoney)); 
-		
-	if  tonumber(p.selectNum) >= 10 then 
+		]]--
+	equip_sell_statistics.setSellMoney(p.consumeMoney);
+	equip_sell_statistics.setSellCardNum(p.selectNum);
+	if  tonumber(p.selectNum) > 10 then 
 		p.setAllCardDisEnable();
-	elseif tonumber(p.selectNum) < 10 then
+	elseif tonumber(p.selectNum) <= 10 then
 		p.setCardDisEnable();
 	end
 end
@@ -286,18 +301,22 @@ function p.clearDate()
 			--WriteCon("k : "..k);
 			local numText = p.allNumText[v];
 			numText:SetText("");
+			numText:SetVisible(false);
+			
 	end
 	p.selectNum  = 0;
 	p.selectList = {};
 	p.setCardDisEnable();
 	p.consumeMoney = 0;
 	
+	
+	--[[
 	local equipCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_MATTER_NUM);
 	equipCount:SetText(tostring(p.selectNum).."/10"); 
 	
 	local equipSellMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_SELL_GOLD);
 	equipSellMoney:SetText(tostring(p.consumeMoney)); 
-	
+	]]--
 end
 
 --设置除选择外的卡牌不可点
@@ -405,13 +424,13 @@ function p.SetDelegate(layer)
     
     local orderBtn = GetButton(layer,ui.ID_CTRL_BUTTON_ORDER);
     orderBtn:SetLuaDelegate(p.OnUIEvent);
-    
+    --[[
     local clearBtn = GetButton(layer,ui.ID_CTRL_BUTTON_CLEAR);
     clearBtn:SetLuaDelegate(p.OnUIEvent);
     
     local sellBtn = GetButton(layer,ui.ID_CTRL_BUTTON_SELL);
     sellBtn:SetLuaDelegate(p.OnUIEvent);
-    
+    ]]--
 end
 
 --事件处理
@@ -505,6 +524,7 @@ function p.update(msg)
 	p.countNum = msg.equip_room_limit;
 	p.cardListByProf  = msg.equipment_info;
 	p.ShowInfo();
+	equip_sell_statistics.Init();
 end
 
 --售出卡牌请求 http://fanta2.sb.dev.91.com/index.php?command=Equip&action=Sell&user_id=123456&id=60174,60175&V=100&R=100&MachineType=WIN32
@@ -542,6 +562,6 @@ function p.CloseUI()
 		p.cardListByProf = {};
 		p.isDress = {};
 		p.equipLevel = {};
-		
+		equip_sell_statistics.CloseUI();
     end
 end

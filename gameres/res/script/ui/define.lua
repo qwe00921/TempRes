@@ -171,7 +171,7 @@ DoFile("ui/ui_equip_sell_list.lua")
 DoFile("ui/ui_equip_sell_select_list.lua")
 DoFile("ui/ui_equip_rein_select.lua")
 DoFile("ui/ui_dlg_equip_rein_result.lua")
-
+DoFile("ui/ui_equip_sell_list_statistics.lua")
 
 --卡牌仓库
 DoFile("ui/ui_dlg_card_depot.lua")
