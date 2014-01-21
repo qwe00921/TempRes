@@ -28,6 +28,7 @@ function p:Process()
 	WriteConWarning( "** msg_maininterface:Process() called" );
 	if self.result then
 		dlg_userinfo.RefreshUI(self.user);
+		maininterface.ShowMailNum(self.user);
 	else
 		--没有人物，则进入创建人物界面
 		--dlg_createrole.ShowUI();
