@@ -119,7 +119,7 @@ NormalFileUV=0 0 102 102
 [CTRL_TEXT_UP1]
 Type=4
 Tag=34
-Rect=214 306 216 34
+Rect=215 291 216 34
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -131,7 +131,7 @@ UIClsoeType=0
 [CTRL_TEXT_UP2]
 Type=4
 Tag=35
-Rect=202 439 239 34
+Rect=202 439 120 34
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -144,6 +144,18 @@ UIClsoeType=0
 Type=4
 Tag=57
 Rect=226 406 185 33
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_UP4]
+Type=4
+Tag=41
+Rect=323 439 120 34
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -222,6 +234,18 @@ Notes=
 TextSize=30
 TextColor=0xff0000
 TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_DESCRIPTION]
+Type=4
+Tag=36
+Rect=215 329 216 34
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
