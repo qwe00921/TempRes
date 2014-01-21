@@ -394,7 +394,7 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 30,
+	Attack= 1,
 	Defence= 2,
 	Speed= 23,
 	Skill= 1006,
@@ -429,7 +429,7 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 30,
+	Attack= 1,
 	Defence= 1,
 	Speed= 35,
 	Skill= 1008,
@@ -823,18 +823,18 @@ function p.initFighterDB(fighterInfo,IsHero)
 	--fighterInfo.Crit = 1000;
 	--临时代码
 	if p.IsDebug == true then
-		fighterInfo.Attack = fighterInfo.Attack * 5;
+		fighterInfo.Attack = fighterInfo.Attack;
 		if IsHero == true then
-			if fighterInfo.Damage_type == 1 then 
+		--	if fighterInfo.Damage_type == 1 then 
 		--		fighterInfo.Attack = fighterInfo.Attack - 10;
-				if fighterInfo.Position == 1 then
-					fighterInfo.Skill = 1001;
-					fighterInfo.Sp = 100;	
-				elseif fighterInfo.Position == 2 then
-					fighterInfo.Skill = 1007;
+				if fighterInfo.Position == 2 then
+					fighterInfo.Skill = 1;
 					fighterInfo.Sp = 100
+				elseif fighterInfo.Position == 3 then
+					fighterInfo.Skill = 1001;
+					fighterInfo.Sp = 100;		
 				end;
-			end;
+		--	end;
 		end;
 	end;
 	
@@ -880,7 +880,9 @@ function p.Init( battleDB )
 	p.Drop = battleDB.fightinfo.Drop;
     
 	--玩家列表
-	p.playerCardList = battleDB.fightinfo.Player; 
+	if p.IsDebug ~= true then
+		p.playerCardList = battleDB.fightinfo.Player; 
+	end;
 	for i=1,#p.playerCardList do
 		p.initFighterDB(p.playerCardList[i],true);
 	end;

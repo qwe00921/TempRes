@@ -212,7 +212,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 
 	if atkFighter.Sp == 100 then
 		if IsMonster ~= true then
-		--	return p.SetPVESkillAtkID(atkID);
+			return p.SetPVESkillAtkID(atkID);
 		end;
 	end;
 
@@ -666,8 +666,8 @@ function calBuff(campType,pEvent)
 				    or  (buffInfo.buff_type == W_BUFF_TYPE_7)  
 					or  (buffInfo.buff_type == W_BUFF_TYPE_8) then --扣血BUFF
 				    local lhp = math.modf(fighter.maxHp * buffInfo.buff_param / 100 )
-					fighter.SubShowLife(lhp);
-					fighter.SubLife(lhp);
+					fighter:SubShowLife(lhp);
+					fighter:SubLife(lhp);
 					if fighter.Hp <= 0 then  --死亡
                         fighterDieLst[#fighterDieLst + 1] = fighter; --加入死亡列表							
 						local machine = w_battle_machinemgr.getAtkStateMachine(fighter.Position);
@@ -1652,26 +1652,25 @@ function p.setFighterDie(targerFighter,camp)
 end
 
 function updateCampBuff(camp)
-	for k,v in ipairs(p.enemyCamp.fighters) do
+	for k,v in ipairs(camp.fighters) do
 		if(v.Hp > 0) then
-			if #v.SkillBuff > 0 then
-				for i=v.BuffIndex, #v.SkillBuff do  --设置一个BUFF
-					local buffInfo = v.SkillBuff[i]
+			if v.showBuff == true then
+				if #v.SkillBuff > 0 then
+					local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
 					v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
 					v.BuffIndex = v.BuffIndex + 1;
 					if v.BuffIndex > #v.SkillBuff then
 						v.BuffIndex = 1;
 					end
-					break;
 				end
-			end
+			end;
 		end;
 	end
 end
 
 function p.UpdateBuff()
-	--updateCampBuff(p.enemyCamp);
-	--updateCampBuff(p.heroCamp);
+	updateCampBuff(p.enemyCamp);
+	updateCampBuff(p.heroCamp);
 end
 
 function p.AddBall(ltype,num)

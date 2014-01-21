@@ -28,7 +28,7 @@ function p:ctor()
 	self.JoinAtkTime = nil;
 	self.HitTime = 0;
 	self.tmplife = self.life;
-    self.atkType = 0;
+--    self.atkType = 0;
 	self.selIndex = 0;  --目标选择顺序
 	self.pPrePos = nil;
 	self.pOriginPos = nil;
@@ -44,6 +44,8 @@ function p:ctor()
 	self.SkillBuff = {}  --中的BUFF列表
 	self.canRevive = false;
 	self.BuffNode = nil;
+ 	self.showBuff = true;
+    self.nowBuffType = nil;
 	self.BuffIndex = 1;
 end
 
@@ -61,7 +63,7 @@ function p:Init( idFighter, node, camp )
 	self.Hp = self.life;
 	self.maxHp = self.life;        
     self.HasTurn = true;  --没有中其它BUFF
-	self:InitBuffNode();
+	--self:InitBuffNode();
 	--self:CreateHpBar();
 	--self:CreateFlyNumGreen();	
 end
@@ -222,7 +224,7 @@ function p:SubShowLife(val) --需展现的血量
 	end
 	
 	--掉血动画, 可以支持掉多个
-	local flynum = self:CreateFlyNum(2);
+	local flynum = self:CreateFlyNum(1);
     if flynum ~= nil then
         flynum:PlayNum( val );
     end	
@@ -242,7 +244,7 @@ function p:AddShowLife(val) --需展现的血量
 	end
 	
 	--掉血动画, 可以支持掉多个
-	local flynum = self:CreateFlyNum(1);
+	local flynum = self:CreateFlyNum(2);
     if flynum ~= nil then
         flynum:PlayNum( val );
     end	
@@ -259,6 +261,7 @@ function p:AddSkillBuff(pSkillID)
 	local lbuff_type = tonumber(SelectCell(T_SKILL,pSkillID,"buff_type"))
 	local lRecord = {buff_type = lbuff_type, buff_time = lwork_time, buff_param=lbuff_param}
 	table.insert(self.SkillBuff, lRecord);
+	self:SetBuffNode(lbuff_type);
 end;
 
 
@@ -409,7 +412,7 @@ function p:InitBuffNode()
 	
 	local lnewPos = CCPointMake(x,y)
     --播放动画
-    imageNode:SetVisible( false );
+    imageNode:SetVisible( true );
 	
 	self.node:AddChildZ( imageNode, E_BATTLE_Z_NORMAL );
 	imageNode:SetFramePos(lnewPos);	
@@ -421,22 +424,46 @@ function p:InitBuffNode()
 	self.BuffNode = imageNode;
 end;
 
-function p:SetBuffNode(lBuffType)
-	if lBuffType == 0 then
-		self.BuffNode:SetVisible(false)
-		return ;
-	else
+function p:HideBuffNode()
+	if self.BuffNode ~= nil then
+		self.showBuff = false;
+		self.BuffNode:SetVisible(false);
+	end
+end;
+
+function p:ShowBuffNode()
+	if self.BuffNode ~= nil then
+		self.showBuff = true;
 		self.BuffNode:SetVisible(true);
 	end
+end;
+
+function p:SetBuffNode(lBuffType)
+	if lBuffType == 0 then
+		return ;
+	end
+	
+	if self.BuffNode ~= nil then
+		if self.nowBuffType == lBuffType then
+			return
+		else
+			self.node:RemoveChild(self.BuffNode,true);
+			self.BuffNode = nil;
+			
+		end
+		
+	end;
+	self:InitBuffNode();	
 	
 	local lBuffAni = "n_battle_buff.buff_type_"..tostring(lBuffType); 
-
---	self.BuffNode:SetPicture(GetPictureByAni(lBuffAni,0));
-	local cmdBuff = createCommandEffect():AddFgEffect( 0, self.BuffNode, lBuffAni );
+    
+	
+	--self.BuffNode:SetImage(GetPictureByAni(lBuffAni,0));
+	local cmdBuff = createCommandEffect():AddFgEffect( 1, self.BuffNode, lBuffAni );
 	local batch = w_battle_mgr.GetBattleBatch(); 
 	local seqBuff = batch:AddSerialSequence();
 	seqBuff:AddCommand(cmdBuff);
-	
+	self.nowBuffType = lBuffType;
 end;
 
 function p:SetShadow(kShadow)
@@ -617,8 +644,20 @@ function p:RemoveBuff(val)
 	end
 end;
 
+function p:Die()
+	self.isDead = true;
+	self.SkillBuff = {}
+	if self.BuffNode ~= nil then
+		self.node:RemoveChild(self.BuffNode,true);
+		self.BuffNode = nil;
+	end
+end
+
 function p:UseHpBall(pVal)
 	local addHp = math.modf(self.maxHp * pVal / 100);
+	self:AddLife(addHp);
+	self:AddShowLife(addHp);
+--[[	
 	self.Hp = self.Hp +addHp;
 	if self.Hp > self.maxHp then
 		self.Hp = self.maxHp;
@@ -628,6 +667,7 @@ function p:UseHpBall(pVal)
 	if self.nowlife > self.maxHp then
 		self.nowlife = self.maxHp 
 	end 
+	]]--
 	w_battle_mgr.HpBallNum = w_battle_mgr.HpBallNum - 1
 	if w_battle_mgr.HpBallNum < 0 then
 		WriteCon("Error HpBallNum < 0");
