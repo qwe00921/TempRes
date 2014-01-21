@@ -59,7 +59,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		self.hurtSound = SelectCell( T_SKILL_SOUND, skillID, "hurt_sound" );
 		self.atkeffect = SelectCell( T_SKILL_RES, skillID, "attack_effect" );
 		self.sing = SelectCell( T_SKILL_RES, skillID, "sing_effect" );
-        self.hurt = SelectCell( T_SKILL_RES, skillID, "hurt_effect" );
+        self.hurt = SelectCell( T_SKILL_RES, skillID, "target_effect" );
 		self.is_bullet = tonumber( SelectCell( T_SKILL_RES, skillID, "is_bullet" ) );
 		self.bulleteffect = SelectCell( T_SKILL_RES, skillID, "bullet_effect" );
 		self.HasBuffLst = HasBuffLst;
