@@ -10,6 +10,8 @@ Rect=3 169 640 790
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -22,6 +24,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\public\close2_click.png
@@ -39,6 +43,8 @@ TextSize=36
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BTN_HARD]
 Type=2
@@ -49,16 +55,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_BUTTON_TEAM_EDIT]
-Type=2
-Tag=8
-Rect=0 320 637 260
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LIST_TEAM]
 Type=8
@@ -66,6 +64,17 @@ Tag=7
 Rect=1 284 637 240
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_LIST_ITEM]
+Type=8
+Tag=199
+Rect=1 524 637 230
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM]
 Type=1
@@ -73,6 +82,8 @@ Tag=10
 Rect=1 524 637 230
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_FIGHT]
 Type=2
@@ -86,6 +97,8 @@ TextSize=20
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
@@ -99,6 +112,8 @@ TextSize=24
 TextColor=0xffff00
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_POWER]
 Type=4
@@ -112,13 +127,8 @@ TextSize=24
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_LIST_ITEM]
-Type=8
-Tag=199
-Rect=1 524 637 230
-AnchorPos=0 0
-Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_QUEST_NAME]
 Type=4
@@ -130,3 +140,5 @@ TextSize=30
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
