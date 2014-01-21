@@ -520,7 +520,7 @@ function p.OnLoadList(msg)
 		p.refreshTab();
 		--p.ShowList(msg.equipment_info or {})
 		
-		WriteCon( "** OnLoadList1 " .. #msg.equipment_info);
+		--WriteCon( "** OnLoadList1 " .. #msg.equipment_info);
 	else
 		--local str = mail_main.GetNetResultError(msg);
 		--if str then

@@ -176,15 +176,15 @@ function p.ShowCardCost()
 	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_FEE_MONEY);
 	cardMoney:SetText(tostring(p.consumeMoney)); 
 	
-	p.userMoney = tonumber(msg_cache.msg_player.Money or 0);
+	p.userMoney = 10;--tonumber(msg_cache.msg_player.Money or 0);
 	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_USER_MONEY);
 	moneyLab:SetText(tostring(p.userMoney));	
 	
 	if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
 		--local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
-		moneyLab:SetFontColor(ccc4(255,0,0,255));
+		cardMoney:SetFontColor(ccc4(255,0,0,255));
     else	
-		moneyLab:SetFontColor(ccc4(255,255,255,255));
+		cardMoney:SetFontColor(ccc4(255,255,255,255));
 	end		
 end;	
 
