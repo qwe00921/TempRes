@@ -92,10 +92,6 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 	else
 		self:atk_startsing();
 	end
-
-	
-	--self:start();
-
 end;
 
 function p:startDelay()
@@ -367,13 +363,15 @@ function p:atk_end()
         --中BUFF动画		
 		if self.IsSkill == true then
 			local lhasBuff = self.HasBuffLst[k]; --是否中BUFF
-			if lhasBuff == true then
+			if lhasBuff == true then --中BUFF特效暂时没有
+				--[[
 				local buffAni = w_battle_mgr.GetBuffAni(self.skillID);
 				local cmdBuff = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), buffAni );
 				
 				local batch = w_battle_mgr.GetBattleBatch(); 
 				local seqBuff = batch:AddSerialSequence();
 				seqBuff:AddCommand( cmdBuff );
+				]]--
 				tarFighter:AddSkillBuff(self.skillID);
 			end;
 		end;

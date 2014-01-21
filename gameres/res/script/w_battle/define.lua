@@ -39,6 +39,7 @@ DoFile("w_battle/w_battle_target_statemachine.lua");
 
 DoFile("w_battle/w_battle_pass.lua");
 DoFile("w_battle/w_battle_pass_bg.lua");
+DoFile("w_battle/w_battle_buff_statemachine.lua");
 
 
 

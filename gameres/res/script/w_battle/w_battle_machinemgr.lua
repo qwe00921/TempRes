@@ -7,7 +7,8 @@ p.targetEnemyMachineLst = {}; --受击者状态机列表
 p.atkMachineLst = {}; 
 p.atkEnemyMachineLst = {};
 
-
+p.heroBuffMachineLst = {};
+p.enemyBuffMachineLst = {};
 
 p.id = 0;
 
@@ -18,6 +19,9 @@ function p.init()
 	p.targetEnemyMachineLst = {};
 	p.atkMachineLst = {}; 
     p.atkEnemyMachineLst = {};
+	
+	p.heroBuffMachineLst = {};
+	p.enemyBuffMachineLst = {};
     --受击者状态机,默认的状态都是结束,所以不用判断是否存在
 	for pos=1,6 do
 		local lTargetHeroMachine = w_battle_target_statemachine:new();
@@ -27,7 +31,6 @@ function p.init()
 		local lTargetEnemyMachine = w_battle_target_statemachine:new();
 		lTargetEnemyMachine:init(pos,W_BATTLE_ENEMY);
 		p.targetEnemyMachineLst[pos] = lTargetEnemyMachine;
-		
 	end;
 --[[
 	local camp = nil;
@@ -41,12 +44,20 @@ function p.init()
 		local lAtkMachine = w_battle_atk_statemachine:new();
 		lAtkMachine.id = v.Position;
 		p.atkMachineLst[#p.atkMachineLst + 1] = lAtkMachine;
+		
+		local lBuffMachine = w_battle_buff_statemachine:new();
+		lBuffMachine:init(v);
+		p.heroBuffMachineLst[#p.heroBuffMachineLst + 1] = lBuffMachine;
 	end;
 	
 	for k,v in ipairs(w_battle_mgr.enemyCamp.fighters) do
 		local lAtkMachine = w_battle_atk_statemachine:new();
 		lAtkMachine.id = v.Position;
 		p.atkEnemyMachineLst[#p.atkEnemyMachineLst + 1] = lAtkMachine;
+		
+		local lBuffMachine = w_battle_buff_statemachine:new();
+		lBuffMachine:init(v);
+		p.enemyBuffMachineLst[#p.enemyBuffMachineLst + 1] = lBuffMachine;
 	end;
 	
 end;
@@ -213,3 +224,47 @@ function p.InitAtkTurnEnd(fightcamp)
 	end
 end
 
+function p.getBuffStateMachine(id)
+	local buffStateMachine = nil;
+	if w_battle_mgr.atkCampType == W_BATTLE_HERO then
+		lBuffMachineLst = p.heroBuffMachineLst;
+	else
+		lBuffMachineLst = p.enemyBuffMachineLst;
+	end;
+  
+    for k,v in ipairs(lBuffMachineLst) do
+		if v.id == id then
+			buffStateMachine = v;
+		end
+	end
+	return buffStateMachine;	
+end
+
+function p.allBuffEnd()
+	local lres = true;
+	if w_battle_mgr.atkCampType == W_BATTLE_HERO then
+		lBuffMachineLst = p.heroBuffMachineLst;
+	else
+		lBuffMachineLst = p.enemyBuffMachineLst;
+	end;
+	
+    for k,v in ipairs(lBuffMachineLst) do
+		if v:IsEnd() == false then
+			lres = false;
+			break;
+		end;
+	end	
+	return lres;
+end
+
+function p.starBuffStateMachine()
+	if w_battle_mgr.atkCampType == W_BATTLE_HERO then
+		lBuffMachineLst = p.heroBuffMachineLst;
+	else
+		lBuffMachineLst = p.enemyBuffMachineLst;
+	end;
+	
+	for k,v in ipairs(lBuffMachineLst) do
+		v:start();
+	end
+end

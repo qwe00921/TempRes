@@ -394,7 +394,7 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 1,
+	Attack= 30,
 	Defence= 2,
 	Speed= 23,
 	Skill= 1006,
@@ -429,7 +429,7 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 1,
+	Attack= 30,
 	Defence= 1,
 	Speed= 35,
 	Skill= 1008,
@@ -823,10 +823,10 @@ function p.initFighterDB(fighterInfo,IsHero)
 	--fighterInfo.Crit = 1000;
 	--¡Ÿ ±¥˙¬Î
 	if p.IsDebug == true then
-		fighterInfo.Attack = fighterInfo.Attack;
+		
 		if IsHero == true then
 		--	if fighterInfo.Damage_type == 1 then 
-		--		fighterInfo.Attack = fighterInfo.Attack - 10;
+				fighterInfo.Attack = fighterInfo.Attack * 5;
 				if fighterInfo.Position == 2 then
 					fighterInfo.Skill = 1;
 					fighterInfo.Sp = 100
