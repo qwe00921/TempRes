@@ -249,8 +249,8 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	bt:SetId(dataListIndex);
 	
 	--显示卡牌图片
-	local aniIndex = "item."..itemInfo.equip_id;
-	imgV:SetPicture( GetPictureByAni(aniIndex, 0) );
+	
+	imgV:SetPicture( p.SelectImage(itemInfo.equip_id) );
 	
 	--显示等级
 	lvV:SetText("LV." .. (itemInfo.equip_level or "1"));
@@ -273,6 +273,15 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 		selV:SetVisible( true );
 	end
 	
+	
+end
+
+function p.SelectImage(id)
+	
+	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(id)); 
+	if pEquipInfo then
+		return GetPictureByAni(pEquipInfo.item_pic,0);
+	end
 	
 end
 
