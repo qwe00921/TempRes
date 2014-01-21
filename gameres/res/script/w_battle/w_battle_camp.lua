@@ -428,7 +428,7 @@ function p:AddFighters( uiArray, fighters )
         f.cardId = tonumber( fighterInfo.CardID );
 		f.Attack = tonumber( fighterInfo.Attack);
 		f.Defence = tonumber( fighterInfo.Defence);
-		f.atkType = tonumber ( fighterInfo.Damage_type);
+--		f.atkType = tonumber ( fighterInfo.Damage_type);
 		f.Position = tonumber (fighterInfo.Position);
 		f.Crit	   = tonumber (fighterInfo.Crit);
 		f.Skill	   = tonumber (fighterInfo.Skill);

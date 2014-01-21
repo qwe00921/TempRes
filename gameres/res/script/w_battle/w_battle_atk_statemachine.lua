@@ -83,6 +83,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		self.targetLst = {}
 		self.targetLst[1] = tarFighter;
 	end
+	self.atkFighter:HideBuffNode();
     --攻击目标的位置
 	if self.atkCampType == W_BATTLE_ENEMY then --攻击方是怪物,先出手延迟
 		self:startDelay();
@@ -116,9 +117,10 @@ function p:atk_startsing()
 		local seqStar = batch:AddSerialSequence();
 		local seqAtk = batch:AddSerialSequence();
 --		self.seqTarget = batch:AddSerialSequence(); 
-	
-    	local cmdSingMusic = createCommandSoundMusicVideo():PlaySoundByName( self.singSound );
-        seqStar:AddCommand( cmdSingMusic );
+		if self.singSound ~= nil then
+			local cmdSingMusic = createCommandSoundMusicVideo():PlaySoundByName( self.singSound );
+			seqStar:AddCommand( cmdSingMusic );
+		end;
     
 	    local cmd1 = createCommandEffect():AddFgEffect( 0.5, self.atkFighter:GetNode(), self.sing );
 		seqStar:AddCommand( cmd1 );
@@ -413,7 +415,7 @@ function p:atkTurnEnd()
 	local atkFighter = self.atkFighter;
 	local tarFighter = self.targetFighter;
 	self.turnState = W_BATTLE_TURNEND
-	
+	self.atkFighter:ShowBuffNode();
 	--已行动的人结束行动了
 	--w_battle_mgr.AtkDec(atkFighter:GetId());	
 	--WriteCon( "atkTurnEnd atkid:"..tostring(atkFighter:GetId()));
