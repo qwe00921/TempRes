@@ -139,28 +139,28 @@ function p.ShowCardLevel(msg)
 	cardbeforHP:SetText(tostring(p.beforCardInfo.Hp)); 
 	--强化后的HP
 	local cardHP = GetLabel(p.layer,ui.ID_CTRL_TEXT_HP_2);
-	cardHP:SetText("+"..tostring(p.cardInfo.add_Hp)); 
+	cardHP:SetText(tostring(p.cardInfo.Hp)); 
 	
 	--未强化前的攻击
 	local cardbeforAttack = GetLabel(p.layer,ui.ID_CTRL_TEXT_ATTACK_1);
 	cardbeforAttack:SetText(tostring(p.beforCardInfo.Attack)); 
 	--强化后的攻击
 	local cardAttack = GetLabel(p.layer,ui.ID_CTRL_TEXT_ATTACK_2);
-	cardAttack:SetText("+"..tostring(p.cardInfo.add_Attack)); 
+	cardAttack:SetText(tostring(p.cardInfo.Attack)); 
 	
 	--未强化前的防御
 	local cardbeforDefence = GetLabel(p.layer,ui.ID_CTRL_TEXT_DEFENCE_1);
 	cardbeforDefence:SetText(tostring(p.beforCardInfo.Defence)); 
 	--强化后的防御
 	local cardDefence = GetLabel(p.layer,ui.ID_CTRL_TEXT_DEFENCE_2);
-	cardDefence:SetText("+"..tostring(p.cardInfo.add_Defence)); 
+	cardDefence:SetText(tostring(p.cardInfo.Defence)); 
 
 	--未强化前的速度
 	local cardbeforSpeed = GetLabel(p.layer,ui.ID_CTRL_TEXT_SPEED_1);
 	cardbeforSpeed:SetText(tostring(p.beforCardInfo.Speed)); 
 	--强化后的速度
 	local cardSpeed = GetLabel(p.layer,ui.ID_CTRL_TEXT_SPEED_2);
-	cardSpeed:SetText("+"..tostring(p.cardInfo.add_Speed)); 
+	cardSpeed:SetText(tostring(p.cardInfo.Speed)); 
 	--[[
 	--未强化前的暴击
 	local cardbeforCrit = GetLabel(p.layer,ui.ID_CTRL_TEXT_CRIT_1);
