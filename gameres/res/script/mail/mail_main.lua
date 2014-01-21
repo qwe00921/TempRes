@@ -102,6 +102,7 @@ function p.ShowUI(isReloadNet)
 	GetUIRoot():AddChild(bottomLayer);
 	LoadUI("mail_main_delete.xui", bottomLayer, nil);
 	p.bottomLayer = bottomLayer;
+	bottomLayer:SetLayoutType(1);
 	
 	
 	

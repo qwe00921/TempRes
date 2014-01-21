@@ -69,8 +69,7 @@ function p.showMoveEffect()
 	if p.nowNum == nil or p.endNum == nil then
 		if moveEffect then
 			KillTimer( moveEffect );
-		end		
-		WriteCon("p============");
+		end
 		return
 	end
 	
