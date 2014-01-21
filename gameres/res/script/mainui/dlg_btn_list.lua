@@ -41,6 +41,8 @@ function p.ShowUI()
 	LoadUI("main_btn_list.xui", layer, nil);
     
 	p.layer = layer;
+	p.layer:SetZOrder(10000);
+	p.layer:SetIsTop(true);
 	
 	p.SetDelegate();
 	p.ShowBtnList();
@@ -70,7 +72,7 @@ function p.ShowBtnList()
 						btn:SetVisible( false );
 					end
 				else
-					local pic = GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 );
+					local pic = GetPictureByAni( "ui.more_action_list", tShowIndex[(i - 1) * 4 + j] - 1 );
 					if pic then
 						local btn = GetButton( view, ui_main_btn_node["ID_CTRL_BUTTON_BTN_" .. j] );
 						if btn ~= nil then
