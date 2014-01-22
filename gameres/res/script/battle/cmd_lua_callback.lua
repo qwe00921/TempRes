@@ -97,11 +97,22 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		if lstateMachine ~= nil then
 			lstateMachine:tar_dieEnd();
 		end;
-	elseif cmdtype == "nextbuff" then
+	elseif cmdtype == "nextBuff" then
 		local lstateMachine = w_battle_machinemgr.getBuffStateMachine(id);
 		if lstateMachine ~= nil then
-			lstateMachine:nextbuff();
+			lstateMachine:nextBuff();
 		end;
+	elseif cmdtype == "buff_dieEnd" then
+		local lstateMachine = w_battle_machinemgr.getBuffStateMachine(id);
+		if lstateMachine ~= nil then
+			lstateMachine:buff_dieEnd();
+		end;			
+	elseif cmdtype == "buff_ReviveEnd" then
+		local lstateMachine = w_battle_machinemgr.getBuffStateMachine(id);
+		if lstateMachine ~= nil then
+			lstateMachine:buff_ReviveEnd();
+		end;			
+		
 	elseif cmdtype == "fighter_addHp" then
         fighter:SetLifeAdd( num );	
 	elseif cmdtype == "fighter_strike_damage" then
