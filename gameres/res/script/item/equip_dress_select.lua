@@ -227,7 +227,7 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	local lvV 	= GetLabel(view, ui_list[lvTagStr]);
 	local drsV	= GetLabel(view, ui_list[drsTagStr]);
 	local selV	= GetLabel(view, ui_list[selTagStr]);
-	local rankV	= GetLabel(view, ui_list[rankTagStr]);
+	local rankV	= GetImage(view, ui_list[rankTagStr]);
 	local nmV	= GetLabel(view, ui_list[nmTagStr]);
 	local imgBdV= GetImage(view, ui_list[imgBdTagStr]);
 	local nmBgV	= GetImage(view, ui_list[nmBgTagStr]);
@@ -256,7 +256,8 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	lvV:SetText("LV." .. (itemInfo.equip_level or "1"));
 	--显示星级
 	if itemInfo.rare and itemInfo.rare ~= "0" then
-		rankV:SetText(itemInfo.rare .. GetStr("card_equip_rand_txt"));
+		rankV:SetPicture( GetPictureByAni("ui.equip_star_"..(itemInfo.rare or 1) ,0));
+		--rankV:SetText(itemInfo.rare .. GetStr("card_equip_rand_txt"));
 	end
 	
 	--是否已装备
