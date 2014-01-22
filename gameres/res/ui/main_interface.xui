@@ -9,6 +9,8 @@ Tag=106
 Rect=-6 507 640 245
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_BG_BTN]
 Type=2
@@ -20,6 +22,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=隐藏子界面按钮
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ACTIVITY]
 Type=2
@@ -31,6 +35,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=活动按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\active.png
 NormalFileUV=0 0 173 70
 SelectFile=.\res\image\ui\main_interface\activity_click.PNG
@@ -48,6 +54,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=邮件按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\home_btn_mail1.png
 NormalFileUV=0 0 173 58
 SelectFile=.\res\image\ui\main_interface\mail_click.png
@@ -62,6 +70,8 @@ Rect=130 532 43 36
 AnchorPos=0 0
 Notes=
 Remark=活动数量通知背景
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\num_bg.png
 NormalFileUV=0 0 36 36
 
@@ -72,6 +82,8 @@ Rect=599 532 36 36
 AnchorPos=0 0
 Notes=
 Remark=邮件数量通知背景
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\num_bg.png
 NormalFileUV=0 0 36 36
 
@@ -88,6 +100,8 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=活动数量
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_MAIL_TIPS_NUM]
 Type=4
@@ -102,6 +116,8 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=邮件数量
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_CHA1]
 Type=2
@@ -112,6 +128,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\card2\u10392_b.png
 NormalFileUV=0 0 108 333
 
@@ -124,6 +142,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\card2\u10684_b.png
 NormalFileUV=0 0 108 333
 
@@ -136,6 +156,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\card2\u10706_b.png
 NormalFileUV=0 0 108 333
 
@@ -148,6 +170,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\card2\u10745_b.png
 NormalFileUV=0 0 108 333
 
@@ -160,6 +184,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\card2\u10835_b.png
 NormalFileUV=0 0 108 333
 
@@ -172,6 +198,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\card2\u10884_b.png
 NormalFileUV=0 0 108 333
 
@@ -181,6 +209,8 @@ Tag=25
 Rect=0 161 640 370
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\card_show.png
 NormalFileUV=0 0 640 350
 
@@ -190,6 +220,8 @@ Tag=16
 Rect=71 479 33 33
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature4.png
 NormalFileUV=0 0 24 24
 
@@ -199,6 +231,8 @@ Tag=17
 Rect=178 479 33 33
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature4.png
 NormalFileUV=0 0 24 24
 
@@ -208,6 +242,8 @@ Tag=24
 Rect=284 479 33 33
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature4.png
 NormalFileUV=0 0 24 24
 
@@ -217,6 +253,8 @@ Tag=26
 Rect=391 479 33 33
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature4.png
 NormalFileUV=0 0 24 24
 
@@ -226,6 +264,8 @@ Tag=27
 Rect=497 479 33 33
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature4.png
 NormalFileUV=0 0 24 24
 
@@ -235,32 +275,40 @@ Tag=28
 Rect=604 479 33 33
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature4.png
 NormalFileUV=0 0 24 24
 
 [CTRL_PICTURE_22]
 Type=1
 Tag=29
-Rect=268 776 32 32
+Rect=268 776 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
 NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_23]
 Type=1
 Tag=30
-Rect=305 776 32 32
+Rect=305 776 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
 NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_24]
 Type=1
 Tag=31
-Rect=342 776 32 32
+Rect=342 776 20 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
 NormalFileUV=0 0 32 32
