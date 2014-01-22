@@ -225,6 +225,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			if card_bag_mian.layer ~= nil then
 				WriteCon("card_bag_mian.layer ~= nil ");
 				card_bag_mian.ShowUI();
+				card_bag_mgr.LoadAllCard(card_bag_mian.layer);
 			else 
 				maininterface.ShowUI();
 			end
