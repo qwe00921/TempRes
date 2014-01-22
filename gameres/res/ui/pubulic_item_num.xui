@@ -162,7 +162,7 @@ NormalFileUV=0 0 100 80
 [CTRL_TEXT_14]
 Type=4
 Tag=16
-Rect=194 472 123 37
+Rect=194 472 123 31
 AnchorPos=0 0
 Notes=
 Text=持有数量：
@@ -177,7 +177,7 @@ UIClsoeType=0
 [CTRL_TEXT_15]
 Type=4
 Tag=17
-Rect=318 472 107 37
+Rect=318 472 107 31
 AnchorPos=0 0
 Notes=
 Text=99
@@ -317,3 +317,33 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\text\MAX.png
 NormalFileUV=0 0 70 28
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=194 506 123 31
+AnchorPos=0 0
+Notes=
+Text=单价：
+TextTradition=單價：
+TextSize=21
+TextColor=0xffffff
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=318 506 107 31
+AnchorPos=0 0
+Notes=
+Text=99
+TextTradition=99
+TextSize=21
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_pubulic_item_num = {};
 local p =  ui_pubulic_item_num;
+p.ID_CTRL_TEXT_26						       = 26;
+p.ID_CTRL_TEXT_25						       = 25;
 p.ID_CTRL_PICTURE_101					    = 101;
 p.ID_CTRL_PICTURE_100					    = 100;
 p.ID_CTRL_PICTURE_99					     = 99;
@@ -28,4 +30,3 @@ p.ID_CTRL_TEXT_6						        = 6;
 p.ID_CTRL_TEXT_43						       = 44;
 p.ID_CTRL_PICTURE_41					     = 42;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
-p.ID_CTRL_PICTURE_42					     = 43;
