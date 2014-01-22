@@ -89,7 +89,7 @@ function p:tar_hurt()
         --self:tar_hurtEnd();
 	end
 end;
-
+--[[
 --奖励
 function p:reward()
 	local targerFighter = self.tarFighter;	
@@ -101,7 +101,7 @@ function p:reward()
 	end;
 	w_battle_pve.MonsterDrop(tmpList)
 end;
-
+]]--
 --只有受伤结束时才调用
 function p:tar_hurtEnd()
 	local targerFighter = self.tarFighter;	
@@ -152,7 +152,7 @@ end;
 
 function p:tar_ReviveEnd() 
 	fighter:GetNode():ClearAllAniEffect();
-    fighter.buffList = {};		
+    fighter.SkillBuff = {};		
 	self:targerTurnEnd();	
 end;
 

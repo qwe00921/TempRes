@@ -760,6 +760,10 @@ end;
 
 
 function p.EnemyUseSkill(lseed)
+	if w_battle_db_mgr.IsDebug == true then
+		return true;
+	end;
+	
 	local lnum = w_battle_atkDamage.getRandom(lseed,100);
 	--WriteCon( "Monster Skill Random num:"..tostring(lnum));		
 	if lnum > 30 then
@@ -847,8 +851,12 @@ end;
 function p.FightLose()  
 	KillTimer(p.buffTimerID);
 	--没有续打,只有失败界面
+	w_battle_pve.MissionOver(p.MissionLose);
+end;
+
+function p.MissionLose()
 	p.QuitBattle()
-	p.SendResult(0);
+	p.SendResult(0);	
 end;
 --[[
 function p.StepOver(pIsPass)  --这一波次结束
@@ -1583,14 +1591,16 @@ function p.setFighterRevive(targerFighter)
 	targerFighter.isDead = false;
 	targerFighter.canRevive = false;
 	targetFighter:RemoveBuff(W_BUFF_TYPE_301)
-	
+
+	targetFighter:ClearAllBuff();
 	targerFighter:standby();
 
 	local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.revive" );
 	seqTarget:AddCommand( cmdf );
+	--[[
 	local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
 	seqTarget:AddCommand( cmdC );		
-
+]]--
 	return cmdc
 end;
 
@@ -1664,12 +1674,13 @@ function updateCampBuff(camp)
 		if(v.Hp > 0) then
 			if v.showBuff == true then
 				if #v.SkillBuff > 0 then
-					local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
-					v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
-					v.BuffIndex = v.BuffIndex + 1;
 					if v.BuffIndex > #v.SkillBuff then
 						v.BuffIndex = 1;
 					end
+					local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
+					v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
+					v.BuffIndex = v.BuffIndex + 1;
+					
 				end
 			end;
 		end;

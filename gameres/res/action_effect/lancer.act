@@ -147,7 +147,7 @@
 @fadein(0.15)
 
 [fly_num_up_1]
-@move+(0.15, 0, -60, 20)
+@move+(0.15, 0, -10, 20)
 
 [fly_num_up_2]
 @idle(1)

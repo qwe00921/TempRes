@@ -46,7 +46,7 @@ function p.init()
 		p.atkMachineLst[#p.atkMachineLst + 1] = lAtkMachine;
 		
 		local lBuffMachine = w_battle_buff_statemachine:new();
-		lBuffMachine:init(v);
+		lBuffMachine:init(v,W_BATTLE_HERO);
 		p.heroBuffMachineLst[#p.heroBuffMachineLst + 1] = lBuffMachine;
 	end;
 	
@@ -56,7 +56,7 @@ function p.init()
 		p.atkEnemyMachineLst[#p.atkEnemyMachineLst + 1] = lAtkMachine;
 		
 		local lBuffMachine = w_battle_buff_statemachine:new();
-		lBuffMachine:init(v);
+		lBuffMachine:init(v,W_BATTLE_ENEMY);
 		p.enemyBuffMachineLst[#p.enemyBuffMachineLst + 1] = lBuffMachine;
 	end;
 	
@@ -265,6 +265,11 @@ function p.starBuffStateMachine()
 	end;
 	
 	for k,v in ipairs(lBuffMachineLst) do
+		v.IsTurnEnd = false;		
+	end
+	
+	for k,v in ipairs(lBuffMachineLst) do
 		v:start();
 	end
+	
 end
