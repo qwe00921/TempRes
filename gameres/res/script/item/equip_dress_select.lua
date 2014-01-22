@@ -368,7 +368,7 @@ end
 --组装装备详细界面所需的数据(统一字段名)
 function p.PasreCardDetail(cardUid, itemInfo, dressId)
 	local item = {};
-	--item.cardId 	= cardInfo.CardID;
+	item.cardId 	= itemInfo.owner_card_id;
 	item.cardUid 	= cardUid;
   --item.cardName	= "xxx"
 	item.itemId 	= itemInfo.equip_id;
