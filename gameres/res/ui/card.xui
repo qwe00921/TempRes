@@ -1,0 +1,13 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_144]
+Type=1
+Tag=44
+Rect=0 0 384 575
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
