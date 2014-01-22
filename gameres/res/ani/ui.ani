@@ -160,3 +160,8 @@ image\ui\main_interface\home_win_quest.png
 [collect_effect]
 image\ui\country\source_fx.png @cut(1, 8) @time=0.125 @loop
 
+;list节点显示标志
+[list_node_effect]
+image\ui\main_interface\header_arena_light_00.png
+image\ui\main_interface\header_arena_light_01.png
+
