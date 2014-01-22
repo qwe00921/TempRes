@@ -1,0 +1,30 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=1
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\choose.png
+NormalFileUV=0 0 196 100
+
+[CTRL_TEXT_TALK]
+Type=4
+Tag=2
+Rect=23 436 600 370
+AnchorPos=0 0
+Notes=
+Text=ttttt
+TextTradition=ttttt
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
