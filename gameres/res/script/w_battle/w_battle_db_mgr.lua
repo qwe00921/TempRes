@@ -16,7 +16,7 @@ p.targetPetList = nil; --敌方宠物数据
 p.roundData = nil; --所有回合的对战数据
 p.roundPetData = nil; --宠物所有回合的对战数据
 p.roundBuffData = nil; --战士Buff数据
-p.roundBuffEffectData = nil; --BUFF特效数据
+p.roundBuffEffectData = nil; --BUFF特O效数据
 
 p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
@@ -378,7 +378,7 @@ p.enemyStepList = {
 p.playerCardList = {
 	
 	{
-	element = 2,
+	element = 1,
 	UniqueId= 10000722,
 	CardID= 10012,
 	Level= 1,
@@ -413,7 +413,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 3,
+	element = 1,
 	UniqueId= 10000723,
 	CardID= 10021,
 	Level= 1,
@@ -448,7 +448,7 @@ p.playerCardList = {
 	},
 
 	{
-	element = 4,
+	element = 1,
 	Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000724,
@@ -482,7 +482,7 @@ p.playerCardList = {
 	Position= 4
 	},
 	{
-	element = 0,
+	element = 1,
 	Sp = 0,
 	maxSp = 100,
 	UniqueId= 10000725,
@@ -826,15 +826,37 @@ function p.initFighterDB(fighterInfo,IsHero)
 		
 		if IsHero == true then
 		--	if fighterInfo.Damage_type == 1 then 
-				fighterInfo.Attack = fighterInfo.Attack * 5;
+				--fighterInfo.Attack = 1;
 				if fighterInfo.Position == 2 then
 					fighterInfo.Skill = 1;
 					fighterInfo.Sp = 100
 				elseif fighterInfo.Position == 3 then
+					fighterInfo.Skill = 2;
+					fighterInfo.Sp = 100;	
+				elseif fighterInfo.Position == 4 then
 					fighterInfo.Skill = 1001;
+					fighterInfo.Sp = 100;	
+				elseif fighterInfo.Position == 5 then
+					fighterInfo.Skill = 1008;
 					fighterInfo.Sp = 100;		
 				end;
-		--	end;
+		else
+			--	fighterInfo.Attack = 1;
+				if fighterInfo.Position == 2 then
+					fighterInfo.Skill = 1;
+					fighterInfo.Sp = 100
+				elseif fighterInfo.Position == 3 then
+					fighterInfo.Skill = 2;
+					fighterInfo.Sp = 100;	
+				elseif fighterInfo.Position == 4 then
+					fighterInfo.Skill = 1001;
+					fighterInfo.Sp = 100;	
+				elseif fighterInfo.Position == 5 then
+					fighterInfo.Skill = 1008;
+					fighterInfo.Sp = 100;		
+				else
+					fighterInfo.Skill = 1008;
+				end;
 		end;
 	end;
 	

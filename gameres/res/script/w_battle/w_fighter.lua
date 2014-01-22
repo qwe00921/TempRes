@@ -91,7 +91,7 @@ function p:CreateFlyNum(nType)
     local flynum = w_fly_num:new();
     flynum:SetOwnerNode( self.node );
     flynum:Init(nType);
-    flynum:SetOffset(30,-20);
+    flynum:SetOffset(0,0);
     
     self.node:AddChildZ( flynum:GetNode(), 2 );
     self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
@@ -401,7 +401,7 @@ function p:GetAtkImageNode(atkNode)
 	return imageNode;
 end;
 
---BUFF状态
+--BUFF状态,头顶的特效
 function p:InitBuffNode()
 	local imageNode = createNDRole();
 	imageNode:Init();
@@ -416,11 +416,11 @@ function p:InitBuffNode()
 	
 	self.node:AddChildZ( imageNode, E_BATTLE_Z_NORMAL );
 	imageNode:SetFramePos(lnewPos);	
-    if self.camp == E_CARD_CAMP_HERO then	
-		imageNode:SetLookAt( E_LOOKAT_LEFT );
-	else
-		imageNode:SetLookAt( E_LOOKAT_RIGHT );
-	end
+   -- if self.camp == E_CARD_CAMP_HERO then	
+	--	imageNode:SetLookAt( E_LOOKAT_RIGHT );
+	--else
+	imageNode:SetLookAt( E_LOOKAT_RIGHT );
+	--end
 	self.BuffNode = imageNode;
 end;
 
@@ -438,8 +438,22 @@ function p:ShowBuffNode()
 	end
 end;
 
+function p:ClearAllBuff()
+	if self.BuffNode ~= nil then
+		self.node:RemoveChild(self.BuffNode,true);
+		self.BuffNode = nil;
+	end;
+	
+	self.BuffIndex = 1;
+	self.SkillBuff = {}
+end;
+
 function p:SetBuffNode(lBuffType)
-	if lBuffType == 0 then
+	if lBuffType == 0 then  --解状态
+		if self.BuffNode ~= nil then
+			self.node:RemoveChild(self.BuffNode,true);
+			self.BuffNode = nil;
+		end
 		return ;
 	end
 	
@@ -449,7 +463,6 @@ function p:SetBuffNode(lBuffType)
 		else
 			self.node:RemoveChild(self.BuffNode,true);
 			self.BuffNode = nil;
-			
 		end
 		
 	end;
@@ -630,6 +643,7 @@ function p:AddBuff(buff, work,param)
 	end
 	local skillRecord = {buff_type = tonumber(effect_type), buff_time = tonumber(work), buff_param = tonumber(param)};
 	table.insert(self.SkillBuff, skillRecord);
+	self:SetBuffNode(tonumber(effect_type));
 end;
 
 function p:RemoveBuff(val)
@@ -640,6 +654,7 @@ function p:RemoveBuff(val)
 			if val == W_BUFF_TYPE_301 then  --死亡只扣一次BUFF
 				break;
 			end
+			self:SetBuffNode(0);
 		end
 	end
 end;

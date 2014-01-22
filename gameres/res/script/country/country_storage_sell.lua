@@ -96,6 +96,9 @@ function p.InitControlelr()
 	
 	p.numText = GetLabel( p.layer, ui.ID_CTRL_TEXT_18 );
 	p.numText:SetText( tostring( math.min( 1, tonumber( p.item.num ) ) ) );
+	
+	local priceText = GetLabel( p.layer, ui.ID_CTRL_TEXT_26 );
+	priceText:SetText( tostring(SelectCell( T_MATERIAL, p.item.material_id, "sell_price" )) );
 end
 
 function p.OnBtnClick( uiNode, uiEventType, param )

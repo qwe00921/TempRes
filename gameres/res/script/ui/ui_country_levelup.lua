@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_country_levelup = {};
 local p =  ui_country_levelup;
+p.ID_CTRL_TEXT_42						       = 43;
 p.ID_CTRL_TEXT_DESCRIPTION			 = 36;
 p.ID_CTRL_TEXT_BUILD_LV				   = 39;
 p.ID_CTRL_BUTTON_RIGHT				    = 51;
