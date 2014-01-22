@@ -25,6 +25,14 @@ function p.ShowUI(rewardData)
 	end
 	dlg_userinfo.ShowUI();
 
+	--如果战斗失败
+	if tonumber(rewardData.result) == 0 then
+		stageMap_main.OpenWorldMap();
+		p.CloseUI();
+		return
+	end
+	
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
