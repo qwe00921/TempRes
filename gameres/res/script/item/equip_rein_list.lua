@@ -176,7 +176,7 @@ function p.ShowCardCost()
 	local cardMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_FEE_MONEY);
 	cardMoney:SetText(tostring(p.consumeMoney)); 
 	
-	p.userMoney = 10;--tonumber(msg_cache.msg_player.Money or 0);
+	p.userMoney = tonumber(msg_cache.msg_player.Money or 0);
 	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_USER_MONEY);
 	moneyLab:SetText(tostring(p.userMoney));	
 	
