@@ -27,6 +27,7 @@ function p.ShowUI(rewardData)
 
 	--如果战斗失败
 	if tonumber(rewardData.victory) == 0 then
+		dlg_userinfo.ShowUI();
 		stageMap_main.OpenWorldMap();
 		p.CloseUI();
 		return
