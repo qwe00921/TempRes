@@ -23,7 +23,6 @@ local tValidIndex = { ID_STRENGTHEN };
 
 function p.ShowUI()
 	if p.layer ~= nil then
-		--p.layer:SetVisible( not p.layer:IsVisible() );
 		p.CloseUI();
 		return;
 	end
@@ -41,8 +40,10 @@ function p.ShowUI()
 	LoadUI("main_btn_list.xui", layer, nil);
     
 	p.layer = layer;
+	
+	p.layer:SetVisible(true);
 	p.layer:SetZOrder(10000);
-	p.layer:SetIsTop(true);
+	--p.layer:SetIsTop(true);
 	
 	p.SetDelegate();
 	p.ShowBtnList();
@@ -54,19 +55,22 @@ function p.SetDelegate()
 end
 
 function p.ShowBtnList()
+	card_bag_mian.SetEnableAll(false);
+
 	local list = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_2 );
 	if list ~= nil then
 		local btn_num = #tShowIndex;
-		local row = math.ceil(btn_num/4);
+		local row = math.ceil(btn_num / 4);
 		for i = 1, row do
 			local view = createNDUIXView();
 			view:Init();
 			LoadUI("main_btn_node.xui", view, nil);
+			--view:SetZOrder(40000);
 			
 			local bg = GetUiNode( view, ui_main_btn_node.ID_CTRL_PICTURE_BG );
 			view:SetViewSize( bg:GetFrameSize());
 			for j = 1, 4 do
-				if (i-1)*4+j > btn_num then
+				if (i - 1) * 4 + j > btn_num then
 					local btn = GetButton( view, ui_main_btn_node["ID_CTRL_BUTTON_BTN_" .. j] );
 					if btn then
 						btn:SetVisible( false );
@@ -78,13 +82,19 @@ function p.ShowBtnList()
 						if btn ~= nil then
 							btn:SetVisible( true );
 							btn:SetId( tShowIndex[(i-1)*4+j] );
-							btn:SetImage( GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 ) );
-							btn:SetTouchDownImage( GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 ));
-							btn:SetDisabledImage( GetPictureByAni( "ui.more_action_list", tShowIndex[(i-1)*4+j]-1 ));
-							
+							btn:SetImage(
+									GetPictureByAni("ui.more_action_list",
+											tShowIndex[(i - 1) * 4 + j] - 1));
+							btn:SetTouchDownImage(
+									GetPictureByAni("ui.more_action_list",
+											tShowIndex[(i - 1) * 4 + j] - 1));
+							btn:SetDisabledImage(
+									GetPictureByAni("ui.more_action_list",
+											tShowIndex[(i - 1) * 4 + j] - 1));
 							btn:SetLuaDelegate( p.OnBtnClick );
+							btn:SetZOrder(10010);
 							
-							btn:SetEnabled( p.CheckEnabledIndex( tShowIndex[(i-1)*4+j] ) );
+							btn:SetEnabled( p.CheckEnabledIndex( tShowIndex[(i - 1) * 4 + j] ) );
 						end
 					end
 				end
@@ -106,6 +116,7 @@ function p.CheckEnabledIndex( index )
 end
 
 function p.OnCloseClick(uiNode, uiEventType, param)
+	
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_3 == tag then
@@ -115,6 +126,7 @@ function p.OnCloseClick(uiNode, uiEventType, param)
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
+	
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId();
 		WriteCon( tostring(id) );		
@@ -135,7 +147,9 @@ end
 
 function p.CloseUI()
 	p.HideUI();
+	card_bag_mian.SetEnableAll(true);
     if p.layer ~= nil then
+		p.layer:SetVisible(false);
         p.layer:LazyClose();
         p.layer = nil;
     end
@@ -146,5 +160,3 @@ function p.HideUI()
         p.layer:SetVisible(false);
 	end
 end
-
-
