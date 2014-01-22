@@ -35,6 +35,8 @@ function p.ShowUI()
 	layer:NoMask();
 	layer:Init();
 	layer:SetSwallowTouch(false);
+	GetUIRoot():AddDisableAllButNoThisLayer(layer);
+	GetUIRoot():DisableAll();
     
 	GetUIRoot():AddChild(layer);
 	LoadUI("main_btn_list.xui", layer, nil);
@@ -148,6 +150,7 @@ end
 function p.CloseUI()
 	p.HideUI();
 	card_bag_mian.SetEnableAll(true);
+	GetUIRoot():EnableAll();
     if p.layer ~= nil then
 		p.layer:SetVisible(false);
         p.layer:LazyClose();
