@@ -388,7 +388,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_EXP_263]
+[CTRL_EXP_EQUIPEXP]
 Type=9
 Tag=263
 Rect=333 310 234 30
@@ -405,7 +405,7 @@ NormalFileUV=0 0 176 28
 [CTRL_PICTURE_264]
 Type=1
 Tag=264
-Rect=336 312 229 26
+Rect=335 310 229 26
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -436,6 +436,18 @@ Text=装备者
 TextTradition=裝備者
 TextSize=25
 TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=73
+Rect=346 309 207 26
+AnchorPos=0 0
+Notes=
+TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0

@@ -198,17 +198,45 @@ function p.ShowItem(  )
 	local str = GetStr("card_equip_attr"..item.attrType)
 	labelV:SetText(GetStr("card_equip_attr"..item.attrType) .. "+" .. item.attrValue);
 	
+	--副属性值
+	if tonumber(item.exType1) > 0 then
+		labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_ATTR2);
+		local str = GetStr("card_equip_attr"..item.exType1)
+		labelV:SetText(GetStr("card_equip_attr"..item.exType1) .. "+" .. item.exValue1);
+	end
+	
+	--经验
+	--[[
+	--当前的经验值条 ID_CTRL_EXP_CARDEXP
+	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.itemLevel));
+	if lCardLeveInfo then
+		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_EQUIPEXP);
+		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
+		lCardExp:SetProcess(tonumber(item.itemExp));
+		lCardExp:SetNoText();
+			
+	--经验值 ID_CTRL_TEXT_EXP
+		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
+		lTextExp:SetText(tostring(item.itemExp).."/"..tostring(lCardLeveInfo.exp));
+	end
+	]]--
+	
+	
 	--图片
 	local itemPic = GetImage( p.layer,ui.ID_CTRL_PICTURE_IMAGE );
 	itemPic:SetPicture( p.SelectImage(item.itemId) );
 	
 	--卡牌名称
-	--local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CARD_NAME );
-	--itemName:SetText( itemNamestr or "");
+	local pCardInfo= SelectRowInner( T_CARD, "id", item.cardId);
+	local itemNamestr = GetStr("card_equip_undress");
+	if pCardInfo then
+		itemNamestr = pCardInfo.name;
+	end
+	local itemName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CARD_NAME );
+	itemName:SetText( itemNamestr or "");
 	
 	--说明
 	local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_DES );
-	local str 
 	description:SetText( p.SelectItemDes(item.itemId) or "");
 	
 	--生命
@@ -329,8 +357,12 @@ function p.CloseUI()
 end
 
 function p.SelectImage(id)
-	local aniIndex = "item."..id;
-	return GetPictureByAni(aniIndex,0);
+	
+	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(id)); 
+	if pEquipInfo then
+		return GetPictureByAni(pEquipInfo.item_pic,0);
+	end
+	
 end
 
 function p.SelectItemName(id)
@@ -344,7 +376,7 @@ function p.SelectItemName(id)
 end
 
 function p.SelectItemDes(id)
-	local itemTable = SelectRowList(T_EQUIP,"id",id);
+	local itemTable = SelectRowList(T_EQUIP,"id",tostring(id));
 	if #itemTable >= 1 then
 		local text = itemTable[1].description;
 		return text;

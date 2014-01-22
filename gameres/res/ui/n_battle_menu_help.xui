@@ -1,0 +1,92 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_216]
+Type=1
+Tag=216
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_BUTTON_66]
+Type=2
+Tag=66
+Rect=-2 30 107 67
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_PICTURE_67]
+Type=1
+Tag=67
+Rect=107 29 208 73
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\quest_title.png
+NormalFileUV=0 0 192 68
+
+[CTRL_TEXT_78]
+Type=4
+Tag=78
+Rect=13 41 80 43
+AnchorPos=0 0
+Notes=
+Text=返回
+TextTradition=返回
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_53]
+Type=4
+Tag=53
+Rect=124 41 80 43
+AnchorPos=0 0
+Notes=
+Text=帮助
+TextTradition=幫助
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_54]
+Type=1
+Tag=54
+Rect=68 133 480 337
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\help.png
+NormalFileUV=0 0 248 174
+
+[CTRL_PICTURE_55]
+Type=1
+Tag=55
+Rect=71 500 480 344
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\help2.png
+NormalFileUV=0 0 247 177

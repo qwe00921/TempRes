@@ -104,6 +104,7 @@ end
 function p.ShowCardList(cardList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
+	list:SetZOrder(-100);
 	p.cardListNode = {}
 	p.allCardPrice 	= 0;	--出售卡牌总价值
 	p.sellCardNodeList = {}	--出售卡牌节点列表
@@ -146,10 +147,10 @@ function p.ShowCardList(cardList)
         view:SetViewSize( bg:GetFrameSize());
 		
 		local row_index = i;
-		local start_index = (row_index-1)*5+1
+		local start_index = (row_index - 1) * 5 + 1
         local end_index = start_index + 4;
 		
-		--设置列表信息，一行4张卡牌
+		--设置列表信息，一行5张卡牌
 		for j = start_index,end_index do
 			if i == 1 and j == 1 and p.hasRemove  == true then
 				local cardIndex = j - start_index + 1;
@@ -157,7 +158,7 @@ function p.ShowCardList(cardList)
 			elseif j <= cardNum then
 				local lstIndex = j;
 				if p.hasRemove  == true then
-					lstIndex = j -1;
+					lstIndex = j - 1;
 				end
 				local card = cardList[lstIndex];
 				local cardIndex = j - start_index + 1;
@@ -623,7 +624,8 @@ function p.CloseUI()
 		p.ClearData()
         card_bag_mgr.ClearData();
 		card_bag_sort.CloseUI();
-		card_bag_sell.CloseUI()
+		card_bag_sell.CloseUI();
+		dlg_msgbox.CloseUI();
 		--maininterface.ShowUI();
     end
 end

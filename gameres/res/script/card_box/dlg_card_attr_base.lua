@@ -134,6 +134,7 @@ function p.SetDelegate()
 		pLableEquip1:SetText(pEquipInfo.name);
 	else
 		pEquipPic1:SetPicture(nil);
+		pLableEquip1:SetText("");
 	end
 	
 	local pEquipPic2 = GetImage(p.layer,ui.ID_CTRL_EQUIP_PIC_2);
@@ -144,6 +145,7 @@ function p.SetDelegate()
 		pLableEquip2:SetText(pEquipInfo.name);
 	else
 		pEquipPic2:SetPicture(nil);
+		pLableEquip2:SetText("");
 	end
 	
 	--¿¨ÅÆµÈ¼¶

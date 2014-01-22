@@ -249,8 +249,8 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	bt:SetId(dataListIndex);
 	
 	--显示卡牌图片
-	local aniIndex = "item."..itemInfo.equip_id;
-	imgV:SetPicture( GetPictureByAni(aniIndex, 0) );
+	
+	imgV:SetPicture( p.SelectImage(itemInfo.equip_id) );
 	
 	--显示等级
 	lvV:SetText("LV." .. (itemInfo.equip_level or "1"));
@@ -273,6 +273,15 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 		selV:SetVisible( true );
 	end
 	
+	
+end
+
+function p.SelectImage(id)
+	
+	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(id)); 
+	if pEquipInfo then
+		return GetPictureByAni(pEquipInfo.item_pic,0);
+	end
 	
 end
 
@@ -359,7 +368,7 @@ end
 --组装装备详细界面所需的数据(统一字段名)
 function p.PasreCardDetail(cardUid, itemInfo, dressId)
 	local item = {};
-	--item.cardId 	= cardInfo.CardID;
+	item.cardId 	= itemInfo.owner_card_id;
 	item.cardUid 	= cardUid;
   --item.cardName	= "xxx"
 	item.itemId 	= itemInfo.equip_id;
@@ -511,7 +520,7 @@ function p.OnLoadList(msg)
 		p.refreshTab();
 		--p.ShowList(msg.equipment_info or {})
 		
-		WriteCon( "** OnLoadList1 " .. #msg.equipment_info);
+		--WriteCon( "** OnLoadList1 " .. #msg.equipment_info);
 	else
 		--local str = mail_main.GetNetResultError(msg);
 		--if str then

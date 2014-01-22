@@ -218,6 +218,8 @@ function p.CollectAnimation( node, result )
 	node:AddChild( image );
 	local effectName = "lancer_cmb.country_collect_" .. math.random( 1, 8 );
 	image:AddActionEffect(effectName);
+	
+	country_main.ShowCollectEffect();
 end
 --==================================================================--
 

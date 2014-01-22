@@ -528,6 +528,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				WriteCon("¹Ø±Õ");
 				p.CloseUI();
 				maininterface.BecomeFirstUI();
+				maininterface.ShowUI();
 			end
 		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
@@ -867,9 +868,9 @@ function p.CloseUI()
 	p.modify_user_team = nil;
 	card_bag_mian.CloseUI();
 	p.user_teams = nil;
-	if (p.missionId == nil and p.stageId == nil) then
-		maininterface.ShowUI();
-	end
+	-- if (p.missionId == nil and p.stageId == nil) then
+		-- maininterface.ShowUI();
+	-- end
 end
 
 function p.UIDisappear()

@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	dlg_gacha.lua
 -- author:		zjj, 2013/08/19
--- purpose:		Å¤µ°½çÃæ
+-- purpose:		æ‰­è›‹ç•Œé¢
 --------------------------------------------------------------
 
 dlg_gacha = {}
@@ -22,12 +22,12 @@ local GIFT_RIGHT  = 4;
 p.intent = nil;
 
 p.layer = nil;
-p.timezj = nil; --ÖĞ¼¶Å¤µ°Ê±¼ä
-p.timegj = nil; --¸ß¼¶Å¤µ°Ê±¼ä
+p.timezj = nil; --ä¸­çº§æ‰­è›‹æ—¶é—´
+p.timegj = nil; --é«˜çº§æ‰­è›‹æ—¶é—´
 
 p.gachadata = nil;
-p.rmb = nil; --Ôª±¦Öµ
-p.pt  = nil; --ptÖµ
+p.rmb = nil; --å…ƒå®å€¼
+p.pt  = nil; --ptå€¼
 p.idTimerRefresh = nil;
 p.freeTimeList = {};
 --p.timerIDList = {};
@@ -35,7 +35,7 @@ p.coin_config = {};
 p.gachaBtnlist = {};
 p.useTicketSign = 0;
 
---Å¤µ°²ÎÊı
+--æ‰­è›‹å‚æ•°
 p.gacha_id = nil;
 p.charge_type = nil;
 p.gacha_type = nil;
@@ -51,11 +51,11 @@ p.shopItmeBtn = nil;
 p.shopPackBtn = nil;
 p.bagBtn = nil;
 
---´æ·ÅÉÌÆ·ÁĞ±íĞÅÏ¢
+--å­˜æ”¾å•†å“åˆ—è¡¨ä¿¡æ¯
 p.shopData = nil;
---´æ·ÅÀñ°üÁĞ±íĞÅÏ¢
+--å­˜æ”¾ç¤¼åŒ…åˆ—è¡¨ä¿¡æ¯
 p.giftData = nil;
---´æ·Å±³°üÁĞ±íĞÅÏ¢
+--å­˜æ”¾èƒŒåŒ…åˆ—è¡¨ä¿¡æ¯
 p.bagData = nil;
 
 p.requestFlag = false;
@@ -79,7 +79,7 @@ function TimeToStr( timeNum )
 	return string.format( "%02d:%02d:%02d" , hours, mins, secs);
 end
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI( intent ,reload)
 	dlg_menu.SetNewUI( p );
 	
@@ -133,39 +133,40 @@ function p.ShowUI( intent ,reload)
 	maininterface.HideUI();
 	
 	gNotify:RegisterEvent( "msg_player", "Emoney", p, p.UpdateRmb );
+	gNotify:RegisterEvent( "msg_player", "MailNum", p, p.UpdateMailNum );
 end
 
---ÉèÖÃÊÂ¼ş´¦Àí
+--è®¾ç½®äº‹ä»¶å¤„ç†
 function p.SetDelegate()
     p.GetCoinCost();
-	--·µ»Ø°´Å¥
+	--è¿”å›æŒ‰é’®
 	local backBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_BACK);
     backBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	
-	--Å¤µ°½çÃæ
+	--æ‰­è›‹ç•Œé¢
 	p.gachaBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI);
 	p.gachaBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	
-    --ÉÌµê°´Å¥
+    --å•†åº—æŒ‰é’®
     p.shopItmeBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_ITEMUI); 
     p.shopItmeBtn:SetLuaDelegate(p.OnGachaUIEvent);
     
-    --Àñ°ü°´Å¥
+    --ç¤¼åŒ…æŒ‰é’®
     p.shopPackBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI);
     p.shopPackBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	
     
-    --³äÖµ
+    --å……å€¼
     local payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_PAY);
     payBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	
-	--³ÖÓĞ
+	--æŒæœ‰
 	p.bagBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_73);
     p.bagBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	
     
 	--[[
-    --¹ã¸æÁĞ±í
+    --å¹¿å‘Šåˆ—è¡¨
     local adList = GetListBoxHorz( p.layer, ui_dlg_gacha.ID_CTRL_LIST_AD);
     adList:ClearView();
     adList:SetSingleMode(true);
@@ -180,24 +181,24 @@ function p.SetDelegate()
        adList:AddView(view);
     end
      
-    --ÏÂÒ»¸ö¹ã¸æ
+    --ä¸‹ä¸€ä¸ªå¹¿å‘Š
     local nextAdBtn = GetButton( p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_AD_NEXT);
     nextAdBtn:SetLuaDelegate(p.OnGachaUIEvent);
-    --ÉÏÒ»¸ö¹ã¸æ
+    --ä¸Šä¸€ä¸ªå¹¿å‘Š
     local lastAdBtn = GetButton( p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_AD_LAST);
     lastAdBtn:SetLuaDelegate(p.OnGachaUIEvent);
     --]]
 
-    --Å¤µ°ÁĞ±í
+    --æ‰­è›‹åˆ—è¡¨
     p.gachaList = GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_GACHA);
     
-    --ÉÌµêÁĞ±í
+    --å•†åº—åˆ—è¡¨
     p.shopItemList = GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_SHOP_ITEM);
     
-    --Àñ°üÁĞ±í
+    --ç¤¼åŒ…åˆ—è¡¨
     p.shopPackList = GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_GIFT_PACK);
 	
-	--ÉÌ³ÇÁĞ±í
+	--å•†åŸåˆ—è¡¨
 	p.bagList	= GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_BAG);
 end
 
@@ -218,23 +219,23 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 		if ( ui_dlg_gacha.ID_CTRL_BUTTON_BACK == tag ) then  
 			p.CloseUI();
 			maininterface.BecomeFirstUI();
-		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --Å¤µ°½çÃæ°´Å¥
-			WriteCon( "Å¤µ°½çÃæ°´Å¥" );
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --æ‰­è›‹ç•Œé¢æŒ‰é’®
+			WriteCon( "æ‰­è›‹ç•Œé¢æŒ‰é’®" );
 			if curPage ~= SHOP_GACHA then
 				p.ShowGachaData( p.gachadata );
 			end
-		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_ITEMUI == tag ) then  --ÉÌµê½çÃæ°´Å¥
-			WriteCon( "ÉÌµê½çÃæ°´Å¥" );
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_ITEMUI == tag ) then  --å•†åº—ç•Œé¢æŒ‰é’®
+			WriteCon( "å•†åº—ç•Œé¢æŒ‰é’®" );
 			if curPage ~= SHOP_ITEM then
 				p.ShowShopData( p.shopData );
 			end
-		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI == tag ) then  --Àñ°ü½çÃæ°´Å¥
-			WriteCon( "Àñ°ü½çÃæ°´Å¥" );
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GIFT_PACKUI == tag ) then  --ç¤¼åŒ…ç•Œé¢æŒ‰é’®
+			WriteCon( "ç¤¼åŒ…ç•Œé¢æŒ‰é’®" );
 			if curPage ~= SHOP_GIFT_PACK then
 				p.ShowGiftPackData( p.giftData );
 			end
-		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_PAY == tag) then --³äÖµ°´Å¥
-			WriteCon( "³äÖµ°´Å¥" );
+		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_PAY == tag) then --å……å€¼æŒ‰é’®
+			WriteCon( "å……å€¼æŒ‰é’®" );
 			
 		elseif (ui_dlg_gacha.ID_CTRL_BUTTON_73 == tag) then
 			if curPage ~= SHOP_BAG then
@@ -242,21 +243,21 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			end
 			
 		elseif ( ui_shop_item_view.ID_CTRL_BUTTON_BUY_L == tag ) then 
-			WriteCon( "ÉÌ³Ç¹ºÂò" );
+			WriteCon( "å•†åŸè´­ä¹°" );
 			local item = p.shopData.list[uiNode:GetId()];
 			dlg_buy_num.ShowUI( item );
 		elseif ( ui_shop_gift_pack_view.ID_CTRL_BUTTON_BUY_L == tag ) then 
-			WriteCon( "Àñ°ü¹ºÂò" );
+			WriteCon( "ç¤¼åŒ…è´­ä¹°" );
 			local gift = p.giftData.list[uiNode:GetId()];
 			dlg_buy_num.ShowUI( gift );
 		
 		elseif ui_gacha_list_view.ID_CTRL_BUTTON_ONE == tag then
-			--µ¥´ÎÅ¤µ°
+			--å•æ¬¡æ‰­è›‹
 			local id = uiNode:GetParent():GetId();
 			local curTime = os.time();
 			local freeTime = p.gachadata.gachaData[id].Gacha_endtime;
 			if freeTime <= curTime then
-				--Ãâ·Ñ
+				--å…è´¹
 				local gacha_id = tonumber(p.gachadata.gachaData[id].Gacha_id);
 				p.charge_type = 1;
 				p.gacha_type = 1;
@@ -267,9 +268,10 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 				local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "single_gacha_cost"));
 
 				if p.rmb < needRmb then
-					WriteCon("**Å¤µ°ĞèÇó´ú±Ò²»×ã**");
+					WriteCon("**æ‰­è›‹éœ€æ±‚ä»£å¸ä¸è¶³**");
+					dlg_msgbox.ShowYesNo( "æç¤º", "æ‚¨èº«ä¸Šçš„å®çŸ³ä¸è¶³ï¼Œæ˜¯å¦è¿›è¡Œå……å€¼ï¼Ÿ", p.DidAddEmoney, p.layer );
 				else
-					--¸¶·Ñ
+					--ä»˜è´¹
 					p.charge_type = 2;
 					p.gacha_type = 1;
 					p.gacha_id = gacha_id;
@@ -277,14 +279,15 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 				end
 			end
 		elseif ui_gacha_list_view.ID_CTRL_BUTTON_TEN == tag then
-			--N´ÎÅ¤µ°
+			--Næ¬¡æ‰­è›‹
 			local id = uiNode:GetParent():GetId();
 			local gacha_id = tonumber(p.gachadata.gachaData[id].Gacha_id);
 			local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "complex_gacha_cost"));
 			if p.rmb < needRmb then
-				WriteCon("**Å¤µ°ĞèÇó´ú±Ò²»×ã**");
+				WriteCon("**æ‰­è›‹éœ€æ±‚ä»£å¸ä¸è¶³**");
+				dlg_msgbox.ShowYesNo( "æç¤º", "æ‚¨èº«ä¸Šçš„å®çŸ³ä¸è¶³ï¼Œæ˜¯å¦è¿›è¡Œå……å€¼ï¼Ÿ", p.DidAddEmoney, p.layer );
 			else
-				--¸¶·Ñ
+				--ä»˜è´¹
 				p.charge_type = 2;
 				p.gacha_type = 2;
 				p.gacha_id = gacha_id;
@@ -294,7 +297,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	end
 end
 
---Ãâ·ÑÅ¤µ°¶Ô»°¿ò»Øµ÷
+--å…è´¹æ‰­è›‹å¯¹è¯æ¡†å›è°ƒ
 function p.OnFreeGacha( result )
     if result then 
 		if p.gachaIndex == 3 then  
@@ -305,14 +308,14 @@ function p.OnFreeGacha( result )
     end
 end
 
---Å¤µ°ÏûÏ¢¿ò»Øµ÷
+--æ‰­è›‹æ¶ˆæ¯æ¡†å›è°ƒ
 function p.OnCostGacha( result )
     if result then
-        if p.useTicketSign == 1 then   --Ê¹ÓÃÖĞ¼¶Å¤µ°¾í
+        if p.useTicketSign == 1 then   --ä½¿ç”¨ä¸­çº§æ‰­è›‹å·
             p.StartGacha("3", "1", "2");
-        elseif p.useTicketSign == 2 then --Ê¹ÓÃ¸ß¼¶Å¤µ°¾í
+        elseif p.useTicketSign == 2 then --ä½¿ç”¨é«˜çº§æ‰­è›‹å·
             p.StartGacha("5", "1", "2");
-        elseif p.useTicketSign == 0 then --Ê¹ÓÃ´ú±Ò
+        elseif p.useTicketSign == 0 then --ä½¿ç”¨ä»£å¸
              if p.gachaIndex == 1 then  
                 p.StartGacha("1", "1", "3");
              elseif p.gachaIndex ==2 then
@@ -330,10 +333,10 @@ function p.OnCostGacha( result )
     end
 end
 
---Å¤µ°¿ªÊ¼ÇëÇó
+--æ‰­è›‹å¼€å§‹è¯·æ±‚
 function p.StartGacha(gacha_id, gacha_num, charge_type)
-	WriteCon("**¿ªÊ¼Å¤µ°**");
-	--±£´æÅ¤µ°²ÎÊı
+	WriteCon("**å¼€å§‹æ‰­è›‹**");
+	--ä¿å­˜æ‰­è›‹å‚æ•°
 	p.gacha_id = gacha_id;
 	p.charge_type = charge_type;
 	
@@ -343,9 +346,9 @@ function p.StartGacha(gacha_id, gacha_num, charge_type)
     SendReq("Gacha","Start",uid, gachaparam);
 end
 
---Ã¿ÃëË¢ĞÂÊ±¼ä
+--æ¯ç§’åˆ·æ–°æ—¶é—´
 function p.RefreshFreeTime()
-   --É¾³ı¶¨Ê±
+   --åˆ é™¤å®šæ—¶
 	if p.idTimerRefresh ~= nil then
 		KillTimer(p.idTimerRefresh);
 		p.idTimerRefresh = nil;
@@ -354,7 +357,7 @@ function p.RefreshFreeTime()
 	p.onFreeTime();
 end
 
---ÏÔÊ¾Ë¢ĞÂÊ±¼ä
+--æ˜¾ç¤ºåˆ·æ–°æ—¶é—´
 function p.onFreeTime( )
 	local gachaData = p.gachadata.gachaData or {};
 	local curTime = os.time();
@@ -364,11 +367,11 @@ function p.onFreeTime( )
 		local gacha = gachaData[i];
 		local freeTime = gacha.Gacha_endtime or 0;
 		if freeTime <= curTime then
-			p.freeTimeList[i]:SetText( ToUtf8( "µ±Ç°¿ÉÒÔ½øĞĞÃâ·ÑÅ¤µ°£¡" ) );
+			p.freeTimeList[i]:SetText( "å½“å‰å¯ä»¥è¿›è¡Œå…è´¹æ‰­è›‹ï¼" );
 		else
 			needTime = true;
 			local secs = freeTime - curTime;
-			p.freeTimeList[i]:SetText( ToUtf8( TimeToStr(secs) .. "ºó¿ÉÃâ·Ñ³éÈ¡1´Î") );
+			p.freeTimeList[i]:SetText( TimeToStr(secs) .. "åå¯å…è´¹æŠ½å–1æ¬¡" );
 		end
 	end
 	
@@ -378,47 +381,47 @@ function p.onFreeTime( )
 	end
 end
 
---ÇëÇógachaÊı¾İ
+--è¯·æ±‚gachaæ•°æ®
 function p.ReqGachaData()
 	p.rmb = nil;
-	WriteCon("**ÇëÇógachaÊı¾İ**");
+	WriteCon("**è¯·æ±‚gachaæ•°æ®**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
     SendReq("Gacha","GetGachaInfo",uid,"");
 end
 
---ÇëÇóÉÌ³ÇÎïÆ·Êı¾İ
+--è¯·æ±‚å•†åŸç‰©å“æ•°æ®
 function p.ReqShopItem()
 	p.rmb = nil;
-	WriteCon("**ÇëÇóÉÌ³ÇÎïÆ·Êı¾İ**");
+	WriteCon("**è¯·æ±‚å•†åŸç‰©å“æ•°æ®**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
     SendReq("Shop","ShopList",uid,"&type_id=1");
 end
 
---ÇëÇóÀñ°üÊı¾İ
+--è¯·æ±‚ç¤¼åŒ…æ•°æ®
 function p.ReqGitfPack()
 	p.rmb = nil;
-    WriteCon("**ÇëÇóÀñ°üÊı¾İ**");
+    WriteCon("**è¯·æ±‚ç¤¼åŒ…æ•°æ®**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
     SendReq("Shop","ShopList",uid,"&type_id=2");
 end
 
---ÇëÇóÀñ°ü¹ºÂò
+--è¯·æ±‚ç¤¼åŒ…è´­ä¹°
 function p.ReqGiftPackBuy( giftid )
-	WriteCon("**ÇëÇóÀñ°ü¹ºÂò**");
+	WriteCon("**è¯·æ±‚ç¤¼åŒ…è´­ä¹°**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
     local num = GetLabel( p.layer, ui_dlg_buy_num.ID_CTRL_TEXT_NUM ):GetText();
     local param = "&type_id=2".."&item_id=" .. giftid .."&num=" .. 1;
-    WriteCon( "¹ºÂò²ÎÊı" .. param );
+    WriteCon( "è´­ä¹°å‚æ•°" .. param );
     SendReq("Shop","AddUserItem",uid, param);
 end
 
---ÇëÇó³ÖÓĞ(±³°ü)Êı¾İ
+--è¯·æ±‚æŒæœ‰(èƒŒåŒ…)æ•°æ®
 function p.ReqBag()
-    WriteCon("**ÇëÇóÀñ°üÊı¾İ**");
+    WriteCon("**è¯·æ±‚ç¤¼åŒ…æ•°æ®**");
     local uid = GetUID();
     if uid == 0 then uid = 100 end; 
     SendReq("Item","ListItem",uid,"");
@@ -431,11 +434,11 @@ function p.ReqStartGacha( gacha_id, charge_type, gacha_type)
 	
 	p.requestFlag = true;
 	
-	WriteCon("**ÇëÇó¿ªÊ¼Å¤µ°**");
+	WriteCon("**è¯·æ±‚å¼€å§‹æ‰­è›‹**");
 	local uid = GetUID();
     if uid == 0 then uid = 100 end; 
 	local param = string.format( "&gacha_id=%d&charge_type=%d&gacha_type=%d", gacha_id, charge_type, gacha_type);
-	WriteCon( "Å¤µ°²ÎÊı£º" .. param );
+	WriteCon( "æ‰­è›‹å‚æ•°ï¼š" .. param );
 	SendReq("Gacha","Start",uid, param);
 end
 
@@ -444,7 +447,7 @@ function p.RequestCallBack()
 	p.requestFlag = false;
 end
 
---ÏÔÊ¾ÉÌ³ÇµÀ¾ßÁĞ±í
+--æ˜¾ç¤ºå•†åŸé“å…·åˆ—è¡¨
 function p.ShowShopData( shopdata )
 	curPage = SHOP_ITEM;
 	
@@ -467,14 +470,14 @@ function p.ShowShopData( shopdata )
     
     p.shopItemList:ClearView();
     
-    --±£´æÉÌ³ÇÎïÆ·ĞÅÏ¢
+    --ä¿å­˜å•†åŸç‰©å“ä¿¡æ¯
     p.shopData = shopdata;
     
 	if p.rmb == nil then
 		p.rmb = tonumber(shopdata.user_coin);
 	end
 	
-    --Ë¢ĞÂÍæ¼ÒÔª±¦
+    --åˆ·æ–°ç©å®¶å…ƒå®
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring(p.rmb));
     
@@ -497,7 +500,7 @@ function p.ShowShopData( shopdata )
     
 end
 
---ÏÔÊ¾ÉÌ³ÇÀñ°üÁĞ±í
+--æ˜¾ç¤ºå•†åŸç¤¼åŒ…åˆ—è¡¨
 function p.ShowGiftPackData( giftdata )
     curPage = SHOP_GIFT_PACK;
 	
@@ -520,14 +523,14 @@ function p.ShowGiftPackData( giftdata )
 	
 	p.shopPackList:ClearView();
     
-    --±£´æÉÌ³ÇÀñ°üĞÅÏ¢
+    --ä¿å­˜å•†åŸç¤¼åŒ…ä¿¡æ¯
 	p.giftData = giftdata;
 	
 	if p.rmb == nil then
 		p.rmb = tonumber(giftdata.user_coin);
 	end
 	
-    --Ë¢ĞÂÍæ¼ÒÔª±¦
+    --åˆ·æ–°ç©å®¶å…ƒå®
 	local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring( p.rmb ));
     
@@ -547,7 +550,7 @@ function p.ShowGiftPackData( giftdata )
     end
 end
 
---ÏÔÊ¾³ÖÓĞ
+--æ˜¾ç¤ºæŒæœ‰
 function p.ShowBagData( bagdata )
 	    curPage = SHOP_BAG;
 	
@@ -569,7 +572,7 @@ function p.ShowBagData( bagdata )
 	
 	p.bagList:ClearView();
     
-    --±£´æĞÅÏ¢
+    --ä¿å­˜ä¿¡æ¯
 	p.bagdata = bagdata;
     
     local itemList = bagdata.user_items or {};
@@ -588,7 +591,7 @@ function p.ShowBagData( bagdata )
 		local start_index = (row_index-1)*5+1
         local end_index = start_index + 4;
 
-		--ÉèÖÃÁĞ±íÏîĞÅÏ¢£¬Ò»ĞĞ5¸öµÀ¾ß
+		--è®¾ç½®åˆ—è¡¨é¡¹ä¿¡æ¯ï¼Œä¸€è¡Œ5ä¸ªé“å…·
 		for j = start_index,end_index do
 			if j <= itemNum then
 				local item = itemList[j];
@@ -602,7 +605,7 @@ function p.ShowBagData( bagdata )
 end
 
 
---Òş²ØÎïÆ·Ïî
+--éšè—ç‰©å“é¡¹
 function p.HideItemView( view )
 	--[[
 	local temp = Get9SlicesImage(view , ui_shop_item_view.ID_CTRL_9SLICES_BG_R);
@@ -612,7 +615,7 @@ function p.HideItemView( view )
 	--]]
 end
 
---Òş²ØÀñ°üÏî
+--éšè—ç¤¼åŒ…é¡¹
 function p.HideGiftView( view )
 	--[[
     local temp = Get9SlicesImage(view , ui_shop_gift_pack_view.ID_CTRL_9SLICES_BG_R);
@@ -624,7 +627,7 @@ function p.HideGiftView( view )
 	--]]
 end
 
---ÏÔÊ¾ÎïÆ·ĞÅÏ¢
+--æ˜¾ç¤ºç‰©å“ä¿¡æ¯
 function p.SetItemInfo( view , item , position, index)
 
     local name;
@@ -668,41 +671,41 @@ function p.SetItemInfo( view , item , position, index)
 		desc = ui_shop_gift_pack_view.ID_CTRL_TEXT_DESCRIPTION_L;
     end
 
-    --Ãû³Æ
+    --åç§°
     local nameLab = GetLabel( view , name );
     --local row_name = SelectRowInner( T_SHOP, "item_id", item.item_id , "name"  );
 	--local row_name = SelectCell( T_ITEM, item.item_id, "name" );
 	local row_name = GetItemName( item.item_id, G_ITEMTYPE_SHOP );
     nameLab:SetText(  row_name );
     
-    --ÏŞÖÆ
+    --é™åˆ¶
     local limitLab = GetLabel( view, limit );
     local lv = msg_cache.msg_player.Level;
     local row_limitLv = SelectRowInner( T_SHOP, "item_id", item.item_id , "level_limit"  );
     local num = item.num;
     local row_limitNum = SelectRowInner( T_SHOP, "item_id", item.item_id , "num_limit"  );
-    limitLab:SetText( row_limitLv .. ToUtf8( "¼¶ÒÔÉÏ¿ÉÒÔ¹ºÂò" ));
+    limitLab:SetText( row_limitLv ..  "çº§ä»¥ä¸Šå¯ä»¥è´­ä¹°" );
     
-    --¹ºÂò°´Å¥
+    --è´­ä¹°æŒ‰é’®
     local buyBtn = GetButton( view , buy );
     buyBtn:SetEnabled( false );
     buyBtn:SetLuaDelegate( p.OnGachaUIEvent );
     buyBtn:SetId( index );
     
-    --ÒÑ´ïµ½ÏŞÖÆ¹ºÂòµÈ¼¶
+    --å·²è¾¾åˆ°é™åˆ¶è´­ä¹°ç­‰çº§
     if tonumber( lv ) >= tonumber( row_limitLv ) then
-        --ÈçÓĞÎïÆ·ÓĞ¹ºÂò´ÎÊıÏŞÖÆ
+        --å¦‚æœ‰ç‰©å“æœ‰è´­ä¹°æ¬¡æ•°é™åˆ¶
         if tonumber( row_limitNum ) ~= 0 then
-            --Î´´òµ½¹ºÂòÉÏÏß
+            --æœªæ‰“åˆ°è´­ä¹°ä¸Šçº¿
             if tonumber( num ) ~= tonumber( row_limitNum ) then
-                limitLab:SetText( ToUtf8( "½öÏŞ¹ºÂò")..row_limitNum..ToUtf8("´Î").."("..num.."/"..row_limitNum..")");
+                limitLab:SetText(  "ä»…é™è´­ä¹°"..row_limitNum.."æ¬¡".."("..num.."/"..row_limitNum..")");
                 buyBtn:SetEnabled( true );
             else
-                limitLab:SetText( ToUtf8("ÒÑ¹ºÂò")..num.."/"..row_limitNum..ToUtf8("´Î"));
+                limitLab:SetText( "å·²è´­ä¹°"..num.."/"..row_limitNum.."æ¬¡");
             end
-        --Ã»ÓĞ¹ºÂòÏŞÖÆ
+        --æ²¡æœ‰è´­ä¹°é™åˆ¶
         else
-            limitLab:SetText(""); --²»ÏÔÊ¾ÄÚÈİ     
+            limitLab:SetText(""); --ä¸æ˜¾ç¤ºå†…å®¹     
             buyBtn:SetEnabled( true );
         end
     end
@@ -712,16 +715,16 @@ function p.SetItemInfo( view , item , position, index)
     local row_rebatePrice = SelectRowInner( T_SHOP, "item_id", item.item_id , "rebate_price");
     local priceLab = GetLabel( view, price );
     local rebatePriceLab = GetLabel( view, rebateprice );
-    --ÓĞÕÛ¿Û¼Û
+    --æœ‰æŠ˜æ‰£ä»·
     if tonumber( row_rebatePrice ) ~= 0 then
-        priceLab:SetText( ToUtf8(  row_price ));
+        priceLab:SetText(  row_price );
         priceLab:SetCenterline( true );
         priceLab:SetCenterlineColor( priceLab:GetFontColor() );
         
-        rebatePriceLab:SetText( ToUtf8( row_rebatePrice ));
-    --ÎŞÕÛ¿Û
+        rebatePriceLab:SetText(  row_rebatePrice );
+    --æ— æŠ˜æ‰£
     else
-		rebatePriceLab:SetText( ToUtf8( row_price ) );
+		rebatePriceLab:SetText( row_price );
 		
 		priceLab:SetVisible( false );
 		local label = GetLabel( view, priceLabel );
@@ -733,11 +736,11 @@ function p.SetItemInfo( view , item , position, index)
 		pic = GetImage( view, linePic);
 		pic:SetVisible( false );
     end
-	--µÀ¾ßËµÃ÷£¨ÔİÎŞ£©
+	--é“å…·è¯´æ˜ï¼ˆæš‚æ— ï¼‰
 	local descLabel = GetLabel( view, desc );
 	descLabel:SetText( SelectCell( T_ITEM, item.item_id, "description" ) );
 	
-	--µÀ¾ßÍ¼Æ¬
+	--é“å…·å›¾ç‰‡
 	local image = GetImage( view, picture );
 	--local imageData = GetPictureByAni( SelectCell( T_ITEM, item.item_id , "item_pic" ) ,0 );
 	local imageData = GetItemPic( item.item_id, G_ITEMTYPE_SHOP );
@@ -745,7 +748,7 @@ function p.SetItemInfo( view , item , position, index)
 		image:SetPicture( imageData );
 	end
 	
-	--Èç¹ûÊÇÀñ°üÏî
+	--å¦‚æœæ˜¯ç¤¼åŒ…é¡¹
 	if position == GIFT_LEFT  then
 	   local lookBtn = GetButton( view, ui_shop_gift_pack_view.ID_CTRL_BUTTON_LOOK_L);
 	   lookBtn:SetLuaDelegate( p.OnGiftUIEvent );
@@ -811,10 +814,10 @@ function p.ShowBagItemInfo( view, item, itemIndex )
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP5;
 		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV5
 	end
-	--ÏÔÊ¾±ß¿ò
+	--æ˜¾ç¤ºè¾¹æ¡†
 	local boxFramePic = GetImage(view,boxFrame);
 	boxFramePic:SetPicture( GetPictureByAni("common_ui.frame", 0) );
-	--ÏÔÊ¾Ãû×Ö±³¾°Í¼Æ¬
+	--æ˜¾ç¤ºåå­—èƒŒæ™¯å›¾ç‰‡
 	--local subTitleBgPic = GetImage(view,subTitleBg);
 	--subTitleBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 
@@ -843,35 +846,35 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 			aniIndex = "ui.soul"
 	end
 
-	--ÏÔÊ¾ÎïÆ·Í¼Æ¬
+	--æ˜¾ç¤ºç‰©å“å›¾ç‰‡
 	local itemButton = GetButton(view, itemBtn);
     itemButton:SetImage( GetPictureByAni(aniIndex,0) );
 	itemButton:SetId(item_id);
     itemButton:SetUID(itemUniqueId);
 	itemButton:SetXID(itemType);
 	
-	--ÎïÆ·Ãû×Ö
+	--ç‰©å“åå­—
 	--local itemNameText = GetLabel(view,itemName );
 	--itemNameText:SetText(itemTable.name);
 	
-	local itemNumText = GetLabel(view,itemNum );	--ÎïÆ·ÊıÁ¿
-	--local equipStarPic = GetImage(view,equipStarPic);	--×°±¸ĞÇ¼¶
-	local equipLevelText = GetLabel(view,equipLevel);	--×°±¸µÈ¼¶
-	local isUsePic = GetImage(view,isUse);			--ÊÇ·ñ×°±¸
+	local itemNumText = GetLabel(view,itemNum );	--ç‰©å“æ•°é‡
+	--local equipStarPic = GetImage(view,equipStarPic);	--è£…å¤‡æ˜Ÿçº§
+	local equipLevelText = GetLabel(view,equipLevel);	--è£…å¤‡ç­‰çº§
+	local isUsePic = GetImage(view,isUse);			--æ˜¯å¦è£…å¤‡
 	itemNumText:SetVisible( false );
 	--equipStarPic:SetVisible( false );
 	equipLevelText:SetVisible( false );
 	isUsePic:SetVisible( false );
 
 	if itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
-	--ÆÕÍ¨¿Éµş¼ÓÎïÆ·£¬ÏÔÊ¾ÊıÁ¿
+	--æ™®é€šå¯å åŠ ç‰©å“ï¼Œæ˜¾ç¤ºæ•°é‡
 		itemNumText:SetVisible(true);
 		itemNumText:SetText("X "..item.Num);
-	--ÏÔÊ¾ÊıÁ¿±³¾°
+	--æ˜¾ç¤ºæ•°é‡èƒŒæ™¯
 		local numBgPic = GetImage(view,numBg);
 		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 	elseif itemType == 3 then 
-		--×°±¸£¬ÏÔÊ¾ĞÇ¼¶
+		--è£…å¤‡ï¼Œæ˜¾ç¤ºæ˜Ÿçº§
 		-- equipStarPic:SetVisible(true);
 		-- local starNum = tonumber(item.Rare);
 		-- if starNum == 0 then
@@ -879,22 +882,22 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 		-- else
 			-- equipStarPic:SetPicture( GetPictureByAni("common_ui.equipStar", starNum) );
 		-- end
-		--ÏÔÊ¾×°±¸µÈ¼¶
+		--æ˜¾ç¤ºè£…å¤‡ç­‰çº§
 		equipLevelText:SetVisible(true);
 		equipLevelText:SetText("LV"..item.Equip_level);
-		--ÊÇ·ñ×°±¸
+		--æ˜¯å¦è£…å¤‡
 		if item.Is_dress == 1 or item.Is_dress == "1" then
 			isUsePic:SetVisible(true);
 			isUsePic:SetPicture( GetPictureByAni("common_ui.equipUse", 0) );
 		end
 	end
 	
-	--ÉèÖÃÎïÆ·°´Å¥ÊÂ¼ş
+	--è®¾ç½®ç‰©å“æŒ‰é’®äº‹ä»¶
 	itemButton:SetLuaDelegate(p.OnBagItemClickEvent);
 	
 end
 
---ÇëÇógachaÊı¾İ»Øµ÷º¯Êı
+--è¯·æ±‚gachaæ•°æ®å›è°ƒå‡½æ•°
 function p.ShowGachaData( gachadata )
 	curPage = SHOP_GACHA;
 	
@@ -923,7 +926,7 @@ function p.ShowGachaData( gachadata )
 		p.rmb = tonumber(gachadata.emoney);
 	end
 	
-    --Ôª±¦Öµ
+    --å…ƒå®å€¼
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring( p.rmb ));
 
@@ -954,7 +957,7 @@ function p.ShowGachaData( gachadata )
 		
 		p.freeTimeList[i] = gachaFreeTime;
 		
-		--Ãâ·ÑÊ±¼ä´óÓÚµ±Ç°Ê±¼ä£¬Ôò½øĞĞµ¹¼ÆÊ±
+		--å…è´¹æ—¶é—´å¤§äºå½“å‰æ—¶é—´ï¼Œåˆ™è¿›è¡Œå€’è®¡æ—¶
 		if gacha[i]. Gacha_endtime > curTime then
 			gachaOneNum:SetVisible(true);
 			gachaOnePic:SetVisible(true);
@@ -963,7 +966,7 @@ function p.ShowGachaData( gachadata )
 			gachaOneNum:SetVisible(false);
 			gachaOnePic:SetVisible(false);
 			gachaFreeMsg:SetVisible(true);
-			gachaFreeTime:SetText( ToUtf8( "µ±Ç°¿ÉÒÔ½øĞĞÃâ·ÑÅ¤µ°£¡" ) );
+			gachaFreeTime:SetText( "å½“å‰å¯ä»¥è¿›è¡Œå…è´¹æ‰­è›‹ï¼" );
 		end
 		
 		gachaName:SetText( gacha[i].Name );
@@ -981,7 +984,7 @@ function p.ShowGachaData( gachadata )
 	p.RefreshFreeTime();
 end
 
---»ñÈ¡Å¤µ°´ú±ÒÊıÁ¿ÅäÖÃ
+--è·å–æ‰­è›‹ä»£å¸æ•°é‡é…ç½®
 function p.GetCoinCost()
 	local t = {};
 	local k = {};
@@ -997,7 +1000,7 @@ function p.GetCoinCost()
     p.coin_config = t;
 end
 
---¸ù¾İËùÓĞ´ú±ÒÊıÁ¿ÉèÖÃÅ¤µ°°´Å¥
+--æ ¹æ®æ‰€æœ‰ä»£å¸æ•°é‡è®¾ç½®æ‰­è›‹æŒ‰é’®
 function p.SetGachaBtnByCoin(index)
     if index == 1 then
         if tonumber(p.pt) >= tonumber(p.coin_config[1]) then
@@ -1023,7 +1026,7 @@ function p.SetGachaBtnByCoin(index)
     end 	
 end
 
---ÉèÖÃ"Ê¹ÓÃ"À¸²»¿É¼û
+--è®¾ç½®"ä½¿ç”¨"æ ä¸å¯è§
 function p.SetBagUseVisible(visible)
 	local useBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_USE);
 	useBtn:SetVisible(visible);
@@ -1037,7 +1040,7 @@ function p.SetBagUseVisible(visible)
 	
 end
 
---µã»÷ÎïÆ·ÊÂ¼ş
+--ç‚¹å‡»ç‰©å“äº‹ä»¶
 function p.OnBagItemClickEvent(uiNode, uiEventType, param)
 	local itemId = uiNode:GetId();
 	local itemUniqueId = uiNode:GetUID();
@@ -1078,7 +1081,7 @@ function p.OnBagItemClickEvent(uiNode, uiEventType, param)
 	p.SetItemChechedFX(uiNode);
 end
 
---ÉèÖÃÑ¡ÖĞÎïÆ·
+--è®¾ç½®é€‰ä¸­ç‰©å“
 function p.SetItemChechedFX(uiNode)
 	local itemNode = ConverToButton( uiNode );
 	if p.itemBtnNode ~= nil then
@@ -1098,11 +1101,11 @@ function p.ShowSelectEffect(uiNode)
 	uiNode:AddChild( view );
 end
 
---µã»÷Ê¹ÓÃÎïÆ·ÊÂ¼ş
+--ç‚¹å‡»ä½¿ç”¨ç‰©å“äº‹ä»¶
 function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent(uiEventType) then
-		if(ui_dlg_gacha.ID_CTRL_BUTTON_USE == tag) then --Ê¹ÓÃ
+		if(ui_dlg_gacha.ID_CTRL_BUTTON_USE == tag) then --ä½¿ç”¨
 			local itemId = uiNode:GetId();
 			local itemUniqueId = uiNode:GetUID();
 			local itemType = uiNode:GetXID();
@@ -1119,7 +1122,7 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 	end
 end
 
---ÉèÖÃ¿É¼û
+--è®¾ç½®å¯è§
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
@@ -1138,7 +1141,7 @@ function p.CloseUI()
 	    p.layer:LazyClose();
         p.layer = nil;
 		
-		--Å¤µ°²ÎÊı
+		--æ‰­è›‹å‚æ•°
 		p.gacha_id = nil;
 		p.charge_type = nil;
 		p.gacha_type = nil;
@@ -1154,18 +1157,18 @@ function p.CloseUI()
 		p.shopPackBtn = nil;
 		p.bagBtn = nil;
 
-		--´æ·ÅÉÌÆ·ÁĞ±íĞÅÏ¢
+		--å­˜æ”¾å•†å“åˆ—è¡¨ä¿¡æ¯
 		p.shopData = nil;
-		--´æ·ÅÀñ°üÁĞ±íĞÅÏ¢
+		--å­˜æ”¾ç¤¼åŒ…åˆ—è¡¨ä¿¡æ¯
 		p.giftData = nil;
 		
 		p.intent = nil;
-		p.timezj = nil; --ÖĞ¼¶Å¤µ°Ê±¼ä
-		p.timegj = nil; --¸ß¼¶Å¤µ°Ê±¼ä
+		p.timezj = nil; --ä¸­çº§æ‰­è›‹æ—¶é—´
+		p.timegj = nil; --é«˜çº§æ‰­è›‹æ—¶é—´
 
 		p.gachadata = nil;
-		p.rmb = nil; --Ôª±¦Öµ
-		p.pt  = nil; --ptÖµ
+		p.rmb = nil; --å…ƒå®å€¼
+		p.pt  = nil; --ptå€¼
 		p.idTimerRefresh = nil;
 		p.freeTimeList = {};
 		--p.timerIDList = {};
@@ -1192,8 +1195,22 @@ function p.UpdateRmb( emoney )
 	
 	p.rmb = tonumber(emoney);
 	
-	--Ôª±¦Öµ
+	--å…ƒå®å€¼
     local rmbLab = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_RMB );
     rmbLab:SetText( tostring( p.rmb ));
 end
 
+function p.UpdateMailNum()
+	if p.layer == nil then
+		return;
+	end
+	
+	dlg_msgbox.ShowOK( "æç¤º", "èƒŒåŒ…å·²æ»¡ï¼Œè¯·æŸ¥çœ‹ç³»ç»Ÿé‚®ä»¶", nil, p.layer );
+end
+
+function p.DidAddEmoney( flag )
+	--å……å€¼æµç¨‹
+	if flag then
+		
+	end
+end

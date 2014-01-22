@@ -250,6 +250,106 @@ function p.showCountryBuild(buildInfo)
 			end
 		end
 	end
+	
+	p.ShowCollectEffect();
+end
+
+--显示光效
+function p.ShowCollectEffect()
+	local homeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_HOME );	--4
+	local riverBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIVER );	--6
+	local fieldBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIELD );	--7
+	local mountainBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_MOUNTAIN );	--8
+	local treeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_TREE );	--9
+	
+	if homeBtn:HasAniEffect("ui.collect_effect") then
+		homeBtn:DelAniEffect("ui.collect_effect");
+	end
+	
+	if riverBtn:HasAniEffect("ui.collect_effect") then
+		riverBtn:DelAniEffect("ui.collect_effect");
+	end
+	
+	if fieldBtn:HasAniEffect("ui.collect_effect") then
+		fieldBtn:DelAniEffect("ui.collect_effect");
+	end
+	
+	if mountainBtn:HasAniEffect("ui.collect_effect") then
+		mountainBtn:DelAniEffect("ui.collect_effect");
+	end
+	
+	if treeBtn:HasAniEffect("ui.collect_effect") then
+		treeBtn:DelAniEffect("ui.collect_effect");
+	end
+	
+	local cache = msg_cache.msg_count_data or {};
+	local build = cache.builds or {};
+	local times = cache.times or {};
+	--房屋
+	if build["B4"] then
+		local nTimes = tonumber(times.Home) or 0;
+		local collectTimes = 0;
+		if country_collect.collectResult and country_collect.collectResult.Home and country_collect.collectResult.Home.times then
+			collectTimes = tonumber(country_collect.collectResult.Home.times);
+		end
+		if nTimes - collectTimes > 0 then
+			if not homeBtn:HasAniEffect("ui.collect_effect") then
+				homeBtn:AddFgEffect("ui.collect_effect");
+			end
+		end
+	end
+	--河流
+	if build["B6"] then
+		local nTimes = tonumber(times.River) or 0;
+		local collectTimes = 0;
+		if country_collect.collectResult and country_collect.collectResult.River and country_collect.collectResult.River.times then
+			collectTimes = tonumber(country_collect.collectResult.River.times);
+		end
+		if nTimes - collectTimes > 0 then
+			if not riverBtn:HasAniEffect("ui.collect_effect") then
+				riverBtn:AddFgEffect("ui.collect_effect");
+			end
+		end
+	end
+	--农田
+	if build["B7"] then
+		local nTimes = tonumber(times.Farm) or 0;
+		local collectTimes = 0;
+		if country_collect.collectResult and country_collect.collectResult.Farm and country_collect.collectResult.Farm.times then
+			collectTimes = tonumber(country_collect.collectResult.Farm.times);
+		end
+		if nTimes - collectTimes > 0 then
+			if not fieldBtn:HasAniEffect("ui.collect_effect") then
+				fieldBtn:AddFgEffect("ui.collect_effect");
+			end
+		end
+	end
+	--山地
+	if build["B8"] then
+		local nTimes = tonumber(times.Hill) or 0;
+		local collectTimes = 0;
+		if country_collect.collectResult and country_collect.collectResult.Hill and country_collect.collectResult.Hill.times then
+			collectTimes = tonumber(country_collect.collectResult.Hill.times);
+		end
+		if nTimes - collectTimes > 0 then
+			if not mountainBtn:HasAniEffect("ui.collect_effect") then
+				mountainBtn:AddFgEffect("ui.collect_effect");
+			end
+		end
+	end
+	--森林
+	if build["B9"] then
+		local nTimes = tonumber(times.Forest) or 0;
+		local collectTimes = 0;
+		if country_collect.collectResult and country_collect.collectResult.Forest and country_collect.collectResult.Forest.times then
+			collectTimes = tonumber(country_collect.collectResult.Forest.times);
+		end
+		if nTimes - collectTimes > 0 then
+			if not treeBtn:HasAniEffect("ui.collect_effect") then
+				treeBtn:AddFgEffect("ui.collect_effect");
+			end
+		end
+	end
 end
 
 function p.showUpBuildView(i,uplevel)

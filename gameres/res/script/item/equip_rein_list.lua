@@ -182,9 +182,9 @@ function p.ShowCardCost()
 	
 	if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
 		--local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
-		moneyLab:SetFontColor(ccc4(255,0,0,255));
+		cardMoney:SetFontColor(ccc4(255,0,0,255));
     else	
-		moneyLab:SetFontColor(ccc4(255,255,255,255));
+		cardMoney:SetFontColor(ccc4(255,255,255,255));
 	end		
 end;	
 
