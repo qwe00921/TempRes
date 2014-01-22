@@ -624,7 +624,8 @@ function p.CloseUI()
 		p.ClearData()
         card_bag_mgr.ClearData();
 		card_bag_sort.CloseUI();
-		card_bag_sell.CloseUI()
+		card_bag_sell.CloseUI();
+		dlg_msgbox.CloseUI();
 		--maininterface.ShowUI();
     end
 end
