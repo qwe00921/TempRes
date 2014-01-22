@@ -156,3 +156,7 @@ image\ui\main_interface\home_win_gate.png
 image\ui\main_interface\home_win_arena.png
 image\ui\main_interface\home_win_quest.png
 
+;可采集光效
+[collect_effect]
+image\ui\country\source_fx.png @cut(1, 8) @time=0.125 @loop
+
