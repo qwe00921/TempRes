@@ -249,6 +249,11 @@ function p.ShowItem(  )
     local lv_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_LEVEL );
     lv_value:SetText( tostring(item.itemLevel) or "0");
 	
+	--ÐÇ¼¶
+	
+	local itemStar = GetImage( p.layer,ui.ID_CTRL_PICTURE_STAR );
+	itemStar:SetPicture( GetPictureByAni("ui.equip_star_"..(item.itemRank or 1) ,0));
+	
 	--¹¥»÷
 	--local atk_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
     --local atk_value = GetLabel( p.layer, ui.ID_CTRL_TEXT_14 );
