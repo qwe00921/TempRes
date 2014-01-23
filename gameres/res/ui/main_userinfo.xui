@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -344,14 +344,12 @@ NormalFileUV=0 0 29 29
 [CTRL_TEXT_180]
 Type=4
 Tag=180
-Rect=406 12 133 19
+Rect=351 12 246 19
 AnchorPos=0 0
 Notes=
-Text=9999/9999
-TextTradition=9999/9999
 TextSize=18
 TextColor=0xffffff
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=等级数值
 UIOpenType=0
@@ -360,14 +358,12 @@ UIClsoeType=0
 [CTRL_TEXT_181]
 Type=4
 Tag=181
-Rect=326 48 133 19
+Rect=314 48 162 19
 AnchorPos=0 0
 Notes=
-Text=9999/9999
-TextTradition=9999/9999
 TextSize=18
 TextColor=0xffffff
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=等级数值
 UIOpenType=0
