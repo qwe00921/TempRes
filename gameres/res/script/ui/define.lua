@@ -28,6 +28,7 @@ DoFile("ui/ui_login_severselect.lua")
 DoFile("ui/ui_login_severselect_option.lua")
 
 --任务
+DoFile("ui/ui_quest_reward_view2.lua")
 DoFile("ui/ui_quest_main_view.lua")
 DoFile("ui/ui_quest_list_view.lua")
 DoFile("ui/ui_quest_reward_view.lua")
