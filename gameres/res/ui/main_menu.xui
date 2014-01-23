@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -298,8 +298,41 @@ NormalFileUV=0 0 52 28
 [CTRL_PICTURE_305]
 Type=1
 Tag=305
-Rect=0 578 640 192
+Rect=0 591 640 192
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=29
+Rect=274 785 20 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=30
+Rect=311 785 20 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=31
+Rect=348 785 20 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
