@@ -146,4 +146,5 @@ p.ID_CTRL_LEFT_SPRITE_3				   = 2;
 p.ID_CTRL_LEFT_SPRITE_2				   = 5;
 p.ID_CTRL_LEFT_SPRITE_1				   = 6;
 p.ID_CTRL_PICTURE_BG1					    = 217;
+p.ID_CTRL_PICTURE_BG					     = 294;
 p.ID_CTRL_PICTURE_82					     = 82;
