@@ -4,8 +4,9 @@
 --------------------------------------------------------------
 ui_main_interface = {};
 local p =  ui_main_interface;
-p.ID_CTRL_PICTURE_180					    = 180;
 p.ID_CTRL_BUTTON_129					     = 129;
+p.ID_CTRL_PICTURE_69					     = 77;
+p.ID_CTRL_PICTURE_180					    = 180;
 p.ID_CTRL_TEXT_CARD_NAME				  = 54;
 p.ID_CTRL_PICTURE_82					     = 90;
 p.ID_CTRL_TEXT_81						       = 89;
@@ -20,7 +21,6 @@ p.ID_CTRL_TEXT_73						       = 81;
 p.ID_CTRL_TEXT_72						       = 80;
 p.ID_CTRL_TEXT_71						       = 79;
 p.ID_CTRL_TEXT_70						       = 78;
-p.ID_CTRL_PICTURE_69					     = 77;
 p.ID_CTRL_PICTURE_68					     = 76;
 p.ID_CTRL_PICTURE_67					     = 75;
 p.ID_CTRL_PICTURE_66					     = 74;
