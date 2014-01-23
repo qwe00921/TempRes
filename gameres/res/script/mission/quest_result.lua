@@ -18,7 +18,7 @@ p.rewardAllData = nil;
 
 function p.ShowUI(backData)
 	if backData.result == false then
-		dlg_msgbox.ShowOK("´íÎóÌáÊ¾",self.message,nil,p.layer);
+		dlg_msgbox.ShowOK("é”™è¯¯æç¤º",self.message,nil,p.layer);
 		return
 	end
 	
@@ -31,7 +31,7 @@ function p.ShowUI(backData)
 	p.rewardAllData = rewardData;
 	dlg_userinfo.ShowUI();
 
-	--Èç¹ûÕ½¶·Ê§°Ü
+	--å¦‚æœæˆ˜æ–—å¤±è´¥
 	if tonumber(rewardData.victory) == 0 then
 		p.CloseUI();
 		dlg_userinfo.ShowUI();
@@ -65,13 +65,13 @@ end
 function p.ShowReward(rewardData)
 	local missionId = tonumber(rewardData.mission_id);
 
-	--ÕÂ½ÚÃû
+	--ç« èŠ‚å
 	local chapterName = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER);
 	local stageId = math.floor(missionId/1000)
 		--WriteConErr("stageId =="..stageId);
 	local stageT = SelectRowInner(T_STAGE,"stage_id",stageId);
 	chapterName:SetText(stageT.stage_name);
-	--ÈÎÎñÃû
+	--ä»»åŠ¡å
 	local missionName = GetLabel(p.layer, ui.ID_CTRL_TEXT_MISSION_NAME);
 	local missionTable = SelectRowInner(T_MISSION,"id",missionId);
 	missionName:SetText(missionTable.name);
@@ -127,14 +127,14 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	end
 end
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
