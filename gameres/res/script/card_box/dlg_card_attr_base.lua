@@ -33,6 +33,9 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 	if mainUIFlag ~= nil then
 		p.mainUIFlag = mainUIFlag;
 		dlg_menu.SetNewUI( p );
+		WriteCon("mainUIFlag ~= nil ");
+	else
+		WriteCon("mainUIFlag == nil ");
 	end
 	
 	if cardInfo == nil then
@@ -454,6 +457,10 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+	card_rein.CloseUI();
+	card_intensify.CloseUI();
+	card_intensify2.CloseUI();
+	card_intensify_succeed.CloseUI();
 	equip_dress_select.CloseUI();
 	equip_rein_list.CloseUI();
 	maininterface.BecomeFirstUI();
