@@ -366,8 +366,9 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 				break
 			end
 		end
-		dlg_card_attr_base.ShowUI(cardData);
 		p.HideUI();
+		dlg_card_attr_base.ShowUI(cardData);
+		
 	end
 end
 

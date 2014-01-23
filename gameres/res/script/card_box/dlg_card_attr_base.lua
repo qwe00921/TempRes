@@ -15,7 +15,7 @@ p.mainUIFlag = false;
 
 --id «UniqueId
 function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
-	
+	dlg_menu.HideUI();
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
@@ -33,11 +33,11 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 	if mainUIFlag ~= nil then
 		p.mainUIFlag = mainUIFlag;
 		dlg_menu.SetNewUI( p );
-		WriteCon("mainUIFlag ~= nil ");
-	else
-		WriteCon("mainUIFlag == nil ");
 	end
-	
+	if card_bag_mian.layer == nil then
+		WriteCon("card_bag_mian.layer == nil ");
+		dlg_menu.SetNewUI( p );
+	end
 	if cardInfo == nil then
 		return;
 	end
@@ -48,7 +48,7 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
 	p.layer = layer;
     p.SetDelegate();
-	dlg_menu.HideUI();
+	
 	cardInfo.UniqueId = cardInfo.UniqueId or cardInfo.UniqueID;
 	
 	p.LoadCardDetail(cardInfo.UniqueId);
@@ -108,6 +108,8 @@ function p.SetDelegate()
 		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",4));
 	elseif tonumber(pCardInfo2.element) == 6 then
 		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
+	elseif tonumber(pCardInfo2.element) == 7 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",6));
 	end
 	
 	--∑µªÿ
