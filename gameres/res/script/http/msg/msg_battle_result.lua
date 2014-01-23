@@ -29,7 +29,7 @@ function p:Process()
 		--local lResult = w_battle_mgr.GetReuslt();
 		--if lResult == 1 then
 
-			quest_reward.ShowUI(self.Reward);
+			quest_result.ShowUI(self.Reward);
 
 		--	dlg_userinfo.ShowUI();
 		--	stageMap_main.OpenWorldMap();

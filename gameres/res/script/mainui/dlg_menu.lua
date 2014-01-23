@@ -45,6 +45,9 @@ function p.ShowUI()
 	local pPic = GetPictureByAni("lancer.mask",1);
 	pImage:SetPicture(pPic);
 	layer:AddChildZ(pImage,10);
+	
+	maininterface.InitScrollList( p.layer );
+	maininterface.OnListScrolled();
 end
 
 function p.SetDelegate()

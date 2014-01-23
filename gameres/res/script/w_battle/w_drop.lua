@@ -105,12 +105,13 @@ function p:Drop(pTargetNode, param)
 	self.imageNode:SetFramePosXY(point.x+size.w/2, point.y+size.h-16);
 	self.imageNode:SetScale( 1.0f );
 	self.imageNode:SetVisible( true );
+	self.imageNode:SetZOrder( 9999 );
 
 	local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.monster_drop" );
 	local varEnv = cmd:GetVarEnv();
 	varEnv:SetFloat( "$1", math.random(-30, 30) );
 	varEnv:SetFloat( "$2", math.random( -5, 5 ) );
-	varEnv:SetFloat( "$3", math.random( 10, 30) );
+	varEnv:SetFloat( "$3", math.random( 30, 50) );
 	
 	return cmd;
 end
@@ -120,6 +121,8 @@ function p:Pick( pTargetNode, pos )
 	if pTargetNode == nil then
 		return;
 	end
+	self.imageNode:SetZOrder( -1 );
+	
 	--local effectName = "lancer_cmb.pick_effect";
 	local targetPoint = pTargetNode:GetFramePos();
 	local targetSize = pTargetNode:GetFrameSize();
@@ -127,7 +130,7 @@ function p:Pick( pTargetNode, pos )
 	
 	local x = targetPoint.x - orignPoint.x + targetSize.w/2;
 	local y = targetPoint.y - orignPoint.y + targetSize.h/2;
-	
+
 	--local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.pick_effect" );
 	local cmd = createCommandEffect():AddActionEffect( 0, self.imageNode, "lancer_cmb.pick_effect" );
 	local batch = w_battle_mgr.GetBattleBatch(); 

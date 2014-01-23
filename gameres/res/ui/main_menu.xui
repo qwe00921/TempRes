@@ -1,104 +1,305 @@
 ﻿
-[UI_INFO_BOTTOM]
+[UI_INFO]
 Width=640
 Height=960
+
+[CTRL_PICTURE_141]
+Type=1
+Tag=141
+Rect=1 825 639 35
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\ad_bg2.png
+NormalFileUV=0 0 639 35
+
+[CTRL_PICTURE_8]
+Type=1
+Tag=8
+Rect=0 815 640 55
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\AD_bg.png
+NormalFileUV=0 0 640 56
 
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 842 639 118
+Rect=0 866 639 94
 AnchorPos=0 0
 Notes=
 Remark=背景图片
-NormalFile=.\res\image\ui\main_interface\temp.png
-NormalFileUV=0 0 407 75
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_bg.png
+NormalFileUV=0 0 640 94
 
 [CTRL_BUTTON_HOME_PAGE]
 Type=2
 Tag=2
-Rect=10 856 100 99
+Rect=32 862 89 99
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=主页按钮
-SelectFile=.\res\image\ui\main_interface\home_page_click.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui\main_interface\home_page.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\button1_temp_normal.png
+NormalFileUV=0 0 89 99
+SelectFile=.\res\image\ui\main_interface\button1_temp_select.png
+SelectedFileUV=0 0 89 99
+DisableFile=.\res\image\ui\main_interface\button1_temp_un.png
+DisableFileUV=0 0 89 99
 
 [CTRL_BUTTON_QUEST]
 Type=2
 Tag=3
-Rect=219 857 100 96
+Rect=232 862 89 99
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=任务按钮
-SelectFile=.\res\image\ui\main_interface\quest_btn_click.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui\main_interface\quest_btn.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\button1_temp_normal.png
+NormalFileUV=0 0 89 99
+SelectFile=.\res\image\ui\main_interface\button1_temp_select.png
+SelectedFileUV=0 0 89 99
+DisableFile=.\res\image\ui\main_interface\button1_temp_un.png
+DisableFileUV=0 0 89 99
 
 [CTRL_BUTTON_CARD_GROUP]
 Type=2
 Tag=4
-Rect=325 856 100 99
+Rect=332 862 89 99
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=卡组按钮
-SelectFile=.\res\image\ui\main_interface\card_group_click.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui\main_interface\card_group.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\button2_temp_normal.png
+NormalFileUV=0 0 89 99
+SelectFile=.\res\image\ui\main_interface\button_temp_select.png
+SelectedFileUV=0 0 89 99
+DisableFile=.\res\image\ui\main_interface\button2_temp_un.png
+DisableFileUV=0 0 89 99
 
 [CTRL_BUTTON_BAG]
 Type=2
 Tag=5
-Rect=116 859 93 93
+Rect=132 862 89 99
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=背包按钮
-SelectFile=.\res\image\ui\main_interface\bag_click.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui\main_interface\bag.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\button2_temp_normal.png
+NormalFileUV=0 0 89 99
+SelectFile=.\res\image\ui\main_interface\button_temp_select.png
+SelectedFileUV=0 0 89 99
+DisableFile=.\res\image\ui\main_interface\button2_temp_un.png
+DisableFileUV=0 0 89 99
 
 [CTRL_BUTTON_PVP]
 Type=2
 Tag=6
-Rect=540 852 93 101
+Rect=532 862 89 99
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=竞技场按钮
-SelectFile=.\res\image\ui\main_interface\pvp_btn_click.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui\main_interface\pvp_btn.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\button2_temp_normal.png
+NormalFileUV=0 0 89 99
+SelectFile=.\res\image\ui\main_interface\button_temp_select.png
+SelectedFileUV=0 0 89 99
+DisableFile=.\res\image\ui\main_interface\button2_temp_un.png
+DisableFileUV=0 0 89 99
 
 [CTRL_BUTTON_GASHAPON]
 Type=2
 Tag=7
-Rect=430 858 100 94
+Rect=432 862 89 99
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=扭蛋按钮
-SelectFile=.\res\image\ui\main_interface\shop_click.png
-SelectedFileUV=0 0 100 100
-DisableFile=.\res\image\ui\main_interface\gashapon.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\button1_temp_normal.png
+NormalFileUV=0 0 89 99
+SelectFile=.\res\image\ui\main_interface\button1_temp_select.png
+SelectedFileUV=0 0 89 99
+DisableFile=.\res\image\ui\main_interface\button1_temp_un.png
+DisableFileUV=0 0 89 99
+
+[CTRL_COLOR_LABEL_140]
+Type=7
+Tag=140
+Rect=10 818 381 46
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_142]
+Type=1
+Tag=142
+Rect=21 927 104 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_text_bg.png
+NormalFileUV=0 0 104 25
+
+[CTRL_PICTURE_143]
+Type=1
+Tag=143
+Rect=124 927 104 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_text_bg.png
+NormalFileUV=0 0 104 25
+
+[CTRL_PICTURE_144]
+Type=1
+Tag=144
+Rect=224 927 104 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_text_bg.png
+NormalFileUV=0 0 104 25
+
+[CTRL_PICTURE_145]
+Type=1
+Tag=145
+Rect=324 927 104 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_text_bg.png
+NormalFileUV=0 0 104 25
+
+[CTRL_PICTURE_146]
+Type=1
+Tag=146
+Rect=424 927 104 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_text_bg.png
+NormalFileUV=0 0 104 25
+
+[CTRL_PICTURE_147]
+Type=1
+Tag=147
+Rect=524 927 104 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_text_bg.png
+NormalFileUV=0 0 104 25
+
+[CTRL_PICTURE_148]
+Type=1
+Tag=148
+Rect=228 926 91 28
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\text_cardbag.png
+NormalFileUV=0 0 91 28
+
+[CTRL_PICTURE_149]
+Type=1
+Tag=149
+Rect=150 925 52 28
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\text_country.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_150]
+Type=1
+Tag=150
+Rect=450 925 52 28
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\text_gacha.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_151]
+Type=1
+Tag=151
+Rect=48 925 52 28
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\text_homepage.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_152]
+Type=1
+Tag=152
+Rect=550 927 52 28
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\text_menu.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_175]
+Type=1
+Tag=175
+Rect=350 926 52 28
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\text_team.png
+NormalFileUV=0 0 52 28
+
+[CTRL_PICTURE_305]
+Type=1
+Tag=305
+Rect=0 578 640 192
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

@@ -18,6 +18,7 @@ DoFile("ui/ui_main_battlearray.lua")
 DoFile("ui/ui_main_battlearray_bg.lua")
 DoFile("ui/ui_main_scrolllist_node.lua")
 DoFile("ui/ui_main_billboard_bg.lua")
+DoFile("ui/ui_main_mailbtn.lua")
 DoFile("ui/ui_marquee_led.lua")
 
 --登录界面
@@ -28,6 +29,7 @@ DoFile("ui/ui_login_severselect.lua")
 DoFile("ui/ui_login_severselect_option.lua")
 
 --任务
+DoFile("ui/ui_quest_reward_view2.lua")
 DoFile("ui/ui_quest_main_view.lua")
 DoFile("ui/ui_quest_list_view.lua")
 DoFile("ui/ui_quest_reward_view.lua")

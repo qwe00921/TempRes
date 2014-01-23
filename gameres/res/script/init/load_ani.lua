@@ -39,6 +39,8 @@ LoadAni("card_element.ani")
 LoadAni("w_drop.ani")
 LoadAni("w_battle_res.ani")
 LoadAni("card_hero.ani")
+LoadAni("mainui_card_head.ani")
+LoadAni("mainui_card_small.ani")
 LoadAni_Done()
 
 --加载组合特效

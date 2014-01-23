@@ -20,6 +20,7 @@ function p.ShowUI()
 	GetUIRoot():AddDlg(layer);
 	LoadUI("equip_sell_list_statistics.xui",layer, nil);
 	
+	layer:SetLayoutType(1);
 	p.layer = layer;
 	p.SetDelegate();
 	p.setSellCardNum(0)

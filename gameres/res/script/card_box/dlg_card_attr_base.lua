@@ -199,9 +199,12 @@ function p.SetDelegate()
 	--技能
 	if  tonumber(pCardInfo2.skill) ~= 0 and  pCardInfo2.skill ~= nil then
 		WriteCon("pCardInfo2.skill = "..tostring(pCardInfo2.skill));
-		local pCardSkill= SelectRowInner( T_SKILL, "id", tostring(pCardInfo2.skill)) or {};
-		pLabSkillName:SetText(pCardSkill.name or ""); 
-		pLabSkillInfo:SetText(pCardSkill.description or ""); 
+		local pCardSkill= SelectRowInner( T_SKILL, "id", pCardInfo2.skill);
+		if pCardSkill ~= nil then
+			pLabSkillName:SetText(pCardSkill.name); 
+			pLabSkillInfo:SetText(pCardSkill.description); 
+		end
+
 	end
 	
 	--经验条
@@ -268,9 +271,10 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_EQUIP_1 == tag then
 			if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip1, "1");
-				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback,p.HideUI);
+				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback,p.redirectCallback);
 			else
 				p.HideUI();
+				dlg_menu.ShowUI();
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 1, p.showEquipDetailCallback, nil)
 				--card_equip_select_list.ShowUI(card_equip_select_list.INTENT_ADD , p.cardInfo.UniqueId, 1, nil);
 			end
@@ -278,9 +282,10 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_EQUIP_2 == tag then
 			if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
 				local item = p.PasreCardDetail(p.cardInfo, p.equip2, "2");
-				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback,p.HideUI);
+				dlg_card_equip_detail.ShowUI4CardEquip(item,p.showEquipDetailCallback,p.redirectCallback);
 			else
 				p.HideUI();
+				dlg_menu.ShowUI();
 				equip_dress_select.ShowUI(p.cardInfo.UniqueId, 2, p.showEquipDetailCallback, nil)
 			end
 
@@ -395,14 +400,24 @@ function p.RefreshCardDetail()
 	p.LoadCardDetail(p.cardInfo.UniqueId);
 end
 
+function p.redirectCallback()
+	p.HideUI();
+	dlg_menu.ShowUI();
+end
+
 function p.showEquipDetailCallback(changed)
 	if changed == true then
 		p.RefreshCardDetail();
 	end
+	
+	dlg_menu.HideUI();
+	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
 	end
+	
+	
 end
 
 ---------------------------------------网络-----------------------------------------------------------

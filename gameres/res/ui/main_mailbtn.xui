@@ -1,0 +1,51 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_MAIL]
+Type=2
+Tag=5
+Rect=561 783 66 67
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=邮件按钮
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\mail1.png
+NormalFileUV=0 0 66 67
+SelectFile=.\res\image\ui\main_interface\mail1_select.png
+SelectedFileUV=0 0 80 80
+DisableFile=.\res\image\ui\main_interface\mail1_un.png
+DisableFileUV=0 0 66 67
+
+[CTRL_PICTURE_MAIL_TIPS_BG]
+Type=1
+Tag=8
+Rect=547 770 42 42
+AnchorPos=0 0
+Notes=
+Remark=邮件数量通知背景
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\num.png
+NormalFileUV=0 0 42 42
+
+[CTRL_TEXT_MAIL_TIPS_NUM]
+Type=4
+Tag=10
+Rect=554 776 30 30
+AnchorPos=0 0
+Notes=
+Text=11
+TextTradition=11
+TextSize=20
+TextColor=0xfffbb6
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=邮件数量
+UIOpenType=0
+UIClsoeType=0

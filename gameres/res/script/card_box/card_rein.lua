@@ -250,7 +250,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	end		
 	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money + tonumber(pCardInfo.Level)*tonumber(pCardInfo.Level);	
 			
-	p.addExp = p.addExp + lCardInfo.feedBase_exp + lCardLeveInfo.feed_exp;
+	p.addExp = p.addExp + lCardInfo.feedbase_exp + lCardLeveInfo.feed_exp;
 	
 end;
 
