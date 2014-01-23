@@ -3,19 +3,10 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_45]
-Type=1
-Tag=45
-Rect=5 55 209 85
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\LoadingBlack_10x10.png
-NormalFileUV=0 0 10 10
-
 [CTRL_PROGRESSBAR_EXP]
 Type=9
 Tag=67
-Rect=41 65 144 36
+Rect=266 14 344 26
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -23,13 +14,15 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=经验条
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\home_bar01.png
 NormalFileUV=0 0 144 36
 
 [CTRL_PROGRESSBAR_STRENGTH]
 Type=9
 Tag=69
-Rect=41 98 144 36
+Rect=266 50 254 26
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -37,22 +30,26 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=体力条
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\home_bar02.png
 NormalFileUV=0 0 144 36
 
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=0 0 640 172
+Rect=0 0 640 81
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\main_interface\title.png
-NormalFileUV=0 0 644 172
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\top_info.png
+NormalFileUV=0 0 640 81
 
 [CTRL_TEXT_EMONEY_NUM]
 Type=4
 Tag=58
-Rect=532 37 84 30
+Rect=190 88 84 30
 AnchorPos=0 0
 Notes=
 Text=11111111
@@ -62,11 +59,25 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=代币数值
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_9SLICES_22]
+Type=22
+Tag=23
+Rect=56 53 143 18
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\energy_bg2.png
+NormalFileUV=0 0 145 16
 
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=532 68 84 30
+Rect=57 88 84 30
 AnchorPos=0 0
 Notes=
 Text=11111111
@@ -76,11 +87,13 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=金币数值
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SOUL]
 Type=4
 Tag=41
-Rect=532 98 84 30
+Rect=326 88 84 30
 AnchorPos=0 0
 Notes=
 Text=11111111
@@ -90,69 +103,224 @@ TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
 Remark=金币数值
-
-[CTRL_PICTURE_42]
-Type=1
-Tag=42
-Rect=534 126 32 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
-[CTRL_PICTURE_43]
-Type=1
-Tag=43
-Rect=559 126 32 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
-[CTRL_PICTURE_44]
-Type=1
-Tag=44
-Rect=585 126 32 32
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
-[CTRL_TEXT_LEVEL_NUM]
-Type=4
-Tag=61
-Rect=47 35 54 30
-AnchorPos=0 0
-Notes=
-Text=350
-TextTradition=350
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=等级数值
-
-[CTRL_TEXT_NAME]
-Type=4
-Tag=54
-Rect=10 -5 139 47
-AnchorPos=0 0
-Notes=
-Text=完颜阿鲁两个字
-TextTradition=完顏阿魯兩個字
-TextSize=20
-TextColor=0xfdffaa
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_46]
 Type=4
 Tag=46
-Rect=26 132 142 20
+Rect=525 45 90 26
 AnchorPos=0 0
 Notes=
 Text=恢复时间
 TextTradition=恢復時間
 TextSize=18
+TextColor=0xff9166
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Rect=21 12 178 29
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\name_bg.png
+NormalFileUV=0 0 178 29
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=195 2 48 48
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\level_bg.png
+NormalFileUV=0 0 48 48
+
+[CTRL_PICTURE_16]
+Type=1
+Tag=16
+Rect=24 44 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\strength2.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_17]
+Type=1
+Tag=17
+Rect=302 43 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\strength2.png
+NormalFileUV=0 0 32 32
+
+[CTRL_TEXT_NAME]
+Type=4
+Tag=54
+Rect=26 11 160 31
+AnchorPos=0 0
+Notes=
+Text=完颜阿鲁两个字
+TextTradition=完顏阿魯兩個字
+TextSize=22
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_19]
+Type=1
+Tag=19
+Rect=302 6 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\EXP_big.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_21]
+Type=1
+Tag=21
+Rect=337 11 271 22
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\strength_bg.png
+NormalFileUV=0 0 251 22
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=22
+Rect=337 48 178 22
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\strength_bg.png
+NormalFileUV=0 0 251 22
+
+[CTRL_PICTURE_42]
+Type=1
+Tag=42
+Rect=68 57 44 8
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\energy1.png
+NormalFileUV=0 0 44 8
+SelectFile=.\res\image\ui\main_interface\energy2.png
+SelectedFileUV=0 0 44 8
+
+[CTRL_PICTURE_43]
+Type=1
+Tag=43
+Rect=105 57 44 8
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\energy1.png
+NormalFileUV=0 0 44 8
+SelectFile=.\res\image\ui\main_interface\energy2.png
+SelectedFileUV=0 0 44 8
+
+[CTRL_PICTURE_44]
+Type=1
+Tag=44
+Rect=142 57 44 8
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\energy1.png
+NormalFileUV=0 0 44 8
+SelectFile=.\res\image\ui\main_interface\energy2.png
+SelectedFileUV=0 0 44 8
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=24
+Rect=158 87 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\gem1.png
+NormalFileUV=0 0 32 32
+
+[CTRL_TEXT_LEVEL_NUM]
+Type=4
+Tag=61
+Rect=194 12 54 25
+AnchorPos=0 0
+Notes=
+Text=350
+TextTradition=350
+TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+Remark=等级数值
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=25
+Rect=25 87 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\money2.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=26
+Rect=292 87 32 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\soul.png
+NormalFileUV=0 0 32 32
+
+[CTRL_9SLICES_109]
+Type=22
+Tag=109
+Rect=351 14 241 13
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\strength_exp.png
+NormalFileUV=0 0 35 13
+
+[CTRL_9SLICES_110]
+Type=22
+Tag=110
+Rect=346 50 158 13
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_exp.png
+NormalFileUV=0 0 35 13

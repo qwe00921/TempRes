@@ -3,12 +3,14 @@ maininterface = {}
 local p = maininterface;
 
 p.layer = nil;
+p.mailLayer = nil;
 p.m_bgImage = nil;
 p.scrollList = nil;
 
 p.billlayer = nil;
 
 p.imageList = {};
+p.showCard = 0;
 
 local ui = ui_main_interface;
 
@@ -50,10 +52,24 @@ function p.ShowUI(userinfo)
 	LoadUI("main_interface.xui", layer, nil);
     
 	p.layer = layer;
-	p.SetDelegate();
 	
-	p.InitScrollList();
-	p.OnListScrolled();
+	
+	--p.InitScrollList();
+	--p.OnListScrolled();
+	
+	local maillayer = createNDUILayer();
+	if maillayer == nil then
+		return false;
+	end
+	
+	maillayer:Init();
+	maillayer:SetSwallowTouch(false);
+	maillayer:SetFrameRectFull();
+	GetUIRoot():AddChildZ( maillayer, 999 );
+	p.mailLayer = maillayer;
+	LoadUI( "main_mailbtn.xui", maillayer, nil);
+	
+	p.SetDelegate();
 	
 	p.ShowMailNum(userinfo);
 	
@@ -74,11 +90,10 @@ function p.SetBtn(btn)
 end
 
 function p.SetDelegate()
-	local mail = GetButton( p.layer, ui.ID_CTRL_BUTTON_MAIL );
+	local mail = GetButton( p.layer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
 	p.SetBtn( mail );
-	
-	local activity = GetButton( p.layer, ui.ID_CTRL_BUTTON_ACTIVITY );
-	p.SetBtn( activity );
+	--local activity = GetButton( p.layer, ui.ID_CTRL_BUTTON_ACTIVITY );
+	--p.SetBtn( activity );
 	
 	local bgBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_BG_BTN );
 	p.SetBtn( bgBtn );
@@ -94,11 +109,14 @@ function p.SetDelegate()
 	table.insert( p.imageList, image );
 	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_24 );
 	table.insert( p.imageList, image );
+	
+	local cardBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_129 );
+	cardBtn:SetLuaDelegate( p.OnClickCard );
 end
 
-function p.InitScrollList()
+function p.InitScrollList( layer )
 	--位置基准控件
-	local posCtrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_106 );
+	local posCtrller = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_305 );
 	if posCtrller == nil then
 		return;
 	end
@@ -116,9 +134,9 @@ function p.InitScrollList()
 	local size = posCtrller:GetFrameSize();
 
 	pList:Init();
-	pList:SetFramePosXY( posXY.x, posXY.y+90 );
+	pList:SetFramePosXY( posXY.x, posXY.y+60 );
 	pList:SetFrameSize( size.w, size.h );
-	pList:SetSizeView( CCSizeMake( 230, 135 ) );
+	pList:SetSizeView( CCSizeMake( 255, 100 ) );
 	pList:SetLuaDelegate( p.OnListScrolled );
 	
 	for i = 1,6 do
@@ -148,7 +166,8 @@ function p.InitScrollList()
 		pList:AddView(pView1);
 	end
 
-	GetUIRoot():AddChild( pList );
+	--p.layer:AddChild( pList );
+	GetUIRoot():AddChildZ( pList, 99 );
 end
 
 function p.OnListScrolled()
@@ -185,7 +204,7 @@ end
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
-		if ui.ID_CTRL_BUTTON_MAIL == tag then
+		if ui_main_mailbtn.ID_CTRL_BUTTON_MAIL == tag then
 			WriteCon("**========邮件========**");
 			mail_main.ShowUI();
 			
@@ -195,11 +214,14 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--隐藏用户信息
 			--dlg_userinfo.HideUI();
 --			dlg_battlearray.HideUI();
-		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
+--[[		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
 			WriteCon("**========活动========**");
 			country_main.ShowUI();
 			maininterface.HideUI();
 			p.CloseAllPanel();
+--]]
+		elseif ui.ID_CTRL_BUTTON_129 == tag then
+			
 		elseif ui.ID_CTRL_BUTTON_BG_BTN == tag then
 			p.CloseAllPanel();
 		end
@@ -232,6 +254,7 @@ function p.CloseUI()
 --		dlg_battlearray.CloseUI();
 		billboard.CloseUI();
 		p.imageList = {};
+		p.showCard = 0;
     end
 	
 	if p.billlayer ~= nil then
@@ -250,8 +273,8 @@ end
 
 --邮件数量显示
 function p.ShowMailNum(userinfo)
-	local bg = GetImage( p.layer, ui.ID_CTRL_PICTURE_MAIL_TIPS_BG );
-	local mailNum = GetLabel( p.layer, ui.ID_CTRL_TEXT_MAIL_TIPS_NUM );
+	local bg = GetImage( p.mailLayer , ui_main_mailbtn.ID_CTRL_PICTURE_MAIL_TIPS_BG );
+	local mailNum = GetLabel( p.mailLayer, ui_main_mailbtn.ID_CTRL_TEXT_MAIL_TIPS_NUM );
 	local num = tonumber(userinfo.MailNum) or 0;
 	if num ~= 0 then
 		mailNum:SetVisible( true );
@@ -268,22 +291,28 @@ function p.ShowBattleArray( user_team, pos )
 	user_team = user_team or {};
 	if user_team["Formation"..pos] ~= nil then
 		local formation = user_team["Formation"..pos];
+		local index = 0;
 		for i = 1, 6 do
 			local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_CHA" .. i] );
 			local nature = GetImage( p.layer, ui["ID_CTRL_PICTURE_NATURE" .. i] );
+			local image = GetImage( p.layer, ui["ID_CTRL_PICTURE_CARD" .. i] );
 			if btn ~= nil and nature ~= nil then
 				btn:SetLuaDelegate( p.OnClickCard );
 				btn:SetId( i );
 				if formation["Pos"..i] ~= nil then
+					if index == 0 then
+						index = i;
+					end
 					btn:SetVisible( true );
 					nature:SetVisible( true );
 					local cardType = formation["Pos"..i].CardID;
-					local path = SelectRowInner( T_CHAR_RES, "card_id", cardType, "hero_pic" );
+					local path = SelectRowInner( T_CHAR_RES, "card_id", cardType, "mainui_card_head" );
 					local picData = nil;
 					if path then
 						picData = GetPictureByAni( path, 0 );
 					end
-					btn:SetImage(picData);
+					--btn:SetImage(picData);
+					image:SetPicture( picData );
 					
 					local element = formation["Pos"..i].element;
 					WriteCon( "element  " .. tostring(element) );
@@ -295,19 +324,87 @@ function p.ShowBattleArray( user_team, pos )
 				end
 			end
 		end
+		
+		p.ShowSelectCard( index );
+	end
+end
+
+function p.ShowSelectCard( index )
+	if p.showCard ~= 0 and p.showCard == index then
+		return;
+	end
+	local cache = msg_cache.msg_player or {};
+	local team = cache.User_Team or {};
+	local teamIndex = cache.CardTeam or 0;
+	if team["Formation".. teamIndex] then
+		local cardInfo = team["Formation".. teamIndex]["Pos"..index];
+		p.showCard = index;
+		
+		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_129 );
+		btn:SetId( index );
+		
+		local levLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_76 );
+		levLab:SetText( tostring(cardInfo.Level) );
+		
+		local life = GetLabel( p.layer, ui.ID_CTRL_TEXT_77 );
+		life:SetText( tostring(cardInfo.Hp) );
+		
+		local atk = GetLabel( p.layer, ui.ID_CTRL_TEXT_78 );
+		atk:SetText( tostring(cardInfo.Attack) );
+		
+		local def = GetLabel( p.layer, ui.ID_CTRL_TEXT_79 );
+		def:SetText( tostring(cardInfo.Defence) );
+		
+		local speed = GetLabel( p.layer, ui.ID_CTRL_TEXT_80 );
+		speed:SetText( tostring(cardInfo.Speed) );
+		
+		local skill = GetLabel( p.layer, ui.ID_CTRL_TEXT_81 );
+		local skillName = SelectCell( T_SKILL, cardInfo.Skill, "name" ) or "";
+		skill:SetText( skillName );
+		
+		local cardName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CARD_NAME );
+		local str = SelectCell( T_CARD, cardInfo.CardID, "name" ) or "";
+		cardName:SetText( str );
+		
+		local cardPic = GetImage( p.layer, ui.ID_CTRL_PICTURE_106 );
+		local path = SelectRowInner( T_CHAR_RES, "card_id", cardInfo.CardID, "mainui_card_small" );
+		local picData = nil;
+		if path then
+			picData = GetPictureByAni( path, 0 );
+		end
+		cardPic:SetPicture( picData );
+		
+		local starPic = GetImage( p.layer, ui.ID_CTRL_PICTURE_180 );
+		local rare = cardInfo.Rare or 0;
+		local star = GetPictureByAni( "ui.card_star", rare-1 );
+		if star then
+			starPic:SetPicture( star );
+		end
 	end
 end
 
 function p.OnClickCard(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
-		local id = uiNode:GetId() or 0;
-		local user_team = msg_cache.msg_player.User_Team or {};
-		local cardTeam = tonumber(msg_cache.msg_player.CardTeam) or 1;
-		local formation = user_team["Formation"..cardTeam] or {};
-		local card = formation["Pos"..id];
-		if card then
-			dlg_card_attr_base.ShowUI( card );
-			maininterface.HideUI();
+		local tag = uiNode:GetTag();
+		if ui.ID_CTRL_BUTTON_129 == tag then
+			local id = uiNode:GetId() or 0;
+			local user_team = msg_cache.msg_player.User_Team or {};
+			local cardTeam = tonumber(msg_cache.msg_player.CardTeam) or 1;
+			local formation = user_team["Formation"..cardTeam] or {};
+			local card = formation["Pos"..id];
+			if card then
+				dlg_card_attr_base.ShowUI( card );
+				maininterface.HideUI();
+			end
+		else
+			local id = uiNode:GetId() or 0;
+			local user_team = msg_cache.msg_player.User_Team or {};
+			local cardTeam = tonumber(msg_cache.msg_player.CardTeam) or 1;
+			local formation = user_team["Formation"..cardTeam] or {};
+			local card = formation["Pos"..id];
+			if card then
+				p.ShowSelectCard( id );
+			end
 		end
 	end
 end

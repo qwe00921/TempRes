@@ -6,9 +6,11 @@ Height=960
 [CTRL_BUTTON_108]
 Type=2
 Tag=108
-Rect=1 0 192 135
+Rect=1 0 139 103
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
