@@ -440,6 +440,7 @@ Notes=
 Text=目标名字
 TextTradition=目標名字
 TextSize=21
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0

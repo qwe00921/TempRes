@@ -121,3 +121,6 @@ T_DROP_VAL		= LoadTable("battle_drop_value.ini");
 
 --任务掉落物品
 T_MONSTER_DROP	= LoadTable("monster_drop.ini");
+
+--BUFF表
+T_BUFF			= LoadTable("buff.ini");

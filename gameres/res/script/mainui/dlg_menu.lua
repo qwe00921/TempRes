@@ -25,6 +25,7 @@ function p.ShowUI()
     
 	--GetUIRoot():AddChild(layer);
 	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddDisableAllButNoThisLayer(layer);
 	LoadUI("main_menu.xui", layer, nil);
 	layer:SetZOrder(99);
 	layer:SetLayoutType(1);
