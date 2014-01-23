@@ -1,8 +1,8 @@
 expbar_move_effect = {}
 local p = expbar_move_effect;
 local moveEffect = nil;
-local intervalTime = 0.1;	--¶à¾ÃÒÆ¶¯Ò»´Î
-local moveTime = 1;	--¶à¾ÃÒÆ¶¯Íê
+local intervalTime = 0.1;	--å¤šä¹…ç§»åŠ¨ä¸€æ¬¡
+local moveTime = 1;	--å¤šä¹…ç§»åŠ¨å®Œ
 
 p.node = nil;
 p.leastNum = nil;
