@@ -40,6 +40,8 @@ function p.test()
 	--测试vector
 --	p.TestVector();
 
+--	p.testGuideLayer();
+
     --测试
 --    p.test1();
 	
@@ -121,6 +123,24 @@ function p.testPost()
 	SendPost("Team","GetTeamsInfo",122655,"&missionID=101061&result=1&money=0&soul=0","feawfeawfawefawefawe");
 end
 
+p.TestRect = nil;
+p.TestLayer = nil;
+
+function p.testGuideLayer()
+	pLayer = createNDUIDialog();
+	pLayer:Init();
+	pLayer:SetSwallowTouch(true);
+	pLayer:SetFrameRectFull();
+	pLayer:SetLuaDelegate(p.OnTestType);
+	LoadDlg("main_interface.xui", pLayer, nil);
+	local mail = GetButton(pLayer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
+	p.TestRect = mail:GetFrameRect();			--获得控件区域
+	GetUIRoot():SetTrainingMode(true,pLayer);  --设置为新手指导模式，传递新手指导的那个layer
+	GetUIRoot():SetHighLightArea(p.TestRect);  --设置高亮区域
+	
+	p.TestLayer = pLayer;
+end
+
 function p.testFly()
 	WriteCon("feafa");
 	pLayer = createNDUIDialog();
@@ -148,8 +168,15 @@ function p.testFly()
 end
 
 function p.OnTestType(uiNode, uiEventType, param)
-	WriteCon("feafaw");
-	pLayer:LazyClose();
+	WriteCon("FFFAAA");
+	
+	if true == ContainsPoint(p.TestRect,param) then		--param是点击事件的position，判断点击事件是否在高亮区域内。
+		WriteCon("1111111");
+		GetUIRoot():SetTrainingMode(false,p.TestLayer);	--关闭新手指导模式
+	else
+		WriteCon("2222222");
+	end
+
 end
 
 function p.EnterBattle()
