@@ -11,6 +11,7 @@ p.magic = nil;
 p.scaleImg = nil;
 p.cardImg = nil;
 p.index = 1;
+p.continueImg = nil;
 
 function p.ShowUI( gacharesult )
 	p.gacharesult = gacharesult;
@@ -29,7 +30,7 @@ function p.ShowUI( gacharesult )
 	layer:Init();
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
-	
+
 	dlg_menu.HideUI();
 	dlg_userinfo.HideUI();
 	dlg_gacha.HideUI();
@@ -40,7 +41,7 @@ function p.ShowUI( gacharesult )
 	
 	p.InitControllers();
 	
-	SetTimerOnce( p.DoShowCardEffect(), 0.5f );
+	SetTimerOnce( p.DoShowCardEffect(), 2 );
 end
 
 function p.InitControllers()
@@ -52,7 +53,10 @@ function p.InitControllers()
 	
 	p.scaleImg = GetImage( p.layer, ui.ID_CTRL_PICTURE_SCALE );
 	
-	p.cardImg = GetImage( p.layer, ui.ID_CTRL_PICTURE_CARD );	
+	p.cardImg = GetImage( p.layer, ui.ID_CTRL_PICTURE_CARD );
+	
+	p.continueImg = GetImage( p.layer, ui.ID_CTRL_PICTURE_6 );
+	p.continueImg:SetVisible( false );
 end
 
 function p.DoShowCardEffect()
@@ -77,7 +81,7 @@ function p.DoShowCardEffect()
 	end
 	p.scaleImg:AddFgEffect( "ui.gacha_card_scale" );
 	
-	SetTimerOnce( p.ShowCard, 1 );
+	SetTimerOnce( p.ShowCard, 0.39f );
 end
 
 function p.ShowCard()
@@ -103,7 +107,13 @@ function p.ShowCard()
 		p.cardImg:SetPicture( picData );
 	end
 	p.cardImg:SetVisible( true );
-	SetTimerOnce( p.ShowNextCard, 0.5f );
+	
+	if cardList[p.index+1] ~= nil then
+		SetTimerOnce( p.ShowNextCard, 0.5f );
+	else
+		p.continueImg:SetVisible(true);
+		p.continueImg:AddActionEffect( "ui_cmb.gacha_effect_scale" );
+	end
 end
 
 function p.ShowNextCard()
@@ -133,6 +143,7 @@ function p.CloseUI()
 		p.scaleImg = nil;
 		p.cardImg = nil;
 		p.index = 1;
+		p.continueImg = nil;
 	end
 end
 
