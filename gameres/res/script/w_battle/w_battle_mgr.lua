@@ -58,9 +58,12 @@ p.PickEndEvent = nil;
 
 p.dropHpBall = 0;
 p.dropSpBall = 0;
-
+p.platform = 1;
+p.isClose = false;
 
 function p.init()
+	p.platform = GetFlatform();
+	p.isClose = false;	
 	--p.heroCamp = nil;			--玩家阵营
 	p.enemyCamp = nil;			--敌对阵营
 	--p.uiLayer = nil;			--战斗层
@@ -96,6 +99,7 @@ end;
 
 function p.starFighter()
 	p.init();
+	w_battle_pve.SetBg(p.missionID);
 --	w_battle_PVEStaMachMgr.init();
 	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
@@ -332,17 +336,29 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 
     if (distanceRes == nil) then
 		WriteConErr( "Error! Skil distance Config is Error! skill="..tostring(skillID));
-		return p.SetPVEAtkID(atkID, IsMonster,targetID);
+		if p.platform == W_PLATFORM_WIN32 then
+			return p.SetPVEAtkID(atkID, IsMonster,targetID);
+		else
+			return false;
+		end;
     end;
 
     if (targetType == nil) then
 		WriteConErr( "Error! Skil Target_type Config is Error! skill="..tostring(skillID));
-		return p.SetPVEAtkID(atkID, IsMonster,targetID);
+		if p.platform == W_PLATFORM_WIN32 then
+			return p.SetPVEAtkID(atkID, IsMonster,targetID);
+		else
+			return false;
+		end;
     end;
    
     if (skillType == nil) then
 		WriteConErr( "Error! Skil Skill_type Config is Error! skill="..tostring(skillID));
-		return p.SetPVEAtkID(atkID, IsMonster,targetID);
+		if p.platform == W_PLATFORM_WIN32 then
+			return p.SetPVEAtkID(atkID, IsMonster,targetID);
+		else
+			return false;
+		end;
 	end;
 
 	--已开始攻击,但攻击未开始
@@ -708,7 +724,7 @@ end;
 
 function p.EnemyUseSkill(lseed)
 	if w_battle_db_mgr.IsDebug == true then
-		return true;
+		return false;
 	end;
 	
 	local lnum = w_battle_atkDamage.getRandom(lseed,100);
@@ -941,7 +957,7 @@ end
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
 	p.missionID = missionId;
-	
+
 	p.SendStartPVEReq( missionId,teamid);
 --[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);
@@ -1239,7 +1255,7 @@ function p.createHeroCamp( fighters )
 	p.heroCamp = w_battle_camp:new();
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
-	--p.heroCamp:AddShadows( p.heroUIArray, fighters );
+	p.heroCamp:AddShadows( p.heroUIArray, fighters );
 	p.heroCamp:AddAllRandomTimeJumpEffect(true);
 end
 
@@ -1366,7 +1382,7 @@ function p.QuitBattle()
 	--dlg_userinfo.ShowUI();
 		
 	--hud.FadeIn();
-	
+	p.isClose = false;
 	--音乐
 	PlayMusic_Task();
 	
@@ -1618,24 +1634,28 @@ end
 
 function updateCampBuff(camp)
 	for k,v in ipairs(camp.fighters) do
-		if(v.Hp > 0) then
-			if v.showBuff == true then
-				if #v.SkillBuff > 0 then
-					if v.BuffIndex > #v.SkillBuff then
-						v.BuffIndex = 1;
+		if v~= nil then
+			if(v.Hp > 0) then
+				if v.showBuff == true then
+					if #v.SkillBuff > 0 then
+						if v.BuffIndex > #v.SkillBuff then
+							v.BuffIndex = 1;
+						end
+						local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
+						v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
+						v.BuffIndex = v.BuffIndex + 1;
 					end
-					local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
-					v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
-					v.BuffIndex = v.BuffIndex + 1;
-				end
+				end;
 			end;
 		end;
 	end
 end
 
 function p.UpdateBuff()
-	updateCampBuff(p.enemyCamp);
-	updateCampBuff(p.heroCamp);
+	if p.isClose == false then
+		updateCampBuff(p.enemyCamp);
+		updateCampBuff(p.heroCamp);
+	end;
 end
 
 function p.AddBall(ltype,num)
