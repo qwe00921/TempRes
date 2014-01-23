@@ -134,13 +134,26 @@ end
 function p.getRewardList(rewardData)
 	if p.viewId == 0 then
 		p.rewardListT = rewardData.rewarditems.item
-	elseif p.viewId == 1 then
+		p.checkList(p.rewardListT)
+	end
+	if p.viewId == 1 then
 		p.rewardListT = rewardData.rewarditems.equip
-	elseif p.viewId == 2 then
+		p.checkList(p.rewardListT)
+	end
+	if p.viewId == 2 then
 		p.rewardListT = rewardData.rewarditems.card
+		p.checkList(p.rewardListT)
 	end
 	p.showRewardList(p.rewardListT)
 end
+
+function p.checkList(list)
+	if list == nil or #list <= 0 then
+		p.viewId = p.viewId + 1;
+		WriteConErr("p.viewId =="..p.viewId);
+	end
+end
+
 
 function p.showRewardList(rewardList)
 	local rewardListT = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST_ITEMANDCHA);
