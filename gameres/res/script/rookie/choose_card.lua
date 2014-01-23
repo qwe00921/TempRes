@@ -117,10 +117,11 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon( "cardId == "..cardId );
 			
 			local uid = GetUID();
-			local param = "cardId="..cardId;
-			--SendReq("Build","UpBuild",uid,param);
+			local param = "guide="..(rookie_main.stepId).."&param="..cardId;
+			SendReq("User","Complete",uid,param);
+
 			
-			--p.CloseUI()
+			--maininterface.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
 			WriteCon( "ID_CTRL_BUTTON_LEFT" );
 		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
@@ -129,10 +130,6 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	end
 end
 
-function p.requestCallBcak()
-
-
-end
 
 --Òþ²ØUI
 function p.HideUI()
@@ -146,5 +143,11 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
+		p.ClearData()
 	end
+end
+
+function p.ClearData()
+	p.scrollList = nil;
+	p.cardIdList = {}
 end

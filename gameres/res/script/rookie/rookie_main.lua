@@ -5,13 +5,16 @@ rookie_main = {};
 local p = rookie_main;
 
 p.userData = nil;
+p.stepId = nil;
 
 function p.getRookieStep(backData)
 	if backData.result == false then
 		dlg_msgbox.ShowOK("¥ÌŒÛÃ· æ",backData.message,nil,p.layer);
 		return;
 	elseif backData.result == true then
-		local stepId = tonumber(backData.user.Guide_id);
+		local stepId = tonumber(backData.user.Guide_id)
+		--stepId = 2;	--≤‚ ‘”√
+		p.stepId = stepId;
 		p.userData = backData.user;
 		if stepId == 0 then
 			maininterface.ShowUI(backData.user);
@@ -26,10 +29,12 @@ function p.ShowLearningStep( step, substep )
 	WriteConErr("rookie step = "..step .. " substep = " .. substep);
 
 	if step == 1 then
-		maininterface.ShowUI(p.userData);
+		WriteConErr("step error");
 	elseif step == 2 then
-		maininterface.ShowUI(p.userData);
+		start_game.ShowUI();
+		--choose_card.ShowUI();
 	elseif step == 3 then
+		choose_card.CloseUI()
 		maininterface.ShowUI(p.userData);
 	elseif step == 4 then
 		maininterface.ShowUI(p.userData);
