@@ -12,6 +12,17 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_BG]
+Type=1
+Tag=294
+Rect=1 -350 640 977
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\mapbg\101011.png
+NormalFileUV=0 0 1454 2291
+
 [CTRL_PICTURE_BG1]
 Type=1
 Tag=217
@@ -1635,7 +1646,7 @@ NormalFileUV=0 0 66 66
 [CTRL_SKILL_BG]
 Type=19
 Tag=207
-Rect=14 85 620 326
+Rect=11 60 620 326
 AnchorPos=0 0
 Notes=
 UIOpenType=0

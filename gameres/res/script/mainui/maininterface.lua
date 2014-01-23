@@ -27,7 +27,12 @@ function p.ShowUI(userinfo)
 		p.m_bgImage:SetVisible(true);
 		p.scrollList:SetVisible(true);
 		
+		p.mailLayer:SetVisible( true );
 		--GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
+		
+		for _,v in ipairs( p.imageList ) do
+			v:SetVisible( true );
+		end
 		return;
 	end
 
@@ -69,6 +74,7 @@ function p.ShowUI(userinfo)
 	p.mailLayer = maillayer;
 	LoadUI( "main_mailbtn.xui", maillayer, nil);
 	
+	maillayer:SetLayoutType(1);
 	p.SetDelegate();
 	
 	p.ShowMailNum(userinfo);
@@ -90,7 +96,7 @@ function p.SetBtn(btn)
 end
 
 function p.SetDelegate()
-	local mail = GetButton( p.layer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
+	local mail = GetButton( p.mailLayer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
 	p.SetBtn( mail );
 	--local activity = GetButton( p.layer, ui.ID_CTRL_BUTTON_ACTIVITY );
 	--p.SetBtn( activity );
@@ -102,14 +108,7 @@ function p.SetDelegate()
 		local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_CHA"..i] );
 		p.SetBtn( btn );
 	end
-	
-	local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_22 );
-	table.insert( p.imageList, image );
-	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_23 );
-	table.insert( p.imageList, image );
-	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_24 );
-	table.insert( p.imageList, image );
-	
+
 	local cardBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_129 );
 	cardBtn:SetLuaDelegate( p.OnClickCard );
 end
@@ -120,6 +119,13 @@ function p.InitScrollList( layer )
 	if posCtrller == nil then
 		return;
 	end
+	
+	local image = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_22 );
+	table.insert( p.imageList, image );
+	image = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_23 );
+	table.insert( p.imageList, image );
+	image = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_24 );
+	table.insert( p.imageList, image );
 	
 	local pList = createNDUIScrollContainerExpand();
 
@@ -136,7 +142,7 @@ function p.InitScrollList( layer )
 	pList:Init();
 	pList:SetFramePosXY( posXY.x, posXY.y+60 );
 	pList:SetFrameSize( size.w, size.h );
-	pList:SetSizeView( CCSizeMake( 255, 100 ) );
+	pList:SetSizeView( CCSizeMake( 280, 100 ) );
 	pList:SetLuaDelegate( p.OnListScrolled );
 	
 	for i = 1,6 do
@@ -167,7 +173,7 @@ function p.InitScrollList( layer )
 	end
 
 	--p.layer:AddChild( pList );
-	GetUIRoot():AddChildZ( pList, 99 );
+	layer:AddChild( pList );
 end
 
 function p.OnListScrolled()
@@ -220,8 +226,6 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			maininterface.HideUI();
 			p.CloseAllPanel();
 --]]
-		elseif ui.ID_CTRL_BUTTON_129 == tag then
-			
 		elseif ui.ID_CTRL_BUTTON_BG_BTN == tag then
 			p.CloseAllPanel();
 		end
@@ -237,10 +241,15 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
-		p.scrollList:SetVisible(false);
+		p.scrollList:SetVisible(false);		
 		--p.m_bgImage:SetVisible(false);
 --		dlg_battlearray.HideUI();
 		--p.HideBillboard();
+		
+		p.mailLayer:SetVisible( false );
+		for _,v in ipairs( p.imageList ) do
+			v:SetVisible( false );
+		end
 	end
 end
 
@@ -258,8 +267,9 @@ function p.CloseUI()
     end
 	
 	if p.billlayer ~= nil then
-		p.billlayer:LazyClose();
-		p.billlayer:SetVisible( false );
+		--p.billlayer:LazyClose();
+		--p.billlayer:SetVisible( false );
+		p.billlayer = nil;
 	end
 end
 
@@ -411,6 +421,7 @@ end
 
 --≈‹¬Ìµ∆œ‘ æ
 function p.ShowBillboardWithInit()
+	--[[
 	if p.billlayer == nil then
 		local layer = createNDUILayer();
 		if layer == nil then
@@ -425,8 +436,12 @@ function p.ShowBillboardWithInit()
 		
 		LoadUI( "main_billboard_bg.xui", layer, nil );
 	end
+	--]]
+	p.billlayer = GetColorLabel( dlg_menu.layer, ui_main_menu.ID_CTRL_COLOR_LABEL_140 );
 	
-	local bg = GetImage( p.billlayer, ui_main_billboard_bg.ID_CTRL_PICTURE_BILLBOARD_BG);
+	--local bg = GetImage( p.billlayer, ui_main_billboard_bg.ID_CTRL_PICTURE_BILLBOARD_BG);
+	local bg = p.billlayer;
+	
 	local rect = bg:GetFrameRect() or {};
 	local pt = rect.origin or {};
 	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y-222)); 

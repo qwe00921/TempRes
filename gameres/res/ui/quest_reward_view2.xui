@@ -16,39 +16,38 @@ Stretch=1
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_BG]
+[CTRL_PICTURE_117]
 Type=1
-Tag=28
-Rect=7 164 640 800
+Tag=117
+Rect=171 137 299 93
 AnchorPos=0 0
 Notes=
-Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
+NormalFile=.\res\image\ui\quest\title.png
+NormalFileUV=0 0 299 91
 
 [CTRL_PICTURE_TITLE]
 Type=1
 Tag=23
-Rect=0 163 279 68
+Rect=0 302 279 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\quest\title3.png
+NormalFileUV=0 0 272 49
 
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=4
-Rect=17 174 155 41
+Rect=73 308 155 28
 AnchorPos=0 0
 Notes=
 Text=任务奖励
 TextTradition=任務獎勵
-TextSize=35
-TextColor=0xfefd92
+TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -57,7 +56,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER]
 Type=4
 Tag=3
-Rect=220 248 201 31
+Rect=220 186 201 31
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -70,10 +69,10 @@ UIClsoeType=0
 [CTRL_TEXT_MISSION_NAME]
 Type=4
 Tag=2
-Rect=164 295 327 33
+Rect=157 236 327 33
 AnchorPos=0 0
 Notes=
-TextSize=32
+TextSize=20
 TextColor=0xfdfdde
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -83,7 +82,7 @@ UIClsoeType=0
 [CTRL_PICTURE_47]
 Type=1
 Tag=47
-Rect=143 364 354 84
+Rect=143 403 354 84
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -94,7 +93,7 @@ NormalFileUV=0 0 354 84
 [CTRL_PICTURE_ITEM]
 Type=1
 Tag=40
-Rect=259 496 122 122
+Rect=231 508 178 180
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -103,20 +102,22 @@ UIClsoeType=0
 [CTRL_PICTURE_NAME_BG]
 Type=1
 Tag=48
-Rect=254 624 129 26
+Rect=170 705 301 70
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
+NormalFile=.\res\image\ui\quest\rewardname.png
+NormalFileUV=0 0 301 70
 
 [CTRL_TEXT_ITEM_NAME]
 Type=4
 Tag=49
-Rect=267 624 107 27
+Rect=234 726 173 32
 AnchorPos=0 0
 Notes=
+Text=奖励
+TextTradition=獎勵
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter

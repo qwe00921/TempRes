@@ -24,18 +24,19 @@ function p:Init()
 end
 
 function p:Process()
-	if self.result == true then 
+	--if self.result == true then 
 		--w_battle_mgr.QuitBattle();
 		--local lResult = w_battle_mgr.GetReuslt();
 		--if lResult == 1 then
 
-			quest_result.ShowUI(self.Reward);
+			quest_result.ShowUI(self);
 
 		--	dlg_userinfo.ShowUI();
 		--	stageMap_main.OpenWorldMap();
 		--end;
 	
-	else
-		WriteConWarning( "**MSG_BATTLE_RESULT  error" );
-	end
+	--else
+		--dlg_msgbox.ShowOK("错误提示",self.message,nil,p.layer);
+	--	WriteConWarning( "**MSG_BATTLE_RESULT  error" );
+	--end
 end

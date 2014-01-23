@@ -181,3 +181,11 @@ image\ui\country\source_fx.png @cut(1, 8) @time=0.125 @loop
 image\ui\main_interface\header_arena_light_00.png
 image\ui\main_interface\header_arena_light_01.png
 
+
+;扭蛋结果特效
+[gacha_magic_bg]
+image\ui\gacha_1\magic.png @cut(6, 4) @time=0.09 @loop @scale=2
+
+[gacha_card_scale]
+image\ui\gacha_1\card_scale.png @cut(2, 4) @time=0.05 @stay
+

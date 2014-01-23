@@ -23,6 +23,7 @@ T_CHAR_RES      = LoadTable( "char_res.ini" );
 --任务信息表
 T_MISSION		= LoadTable( "mission.ini" );
 T_MISSION_REWARD = LoadTable( "mission_reward.ini")
+T_MISSION_RES	= LoadTable("mission_res.ini")
 --任务章节表
 T_STAGE			= LoadTable( "Stage.ini" );
 

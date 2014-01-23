@@ -34,7 +34,8 @@ function p:Process()
 	--重置可发送扭蛋请求标志
 	dlg_gacha.RequestCallBack();
 	if self.result then
-		dlg_gacha_result.ShowUI(self);
+		--dlg_gacha_result.ShowUI(self);
+		dlg_gacha_effect.ShowUI( self );
 --		dlg_gacha.UpdateRmb( self.emoney );
 	else
 		dlg_msgbox.ShowOK( ToUtf8("提示"), self.message, nil, dlg_gacha.layer );
