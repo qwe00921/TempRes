@@ -173,7 +173,7 @@ function p.InitScrollList( layer )
 	end
 
 	--p.layer:AddChild( pList );
-	layer:AddChild( pList );
+	--layer:AddChild( pList );
 end
 
 function p.OnListScrolled()
