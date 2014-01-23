@@ -212,7 +212,12 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 
 	if (atkFighter.Sp == 100) and (atkFighter.Skill ~= 0) then
 		if IsMonster ~= true then
-			return p.SetPVESkillAtkID(atkID);
+			local distanceRes = tonumber( SelectCell( T_SKILL_RES, atkFighter.Skill, "distance" ) );--远程与近战的判断;	
+			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Target_type" ) );
+			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Skill_type" ) );
+			if (distanceRes ~= nil) and (targetType ~= nil) and (skillType ~= nil) then
+				return p.SetPVESkillAtkID(atkID);
+			end;
 		end;
 	end;
 
@@ -327,17 +332,17 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 
     if (distanceRes == nil) then
 		WriteCon( "Error! Skil distance Config is Error! skill="..tostring(skillID));
-		return false;
+		return p.SetPVEAtkID(atkID, IsMonster,targetID);
     end;
 
     if (targetType == nil) then
 		WriteCon( "Error! Skil Target_type Config is Error! skill="..tostring(skillID));
-		return false;
+		return p.SetPVEAtkID(atkID, IsMonster,targetID);
     end;
    
     if (skillType == nil) then
 		WriteCon( "Error! Skil Skill_type Config is Error! skill="..tostring(skillID));
-		return false;
+		return p.SetPVEAtkID(atkID, IsMonster,targetID);
 	end;
 
 	--已开始攻击,但攻击未开始
@@ -652,9 +657,11 @@ function calBuff(campType)
 						fighter.canRevive = false;
 					end
 					table.remove(fighter.SkillBuff,i);
-					
+				else
+					buffInfo.buff_time = buffInfo.buff_time - 1;
 				end
 			end;
+			fighter:calBuff();
 			fighter.Buff = 1;
 			fighter.HasTurn = true; --先设置可以行动
 		end;
@@ -1620,7 +1627,6 @@ function updateCampBuff(camp)
 					local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
 					v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
 					v.BuffIndex = v.BuffIndex + 1;
-					
 				end
 			end;
 		end;
