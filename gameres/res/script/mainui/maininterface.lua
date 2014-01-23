@@ -12,6 +12,14 @@ p.billlayer = nil;
 p.imageList = {};
 p.showCard = 0;
 
+p.effect_num = {};
+
+local LEV_INDEX = 1;
+local HP_INDEX = 2;
+local ATK_INDEX = 3;
+local DEF_INDEX = 4;
+local SPEED_INDEX = 5;
+
 local ui = ui_main_interface;
 
 function p.ShowUI(userinfo)
@@ -242,10 +250,7 @@ function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 		p.scrollList:SetVisible(false);		
-		--p.m_bgImage:SetVisible(false);
---		dlg_battlearray.HideUI();
-		--p.HideBillboard();
-		
+
 		p.mailLayer:SetVisible( false );
 		for _,v in ipairs( p.imageList ) do
 			v:SetVisible( false );
@@ -264,6 +269,7 @@ function p.CloseUI()
 		billboard.CloseUI();
 		p.imageList = {};
 		p.showCard = 0;
+		p.effect_num = {};
     end
 	
 	if p.billlayer ~= nil then
@@ -354,19 +360,24 @@ function p.ShowSelectCard( index )
 		btn:SetId( index );
 		
 		local levLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_76 );
-		levLab:SetText( tostring(cardInfo.Level) );
+		--levLab:SetText( tostring(cardInfo.Level) );
+		p.CreateEffectNum( LEV_INDEX, levLab, 0.6, 0, -10, cardInfo.Level );
 		
 		local life = GetLabel( p.layer, ui.ID_CTRL_TEXT_77 );
-		life:SetText( tostring(cardInfo.Hp) );
+		--life:SetText( tostring(cardInfo.Hp) );
+		p.CreateEffectNum( HP_INDEX, life, 0.6, 0, -10, cardInfo.Hp );
 		
 		local atk = GetLabel( p.layer, ui.ID_CTRL_TEXT_78 );
-		atk:SetText( tostring(cardInfo.Attack) );
+		--atk:SetText( tostring(cardInfo.Attack) );
+		p.CreateEffectNum( ATK_INDEX, atk, 0.6, 0, -10, cardInfo.Attack );
 		
 		local def = GetLabel( p.layer, ui.ID_CTRL_TEXT_79 );
-		def:SetText( tostring(cardInfo.Defence) );
+		--def:SetText( tostring(cardInfo.Defence) );
+		p.CreateEffectNum( DEF_INDEX, def, 0.6, 0, -10, cardInfo.Defence );
 		
 		local speed = GetLabel( p.layer, ui.ID_CTRL_TEXT_80 );
-		speed:SetText( tostring(cardInfo.Speed) );
+		--speed:SetText( tostring(cardInfo.Speed) );
+		p.CreateEffectNum( SPEED_INDEX, speed, 0.6, 0, -10, cardInfo.Speed );
 		
 		local skill = GetLabel( p.layer, ui.ID_CTRL_TEXT_81 );
 		local skillName = SelectCell( T_SKILL, cardInfo.Skill, "name" ) or "";
@@ -391,6 +402,23 @@ function p.ShowSelectCard( index )
 			starPic:SetPicture( star );
 		end
 	end
+end
+
+function p.CreateEffectNum( index, node, scale, offestX, offestY, num )
+	if p.effect_num[index] == nil then
+		local effect = effect_num:new();
+		effect:SetNumFont();
+		effect:SetOwnerNode( node );
+		effect:Init();
+		p.effect_num[index] = effect;
+		node:AddChild( effect:GetNode() );
+	end
+	local rect = node:GetFrameRect();
+	local x = rect.size.w;
+	local len = string.len(tostring(num));
+	p.effect_num[index]:SetScale( scale );
+	p.effect_num[index]:SetOffset( x+offestX-len*23+(1-scale)/2*len*23 , offestY);
+	p.effect_num[index]:PlayNum( tonumber(num) );
 end
 
 function p.OnClickCard(uiNode, uiEventType, param)

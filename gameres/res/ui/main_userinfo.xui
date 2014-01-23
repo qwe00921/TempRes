@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -60,11 +60,9 @@ NormalFileUV=0 0 640 81
 [CTRL_TEXT_EMONEY_NUM]
 Type=4
 Tag=58
-Rect=194 81 104 30
+Rect=190 83 84 30
 AnchorPos=0 0
 Notes=
-Text=11111111
-TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -88,11 +86,9 @@ NormalFileUV=0 0 145 16
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=49 81 104 30
+Rect=57 83 84 30
 AnchorPos=0 0
 Notes=
-Text=11111111
-TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -104,11 +100,9 @@ UIClsoeType=0
 [CTRL_TEXT_SOUL]
 Type=4
 Tag=41
-Rect=338 81 104 30
+Rect=342 83 84 30
 AnchorPos=0 0
 Notes=
-Text=11111111
-TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -266,7 +260,7 @@ SelectedFileUV=0 0 44 8
 [CTRL_PICTURE_23]
 Type=1
 Tag=24
-Rect=160 80 32 32
+Rect=159 80 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0

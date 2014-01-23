@@ -23,16 +23,47 @@ function p:ctor()
     super.ctor(self);
 	
 	self.m_strNumberPath = "effect.num_level";
+	self.m_scale = 1.0f;
+end
+
+function p:Init()
+	super.Init(self);
+	
+	self.offsetX = 0;
+	self.offsetY = 0;
+end
+
+function p:SetScale( nScale )
+	self.m_scale = nScale;
+end
+
+--设置图片路径
+function p:SetNumFont()
+	self.m_strNumberPath = "effect.num_font";
 end
 
 --根据数值位数设置偏移
 function p:AdjustOffset( num )
+	--[[
 	if num >= 100 then
 		self:SetOffset( 0, 2 );
 	elseif num >= 10 then
 		self:SetOffset( 5, 2 );
 	else
 		self:SetOffset( 15, 2 );
+	end
+	--]]
+end
+
+function p:PushNum( num )
+	local numStr = tostring(num);
+	local len = string.len(numStr);
+	if len > 0 then
+		self.comboPicture:ClearPicture( false );
+		for i = 1, len do
+			local n = tonumber( string.sub(numStr, i, i ) );
+			self.comboPicture:PushPicture( self:GetPicByNum( n ) );
+		end
 	end
 end
 
@@ -47,7 +78,7 @@ function p:PlayNum( num )
 	self:AdjustOffset( nIntNumber );
 	
 	--设置图片
-	self.imageNode:SetScale(1.0f);
+	self.imageNode:SetScale(self.m_scale);
 	self.imageNode:SetPicture( self.comboPicture );
 	self.imageNode:ResizeToFitPicture();
 	
