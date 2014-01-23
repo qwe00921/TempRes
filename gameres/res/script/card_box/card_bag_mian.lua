@@ -25,6 +25,7 @@ p.isReplace = false;
 p.callback = nil;
 p.hasRemove = false;
 p.cardListInfoSell = {}
+p.m_list = nil;
 
 function p.ShowUI()
 	if p.isReplace ~= true then
@@ -33,6 +34,7 @@ function p.ShowUI()
 	maininterface.HideUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
+		p.SetEnableAll(true);
 		local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 		if list then
 			list:SetVisible(true);
@@ -47,6 +49,7 @@ function p.ShowUI()
 	layer:NoMask();
     layer:Init();   
 	layer:SetSwallowTouch(false);
+	p.SetEnableAll(true);
 	
     GetUIRoot():AddDlg(layer);
     LoadDlg("card_main_view.xui", layer, nil);
@@ -61,7 +64,7 @@ function p.ShouReplaceUI(callback, hasRemove)
 	p.isReplace = true;
 	p.callback  = callback;
 	p.hasRemove = hasRemove;
-	p.ShowUI()
+	p.ShowUI();
 	if p.cardListInfo then
 		p.ShowCardList(p.cardListInfo);
 	else
@@ -105,6 +108,7 @@ function p.ShowCardList(cardList)
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 	list:SetZOrder(-100);
+	p.m_list = list;
 	p.cardListNode = {}
 	p.allCardPrice 	= 0;	--出售卡牌总价值
 	p.sellCardNodeList = {}	--出售卡牌节点列表
@@ -279,6 +283,21 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	-- if p.BatchSellMark == MARK_ON then
 		-- p.setTeamCardDisEnable()
 	-- end	
+
+end
+
+function p.SetEnableAll(bVar)
+	if nil ~= p.layer then
+		local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
+		if list then
+			list:SetEnabledList(bVar);
+			
+			for i = 1, #p.cardListNode do
+				local uiNode = p.cardListNode[i]
+				uiNode:SetEnabled(bVar)
+			end
+		end
+	end
 
 end
 

@@ -1,0 +1,25 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=33
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_BG]
+Type=2
+Tag=2
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

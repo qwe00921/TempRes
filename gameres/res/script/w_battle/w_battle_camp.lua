@@ -436,10 +436,41 @@ function p:AddFighters( uiArray, fighters )
 		f.CardID   = tonumber (fighterInfo.CardID);
 		f.Sp = tonumber(fighterInfo.Sp);
 		f.maxSp = tonumber(fighterInfo.maxSp);
+		f.canRevive = fighterInfo.canRevive;
 		f.dropLst = fighterInfo.dropLst; --掉落的物品列表
         f.buffList = {};
+
+		if w_battle_db_mgr.IsDebug == true then
+			if self.idCamp == E_CARD_CAMP_HERO then
+				f.Attack = 1000;
+				f.Sp = 100;
+				if f.Position == 2 then
+					f.Skill = 1;
+				elseif f.Position == 3 then
+					f.Skill = 2;
+				elseif f.Position == 4 then
+					f.Skill = 1001;
+				elseif f.Position == 5 then
+					f.Skill = 1008;
+				end;
+			elseif self.idCamp == E_CARD_CAMP_ENEMY then
+				f.Attack = 1;
+				
+				if f.Position == 2 then
+					f.Skill = 1003;
+				elseif f.Position == 3 then
+					f.Skill = 2;
+				elseif f.Position == 4 then
+					f.Skill = 1001;
+				elseif f.Position == 5 then
+					f.Skill = 1008;
+				else
+					f.Skill = 1;
+				end;
+			end
+		end;
 		
-         
+		
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
 		f.nowlife = f.Hp;

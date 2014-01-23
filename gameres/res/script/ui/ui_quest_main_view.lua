@@ -9,4 +9,3 @@ p.ID_CTRL_BTN_HARD					       = 9;
 p.ID_CTRL_TEXT_QUEST_NAME				 = 6;
 p.ID_CTRL_TEXT_RETURN					    = 48;
 p.ID_CTRL_BTN_TETURN					     = 2;
-p.ID_CTRL_9SLICES_12					     = 12;
