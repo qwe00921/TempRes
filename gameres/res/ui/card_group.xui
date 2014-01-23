@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -109,39 +109,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\mail\right.png
 NormalFileUV=0 0 70 52
-
-[CTRL_PICTURE_12]
-Type=1
-Tag=13
-Rect=246 774 32 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
-[CTRL_PICTURE_13]
-Type=1
-Tag=14
-Rect=304 774 32 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
-[CTRL_PICTURE_15]
-Type=1
-Tag=16
-Rect=362 774 32 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
 
 [CTRL_BUTTON_110]
 Type=2

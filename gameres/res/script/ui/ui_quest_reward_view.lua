@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_quest_reward_view = {};
 local p =  ui_quest_reward_view;
+p.ID_CTRL_TEXT_33						       = 41;
+p.ID_CTRL_TEXT_32						       = 37;
+p.ID_CTRL_TEXT_31						       = 31;
 p.ID_CTRL_PICTURE_105					    = 105;
 p.ID_CTRL_9SLICES_104					    = 104;
 p.ID_CTRL_EXP_EXP						       = 33;
