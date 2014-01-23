@@ -199,9 +199,9 @@ function p.SetDelegate()
 	--技能
 	if  tonumber(pCardInfo2.skill) ~= 0 and  pCardInfo2.skill ~= nil then
 		WriteCon("pCardInfo2.skill = "..tostring(pCardInfo2.skill));
-		local pCardSkill= SelectRowInner( T_SKILL, "id", pCardInfo2.skill);
-		pLabSkillName:SetText(pCardSkill.name); 
-		pLabSkillInfo:SetText(pCardSkill.description); 
+		local pCardSkill= SelectRowInner( T_SKILL, "id", tostring(pCardInfo2.skill)) or {};
+		pLabSkillName:SetText(pCardSkill.name or ""); 
+		pLabSkillInfo:SetText(pCardSkill.description or ""); 
 	end
 	
 	--经验条

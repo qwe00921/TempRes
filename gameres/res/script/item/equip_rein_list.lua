@@ -352,7 +352,7 @@ function p.upgrade()
 		--WriteCon("=====itemLevel,plevel" .. itemLevel .. ","..playerLevel);
 		if itemLevel >= tonumber(playerEquipLimit) then
 			WriteCon("=====itemLevel");
-			local str = string.format(GetStr("card_equip_up_lvl_limit"), playerEquipLimit, p.item.itemLevel or "1")
+			local str = string.format(GetStr("card_equip_up_lvl_limit"), tostring(playerLevel),tostring(playerEquipLimit) or "1")
 			dlg_msgbox.ShowOK("",str,p.OnMsgCallback);
 			return;
 		end
@@ -407,7 +407,7 @@ function p.OnMsgCallback(result)
 end
 
 function p.SelectPlayerEquipLimit(playerLevel)
-	local itemTable = SelectRowList(T_PLAYER_LEVEL,"level",playerLevel);
+	local itemTable = SelectRowList(T_PLAYER_LEVEL,"level",tostring(playerLevel));
 	if #itemTable >= 1 then
 		local item = itemTable[1];
 		return item.equip_upgrade_limit;

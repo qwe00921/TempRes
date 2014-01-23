@@ -26,6 +26,7 @@ p.isAlive = nil;
 p.missionId = nil;
 p.stageId = nil;
 p.missionTeamID = nil;
+p.imageList = {};
 
 
 local ui = ui_card_group;
@@ -49,6 +50,17 @@ function p.ShowUI(missionId,stageId,missionTeamId)
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
+		local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );
+		local v = list:GetEnableMove();
+		local bt = ConverToButton(uiNode);
+		if v == false then
+			bg:SetVisible(true);
+			bt:SetText(GetStr("card_group_drag_cancel"));
+		else 
+			bg:SetVisible(false);
+			bt:SetText(GetStr("card_group_drag" ));
+		end
 		PlayMusic_ShopUI();
 		return;
 	end
@@ -102,6 +114,12 @@ function p.SetDelegate()
 	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_110 );
 	bt:SetLuaDelegate( p.OnBtnClick );
 	
+	--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_22 );
+	--table.insert( p.imageList, image );
+	--image = GetImage( p.layer, ui.ID_CTRL_PICTURE_23 );
+	--table.insert( p.imageList, image );
+	--image = GetImage( p.layer, ui.ID_CTRL_PICTURE_24 );
+	--table.insert( p.imageList, image );
 	
 end
 
@@ -208,6 +226,8 @@ function p.ShowTeamList()
 	end
 	
 	list:SetSingleMode(true);
+	--list:SetLuaDelegate( p.OnListScrolled );
+	
 	local user_teams = p.user_teams or {{},{},{}};
 
 	--local count = list:GetViewCount() or 0;
@@ -319,6 +339,8 @@ function p.SetTeamInfo( view, user_teamData )
 					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",4));
 				elseif tonumber(data.element) == 6 then
 					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
+				elseif tonumber(data.element) == 7 then
+					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",6));
 				else
 					pPicCardNature:SetPicture(nil);
 				end
@@ -409,6 +431,23 @@ function p.SetTeamInfo( view, user_teamData )
 	defLabel:SetText( tostring( p.TotalData( user_teamData, "Defence" )) );
 	]]--
 end
+
+function p.OnListScrolled()
+	local listindex = p.scrollList:GetCurrentIndex();
+	local index = math.mod(listindex, 3)+1;
+	
+	for i = 1, #p.imageList do
+		local node = p.imageList[i];
+		if node then
+			local frame = i == index and 1 or 0;
+			local picData = GetPictureByAni( "ui.list_node_effect", frame );
+			if picData then
+				node:SetPicture( picData );
+			end
+		end
+	end
+end
+
 
 function p.OnDragEvent(uiNode, uiEventType, param)
 	
