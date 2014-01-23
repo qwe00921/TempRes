@@ -449,6 +449,9 @@ end
 
 --显示商城道具列表
 function p.ShowShopData( shopdata )
+	if p.layer == nil then
+		return;
+	end
 	curPage = SHOP_ITEM;
 	
 	if shopdata == nil then
@@ -502,6 +505,10 @@ end
 
 --显示商城礼包列表
 function p.ShowGiftPackData( giftdata )
+	if p.layer == nil then
+		return;
+	end
+	
     curPage = SHOP_GIFT_PACK;
 	
 	if giftdata == nil then
@@ -899,6 +906,10 @@ end
 
 --请求gacha数据回调函数
 function p.ShowGachaData( gachadata )
+	if p.layer == nil then
+		return;
+	end
+	
 	curPage = SHOP_GACHA;
 	
 	if gachadata == nil then
