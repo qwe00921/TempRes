@@ -15,7 +15,15 @@ local p = quest_result;
 local ui = ui_quest_reward_view2
 p.layer= nil;
 p.rewardAllData = nil;
-function p.ShowUI(rewardData)
+
+function p.ShowUI(backData)
+	if backData.result == false then
+		dlg_msgbox.ShowOK("¥ÌŒÛÃ· æ",self.message,nil,p.layer);
+		return
+	end
+	
+	local rewardData = backData.Reward;
+	
 	if rewardData == nil then
 		WriteConErr("rewardData error");
 		return
