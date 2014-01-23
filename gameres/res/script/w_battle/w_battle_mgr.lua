@@ -210,7 +210,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	  return false;
    end;
 
-	if atkFighter.Sp == 100 then
+	if (atkFighter.Sp == 100) and (atkFighter.Skill ~= 0) then
 		if IsMonster ~= true then
 			return p.SetPVESkillAtkID(atkID);
 		end;
@@ -559,7 +559,7 @@ function p.UseItem(pItemPos, pHeroPos)
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmdBuff );
 				
-				w_battle_pve.SetHeroCardAttr(v:GetId(), v);
+				--w_battle_pve.SetHeroCardAttr(v:GetId(), v);
 			end;		
 		end;
 	else
@@ -569,7 +569,7 @@ function p.UseItem(pItemPos, pHeroPos)
 				cmdBuff = createCommandEffect():AddFgEffect( 0.5, fighter:GetNode(), effect_skill );
 				local seqTemp = batch:AddSerialSequence();
 				seqTemp:AddCommand( cmdBuff );		
-				w_battle_pve.SetHeroCardAttr(fighter:GetId(), fighter);
+				--w_battle_pve.SetHeroCardAttr(fighter:GetId(), fighter);
 			end;
 		end
 	end
@@ -648,7 +648,11 @@ function calBuff(campType)
 			for i=#fighter.SkillBuff,1,-1 do --BUFF时间到了
 				local buffInfo = fighter.SkillBuff[i];
 				if buffInfo.buff_time == 0 then
+					if buffInfo.buff_type == W_BUFF_TYPE_301 then
+						fighter.canRevive = false;
+					end
 					table.remove(fighter.SkillBuff,i);
+					
 				end
 			end;
 			fighter.Buff = 1;
@@ -657,71 +661,7 @@ function calBuff(campType)
 	end;	
 
 	w_battle_machinemgr.starBuffStateMachine();
---[[			
-			for i,buffInfo in ipairs(fighter.SkillBuff) do
-				buffInfo.buff_time = buffInfo.buff_time - 1;
-				if    (buffInfo.buff_type == W_BUFF_TYPE_1)    --不能行动的BUFF
-					or  (buffInfo.buff_type == W_BUFF_TYPE_2)
-					or  (buffInfo.buff_type == W_BUFF_TYPE_3)
-					or  (buffInfo.buff_type == W_BUFF_TYPE_4) 
-					or  (buffInfo.buff_type == W_BUFF_TYPE_5) then 
-					fighter.HasTurn = false; --不能行动
-				elseif (buffInfo.buff_type == W_BUFF_TYPE_6) 
-				    or  (buffInfo.buff_type == W_BUFF_TYPE_7)  
-					or  (buffInfo.buff_type == W_BUFF_TYPE_8) then --扣血BUFF
-				    local lhp = math.modf(fighter.maxHp * buffInfo.buff_param / 100 )
-					fighter:SubShowLife(lhp);
-					fighter:SubLife(lhp);
-					if fighter.Hp <= 0 then  --死亡
-                        fighterDieLst[#fighterDieLst + 1] = fighter; --加入死亡列表							
-						local machine = w_battle_machinemgr.getAtkStateMachine(fighter.Position);
-						machine.turnState = W_BATTLE_TURNEND; 
-						break;
-					end
-				elseif buffInfo.buff_type == W_BUFF_TYPE_9 then  --加血BUFF
-					local lhp = math.modf(fighter.maxHp * buffInfo.buff_param / 100 )
-					fighter.AddLife(lhp);
-					fighter.AddShowLife(lhp);
-				end
-			end
-		end
-		]]--
-   
---[[
-	if (#fighterDieLst > 0) then
-		local camp = nil;
-		
-		if (campType == W_BATTLE_ENEMY) then
-			p.EnemyBuffDie = true;
-			camp = W_BATTLE_ENEMY
-		else
-			camp = W_BATTLE_HERO
-		end;
-		local cmdDie = nil;
-		for k,v in ipairs(fighterDieLst) do
-			local lfighter = v;
-			if lfighter.canRevive == true then
-				cmdDie = p.setFighterRevive(lfighter)
-			else
-				local lact = p.setFighterDie(lfighter,camp);
-				if lact ~= nil then
-					cmdDie = lact;
-				end
-			end
-		end	
-		if cmdDie ~= nil then
-			local batch = w_battle_mgr.GetBattleBatch(); 
-			local seqDie = batch:AddSerialSequence();
-			local cmdBuffEnd = createCommandLua():SetCmd( "buffEnd", 0, 0, "" );
-			if cmdBuffEnd ~= nil then
-				seqDie:AddCommand( cmdBuffEnd );
-				seqDie:SetWaitEnd(cmdDie);
-			end	
-		end
-	else
-		pEvent();
-	end;
-	]]--
+
 end;	
 
 function p.checkBuffEnd()
@@ -987,8 +927,6 @@ function p.SendStartPVEReq( targetId, teamid )
         return ;
     end;
     local param = string.format("&missionID=%d&teamID=%d", targetId,teamid);
-	
-	--local param = string.format("&missionID=%d", targetId,teamid);
     SendReq("Fight","StartPvC",UID,param);
 end
 
@@ -1560,10 +1498,10 @@ function p.PickItem(pos, itemtype)
 		if heroFighter ~= nil then
 			if itemtype == E_DROP_HPBALL then
 				heroFighter:UseHpBall(p.hpballval);
-				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
+		--		w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			elseif itemtype == E_DROP_SPBALL then
 				heroFighter:UseSpBall(p.spballval);
-				w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
+		--		w_battle_pve.SetHeroCardAttr(heroFighter:GetId(),heroFighter);
 			end
 		end
 	end;
@@ -1583,19 +1521,21 @@ function p.GetBuffAni(skillID)
 	
 end
 
-function p.setFighterRevive(targerFighter)
+function p.setFighterRevive(targetFighter)
 	local batch = w_battle_mgr.GetBattleBatch();
 	local seqTarget = batch:AddSerialSequence();
 	local seqHurt = batch:AddSerialSequence();	
 	
-	targerFighter.isDead = false;
-	targerFighter.canRevive = false;
-	targetFighter:RemoveBuff(W_BUFF_TYPE_301)
+	targetFighter.isDead = false;
+	targetFighter.canRevive = false;
+			
+	targetFighter:Revive();
+	--targetFighter:RemoveBuff(W_BUFF_TYPE_301)
 
 	targetFighter:ClearAllBuff();
-	targerFighter:standby();
+	targetFighter:standby();
 
-	local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode(), "lancer_cmb.revive" );
+	local cmdf = createCommandEffect():AddActionEffect( 0.01, targetFighter:GetNode(), "lancer_cmb.revive" );
 	seqTarget:AddCommand( cmdf );
 	--[[
 	local cmdC = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.revive" );
