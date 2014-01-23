@@ -146,10 +146,11 @@ function p.InitScrollList( layer )
 	
 	local posXY = posCtrller:GetFramePos();
 	local size = posCtrller:GetFrameSize();
+	local winSize = GetWinSize();
 
 	pList:Init();
-	pList:SetFramePosXY( posXY.x, posXY.y+60 );
-	pList:SetFrameSize( size.w, size.h );
+	pList:SetFramePosXY( posXY.x, posXY.y + 60 );
+	pList:SetFrameSize( winSize.w, size.h );
 	pList:SetSizeView( CCSizeMake( 280, 100 ) );
 	pList:SetLuaDelegate( p.OnListScrolled );
 	
@@ -181,7 +182,7 @@ function p.InitScrollList( layer )
 	end
 
 	--p.layer:AddChild( pList );
-	--layer:AddChild( pList );
+	layer:AddChild( pList );
 end
 
 function p.OnListScrolled()

@@ -284,6 +284,15 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\text_team.png
 NormalFileUV=0 0 52 28
 
+[CTRL_PICTURE_305]
+Type=1
+Tag=305
+Rect=0 591 1 192
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_22]
 Type=1
 Tag=29
