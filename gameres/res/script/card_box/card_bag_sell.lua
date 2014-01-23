@@ -20,6 +20,8 @@ function p.ShowUI()
 	GetUIRoot():AddDlg(layer);
 	LoadUI("card_bag_sell_veiw.xui",layer, nil);
 	
+	layer:SetLayoutType(1);
+	
 	p.layer = layer;
 	p.SetDelegate();
 	p.setSellCardNum(0)
