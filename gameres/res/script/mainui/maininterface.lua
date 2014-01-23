@@ -27,6 +27,8 @@ function p.ShowUI(userinfo)
 		p.m_bgImage:SetVisible(true);
 		p.scrollList:SetVisible(true);
 		
+		p.mailLayer:SetVisible(true);
+		
 		--GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
 		return;
 	end
@@ -52,11 +54,7 @@ function p.ShowUI(userinfo)
 	LoadUI("main_interface.xui", layer, nil);
     
 	p.layer = layer;
-	
-	
-	--p.InitScrollList();
-	--p.OnListScrolled();
-	
+
 	local maillayer = createNDUILayer();
 	if maillayer == nil then
 		return false;
@@ -75,8 +73,6 @@ function p.ShowUI(userinfo)
 	
 	dlg_userinfo.ShowUI(userinfo);
 	dlg_menu.ShowUI();
-	--dlg_battlearray.ShowUI();
-	--p.ShowBattleArray();
 	
 	p.ShowBillboardWithInit();
 	PlayMusic_MainUI();
@@ -90,10 +86,8 @@ function p.SetBtn(btn)
 end
 
 function p.SetDelegate()
-	local mail = GetButton( p.layer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
+	local mail = GetButton( p.mailLayer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
 	p.SetBtn( mail );
-	--local activity = GetButton( p.layer, ui.ID_CTRL_BUTTON_ACTIVITY );
-	--p.SetBtn( activity );
 	
 	local bgBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_BG_BTN );
 	p.SetBtn( bgBtn );
@@ -238,6 +232,8 @@ function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 		p.scrollList:SetVisible(false);
+		p.mailLayer:SetVisible(false);
+		
 		--p.m_bgImage:SetVisible(false);
 --		dlg_battlearray.HideUI();
 		--p.HideBillboard();
@@ -256,6 +252,11 @@ function p.CloseUI()
 		p.imageList = {};
 		p.showCard = 0;
     end
+	
+	if p.mailLayer then
+		p.mailLayer:LazyClose();
+		p.mailLayer = nil;
+	end
 	
 	if p.billlayer ~= nil then
 		p.billlayer:LazyClose();
