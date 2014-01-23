@@ -199,6 +199,8 @@ DoFile("ui/ui_dlg_gacha.lua")
 DoFile("ui/ui_dlg_gacha_result.lua")
 DoFile("ui/ui_gacha_list_view.lua")
 DoFile("ui/ui_gacha_ad_view.lua")
+DoFile("ui/ui_gacha_ing.lua")
+DoFile("ui/ui_gacha_result.lua")
 
 --商城
 DoFile("ui/ui_shop_item_view.lua")

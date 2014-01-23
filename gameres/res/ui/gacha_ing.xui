@@ -1,0 +1,54 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=9
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\gacha_1\mask.png
+NormalFileUV=0 0 1 1
+
+[CTRL_SPRITE_MAGICCIRCLE]
+Type=19
+Tag=10
+Rect=170 328 300 304
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_SCALE]
+Type=1
+Tag=41
+Rect=170 328 300 304
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_CARD]
+Type=1
+Tag=7
+Rect=141 215 359 530
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
