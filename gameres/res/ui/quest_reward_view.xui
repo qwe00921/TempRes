@@ -86,7 +86,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=29
-Rect=243 312 32 32
+Rect=245 312 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -110,7 +110,7 @@ UIClsoeType=0
 [CTRL_PICTURE_GHO]
 Type=1
 Tag=30
-Rect=241 358 30 30
+Rect=243 359 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -200,8 +200,8 @@ Tag=39
 Rect=71 530 155 32
 AnchorPos=0 0
 Notes=
-Text=获得素材
-TextTradition=獲得素材
+Text=获得物品
+TextTradition=獲得物品
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -247,10 +247,55 @@ NormalFileUV=0 0 35 13
 [CTRL_PICTURE_105]
 Type=1
 Tag=105
-Rect=241 402 35 35
+Rect=243 403 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\EXP_big.png
 NormalFileUV=0 0 32 32
+
+[CTRL_TEXT_31]
+Type=4
+Tag=31
+Rect=186 312 65 32
+AnchorPos=0 0
+Notes=
+Text=获得
+TextTradition=獲得
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_32]
+Type=4
+Tag=37
+Rect=186 358 65 32
+AnchorPos=0 0
+Notes=
+Text=获得
+TextTradition=獲得
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_33]
+Type=4
+Tag=41
+Rect=186 404 65 32
+AnchorPos=0 0
+Notes=
+Text=获得
+TextTradition=獲得
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
