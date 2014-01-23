@@ -45,11 +45,13 @@ function p:Process()
 	WriteConWarning( "** msg_check_exist_role:Process() called" );
 	--msg_cache.msg_player = msg_cache.msg_player or {};
 
-	if self.result == true then
-		maininterface.ShowUI(self.user);
-	else
-		dlg_createrole.ShowUI();
-	end
+	rookie_main.getRookieStep(self)
+	
+	-- if self.result == true then
+		-- maininterface.ShowUI(self.user);
+	-- else
+		-- dlg_createrole.ShowUI();
+	-- end
 end
 
 

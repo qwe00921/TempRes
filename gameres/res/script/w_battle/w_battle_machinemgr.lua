@@ -265,7 +265,7 @@ function p.starBuffStateMachine()
 	end;
 	
 	for k,v in ipairs(lBuffMachineLst) do
-		v.IsTurnEnd = false;		
+		v:ready();
 	end
 	
 	for k,v in ipairs(lBuffMachineLst) do

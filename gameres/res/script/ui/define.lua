@@ -304,7 +304,10 @@ DoFile("ui/ui_country_produce_lsit_list.lua");
 DoFile("ui/ui_item_produce.lua");
 
 --新手引导
+DoFile("ui/ui_game_start.lua");
 DoFile("ui/ui_learning.lua");
+DoFile("ui/ui_learning_card.lua");
+DoFile("ui/ui_card.lua");
 
 --测试（以后要删除）
 DoFile("ui/ui_test_fly.lua");
