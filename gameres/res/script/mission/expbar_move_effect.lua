@@ -47,7 +47,7 @@ function p.showEffect(expBar,leastNum,maxNum,startNum,getExp,nowLevel)
 end
 
 function p.getAddNum(Num)
-	local addNum = math.floor(Num/(moveTime/intervalTime)) 
+	local addNum = math.ceil(Num/(moveTime/intervalTime)) 
 	return addNum
 end
 
