@@ -139,7 +139,7 @@ function p.RefreshUI(userinfo)
 	
 	local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
 	strength:SetValue( 0, tonumber( userinfo.MaxMove ), tonumber( userinfo.Move ) );
-	p.CreateEffectNum( STRENGTH_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_181) , 0.4, 0, -12, string.format( "%d/%d", tonumber( userinfo.Move ), tonumber( userinfo.MaxMove ) ) );
+	p.CreateEffectNum( STRENGTH_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_181) , 0.5, 0, -10, string.format( "%d/%d", tonumber( userinfo.Move ), tonumber( userinfo.MaxMove ) ) );
 	
 	local bluesoul = GetLabel( p.layer, ui.ID_CTRL_TEXT_SOUL );
 	if p.effect_num[SOUL_INDEX] == nil then
@@ -156,7 +156,7 @@ function p.RefreshUI(userinfo)
 
 	local Exp = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_EXP );
 	Exp:SetValue( 0, tonumber( userinfo.MaxExp ), tonumber( userinfo.Exp ) );
-	p.CreateEffectNum( EXP_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_180) , 0.4, 0, -12, string.format( "%d/%d", tonumber( userinfo.Exp ), tonumber( userinfo.MaxExp ) ) );
+	p.CreateEffectNum( EXP_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_180) , 0.5, 0, -10, string.format( "%d/%d", tonumber( userinfo.Exp ), tonumber( userinfo.MaxExp ) ) );
 	
 	maininterface.ShowBattleArray( userinfo.User_Team ,tonumber(userinfo.CardTeam) or 1 );
 	
@@ -245,7 +245,7 @@ function p.OnUpdateInfo()
 			
 			local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
 			strength:SetValue( 0, tonumber( cache.MaxMove ), tonumber( cache.Move ) );
-			p.CreateEffectNum( STRENGTH_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_181) , 0.4, 0, -12, string.format( "%d/%d", tonumber( cache.Move ), tonumber( cache.MaxMove ) ) );
+			p.CreateEffectNum( STRENGTH_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_181) , 0.5, 0, -10, string.format( "%d/%d", tonumber( cache.Move ), tonumber( cache.MaxMove ) ) );
 		end
 		
 		local timeText = GetLabel( p.layer, ui.ID_CTRL_TEXT_46 );
