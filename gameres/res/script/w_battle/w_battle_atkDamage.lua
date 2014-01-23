@@ -76,8 +76,8 @@ function p.SkillDamage(skillID,atkFighter,tarFighter)
 	local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );	
 	local damage = 0;
 	if skillType == W_SKILL_TYPE_1 then --伤害类
-		 damage= atkFighter.damage * atkFighter.Buff * lpropRate * (1+lJoinAtkRate) * (1 + damage_percent)
-					 - tarFighter.Defence * tarFighter.Buff;
+		 damage= atkFighter.damage * atkFighter.atkBuff * lpropRate * (1+lJoinAtkRate) * (1 + damage_percent)
+					 - tarFighter.Defence * tarFighter.defBuff;
 	--普通攻击伤害 = （人物攻击力 + 装备攻击力）* BUFF百分比加成*属性克制关系加成*（暴击加成+合击加成）
 	--           –（对方人物防御值+对方装备防御值）* BUFF百分比加成
     elseif skillType == W_SKILL_TYPE_2 then --恢复类
@@ -142,7 +142,7 @@ function p.IsCrit(atkFighter,tarFighter)
 	local lIsCrit = false;
 	
     local lrandom = p.getRandom(atkFighter:GetId(),1000);
-	if lrandom < atkFighter.Crit then  --暴击成功
+	if lrandom < atkFighter.Crit * atkFighter.critBuff then  --暴击成功
 		lIsCrit = true;
 	end
 	

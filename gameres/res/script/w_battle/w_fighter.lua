@@ -36,7 +36,7 @@ function p:ctor()
 	self.m_kCurrentBatch = nil;
 	self.flynumGreen = nil;
 	self.damage = 0;
-	self.Buff = 1;
+	--self.Buff = 1;
 	
 	self.nowlife = 0; --当前实际血量
 	self.IsTurnEnd = false;
@@ -47,6 +47,9 @@ function p:ctor()
  	self.showBuff = true;
     self.nowBuffType = nil;
 	self.BuffIndex = 1;
+	self.atkBuff = 1;
+	self.defBuff = 1;
+	self.critBuff = 1;
 end
 
 --初始化（重载）
@@ -282,6 +285,7 @@ function p:AddSkillBuff(pSkillID)
 		self.canRevive = true;
 	end
 	self:SetBuffNode(lbuff_type);
+	self:calBuff();
 end;
 
 
@@ -627,14 +631,14 @@ function p:UseItem(pId)
 		end
 	elseif subtype == W_MATERIAL_SUBTYPE2 then --中相应状态的才可用
 		if effect_type == W_BATTLE_REVIVAL then --复活物品
-			--if(self:IsDead() == true) then
+			if(self:IsDead() == true) then
 				self.isDead = false;
 				self.Hp = 0;
 				self.nowlife = 0;
 				self.Hp = math.modf(self.maxHp * effect_value / 100);
 				self:AddShowLife(self.Hp);
 				--self:updateUIShowLife();
-			--end
+			end
 		else  --解状态的BUFF
 			self:RemoveBuff(effect_type);
 		end;
@@ -682,6 +686,7 @@ function p:AddBuff(effect_type, work,param)
 	local skillRecord = {buff_type = tonumber(effect_type), buff_time = tonumber(work), buff_param = tonumber(param)};
 	table.insert(self.SkillBuff, skillRecord);
 	self:SetBuffNode(tonumber(effect_type));
+	self:calBuff()
 end;
 
 function p:RemoveBuff(val)
@@ -695,6 +700,52 @@ function p:RemoveBuff(val)
 			self:SetBuffNode(0);
 		end
 	end
+	self:calBuff(); --计算各种BUFF后的攻,防,暴击
+end;
+
+function p:calBuff()
+	local latkbuff = 1;
+	local ldefbuff = 1;
+	local lcritbuff = 1;
+	for k,v in ipairs(self.SkillBuff) do
+		local skillRecord = v;
+		local lbuff_type = skillRecord.buff_type;
+		local lparam = skillRecord.buff_param;		
+		if lbuff_type == W_BUFF_TYPE_101 then
+			latkbuff = latkbuff + lparam/100;
+		elseif lbuff_type == W_BUFF_TYPE_201 then
+			latkbuff = latkbuff - lparam/100;
+
+		elseif lbuff_type == W_BUFF_TYPE_102 then
+			ldefbuff = ldefbuff + lparam/100;
+		elseif lbuff_type == W_BUFF_TYPE_202 then
+			ldefbuff = ldefbuff - lparam/100;		
+		
+		elseif lbuff_type == W_BUFF_TYPE_103 then
+			lcritbuff = lcritbuff + lparam/100;
+		elseif lbuff_type == W_BUFF_TYPE_203 then
+			lcritbuff = lcritbuff - lparam/100;		
+		end
+	end
+	if latkbuff > 0 then
+		self.atkBuff = latkbuff;
+	else
+		self.atkBuff = W_BUFF_ATKMIN;
+	end;
+	
+	if ldefbuff> 0 then
+		self.defBuff = ldefbuff;
+	else
+		self.defBuff = W_BUFF_DEFMIN
+	end;
+	
+	if ldefbuff > 0 then
+		self.critBuff = lcritbuff;	
+	else
+		self.critBuff = W_BUFF_CRITMIN;	
+	end
+
+	
 end;
 
 function p:Die()

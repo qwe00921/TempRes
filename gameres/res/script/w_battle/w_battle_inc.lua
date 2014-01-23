@@ -57,6 +57,11 @@ W_BUFF_TYPE_203 = 203;--暴击减弱
 
 W_BUFF_TYPE_301 = 301;--复活
 
+--各种BUFF的最低值
+W_BUFF_ATKMIN   = 0
+W_BUFF_DEFMIN   = 0
+W_BUFF_CRITMIN  = 0.001   
+
 --skill type
 W_SKILL_TYPE_1 = 1;--主动伤害技能
 W_SKILL_TYPE_2 = 2;--主动恢复技能

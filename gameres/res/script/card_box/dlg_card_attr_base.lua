@@ -200,8 +200,11 @@ function p.SetDelegate()
 	if  tonumber(pCardInfo2.skill) ~= 0 and  pCardInfo2.skill ~= nil then
 		WriteCon("pCardInfo2.skill = "..tostring(pCardInfo2.skill));
 		local pCardSkill= SelectRowInner( T_SKILL, "id", pCardInfo2.skill);
-		pLabSkillName:SetText(pCardSkill.name); 
-		pLabSkillInfo:SetText(pCardSkill.description); 
+		if pCardSkill ~= nil then
+			pLabSkillName:SetText(pCardSkill.name); 
+			pLabSkillInfo:SetText(pCardSkill.description); 
+		end
+		
 	end
 	
 	--¾­ÑéÌõ
