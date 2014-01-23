@@ -66,7 +66,7 @@ function p.init()
 	--p.uiLayer = nil;			--战斗层
 	--p.heroUIArray = nil;		--玩家阵营站位UITag表
 	--p.enemyUIArray = nil;		--敌对阵营站位UITag表
-	--p.enemyUILockArray = nil;   --敌对目标被的锁定标志
+	--p.enem	yUILockArray = nil;   --敌对目标被的锁定标志
 	
 	p.PVEEnemyID = nil;   --当前被攻击的敌人ID
 	--p.PVEHeroID = nil;
@@ -201,12 +201,12 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
     end;
 
    if targetID == nil then
-      WriteCon( "Error! SetPVEAtkID targerID is nil");
+      WriteConErr( "Error! SetPVEAtkID targerID is nil");
 	  return false;
    end; 
 
    if atkFighter == nil then
-      WriteCon( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
+      WriteConErr( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
 	  return false;
    end;
 
@@ -279,7 +279,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	else
 		atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
 		if atkFighter.Sp < 100 then
-			WriteCon( "Sp<100");
+			WriteConErr( "Sp<100");
 			return false;
 		end
 	end;
@@ -297,12 +297,12 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
     end;
 	
     if targetID == nil then
-      WriteCon( "Error! SetPVESkillAtkID targerID is nil");
+      WriteConErr( "Error! SetPVESkillAtkID targerID is nil");
 	  return false;
     end; 
 
     if atkFighter == nil then
-      WriteCon( "Error! SetPVESkillAtkID atkFighter is nil! id:"..tostring(atkID));
+      WriteConErr( "Error! SetPVESkillAtkID atkFighter is nil! id:"..tostring(atkID));
 	  return false;
     end;
 
@@ -313,7 +313,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	   targetFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( targetID ) );
     end;
     if targetFighter == nil then
-       WriteCon( "Error! SetPVESkillAtkID targetFighter is nil! id:"..tostring(targetID));
+       WriteConErr( "Error! SetPVESkillAtkID targetFighter is nil! id:"..tostring(targetID));
 	   return false;
     end;
 
@@ -331,17 +331,17 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
 
     if (distanceRes == nil) then
-		WriteCon( "Error! Skil distance Config is Error! skill="..tostring(skillID));
+		WriteConErr( "Error! Skil distance Config is Error! skill="..tostring(skillID));
 		return p.SetPVEAtkID(atkID, IsMonster,targetID);
     end;
 
     if (targetType == nil) then
-		WriteCon( "Error! Skil Target_type Config is Error! skill="..tostring(skillID));
+		WriteConErr( "Error! Skil Target_type Config is Error! skill="..tostring(skillID));
 		return p.SetPVEAtkID(atkID, IsMonster,targetID);
     end;
    
     if (skillType == nil) then
-		WriteCon( "Error! Skil Skill_type Config is Error! skill="..tostring(skillID));
+		WriteConErr( "Error! Skil Skill_type Config is Error! skill="..tostring(skillID));
 		return p.SetPVEAtkID(atkID, IsMonster,targetID);
 	end;
 
