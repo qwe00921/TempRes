@@ -27,6 +27,7 @@ function p.ShowUI(userinfo)
 		p.m_bgImage:SetVisible(true);
 		p.scrollList:SetVisible(true);
 		
+		p.mailLayer:SetVisible( true );
 		--GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
 		return;
 	end
@@ -241,6 +242,8 @@ function p.HideUI()
 		--p.m_bgImage:SetVisible(false);
 --		dlg_battlearray.HideUI();
 		--p.HideBillboard();
+		
+		p.mailLayer:SetVisible( false );
 	end
 end
 
