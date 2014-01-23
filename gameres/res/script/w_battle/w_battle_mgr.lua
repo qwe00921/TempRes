@@ -1248,7 +1248,7 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp = w_battle_camp:new();
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
-	--p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
+	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
 	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 end
 
@@ -1605,12 +1605,12 @@ function p.setFighterDie(targerFighter,camp)
 		
 	end;
 	
-	--[[
+	
 	if targerFighter.m_kShadow ~= nil then
 		local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
-		self.seqTarget:AddCommand( cmdf );
+		seqTarget:AddCommand( cmdf );
 	end;
-	]]--
+	
 	local cmdC = createCommandEffect():AddActionEffect( 1, targerFighter:GetNode(), "lancer_cmb.die" );
 	seqTarget:AddCommand( cmdC );	
 	return cmdC			
