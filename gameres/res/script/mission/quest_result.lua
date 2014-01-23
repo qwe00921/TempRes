@@ -16,7 +16,7 @@ local ui = ui_quest_reward_view2
 p.layer= nil;
 p.rewardAllData = nil;
 
-function p.ShowUI(self,backData)
+function p.ShowUI(backData)
 	if backData.result == false then
 		dlg_msgbox.ShowOK("错误提示",self.message,nil,p.layer);
 		return
