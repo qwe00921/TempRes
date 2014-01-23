@@ -27,6 +27,13 @@ function p:init(pfighter,pCamp)
 	self.camp = pCamp
 end;
 
+function p:ready()
+	self.IsTurnEnd = false;
+	self.buffShowIndex = 0;
+	self.buff_time = 0;
+	self.noTurnbufftype = nil; --不能行动的BUFF状态
+	self.hasTurn = true;
+end;
 
 function p:start()
 	if self.fighter.Hp > 0 then  --没体力或没中BUFF直接结束
@@ -94,11 +101,14 @@ function p:nextBuff()
 			fighter:SubShowLife(lhp);
 			fighter:SubLife(lhp);
 			self:ShowBuff(buffInfo.buff_type); --显示某个BUFF
+		else --复活BUFF
+			self:nextBuff();
 		end;
 	end
 end;
 
 function p:buff_dieEnd()
+	
 	self:BuffEnd();
 end;
 

@@ -106,7 +106,7 @@ image\n_battle\u10416_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 image\n_battle\u10432_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
 [10455]
 image\n_battle\u10455_d.png @cut(4,8) @use(27,3) @scale=1.8 @loop @reverse
-[10486]
+[10468]
 image\n_battle\u10486_d.png @cut(4,8) @use(27,1) @scale=1.8 @loop @reverse
 [10500]
 image\n_battle\u10500_d.png @cut(4,8) @use(27,4) @scale=1.8 @loop @reverse
