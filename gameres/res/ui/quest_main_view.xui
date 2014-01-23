@@ -3,10 +3,21 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_6]
+Type=1
+Tag=7
+Rect=153 123 299 91
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\title.png
+NormalFileUV=0 0 299 91
+
 [CTRL_BTN_TETURN]
 Type=2
 Tag=2
-Rect=5 184 100 80
+Rect=16 148 122 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -14,37 +25,22 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\close2_click.png
-SelectedFileUV=0 0 68 68
-
-[CTRL_TEXT_RETURN]
-Type=4
-Tag=48
-Rect=11 193 88 60
-AnchorPos=0 0
-Notes=
-Text=返回
-TextTradition=返回
-TextSize=36
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_TEXT_QUEST_NAME]
 Type=4
 Tag=6
-Rect=128 203 317 40
+Rect=144 163 317 40
 AnchorPos=0 0
 Notes=
 Text=章节名称
 TextTradition=章節名稱
 TextSize=30
 TextColor=0xffffff
-TextHorAlign=AlignLeft
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
 UIOpenType=0
@@ -53,7 +49,7 @@ UIClsoeType=0
 [CTRL_BTN_HARD]
 Type=2
 Tag=9
-Rect=483 176 160 90
+Rect=463 136 168 72
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -65,7 +61,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST]
 Type=14
 Tag=5
-Rect=1 267 636 580
+Rect=-7 217 636 659
 AnchorPos=0 0
 Notes=
 UIOpenType=0

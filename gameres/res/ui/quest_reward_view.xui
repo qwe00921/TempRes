@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_BG]
 Type=2
 Tag=21
-Rect=0 0 640 870
+Rect=0 0 640 868
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -16,39 +16,38 @@ Stretch=1
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_BG]
+[CTRL_PICTURE_106]
 Type=1
-Tag=28
-Rect=0 168 640 700
+Tag=106
+Rect=171 120 299 91
 AnchorPos=0 0
 Notes=
-Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
+NormalFile=.\res\image\ui\quest\title.png
+NormalFileUV=0 0 299 91
 
 [CTRL_PICTURE_REWARD_TEXT_BG]
 Type=1
 Tag=23
-Rect=0 171 279 68
+Rect=-3 257 272 49
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\quest\title3.png
+NormalFileUV=0 0 272 49
 
 [CTRL_TEXT_STAR]
 Type=4
 Tag=4
-Rect=17 182 155 41
+Rect=68 262 172 33
 AnchorPos=0 0
 Notes=
 Text=任务奖励
 TextTradition=任務獎勵
-TextSize=35
-TextColor=0xfefd92
+TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -57,7 +56,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER]
 Type=4
 Tag=3
-Rect=220 250 201 31
+Rect=220 168 201 31
 AnchorPos=0 0
 Notes=
 Text=章节
@@ -72,12 +71,12 @@ UIClsoeType=0
 [CTRL_TEXT_MISSION_NAME]
 Type=4
 Tag=2
-Rect=220 290 200 33
+Rect=220 223 200 24
 AnchorPos=0 0
 Notes=
 Text=任务名称
 TextTradition=任務名稱
-TextSize=32
+TextSize=20
 TextColor=0xfdfdde
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -87,35 +86,22 @@ UIClsoeType=0
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=29
-Rect=161 349 32 32
+Rect=243 312 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\money.png
+NormalFile=.\res\image\ui\main_interface\money2.png
 NormalFileUV=0 0 32 32
-
-[CTRL_TEXT_MONEY]
-Type=4
-Tag=5
-Rect=200 349 97 33
-AnchorPos=0 0
-Notes=
-Text=获得金币
-TextTradition=獲得金幣
-TextSize=24
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_TEXT_MONEY_V]
 Type=4
 Tag=18
-Rect=373 349 107 32
+Rect=296 312 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -124,50 +110,23 @@ UIClsoeType=0
 [CTRL_PICTURE_GHO]
 Type=1
 Tag=30
-Rect=156 391 43 43
+Rect=241 358 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\karma_thum.png
-NormalFileUV=0 0 102 102
-
-[CTRL_TEXT_SOUL]
-Type=4
-Tag=31
-Rect=202 396 97 33
-AnchorPos=0 0
-Notes=
-Text=获得魂
-TextTradition=獲得魂
-TextSize=24
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\soul.png
+NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_SOUL_V]
 Type=4
 Tag=32
-Rect=373 396 107 32
+Rect=296 358 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_EXP]
-Type=4
-Tag=6
-Rect=161 449 100 25
-AnchorPos=0 0
-Notes=
-Text=获得经验
-TextTradition=獲得經驗
-TextSize=24
-TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -175,49 +134,37 @@ UIClsoeType=0
 [CTRL_TEXT_EXP_V]
 Type=4
 Tag=17
-Rect=373 445 107 32
+Rect=296 404 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_EXP_EXP]
-Type=9
-Tag=33
-Rect=160 491 324 34
-AnchorPos=0 0
-Notes=
-TextSize=16
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\energy_progressbar.png
-NormalFileUV=0 0 176 28
 
 [CTRL_PICTURE_32]
 Type=1
 Tag=34
-Rect=167 495 310 27
+Rect=165 448 310 27
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
-NormalFileUV=0 0 176 28
+NormalFile=.\res\image\ui\main_interface\strength_bg.png
+NormalFileUV=0 0 251 22
 
 [CTRL_TEXT_EXP_UP]
 Type=4
 Tag=35
-Rect=161 537 194 25
+Rect=161 488 194 25
 AnchorPos=0 0
 Notes=
 Text=距离下一等级经验
 TextTradition=距離下一等級經驗
-TextSize=24
+TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -226,10 +173,11 @@ UIClsoeType=0
 [CTRL_TEXT_NEED_EXP_V]
 Type=4
 Tag=36
-Rect=373 533 107 32
+Rect=373 484 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -238,24 +186,24 @@ UIClsoeType=0
 [CTRL_PICTURE_36]
 Type=1
 Tag=38
-Rect=5 574 279 68
+Rect=1 524 272 49
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\quest\title3.png
+NormalFileUV=0 0 272 49
 
 [CTRL_TEXT_ITEM]
 Type=4
 Tag=39
-Rect=27 586 155 41
+Rect=71 530 155 32
 AnchorPos=0 0
 Notes=
 Text=获得素材
 TextTradition=獲得素材
-TextSize=35
-TextColor=0xfefd92
+TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -264,8 +212,45 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_ITEMANDCHA]
 Type=14
 Tag=40
-Rect=22 655 604 200
+Rect=18 576 604 279
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_EXP_EXP]
+Type=9
+Tag=33
+Rect=174 451 279 15
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_exp.png
+NormalFileUV=0 0 35 13
+
+[CTRL_9SLICES_104]
+Type=22
+Tag=104
+Rect=183 451 275 15
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_exp.png
+NormalFileUV=0 0 35 13
+
+[CTRL_PICTURE_105]
+Type=1
+Tag=105
+Rect=241 402 35 35
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\EXP_big.png
+NormalFileUV=0 0 32 32
