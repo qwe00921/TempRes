@@ -74,6 +74,7 @@ function p.ShowUI(userinfo)
 	p.mailLayer = maillayer;
 	LoadUI( "main_mailbtn.xui", maillayer, nil);
 	
+	maillayer:SetLayoutType(1);
 	p.SetDelegate();
 	
 	p.ShowMailNum(userinfo);
