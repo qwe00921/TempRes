@@ -70,7 +70,7 @@ image\ui\n_battle\nature3.png
 image\ui\n_battle\nature4.png
 image\ui\n_battle\nature5.png
 image\ui\n_battle\nature6.png
-
+image\ui\n_battle\nature7.png
 [map_lock]
 \image\ui\word_map\lock.png @cut(1,1) @scale=0.2 @loop
 

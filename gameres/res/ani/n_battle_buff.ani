@@ -1,3 +1,4 @@
+;中BUFF时各种特效
 ;晕眩
 [buff_type_act1]
 image\battle_buff\1.png @cut(1,1) @scale=0.6 @time=1.5
@@ -62,6 +63,7 @@ image\battle_buff\203.png @cut(1,1)  @scale=0.6 @time=1.5
 [buff_type_act301]
 image\battle_buff\301.png @cut(1,1)  @scale=0.6 @time=1.5
 
+;头上各种BUFF状态标识
 ;晕眩
 [buff_type_1]
 image\battle_buff\buff1.png @cut(1,1) @stay @scale=0.6
@@ -126,6 +128,7 @@ image\battle_buff\buff203.png @cut(1,1) @stay @scale=0.6
 [buff_type_301]
 image\battle_buff\buff301.png @cut(1,1) @stay @scale=0.6
 
+;BUFF生效动画
 ;晕眩
 [buff_type_body_1]
 image\battle_buff\buff_body1.png @cut(1,1) @stay @scale=0.6
@@ -145,3 +148,7 @@ image\battle_buff\buff_body4.png @cut(1,1) @stay @scale=0.6
 ;石化
 [buff_type_body_5]
 image\battle_buff\buff_body5.png @cut(1,1) @stay @scale=0.6
+
+;复活生效
+[buff_type_body_301]
+image\battle_buff\buff_body301.png @cut(1,1) @stay @scale=0.6

@@ -5,4 +5,5 @@
 ui_game_start = {};
 local p =  ui_game_start;
 p.ID_CTRL_TEXT_TALK					      = 2;
+p.ID_CTRL_BUTTON_NEXT					    = 3;
 p.ID_CTRL_PICTURE_BG					     = 1;

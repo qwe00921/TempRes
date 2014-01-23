@@ -15,7 +15,6 @@ end
 function p:ctor()
 	self.IsTurnEnd = true; 
 	self.id = 0;	
-	self.canRevive = false;
 	self.tarFighter = nil;
 end
 
@@ -151,8 +150,6 @@ function p:tar_hurtEnd()
 end;
 
 function p:tar_ReviveEnd() 
-	fighter:GetNode():ClearAllAniEffect();
-    fighter.SkillBuff = {};		
 	self:targerTurnEnd();	
 end;
 

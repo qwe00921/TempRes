@@ -366,8 +366,9 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 				break
 			end
 		end
-		dlg_card_attr_base.ShowUI(cardData);
 		p.HideUI();
+		dlg_card_attr_base.ShowUI(cardData);
+		
 	end
 end
 
@@ -666,5 +667,12 @@ function p.ClearData()
 end
 function p.UIDisappear()
 	p.CloseUI();
+	dlg_card_attr_base.CloseUI();
+	card_rein.CloseUI();
+	card_intensify.CloseUI();
+	card_intensify2.CloseUI();
+	card_intensify_succeed.CloseUI();
+	equip_dress_select.CloseUI();
+	equip_rein_list.CloseUI();
 	maininterface.BecomeFirstUI();
 end

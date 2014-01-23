@@ -3,6 +3,18 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_56]
+Type=2
+Tag=56
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_48]
 Type=1
 Tag=48
@@ -52,7 +64,7 @@ NormalFileUV=0 0 64 64
 [CTRL_COLOR_LABEL_52]
 Type=7
 Tag=52
-Rect=149 23 477 105
+Rect=141 25 477 106
 AnchorPos=0 0
 Notes=
 Text=说明文字

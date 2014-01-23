@@ -15,7 +15,7 @@ p.mainUIFlag = false;
 
 --id «UniqueId
 function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
-	
+	dlg_menu.HideUI();
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
@@ -34,7 +34,10 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 		p.mainUIFlag = mainUIFlag;
 		dlg_menu.SetNewUI( p );
 	end
-	
+	if card_bag_mian.layer == nil then
+		WriteCon("card_bag_mian.layer == nil ");
+		dlg_menu.SetNewUI( p );
+	end
 	if cardInfo == nil then
 		return;
 	end
@@ -45,7 +48,7 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
 	p.layer = layer;
     p.SetDelegate();
-	dlg_menu.HideUI();
+	
 	cardInfo.UniqueId = cardInfo.UniqueId or cardInfo.UniqueID;
 	
 	p.LoadCardDetail(cardInfo.UniqueId);
@@ -105,6 +108,8 @@ function p.SetDelegate()
 		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",4));
 	elseif tonumber(pCardInfo2.element) == 6 then
 		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",5));
+	elseif tonumber(pCardInfo2.element) == 7 then
+		pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",6));
 	end
 	
 	--∑µªÿ
@@ -454,6 +459,10 @@ end
 
 function p.UIDisappear()
 	p.CloseUI();
+	card_rein.CloseUI();
+	card_intensify.CloseUI();
+	card_intensify2.CloseUI();
+	card_intensify_succeed.CloseUI();
 	equip_dress_select.CloseUI();
 	equip_rein_list.CloseUI();
 	maininterface.BecomeFirstUI();
