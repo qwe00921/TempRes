@@ -1,0 +1,110 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_BG]
+Type=1
+Tag=5
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD]
+Type=1
+Tag=6
+Rect=56 47 528 77
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_HEAD]
+Type=4
+Tag=32
+Rect=69 54 501 60
+AnchorPos=0 0
+Notes=
+Text=请选择一张卡牌作为星卡
+TextTradition=請選擇一張卡牌作為星卡
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_CARD]
+Type=1
+Tag=7
+Rect=126 136 384 575
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_WORD]
+Type=4
+Tag=8
+Rect=62 723 517 107
+AnchorPos=0 0
+Notes=
+Text=文字描述
+TextTradition=文字描述
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_START]
+Type=2
+Tag=9
+Rect=218 845 205 74
+AnchorPos=0 0
+Notes=
+Text=开始冒险
+TextTradition=開始冒險
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button_blue_click.png
+NormalFileUV=0 0 232 84
+
+[CTRL_BUTTON_LEFT]
+Type=2
+Tag=10
+Rect=25 311 68 177
+AnchorPos=0 0
+Notes=
+Text=左
+TextTradition=左
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bgtoguohao.png
+NormalFileUV=0 0 720 1280
+
+[CTRL_BUTTON_RIGHT]
+Type=2
+Tag=11
+Rect=547 311 68 177
+AnchorPos=0 0
+Notes=
+Text=右
+TextTradition=右
+TextSize=30
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg.png
+NormalFileUV=0 0 640 960

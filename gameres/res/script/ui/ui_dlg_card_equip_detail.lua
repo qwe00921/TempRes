@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_dlg_card_equip_detail = {};
 local p =  ui_dlg_card_equip_detail;
+p.ID_CTRL_PICTURE_STAR				    = 74;
 p.ID_CTRL_TEXT_EXP					       = 73;
 p.ID_CTRL_TEXT_265					       = 265;
 p.ID_CTRL_TEXT_CARD_NAME				  = 1339;

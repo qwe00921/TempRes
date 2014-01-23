@@ -156,7 +156,28 @@ image\ui\main_interface\home_win_gate.png
 image\ui\main_interface\home_win_arena.png
 image\ui\main_interface\home_win_quest.png
 
+;装备星级
+[equip_star_1]
+image\ui\public\star1.png
+[equip_star_2]
+image\ui\public\star2.png
+[equip_star_3]
+image\ui\public\star3.png
+[equip_star_4]
+image\ui\public\star4.png
+[equip_star_5]
+image\ui\public\star5.png
+[equip_star_6]
+image\ui\public\star6.png
+[equip_star_7]
+image\ui\public\star7.png
+
 ;可采集光效
 [collect_effect]
 image\ui\country\source_fx.png @cut(1, 8) @time=0.125 @loop
+
+;list节点显示标志
+[list_node_effect]
+image\ui\main_interface\header_arena_light_00.png
+image\ui\main_interface\header_arena_light_01.png
 

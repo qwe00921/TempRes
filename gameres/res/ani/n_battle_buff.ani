@@ -1,67 +1,69 @@
+;中BUFF时各种特效
 ;晕眩
 [buff_type_act1]
-image\battle_buff\1.png @cut(1,1) @scale=0.6 @offset(0,-30)
+image\battle_buff\1.png @cut(1,1) @scale=0.6 @time=1.5
 
 ;冰冻
 [buff_type_act2]
-image\battle_buff\2.png @cut(1,1)  @scale=0.6
+image\battle_buff\2.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;缠绕
 [buff_type_act3]
-image\battle_buff\3.png @cut(1,1)  @scale=0.6
+image\battle_buff\3.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;麻痹
 [buff_type_act4]
-image\battle_buff\4.png @cut(1,1)  @scale=0.6
+image\battle_buff\4.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;石化
 [buff_type_act5]
-image\battle_buff\5.png @cut(1,1)  @scale=0.6
+image\battle_buff\5.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;中毒
 [buff_type_act6]
-image\battle_buff\6.png @cut(1,1)  @scale=0.6
+image\battle_buff\6.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;火烧
 [buff_type_act7]
-image\battle_buff\7.png @cut(1,1)  @scale=0.6
+image\battle_buff\7.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;诅咒
 [buff_type_act8]
-image\battle_buff\8.png @cut(1,1)  @scale=0.6
+image\battle_buff\8.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;回复
 [buff_type_act9]
-image\battle_buff\9.png @cut(1,1)  @scale=0.6
+image\battle_buff\9.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;攻击up
 [buff_type_act101]
-image\battle_buff\101.png @cut(1,1)  @scale=0.6
+image\battle_buff\101.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;防御up
 [buff_type_act102]
-image\battle_buff\102.png @cut(1,1)  @scale=0.6
+image\battle_buff\102.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;暴击up
 [buff_type_act103]
-image\battle_buff\103.png @cut(1,1)  @scale=0.6
+image\battle_buff\103.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;攻击减弱
 [buff_type_act201]
-image\battle_buff\201.png @cut(1,1)  @scale=0.6
+image\battle_buff\201.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;防御减弱
 [buff_type_act202]
-image\battle_buff\202.png @cut(1,1)  @scale=0.6
+image\battle_buff\202.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;暴击减弱
 [buff_type_act203]
-image\battle_buff\203.png @cut(1,1)  @scale=0.6
+image\battle_buff\203.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;复活特效
 [buff_type_act301]
-image\battle_buff\301.png @cut(1,1)  @scale=0.6
+image\battle_buff\301.png @cut(1,1)  @scale=0.6 @time=1.5
 
+;头上各种BUFF状态标识
 ;晕眩
 [buff_type_1]
 image\battle_buff\buff1.png @cut(1,1) @stay @scale=0.6
@@ -126,6 +128,7 @@ image\battle_buff\buff203.png @cut(1,1) @stay @scale=0.6
 [buff_type_301]
 image\battle_buff\buff301.png @cut(1,1) @stay @scale=0.6
 
+;BUFF生效动画
 ;晕眩
 [buff_type_body_1]
 image\battle_buff\buff_body1.png @cut(1,1) @stay @scale=0.6
@@ -145,3 +148,7 @@ image\battle_buff\buff_body4.png @cut(1,1) @stay @scale=0.6
 ;石化
 [buff_type_body_5]
 image\battle_buff\buff_body5.png @cut(1,1) @stay @scale=0.6
+
+;复活生效
+[buff_type_body_301]
+image\battle_buff\buff_body301.png @cut(1,1) @stay @scale=0.6

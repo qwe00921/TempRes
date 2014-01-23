@@ -16,7 +16,7 @@ p.targetPetList = nil; --敌方宠物数据
 p.roundData = nil; --所有回合的对战数据
 p.roundPetData = nil; --宠物所有回合的对战数据
 p.roundBuffData = nil; --战士Buff数据
-p.roundBuffEffectData = nil; --BUFF特效数据
+p.roundBuffEffectData = nil; --BUFF特O效数据
 
 p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
@@ -43,10 +43,10 @@ p.enemyStepList = {
 	Rare_max= 0,
 	Hp= 230,
 	maxHp= 240,
-	Attack= 30,
+	Attack= 300,
 	Defence= 1,
 	Speed= 26,
-	Skill= 1001,
+	Skill= 1,
 	Crit= 5,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -77,10 +77,10 @@ p.enemyStepList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 30,
+	Attack= 1,
 	Defence= 2,
 	Speed= 23,
-	Skill= 1006,
+	Skill= 2,
 	Crit= 3,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -92,7 +92,7 @@ p.enemyStepList = {
 	Source= 0,
 	Position= 2,
 	Sp = 0,
-	maxSp = 100
+	maxSp = 100,
 	},
 
 	{
@@ -112,10 +112,10 @@ p.enemyStepList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 30,
+	Attack= 1,
 	Defence= 1,
 	Speed= 35,
-	Skill= 1008,
+	Skill= 1001,
 	Crit= 12,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -149,10 +149,10 @@ p.enemyStepList = {
 	Rare_max= 0,
 	Hp= 290,
 	maxHp= 300,
-	Attack= 30,
+	Attack= 1,
 	Defence= 2,
 	Speed= 32,
-	Skill= 1002,
+	Skill= 1008,
 	Crit= 8,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -183,10 +183,10 @@ p.enemyStepList = {
 	Rare_max= 0,
 	Hp= 290,
 	maxHp= 300,
-	Attack= 30,
+	Attack= 1,
 	Defence= 1,
 	Speed= 41,
-	Skill= 1003,
+	Skill= 1008,
 	Crit= 10,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -230,9 +230,9 @@ p.enemyStepList = {
 	Gem3= 0,
 	Price= 0,
 	Source= 0,
-	Position= 1,
+	Position= 2,
 	Sp = 0,
-	maxSp = 100;
+	maxSp = 100,
 	},
 	{
 	element = 2,
@@ -378,9 +378,9 @@ p.enemyStepList = {
 p.playerCardList = {
 	
 	{
-	element = 2,
+	element = 1,
 	UniqueId= 10000722,
-	CardID= 10012,
+	CardID= 10000,
 	Level= 1,
 	Level_max= 0,
 	Race= 0,
@@ -394,10 +394,10 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 30,
+	Attack= 60,
 	Defence= 2,
 	Speed= 23,
-	Skill= 1006,
+	Skill= 1,
 	Crit= 3,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -408,14 +408,14 @@ p.playerCardList = {
 	Price= 0,
 	Source= 0,
 	Position= 2,
-	Sp = 0,
+	Sp = 100,
 	maxSp = 100
 	},
 
 	{
-	element = 3,
+	element = 1,
 	UniqueId= 10000723,
-	CardID= 10021,
+	CardID= 10001,
 	Level= 1,
 	Level_max= 0,
 	Race= 0,
@@ -429,10 +429,10 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 190,
 	maxHp= 200,
-	Attack= 30,
+	Attack= 60,
 	Defence= 1,
 	Speed= 35,
-	Skill= 1008,
+	Skill= 2,
 	Crit= 12,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -443,13 +443,13 @@ p.playerCardList = {
 	Price= 0,
 	Source= 0,
 	Position= 3,
-	Sp = 0,
+	Sp = 100,
 	maxSp = 100,
 	},
 
 	{
-	element = 4,
-	Sp = 0,
+	element = 1,
+	Sp = 100,
 	maxSp = 100,
 	UniqueId= 10000724,
 	CardID= 10003,
@@ -466,10 +466,10 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 290,
 	maxHp= 300,
-	Attack= 30,
+	Attack= 60,
 	Defence= 2,
 	Speed= 32,
-	Skill= 1002,
+	Skill= 1001,
 	Crit= 8,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -482,11 +482,11 @@ p.playerCardList = {
 	Position= 4
 	},
 	{
-	element = 0,
-	Sp = 0,
+	element = 1,
+	Sp = 100,
 	maxSp = 100,
 	UniqueId= 10000725,
-	CardID= 10022,
+	CardID= 10007,
 	Level= 1,
 	Level_max= 0,
 	Race= 0,
@@ -500,10 +500,10 @@ p.playerCardList = {
 	Rare_max= 0,
 	Hp= 290,
 	maxHp= 300,
-	Attack= 30,
+	Attack= 60,
 	Defence= 1,
 	Speed= 41,
-	Skill= 1003,
+	Skill= 1008,
 	Crit= 10,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -522,7 +522,7 @@ p.targetCardList = {
 	{
 	element = 1,
 	UniqueId= 7,
-	CardID= 10012,
+	CardID= 10000,
 	Level= 10,
 	Race= 0,
 	Class= 2,
@@ -532,10 +532,10 @@ p.targetCardList = {
 	Rare_max= 5,
 	Hp= 100,
 	maxHp= 100,
-	Attack= 70,
+	Attack= 1,
 	Defence= 20,
 	Speed= 23,
-	Skill= 1001,
+	Skill= 1,
 	Crit= 3,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -549,7 +549,7 @@ p.targetCardList = {
 	{
 	element = 2,
 	UniqueId= 3,
-	CardID= 10003,
+	CardID= 10001,
 	Level= 10,
 	Race= 0,
 	Class= 4,
@@ -559,10 +559,10 @@ p.targetCardList = {
 	Rare_max= 5,
 	Hp= 300,
 	maxHp= 300,
-	Attack= 70,
+	Attack= 1,
 	Defence= 10,
 	Speed= 32,
-	Skill= 1001,
+	Skill= 2,
 	Crit= 8,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -575,7 +575,7 @@ p.targetCardList = {
 	{
 	element = 3,
 	UniqueId= 4,
-	CardID= 10004,
+	CardID= 10003,
 	Level= 10,
 	Race= 0,
 	Class= 2,
@@ -585,7 +585,7 @@ p.targetCardList = {
 	Rare_max= 5,
 	Hp= 290,
 	maxHp= 290,
-	Attack= 70,
+	Attack= 1,
 	Defence= 10,
 	Speed= 20,
 	Skill= 1001,
@@ -601,7 +601,7 @@ p.targetCardList = {
 	{
 	element = 4,
 	UniqueId= 5,
-	CardID= 10005,
+	CardID= 10007,
 	Level= 10,
 	Race= 0,
 	Class= 2,
@@ -611,10 +611,10 @@ p.targetCardList = {
 	Rare_max= 5,
 	Hp= 288,
 	maxHp= 288,
-	Attack= 70,
+	Attack= 1,
 	Defence= 10,
 	Speed= 23,
-	Skill= 1001,
+	Skill= 1008,
 	Crit= 1,
 	Item_Id1= 0,
 	Item_Id2= 0,
@@ -627,7 +627,7 @@ p.targetCardList = {
 	{
 	element = 0,
 	UniqueId= 6,
-	CardID= 10009,
+	CardID= 10008,
 	Level= 10,
 	Race= 0,
 	Class= 1,
@@ -637,7 +637,7 @@ p.targetCardList = {
 	Rare_max= 5,
 	Hp= 279,
 	maxHp= 279,
-	Attack= 70,
+	Attack= 1,
 	Defence= 10,
 	Speed= 34,
 	Skill= 1001,
@@ -653,7 +653,7 @@ p.targetCardList = {
 	{
 	element = 5,
 	UniqueId= 2,
-	CardID= 10001,
+	CardID= 10010,
 	Level= 10,
 	Race= 0,
 	Class= 4,
@@ -663,7 +663,7 @@ p.targetCardList = {
 	Rare_max= 5,
 	Hp= 280,
 	maxHp= 280,
-	Attack= 70,
+	Attack= 1,
 	Defence= 10,
 	Speed= 31,
 	Skill= 1001,
@@ -681,11 +681,11 @@ p.targetCardList = {
 
 p.useItemData= {}
 p.ItemList = {
-	{item_id = 101001, num = 0, location = 1},
-	{item_id = 101001, num = 0, location = 2},
-	{item_id = 101001, num = 0, location = 3},
-	{item_id = 101001, num = 0, location = 4},
-	{item_id = 101001, num = 0, location = 5},
+	{item_id = 101015, num = 5, location = 1},
+	{item_id = 101016, num = 5, location = 2},
+	{item_id = 101017, num = 5, location = 3},
+	{item_id = 101018, num = 5, location = 4},
+	{item_id = 101019, num = 5, location = 5},
 }
 
 p.Reward= {
@@ -819,25 +819,6 @@ function p.initFighterDB(fighterInfo,IsHero)
 		fighterInfo.Position = fighterInfo.position;
 		fighterInfo.position = nil;
 	end;
-	
-	--fighterInfo.Crit = 1000;
-	--临时代码
-	if p.IsDebug == true then
-		
-		if IsHero == true then
-		--	if fighterInfo.Damage_type == 1 then 
-				fighterInfo.Attack = fighterInfo.Attack * 5;
-				if fighterInfo.Position == 2 then
-					fighterInfo.Skill = 1;
-					fighterInfo.Sp = 100
-				elseif fighterInfo.Position == 3 then
-					fighterInfo.Skill = 1001;
-					fighterInfo.Sp = 100;		
-				end;
-		--	end;
-		end;
-	end;
-	
 end;
 
 function p.initItem(pItemLst)
@@ -867,22 +848,22 @@ function p.Init( battleDB )
     end
 	
 	p.useItemData = {}
-	
+
 	--携带的物品列表
 	if battleDB.fightinfo.Item ~= nil then
 		p.initItem(battleDB.fightinfo.Item);
 	else
 		p.ItemList = {};
 	end;
-    p.initUseItem(p.ItemList);
-	
-    --掉落的物品
+	p.initUseItem(p.ItemList);
+	--掉落的物品
 	p.Drop = battleDB.fightinfo.Drop;
-    
+	
 	--玩家列表
-	if p.IsDebug ~= true then
-		p.playerCardList = battleDB.fightinfo.Player; 
-	end;
+	
+	p.playerCardList = battleDB.fightinfo.Player; 
+
+
 	for i=1,#p.playerCardList do
 		p.initFighterDB(p.playerCardList[i],true);
 	end;

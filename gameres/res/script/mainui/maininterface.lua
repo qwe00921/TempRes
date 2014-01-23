@@ -8,6 +8,8 @@ p.scrollList = nil;
 
 p.billlayer = nil;
 
+p.imageList = {};
+
 local ui = ui_main_interface;
 
 function p.ShowUI(userinfo)
@@ -51,6 +53,7 @@ function p.ShowUI(userinfo)
 	p.SetDelegate();
 	
 	p.InitScrollList();
+	p.OnListScrolled();
 	
 	p.ShowMailNum(userinfo);
 	
@@ -84,6 +87,13 @@ function p.SetDelegate()
 		local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_CHA"..i] );
 		p.SetBtn( btn );
 	end
+	
+	local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_22 );
+	table.insert( p.imageList, image );
+	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_23 );
+	table.insert( p.imageList, image );
+	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_24 );
+	table.insert( p.imageList, image );
 end
 
 function p.InitScrollList()
@@ -109,6 +119,7 @@ function p.InitScrollList()
 	pList:SetFramePosXY( posXY.x, posXY.y+90 );
 	pList:SetFrameSize( size.w, size.h );
 	pList:SetSizeView( CCSizeMake( 230, 135 ) );
+	pList:SetLuaDelegate( p.OnListScrolled );
 	
 	for i = 1,6 do
 		local pView1 = createNDUIScrollViewExpand();
@@ -138,6 +149,23 @@ function p.InitScrollList()
 	end
 
 	GetUIRoot():AddChild( pList );
+end
+
+function p.OnListScrolled()
+	--WriteConErr( tostring( p.scrollList:GetCurrentIndex() ));
+	local listindex = p.scrollList:GetCurrentIndex();
+	local index = math.mod(listindex, 3)+1;
+	
+	for i = 1, #p.imageList do
+		local node = p.imageList[i];
+		if node then
+			local frame = i == index and 1 or 0;
+			local picData = GetPictureByAni( "ui.list_node_effect", frame );
+			if picData then
+				node:SetPicture( picData );
+			end
+		end
+	end
 end
 
 function p.OnTouchImage(uiNode, uiEventType, param)
@@ -203,6 +231,7 @@ function p.CloseUI()
 		--p.m_bgImage = nil;
 --		dlg_battlearray.CloseUI();
 		billboard.CloseUI();
+		p.imageList = {};
     end
 	
 	if p.billlayer ~= nil then

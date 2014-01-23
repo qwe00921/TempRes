@@ -58,7 +58,7 @@ function p:PlayNum( num )
     --²¥·Å¶¯»­
     self.imageNode:SetVisible( true );
     self.imageNode:SetOpacity( 0 );
-    self.imageNode:SetFramePosXY( self.offsetX, self.offsetY + UIOffsetY(60));
+    self.imageNode:SetFramePosXY( self.offsetX, self.offsetY - UIOffsetY(60));
     self:AddAction();
 end
 

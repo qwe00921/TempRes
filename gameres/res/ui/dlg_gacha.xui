@@ -3,18 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_9SLICES_20]
-Type=22
-Tag=25
-Rect=0 249 640 743
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_frame.png
-NormalFileUV=0 0 640 780
-
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=4

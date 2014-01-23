@@ -91,7 +91,7 @@ function p:CreateFlyNum(nType)
     local flynum = w_fly_num:new();
     flynum:SetOwnerNode( self.node );
     flynum:Init(nType);
-    flynum:SetOffset(30,-20);
+    flynum:SetOffset(0,0);
     
     self.node:AddChildZ( flynum:GetNode(), 2 );
     self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
@@ -234,7 +234,22 @@ function p:SubShowLife(val) --需展现的血量
 		WriteCon(str);
 	end	
 	
-    
+	self:updateUIShowLife();
+  
+end;
+
+function p:updateUIShowLife()
+	if self.camp == E_CARD_CAMP_HERO then
+		w_battle_pve.SetHeroCardAttr(self:GetId(), self);
+	else
+		if w_battle_mgr.LockEnemy ~= true then --未锁定,要更新血量
+			w_battle_pve.SetHp(self); --更新血量	
+		else
+			if self:GetId() == w_battle_mgr.PVEEnemyID then
+				w_battle_pve.SetHp(self); --更新血量	
+			end
+		end;	
+	end;  	
 end;
 
 function p:AddShowLife(val) --需展现的血量
@@ -253,6 +268,8 @@ function p:AddShowLife(val) --需展现的血量
 		local str = string.format("id=%d Hp=%d addval=%d", self:GetId(),self.Hp,val);
 		WriteCon(str);
 	end
+	
+	self:updateUIShowLife();
 end;
 
 function p:AddSkillBuff(pSkillID)
@@ -261,6 +278,9 @@ function p:AddSkillBuff(pSkillID)
 	local lbuff_type = tonumber(SelectCell(T_SKILL,pSkillID,"buff_type"))
 	local lRecord = {buff_type = lbuff_type, buff_time = lwork_time, buff_param=lbuff_param}
 	table.insert(self.SkillBuff, lRecord);
+	if lbuff_type == W_BUFF_TYPE_301 then
+		self.canRevive = true;
+	end
 	self:SetBuffNode(lbuff_type);
 end;
 
@@ -401,7 +421,7 @@ function p:GetAtkImageNode(atkNode)
 	return imageNode;
 end;
 
---BUFF状态
+--BUFF状态,头顶的特效
 function p:InitBuffNode()
 	local imageNode = createNDRole();
 	imageNode:Init();
@@ -416,11 +436,11 @@ function p:InitBuffNode()
 	
 	self.node:AddChildZ( imageNode, E_BATTLE_Z_NORMAL );
 	imageNode:SetFramePos(lnewPos);	
-    if self.camp == E_CARD_CAMP_HERO then	
-		imageNode:SetLookAt( E_LOOKAT_LEFT );
-	else
-		imageNode:SetLookAt( E_LOOKAT_RIGHT );
-	end
+   -- if self.camp == E_CARD_CAMP_HERO then	
+	--	imageNode:SetLookAt( E_LOOKAT_RIGHT );
+	--else
+	imageNode:SetLookAt( E_LOOKAT_RIGHT );
+	--end
 	self.BuffNode = imageNode;
 end;
 
@@ -438,8 +458,22 @@ function p:ShowBuffNode()
 	end
 end;
 
+function p:ClearAllBuff()
+	if self.BuffNode ~= nil then
+		self.node:RemoveChild(self.BuffNode,true);
+		self.BuffNode = nil;
+	end;
+	
+	self.BuffIndex = 1;
+	self.SkillBuff = {}
+end;
+
 function p:SetBuffNode(lBuffType)
-	if lBuffType == 0 then
+	if lBuffType == 0 then  --解状态
+		if self.BuffNode ~= nil then
+			self.node:RemoveChild(self.BuffNode,true);
+			self.BuffNode = nil;
+		end
 		return ;
 	end
 	
@@ -449,7 +483,6 @@ function p:SetBuffNode(lBuffType)
 		else
 			self.node:RemoveChild(self.BuffNode,true);
 			self.BuffNode = nil;
-			
 		end
 		
 	end;
@@ -578,7 +611,6 @@ function p:UseItem(pId)
 	local subtype = tonumber(SelectCell( T_MATERIAL, pId, "sub_type" ));
 	local effect_type = tonumber(SelectCell( T_MATERIAL, pId, "effect_type" ));
 	local effect_value = tonumber(SelectCell( T_MATERIAL, pId, "effect_value" ));
-
 	if subtype == W_MATERIAL_SUBTYPE1 then  --HP>0的
 		if self:IsAlive() == true then
 			local lval = 0
@@ -595,20 +627,35 @@ function p:UseItem(pId)
 		end
 	elseif subtype == W_MATERIAL_SUBTYPE2 then --中相应状态的才可用
 		if effect_type == W_BATTLE_REVIVAL then --复活物品
-			if(self:IsDead() == true) then
+			--if(self:IsDead() == true) then
 				self.isDead = false;
-				self.nowlife = math.mod(self.maxHp * effect_value / 100);
-				self.Hp = self.nowlife;
-			end
+				self.Hp = 0;
+				self.nowlife = 0;
+				self.Hp = math.modf(self.maxHp * effect_value / 100);
+				self:AddShowLife(self.Hp);
+				--self:updateUIShowLife();
+			--end
 		else  --解状态的BUFF
 			self:RemoveBuff(effect_type);
 		end;
 	elseif subtype == W_MATERIAL_SUBTYPE3 then --所有未死亡的,均可用
-		self:AddBuff(effect_type,effect_value) --上BUFF状态及回合数
+		local buff_time = effect_value;
+		local buff_type,buff_param = self:getBuffParam(effect_type);
+		if buff_type == nil or buff_param == nil then
+			lResult = false;
+		else
+			self:AddBuff(buff_type,buff_time,buff_param) --上BUFF状态,回复百分比,及回合数
+		end
 	end
 	
 	return lResult;
 end
+
+function p:getBuffParam(buffid)
+	local bufftype = tonumber(SelectCell(T_BUFF,buffid,"buff_type"));
+	local buffparam = tonumber(SelectCell(T_BUFF,buffid,"buff_param"));
+	return bufftype,buffparam;
+end;
 
 function p:HasBuff(buff)
 	local lRes = false;
@@ -623,13 +670,18 @@ function p:HasBuff(buff)
 end;
 
 --BUFF类型,参数
-function p:AddBuff(buff, work,param)
+function p:AddBuff(effect_type, work,param)
 	--local skillRecord = {effecttype = effect_type, effectval = effect_value};
 	if param == nil then
 		param = 0;
 	end
+	if effect_type == W_BUFF_TYPE_301 then
+		self.canRevive = true;
+	end
+	
 	local skillRecord = {buff_type = tonumber(effect_type), buff_time = tonumber(work), buff_param = tonumber(param)};
 	table.insert(self.SkillBuff, skillRecord);
+	self:SetBuffNode(tonumber(effect_type));
 end;
 
 function p:RemoveBuff(val)
@@ -640,6 +692,7 @@ function p:RemoveBuff(val)
 			if val == W_BUFF_TYPE_301 then  --死亡只扣一次BUFF
 				break;
 			end
+			self:SetBuffNode(0);
 		end
 	end
 end;
@@ -652,6 +705,30 @@ function p:Die()
 		self.BuffNode = nil;
 	end
 end
+
+function p:Revive()
+	self.isDead = false;
+	for k,v in ipairs(self.SkillBuff) do
+		if v.buff_type == W_BUFF_TYPE_301 then
+		    --local param = v.buff_param
+			--local tmpHP = 0;
+			
+			--self:AddLife(tmpHp);
+			--self:AddShowLife(tmpHp)
+			self.Hp = 0;
+			self.nowlife = 0;
+			self.nowlife = math.modf(self.maxHp * v.buff_param / 100);
+			self:AddShowLife(self.nowlife);
+			break;
+		end
+	end;
+	
+	self.SkillBuff = {}
+	if self.BuffNode ~= nil then
+		self.node:RemoveChild(self.BuffNode,true);
+		self.BuffNode = nil;
+	end
+end;
 
 function p:UseHpBall(pVal)
 	local addHp = math.modf(self.maxHp * pVal / 100);
