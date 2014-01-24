@@ -142,7 +142,7 @@ function p.CloseUI()
 		p.curListTypeTag = nil;
 		p.msgs = {}
 		p.subLayer = nil;
-		maininterface.ShowUI();
+		--maininterface.ShowUI();
     end
 	
 		if p.bottomLayer ~= nil then
@@ -193,10 +193,15 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_GO_BACK == tag then
 			WriteCon("**========返回========**");
+			if p.subLayer then 
+				p.subLayer.CloseUI();
+			end
 			p.CloseUI();
+			
+			maininterface.ShowUI();
 			maininterface.BecomeFirstUI();
 			--maininterface.ShowUI();
-			dlg_userinfo.ShowUI();
+			--dlg_userinfo.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_WRITE == tag then
 			WriteCon("**========写信========**");
 			p.HideUI();
@@ -559,21 +564,13 @@ function p.SetItemInfo4Sys( view, item )
 		local picV = GetImage(view,ui_item_sys[picTagName]);
 		
 		if stRe == p.MAIL_REWARD_UNGET and picV and rewrad.rewordId and tonumber(rewrad.rewordId) ~= 0 and rewrad.rewordType then
-			rewrad.rewordId = "10002";
+			
 			local rtype = tonumber(rewrad.rewordType);
-			local aniIndex = "item."..rewrad.rewordId;
-			if rtype == 2 then
-				aniIndex = "card_icon."..rewrad.rewordId;
-			elseif rtype == 4 then
-				aniIndex = "ui.emoney"
-			elseif rtype == 6 then
-				aniIndex = "ui.money"
-			elseif rtype == 5 then
-				aniIndex = "ui.soul"
-			end
+			
 			--local aniIndex = p.GetPicAni(rewrad.rewordType, rewrad.rewordId);
-			if aniIndex then
-				picV:SetPicture( GetPictureByAni(aniIndex,0) );
+			local pic = p.findPic(tonumber(rtype), rewrad.rewordId);
+			if pic then
+				picV:SetPicture( pic);
 			else
 				picV:SetPicture(nil);
 			end 
@@ -596,6 +593,30 @@ function p.SetItemInfo4Sys( view, item )
 	--cardPicNode:SetLuaDelegate(p.OnBtnClicked);
 	
 	view:SetLuaDelegate(p.OnItemClick);
+end
+
+function p.findPic(rtype, id)
+	rtype = tonumber(rtype);
+	id = tostring(id);
+	local aniIndex = nil;
+	if rtype == 2 then
+		local item = SelectRowInner(T_CHAR_RES,"card_id",id) or {};
+		aniIndex = item.head_pic;
+	elseif rtype == 3 then
+		local item= SelectRowInner( T_EQUIP, "id", id) or {}; 
+		aniIndex = item.item_pic;
+	elseif rtype == 4 then
+				aniIndex = "ui.emoney"
+	elseif rtype == 6 then
+				aniIndex = "ui.money"
+	elseif rtype == 5 then
+		aniIndex = "ui.soul"
+	end		
+	
+	if aniIndex == nil then
+		aniIndex = "item."..id;
+	end
+	return GetPictureByAni(aniIndex,0) ;
 end
 
 -------- 个人邮件Item
@@ -892,8 +913,8 @@ function p.UIDisappear()
 		p.subLayer.CloseUI();
 	end
 	p.CloseUI();
-	maininterface.ShowUI();
-	dlg_userinfo.ShowUI();
+	maininterface.BecomeFirstUI();
+	--dlg_userinfo.ShowUI();
 --	dlg_battlearray.ShowUI();
 end
 

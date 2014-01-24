@@ -246,9 +246,9 @@ function p.setMissionInfo(misId,view)
 	local misMoney = GetLabel(view, uiList.ID_CTRL_TEXT_MONEY_V);
 	local misExp = GetLabel(view, uiList.ID_CTRL_TEXT_EXP_V);
 	local misGhost = GetLabel(view, uiList.ID_CTRL_TEXT_GHO_V);
-	local misReward1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG1);
-	local misReward2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG2);
-	local misReward3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD_BG3);
+	local misReward1 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD1);
+	local misReward2 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD2);
+	local misReward3 = GetImage(view, uiList.ID_CTRL_PICTURE_REWARD3);
 	local misRewardT = {}
 	misRewardT[1] = misReward1;
 	misRewardT[2] = misReward2;

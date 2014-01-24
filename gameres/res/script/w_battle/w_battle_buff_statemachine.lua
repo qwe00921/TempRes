@@ -60,6 +60,10 @@ function p:nextBuff()
 			seqDie:SetWaitEnd( cmdC ); 
 			
 		else  --死了
+			if (w_battle_mgr.LockEnemy == false) then
+				w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstHasHpFighterID(targerID); --选择下个nowHP > 0活的怪物目标
+			end
+			
 			local cmdC = w_battle_mgr.setFighterDie(fighter,self.camp);
 			if cmdC ~= nil then	
 				local batch = w_battle_mgr.GetBattleBatch(); 			

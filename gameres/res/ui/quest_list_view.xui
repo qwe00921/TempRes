@@ -53,29 +53,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_DIFFICULT]
-Type=1
-Tag=35
-Rect=51 179 47 47
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\monster.png
-NormalFileUV=0 0 47 47
-
-[CTRL_9SLICES_DIF_BG]
-Type=22
-Tag=32
-Rect=53 182 43 41
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
-
 [CTRL_TEXT_DIF_V]
 Type=4
 Tag=36
@@ -89,64 +66,18 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_POWER]
-Type=1
-Tag=42
-Rect=43 183 63 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\strength.png
-NormalFileUV=0 0 60 40
-
-[CTRL_PICTURE_POWER_BG]
-Type=1
-Tag=59
-Rect=53 181 42 43
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
-
 [CTRL_TEXT_POWER_V]
 Type=4
 Tag=4
 Rect=443 37 37 35
 AnchorPos=0 0
 Notes=
-Text=333
-TextTradition=333
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_TIMES]
-Type=1
-Tag=16
-Rect=59 187 30 30
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\battle.png
-NormalFileUV=0 0 40 40
-
-[CTRL_PICTURE_TIME_BG]
-Type=1
-Tag=60
-Rect=46 182 57 41
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
 
 [CTRL_TEXT_TIEMS_V]
 Type=4
@@ -154,8 +85,6 @@ Tag=5
 Rect=556 37 51 35
 AnchorPos=0 0
 Notes=
-Text=0/5
-TextTradition=0/5
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -163,16 +92,18 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_MONEY]
-Type=1
-Tag=9
-Rect=62 190 24 24
+[CTRL_TEXT_EXP_V]
+Type=4
+Tag=17
+Rect=67 98 62 33
 AnchorPos=0 0
 Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\money.png
-NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_MONEY_V]
 Type=4
@@ -180,51 +111,12 @@ Tag=18
 Rect=186 99 67 30
 AnchorPos=0 0
 Notes=
-Text=99999
-TextTradition=99999
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_EXP]
-Type=1
-Tag=8
-Rect=44 182 60 40
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\EXP..png
-NormalFileUV=0 0 60 40
-
-[CTRL_TEXT_EXP_V]
-Type=4
-Tag=17
-Rect=67 98 62 33
-AnchorPos=0 0
-Notes=
-Text=99999
-TextTradition=99999
-TextSize=24
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_GHO]
-Type=1
-Tag=30
-Rect=59 187 30 30
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\exp.png
-NormalFileUV=0 0 63 61
 
 [CTRL_TEXT_GHO_V]
 Type=4
@@ -232,26 +124,9 @@ Tag=31
 Rect=306 98 63 33
 AnchorPos=0 0
 Notes=
-Text=99999
-TextTradition=99999
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_PROBABILITY]
-Type=4
-Tag=7
-Rect=46 186 56 33
-AnchorPos=0 0
-Notes=
-Text=概率
-TextTradition=概率
-TextSize=24
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -267,39 +142,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_REWARD_BG1]
-Type=1
-Tag=100
-Rect=44 172 60 60
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_REWARD_BG2]
-Type=1
-Tag=101
-Rect=44 172 60 60
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_REWARD_BG3]
-Type=1
-Tag=39
-Rect=44 172 60 60
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_REWARD1]
 Type=1
