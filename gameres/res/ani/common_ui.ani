@@ -16,7 +16,7 @@ image\ui\quest\hard.png
 
 [mission_hard]
 image\ui\quest\easy.png
-image\ui\quest\normal.png
+image\ui\quest\hard.png
 
 ;任务评价
 [evaluate_0]
