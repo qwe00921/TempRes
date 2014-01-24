@@ -113,7 +113,7 @@ function p.RefreshUI(userinfo)
 	local x = rect.size.w/2;
 	local len = string.len(tostring(userinfo.Level));
 	
-	local scale = 0.7;
+	local scale = 0.5;
 	p.effect_num[LEV_INDEX]:SetScale(scale);
 	p.effect_num[LEV_INDEX]:SetOffset( x-len*23/2, -36*(1-scale)/2-2 );
 	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
