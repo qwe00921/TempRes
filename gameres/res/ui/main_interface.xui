@@ -135,86 +135,6 @@ Remark=隐藏子界面按钮
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_MAIL]
-Type=2
-Tag=5
-Rect=561 783 66 67
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=邮件按钮
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\mail1.png
-NormalFileUV=0 0 66 67
-SelectFile=.\res\image\ui\main_interface\mail1_select.png
-SelectedFileUV=0 0 80 80
-DisableFile=.\res\image\ui\main_interface\mail1_un.png
-DisableFileUV=0 0 66 67
-
-[CTRL_PICTURE_MAIL_TIPS_BG]
-Type=1
-Tag=8
-Rect=547 770 42 42
-AnchorPos=0 0
-Notes=
-Remark=邮件数量通知背景
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\num.png
-NormalFileUV=0 0 42 42
-
-[CTRL_TEXT_MAIL_TIPS_NUM]
-Type=4
-Tag=10
-Rect=554 776 30 30
-AnchorPos=0 0
-Notes=
-Text=11
-TextTradition=11
-TextSize=20
-TextColor=0xfffbb6
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=邮件数量
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_22]
-Type=1
-Tag=29
-Rect=251 785 20 20
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
-[CTRL_PICTURE_23]
-Type=1
-Tag=30
-Rect=288 785 20 20
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
-[CTRL_PICTURE_24]
-Type=1
-Tag=31
-Rect=325 785 20 20
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
-NormalFileUV=0 0 32 32
-
 [CTRL_PICTURE_CARD3]
 Type=1
 Tag=57
@@ -756,8 +676,6 @@ Tag=84
 Rect=477 350 56 24
 AnchorPos=0 0
 Notes=
-Text=144
-TextTradition=144
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
@@ -771,8 +689,6 @@ Tag=85
 Rect=457 393 76 24
 AnchorPos=0 0
 Notes=
-Text=144
-TextTradition=144
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
@@ -786,8 +702,6 @@ Tag=86
 Rect=449 436 85 24
 AnchorPos=0 0
 Notes=
-Text=144
-TextTradition=144
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
@@ -801,8 +715,6 @@ Tag=87
 Rect=430 479 104 24
 AnchorPos=0 0
 Notes=
-Text=144
-TextTradition=144
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
@@ -816,8 +728,6 @@ Tag=88
 Rect=401 522 133 24
 AnchorPos=0 0
 Notes=
-Text=144
-TextTradition=144
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
@@ -831,8 +741,6 @@ Tag=89
 Rect=379 565 155 24
 AnchorPos=0 0
 Notes=
-Text=144
-TextTradition=144
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight

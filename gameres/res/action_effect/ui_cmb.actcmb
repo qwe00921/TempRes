@@ -23,6 +23,10 @@ ui.common_move
 @type=0 @loop
 ui.mainui_btn_scale
 
+[gacha_effect_scale]
+@type=0 @loop
+ui.gacha_effect_scale
+
 --行动力点数不足
 [action_point_lack]
 @type=0 @loop

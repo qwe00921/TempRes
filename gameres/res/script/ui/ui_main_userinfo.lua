@@ -34,3 +34,4 @@ p.ID_CTRL_TEXT_EMONEY_NUM				 = 58;	--代币数值
 p.ID_CTRL_PICTURE_20					     = 20;
 p.ID_CTRL_PROGRESSBAR_STRENGTH		= 69;	--体力条
 p.ID_CTRL_PROGRESSBAR_EXP				 = 67;	--经验条
+p.ID_CTRL_PICTURE_169					    = 169;

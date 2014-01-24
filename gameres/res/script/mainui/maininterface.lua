@@ -12,6 +12,14 @@ p.billlayer = nil;
 p.imageList = {};
 p.showCard = 0;
 
+p.effect_num = {};
+
+local LEV_INDEX = 1;
+local HP_INDEX = 2;
+local ATK_INDEX = 3;
+local DEF_INDEX = 4;
+local SPEED_INDEX = 5;
+
 local ui = ui_main_interface;
 
 function p.ShowUI(userinfo)
@@ -29,6 +37,10 @@ function p.ShowUI(userinfo)
 		
 		p.mailLayer:SetVisible( true );
 		--GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
+		
+		for _,v in ipairs( p.imageList ) do
+			v:SetVisible( true );
+		end
 		return;
 	end
 
@@ -70,6 +82,7 @@ function p.ShowUI(userinfo)
 	p.mailLayer = maillayer;
 	LoadUI( "main_mailbtn.xui", maillayer, nil);
 	
+	maillayer:SetLayoutType(1);
 	p.SetDelegate();
 	
 	p.ShowMailNum(userinfo);
@@ -91,7 +104,7 @@ function p.SetBtn(btn)
 end
 
 function p.SetDelegate()
-	local mail = GetButton( p.layer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
+	local mail = GetButton( p.mailLayer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
 	p.SetBtn( mail );
 	--local activity = GetButton( p.layer, ui.ID_CTRL_BUTTON_ACTIVITY );
 	--p.SetBtn( activity );
@@ -103,14 +116,7 @@ function p.SetDelegate()
 		local btn = GetButton( p.layer, ui["ID_CTRL_BUTTON_CHA"..i] );
 		p.SetBtn( btn );
 	end
-	
-	local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_22 );
-	table.insert( p.imageList, image );
-	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_23 );
-	table.insert( p.imageList, image );
-	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_24 );
-	table.insert( p.imageList, image );
-	
+
 	local cardBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_129 );
 	cardBtn:SetLuaDelegate( p.OnClickCard );
 end
@@ -121,6 +127,13 @@ function p.InitScrollList( layer )
 	if posCtrller == nil then
 		return;
 	end
+	
+	local image = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_22 );
+	table.insert( p.imageList, image );
+	image = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_23 );
+	table.insert( p.imageList, image );
+	image = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_24 );
+	table.insert( p.imageList, image );
 	
 	local pList = createNDUIScrollContainerExpand();
 
@@ -133,11 +146,12 @@ function p.InitScrollList( layer )
 	
 	local posXY = posCtrller:GetFramePos();
 	local size = posCtrller:GetFrameSize();
+	local winSize = GetWinSize();
 
 	pList:Init();
-	pList:SetFramePosXY( posXY.x, posXY.y+60 );
-	pList:SetFrameSize( size.w, size.h );
-	pList:SetSizeView( CCSizeMake( 255, 100 ) );
+	pList:SetFramePosXY( posXY.x, posXY.y + 60 );
+	pList:SetFrameSize( winSize.w, size.h );
+	pList:SetSizeView( CCSizeMake( 280, 100 ) );
 	pList:SetLuaDelegate( p.OnListScrolled );
 	
 	for i = 1,6 do
@@ -168,7 +182,7 @@ function p.InitScrollList( layer )
 	end
 
 	--p.layer:AddChild( pList );
-	GetUIRoot():AddChildZ( pList, 99 );
+	layer:AddChild( pList );
 end
 
 function p.OnListScrolled()
@@ -221,8 +235,6 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			maininterface.HideUI();
 			p.CloseAllPanel();
 --]]
-		elseif ui.ID_CTRL_BUTTON_129 == tag then
-			
 		elseif ui.ID_CTRL_BUTTON_BG_BTN == tag then
 			p.CloseAllPanel();
 		end
@@ -238,12 +250,12 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
-		p.scrollList:SetVisible(false);
-		--p.m_bgImage:SetVisible(false);
---		dlg_battlearray.HideUI();
-		--p.HideBillboard();
-		
+		p.scrollList:SetVisible(false);		
+
 		p.mailLayer:SetVisible( false );
+		for _,v in ipairs( p.imageList ) do
+			v:SetVisible( false );
+		end
 	end
 end
 
@@ -258,11 +270,13 @@ function p.CloseUI()
 		billboard.CloseUI();
 		p.imageList = {};
 		p.showCard = 0;
+		p.effect_num = {};
     end
 	
 	if p.billlayer ~= nil then
-		p.billlayer:LazyClose();
-		p.billlayer:SetVisible( false );
+		--p.billlayer:LazyClose();
+		--p.billlayer:SetVisible( false );
+		p.billlayer = nil;
 	end
 end
 
@@ -347,19 +361,24 @@ function p.ShowSelectCard( index )
 		btn:SetId( index );
 		
 		local levLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_76 );
-		levLab:SetText( tostring(cardInfo.Level) );
+		--levLab:SetText( tostring(cardInfo.Level) );
+		p.CreateEffectNum( LEV_INDEX, levLab, 0.6, 0, -10, cardInfo.Level );
 		
 		local life = GetLabel( p.layer, ui.ID_CTRL_TEXT_77 );
-		life:SetText( tostring(cardInfo.Hp) );
+		--life:SetText( tostring(cardInfo.Hp) );
+		p.CreateEffectNum( HP_INDEX, life, 0.6, 0, -10, cardInfo.Hp );
 		
 		local atk = GetLabel( p.layer, ui.ID_CTRL_TEXT_78 );
-		atk:SetText( tostring(cardInfo.Attack) );
+		--atk:SetText( tostring(cardInfo.Attack) );
+		p.CreateEffectNum( ATK_INDEX, atk, 0.6, 0, -10, cardInfo.Attack );
 		
 		local def = GetLabel( p.layer, ui.ID_CTRL_TEXT_79 );
-		def:SetText( tostring(cardInfo.Defence) );
+		--def:SetText( tostring(cardInfo.Defence) );
+		p.CreateEffectNum( DEF_INDEX, def, 0.6, 0, -10, cardInfo.Defence );
 		
 		local speed = GetLabel( p.layer, ui.ID_CTRL_TEXT_80 );
-		speed:SetText( tostring(cardInfo.Speed) );
+		--speed:SetText( tostring(cardInfo.Speed) );
+		p.CreateEffectNum( SPEED_INDEX, speed, 0.6, 0, -10, cardInfo.Speed );
 		
 		local skill = GetLabel( p.layer, ui.ID_CTRL_TEXT_81 );
 		local skillName = SelectCell( T_SKILL, cardInfo.Skill, "name" ) or "";
@@ -384,6 +403,23 @@ function p.ShowSelectCard( index )
 			starPic:SetPicture( star );
 		end
 	end
+end
+
+function p.CreateEffectNum( index, node, scale, offestX, offestY, num )
+	if p.effect_num[index] == nil then
+		local effect = effect_num:new();
+		effect:SetNumFont();
+		effect:SetOwnerNode( node );
+		effect:Init();
+		p.effect_num[index] = effect;
+		node:AddChild( effect:GetNode() );
+	end
+	local rect = node:GetFrameRect();
+	local x = rect.size.w;
+	local len = string.len(tostring(num));
+	p.effect_num[index]:SetScale( scale );
+	p.effect_num[index]:SetOffset( x+offestX-len*23+(1-scale)/2*len*23 , offestY);
+	p.effect_num[index]:PlayNum( tonumber(num) );
 end
 
 function p.OnClickCard(uiNode, uiEventType, param)
@@ -414,6 +450,7 @@ end
 
 --≈‹¬Ìµ∆œ‘ æ
 function p.ShowBillboardWithInit()
+	--[[
 	if p.billlayer == nil then
 		local layer = createNDUILayer();
 		if layer == nil then
@@ -428,8 +465,12 @@ function p.ShowBillboardWithInit()
 		
 		LoadUI( "main_billboard_bg.xui", layer, nil );
 	end
+	--]]
+	p.billlayer = GetColorLabel( dlg_menu.layer, ui_main_menu.ID_CTRL_COLOR_LABEL_140 );
 	
-	local bg = GetImage( p.billlayer, ui_main_billboard_bg.ID_CTRL_PICTURE_BILLBOARD_BG);
+	--local bg = GetImage( p.billlayer, ui_main_billboard_bg.ID_CTRL_PICTURE_BILLBOARD_BG);
+	local bg = p.billlayer;
+	
 	local rect = bg:GetFrameRect() or {};
 	local pt = rect.origin or {};
 	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y-222)); 

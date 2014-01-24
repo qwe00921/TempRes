@@ -3,6 +3,17 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_169]
+Type=1
+Tag=169
+Rect=0 81 564 31
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\ad_bg2.png
+NormalFileUV=0 0 639 35
+
 [CTRL_PROGRESSBAR_EXP]
 Type=9
 Tag=67
@@ -52,8 +63,6 @@ Tag=58
 Rect=190 83 84 30
 AnchorPos=0 0
 Notes=
-Text=11111111
-TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -80,8 +89,6 @@ Tag=57
 Rect=57 83 84 30
 AnchorPos=0 0
 Notes=
-Text=11111111
-TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -93,11 +100,9 @@ UIClsoeType=0
 [CTRL_TEXT_SOUL]
 Type=4
 Tag=41
-Rect=326 83 84 30
+Rect=342 83 84 30
 AnchorPos=0 0
 Notes=
-Text=11111111
-TextTradition=11111111
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -255,7 +260,7 @@ SelectedFileUV=0 0 44 8
 [CTRL_PICTURE_23]
 Type=1
 Tag=24
-Rect=158 82 32 32
+Rect=159 80 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -282,7 +287,7 @@ UIClsoeType=0
 [CTRL_PICTURE_24]
 Type=1
 Tag=25
-Rect=25 82 32 32
+Rect=17 80 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -293,7 +298,7 @@ NormalFileUV=0 0 32 32
 [CTRL_PICTURE_25]
 Type=1
 Tag=26
-Rect=292 82 32 32
+Rect=303 80 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -339,14 +344,12 @@ NormalFileUV=0 0 29 29
 [CTRL_TEXT_180]
 Type=4
 Tag=180
-Rect=406 12 133 19
+Rect=351 12 246 19
 AnchorPos=0 0
 Notes=
-Text=9999/9999
-TextTradition=9999/9999
 TextSize=18
 TextColor=0xffffff
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=等级数值
 UIOpenType=0
@@ -355,14 +358,12 @@ UIClsoeType=0
 [CTRL_TEXT_181]
 Type=4
 Tag=181
-Rect=326 48 133 19
+Rect=314 48 162 19
 AnchorPos=0 0
 Notes=
-Text=9999/9999
-TextTradition=9999/9999
 TextSize=18
 TextColor=0xffffff
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=等级数值
 UIOpenType=0

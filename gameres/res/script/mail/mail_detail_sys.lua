@@ -136,15 +136,14 @@ function p.SetViewInfo()
 			--rewrad.rewordId = "10002"
 			--numV:SetText("X"..(rewrad.num or "1"))
 			local rtype = tonumber(rewrad.rewordType);
-			local aniIndex = "item."..rewrad.rewordId;
-			if rtype == 2  or rtype == 3 then
-				aniIndex = "card_icon."..rewrad.rewordId;
-			elseif rtype == 4 then
-				aniIndex = "ui.emoney"
-			elseif rtype == 5 then
-				aniIndex = "ui.money"
+		
+			local pic = mail_main.findPic(tonumber(rtype), rewrad.rewordId);
+			if pic then
+				picV:SetPicture( pic);
+			else
+				picV:SetPicture( nil);
 			end
-			picV:SetPicture( GetPictureByAni(aniIndex,0) );
+			--picV:SetPicture( GetPictureByAni(aniIndex,0) );
 			
 			
 			--local txt = p.SelectItemName(tonumber(rewrad.rewordId));

@@ -23,10 +23,21 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\gacha_1\mask.png
+NormalFileUV=0 0 1 1
 
 [CTRL_SPRITE_MAGICCIRCLE]
 Type=19
 Tag=10
+Rect=170 328 300 304
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_SCALE]
+Type=1
+Tag=41
 Rect=170 328 300 304
 AnchorPos=0 0
 Notes=
@@ -41,3 +52,14 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=6
+Rect=222 811 196 54
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\gacha_1\continue.png
+NormalFileUV=0 0 196 54

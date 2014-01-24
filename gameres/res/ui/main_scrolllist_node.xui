@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_108]
 Type=2
 Tag=108
-Rect=0 0 76 67
+Rect=-34 -8 150 105
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -14,3 +14,5 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\home_win_quest.png
+NormalFileUV=0 0 450 316
