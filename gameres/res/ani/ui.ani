@@ -190,4 +190,9 @@ image\ui\gacha_1\magic.png @cut(6, 4) @time=0.09 @loop @scale=2
 image\ui\gacha_1\card_scale.png @cut(2, 4) @time=0.05 @stay
 
 [Special_reward]
-image\ui\quest\Special_reward.png @cut(1, 2) @time=0.2 @loop 
+image\ui\quest\Special_reward.png @cut(1, 2) @time=0.2 @loop
+
+[energy_pic]
+image\ui\main_interface\energy1.png
+image\ui\main_interface\energy2.png
+

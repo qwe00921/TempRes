@@ -99,15 +99,23 @@ function p.RefreshUI(userinfo)
 
 	local level = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL_NUM);
 	level:SetText( " " );
-	
+
 	if p.effect_num[LEV_INDEX] == nil then
 		local levNum = effect_num:new();
+		levNum:SetNumFont();
 		levNum:SetOwnerNode( level );
 		levNum:Init();
 		p.effect_num[LEV_INDEX] = levNum;
 		level:AddChild( levNum:GetNode() );	
 	end
-	p.effect_num[LEV_INDEX]:SetScale(0.7);
+	
+	local rect = level:GetFrameRect();
+	local x = rect.size.w/2;
+	local len = string.len(tostring(userinfo.Level));
+	
+	local scale = 0.5;
+	p.effect_num[LEV_INDEX]:SetScale(scale);
+	p.effect_num[LEV_INDEX]:SetOffset( x-len*23/2, -36*(1-scale)/2-2 );
 	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
 	
 	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);
@@ -183,9 +191,13 @@ function p.RefreshUI(userinfo)
 	
 	local energy = tonumber(userinfo.Energy) or 0;
 	for i = 1, #p.eneryList do
-		local ctrller = p.eneryList[i];
-		if ctrller then
-			ctrller:SetVisible( i <= energy );
+		local ctrllers = p.eneryList[i];
+		if ctrllers then
+			ctrllers[2]:SetVisible( i <= energy );
+			
+			local index = i <= energy and 0 or 1;
+			local pic = GetPictureByAni( "ui.energy_pic", index );
+			ctrllers[1]:SetPicture( pic );
 		end
 	end
 end
@@ -208,12 +220,9 @@ function p.CreateEffectNum( index, node, scale, offestX, offestY, str )
 end
 
 function p.SetDelegate()
-	local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_42 );
-	table.insert( p.eneryList, image );
-	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_43 );
-	table.insert( p.eneryList, image );
-	image = GetImage( p.layer, ui.ID_CTRL_PICTURE_44 );
-	table.insert( p.eneryList, image );
+	table.insert( p.eneryList, { GetImage( p.layer, ui.ID_CTRL_PICTURE_42 ), GetImage( p.layer, ui.ID_CTRL_PICTURE_179 ) } );
+	table.insert( p.eneryList, { GetImage( p.layer, ui.ID_CTRL_PICTURE_43 ), GetImage( p.layer, ui.ID_CTRL_PICTURE_182 ) } );
+	table.insert( p.eneryList, { GetImage( p.layer, ui.ID_CTRL_PICTURE_44 ), GetImage( p.layer, ui.ID_CTRL_PICTURE_183 ) } );
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
@@ -263,9 +272,13 @@ function p.OnUpdateInfo()
 			cache.Energy = cache.Energy + 1;
 
 			for i = 1, #p.eneryList do
-				local ctrller = p.eneryList[i];
-				if ctrller then
-					ctrller:SetVisible( i <= cache.Energy );
+				local ctrllers = p.eneryList[i];
+				if ctrllers then
+					ctrllers[2]:SetVisible( i <= cache.Energy );
+					
+					local index = i <= cache.Energy and 0 or 1;
+					local pic = GetPictureByAni( "ui.energy_pic", index );
+					ctrllers[1]:SetPicture( pic );
 				end
 			end
 		end

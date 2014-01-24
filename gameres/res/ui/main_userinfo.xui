@@ -3,10 +3,43 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_20]
+Type=1
+Tag=20
+Rect=0 0 637 79
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\top_info.png
+NormalFileUV=0 0 640 81
+
+[CTRL_PICTURE_33]
+Type=1
+Tag=33
+Rect=310 53 170 18
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\strength_frame_bg.png
+NormalFileUV=0 0 251 17
+
+[CTRL_PICTURE_32]
+Type=1
+Tag=32
+Rect=364 16 246 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_frame_bg.png
+NormalFileUV=0 0 351 16
+
 [CTRL_PICTURE_169]
 Type=1
 Tag=169
-Rect=0 81 564 31
+Rect=0 80 564 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +50,7 @@ NormalFileUV=0 0 639 35
 [CTRL_PROGRESSBAR_EXP]
 Type=9
 Tag=67
-Rect=266 14 344 26
+Rect=369 18 239 14
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -27,13 +60,13 @@ TextVerAlign=AlignVerCenter
 Remark=经验条
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\home_bar01.png
-NormalFileUV=0 0 144 36
+NormalFile=.\res\image\ui\main_interface\exp_frame.png
+NormalFileUV=0 0 340 13
 
 [CTRL_PROGRESSBAR_STRENGTH]
 Type=9
 Tag=69
-Rect=266 50 254 26
+Rect=315 55 160 15
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -43,24 +76,13 @@ TextVerAlign=AlignVerCenter
 Remark=体力条
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\home_bar02.png
-NormalFileUV=0 0 144 36
-
-[CTRL_PICTURE_20]
-Type=1
-Tag=20
-Rect=0 0 640 81
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\top_info.png
-NormalFileUV=0 0 640 81
+NormalFile=.\res\image\ui\main_interface\strength_frame3.png
+NormalFileUV=0 0 250 13
 
 [CTRL_TEXT_EMONEY_NUM]
 Type=4
 Tag=58
-Rect=190 83 84 30
+Rect=197 82 84 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -86,7 +108,7 @@ NormalFileUV=0 0 145 16
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=57 83 84 30
+Rect=55 82 84 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -100,7 +122,7 @@ UIClsoeType=0
 [CTRL_TEXT_SOUL]
 Type=4
 Tag=41
-Rect=342 83 84 30
+Rect=339 82 84 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -114,13 +136,13 @@ UIClsoeType=0
 [CTRL_TEXT_46]
 Type=4
 Tag=46
-Rect=485 45 140 26
+Rect=486 49 140 26
 AnchorPos=0 0
 Notes=
 Text=xx:xx:xx
 TextTradition=xx:xx:xx
 TextSize=18
-TextColor=0xff9166
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -129,7 +151,7 @@ UIClsoeType=0
 [CTRL_PICTURE_13]
 Type=1
 Tag=13
-Rect=21 12 196 29
+Rect=63 12 196 29
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -140,7 +162,7 @@ NormalFileUV=0 0 178 29
 [CTRL_PICTURE_14]
 Type=1
 Tag=14
-Rect=226 2 48 48
+Rect=263 2 48 48
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -162,7 +184,7 @@ NormalFileUV=0 0 32 32
 [CTRL_PICTURE_17]
 Type=1
 Tag=17
-Rect=270 43 32 32
+Rect=270 46 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -173,14 +195,14 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_NAME]
 Type=4
 Tag=54
-Rect=26 11 160 31
+Rect=81 11 160 31
 AnchorPos=0 0
 Notes=
 Text=完颜阿鲁两个字
 TextTradition=完顏阿魯兩個字
 TextSize=22
 TextColor=0xffffff
-TextHorAlign=AlignLeft
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -188,34 +210,34 @@ UIClsoeType=0
 [CTRL_PICTURE_19]
 Type=1
 Tag=19
-Rect=302 6 32 32
+Rect=325 8 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\EXP_big.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\main_interface\exp4.png
+NormalFileUV=0 0 46 46
 
 [CTRL_PICTURE_21]
 Type=1
 Tag=21
-Rect=337 11 271 22
+Rect=361 16 254 19
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\strength_bg.png
-NormalFileUV=0 0 251 22
+NormalFile=.\res\image\ui\main_interface\exp_frame1.png
+NormalFileUV=0 0 351 22
 
 [CTRL_PICTURE_22]
 Type=1
 Tag=22
-Rect=305 48 178 22
+Rect=305 53 178 18
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\strength_bg.png
+NormalFile=.\res\image\ui\main_interface\strength_frame1.png
 NormalFileUV=0 0 251 22
 
 [CTRL_PICTURE_42]
@@ -260,7 +282,7 @@ SelectedFileUV=0 0 44 8
 [CTRL_PICTURE_23]
 Type=1
 Tag=24
-Rect=159 80 32 32
+Rect=160 81 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -271,7 +293,7 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_LEVEL_NUM]
 Type=4
 Tag=61
-Rect=225 13 54 25
+Rect=258 18 54 25
 AnchorPos=0 0
 Notes=
 Text=350
@@ -287,48 +309,24 @@ UIClsoeType=0
 [CTRL_PICTURE_24]
 Type=1
 Tag=25
-Rect=17 80 32 32
+Rect=17 81 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\money2.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\main_interface\money3.png
+NormalFileUV=0 0 46 46
 
 [CTRL_PICTURE_25]
 Type=1
 Tag=26
-Rect=303 80 32 32
+Rect=303 81 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\soul.png
 NormalFileUV=0 0 32 32
-
-[CTRL_9SLICES_109]
-Type=22
-Tag=109
-Rect=350 14 245 13
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_exp.png
-NormalFileUV=0 0 35 13
-
-[CTRL_9SLICES_110]
-Type=22
-Tag=110
-Rect=313 51 161 13
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\strength_exp.png
-NormalFileUV=0 0 35 13
 
 [CTRL_PICTURE_179]
 Type=1
@@ -344,7 +342,7 @@ NormalFileUV=0 0 29 29
 [CTRL_TEXT_180]
 Type=4
 Tag=180
-Rect=351 12 246 19
+Rect=372 16 225 19
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -358,7 +356,7 @@ UIClsoeType=0
 [CTRL_TEXT_181]
 Type=4
 Tag=181
-Rect=314 48 162 19
+Rect=315 52 162 19
 AnchorPos=0 0
 Notes=
 TextSize=18

@@ -105,7 +105,8 @@ function p:Drop(pTargetNode, param)
 	self.imageNode:SetFramePosXY(point.x+size.w/2, point.y+size.h-16);
 	self.imageNode:SetScale( 1.0f );
 	self.imageNode:SetVisible( true );
-	self.imageNode:SetZOrder( 9999 );
+	--local zorder = self.imageNode:GetZOrder();
+	self.imageNode:SetZOrder( E_BATTLE_Z_BULLET );
 
 	local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.monster_drop" );
 	local varEnv = cmd:GetVarEnv();
@@ -121,7 +122,7 @@ function p:Pick( pTargetNode, pos )
 	if pTargetNode == nil then
 		return;
 	end
-	self.imageNode:SetZOrder( -1 );
+	--self.imageNode:SetZOrder( E_BATTLE_TAG_ENEMY_FIGHTER + 7 );
 	
 	--local effectName = "lancer_cmb.pick_effect";
 	local targetPoint = pTargetNode:GetFramePos();

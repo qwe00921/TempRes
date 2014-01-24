@@ -782,41 +782,51 @@ function p:Revive()
 end;
 
 function p:UseHpBall(pVal)
-	local addHp = math.modf(self.maxHp * pVal / 100);
-	self:AddLife(addHp);
-	self:AddShowLife(addHp);
---[[	
-	self.Hp = self.Hp +addHp;
-	if self.Hp > self.maxHp then
-		self.Hp = self.maxHp;
-	end
-	
-	self.nowlife = self.nowlife + addHp;
-	if self.nowlife > self.maxHp then
-		self.nowlife = self.maxHp 
-	end 
-	]]--
-	w_battle_mgr.HpBallNum = w_battle_mgr.HpBallNum - 1
-	if w_battle_mgr.HpBallNum < 0 then
-		WriteCon("Error HpBallNum < 0");
+	if self.Hp > 0 then
+		local addHp = math.modf(self.maxHp * pVal / 100);
+		self:AddLife(addHp);
+		self:AddShowLife(addHp);
 	else
-		WriteCon("HpBallNum ="..tostring(w_battle_mgr.HpBallNum));
-	end
-	w_battle_mgr.checkPickEnd();
+		WriteConErr("Error HpBall fly to die! POS:"..tostring(self:GetId()));
+	end;		
+	--[[	
+		self.Hp = self.Hp +addHp;
+		if self.Hp > self.maxHp then
+			self.Hp = self.maxHp;
+		end
+		
+		self.nowlife = self.nowlife + addHp;
+		if self.nowlife > self.maxHp then
+			self.nowlife = self.maxHp 
+		end 
+		]]--
+		w_battle_mgr.HpBallNum = w_battle_mgr.HpBallNum - 1
+		if w_battle_mgr.HpBallNum < 0 then
+			WriteCon("Error HpBallNum < 0");
+		else
+			WriteCon("HpBallNum ="..tostring(w_battle_mgr.HpBallNum));
+		end
+		w_battle_mgr.checkPickEnd();
+
 end;
 
 function p:UseSpBall(pVal)
-	self.Sp = self.Sp + pVal;
-	if self.Sp > self.maxSp then
-		self.Sp = self.maxSp;
-	end
-	w_battle_mgr.SpBallNum = w_battle_mgr.SpBallNum - 1
-	if w_battle_mgr.SpBallNum < 0 then
-		WriteCon("Error SpBallNum < 0");
+	if self.Hp > 0 then
+		self.Sp = self.Sp + pVal;
+		if self.Sp > self.maxSp then
+			self.Sp = self.maxSp;
+		end
 	else
-		WriteCon("SpBallNum ="..tostring(w_battle_mgr.SpBallNum));
-	end
-	w_battle_mgr.checkPickEnd();
+		WriteConErr("Error SpBall fly to die! POS:"..tostring(self:GetId()));
+	end;
+	
+		w_battle_mgr.SpBallNum = w_battle_mgr.SpBallNum - 1
+		if w_battle_mgr.SpBallNum < 0 then
+			WriteCon("Error SpBallNum < 0");
+		else
+			WriteCon("SpBallNum ="..tostring(w_battle_mgr.SpBallNum));
+		end
+		w_battle_mgr.checkPickEnd();
 end;
 
 function p:SetOldPos()

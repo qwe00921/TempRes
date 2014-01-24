@@ -74,7 +74,15 @@ function p.RefreshUI( )
 	local itemList = w_battle_db_mgr.GetItemList() or {};
 	local item = itemList[p.index] or {};
 	if itemnum and item then
-		itemnum:SetText( tostring( item.num ) );
+		local useItemTable = w_battle_db_mgr.GetBattleItem();
+		local useNum = 0;
+		for _,v in ipairs( useItemTable ) do
+			if v.id == p.itemid then
+				useNum = v.num or 0;
+				break;
+			end
+		end
+		itemnum:SetText( tostring( math.max( item.num-useNum , 0)) );
 	end
 	
 	p.ShowCanUseItemRole();

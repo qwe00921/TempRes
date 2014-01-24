@@ -739,7 +739,7 @@ function p.GetBattleItem()
 			if v ~= 0 then
 				local item_id = p.GetItemId(k);
 				local lnum = v;
-				local lRecord = {id=item_id, num=num}
+				local lRecord = {id=item_id, num=lnum}
 				itemLst[#itemLst + 1] = lRecord
 			end
 		end;
