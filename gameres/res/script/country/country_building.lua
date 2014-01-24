@@ -191,9 +191,13 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 			p.upNeedSoul:SetText("蓝魂:"..soulNeed);
 			p.SetTextColour(p.upNeedSoul,tonumber(p.nowPlaySoul),tonumber(soulNeed))
 			
-			p.upNeedHome:SetText("生产屋:"..homeLvNeed);
-			p.SetTextColour(p.upNeedHome,tonumber(p.nowProduceLevel),tonumber(homeLvNeed))
-
+			if tonumber(homeLvNeed) > 0 then
+				p.upNeedHome:SetText("生产屋:"..homeLvNeed);
+				p.SetTextColour(p.upNeedHome,tonumber(p.nowProduceLevel),tonumber(homeLvNeed))
+			else
+				p.upNeedHome:SetText(" ");
+			end
+			
 			p.buildLevel:SetText("LV"..nowLevel);
 			p.bulidDescription:SetText(desText);
 		elseif upIng == 1 then
