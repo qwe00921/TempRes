@@ -137,6 +137,22 @@ function p:GetFirstNotDeadFighterID(pFighterID)
 	return lId;
 end;	
 
+--获得预估还活着的怪物
+function p:GetFirstHasHpFighterID(pFighterID)
+	local lminSelId=7;  --
+	local lId= pFighterID; --真实的ID
+	for k,v in ipairs(self.fighters) do
+		if ((v.nowlife > 0) and (v:GetId() ~= pFighterID))then			
+			if v.selIndex < lminSelId then
+				lminSelId = v.selIndex ;
+				lId = v:GetId();
+				--break;
+			end
+		end;
+	end;
+	
+	return lId;	
+end;
 
 --获得当前尸体未消失的怪物
 function p:GetNotDeadFighterCount()
@@ -148,6 +164,17 @@ function p:GetNotDeadFighterCount()
 	end;
     return lCount;
 end
+
+function p:GetHasHpFighterCount()
+	local lCount = 0;
+	for k,v in ipairs(self.fighters) do
+		if (v.nowlife > 0) then --尸体还在
+			lCount = lCount + 1;
+		end;
+	end;
+    return lCount;
+	
+end;
 
 function p:HasTurn()
 	local lHasTurn = false;
@@ -442,9 +469,9 @@ function p:AddFighters( uiArray, fighters )
 
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				f.Attack = 10000;
-				f.Defence = 100;
-				f.Sp = 100;
+				--f.Attack = f.Attack;
+				f.Defence = f.Defence + 400;
+			--[[	f.Sp = 100;
 				if f.Position == 2 then
 					f.Skill = 102;
 				elseif f.Position == 3 then
@@ -453,9 +480,9 @@ function p:AddFighters( uiArray, fighters )
 					f.Skill = 1001;
 				elseif f.Position == 5 then
 					f.Skill = 1008;
-				end;
+				end;]]--
 			elseif self.idCamp == E_CARD_CAMP_ENEMY then
-				f.Attack = 1;
+			--[[	f.Attack = 1;
 				f.Defence = 100;
 				f.Skill = 0;
 				if f.Position == 1  then
@@ -468,7 +495,7 @@ function p:AddFighters( uiArray, fighters )
 					f.Skill = 1008;
 				else
 					f.Skill = 1;
-				end;
+				end;]]--
 			end
 		end;
 		
