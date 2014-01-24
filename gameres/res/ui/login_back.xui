@@ -12,15 +12,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-
-[CTRL_LOGIN_BG]
-Type=1
-Tag=1
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\shop\login_bg.png
-NormalFileUV=0 0 640 960
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_102]
 Type=2
@@ -31,16 +24,9 @@ Notes=
 TextSize=26
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui_honor\login\Taptostart.png
 NormalFileUV=0 243 560 81
 SelectFile=.\res\image\ui_honor\login\Taptostart.png
 SelectedFileUV=0 324 560 81
-
-[CTRL_PICTURE_3]
-Type=1
-Tag=3
-Rect=95 155 450 255
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\ui\public\logo2.png
-NormalFileUV=0 0 450 255
