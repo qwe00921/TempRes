@@ -495,8 +495,8 @@ function p:AddFighters( uiArray, fighters )
 					f.Skill = 1008;
 				else
 					f.Skill = 1;
-				end;
-			end]]--
+				end;]]--
+			end
 		end;
 		
 		
