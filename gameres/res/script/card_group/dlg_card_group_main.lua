@@ -53,13 +53,10 @@ function p.ShowUI(missionId,stageId,missionTeamId)
 		local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 		local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );
 		local v = list:GetEnableMove();
-		local bt = ConverToButton(uiNode);
 		if v == false then
 			bg:SetVisible(true);
-			bt:SetText(GetStr("card_group_drag_cancel"));
 		else 
 			bg:SetVisible(false);
-			bt:SetText(GetStr("card_group_drag" ));
 		end
 		PlayMusic_ShopUI();
 		return;
