@@ -99,7 +99,7 @@ function p.RefreshUI(userinfo)
 
 	local level = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL_NUM);
 	level:SetText( " " );
-	
+
 	if p.effect_num[LEV_INDEX] == nil then
 		local levNum = effect_num:new();
 		levNum:SetOwnerNode( level );
@@ -107,7 +107,14 @@ function p.RefreshUI(userinfo)
 		p.effect_num[LEV_INDEX] = levNum;
 		level:AddChild( levNum:GetNode() );	
 	end
-	p.effect_num[LEV_INDEX]:SetScale(0.7);
+	
+	local rect = level:GetFrameRect();
+	local x = rect.size.w/2;
+	local len = string.len(tostring(userinfo.Level));
+	
+	local scale = 0.7;
+	p.effect_num[LEV_INDEX]:SetScale(scale);
+	p.effect_num[LEV_INDEX]:SetOffset( x-len*20/2, -26*(1-scale)/2 );
 	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
 	
 	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);

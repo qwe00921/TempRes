@@ -271,7 +271,7 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_LEVEL_NUM]
 Type=4
 Tag=61
-Rect=225 13 54 25
+Rect=223 13 54 25
 AnchorPos=0 0
 Notes=
 Text=350
