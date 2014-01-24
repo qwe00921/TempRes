@@ -277,7 +277,7 @@ function p.InitController()
 	
 	--宝箱图片
 	p.boxImage = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_BOX );
-	p.boxImage:SetZOrder(1);
+	p.boxImage:SetZOrder(E_BATTLE_Z_HERO_FIGHTER);
 	
 	--使用物品的遮罩
 	p.useitemMask = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_IMPORTANT );
