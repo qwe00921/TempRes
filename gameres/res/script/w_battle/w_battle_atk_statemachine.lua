@@ -179,7 +179,9 @@ function p:atk_start()
 		
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		--向攻击目标移动
-		local cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
+		local cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
+		
+		--local cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
 		
 		local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", seqTarget);
 		seqTarget:SetWaitEnd( cmdMove );
@@ -386,7 +388,9 @@ function p:atk_end()
     --处理攻击方	
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
         --返回原来的位置
-        local cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);
+        --local cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);
+		local cmd5 = JumpMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);
+		
 		atkFighter:cmdLua( "atk_moveback",  self.id, "", seqAtk ); 
 	else
 		self:atkTurnEnd();

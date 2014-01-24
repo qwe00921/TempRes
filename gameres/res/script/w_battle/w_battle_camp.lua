@@ -442,10 +442,11 @@ function p:AddFighters( uiArray, fighters )
 
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				f.Attack = 1000;
+				f.Attack = 10000;
+				f.Defence = 100;
 				f.Sp = 100;
 				if f.Position == 2 then
-					f.Skill = 1;
+					f.Skill = 102;
 				elseif f.Position == 3 then
 					f.Skill = 2;
 				elseif f.Position == 4 then
@@ -455,9 +456,10 @@ function p:AddFighters( uiArray, fighters )
 				end;
 			elseif self.idCamp == E_CARD_CAMP_ENEMY then
 				f.Attack = 1;
-				
-				if f.Position == 2 then
-					f.Skill = 1003;
+				f.Defence = 100;
+				f.Skill = 0;
+				if f.Position == 1  then
+					f.Skill = 102;
 				elseif f.Position == 3 then
 					f.Skill = 2;
 				elseif f.Position == 4 then

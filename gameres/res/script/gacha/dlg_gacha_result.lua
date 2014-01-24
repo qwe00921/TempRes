@@ -1,264 +1,143 @@
 --------------------------------------------------------------
 -- FileName: 	dlg_gacha_result.lua
 -- author:		zjj, 2013/07/22
--- purpose:		≈§µ∞Ω·π˚ΩÁ√Ê
+-- purpose:		Êâ≠ËõãÁªìÊûúÁïåÈù¢
 --------------------------------------------------------------
 
 dlg_gacha_result = {}
 local p = dlg_gacha_result;
 
 p.layer = nil;
-p.msg = nil;
-
 p.cardIndex = 1;
-p.cardIdList = {};
-p.coin = nil;
 p.gacharesult = nil;
+local ui = ui_gacha_result;
 
---œ‘ æUI
-function p.ShowUI(gacharesult)
-    
-    if p.layer ~= nil then
+function p.ShowUI( gacharesult )
+	p.gacharesult = gacharesult;
+	
+	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		return;
 	end
 	
 	local layer = createNDUIDialog();
-    if layer == nil then
-        return false;
-    end
+	if layer == nil then
+		return false;
+	end
 	
 	layer:NoMask();
-	layer:Init();	
-	GetUIRoot():AddDlg(layer);
-    LoadDlg("dlg_gacha_result.xui", layer, nil);
+	layer:Init();
+	layer:SetSwallowTouch(true);
+	layer:SetFrameRectFull();
 	
+	GetUIRoot():AddDlg( layer );
+	LoadDlg( "gacha_result.xui", layer, nil );
 	p.layer = layer;
-	if gacharesult ~= nil then
-	   p.gacharesult = gacharesult;
-	end
-	WriteCon("**≈§µ∞**1"  );
-	
-	--
-	if dlg_gacha.rmb then
-		dlg_gacha.rmb = dlg_gacha.rmb - p.gacharesult.cost;
-	end
 	
 	p.SetDelegate();
-	p.GachaResult(gacharesult);
+	
+	p.cardIndex = 1;
+	p.ShowCardInfo();
 end
 
---…Ë÷√ ¬º˛¥¶¿Ì
 function p.SetDelegate()
-	--‘Ÿ¿¥“ª¥Œ∞¥≈•
-    p.againBtn = GetButton(p.layer,ui_dlg_gacha_result.ID_CTRL_BUTTON_AGAIN);
-    p.againBtn:SetLuaDelegate(p.OnGachaResultUIEvent);
-    p.againBtn:SetEnabled( false );
+	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
+	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	local gacha_type = dlg_gacha.gacha_type or 1;
-	local text = tonumber(gacha_type) == 1 and ToUtf8( "‘Ÿ≈§“ª¥Œ" ) or ToUtf8( "‘Ÿ≈§ŒÂ¥Œ" );
-	p.againBtn:SetText( text );
+	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_START );
+	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	--ºÃ–¯»ŒŒÒ∞¥≈•
-	local backBtn = GetButton(p.layer,ui_dlg_gacha_result.ID_CTRL_BUTTON_BACK);
-    backBtn:SetLuaDelegate(p.OnGachaResultUIEvent);
-	
-    --œ¬“ª’≈∞¥≈•
-    local nextBtn = GetButton(p.layer,ui_dlg_gacha_result.ID_CTRL_BUTTON_NEXT);
-    nextBtn:SetLuaDelegate(p.OnGachaResultUIEvent);
-	
-	--nextBtn:SetEnabled(#p.cardIdList > p.cardIndex);
+	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
+	btn:SetLuaDelegate( p.OnBtnClick );
 end
 
-function p.OnGachaResultUIEvent(uiNode, uiEventType, param)
-	local tag = uiNode:GetTag();
+function p.OnBtnClick( uiNode, uiEventType, param )
 	if IsClickEvent( uiEventType ) then
-		if ( ui_dlg_gacha_result.ID_CTRL_BUTTON_BACK == tag ) then	-- ∑µªÿ		
+		local tag = uiNode:GetTag();
+		if ui.ID_CTRL_BUTTON_LEFT == tag then
+			p.cardIndex = p.cardIndex - 1;
+			p.cardIndex = math.max( p.cardIndex, 1 );
+			p.ShowCardInfo();
+		elseif ui.ID_CTRL_BUTTON_START == tag then
+			WriteCon( "ËøîÂõû" );
 			p.CloseUI();
-			dlg_gacha.ReqGachaData(); --÷ÿ‘ÿ≈§µ∞ΩÁ√Ê
-		elseif ( ui_dlg_gacha_result.ID_CTRL_BUTTON_AGAIN == tag ) then -- ‘Ÿ≈§“ª¥Œ
-		    WriteCon("**‘Ÿ¥Œ≈§µ∞**");
-            --±£¥Ê≈§µ∞≤Œ ˝
-            local gacha_id = dlg_gacha.gacha_id;
-            local charge_type = dlg_gacha.charge_type;
-			local gacha_type = dlg_gacha.gacha_type;
-            local uid = GetUID();
-            if uid == 0 then uid = 100 end; 
-            local param = string.format( "&gacha_id=%d&charge_type=%d&gacha_type=%d", gacha_id, charge_type, gacha_type)
-            SendReq("Gacha","Start",uid, param);
-			p.CloseUI();
-		elseif ( ui_dlg_gacha_result.ID_CTRL_BUTTON_NEXT == tag ) then --œ¬“ª’≈
-		    p.ShowCardInfo(p.cardIdList[p.cardIndex].id);
+			dlg_menu.ShowUI();
+			dlg_gacha.ShowUI();
+			dlg_gacha.ReqGachaData();
+			
+			local user = msg_cache.msg_player;
+			dlg_userinfo.ShowUI( user );
+			
+		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
+			p.cardIndex = p.cardIndex + 1;
+			p.ShowCardInfo();
 		end
 	end
 end
 
---∏˘æ›…œ“ª¥Œ≈§µ∞¿‡–Õ≈–∂œ ±∫Úø…“‘ºÃ–¯≈§µ∞
-function p.CanGachaAgain()
-	-- π”√¥˙±“£¨√‚∑—≈§µ∞≤ªƒ‹÷±Ω”‘Ÿ¿¥“ª¥Œ
-	if dlg_gacha.charge_type == 2 then
-		if dlg_gacha.gacha_id ~= nil then
-			if dlg_gacha.gacha_type == 1 then
-				local needRmb = tonumber(SelectCell( T_GACHA, tostring(dlg_gacha.gacha_id), "single_gacha_cost"));
-				p.againBtn:SetEnabled( dlg_gacha.rmb >= needRmb );
-			else
-				local needRmb = tonumber(SelectCell( T_GACHA, tostring(dlg_gacha.gacha_id), "complex_gacha_cost"));
-				p.againBtn:SetEnabled( dlg_gacha.rmb >= needRmb );
-			end
-		else
-			p.againBtn:SetEnabled( false );
+function p.ShowCardInfo()
+	p.gacharesult = p.gacharesult or {};
+	local cardList = p.gacharesult.card_ids or {};
+	local cardinfo = cardList[p.cardIndex];
+	if cardinfo ~= nil then
+		local cardId = cardinfo.id or 0;
+		local pic = GetImage( p.layer, ui.ID_CTRL_PICTURE_CARD );
+		local path = SelectRowInner( T_CHAR_RES, "card_id", cardId, "card_pic" );
+		if path then
+			pic:SetPicture( GetPictureByAni( path, 0 ) );
 		end
+		
+		local rareImg = GetImage( p.layer, ui.ID_CTRL_PICTURE_75 );
+		local rare = tonumber(SelectCell( T_CARD, cardId, "rare" )) or 1;
+		rareImg:SetPicture( GetPictureByAni( "ui.card_star", rare - 1 ) );
+		
+		local hpLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_9 );
+		hpLab:SetText( string.format( "Ë°ÄÈáèÔºö%s", tostring( SelectCell( T_CARD, cardId, "hp" ) or "" ) ) );
+		
+		local atkLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_10 );
+		atkLab:SetText( string.format( "ÊîªÂáªÔºö%s", tostring( SelectCell( T_CARD, cardId, "attack" or "" ) ) ) );
+		
+		local defLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_11 );
+		defLab:SetText( string.format( "Èò≤Âæ°Ôºö%s", tostring( SelectCell( T_CARD, cardId, "defence" or "" ) ) ) );
+		
+		local speedLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_12 );
+		speedLab:SetText( string.format( "ÈÄüÂ∫¶Ôºö%s", tostring( SelectCell( T_CARD, cardId, "speed" or "" ) ) ) );
+		
+		local critLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
+		critLab:SetText( string.format( "Êö¥ÂáªÔºö%s", tostring( SelectCell( T_CARD, cardId, "crit" or "" ) ) ) );
+		
+		local skillLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_14 );
+		local skillid = SelectCell( T_CARD, cardId, "skill" ) or 0;
+		local skillname =SelectCell( T_SKILL, skillid, "name" ) or "";
+		
+		skillLab:SetText( skillname );
+		
+		local descLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_WORD );
+		descLab:SetText( string.format( "%s", tostring( SelectCell( T_CARD, cardId, "description" ) or "" ) ) );
+	end
+	p.ShowOtherCardBtn();
+end
+
+function p.ShowOtherCardBtn()
+	p.gacharesult = p.gacharesult or {};
+	local cardList = p.gacharesult.card_ids or {};
+	if p.cardIndex <= 1 then
+		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
+		btn:SetVisible( false );
 	else
-		p.againBtn:SetVisible( false );
+		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
+		btn:SetVisible( true );
 	end
-	--[[
-    if dlg_gacha.charge_type == "3" then  --»Áπ˚ π”√¥˙±“
-        if tonumber(p.gacharesult.gacha_id) == 1 then --pt“ª≈§
-             if tonumber(p.gacharesult.gacha_point) >= tonumber(dlg_gacha.coin_config[1]) then
-                    p.againBtn:SetEnabled( true );
-             end
-        elseif tonumber(p.gacharesult.gacha_id) == 2 then --pt Æ¡¨≈§
-             if tonumber(p.gacharesult.gacha_point) >= tonumber(dlg_gacha.coin_config[2]) then
-                    p.againBtn:SetEnabled( true );
-             end
-        elseif tonumber(p.gacharesult.gacha_id) == 3 then --÷–º∂“ª≈§
-             if tonumber(p.gacharesult.rmb) >= tonumber(dlg_gacha.coin_config[3]) then
-                    p.againBtn:SetEnabled( true );
-             end
-        elseif tonumber(p.gacharesult.gacha_id) == 4 then --÷–º∂ Æ¡¨≈§
-             if tonumber(p.gacharesult.rmb) >= tonumber(dlg_gacha.coin_config[4])  then
-                    p.againBtn:SetEnabled( true );
-             end
-        elseif tonumber(p.gacharesult.gacha_id) == 5 then --∏ﬂº∂“ª≈§
-             if tonumber(p.gacharesult.rmb) >= tonumber(dlg_gacha.coin_config[5]) then
-                    p.againBtn:SetEnabled( true );
-             end
-        elseif tonumber(p.gacharesult.gacha_id) == 6 then --∏ﬂº∂ Æ¡¨≈§
-             if tonumber(p.gacharesult.rmb) >= tonumber(dlg_gacha.coin_config[6]) then
-                    p.againBtn:SetEnabled( true );
-             end
-        end
-    elseif dlg_gacha.charge_type == "2" then  --»Áπ˚ π”√≈§µ∞æÌ
-        if tonumber(p.gacharesult.ticket.num) >= 1 then
-                 p.againBtn:SetEnabled( true );
-        end
-    end
-	--]]
+	
+	if cardList[p.cardIndex+1] == nil then
+		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
+		btn:SetVisible( false );
+	else
+		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
+		btn:SetVisible( true );
+	end
 end
 
---≈§µ∞Ω·π˚ªÿµ˜
-function p.GachaResult(gacharesult)
-    p.cardIdList = gacharesult.card_ids;
-    p.coin = gacharesult.coin;
-    p.ShowCardInfo(p.cardIdList[1].id);
-end
-
---œ‘ æø®≈∆–≈œ¢
-function p.ShowCardInfo(card_id)
-    
-    if card_id ~= "0" then
-        WriteCon("≈§µ∞id" .. card_id );
-        --ø®≈∆Õº∆¨
-        local cardPic = GetImage( p.layer,ui_dlg_gacha_result.ID_CTRL_PICTURE_CARD );
-        local pic = GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", tostring(card_id ), "card_pic" ), 0 );
-        if pic ~= nil then
-        	cardPic:SetPicture( pic );
-        end
-        
-        --–«º∂
-        local rareLab = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_RARE );
-        rareLab:SetText(SelectCell( T_CARD, card_id, "rare" ));
-        --√˚≥∆
-        local cardName = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_NAME );
-        cardName:SetText( SelectCell( T_CARD, card_id, "name" ));
-        --HP
-        local cardHp = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_HP );
-        cardHp:SetText( SelectCell(T_CARD, card_id, "hp") );
-        --π•ª˜
-        local cardAtk = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_ATK );
-        cardAtk:SetText( SelectCell(T_CARD, card_id, "attack") );
-        --∑¿”˘
-        local cardDef = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DEF );
-        cardDef:SetText( SelectCell(T_CARD, card_id, "defence") );
-		
-		local speed = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_SPEED );
-		speed:SetText( SelectCell(T_CARD, card_id, "speed") );
-		
-		local crit = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_CRIT );
-		crit:SetText( SelectCell(T_CARD, card_id, "crit") );
-		
-        --ººƒ‹
-		--[[
-        local cardSkill = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_SKILL );
-        local skill_id = SelectCell( T_CARD, card_id, "skill" );
-        if skill_id ~= "0" then
-            cardSkill:SetText( SelectCell( T_SKILL, skill_id, "name" ) );
-        end
-		--]]
-		local cardSkill = GetImage( p.layer, ui_dlg_gacha_result.ID_CTRL_PICTURE_SKILL );
-		local skill_id = SelectCell( T_CARD, card_id , "skill" );
-		if skill_id ~= "0" then
-			local path = SelectCell( T_SKILL_RES, skill_id, "icon" );
-			local picData;
-			if path then
-				picData = GetPictureByAni( path, 0 );
-			end
-			if picData then
-				cardSkill:SetPicture( picData );
-			end
-		end
-
-        --√Ë ˆ
-        local description = GetLabel( p.layer, ui_dlg_gacha_result.ID_CTRL_TEXT_DESCRIPTION);
-        description:SetText( SelectCell( T_CARD, card_id, "description" ) );
-    end
-    --≈–∂œ√ª”–∫Û–¯ø®≈∆ ‘Úø™ º‘Ÿ≈§“ª¥Œ≈–∂œ£¨≤¢“˛≤ÿœ¬“ª’≈∞¥≈•
-    if p.cardIndex == #p.cardIdList then
-        local nextBtn = GetButton(p.layer,ui_dlg_gacha_result.ID_CTRL_BUTTON_NEXT);
-        nextBtn:SetVisible( false );
-        p.CanGachaAgain();
-    end
-    --÷∏œÚœ¬“ª’≈ø®≈∆Œª÷√
-    p.cardIndex = p.cardIndex + 1;
-end
-
---[[
---ªÒ»°µ±«∞µƒ…˙√¸÷µ
-function p.GetHP( id )
-    local hp_max = SelectCell( T_CARD, id, "hp_max" );
-    local hp_min = SelectCell( T_CARD, id, "hp_min" );
-    local level_max = SelectCell( T_CARD, id, "max_level" );
-    return p.GetCurrentValue( hp_max, hp_min, level_max, 1  );
-end
-
---ªÒ»°µ±«∞µƒπ•ª˜¡¶
-function p.GetAttack( id )
-    local attack_max = SelectCell( T_CARD, id, "attack_max" );
-    local attack_min = SelectCell( T_CARD, id, "attack_min" );
-    local level_max = SelectCell( T_CARD, id, "max_level" );
-    return p.GetCurrentValue( attack_max, attack_min, level_max, 1  );
-end
-
---ªÒ»°µ±«∞µƒ∑¿”˘¡¶
-function p.GetDef( id )
-    local defence_max = SelectCell( T_CARD, id, "defence_max" );
-    local defence_min = SelectCell( T_CARD, id, "defence_min" );
-    local level_max = SelectCell( T_CARD, id, "max_level" );
-    return p.GetCurrentValue( defence_max, defence_min, level_max, 1  );
-end
-
---ªÒ»°œ‡πÿ–≈œ¢µƒπ´ Ω
-function p.GetCurrentValue( maxValue, minValue, maxLv, lv)
-    local maxv = tonumber( maxValue );
-    local minv = tonumber( minValue );
-    local maxLv = tonumber( maxLv )
-    local lv = tonumber( lv );
-    local cur_value = minValue + (maxv - minv)/(maxLv - 1) * ( lv - 1)
-    return math.floor( cur_value );
-end
---]]
-
---…Ë÷√ø…º˚
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
@@ -267,13 +146,9 @@ end
 
 function p.CloseUI()
 	if p.layer ~= nil then
-	    p.layer:LazyClose();
-        p.layer = nil;
-        p.cardIndex = 1;
-        p.cardIdList = {};
-        p.coin = nil;
-        p.gacharesult = nil;
-    end
-
-end
-
+		p.layer:LazyClose();
+		p.layer = nil;
+		p.cardIndex = 1;
+		p.gacharesult = nil;
+	end
+end	

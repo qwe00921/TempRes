@@ -155,3 +155,6 @@ W_BATTLE_REVIVAL     = 9999; --复活状态
 W_BATTLE_DELAYTIME   = 0.5;  --相隔0.5秒出手
 
 W_SHOWBUFF_STATE     = 3;  --BUFF状态轮流显示的时间
+--平台判断
+W_PLATFORM_WIN32     = 1
+W_PLATFORM_IOS       = 2

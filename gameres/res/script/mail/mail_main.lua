@@ -142,7 +142,7 @@ function p.CloseUI()
 		p.curListTypeTag = nil;
 		p.msgs = {}
 		p.subLayer = nil;
-		--maininterface.ShowUI();
+		maininterface.ShowUI();
     end
 	
 		if p.bottomLayer ~= nil then
@@ -193,15 +193,10 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_GO_BACK == tag then
 			WriteCon("**========·µ»Ø========**");
-			if p.subLayer then 
-				p.subLayer.CloseUI();
-			end
 			p.CloseUI();
-			
-			maininterface.ShowUI();
 			maininterface.BecomeFirstUI();
 			--maininterface.ShowUI();
-			--dlg_userinfo.ShowUI();
+			dlg_userinfo.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_WRITE == tag then
 			WriteCon("**========Ð´ÐÅ========**");
 			p.HideUI();
@@ -913,8 +908,8 @@ function p.UIDisappear()
 		p.subLayer.CloseUI();
 	end
 	p.CloseUI();
-	maininterface.BecomeFirstUI();
-	--dlg_userinfo.ShowUI();
+	maininterface.ShowUI();
+	dlg_userinfo.ShowUI();
 --	dlg_battlearray.ShowUI();
 end
 

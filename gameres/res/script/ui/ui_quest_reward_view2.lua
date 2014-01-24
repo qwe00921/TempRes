@@ -12,5 +12,5 @@ p.ID_CTRL_TEXT_MISSION_NAME			= 2;
 p.ID_CTRL_TEXT_CHAPTER				    = 3;
 p.ID_CTRL_TEXT_TITLE					     = 4;
 p.ID_CTRL_PICTURE_TITLE				   = 23;
-p.ID_CTRL_PICTURE_BG					     = 28;
+p.ID_CTRL_PICTURE_117					    = 117;
 p.ID_CTRL_BUTTON_BG					      = 21;

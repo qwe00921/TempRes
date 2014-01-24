@@ -902,3 +902,13 @@ function p.UpdateDamageBufftype( list )
 		end
 	end
 end
+
+function p.SetBg(pMissionID)
+	local lAni = SelectRowInner(T_MISSION_RES,"id",tostring(pMissionID),"bg")
+	if lAni ~= nil then
+		local lpic = GetPictureByAni(lAni,0);
+		local bgImg = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_BG );
+		bgImg:SetPicture(lpic);
+	end;
+	
+end

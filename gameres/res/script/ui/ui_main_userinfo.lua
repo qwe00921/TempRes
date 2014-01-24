@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_main_userinfo = {};
 local p =  ui_main_userinfo;
+p.ID_CTRL_PICTURE_183					    = 183;
+p.ID_CTRL_PICTURE_182					    = 182;
+p.ID_CTRL_TEXT_181					       = 181;	--等级数值
+p.ID_CTRL_TEXT_180					       = 180;	--等级数值
+p.ID_CTRL_PICTURE_179					    = 179;
 p.ID_CTRL_9SLICES_110					    = 110;
 p.ID_CTRL_9SLICES_109					    = 109;
 p.ID_CTRL_PICTURE_25					     = 26;
@@ -29,3 +34,4 @@ p.ID_CTRL_TEXT_EMONEY_NUM				 = 58;	--代币数值
 p.ID_CTRL_PICTURE_20					     = 20;
 p.ID_CTRL_PROGRESSBAR_STRENGTH		= 69;	--体力条
 p.ID_CTRL_PROGRESSBAR_EXP				 = 67;	--经验条
+p.ID_CTRL_PICTURE_169					    = 169;

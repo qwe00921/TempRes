@@ -113,6 +113,7 @@ DoFile("skill/dlg_user_skill_intensify_result.lua");
 --扭蛋
 DoFile("gacha/dlg_gacha.lua");
 DoFile("gacha/dlg_gacha_result.lua");
+DoFile("gacha/dlg_gacha_effect.lua");
 
 --商城
 DoFile("gacha/dlg_buy_num.lua");

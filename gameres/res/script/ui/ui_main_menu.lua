@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_main_menu = {};
 local p =  ui_main_menu;
+p.ID_CTRL_PICTURE_24					     = 31;
+p.ID_CTRL_PICTURE_23					     = 30;
+p.ID_CTRL_PICTURE_22					     = 29;
 p.ID_CTRL_PICTURE_305					    = 305;
 p.ID_CTRL_PICTURE_175					    = 175;
 p.ID_CTRL_PICTURE_152					    = 152;
@@ -26,4 +29,3 @@ p.ID_CTRL_BUTTON_QUEST				    = 3;	--任务按钮
 p.ID_CTRL_BUTTON_HOME_PAGE			 = 2;	--主页按钮
 p.ID_CTRL_PICTURE_BG					     = 1;	--背景图片
 p.ID_CTRL_PICTURE_8					      = 8;
-p.ID_CTRL_PICTURE_141					    = 141;

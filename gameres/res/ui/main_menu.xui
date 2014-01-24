@@ -1,23 +1,12 @@
 ﻿
-[UI_INFO_BOTTOM]
+[UI_INFO]
 Width=640
 Height=960
-
-[CTRL_PICTURE_141]
-Type=1
-Tag=141
-Rect=1 825 639 35
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\ad_bg2.png
-NormalFileUV=0 0 639 35
 
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=0 815 640 55
+Rect=0 810 640 55
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -154,7 +143,7 @@ DisableFileUV=0 0 89 99
 [CTRL_COLOR_LABEL_140]
 Type=7
 Tag=140
-Rect=10 818 381 46
+Rect=25 810 524 46
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -298,8 +287,41 @@ NormalFileUV=0 0 52 28
 [CTRL_PICTURE_305]
 Type=1
 Tag=305
-Rect=0 578 640 192
+Rect=0 591 1 192
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=29
+Rect=273 785 20 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=30
+Rect=310 785 20 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=31
+Rect=347 785 20 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
+NormalFileUV=0 0 32 32

@@ -1,0 +1,15 @@
+﻿
+[UI_INFO]
+Width=720
+Height=1136
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 720 1136
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1

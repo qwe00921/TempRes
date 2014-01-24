@@ -12,9 +12,16 @@ p.energy_time = 30;
 p.move_remain_time = 0;
 p.energy_remain_time = 0;
 
-p.levNum = nil;
+p.effect_num = {};
 
 p.eneryList = {};
+
+local LEV_INDEX = 1;
+local MONEY_INDEX = 2;
+local EMONEY_INDEX = 3;
+local SOUL_INDEX = 4;
+local EXP_INDEX = 5;
+local STRENGTH_INDEX = 6;
 
 local ui = ui_main_userinfo
 
@@ -63,7 +70,7 @@ function p.CloseUI()
         p.layer:LazyClose();
         p.layer = nil;
 		p.userinfo = nil;
-		p.levNum = nil;
+		p.effect_num = {};
 		if p.updateTimer then
 			KillTimer( p.updateTimer );
 		end
@@ -89,33 +96,67 @@ function p.RefreshUI(userinfo)
 
 	local username = GetLabel( p.layer, ui.ID_CTRL_TEXT_NAME);
 	username:SetText( userinfo.Name );
-	
+
 	local level = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL_NUM);
 	level:SetText( " " );
 	
-	if p.levNum == nil then
+	if p.effect_num[LEV_INDEX] == nil then
 		local levNum = effect_num:new();
 		levNum:SetOwnerNode( level );
 		levNum:Init();
-		p.levNum = levNum;
-		level:AddChild( levNum:GetNode() );
+		p.effect_num[LEV_INDEX] = levNum;
+		level:AddChild( levNum:GetNode() );	
 	end
-	p.levNum:PlayNum( tonumber(userinfo.Level) );
-
+	p.effect_num[LEV_INDEX]:SetScale(0.7);
+	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
+	
 	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);
-	money:SetText( tostring(userinfo.Money) );
+
+	if p.effect_num[MONEY_INDEX] == nil then
+		local moneyNum = effect_num:new();
+		moneyNum:SetNumFont();
+		moneyNum:SetOwnerNode( money );
+		moneyNum:Init();		
+		p.effect_num[MONEY_INDEX] = moneyNum;
+		money:AddChild( moneyNum:GetNode() );
+	end
+	p.effect_num[MONEY_INDEX]:SetScale( 0.5 );
+	p.effect_num[MONEY_INDEX]:SetOffset(-23, -6);
+	p.effect_num[MONEY_INDEX]:PlayNum( tonumber(userinfo.Money) );
 	
 	local emoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_EMONEY_NUM);
-	emoney:SetText( tostring(userinfo.Emoney) );
+	if p.effect_num[EMONEY_INDEX] == nil then
+		local emoneyNum = effect_num:new();
+		emoneyNum:SetNumFont();
+		emoneyNum:SetOwnerNode( emoney );
+		emoneyNum:Init();
+		p.effect_num[EMONEY_INDEX] = emoneyNum;
+		emoney:AddChild( emoneyNum:GetNode() );
+	end
+	p.effect_num[EMONEY_INDEX]:SetScale( 0.5 );
+	p.effect_num[EMONEY_INDEX]:SetOffset(-23, -6);
+	p.effect_num[EMONEY_INDEX]:PlayNum( tonumber(userinfo.Emoney) );
 	
 	local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
 	strength:SetValue( 0, tonumber( userinfo.MaxMove ), tonumber( userinfo.Move ) );
+	p.CreateEffectNum( STRENGTH_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_181) , 0.5, 0, -10, string.format( "%d/%d", tonumber( userinfo.Move ), tonumber( userinfo.MaxMove ) ) );
 	
 	local bluesoul = GetLabel( p.layer, ui.ID_CTRL_TEXT_SOUL );
-	bluesoul:SetText( tostring(userinfo.BlueSoul) );
+	if p.effect_num[SOUL_INDEX] == nil then
+		local soul = effect_num:new();
+		soul:SetNumFont();
+		soul:SetOwnerNode( bluesoul );
+		soul:Init();		
+		p.effect_num[SOUL_INDEX] = soul;
+		bluesoul:AddChild( soul:GetNode() );
+	end
+	p.effect_num[SOUL_INDEX]:SetScale( 0.5 );
+	p.effect_num[SOUL_INDEX]:SetOffset(-20, -6);
+	p.effect_num[SOUL_INDEX]:PlayNum( tonumber(userinfo.BlueSoul) );
 
 	local Exp = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_EXP );
 	Exp:SetValue( 0, tonumber( userinfo.MaxExp ), tonumber( userinfo.Exp ) );
+	p.CreateEffectNum( EXP_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_180) , 0.5, 0, -10, string.format( "%d/%d", tonumber( userinfo.Exp ), tonumber( userinfo.MaxExp ) ) );
 	
 	maininterface.ShowBattleArray( userinfo.User_Team ,tonumber(userinfo.CardTeam) or 1 );
 	
@@ -147,6 +188,23 @@ function p.RefreshUI(userinfo)
 			ctrller:SetVisible( i <= energy );
 		end
 	end
+end
+
+function p.CreateEffectNum( index, node, scale, offestX, offestY, str )
+	if p.effect_num[index] == nil then
+		local effect = effect_num:new();
+		effect:SetNumFont();
+		effect:SetOwnerNode( node );
+		effect:Init();
+		p.effect_num[index] = effect;
+		node:AddChild( effect:GetNode() );
+	end
+	local rect = node:GetFrameRect();
+	local x = rect.size.w/2;
+	local len = string.len(str);
+	p.effect_num[index]:SetScale( scale );
+	p.effect_num[index]:SetOffset( x+offestX-len*23/2 , offestY);	
+	p.effect_num[index]:PlayNum( str );
 end
 
 function p.SetDelegate()
@@ -187,6 +245,7 @@ function p.OnUpdateInfo()
 			
 			local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
 			strength:SetValue( 0, tonumber( cache.MaxMove ), tonumber( cache.Move ) );
+			p.CreateEffectNum( STRENGTH_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_181) , 0.5, 0, -10, string.format( "%d/%d", tonumber( cache.Move ), tonumber( cache.MaxMove ) ) );
 		end
 		
 		local timeText = GetLabel( p.layer, ui.ID_CTRL_TEXT_46 );

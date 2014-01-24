@@ -43,7 +43,7 @@ end
 
 
 --战士从一个点跳跃到另一个点
-function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq,pIsParallelSeq)
+function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
     local fx = "lancer_cmb.begin_battle_jump";
     
     local atkPos = fPos;
