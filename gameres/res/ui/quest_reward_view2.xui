@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_BG]
 Type=2
 Tag=21
-Rect=0 0 640 960
+Rect=0 0 639 958
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -82,7 +82,7 @@ UIClsoeType=0
 [CTRL_PICTURE_47]
 Type=1
 Tag=47
-Rect=143 368 354 84
+Rect=20 315 600 410
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -93,7 +93,7 @@ NormalFileUV=0 0 354 84
 [CTRL_PICTURE_ITEM]
 Type=1
 Tag=40
-Rect=245 485 150 150
+Rect=245 672 150 150
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -102,7 +102,7 @@ UIClsoeType=0
 [CTRL_PICTURE_NAME_BG]
 Type=1
 Tag=48
-Rect=170 680 301 70
+Rect=170 835 301 70
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -113,7 +113,7 @@ NormalFileUV=0 0 301 70
 [CTRL_TEXT_ITEM_NAME]
 Type=4
 Tag=49
-Rect=189 700 262 32
+Rect=189 855 262 32
 AnchorPos=0 0
 Notes=
 Text=奖励
