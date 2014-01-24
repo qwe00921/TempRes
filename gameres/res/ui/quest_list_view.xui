@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_FIGHTING]
 Type=2
 Tag=15
-Rect=0 4 638 156
+Rect=0 -2 638 156
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -20,7 +20,7 @@ DisableFileUV=0 0 279 77
 [CTRL_PIC_LIST_BG]
 Type=1
 Tag=1
-Rect=0 19 638 140
+Rect=0 -2 638 140
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -29,19 +29,151 @@ UIClsoeType=0
 [CTRL_9SLICES_BG]
 Type=22
 Tag=37
-Rect=10 13 629 140
+Rect=8 6 629 140
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\list.png
+NormalFile=.\res\image\ui\quest\list_bg2.png
 NormalFileUV=0 0 629 140
+
+[CTRL_PICTURE_20]
+Type=1
+Tag=21
+Rect=543 31 85 37
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\info_bg2.png
+NormalFileUV=0 0 46 13
+
+[CTRL_PICTURE_19]
+Type=1
+Tag=20
+Rect=499 20 53 53
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\battle2.png
+NormalFileUV=0 0 53 53
+
+[CTRL_PICTURE_21]
+Type=1
+Tag=22
+Rect=432 31 65 36
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\info_bg2.png
+NormalFileUV=0 0 46 13
+
+[CTRL_PICTURE_22]
+Type=1
+Tag=23
+Rect=345 29 41 37
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\info_bg2.png
+NormalFileUV=0 0 46 13
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=27
+Rect=293 98 89 33
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\info_bg2.png
+NormalFileUV=0 0 46 13
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=28
+Rect=169 97 89 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\info_bg2.png
+NormalFileUV=0 0 46 13
+
+[CTRL_PICTURE_28]
+Type=1
+Tag=29
+Rect=55 97 89 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\info_bg2.png
+NormalFileUV=0 0 46 13
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=24
+Rect=19 90 46 46
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\exp3.png
+NormalFileUV=0 0 46 46
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=25
+Rect=139 90 46 46
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\money3.png
+NormalFileUV=0 0 46 46
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=26
+Rect=259 81 46 59
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\soul.png
+NormalFileUV=0 0 46 59
+
+[CTRL_PICTURE_29]
+Type=1
+Tag=30
+Rect=385 22 53 53
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\strength.png
+NormalFileUV=0 0 53 53
+
+[CTRL_PICTURE_30]
+Type=1
+Tag=32
+Rect=297 22 53 53
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\boss.png
+NormalFileUV=0 0 53 53
 
 [CTRL_TEXT_QUEST_NAME_V]
 Type=4
 Tag=2
-Rect=31 34 259 37
+Rect=25 26 259 37
 AnchorPos=0 0
 Notes=
 Text=关卡名字七个字
@@ -56,7 +188,7 @@ UIClsoeType=0
 [CTRL_TEXT_DIF_V]
 Type=4
 Tag=36
-Rect=353 37 36 35
+Rect=353 30 36 35
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -69,7 +201,7 @@ UIClsoeType=0
 [CTRL_TEXT_POWER_V]
 Type=4
 Tag=4
-Rect=443 37 37 35
+Rect=441 32 37 35
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -82,7 +214,7 @@ UIClsoeType=0
 [CTRL_TEXT_TIEMS_V]
 Type=4
 Tag=5
-Rect=556 37 51 35
+Rect=555 32 51 35
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -95,7 +227,7 @@ UIClsoeType=0
 [CTRL_TEXT_EXP_V]
 Type=4
 Tag=17
-Rect=67 98 62 33
+Rect=64 97 62 33
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -108,7 +240,7 @@ UIClsoeType=0
 [CTRL_TEXT_MONEY_V]
 Type=4
 Tag=18
-Rect=186 99 67 30
+Rect=183 98 67 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -121,7 +253,7 @@ UIClsoeType=0
 [CTRL_TEXT_GHO_V]
 Type=4
 Tag=31
-Rect=306 98 63 33
+Rect=303 97 63 33
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -134,7 +266,7 @@ UIClsoeType=0
 [CTRL_BUTTON_REWARD]
 Type=2
 Tag=38
-Rect=443 90 186 57
+Rect=437 86 186 57
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -146,7 +278,7 @@ UIClsoeType=0
 [CTRL_PICTURE_REWARD1]
 Type=1
 Tag=12
-Rect=501 86 60 60
+Rect=499 83 60 60
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -157,7 +289,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_REWARD2]
 Type=1
 Tag=13
-Rect=449 86 60 60
+Rect=448 83 60 60
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -168,7 +300,7 @@ NormalFileUV=0 0 72 84
 [CTRL_PICTURE_REWARD3]
 Type=1
 Tag=40
-Rect=553 86 60 60
+Rect=550 83 60 60
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -176,22 +308,22 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\quest\getitem.png
 NormalFileUV=0 0 72 84
 
-[CTRL_PICTURE_39]
-Type=1
-Tag=41
-Rect=21 77 606 5
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\line.png
-NormalFileUV=0 0 567 4
-
 [CTRL_PICTURE_NEW]
 Type=1
 Tag=86
-Rect=11 9 51 25
+Rect=15 0 85 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_32]
+Type=1
+Tag=33
+Rect=377 98 68 30
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\text1.png
+NormalFileUV=0 0 68 30
