@@ -445,7 +445,7 @@ NormalFileUV=0 0 202 22
 [CTRL_TEXT_365]
 Type=4
 Tag=365
-Rect=48 417 107 26
+Rect=48 417 207 26
 AnchorPos=0 0
 Notes=
 Text=目标名字
