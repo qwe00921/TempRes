@@ -18,7 +18,7 @@ p.rewardAllData = nil;
 
 function p.ShowUI(backData)
 	if backData.result == false then
-		dlg_msgbox.ShowOK("错误提示",self.message,nil,p.layer);
+		dlg_msgbox.ShowOK("错误提示",backData.message,nil,p.layer);
 		return
 	end
 	
@@ -63,6 +63,10 @@ function p.ShowUI(backData)
 end
 
 function p.ShowReward(rewardData)
+	local SpecialReward = GetImage(p.layer, ui.ID_CTRL_PICTURE_47);
+	SpecialReward:AddFgEffect("ui.Special_reward");
+	--SpecialReward:AddActionEffect( "ui_cmb.mainui_btn_scale" );
+
 	local missionId = tonumber(rewardData.mission_id);
 
 	--章节名
