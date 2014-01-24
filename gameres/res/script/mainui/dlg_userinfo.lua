@@ -102,6 +102,7 @@ function p.RefreshUI(userinfo)
 
 	if p.effect_num[LEV_INDEX] == nil then
 		local levNum = effect_num:new();
+		levNum:SetNumFont();
 		levNum:SetOwnerNode( level );
 		levNum:Init();
 		p.effect_num[LEV_INDEX] = levNum;
@@ -114,7 +115,7 @@ function p.RefreshUI(userinfo)
 	
 	local scale = 0.7;
 	p.effect_num[LEV_INDEX]:SetScale(scale);
-	p.effect_num[LEV_INDEX]:SetOffset( x-len*20/2, -26*(1-scale)/2 );
+	p.effect_num[LEV_INDEX]:SetOffset( x-len*23/2, -36*(1-scale)/2-2 );
 	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
 	
 	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);
