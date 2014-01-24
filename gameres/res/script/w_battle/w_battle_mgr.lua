@@ -594,7 +594,7 @@ function p.UseItem(pItemPos, pHeroPos)
 			end;
 		end
 	end
-	w_battle_db_mgr.CalUseItem(pPos)
+	w_battle_db_mgr.CalUseItem(pItemPos)
 	w_battle_useitem.RefreshUI()  --物品使用完后,调用刷新UI, UI会内部调用p.GetItemCanUsePlayer
 end;
 
