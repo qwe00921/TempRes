@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -264,7 +264,7 @@ UIClsoeType=0
 [CTRL_PICTURE_NATURE1]
 Type=1
 Tag=16
-Rect=37 187 20 20
+Rect=33 187 20 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -275,7 +275,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_NATURE2]
 Type=1
 Tag=17
-Rect=191 187 20 20
+Rect=188 187 20 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -286,7 +286,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_NATURE3]
 Type=1
 Tag=24
-Rect=347 187 20 20
+Rect=343 187 20 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -297,7 +297,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_NATURE4]
 Type=1
 Tag=26
-Rect=133 289 20 20
+Rect=141 289 20 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -308,7 +308,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_NATURE5]
 Type=1
 Tag=27
-Rect=290 289 20 20
+Rect=295 289 20 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -330,7 +330,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_43]
 Type=1
 Tag=43
-Rect=385 334 58 65
+Rect=383 334 58 65
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -539,7 +539,7 @@ NormalFileUV=0 0 28 26
 [CTRL_PICTURE_65]
 Type=1
 Tag=73
-Rect=393 397 28 28
+Rect=393 396 28 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -550,7 +550,7 @@ NormalFileUV=0 0 28 26
 [CTRL_PICTURE_66]
 Type=1
 Tag=74
-Rect=372 440 28 28
+Rect=372 439 28 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -561,7 +561,7 @@ NormalFileUV=0 0 28 26
 [CTRL_PICTURE_67]
 Type=1
 Tag=75
-Rect=350 483 28 28
+Rect=350 482 28 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -572,7 +572,7 @@ NormalFileUV=0 0 28 26
 [CTRL_PICTURE_68]
 Type=1
 Tag=76
-Rect=330 527 28 28
+Rect=330 526 28 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -673,78 +673,78 @@ UIClsoeType=0
 [CTRL_TEXT_76]
 Type=4
 Tag=84
-Rect=477 350 56 24
+Rect=477 357 56 24
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
+TextVerAlign=AlignBottom
 UIOpenType=0
 UIClsoeType=0
 
 [CTRL_TEXT_77]
 Type=4
 Tag=85
-Rect=457 393 76 24
+Rect=457 400 76 24
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
+TextVerAlign=AlignBottom
 UIOpenType=0
 UIClsoeType=0
 
 [CTRL_TEXT_78]
 Type=4
 Tag=86
-Rect=449 436 85 24
+Rect=449 443 85 24
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
+TextVerAlign=AlignBottom
 UIOpenType=0
 UIClsoeType=0
 
 [CTRL_TEXT_79]
 Type=4
 Tag=87
-Rect=430 479 104 24
+Rect=430 486 104 24
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
+TextVerAlign=AlignBottom
 UIOpenType=0
 UIClsoeType=0
 
 [CTRL_TEXT_80]
 Type=4
 Tag=88
-Rect=401 522 133 24
+Rect=401 529 133 24
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
+TextVerAlign=AlignBottom
 UIOpenType=0
 UIClsoeType=0
 
 [CTRL_TEXT_81]
 Type=4
 Tag=89
-Rect=379 565 155 24
+Rect=379 572 155 24
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
+TextVerAlign=AlignBottom
 UIOpenType=0
 UIClsoeType=0
 
@@ -762,12 +762,12 @@ NormalFileUV=0 0 297 62
 [CTRL_TEXT_CARD_NAME]
 Type=4
 Tag=54
-Rect=34 546 182 35
+Rect=29 548 219 35
 AnchorPos=0 0
 Notes=
-Text=11111
-TextTradition=11111
-TextSize=17
+Text=一二三四五六七八九
+TextTradition=一二三四五六七八九
+TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -777,16 +777,18 @@ UIClsoeType=0
 [CTRL_PICTURE_180]
 Type=1
 Tag=180
-Rect=57 521 202 29
+Rect=142 336 256 36
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\public\star7.png
+NormalFileUV=0 0 196 28
 
 [CTRL_PICTURE_69]
 Type=1
 Tag=77
-Rect=311 571 28 28
+Rect=311 570 28 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -797,7 +799,7 @@ NormalFileUV=0 0 28 26
 [CTRL_BUTTON_129]
 Type=2
 Tag=129
-Rect=6 336 443 262
+Rect=6 339 427 262
 AnchorPos=0 0
 Notes=
 TextSize=10
