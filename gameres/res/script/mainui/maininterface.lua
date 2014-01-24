@@ -19,6 +19,7 @@ local HP_INDEX = 2;
 local ATK_INDEX = 3;
 local DEF_INDEX = 4;
 local SPEED_INDEX = 5;
+local MAILNUM_INDEX = 6;
 
 local ui = ui_main_interface;
 
@@ -292,13 +293,31 @@ end
 function p.ShowMailNum(userinfo)
 	local bg = GetImage( p.mailLayer , ui_main_mailbtn.ID_CTRL_PICTURE_MAIL_TIPS_BG );
 	local mailNum = GetLabel( p.mailLayer, ui_main_mailbtn.ID_CTRL_TEXT_MAIL_TIPS_NUM );
+	mailNum:SetText( "" );
 	local num = tonumber(userinfo.MailNum) or 0;
+	if p.effect_num[MAILNUM_INDEX] == nil then
+		local effect = effect_num:new();
+		effect:SetNumFont();
+		effect:SetOwnerNode( mailNum );
+		effect:Init();
+		p.effect_num[MAILNUM_INDEX] = effect;
+		mailNum:AddChild( effect:GetNode() );
+	end
+
 	if num ~= 0 then
-		mailNum:SetVisible( true );
+		local scale = 0.5;
+		local rect = mailNum:GetFrameRect();
+		local x = rect.size.w/2;
+		local len = string.len(tostring(num));
+		
+		p.effect_num[MAILNUM_INDEX]:SetScale( scale );
+		p.effect_num[MAILNUM_INDEX]:SetOffset( x-len*23/2, -36*(1-scale)/2 );
+		p.effect_num[MAILNUM_INDEX]:PlayNum( num );
+		p.effect_num[MAILNUM_INDEX]:GetNode():SetVisible(true);
 		bg:SetVisible( true );
-		mailNum:SetText( tostring(num) );
+		
 	else
-		mailNum:SetVisible( false );
+		p.effect_num[MAILNUM_INDEX]:GetNode():SetVisible(false);
 		bg:SetVisible( false );
 	end
 end

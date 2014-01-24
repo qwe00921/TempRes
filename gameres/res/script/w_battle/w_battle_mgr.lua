@@ -602,6 +602,7 @@ end;
 function p.HeroBuffStarTurn()
 	WriteCon( "HeroBuffStarTurn");
 	p.atkCampType = W_BATTLE_HERO;
+	p.SetCampZorder();
 	calBuff(W_BATTLE_HERO);
 	--p.HeroBuffTurnEnd();  --直接判定我方BUFF结束
 end;
@@ -650,6 +651,7 @@ function p.EnemyBuffStarTurn()
 	WriteCon( "EnemyBuffStarTurn");	
    p.atkCampType = W_BATTLE_ENEMY;
    p.EnemyBuffDie = false;
+   p.SetCampZorder();
    w_battle_machinemgr.InitAtkTurnEnd(W_BATTLE_ENEMY); 
    calBuff(W_BATTLE_ENEMY);
    --p.EnemyBuffTurnEnd();  --先暂时判定BUFF完成
@@ -1302,3 +1304,14 @@ function p.checkPickEnd()
 	
 end
 
+function p.SetCampZorder()
+	if p.atkCampType == W_BATTLE_HERO then
+		p.heroCamp:SetFightersZOrder(E_BATTLE_Z_HERO_FIGHTER)
+		p.enemyCamp:SetFightersZOrder(E_BATTLE_Z_ENEMY_FIGHTER)
+	else
+		p.heroCamp:SetFightersZOrder(E_BATTLE_Z_ENEMY_FIGHTER)
+		p.enemyCamp:SetFightersZOrder(E_BATTLE_Z_HERO_FIGHTER)
+	end
+
+	
+end
