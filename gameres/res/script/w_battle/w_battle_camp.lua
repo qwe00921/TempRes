@@ -515,3 +515,9 @@ function p:SetFighterConfig( f, idx )
 	--f:UseConfig( string.format("test%s", tobjId[self.idCamp == E_CARD_CAMP_HERO and idx or idx + 8]) );
 	--f.petTag = idx % 2 == 0 and PET_FLY_DRAGON_TAG or PET_BLUE_DEVIL_TAG;
 end
+
+function p:ClearFighterBuff()
+	for k,v in ipairs(self.fighters) do
+		v:initBuff();
+	end
+end

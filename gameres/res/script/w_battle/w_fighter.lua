@@ -829,3 +829,14 @@ end
 function p:SaveOldPos(pos)
 	self.oldPos = pos;
 end
+
+function p:initBuff()
+	
+	self.SkillBuff = {}
+    self.nowBuffType = nil;
+	self.BuffIndex = 1;
+	self.atkBuff = 1;
+	self.defBuff = 1;
+	self.critBuff = 1;
+	self:SetBuffNode(0);
+end

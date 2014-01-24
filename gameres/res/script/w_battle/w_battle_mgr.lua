@@ -724,7 +724,7 @@ end;
 
 function p.EnemyUseSkill(lseed)
 	if w_battle_db_mgr.IsDebug == true then
-		return false;
+		return true;
 	end;
 	
 	local lnum = w_battle_atkDamage.getRandom(lseed,100);
@@ -801,6 +801,7 @@ end;
 --战斗胜利
 function p.FightWin()  
 	KillTimer(p.buffTimerID);
+	p.heroCamp:ClearFighterBuff();
 	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
 		w_battle_db_mgr.nextStep();  --数据进入下一波次
 		--w_battle_mgr.enemyCamp:free();
@@ -1382,7 +1383,7 @@ function p.QuitBattle()
 	--dlg_userinfo.ShowUI();
 		
 	--hud.FadeIn();
-	p.isClose = false;
+	p.isClose = true;
 	--音乐
 	PlayMusic_Task();
 	
@@ -1633,22 +1634,24 @@ function p.setFighterDie(targerFighter,camp)
 end
 
 function updateCampBuff(camp)
-	for k,v in ipairs(camp.fighters) do
-		if v~= nil then
-			if(v.Hp > 0) then
-				if v.showBuff == true then
-					if #v.SkillBuff > 0 then
-						if v.BuffIndex > #v.SkillBuff then
-							v.BuffIndex = 1;
+	if camp ~=nil then
+		for k,v in ipairs(camp.fighters) do
+			if v~= nil then
+				if(v.Hp > 0) then
+					if v.showBuff == true then
+						if #v.SkillBuff > 0 then
+							if v.BuffIndex > #v.SkillBuff then
+								v.BuffIndex = 1;
+							end
+							local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
+							v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
+							v.BuffIndex = v.BuffIndex + 1;
 						end
-						local buffInfo = v.SkillBuff[v.BuffIndex]  --设置一个BUFF
-						v:SetBuffNode(buffInfo.buff_type); --设置BUFF图片
-						v.BuffIndex = v.BuffIndex + 1;
-					end
+					end;
 				end;
 			end;
-		end;
-	end
+		end
+	end;
 end
 
 function p.UpdateBuff()
