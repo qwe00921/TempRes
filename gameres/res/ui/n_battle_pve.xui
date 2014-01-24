@@ -479,15 +479,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
-[CTRL_RIGHT_SPRITE_5]
-Type=19
-Tag=11
-Rect=559 230 71 90
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_RIGHT_SPRITE_4]
 Type=19
 Tag=10
@@ -510,6 +501,15 @@ UIClsoeType=0
 Type=19
 Tag=8
 Rect=466 230 71 90
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_RIGHT_SPRITE_5]
+Type=19
+Tag=11
+Rect=559 230 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1317,15 +1317,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
 NormalFileUV=0 0 24 24
 
-[CTRL_PICTURE_NATURE4]
-Type=1
-Tag=212
-Rect=436 483 26 26
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_NATURE2]
 Type=1
 Tag=213
@@ -1335,19 +1326,28 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_NATURE5]
+[CTRL_PICTURE_NATURE3]
 Type=1
-Tag=214
-Rect=436 601 26 26
+Tag=215
+Rect=115 719 26 26
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_NATURE3]
+[CTRL_PICTURE_NATURE4]
 Type=1
-Tag=215
-Rect=115 719 26 26
+Tag=212
+Rect=436 483 26 26
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NATURE5]
+Type=1
+Tag=214
+Rect=436 601 26 26
 AnchorPos=0 0
 Notes=
 UIOpenType=0

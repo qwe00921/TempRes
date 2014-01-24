@@ -470,7 +470,7 @@ function p:AddFighters( uiArray, fighters )
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
 				--f.Attack = f.Attack;
-				f.Defence = f.Defence + 400;
+				f.Defence = f.Defence + 200;
 			--[[	f.Sp = 100;
 				if f.Position == 2 then
 					f.Skill = 102;
@@ -507,10 +507,10 @@ function p:AddFighters( uiArray, fighters )
 		f:standby();
 		
 		if self:IsHeroCamp() then
-			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER );
+			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER + f.Position);
 			f:SetLookAt( E_LOOKAT_LEFT );
 		else
-			node:SetZOrder( E_BATTLE_Z_ENEMY_FIGHTER );
+			node:SetZOrder( E_BATTLE_Z_ENEMY_FIGHTER + f.Position );
 			f:SetLookAt( E_LOOKAT_RIGHT );
 		end
 		node:SetId(f.idFighter);
@@ -546,5 +546,11 @@ end
 function p:ClearFighterBuff()
 	for k,v in ipairs(self.fighters) do
 		v:initBuff();
+	end
+end
+
+function p:SetFightersZOrder(pZorder)
+	for k,v in ipairs(self.fighters) do
+		v.node:SetZOrder(pZorder + v.Position);
 	end
 end
