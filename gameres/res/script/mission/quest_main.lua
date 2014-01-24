@@ -171,7 +171,7 @@ end
 
 function p.ShowQuestList(self)
 	if self.result == false then
-		dlg_msgbox.ShowOK("错误提示","玩家数据错误，请联系开发人员。",nil,p.layer);
+		dlg_msgbox.ShowOK("错误提示",self.message,nil,p.layer);
 		return;
 	end
 	

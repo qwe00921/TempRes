@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_BG]
 Type=2
 Tag=21
-Rect=0 0 640 868
+Rect=0 0 640 870
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -155,6 +155,20 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\strength_bg.png
 NormalFileUV=0 0 251 22
 
+[CTRL_EXP_EXP]
+Type=9
+Tag=33
+Rect=171 452 291 15
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_exp.png
+NormalFileUV=0 0 35 13
+
 [CTRL_TEXT_EXP_UP]
 Type=4
 Tag=35
@@ -217,32 +231,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_EXP_EXP]
-Type=9
-Tag=33
-Rect=174 451 279 15
-AnchorPos=0 0
-Notes=
-TextSize=16
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_exp.png
-NormalFileUV=0 0 35 13
-
-[CTRL_9SLICES_104]
-Type=22
-Tag=104
-Rect=183 451 275 15
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_exp.png
-NormalFileUV=0 0 35 13
 
 [CTRL_PICTURE_105]
 Type=1
