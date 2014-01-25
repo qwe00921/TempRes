@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=0 163 100 68
+Rect=0 123 100 68
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -23,7 +23,7 @@ NormalFileUV=0 0 100 80
 [CTRL_PICTURE_86]
 Type=1
 Tag=86
-Rect=100 164 208 68
+Rect=100 124 208 68
 AnchorPos=0 0
 Notes=
 UIOpenType=2
@@ -34,7 +34,7 @@ NormalFileUV=0 0 192 108
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=87
-Rect=112 172 180 50
+Rect=112 132 180 50
 AnchorPos=0 0
 Notes=
 Text=卡牌一览
@@ -49,7 +49,7 @@ UIClsoeType=2
 [CTRL_PICTURE_92]
 Type=1
 Tag=92
-Rect=318 165 107 30
+Rect=318 125 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=3
@@ -60,7 +60,7 @@ NormalFileUV=0 0 192 108
 [CTRL_TEXT_94]
 Type=4
 Tag=94
-Rect=324 168 96 24
+Rect=324 128 96 24
 AnchorPos=0 0
 Notes=
 Text=伙伴栏
@@ -75,7 +75,7 @@ UIClsoeType=3
 [CTRL_PICTURE_91]
 Type=1
 Tag=91
-Rect=317 199 107 30
+Rect=317 159 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -86,7 +86,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=38
-Rect=325 202 90 22
+Rect=325 162 90 22
 AnchorPos=0 0
 Notes=
 Text=99/99
@@ -101,7 +101,7 @@ UIClsoeType=3
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=20
-Rect=432 163 100 68
+Rect=432 123 100 68
 AnchorPos=0 0
 Notes=
 Text=卖出
@@ -120,7 +120,7 @@ SelectedFileUV=0 0 202 80
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=537 163 100 68
+Rect=537 123 100 68
 AnchorPos=0 0
 Notes=
 Text=排序
@@ -137,7 +137,7 @@ NormalFileUV=0 0 100 80
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=5 240 628 512
+Rect=5 199 628 603
 AnchorPos=0 0
 Notes=
 UIOpenType=0

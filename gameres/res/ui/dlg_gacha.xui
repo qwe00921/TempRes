@@ -60,7 +60,7 @@ DisableFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_GACHA]
 Type=14
 Tag=13
-Rect=11 335 620 494
+Rect=11 337 620 480
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -70,7 +70,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_SHOP_ITEM]
 Type=14
 Tag=15
-Rect=9 335 620 491
+Rect=9 337 620 477
 AnchorPos=0 0
 Notes=
 Remark=道具list
@@ -80,7 +80,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_GIFT_PACK]
 Type=14
 Tag=35
-Rect=9 332 620 494
+Rect=9 334 620 481
 AnchorPos=0 0
 Notes=
 Remark=礼包list
@@ -101,7 +101,7 @@ NormalFileUV=0 0 52 28
 [CTRL_BUTTON_GACHAUI]
 Type=2
 Tag=1
-Rect=8 258 110 60
+Rect=8 250 110 80
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -111,17 +111,13 @@ TextVerAlign=AlignVerCenter
 Remark=扭蛋按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\quest\button_public_select.png
-SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
 [CTRL_BUTTON_GIFT_PACKUI]
 Type=2
 Tag=14
-Rect=228 258 110 60
+Rect=228 250 110 80
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -131,17 +127,13 @@ TextVerAlign=AlignVerCenter
 Remark=礼包按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\quest\button_public_select.png
-SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
 [CTRL_BUTTON_ITEMUI]
 Type=2
 Tag=2
-Rect=119 258 110 60
+Rect=118 250 110 80
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -151,45 +143,8 @@ TextVerAlign=AlignVerCenter
 Remark=道具按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\quest\button_public_select.png
-SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
-
-[CTRL_PICTURE_111]
-Type=1
-Tag=111
-Rect=142 269 66 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\shop\item.png
-NormalFileUV=0 0 66 38
-
-[CTRL_PICTURE_112]
-Type=1
-Tag=112
-Rect=249 269 66 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\shop\gift.png
-NormalFileUV=0 0 66 38
-
-[CTRL_PICTURE_113]
-Type=1
-Tag=113
-Rect=30 269 66 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\shop\text_gacha.png
-NormalFileUV=0 0 66 38
 
 [CTRL_TEXT_72]
 Type=4
@@ -209,7 +164,7 @@ UIClsoeType=0
 [CTRL_BUTTON_73]
 Type=2
 Tag=73
-Rect=337 258 110 60
+Rect=338 250 110 80
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -219,27 +174,8 @@ TextVerAlign=AlignVerCenter
 Remark=礼包按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\quest\button_public_select.png
-SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
-
-[CTRL_TEXT_75]
-Type=4
-Tag=75
-Rect=355 257 79 60
-AnchorPos=0 0
-Notes=
-Text=持有
-TextTradition=持有
-TextSize=30
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_76]
 Type=1
@@ -270,7 +206,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_BAG]
 Type=14
 Tag=1068
-Rect=9 336 620 493
+Rect=9 335 620 478
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -280,7 +216,7 @@ UIClsoeType=0
 [CTRL_PICTURE_USE]
 Type=1
 Tag=24
-Rect=81 382 479 197
+Rect=81 384 479 197
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -291,7 +227,7 @@ NormalFileUV=0 0 594 208
 [CTRL_BUTTON_USE]
 Type=2
 Tag=26
-Rect=253 513 107 53
+Rect=253 515 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -305,7 +241,7 @@ NormalFileUV=0 0 110 54
 [CTRL_PICTURE_LABEL_USE]
 Type=1
 Tag=27
-Rect=276 521 61 32
+Rect=276 523 61 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -316,12 +252,104 @@ NormalFileUV=0 0 52 28
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=28
-Rect=121 397 398 103
+Rect=121 399 398 103
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=25
+Rect=9 254 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=29
+Rect=119 254 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=30
+Rect=229 254 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=31
+Rect=339 254 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+
+[CTRL_PICTURE_111]
+Type=1
+Tag=111
+Rect=139 265 66 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\item.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_112]
+Type=1
+Tag=112
+Rect=249 265 66 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\gift.png
+NormalFileUV=0 0 66 38
+
+[CTRL_PICTURE_113]
+Type=1
+Tag=113
+Rect=29 265 66 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\text_gacha.png
+NormalFileUV=0 0 66 38
+
+[CTRL_TEXT_75]
+Type=4
+Tag=75
+Rect=354 254 79 60
+AnchorPos=0 0
+Notes=
+Text=持有
+TextTradition=持有
+TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0

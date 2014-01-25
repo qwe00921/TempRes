@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -20,7 +20,7 @@ UIClsoeType=0
 [CTRL_PICTURE_76]
 Type=1
 Tag=76
-Rect=0 784 640 62
+Rect=0 745 640 62
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -31,7 +31,7 @@ NormalFileUV=0 0 640 338
 [CTRL_BUTTON_SELECT_ALL]
 Type=2
 Tag=158
-Rect=24 790 110 54
+Rect=24 751 110 54
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -46,7 +46,7 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_DEL]
 Type=2
 Tag=159
-Rect=149 790 110 54
+Rect=149 751 110 54
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -61,7 +61,7 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_PRE_PAGE]
 Type=2
 Tag=160
-Rect=346 791 70 52
+Rect=346 752 70 52
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -78,7 +78,7 @@ SelectedFileUV=0 0 70 52
 [CTRL_TEXT_PAGE_INFO]
 Type=4
 Tag=161
-Rect=422 796 125 43
+Rect=422 757 125 43
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -90,7 +90,7 @@ UIClsoeType=0
 [CTRL_BUTTON_NEXT_PAGE]
 Type=2
 Tag=162
-Rect=553 791 70 52
+Rect=553 752 70 52
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -107,7 +107,7 @@ SelectedFileUV=0 0 70 52
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=44 798 66 38
+Rect=44 759 66 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -118,7 +118,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_26]
 Type=1
 Tag=26
-Rect=171 798 66 38
+Rect=171 759 66 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0

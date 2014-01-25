@@ -4,6 +4,14 @@
 --------------------------------------------------------------
 ui_dlg_gacha = {};
 local p =  ui_dlg_gacha;
+p.ID_CTRL_TEXT_75						       = 75;
+p.ID_CTRL_PICTURE_113					    = 113;
+p.ID_CTRL_PICTURE_112					    = 112;
+p.ID_CTRL_PICTURE_111					    = 111;
+p.ID_CTRL_PICTURE_27					     = 31;
+p.ID_CTRL_PICTURE_26					     = 30;
+p.ID_CTRL_PICTURE_25					     = 29;
+p.ID_CTRL_PICTURE_24					     = 25;
 p.ID_CTRL_TEXT_ITEM_INFO				  = 28;
 p.ID_CTRL_PICTURE_LABEL_USE			= 27;
 p.ID_CTRL_BUTTON_USE					     = 26;
@@ -11,12 +19,8 @@ p.ID_CTRL_PICTURE_USE					    = 24;
 p.ID_CTRL_VERTICAL_LIST_BAG			= 1068;	--扭蛋list
 p.ID_CTRL_TEXT_77						       = 77;
 p.ID_CTRL_PICTURE_76					     = 76;
-p.ID_CTRL_TEXT_75						       = 75;
 p.ID_CTRL_BUTTON_73					      = 73;	--礼包按钮
 p.ID_CTRL_TEXT_72						       = 72;
-p.ID_CTRL_PICTURE_113					    = 113;
-p.ID_CTRL_PICTURE_112					    = 112;
-p.ID_CTRL_PICTURE_111					    = 111;
 p.ID_CTRL_BUTTON_ITEMUI				   = 2;	--道具按钮
 p.ID_CTRL_BUTTON_GIFT_PACKUI			= 14;	--礼包按钮
 p.ID_CTRL_BUTTON_GACHAUI				  = 1;	--扭蛋按钮
