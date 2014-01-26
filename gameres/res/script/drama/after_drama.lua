@@ -40,9 +40,7 @@ function p.DoAfterDrama()
 		WriteCon("viewType STAGE ");
 	elseif viewType == after_drama_data.ROOKIE then
 		WriteCon("viewType ROOKIE ");
-		if dlg_drama.nextEvent then
-			dlg_drama.nextEvent()
-		end
+		rookie_main.dramaCallBack(dlg_drama.storyId)
 	end
 	p.Clear();
 end

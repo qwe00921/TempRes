@@ -32,9 +32,9 @@ function p.ShowLearningStep( step, substep )
 		WriteConErr("step error");
 	elseif step == 2 then
 		start_game.ShowUI();
-		--choose_card.ShowUI();
 	elseif step == 3 then
 		choose_card.CloseUI()
+		--dlg_drama.ShowUI( 3,after_drama_data.ROOKIE,0,0,maininterface.ShowUI)
 		maininterface.ShowUI(p.userData);
 	elseif step == 4 then
 		maininterface.ShowUI(p.userData);
@@ -127,4 +127,23 @@ function p.GetHighLightRect( step, substep )
 		
 	end
 	return rect;
+end
+
+function p.dramaCallBack(storyId)
+	if storyId == 1 then
+	
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	elseif storyId == 2 then
+	
+	end
+	
+
 end
