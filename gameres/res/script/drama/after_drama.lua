@@ -22,8 +22,9 @@ function p.DoAfterDrama()
 	WriteCon("nextView = "..nextView);
 	local nowTeam = dlg_drama.teamId
 	WriteCon("nowTeam = "..nowTeam);
-	maininterface.m_bgImage:SetVisible(false);
-	
+	if maininterface.m_bgImage then
+		maininterface.m_bgImage:SetVisible(false);
+	end
 	if viewType == after_drama_data.FIGHT then
 		WriteCon("viewType FIGHT ");
 		if E_DEMO_VER== 4 then
@@ -37,6 +38,11 @@ function p.DoAfterDrama()
 	elseif viewType == after_drama_data.STAGE then
 		quest_main.ShowUI(nextView);
 		WriteCon("viewType STAGE ");
+	elseif viewType == after_drama_data.ROOKIE then
+		WriteCon("viewType ROOKIE ");
+		if dlg_drama.nextEvent then
+			dlg_drama.nextEvent()
+		end
 	end
 	p.Clear();
 end
