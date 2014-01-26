@@ -159,7 +159,7 @@ function p.ResetUI( dramaInfo )
 	if tonumber(name) ~= nil and tonumber(name) == 0 then
 		name = " ";
 	end
-	if string.find( name, ToUtf8("主角") ) then
+	if string.find( name, "主角") then
 		name = msg_cache.msg_player.Name or dramaInfo.npcName;
 	end
 

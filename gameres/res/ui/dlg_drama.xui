@@ -107,7 +107,7 @@ DisableFileUV=0 0 43 23
 [CTRL_TEXT_NPC_NAME]
 Type=4
 Tag=5
-Rect=56 496 157 51
+Rect=56 496 246 51
 AnchorPos=0 0
 Notes=
 Text=说话者
