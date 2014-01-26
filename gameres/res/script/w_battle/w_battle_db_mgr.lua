@@ -716,9 +716,21 @@ function p.initUseItem(pItemList)
 end;
 
 function p.CalUseItem(pPos)
-	if p.useItemData[pPos] ~= nil then
-		p.useItemData[pPos] = p.useItemData[pPos] +1
-	end;
+--	if p.useItemData[pPos] ~= nil then
+--		p.useItemData[pPos] = p.useItemData[pPos] +1
+--	end;
+	
+	for k,v in ipairs(p.ItemList) do
+		if v.location == pPos then
+			v.num = v.num - 1;
+			if v.num < 0 then
+				v.num = 0;
+				WriteConErr("useitem error! pos="..tostring(pPos))
+			end
+			break;
+		end
+	end
+	
 end;
 
 function p.GetItemId(pos)
@@ -734,7 +746,7 @@ end;
 
 function p.GetBattleItem()
 	local itemLst = {}
-	if p.useItemData ~= {} then
+--[[	if p.useItemData ~= {} then
 		for k,v in ipairs(p.useItemData) do
 			if v ~= 0 then
 				local item_id = p.GetItemId(k);
@@ -744,6 +756,23 @@ function p.GetBattleItem()
 			end
 		end;
 	end
+	]]--
+	return itemLst;
+end;
+
+function p.GetBattleEndItem()
+	local itemLst = {}
+	local tmpLst = p.GetItemList();
+	for k,v in ipairs(tmpLst) do
+--		if v.num == 0 then
+--			v.item_id = 0;
+--		end;
+		if v.item_id ~= 0 then
+			local lRecord = {id=v.item_id, num=v.num}
+			itemLst[#itemLst + 1] = lRecord
+		end;
+		
+	end;
 	return itemLst;
 end;
 
