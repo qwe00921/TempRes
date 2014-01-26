@@ -981,7 +981,7 @@ function p.SendResult(result)
 		               result = tonumber(result),
 		               money  = 0,
 					   soul   = 0,
-					   post_data = w_battle_db_mgr.GetBattleItem()
+					   post_data = w_battle_db_mgr.GetBattleEndItem()
 					   }
 		local lstr = FormatTableToJson(param);		
 		SendPost("Fight","PvEReward",uid,"",lstr);

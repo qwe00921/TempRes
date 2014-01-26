@@ -101,7 +101,7 @@ NormalFileUV=0 0 52 28
 [CTRL_BUTTON_GACHAUI]
 Type=2
 Tag=1
-Rect=8 250 110 80
+Rect=9 254 107 60
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -111,13 +111,17 @@ TextVerAlign=AlignVerCenter
 Remark=扭蛋按钮
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
 [CTRL_BUTTON_GIFT_PACKUI]
 Type=2
 Tag=14
-Rect=228 250 110 80
+Rect=229 254 110 60
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -127,13 +131,17 @@ TextVerAlign=AlignVerCenter
 Remark=礼包按钮
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
 [CTRL_BUTTON_ITEMUI]
 Type=2
 Tag=2
-Rect=118 250 110 80
+Rect=119 254 107 60
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -143,6 +151,10 @@ TextVerAlign=AlignVerCenter
 Remark=道具按钮
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
@@ -164,7 +176,7 @@ UIClsoeType=0
 [CTRL_BUTTON_73]
 Type=2
 Tag=73
-Rect=338 250 110 80
+Rect=341 254 110 60
 AnchorPos=0 0
 Notes=
 TextSize=28
@@ -174,6 +186,10 @@ TextVerAlign=AlignVerCenter
 Remark=礼包按钮
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\quest\button_public.png
+NormalFileUV=0 0 100 80
+SelectFile=.\res\image\ui\quest\button_public_select.png
+SelectedFileUV=0 0 100 80
 DisableFile=.\res\image\ui\public\page_select.png
 DisableFileUV=0 0 104 78
 
@@ -262,50 +278,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_24]
-Type=1
-Tag=25
-Rect=9 254 107 60
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-
-[CTRL_PICTURE_25]
-Type=1
-Tag=29
-Rect=119 254 107 60
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-
-[CTRL_PICTURE_26]
-Type=1
-Tag=30
-Rect=229 254 107 60
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-
-[CTRL_PICTURE_27]
-Type=1
-Tag=31
-Rect=339 254 107 60
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-
 [CTRL_PICTURE_111]
 Type=1
 Tag=111
@@ -342,7 +314,7 @@ NormalFileUV=0 0 66 38
 [CTRL_TEXT_75]
 Type=4
 Tag=75
-Rect=354 254 79 60
+Rect=356 254 79 60
 AnchorPos=0 0
 Notes=
 Text=持有
