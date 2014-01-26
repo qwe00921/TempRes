@@ -36,7 +36,9 @@ function p:Process()
 	WriteConWarning( "** msg_card_intensify:Process() called" );
 	if self.result == true then 
 		card_intensify_succeed.ShowCardLevel(self);
+		
 	else
 		WriteConWarning( "** MSG_CARDBOX_USER_CARDS error" );
+		dlg_msgbox.ShowOK(GetStr("card_caption"), self.message,nil);
 	end
 end
