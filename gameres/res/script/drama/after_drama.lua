@@ -27,19 +27,23 @@ function p.DoAfterDrama()
 	end
 	if viewType == after_drama_data.FIGHT then
 		WriteCon("viewType FIGHT ");
+		dlg_drama.CloseUI()
 		if E_DEMO_VER== 4 then
 			n_battle_mgr.EnterBattle( N_BATTLE_PVE, nextView, nowTeam );--进入战斗PVE
 		else
 			w_battle_mgr.EnterBattle( W_BATTLE_PVE, nextView, nowTeam );--进入战斗PVE
 		end
 	elseif viewType == after_drama_data.CHAPTER then
+		dlg_drama.CloseUI()
 		stageMap_main.openChapter();
 		WriteCon("viewType CHAPTER ");
 	elseif viewType == after_drama_data.STAGE then
+		dlg_drama.CloseUI()
 		quest_main.ShowUI(nextView);
 		WriteCon("viewType STAGE ");
 	elseif viewType == after_drama_data.ROOKIE then
-		WriteCon("viewType ROOKIE ");
+		WriteCon("viewType ROOKIE dlg_drama.storyId == "..dlg_drama.storyId);
+		dlg_drama.CloseUI()
 		rookie_main.dramaCallBack(dlg_drama.storyId)
 	end
 	p.Clear();
