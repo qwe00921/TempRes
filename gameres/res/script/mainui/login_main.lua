@@ -58,7 +58,7 @@ function p.SetDelegate()
 	local start = GetButton(p.layer, ui.ID_CTRL_BUTTON_102);
 	start:SetLuaDelegate(p.OnBtnClick);
 	--start:AddActionEffect( "ui_cmb.mainui_btn_scale" );
-	start:AddFgEffect("ui.TapToStart");
+	--start:AddFgEffect("ui.TapToStart");
 	start:AddActionEffect( "ui_cmb.mainui_btn_scale" );
 
 	local startBg = GetButton(p.layer, ui.ID_CTRL_BUTTON_4);
