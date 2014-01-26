@@ -324,7 +324,7 @@ image\ui\equip\item3.png
 image\ui\boss_out\fx.png @cut(1,4) @time=0.2 @scale=0.5 @loop
 
 [busy]
-lj\effect\busy1.png @cut(4,4) @time=0.05 @scale=0.5 @loop
+lj\effect\busy1.png @cut(4,4) @time=0.05 @scale=1.5 @loop
 
 ;遭遇货币
 [encounter_money]

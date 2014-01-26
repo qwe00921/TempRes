@@ -40,7 +40,7 @@ function p.test()
 	--测试vector
 --	p.TestVector();
 
---	p.testGuideLayer();
+	--p.testGuideLayer();
 
     --测试
 --    p.test1();
@@ -58,8 +58,7 @@ function p.test()
 --	p.TestCardBox();
 	
 	--测试发包
---	p.TestHttpSend();
-
+	--p.TestHttpSend();
     --测试删除Ani特效
 --    p.TestDelAni();
 
@@ -731,6 +730,12 @@ end
 
 --测试发送http请求
 function p.TestHttpSend()
+	local layer = createNDUILayer();
+	layer:Init();
+	layer:SetFrameRectFull();
+	layer:SetSwallowTouch( false );
+	GetUIRoot():AddChild(layer);
+	layer:AddFgEffect("lancer.busy");
 	SendReq( "Test", "TestAction", GetUID(), "a=1&b=2&str=hello" );
 end
 

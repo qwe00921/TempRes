@@ -9,6 +9,7 @@ local busy_fx = "lancer.busy";
 
 local WaitForPostCallBack = nil;
 local RequestCallBack = nil;
+local pLayer = nil;
 
 --∑¢ÀÕHttp«Î«Û
 function SendReq( cmd, action, uid, param )
@@ -19,6 +20,15 @@ function SendReq( cmd, action, uid, param )
 			RequestCallBack = { Cmd = cmd, Action = action, Uid = uid, Param = param };
 			return;
 		end
+	end
+	
+	if nil == pLayer then
+		local layer = createNDUILayer();
+		layer:Init();
+		layer:SetFrameRectFull();
+		layer:SetSwallowTouch( false );
+		pLayer = layer;
+		GetUIRoot():AddChild(layer);
 	end
 
 	SendRequest( cmd, action, uid, param );
@@ -38,7 +48,10 @@ end
 function OnTimerCheckBusy()
 	if http_busy then
 		if not FindHudEffect(busy_fx) then
-			AddHudEffect( busy_fx );
+			WriteCon("mang");
+			if pLayer ~= nil then
+				pLayer:DelAniEffect("lancer.busy");
+			end
 		end
 	end
 end
