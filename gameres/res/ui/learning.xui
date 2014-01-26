@@ -3,18 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_BUTTON_56]
-Type=2
-Tag=56
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_48]
 Type=1
 Tag=48
@@ -25,18 +13,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
-
-[CTRL_BUTTON_5]
-Type=2
-Tag=5
-Rect=0 0 100 100
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_9SLICES_50]
 Type=22
@@ -64,7 +40,7 @@ NormalFileUV=0 0 64 64
 [CTRL_COLOR_LABEL_52]
 Type=7
 Tag=52
-Rect=141 25 477 106
+Rect=141 25 477 107
 AnchorPos=0 0
 Notes=
 Text=说明文字
