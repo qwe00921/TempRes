@@ -11,8 +11,9 @@ p.nowTeamId = nil;
 p.teamListData = {};
 p.itemListData = {};
 p.teamTableView = nil;
+p.storyId = nil;
 
-function p.ShowUI(missionId,stageId,nowTeamId)
+function p.ShowUI(missionId,stageId,nowTeamId,storyId)
 	if missionId == nil or stageId == nil then
 		WriteConErr("param errer");
 		return
@@ -20,6 +21,7 @@ function p.ShowUI(missionId,stageId,nowTeamId)
 	p.stageId = stageId;
 	p.missionId = missionId;
 	p.nowTeamId = nowTeamId or 1;
+	p.storyId = storyId or 0;
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -60,7 +62,7 @@ end
 
 function p.showTeamItem(data)
 	if data.result == false then
-		dlg_msgbox.ShowOK("错误提示","基础数据丢失",nil,p.layer);
+		dlg_msgbox.ShowOK("错误提示",data.message,nil,p.layer);
 		return;
 	end
 
@@ -291,15 +293,39 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			p.CloseUI();
 		--战斗
 		elseif (ui.ID_CTRL_BUTTON_FIGHT == tag) then
-			local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
-			WriteCon("nowTeamId == "..nowTeamId);
-			maininterface.m_bgImage:SetVisible(false);
-			if E_DEMO_VER== 4 then
-				 n_battle_mgr.EnterBattle( N_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
+			if tonumber(p.storyId) == 0 then
+				local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
+				WriteCon("nowTeamId == "..nowTeamId);
+				maininterface.m_bgImage:SetVisible(false);
+				if E_DEMO_VER== 4 then
+					 n_battle_mgr.EnterBattle( N_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
+				else
+					w_battle_mgr.EnterBattle( W_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
+				end
+				p.CloseUI();
 			else
-				w_battle_mgr.EnterBattle( W_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
+				dlg_drama.ShowUI( storyId,after_drama_data.FIGHT ,p.missionId,nowTeamId);
 			end
-			p.CloseUI();
+			
+			-- if p.missionList["M"..missionId] then
+				-- local storyId = p.missionList["M"..missionId].begin_story;
+				-- WriteCon("storyId = "..storyId);
+				-- if tonumber(storyId) ~= 0 then
+					-- dlg_drama.ShowUI( missionId , storyId);
+				-- else
+				   -- if E_DEMO_VER == 4 then
+					-- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				   -- else	
+					-- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				   -- end;
+				-- end
+			-- else
+				-- if E_DEMO_VER== 4 then
+				  -- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
+				-- else
+				  -- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
+				-- end;
+			-- en
 		--队伍编辑
 		elseif (ui_team.ID_CTRL_BUTTON_BG == tag or ui_team.ID_CTRL_BUTTON_EDIT == tag) then
 			local nowTeamId = uiNode:GetId();

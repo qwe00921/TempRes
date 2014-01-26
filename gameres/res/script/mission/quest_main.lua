@@ -123,9 +123,14 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 				dlg_msgbox.ShowOK("提示" ,  "今日挑战次数已达上限。");
 				return
 			end
+			local storyId = nil;
+			if p.missionList["M"..missionId] then
+				storyId = p.missionList["M"..missionId].begin_story;
+				WriteCon("storyId = "..storyId);
+			end
 			--p.HideUI()
 			
-			p.showTeamItem(missionId)
+			
 			
 			--local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST);
 			--missionListTable:SetVisible(false);
@@ -136,7 +141,7 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 			
 			-- maininterface.m_bgImage:SetVisible(false);
 			-- if p.missionList["M"..missionId] then
-				-- local storyId = p.missionList["M"..missionId].begin_story;
+			-- local storyId = p.missionList["M"..missionId].begin_story;
 				-- WriteCon("storyId = "..storyId);
 				-- if tonumber(storyId) ~= 0 then
 					-- dlg_drama.ShowUI( missionId , storyId);
@@ -155,6 +160,7 @@ function p.OnFightBtnClick(uiNode,uiEventType,param)
 				-- end;
 			-- end
 			-- p.CloseUI();
+			p.showTeamItem(missionId,storyId)
 		end
 	end
 end
@@ -308,8 +314,10 @@ function p.OnRewardBtnClick(uiNode,uiEventType,param)
 	end
 end
 
-function p.showTeamItem(missionId)
-	quest_team_item.ShowUI(missionId,p.stageId);
+function p.showTeamItem(missionId,storyId)
+	local teamId = tonumber(msg_cache.msg_player.CardTeam)
+	WriteCon("now team Id = "..teamId);
+	quest_team_item.ShowUI(missionId,p.stageId,teamId,storyId);
 	p.CloseUI()
 end
 

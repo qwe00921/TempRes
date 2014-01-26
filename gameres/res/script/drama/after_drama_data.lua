@@ -1,7 +1,7 @@
---¾çÇéºó²»½ÓÕ½¶·£¬½Ó½çÃæÊ±
---½«¾çÇé½áÊøºóµÄ½çÃæÇø·Ö¿ª£¬·Ö±ð´ú±í¾çÇé½áÊøºóÒª´ò¿ªµÄ½çÃæ
+--å‰§æƒ…åŽä¸æŽ¥æˆ˜æ–—ï¼ŒæŽ¥ç•Œé¢æ—¶
+--å°†å‰§æƒ…ç»“æŸåŽçš„ç•Œé¢åŒºåˆ†å¼€ï¼Œåˆ†åˆ«ä»£è¡¨å‰§æƒ…ç»“æŸåŽè¦æ‰“å¼€çš„ç•Œé¢
 after_drama_data = {}
 local p = after_drama_data;
-p.FIGHT = 0;	--ºóÃæ½ÓÕ½¶·£¬
-p.CHAPTER = 10;	--ºóÃæ½Óchapter½çÃæ
-p.STAGE = 11;	--ºóÃæ½Óstage½çÃæ
+p.FIGHT = 0;	--åŽé¢æŽ¥æˆ˜æ–—ï¼Œ
+p.CHAPTER = 10;	--åŽé¢æŽ¥chapterç•Œé¢
+p.STAGE = 11;	--åŽé¢æŽ¥stageç•Œé¢

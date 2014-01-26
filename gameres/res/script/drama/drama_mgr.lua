@@ -8,21 +8,14 @@ drama_mgr = {}
 local p = drama_mgr;
 p.dramaList = {};--剧情对话内容列表
 p.index = nil;--对话位置索引
-p.currentStageId = 0;
-p.openView =nil;
 
 --载入剧情对话内容
-function p.LoadDramaInfo( stageId,dramaId,openViewId )
-	if openViewId == nil then
-		openViewId = after_drama_data.FIGHT 
-	end
-	p.openView = openViewId;
-	
+function p.LoadDramaInfo()
+
+	dramaId = tonumber(dlg_drama.storyId)
     if dramaId == nil then
     	return;
     end
-
-	p.currentStageId = stageId;
 	
     local dramaList = SelectRowList( T_STORY_INFO, "story_id", dramaId );
     if dramaList == nil or #dramaList == 0 then
@@ -54,7 +47,7 @@ function p.NextDramaInfo()
 	if #p.dramaList < p.index then
 		dlg_drama.CloseUI();
 		p.ClearData();
-		after_drama.DoAfterDrama(p.currentStageId,p.openView);
+		after_drama.DoAfterDrama();
 	else
 	   p.dramaList[p.index]:ShowPage();	
 	end
