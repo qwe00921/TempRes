@@ -35,7 +35,7 @@ local DIR_RIGHT = 2;--图片在右
 --显示UI
 function p.ShowUI( storyId,openViewType,viewId,teamId)
 											--参数 openViewType 详见 after_drama_data.lua
-    if storyId == nil or openViewType == nil or ViewId == nil then
+    if storyId == nil or openViewType == nil or viewId == nil then
     	return;
     else
        p.storyId = tonumber(storyId);	
@@ -125,7 +125,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
             end
             p.isActivity = false;
 			after_drama.DoAfterDrama();
-            p.CloseUI();
+            --p.CloseUI();
         end
     end
 end
@@ -159,7 +159,7 @@ function p.ResetUI( dramaInfo )
 	if tonumber(name) ~= nil and tonumber(name) == 0 then
 		name = " ";
 	end
-	if string.find( name, ToUtf8("主角") ) then
+	if string.find( name, "主角") then
 		name = msg_cache.msg_player.Name or dramaInfo.npcName;
 	end
 

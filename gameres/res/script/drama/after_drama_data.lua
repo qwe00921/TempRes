@@ -5,3 +5,5 @@ local p = after_drama_data;
 p.FIGHT = 0;	--后面接战斗，
 p.CHAPTER = 10;	--后面接chapter界面
 p.STAGE = 11;	--后面接stage界面
+
+p.ROOKIE = 100	--新手任务
