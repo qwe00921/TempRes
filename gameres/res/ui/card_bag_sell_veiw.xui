@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=0 731 640 80
+Rect=0 736 640 75
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 640 338
 [CTRL_PICTURE_BG]
 Type=1
 Tag=83
-Rect=0 732 634 80
+Rect=0 737 634 75
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -63,7 +63,7 @@ NormalFileUV=0 0 110 54
 [CTRL_TEXT_86]
 Type=4
 Tag=88
-Rect=410 738 107 31
+Rect=410 744 107 31
 AnchorPos=0 0
 Notes=
 Text=出售金额
@@ -78,7 +78,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=89
-Rect=493 735 30 30
+Rect=493 741 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -89,7 +89,7 @@ NormalFileUV=0 0 30 30
 [CTRL_TEXT_SELL_MONEY]
 Type=4
 Tag=90
-Rect=525 739 80 24
+Rect=525 746 80 24
 AnchorPos=0 0
 Notes=
 Text=0
@@ -104,7 +104,7 @@ UIClsoeType=0
 [CTRL_TEXT_89]
 Type=4
 Tag=93
-Rect=431 778 107 27
+Rect=411 777 107 27
 AnchorPos=0 0
 Notes=
 Text=选择人数
@@ -119,7 +119,7 @@ UIClsoeType=0
 [CTRL_TEXT_SELL_NUM]
 Type=4
 Tag=95
-Rect=524 775 51 31
+Rect=525 774 51 31
 AnchorPos=0 0
 Notes=
 Text=0
