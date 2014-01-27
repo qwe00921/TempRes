@@ -247,7 +247,7 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 			else
 				dlg_menu.ShowUI();
 				--¿¨ÅÆÇ¿»¯
-				card_intensify2.OnSendReq();
+				--card_intensify2.OnSendReq();
 				card_rein.ShowUI(p.cardInfo);
 				p.HideUI();
 			end
