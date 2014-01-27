@@ -18,7 +18,7 @@ function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 	end;
 	
 	--计算BUFF加成
-	atkFighter.Buff = 1;	
+	--atkFighter.Buff = 1;	
 	
 	--合击加成
 	local lIsJoinAtk = false
@@ -38,8 +38,8 @@ function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 	end;
 	
 	
-	local damage = atkFighter.damage * atkFighter.Buff * lpropRate * (1+lAddCrit + lJoinAtkRate)
-	             - tarFighter.Defence * tarFighter.Buff;
+	local damage = atkFighter.damage * atkFighter.atkBuff * lpropRate * (1+lAddCrit + lJoinAtkRate)
+	             - tarFighter.Defence * tarFighter.defBuff;
 --普通攻击伤害 = （人物攻击力 + 装备攻击力）* BUFF百分比加成*属性克制关系加成*（暴击加成+合击加成）
 --           –（对方人物防御值+对方装备防御值）* BUFF百分比加成
 	if damage < 0 then
@@ -81,7 +81,7 @@ function p.SkillDamage(skillID,atkFighter,tarFighter)
 	--普通攻击伤害 = （人物攻击力 + 装备攻击力）* BUFF百分比加成*属性克制关系加成*（暴击加成+合击加成）
 	--           –（对方人物防御值+对方装备防御值）* BUFF百分比加成
     elseif skillType == W_SKILL_TYPE_2 then --恢复类
-		damage= atkFighter.damage * atkFighter.Buff * (1 + damage_percent)
+		damage= atkFighter.damage * (1 + damage_percent)
 	end;
 
 	if damage < 0 then

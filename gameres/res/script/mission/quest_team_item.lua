@@ -18,6 +18,8 @@ function p.ShowUI(missionId,stageId,nowTeamId,storyId)
 		WriteConErr("param errer");
 		return
 	end
+	dlg_menu.SetNewUI( p );
+
 	p.stageId = stageId;
 	p.missionId = missionId;
 	p.nowTeamId = nowTeamId or 1;
@@ -87,6 +89,9 @@ function p.ShowTeamList(teamData)
 	end
 	
 	local teamTable = GetListBoxHorz(p.layer, ui.ID_CTRL_LIST_TEAM)
+	if teamTable == nil then
+		return
+	end
 	teamTable:SetSingleMode(true);
 	teamTable:ClearView();
 	
@@ -367,4 +372,10 @@ function p.ClearData()
 	p.teamListData = {};
 	p.itemListData = {};
 	p.teamTableView = nil;
+end
+
+
+function p.UIDisappear()
+	p.CloseUI();
+	--maininterface.BecomeFirstUI();
 end

@@ -67,6 +67,9 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 	else
 		self.distanceRes = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "distance" ) );
 		self.atkSound =  SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "atk_sound" );	
+		if self.atkSound == nil then
+			self.atkSound = "battle_paw.mp3"
+		end
 		self.is_bullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
 	end
 
@@ -241,7 +244,18 @@ function p:atk_startAtk()
 				seqTemp:AddCommand( cmd11 );					
 				
 			--end;			
-		end;		
+		end;	
+		
+		if self.IsSkill == false then
+			local seqMusic = batch:AddSerialSequence();
+			if self.atkSound ~= nil then
+				local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( self.atkplayerNode, true );
+				seqMusic:AddCommand( cmdAtkBegin );
+
+				local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.atkSound  );
+				seqMusic:AddCommand( cmdAtkMusic );
+			end		
+		end;
 		--攻击结束播放受击动作
 		self.atkFighter:cmdLua( "atk_end",  self.id, "", seqAtkEnd ); 
 		seqAtkEnd:SetWaitEnd(cmdAtk);
@@ -250,13 +264,6 @@ function p:atk_startAtk()
 		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		seqStar:AddCommand( cmdAtk ); --攻击动作
 		
-		local atkSound = self.atkSound;
-		--攻击音乐
-		if atkSound ~= nil then
-			local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( atkSound );
-			seqMusic:AddCommand( cmdAtkMusic );
-		end			
-
 		if self.is_bullet == W_BATTLE_BULLET_1 then --有弹道
 			local bulletAni = "w_bullet."..tostring( atkFighter.cardId );
 			
@@ -275,10 +282,31 @@ function p:atk_startAtk()
 				seqAtk:AddCommand(cmd11);
 			end;
 			
+			--local seqMusic = batch:AddSerialSequence();
+			if self.IsSkill == false then
+				if self.atkSound ~= nil then
+					local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( self.atkplayerNode, true );
+					seqAtk:AddCommand( cmdAtkBegin );
+
+					local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.atkSound  );
+					seqAtk:AddCommand( cmdAtkMusic );
+				end				
+			end;
 			atkFighter:cmdLua("atk_end",        self.id, "", seqTarget);
 			seqTarget:SetWaitEnd( bulletend );
 		else  --没弹道
 			--攻击结束
+			if self.IsSkill == false then
+				local seqMusic = batch:AddSerialSequence();
+				if self.atkSound ~= nil then
+					local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( self.atkplayerNode, true );
+					seqMusic:AddCommand( cmdAtkBegin );
+
+					local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.atkSound  );
+					seqMusic:AddCommand( cmdAtkMusic );
+				end							
+			end;
+			
 			if self.IsSkill == true then	--技能受击特效
 				--for pos=1,#self.targetLst do
 				--	tarFighter = (self.targetLst)[pos];
@@ -307,8 +335,19 @@ function p:atk_end()
 	local batch = w_battle_mgr.GetBattleBatch(); 
 --	local seqStar = batch:AddSerialSequence();
 	local seqAtk = batch:AddSerialSequence();
---	local seqMusic = batch:AddSerialSequence();
+	local seqMusic = batch:AddSerialSequence();
 --	local seqTarget = batch:AddSerialSequence(); 
+
+	--攻击音乐
+	if self.IsSkill == true then
+		if self.hurtSound ~= nil then
+			local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( self.atkplayerNode, true );
+			seqMusic:AddCommand( cmdAtkBegin );
+
+			local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.hurtSound  );
+			seqMusic:AddCommand( cmdAtkMusic );
+		end
+	end;
 		
 	--for pos=1,#self.targetLst do
 	--	tarFighter = (self.targetLst)[pos];

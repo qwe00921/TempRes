@@ -17,6 +17,8 @@ p.missionIdGap = 10;
 local difficultKey = EASY;
 
 function p.ShowUI(stageId)
+	dlg_menu.SetNewUI( p );
+	
 	p.stageId  = stageId;
 	--获取missionId初始值
 	p.GetMissionId();
@@ -205,6 +207,9 @@ function p.loadMissionList(missionStartId)
 	local misId = missionStartId
 	local count = p.missionMax;
 	local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST);
+	if missionListTable == nil then
+		return
+	end
 	missionListTable:ClearView();
 	
 	for i = 1,count do
@@ -272,31 +277,44 @@ function p.setMissionInfo(misId,view)
 	misGhost:SetText(missionTable.soul);
 
 	local rewardId = missionTable.reward_id;
-	local rewardTable = SelectRowList(T_MISSION_REWARD,"reward_id",rewardId);
+	WriteConErr("rewardId == "..rewardId);
+
+	local rewardTable = SelectRowList(T_MISSION_REWARD,"id",rewardId);
 	if rewardTable == nil then
 		WriteCon("rewardTable error");
 		return
 	end
-	local rewardGroupTable = {};
-	for k,v in pairs(rewardTable) do
-		if tonumber(v.group) == 1 then
-			rewardGroupTable[#rewardGroupTable + 1] = v;
+	--local rewardGroupTable = rewardTable
+	--local rewardGroupTable = {};
+	-- for k,v in pairs(rewardTable) do
+		-- if tonumber(v.group) == 1 then
+			-- rewardGroupTable[#rewardGroupTable + 1] = v;
+		-- end
+	-- end
+	
+	local picIndex = nil;
+	local itemT = nil;
+	local itemType = nil;
+	local itemId = nil;
+	for i = 1,#rewardTable do
+		itemType = tonumber(rewardTable[i].item_type)
+		itemId = tonumber(rewardTable[i].item_id)
+
+		if itemType == QUEST_ITEM_TYPE_MATERIAL then
+			itemT = SelectRowInner(T_MATERIAL,"id",itemId);
+			picIndex = itemT.item_pic;
+		elseif itemType == QUEST_ITEM_TYPE_CARD then
+			itemT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+			picIndex = itemT.head_pic;
+		elseif itemType == QUEST_ITEM_TYPE_EQUIP then
+			itemT = SelectRowInner(T_EQUIP,"id",itemId);
+			picIndex = itemT.item_pic;
+		elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE 
+				or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
+			itemT = SelectRowInner(T_ITEM,"id",itemId);
+			picIndex = itemT.item_pic;
 		end
-	end
-	for i = 1,#rewardGroupTable do
-		if rewardGroupTable[i].drop_type == 1 then
-		
-		elseif rewardGroupTable[i].drop_type == 2 then
-		elseif rewardGroupTable[i].drop_type == 3 then
-		elseif rewardGroupTable[i].drop_type == 4 then
-		elseif rewardGroupTable[i].drop_type == 5 then
-		elseif rewardGroupTable[i].drop_type == 6 then
-		elseif rewardGroupTable[i].drop_type == 7 then
-		elseif rewardGroupTable[i].drop_type == 8 then
-		elseif rewardGroupTable[i].drop_type == 9 then
-		
-		end
-		--misRewardT[i]:SetPicture( GetPictureByAni("common_ui.evaluate_0", 0));
+		misRewardT[i]:SetPicture( GetPictureByAni(picIndex, 0));
 	end
 --	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
 	
@@ -343,4 +361,8 @@ function p.Clear()
 	p.stageId = nil;	--关卡ID
 	p.missionId = nil; 	--任务ID
 	p.missionList = nil;
+end
+function p.UIDisappear()
+	p.CloseUI();
+	--maininterface.BecomeFirstUI();
 end

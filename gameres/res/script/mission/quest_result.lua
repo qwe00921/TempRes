@@ -1,13 +1,3 @@
-QUEST_ITEM_TYPE_MATERIAL = 1;		--material
-QUEST_ITEM_TYPE_CARD = 2;			--char_res
-QUEST_ITEM_TYPE_EQUIP = 3;			--equip
-QUEST_ITEM_TYPE_MONEY = 4;
-QUEST_ITEM_TYPE_BLUESOUL = 5;
-QUEST_ITEM_TYPE_EMONEY = 6;
-QUEST_ITEM_TYPE_GIFT = 7;			--item
-QUEST_ITEM_TYPE_TREASURE = 8;		--item
-QUEST_ITEM_TYPE_OTHER = 9;			--item
-QUEST_ITEM_TYPE_SHOP = 10;			--item
 
 quest_result = {}
 
@@ -34,9 +24,10 @@ function p.ShowUI(backData)
 	--如果战斗失败
 	if tonumber(rewardData.victory) == 0 then
 		p.CloseUI();
-		dlg_userinfo.ShowUI();
-		stageMap_main.OpenWorldMap();
-		dlg_menu.ShowUI();
+		quest_lost.ShowUI();
+		-- dlg_userinfo.ShowUI();
+		-- stageMap_main.OpenWorldMap();
+		-- dlg_menu.ShowUI();
 		return
 	end
 	

@@ -11,7 +11,7 @@ function p.ShowUI()
 	end
 	--maininterface.m_bgImage:SetVisible(false);
 	dlg_userinfo.HideUI();
-	--dlg_menu.HideUI();
+	dlg_menu.ShowUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -72,6 +72,9 @@ function p.Init()
 end
 
 function p.addAllStage(callBackData)
+	if p.layer == nil then
+		return
+	end
 	if callBackData.result == false then
 		dlg_msgbox.ShowOK(callBackData.message,nil,p.layer);
 		return

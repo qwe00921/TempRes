@@ -277,8 +277,8 @@ UIClsoeType=0
 
 [CTRL_PICTURE_REWARD1]
 Type=1
-Tag=12
-Rect=499 83 60 60
+Tag=13
+Rect=448 83 60 60
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -288,8 +288,8 @@ NormalFileUV=0 0 72 84
 
 [CTRL_PICTURE_REWARD2]
 Type=1
-Tag=13
-Rect=448 83 60 60
+Tag=12
+Rect=499 83 60 60
 AnchorPos=0 0
 Notes=
 UIOpenType=0
