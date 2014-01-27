@@ -218,6 +218,7 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) or IsDoubleEvent( uiEventType ) then
 		if ( ui_dlg_gacha.ID_CTRL_BUTTON_BACK == tag ) then  
 			p.CloseUI();
+			maininterface.ShowUI();
 			maininterface.BecomeFirstUI();
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --扭蛋界面按钮
 			WriteCon( "扭蛋界面按钮" );
@@ -1178,7 +1179,7 @@ function p.CloseUI()
 
 		p.requestFlag = false;
 		
-		maininterface.ShowUI();
+		--maininterface.ShowUI();
     end
 end
 
