@@ -94,6 +94,7 @@ function p.init()
 	p.SpBallNum = 0;
 	p.IsPickEnd = false;
 	p.PickEndEvent = nil;
+	
 end;
 
 
@@ -868,6 +869,7 @@ function p.SetLockAction(position)
 	   local lLockPic = GetImage(p.uiLayer, ltag);	    
 	   --local lLockPic = p.GetLockImage();		
 	   lLockPic:SetVisible(true);
+	   lLockPic:SetZOrder(E_BATTLE_Z_HERO_FIGHTER + 10);
 	   local targetFighter = p.enemyCamp:FindFighter(position);
 	   w_battle_pve.SetHp(targetFighter); --更新血量
 	   local lElementLst = p.heroCamp:GetElementAtkFighter(targetFighter);
