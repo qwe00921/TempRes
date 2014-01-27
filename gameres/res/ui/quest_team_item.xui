@@ -6,7 +6,7 @@ Height=960
 [CTRL_9SLICES_12]
 Type=22
 Tag=12
-Rect=3 169 640 790
+Rect=3 169 640 680
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -88,7 +88,7 @@ UIClsoeType=0
 [CTRL_BUTTON_FIGHT]
 Type=2
 Tag=11
-Rect=271 773 107 53
+Rect=275 762 107 53
 AnchorPos=0 0
 Notes=
 Text=进入战斗
@@ -105,7 +105,7 @@ NormalFileUV=0 0 110 54
 [CTRL_TEXT_POWER_V]
 Type=4
 Tag=227
-Rect=193 773 59 51
+Rect=197 762 59 51
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -118,7 +118,7 @@ UIClsoeType=0
 [CTRL_TEXT_POWER]
 Type=4
 Tag=13
-Rect=79 773 114 51
+Rect=83 762 114 51
 AnchorPos=0 0
 Notes=
 Text=消耗体力:

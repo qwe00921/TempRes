@@ -72,6 +72,9 @@ function p.Init()
 end
 
 function p.addAllStage(callBackData)
+	if p.layer == nil then
+		return
+	end
 	if callBackData.result == false then
 		dlg_msgbox.ShowOK(callBackData.message,nil,p.layer);
 		return

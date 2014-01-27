@@ -18,6 +18,8 @@ function p.ShowUI(missionId,stageId,nowTeamId,storyId)
 		WriteConErr("param errer");
 		return
 	end
+	dlg_menu.SetNewUI( p );
+
 	p.stageId = stageId;
 	p.missionId = missionId;
 	p.nowTeamId = nowTeamId or 1;
@@ -367,4 +369,10 @@ function p.ClearData()
 	p.teamListData = {};
 	p.itemListData = {};
 	p.teamTableView = nil;
+end
+
+
+function p.UIDisappear()
+	p.CloseUI();
+	--maininterface.BecomeFirstUI();
 end

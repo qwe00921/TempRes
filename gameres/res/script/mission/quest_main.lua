@@ -17,6 +17,8 @@ p.missionIdGap = 10;
 local difficultKey = EASY;
 
 function p.ShowUI(stageId)
+	dlg_menu.SetNewUI( p );
+	
 	p.stageId  = stageId;
 	--获取missionId初始值
 	p.GetMissionId();
@@ -205,6 +207,9 @@ function p.loadMissionList(missionStartId)
 	local misId = missionStartId
 	local count = p.missionMax;
 	local missionListTable = GetListBoxVert(p.layer, ui.ID_CTRL_VERTICAL_LIST);
+	if missionListTable == nil then
+		return
+	end
 	missionListTable:ClearView();
 	
 	for i = 1,count do
@@ -343,4 +348,8 @@ function p.Clear()
 	p.stageId = nil;	--关卡ID
 	p.missionId = nil; 	--任务ID
 	p.missionList = nil;
+end
+function p.UIDisappear()
+	p.CloseUI();
+	--maininterface.BecomeFirstUI();
 end

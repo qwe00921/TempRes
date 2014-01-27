@@ -23,3 +23,4 @@ DoFile("mission/quest_reward.lua");
 DoFile("mission/expbar_move_effect.lua");
 DoFile("mission/quest_team_item.lua");
 DoFile("mission/quest_result.lua");
+DoFile("mission/quest_lost.lua");
