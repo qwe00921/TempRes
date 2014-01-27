@@ -52,9 +52,30 @@ image\ui\bag\star2.png
 
 ;队伍图片	XMK
 [teamName]
-image\ui\public\team1.png
-image\ui\public\team2.png
-image\ui\public\team3.png
+image\ui\card_bag\team1.png
+image\ui\card_bag\team2.png
+image\ui\card_bag\team3.png
+
+;卡牌背包排序按钮
+[cardBagSort]
+image\ui\card_bag\btn_sort_head_1.png
+image\ui\card_bag\btn_sort_head_2.png
+image\ui\card_bag\btn_lv_head_1.png
+image\ui\card_bag\btn_lv_head_2.png
+image\ui\card_bag\btn_star_head_1.png
+image\ui\card_bag\btn_star_head_2.png
+image\ui\card_bag\btn_type_head_1.png
+image\ui\card_bag\btn_type_head_2.png
+
+[cardBagTypeBox]
+image\ui\card_bag\type_0.png
+image\ui\card_bag\type_1.png
+image\ui\card_bag\type_2.png
+image\ui\card_bag\type_3.png
+image\ui\card_bag\type_4.png
+image\ui\card_bag\type_5.png
+image\ui\card_bag\type_6.png
+image\ui\card_bag\type_7.png
 
 ;卡牌背包等级背景图片
 [levelBg]

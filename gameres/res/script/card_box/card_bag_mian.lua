@@ -240,7 +240,7 @@ function p.ShowCardInfo(view, card, cardIndex,row)
  	--WriteCon("cardUniqueId ===== "..cardUniqueId);
     cardButton:SetId(cardUniqueId);
 	--等级
-	local levelText = "LV "..tostring(card.Level)
+	local levelText = tostring(card.Level)
 	cardLevelText:SetText(levelText);
 	--队伍
 	local teamId = tonumber(card.Team_marks)
@@ -256,8 +256,9 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	
 	--卡牌边框颜色
 	
-	local cardType = tonumber(card.Class)
+	local cardType = tonumber(card.element)
 	--WriteCon("cardType ===== "..cardType);
+	cardBoxPic:SetPicture( GetPictureByAni("common_ui.cardBagTypeBox",cardType));
 	-- if cardType == 0 then
 		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
 	-- elseif cardType == 1 then
@@ -575,15 +576,18 @@ function p.sortByBtnEvent(sortType)
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
-		sortByBtn:SetText("等级");
+		--sortByBtn:SetText("等级");
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",2))
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		sortByBtn:SetText("星级");
+		--sortByBtn:SetText("星级");
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",4))
 	elseif(sortType == CARD_BAG_SORT_BY_TYPE) then 
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_TYPE;
-		sortByBtn:SetText("属性");
+		--sortByBtn:SetText("属性");
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",6))
 	end
 	card_bag_mgr.sortByRule(sortType)
 end
