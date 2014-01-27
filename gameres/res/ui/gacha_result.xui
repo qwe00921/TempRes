@@ -51,7 +51,7 @@ UIClsoeType=0
 [CTRL_TEXT_WORD]
 Type=4
 Tag=8
-Rect=126 722 383 107
+Rect=36 723 564 107
 AnchorPos=0 0
 Notes=
 Text=文字描述
