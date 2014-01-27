@@ -76,15 +76,23 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 
     --攻击者最初的位置
     self.originPos = self.atkplayerNode:GetCenterPos();
+	--local lscale = GetUIRoot:GetScale();
+	--self.originPos.x = self.originPos.x * lscale;
+	--self.originPos.y = self.originPos.y * lscale;
 	if self.isAoe == true then
 		if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战
 			self.enemyPos = w_battle_mgr.GetScreenCenterPos();	
+			--self.enemyPos.x = self.enemyPos.x * lscale;
+			--self.enemyPos.y = self.enemyPos.y * lscale;
 		else  --远程,在自己位置上,没有目标
 			self.enemyPos = nil;
 		end;
 		self.targetLst = targetLst;
 	else
 	    self.enemyPos = tarFighter:GetFrontPos(self.atkplayerNode);	
+		--self.enemyPos.x = self.enemyPos.x * lscale;
+		--self.enemyPos.y = self.enemyPos.y * lscale;
+
 		self.targetLst = {}
 		self.targetLst[1] = tarFighter;
 	end
@@ -233,17 +241,23 @@ function p:atk_startAtk()
 		seqAtk:AddCommand( cmdAtk );	
 	
 		local cmd11 = nil;
-		if self.IsSkill == true then	--近战技能只有攻击,  受击特效
-			--for k,v in pairs(self.targetLst) do
-			--	tarFighter = v;
-				local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode)
-				--local lPlayNode = tarFighter:GetPlayerNode()
-				cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.atkeffect );
-				local batch = w_battle_mgr.GetBattleBatch(); 
-				local seqTemp = batch:AddSerialSequence();
-				seqTemp:AddCommand( cmd11 );					
-				
-			--end;			
+		if self.IsSkill == true then	--近战技能攻击
+			local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode)
+			cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.atkeffect );
+			local batch = w_battle_mgr.GetBattleBatch(); 
+			local seqTemp = batch:AddSerialSequence();
+			seqTemp:AddCommand( cmd11 );					
+
+			--群体技能,需要加入受击特效
+			if self.isAoe == true then
+				for k,v in pairs(self.targetLst) do
+					local cmdhurt = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );			
+					local seqHurt = batch:AddSerialSequence(); 
+					seqHurt:AddCommand(cmdhurt);
+					seqHurt:SetWaitEnd(cmd11)
+				end
+			end;
+			
 		end;	
 		
 		if self.IsSkill == false then
@@ -308,8 +322,6 @@ function p:atk_startAtk()
 			end;
 			
 			if self.IsSkill == true then	--技能受击特效
-				--for pos=1,#self.targetLst do
-				--	tarFighter = (self.targetLst)[pos];
 				for k,v in pairs(self.targetLst) do
 					tarFighter = v;
 					local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );

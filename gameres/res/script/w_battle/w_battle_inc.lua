@@ -158,3 +158,9 @@ W_SHOWBUFF_STATE     = 3;  --BUFF状态轮流显示的时间
 --平台判断
 W_PLATFORM_WIN32     = 1
 W_PLATFORM_IOS       = 2
+
+--战斗所用到的像素
+W_BATTLE_JUMPSTAR = 220;     --人物进场动画偏移
+W_BATTLE_DAMAGE_OFFSETY = 60 --掉血数字的起始偏移
+W_BATTLE_DROP_H = 16;  --战斗中掉落物品的图片的宽高是一样的
+W_BATTLE_PASSBG_INIT = 740;  --过场动画的进度条的偏移值
