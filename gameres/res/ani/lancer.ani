@@ -205,7 +205,7 @@ image\ui\x_battle_main_ui\pet_skill.png
 ;hero血条
 [hpbar]
 ;image\ui\pve\hpbar_bk.png (1,0,81,11)
-;image\ui\pve\hpbar.png 
+;image\ui\pve\hpbar.png
 image\xbattleui\ko_hp.png (146,0,146,44)
 image\xbattleui\ko_bg.png
 image\xbattleui\ko_mp.png
@@ -278,7 +278,7 @@ image\map_base\boss_fx.png @cut(1,8) @time=0.4 @scale=0.8 @offset(-8,-20) @loop
 ;}-----------------------------------------------------
 
 [cardflash]
-sk\effect\card_drop\card_drop0009.png @cut(1,4) @time=0.2 @size(240,300)	
+sk\effect\card_drop\card_drop0009.png @cut(1,4) @time=0.2 @size(240,300)
 
 
 ;角色背景
@@ -324,7 +324,7 @@ image\ui\equip\item3.png
 image\ui\boss_out\fx.png @cut(1,4) @time=0.2 @scale=0.5 @loop
 
 [busy]
-lj\effect\busy1.png @cut(4,4) @time=0.05 @scale=1.5 @loop
+lj\effect\busy1.png @cut(4,4) @time=0.05 @scale=0.6 @loop
 
 ;遭遇货币
 [encounter_money]
