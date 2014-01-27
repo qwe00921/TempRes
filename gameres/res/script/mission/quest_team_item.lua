@@ -23,7 +23,7 @@ function p.ShowUI(missionId,stageId,nowTeamId,storyId)
 	p.stageId = stageId;
 	p.missionId = missionId;
 	p.nowTeamId = nowTeamId or 1;
-	p.storyId = storyId or 0;
+	p.storyId = storyId or p.storyId or 0;
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -301,6 +301,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			p.CloseUI();
 		--战斗
 		elseif (ui.ID_CTRL_BUTTON_FIGHT == tag) then
+			WriteCon("p.storyId == "..p.storyId);
 			if tonumber(p.storyId) == 0 then
 				local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
 				WriteCon("nowTeamId == "..nowTeamId);
@@ -313,6 +314,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 				p.CloseUI();
 			else
 				dlg_drama.ShowUI( p.storyId,after_drama_data.FIGHT ,p.missionId,nowTeamId);
+				p.storyId = nil;
 				p.CloseUI();
 			end
 

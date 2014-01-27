@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=0 123 100 68
+Rect=0 139 100 49
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -17,8 +17,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=2
 UIClsoeType=2
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
+NormalFile=.\res\image\ui\card_bag\return_1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_PICTURE_86]
 Type=1
@@ -49,13 +51,13 @@ UIClsoeType=2
 [CTRL_PICTURE_92]
 Type=1
 Tag=92
-Rect=318 125 107 30
+Rect=309 125 123 30
 AnchorPos=0 0
 Notes=
 UIOpenType=3
 UIClsoeType=3
-NormalFile=.\res\image\ui\card\card2.png
-NormalFileUV=0 0 192 108
+NormalFile=.\res\image\ui\card_bag\27.png
+NormalFileUV=0 0 121 34
 
 [CTRL_TEXT_94]
 Type=4
@@ -63,8 +65,8 @@ Tag=94
 Rect=324 128 96 24
 AnchorPos=0 0
 Notes=
-Text=伙伴栏
-TextTradition=伙伴欄
+Text=小伙伴们
+TextTradition=小伙伴們
 TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -117,28 +119,51 @@ NormalFileUV=0 0 100 80
 SelectFile=.\res\image\ui\card\sellall_click.png
 SelectedFileUV=0 0 202 80
 
-[CTRL_BUTTON_SORT_BY]
-Type=2
-Tag=30
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
 Rect=537 123 100 68
 AnchorPos=0 0
 Notes=
-Text=排序
-TextTradition=排序
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_bag\return_1.png
+NormalFileUV=0 0 122 60
+
+[CTRL_BUTTON_SORT_BY]
+Type=2
+Tag=30
+Rect=547 133 79 50
+AnchorPos=0 0
+Notes=
 TextSize=24
 TextColor=0xd3cf9d
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=3
 UIClsoeType=3
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
+NormalFile=.\res\image\ui\card_bag\btn_sort_head_1.png
+NormalFileUV=0 0 67 46
+SelectFile=.\res\image\ui\card_bag\btn_sort_head_2.png
+SelectedFileUV=0 0 67 46
 
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=5 199 628 603
+Rect=5 199 628 540
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_68]
+Type=1
+Tag=68
+Rect=0 749 640 70
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\card_all1.png
+NormalFileUV=0 0 613 63

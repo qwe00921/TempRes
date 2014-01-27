@@ -79,13 +79,14 @@ function p:tar_hurt()
 		seqHurt:SetWaitEnd(cmdHurt); 
 	else
 		WriteCon( "targetTurn tar_hurt to end tarid="..tostring(targerFighter:GetId()));
+		--[[
 		local lPlayerNode = targerFighter:GetPlayerNode();
 		local moveback = OnlyMoveTo(targerFighter, lPlayerNode:GetCenterPos(), targerFighter.oldPos, seqTarget,true);
 		
 		local cmdIshurt = targerFighter:cmdLua( "tar_hurtEnd",   self.id, tostring(self.camp), seqHurt );
 		seqHurt:SetWaitEnd(moveback); 
-		
-        --self:tar_hurtEnd();
+		]]--
+        self:tar_hurtEnd();
 	end
 end;
 --[[

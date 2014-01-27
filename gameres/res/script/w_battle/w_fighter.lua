@@ -388,7 +388,10 @@ end
 function p:GetFrontPos(targetNode)
 	local frontPos = self:GetNode():GetCenterPos();
     local halfWidthSum = self:GetNode():GetCurAnimRealSize().w/4 + targetNode:GetCurAnimRealSize().w/4;
-    
+	--local halfWidthSum = self:GetNode():GetFrameSize().w/2;
+	local lscale = GetUIScale();
+	halfWidthSum = halfWidthSum * lscale;
+	
     if self.camp == E_CARD_CAMP_HERO then
         frontPos.x = frontPos.x - halfWidthSum;
     else
