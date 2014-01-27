@@ -140,6 +140,9 @@ function p.InitController()
 end
 
 function p.ShowCountry(backData)
+	if p.layer == nil then
+		return
+	end
 	if backData.result == false then
 		dlg_msgbox.ShowOK("错误提示","玩家数据错误。",nil,p.layer);
 		return;
