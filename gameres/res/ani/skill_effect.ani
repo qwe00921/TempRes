@@ -60,8 +60,6 @@ image\skill\target_1004.png @cut(2,4) @use(1,2) @time=0.1
 image\skill\target_1007.png @cut(2,4) @use(1,2) @time=0.1
 [bullet_1016]
 image\skill\target_1016.png @cut(2,4) @use(1,2) @time=0.1
-[bullet_1016]
-image\skill\target_1016.png @cut(2,4) @use(1,2) @time=0.1
 [bullet_1018]
 image\skill\target_1018.png @cut(2,4) @use(1,2) @time=0.1
 [bullet_1019]
