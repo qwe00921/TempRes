@@ -122,6 +122,7 @@ function p.OnCloseClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_3 == tag then
+			dlg_menu.CloseBtnList();
 			p.CloseUI();
 		end
 	end
@@ -131,7 +132,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	
 	if IsClickEvent(uiEventType) then
 		local id = uiNode:GetId();
-		WriteCon( tostring(id) );		
+		WriteCon( tostring(id) );	
 		p.CloseUI();
 --[[		if id == ID_PET then
 			dlg_beast_main.ShowUI();
@@ -143,6 +144,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		--]]
 		if id == ID_STRENGTHEN then
 			card_rein.ShowUI();
+			dlg_menu.SetSelectButton( -1 );--菜单取消高亮
 		end
 	end
 end

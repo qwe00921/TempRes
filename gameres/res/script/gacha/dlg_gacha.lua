@@ -220,6 +220,8 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			p.CloseUI();
 			maininterface.ShowUI();
 			maininterface.BecomeFirstUI();
+			
+			dlg_menu.SetSelectButton( -1 );
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --扭蛋界面按钮
 			WriteCon( "扭蛋界面按钮" );
 			if curPage ~= SHOP_GACHA then

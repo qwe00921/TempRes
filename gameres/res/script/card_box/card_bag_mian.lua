@@ -501,6 +501,8 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			else
 				maininterface.ShowUI();
 				p.CloseUI();
+				
+				dlg_menu.SetSelectButton( -1 );
 			end
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then
 			WriteCon("card_bag_sort.ShowUI()");

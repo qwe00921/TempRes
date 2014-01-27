@@ -151,6 +151,17 @@ image\ui\main_interface\clear.png
 image\ui\main_interface\home_win_arena.png
 image\ui\main_interface\home_win_quest.png
 image\ui\main_interface\home_win_gate.png
+
+[mainui_scrolllist_highlight]
+image\ui\main_interface\home_win_arena_1.png
+image\ui\main_interface\home_win_quest_1.png
+image\ui\main_interface\home_win_gate_1.png
+
+[mainui_scrolllist_disabled]
+image\ui\main_interface\home_win_arena_2.png
+image\ui\main_interface\home_win_quest_2.png
+image\ui\main_interface\home_win_gate_2.png
+
 ;强化成功
 [intensify_succeed]
 image\ui\main_interface\home_win_arena.png

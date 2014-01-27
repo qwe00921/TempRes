@@ -79,7 +79,8 @@ end
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
-
+		p.SetSelectButton( tag );
+		
 		if ui.ID_CTRL_BUTTON_GASHAPON == tag then
 			WriteCon("**========Å¤µ°========**");
 			dlg_gacha.ShowUI( SHOP_ITEM );
@@ -120,6 +121,31 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 
 		end
 		maininterface.CloseAllPanel();
+	end
+end
+
+function p.CloseBtnList()
+	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_PVP );
+	btn:SetChecked( false );
+end
+
+function p.SetSelectButton( tag )
+	if tag == ui.ID_CTRL_BUTTON_PVP then
+		local btn = GetButton( p.layer, tag );
+		btn:SetChecked( true );
+		return;
+	end
+	
+	local temp = {
+		ui.ID_CTRL_BUTTON_GASHAPON,
+		ui.ID_CTRL_BUTTON_BAG,
+		ui.ID_CTRL_BUTTON_CARD_GROUP,
+		ui.ID_CTRL_BUTTON_QUEST,
+	};
+	
+	for i,v in ipairs(temp) do
+		local btn = GetButton( p.layer, v );
+		btn:SetChecked( v == tag );
 	end
 end
 

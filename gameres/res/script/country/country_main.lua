@@ -425,6 +425,8 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 
 			--注销采集倒计时
 			country_collect.EndTick();
+			
+			dlg_menu.SetSelectButton( -1 );
 		elseif ui.ID_CTRL_BUTTON_MOUNTAIN == tag then
 			--country_collect.Collect( E_COLLECT_MOUNTAIN );
 		elseif ui.ID_CTRL_BUTTON_TREE == tag then
