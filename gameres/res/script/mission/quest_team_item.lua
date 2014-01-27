@@ -89,6 +89,9 @@ function p.ShowTeamList(teamData)
 	end
 	
 	local teamTable = GetListBoxHorz(p.layer, ui.ID_CTRL_LIST_TEAM)
+	if teamTable == nil then
+		return
+	end
 	teamTable:SetSingleMode(true);
 	teamTable:ClearView();
 	

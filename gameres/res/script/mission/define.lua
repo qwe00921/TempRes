@@ -4,6 +4,8 @@
 -- purpose:		加载脚本：任务相关（mission）
 --------------------------------------------------------------
 
+DoFile("mission/item_type_init.lua");
+
 --任务
 DoFile("mission/dlg_mission_exit.lua");
 DoFile("mission/get_card.lua"); 			--加载获得卡片界面

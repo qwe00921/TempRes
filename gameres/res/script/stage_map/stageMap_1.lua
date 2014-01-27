@@ -11,7 +11,7 @@ function p.ShowUI()
 	end
 	--maininterface.m_bgImage:SetVisible(false);
 	dlg_userinfo.HideUI();
-	--dlg_menu.HideUI();
+	dlg_menu.ShowUI();
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;

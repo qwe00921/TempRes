@@ -42,14 +42,14 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	end
 end
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
