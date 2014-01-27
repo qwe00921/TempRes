@@ -14,6 +14,7 @@ p.teamTableView = nil;
 p.storyId = nil;
 
 function p.ShowUI(missionId,stageId,nowTeamId,storyId)
+	WriteCon("storyId == "..storyId);
 	if missionId == nil or stageId == nil then
 		WriteConErr("param errer");
 		return
@@ -309,28 +310,10 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 				end
 				p.CloseUI();
 			else
-				dlg_drama.ShowUI( storyId,after_drama_data.FIGHT ,p.missionId,nowTeamId);
+				dlg_drama.ShowUI( p.storyId,after_drama_data.FIGHT ,p.missionId,nowTeamId);
+				p.CloseUI();
 			end
-			
-			-- if p.missionList["M"..missionId] then
-				-- local storyId = p.missionList["M"..missionId].begin_story;
-				-- WriteCon("storyId = "..storyId);
-				-- if tonumber(storyId) ~= 0 then
-					-- dlg_drama.ShowUI( missionId , storyId);
-				-- else
-				   -- if E_DEMO_VER == 4 then
-					-- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
-				   -- else	
-					-- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
-				   -- end;
-				-- end
-			-- else
-				-- if E_DEMO_VER== 4 then
-				  -- n_battle_mgr.EnterBattle( N_BATTLE_PVE, missionId );--进入战斗PVE
-				-- else
-				  -- w_battle_mgr.EnterBattle( W_BATTLE_PVE, missionId );--进入战斗PVE
-				-- end;
-			-- en
+
 		--队伍编辑
 		elseif (ui_team.ID_CTRL_BUTTON_BG == tag or ui_team.ID_CTRL_BUTTON_EDIT == tag) then
 			local nowTeamId = uiNode:GetId();
@@ -369,9 +352,11 @@ end
 function p.ClearData()
 	p.stageId = nil;
 	p.missionId = nil;
+	p.nowTeamId = nil;
 	p.teamListData = {};
 	p.itemListData = {};
 	p.teamTableView = nil;
+	p.storyId = nil;
 end
 
 
