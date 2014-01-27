@@ -26,11 +26,12 @@ function SendReq( cmd, action, uid, param )
 		local layer = createNDUILayer();
 		layer:Init();
 		layer:SetFrameRectFull();
-		layer:SetSwallowTouch( true );
 		layer:SetZOrder( 999999 );
 		pLayer = layer;
 		GetUIRoot():AddChild(layer);
 	end
+	
+	pLayer:SetSwallowTouch( true );
 
 	SendRequest( cmd, action, uid, param );
 	
