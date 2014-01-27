@@ -47,9 +47,9 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
     local fx = "lancer_cmb.begin_battle_jump";
     
     local atkPos = fPos;
-	local lscale = GetUIRoot():GetScale();
-    local x = (tPos.x - atkPos.x) * lscale;
-    local y = (tPos.y - atkPos.y) * lscale;
+    local lscale = GetUIScale();
+    local x = (tPos.x - atkPos.x)*lscale;
+    local y = (tPos.y - atkPos.y)*lscale;
     local distance = (x ^ 2 + y ^ 2) ^ 0.75;
     
     -- calc start offset

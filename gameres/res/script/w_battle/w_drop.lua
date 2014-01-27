@@ -55,9 +55,7 @@ function p:InitImageNode()
 		self.imageNode = createNDUIImage();
 		self.imageNode:Init();
 		self.imageNode:SetFramePosXY(0,0);
-		local lscale = GetUIRoot():GetScale();
-		local lh = W_BATTLE_DROP_H * lscale;
-		self.imageNode:SetFrameSize(lh,lh);
+		self.imageNode:SetFrameSize(16,16);
 		self.imageNode:SetVisible( false );
 	end
 end
@@ -104,9 +102,7 @@ function p:Drop(pTargetNode, param)
 	
 	local point = pTargetNode:GetFramePos();
 	local size = pTargetNode:GetFrameSize();
-	
-	local lscale = GetUIRoot():GetScale();	
-	self.imageNode:SetFramePosXY((point.x+size.w/2) * lscale, (point.y+size.h-W_BATTLE_DROP_H) * lscale);
+	self.imageNode:SetFramePosXY(point.x+size.w/2, point.y+size.h-16);
 	self.imageNode:SetScale( 1.0f );
 	self.imageNode:SetVisible( true );
 	--local zorder = self.imageNode:GetZOrder();
@@ -132,9 +128,9 @@ function p:Pick( pTargetNode, pos )
 	local targetPoint = pTargetNode:GetFramePos();
 	local targetSize = pTargetNode:GetFrameSize();
 	local orignPoint = self.imageNode:GetFramePos();
-	local lscale = GetUIRoot():GetScale();
-	local x = (targetPoint.x - orignPoint.x + targetSize.w/2) * lscale;
-	local y = (targetPoint.y - orignPoint.y + targetSize.h/2) * lscale;
+	
+	local x = targetPoint.x - orignPoint.x + targetSize.w/2;
+	local y = targetPoint.y - orignPoint.y + targetSize.h/2;
 
 	--local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.pick_effect" );
 	local cmd = createCommandEffect():AddActionEffect( 0, self.imageNode, "lancer_cmb.pick_effect" );

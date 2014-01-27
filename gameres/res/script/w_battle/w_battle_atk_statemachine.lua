@@ -76,23 +76,15 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 
     --攻击者最初的位置
     self.originPos = self.atkplayerNode:GetCenterPos();
-	--local lscale = GetUIRoot:GetScale();
-	--self.originPos.x = self.originPos.x * lscale;
-	--self.originPos.y = self.originPos.y * lscale;
 	if self.isAoe == true then
 		if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战
 			self.enemyPos = w_battle_mgr.GetScreenCenterPos();	
-			--self.enemyPos.x = self.enemyPos.x * lscale;
-			--self.enemyPos.y = self.enemyPos.y * lscale;
 		else  --远程,在自己位置上,没有目标
 			self.enemyPos = nil;
 		end;
 		self.targetLst = targetLst;
 	else
 	    self.enemyPos = tarFighter:GetFrontPos(self.atkplayerNode);	
-		--self.enemyPos.x = self.enemyPos.x * lscale;
-		--self.enemyPos.y = self.enemyPos.y * lscale;
-
 		self.targetLst = {}
 		self.targetLst[1] = tarFighter;
 	end

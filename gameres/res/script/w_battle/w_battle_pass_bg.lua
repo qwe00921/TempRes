@@ -53,8 +53,7 @@ function p.ShowAnimation()
 		return;
 	end
 	
-	local lscale = GetUIRoot():GetScale();
-	p.layer:SetFramePosXY(W_BATTLE_PASSBG_INIT * lscale , 0);
+	p.layer:SetFramePosXY(740, 0);
 	p.layer:SetVisible( true );
 	
 	p.layer:AddActionEffect( "ui.w_battle_pass_bg_show" );
