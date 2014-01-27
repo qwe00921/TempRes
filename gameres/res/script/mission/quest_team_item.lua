@@ -14,7 +14,6 @@ p.teamTableView = nil;
 p.storyId = nil;
 
 function p.ShowUI(missionId,stageId,nowTeamId,storyId)
-	WriteCon("storyId == "..storyId);
 	if missionId == nil or stageId == nil then
 		WriteConErr("param errer");
 		return
@@ -201,6 +200,9 @@ end
 
 function p.ShowItemList(itemData)
 		local tiemTable = GetListBoxHorz(p.layer, ui.ID_CTRL_LIST_ITEM)
+		if tiemTable == nil then 
+			return
+		end
 		tiemTable:ClearView();
 		
 		local view = createNDUIXView();
@@ -356,7 +358,7 @@ function p.ClearData()
 	p.teamListData = {};
 	p.itemListData = {};
 	p.teamTableView = nil;
-	p.storyId = nil;
+	--p.storyId = nil;
 end
 
 
