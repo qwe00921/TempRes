@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=0 720 640 91
+Rect=0 731 640 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 640 338
 [CTRL_PICTURE_BG]
 Type=1
 Tag=83
-Rect=0 721 634 89
+Rect=0 732 634 80
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -29,7 +29,7 @@ NormalFileUV=0 0 100 100
 [CTRL_BUTTON_CLEAR]
 Type=2
 Tag=84
-Rect=31 737 170 67
+Rect=31 747 170 67
 AnchorPos=0 0
 Notes=
 Text=清除选择
@@ -46,7 +46,7 @@ NormalFileUV=0 0 110 54
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=85
-Rect=242 738 146 63
+Rect=242 748 146 63
 AnchorPos=0 0
 Notes=
 Text=出售
@@ -63,7 +63,7 @@ NormalFileUV=0 0 110 54
 [CTRL_TEXT_86]
 Type=4
 Tag=88
-Rect=410 728 107 31
+Rect=410 738 107 31
 AnchorPos=0 0
 Notes=
 Text=出售金额
@@ -78,7 +78,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=89
-Rect=493 725 30 30
+Rect=493 735 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -89,7 +89,7 @@ NormalFileUV=0 0 30 30
 [CTRL_TEXT_SELL_MONEY]
 Type=4
 Tag=90
-Rect=525 729 80 24
+Rect=525 739 80 24
 AnchorPos=0 0
 Notes=
 Text=0
@@ -104,7 +104,7 @@ UIClsoeType=0
 [CTRL_TEXT_89]
 Type=4
 Tag=93
-Rect=431 768 107 27
+Rect=431 778 107 27
 AnchorPos=0 0
 Notes=
 Text=选择人数
@@ -119,7 +119,7 @@ UIClsoeType=0
 [CTRL_TEXT_SELL_NUM]
 Type=4
 Tag=95
-Rect=524 765 51 31
+Rect=524 775 51 31
 AnchorPos=0 0
 Notes=
 Text=0

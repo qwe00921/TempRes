@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_card_main_view = {};
 local p =  ui_card_main_view;
+p.ID_CTRL_PICTURE_68					     = 68;
 p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
 p.ID_CTRL_BUTTON_SORT_BY				  = 30;
 p.ID_CTRL_PICTURE_15					     = 15;
