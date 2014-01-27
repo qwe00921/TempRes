@@ -55,7 +55,7 @@ function p:InitImageNode()
 		self.imageNode = createNDUIImage();
 		self.imageNode:Init();
 		self.imageNode:SetFramePosXY(0,0);
-		self.imageNode:SetFrameSize(16,16);
+		self.imageNode:SetFrameSize(W_BATTLE_DROP_H,W_BATTLE_DROP_H);
 		self.imageNode:SetVisible( false );
 	end
 end
@@ -102,7 +102,7 @@ function p:Drop(pTargetNode, param)
 	
 	local point = pTargetNode:GetFramePos();
 	local size = pTargetNode:GetFrameSize();
-	self.imageNode:SetFramePosXY(point.x+size.w/2, point.y+size.h-16);
+	self.imageNode:SetFramePosXY(point.x+size.w/2, point.y+size.h-W_BATTLE_DROP_H);
 	self.imageNode:SetScale( 1.0f );
 	self.imageNode:SetVisible( true );
 	--local zorder = self.imageNode:GetZOrder();
@@ -128,9 +128,10 @@ function p:Pick( pTargetNode, pos )
 	local targetPoint = pTargetNode:GetFramePos();
 	local targetSize = pTargetNode:GetFrameSize();
 	local orignPoint = self.imageNode:GetFramePos();
+	local lscale = GetUIScale();
 	
-	local x = targetPoint.x - orignPoint.x + targetSize.w/2;
-	local y = targetPoint.y - orignPoint.y + targetSize.h/2;
+	local x = (targetPoint.x - orignPoint.x + targetSize.w/2)*lscale;
+	local y = (targetPoint.y - orignPoint.y + targetSize.h/2)*lscale;
 
 	--local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.pick_effect" );
 	local cmd = createCommandEffect():AddActionEffect( 0, self.imageNode, "lancer_cmb.pick_effect" );
