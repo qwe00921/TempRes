@@ -58,7 +58,7 @@ p.PickEndEvent = nil;
 
 p.dropHpBall = 0;
 p.dropSpBall = 0;
-p.platform = W_PLATFORM_WIN32;
+p.platform = 1;
 p.isClose = false;
 
 function p.init()
@@ -222,7 +222,10 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Skill_type" ) );
 			if (distanceRes ~= nil) and (targetType ~= nil) and (skillType ~= nil) then
 				return p.SetPVESkillAtkID(atkID);
+			else
+				WriteConWarning("SkillID config is Error Id="..tostring(atkFighter.Skill));
 			end;
+			
 		end;
 	end;
 
