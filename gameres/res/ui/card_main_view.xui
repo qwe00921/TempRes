@@ -25,7 +25,7 @@ DisableFileUV=0 0 122 60
 [CTRL_PICTURE_86]
 Type=1
 Tag=86
-Rect=123 124 160 68
+Rect=123 124 141 68
 AnchorPos=0 0
 Notes=
 UIOpenType=2
@@ -36,7 +36,7 @@ NormalFileUV=0 0 192 108
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=87
-Rect=135 132 134 50
+Rect=135 132 120 50
 AnchorPos=0 0
 Notes=
 Text=卡牌一览
@@ -51,7 +51,7 @@ UIClsoeType=2
 [CTRL_PICTURE_92]
 Type=1
 Tag=92
-Rect=287 125 123 30
+Rect=261 125 123 30
 AnchorPos=0 0
 Notes=
 UIOpenType=3
@@ -62,7 +62,7 @@ NormalFileUV=0 0 121 34
 [CTRL_TEXT_94]
 Type=4
 Tag=94
-Rect=300 128 96 24
+Rect=274 128 96 24
 AnchorPos=0 0
 Notes=
 Text=小伙伴们
@@ -77,7 +77,7 @@ UIClsoeType=3
 [CTRL_PICTURE_91]
 Type=1
 Tag=91
-Rect=295 159 107 30
+Rect=269 159 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -88,7 +88,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=38
-Rect=303 162 90 22
+Rect=277 162 90 22
 AnchorPos=0 0
 Notes=
 Text=99/99
@@ -103,21 +103,19 @@ UIClsoeType=3
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=20
-Rect=410 124 100 68
+Rect=387 129 122 60
 AnchorPos=0 0
 Notes=
-Text=卖出
-TextTradition=賣出
 TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=3
 UIClsoeType=3
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\card\sellall_click.png
-SelectedFileUV=0 0 202 80
+NormalFile=.\res\image\ui\card_bag\btn_sell_1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\btn_sell_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_PICTURE_15]
 Type=1
@@ -154,7 +152,7 @@ SelectedFileUV=0 0 67 46
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=5 199 628 540
+Rect=5 199 628 590
 AnchorPos=0 0
 Notes=
 UIOpenType=0

@@ -525,7 +525,9 @@ function p.sellBtnEvent()
 	--btn:SetEnabled(false)
 	if p.BatchSellMark == MARK_OFF then
 		p.BatchSellMark = MARK_ON;
-		btn:SetText("取消");
+		--btn:SetText("取消");
+		btn:SetImage( GetPictureByAni( "common_ui.cardBagSell", 0 ) );
+		btn:SetTouchDownImage( GetPictureByAni( "common_ui.cardBagSell", 1 ) );
 		card_bag_sell.ShowUI();
 		p.selectCardList()
 		p.setTeamCardDisEnable()
@@ -534,7 +536,8 @@ function p.sellBtnEvent()
 		p.BatchSellMark = MARK_OFF
 		p.allCardPrice 	= 0;	--出售卡牌总价值
 		p.sellCardNodeList 	= {};	--出售卡牌列表
-		btn:SetText("卖出");
+		btn:SetImage( GetPictureByAni( "common_ui.cardBagSell", 2 ) );
+		btn:SetTouchDownImage( GetPictureByAni( "common_ui.cardBagSell", 3 ) );
 		card_bag_sell.CloseUI() 
 		p.ShowCardList(p.cardListInfo)
 	end
