@@ -243,7 +243,7 @@ function p:atk_startAtk()
 			--群体技能,需要加入受击特效
 			if self.isAoe == true then
 				for k,v in pairs(self.targetLst) do
-					local cmdhurt = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );			
+					local cmdhurt = createCommandEffect():AddFgEffect( 1, v:GetNode(), self.hurt );			
 					local seqHurt = batch:AddSerialSequence(); 
 					seqHurt:AddCommand(cmdhurt);
 					seqHurt:SetWaitEnd(cmd11)
