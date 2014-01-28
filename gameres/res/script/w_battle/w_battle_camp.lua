@@ -474,7 +474,7 @@ function p:AddFighters( uiArray, fighters )
 
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				f.Attack = 100;
+				f.Attack = 3000;
 				--f.Sp = 100;
 				--f.Defence = f.Defence + 200;
 			--[[	f.Sp = 100;
@@ -517,8 +517,8 @@ function p:AddFighters( uiArray, fighters )
 		local lscale = GetUIScale();
 		local lframe = node:GetFrameSize();
 		local x = lframe.w*lscale;
-		local x = lframe.h*lscale;
-		--node:SetFrameSize(x,y);
+		local y = lframe.h*lscale;
+		node:SetFrameSize(x,y);
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER + f.Position);
