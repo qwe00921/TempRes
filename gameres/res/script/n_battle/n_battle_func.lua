@@ -48,6 +48,7 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
     
     local atkPos = fPos;
     local lscale = GetUIScale();
+
     local x = (tPos.x - atkPos.x)*lscale;
     local y = (tPos.y - atkPos.y)*lscale;
     local distance = (x ^ 2 + y ^ 2) ^ 0.75;
@@ -76,23 +77,13 @@ function OnlyMoveTo(atkFighter, fPos, tPos, pSeq, pIsBack)
 		fx = "lancer_cmb.hurt_end_move";
 	end
     local atkPos = fPos;
-    
-    local x = tPos.x - atkPos.x;
-    local y = tPos.y - atkPos.y;
-    local distance = (x ^ 2 + y ^ 2) ^ 0.75;
-    
-    -- calc start offset
+    local lscale = GetUIScale();
+	lscale = 1
+    local x = (tPos.x - atkPos.x)*lscale;
+    local y = (tPos.y - atkPos.y)*lscale;
     local startOffset = 0;
-    local offsetX = x * startOffset / distance;
-    local offsetY = y * startOffset / distance;
-    --local pPos = CCPointMake(atkPos.x + offsetX, atkPos.y + offsetY );
-
-    --self.pOriginPos = CCPointMake(targetPos.x,targetPos.y);
-	--local pCmd = nil;
 	local pCmd =	createCommandEffect():AddActionEffect( 0, atkFighter:GetPlayerNode(), fx );
 	pSeq:AddCommand( pCmd );
-	--pCmd = battle_show.AddActionEffect_ToSequence( 0, atkFighter:GetPlayerNode(), fx,pSeq);
-	--pCmd = battle_show.AddActionEffect_ToParallelSequence( 0, atkFighter:GetPlayerNode(), fx,pSeq);
     local varEnv = pCmd:GetVarEnv();
     varEnv:SetFloat( "$1", x );
     varEnv:SetFloat( "$2", y );
