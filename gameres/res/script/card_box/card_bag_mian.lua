@@ -577,17 +577,20 @@ function p.sortByBtnEvent(sortType)
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 		--sortByBtn:SetText("等级");
-		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",2))
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",2));
+		sortByBtn:SetTouchDownImage(GetPictureByAni("common_ui.cardBagSort",3));
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
 		--sortByBtn:SetText("星级");
-		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",4))
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",4));
+		sortByBtn:SetTouchDownImage(GetPictureByAni("common_ui.cardBagSort",5));
 	elseif(sortType == CARD_BAG_SORT_BY_TYPE) then 
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_TYPE;
 		--sortByBtn:SetText("属性");
-		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",6))
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",6));
+		sortByBtn:SetTouchDownImage(GetPictureByAni("common_ui.cardBagSort",7));
 	end
 	card_bag_mgr.sortByRule(sortType)
 end

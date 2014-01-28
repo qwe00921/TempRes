@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_SORT_BG]
 Type=1
 Tag=15
-Rect=513 185 125 200
+Rect=514 185 125 200
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 115 153
 [CTRL_BUTTON_SOTR_LEVEL]
 Type=2
 Tag=2
-Rect=524 194 100 54
+Rect=544 202 65 35
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -34,7 +34,7 @@ SelectedFileUV=0 0 65 35
 [CTRL_BUTTON_SORT_STAR]
 Type=2
 Tag=3
-Rect=524 251 100 54
+Rect=544 260 65 35
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -43,15 +43,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\btn_star_2.png
+NormalFile=.\res\image\ui\card_bag\btn_star_1.png
 NormalFileUV=0 0 65 35
-SelectFile=.\res\image\ui\card\choose_click.png
-SelectedFileUV=0 0 196 100
+SelectFile=.\res\image\ui\card_bag\btn_star_2.png
+SelectedFileUV=0 0 65 35
 
 [CTRL_BUTTON_SOTR_ITEM]
 Type=2
 Tag=4
-Rect=524 307 100 54
+Rect=544 316 65 35
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -60,7 +60,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\btn_type_2.png
+NormalFile=.\res\image\ui\card_bag\btn_type_1.png
 NormalFileUV=0 0 65 35
-SelectFile=.\res\image\ui\card\choose_click.png
-SelectedFileUV=0 0 196 100
+SelectFile=.\res\image\ui\card_bag\btn_type_2.png
+SelectedFileUV=0 0 65 35
