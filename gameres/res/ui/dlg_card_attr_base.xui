@@ -59,7 +59,7 @@ NormalFileUV=0 0 62 58
 [CTRL_CARD_GRADE]
 Type=4
 Tag=309
-Rect=443 268 49 31
+Rect=443 270 49 31
 AnchorPos=0 0
 Notes=
 Text=121
@@ -324,7 +324,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_45]
 Type=1
 Tag=45
-Rect=519 276 105 14
+Rect=519 278 105 14
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -335,7 +335,7 @@ NormalFileUV=0 0 105 14
 [CTRL_EXP_44]
 Type=9
 Tag=44
-Rect=522 279 99 8
+Rect=522 281 99 8
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -349,7 +349,7 @@ NormalFileUV=0 0 6 8
 [CTRL_PICTURE_34]
 Type=1
 Tag=34
-Rect=408 273 27 20
+Rect=408 275 27 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -360,7 +360,7 @@ NormalFileUV=0 0 27 20
 [CTRL_PICTURE_36]
 Type=1
 Tag=36
-Rect=489 267 32 32
+Rect=489 269 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -448,7 +448,7 @@ NormalFileUV=0 0 205 7
 [CTRL_PICTURE_44]
 Type=1
 Tag=46
-Rect=417 691 205 7
+Rect=417 694 205 7
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -514,3 +514,14 @@ TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_49]
+Type=1
+Tag=52
+Rect=417 262 205 7
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\underline.png
+NormalFileUV=0 0 205 7
