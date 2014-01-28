@@ -58,11 +58,11 @@ p.PickEndEvent = nil;
 
 p.dropHpBall = 0;
 p.dropSpBall = 0;
-p.platform = 1;
+p.platform = W_PLATFORM_WIN32;
 p.isClose = false;
 
 function p.init()
-	p.platform = GetFlatform();
+	--p.platform = GetFlatform();
 	p.isClose = false;	
 	--p.heroCamp = nil;			--玩家阵营
 	p.enemyCamp = nil;			--敌对阵营
