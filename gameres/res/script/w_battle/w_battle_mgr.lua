@@ -1047,6 +1047,11 @@ function p.GetScreenCenterPos()
 	return cNode:GetCenterPos();
 end
 
+function p.bulletCenterNode()
+	local cNode = GetPlayer( p.uiLayer, ui_n_battle_pve.ID_CTRL_LEFT_SPRITE_2 );
+	return cNode;
+end;
+
 function p.checkTurnEnd()
 	--受击状态机全行动完成了且未在行动中, 攻击状态机没有处于行动中的
 	if (w_battle_machinemgr.checkAllTargetMachineEnd() == true) and (w_battle_machinemgr.checkAllAtkMachineHasTurn() == false) then

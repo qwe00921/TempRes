@@ -72,8 +72,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		end
 		self.is_bullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
 	end
-
-
+	
     --攻击者最初的位置
     self.originPos = self.atkplayerNode:GetCenterPos();
 	if self.isAoe == true then
@@ -238,22 +237,25 @@ function p:atk_startAtk()
 	
 		local cmd11 = nil;
 		if self.IsSkill == true then	--近战技能攻击
-			local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode)
-			cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.atkeffect );
-			local batch = w_battle_mgr.GetBattleBatch(); 
-			local seqTemp = batch:AddSerialSequence();
-			seqTemp:AddCommand( cmd11 );					
+			if self.atkeffect ~= "" then
+				local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode)
+				cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.atkeffect );
+				local batch = w_battle_mgr.GetBattleBatch(); 
+				local seqTemp = batch:AddSerialSequence();
+				seqTemp:AddCommand( cmd11 );
+			end;					
 
-			--群体技能,需要加入受击特效
-			if self.isAoe == true then
+			--技能,需要加入受击特效
+			if self.hurt ~= nil then
 				for k,v in pairs(self.targetLst) do
 					local cmdhurt = createCommandEffect():AddFgEffect( 1, v:GetNode(), self.hurt );			
 					local seqHurt = batch:AddSerialSequence(); 
 					seqHurt:AddCommand(cmdhurt);
-					seqHurt:SetWaitEnd(cmd11)
+					if self.isAoe == true then
+						seqHurt:SetWaitEnd(cmd11)
+					end;
 				end
 			end;
-			
 		end;	
 		
 		if self.IsSkill == false then
@@ -274,24 +276,57 @@ function p:atk_startAtk()
 		local cmdAtk = createCommandPlayer():Atk( W_BATTLE_ATKTIME, self.atkplayerNode, "" );
 		seqStar:AddCommand( cmdAtk ); --攻击动作
 		
+		if self.IsSkill == true then
+			if self.atkeffect ~= "" then
+				local lPlayNode = atkFighter:GetAtkImageNode(self.atkplayerNode)
+				cmd11 = createCommandEffect():AddFgEffect( 1, lPlayNode, self.atkeffect );
+				local batch = w_battle_mgr.GetBattleBatch(); 
+				local seqTemp = batch:AddSerialSequence();
+				seqTemp:AddCommand( cmd11 );
+			end;		
+		end;
+		
 		if self.is_bullet == W_BATTLE_BULLET_1 then --有弹道
 			local bulletAni = "w_bullet."..tostring( atkFighter.cardId );
+			local deg;
 			
-			local deg = atkFighter:GetAngleByFighter( tarFighter );
+			local lbulletnode = nil; 
+			local ltargetPos;
+			if self.isAoe == true then
+				lbulletnode = w_battle_mgr.bulletCenterNode()
+				ltargetPos = lbulletnode:GetCenterPos();
+				local halfWidthSum = lbulletnode:GetCurAnimRealSize().w/2
+				if atkFighter.camp == E_CARD_CAMP_HERO then
+					ltargetPos.x = ltargetPos.x + halfWidthSum;
+				else
+					ltargetPos.x = ltargetPos.x - halfWidthSum;
+				end
+			else
+				lbulletnode	= tarFighter:GetNode()
+				ltargetPos = tarFighter:GetNode():GetCenterPos();
+			end;
+			
+			--if self.iaAoe == true then
+				
+			deg = atkFighter:GetAngleByPos( ltargetPos );
+			--else
+			--	deg = atkFighter:GetAngleByFighter( tarFighter );
+			--end;
 			local bullet = w_bullet:new();
 			bullet:AddToBattleLayer();
 			bullet:SetEffectAni( bulletAni );
 						
 			bullet:GetNode():SetRotationDeg( deg );
 			local bullet1 = bullet:cmdSetVisible( true, seqAtk );
-			bulletend = bullet:cmdShoot( atkFighter, tarFighter, seqAtk, false );
+			
+			bulletend = bullet:cmdShootPos( atkFighter, ltargetPos, seqAtk, false );
 			local bullet3 = bullet:cmdSetVisible( false, seqAtk );
 			--seqBullet:SetWaitEnd( cmdAtk );
-			if self.IsSkill == true then  --技能有受击光效
+			--[[if self.IsSkill == true then  --技能有受击光效
 				local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );			
 				seqAtk:AddCommand(cmd11);
 			end;
-			
+			]]--
 			--local seqMusic = batch:AddSerialSequence();
 			if self.IsSkill == false then
 				if self.atkSound ~= nil then
@@ -300,7 +335,17 @@ function p:atk_startAtk()
 
 					local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.atkSound  );
 					seqAtk:AddCommand( cmdAtkMusic );
-				end				
+				end		
+			else --技能攻击
+				if self.hurt ~= "" then
+					for k,v in pairs(self.targetLst) do
+						local cmdhurt = createCommandEffect():AddFgEffect( 1, v:GetNode(), self.hurt );
+						local batch = w_battle_mgr.GetBattleBatch(); 
+						local seqTemp = batch:AddSerialSequence();
+						seqTemp:AddCommand( cmdhurt );
+						seqTemp:SetWaitEnd(bulletend);
+					end;
+				end;	
 			end;
 			atkFighter:cmdLua("atk_end",        self.id, "", seqTarget);
 			seqTarget:SetWaitEnd( bulletend );
@@ -317,14 +362,16 @@ function p:atk_startAtk()
 				end							
 			end;
 			
-			if self.IsSkill == true then	--技能受击特效
-				for k,v in pairs(self.targetLst) do
-					tarFighter = v;
-					local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
-					local batch = w_battle_mgr.GetBattleBatch(); 
-					local seqTemp = batch:AddSerialSequence();
-					seqTemp:AddCommand( cmd11 );
-				end;			
+			if self.hurt ~= "" then
+				if self.IsSkill == true then	--技能受击特效
+					for k,v in pairs(self.targetLst) do
+						tarFighter = v;
+						local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );
+						local batch = w_battle_mgr.GetBattleBatch(); 
+						local seqTemp = batch:AddSerialSequence();
+						seqTemp:AddCommand( cmd11 );
+					end;			
+				end;
 			end;			
 
 			
