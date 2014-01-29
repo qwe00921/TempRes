@@ -298,11 +298,11 @@ function p:atk_startAtk()
 			bulletend = bullet:cmdShoot( atkFighter, tarFighter, seqAtk, false );
 			local bullet3 = bullet:cmdSetVisible( false, seqAtk );
 			--seqBullet:SetWaitEnd( cmdAtk );
-			if self.IsSkill == true then  --技能有受击光效
+			--[[if self.IsSkill == true then  --技能有受击光效
 				local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );			
 				seqAtk:AddCommand(cmd11);
 			end;
-			
+			]]--
 			--local seqMusic = batch:AddSerialSequence();
 			if self.IsSkill == false then
 				if self.atkSound ~= nil then
