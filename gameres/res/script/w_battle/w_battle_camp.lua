@@ -352,7 +352,7 @@ function p.AddEnemyFightersJumpEffect()
 	pFighter:SaveOldPos(pNewPos);
 	
 	local batch = battle_show.GetNewBatch();
-	node:AddActionEffect("lancer.fadein0");
+	--node:AddActionEffect("lancer.fadein0");
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
 	g_EnemyIndex = g_EnemyIndex + 1;
@@ -528,6 +528,9 @@ function p:AddFighters( uiArray, fighters )
 			f:SetLookAt( E_LOOKAT_RIGHT );
 		end
 		node:SetId(f.idFighter);
+		
+		local batch = battle_show.GetNewBatch();
+		node:AddActionEffect("lancer.fadein0");
 	end
 end
 
