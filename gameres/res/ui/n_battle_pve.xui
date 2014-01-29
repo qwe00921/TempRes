@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -431,7 +431,7 @@ NormalFileUV=0 0 100 100
 [CTRL_EXP_HP]
 Type=9
 Tag=120
-Rect=69 450 503 22
+Rect=70 454 503 18
 AnchorPos=0 0
 Notes=
 TextSize=10
