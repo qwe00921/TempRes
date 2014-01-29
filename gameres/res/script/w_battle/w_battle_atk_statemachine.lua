@@ -252,7 +252,9 @@ function p:atk_startAtk()
 					local cmdhurt = createCommandEffect():AddFgEffect( 1, v:GetNode(), self.hurt );			
 					local seqHurt = batch:AddSerialSequence(); 
 					seqHurt:AddCommand(cmdhurt);
-					seqHurt:SetWaitEnd(cmd11)
+					if self.isAoe == true then
+						seqHurt:SetWaitEnd(cmd11)
+					end;
 				end
 			end;
 		end;	
