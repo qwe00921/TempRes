@@ -349,6 +349,18 @@ function p:GetAngleByFighter( targetFighter )
 	return degree;
 end
 
+function p:GetAngleByPos(targetPos)
+	local selfPos = self:GetNode():GetCenterPos();
+	--local targetPos = node:GetCenterPos();
+	
+	local tang = (selfPos.y - targetPos.y) / (targetPos.x - selfPos.x);
+	local radians = math.atan(tang);
+	
+	local degree = radians * 180 / math.pi;
+	return degree;
+	
+end;
+
 function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
     local pJumpSeq = batch:AddParallelSequence();
     local fx = "lancer_cmb.begin_battle_jump";
@@ -408,6 +420,17 @@ function p:GetFrontPos(targetNode)
 	end;
     return frontPos;
 end
+
+function p:GetTargetPos(targetNode)
+	local frontPos = self:GetPlayerNode():GetCenterPos();
+	local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w/4 + targetNode:GetCurAnimRealSize().w/4;
+	local lscale = GetUIScale();
+	if self.camp == E_CARD_CAMP_HERO then
+		frontPos.x = frontPos.x - halfWidthSum*lscale;
+	else
+		frontPos.x = frontPos.x + halfWidthSum*lscale;
+	end
+end;
 
 --近战攻击特效
 function p:GetAtkImageNode(atkNode)

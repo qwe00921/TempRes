@@ -72,8 +72,7 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		end
 		self.is_bullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
 	end
-
-
+	
     --攻击者最初的位置
     self.originPos = self.atkplayerNode:GetCenterPos();
 	if self.isAoe == true then
@@ -289,15 +288,38 @@ function p:atk_startAtk()
 		
 		if self.is_bullet == W_BATTLE_BULLET_1 then --有弹道
 			local bulletAni = "w_bullet."..tostring( atkFighter.cardId );
+			local deg;
 			
-			local deg = atkFighter:GetAngleByFighter( tarFighter );
+			local lbulletnode = nil; 
+			local ltargetPos;
+			if self.isAoe == true then
+				lbulletnode = w_battle_mgr.bulletCenterNode()
+				ltargetPos = lbulletnode:GetCenterPos();
+				local halfWidthSum = lbulletnode:GetCurAnimRealSize().w/2
+				if atkFighter.camp == E_CARD_CAMP_HERO then
+					ltargetPos.x = ltargetPos.x + halfWidthSum;
+				else
+					ltargetPos.x = ltargetPos.x - halfWidthSum;
+				end
+			else
+				lbulletnode	= tarFighter:GetNode()
+				ltargetPos = tarFighter:GetNode():GetCenterPos();
+			end;
+			
+			--if self.iaAoe == true then
+				
+			deg = atkFighter:GetAngleByPos( ltargetPos );
+			--else
+			--	deg = atkFighter:GetAngleByFighter( tarFighter );
+			--end;
 			local bullet = w_bullet:new();
 			bullet:AddToBattleLayer();
 			bullet:SetEffectAni( bulletAni );
 						
 			bullet:GetNode():SetRotationDeg( deg );
 			local bullet1 = bullet:cmdSetVisible( true, seqAtk );
-			bulletend = bullet:cmdShoot( atkFighter, tarFighter, seqAtk, false );
+			
+			bulletend = bullet:cmdShootPos( atkFighter, ltargetPos, seqAtk, false );
 			local bullet3 = bullet:cmdSetVisible( false, seqAtk );
 			--seqBullet:SetWaitEnd( cmdAtk );
 			--[[if self.IsSkill == true then  --技能有受击光效
