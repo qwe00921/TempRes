@@ -72,6 +72,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
 			end
 		end
+		p.HideUI();
 		p.CloseUI();
 	end
 end

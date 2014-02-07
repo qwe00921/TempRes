@@ -308,6 +308,9 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
 	
+	card_bag_sort.HideUI();
+	card_bag_sort.CloseUI();
+	
 	--是否处于编辑中
 	if p.isReplace == true then
 		if p.callback then
@@ -511,9 +514,12 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				card_bag_sort.ShowUI(0);
 			else
 				p.sortBtnMark = MARK_OFF;
+				card_bag_sort.HideUI();
 				card_bag_sort.CloseUI();
 			end
 		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then
+			card_bag_sort.HideUI();
+			card_bag_sort.CloseUI();
 			p.sellBtnEvent();
 		end
 	end
@@ -656,6 +662,7 @@ function p.CloseUI()
 		
 		p.ClearData()
         card_bag_mgr.ClearData();
+		card_bag_sort.HideUI();
 		card_bag_sort.CloseUI();
 		card_bag_sell.CloseUI();
 		dlg_msgbox.CloseUI();
