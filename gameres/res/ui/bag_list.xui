@@ -3,117 +3,15 @@
 Width=960
 Height=640
 
-[CTRL_PICTURE_25]
-Type=1
-Tag=25
-Rect=445 175 145 30
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_24]
-Type=1
-Tag=24
-Rect=252 167 145 30
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_23]
-Type=1
-Tag=23
-Rect=136 164 145 30
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_22]
-Type=1
-Tag=22
-Rect=29 176 145 30
-AnchorPos=0 0
-Notes=
-
-[CTRL_TEXT_ITEMNAME4]
-Type=4
-Tag=13
-Rect=470 160 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_TEXT_ITEMNAME3]
-Type=4
-Tag=14
-Rect=280 182 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_TEXT_ITEMNAME2]
-Type=4
-Tag=3
-Rect=141 168 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_TEXT_ITEMNAME1]
-Type=4
-Tag=5
-Rect=34 185 130 27
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具名称
-
-[CTRL_PICTURE_STAR1]
-Type=1
-Tag=30
-Rect=27 220 136 20
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_STAR2]
-Type=1
-Tag=31
-Rect=142 210 136 20
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_STAR3]
-Type=1
-Tag=32
-Rect=278 213 136 20
-AnchorPos=0 0
-Notes=
-
-[CTRL_PICTURE_STAR4]
-Type=1
-Tag=33
-Rect=444 218 136 20
-AnchorPos=0 0
-Notes=
-
 [CTRL_PICTURE_13]
 Type=1
 Tag=15
 Z_Order=-1
-Rect=-8 -3 638 134
+Rect=-8 -3 638 157
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM5]
 Type=2
@@ -124,6 +22,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM4]
 Type=2
@@ -135,6 +35,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品4
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM3]
 Type=2
@@ -146,6 +48,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品3
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM2]
 Type=2
@@ -157,6 +61,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品2
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM1]
 Type=2
@@ -168,6 +74,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_95]
 Type=1
@@ -175,6 +83,8 @@ Tag=111
 Rect=494 5 115 115
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_94]
 Type=1
@@ -182,6 +92,8 @@ Tag=99
 Rect=372 5 115 115
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_93]
 Type=1
@@ -189,6 +101,8 @@ Tag=98
 Rect=252 5 115 115
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_92]
 Type=1
@@ -196,6 +110,8 @@ Tag=97
 Rect=131 5 115 115
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_91]
 Type=1
@@ -203,6 +119,8 @@ Tag=96
 Rect=11 5 115 115
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NUM_BG1]
 Type=1
@@ -210,6 +128,8 @@ Tag=263
 Rect=54 95 70 22
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NUM_BG2]
 Type=1
@@ -217,6 +137,8 @@ Tag=264
 Rect=174 95 70 22
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NUM_BG3]
 Type=1
@@ -224,6 +146,8 @@ Tag=265
 Rect=295 95 70 22
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NUM_BG4]
 Type=1
@@ -231,6 +155,8 @@ Tag=266
 Rect=415 95 70 22
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NUM_BG5]
 Type=1
@@ -238,6 +164,8 @@ Tag=115
 Rect=537 95 70 22
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEMNUM5]
 Type=4
@@ -249,6 +177,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEMNUM4]
 Type=4
@@ -260,6 +190,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEMNUM3]
 Type=4
@@ -271,6 +203,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEMNUM2]
 Type=4
@@ -282,6 +216,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEMNUM1]
 Type=4
@@ -293,6 +229,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_EQUIP5]
 Type=1
@@ -301,6 +239,8 @@ Rect=495 6 30 30
 AnchorPos=0 0
 Notes=
 Remark=装备标志4
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_EQUIP4]
 Type=1
@@ -309,6 +249,8 @@ Rect=373 6 30 30
 AnchorPos=0 0
 Notes=
 Remark=装备标志4
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_EQUIP3]
 Type=1
@@ -317,6 +259,8 @@ Rect=254 6 30 30
 AnchorPos=0 0
 Notes=
 Remark=装备标志3
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_EQUIP2]
 Type=1
@@ -325,6 +269,8 @@ Rect=132 6 30 30
 AnchorPos=0 0
 Notes=
 Remark=装备标志2
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_EQUIP1]
 Type=1
@@ -332,6 +278,8 @@ Tag=26
 Rect=12 6 30 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EQUIP_LEV1]
 Type=4
@@ -342,6 +290,8 @@ Notes=
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EQUIP_LEV2]
 Type=4
@@ -352,6 +302,8 @@ Notes=
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EQUIP_LEV3]
 Type=4
@@ -362,6 +314,8 @@ Notes=
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EQUIP_LEV4]
 Type=4
@@ -372,6 +326,8 @@ Notes=
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EQUIP_LEV5]
 Type=4
@@ -382,3 +338,120 @@ Notes=
 TextSize=18
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_ITEM_NAME_BG5]
+Type=1
+Tag=45
+Rect=494 124 115 23
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_ITEM_NAME_BG4]
+Type=1
+Tag=25
+Rect=372 124 115 23
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_ITEM_NAME_BG3]
+Type=1
+Tag=24
+Rect=252 124 115 23
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_ITEM_NAME_BG2]
+Type=1
+Tag=23
+Rect=131 124 115 23
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_ITEM_NAME_BG1]
+Type=1
+Tag=22
+Rect=11 124 115 23
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ITEMNAME5]
+Type=4
+Tag=44
+Rect=494 124 115 23
+AnchorPos=0 0
+Notes=
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ITEMNAME4]
+Type=4
+Tag=13
+Rect=372 124 115 23
+AnchorPos=0 0
+Notes=
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ITEMNAME3]
+Type=4
+Tag=14
+Rect=252 124 115 23
+AnchorPos=0 0
+Notes=
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ITEMNAME2]
+Type=4
+Tag=3
+Rect=131 124 115 23
+AnchorPos=0 0
+Notes=
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_ITEMNAME1]
+Type=4
+Tag=5
+Rect=11 124 115 23
+AnchorPos=0 0
+Notes=
+TextSize=17
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具名称
+UIOpenType=0
+UIClsoeType=0
