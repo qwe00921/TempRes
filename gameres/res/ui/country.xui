@@ -438,7 +438,7 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\card_icon\u10000_f.png
+NormalFile=
 NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_UPDUILD]
