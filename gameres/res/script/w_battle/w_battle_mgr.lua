@@ -61,6 +61,10 @@ p.dropSpBall = 0;
 p.platform = 1;
 p.isClose = false;
 
+p.IsGuid = false;  --战斗引导
+p.step = nil;
+p.substep = nil;
+
 function p.init()
 	p.platform = GetFlatform();
 	p.isClose = false;	
@@ -242,7 +246,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
    end;
 
 	if IsMonster ~= true then
-	   if w_battle_mgr.isCanSelFighter == false then  --没有存活的目标可选
+	   if p.isCanSelFighter == false then  --没有存活的目标可选
 		  WriteCon( "Warning! All targetFighter is Dead!");
 		  return false;  
 	   end;
@@ -326,7 +330,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
     end;
 
     if IsMonster ~= true then
-	   if w_battle_mgr.isCanSelFighter == false then  --没有存活的目标可选
+	   if p.isCanSelFighter == false then  --没有存活的目标可选
 		  WriteCon( "Warning! All targetFighter is Dead!");
 		  return false;  
 	   end;
@@ -1229,6 +1233,7 @@ function p.setFighterDie(targerFighter,camp)
 					--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
 				else  --没有活着的怪物可选
 				   w_battle_mgr.isCanSelFighter = false;
+				   w_battle_pve.CancelSel();
 				end
 			end;
 		else --未锁定目标
@@ -1242,6 +1247,9 @@ function p.setFighterDie(targerFighter,camp)
 				if lFighter ~= nil then
 					w_battle_pve.SetHp(lFighter);
 				end;
+			else
+			   w_battle_mgr.isCanSelFighter = false;
+			   w_battle_pve.CancelSel();
 			end
 			--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 		end;		
@@ -1327,5 +1335,110 @@ function p.SetCampZorder()
 		p.enemyCamp:SetFightersZOrder(E_BATTLE_Z_HERO_FIGHTER)
 	end
 
+	
+end
+
+--第一轮的新手引导,点击完的事件
+function p.fighterGuid(substep)
+	p.IsGuid = true;
+	p.step = 3;
+	p.substep = substep;
+	if substep == 1 then
+		rookie_mask.ShowUI(p.step,p.substep + 1) --开启下一步遮照
+	elseif substep == 2 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 3 then
+	    --2号位移动,目标一半的位置
+		--移动到一半停下来, 显示遮照 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 4 then
+		p.SetPVEAtkID(2); 		
+		p.SetPVEAtkID(1);  --只有一个怪,等怪死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 5 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 6 then
+		p.SetPVETargerID(6);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 7 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 8 then
+		p.SetPVEAtkID(2);  --等怪进攻后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 9 then
+			 --怪物死亡必掉 HP水晶
+		     --等战斗胜利,  调用rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 10 then
+		p.FightWin()
+	    --怪物进场后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 11 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 12 then
+	   --选择物品
+		w_battle_useitem.UseItem(1);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 13 then
+		--使用物品
+		p.UseItem(1,2);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 14 then
+		--等所有战斗结束调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 15 then
+		p.IsGuid = false;
+	end
+	
+end
+
+function p.fighterSecondGuid(substep)
+	p.IsGuid = true;
+	p.step = 3;
+	p.substep = substep;
+	if substep == 1 then
+
+	elseif substep == 2 then
+
+	elseif substep == 3 then
+
+	elseif substep == 4 then
+
+	elseif substep == 5 then
+		--收到战斗发起返回消息后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 6 then
+		--双方人物进场后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 7 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 8 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 9 then
+		p.SetPVETargerID(2);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 10 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 11 then
+		p.SetPVEAtkID(3);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 12 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 13 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 14 then
+		--战斗胜利并加载下一波敌人后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 15 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 16 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 17 then
+	    --攻击敌人后 SP球必掉, 需飞向指定目标
+		--rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 18 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 19 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 20 then
+		p.SetPVESkillAtkID(2);
+		--技能发动后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 21 then
+	    --战斗失败后
+		--rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 22 then
+		p.IsGuid = false;
+	end	
 	
 end
