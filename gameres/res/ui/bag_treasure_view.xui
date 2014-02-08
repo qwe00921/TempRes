@@ -10,6 +10,8 @@ Rect=104 164 436 328
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg2.png
 NormalFileUV=0 0 640 338
 
@@ -20,6 +22,8 @@ Rect=100 160 440 335
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_frame2.png
 NormalFileUV=0 0 640 376
 
@@ -36,6 +40,8 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 
@@ -49,6 +55,8 @@ TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM]
 Type=1
@@ -56,6 +64,8 @@ Tag=77
 Rect=260 248 120 120
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NAME]
 Type=4
@@ -67,6 +77,8 @@ TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_ITEM_NUM]
 Type=4
@@ -75,8 +87,11 @@ Rect=300 336 76 27
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_17]
 Type=1
@@ -84,5 +99,7 @@ Tag=17
 Rect=259 248 122 122
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100

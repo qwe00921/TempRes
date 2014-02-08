@@ -66,6 +66,11 @@ function p.ShowTreasureInfo(self)
 	local treasureName = GetLabel(p.layer,ui.ID_CTRL_TEXT_ITEM_NAME);
 	local treasurePic = GetImage(p.layer,ui.ID_CTRL_PICTURE_ITEM);
 	
+	treasureName:SetText( GetItemName( itemId, itemType ) );
+	treasurePic:SetPicture( GetItemPic( itemId, itemType ) );
+	treasureNum:SetText( itemNumber );
+	
+	--[[
 	if itemType == 1 then		--卡片
 		itemInfoTable = SelectRowInner(T_CARD,"id",itemId);
 		treasureName:SetText(itemInfoTable.name);
@@ -92,6 +97,8 @@ function p.ShowTreasureInfo(self)
 		treasureName:SetText(itemInfoTable.name);
 		treasurePic:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
 	end
+	--]]
+	
 end
 
 

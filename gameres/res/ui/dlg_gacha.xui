@@ -243,7 +243,7 @@ NormalFileUV=0 0 594 208
 [CTRL_BUTTON_USE]
 Type=2
 Tag=26
-Rect=253 515 107 53
+Rect=199 515 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -257,7 +257,7 @@ NormalFileUV=0 0 110 54
 [CTRL_PICTURE_LABEL_USE]
 Type=1
 Tag=27
-Rect=276 523 61 32
+Rect=222 523 61 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -320,6 +320,35 @@ Notes=
 Text=持有
 TextTradition=持有
 TextSize=30
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_69]
+Type=2
+Tag=69
+Rect=340 515 107 53
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_TEXT_71]
+Type=4
+Tag=71
+Rect=354 519 79 37
+AnchorPos=0 0
+Notes=
+Text=取消
+TextTradition=取消
+TextSize=26
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
