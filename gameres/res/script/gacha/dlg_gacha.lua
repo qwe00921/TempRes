@@ -88,6 +88,18 @@ function p.ShowUI( intent ,reload)
 		p.SetBagUseVisible(false);
 		
 		maininterface.HideUI();
+		
+		if reload then
+			if intent == SHOP_GACHA then
+				p.ShowGachaData();
+			elseif intent == SHOP_ITEM then
+			   p.ShowShopData();
+			elseif intent == SHOP_GIFT_PACK then 
+			   p.ShowGiftPackData();
+			elseif intent == SHOP_BAG then
+			   p.ShowBagData();
+			end
+		end
 		return;
 	end
 	
