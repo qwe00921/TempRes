@@ -40,6 +40,7 @@ function p.test()
 	--测试vector
 --	p.TestVector();
 
+	--测试新手引导遮挡
 	--p.testGuideLayer();
 
     --测试
@@ -132,7 +133,7 @@ function p.testGuideLayer()
 	pLayer:SetFrameRectFull();
 	pLayer:SetLuaDelegate(p.OnTestType);
 	LoadDlg("main_interface.xui", pLayer, nil);
-	local mail = GetButton(pLayer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
+	local mail = GetButton(pLayer, ui_main_interface.ID_CTRL_BUTTON_129 );
 	p.TestRect = mail:GetFrameRect();			--获得控件区域
 	GetUIRoot():SetTrainingMode(true,pLayer);  --设置为新手指导模式，传递新手指导的那个layer
 	GetUIRoot():SetHighLightArea(p.TestRect);  --设置高亮区域
