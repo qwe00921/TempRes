@@ -10,12 +10,12 @@ p.index = nil;
 p.posList = nil;
 
 local role = {
-	{ ui.ID_CTRL_BUTTON_POS1, ui.ID_CTRL_PICTURE_POS1 },
-	{ ui.ID_CTRL_BUTTON_POS2, ui.ID_CTRL_PICTURE_POS2 },
-	{ ui.ID_CTRL_BUTTON_POS3, ui.ID_CTRL_PICTURE_POS3 },
-	{ ui.ID_CTRL_BUTTON_POS4, ui.ID_CTRL_PICTURE_POS4 },
-	{ ui.ID_CTRL_BUTTON_POS5, ui.ID_CTRL_PICTURE_POS5 },
-	{ ui.ID_CTRL_BUTTON_POS6, ui.ID_CTRL_PICTURE_POS6 },
+	{ ui.ID_CTRL_BUTTON_POS1, ui.ID_CTRL_PICTURE_POS1, ui.ID_CTRL_PICTURE_49 },
+	{ ui.ID_CTRL_BUTTON_POS2, ui.ID_CTRL_PICTURE_POS2, ui.ID_CTRL_PICTURE_52 },
+	{ ui.ID_CTRL_BUTTON_POS3, ui.ID_CTRL_PICTURE_POS3, ui.ID_CTRL_PICTURE_53 },
+	{ ui.ID_CTRL_BUTTON_POS4, ui.ID_CTRL_PICTURE_POS4, ui.ID_CTRL_PICTURE_50 },
+	{ ui.ID_CTRL_BUTTON_POS5, ui.ID_CTRL_PICTURE_POS5, ui.ID_CTRL_PICTURE_51 },
+	{ ui.ID_CTRL_BUTTON_POS6, ui.ID_CTRL_PICTURE_POS6, ui.ID_CTRL_PICTURE_54 },
 };
 
 function p.ShowUI( itemid, index )
@@ -98,6 +98,7 @@ function p.ShowCanUseItemRole()
 		end
 		
 		local image = GetImage( p.layer, role[i][2] );
+		local useTag = GetImage( p.layer, role[i][3] );
 		local bflag = true;
 		if p.posList ~= nil then
 			for _, v in pairs( p.posList ) do
@@ -108,6 +109,11 @@ function p.ShowCanUseItemRole()
 			end
 		end
 		image:SetVisible( bflag );
+		useTag:SetVisible( not bflag );
+		
+		if not useTag:FindActionEffect( "lancer_cmb.battle_move" ) then
+			useTag:AddActionEffect( "lancer_cmb.battle_move" );
+		end
 	end
 end
 
@@ -158,6 +164,8 @@ function p.UseItem( index )
 		for _, v in pairs(p.posList) do
 			if v == index then
 				w_battle_mgr.UseItem( p.index, index );
+				
+				w_battle_pve.RefreshItemInfo( false );
 				break;
 			end
 		end
