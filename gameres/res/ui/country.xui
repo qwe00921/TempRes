@@ -269,7 +269,7 @@ UIClsoeType=0
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=56
-Rect=5 140 107 53
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=20

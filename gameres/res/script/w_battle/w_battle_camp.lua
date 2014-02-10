@@ -316,8 +316,11 @@ function p.AddHeroFightersJumpEffect()
 	end
 		
 	local pOldPos = node:GetCenterPos();
-	local lscale = GetUIScale();
-	local x = pOldPos.x - W_BATTLE_JUMPSTAR* lscale ;
+	
+	local lwinWidth = GetWinSize().w;	
+	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320);	
+	--local lscale = GetUIScale();
+	local x = pOldPos.x - loffset;
 	local y = pOldPos.y;
 	
 	local pNewPos = CCPointMake(x,y);	
@@ -344,8 +347,10 @@ function p.AddEnemyFightersJumpEffect()
 		
 	local pOldPos = node:GetCenterPos();
 	
-	local lscale = GetUIScale();
-	local x = pOldPos.x + W_BATTLE_JUMPSTAR* lscale;
+	local lwinWidth = GetWinSize().w;	
+	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320);		
+	--local lscale = GetUIScale();
+	local x = pOldPos.x + loffset;
 	local y = pOldPos.y;
 
 	local pNewPos = CCPointMake(x,y);	
@@ -441,17 +446,20 @@ function p:AddFighters( uiArray, fighters )
 		
 		local pOldPos = node:GetCenterPos();
         
+		
+		local lwinWidth = GetWinSize().w;
+		local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320);
 		local lscale = GetUIScale();
 		
-		if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 			--有跳入动作
 			if self.idCamp == E_CARD_CAMP_HERO then
-				pOldPos.x = (pOldPos.x + W_BATTLE_JUMPSTAR) * lscale ;
+				pOldPos.x = pOldPos.x + loffset
 			elseif self.idCamp == E_CARD_CAMP_ENEMY then
-				pOldPos.x = (pOldPos.x - W_BATTLE_JUMPSTAR) * lscale ;
+				pOldPos.x = pOldPos.x - loffset
 			end
 			node:SetCenterPos(pOldPos);
-		end;
+		--end;
 		--战士属性
         f.life = tonumber( fighterInfo.Hp );
         --f.lifeMax = tonumber( fighterInfo.Hp );
@@ -468,14 +476,21 @@ function p:AddFighters( uiArray, fighters )
 		f.CardID   = tonumber (fighterInfo.CardID);
 		f.Sp = tonumber(fighterInfo.Sp);
 		f.maxSp = tonumber(fighterInfo.maxSp);
+		f.Level = tonumber(fighterInfo.Level);
 		f.canRevive = fighterInfo.canRevive;
 		f.dropLst = fighterInfo.dropLst; --掉落的物品列表
         f.buffList = {};
-
+		
+		
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				f.Attack = 3000;
+				f.Attack = 1;
+				f.Defence = 1;
 				--f.Sp = 100;
+				if f.Position == 1 then
+					f.Skill = 1002	
+				end
+				
 				--f.Defence = f.Defence + 200;
 			--[[	f.Sp = 100;
 				if f.Position == 2 then
@@ -489,12 +504,13 @@ function p:AddFighters( uiArray, fighters )
 				end;]]--
 			elseif self.idCamp == E_CARD_CAMP_ENEMY then
 				f.Attack = 1;
-				f.Defence = 1
-			--[[	f.Attack = 1;
 				f.Defence = 100;
 				f.Skill = 0;
-				if f.Position == 1  then
-					f.Skill = 102;
+				if f.Position == 1 then
+					f.Skill = 1001	
+				end
+			--[[	if f.Position == 1  then
+					f.Skill = 1005;
 				elseif f.Position == 3 then
 					f.Skill = 2;
 				elseif f.Position == 4 then

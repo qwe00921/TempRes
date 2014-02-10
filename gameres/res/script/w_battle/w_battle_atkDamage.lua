@@ -73,7 +73,7 @@ function p.SkillDamage(skillID,atkFighter,tarFighter)
 
 	--角色攻击力*伤害百分比
     local damage_percent   = tonumber( SelectCell( T_SKILL, skillID, "damage_percent" ) )/100;	
-	local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );	
+	local skillType = tonumber( SelectCell( T_SKILL, skillID, "skill_type" ) );	
 	local damage = 0;
 	if skillType == W_SKILL_TYPE_1 then --伤害类
 		 damage= atkFighter.damage * atkFighter.atkBuff * lpropRate * (1+lJoinAtkRate) * (damage_percent)

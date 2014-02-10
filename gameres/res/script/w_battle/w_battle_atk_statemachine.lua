@@ -53,8 +53,8 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 	self.skillID = skillID;
 	if self.IsSkill == true then
 		self.distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--远程与近战的判断;	
-		self.targetType   = tonumber( SelectCell( T_SKILL, skillID, "Target_type" ) );
-		self.skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
+		self.targetType   = tonumber( SelectCell( T_SKILL, skillID, "target_type" ) );
+		self.skillType = tonumber( SelectCell( T_SKILL, skillID, "skill_type" ) );
 		self.singSound = SelectCell( T_SKILL_SOUND, skillID, "sing_sound" );
 		self.hurtSound = SelectCell( T_SKILL_SOUND, skillID, "hurt_sound" );
 		self.atkeffect = SelectCell( T_SKILL_RES, skillID, "attack_effect" );

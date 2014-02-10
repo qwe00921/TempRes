@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_6]
 Type=1
 Tag=7
-Rect=153 121 299 91
+Rect=153 120 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 299 91
 [CTRL_BTN_TETURN]
 Type=2
 Tag=2
-Rect=5 141 122 60
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -33,7 +33,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_TEXT_QUEST_NAME]
 Type=4
 Tag=6
-Rect=144 163 317 40
+Rect=144 162 317 40
 AnchorPos=0 0
 Notes=
 Text=章节名称
@@ -49,7 +49,7 @@ UIClsoeType=0
 [CTRL_BTN_HARD]
 Type=2
 Tag=9
-Rect=463 135 168 72
+Rect=463 134 168 72
 AnchorPos=0 0
 Notes=
 TextSize=10

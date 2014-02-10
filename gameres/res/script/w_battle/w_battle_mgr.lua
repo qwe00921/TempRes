@@ -222,8 +222,8 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	if (atkFighter.Sp == 100) and (atkFighter.Skill ~= 0) then
 		if IsMonster ~= true then
 			local distanceRes = tonumber( SelectCell( T_SKILL_RES, atkFighter.Skill, "distance" ) );--远程与近战的判断;	
-			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Target_type" ) );
-			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Skill_type" ) );
+			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "target_type" ) );
+			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "skill_type" ) );
 			if (distanceRes ~= nil) and (targetType ~= nil) and (skillType ~= nil) then
 				return p.SetPVESkillAtkID(atkID);
 			else
@@ -339,8 +339,8 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    local skillID = atkFighter.Skill;
 
    local distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--远程与近战的判断;	
-   local targetType   = tonumber( SelectCell( T_SKILL, skillID, "Target_type" ) );
-   local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
+   local targetType   = tonumber( SelectCell( T_SKILL, skillID, "target_type" ) );
+   local skillType = tonumber( SelectCell( T_SKILL, skillID, "skill_type" ) );
 
     if (distanceRes == nil) then
 		WriteConErr( "Error! Skil distance Config is Error! skill="..tostring(skillID));
@@ -436,7 +436,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 			end;
 			isAoe = true;
 		else
-			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
+			WriteConErr( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
 			return false;
 		end
 
@@ -952,9 +952,9 @@ function p.createHeroCamp( fighters )
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
 	p.heroCamp:AddShadows( p.heroUIArray, fighters );
-	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 		p.heroCamp:AddAllRandomTimeJumpEffect(true);
-	end;
+	--end;
 end
 
 --创建敌对阵营
@@ -963,9 +963,9 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
 	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
-	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 		p.enemyCamp:AddAllRandomTimeJumpEffect(false);
-	end;
+	--end;
 end
 
 

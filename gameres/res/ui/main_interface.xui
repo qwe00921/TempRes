@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -738,7 +738,7 @@ UIClsoeType=0
 [CTRL_TEXT_81]
 Type=4
 Tag=89
-Rect=379 572 155 24
+Rect=379 568 155 24
 AnchorPos=0 0
 Notes=
 TextSize=20
