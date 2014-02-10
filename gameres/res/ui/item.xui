@@ -18,7 +18,7 @@ UIClsoeType=0
 [CTRL_PICTURE_BG]
 Type=1
 Tag=34
-Rect=-1 0 640 231
+Rect=-1 0 640 226
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -27,7 +27,7 @@ UIClsoeType=0
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=2 84 640 138
+Rect=2 84 640 130
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -38,7 +38,7 @@ NormalFileUV=0 0 640 110
 [CTRL_BUTTON_ITEM_EDIT]
 Type=2
 Tag=122
-Rect=1 43 199 49
+Rect=1 42 199 49
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -52,7 +52,7 @@ NormalFileUV=0 0 272 49
 [CTRL_PICTURE_EDIT]
 Type=1
 Tag=23
-Rect=58 49 107 29
+Rect=58 48 107 29
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -63,7 +63,7 @@ NormalFileUV=0 0 110 30
 [CTRL_PICTURE_ITEM1]
 Type=1
 Tag=26
-Rect=17 93 120 120
+Rect=17 90 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -72,7 +72,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM2]
 Type=1
 Tag=27
-Rect=140 92 120 120
+Rect=140 89 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -81,7 +81,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM3]
 Type=1
 Tag=29
-Rect=263 92 120 120
+Rect=263 89 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -90,7 +90,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM4]
 Type=1
 Tag=30
-Rect=386 92 120 120
+Rect=386 89 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -99,7 +99,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM5]
 Type=1
 Tag=31
-Rect=509 92 120 120
+Rect=509 89 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -108,7 +108,7 @@ UIClsoeType=0
 [CTRL_PICTURE_1]
 Type=1
 Tag=19
-Rect=23 187 107 21
+Rect=23 183 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -119,7 +119,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_2]
 Type=1
 Tag=21
-Rect=147 187 107 21
+Rect=147 183 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -130,7 +130,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_3]
 Type=1
 Tag=24
-Rect=272 187 107 21
+Rect=272 183 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -141,7 +141,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_4]
 Type=1
 Tag=25
-Rect=396 187 107 21
+Rect=396 183 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -152,7 +152,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_5]
 Type=1
 Tag=28
-Rect=518 187 107 21
+Rect=518 183 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -163,11 +163,11 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_ITEMNAME1]
 Type=4
 Tag=32
-Rect=26 184 100 28
+Rect=26 180 100 28
 AnchorPos=0 0
 Notes=
 TextSize=18
-TextColor=0xffff00
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -176,11 +176,11 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME2]
 Type=4
 Tag=35
-Rect=150 184 100 28
+Rect=150 180 100 28
 AnchorPos=0 0
 Notes=
 TextSize=18
-TextColor=0xffff00
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -189,11 +189,11 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME3]
 Type=4
 Tag=36
-Rect=275 184 100 28
+Rect=275 180 100 28
 AnchorPos=0 0
 Notes=
 TextSize=18
-TextColor=0xffff00
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -202,11 +202,11 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME4]
 Type=4
 Tag=37
-Rect=399 184 100 28
+Rect=399 180 100 28
 AnchorPos=0 0
 Notes=
 TextSize=18
-TextColor=0xffff00
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -215,11 +215,11 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME5]
 Type=4
 Tag=38
-Rect=521 184 100 28
+Rect=521 180 100 28
 AnchorPos=0 0
 Notes=
 TextSize=18
-TextColor=0xffff00
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -228,7 +228,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM1]
 Type=4
 Tag=46
-Rect=102 97 31 25
+Rect=102 95 31 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -241,7 +241,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM2]
 Type=4
 Tag=47
-Rect=226 97 31 25
+Rect=226 95 31 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -254,7 +254,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM3]
 Type=4
 Tag=48
-Rect=349 97 31 25
+Rect=349 95 31 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -267,7 +267,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM4]
 Type=4
 Tag=49
-Rect=469 97 35 25
+Rect=468 95 35 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -280,7 +280,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM5]
 Type=4
 Tag=50
-Rect=595 97 30 25
+Rect=596 95 30 25
 AnchorPos=0 0
 Notes=
 TextSize=25
