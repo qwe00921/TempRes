@@ -167,3 +167,7 @@ lancer.show
 lancer.country_collect_8
 lancer.fadeout
 
+[battle_move]
+@type=0 @loop
+lancer.battle_move
+

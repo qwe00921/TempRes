@@ -215,7 +215,7 @@ UIClsoeType=0
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=23
-Rect=11 80 107 60
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -223,3 +223,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
