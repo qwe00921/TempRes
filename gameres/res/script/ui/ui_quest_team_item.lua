@@ -4,8 +4,8 @@
 --------------------------------------------------------------
 ui_quest_team_item = {};
 local p =  ui_quest_team_item;
+p.ID_CTRL_PICTURE_11					     = 12;
 p.ID_CTRL_TEXT_QUEST_NAME				 = 64;
-p.ID_CTRL_TEXT_POWER					     = 13;
 p.ID_CTRL_TEXT_POWER_V				    = 227;
 p.ID_CTRL_BUTTON_FIGHT				    = 11;
 p.ID_CTRL_PICTURE_ITEM				    = 10;

@@ -400,12 +400,12 @@ end
 function p:GetFrontPos(targetNode)
 	local frontPos = self:GetPlayerNode():GetCenterPos();
 	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
- 		local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w/4 + targetNode:GetCurAnimRealSize().w/4;
+ 		local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w / 4 + targetNode:GetCurAnimRealSize().w / 4;
 		local lscale = GetUIScale();
 		if self.camp == E_CARD_CAMP_HERO then
-			frontPos.x = frontPos.x - halfWidthSum*lscale;
+			frontPos.x = frontPos.x - halfWidthSum * lscale;
 		else
-			frontPos.x = frontPos.x + halfWidthSum*lscale;
+			frontPos.x = frontPos.x + halfWidthSum * lscale;
 		end
 	else
 		local halfWidthSum = self:GetPlayerNode():GetFrameSize().w;
@@ -423,12 +423,12 @@ end
 
 function p:GetTargetPos(targetNode)
 	local frontPos = self:GetPlayerNode():GetCenterPos();
-	local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w/4 + targetNode:GetCurAnimRealSize().w/4;
+	local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w / 4 + targetNode:GetCurAnimRealSize().w / 4;
 	local lscale = GetUIScale();
 	if self.camp == E_CARD_CAMP_HERO then
-		frontPos.x = frontPos.x - halfWidthSum*lscale;
+		frontPos.x = frontPos.x - halfWidthSum * lscale;
 	else
-		frontPos.x = frontPos.x + halfWidthSum*lscale;
+		frontPos.x = frontPos.x + halfWidthSum * lscale;
 	end
 end;
 

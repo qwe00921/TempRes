@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -18,7 +18,7 @@ UIClsoeType=0
 [CTRL_PICTURE_BG]
 Type=1
 Tag=34
-Rect=0 0 637 240
+Rect=1 -1 637 240
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -38,7 +38,7 @@ NormalFileUV=0 0 640 130
 [CTRL_PICTURE_EDIT]
 Type=1
 Tag=23
-Rect=125 527 107 40
+Rect=156 550 107 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -61,13 +61,13 @@ NormalFileUV=0 0 272 49
 [CTRL_PICTURE_TEAM_NUM]
 Type=1
 Tag=24
-Rect=267 36 107 49
+Rect=260 36 120 47
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
+NormalFile=.\res\image\ui\card_bag\team1.png
+NormalFileUV=0 0 88 35
 
 [CTRL_PICTURE_CHA1]
 Type=1

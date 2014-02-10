@@ -25,12 +25,24 @@ function p.RefreshUI(self)
 	
 	if self.result == true then
 		local cardList = self.cardlist
-		card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_TIME;
-		WriteCon("========sort by time");
-		table.sort(cardList,p.sortByTime);
-		p.cardList = cardList;
-		p.cardListByProf = cardList;
-		card_bag_mian.ShowCardList(cardList);
+		if card_bag_mian.sortByRuleV == nil then
+			WriteCon("card_bag_mian.sortByRuleV == nil");
+			card_bag_mian.sortByRuleV = CARD_BAG_SORT_BY_TIME;
+			WriteCon("========sort by time");
+			table.sort(cardList,p.sortByTime);
+			p.cardList = cardList;
+			p.cardListByProf = cardList;
+			card_bag_mian.ShowCardList(cardList);
+		else
+			WriteCon("card_bag_mian.sortByRuleV ~= nil");
+			p.cardList = cardList;
+			p.cardListByProf = cardList;
+			p.sortByRule(card_bag_mian.sortByRuleV);
+			--table.sort(cardList,p.sortByTime);
+			--card_bag_mian.ShowCardList(cardList);
+		end
+		
+		
 	elseif self.result == false then
 		WriteConWarning( "** msg_card_box error" );
 	end
@@ -186,7 +198,8 @@ end
 
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.Level) > tonumber(b.Level);
+	--return tonumber(a.Level) > tonumber(b.Level);
+	return tonumber(a.Level) > tonumber(b.Level) or ( tonumber(a.Level) == tonumber(b.Level) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 --按星级排序
 function p.sortByStar(a,b)
@@ -198,7 +211,8 @@ function p.sortByTime(a,b)
 end
 --按时间排序
 function p.sortByType(a,b)
-	return tonumber(a.element) < tonumber(b.element);
+	--return tonumber(a.element) < tonumber(b.element);
+	return tonumber(a.element) > tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 
 --根据unique获取卡信息

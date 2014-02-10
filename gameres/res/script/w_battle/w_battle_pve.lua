@@ -46,6 +46,7 @@ p.battleType = W_BATTLE_PVE;
 p.targetHp = nil;
 p.targetName = nil;
 p.targetAttr = nil;
+p.targetHpText = nil;
 p.boxImage = nil;
 p.useitemMask = nil;
 p.itemMask = nil;
@@ -85,7 +86,7 @@ local DAMAGE_INDEX = 13;
 local objs = {
 	{ 
 		ui.ID_CTRL_BUTTON_63,
-		ui.ID_CTRL_PICTURE_NATURE1,
+		ui.ID_CTRL_PICTURE_139,
 		ui.ID_CTRL_TEXT_NAME1,
 		ui.ID_CTRL_TEXT_90,
 		ui.ID_CTRL_TEXT_HP1,
@@ -100,7 +101,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_65,
-		ui.ID_CTRL_PICTURE_NATURE2,
+		ui.ID_CTRL_PICTURE_143,
 		ui.ID_CTRL_TEXT_NAME2,
 		ui.ID_CTRL_TEXT_92,
 		ui.ID_CTRL_TEXT_HP2,
@@ -115,7 +116,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_66,
-		ui.ID_CTRL_PICTURE_NATURE3,
+		ui.ID_CTRL_PICTURE_144,
 		ui.ID_CTRL_TEXT_NAME3,
 		ui.ID_CTRL_TEXT_94,
 		ui.ID_CTRL_TEXT_HP3,
@@ -130,7 +131,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_64,
-		ui.ID_CTRL_PICTURE_NATURE4,
+		ui.ID_CTRL_PICTURE_141,
 		ui.ID_CTRL_TEXT_NAME4,
 		ui.ID_CTRL_TEXT_91,
 		ui.ID_CTRL_TEXT_HP4,
@@ -145,7 +146,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_67,
-		ui.ID_CTRL_PICTURE_NATURE5,
+		ui.ID_CTRL_PICTURE_142,
 		ui.ID_CTRL_TEXT_NAME5,
 		ui.ID_CTRL_TEXT_93,
 		ui.ID_CTRL_TEXT_HP5,
@@ -160,7 +161,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_68,
-		ui.ID_CTRL_PICTURE_NATURE6,
+		ui.ID_CTRL_PICTURE_145,
 		ui.ID_CTRL_TEXT_NAME6,
 		ui.ID_CTRL_TEXT_95,
 		ui.ID_CTRL_TEXT_HP6,
@@ -182,37 +183,42 @@ local ITEM_BTN_INDEX = 1;
 local ITEM_NAME_INDEX = 2;
 local ITEM_NAMEBG_INDEX = 3;
 local ITEM_IMAGE_INDEX = 4;
---local ITEM_FRAME_INDEX = 5;
+local ITEM_NUM_INDEX = 5;
 local items = {
 	{
 		ui.ID_CTRL_BUTTON_ITEM1,
 		ui.ID_CTRL_TEXT_ITEM1,
 		ui.ID_CTRL_PICTURE_328,
 		ui.ID_CTRL_PICTURE_70,
+		ui.ID_CTRL_TEXT_ITEMNUM1,
 	},
 	{
 		ui.ID_CTRL_BUTTON_ITEM2,
 		ui.ID_CTRL_TEXT_ITEM2,
 		ui.ID_CTRL_PICTURE_329,
 		ui.ID_CTRL_PICTURE_71,
+		ui.ID_CTRL_TEXT_ITEMNUM2,
 	},
 	{
 		ui.ID_CTRL_BUTTON_ITEM3,
 		ui.ID_CTRL_TEXT_ITEM3,
 		ui.ID_CTRL_PICTURE_330,
 		ui.ID_CTRL_PICTURE_72,
+		ui.ID_CTRL_TEXT_ITEMNUM3,
 	},
 	{
 		ui.ID_CTRL_BUTTON_ITEM4,
 		ui.ID_CTRL_TEXT_ITEM4,
 		ui.ID_CTRL_PICTURE_331,
 		ui.ID_CTRL_PICTURE_73,
+		ui.ID_CTRL_TEXT_ITEMNUM4,
 	},
 	{
 		ui.ID_CTRL_BUTTON_ITEM5,
 		ui.ID_CTRL_TEXT_ITEM5,
 		ui.ID_CTRL_PICTURE_332,
 		ui.ID_CTRL_PICTURE_74,
+		ui.ID_CTRL_TEXT_ITEMNUM5,
 	},
 };
 
@@ -254,6 +260,9 @@ function p.InitController()
 	p.targetHp = GetExp( p.battleLayer, ui.ID_CTRL_EXP_HP );
 	p.targetName = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_365 );
 	p.targetAttr = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_140 );
+	p.targetHpText = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_HP );
+	
+	p.targetHp:SetTextStyle( 2 );
 	
 	for i = 1, 6 do
 		local tCard = p.GetCardTable( i );
@@ -360,6 +369,8 @@ function p.GetItemTable( index )
 	ctrller = GetImage( p.battleLayer, tag[ITEM_IMAGE_INDEX] );
 	temp[ITEM_IMAGE_INDEX] = ctrller;
 	
+	ctrller = GetLabel( p.battleLayer, tag[ITEM_NUM_INDEX] );
+	temp[ITEM_NUM_INDEX] = ctrller;
 	return temp;
 end
 
@@ -373,7 +384,12 @@ function p.CancelSel()
 	end;
 end;
 
-function p.RefreshUI(pIsRoundStar)
+function p.RefreshUI( pIsRoundStar )
+	p.RefreshCardInfo( pIsRoundStar );
+	p.RefreshItemInfo( pIsRoundStar );
+end
+
+function p.RefreshCardInfo( pIsRoundStar )
 	--刷新卡牌显示
 	local cardList = w_battle_db_mgr.GetPlayerCardList();
 	if pIsRoundStar == true then
@@ -428,7 +444,7 @@ function p.RefreshUI(pIsRoundStar)
 					
 					ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber(data.maxSp), tonumber(data.Sp) );
 					
-					local attrpic = GetPictureByAni( "card_element.".. tostring(data.element), 0 );
+					local attrpic = GetPictureByAni( "common_ui.cardBagTypeBox", tonumber(data.element) );
 					if attrpic then
 						ctrllers[ATTR_INDEX]:SetPicture( attrpic );
 					end
@@ -444,7 +460,9 @@ function p.RefreshUI(pIsRoundStar)
 			end
 		end
 	end
-	--CTRL_PICTURE_115 486
+end
+
+function p.RefreshItemInfo( pIsRoundStar )
 	--刷新物品显示
 	local itemList = w_battle_db_mgr.GetItemList();
 	if itemList ~= nil then
@@ -462,6 +480,7 @@ function p.RefreshUI(pIsRoundStar)
 					if picData then
 						ctrllers[ITEM_IMAGE_INDEX]:SetPicture( picData );
 					end
+					ctrllers[ITEM_NUM_INDEX]:SetText( tostring( item.num ) );
 				else
 					p.SetVisible( ctrllers, false );
 				end
@@ -492,8 +511,12 @@ function p.SetHp( fighter )
 	p.targetHp = p.targetHp or GetExp( p.battleLayer, ui.ID_CTRL_EXP_HP );
 	p.targetName = p.targetName or GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_365 );
 	p.targetAttr = p.targetAttr or GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_140 );
-
+	p.targetHpText = p.targetHpText or GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_HP );
+	
+	p.targetHp:SetTextStyle( 2 );
 	p.targetHp:SetValue( 0, tonumber( fighter.maxHp ), tonumber( fighter.Hp ) );
+	
+	p.targetHpText:SetText( string.format( "%d/%d", tonumber( fighter.Hp ), tonumber( fighter.maxHp ) ) );	
 	
 	p.targetName:SetText( "" );
 	local cardID = fighter.CardID or 0;
