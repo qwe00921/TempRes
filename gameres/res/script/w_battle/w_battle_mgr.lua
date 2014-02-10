@@ -952,9 +952,9 @@ function p.createHeroCamp( fighters )
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
 	p.heroCamp:AddShadows( p.heroUIArray, fighters );
-	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 		p.heroCamp:AddAllRandomTimeJumpEffect(true);
-	end;
+	--end;
 end
 
 --创建敌对阵营
@@ -963,9 +963,9 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
 	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
-	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 		p.enemyCamp:AddAllRandomTimeJumpEffect(false);
-	end;
+	--end;
 end
 
 
