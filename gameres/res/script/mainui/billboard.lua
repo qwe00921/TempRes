@@ -48,7 +48,11 @@ function p.ShowUI()
 		local x = p.billboard_x or 0.5f * (1.0f - p.billboardRatio) * GetScreenWidth();
 		local y = p.billboard_y or UIOffsetY(56);
 		local w = GetScreenWidth() * p.billboardRatio;
-		local rect = CCRectMake( x, y, w, UIOffsetY(p.billboardHeight) );
+		local rect = dlg_menu.GetBillboardRect();
+		if rect == nil then
+			rect = CCRectMake( x, y, w, UIOffsetY(p.billboardHeight) );
+		end
+		
         p.title:SetFrameRect( rect );
 		
         p.title:SetScrollSpeed(tonumber( GetStr( "message_speed" )));
@@ -242,6 +246,12 @@ function p.resumeBillBoard()
 	p.title:SetVisible(true);
 	--p.LoadMessage(); -- 不在resumeBillBoard下读数据
 	p.StartTimer();
+end
+
+function p.SetFrameRect(rect)
+	if p.title then
+		p.title:SetFrameRect( rect );
+	end
 end
 
 function p.HideUI()
