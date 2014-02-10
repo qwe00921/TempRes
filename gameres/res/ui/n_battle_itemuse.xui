@@ -12,6 +12,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_143]
 Type=2
@@ -23,6 +25,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=用于截取点击事件的，本身无逻辑
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_10]
 Type=1
@@ -30,6 +34,8 @@ Tag=10
 Rect=4 27 633 144
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title2.png
 NormalFileUV=0 0 640 160
 
@@ -39,6 +45,8 @@ Tag=11
 Rect=16 35 125 125
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_12]
 Type=1
@@ -46,6 +54,8 @@ Tag=12
 Rect=15 36 128 128
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\item-list.png
 NormalFileUV=0 0 100 100
 
@@ -61,6 +71,8 @@ TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_14]
 Type=1
@@ -68,6 +80,8 @@ Tag=14
 Rect=157 98 300 3
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\quest\line.png
 NormalFileUV=0 0 567 4
 
@@ -83,6 +97,8 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_16]
 Type=4
@@ -96,6 +112,8 @@ TextSize=20
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_17]
 Type=4
@@ -109,11 +127,13 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_18]
 Type=2
 Tag=18
-Rect=13 870 129 79
+Rect=16 889 129 63
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -122,8 +142,10 @@ TextSize=30
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\back.png
+NormalFileUV=0 0 118 58
 
 [CTRL_BUTTON_POS1]
 Type=2
@@ -134,6 +156,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_POS2]
 Type=2
@@ -144,6 +168,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_POS3]
 Type=2
@@ -154,6 +180,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_POS4]
 Type=2
@@ -164,6 +192,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_POS5]
 Type=2
@@ -174,6 +204,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_POS6]
 Type=2
@@ -184,6 +216,8 @@ Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_POS1]
 Type=1
@@ -191,6 +225,8 @@ Tag=127
 Rect=-1 474 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -200,6 +236,8 @@ Tag=128
 Rect=0 592 319 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -209,6 +247,8 @@ Tag=129
 Rect=0 709 319 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -218,6 +258,8 @@ Tag=130
 Rect=319 474 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -227,6 +269,8 @@ Tag=131
 Rect=319 592 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
@@ -236,5 +280,84 @@ Tag=132
 Rect=319 709 320 117
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_48]
+Type=1
+Tag=48
+Rect=48 905 61 33
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\back1.png
+NormalFileUV=0 0 61 33
+
+[CTRL_PICTURE_49]
+Type=1
+Tag=49
+Rect=22 492 58 83
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83
+
+[CTRL_PICTURE_50]
+Type=1
+Tag=50
+Rect=344 492 58 83
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83
+
+[CTRL_PICTURE_51]
+Type=1
+Tag=51
+Rect=344 607 58 83
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83
+
+[CTRL_PICTURE_52]
+Type=1
+Tag=52
+Rect=22 607 58 83
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83
+
+[CTRL_PICTURE_53]
+Type=1
+Tag=53
+Rect=22 726 58 83
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83
+
+[CTRL_PICTURE_54]
+Type=1
+Tag=54
+Rect=344 726 58 83
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83

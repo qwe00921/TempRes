@@ -85,7 +85,7 @@ NormalFileUV=0 0 46 13
 [CTRL_PICTURE_26]
 Type=1
 Tag=27
-Rect=293 98 89 33
+Rect=286 98 89 33
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -96,7 +96,7 @@ NormalFileUV=0 0 46 13
 [CTRL_PICTURE_27]
 Type=1
 Tag=28
-Rect=169 97 89 34
+Rect=159 97 89 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -129,7 +129,7 @@ NormalFileUV=0 0 46 46
 [CTRL_PICTURE_24]
 Type=1
 Tag=25
-Rect=139 90 46 46
+Rect=129 90 46 46
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -140,7 +140,7 @@ NormalFileUV=0 0 46 46
 [CTRL_PICTURE_25]
 Type=1
 Tag=26
-Rect=259 81 46 59
+Rect=242 81 46 59
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -240,7 +240,7 @@ UIClsoeType=0
 [CTRL_TEXT_MONEY_V]
 Type=4
 Tag=18
-Rect=183 98 67 30
+Rect=173 98 67 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -253,7 +253,7 @@ UIClsoeType=0
 [CTRL_TEXT_GHO_V]
 Type=4
 Tag=31
-Rect=303 97 63 33
+Rect=286 97 63 33
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -266,7 +266,7 @@ UIClsoeType=0
 [CTRL_BUTTON_REWARD]
 Type=2
 Tag=38
-Rect=437 86 186 57
+Rect=428 85 186 57
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -278,7 +278,7 @@ UIClsoeType=0
 [CTRL_PICTURE_REWARD1]
 Type=1
 Tag=13
-Rect=449 88 50 50
+Rect=442 88 50 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -287,7 +287,7 @@ UIClsoeType=0
 [CTRL_PICTURE_REWARD2]
 Type=1
 Tag=12
-Rect=507 88 50 50
+Rect=496 88 50 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -296,7 +296,7 @@ UIClsoeType=0
 [CTRL_PICTURE_REWARD3]
 Type=1
 Tag=40
-Rect=566 88 50 50
+Rect=550 88 50 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -314,7 +314,7 @@ UIClsoeType=0
 [CTRL_PICTURE_32]
 Type=1
 Tag=33
-Rect=377 98 68 30
+Rect=373 98 68 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0

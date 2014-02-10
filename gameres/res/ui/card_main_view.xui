@@ -3,10 +3,21 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_17]
+Type=1
+Tag=17
+Rect=106 118 299 91
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
+
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=1 129 122 60
+Rect=1 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -22,21 +33,10 @@ SelectedFileUV=0 0 122 60
 DisableFile=.\res\image\ui\quest\back_un.png
 DisableFileUV=0 0 122 60
 
-[CTRL_PICTURE_86]
-Type=1
-Tag=86
-Rect=123 124 141 68
-AnchorPos=0 0
-Notes=
-UIOpenType=2
-UIClsoeType=2
-NormalFile=.\res\image\ui\card\card2.png
-NormalFileUV=0 0 192 108
-
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=87
-Rect=135 132 120 50
+Rect=640 0 120 50
 AnchorPos=0 0
 Notes=
 Text=卡牌一览
@@ -51,7 +51,7 @@ UIClsoeType=2
 [CTRL_PICTURE_92]
 Type=1
 Tag=92
-Rect=261 125 123 30
+Rect=403 206 123 30
 AnchorPos=0 0
 Notes=
 UIOpenType=3
@@ -62,7 +62,7 @@ NormalFileUV=0 0 121 34
 [CTRL_TEXT_94]
 Type=4
 Tag=94
-Rect=274 128 96 24
+Rect=422 209 96 24
 AnchorPos=0 0
 Notes=
 Text=小伙伴们
@@ -77,7 +77,7 @@ UIClsoeType=3
 [CTRL_PICTURE_91]
 Type=1
 Tag=91
-Rect=269 159 107 30
+Rect=526 206 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -88,7 +88,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=38
-Rect=277 162 90 22
+Rect=534 209 90 22
 AnchorPos=0 0
 Notes=
 Text=99/99
@@ -103,7 +103,7 @@ UIClsoeType=3
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=20
-Rect=387 129 122 60
+Rect=387 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -120,7 +120,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=514 129 122 60
+Rect=514 141 122 60
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -135,7 +135,7 @@ DisableFileUV=0 0 122 60
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=542 138 67 46
+Rect=542 150 67 46
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -152,8 +152,19 @@ SelectedFileUV=0 0 67 46
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=5 199 628 590
+Rect=5 245 628 590
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_21]
+Type=1
+Tag=21
+Rect=180 157 150 45
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\card_list2.png
+NormalFileUV=0 0 150 45

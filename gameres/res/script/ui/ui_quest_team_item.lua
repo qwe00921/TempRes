@@ -12,6 +12,5 @@ p.ID_CTRL_PICTURE_ITEM				    = 10;
 p.ID_CTRL_LIST_ITEM					      = 199;
 p.ID_CTRL_LIST_TEAM					      = 7;
 p.ID_CTRL_BTN_HARD					       = 9;
-p.ID_CTRL_TEXT_RETURN					    = 48;
 p.ID_CTRL_BTN_TETURN					     = 2;
-p.ID_CTRL_9SLICES_12					     = 12;
+p.ID_CTRL_PICTURE_36					     = 36;

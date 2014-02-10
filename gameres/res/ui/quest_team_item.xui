@@ -3,22 +3,21 @@
 Width=640
 Height=960
 
-[CTRL_9SLICES_12]
-Type=22
-Tag=12
-Rect=3 169 640 680
+[CTRL_PICTURE_36]
+Type=1
+Tag=36
+Rect=153 121 299 91
 AnchorPos=0 0
 Notes=
-Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
 
 [CTRL_BTN_TETURN]
 Type=2
 Tag=2
-Rect=5 184 100 80
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -26,30 +25,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\close2_click.png
-SelectedFileUV=0 0 68 68
-
-[CTRL_TEXT_RETURN]
-Type=4
-Tag=48
-Rect=11 193 88 60
-AnchorPos=0 0
-Notes=
-Text=返回
-TextTradition=返回
-TextSize=36
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_BTN_HARD]
 Type=2
 Tag=9
-Rect=474 176 160 90
+Rect=474 125 160 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -61,7 +45,7 @@ UIClsoeType=0
 [CTRL_LIST_TEAM]
 Type=8
 Tag=7
-Rect=1 284 637 240
+Rect=1 219 640 240
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -70,7 +54,7 @@ UIClsoeType=0
 [CTRL_LIST_ITEM]
 Type=8
 Tag=199
-Rect=1 524 637 230
+Rect=1 423 640 230
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -79,7 +63,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM]
 Type=1
 Tag=10
-Rect=1 524 637 230
+Rect=0 432 639 230
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -88,24 +72,24 @@ UIClsoeType=0
 [CTRL_BUTTON_FIGHT]
 Type=2
 Tag=11
-Rect=275 762 107 53
+Rect=254 700 132 65
 AnchorPos=0 0
 Notes=
-Text=进入战斗
-TextTradition=進入戰斗
 TextSize=20
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
+NormalFile=.\res\image\ui\quest\start.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\start_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_TEXT_POWER_V]
 Type=4
 Tag=227
-Rect=197 762 59 51
+Rect=186 706 59 51
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -118,7 +102,7 @@ UIClsoeType=0
 [CTRL_TEXT_POWER]
 Type=4
 Tag=13
-Rect=83 762 114 51
+Rect=72 706 114 51
 AnchorPos=0 0
 Notes=
 Text=消耗体力:
@@ -133,12 +117,12 @@ UIClsoeType=0
 [CTRL_TEXT_QUEST_NAME]
 Type=4
 Tag=64
-Rect=128 203 317 40
+Rect=168 162 269 40
 AnchorPos=0 0
 Notes=
 TextSize=30
 TextColor=0xfffbf0
-TextHorAlign=AlignLeft
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0

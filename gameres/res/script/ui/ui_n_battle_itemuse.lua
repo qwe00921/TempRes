@@ -4,6 +4,13 @@
 --------------------------------------------------------------
 ui_n_battle_itemuse = {};
 local p =  ui_n_battle_itemuse;
+p.ID_CTRL_PICTURE_54					     = 54;
+p.ID_CTRL_PICTURE_53					     = 53;
+p.ID_CTRL_PICTURE_52					     = 52;
+p.ID_CTRL_PICTURE_51					     = 51;
+p.ID_CTRL_PICTURE_50					     = 50;
+p.ID_CTRL_PICTURE_49					     = 49;
+p.ID_CTRL_PICTURE_48					     = 48;
 p.ID_CTRL_PICTURE_POS6				    = 132;
 p.ID_CTRL_PICTURE_POS5				    = 131;
 p.ID_CTRL_PICTURE_POS4				    = 130;

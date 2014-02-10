@@ -18,7 +18,6 @@ p.ID_CTRL_PICTURE_40					     = 40;
 p.ID_CTRL_PICTURE_39					     = 39;
 p.ID_CTRL_PICTURE_38					     = 38;
 p.ID_CTRL_PICTURE_37					     = 37;
-p.ID_CTRL_PICTURE_36					     = 36;
 p.ID_CTRL_PICTURE_34					     = 34;
 p.ID_CTRL_EXP_44						        = 44;
 p.ID_CTRL_PICTURE_45					     = 45;

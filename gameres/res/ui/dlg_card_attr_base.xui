@@ -17,7 +17,7 @@ NormalFileUV=0 0 370 556
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=299
-Rect=13 149 122 60
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -59,7 +59,7 @@ NormalFileUV=0 0 62 58
 [CTRL_CARD_GRADE]
 Type=4
 Tag=309
-Rect=443 270 49 31
+Rect=478 270 39 30
 AnchorPos=0 0
 Notes=
 Text=121
@@ -134,7 +134,7 @@ UIClsoeType=0
 [CTRL_BTN_INTENSIFY]
 Type=2
 Tag=321
-Rect=505 149 122 60
+Rect=514 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -258,7 +258,7 @@ UIClsoeType=0
 [CTRL_BUTTON_LUCK]
 Type=2
 Tag=223
-Rect=0 783 639 177
+Rect=0 771 640 189
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -272,7 +272,7 @@ NormalFileUV=0 0 640 177
 [CTRL_LUCK_INTRO]
 Type=4
 Tag=320
-Rect=9 914 166 30
+Rect=38 912 166 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -285,7 +285,7 @@ UIClsoeType=0
 [CTRL_TEXT_SKILLNAME]
 Type=4
 Tag=59
-Rect=191 805 399 30
+Rect=191 815 399 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -298,12 +298,12 @@ UIClsoeType=0
 [CTRL_TEXT_CARDNAME]
 Type=4
 Tag=66
-Rect=444 229 179 31
+Rect=393 229 242 31
 AnchorPos=0 0
 Notes=
-Text=卡牌名字很多字
-TextTradition=卡牌名字很多字
-TextSize=24
+Text=卡牌名字很多字有十个
+TextTradition=卡牌名字很多字有十個
+TextSize=23
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -313,7 +313,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARDNATURE]
 Type=1
 Tag=68
-Rect=408 232 24 24
+Rect=405 273 24 24
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -349,24 +349,13 @@ NormalFileUV=0 0 6 8
 [CTRL_PICTURE_34]
 Type=1
 Tag=34
-Rect=408 275 27 20
+Rect=443 275 27 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 27 20
-
-[CTRL_PICTURE_36]
-Type=1
-Tag=36
-Rect=489 269 32 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\EXP_big.png
-NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_37]
 Type=1
@@ -470,7 +459,7 @@ NormalFileUV=0 0 112 24
 [CTRL_PICTURE_47]
 Type=1
 Tag=48
-Rect=4 800 174 40
+Rect=4 810 174 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -481,7 +470,7 @@ NormalFileUV=0 0 174 40
 [CTRL_PICTURE_48]
 Type=1
 Tag=49
-Rect=4 863 174 40
+Rect=4 860 174 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -492,7 +481,7 @@ NormalFileUV=0 0 174 40
 [CTRL_TEXT_48]
 Type=4
 Tag=50
-Rect=185 914 166 30
+Rect=237 912 166 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -505,7 +494,7 @@ UIClsoeType=0
 [CTRL_TEXT_49]
 Type=4
 Tag=51
-Rect=362 914 166 30
+Rect=436 912 166 30
 AnchorPos=0 0
 Notes=
 TextSize=24
