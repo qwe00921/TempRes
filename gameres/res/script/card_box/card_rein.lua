@@ -23,6 +23,11 @@ function p.ShowUI(card_info)
 		return;
 	end
 	
+	if dlg_card_attr_base.layer == nil then
+		WriteCon("card_bag_mian.layer == nil ");
+		dlg_menu.SetNewUI( p );
+	end
+	
     local layer = createNDUIDialog();
     if layer == nil then
         return false;
@@ -412,3 +417,10 @@ function p.ClearSelData()
 	p.InitAllCardInfo();
 end
 
+function p.UIDisappear()
+	p.CloseUI();
+	card_intensify.CloseUI();
+	card_intensify2.CloseUI();
+	card_intensify_succeed.CloseUI();
+	maininterface.BecomeFirstUI();
+end

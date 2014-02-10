@@ -27,7 +27,8 @@ function p.ShowUI( item )
     end
 	
 	layer:NoMask();
-	layer:Init();	
+	layer:Init();
+	layer:SetSwallowTouch( true );
 	GetUIRoot():AddDlg(layer);
     LoadDlg("dlg_buy_num.xui", layer, nil);
 	

@@ -311,7 +311,14 @@ end
 
 function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipOne = p.newEquip[uiNode:GetId()];
-	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.LoadEquipData);
+	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.onReinCallback,p.HideUI);
+end
+
+function p.onReinCallback(isRein)
+	p.ShowUI();
+	if isRein == true then
+		p.LoadEquipData();
+	end
 end
 
 

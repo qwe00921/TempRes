@@ -190,15 +190,15 @@ function p.sortByLevel(a,b)
 end
 --按星级排序
 function p.sortByStar(a,b)
-	return tonumber(a.Rare) < tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.Rare) > tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 --按属性排序
 function p.sortByTime(a,b)
-	return tonumber(a.Class) < tonumber(b.Class);
+	return tonumber(a.Time) < tonumber(b.Time);
 end
 --按时间排序
 function p.sortByType(a,b)
-	return tonumber(a.Time) < tonumber(b.Time);
+	return tonumber(a.element) < tonumber(b.element);
 end
 
 --根据unique获取卡信息

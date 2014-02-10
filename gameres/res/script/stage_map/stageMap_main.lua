@@ -29,7 +29,7 @@ function p.getChapterListCallBack(self)
 	elseif p.startPlayKey == 1 then
 	--获取storyID
 		local storyId = 1;
-		dlg_drama.ShowUI(0,storyId,after_drama_data.CHAPTER);
+		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,1);
 	end
 
 end

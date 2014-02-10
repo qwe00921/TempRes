@@ -88,6 +88,18 @@ function p.ShowUI( intent ,reload)
 		p.SetBagUseVisible(false);
 		
 		maininterface.HideUI();
+		
+		if reload then
+			if intent == SHOP_GACHA then
+				p.ShowGachaData();
+			elseif intent == SHOP_ITEM then
+			   p.ShowShopData();
+			elseif intent == SHOP_GIFT_PACK then 
+			   p.ShowGiftPackData();
+			elseif intent == SHOP_BAG then
+			   p.ShowBagData();
+			end
+		end
 		return;
 	end
 	
@@ -218,7 +230,10 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) or IsDoubleEvent( uiEventType ) then
 		if ( ui_dlg_gacha.ID_CTRL_BUTTON_BACK == tag ) then  
 			p.CloseUI();
+			maininterface.ShowUI();
 			maininterface.BecomeFirstUI();
+			
+			dlg_menu.SetSelectButton( -1 );
 		elseif ( ui_dlg_gacha.ID_CTRL_BUTTON_GACHAUI == tag ) then  --扭蛋界面按钮
 			WriteCon( "扭蛋界面按钮" );
 			if curPage ~= SHOP_GACHA then
@@ -691,13 +706,13 @@ function p.SetItemInfo( view , item , position, index)
     buyBtn:SetEnabled( false );
     buyBtn:SetLuaDelegate( p.OnGachaUIEvent );
     buyBtn:SetId( index );
-    
+
     --已达到限制购买等级
     if tonumber( lv ) >= tonumber( row_limitLv ) then
         --如有物品有购买次数限制
         if tonumber( row_limitNum ) ~= 0 then
             --未打到购买上线
-            if tonumber( num ) ~= tonumber( row_limitNum ) then
+            if tonumber( num ) < tonumber( row_limitNum ) then
                 limitLab:SetText(  "仅限购买"..row_limitNum.."次".."("..num.."/"..row_limitNum..")");
                 buyBtn:SetEnabled( true );
             else
@@ -709,8 +724,7 @@ function p.SetItemInfo( view , item , position, index)
             buyBtn:SetEnabled( true );
         end
     end
-    
-    
+
     local row_price = SelectRowInner( T_SHOP, "item_id", item.item_id , "price");
     local row_rebatePrice = SelectRowInner( T_SHOP, "item_id", item.item_id , "rebate_price");
     local priceLab = GetLabel( view, price );
@@ -772,8 +786,8 @@ function p.ShowBagItemInfo( view, item, itemIndex )
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP1;
 		boxFrame = ui_list.ID_CTRL_PICTURE_91;
 		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG1;
-		--subTitleBg = ui_list.ID_CTRL_PICTURE_22;
-        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME1;
+		subTitleBg = ui_list.ID_CTRL_PICTURE_ITEM_NAME_BG1;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME1;
 		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR1;
 	elseif itemIndex == 2 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
@@ -782,8 +796,8 @@ function p.ShowBagItemInfo( view, item, itemIndex )
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP2;
 		boxFrame = ui_list.ID_CTRL_PICTURE_92;
 		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG2;
-		--subTitleBg = ui_list.ID_CTRL_PICTURE_23;
-        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME2;
+		subTitleBg = ui_list.ID_CTRL_PICTURE_ITEM_NAME_BG2;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME2;
 		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR2;
 	elseif itemIndex == 3 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
@@ -792,8 +806,8 @@ function p.ShowBagItemInfo( view, item, itemIndex )
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP3;
 		boxFrame = ui_list.ID_CTRL_PICTURE_93;
 		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG3;
-		--subTitleBg = ui_list.ID_CTRL_PICTURE_24;
-        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME3;
+		subTitleBg = ui_list.ID_CTRL_PICTURE_ITEM_NAME_BG3;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME3;
 		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR3;
 	elseif itemIndex == 4 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
@@ -803,8 +817,8 @@ function p.ShowBagItemInfo( view, item, itemIndex )
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP4;
 		boxFrame = ui_list.ID_CTRL_PICTURE_94;
 		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG4;
-		--subTitleBg = ui_list.ID_CTRL_PICTURE_25;
-        --itemName = ui_list.ID_CTRL_TEXT_ITEMNAME4;
+		subTitleBg = ui_list.ID_CTRL_PICTURE_ITEM_NAME_BG4;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME4;
 		--equipStarPic = ui_list.ID_CTRL_PICTURE_STAR4;
 	elseif itemIndex == 5 then
         itemBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
@@ -812,14 +826,17 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 		numBg = ui_list.ID_CTRL_PICTURE_NUM_BG5;
         itemNum = ui_list.ID_CTRL_TEXT_ITEMNUM5;
         isUse = ui_list.ID_CTRL_PICTURE_EQUIP5;
-		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV5
+		equipLevel = ui_list.ID_CTRL_TEXT_EQUIP_LEV5;
+		
+		subTitleBg = ui_list.ID_CTRL_PICTURE_ITEM_NAME_BG5;
+        itemName = ui_list.ID_CTRL_TEXT_ITEMNAME5;
 	end
 	--显示边框
 	local boxFramePic = GetImage(view,boxFrame);
 	boxFramePic:SetPicture( GetPictureByAni("common_ui.frame", 0) );
 	--显示名字背景图片
-	--local subTitleBgPic = GetImage(view,subTitleBg);
-	--subTitleBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
+	local subTitleBgPic = GetImage(view,subTitleBg);
+	subTitleBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 
 	local item_id = tonumber(item.Item_id);
 	local itemType = tonumber(item.Item_type);
@@ -854,8 +871,8 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	itemButton:SetXID(itemType);
 	
 	--物品名字
-	--local itemNameText = GetLabel(view,itemName );
-	--itemNameText:SetText(itemTable.name);
+	local itemNameText = GetLabel(view, itemName );
+	itemNameText:SetText( GetItemName( item_id, itemType ) );
 	
 	local itemNumText = GetLabel(view,itemNum );	--物品数量
 	--local equipStarPic = GetImage(view,equipStarPic);	--装备星级
@@ -866,14 +883,7 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	equipLevelText:SetVisible( false );
 	isUsePic:SetVisible( false );
 
-	if itemType == 0 or itemType == 4 or itemType == 5 or itemType == 6 then
-	--普通可叠加物品，显示数量
-		itemNumText:SetVisible(true);
-		itemNumText:SetText("X "..item.Num);
-	--显示数量背景
-		local numBgPic = GetImage(view,numBg);
-		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
-	elseif itemType == 3 then 
+	if itemType == G_ITEMTYPE_EQUIP then
 		--装备，显示星级
 		-- equipStarPic:SetVisible(true);
 		-- local starNum = tonumber(item.Rare);
@@ -890,8 +900,14 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 			isUsePic:SetVisible(true);
 			isUsePic:SetPicture( GetPictureByAni("common_ui.equipUse", 0) );
 		end
+	else
+		--普通可叠加物品，显示数量
+		itemNumText:SetVisible(true);
+		itemNumText:SetText("X "..item.Num);
+		--显示数量背景
+		local numBgPic = GetImage(view,numBg);
+		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 	end
-	
 	--设置物品按钮事件
 	itemButton:SetLuaDelegate(p.OnBagItemClickEvent);
 	
@@ -1038,6 +1054,11 @@ function p.SetBagUseVisible(visible)
 	local bg = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_USE);
 	bg:SetVisible(visible);
 	
+	local cancelBtn = GetButton( p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_69 );
+	cancelBtn:SetVisible(visible);
+	
+	local cancelText = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_71 );
+	cancelText:SetVisible(visible);
 end
 
 --点击物品事件
@@ -1072,6 +1093,15 @@ function p.OnBagItemClickEvent(uiNode, uiEventType, param)
 		useBtn:SetXID(itemType);
 		useBtn:SetZOrder(9999);
 		
+		local cancelBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_69);
+		cancelBtn:SetLuaDelegate(p.OnUseItemClickEvent);
+		cancelBtn:SetZOrder(9999);
+		cancelBtn:SetVisible(true);
+		
+		local cancelText = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_71 );
+		cancelText:SetVisible(true);
+		cancelText:SetZOrder(9999);
+		
 		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
 		useTextPic:SetVisible(true);
 		itemDescribeText:SetVisible(true);
@@ -1083,6 +1113,14 @@ end
 
 --设置选中物品
 function p.SetItemChechedFX(uiNode)
+	if uiNode == nil then
+		if p.itemBtnNode ~= nil then
+			p.itemBtnNode:RemoveAllChildren(true);
+		end
+		p.itemBtnNode = nil;
+		return;
+	end
+	
 	local itemNode = ConverToButton( uiNode );
 	if p.itemBtnNode ~= nil then
 		p.itemBtnNode:RemoveAllChildren(true);
@@ -1118,6 +1156,9 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 			end
 			pack_box_mgr.UseItemEvent(itemId,itemUniqueId,itemType);
 			p.SetBagUseVisible(false)
+		elseif ui_dlg_gacha.ID_CTRL_BUTTON_69 == tag then			
+			p.SetBagUseVisible(false);
+			 p.SetItemChechedFX( nil );
 		end
 	end
 end
@@ -1178,7 +1219,7 @@ function p.CloseUI()
 
 		p.requestFlag = false;
 		
-		maininterface.ShowUI();
+		--maininterface.ShowUI();
     end
 end
 

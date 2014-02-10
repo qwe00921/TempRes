@@ -363,6 +363,16 @@ function p.GetItemTable( index )
 	return temp;
 end
 
+function p.CancelSel()
+	for i = 1, 6 do
+		local ctrllers = p.objList[i];
+		if ctrllers then
+			ctrllers[MASK_INDEX]:SetVisible( true );
+			ctrllers[BTN_INDEX]:SetVisible( false );	
+		end
+	end;
+end;
+
 function p.RefreshUI(pIsRoundStar)
 	--Ë¢ÐÂ¿¨ÅÆÏÔÊ¾
 	local cardList = w_battle_db_mgr.GetPlayerCardList();

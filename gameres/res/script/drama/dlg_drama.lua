@@ -9,7 +9,6 @@ local p = dlg_drama;
 local ui = ui_dlg_drama;
 
 p.layer = nil;
-p.storyId = nil;
 
 p.contentNode = nil;
 p.npcNameNode = nil;
@@ -23,32 +22,32 @@ p.contentStrLn = nil;   --当前对话内容长度
 p.contentIndex = nil;   --当前说话的索引，用于特效
 p.timerId = nil;        --定时器ID
 p.isActivity = false;
-p.curStageId = 0;
-p.openView =nil;
 p.fontSize = 20;
 
+p.storyId = nil;
+p.openViewType =nil;
+p.viewId = nil;
+p.teamId = nil;
 local act_zoom = "engine_cmb.zoom_in_out"; --呼吸效果
 
 local DIR_LEFT = 1;--图片在左
 local DIR_RIGHT = 2;--图片在右
 --显示UI
-function p.ShowUI( stageId, storyId, openViewId  )
-											--参数 openViewId 详见 after_drama_data.lua
-	if openViewId == nil then
-		openViewId = after_drama_data.FIGHT
-	end
-	p.openView = openViewId;
-	
-    if storyId == nil then
+function p.ShowUI( storyId,openViewType,viewId,teamId)
+											--参数 openViewType 详见 after_drama_data.lua
+    if storyId == nil or openViewType == nil or viewId == nil then
     	return;
     else
-       p.storyId = storyId;	
+       p.storyId = tonumber(storyId);	
+	   p.openViewType = tonumber(openViewType);
+	   p.viewId = tonumber(viewId);
+	   p.teamId = tonumber(teamId) or 1;
     end
+
 	p.isActivity = true;
     if p.layer ~= nil then
 		p.layer:SetVisible( true );
-		p.curStageId = stageId;
-		drama_mgr.LoadDramaInfo( stageId,storyId,openViewId );
+		drama_mgr.LoadDramaInfo();
 		return;
 	end
 	
@@ -62,10 +61,9 @@ function p.ShowUI( stageId, storyId, openViewId  )
     LoadDlg("dlg_drama.xui", layer, nil);
 	
 	p.layer = layer;
-	p.curStageId = stageId;
 	p.Init();
 	p.SetDelegate();
-	drama_mgr.LoadDramaInfo( stageId, storyId ,openViewId);
+	drama_mgr.LoadDramaInfo();
 end
 
 --初始化控件
@@ -126,8 +124,8 @@ function p.BtnOnclick(uiNode, uiEventType, param)
                 p.timerId = nil;
             end
             p.isActivity = false;
-			after_drama.DoAfterDrama(p.curStageId,p.openView);
-            p.CloseUI();
+			after_drama.DoAfterDrama();
+            --p.CloseUI();
         end
     end
 end
@@ -161,7 +159,7 @@ function p.ResetUI( dramaInfo )
 	if tonumber(name) ~= nil and tonumber(name) == 0 then
 		name = " ";
 	end
-	if string.find( name, ToUtf8("主角") ) then
+	if string.find( name, "主角") then
 		name = msg_cache.msg_player.Name or dramaInfo.npcName;
 	end
 
@@ -252,9 +250,6 @@ function p.CloseUI()
 		p.layer:SetVisible(false);
         p.layer:LazyClose();
     	p.layer = nil;
-    	p.storyId = nil;
-    	p.openView =nil;
-
         p.contentNode = nil;
         p.npcNameNode = nil;
         p.bgPicNode   = nil;

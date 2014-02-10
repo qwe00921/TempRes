@@ -1,0 +1,62 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=0 132 640 600
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\bg2.png
+NormalFileUV=0 0 640 600
+
+[CTRL_TEXT_24]
+Type=4
+Tag=24
+Rect=61 280 518 105
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=61 424 518 105
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_26]
+Type=4
+Tag=26
+Rect=61 568 518 105
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=4 203 174 40
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\card_info.png
+NormalFileUV=0 0 174 40

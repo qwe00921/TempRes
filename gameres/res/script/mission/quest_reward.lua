@@ -73,14 +73,14 @@ end
 
 --是否显示剧情
 function p.isShowPlot()
-	local storyId = tonumber(p.rewardDataT.story)
-	if storyId == 0 then
+	local storyId = tonumber(p.rewardDataT.endStory)
+	if tonumber(storyId) == 0 then
 		p.CloseUI();
-		dlg_userinfo.ShowUI();
 		stageMap_main.OpenWorldMap();
+		dlg_userinfo.ShowUI();
 	else
 		p.CloseUI();
-		dlg_drama.ShowUI(0,storyId,after_drama_data.CHAPTER)
+		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,0)
 		WriteCon("OK BUTTON");
 	end
 

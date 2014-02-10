@@ -16,6 +16,17 @@ Stretch=1
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_46]
+Type=1
+Tag=46
+Rect=168 450 304 16
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_frame_bg.png
+NormalFileUV=0 0 351 16
+
 [CTRL_PICTURE_106]
 Type=1
 Tag=106
@@ -144,21 +155,10 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_32]
-Type=1
-Tag=34
-Rect=165 448 310 27
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\strength_bg.png
-NormalFileUV=0 0 251 22
-
 [CTRL_EXP_EXP]
 Type=9
 Tag=33
-Rect=171 452 291 15
+Rect=177 453 291 11
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -166,8 +166,8 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_exp.png
-NormalFileUV=0 0 35 13
+NormalFile=.\res\image\ui\main_interface\exp_frame.png
+NormalFileUV=0 0 340 13
 
 [CTRL_TEXT_EXP_UP]
 Type=4
@@ -287,3 +287,14 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_32]
+Type=1
+Tag=34
+Rect=166 450 310 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_frame1.png
+NormalFileUV=0 0 351 22

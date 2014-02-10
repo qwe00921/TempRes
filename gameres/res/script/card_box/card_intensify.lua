@@ -66,7 +66,7 @@ end
 
 --可强化卡牌List请求
 function p.OnSendReq()
-	
+	WriteCon("card_intensify OnSendReq");
 	local uid = GetUID();
 	--uid = 1234;
 	if uid ~= nil and uid > 0 then
@@ -93,6 +93,10 @@ end
 function p.SetDelegate(layer)
 	local retBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
 	retBtn:SetLuaDelegate(p.OnUIClickEvent);
+	
+	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
+	list:ClearView();
+	
 --[[
 	local cardBtnAll = GetButton(layer, ui.ID_CTRL_BUTTON_ALL);
 	cardBtnAll:SetLuaDelegate(p.OnUIClickEvent);
@@ -260,13 +264,18 @@ end
 
 --返回数据显示 Lab框
 function p.ShowCardList(cardList,msg)
+	
 	if p.layer == nil then
 		return;
 	end
 	if #cardList <= 0 then
 		return;
 	end
+	card_rein.SetUserMoney(msg.money);
+	card_rein.setCardListInfo(cardList);
 	
+	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
+	list:ClearView();
 
 	local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);
 	cardCount:SetText(tostring(p.selectNum).."/10"); 	
@@ -349,6 +358,7 @@ end;
 
 --显示卡牌列表
 function p.ShowCardView(cardList)
+	
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
 	list:ClearView();
 	p.cardListNode = {};

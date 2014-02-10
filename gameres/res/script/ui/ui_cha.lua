@@ -4,6 +4,13 @@
 --------------------------------------------------------------
 ui_cha = {};
 local p =  ui_cha;
+p.ID_CTRL_PICTURE_25					     = 25;
+p.ID_CTRL_PICTURE_34					     = 45;
+p.ID_CTRL_PICTURE_33					     = 44;
+p.ID_CTRL_PICTURE_32					     = 43;
+p.ID_CTRL_PICTURE_31					     = 42;
+p.ID_CTRL_PICTURE_30					     = 41;
+p.ID_CTRL_PICTURE_29					     = 33;
 p.ID_CTRL_TEXT_HP_V					      = 40;
 p.ID_CTRL_TEXT_HP						       = 39;
 p.ID_CTRL_TEXT_DEFENSE_V				  = 38;

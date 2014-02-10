@@ -175,8 +175,11 @@ function p.InitScrollList( layer )
 		--pView1:SetTag(i);
 		local btn = GetButton( pView1, ui_main_scrolllist_node.ID_CTRL_BUTTON_108 );
 		btn:SetImage( GetPictureByAni( "ui.mainui_scrolllist", math.mod(i,3) ) );
+		btn:SetTouchDownImage( GetPictureByAni( "ui.mainui_scrolllist_highlight", math.mod(i,3) ) );
+		btn:SetDisabledImage( GetPictureByAni( "ui.mainui_scrolllist_disabled", math.mod(i,3) ) );
 		btn:SetLuaDelegate( p.OnTouchImage );
 		btn:SetId( math.mod(i,3) );
+		btn:SetEnabled( math.mod(i,3) == 1 )
 		
 		--pView1:SetLuaDelegate( p.OnTouchImage );
 		pList:AddView(pView1);
@@ -511,6 +514,7 @@ function p.BecomeFirstUI()
 	dlg_userinfo.ShowUI();
 	p.ShowBillboard();
 end
+
 function p.BecomeBackground()
 	p.HideBillboard()
 end

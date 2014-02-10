@@ -67,19 +67,18 @@ function p.SetDelegate()
 end
 
 function p.OnBtnClick(uiNode, uiEventType, param)
-	if IsClickEvent( uiEventType ) then
-			uiNode:SetVisible(false);
+	--if IsClickEvent( uiEventType ) then
+	    --local tag = uiNode:GetTag();
+		--if ui.ID_CTRL_BUTTON_102 == tag or ui.ID_CTRL_BUTTON_4 == tag then
+			--uiNode:SetVisible(false);
 			--login_ui.ShowUI();
 			--暂时去除登录界面
 			--p.CloseUI();
 			--maininterface.ShowUI();
 			local uid = GetUID();
 			SendReq("ServerList","List",uid,"");
-	    local tag = uiNode:GetTag();
-		if ui.ID_CTRL_BUTTON_102 == tag or ui.ID_CTRL_BUTTON_4 == tag then
-
-		end
-	end
+		--end
+	--end
 end
 
 function p.HideUI()

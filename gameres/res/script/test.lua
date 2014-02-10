@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	test.lua
 -- author:		zhangwq, 2013/05/13
--- purpose:		²âÊÔÓÃ
+-- purpose:		æµ‹è¯•ç”¨
 --------------------------------------------------------------
 
 test = {}
@@ -13,105 +13,105 @@ function p.test()
 
 --[[	WriteFile("your output text","YourFileName.log");
 	WriteFile("your output text","YourFileName");
-	WriteFile("your output text");   --Ä¬ÈÏÎª"ClientLua.log"--]]
+	WriteFile("your output text");   --é»˜è®¤ä¸º"ClientLua.log"--]]
 	
-	--ÕâÀïµ÷ÓÃĞèÒª²âÊÔµÄº¯Êı
+	--è¿™é‡Œè°ƒç”¨éœ€è¦æµ‹è¯•çš„å‡½æ•°
 --	p.TestDB();
 	
-	--²âÊÔÍ¼Æ¬×éºÏ
+	--æµ‹è¯•å›¾ç‰‡ç»„åˆ
 	--p.TestPictureCombo();
 
-	--²âÊÔAniÅäÖÃº¬Í¼Æ¬×éºÏ
+	--æµ‹è¯•Anié…ç½®å«å›¾ç‰‡ç»„åˆ
 --	p.TestAniWithPictureCombo();
 
-	--½áºÏcmd²âÊÔÍ¼Æ¬×éºÏ
+	--ç»“åˆcmdæµ‹è¯•å›¾ç‰‡ç»„åˆ
 --	p.testPictureComboWithCmd();
 
-	--²âÊÔÒôĞ§¡¢ÒôÀÖ¡¢ÊÓÆµ
+	--æµ‹è¯•éŸ³æ•ˆã€éŸ³ä¹ã€è§†é¢‘
 --	p.TestSoundMusicVolume();
 
-	--²âÊÔUIX
+	--æµ‹è¯•UIX
 --	p.TestUIX();
 --	p.TestUIX_SingleMode();
 
-    --²âÊÔScrollText
+    --æµ‹è¯•ScrollText
 --    p.TestScrollText();
 
-	--²âÊÔvector
+	--æµ‹è¯•vector
 --	p.TestVector();
 
---	p.testGuideLayer();
+	--æµ‹è¯•æ–°æ‰‹å¼•å¯¼é®æŒ¡
+	--p.testGuideLayer();
 
-    --²âÊÔ
+    --æµ‹è¯•
 --    p.test1();
 	
-	--²âÊÔplayerÃüÁî
+	--æµ‹è¯•playerå‘½ä»¤
 --	SetTimerOnce( p.testPlayerCmd, 2.0f );
 
-    --²âÊÔ×Óµ¯ÅäÖÃ
+    --æµ‹è¯•å­å¼¹é…ç½®
 --    p.TestBullet();
 
-    --²âÊÔ¸ßË¹Ä£ºı
+    --æµ‹è¯•é«˜æ–¯æ¨¡ç³Š
 --    SetTimerOnce( p.TestGaussianBlur, 2.0f );
 
-	--²âÊÔ¿¨°ü
+	--æµ‹è¯•å¡åŒ…
 --	p.TestCardBox();
 	
-	--²âÊÔ·¢°ü
---	p.TestHttpSend();
-
-    --²âÊÔÉ¾³ıAniÌØĞ§
+	--æµ‹è¯•å‘åŒ…
+	--p.TestHttpSend();
+    --æµ‹è¯•åˆ é™¤Aniç‰¹æ•ˆ
 --    p.TestDelAni();
 
-    --²âÊÔÍæ¼ÒĞÅÏ¢±£´æ
+    --æµ‹è¯•ç©å®¶ä¿¡æ¯ä¿å­˜
 --    p.TestUserConfig();
 
-	--²âÊÔ´´½¨Íæ¼Ò
+	--æµ‹è¯•åˆ›å»ºç©å®¶
 	--p.TestCreatePlayer();
 	
-	--²âÊÔLua´íÎó´¦Àí
+	--æµ‹è¯•Luaé”™è¯¯å¤„ç†
 --	p.TestLuaErrHandler();
 
-	--²âÊÔÏûÏ¢ÌáÊ¾¿ò
+	--æµ‹è¯•æ¶ˆæ¯æç¤ºæ¡†
 --	p.TestMsgBox();
 
-	--²âÊÔ¿¨Æ¬·­×ª
+	--æµ‹è¯•å¡ç‰‡ç¿»è½¬
 --	p.TestCardRotate();
 
-	--²âÊÔColorLabel
+	--æµ‹è¯•ColorLabel
 --	p.TestColorLabel();
 
-	--²âÊÔedit¿Ø¼ş
+	--æµ‹è¯•editæ§ä»¶
 --	p.TestEdit();
 
-	--²âÊÔ9¹¬¸ñ¿Ø¼ş
+	--æµ‹è¯•9å®«æ ¼æ§ä»¶
 --	p.Test9Slices();
 
-	--²âÊÔÀ©Õ¹ÁĞ±í
+	--æµ‹è¯•æ‰©å±•åˆ—è¡¨
 	--p.TestNDUIScrollContainerExpand();
 
-	--Ö±½Ó½øÕ½¶·
+	--ç›´æ¥è¿›æˆ˜æ–—
 	--p.EnterBattle();
 	--x_battle_mgr.EnterBattle();
 	--n_battle_mgr.EnterBattle( N_BATTLE_PVE, 101011 );
 	--n_battle_mgr.EnterBattle( N_BATTLE_PVP, 10002 );
---	--²âÊÔutf8×Ó´®
+--	--æµ‹è¯•utf8å­ä¸²
 --	  p.TestUtf8String();
     
-    --²âÊÔ¾çÇé
---	dlg_drama.ShowUI(0,1,10);
+    --æµ‹è¯•å‰§æƒ…
+--	dlg_drama.ShowUI(1,10,0,);
 
 	--p.testFly();
 	
-	--²âÊÔ´´½¨½ÇÉ«
+	--æµ‹è¯•åˆ›å»ºè§’è‰²
 	--dlg_createrole.ShowUI();
 	--dlg_create_player.ShowUI();
 	
-	--²âÊÔ¾çÇéºóµÄÇëÇóÕ½¶·
+	--æµ‹è¯•å‰§æƒ…åçš„è¯·æ±‚æˆ˜æ–—
 	--local strParam = string.format("&target=%d",10002);
 	--SendReq( "Fight","StartPvP",10001,strParam );
 	
-	--²âÊÔ½ÙÕù
+	--æµ‹è¯•åŠ«äº‰
 	--battle_ko.ShowUI();
 	
 	--p.testPost();
@@ -133,10 +133,10 @@ function p.testGuideLayer()
 	pLayer:SetFrameRectFull();
 	pLayer:SetLuaDelegate(p.OnTestType);
 	LoadDlg("main_interface.xui", pLayer, nil);
-	local mail = GetButton(pLayer, ui_main_mailbtn.ID_CTRL_BUTTON_MAIL );
-	p.TestRect = mail:GetFrameRect();			--»ñµÃ¿Ø¼şÇøÓò
-	GetUIRoot():SetTrainingMode(true,pLayer);  --ÉèÖÃÎªĞÂÊÖÖ¸µ¼Ä£Ê½£¬´«µİĞÂÊÖÖ¸µ¼µÄÄÇ¸ölayer
-	GetUIRoot():SetHighLightArea(p.TestRect);  --ÉèÖÃ¸ßÁÁÇøÓò
+	local mail = GetButton(pLayer, ui_main_interface.ID_CTRL_BUTTON_129 );
+	p.TestRect = mail:GetFrameRect();			--è·å¾—æ§ä»¶åŒºåŸŸ
+	GetUIRoot():SetTrainingMode(true,pLayer);  --è®¾ç½®ä¸ºæ–°æ‰‹æŒ‡å¯¼æ¨¡å¼ï¼Œä¼ é€’æ–°æ‰‹æŒ‡å¯¼çš„é‚£ä¸ªlayer
+	GetUIRoot():SetHighLightArea(p.TestRect);  --è®¾ç½®é«˜äº®åŒºåŸŸ
 	
 	p.TestLayer = pLayer;
 end
@@ -170,9 +170,9 @@ end
 function p.OnTestType(uiNode, uiEventType, param)
 	WriteCon("FFFAAA");
 	
-	if true == ContainsPoint(p.TestRect,param) then		--paramÊÇµã»÷ÊÂ¼şµÄposition£¬ÅĞ¶Ïµã»÷ÊÂ¼şÊÇ·ñÔÚ¸ßÁÁÇøÓòÄÚ¡£
+	if true == ContainsPoint(p.TestRect,param) then		--paramæ˜¯ç‚¹å‡»äº‹ä»¶çš„positionï¼Œåˆ¤æ–­ç‚¹å‡»äº‹ä»¶æ˜¯å¦åœ¨é«˜äº®åŒºåŸŸå†…ã€‚
 		WriteCon("1111111");
-		GetUIRoot():SetTrainingMode(false,p.TestLayer);	--¹Ø±ÕĞÂÊÖÖ¸µ¼Ä£Ê½
+		GetUIRoot():SetTrainingMode(false,p.TestLayer);	--å…³é—­æ–°æ‰‹æŒ‡å¯¼æ¨¡å¼
 	else
 		WriteCon("2222222");
 	end
@@ -202,7 +202,7 @@ function reload()
 end
 
 
---²âÊÔÊı¾İ¿â½Ó¿Ú
+--æµ‹è¯•æ•°æ®åº“æ¥å£
 function p.TestDB()
     WriteCon( "\r\n*** db test *** \r\n" );
 	local t = GetTable(T_TEST);
@@ -217,10 +217,10 @@ function p.TestDB()
 	local rowCount = t:GetRowCount();
 	for i = 1, rowCount do
 		local row = t:GetRow(i-1);
-		local f0 = row:GetNum(0);--°´Ë÷ÒıÈ¡ÊıÖµ
-		local f1 = row:GetStr(1);--°´Ë÷ÒıÈ¡´®
-		local f2 = row:GetNumByName("tel");--°´×Ö¶ÎÃûÈ¡ÊıÖµ
-		local f3 = row:GetStrByName("addr");--°´×Ö¶ÎÃûÈ¡´®
+		local f0 = row:GetNum(0);--æŒ‰ç´¢å¼•å–æ•°å€¼
+		local f1 = row:GetStr(1);--æŒ‰ç´¢å¼•å–ä¸²
+		local f2 = row:GetNumByName("tel");--æŒ‰å­—æ®µåå–æ•°å€¼
+		local f3 = row:GetStrByName("addr");--æŒ‰å­—æ®µåå–ä¸²
 		local f4 = row:GetStr(4);
 		
 		local linestr = string.format( "%d %s %d %s %s", f0, f1, f2, f3, f4);
@@ -228,16 +228,16 @@ function p.TestDB()
 		WriteCon( linestr );
 	end
 	
-	--²éÕÒĞĞ
+	--æŸ¥æ‰¾è¡Œ
 	local rowIndex = t:FindRow( "id", "3" );
 	if rowIndex ~= -1 then
 		WriteCon( string.format("find row ok, rowIndex=%d\r\n", rowIndex ));
 	end
 end
 
---²âÊÔÍ¼Æ¬×éºÏ
+--æµ‹è¯•å›¾ç‰‡ç»„åˆ
 function p.TestPictureCombo()
-	--È¡³öÊı×Ö×ÊÔ´Í¼Æ¬
+	--å–å‡ºæ•°å­—èµ„æºå›¾ç‰‡
 	local pic0 = GetPictureByAni("effect.num", 0);
 	local pic1 = GetPictureByAni("effect.num", 1);
 	local pic2 = GetPictureByAni("effect.num", 2);
@@ -250,7 +250,7 @@ function p.TestPictureCombo()
 	local pic9 = GetPictureByAni("effect.num", 9);	
 	local pic10= GetPictureByAni("effect.num", 10);	
 		
-	--´´½¨Í¼Æ¬×éºÏ
+	--åˆ›å»ºå›¾ç‰‡ç»„åˆ
 	local picCmb = createNDPictureCombo();
 	picCmb:PushPicture( pic0 );
 	picCmb:PushPicture( pic1 );
@@ -264,25 +264,25 @@ function p.TestPictureCombo()
 	picCmb:PushPicture( pic9 );
 	picCmb:PushPicture( pic10 );
 	
-	--´´½¨image¿Ø¼ş
+	--åˆ›å»ºimageæ§ä»¶
 	local image = createNDUIImage();
 	image:Init();
 	image:SetPicture( picCmb );
 	image:ResizeToFitPicture();
 	image:SetFramePosXY(100,100);
 	
-	--Ìí¼Óµ½hud²ã
+	--æ·»åŠ åˆ°hudå±‚
 	GetHudLayer():AddChild( image );
 end
 
---²âÊÔ´´½¨Í¼Æ¬×éºÏ
+--æµ‹è¯•åˆ›å»ºå›¾ç‰‡ç»„åˆ
 function p.CreatePictureCombo( n1, n2, n3 )
-	--È¡³öÊı×Ö×ÊÔ´Í¼Æ¬
+	--å–å‡ºæ•°å­—èµ„æºå›¾ç‰‡
 	local pic0 = GetPictureByAni("effect.num", n1);
 	local pic1 = GetPictureByAni("effect.num", n2);
 	local pic2 = GetPictureByAni("effect.num", n3);
 		
-	--´´½¨Í¼Æ¬×éºÏ
+	--åˆ›å»ºå›¾ç‰‡ç»„åˆ
 	local picCmb = createNDPictureCombo();
 	picCmb:PushPicture( pic0 );
 	picCmb:PushPicture( pic1 );
@@ -291,58 +291,58 @@ function p.CreatePictureCombo( n1, n2, n3 )
 	return picCmb;
 end
 
---ÔÚhud²ã´´½¨Ò»¸öimage¿Ø¼ş
+--åœ¨hudå±‚åˆ›å»ºä¸€ä¸ªimageæ§ä»¶
 function p.CreateUIImageInHudLayer( x, y )
-	--´´½¨image¿Ø¼ş
+	--åˆ›å»ºimageæ§ä»¶
 	local image = createNDUIImage();
 	image:Init();
 	image:ResizeToFitPicture();
 	image:SetFramePosXY( x, y );
 	
-	--Ìí¼Óµ½hud²ã
+	--æ·»åŠ åˆ°hudå±‚
 	GetHudLayer():AddChild( image );
 	return image;
 end
 
---²âÊÔAniÅäÖÃº¬Í¼Æ¬×éºÏ
+--æµ‹è¯•Anié…ç½®å«å›¾ç‰‡ç»„åˆ
 function p.TestAniWithPictureCombo()
 
-	--´´½¨Í¼Æ¬×éºÏ
+	--åˆ›å»ºå›¾ç‰‡ç»„åˆ
 	local picCmb = p.CreatePictureCombo( 1, 2, 3 );
 
-	--ÔÚhud²ã´´½¨Ò»¸öimage¿Ø¼ş	
+	--åœ¨hudå±‚åˆ›å»ºä¸€ä¸ªimageæ§ä»¶	
 	local image = p.CreateUIImageInHudLayer( 100, 100 );
 	image:AddFgEffect( "effect.piccmb" );
 	
-	--ÉèÖÃ±äÁ¿»·¾³
+	--è®¾ç½®å˜é‡ç¯å¢ƒ
 	ResetVarEnv();
 	local env = GetVarEnv();
 	env:SetPtr( "$1", picCmb );
 end
 
---²âÊÔAniÍ¼Æ¬×éºÏ£¬½áºÏcmd
+--æµ‹è¯•Aniå›¾ç‰‡ç»„åˆï¼Œç»“åˆcmd
 function p.testPictureComboWithCmd()
-	--´´½¨Í¼Æ¬×éºÏ
+	--åˆ›å»ºå›¾ç‰‡ç»„åˆ
 	local picCmb1 = p.CreatePictureCombo( 1, 2, 3 );
 	local picCmb2 = p.CreatePictureCombo( 4, 5, 6 );
 	
-	--ÔÚhud²ã´´½¨Á½¸öimage¿Ø¼ş	
+	--åœ¨hudå±‚åˆ›å»ºä¸¤ä¸ªimageæ§ä»¶	
 	local image1 = p.CreateUIImageInHudLayer( 100, 100 );
 	local image2 = p.CreateUIImageInHudLayer( 200, 200 );
 	
-	--ÓÃcmd¸ø¿Ø¼ş°ó¸öÌØĞ§
+	--ç”¨cmdç»™æ§ä»¶ç»‘ä¸ªç‰¹æ•ˆ
 	local cmd1 = createCommandEffect():AddFgEffect( 0.25, image1, "combo.piccmb" );
 	local cmd2 = createCommandEffect():AddFgEffect( 0.25, image2, "combo.piccmb" );
 	
 	battle_show.GetDefaultSerialSequence():AddCommand( cmd1 );
 	battle_show.GetDefaultSerialSequence():AddCommand( cmd2 );
 	
-	--ÉèÖÃcmdµÄ±äÁ¿»·¾³
+	--è®¾ç½®cmdçš„å˜é‡ç¯å¢ƒ
 	cmd1:GetVarEnv():SetPtr( "$1", picCmb1 );
 	cmd2:GetVarEnv():SetPtr( "$1", picCmb2 );
 end
 
---²âÊÔÒôĞ§¡¢ÒôÀÖ¡¢ÊÓÆµ
+--æµ‹è¯•éŸ³æ•ˆã€éŸ³ä¹ã€è§†é¢‘
 function p.TestSoundMusicVolume()
 	PlayBGMusic(1);
 	
@@ -362,7 +362,7 @@ function p.TestSoundMusicVolume()
 --]]	
 end
 
---²âÊÔUIX
+--æµ‹è¯•UIX
 function p.TestUIX()
 	p.TestUIX_ListHorz();
 	p.TestUIX_ListVert();
@@ -373,7 +373,7 @@ function p.TestUIX_SingleMode()
 	p.TestUIX_ListVert_SingleMode();
 end
 
---²âÊÔºáÏòÁĞ±í
+--æµ‹è¯•æ¨ªå‘åˆ—è¡¨
 function p.TestUIX_ListHorz()
 	local list = createNDUIXListBoxHorz();
 	list:Init();
@@ -413,7 +413,7 @@ function p.TestUIX_ListHorz()
 	list:MoveToLast();
 end
 
---²âÊÔºáÏòÁĞ±í£¨½öµ¥¸öview¿É¼û£©
+--æµ‹è¯•æ¨ªå‘åˆ—è¡¨ï¼ˆä»…å•ä¸ªviewå¯è§ï¼‰
 function p.TestUIX_ListHorz_SingleMode()
 	local list = createNDUIXListBoxHorz();
 	list:Init();
@@ -450,9 +450,9 @@ function p.TestUIX_ListHorz_SingleMode()
 	
 	GetUIRoot():AddChild( list );
 	
-	--list:SetActiveView(1); --ÉèÖÃĞòºÅ1µÄviewÎªµ±Ç°View
-	--list:MoveToPrevView(); --¹öµ½Ç°Ò»¸öview
-	--list:MoveToNextView(); --¹öµ½ºóÒ»¸öview
+	--list:SetActiveView(1); --è®¾ç½®åºå·1çš„viewä¸ºå½“å‰View
+	--list:MoveToPrevView(); --æ»šåˆ°å‰ä¸€ä¸ªview
+	--list:MoveToNextView(); --æ»šåˆ°åä¸€ä¸ªview
 end
 
 function p.TestNDUIScrollContainerExpand()
@@ -496,7 +496,7 @@ function p.TestBB(uiNode, uiEventType, param)
 	WriteCon("feafae");
 end
 
---²âÊÔ×İÏòÁĞ±í
+--æµ‹è¯•çºµå‘åˆ—è¡¨
 function p.TestUIX_ListVert()
 	local list = createNDUIXListBoxVert();
 	list:Init();
@@ -535,12 +535,12 @@ function p.TestUIX_ListVert()
 	list:SetLastVisibleIndex(5);
 	list:MoveToLast();
 	
-	--list:SetActiveView(4); --ÉèÖÃĞòºÅ1µÄviewÎªµ±Ç°View
-	--list:MoveToPrevView(); --¹öµ½Ç°Ò»¸öview
-	--list:MoveToNextView(); --¹öµ½ºóÒ»¸öview	
+	--list:SetActiveView(4); --è®¾ç½®åºå·1çš„viewä¸ºå½“å‰View
+	--list:MoveToPrevView(); --æ»šåˆ°å‰ä¸€ä¸ªview
+	--list:MoveToNextView(); --æ»šåˆ°åä¸€ä¸ªview	
 end
 
---²âÊÔ×İÏòÁĞ±í£¨½öµ¥¸öview¿É¼û£©
+--æµ‹è¯•çºµå‘åˆ—è¡¨ï¼ˆä»…å•ä¸ªviewå¯è§ï¼‰
 function p.TestUIX_ListVert_SingleMode()
 	local list = createNDUIXListBoxVert();
 	list:Init();
@@ -577,19 +577,19 @@ function p.TestUIX_ListVert_SingleMode()
 	
     GetUIRoot():AddChild( list );
 	
-	--list:SetActiveView(1); --ÉèÖÃĞòºÅ1µÄviewÎªµ±Ç°View
-	--list:MoveToPrevView(); --¹öµ½Ç°Ò»¸öview
-	--list:MoveToNextView(); --¹öµ½ºóÒ»¸öview	
+	--list:SetActiveView(1); --è®¾ç½®åºå·1çš„viewä¸ºå½“å‰View
+	--list:MoveToPrevView(); --æ»šåˆ°å‰ä¸€ä¸ªview
+	--list:MoveToNextView(); --æ»šåˆ°åä¸€ä¸ªview	
 end
 
---°´Å¥ÊÂ¼ş
+--æŒ‰é’®äº‹ä»¶
 function p.OnBtnEvent(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		WriteCon( "on btn event" );
 	end
 end
 
---ViewÊÂ¼ş
+--Viewäº‹ä»¶
 function p.OnViewEvent(uiNode, uiEventType, param)
 	local view = ConverToView(uiNode);
     if IsClickEvent(uiEventType) then
@@ -608,7 +608,7 @@ function p.OnViewEvent(uiNode, uiEventType, param)
 	end	
 end
 
---²âÊÔ¹ö¶¯ÎÄ±¾
+--æµ‹è¯•æ»šåŠ¨æ–‡æœ¬
 function p.TestScrollText()
     local text = createNDUIScrollText();
     text:Init();
@@ -624,7 +624,7 @@ function p.TestScrollText()
     --SetDebugDraw(true);
 end
 
---²âÊÔvector
+--æµ‹è¯•vector
 function p.TestVector()
 	local v = vector:new();
 	v:push( 100 );
@@ -662,7 +662,7 @@ function p.TestVector()
 --]]	
 end
 
---²âÊÔdemo2.0 pvp
+--æµ‹è¯•demo2.0 pvp
 function p.test1()
 	local layer = createNDUILayer();
     if layer == nil then
@@ -677,10 +677,10 @@ function p.test1()
     LoadUI( "x_battle_pvp.xui", layer, nil );
 end
 
---²âÊÔplayerÃüÁî
+--æµ‹è¯•playerå‘½ä»¤
 function p.testPlayerCmd()
     --[[
-	--±¸×¢£ºplayerCmdÓĞ£ºStandby, Atk, Skill, Defence, Hurt, Dead, PlayAnim
+	--å¤‡æ³¨ï¼šplayerCmdæœ‰ï¼šStandby, Atk, Skill, Defence, Hurt, Dead, PlayAnim
 	if x_battle_mgr.IsActive() then
 	    local node = x_battle_mgr.GetFirstHero():GetNode();
 	    local cmd1 = createCommandPlayer():Atk( 0, node, "");
@@ -694,7 +694,7 @@ function p.testPlayerCmd()
     --]]
     
     --[[    
-    --²âÊÔactionÎ»ÒÆ
+    --æµ‹è¯•actionä½ç§»
     if x_battle_mgr.IsActive() then
         local node = x_battle_mgr.GetFirstHero():GetNode();
         node:AddActionEffect( "fighter.move_test" );
@@ -705,7 +705,7 @@ function p.testPlayerCmd()
     --]]
 end
 
---²âÊÔ×Óµ¯ÅäÖÃ
+--æµ‹è¯•å­å¼¹é…ç½®
 function p.TestBullet()
     local bullet = GetBullet( "bullet.bullet1" );
     if bullet ~= nil then
@@ -715,7 +715,7 @@ function p.TestBullet()
     end
 end
 
---²âÊÔ¸ßË¹Ä£ºı
+--æµ‹è¯•é«˜æ–¯æ¨¡ç³Š
 function p.TestGaussianBlur()
     if x_battle_mgr.IsActive() then
         local node = x_battle_mgr.GetFirstHero():GetNode();
@@ -729,12 +729,18 @@ function p.TestCardBox()
 	dlg_card_box_mainui.ShowUI();
 end
 
---²âÊÔ·¢ËÍhttpÇëÇó
+--æµ‹è¯•å‘é€httpè¯·æ±‚
 function p.TestHttpSend()
+	local layer = createNDUILayer();
+	layer:Init();
+	layer:SetFrameRectFull();
+	layer:SetSwallowTouch( false );
+	GetUIRoot():AddChild(layer);
+	layer:AddFgEffect("lancer.busy");
 	SendReq( "Test", "TestAction", GetUID(), "a=1&b=2&str=hello" );
 end
 
---²âÊÔÉ¾³ıAniÌØĞ§
+--æµ‹è¯•åˆ é™¤Aniç‰¹æ•ˆ
 function p.TestDelAni()
     local node = x_battle_mgr.GetFirstHero():GetNode();
     if node ~= nil then
@@ -751,7 +757,7 @@ function p.DelAni()
 end
 
 
---²âÊÔÍæ¼ÒĞÅÏ¢±£´æ
+--æµ‹è¯•ç©å®¶ä¿¡æ¯ä¿å­˜
 function p.TestUserConfig()
     local uid = GetUID();
     uid = uid + 1;
@@ -759,12 +765,12 @@ function p.TestUserConfig()
     GetUserConfig():Save();
 end
 
---²âÊÔ´´½¨Íæ¼Ò
+--æµ‹è¯•åˆ›å»ºç©å®¶
 function p.TestCreatePlayer()
 	dlg_create_player:ShowUI();
 end
 
---²âÊÔLua´íÎó´¦Àí
+--æµ‹è¯•Luaé”™è¯¯å¤„ç†
 function p.TestLuaErrHandler()
 	WriteConWarning( "--- TestLuaErrHandler() ---\r\n" );
 	local t = {};
@@ -773,17 +779,17 @@ function p.TestLuaErrHandler()
 	--t:wtf():damn(); --err
 end
 
---²âÊÔÏûÏ¢ÌáÊ¾¿ò
+--æµ‹è¯•æ¶ˆæ¯æç¤ºæ¡†
 function p.TestMsgBox(layer)
-	dlg_msgbox.ShowYesNo( ToUtf8("Ñ¯ÎÊ"), ToUtf8("²âÊÔÏûÏ¢ÌáÊ¾¿ò£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡"), p.OnMsgBoxCallback , layer );
+	dlg_msgbox.ShowYesNo( ToUtf8("è¯¢é—®"), ToUtf8("æµ‹è¯•æ¶ˆæ¯æç¤ºæ¡†ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼"), p.OnMsgBoxCallback , layer );
 end
 
---ÏûÏ¢¿ò»Øµ÷
+--æ¶ˆæ¯æ¡†å›è°ƒ
 function p.OnMsgBoxCallback( result )
 	WriteConErr("!!! OnMsgBoxCallback: "..tostring(result));
 end
 
---²âÊÔ¿¨Æ¬·­×ª
+--æµ‹è¯•å¡ç‰‡ç¿»è½¬
 function p.TestCardRotate()
 	local x0 = 100;
 	local x = x0;
@@ -816,12 +822,12 @@ function p.TestCardRotate()
 	end
 end
 
---²âÊÔColorLabel
+--æµ‹è¯•ColorLabel
 function p.TestColorLabel()
 	local crLabel = createNDUIColorLabel();
-	local text = "<#red>ºÃºÃÑ§Ï°£¬<#green>ÌìÌìÏòÉÏ£¬<#blue>good good study, day day up! \none two three four five six seven eight nine ten.";
-	--local text = "<#ff0000ff>ºÃºÃÑ§Ï°£¬<#00ff00ff>ÌìÌìÏòÉÏ£¬<#0000ffff>good good study, day day up! \n<#000000ff>one two three four five six seven eight nine ten.";
-	--local text = "<#red>¹ş¹ş·¶µÂÈø\n<#blue>good\n<#gray>good\<#yellow>study\n\n<#green>xx\none\ntwo\nthree\nfour\nfive\nsix";
+	local text = "<#red>å¥½å¥½å­¦ä¹ ï¼Œ<#green>å¤©å¤©å‘ä¸Šï¼Œ<#blue>good good study, day day up! \none two three four five six seven eight nine ten.";
+	--local text = "<#ff0000ff>å¥½å¥½å­¦ä¹ ï¼Œ<#00ff00ff>å¤©å¤©å‘ä¸Šï¼Œ<#0000ffff>good good study, day day up! \n<#000000ff>one two three four five six seven eight nine ten.";
+	--local text = "<#red>å“ˆå“ˆèŒƒå¾·è¨\n<#blue>good\n<#gray>good\<#yellow>study\n\n<#green>xx\none\ntwo\nthree\nfour\nfive\nsix";
 	crLabel:Init();
 	crLabel:SetText( ToUtf8(text));
 	crLabel:SetFontSize( FontSize(25));
@@ -831,9 +837,9 @@ function p.TestColorLabel()
 	GetUIRoot():AddChild(crLabel);
 end
 
---²âÊÔedit¿Ø¼ş
+--æµ‹è¯•editæ§ä»¶
 function p.TestEdit()
-	--ÊÂ¼şÍ¨¹ıLayerÅÉ·¢¸øEdit¿Ø¼ş
+	--äº‹ä»¶é€šè¿‡Layeræ´¾å‘ç»™Editæ§ä»¶
 	local layer = createNDUILayer();
 	layer:Init();
 	layer:SetFrameRectFull();
@@ -843,16 +849,16 @@ function p.TestEdit()
 	local edit = createNDUIEdit();
 	edit:Init();
 	edit:SetFrameRect( CCRectMake(10,10,300,60));
-	edit:SetText( ToUtf8("·¢µÄË¢¿¨·À¾²µçÈö"));
+	edit:SetText( ToUtf8("å‘çš„åˆ·å¡é˜²é™ç”µæ’’"));
 	edit:SetTextColor( ccc4(255,255,255,255));
-	edit:SetMaxLength(20); --ÏŞÖÆÎª20¸ö×Ö·û£¬ºº×ÖËã2¸ö×Ö·û£¬Ó¢ÎÄºÍÊı×ÖËã1¸ö×Ö·û
+	edit:SetMaxLength(20); --é™åˆ¶ä¸º20ä¸ªå­—ç¬¦ï¼Œæ±‰å­—ç®—2ä¸ªå­—ç¬¦ï¼Œè‹±æ–‡å’Œæ•°å­—ç®—1ä¸ªå­—ç¬¦
 	edit:SetHorzAlign(0);
 	layer:AddChild(edit);
 	
 	SetDebugDraw(true);
 end
 
---²âÊÔ9¹¬¸ñ¿Ø¼ş
+--æµ‹è¯•9å®«æ ¼æ§ä»¶
 function p.Test9Slices()
 	local widget = createNDUI9SlicesImage();
 	widget:Init();
@@ -861,7 +867,7 @@ function p.Test9Slices()
 	GetUIRoot():AddChild(widget);
 end
 
---²âÊÔutf8×Ó´®
+--æµ‹è¯•utf8å­ä¸²
 function p.TestUtf8String()
 	g_str = GetStr("s3"); --global
 	g_str_index = 1;
@@ -870,7 +876,7 @@ function p.TestUtf8String()
 	SetTimer( p.OnTimer_UpdateSubString, 0.1f );
 end
 
---¶¨Ê±¸üĞÂ×Ó´®
+--å®šæ—¶æ›´æ–°å­ä¸²
 function p.OnTimer_UpdateSubString( idTimer )
 	WriteCon( GetSubStringUtf8( g_str, g_str_index ));
 	g_str_index = g_str_index + 1;

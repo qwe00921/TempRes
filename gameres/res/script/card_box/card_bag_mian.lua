@@ -33,6 +33,7 @@ function p.ShowUI()
 	end
 	maininterface.HideUI();
 	if p.layer ~= nil then 
+		p.CloseNotSelfUI();
 		p.layer:SetVisible(true);
 		p.SetEnableAll(true);
 		local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);
@@ -239,7 +240,7 @@ function p.ShowCardInfo(view, card, cardIndex,row)
  	--WriteCon("cardUniqueId ===== "..cardUniqueId);
     cardButton:SetId(cardUniqueId);
 	--等级
-	local levelText = "LV "..tostring(card.Level)
+	local levelText = tostring(card.Level)
 	cardLevelText:SetText(levelText);
 	--队伍
 	local teamId = tonumber(card.Team_marks)
@@ -255,8 +256,9 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	
 	--卡牌边框颜色
 	
-	local cardType = tonumber(card.Class)
+	local cardType = tonumber(card.element)
 	--WriteCon("cardType ===== "..cardType);
+	cardBoxPic:SetPicture( GetPictureByAni("common_ui.cardBagTypeBox",cardType));
 	-- if cardType == 0 then
 		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
 	-- elseif cardType == 1 then
@@ -305,6 +307,9 @@ end
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	WriteCon("cardUniqueId = "..cardUniqueId);
+	
+	card_bag_sort.HideUI();
+	card_bag_sort.CloseUI();
 	
 	--是否处于编辑中
 	if p.isReplace == true then
@@ -500,6 +505,8 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			else
 				maininterface.ShowUI();
 				p.CloseUI();
+				
+				dlg_menu.SetSelectButton( -1 );
 			end
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then
 			WriteCon("card_bag_sort.ShowUI()");
@@ -507,9 +514,12 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 				card_bag_sort.ShowUI(0);
 			else
 				p.sortBtnMark = MARK_OFF;
+				card_bag_sort.HideUI();
 				card_bag_sort.CloseUI();
 			end
 		elseif(ui.ID_CTRL_BUTTON_SELL == tag) then
+			card_bag_sort.HideUI();
+			card_bag_sort.CloseUI();
 			p.sellBtnEvent();
 		end
 	end
@@ -521,7 +531,9 @@ function p.sellBtnEvent()
 	--btn:SetEnabled(false)
 	if p.BatchSellMark == MARK_OFF then
 		p.BatchSellMark = MARK_ON;
-		btn:SetText("取消");
+		--btn:SetText("取消");
+		btn:SetImage( GetPictureByAni( "common_ui.cardBagSell", 0 ) );
+		btn:SetTouchDownImage( GetPictureByAni( "common_ui.cardBagSell", 1 ) );
 		card_bag_sell.ShowUI();
 		p.selectCardList()
 		p.setTeamCardDisEnable()
@@ -530,7 +542,8 @@ function p.sellBtnEvent()
 		p.BatchSellMark = MARK_OFF
 		p.allCardPrice 	= 0;	--出售卡牌总价值
 		p.sellCardNodeList 	= {};	--出售卡牌列表
-		btn:SetText("卖出");
+		btn:SetImage( GetPictureByAni( "common_ui.cardBagSell", 2 ) );
+		btn:SetTouchDownImage( GetPictureByAni( "common_ui.cardBagSell", 3 ) );
 		card_bag_sell.CloseUI() 
 		p.ShowCardList(p.cardListInfo)
 	end
@@ -572,15 +585,21 @@ function p.sortByBtnEvent(sortType)
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
-		sortByBtn:SetText("等级");
+		--sortByBtn:SetText("等级");
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",2));
+		sortByBtn:SetTouchDownImage(GetPictureByAni("common_ui.cardBagSort",3));
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		sortByBtn:SetText("星级");
+		--sortByBtn:SetText("星级");
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",4));
+		sortByBtn:SetTouchDownImage(GetPictureByAni("common_ui.cardBagSort",5));
 	elseif(sortType == CARD_BAG_SORT_BY_TYPE) then 
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_TYPE;
-		sortByBtn:SetText("属性");
+		--sortByBtn:SetText("属性");
+		sortByBtn:SetImage(GetPictureByAni("common_ui.cardBagSort",6));
+		sortByBtn:SetTouchDownImage(GetPictureByAni("common_ui.cardBagSort",7));
 	end
 	card_bag_mgr.sortByRule(sortType)
 end
@@ -643,6 +662,7 @@ function p.CloseUI()
 		
 		p.ClearData()
         card_bag_mgr.ClearData();
+		card_bag_sort.HideUI();
 		card_bag_sort.CloseUI();
 		card_bag_sell.CloseUI();
 		dlg_msgbox.CloseUI();
@@ -667,6 +687,17 @@ function p.ClearData()
 end
 function p.UIDisappear()
 	p.CloseUI();
+	dlg_card_attr_base.CloseUI();
+	card_rein.CloseUI();
+	card_intensify.CloseUI();
+	card_intensify2.CloseUI();
+	card_intensify_succeed.CloseUI();
+	equip_dress_select.CloseUI();
+	equip_rein_list.CloseUI();
+	maininterface.BecomeFirstUI();
+end
+
+function p.CloseNotSelfUI()
 	dlg_card_attr_base.CloseUI();
 	card_rein.CloseUI();
 	card_intensify.CloseUI();

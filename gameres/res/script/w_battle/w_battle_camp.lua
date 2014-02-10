@@ -316,8 +316,8 @@ function p.AddHeroFightersJumpEffect()
 	end
 		
 	local pOldPos = node:GetCenterPos();
-	
-	local x = pOldPos.x - 220;
+	local lscale = GetUIScale();
+	local x = pOldPos.x - W_BATTLE_JUMPSTAR* lscale ;
 	local y = pOldPos.y;
 	
 	local pNewPos = CCPointMake(x,y);	
@@ -344,14 +344,15 @@ function p.AddEnemyFightersJumpEffect()
 		
 	local pOldPos = node:GetCenterPos();
 	
-	local x = pOldPos.x + 220;
+	local lscale = GetUIScale();
+	local x = pOldPos.x + W_BATTLE_JUMPSTAR* lscale;
 	local y = pOldPos.y;
 
 	local pNewPos = CCPointMake(x,y);	
 	pFighter:SaveOldPos(pNewPos);
 	
 	local batch = battle_show.GetNewBatch();
-	node:AddActionEffect("lancer.fadein0");
+	--node:AddActionEffect("lancer.fadein0");
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
 	g_EnemyIndex = g_EnemyIndex + 1;
@@ -440,13 +441,17 @@ function p:AddFighters( uiArray, fighters )
 		
 		local pOldPos = node:GetCenterPos();
         
-		--有跳入动作
-		if self.idCamp == E_CARD_CAMP_HERO then
-			pOldPos.x = pOldPos.x + 220;
-		elseif self.idCamp == E_CARD_CAMP_ENEMY then
-			pOldPos.x = pOldPos.x - 220;
-		end
-		node:SetCenterPos(pOldPos);
+		local lscale = GetUIScale();
+		
+		if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+			--有跳入动作
+			if self.idCamp == E_CARD_CAMP_HERO then
+				pOldPos.x = (pOldPos.x + W_BATTLE_JUMPSTAR) * lscale ;
+			elseif self.idCamp == E_CARD_CAMP_ENEMY then
+				pOldPos.x = (pOldPos.x - W_BATTLE_JUMPSTAR) * lscale ;
+			end
+			node:SetCenterPos(pOldPos);
+		end;
 		--战士属性
         f.life = tonumber( fighterInfo.Hp );
         --f.lifeMax = tonumber( fighterInfo.Hp );
@@ -469,8 +474,9 @@ function p:AddFighters( uiArray, fighters )
 
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				--f.Attack = f.Attack;
-				f.Defence = f.Defence + 200;
+				f.Attack = 3000;
+				--f.Sp = 100;
+				--f.Defence = f.Defence + 200;
 			--[[	f.Sp = 100;
 				if f.Position == 2 then
 					f.Skill = 102;
@@ -482,6 +488,8 @@ function p:AddFighters( uiArray, fighters )
 					f.Skill = 1008;
 				end;]]--
 			elseif self.idCamp == E_CARD_CAMP_ENEMY then
+				f.Attack = 1;
+				f.Defence = 1
 			--[[	f.Attack = 1;
 				f.Defence = 100;
 				f.Skill = 0;
@@ -497,7 +505,7 @@ function p:AddFighters( uiArray, fighters )
 					f.Skill = 1;
 				end;]]--
 			end
-		end;
+		end;		
 		
 		
 		--f:Init( uiTag, node, self.idCamp );
@@ -505,6 +513,12 @@ function p:AddFighters( uiArray, fighters )
 		f.nowlife = f.Hp;
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();
+		
+		local lscale = GetUIScale();
+		local lframe = node:GetFrameSize();
+		local x = lframe.w*lscale;
+		local y = lframe.h*lscale;
+		node:SetFrameSize(x,y);
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER + f.Position);
@@ -514,6 +528,9 @@ function p:AddFighters( uiArray, fighters )
 			f:SetLookAt( E_LOOKAT_RIGHT );
 		end
 		node:SetId(f.idFighter);
+		
+		local batch = battle_show.GetNewBatch();
+		node:AddActionEffect("lancer.fadein0");
 	end
 end
 

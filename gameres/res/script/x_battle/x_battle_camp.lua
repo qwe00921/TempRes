@@ -91,7 +91,7 @@ function p.AddHeroFightersJumpEffect()
 		
 	local pOldPos = node:GetFramePos();
 	
-	local x = pOldPos.x + 220;
+	local x = pOldPos.x + 444;
 	local y = pOldPos.y;
 
 	local pNewPos = CCPointMake(x,y);	
@@ -117,7 +117,7 @@ function p.AddEnemyFightersJumpEffect()
 		
 	local pOldPos = node:GetFramePos();
 	
-	local x = pOldPos.x - 220;
+	local x = pOldPos.x - 440;
 	local y = pOldPos.y;
 
 	local pNewPos = CCPointMake(x,y);	
@@ -200,9 +200,11 @@ function p:AddFighters( uiArray )
 		local pOldPos = node:GetFramePos();
 
 		if self.idCamp == E_CARD_CAMP_HERO then
-			pOldPos.x = pOldPos.x - 220;
+			pOldPos.x = pOldPos.x * GetUIRoot():GetUIScale();
+			pOldPos.x = pOldPos.x - 440;
 		elseif self.idCamp == E_CARD_CAMP_ENEMY then
-			pOldPos.x = pOldPos.x + 220;
+			pOldPos.x = pOldPos.x * GetUIRoot():GetUISclae();
+			pOldPos.x = pOldPos.x + 440;
 		end
 		node:SetFramePos(pOldPos);
 		

@@ -71,6 +71,19 @@ image\ui\n_battle\nature4.png
 image\ui\n_battle\nature5.png
 image\ui\n_battle\nature6.png
 image\ui\n_battle\nature7.png
+
+;卡牌装备背景
+[card_equip_bg]
+image\ui\card_attr_base\weapon_bg.png
+image\ui\card_attr_base\clothes.png
+
+;卡牌类型 守护型、平衡型、破坏型、耐力型
+[card_equip_type]
+image\ui\card_attr_base\balance.png
+image\ui\card_attr_base\staypower.png
+image\ui\card_attr_base\destroy.png
+image\ui\card_attr_base\watch.png
+
 [map_lock]
 \image\ui\word_map\lock.png @cut(1,1) @scale=0.2 @loop
 
@@ -151,6 +164,17 @@ image\ui\main_interface\clear.png
 image\ui\main_interface\home_win_arena.png
 image\ui\main_interface\home_win_quest.png
 image\ui\main_interface\home_win_gate.png
+
+[mainui_scrolllist_highlight]
+image\ui\main_interface\home_win_arena_1.png
+image\ui\main_interface\home_win_quest_1.png
+image\ui\main_interface\home_win_gate_1.png
+
+[mainui_scrolllist_disabled]
+image\ui\main_interface\home_win_arena_2.png
+image\ui\main_interface\home_win_quest_2.png
+image\ui\main_interface\home_win_gate_2.png
+
 ;强化成功
 [intensify_succeed]
 image\ui\main_interface\home_win_arena.png

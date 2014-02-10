@@ -61,6 +61,10 @@ p.dropSpBall = 0;
 p.platform = 1;
 p.isClose = false;
 
+p.IsGuid = false;  --战斗引导
+p.step = nil;
+p.substep = nil;
+
 function p.init()
 	p.platform = GetFlatform();
 	p.isClose = false;	
@@ -94,6 +98,7 @@ function p.init()
 	p.SpBallNum = 0;
 	p.IsPickEnd = false;
 	p.PickEndEvent = nil;
+	
 end;
 
 
@@ -217,11 +222,14 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	if (atkFighter.Sp == 100) and (atkFighter.Skill ~= 0) then
 		if IsMonster ~= true then
 			local distanceRes = tonumber( SelectCell( T_SKILL_RES, atkFighter.Skill, "distance" ) );--远程与近战的判断;	
-			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Target_type" ) );
-			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Skill_type" ) );
+			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "target_type" ) );
+			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "skill_type" ) );
 			if (distanceRes ~= nil) and (targetType ~= nil) and (skillType ~= nil) then
 				return p.SetPVESkillAtkID(atkID);
+			else
+				WriteConWarning("SkillID config is Error Id="..tostring(atkFighter.Skill));
 			end;
+			
 		end;
 	end;
 
@@ -238,7 +246,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
    end;
 
 	if IsMonster ~= true then
-	   if w_battle_mgr.isCanSelFighter == false then  --没有存活的目标可选
+	   if p.isCanSelFighter == false then  --没有存活的目标可选
 		  WriteCon( "Warning! All targetFighter is Dead!");
 		  return false;  
 	   end;
@@ -322,7 +330,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
     end;
 
     if IsMonster ~= true then
-	   if w_battle_mgr.isCanSelFighter == false then  --没有存活的目标可选
+	   if p.isCanSelFighter == false then  --没有存活的目标可选
 		  WriteCon( "Warning! All targetFighter is Dead!");
 		  return false;  
 	   end;
@@ -331,34 +339,34 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    local skillID = atkFighter.Skill;
 
    local distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--远程与近战的判断;	
-   local targetType   = tonumber( SelectCell( T_SKILL, skillID, "Target_type" ) );
-   local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
+   local targetType   = tonumber( SelectCell( T_SKILL, skillID, "target_type" ) );
+   local skillType = tonumber( SelectCell( T_SKILL, skillID, "skill_type" ) );
 
     if (distanceRes == nil) then
 		WriteConErr( "Error! Skil distance Config is Error! skill="..tostring(skillID));
-		if p.platform == W_PLATFORM_WIN32 then
+		--if p.platform == W_PLATFORM_WIN32 then
 			return p.SetPVEAtkID(atkID, IsMonster,targetID);
-		else
-			return false;
-		end;
+		--else
+		--	return false;
+		--end;
     end;
 
     if (targetType == nil) then
 		WriteConErr( "Error! Skil Target_type Config is Error! skill="..tostring(skillID));
-		if p.platform == W_PLATFORM_WIN32 then
+		--if p.platform == W_PLATFORM_WIN32 then
 			return p.SetPVEAtkID(atkID, IsMonster,targetID);
-		else
-			return false;
-		end;
+		--else
+		--	return false;
+		--end;
     end;
    
     if (skillType == nil) then
 		WriteConErr( "Error! Skil Skill_type Config is Error! skill="..tostring(skillID));
-		if p.platform == W_PLATFORM_WIN32 then
+		--if p.platform == W_PLATFORM_WIN32 then
 			return p.SetPVEAtkID(atkID, IsMonster,targetID);
-		else
-			return false;
-		end;
+		--else
+		--	return false;
+		--end;
 	end;
 
 	--已开始攻击,但攻击未开始
@@ -428,7 +436,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 			end;
 			isAoe = true;
 		else
-			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
+			WriteConErr( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
 			return false;
 		end
 
@@ -868,6 +876,7 @@ function p.SetLockAction(position)
 	   local lLockPic = GetImage(p.uiLayer, ltag);	    
 	   --local lLockPic = p.GetLockImage();		
 	   lLockPic:SetVisible(true);
+	   lLockPic:SetZOrder(E_BATTLE_Z_HERO_FIGHTER + 10);
 	   local targetFighter = p.enemyCamp:FindFighter(position);
 	   w_battle_pve.SetHp(targetFighter); --更新血量
 	   local lElementLst = p.heroCamp:GetElementAtkFighter(targetFighter);
@@ -943,7 +952,9 @@ function p.createHeroCamp( fighters )
 	p.heroCamp.idCamp = E_CARD_CAMP_HERO;
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
 	p.heroCamp:AddShadows( p.heroUIArray, fighters );
-	p.heroCamp:AddAllRandomTimeJumpEffect(true);
+	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		p.heroCamp:AddAllRandomTimeJumpEffect(true);
+	end;
 end
 
 --创建敌对阵营
@@ -952,7 +963,9 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp.idCamp = E_CARD_CAMP_ENEMY;
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
 	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
-	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
+	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		p.enemyCamp:AddAllRandomTimeJumpEffect(false);
+	end;
 end
 
 
@@ -981,7 +994,7 @@ function p.SendResult(result)
 		               result = tonumber(result),
 		               money  = 0,
 					   soul   = 0,
-					   post_data = w_battle_db_mgr.GetBattleItem()
+					   post_data = w_battle_db_mgr.GetBattleEndItem()
 					   }
 		local lstr = FormatTableToJson(param);		
 		SendPost("Fight","PvEReward",uid,"",lstr);
@@ -1037,6 +1050,11 @@ function p.GetScreenCenterPos()
 	local cNode = GetImage( p.uiLayer, ui_n_battle_pve.ID_CTRL_PICTURE_CENTER );
 	return cNode:GetCenterPos();
 end
+
+function p.bulletCenterNode()
+	local cNode = GetPlayer( p.uiLayer, ui_n_battle_pve.ID_CTRL_LEFT_SPRITE_2 );
+	return cNode;
+end;
 
 function p.checkTurnEnd()
 	--受击状态机全行动完成了且未在行动中, 攻击状态机没有处于行动中的
@@ -1215,6 +1233,7 @@ function p.setFighterDie(targerFighter,camp)
 					--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
 				else  --没有活着的怪物可选
 				   w_battle_mgr.isCanSelFighter = false;
+				   w_battle_pve.CancelSel();
 				end
 			end;
 		else --未锁定目标
@@ -1228,6 +1247,9 @@ function p.setFighterDie(targerFighter,camp)
 				if lFighter ~= nil then
 					w_battle_pve.SetHp(lFighter);
 				end;
+			else
+			   w_battle_mgr.isCanSelFighter = false;
+			   w_battle_pve.CancelSel();
 			end
 			--非锁定攻击的怪物,在选择我方人员时就完成了怪物的选择,无需处理
 		end;		
@@ -1313,5 +1335,110 @@ function p.SetCampZorder()
 		p.enemyCamp:SetFightersZOrder(E_BATTLE_Z_HERO_FIGHTER)
 	end
 
+	
+end
+
+--第一轮的新手引导,点击完的事件
+function p.fighterGuid(substep)
+	p.IsGuid = true;
+	p.step = 3;
+	p.substep = substep;
+	if substep == 1 then
+		rookie_mask.ShowUI(p.step,p.substep + 1) --开启下一步遮照
+	elseif substep == 2 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 3 then
+	    --2号位移动,目标一半的位置
+		--移动到一半停下来, 显示遮照 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 4 then
+		p.SetPVEAtkID(2); 		
+		p.SetPVEAtkID(1);  --只有一个怪,等怪死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 5 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 6 then
+		p.SetPVETargerID(6);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 7 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 8 then
+		p.SetPVEAtkID(2);  --等怪进攻后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 9 then
+			 --怪物死亡必掉 HP水晶
+		     --等战斗胜利,  调用rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 10 then
+		p.FightWin()
+	    --怪物进场后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 11 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 12 then
+	   --选择物品
+		w_battle_useitem.UseItem(1);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 13 then
+		--使用物品
+		p.UseItem(1,2);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 14 then
+		--等所有战斗结束调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 15 then
+		p.IsGuid = false;
+	end
+	
+end
+
+function p.fighterSecondGuid(substep)
+	p.IsGuid = true;
+	p.step = 3;
+	p.substep = substep;
+	if substep == 1 then
+
+	elseif substep == 2 then
+
+	elseif substep == 3 then
+
+	elseif substep == 4 then
+
+	elseif substep == 5 then
+		--收到战斗发起返回消息后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 6 then
+		--双方人物进场后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 7 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 8 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 9 then
+		p.SetPVETargerID(2);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 10 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 11 then
+		p.SetPVEAtkID(3);
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 12 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 13 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 14 then
+		--战斗胜利并加载下一波敌人后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 15 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 16 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 17 then
+	    --攻击敌人后 SP球必掉, 需飞向指定目标
+		--rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 18 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 19 then
+		rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 20 then
+		p.SetPVESkillAtkID(2);
+		--技能发动后 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 21 then
+	    --战斗失败后
+		--rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 22 then
+		p.IsGuid = false;
+	end	
 	
 end

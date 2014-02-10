@@ -206,9 +206,9 @@ function p.ShowItem(  )
 	end
 	
 	--经验
-	--[[
+	
 	--当前的经验值条 ID_CTRL_EXP_CARDEXP
-	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.itemLevel));
+	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(item.itemLevel));
 	if lCardLeveInfo then
 		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_EQUIPEXP);
 		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
@@ -219,7 +219,7 @@ function p.ShowItem(  )
 		local lTextExp = GetLabel(p.layer, ui.ID_CTRL_TEXT_EXP);
 		lTextExp:SetText(tostring(item.itemExp).."/"..tostring(lCardLeveInfo.exp));
 	end
-	]]--
+	
 	
 	
 	--图片

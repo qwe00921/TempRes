@@ -13,26 +13,38 @@ BOSS_OUT = 1;       --BOSS出现
 STAGE_CLEAR = 2;    --通关    
 BATTLE_BEGIN = 3;
 
-function p.DoAfterDrama(stageId, openViewId)
-	
-	WriteCon("StageID = "..stageId);
-	maininterface.m_bgImage:SetVisible(false);
-	if tonumber(stageId) == 0 then
-		if openViewId == after_drama_data.FIGHT then
-			WriteCon("openViewId error ");
-		elseif openViewId == after_drama_data.CHAPTER then
-			stageMap_main.openChapter();
-			WriteCon("openViewId CHAPTER ");
-		elseif openViewId == after_drama_data.STAGE then
-			stageMap_main.openChapter();
-			WriteCon("openViewId STAGE ");
+function p.DoAfterDrama()
+	local viewType = dlg_drama.openViewType
+	WriteCon("viewType = "..viewType);
+	local openView = dlg_drama.viewId
+	WriteCon("openView = "..openView);
+	local nextView = dlg_drama.viewId
+	WriteCon("nextView = "..nextView);
+	local nowTeam = dlg_drama.teamId
+	WriteCon("nowTeam = "..nowTeam);
+	if maininterface.m_bgImage then
+		maininterface.m_bgImage:SetVisible(false);
+	end
+	if viewType == after_drama_data.FIGHT then
+		WriteCon("viewType FIGHT ");
+		dlg_drama.CloseUI()
+		if E_DEMO_VER== 4 then
+			n_battle_mgr.EnterBattle( N_BATTLE_PVE, nextView, nowTeam );--进入战斗PVE
+		else
+			w_battle_mgr.EnterBattle( W_BATTLE_PVE, nextView, nowTeam );--进入战斗PVE
 		end
-	else
-		if E_DEMO_VER == 4 then
-			n_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
-		elseif E_DEMO_VER == 5 then
-			w_battle_mgr.EnterBattle( N_BATTLE_PVE, stageId );
-		end
+	elseif viewType == after_drama_data.CHAPTER then
+		dlg_drama.CloseUI()
+		stageMap_main.openChapter();
+		WriteCon("viewType CHAPTER ");
+	elseif viewType == after_drama_data.STAGE then
+		dlg_drama.CloseUI()
+		quest_main.ShowUI(nextView);
+		WriteCon("viewType STAGE ");
+	elseif viewType == after_drama_data.ROOKIE then
+		WriteCon("viewType ROOKIE dlg_drama.storyId == "..dlg_drama.storyId);
+		dlg_drama.CloseUI()
+		rookie_main.dramaCallBack(dlg_drama.storyId)
 	end
 	p.Clear();
 end

@@ -116,7 +116,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		SendReq("Item","UseQuickItem",uid,param);
 	elseif itemId == 3001 then
 		SendReq("Item","UseStorageItem",uid,param);
-	elseif itemType == 7 then
+	elseif itemType == G_ITEMTYPE_GIFT then
 		local itemTable = p.GetItemByID( itemUniqueId );
 		if itemTable then
 			local level_limit = tonumber(itemTable.Level_limit) or 0;
@@ -128,11 +128,47 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 			end
 		end
 		SendReq("Item","UseGiftItem",uid,param);
-	elseif itemType == 8 then
+	elseif itemType == G_ITEMTYPE_TREASURE then
+		local keyItem = tonumber(SelectCell( T_ITEM, itemId, "param" )) or 0;
+		if keyItem ~= 0 then
+			local item = p.GetItemByItemID( keyItem );
+			if item == nil then
+				dlg_msgbox.ShowOK( "提示", "没有钥匙，无法打开宝箱！" , nil, pack_box.layer );
+				return;
+			end
+		end
 		SendReq("Item","UseTreasureItem",uid,param);
 	else
-		WriteConErr("used item id error ");
+		--使用钥匙，找到对应宝箱
+		local tempItemId = tonumber(SelectRowInner( T_ITEM, "param", itemId, "id" ));
+		if tempItemId == nil then
+			WriteConErr("used item id error ");
+			dlg_msgbox.ShowOK( "提示", "该物品无法使用！" , nil, pack_box.layer );
+		else
+			local item = p.GetItemByItemID( tempItemId );
+			if item == nil then
+				dlg_msgbox.ShowOK( "提示", "没有宝箱，无法使用！" , nil, pack_box.layer );
+			else
+				local paramEx = "MachineType=Android&item_id="..item.Item_id.."&id="..item.id;
+				SendReq("Item","UseTreasureItem",uid,paramEx);
+			end
+		end
 	end
+end
+
+function p.GetItemByItemID( itemid )
+	local cache = msg_cache.msg_pack_item or {};
+	local bagitem = cache.user_items;
+	if itemid == nil or bagitem == nil or #bagitem == 0 then
+		return nil;
+	end
+	
+	for _,item in pairs( bagitem ) do
+		if tonumber(itemid) == tonumber(item.Item_id) then
+			return item;
+		end
+	end
+	return nil;
 end
 
 --使用物品回调
@@ -198,7 +234,7 @@ function p.reOpenPackBox()
 	pack_box_equip.CloseUI();
 	--pack_box.CloseUI();
 	--pack_box.ShowUI();
-	dlg_gacha.ShowUI(4);
+	dlg_gacha.ShowUI(SHOP_BAG, true);
 end
 
 function p.getItemInfoTable(uniqueid)

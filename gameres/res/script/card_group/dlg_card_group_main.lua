@@ -565,6 +565,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				p.CloseUI();
 				maininterface.BecomeFirstUI();
 				maininterface.ShowUI();
+				
+				dlg_menu.SetSelectButton( -1 );
 			end
 		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );

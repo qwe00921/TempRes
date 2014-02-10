@@ -30,6 +30,7 @@ p.baseCardInfo = nil;
 --p.userMoney = 0;
 p.cardListByProf = {};
 function p.ShowUI(baseCardInfo)
+	WriteCon("card_intensify2 ShowUI");
 	p.baseCardInfo = baseCardInfo;
 	p.cardListInfo = card_rein.getCardListInfo();
 	--p.baseCardInfo = baseCardInfo;
@@ -61,7 +62,7 @@ end
 
 --可强化卡牌List请求
 function p.OnSendReq()
-	
+	WriteCon("card_intensify2 OnSendReq");
 	local uid = GetUID();
 	--uid = 1234;
 	if uid ~= nil and uid > 0 then
@@ -123,6 +124,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 	if IsClickEvent(uiEventType) then
 		if(ui.ID_CTRL_BUTTON_RETURN == tag) then --返回
 			p.CloseUI();
+			card_rein.ShowUI();
 		elseif(ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			p.SetBtnCheckedFX( uiNode );
 			p.ShowCardView(p.cardListInfo);
@@ -184,16 +186,14 @@ end
 function p.ShowCardList(cardList,msg)
 
 	card_rein.SetUserMoney(msg.money);
-	p.cardListInfo = cardList;
-	card_rein.setCardListInfo(cardList);	
-	
+	--card_rein.setCardListInfo(cardList);	
 	if p.layer == nil then
 		return;
 	end
 	if #cardList <= 0 then
 		return;
 	end
-	
+	p.cardListInfo = cardList;
 
 	--local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);
 	--cardCount:SetText(tostring(p.selectNum).."/10"); 	
@@ -436,8 +436,10 @@ function p.OnSendCardDetail(cardUniqueId)
 	
 	local param = string.format("&card_unique_id=%s",cardUniqueId)
 	SendReq("Equip","CardDetailShow",uid,param);
-	card_rein.ShowUI();
+	p.CloseUI();
 	card_rein.ClearSelData();	
+	card_rein.ShowUI();
+	
 end;	
 
 function p.GetCardInfo(cardUniqueId)

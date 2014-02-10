@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_6]
 Type=1
 Tag=7
-Rect=153 123 299 91
+Rect=153 121 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 299 91
 [CTRL_BTN_TETURN]
 Type=2
 Tag=2
-Rect=16 148 122 60
+Rect=5 141 122 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -49,7 +49,7 @@ UIClsoeType=0
 [CTRL_BTN_HARD]
 Type=2
 Tag=9
-Rect=463 136 168 72
+Rect=463 135 168 72
 AnchorPos=0 0
 Notes=
 TextSize=10
