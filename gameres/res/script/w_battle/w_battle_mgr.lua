@@ -222,8 +222,8 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	if (atkFighter.Sp == 100) and (atkFighter.Skill ~= 0) then
 		if IsMonster ~= true then
 			local distanceRes = tonumber( SelectCell( T_SKILL_RES, atkFighter.Skill, "distance" ) );--远程与近战的判断;	
-			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Target_type" ) );
-			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "Skill_type" ) );
+			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "target_type" ) );
+			local skillType = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "skill_type" ) );
 			if (distanceRes ~= nil) and (targetType ~= nil) and (skillType ~= nil) then
 				return p.SetPVESkillAtkID(atkID);
 			else
@@ -339,8 +339,8 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    local skillID = atkFighter.Skill;
 
    local distanceRes = tonumber( SelectCell( T_SKILL_RES, skillID, "distance" ) );--远程与近战的判断;	
-   local targetType   = tonumber( SelectCell( T_SKILL, skillID, "Target_type" ) );
-   local skillType = tonumber( SelectCell( T_SKILL, skillID, "Skill_type" ) );
+   local targetType   = tonumber( SelectCell( T_SKILL, skillID, "target_type" ) );
+   local skillType = tonumber( SelectCell( T_SKILL, skillID, "skill_type" ) );
 
     if (distanceRes == nil) then
 		WriteConErr( "Error! Skil distance Config is Error! skill="..tostring(skillID));
@@ -436,7 +436,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 			end;
 			isAoe = true;
 		else
-			WriteCon( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
+			WriteConErr( "Error! Skil Config is Error! skilltype and targettype is not right! skill="..tostring(skillID));
 			return false;
 		end
 
