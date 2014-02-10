@@ -3,17 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_MAP]
-Type=1
-Tag=1
-Rect=0 0 640 870
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\map\chapter.PNG
-NormalFileUV=0 0 640 1136
-
 [CTRL_BUTTON_CHAPTER1]
 Type=2
 Tag=8
