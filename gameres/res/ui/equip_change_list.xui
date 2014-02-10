@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=5 144 122 60
+Rect=4 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -30,7 +30,7 @@ UIClsoeType=0
 [CTRL_PICTURE_41]
 Type=1
 Tag=42
-Rect=171 121 299 91
+Rect=171 118 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -41,7 +41,7 @@ NormalFileUV=0 0 299 91
 [CTRL_BUTTON_ORDER]
 Type=2
 Tag=11
-Rect=514 144 122 60
+Rect=514 141 122 60
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -82,7 +82,7 @@ UIClsoeType=0
 [CTRL_TEXT_176]
 Type=4
 Tag=176
-Rect=236 156 168 46
+Rect=236 153 168 46
 AnchorPos=0 0
 Notes=
 Text=装备选择
@@ -97,7 +97,7 @@ UIClsoeType=0
 [CTRL_PICTURE_11]
 Type=1
 Tag=12
-Rect=542 151 67 46
+Rect=542 148 67 46
 AnchorPos=0 0
 Notes=
 UIOpenType=0
