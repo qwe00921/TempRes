@@ -117,9 +117,16 @@ function p.InitUI(card_info)
 		card_intensify2.CloseUI();	
 		--头像 CTRL_PICTURE_231			CTRL_BUTTON_MAIN	 GetPictureByAni("w_battle.intensify_"..lcardId,0) 
 		local lCardResRowInfo= SelectRowInner( T_CHAR_RES, "card_id", card_info.CardID); --从表中获取卡牌详细信息			
-		local lHeadPic = GetImage(p.layer, ui.ID_CTRL_PICTURE_231);	
-		lHeadPic:SetPicture(GetPictureByAni("w_battle.intensify_"..card_info.CardID,0));
+		local lHeadPic = GetPlayer(p.layer, ui.ID_CTRL_SPRITE_CARD);	
+		--lHeadPic:SetPicture(GetPictureByAni("w_battle.intensify_"..card_info.CardID,0));
+		--lHeadPic:SetScaleX(GetUIScale());
+	
+		lHeadPic:UseConfig(tostring(card_info.CardID));
+		lHeadPic:SetLookAt(E_LOOKAT_LEFT);
+		lHeadPic:Standby("");
+		lHeadPic:SetEnableSwapDrag(true);
 		lHeadPic:SetScaleX(GetUIScale());
+	
 		--lHeadPic:SetScaleX(2.0);
 		--名字 CTRL_TEXT_252
 		local lCardRowInfo= SelectRowInner( T_CARD, "id", card_info.CardID); --从表中获取卡牌详细信息					
@@ -225,6 +232,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	local lLevelStr 	= "ID_CTRL_TEXT_CARDLEVEL"..pIndex;--等级
 	local lCardPic 	= "ID_CTRL_BUTTON_CHA"..pIndex;--cardpic
 	local lCardName 	= "ID_CTRL_TEXT_NAME"..pIndex;--cardpic
+	local lCardSprite 	= "ID_CTRL_SPRITE_"..pIndex;--cardpic
 	
 	WriteCon("SetCardInfoWS"..pIndex.."  LEVELE : "..pCardInfo.Level);
 	local cardLevText = GetLabel(p.layer, ui[lLevelStr]);
@@ -234,10 +242,20 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	local cardButton = GetButton(p.layer, ui[lCardPic]);
 	local lcardId = tonumber(pCardInfo.CardID);
 	local lCardRowInfo= SelectRowInner( T_CHAR_RES, "card_id", lcardId); --从表中获取卡牌详细信息	
+	
+	WriteCon("********    =  "..lCardSprite);	
+	
+	local cardSprite = GetPlayer(p.layer, ui[lCardSprite]);
+	
+	cardSprite:UseConfig(tostring(lcardId));
+	cardSprite:SetLookAt(E_LOOKAT_LEFT);
+	cardSprite:Standby("");
+	cardSprite:SetEnableSwapDrag(true);
+	cardSprite:SetScaleX(GetUIScale());
 		
 	--cardButton:SetImage( GetPictureByAni("n_battle.attack_"..lcardId,0) );
-	cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
-	cardButton:SetScaleX(GetUIScale());
+	--cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
+	--cardButton:SetScaleX(GetUIScale());
 	--cardButton:SetScaleX(2.0);
 	local lCardInfo = SelectRowInner( T_CARD, "id", lcardId);
 	

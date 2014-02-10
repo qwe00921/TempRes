@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -685,7 +685,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_76]
+[CTRL_SPRITE_1]
 Type=19
 Tag=76
 Rect=24 401 95 95
@@ -694,7 +694,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_77]
+[CTRL_SPRITE_2]
 Type=19
 Tag=77
 Rect=148 401 95 95
@@ -703,7 +703,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_78]
+[CTRL_SPRITE_3]
 Type=19
 Tag=78
 Rect=272 401 95 95
@@ -712,7 +712,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_79]
+[CTRL_SPRITE_4]
 Type=19
 Tag=79
 Rect=396 401 95 95
@@ -721,7 +721,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_80]
+[CTRL_SPRITE_5]
 Type=19
 Tag=80
 Rect=520 401 95 95
@@ -730,7 +730,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_67]
+[CTRL_SPRITE_6]
 Type=19
 Tag=67
 Rect=25 559 95 95
@@ -739,7 +739,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_68]
+[CTRL_SPRITE_7]
 Type=19
 Tag=68
 Rect=148 559 95 95
@@ -748,7 +748,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_69]
+[CTRL_SPRITE_8]
 Type=19
 Tag=69
 Rect=271 559 95 95
@@ -757,7 +757,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_70]
+[CTRL_SPRITE_9]
 Type=19
 Tag=70
 Rect=394 559 95 95
@@ -766,7 +766,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_SPRITE_71]
+[CTRL_SPRITE_10]
 Type=19
 Tag=71
 Rect=517 559 95 95
@@ -1141,6 +1141,15 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\unit_table.png
 NormalFileUV=0 0 194 104
 
+[CTRL_SPRITE_CARD]
+Type=19
+Tag=1007
+Rect=44 239 101 101
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_TEXT_252]
 Type=4
 Tag=252
@@ -1151,15 +1160,6 @@ TextSize=18
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_231]
-Type=1
-Tag=231
-Rect=44 239 101 101
-AnchorPos=0 0
-Notes=
 UIOpenType=0
 UIClsoeType=0
 
@@ -1194,7 +1194,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=0 229 638 162
+Rect=2 231 638 162
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1303,7 +1303,7 @@ UIClsoeType=0
 [CTRL_PICTURE_186]
 Type=1
 Tag=999
-Rect=0 396 640 322
+Rect=1 393 640 322
 AnchorPos=0 0
 Notes=
 UIOpenType=0
