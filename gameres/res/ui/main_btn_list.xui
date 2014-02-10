@@ -12,8 +12,8 @@ Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame9.png
-NormalFileUV=0 0 62 58
+NormalFile=.\res\image\ui\public\frame10.png
+NormalFileUV=0 0 54 48
 
 [CTRL_VERTICAL_LIST_2]
 Type=14
@@ -28,7 +28,7 @@ UIClsoeType=0
 [CTRL_BUTTON_3]
 Type=2
 Tag=3
-Rect=485 347 68 68
+Rect=480 325 68 68
 AnchorPos=0 0
 Notes=
 TextSize=10

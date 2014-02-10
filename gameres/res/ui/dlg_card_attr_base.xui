@@ -134,7 +134,7 @@ UIClsoeType=0
 [CTRL_BTN_INTENSIFY]
 Type=2
 Tag=321
-Rect=514 140 122 60
+Rect=511 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -258,7 +258,7 @@ UIClsoeType=0
 [CTRL_BUTTON_LUCK]
 Type=2
 Tag=223
-Rect=0 771 640 189
+Rect=0 783 640 177
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -266,7 +266,7 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\bg1.png
+NormalFile=.\res\image\ui\card_attr_base\bg4.png
 NormalFileUV=0 0 640 177
 
 [CTRL_LUCK_INTRO]
@@ -285,7 +285,7 @@ UIClsoeType=0
 [CTRL_TEXT_SKILLNAME]
 Type=4
 Tag=59
-Rect=191 815 399 30
+Rect=191 811 399 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -459,7 +459,7 @@ NormalFileUV=0 0 112 24
 [CTRL_PICTURE_47]
 Type=1
 Tag=48
-Rect=4 810 174 40
+Rect=4 806 174 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -470,7 +470,7 @@ NormalFileUV=0 0 174 40
 [CTRL_PICTURE_48]
 Type=1
 Tag=49
-Rect=4 860 174 40
+Rect=4 863 174 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0

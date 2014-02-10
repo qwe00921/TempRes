@@ -27,7 +27,7 @@ UIClsoeType=0
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=2 84 640 133
+Rect=2 84 640 138
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -63,62 +63,52 @@ NormalFileUV=0 0 110 30
 [CTRL_PICTURE_ITEM1]
 Type=1
 Tag=26
-Rect=20 92 120 120
+Rect=17 93 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_ITEM2]
 Type=1
 Tag=27
-Rect=143 92 120 120
+Rect=140 92 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_ITEM3]
 Type=1
 Tag=29
-Rect=262 92 120 120
+Rect=263 92 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_ITEM4]
 Type=1
 Tag=30
-Rect=388 92 120 120
+Rect=386 92 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_ITEM5]
 Type=1
 Tag=31
-Rect=514 92 120 120
+Rect=509 92 120 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_1]
 Type=1
 Tag=19
-Rect=22 186 107 22
+Rect=23 187 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -129,7 +119,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_2]
 Type=1
 Tag=21
-Rect=147 186 107 22
+Rect=147 187 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -140,7 +130,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_3]
 Type=1
 Tag=24
-Rect=272 186 107 22
+Rect=272 187 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -151,7 +141,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_4]
 Type=1
 Tag=25
-Rect=394 186 107 22
+Rect=396 187 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -162,7 +152,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_5]
 Type=1
 Tag=28
-Rect=517 186 107 22
+Rect=518 187 107 21
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -173,10 +163,10 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_ITEMNAME1]
 Type=4
 Tag=32
-Rect=27 186 100 21
+Rect=26 184 100 28
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -186,10 +176,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME2]
 Type=4
 Tag=35
-Rect=152 186 100 21
+Rect=150 184 100 28
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -199,10 +189,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME3]
 Type=4
 Tag=36
-Rect=277 186 100 21
+Rect=275 184 100 28
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -212,10 +202,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME4]
 Type=4
 Tag=37
-Rect=399 186 100 21
+Rect=399 184 100 28
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -225,10 +215,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME5]
 Type=4
 Tag=38
-Rect=522 186 100 21
+Rect=521 184 100 28
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
