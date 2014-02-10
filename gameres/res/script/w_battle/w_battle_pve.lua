@@ -86,7 +86,7 @@ local DAMAGE_INDEX = 13;
 local objs = {
 	{ 
 		ui.ID_CTRL_BUTTON_63,
-		ui.ID_CTRL_PICTURE_NATURE1,
+		ui.ID_CTRL_PICTURE_139,
 		ui.ID_CTRL_TEXT_NAME1,
 		ui.ID_CTRL_TEXT_90,
 		ui.ID_CTRL_TEXT_HP1,
@@ -101,7 +101,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_65,
-		ui.ID_CTRL_PICTURE_NATURE2,
+		ui.ID_CTRL_PICTURE_143,
 		ui.ID_CTRL_TEXT_NAME2,
 		ui.ID_CTRL_TEXT_92,
 		ui.ID_CTRL_TEXT_HP2,
@@ -116,7 +116,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_66,
-		ui.ID_CTRL_PICTURE_NATURE3,
+		ui.ID_CTRL_PICTURE_144,
 		ui.ID_CTRL_TEXT_NAME3,
 		ui.ID_CTRL_TEXT_94,
 		ui.ID_CTRL_TEXT_HP3,
@@ -131,7 +131,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_64,
-		ui.ID_CTRL_PICTURE_NATURE4,
+		ui.ID_CTRL_PICTURE_141,
 		ui.ID_CTRL_TEXT_NAME4,
 		ui.ID_CTRL_TEXT_91,
 		ui.ID_CTRL_TEXT_HP4,
@@ -146,7 +146,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_67,
-		ui.ID_CTRL_PICTURE_NATURE5,
+		ui.ID_CTRL_PICTURE_142,
 		ui.ID_CTRL_TEXT_NAME5,
 		ui.ID_CTRL_TEXT_93,
 		ui.ID_CTRL_TEXT_HP5,
@@ -161,7 +161,7 @@ local objs = {
 	},
 	{
 		ui.ID_CTRL_BUTTON_68,
-		ui.ID_CTRL_PICTURE_NATURE6,
+		ui.ID_CTRL_PICTURE_145,
 		ui.ID_CTRL_TEXT_NAME6,
 		ui.ID_CTRL_TEXT_95,
 		ui.ID_CTRL_TEXT_HP6,
@@ -444,7 +444,7 @@ function p.RefreshCardInfo( pIsRoundStar )
 					
 					ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber(data.maxSp), tonumber(data.Sp) );
 					
-					local attrpic = GetPictureByAni( "card_element.".. tostring(data.element), 0 );
+					local attrpic = GetPictureByAni( "common_ui.cardBagTypeBox", tonumber(data.element) );
 					if attrpic then
 						ctrllers[ATTR_INDEX]:SetPicture( attrpic );
 					end
