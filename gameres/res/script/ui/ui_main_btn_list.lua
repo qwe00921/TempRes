@@ -6,4 +6,4 @@ ui_main_btn_list = {};
 local p =  ui_main_btn_list;
 p.ID_CTRL_BUTTON_3					       = 3;
 p.ID_CTRL_VERTICAL_LIST_2				 = 2;	--∞¥≈•¡–±ÌList
-p.ID_CTRL_PICTURE_BG					     = 1;
+p.ID_CTRL_9SLICES_35					     = 35;
