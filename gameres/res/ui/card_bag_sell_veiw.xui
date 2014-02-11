@@ -6,30 +6,18 @@ Height=960
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=0 736 640 75
+Rect=-11 699 657 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg2.png
-NormalFileUV=0 0 640 338
-
-[CTRL_PICTURE_BG]
-Type=1
-Tag=83
-Rect=3 739 634 75
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame_item.png
-NormalFileUV=0 0 100 100
+NormalFile=.\res\image\ui\card_attr_base\bg3.png
+NormalFileUV=0 0 380 80
 
 [CTRL_BUTTON_CLEAR]
 Type=2
 Tag=84
-Rect=30 746 124 61
+Rect=30 726 124 61
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -46,7 +34,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=85
-Rect=279 746 124 61
+Rect=216 726 124 61
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -63,12 +51,12 @@ SelectedFileUV=0 0 122 60
 [CTRL_TEXT_86]
 Type=4
 Tag=88
-Rect=410 744 107 31
+Rect=402 726 107 31
 AnchorPos=0 0
 Notes=
-Text=出售金额
-TextTradition=出售金額
-TextSize=16
+Text=出售金币
+TextTradition=出售金幣
+TextSize=18
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -78,24 +66,24 @@ UIClsoeType=0
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=89
-Rect=498 746 30 30
+Rect=495 726 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\gem1.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\main_interface\money3.png
+NormalFileUV=0 0 46 46
 
 [CTRL_TEXT_SELL_MONEY]
 Type=4
 Tag=90
-Rect=530 746 80 24
+Rect=530 729 80 24
 AnchorPos=0 0
 Notes=
 Text=0
 TextTradition=0
-TextSize=16
-TextColor=0xfffbf0
+TextSize=18
+TextColor=0xffff00
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -104,12 +92,12 @@ UIClsoeType=0
 [CTRL_TEXT_89]
 Type=4
 Tag=93
-Rect=411 777 107 27
+Rect=402 759 107 27
 AnchorPos=0 0
 Notes=
-Text=选择人数
-TextTradition=選擇人數
-TextSize=16
+Text=已选卡牌
+TextTradition=已選卡牌
+TextSize=18
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -119,14 +107,25 @@ UIClsoeType=0
 [CTRL_TEXT_SELL_NUM]
 Type=4
 Tag=95
-Rect=530 774 51 31
+Rect=530 757 51 31
 AnchorPos=0 0
 Notes=
 Text=0
 TextTradition=0
-TextSize=16
-TextColor=0xfffbf0
+TextSize=18
+TextColor=0xffff00
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_53]
+Type=1
+Tag=53
+Rect=495 757 30 30
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\menu_card_normal.png
+NormalFileUV=0 0 84 82

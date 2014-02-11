@@ -447,7 +447,7 @@ end
 --读取装备等级表配置信息
 function p.SelectEquipConfig(level)
 	
-	local itemTable = SelectRowList(T_EQUIP_LEVEL,"equip_level",level);
+	local itemTable = SelectRowList(T_EQUIP_LEVEL,"level",level);
 	if #itemTable >= 1 then
 		local item = itemTable[1];
 		return item;

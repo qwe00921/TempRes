@@ -8,6 +8,7 @@
 *.lib
 *.ilk
 *.log
+.nomedia
 log.txt
 e2e
 /des

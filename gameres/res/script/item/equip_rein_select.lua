@@ -314,7 +314,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	for k,v in pairs(p.selectList) do
 		if v == equip.id then
-			local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(equip.equip_level));
+			local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(equip.equip_level));
 			if levelConfig then
 				p.consumeMoney = p.consumeMoney + tonumber(levelConfig.feed_money);
 			end
@@ -338,7 +338,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipSelectText = p.allNumText[equipId] ;
 
 	local pEquipLevel = tonumber(p.equipLevel[equipId]);
-	local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(p.equipLevel[equipId])); --从表中获取卡牌详细信息	
+	local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(p.equipLevel[equipId])); --从表中获取卡牌详细信息	
 	local selectNum = #p.selectList;
 	if p.isDress[equipId] ~=1 then
 		if equipSelectText:IsVisible() == true then

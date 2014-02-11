@@ -1344,62 +1344,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rege_sp.png
 NormalFileUV=0 0 8 10
 
-[CTRL_PICTURE_NATURE1]
-Type=1
-Tag=211
-Rect=600 448 26 26
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\nature1.png
-NormalFileUV=0 0 24 24
-
-[CTRL_PICTURE_NATURE2]
-Type=1
-Tag=213
-Rect=600 448 26 26
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_NATURE3]
-Type=1
-Tag=215
-Rect=600 448 26 26
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_NATURE4]
-Type=1
-Tag=212
-Rect=600 448 26 26
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_NATURE5]
-Type=1
-Tag=214
-Rect=600 448 26 26
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_NATURE6]
-Type=1
-Tag=216
-Rect=600 448 26 26
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_157]
 Type=1
 Tag=157
@@ -1590,7 +1534,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_120]
 Type=1
 Tag=132
-Rect=319 709 320 123
+Rect=319 710 320 123
 AnchorPos=0 0
 Notes=
 UIOpenType=0

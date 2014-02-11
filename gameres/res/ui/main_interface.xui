@@ -138,7 +138,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD3]
 Type=1
 Tag=57
-Rect=336 123 182 84
+Rect=331 122 189 88
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -147,7 +147,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD2]
 Type=1
 Tag=56
-Rect=181 123 182 84
+Rect=177 122 189 88
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -156,7 +156,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD1]
 Type=1
 Tag=55
-Rect=26 123 182 84
+Rect=21 122 189 88
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -165,7 +165,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD6]
 Type=1
 Tag=60
-Rect=443 225 182 84
+Rect=438 225 189 88
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -174,7 +174,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD5]
 Type=1
 Tag=59
-Rect=288 225 182 84
+Rect=284 225 189 88
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -183,7 +183,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD4]
 Type=1
 Tag=58
-Rect=133 225 182 84
+Rect=129 225 189 88
 AnchorPos=0 0
 Notes=
 UIOpenType=0

@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -46,7 +46,7 @@ UIClsoeType=0
 [CTRL_PICTURE_7]
 Type=1
 Tag=7
-Rect=0 355 640 126
+Rect=0 355 640 130
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -89,7 +89,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=10
-Rect=25 369 100 100
+Rect=25 370 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -101,7 +101,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=11
-Rect=150 369 100 100
+Rect=150 370 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -113,7 +113,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=12
-Rect=273 370 100 100
+Rect=273 371 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -125,7 +125,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=13
-Rect=397 369 100 100
+Rect=397 370 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -137,7 +137,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM5]
 Type=2
 Tag=14
-Rect=519 368 100 100
+Rect=519 369 100 100
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -149,7 +149,7 @@ UIClsoeType=0
 [CTRL_PICTURE_22]
 Type=1
 Tag=23
-Rect=17 445 107 19
+Rect=17 446 107 19
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -160,7 +160,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_23]
 Type=1
 Tag=24
-Rect=145 447 107 19
+Rect=145 448 107 19
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -171,7 +171,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_24]
 Type=1
 Tag=25
-Rect=267 448 107 19
+Rect=267 449 107 19
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -182,7 +182,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_25]
 Type=1
 Tag=26
-Rect=390 447 107 19
+Rect=390 448 107 19
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -193,7 +193,7 @@ NormalFileUV=0 0 90 24
 [CTRL_PICTURE_26]
 Type=1
 Tag=27
-Rect=511 446 107 19
+Rect=511 447 107 19
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -204,7 +204,7 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_ITEMNAME1]
 Type=4
 Tag=28
-Rect=21 443 107 27
+Rect=21 444 107 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -217,7 +217,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME2]
 Type=4
 Tag=29
-Rect=147 443 107 27
+Rect=147 444 107 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -230,7 +230,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME3]
 Type=4
 Tag=30
-Rect=270 443 107 27
+Rect=270 444 107 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -243,7 +243,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME4]
 Type=4
 Tag=31
-Rect=394 443 107 27
+Rect=394 444 107 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -256,7 +256,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME5]
 Type=4
 Tag=32
-Rect=516 443 107 27
+Rect=516 444 107 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -269,7 +269,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM1]
 Type=4
 Tag=33
-Rect=62 374 60 23
+Rect=62 375 60 23
 AnchorPos=0 0
 Notes=
 TextSize=19
@@ -282,7 +282,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM2]
 Type=4
 Tag=34
-Rect=188 370 60 23
+Rect=188 371 60 23
 AnchorPos=0 0
 Notes=
 TextSize=19
@@ -295,7 +295,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM3]
 Type=4
 Tag=35
-Rect=311 371 60 23
+Rect=311 372 60 23
 AnchorPos=0 0
 Notes=
 TextSize=19
@@ -308,7 +308,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM4]
 Type=4
 Tag=36
-Rect=435 370 60 23
+Rect=435 371 60 23
 AnchorPos=0 0
 Notes=
 TextSize=19
@@ -321,7 +321,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM5]
 Type=4
 Tag=37
-Rect=557 369 60 23
+Rect=557 370 60 23
 AnchorPos=0 0
 Notes=
 TextSize=19

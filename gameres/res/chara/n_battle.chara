@@ -3,6 +3,7 @@
 ;----------------------------------------------------
 [10000]
 @standby name=standby ani=n_battle.standby_10000
+@standbyface name=standby ani=n_battle.standbyface_10000
 @atk name=atk ani=n_battle.attack_10000
 @run
 @skill name=skill ani=n_battle.skill_10000
@@ -11,6 +12,7 @@
 @dead
 [10001]
 @standby name=standby ani=n_battle.standby_10001
+@standbyface name=standby ani=n_battle.standbyface_10001
 @atk name=atk ani=n_battle.attack_10001
 @run
 @skill name=skill ani=n_battle.skill_10001
@@ -19,6 +21,7 @@
 @dead
 [10003]
 @standby name=standby ani=n_battle.standby_10003
+@standbyface name=standby ani=n_battle.standbyface_10003
 @atk name=atk ani=n_battle.attack_10003
 @run
 @skill name=skill ani=n_battle.skill_10003
@@ -27,6 +30,7 @@
 @dead
 [10007]
 @standby name=standby ani=n_battle.standby_10007
+@standbyface name=standby ani=n_battle.standbyface_10007
 @atk name=atk ani=n_battle.attack_10007
 @run
 @skill name=skill ani=n_battle.skill_10007
@@ -35,6 +39,7 @@
 @dead
 [10008]
 @standby name=standby ani=n_battle.standby_10008
+@standbyface name=standby ani=n_battle.standbyface_10008
 @atk name=atk ani=n_battle.attack_10008
 @run
 @skill name=skill ani=n_battle.skill_10008
@@ -43,6 +48,7 @@
 @dead
 [10010]
 @standby name=standby ani=n_battle.standby_10010
+@standbyface name=standby ani=n_battle.standbyface_10010
 @atk name=atk ani=n_battle.attack_10010
 @run
 @skill name=skill ani=n_battle.skill_10010
@@ -51,6 +57,7 @@
 @dead
 [10016]
 @standby name=standby ani=n_battle.standby_10016
+@standbyface name=standby ani=n_battle.standbyface_10016
 @atk name=atk ani=n_battle.attack_10016
 @run
 @skill name=skill ani=n_battle.skill_10016
@@ -59,6 +66,7 @@
 @dead
 [10018]
 @standby name=standby ani=n_battle.standby_10018
+@standbyface name=standby ani=n_battle.standbyface_10018
 @atk name=atk ani=n_battle.attack_10018
 @run
 @skill name=skill ani=n_battle.skill_10018
@@ -67,6 +75,7 @@
 @dead
 [10020]
 @standby name=standby ani=n_battle.standby_10020
+@standbyface name=standby ani=n_battle.standbyface_10020
 @atk name=atk ani=n_battle.attack_10020
 @run
 @skill name=skill ani=n_battle.skill_10020
@@ -75,6 +84,7 @@
 @dead
 [10024]
 @standby name=standby ani=n_battle.standby_10024
+@standbyface name=standby ani=n_battle.standbyface_10024
 @atk name=atk ani=n_battle.attack_10024
 @run
 @skill name=skill ani=n_battle.skill_10024
@@ -83,6 +93,7 @@
 @dead
 [10025]
 @standby name=standby ani=n_battle.standby_10025
+@standbyface name=standby ani=n_battle.standbyface_10025
 @atk name=atk ani=n_battle.attack_10025
 @run
 @skill name=skill ani=n_battle.skill_10025
@@ -91,6 +102,7 @@
 @dead
 [10027]
 @standby name=standby ani=n_battle.standby_10027
+@standbyface name=standby ani=n_battle.standbyface_10027
 @atk name=atk ani=n_battle.attack_10027
 @run
 @skill name=skill ani=n_battle.skill_10027
@@ -99,6 +111,7 @@
 @dead
 [10030]
 @standby name=standby ani=n_battle.standby_10030
+@standbyface name=standby ani=n_battle.standbyface_10030
 @atk name=atk ani=n_battle.attack_10030
 @run
 @skill name=skill ani=n_battle.skill_10030
@@ -107,6 +120,7 @@
 @dead
 [10031]
 @standby name=standby ani=n_battle.standby_10031
+@standbyface name=standby ani=n_battle.standbyface_10031
 @atk name=atk ani=n_battle.attack_10031
 @run
 @skill name=skill ani=n_battle.skill_10031
@@ -115,6 +129,7 @@
 @dead
 [10034]
 @standby name=standby ani=n_battle.standby_10034
+@standbyface name=standby ani=n_battle.standbyface_10034
 @atk name=atk ani=n_battle.attack_10034
 @run
 @skill name=skill ani=n_battle.skill_10034
@@ -123,6 +138,7 @@
 @dead
 [10037]
 @standby name=standby ani=n_battle.standby_10037
+@standbyface name=standby ani=n_battle.standbyface_10037
 @atk name=atk ani=n_battle.attack_10037
 @run
 @skill name=skill ani=n_battle.skill_10037
@@ -131,6 +147,7 @@
 @dead
 [10039]
 @standby name=standby ani=n_battle.standby_10039
+@standbyface name=standby ani=n_battle.standbyface_10039
 @atk name=atk ani=n_battle.attack_10039
 @run
 @skill name=skill ani=n_battle.skill_10039
@@ -139,6 +156,7 @@
 @dead
 [10040]
 @standby name=standby ani=n_battle.standby_10040
+@standbyface name=standby ani=n_battle.standbyface_10040
 @atk name=atk ani=n_battle.attack_10040
 @run
 @skill name=skill ani=n_battle.skill_10040
@@ -147,6 +165,7 @@
 @dead
 [10042]
 @standby name=standby ani=n_battle.standby_10042
+@standbyface name=standby ani=n_battle.standbyface_10042
 @atk name=atk ani=n_battle.attack_10042
 @run
 @skill name=skill ani=n_battle.skill_10042
@@ -155,6 +174,7 @@
 @dead
 [10049]
 @standby name=standby ani=n_battle.standby_10049
+@standbyface name=standby ani=n_battle.standbyface_10049
 @atk name=atk ani=n_battle.attack_10049
 @run
 @skill name=skill ani=n_battle.skill_10049
@@ -163,6 +183,7 @@
 @dead
 [10051]
 @standby name=standby ani=n_battle.standby_10051
+@standbyface name=standby ani=n_battle.standbyface_10051
 @atk name=atk ani=n_battle.attack_10051
 @run
 @skill name=skill ani=n_battle.skill_10051
@@ -171,6 +192,7 @@
 @dead
 [10052]
 @standby name=standby ani=n_battle.standby_10052
+@standbyface name=standby ani=n_battle.standbyface_10052
 @atk name=atk ani=n_battle.attack_10052
 @run
 @skill name=skill ani=n_battle.skill_10052
@@ -179,6 +201,7 @@
 @dead
 [10053]
 @standby name=standby ani=n_battle.standby_10053
+@standbyface name=standby ani=n_battle.standbyface_10053
 @atk name=atk ani=n_battle.attack_10053
 @run
 @skill name=skill ani=n_battle.skill_10053
@@ -187,6 +210,7 @@
 @dead
 [10054]
 @standby name=standby ani=n_battle.standby_10054
+@standbyface name=standby ani=n_battle.standbyface_10054
 @atk name=atk ani=n_battle.attack_10054
 @run
 @skill name=skill ani=n_battle.skill_10054
@@ -195,6 +219,7 @@
 @dead
 [10055]
 @standby name=standby ani=n_battle.standby_10055
+@standbyface name=standby ani=n_battle.standbyface_10055
 @atk name=atk ani=n_battle.attack_10055
 @run
 @skill name=skill ani=n_battle.skill_10055
@@ -203,6 +228,7 @@
 @dead
 [10056]
 @standby name=standby ani=n_battle.standby_10056
+@standbyface name=standby ani=n_battle.standbyface_10056
 @atk name=atk ani=n_battle.attack_10056
 @run
 @skill name=skill ani=n_battle.skill_10056
@@ -211,6 +237,7 @@
 @dead
 [10065]
 @standby name=standby ani=n_battle.standby_10065
+@standbyface name=standby ani=n_battle.standbyface_10065
 @atk name=atk ani=n_battle.attack_10065
 @run
 @skill name=skill ani=n_battle.skill_10065
@@ -219,6 +246,7 @@
 @dead
 [10067]
 @standby name=standby ani=n_battle.standby_10067
+@standbyface name=standby ani=n_battle.standbyface_10067
 @atk name=atk ani=n_battle.attack_10067
 @run
 @skill name=skill ani=n_battle.skill_10067
@@ -227,6 +255,7 @@
 @dead
 [10069]
 @standby name=standby ani=n_battle.standby_10069
+@standbyface name=standby ani=n_battle.standbyface_10069
 @atk name=atk ani=n_battle.attack_10069
 @run
 @skill name=skill ani=n_battle.skill_10069
@@ -235,6 +264,7 @@
 @dead
 [10071]
 @standby name=standby ani=n_battle.standby_10071
+@standbyface name=standby ani=n_battle.standbyface_10071
 @atk name=atk ani=n_battle.attack_10071
 @run
 @skill name=skill ani=n_battle.skill_10071
@@ -243,6 +273,7 @@
 @dead
 [10077]
 @standby name=standby ani=n_battle.standby_10077
+@standbyface name=standby ani=n_battle.standbyface_10077
 @atk name=atk ani=n_battle.attack_10077
 @run
 @skill name=skill ani=n_battle.skill_10077
@@ -251,6 +282,7 @@
 @dead
 [10078]
 @standby name=standby ani=n_battle.standby_10078
+@standbyface name=standby ani=n_battle.standbyface_10078
 @atk name=atk ani=n_battle.attack_10078
 @run
 @skill name=skill ani=n_battle.skill_10078
@@ -259,6 +291,7 @@
 @dead
 [10080]
 @standby name=standby ani=n_battle.standby_10080
+@standbyface name=standby ani=n_battle.standbyface_10080
 @atk name=atk ani=n_battle.attack_10080
 @run
 @skill name=skill ani=n_battle.skill_10080
@@ -267,6 +300,7 @@
 @dead
 [10104]
 @standby name=standby ani=n_battle.standby_10104
+@standbyface name=standby ani=n_battle.standbyface_10104
 @atk name=atk ani=n_battle.attack_10104
 @run
 @skill name=skill ani=n_battle.skill_10104
@@ -275,6 +309,7 @@
 @dead
 [10105]
 @standby name=standby ani=n_battle.standby_10105
+@standbyface name=standby ani=n_battle.standbyface_10105
 @atk name=atk ani=n_battle.attack_10105
 @run
 @skill name=skill ani=n_battle.skill_10105
@@ -283,6 +318,7 @@
 @dead
 [10109]
 @standby name=standby ani=n_battle.standby_10109
+@standbyface name=standby ani=n_battle.standbyface_10109
 @atk name=atk ani=n_battle.attack_10109
 @run
 @skill name=skill ani=n_battle.skill_10109
@@ -291,6 +327,7 @@
 @dead
 [10124]
 @standby name=standby ani=n_battle.standby_10124
+@standbyface name=standby ani=n_battle.standbyface_10124
 @atk name=atk ani=n_battle.attack_10124
 @run
 @skill name=skill ani=n_battle.skill_10124
@@ -299,6 +336,7 @@
 @dead
 [10126]
 @standby name=standby ani=n_battle.standby_10126
+@standbyface name=standby ani=n_battle.standbyface_10126
 @atk name=atk ani=n_battle.attack_10126
 @run
 @skill name=skill ani=n_battle.skill_10126
@@ -307,6 +345,7 @@
 @dead
 [10141]
 @standby name=standby ani=n_battle.standby_10141
+@standbyface name=standby ani=n_battle.standbyface_10141
 @atk name=atk ani=n_battle.attack_10141
 @run
 @skill name=skill ani=n_battle.skill_10141
@@ -315,6 +354,7 @@
 @dead
 [10144]
 @standby name=standby ani=n_battle.standby_10144
+@standbyface name=standby ani=n_battle.standbyface_10144
 @atk name=atk ani=n_battle.attack_10144
 @run
 @skill name=skill ani=n_battle.skill_10144
@@ -323,6 +363,7 @@
 @dead
 [10152]
 @standby name=standby ani=n_battle.standby_10152
+@standbyface name=standby ani=n_battle.standbyface_10152
 @atk name=atk ani=n_battle.attack_10152
 @run
 @skill name=skill ani=n_battle.skill_10152
@@ -331,6 +372,7 @@
 @dead
 [10173]
 @standby name=standby ani=n_battle.standby_10173
+@standbyface name=standby ani=n_battle.standbyface_10173
 @atk name=atk ani=n_battle.attack_10173
 @run
 @skill name=skill ani=n_battle.skill_10173
@@ -339,6 +381,7 @@
 @dead
 [10174]
 @standby name=standby ani=n_battle.standby_10174
+@standbyface name=standby ani=n_battle.standbyface_10174
 @atk name=atk ani=n_battle.attack_10174
 @run
 @skill name=skill ani=n_battle.skill_10174
@@ -347,6 +390,7 @@
 @dead
 [10175]
 @standby name=standby ani=n_battle.standby_10175
+@standbyface name=standby ani=n_battle.standbyface_10175
 @atk name=atk ani=n_battle.attack_10175
 @run
 @skill name=skill ani=n_battle.skill_10175
@@ -355,6 +399,7 @@
 @dead
 [10176]
 @standby name=standby ani=n_battle.standby_10176
+@standbyface name=standby ani=n_battle.standbyface_10176
 @atk name=atk ani=n_battle.attack_10176
 @run
 @skill name=skill ani=n_battle.skill_10176
@@ -363,6 +408,7 @@
 @dead
 [10185]
 @standby name=standby ani=n_battle.standby_10185
+@standbyface name=standby ani=n_battle.standbyface_10185
 @atk name=atk ani=n_battle.attack_10185
 @run
 @skill name=skill ani=n_battle.skill_10185
@@ -371,6 +417,7 @@
 @dead
 [10186]
 @standby name=standby ani=n_battle.standby_10186
+@standbyface name=standby ani=n_battle.standbyface_10186
 @atk name=atk ani=n_battle.attack_10186
 @run
 @skill name=skill ani=n_battle.skill_10186
@@ -379,6 +426,7 @@
 @dead
 [10189]
 @standby name=standby ani=n_battle.standby_10189
+@standbyface name=standby ani=n_battle.standbyface_10189
 @atk name=atk ani=n_battle.attack_10189
 @run
 @skill name=skill ani=n_battle.skill_10189
@@ -387,6 +435,7 @@
 @dead
 [10190]
 @standby name=standby ani=n_battle.standby_10190
+@standbyface name=standby ani=n_battle.standbyface_10190
 @atk name=atk ani=n_battle.attack_10190
 @run
 @skill name=skill ani=n_battle.skill_10190
@@ -395,6 +444,7 @@
 @dead
 [10198]
 @standby name=standby ani=n_battle.standby_10198
+@standbyface name=standby ani=n_battle.standbyface_10198
 @atk name=atk ani=n_battle.attack_10198
 @run
 @skill name=skill ani=n_battle.skill_10198
@@ -403,6 +453,7 @@
 @dead
 [10201]
 @standby name=standby ani=n_battle.standby_10201
+@standbyface name=standby ani=n_battle.standbyface_10201
 @atk name=atk ani=n_battle.attack_10201
 @run
 @skill name=skill ani=n_battle.skill_10201
@@ -411,6 +462,7 @@
 @dead
 [10207]
 @standby name=standby ani=n_battle.standby_10207
+@standbyface name=standby ani=n_battle.standbyface_10207
 @atk name=atk ani=n_battle.attack_10207
 @run
 @skill name=skill ani=n_battle.skill_10207
@@ -419,6 +471,7 @@
 @dead
 [10208]
 @standby name=standby ani=n_battle.standby_10208
+@standbyface name=standby ani=n_battle.standbyface_10208
 @atk name=atk ani=n_battle.attack_10208
 @run
 @skill name=skill ani=n_battle.skill_10208
@@ -427,6 +480,7 @@
 @dead
 [10209]
 @standby name=standby ani=n_battle.standby_10209
+@standbyface name=standby ani=n_battle.standbyface_10209
 @atk name=atk ani=n_battle.attack_10209
 @run
 @skill name=skill ani=n_battle.skill_10209
@@ -435,6 +489,7 @@
 @dead
 [10231]
 @standby name=standby ani=n_battle.standby_10231
+@standbyface name=standby ani=n_battle.standbyface_10231
 @atk name=atk ani=n_battle.attack_10231
 @run
 @skill name=skill ani=n_battle.skill_10231
@@ -443,6 +498,7 @@
 @dead
 [10234]
 @standby name=standby ani=n_battle.standby_10234
+@standbyface name=standby ani=n_battle.standbyface_10234
 @atk name=atk ani=n_battle.attack_10234
 @run
 @skill name=skill ani=n_battle.skill_10234
@@ -451,6 +507,7 @@
 @dead
 [10235]
 @standby name=standby ani=n_battle.standby_10235
+@standbyface name=standby ani=n_battle.standbyface_10235
 @atk name=atk ani=n_battle.attack_10235
 @run
 @skill name=skill ani=n_battle.skill_10235
@@ -459,6 +516,7 @@
 @dead
 [10241]
 @standby name=standby ani=n_battle.standby_10241
+@standbyface name=standby ani=n_battle.standbyface_10241
 @atk name=atk ani=n_battle.attack_10241
 @run
 @skill name=skill ani=n_battle.skill_10241
@@ -467,6 +525,7 @@
 @dead
 [10264]
 @standby name=standby ani=n_battle.standby_10264
+@standbyface name=standby ani=n_battle.standbyface_10264
 @atk name=atk ani=n_battle.attack_10264
 @run
 @skill name=skill ani=n_battle.skill_10264
@@ -475,6 +534,7 @@
 @dead
 [10266]
 @standby name=standby ani=n_battle.standby_10266
+@standbyface name=standby ani=n_battle.standbyface_10266
 @atk name=atk ani=n_battle.attack_10266
 @run
 @skill name=skill ani=n_battle.skill_10266
@@ -483,6 +543,7 @@
 @dead
 [10267]
 @standby name=standby ani=n_battle.standby_10267
+@standbyface name=standby ani=n_battle.standbyface_10267
 @atk name=atk ani=n_battle.attack_10267
 @run
 @skill name=skill ani=n_battle.skill_10267
@@ -491,6 +552,7 @@
 @dead
 [10299]
 @standby name=standby ani=n_battle.standby_10299
+@standbyface name=standby ani=n_battle.standbyface_10299
 @atk name=atk ani=n_battle.attack_10299
 @run
 @skill name=skill ani=n_battle.skill_10299
@@ -499,6 +561,7 @@
 @dead
 [10326]
 @standby name=standby ani=n_battle.standby_10326
+@standbyface name=standby ani=n_battle.standbyface_10326
 @atk name=atk ani=n_battle.attack_10326
 @run
 @skill name=skill ani=n_battle.skill_10326
@@ -507,6 +570,7 @@
 @dead
 [10327]
 @standby name=standby ani=n_battle.standby_10327
+@standbyface name=standby ani=n_battle.standbyface_10327
 @atk name=atk ani=n_battle.attack_10327
 @run
 @skill name=skill ani=n_battle.skill_10327
@@ -515,6 +579,7 @@
 @dead
 [10337]
 @standby name=standby ani=n_battle.standby_10337
+@standbyface name=standby ani=n_battle.standbyface_10337
 @atk name=atk ani=n_battle.attack_10337
 @run
 @skill name=skill ani=n_battle.skill_10337
@@ -523,6 +588,7 @@
 @dead
 [10339]
 @standby name=standby ani=n_battle.standby_10339
+@standbyface name=standby ani=n_battle.standbyface_10339
 @atk name=atk ani=n_battle.attack_10339
 @run
 @skill name=skill ani=n_battle.skill_10339
@@ -531,6 +597,7 @@
 @dead
 [10342]
 @standby name=standby ani=n_battle.standby_10342
+@standbyface name=standby ani=n_battle.standbyface_10342
 @atk name=atk ani=n_battle.attack_10342
 @run
 @skill name=skill ani=n_battle.skill_10342
@@ -539,6 +606,7 @@
 @dead
 [10355]
 @standby name=standby ani=n_battle.standby_10355
+@standbyface name=standby ani=n_battle.standbyface_10355
 @atk name=atk ani=n_battle.attack_10355
 @run
 @skill name=skill ani=n_battle.skill_10355
@@ -547,6 +615,7 @@
 @dead
 [10356]
 @standby name=standby ani=n_battle.standby_10356
+@standbyface name=standby ani=n_battle.standbyface_10356
 @atk name=atk ani=n_battle.attack_10356
 @run
 @skill name=skill ani=n_battle.skill_10356
@@ -555,6 +624,7 @@
 @dead
 [10357]
 @standby name=standby ani=n_battle.standby_10357
+@standbyface name=standby ani=n_battle.standbyface_10357
 @atk name=atk ani=n_battle.attack_10357
 @run
 @skill name=skill ani=n_battle.skill_10357
@@ -563,6 +633,7 @@
 @dead
 [10366]
 @standby name=standby ani=n_battle.standby_10366
+@standbyface name=standby ani=n_battle.standbyface_10366
 @atk name=atk ani=n_battle.attack_10366
 @run
 @skill name=skill ani=n_battle.skill_10366
@@ -571,6 +642,7 @@
 @dead
 [10367]
 @standby name=standby ani=n_battle.standby_10367
+@standbyface name=standby ani=n_battle.standbyface_10367
 @atk name=atk ani=n_battle.attack_10367
 @run
 @skill name=skill ani=n_battle.skill_10367
@@ -579,6 +651,7 @@
 @dead
 [10371]
 @standby name=standby ani=n_battle.standby_10371
+@standbyface name=standby ani=n_battle.standbyface_10371
 @atk name=atk ani=n_battle.attack_10371
 @run
 @skill name=skill ani=n_battle.skill_10371
@@ -587,6 +660,7 @@
 @dead
 [10372]
 @standby name=standby ani=n_battle.standby_10372
+@standbyface name=standby ani=n_battle.standbyface_10372
 @atk name=atk ani=n_battle.attack_10372
 @run
 @skill name=skill ani=n_battle.skill_10372
@@ -595,6 +669,7 @@
 @dead
 [10385]
 @standby name=standby ani=n_battle.standby_10385
+@standbyface name=standby ani=n_battle.standbyface_10385
 @atk name=atk ani=n_battle.attack_10385
 @run
 @skill name=skill ani=n_battle.skill_10385
@@ -603,6 +678,7 @@
 @dead
 [10414]
 @standby name=standby ani=n_battle.standby_10414
+@standbyface name=standby ani=n_battle.standbyface_10414
 @atk name=atk ani=n_battle.attack_10414
 @run
 @skill name=skill ani=n_battle.skill_10414
@@ -611,6 +687,7 @@
 @dead
 [10415]
 @standby name=standby ani=n_battle.standby_10415
+@standbyface name=standby ani=n_battle.standbyface_10415
 @atk name=atk ani=n_battle.attack_10415
 @run
 @skill name=skill ani=n_battle.skill_10415
@@ -619,6 +696,7 @@
 @dead
 [10416]
 @standby name=standby ani=n_battle.standby_10416
+@standbyface name=standby ani=n_battle.standbyface_10416
 @atk name=atk ani=n_battle.attack_10416
 @run
 @skill name=skill ani=n_battle.skill_10416
@@ -627,6 +705,7 @@
 @dead
 [10426]
 @standby name=standby ani=n_battle.standby_10426
+@standbyface name=standby ani=n_battle.standbyface_10426
 @atk name=atk ani=n_battle.attack_10426
 @run
 @skill name=skill ani=n_battle.skill_10426
@@ -635,6 +714,7 @@
 @dead
 [10429]
 @standby name=standby ani=n_battle.standby_10429
+@standbyface name=standby ani=n_battle.standbyface_10429
 @atk name=atk ani=n_battle.attack_10429
 @run
 @skill name=skill ani=n_battle.skill_10429
@@ -643,6 +723,7 @@
 @dead
 [10432]
 @standby name=standby ani=n_battle.standby_10432
+@standbyface name=standby ani=n_battle.standbyface_10432
 @atk name=atk ani=n_battle.attack_10432
 @run
 @skill name=skill ani=n_battle.skill_10432
@@ -651,6 +732,7 @@
 @dead
 [10446]
 @standby name=standby ani=n_battle.standby_10446
+@standbyface name=standby ani=n_battle.standbyface_10446
 @atk name=atk ani=n_battle.attack_10446
 @run
 @skill name=skill ani=n_battle.skill_10446
@@ -659,6 +741,7 @@
 @dead
 [10455]
 @standby name=standby ani=n_battle.standby_10455
+@standbyface name=standby ani=n_battle.standbyface_10455
 @atk name=atk ani=n_battle.attack_10455
 @run
 @skill name=skill ani=n_battle.skill_10455
@@ -667,6 +750,7 @@
 @dead
 [10457]
 @standby name=standby ani=n_battle.standby_10457
+@standbyface name=standby ani=n_battle.standbyface_10457
 @atk name=atk ani=n_battle.attack_10457
 @run
 @skill name=skill ani=n_battle.skill_10457
@@ -675,6 +759,7 @@
 @dead
 [10468]
 @standby name=standby ani=n_battle.standby_10468
+@standbyface name=standby ani=n_battle.standbyface_10468
 @atk name=atk ani=n_battle.attack_10468
 @run
 @skill name=skill ani=n_battle.skill_10468
@@ -683,6 +768,7 @@
 @dead
 [10500]
 @standby name=standby ani=n_battle.standby_10500
+@standbyface name=standby ani=n_battle.standbyface_10500
 @atk name=atk ani=n_battle.attack_10500
 @run
 @skill name=skill ani=n_battle.skill_10500
@@ -691,6 +777,7 @@
 @dead
 [10541]
 @standby name=standby ani=n_battle.standby_10541
+@standbyface name=standby ani=n_battle.standbyface_10541
 @atk name=atk ani=n_battle.attack_10541
 @run
 @skill name=skill ani=n_battle.skill_10541
@@ -699,6 +786,7 @@
 @dead
 [10560]
 @standby name=standby ani=n_battle.standby_10560
+@standbyface name=standby ani=n_battle.standbyface_10560
 @atk name=atk ani=n_battle.attack_10560
 @run
 @skill name=skill ani=n_battle.skill_10560
@@ -707,6 +795,7 @@
 @dead
 [10632]
 @standby name=standby ani=n_battle.standby_10632
+@standbyface name=standby ani=n_battle.standbyface_10632
 @atk name=atk ani=n_battle.attack_10632
 @run
 @skill name=skill ani=n_battle.skill_10632
@@ -715,6 +804,7 @@
 @dead
 [10635]
 @standby name=standby ani=n_battle.standby_10635
+@standbyface name=standby ani=n_battle.standbyface_10635
 @atk name=atk ani=n_battle.attack_10635
 @run
 @skill name=skill ani=n_battle.skill_10635
@@ -723,6 +813,7 @@
 @dead
 [10640]
 @standby name=standby ani=n_battle.standby_10640
+@standbyface name=standby ani=n_battle.standbyface_10640
 @atk name=atk ani=n_battle.attack_10640
 @run
 @skill name=skill ani=n_battle.skill_10640
@@ -731,6 +822,7 @@
 @dead
 [10679]
 @standby name=standby ani=n_battle.standby_10679
+@standbyface name=standby ani=n_battle.standbyface_10679
 @atk name=atk ani=n_battle.attack_10679
 @run
 @skill name=skill ani=n_battle.skill_10679
@@ -739,6 +831,7 @@
 @dead
 [10681]
 @standby name=standby ani=n_battle.standby_10681
+@standbyface name=standby ani=n_battle.standbyface_10681
 @atk name=atk ani=n_battle.attack_10681
 @run
 @skill name=skill ani=n_battle.skill_10681
@@ -747,6 +840,7 @@
 @dead
 [10727]
 @standby name=standby ani=n_battle.standby_10727
+@standbyface name=standby ani=n_battle.standbyface_10727
 @atk name=atk ani=n_battle.attack_10727
 @run
 @skill name=skill ani=n_battle.skill_10727
@@ -755,6 +849,7 @@
 @dead
 [10745]
 @standby name=standby ani=n_battle.standby_10745
+@standbyface name=standby ani=n_battle.standbyface_10745
 @atk name=atk ani=n_battle.attack_10745
 @run
 @skill name=skill ani=n_battle.skill_10745
@@ -763,6 +858,7 @@
 @dead
 [10870]
 @standby name=standby ani=n_battle.standby_10870
+@standbyface name=standby ani=n_battle.standbyface_10870
 @atk name=atk ani=n_battle.attack_10870
 @run
 @skill name=skill ani=n_battle.skill_10870
@@ -771,6 +867,7 @@
 @dead
 [10871]
 @standby name=standby ani=n_battle.standby_10871
+@standbyface name=standby ani=n_battle.standbyface_10871
 @atk name=atk ani=n_battle.attack_10871
 @run
 @skill name=skill ani=n_battle.skill_10871
@@ -779,6 +876,7 @@
 @dead
 [10892]
 @standby name=standby ani=n_battle.standby_10892
+@standbyface name=standby ani=n_battle.standbyface_10892
 @atk name=atk ani=n_battle.attack_10892
 @run
 @skill name=skill ani=n_battle.skill_10892
