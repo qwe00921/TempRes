@@ -4,6 +4,14 @@
 --------------------------------------------------------------
 ui_country = {};
 local p =  ui_country;
+p.ID_CTRL_PICTURE_47					     = 53;
+p.ID_CTRL_PICTURE_46					     = 52;
+p.ID_CTRL_PICTURE_45					     = 51;
+p.ID_CTRL_PICTURE_44					     = 50;
+p.ID_CTRL_PICTURE_43					     = 49;
+p.ID_CTRL_PICTURE_42					     = 48;
+p.ID_CTRL_PICTURE_41					     = 47;
+p.ID_CTRL_PICTURE_40					     = 46;
 p.ID_CTRL_TEXT_UPDUILD				    = 44;
 p.ID_CTRL_PICTURE_UPBUILD				 = 43;
 p.ID_CTRL_9SLICES_UPBUILD_BG			= 42;
