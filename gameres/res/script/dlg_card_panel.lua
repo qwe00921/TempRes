@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName:    dlg_card_panel.lua
 -- author:      hst, 2013/09/5
--- purpose:     Ö÷½çÃæ¿¨Æ¬Ä£¿é×Ó°´Å¥×é
+-- purpose:     ä¸»ç•Œé¢å¡ç‰‡æ¨¡å—å­æŒ‰é’®ç»„
 --------------------------------------------------------------
 
 dlg_card_panel = {}
@@ -10,14 +10,14 @@ local ui = ui_dlg_card_panel;
 
 p.layer = nil;
 
---°´Å¥±êÇ©
+--æŒ‰é’®æ ‡ç­¾
 p.chapterTag = {};
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI( btnObj )
     if btnObj == nil then return false end;
     
-    --ÏÔÊ¾»ò´´½¨layer
+    --æ˜¾ç¤ºæˆ–åˆ›å»ºlayer
     if p.layer ~= nil then
         p.layer:SetVisible( true );
     else
@@ -36,7 +36,7 @@ function p.ShowUI( btnObj )
         p.SetDelegate();
     end
     
-    --ÉèÖÃÎ»ÖÃºÍ³ß´ç
+    --è®¾ç½®ä½ç½®å’Œå°ºå¯¸
     local pos = btnObj:GetCenterPos();
     local bgSize = p.GetBgSize();
     local x = pos.x - 0.5f * bgSize.w;
@@ -45,53 +45,53 @@ function p.ShowUI( btnObj )
     p.layer:SetFrameRect( rect );
 end
 
---³õÊ¼»¯°´Å¥
+--åˆå§‹åŒ–æŒ‰é’®
 function p.SetDelegate( )
-    --¿¨ÅÆ±³°ü
+    --å¡ç‰ŒèƒŒåŒ…
     local btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CARDBOX);
     btn:SetLuaDelegate(p.OnBtnClick);
     
-    --¿¨ÅÆ²Ö¿â
+    --å¡ç‰Œä»“åº“
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CARDDEPOT);
     btn:SetLuaDelegate(p.OnBtnClick);
     
-    --¿¨ÅÆ¶ÓÎé
+    --å¡ç‰Œé˜Ÿä¼
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CARDTEAM);
     btn:SetLuaDelegate(p.OnBtnClick);
     
-    --¼¼ÄÜ¿¨ÅÆ
+    --æŠ€èƒ½å¡ç‰Œ
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CARDSKILL);
     btn:SetLuaDelegate(p.OnBtnClick);
     
-    --¼¼ÄÜËéÆ¬
+    --æŠ€èƒ½ç¢ç‰‡
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_SKILLCHIP);
     btn:SetLuaDelegate(p.OnBtnClick);
 end
 
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.OnBtnClick(uiNode, uiEventType, param)   
     if IsClickEvent( uiEventType ) then
         local tag = uiNode:GetTag();
         
         if ( ui.ID_CTRL_BUTTON_CARDBOX == tag ) then  
-                WriteCon( "¿¨ÅÆ±³°ü");
+                WriteCon( "å¡ç‰ŒèƒŒåŒ…");
                 dlg_card_box_mainui.ShowUI( CARD_INTENT_PREVIEW );
                 
         elseif ( ui.ID_CTRL_BUTTON_CARDDEPOT == tag ) then
-                WriteCon( "¿¨ÅÆ²Ö¿â");
+                WriteCon( "å¡ç‰Œä»“åº“");
                 dlg_card_depot.ShowUI();
                 
         elseif ( ui.ID_CTRL_BUTTON_CARDTEAM == tag ) then
-                WriteCon( "¿¨ÅÆ¶ÓÎé");
+                WriteCon( "å¡ç‰Œé˜Ÿä¼");
                 dlg_card_group.ShowUI();
                 
         elseif ( ui.ID_CTRL_BUTTON_CARDSKILL == tag ) then
-                WriteCon( "¼¼ÄÜ¿¨ÅÆ");
+                WriteCon( "æŠ€èƒ½å¡ç‰Œ");
                 dlg_user_skill.ShowUI(SKILL_INTENT_PREVIEW);
                 
         elseif ( ui.ID_CTRL_BUTTON_SKILLCHIP == tag ) then
-                WriteCon( "¼¼ÄÜËéÆ¬");
+                WriteCon( "æŠ€èƒ½ç¢ç‰‡");
                 dlg_skill_piece_combo.ShowUI();
                 
         end
@@ -112,7 +112,7 @@ function p.CloseUI()
     end
 end
 
---»ñÈ¡µ×°å³ß´ç
+--è·å–åº•æ¿å°ºå¯¸
 function p.GetBgSize()
     if p.layer ~= nil then
         local bg = GetImage( p.layer, ui.ID_CTRL_PICTURE_BG );

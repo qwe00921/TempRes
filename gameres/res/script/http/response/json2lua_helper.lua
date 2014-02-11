@@ -1,10 +1,10 @@
 --------------------------------------------------------------
 -- FileName: 	json2lua_helper.lua
 -- author:		zhangwq, 2013/07/10
--- purpose:		json×ªlua°ïÖúº¯Êı£¨È«¾Ö£©
+-- purpose:		jsonè½¬luaå¸®åŠ©å‡½æ•°ï¼ˆå…¨å±€ï¼‰
 --------------------------------------------------------------
 
---½«ÏûÏ¢¶ÔÏó¼ÓÈëµ½ÏìÓ¦¶ÔÏó
+--å°†æ¶ˆæ¯å¯¹è±¡åŠ å…¥åˆ°å“åº”å¯¹è±¡
 function j2l_resp_add_msg( idmsg )
 	--var: resp, msg (defined in c++ side)
 	if resp ~= nil and msg ~= nil then
@@ -15,7 +15,7 @@ function j2l_resp_add_msg( idmsg )
 	end
 end
 
---´¦ÀíÏìÓ¦ 
+--å¤„ç†å“åº” 
 function j2l_resp_process()
 	WriteConWarning( "j2l_resp_process()");
 	

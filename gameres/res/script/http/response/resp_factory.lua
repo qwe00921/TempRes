@@ -1,17 +1,17 @@
 --------------------------------------------------------------
 -- FileName: 	resp_factory.lua
 -- author:		zhangwq, 2013/07/05
--- purpose:		ÏìÓ¦¹¤³§£¨µ¥Àı£©
+-- purpose:		å“åº”å·¥å‚ï¼ˆå•ä¾‹ï¼‰
 --------------------------------------------------------------
 
 resp_factory = {}
 local p = resp_factory;
 
---¸ù¾İÏìÓ¦ºÅ´´½¨ÏìÓ¦
+--æ ¹æ®å“åº”å·åˆ›å»ºå“åº”
 function CreateResponse( command, action )
 	WriteConWarning( string.format("CreateResponse(): command=%s, action=%s", command, action));
 	
-	--²âÊÔÏûÏ¢
+	--æµ‹è¯•æ¶ˆæ¯
 	--if idResponse == 1 then return resp_test:new();
 	return resp_test:new();
 	--@todo...

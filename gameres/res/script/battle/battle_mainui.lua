@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	battle_mainui.lua
 -- author:		hst, 2013/05/31
--- purpose:		¶ÔÕ½Ö÷UI
+-- purpose:		å¯¹æˆ˜ä¸»UI
 --------------------------------------------------------------
 
 battle_mainui = {}
@@ -10,22 +10,22 @@ local p = battle_mainui;
 p.layer = nil;
 p.imageMask = nil;
 
-local useSkill = false;  --µ±Ç°»ØºÏÊÇ·ñÓÃ¼¼ÄÜ¹¥»÷
-local isHeroAutoAtk = false; --ÊÇ·ñÍĞ¹Ü£¨×Ô¶¯¹¥»÷£©
+local useSkill = false;  --å½“å‰å›åˆæ˜¯å¦ç”¨æŠ€èƒ½æ”»å‡»
+local isHeroAutoAtk = false; --æ˜¯å¦æ‰˜ç®¡ï¼ˆè‡ªåŠ¨æ”»å‡»ï¼‰
 local waitingInput = true;
 
 local atkBtn = nil;
 local autoBtn = nil;
 local bossHpBar = nil;
 
---ÖØÖÃ
+--é‡ç½®
 function p.Reset()
 	useSkill = false;
 	isHeroAutoAtk = false;
 	waitingInput = true;
 end
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI()
 	p.Reset();
 		
@@ -51,26 +51,26 @@ function p.ShowUI()
 	p.SetDelegate(layer);
 	p.InitBossHpBar();
 	
-	--Ìí¼ÓÃÉ°æÍ¼Æ¬
+	--æ·»åŠ è’™ç‰ˆå›¾ç‰‡
 	p.AddMaskImage();
 	
-	--Ìí¼ÓÕ½¶·¿ªÆô¹âĞ§
+	--æ·»åŠ æˆ˜æ–—å¼€å¯å…‰æ•ˆ
 	local id = AddHudEffect( "lancer.enter_battle" );
 	--local id = AddHudEffect( "lancer_cmb.enter_battle" );
 	RegAniEffectCallBack( id, p.OnAniEffectCallBack );
 	
-    --×¢²áÕ½¶·±íÏÖ½áÊøµÄ»Øµ÷
+    --æ³¨å†Œæˆ˜æ–—è¡¨ç°ç»“æŸçš„å›è°ƒ
     RegCallBack_BattleShowFinished( p.OnBattleShowFinished );	
 end
 
---Òş²Ø
+--éšè—
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 	end
 end
 
---¹Ø±Õ
+--å…³é—­
 function p.CloseUI()
 	if p.layer ~= nil then	
 		p.layer:LazyClose();
@@ -78,18 +78,18 @@ function p.CloseUI()
 	end
 end
 
---ÉèÖÃÊÂ¼ş´¦Àí
+--è®¾ç½®äº‹ä»¶å¤„ç†
 function p.SetDelegate(layer)
-	--¹¥»÷°´Å¥
+	--æ”»å‡»æŒ‰é’®
 	atkBtn = GetButton( layer, ui_battle_mainui.ID_CTRL_BUTTON_10 );
     atkBtn:SetLuaDelegate( p.OnBtnClicked_Atk );
 	
-	--ÍĞ¹Ü°´Å¥
+	--æ‰˜ç®¡æŒ‰é’®
 	autoBtn = GetButton( layer, ui_battle_mainui.ID_CTRL_BUTTON_11 );
 	autoBtn:SetLuaDelegate( p.OnBtnClicked_Auto );
 end
 
---³õÊ¼»¯bossÑªÌõ
+--åˆå§‹åŒ–bossè¡€æ¡
 function p.InitBossHpBar()
 	bossHpBarNode = GetExp( p.layer, ui_battle_mainui.ID_CTRL_EXP_13 );
 	if bossHpBarNode == nil then return end;
@@ -105,12 +105,12 @@ function p.InitBossHpBar()
 	end
 end
 
---È¡bossÑªÌõ
+--å–bossè¡€æ¡
 function p.GetBossHpBar()
 	return p.bossHpBar;
 end
 
---Ìí¼ÓÃÉ°æÍ¼Æ¬
+--æ·»åŠ è’™ç‰ˆå›¾ç‰‡
 function p.AddMaskImage()
 	imageMask = createNDUIImage();
 	imageMask:Init();
@@ -121,19 +121,19 @@ function p.AddMaskImage()
 	p.layer:AddChildZ( imageMask, 1 );
 end
 
---AniÌØĞ§²¥·ÅÍê±Ï
+--Aniç‰¹æ•ˆæ’­æ”¾å®Œæ¯•
 function p.OnAniEffectCallBack(id)
 	local s = string.format( "OnAniEffectCallBack(): id = %d", id);
 	WriteCon(s);
 	
-	--ÃÉ°æ½¥±ä£¬²¥·Å½áÊøºóÉ¾³ıÃÉ°æ
+	--è’™ç‰ˆæ¸å˜ï¼Œæ’­æ”¾ç»“æŸååˆ é™¤è’™ç‰ˆ
 	if imageMask ~= nil then
 		local id = imageMask:AddActionEffect( "lancer.fadeout" );	
 		RegActionEffectCallBack( id, p.OnActionEffectCallBack );
 	end
 end
 
---ActionÌØĞ§²¥·ÅÍê±Ï
+--Actionç‰¹æ•ˆæ’­æ”¾å®Œæ¯•
 function p.OnActionEffectCallBack(id)
 	local s = string.format( "OnActionEffectCallBack(): id = %d", id);
 	WriteCon(s);
@@ -143,14 +143,14 @@ function p.OnActionEffectCallBack(id)
 	end
 end
 
---¹¥»÷°´Å¥µã»÷ÊÂ¼ş
+--æ”»å‡»æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 function p.OnBtnClicked_Atk(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 
-		--ÆÁ±Î°´Å¥
+		--å±è”½æŒ‰é’®
 		atkBtn:SetEnabled( false );
 		
-		--¶Ô´ò
+		--å¯¹æ‰“
 		if useSkill then
 			battle_mgr.HeroAtkSkill();
 			battle_mgr.BossAtkSkill();
@@ -164,7 +164,7 @@ function p.OnBtnClicked_Atk(uiNode, uiEventType, param)
 	end
 end
 
---×Ô¶¯°´Å¥µã»÷ÊÂ¼ş
+--è‡ªåŠ¨æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 function p.OnBtnClicked_Auto(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		isHeroAutoAtk = not isHeroAutoAtk;
@@ -175,7 +175,7 @@ function p.OnBtnClicked_Auto(uiNode, uiEventType, param)
 	end
 end
 
---Õ½¶·±íÏÖ½áÊøµÄ»Øµ÷
+--æˆ˜æ–—è¡¨ç°ç»“æŸçš„å›è°ƒ
 function p.OnBattleShowFinished()
 	WriteCon( "OnBattleShowFinished()" );
 	
