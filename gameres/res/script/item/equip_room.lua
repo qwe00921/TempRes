@@ -482,6 +482,9 @@ function p.HideUI()
 end
 
 function p.CloseUI()
+	
+	equip_rein_list.CloseUI(); -- 先关子界面
+	
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
         p.layer = nil;
@@ -496,6 +499,8 @@ function p.CloseUI()
 			equip_bag_sort.CloseUI();
 		end
     end
+	
+	
 
 end
 

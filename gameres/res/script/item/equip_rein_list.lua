@@ -257,6 +257,8 @@ end
 
 function p.CloseUI()
     if p.layer ~= nil then
+		equip_rein_select.CloseUI(); --优先关子界面
+		
 	    p.layer:LazyClose();
         p.layer = nil;	
 		p.baseCardInfo = nil;
@@ -265,7 +267,7 @@ function p.CloseUI()
 		p.consumeMoney = 0;
 		p.nowExp = 0;
 		p.addExp = 0;
-		equip_rein_select.CloseUI();
+		
     end
 	
 	if p.callback then

@@ -30,11 +30,11 @@ p.selectList = {};
 p.consumeMoney = 0;
 p.equipListNode = {};
 p.equipEnabled = true;
-p.cardListByProf = {};
 p.isDress = {};
 p.equipLevel = {};
 p.callback = nil;
 p.isChanged = nil;
+
 
 --œ‘ æUI
 function p.ShowUI(selectList,callback)
@@ -208,7 +208,13 @@ function p.ShowInfo(msg)
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
-	p.refreshList(msg.equipment_info);
+	
+	if p.sortByRuleV then
+		p.sortByBtnEvent(p.sortByRuleV);
+	else
+		p.refreshList(msg.equipment_info);
+	end
+	
 	
 end
 
@@ -560,7 +566,7 @@ function p.CloseUI(isGoBack)
     end
 	
 	p.equlip_list = {};
-		p.sortByRuleV = nil;
+		--p.sortByRuleV = nil;
 		p.cardListByProf = {};
 		p.curBtnNode = nil;
 		p.newEquip = {};
@@ -581,6 +587,11 @@ function p.CloseUI(isGoBack)
 	p.selectList = {};
 	p.callback = nil;
 	p.isChanged = nil;
+	
+	if p.sortBtnMark == MARK_ON then
+		p.sortBtnMark = MARK_OFF;
+		equip_bag_sort.CloseUI();
+	end
 
 end
 
