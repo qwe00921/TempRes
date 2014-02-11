@@ -39,7 +39,7 @@ function p.ShowUI()
     end
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(true);
+	--layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
 	GetUIRoot():AddDlg(layer);
