@@ -182,7 +182,13 @@ function p.ShowInfo(msg)
 	tetCrit:SetText(GetStr("equip_intensify_crit")..tostring(msg.crit_prob).."%"); 	
 	
 	if msg.equipment_info ~= nil then
-		p.refreshList(msg.equipment_info);
+		if p.sortByRuleV ~= nil then 
+			p.cardListByProf = msg.equipment_info;
+			p.sortByRule(p.sortByRuleV);
+		else
+			p.refreshList(msg.equipment_info);
+		end
+		
 	end
 	
 end
@@ -442,7 +448,8 @@ function p.sortByRule(sortType)
 end
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.equip_level) > tonumber(b.equip_level);
+	--return tonumber(a.equip_level) > tonumber(b.equip_level);
+	return tonumber(a.equip_level) < tonumber(b.equip_level) or ( tonumber(a.equip_level) == tonumber(b.equip_level) and tonumber(a.equip_id) < tonumber(b.equip_id));
 end
 
 --按星级排序
@@ -467,7 +474,7 @@ function p.CloseUI()
 		p.curBtnNode = nil;
 		p.newEquip = {};
 		p.msg = nil;
-
+		equip_bag_sort.CloseUI();
     end
 
 end
