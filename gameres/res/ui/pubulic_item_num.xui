@@ -3,6 +3,17 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
@@ -48,18 +59,18 @@ UIClsoeType=0
 [CTRL_PICTURE_6]
 Type=1
 Tag=7
-Rect=19 262 602 167
+Rect=19 210 602 160
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_list2.png
-NormalFileUV=0 0 602 167
+NormalFile=.\res\image\ui\quest\frame1.png
+NormalFileUV=0 0 619 165
 
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=53 296 100 100
+Rect=53 254 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -68,7 +79,7 @@ UIClsoeType=0
 [CTRL_PICTURE_9]
 Type=1
 Tag=9
-Rect=49 293 107 107
+Rect=49 251 107 107
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -79,18 +90,18 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_10]
 Type=1
 Tag=10
-Rect=155 348 412 5
+Rect=155 301 452 15
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\line.png
-NormalFileUV=0 0 567 4
+NormalFile=.\res\image\ui\card_attr_base\underline.png
+NormalFileUV=0 0 205 7
 
 [CTRL_TEXT_ITEMNAME]
 Type=4
 Tag=12
-Rect=160 297 135 46
+Rect=160 255 135 46
 AnchorPos=0 0
 Notes=
 Text=道具名称
@@ -105,7 +116,7 @@ UIClsoeType=0
 [CTRL_TEXT_13]
 Type=4
 Tag=13
-Rect=164 357 314 38
+Rect=164 315 314 38
 AnchorPos=0 0
 Notes=
 Text=物品介绍
@@ -120,19 +131,19 @@ UIClsoeType=0
 [CTRL_9SLICES_14]
 Type=22
 Tag=14
-Rect=22 438 599 237
+Rect=19 376 603 426
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\quest\frame2.png
+NormalFileUV=0 0 603 426
 
 [CTRL_BUTTON_15]
 Type=2
 Tag=15
-Rect=259 696 122 60
+Rect=259 704 122 60
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -144,30 +155,15 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\ok1_select.png
 NormalFileUV=0 0 122 60
 
-[CTRL_TEXT_14]
-Type=4
-Tag=16
-Rect=194 454 123 31
-AnchorPos=0 0
-Notes=
-Text=持有数量：
-TextTradition=持有數量：
-TextSize=21
-TextColor=0xffffff
-TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_15]
 Type=4
 Tag=17
-Rect=318 454 107 31
+Rect=328 406 107 31
 AnchorPos=0 0
 Notes=
 Text=99
 TextTradition=99
-TextSize=21
+TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -177,7 +173,7 @@ UIClsoeType=0
 [CTRL_BUTTON_16]
 Type=2
 Tag=18
-Rect=170 532 40 40
+Rect=146 515 55 54
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -185,13 +181,17 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\-.png
-NormalFileUV=0 0 33 33
+NormalFile=.\res\image\ui\country\less.png
+NormalFileUV=0 0 55 55
+SelectFile=.\res\image\ui\country\less_select.png
+SelectedFileUV=0 0 56 55
+DisableFile=.\res\image\ui\country\less_un.png
+DisableFileUV=0 0 56 55
 
 [CTRL_BUTTON_17]
 Type=2
 Tag=19
-Rect=430 532 40 40
+Rect=442 515 56 55
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -199,24 +199,28 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\+.png
-NormalFileUV=0 0 33 33
+NormalFile=.\res\image\ui\country\add.png
+NormalFileUV=0 0 56 55
+SelectFile=.\res\image\ui\country\add_select.png
+SelectedFileUV=0 0 56 55
+DisableFile=.\res\image\ui\country\add_un.png
+DisableFileUV=0 0 56 55
 
 [CTRL_PICTURE_94]
 Type=1
 Tag=94
-Rect=235 536 170 32
+Rect=209 522 222 41
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\bg_shop.png
-NormalFileUV=0 0 594 208
+NormalFile=.\res\image\ui\country\input.png
+NormalFileUV=0 0 222 41
 
 [CTRL_TEXT_18]
 Type=4
 Tag=20
-Rect=245 536 150 32
+Rect=245 526 150 32
 AnchorPos=0 0
 Notes=
 Text=1
@@ -231,7 +235,7 @@ UIClsoeType=0
 [CTRL_BUTTON_95]
 Type=2
 Tag=95
-Rect=206 607 60 50
+Rect=187 591 65 47
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -239,13 +243,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\num.png
-NormalFileUV=0 0 33 33
+NormalFile=.\res\image\ui\country\num_btn.png
+NormalFileUV=0 0 65 47
 
 [CTRL_BUTTON_96]
 Type=2
 Tag=96
-Rect=275 607 60 50
+Rect=288 591 65 47
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -253,13 +257,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\num.png
-NormalFileUV=0 0 33 33
+NormalFile=.\res\image\ui\country\num_btn.png
+NormalFileUV=0 0 65 47
 
 [CTRL_BUTTON_97]
 Type=2
 Tag=97
-Rect=344 607 83 50
+Rect=389 591 70 47
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -267,13 +271,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\num.png
-NormalFileUV=0 0 33 33
+NormalFile=.\res\image\ui\country\num_btn.png
+NormalFileUV=0 0 65 47
 
 [CTRL_PICTURE_99]
 Type=1
 Tag=99
-Rect=216 616 40 28
+Rect=199 600 40 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -284,7 +288,7 @@ NormalFileUV=0 0 40 28
 [CTRL_PICTURE_100]
 Type=1
 Tag=100
-Rect=285 616 40 28
+Rect=300 600 40 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -295,7 +299,7 @@ NormalFileUV=0 0 40 28
 [CTRL_PICTURE_101]
 Type=1
 Tag=101
-Rect=355 619 59 23
+Rect=395 603 59 23
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -303,32 +307,50 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\text\MAX.png
 NormalFileUV=0 0 70 28
 
-[CTRL_TEXT_25]
-Type=4
-Tag=25
-Rect=194 488 123 31
-AnchorPos=0 0
-Notes=
-Text=单价：
-TextTradition=單價：
-TextSize=21
-TextColor=0xffffff
-TextHorAlign=AlignRight
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_26]
 Type=4
 Tag=26
-Rect=318 488 107 31
+Rect=342 459 107 31
 AnchorPos=0 0
 Notes=
 Text=99
 TextTradition=99
-TextSize=21
+TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_92]
+Type=1
+Tag=92
+Rect=27 669 590 15
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\underline.png
+NormalFileUV=0 0 205 7
+
+[CTRL_PICTURE_93]
+Type=1
+Tag=93
+Rect=193 402 241 40
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\01.png
+NormalFileUV=0 0 306 55
+
+[CTRL_PICTURE_95]
+Type=1
+Tag=98
+Rect=193 454 241 40
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\02.png
+NormalFileUV=0 0 241 40

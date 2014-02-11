@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_17]
 Type=2
 Tag=17
-Rect=0 0 602 143
+Rect=0 31 640 143
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -18,18 +18,18 @@ UIClsoeType=0
 [CTRL_PICTURE_6]
 Type=1
 Tag=7
-Rect=0 0 602 143
+Rect=-2 2 643 171
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_list2.png
-NormalFileUV=0 0 602 167
+NormalFile=.\res\image\ui\quest\frame1.png
+NormalFileUV=0 0 619 165
 
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=34 24 100 100
+Rect=34 48 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -38,7 +38,7 @@ UIClsoeType=0
 [CTRL_PICTURE_9]
 Type=1
 Tag=9
-Rect=30 21 107 107
+Rect=30 45 107 107
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -46,21 +46,10 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\quest\item-list.png
 NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_10]
-Type=1
-Tag=10
-Rect=136 76 412 5
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\line.png
-NormalFileUV=0 0 567 4
-
 [CTRL_TEXT_ITEMNAME]
 Type=4
 Tag=12
-Rect=141 25 135 46
+Rect=141 49 135 46
 AnchorPos=0 0
 Notes=
 Text=道具名称
@@ -75,7 +64,7 @@ UIClsoeType=0
 [CTRL_TEXT_13]
 Type=4
 Tag=13
-Rect=145 85 314 38
+Rect=145 113 314 38
 AnchorPos=0 0
 Notes=
 Text=物品介绍
@@ -90,7 +79,7 @@ UIClsoeType=0
 [CTRL_TEXT_14]
 Type=4
 Tag=14
-Rect=442 33 84 30
+Rect=489 42 84 30
 AnchorPos=0 0
 Notes=
 Text=持有数量
@@ -105,7 +94,7 @@ UIClsoeType=0
 [CTRL_TEXT_15]
 Type=4
 Tag=15
-Rect=530 33 37 30
+Rect=577 42 37 30
 AnchorPos=0 0
 Notes=
 Text=99
@@ -120,7 +109,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MASK]
 Type=1
 Tag=18
-Rect=33 24 100 100
+Rect=33 48 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -131,7 +120,7 @@ NormalFileUV=0 0 1 1
 [CTRL_TEXT_19]
 Type=4
 Tag=19
-Rect=35 100 99 26
+Rect=35 124 99 26
 AnchorPos=0 0
 Notes=
 Text=素材不足
@@ -142,3 +131,14 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_20]
+Type=1
+Tag=20
+Rect=136 104 494 4
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\underline.png
+NormalFileUV=0 0 205 7

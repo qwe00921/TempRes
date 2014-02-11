@@ -6,21 +6,19 @@ Height=960
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=5
-Rect=0 120 100 80
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
-Text=返回
-TextTradition=返回
 TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=2
 UIClsoeType=2
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\close_click.png
-SelectedFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_TEXT_38_DELETE]
 Type=4
@@ -39,18 +37,18 @@ UIClsoeType=0
 [CTRL_PICTURE_7]
 Type=1
 Tag=8
-Rect=100 124 211 74
+Rect=171 117 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=2
 UIClsoeType=2
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
 
 [CTRL_TEXT_8]
 Type=4
 Tag=9
-Rect=112 135 105 48
+Rect=268 165 105 32
 AnchorPos=0 0
 Notes=
 Text=队伍编辑
@@ -76,7 +74,7 @@ NormalFileUV=0 0 1 1
 [CTRL_LIST_9]
 Type=8
 Tag=10
-Rect=0 207 640 510
+Rect=0 215 640 510
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -85,7 +83,7 @@ UIClsoeType=0
 [CTRL_BUTTON_LEFT]
 Type=2
 Tag=11
-Rect=1 724 70 52
+Rect=78 739 40 44
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -94,12 +92,12 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\mail\left1.png
-NormalFileUV=0 0 70 52
+NormalFileUV=0 0 40 44
 
 [CTRL_BUTTON_RIGHT]
 Type=2
 Tag=12
-Rect=567 724 70 52
+Rect=523 739 40 44
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -108,23 +106,65 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\mail\right.png
-NormalFileUV=0 0 70 52
+NormalFileUV=0 0 40 44
 
 [CTRL_BUTTON_110]
 Type=2
 Tag=110
-Rect=535 120 100 80
+Rect=512 140 122 60
 AnchorPos=0 0
 Notes=
-Text=拖动阵型
-TextTradition=拖動陣型
 TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=3
 UIClsoeType=3
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
+NormalFile=.\res\image\ui\card_bag\return_1.png
+NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
+
+[CTRL_PICTURE_13]
+Type=1
+Tag=13
+Rect=486 746 28 31
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\mail\right2.png
+NormalFileUV=0 0 28 31
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=127 746 28 31
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\mail\left2.png
+NormalFileUV=0 0 28 31
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
+Rect=460 752 17 18
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\mail\right3.png
+NormalFileUV=0 0 17 18
+
+[CTRL_PICTURE_16]
+Type=1
+Tag=16
+Rect=164 752 17 18
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\mail\left3.png
+NormalFileUV=0 0 17 18
