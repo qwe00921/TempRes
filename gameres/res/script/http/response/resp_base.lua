@@ -1,13 +1,13 @@
 --------------------------------------------------------------
 -- FileName: 	resp_base.lua
 -- author:		zhangwq, 2013/07/05
--- purpose:		ÏìÓ¦»ùÀà
+-- purpose:		å“åº”åŸºç±»
 --------------------------------------------------------------
 
 resp_base = {}
 local p = resp_base;
 
---´´½¨ĞÂÊµÀı
+--åˆ›å»ºæ–°å®ä¾‹
 function p:new()	
 	o = {}
 	setmetatable( o, self );
@@ -15,20 +15,20 @@ function p:new()
 	o:ctor(); return o;
 end
 
---¹¹Ôìº¯Êı
+--æ„é€ å‡½æ•°
 function p:ctor()
-    self.cmd = ""; --¹¦ÄÜ´óÀà
-	self.action = ""; --¹¦ÄÜ×ÓÀà
-	self.result = 0; --³É¹¦±êÖ¾
-	self.errmsg = ""; --´íÎóĞÅÏ¢
-	self.msgArray={}; --ÏûÏ¢Êı×é
+    self.cmd = ""; --åŠŸèƒ½å¤§ç±»
+	self.action = ""; --åŠŸèƒ½å­ç±»
+	self.result = 0; --æˆåŠŸæ ‡å¿—
+	self.errmsg = ""; --é”™è¯¯ä¿¡æ¯
+	self.msgArray={}; --æ¶ˆæ¯æ•°ç»„
 end
 
---³õÊ¼»¯
+--åˆå§‹åŒ–
 function p:Init()
 end
 
---´¦ÀíÏìÓ¦
+--å¤„ç†å“åº”
 function p:Process()
     WriteConWarning( "** resp_base:Process() called" );
     
@@ -45,7 +45,7 @@ function p:Process()
 end
 
 
---Ìí¼ÓÏûÏ¢
+--æ·»åŠ æ¶ˆæ¯
 function p:AddMsg( idmsg, objmsg )
 	if objmsg ~= nil then
 		--WriteConWarning( string.format("AddMsg() ok, idmsg=%d", idmsg));
@@ -57,7 +57,7 @@ function p:AddMsg( idmsg, objmsg )
 	end
 end
 
---»ñÈ¡ÏûÏ¢
+--è·å–æ¶ˆæ¯
 function p:GetMsg( idmsg )
 	local msg = self.msgArray[idmsg];
 	if msg == nil then
@@ -66,7 +66,7 @@ function p:GetMsg( idmsg )
 	return msg;
 end
 
---·µ»ØÏûÏ¢ÊıÁ¿
+--è¿”å›æ¶ˆæ¯æ•°é‡
 function p:GetMsgCount()
 	return #self.msgArray;
 end

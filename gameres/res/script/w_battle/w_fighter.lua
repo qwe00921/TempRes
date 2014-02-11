@@ -403,9 +403,9 @@ function p:GetFrontPos(targetNode)
  		local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w / 4 + targetNode:GetCurAnimRealSize().w / 4;
 		local lscale = GetUIScale();
 		if self.camp == E_CARD_CAMP_HERO then
-			frontPos.x = frontPos.x - halfWidthSum * lscale;
+			frontPos.x = frontPos.x - halfWidthSum * 2.0 * lscale;
 		else
-			frontPos.x = frontPos.x + halfWidthSum * lscale;
+			frontPos.x = frontPos.x + halfWidthSum * 2.0 * lscale;
 		end
 	else
 		local halfWidthSum = self:GetPlayerNode():GetFrameSize().w;
@@ -413,9 +413,9 @@ function p:GetFrontPos(targetNode)
 		lscale = 1;
 		
 		if self.camp == E_CARD_CAMP_HERO then
-			frontPos.x = frontPos.x - halfWidthSum*2;
+			frontPos.x = frontPos.x - halfWidthSum * 2.0;
 		else
-			frontPos.x = frontPos.x + halfWidthSum*2;
+			frontPos.x = frontPos.x + halfWidthSum * 2.0;
 		end
 	end;
     return frontPos;

@@ -28,7 +28,7 @@ function p.ShowUI()
    -- dlg_menu.ShowUI();
 	--dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
-    if p.layer ~= nil then
+    if p.layer ~= nil then 
 		p.layer:SetVisible( true );
 		return;
 	end
@@ -39,7 +39,7 @@ function p.ShowUI()
     end
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(true);
+	--layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
 	GetUIRoot():AddDlg(layer);
@@ -79,6 +79,11 @@ end
 function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
+		
+		if p.sortBtnMark == MARK_ON then
+			p.sortBtnMark = MARK_OFF;
+			equip_bag_sort.CloseUI();
+		end
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
 			--dlg_userinfo.ShowUI( );
@@ -182,7 +187,13 @@ function p.ShowInfo(msg)
 	tetCrit:SetText(GetStr("equip_intensify_crit")..tostring(msg.crit_prob).."%"); 	
 	
 	if msg.equipment_info ~= nil then
-		p.refreshList(msg.equipment_info);
+		if p.sortByRuleV ~= nil then 
+			p.cardListByProf = msg.equipment_info;
+			p.sortByRule(p.sortByRuleV);
+		else
+			p.refreshList(msg.equipment_info);
+		end
+		
 	end
 	
 end
@@ -310,8 +321,20 @@ function p.PasreCardDetail(itemInfo)
 end
 
 function p.OnItemClickEvent(uiNode, uiEventType, param)
+	
+	if p.sortBtnMark == MARK_ON then
+		p.sortBtnMark = MARK_OFF;
+		equip_bag_sort.CloseUI();
+	end
 	local equipOne = p.newEquip[uiNode:GetId()];
-	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.LoadEquipData);
+	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.onReinCallback,p.HideUI);
+end
+
+function p.onReinCallback(isRein)
+	p.ShowUI();
+	if isRein == true then
+		p.LoadEquipData();
+	end
 end
 
 
@@ -442,7 +465,8 @@ function p.sortByRule(sortType)
 end
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.equip_level) > tonumber(b.equip_level);
+	--return tonumber(a.equip_level) > tonumber(b.equip_level);
+	return tonumber(a.equip_level) < tonumber(b.equip_level) or ( tonumber(a.equip_level) == tonumber(b.equip_level) and tonumber(a.equip_id) < tonumber(b.equip_id));
 end
 
 --按星级排序
@@ -458,6 +482,9 @@ function p.HideUI()
 end
 
 function p.CloseUI()
+	
+	equip_rein_list.CloseUI(); -- 先关子界面
+	
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
         p.layer = nil;
@@ -467,8 +494,13 @@ function p.CloseUI()
 		p.curBtnNode = nil;
 		p.newEquip = {};
 		p.msg = nil;
-
+		if p.sortBtnMark == MARK_ON then
+			p.sortBtnMark = MARK_OFF;
+			equip_bag_sort.CloseUI();
+		end
     end
+	
+	
 
 end
 

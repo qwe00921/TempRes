@@ -85,7 +85,7 @@ function p.ShowUI(userinfo)
 	
 	maillayer:SetLayoutType(1);
 	p.SetDelegate();
-	
+
 	p.ShowMailNum(userinfo);
 	
 	dlg_userinfo.ShowUI(userinfo);
@@ -96,7 +96,7 @@ function p.ShowUI(userinfo)
 	p.ShowBillboardWithInit();
 	PlayMusic_MainUI();
 	
-	GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
+--	GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
 end
 
 --…Ë÷√∞¥≈•

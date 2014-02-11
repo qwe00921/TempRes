@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	test_button.lua
 -- author:		hst, 2013/05/27
--- purpose:		×ó²à²Ëµ¥²âÊÔ
+-- purpose:		å·¦ä¾§èœå•æµ‹è¯•
 --------------------------------------------------------------
 
 test_button = {}
@@ -10,7 +10,7 @@ local p = test_button;
 
 p.layer = nil;
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI()	
 	local layer = createNDUILayer();
     if layer == nil then
@@ -31,7 +31,7 @@ function p.ShowUI()
 	
 end
 
---ÉèÖÃÊÂ¼ş´¦Àí
+--è®¾ç½®äº‹ä»¶å¤„ç†
 function p.SetDelegate(layer)
 	local pMissionBossBtn01 = GetButton(layer,ui_test_button.ID_CTRL_BUTTON_1);
     pMissionBossBtn01:SetLuaDelegate(p.OnUIEventMission);
@@ -61,27 +61,27 @@ end
 function p.Init()	
 end
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.OnUIEventMission(uiNode, uiEventType, param)
 	--p.layer:RemoveFromParent(true);
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
 	
         if ( ui_test_button.ID_CTRL_BUTTON_1 == tag ) then	
-			WriteCon("½øÈëÈÎÎñ");
+			WriteCon("è¿›å…¥ä»»åŠ¡");
 
 			p.HideAll();
 			GetTileMap():SetVisible( true );
 			task_map_mainui.ShowUI();
 			
 		elseif ( ui_test_button.ID_CTRL_BUTTON_2 == tag ) then
-			WriteCon("½øÈëPVP");
+			WriteCon("è¿›å…¥PVP");
 			
 			--p.HideAll();
 			--battle_pvp.ShowUI();
 			
 		elseif ( ui_test_button.ID_CTRL_BUTTON_3 == tag ) then
-			WriteCon("½øÈëPVE");
+			WriteCon("è¿›å…¥PVE");
 			
 			if E_DEMO_VER == 1 then
 				battle_mgr.EnterBattle();
@@ -93,32 +93,32 @@ function p.OnUIEventMission(uiNode, uiEventType, param)
 			
 			
 		elseif ( ui_test_button.ID_CTRL_BUTTON_4 == tag ) then
-			WriteCon("µÚËÄ¸ö²Ëµ¥");
+			WriteCon("ç¬¬å››ä¸ªèœå•");
 			p.HideAll();
 			open_box.ShowUI();
 			
 		elseif ( ui_test_button.ID_CTRL_BUTTON_5 == tag ) then
-			WriteCon("µÚÎå¸ö²Ëµ¥");	
+			WriteCon("ç¬¬äº”ä¸ªèœå•");	
 			p.HideAll();
 			boss_out.ShowUI();
 
 		elseif ( ui_test_button.ID_CTRL_BUTTON_6 == tag ) then
-			WriteCon("µÚÁù¸ö²Ëµ¥");	
+			WriteCon("ç¬¬å…­ä¸ªèœå•");	
 			p.HideAll();
 			get_card.ShowUI();	
 	
 		elseif ( ui_test_button.ID_CTRL_BUTTON_7 == tag ) then		
-			WriteCon("µÚÆß¸ö²Ëµ¥");	
+			WriteCon("ç¬¬ä¸ƒä¸ªèœå•");	
 			game_main.EnterWorldMap();
 			
 		elseif ( ui_test_button.ID_CTRL_BUTTON_8 == tag ) then
-			WriteCon("µÚ°Ë¸ö²Ëµ¥");	
+			WriteCon("ç¬¬å…«ä¸ªèœå•");	
 			game_main.EnterTaskMap( "travel_1_1_1.tmx", 1, 0 );
 		end				
 	end
 end
 
---Òş²ØËùÓĞ
+--éšè—æ‰€æœ‰
 function p.HideAll()
 	GetTileMap():SetVisible( false );
 	
@@ -137,12 +137,12 @@ function p.HideAll()
 	StopJumpShow();
 end
 
---²âÊÔÒÆ¶¯³¡¾°
+--æµ‹è¯•ç§»åŠ¨åœºæ™¯
 function p.testMoveScene()
     GetRunningScene():AddActionEffect( "test.move2" );
 end
 
---²âÊÔÆ®Ñª
+--æµ‹è¯•é£˜è¡€
 function p.TestFlyNum()
 	battle_mgr.GetFirstHero():SetLifeDamage( 20 );
 end

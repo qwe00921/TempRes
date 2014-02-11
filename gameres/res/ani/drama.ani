@@ -13,7 +13,7 @@ image\drama_bg\1.png
 [bg_3]
 image\drama_bg\1.png
 [bg_4]
-image\drama_bg\1.png
+image\ui\common\contry_temp.png
 [bg_5]
 image\drama_bg\1.png
 [bg_6]
@@ -37,6 +37,24 @@ image\drama_bg\1.png
 [bg_15]
 image\drama_bg\1.png
 [bg_16]
+image\drama_bg\1.png
+[bg_17]
+image\drama_bg\1.png
+[bg_18]
+image\drama_bg\1.png
+[bg_19]
+image\drama_bg\1.png
+[bg_20]
+image\drama_bg\1.png
+[bg_21]
+image\drama_bg\1.png
+[bg_22]
+image\drama_bg\1.png
+[bg_23]
+image\drama_bg\1.png
+[bg_24]
+image\drama_bg\1.png
+[bg_25]
 image\drama_bg\1.png
 
 ;NPC对话图片
@@ -64,8 +82,18 @@ image\npc\10234.png
 image\npc\10329.png
 [10253_1]
 image\npc\10253.png
-
-
+[10007_2]
+image\npc\10007.png
+[10080_2]
+image\npc\10080.png
+[10339_1]
+image\npc\10339.png
+[10455_2]
+image\npc\10455.png
+[10727_2]
+image\npc\10727.png
+[10892_2]
+image\npc\10892.png
 
 ;主角对话图片
 ;卡牌本身朝左_1

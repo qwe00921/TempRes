@@ -48,6 +48,11 @@ function p.ShowUI()
 	
 	maininterface.InitScrollList( p.layer );
 	maininterface.OnListScrolled();
+	
+	--此处调整billboard位置
+	--local lb = GetImage( p.layer, ui.ID_CTRL_PICTURE_8 );
+	--local rect = lb:GetScreenRect();
+	--billboard.SetFrameRect(rect);
 end
 
 function p.SetDelegate()
@@ -124,6 +129,13 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	end
 end
 
+function p.GetBillboardRect()
+	if (p.layer) then
+		--local lb = GetImage( p.layer, ui.ID_CTRL_PICTURE_8 );
+		--local rect = lb:GetFrameRect();--lb:GetScreenRect();
+		--return rect;
+	end
+end
 function p.CloseBtnList()
 	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_PVP );
 	btn:SetChecked( false );

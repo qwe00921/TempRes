@@ -1,14 +1,14 @@
 --------------------------------------------------------------
 -- FileName: 	resp_test.lua
 -- author:		zhangwq, 2013/07/05
--- purpose:		ÏìÓ¦²âÊÔ
+-- purpose:		å“åº”æµ‹è¯•
 --------------------------------------------------------------
 
 resp_test = resp_base:new();
 local p = resp_test;
 local super = resp_base;
 
---´´½¨ĞÂÊµÀı
+--åˆ›å»ºæ–°å®ä¾‹
 function p:new()	
 	o = {}
 	setmetatable( o, self );
@@ -16,17 +16,17 @@ function p:new()
 	o:ctor(); return o;
 end
 
---¹¹Ôìº¯Êı
+--æ„é€ å‡½æ•°
 function p:ctor()
 	super.ctor(self);
-    self.idResponse = 1; --ÏìÓ¦ºÅ
+    self.idResponse = 1; --å“åº”å·
 end
 
---³õÊ¼»¯
+--åˆå§‹åŒ–
 function p:Init()
 end
 
---´¦ÀíÏûÏ¢
+--å¤„ç†æ¶ˆæ¯
 function p:Process()
 	WriteConWarning( "** resp_test:Process() called" );
 	super.Process( self );

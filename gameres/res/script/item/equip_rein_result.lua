@@ -102,7 +102,7 @@ function p.initView(preItem,nowItem)
 	label:SetVisible(false); 
 	
 	--当前的经验值条
-	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(nowItem.itemLevel));
+	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(nowItem.itemLevel));
 	local lCardExp = GetExp(p.layer,p.ui.ID_CTRL_TEXT_ITEM_EXP);
 	lCardExp:SetVisible(false); 
 	lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));

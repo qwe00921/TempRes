@@ -30,11 +30,11 @@ p.selectList = {};
 p.consumeMoney = 0;
 p.equipListNode = {};
 p.equipEnabled = true;
-p.cardListByProf = {};
 p.isDress = {};
 p.equipLevel = {};
 p.callback = nil;
 p.isChanged = nil;
+
 
 --显示UI
 function p.ShowUI(selectList,callback)
@@ -208,7 +208,13 @@ function p.ShowInfo(msg)
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
-	p.refreshList(msg.equipment_info);
+	
+	if p.sortByRuleV then
+		p.sortByBtnEvent(p.sortByRuleV);
+	else
+		p.refreshList(msg.equipment_info);
+	end
+	
 	
 end
 
@@ -314,7 +320,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	for k,v in pairs(p.selectList) do
 		if v == equip.id then
-			local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(equip.equip_level));
+			local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(equip.equip_level));
 			if levelConfig then
 				p.consumeMoney = p.consumeMoney + tonumber(levelConfig.feed_money);
 			end
@@ -338,7 +344,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipSelectText = p.allNumText[equipId] ;
 
 	local pEquipLevel = tonumber(p.equipLevel[equipId]);
-	local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(p.equipLevel[equipId])); --从表中获取卡牌详细信息	
+	local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(p.equipLevel[equipId])); --从表中获取卡牌详细信息	
 	local selectNum = #p.selectList;
 	if p.isDress[equipId] ~=1 then
 		if equipSelectText:IsVisible() == true then
@@ -560,7 +566,7 @@ function p.CloseUI(isGoBack)
     end
 	
 	p.equlip_list = {};
-		p.sortByRuleV = nil;
+		--p.sortByRuleV = nil;
 		p.cardListByProf = {};
 		p.curBtnNode = nil;
 		p.newEquip = {};
@@ -581,6 +587,11 @@ function p.CloseUI(isGoBack)
 	p.selectList = {};
 	p.callback = nil;
 	p.isChanged = nil;
+	
+	if p.sortBtnMark == MARK_ON then
+		p.sortBtnMark = MARK_OFF;
+		equip_bag_sort.CloseUI();
+	end
 
 end
 

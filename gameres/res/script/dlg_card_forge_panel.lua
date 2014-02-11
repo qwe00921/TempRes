@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName:    dlg_card_forge_panel.lua
 -- author:      hst, 2013/09/5
--- purpose:     Ö÷½çÃæ¿¨Æ¬¶ÍÔì×Ó°´Å¥×é
+-- purpose:     ä¸»ç•Œé¢å¡ç‰‡é”»é€ å­æŒ‰é’®ç»„
 --------------------------------------------------------------
 
 dlg_card_forge_panel = {}
@@ -10,14 +10,14 @@ local ui = ui_dlg_card_forge_panel;
 
 p.layer = nil;
 
---°´Å¥±êÇ©
+--æŒ‰é’®æ ‡ç­¾
 p.chapterTag = {};
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI( btnObj )
     if btnObj == nil then return false end;
     
-    --ÏÔÊ¾»ò´´½¨layer
+    --æ˜¾ç¤ºæˆ–åˆ›å»ºlayer
     if p.layer ~= nil then
         p.layer:SetVisible( true );
     else
@@ -36,7 +36,7 @@ function p.ShowUI( btnObj )
         p.SetDelegate();
     end
     
-    --ÉèÖÃÎ»ÖÃºÍ³ß´ç
+    --è®¾ç½®ä½ç½®å’Œå°ºå¯¸
     local pos = btnObj:GetCenterPos();
     local bgSize = p.GetBgSize();
     local x = pos.x - 0.5f * bgSize.w;
@@ -45,37 +45,37 @@ function p.ShowUI( btnObj )
     p.layer:SetFrameRect( rect );
 end
 
---³õÊ¼»¯°´Å¥
+--åˆå§‹åŒ–æŒ‰é’®
 function p.SetDelegate( )
-    --¿¨ÅÆÇ¿»¯
+    --å¡ç‰Œå¼ºåŒ–
     local btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_INTENSIFY);
     btn:SetLuaDelegate(p.OnBtnClick);
     
-    --¿¨ÅÆ½ø»¯
+    --å¡ç‰Œè¿›åŒ–
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_EVOLUTION);
     btn:SetLuaDelegate(p.OnBtnClick);
     
-    --¿¨ÅÆÈÚºÏ
+    --å¡ç‰Œèåˆ
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_FUSE);
     btn:SetLuaDelegate(p.OnBtnClick);
 end
 
 
---ÊÂ¼ş´¦Àí
+--äº‹ä»¶å¤„ç†
 function p.OnBtnClick(uiNode, uiEventType, param)   
     if IsClickEvent( uiEventType ) then
         local tag = uiNode:GetTag();
         
         if ( ui.ID_CTRL_BUTTON_INTENSIFY == tag ) then  
-                --WriteCon( "¿¨ÅÆÇ¿»¯");
+                --WriteCon( "å¡ç‰Œå¼ºåŒ–");
                 dlg_card_box_mainui.ShowUI( CARD_INTENT_INTENSIFY );
                 
         elseif ( ui.ID_CTRL_BUTTON_EVOLUTION == tag ) then
-                --WriteCon( "¿¨ÅÆ½ø»¯");
+                --WriteCon( "å¡ç‰Œè¿›åŒ–");
                 dlg_card_box_mainui.ShowUI( CARD_INTENT_EVOLUTION );
                 
         elseif ( ui.ID_CTRL_BUTTON_FUSE == tag ) then
-                --WriteCon( "¿¨ÅÆÈÚºÏ");
+                --WriteCon( "å¡ç‰Œèåˆ");
                 dlg_card_fuse.ShowUI();
                 
         end
@@ -95,7 +95,7 @@ function p.CloseUI()
     end
 end
 
---»ñÈ¡µ×°å³ß´ç
+--è·å–åº•æ¿å°ºå¯¸
 function p.GetBgSize()
     if p.layer ~= nil then
         local bg = GetImage( p.layer, ui.ID_CTRL_PICTURE_BG );

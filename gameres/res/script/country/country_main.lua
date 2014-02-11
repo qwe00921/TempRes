@@ -495,10 +495,12 @@ function p.ClearData()
 
 end
 function p.UIDisappear()
-	p.CloseUI();
+	
+	equip_room.CloseUI();
 	country_building.CloseUI();
 	country_storage.UIDisappear();
 	country_mixhouse.UIDisappear();
+	p.CloseUI();
 	
 	maininterface.BecomeFirstUI();
 	maininterface.CloseAllPanel();

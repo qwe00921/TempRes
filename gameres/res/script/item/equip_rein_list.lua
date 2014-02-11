@@ -135,7 +135,7 @@ function p.InitUI(item)
 	p.reinedItem.itemLevel = item.itemLevel
 	
 	--当前的经验值条 ID_CTRL_EXP_CARDEXP
-	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.itemLevel));
+	local lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(item.itemLevel));
 	if lCardLeveInfo then
 		local lCardExp = GetExp(p.layer, ui.ID_CTRL_EXP_EQUIPEXP);
 		lCardExp:SetTotal(tonumber(lCardLeveInfo.exp));
@@ -216,14 +216,18 @@ function p.SetCardInfo(pIndex,item)  --pIndex从1开始
 
 	local lCardLeveInfo;
 	if item.equip_level == 0 then
-		lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", "1");
+		lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "level", "1");
 	else
-		lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "equip_level", tostring(item.equip_level));
+		lCardLeveInfo= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(item.equip_level));
 	end	
 	
 	if lCardLeveInfo then
-		p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money;	
-		p.addExp = p.addExp + lCardLeveInfo.feed_exp;
+		p.consumeMoney = p.consumeMoney + tonumber(lCardLeveInfo.feed_money);	
+		p.addExp = p.addExp + tonumber(lCardLeveInfo.feed_exp);
+	end
+	
+	if pEquipInfo.exp then
+		p.addExp = p.addExp + tonumber(pEquipInfo.exp)
 	end
 	
 end;
@@ -253,6 +257,8 @@ end
 
 function p.CloseUI()
     if p.layer ~= nil then
+		equip_rein_select.CloseUI(); --优先关子界面
+		
 	    p.layer:LazyClose();
         p.layer = nil;	
 		p.baseCardInfo = nil;
@@ -261,7 +267,7 @@ function p.CloseUI()
 		p.consumeMoney = 0;
 		p.nowExp = 0;
 		p.addExp = 0;
-		equip_rein_select.CloseUI();
+		
     end
 	
 	if p.callback then
@@ -456,6 +462,8 @@ if p.layer == nil then --or p.layer:IsVisible() ~= true then
 			p.InitUI(p.item);
 			p.refreshItemList();
 		end
+		
+		p.isReined = true;
 		
 	else
 		local str = dlg_card_equip_detail.GetNetResultError(msg);

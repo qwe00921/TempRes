@@ -3,17 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_48]
-Type=1
-Tag=48
-Rect=1 1 640 960
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\bg4.png
-NormalFileUV=0 0 1 1
-
 [CTRL_9SLICES_50]
 Type=22
 Tag=50
@@ -40,7 +29,7 @@ NormalFileUV=0 0 64 64
 [CTRL_COLOR_LABEL_52]
 Type=7
 Tag=52
-Rect=141 25 477 107
+Rect=143 12 477 121
 AnchorPos=0 0
 Notes=
 Text=说明文字
