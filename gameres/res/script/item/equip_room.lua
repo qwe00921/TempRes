@@ -28,7 +28,7 @@ function p.ShowUI()
    -- dlg_menu.ShowUI();
 	--dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
-    if p.layer ~= nil then
+    if p.layer ~= nil then 
 		p.layer:SetVisible( true );
 		return;
 	end
@@ -79,6 +79,11 @@ end
 function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
+		
+		if p.sortBtnMark == MARK_ON then
+			p.sortBtnMark = MARK_OFF;
+			equip_bag_sort.CloseUI();
+		end
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
 			--dlg_userinfo.ShowUI( );
@@ -316,6 +321,11 @@ function p.PasreCardDetail(itemInfo)
 end
 
 function p.OnItemClickEvent(uiNode, uiEventType, param)
+	
+	if p.sortBtnMark == MARK_ON then
+		p.sortBtnMark = MARK_OFF;
+		equip_bag_sort.CloseUI();
+	end
 	local equipOne = p.newEquip[uiNode:GetId()];
 	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.onReinCallback,p.HideUI);
 end
@@ -481,7 +491,10 @@ function p.CloseUI()
 		p.curBtnNode = nil;
 		p.newEquip = {};
 		p.msg = nil;
-		equip_bag_sort.CloseUI();
+		if p.sortBtnMark == MARK_ON then
+			p.sortBtnMark = MARK_OFF;
+			equip_bag_sort.CloseUI();
+		end
     end
 
 end
