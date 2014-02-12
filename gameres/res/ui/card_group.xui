@@ -111,7 +111,7 @@ NormalFileUV=0 0 40 44
 [CTRL_BUTTON_110]
 Type=2
 Tag=110
-Rect=512 140 122 60
+Rect=487 140 149 60
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -120,10 +120,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=3
 UIClsoeType=3
-NormalFile=.\res\image\ui\card_bag\return_1.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\public\close_click.png
-SelectedFileUV=0 0 100 98
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
+SelectFile=.\res\image\ui\card\button_4_select.png
+SelectedFileUV=0 0 149 60
 
 [CTRL_PICTURE_13]
 Type=1
@@ -168,3 +168,14 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\mail\left3.png
 NormalFileUV=0 0 17 18
+
+[CTRL_PICTURE_17]
+Type=1
+Tag=17
+Rect=499 153 124 35
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\1.png
+NormalFileUV=0 0 124 35
