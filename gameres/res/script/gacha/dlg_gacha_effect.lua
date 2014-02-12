@@ -30,6 +30,7 @@ function p.ShowUI( gacharesult )
 	layer:Init();
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
+	layer:SetLayoutType(1);
 
 	dlg_menu.HideUI();
 	dlg_userinfo.HideUI();
@@ -41,7 +42,7 @@ function p.ShowUI( gacharesult )
 	
 	p.InitControllers();
 
-	SetTimerOnce( p.DoShowCardEffect, 1.5f );
+	SetTimerOnce( p.DoShowCardEffect, 1.2f );
 end
 
 function p.InitControllers()
@@ -89,7 +90,7 @@ function p.DoShowCardEffect()
 	end
 	p.scaleImg:AddFgEffect( "ui.gacha_card_scale" );
 	
-	SetTimerOnce( p.ShowCard, 1.25f );
+	SetTimerOnce( p.ShowCard, 0.5f );
 end
 
 function p.ShowCard()
@@ -114,7 +115,7 @@ function p.ShowCard()
 	if picData then
 		p.cardImg:SetPicture( picData );
 	end
-	p.cardImg:SetScale( 0 );
+	p.cardImg:SetScale( 0.7 );
 	p.cardImg:SetVisible( true );
 	
 	if p.cardImg:FindActionEffect( "lancer.gacha_show_card" ) then

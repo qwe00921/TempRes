@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_equip_rein = {};
 local p =  ui_equip_rein;
+p.ID_CTRL_TEXT_102					       = 104;
+p.ID_CTRL_PICTURE_94					     = 103;
 p.ID_CTRL_BUTTON_CHA10				    = 115;
 p.ID_CTRL_BUTTON_CHA9					    = 114;
 p.ID_CTRL_BUTTON_CHA8					    = 113;
@@ -14,8 +16,6 @@ p.ID_CTRL_BUTTON_CHA4					    = 109;
 p.ID_CTRL_BUTTON_CHA3					    = 108;
 p.ID_CTRL_BUTTON_CHA2					    = 107;
 p.ID_CTRL_BUTTON_CHA1					    = 106;
-p.ID_CTRL_TEXT_102					       = 104;
-p.ID_CTRL_9SLICES_101					    = 103;
 p.ID_CTRL_PICTURE_90					     = 88;
 p.ID_CTRL_PICTURE_89					     = 87;
 p.ID_CTRL_PICTURE_88					     = 86;
@@ -88,4 +88,3 @@ p.ID_CTRL_9SLICES_24					     = 40;
 p.ID_CTRL_9SLICES_29					     = 47;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_BUTTON_CHOOSE_BG			 = 724;
-p.ID_CTRL_PICTURE_103					    = 105;

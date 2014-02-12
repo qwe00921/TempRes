@@ -3,21 +3,10 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_103]
-Type=1
-Tag=105
-Rect=0 155 640 715
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
-
 [CTRL_BUTTON_CHOOSE_BG]
 Type=2
 Tag=724
-Rect=0 231 640 162
+Rect=0 209 640 184
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -29,19 +18,19 @@ UIClsoeType=0
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=0 160 100 64
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
-Text=返回
-TextTradition=返回
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_9SLICES_29]
 Type=22
@@ -206,19 +195,19 @@ UIClsoeType=0
 [CTRL_9SLICES_230]
 Type=22
 Tag=230
-Rect=0 228 640 162
+Rect=0 205 640 186
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\card2.png
-NormalFileUV=0 0 192 108
+NormalFile=.\res\image\ui\quest\frame1.png
+NormalFileUV=0 0 619 165
 
 [CTRL_PICTURE_231]
 Type=1
 Tag=231
-Rect=28 240 110 110
+Rect=69 240 110 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -229,7 +218,7 @@ NormalFileUV=0 0 100 100
 [CTRL_TEXT_LEVEL1]
 Type=4
 Tag=233
-Rect=164 243 54 27
+Rect=250 246 54 27
 AnchorPos=0 0
 Notes=
 Text=等级
@@ -244,7 +233,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK1]
 Type=4
 Tag=235
-Rect=164 314 54 27
+Rect=250 317 54 27
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -259,7 +248,7 @@ UIClsoeType=0
 [CTRL_EXP_CARDADD]
 Type=9
 Tag=752
-Rect=167 280 260 22
+Rect=253 283 260 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -273,7 +262,7 @@ NormalFileUV=0 0 188 32
 [CTRL_EXP_CARDEXP]
 Type=9
 Tag=236
-Rect=168 282 260 22
+Rect=254 283 260 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -281,13 +270,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp2.png
-NormalFileUV=0 0 188 32
+NormalFile=.\res\image\ui\main_interface\exp_frame.png
+NormalFileUV=0 0 340 13
 
 [CTRL_TEXT_DEFENCE1]
 Type=4
 Tag=237
-Rect=164 348 54 27
+Rect=250 351 54 27
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -302,7 +291,7 @@ UIClsoeType=0
 [CTRL_TEXT_SPEED1]
 Type=4
 Tag=239
-Rect=360 314 54 27
+Rect=451 317 54 27
 AnchorPos=0 0
 Notes=
 Text=速度
@@ -317,7 +306,7 @@ UIClsoeType=0
 [CTRL_PICTURE_241]
 Type=1
 Tag=241
-Rect=160 281 275 27
+Rect=246 281 275 27
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -328,7 +317,7 @@ NormalFileUV=0 0 176 28
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=243
-Rect=220 243 113 27
+Rect=306 246 113 27
 AnchorPos=0 0
 Notes=
 Text=等级
@@ -343,7 +332,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK]
 Type=4
 Tag=244
-Rect=220 314 113 27
+Rect=306 317 113 27
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -358,7 +347,7 @@ UIClsoeType=0
 [CTRL_TEXT_DEFENCE]
 Type=4
 Tag=245
-Rect=220 348 113 27
+Rect=306 351 113 27
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -373,7 +362,7 @@ UIClsoeType=0
 [CTRL_TEXT_247]
 Type=4
 Tag=247
-Rect=422 314 113 27
+Rect=508 317 113 27
 AnchorPos=0 0
 Notes=
 Text=速度
@@ -388,18 +377,18 @@ UIClsoeType=0
 [CTRL_PICTURE_251]
 Type=1
 Tag=251
-Rect=24 358 118 20
+Rect=13 350 208 37
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
+NormalFile=.\res\image\ui\quest\title3.png
+NormalFileUV=0 0 272 49
 
 [CTRL_TEXT_252]
 Type=4
 Tag=252
-Rect=14 359 143 20
+Rect=56 354 143 20
 AnchorPos=0 0
 Notes=
 Text=八个字八个字八个
@@ -414,7 +403,7 @@ UIClsoeType=0
 [CTRL_TEXT_EXP]
 Type=4
 Tag=74
-Rect=190 283 177 19
+Rect=276 284 177 19
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -427,7 +416,7 @@ UIClsoeType=0
 [CTRL_BUTTON_MAIN]
 Type=2
 Tag=116
-Rect=29 239 107 111
+Rect=70 239 107 111
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -439,7 +428,7 @@ UIClsoeType=0
 [CTRL_SPRITE_75]
 Type=19
 Tag=75
-Rect=34 249 95 95
+Rect=75 249 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -927,33 +916,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\quest\quest_title.png
 NormalFileUV=0 0 192 68
 
-[CTRL_9SLICES_101]
-Type=22
-Tag=103
-Rect=105 159 240 68
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_TEXT_102]
-Type=4
-Tag=104
-Rect=113 161 216 60
-AnchorPos=0 0
-Notes=
-Text=装备强化
-TextTradition=裝備強化
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_BUTTON_CHA1]
 Type=1
 Tag=106
@@ -1041,5 +1003,31 @@ Tag=115
 Rect=515 556 107 111
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_94]
+Type=1
+Tag=103
+Rect=171 116 299 91
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
+
+[CTRL_TEXT_102]
+Type=4
+Tag=104
+Rect=212 155 216 40
+AnchorPos=0 0
+Notes=
+Text=装备强化
+TextTradition=裝備強化
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0

@@ -490,9 +490,9 @@ function p:AddFighters( uiArray, fighters )
 			if self.idCamp == E_CARD_CAMP_HERO then
 				f.Attack = 1;
 				f.Defence = 1;
-				--f.Sp = 100;
-				if f.Position == 1 then
-					f.Skill = 1002	
+				--
+				if f.Position == 2 then
+					f.Sp = 100;
 				end
 				
 				--f.Defence = f.Defence + 200;

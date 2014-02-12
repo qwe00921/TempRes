@@ -3,6 +3,97 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_GACHAUI]
+Type=2
+Tag=1
+Rect=25 221 107 58
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=扭蛋按钮
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_tab.png
+NormalFileUV=0 0 91 49
+SelectFile=.\res\image\ui\shop\btn_tab_select.png
+SelectedFileUV=0 0 91 49
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_BUTTON_GIFT_PACKUI]
+Type=2
+Tag=14
+Rect=245 221 110 59
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼包按钮
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_tab.png
+NormalFileUV=0 0 91 49
+SelectFile=.\res\image\ui\shop\btn_tab_select.png
+SelectedFileUV=0 0 91 49
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_BUTTON_ITEMUI]
+Type=2
+Tag=2
+Rect=135 221 107 58
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具按钮
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_tab.png
+NormalFileUV=0 0 91 49
+SelectFile=.\res\image\ui\shop\btn_tab_select.png
+SelectedFileUV=0 0 91 49
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_BUTTON_73]
+Type=2
+Tag=73
+Rect=357 221 110 59
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼包按钮
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_tab.png
+NormalFileUV=0 0 91 49
+SelectFile=.\res\image\ui\shop\btn_tab_select.png
+SelectedFileUV=0 0 91 49
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=0 277 640 495
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\shop_bg.png
+NormalFileUV=0 0 603 547
+
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=4
@@ -60,7 +151,7 @@ DisableFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_GACHA]
 Type=14
 Tag=13
-Rect=11 300 620 480
+Rect=10 316 620 439
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -70,7 +161,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_SHOP_ITEM]
 Type=14
 Tag=15
-Rect=9 300 620 477
+Rect=10 318 620 439
 AnchorPos=0 0
 Notes=
 Remark=道具list
@@ -80,7 +171,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_GIFT_PACK]
 Type=14
 Tag=35
-Rect=9 297 620 481
+Rect=10 316 620 439
 AnchorPos=0 0
 Notes=
 Remark=礼包list
@@ -97,86 +188,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\add.png
 NormalFileUV=0 0 52 28
-
-[CTRL_BUTTON_GACHAUI]
-Type=2
-Tag=1
-Rect=6 220 107 53
-AnchorPos=0 0
-Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=扭蛋按钮
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\return_1.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\card_bag\return_2.png
-SelectedFileUV=0 0 122 60
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
-
-[CTRL_BUTTON_GIFT_PACKUI]
-Type=2
-Tag=14
-Rect=226 220 110 54
-AnchorPos=0 0
-Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=礼包按钮
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\return_1.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\card_bag\return_2.png
-SelectedFileUV=0 0 122 60
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
-
-[CTRL_BUTTON_ITEMUI]
-Type=2
-Tag=2
-Rect=116 220 107 53
-AnchorPos=0 0
-Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具按钮
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\return_1.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\card_bag\return_2.png
-SelectedFileUV=0 0 122 60
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
-
-[CTRL_BUTTON_73]
-Type=2
-Tag=73
-Rect=338 220 110 54
-AnchorPos=0 0
-Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=礼包按钮
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\return_1.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\card_bag\return_2.png
-SelectedFileUV=0 0 122 60
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
 
 [CTRL_PICTURE_76]
 Type=1
@@ -207,7 +218,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_BAG]
 Type=14
 Tag=1068
-Rect=9 298 620 478
+Rect=7 286 627 471
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -217,7 +228,7 @@ UIClsoeType=0
 [CTRL_PICTURE_USE]
 Type=1
 Tag=24
-Rect=81 347 479 197
+Rect=51 382 479 197
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -228,7 +239,7 @@ NormalFileUV=0 0 594 208
 [CTRL_BUTTON_USE]
 Type=2
 Tag=26
-Rect=199 478 107 53
+Rect=169 513 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -244,7 +255,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_PICTURE_LABEL_USE]
 Type=1
 Tag=27
-Rect=222 488 61 32
+Rect=192 523 61 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -255,7 +266,7 @@ NormalFileUV=0 0 52 28
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=28
-Rect=121 362 398 103
+Rect=91 397 398 103
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -268,55 +279,40 @@ UIClsoeType=0
 [CTRL_PICTURE_111]
 Type=1
 Tag=111
-Rect=136 227 66 38
+Rect=159 235 59 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\item.png
-NormalFileUV=0 0 66 38
+NormalFile=.\res\image\ui\shop\text_item_select.png
+NormalFileUV=0 0 59 30
 
 [CTRL_PICTURE_112]
 Type=1
 Tag=112
-Rect=248 228 66 38
+Rect=271 235 59 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\gift.png
-NormalFileUV=0 0 66 38
+NormalFile=.\res\image\ui\shop\text_gift.png
+NormalFileUV=0 0 59 30
 
 [CTRL_PICTURE_113]
 Type=1
 Tag=113
-Rect=26 227 66 38
+Rect=49 235 59 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\text_gacha.png
-NormalFileUV=0 0 66 38
-
-[CTRL_TEXT_75]
-Type=4
-Tag=75
-Rect=354 217 79 60
-AnchorPos=0 0
-Notes=
-Text=持有
-TextTradition=持有
-TextSize=30
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+NormalFile=.\res\image\ui\shop\text_gift_select.png
+NormalFileUV=0 0 59 30
 
 [CTRL_BUTTON_69]
 Type=2
 Tag=69
-Rect=340 478 107 53
+Rect=310 513 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -332,7 +328,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_TEXT_71]
 Type=4
 Tag=71
-Rect=354 486 79 37
+Rect=324 521 79 37
 AnchorPos=0 0
 Notes=
 Text=取消
@@ -343,3 +339,14 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_26]
+Type=1
+Tag=29
+Rect=383 235 59 30
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\text_have.png
+NormalFileUV=0 0 59 30

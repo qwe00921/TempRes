@@ -81,57 +81,47 @@ UIClsoeType=0
 [CTRL_PICTURE_BG1]
 Type=1
 Tag=92
-Rect=18 5 115 115
+Rect=18 6 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\lattice.png
-NormalFileUV=0 0 50 48
 
 [CTRL_PICTURE_BG2]
 Type=1
 Tag=93
-Rect=141 5 115 115
+Rect=141 6 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\lattice.png
-NormalFileUV=0 0 50 48
 
 [CTRL_PICTURE_BG3]
 Type=1
 Tag=94
-Rect=264 5 115 115
+Rect=264 6 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\lattice.png
-NormalFileUV=0 0 50 48
 
 [CTRL_PICTURE_BG4]
 Type=1
 Tag=95
-Rect=387 5 115 115
+Rect=387 6 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\lattice.png
-NormalFileUV=0 0 50 48
 
 [CTRL_PICTURE_BG5]
 Type=1
 Tag=96
-Rect=510 5 115 115
+Rect=510 6 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\lattice.png
-NormalFileUV=0 0 50 48
 
 [CTRL_TEXT_LV1]
 Type=4

@@ -31,7 +31,7 @@ p.imageList = {};
 
 local ui = ui_card_group;
 
---ÍÏ¶¯¿ØÖÆ
+--æ‹–åŠ¨æ§åˆ¶
 p.beginDragId = nil;
 p.beginPos = nil;
 p.beginRect = nil;
@@ -97,7 +97,7 @@ function p.ShowUI(missionId,stageId,missionTeamId)
 	
 end
 
---ÉèÖÃ»Øµ÷
+--è®¾ç½®å›è°ƒ
 function p.SetDelegate()
 	local backBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_BACK );
 	backBtn:SetLuaDelegate( p.OnBtnClick );
@@ -120,28 +120,28 @@ function p.SetDelegate()
 	
 end
 
---ÇëÇóÊı¾İ
+--è¯·æ±‚æ•°æ®
 function p.RequestData()
 	local uid = GetUID();
 	if uid == nil or uid == 0 then
 		return;
 	end
 	
-	--ÇëÇó¿¨×éÊı¾İ
+	--è¯·æ±‚å¡ç»„æ•°æ®
 	SendReq( "Team", "GetTeamsInfo", uid, "" );
 end
 
---Ë¢ĞÂUI
+--åˆ·æ–°UI
 function p.RefreshUI( source )
-	p.source = source;--Ô­Ê¼Êı¾İ
+	p.source = source;--åŸå§‹æ•°æ®
 	
 	p.UpdateListData();
 end
 
---¸üĞÂÊı¾İ
+--æ›´æ–°æ•°æ®
 function p.UpdateListData( dataSource )
 	if p.layer == nil then
-		--½çÃæÎ´¿ªÆô£¬¿ÉÄÜÊÇÖ÷½çÃæÖ±½Ó½øĞĞ³öÕ½¿¨×é±à¼­
+		--ç•Œé¢æœªå¼€å¯ï¼Œå¯èƒ½æ˜¯ä¸»ç•Œé¢ç›´æ¥è¿›è¡Œå‡ºæˆ˜å¡ç»„ç¼–è¾‘
 		return;
 	end
 
@@ -170,7 +170,7 @@ function p.UpdateListData( dataSource )
 	list:SetActiveView(teamid);
 end
 
---´¦Àí·şÎñ¶ËÏÂ·¢Êı¾İ£¬·½±ãµ÷ÓÃ
+--å¤„ç†æœåŠ¡ç«¯ä¸‹å‘æ•°æ®ï¼Œæ–¹ä¾¿è°ƒç”¨
 function p.SetData( dataSource )
 	if dataSource ~= nil then
 		p.user_teams = dataSource.user_teams;
@@ -215,7 +215,7 @@ function p.SetData( dataSource )
 	end
 end
 
---ÏÔÊ¾list
+--æ˜¾ç¤ºlist
 function p.ShowTeamList()
 	local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 	if list == nil then
@@ -274,7 +274,7 @@ function p.ShowTeamList()
 
 end
 
---ÏÔÊ¾µ¥¸ö½Úµã
+--æ˜¾ç¤ºå•ä¸ªèŠ‚ç‚¹
 function p.SetTeamInfo( view, user_teamData )
 	--local ui_card_group_node = ui_card_group_node2; 
 	local teamid = tonumber( user_teamData.Team_id ) or 0;
@@ -354,7 +354,7 @@ function p.SetTeamInfo( view, user_teamData )
 			
 			
 			
-			--[[Ôö¼ÓĞÇ¼¶ÏÔÊ¾]]--
+			--[[å¢åŠ æ˜Ÿçº§æ˜¾ç¤º]]--
 		else
 			--cardBtn:SetImage( GetPictureByAni( "ui.default_card_btn", 0 ) );
 			--cardBtn:SetTouchDownImage( GetPictureByAni( "ui.default_card_btn", 1 ) );
@@ -378,7 +378,7 @@ function p.SetTeamInfo( view, user_teamData )
 	--formationBtn:SetLuaDelegate( p.OnListBtnClick );
 	
 	--local formationLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_27 );
-	--formationLabel:SetText( ToUtf8("Ñ¡ÔñÕ½Êõ") );
+	--formationLabel:SetText( ToUtf8("é€‰æ‹©æˆ˜æœ¯") );
 	
 	--local petBtn1 = GetButton( view, ui_card_group_node.ID_CTRL_BUTTON_PET_1 );
 	--petBtn1:SetLuaDelegate( p.OnListBtnClick );
@@ -395,7 +395,7 @@ function p.SetTeamInfo( view, user_teamData )
 	--	petBtn1:SetImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
 	--	petBtn1:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card1, "face_pic" ), 0 ) );
 	--else
-	--	petName1:SetText( ToUtf8("Ñ¡ÔñÕÙ»½ÊŞ") );
+	--	petName1:SetText( ToUtf8("é€‰æ‹©å¬å”¤å…½") );
 		
 	--	petBtn1:SetImage( GetPictureByAni( "ui.default_pet_btn", 0 ) );
 	--	petBtn1:SetTouchDownImage( GetPictureByAni( "ui.default_pet_btn", 1 ));
@@ -408,7 +408,7 @@ function p.SetTeamInfo( view, user_teamData )
 		petBtn2:SetImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card2, "face_pic" ), 0 ) );
 		petBtn2:SetTouchDownImage( GetPictureByAni( SelectCell( T_PET_RES, user_teamData.Pet_card2, "face_pic" ), 0 ) );
 	else
-		petName2:SetText( ToUtf8("Ñ¡ÔñÕÙ»½ÊŞ") );
+		petName2:SetText( ToUtf8("é€‰æ‹©å¬å”¤å…½") );
 		
 		petBtn2:SetImage( GetPictureByAni( "ui.default_pet_btn", 0 ) );
 		petBtn2:SetTouchDownImage( GetPictureByAni( "ui.default_pet_btn", 1 ));
@@ -418,7 +418,7 @@ function p.SetTeamInfo( view, user_teamData )
 	fightBtn:SetLuaDelegate( p.OnListBtnClick );
 	local flag = tonumber(user_teamData.Team_id) == tonumber(p.source.nowteam)
 	fightBtn:SetChecked( flag );
-	--local str = flag and ToUtf8("³öÕ½ÖĞ") or ToUtf8("³öÕ½");
+	--local str = flag and ToUtf8("å‡ºæˆ˜ä¸­") or ToUtf8("å‡ºæˆ˜");
 	--fightBtn:SetText( str );
 	
 	local atkLabel = GetLabel( view, ui_card_group_node.ID_CTRL_TEXT_TOTAL_ATK );
@@ -451,7 +451,7 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 	if nil ~= p.m_list then
 		local n = p.m_list:GetActiveView();
 		WriteCon(string.format("Now View Index Is %d",n));
-		local v = p.m_list:GetEnableMove(); --´¦ÓÚ¹ö¶¯×´Ì¬²»ÏìÓ¦
+		local v = p.m_list:GetEnableMove(); --å¤„äºæ»šåŠ¨çŠ¶æ€ä¸å“åº”
 		if(v== true) then
 			return;
 		end
@@ -549,7 +549,7 @@ function p.TotalData( user_teamData, str )
 	return num;
 end
 
---°´Å¥»Øµ÷
+--æŒ‰é’®å›è°ƒ
 function p.OnBtnClick(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
@@ -561,7 +561,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				p.missionId = nil;
 				p.stageId = nil;
 			else
-				WriteCon("¹Ø±Õ");
+				WriteCon("å…³é—­");
 				p.CloseUI();
 				maininterface.BecomeFirstUI();
 				maininterface.ShowUI();
@@ -594,7 +594,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	end
 end
 
---ÁĞ±í½ÚµãµÄ°´Å¥
+--åˆ—è¡¨èŠ‚ç‚¹çš„æŒ‰é’®
 function p.OnListBtnClick(uiNode, uiEventType, param)
 	
 	local node = uiNode:GetParent();
@@ -603,7 +603,7 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		if ui_card_group_node.ID_CTRL_BUTTON_SETFIGHT == tag then
 			if id  ~= tonumber(p.source.nowteam) then
-				--±ä¸ü³öÕ½¶ÓÎé
+				--å˜æ›´å‡ºæˆ˜é˜Ÿä¼
 				p.SetBattleFlag( id );
 			end
 		elseif ui_card_group_node.ID_CTRL_BUTTON_CARD_1 == tag or ui_card_group_node.ID_CTRL_BUTTON_CARD_2 == tag or ui_card_group_node.ID_CTRL_BUTTON_CARD_3 == tag or ui_card_group_node.ID_CTRL_BUTTON_CARD_4 == tag or ui_card_group_node.ID_CTRL_BUTTON_CARD_5 == tag or ui_card_group_node.ID_CTRL_BUTTON_CARD_6 == tag then
@@ -617,7 +617,7 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 	end
 end
 
---ÁĞ±í½ÚµãµÄ°´Å¥
+--åˆ—è¡¨èŠ‚ç‚¹çš„æŒ‰é’®
 function p.OnListItemClick(uiNode, uiEventType, param)
 	
 	local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
@@ -647,7 +647,25 @@ function p.OnListItemClick(uiNode, uiEventType, param)
 	p.nowTeam = p.m_list:GetActiveView() + 1;
 end
 
---Ñ¡Ôñ¿¨ÅÆ»Øµ÷
+function p.rookieBtn()
+	p.selTeam = 1;
+	p.selTeamPos = 4
+	local hasRemove = false;
+	if p.user_teams[p.selTeam] and tonumber(p.user_teams[p.selTeam]["Pos_unique"..p.selTeamPos] or 0) ~= 0 then
+		for i = 1,6 do
+			if i ~= p.selTeamPos and tonumber(p.user_teams[p.selTeam]["Pos_unique"..i] or 0) ~= 0 then
+				hasRemove = true;
+				break
+			end
+		end
+	end
+	p.HideUI();
+	p.nowTeam = p.m_list:GetActiveView() + 1;
+	card_bag_mian.ShouReplaceUI(p.OnSelectReplaceCallback, hasRemove);
+end
+
+
+--é€‰æ‹©å¡ç‰Œå›è°ƒ
 function p.OnSelectReplaceCallback(cardData,unchanged)
 	
 	if p.layer ~= nil then
@@ -677,7 +695,7 @@ function p.OnSelectReplaceCallback(cardData,unchanged)
 			end
 		else
 		
-			--ÊÇ·ñÔÚÍ¬×é
+			--æ˜¯å¦åœ¨åŒç»„
 			
 			local cardUni = tostring (cardData.UniqueID or cardData.UniqueId);
 			local cardPos = nil;
@@ -688,7 +706,7 @@ function p.OnSelectReplaceCallback(cardData,unchanged)
 				end
 			end
 			
-			--Í¬×éÔò½»»»,²»Í¬×éÔòÖ±½Ó¸ø±¾×é¸³Öµ
+			--åŒç»„åˆ™äº¤æ¢,ä¸åŒç»„åˆ™ç›´æ¥ç»™æœ¬ç»„èµ‹å€¼
 			if cardPos then
 				team["Pos_unique"..cardPos] = team["Pos_unique"..p.selTeamPos];
 				team["Pos_card"..cardPos] = team["Pos_card"..p.selTeamPos];
@@ -715,7 +733,7 @@ function p.OnSelectReplaceCallback(cardData,unchanged)
 end
 
 
---ÏÔÊ¾¿¨ÅÆ
+--æ˜¾ç¤ºå¡ç‰Œ
 function p.ShowCardInfo( teamid, index )
 	if index == nil or index == 0 then
 		return;
@@ -723,7 +741,7 @@ function p.ShowCardInfo( teamid, index )
 	
 	local team_data = p.team_data[tostring(teamid)];
 	if team_data == nil then
-		dlg_msgbox.ShowOK( ToUtf8("ÌáÊ¾"), ToUtf8("¸Ã¿¨×é²»´æÔÚ"), nil, dlg_card_group_main.layer );
+		dlg_msgbox.ShowOK( ToUtf8("æç¤º"), ToUtf8("è¯¥å¡ç»„ä¸å­˜åœ¨"), nil, dlg_card_group_main.layer );
 		return;
 	end
 	
@@ -742,21 +760,21 @@ function p.ShowCardInfo( teamid, index )
 	if cardinfo then
 		dlg_card_attr_base.ShowUI( cardinfo , true );
 	else
-		--Ö±½ÓÏÔÊ¾ĞÇÁéÁĞ±í
+		--ç›´æ¥æ˜¾ç¤ºæ˜Ÿçµåˆ—è¡¨
 		card_bag_mian.ShowUI( true );
 	end
 end
 
---±ä¸ü³öÕ½¶ÓÎé
+--å˜æ›´å‡ºæˆ˜é˜Ÿä¼
 function p.SetBattleFlag( teamid )
 	local team_data = p.team_data[tostring(teamid)];
 	if team_data == nil then
-		dlg_msgbox.ShowOK( ToUtf8("ÌáÊ¾"), ToUtf8("¸Ã¿¨×é²»´æÔÚ"), nil, dlg_card_group_main.layer );
+		dlg_msgbox.ShowOK( ToUtf8("æç¤º"), ToUtf8("è¯¥å¡ç»„ä¸å­˜åœ¨"), nil, dlg_card_group_main.layer );
 		return;
 	end
 	
 	if tonumber(team_data["Pos_unique1"]) == 0 and tonumber(team_data["Pos_unique2"]) == 0 and tonumber(team_data["Pos_unique3"]) == 0 and tonumber(team_data["Pos_unique4"]) == 0 and tonumber(team_data["Pos_unique5"]) == 0 and tonumber(team_data["Pos_unique6"]) == 0 and tonumber(team_data["Pet_unique1"]) == 0 and tonumber(team_data["Pet_unique2"]) == 0 then
-		dlg_msgbox.ShowOK( ToUtf8("ÌáÊ¾"), ToUtf8("¸Ã¿¨×é²»´æÔÚ"), nil, dlg_card_group_main.layer );
+		dlg_msgbox.ShowOK( ToUtf8("æç¤º"), ToUtf8("è¯¥å¡ç»„ä¸å­˜åœ¨"), nil, dlg_card_group_main.layer );
 		return;
 	end
 
@@ -764,11 +782,11 @@ function p.SetBattleFlag( teamid )
 	if uid == nil or uid == 0 then
 		return;
 	end
-	--ÇëÇó¿¨×éÊı¾İ
+	--è¯·æ±‚å¡ç»„æ•°æ®
 	SendReq( "Team", "SetBattleFlag", uid, "&team_id=".. tostring(teamid) );
 end
 
---Ë¢ĞÂ³öÕ½°´Å¥
+--åˆ·æ–°å‡ºæˆ˜æŒ‰é’®
 function p.RefreshBattleBtn( data )
 	p.source.nowteam = data.nowteam;
 	
@@ -786,13 +804,13 @@ function p.RefreshBattleBtn( data )
 			fightBtn:SetLuaDelegate( p.OnListBtnClick );
 			local flag = tonumber(id) == tonumber( data.nowteam )
 			fightBtn:SetChecked( flag );
-			--local str = flag and ToUtf8("³öÕ½ÖĞ") or ToUtf8("³öÕ½");
+			--local str = flag and ToUtf8("å‡ºæˆ˜ä¸­") or ToUtf8("å‡ºæˆ˜");
 			--fightBtn:SetText( str );
 		end
 	end
 end
 
---¿¨ÅÆÑ¡Ôñ»Øµ÷¡¢ÕÙ»½ÊŞÑ¡Ôñ»Øµ÷
+--å¡ç‰Œé€‰æ‹©å›è°ƒã€å¬å”¤å…½é€‰æ‹©å›è°ƒ
 function p.UpdatePosCard( cardId )
 	WriteCon( tostring(cardId) .. " "..tostring(p.modify_team_id) .." "..tostring(p.pos_no) );
 	if cardId == nil or p.modify_team_id == nil or p.pos_no == nil then
@@ -807,11 +825,11 @@ function p.UpdatePosCard( cardId )
 	end
 	
 	local param = "&team_id=".. p.modify_team_id .."&flag=1&pos_no=".. p.pos_no .."&uid=".. cardId;
-	--ÇëÇó¿¨×éÊı¾İ
+	--è¯·æ±‚å¡ç»„æ•°æ®
 	SendReq( "Team", "UpdateTeamInfo", uid, param );
 end
 
---±£´æÊı¾İ
+--ä¿å­˜æ•°æ®
 function p.SaveData()
 	local needUpload = false;
 	
@@ -842,14 +860,14 @@ function p.SaveData()
 	end
 end
 
---¸üĞÂÕóĞÍ
+--æ›´æ–°é˜µå‹
 function p.UploadTeamSetting()
 	local uid = GetUID();
 	if uid == nil or uid == 0 then
 		return;
 	end
 	
-	--ÇëÇó¿¨×éÊı¾İ
+	--è¯·æ±‚å¡ç»„æ•°æ®
 	local param = "&team_id=".. p.nowTeam;
 	for i = 1,3 do
 		param = param .."&idm"..i.."=";
@@ -865,7 +883,7 @@ function p.UploadTeamSetting()
 	SendReq( "Team", "UpdateTeamInfo", uid, param );
 end
 
--- ¿½±´±àÊı¾İ
+-- æ‹·è´ç¼–æ•°æ®
 function p.CopyUserTeam(user_teams)
 	if user_teams == nil then
 		return nil;
@@ -882,14 +900,14 @@ function p.CopyUserTeam(user_teams)
 	return lst;
 end
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.isAlive ~= true then
 		return;
@@ -912,9 +930,10 @@ function p.CloseUI()
 end
 
 function p.UIDisappear()
-	p.CloseUI();
+	
 	dlg_beast_main.CloseUI();
 	dlg_card_attr_base.CloseUI();
+	p.CloseUI();
 	
 	maininterface.BecomeFirstUI();
 end

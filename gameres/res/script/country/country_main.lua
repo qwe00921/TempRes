@@ -19,6 +19,7 @@ function p.ShowUI()
 	dlg_menu.SetNewUI( p );
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
+	PlayMusic_Country();
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		
@@ -468,6 +469,13 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			end
 		end
 	end
+end
+
+function p.ShowBuildUP()
+	WriteCon("PRODUCE");
+	--maininterface.ShowUI();
+	country_building.ShowUI(p.countryInfoT)
+	p.CloseUI();
 end
 
 function p.HideUI()

@@ -1,0 +1,269 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_20]
+Type=1
+Tag=25
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\stage_02.png
+NormalFileUV=0 0 720 1136
+
+[CTRL_BUTTON_CHAPTER1]
+Type=2
+Tag=8
+Rect=337 727 303 208
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER2]
+Type=2
+Tag=2
+Rect=-11 578 308 311
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER3]
+Type=2
+Tag=3
+Rect=430 422 208 245
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER4]
+Type=2
+Tag=4
+Rect=418 122 222 267
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER5]
+Type=2
+Tag=5
+Rect=204 308 219 251
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER6]
+Type=2
+Tag=6
+Rect=5 259 200 256
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD1]
+Type=1
+Tag=9
+Rect=478 842 145 50
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD2]
+Type=1
+Tag=10
+Rect=40 720 145 50
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD3]
+Type=1
+Tag=11
+Rect=463 521 145 50
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD4]
+Type=1
+Tag=12
+Rect=464 239 145 50
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD5]
+Type=1
+Tag=14
+Rect=228 462 145 49
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD6]
+Type=1
+Tag=17
+Rect=28 356 145 50
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CHAPTER1]
+Type=4
+Tag=18
+Rect=486 849 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CHAPTER2]
+Type=4
+Tag=19
+Rect=50 727 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CHAPTER3]
+Type=4
+Tag=20
+Rect=472 528 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CHAPTER4]
+Type=4
+Tag=21
+Rect=474 246 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CHAPTER5]
+Type=4
+Tag=22
+Rect=236 469 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CHAPTER6]
+Type=4
+Tag=24
+Rect=37 363 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_RETURN]
+Type=2
+Tag=23
+Rect=5 140 122 60
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
+
+[CTRL_BUTTON_CHAPTER7]
+Type=2
+Tag=26
+Rect=165 11 200 245
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD7]
+Type=1
+Tag=28
+Rect=182 91 145 50
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_CHAPTER7]
+Type=4
+Tag=27
+Rect=194 97 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
