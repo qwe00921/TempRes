@@ -77,13 +77,13 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
     self.originPos = self.atkplayerNode:GetCenterPos();
 	if self.isAoe == true then
 		if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战
-			self.enemyPos = w_battle_mgr.GetScreenCenterPos();	
+			self.enemyPos = w_battle_mgr.GetScreenCenterPos();
 		else  --远程,在自己位置上,没有目标
 			self.enemyPos = nil;
 		end;
 		self.targetLst = targetLst;
 	else
-	    self.enemyPos = tarFighter:GetFrontPos(self.atkplayerNode);	
+	    self.enemyPos = tarFighter:GetFrontPos(self.atkplayerNode);
 		self.targetLst = {}
 		self.targetLst[1] = tarFighter;
 	end
@@ -182,11 +182,16 @@ function p:atk_start()
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		--向攻击目标移动
 		local cmdMove = nil;
-		if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-			cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
-		else
+		local fX = GetWinSize().w / 2.0;
+		local fY = GetWinSize().h / 2.0;
+		self.enemyPos = CCPointMake(fX,fY);
+		
+		--WriteCon(string.format("X:%d,Y:%d",fX,fY));
+		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		--	cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
+		--else
 			cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
-		end
+	--	end
 		
 		
 		local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", seqTarget);
@@ -483,11 +488,7 @@ function p:atk_end()
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
         --返回原来的位置
 		local cmd5 = nil;
-		if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-			cmd5 = JumpMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);	
-		else	
-			cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);		
-		end
+		cmd5 = JumpMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);	
 
 		atkFighter:cmdLua( "atk_moveback",  self.id, "", seqAtk ); 
 	else

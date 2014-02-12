@@ -399,7 +399,6 @@ end
 --获取战士前方坐标
 function p:GetFrontPos(targetNode)
 	local frontPos = self:GetPlayerNode():GetCenterPos();
-	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
  		local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w / 4 + targetNode:GetCurAnimRealSize().w / 4;
 		local lscale = GetUIScale();
 		if self.camp == E_CARD_CAMP_HERO then
@@ -407,17 +406,6 @@ function p:GetFrontPos(targetNode)
 		else
 			frontPos.x = frontPos.x + halfWidthSum * 2.0 * lscale;
 		end
-	else
-		local halfWidthSum = self:GetPlayerNode():GetFrameSize().w;
-		local lscale = GetUIScale();
-		lscale = 1;
-		
-		if self.camp == E_CARD_CAMP_HERO then
-			frontPos.x = frontPos.x - halfWidthSum * 2.0;
-		else
-			frontPos.x = frontPos.x + halfWidthSum * 2.0;
-		end
-	end;
     return frontPos;
 end
 

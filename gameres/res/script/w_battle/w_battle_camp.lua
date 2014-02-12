@@ -139,7 +139,7 @@ end;
 
 --获得预估还活着的怪物
 function p:GetFirstHasHpFighterID(pFighterID)
-	local lminSelId=7;  --
+	local lminSelId = 7;  --
 	local lId= pFighterID; --真实的ID
 	for k,v in ipairs(self.fighters) do
 		if ((v.nowlife > 0) and (v:GetId() ~= pFighterID))then			
@@ -296,7 +296,7 @@ function p:AddBoss()
 		node:SetZOrder( 3 );
 		f:SetLookAt( E_LOOKAT_RIGHT );
 	else
-		node:SetZOrder( 3 );
+		node:SetZOrder(3);
 		f:SetLookAt( E_LOOKAT_LEFT );
 	end
 end
@@ -314,16 +314,25 @@ function p.AddHeroFightersJumpEffect()
 		WriteCon( "get player node failed" );
 		return;
 	end
-		
+
 	local pOldPos = node:GetCenterPos();
 	
-	local lwinWidth = GetWinSize().w;	
-	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * 2);	
+	local lwinWidth = GetWinSize().w;
+
+	local fTemp = 0.0;
+		
+	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		fTemp = 320.0;
+	else
+		fTemp = 640.0;
+	end	
+	
+	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp));
 	--local lscale = GetUIScale();
 	local x = pOldPos.x - loffset;
 	local y = pOldPos.y;
 	
-	local pNewPos = CCPointMake(x,y);	
+	local pNewPos = CCPointMake(x,y);
 	pFighter:SaveOldPos(pNewPos);
 	
 	local batch = battle_show.GetNewBatch();
@@ -348,7 +357,15 @@ function p.AddEnemyFightersJumpEffect()
 	local pOldPos = node:GetCenterPos();
 	
 	local lwinWidth = GetWinSize().w;	
-	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * 2);		
+	local fTemp = 0.0;
+		
+	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		fTemp = 320.0;
+	else
+		fTemp = 640.0;
+	end
+	
+	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp));		
 	--local lscale = GetUIScale();
 	local x = pOldPos.x + loffset;
 	local y = pOldPos.y;
@@ -448,8 +465,17 @@ function p:AddFighters( uiArray, fighters )
         
 		
 		local lwinWidth = GetWinSize().w;
-		local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320);
+
+		local fTemp = 0.0;
+		
+		if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+			fTemp = 320.0;
+		else
+			fTemp = 640.0;
+		end
+		
 		local lscale = GetUIScale();
+		local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp) * lscale);
 		
 		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 			--有跳入动作
@@ -532,8 +558,8 @@ function p:AddFighters( uiArray, fighters )
 		
 		local lscale = GetUIScale();
 		local lframe = node:GetFrameSize();
-		local x = lframe.w*lscale;
-		local y = lframe.h*lscale;
+		local x = lframe.w * lscale;
+		local y = lframe.h * lscale;
 		node:SetFrameSize(x,y);
 		
 		if self:IsHeroCamp() then
