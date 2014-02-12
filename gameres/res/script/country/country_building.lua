@@ -25,7 +25,7 @@ function p.ShowUI(countryInfo)
 	WriteCon("p.nowPlayMoney == "..p.nowPlayMoney);
 	WriteCon("p.nowPlaySoul == "..p.nowPlaySoul);
 
-	--dlg_menu.SetNewUI( p );
+	dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
 	maininterface.HideUI();
 	if countryInfo == nil then
@@ -345,9 +345,9 @@ function p.ClearData()
 	p.nowProduceLevel = nil;
 end
 
--- function p.UIDisappear()
-	-- p.CloseUI();
--- end
+function p.UIDisappear()
+	p.CloseUI();
+end
 -- "build_type": 2,
 -- "build_level": 1,
 -- "is_upgrade": 0,
