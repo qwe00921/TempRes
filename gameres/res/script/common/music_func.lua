@@ -113,6 +113,16 @@ function PlayMusic_ShopUI()
 	end
 end
 
+function PlayMusic_Country()
+	if MUSIC_GLOBAL_SILENT == 0 then
+		return;
+	end
+	
+	PlayBGMusicByName( "bgm_country.mp3" ); 
+	MUSIC_GLOBAL_MUSICE = 6
+	
+end
+
 --Õ£÷π±≥æ∞“Ù¿÷
 function StopMusic()
     StopBGMusic();

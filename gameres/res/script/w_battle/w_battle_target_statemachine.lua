@@ -35,6 +35,10 @@ end;
 function p:setInHurt(atkFighter)
 	self.atkFighter = atkFighter;
 	local targerFighter = self.tarFighter;
+	
+	if w_battle_mgr.NeedQuit == true then --中途退出,直接结束
+		self:targerTurnEnd();
+	end
 	--self.playNode = targerFighter:GetNode()
 	--self.oldPos = self.playNode:GetCenterPos()
 	--WriteCon( " targetTurn start tarid="..tostring(targerFighter:GetId()));

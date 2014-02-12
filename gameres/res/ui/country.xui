@@ -3,6 +3,18 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_TEAM]
+Type=2
+Tag=61
+Rect=328 868 89 90
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_BUTTON_MOUNTAIN]
 Type=2
 Tag=2
@@ -42,7 +54,7 @@ UIClsoeType=0
 [CTRL_BUTTON_RIVER]
 Type=2
 Tag=10
-Rect=267 227 164 121
+Rect=267 227 164 124
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -102,7 +114,7 @@ UIClsoeType=0
 [CTRL_BUTTON_STORE]
 Type=2
 Tag=28
-Rect=11 596 145 165
+Rect=11 596 156 165
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -123,7 +135,7 @@ UIClsoeType=0
 [CTRL_PIC_PRODUCE_HEAD_BG]
 Type=1
 Tag=15
-Rect=479 462 118 38
+Rect=485 434 118 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -132,7 +144,7 @@ UIClsoeType=0
 [CTRL_PIC_MERGE_HEAD_BG]
 Type=1
 Tag=14
-Rect=462 272 118 38
+Rect=471 272 118 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -141,7 +153,7 @@ UIClsoeType=0
 [CTRL_PIC_EQUIP_HEAD_BG]
 Type=1
 Tag=12
-Rect=320 392 118 38
+Rect=321 366 118 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -159,7 +171,7 @@ UIClsoeType=0
 [CTRL_PIC_HOME_ITEM_BG]
 Type=1
 Tag=24
-Rect=41 404 107 30
+Rect=31 503 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -168,7 +180,7 @@ UIClsoeType=0
 [CTRL_PIC_PRODUCE_ITEM_BG]
 Type=1
 Tag=23
-Rect=485 427 107 30
+Rect=493 490 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -177,7 +189,7 @@ UIClsoeType=0
 [CTRL_PIC_MERGE_TIME_BG]
 Type=1
 Tag=21
-Rect=468 240 107 30
+Rect=460 348 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -186,7 +198,7 @@ UIClsoeType=0
 [CTRL_PIC_EQUIP_ITEM_BG]
 Type=1
 Tag=22
-Rect=326 362 107 30
+Rect=333 417 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -195,7 +207,7 @@ UIClsoeType=0
 [CTRL_PIC_STORE_ITEM_BG]
 Type=1
 Tag=31
-Rect=41 610 107 30
+Rect=42 687 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -217,7 +229,7 @@ UIClsoeType=0
 [CTRL_TEXT_PRODUCE_LV]
 Type=4
 Tag=18
-Rect=482 466 112 27
+Rect=488 438 112 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -230,7 +242,7 @@ UIClsoeType=0
 [CTRL_TEXT_MERGE_LV]
 Type=4
 Tag=17
-Rect=468 277 107 27
+Rect=477 277 107 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -243,7 +255,7 @@ UIClsoeType=0
 [CTRL_TEXT_EQUIP_LV]
 Type=4
 Tag=11
-Rect=326 395 107 27
+Rect=327 369 107 27
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -286,7 +298,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_EXP_HOME]
 Type=9
 Tag=32
-Rect=42 404 107 30
+Rect=31 503 107 30
 AnchorPos=0 0
 Notes=
 TextSize=14
@@ -300,7 +312,7 @@ NormalFileUV=0 0 176 28
 [CTRL_EXP_PRODUCE]
 Type=9
 Tag=38
-Rect=485 428 107 30
+Rect=493 491 107 30
 AnchorPos=0 0
 Notes=
 TextSize=14
@@ -314,7 +326,7 @@ NormalFileUV=0 0 176 28
 [CTRL_EXP_MERGE]
 Type=9
 Tag=39
-Rect=468 237 107 30
+Rect=460 345 107 30
 AnchorPos=0 0
 Notes=
 TextSize=14
@@ -328,7 +340,7 @@ NormalFileUV=0 0 176 28
 [CTRL_EXP_EQUIP]
 Type=9
 Tag=40
-Rect=326 360 107 30
+Rect=333 415 107 30
 AnchorPos=0 0
 Notes=
 TextSize=14
@@ -342,7 +354,7 @@ NormalFileUV=0 0 176 28
 [CTRL_EXP_STORE]
 Type=9
 Tag=41
-Rect=40 607 107 30
+Rect=42 687 107 30
 AnchorPos=0 0
 Notes=
 TextSize=14
@@ -356,7 +368,7 @@ NormalFileUV=0 0 176 28
 [CTRL_TEXT_HOME_TIME]
 Type=4
 Tag=35
-Rect=43 406 107 30
+Rect=31 503 107 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -369,7 +381,7 @@ UIClsoeType=0
 [CTRL_TEXT_PRODUCE_ITEM]
 Type=4
 Tag=33
-Rect=485 427 107 30
+Rect=493 490 107 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -382,7 +394,7 @@ UIClsoeType=0
 [CTRL_TEXT_MERGE_TIME]
 Type=4
 Tag=34
-Rect=468 240 107 30
+Rect=460 348 107 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -395,7 +407,7 @@ UIClsoeType=0
 [CTRL_TEXT_EQUIP_TIME]
 Type=4
 Tag=36
-Rect=326 361 107 30
+Rect=333 416 107 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -408,7 +420,7 @@ UIClsoeType=0
 [CTRL_TEXT_STORE_TIME]
 Type=4
 Tag=37
-Rect=36 608 115 30
+Rect=38 687 115 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -455,7 +467,7 @@ UIClsoeType=0
 [CTRL_PICTURE_40]
 Type=1
 Tag=46
-Rect=293 272 107 32
+Rect=293 310 107 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0

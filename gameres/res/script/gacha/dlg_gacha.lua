@@ -391,8 +391,10 @@ function p.onFreeTime( )
 	end
 	
 	if not needTime then
-		KillTimer(p.idTimerRefresh);
-		p.idTimerRefresh = nil;
+		if p.idTimerRefresh ~= nil then
+			KillTimer(p.idTimerRefresh);
+			p.idTimerRefresh = nil;
+		end
 	end
 end
 

@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_card_group = {};
 local p =  ui_card_group;
+p.ID_CTRL_PICTURE_17					     = 17;
 p.ID_CTRL_PICTURE_16					     = 16;
 p.ID_CTRL_PICTURE_15					     = 15;
 p.ID_CTRL_PICTURE_14					     = 14;
@@ -17,3 +18,4 @@ p.ID_CTRL_TEXT_8						        = 9;
 p.ID_CTRL_PICTURE_7					      = 8;
 p.ID_CTRL_TEXT_38_DELETE				  = 38;
 p.ID_CTRL_BUTTON_BACK					    = 5;
+p.ID_CTRL_BUTTON_177					     = 177;

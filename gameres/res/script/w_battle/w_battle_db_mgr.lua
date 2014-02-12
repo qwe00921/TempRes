@@ -20,7 +20,7 @@ p.roundBuffEffectData = nil; --BUFF特O效数据
 
 p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
-p.step = 1;      --回合结束时, 当前波次+1,调用过场动画
+p.step = 0;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
 p.IsDebug = false;
 
@@ -797,6 +797,26 @@ function p.nextStep()
 		local EquipDrop = {};
 		local ItemDrop = {};
 		local CardDrop = {};
+		--local lstep = ;
+		local dropItemLst = p.Drop["step"..tostring(p.step)];
+		if dropItemLst ~= nil then
+			for k,v in ipairs(dropItemLst) do
+				if tonumber(v.item_type) == 1 then
+					for i=1,v.num do
+						ItemDrop[#ItemDrop + 1] = tonumber(v.item_id)
+					end;
+				elseif tonumber(v.item_type) == 2 then
+					for i=1,v.num do
+						CardDrop[#CardDrop + 1] = tonumber(v.item_id)
+					end;
+				elseif tonumber(v.item_type) == 3 then
+					for i=1,v.num do
+						EquipDrop[#EquipDrop + 1] = tonumber(v.item_id)
+					end;
+				end
+			end
+		end;
+		--[[
 		for i=1, #p.Drop do
 			local dropItem = p.Drop[i];
 			if dropItem.step == p.step then  --取出服务端下发的某个波次要掉落的groupid
@@ -814,7 +834,7 @@ function p.nextStep()
 				--SelectRowList();
 			end;
 		end;
-
+]]--
 		local monsterMax = #p.targetCardList;
 		for k,v in ipairs(EquipDrop) do
 			local itemid = v;

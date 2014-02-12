@@ -365,4 +365,7 @@ end
 function p.UIDisappear()
 	p.CloseUI();
 	--maininterface.BecomeFirstUI();
+	maininterface.BecomeFirstUI();
+	maininterface.CloseAllPanel();
+	maininterface.ShowUI();
 end

@@ -316,7 +316,7 @@ function p.AddHeroFightersJumpEffect()
 	end
 
 	local pOldPos = node:GetCenterPos();
-	
+
 	local lwinWidth = GetWinSize().w;
 
 	local fTemp = 0.0;
@@ -328,6 +328,11 @@ function p.AddHeroFightersJumpEffect()
 	end	
 	
 	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp));
+
+	--local lwinWidth = GetWinSize().w;	
+	--update by csd
+	--w_battle_mgr.platformScale in win32 is 1, in other is 2 
+	--local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * w_battle_mgr.platformScale);	
 	--local lscale = GetUIScale();
 	local x = pOldPos.x - loffset;
 	local y = pOldPos.y;
@@ -366,6 +371,10 @@ function p.AddEnemyFightersJumpEffect()
 	end
 	
 	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp));		
+	--local lwinWidth = GetWinSize().w;
+	--update by csd	
+	--w_battle_mgr.platformScale in win32 is 1, in other is 2
+	--local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * w_battle_mgr.platformScale);		
 	--local lscale = GetUIScale();
 	local x = pOldPos.x + loffset;
 	local y = pOldPos.y;
@@ -512,9 +521,9 @@ function p:AddFighters( uiArray, fighters )
 			if self.idCamp == E_CARD_CAMP_HERO then
 				f.Attack = 1;
 				f.Defence = 1;
-				--f.Sp = 100;
-				if f.Position == 1 then
-					f.Skill = 1002	
+				--
+				if f.Position == 2 then
+					f.Sp = 100;
 				end
 				
 				--f.Defence = f.Defence + 200;

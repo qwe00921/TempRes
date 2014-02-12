@@ -15,13 +15,13 @@ UIClsoeType=0
 [CTRL_PICTURE_BG]
 Type=1
 Tag=294
-Rect=1 -350 640 977
+Rect=1 -350 640 1010
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\mapbg\101011.png
-NormalFileUV=0 0 1454 2291
+NormalFile=.\res\image\mapbg\1.png
+NormalFileUV=0 0 720 1136
 
 [CTRL_PICTURE_BG1]
 Type=1

@@ -1,4 +1,4 @@
---------------------------------------------------------------
+ --------------------------------------------------------------
 -- FileName: 	w_battle_mgr.lua
 -- author:		zhangwq, 2013/06/20
 -- purpose:		战斗管理器（单实例）demo v2.0
@@ -59,14 +59,22 @@ p.PickEndEvent = nil;
 p.dropHpBall = 0;
 p.dropSpBall = 0;
 p.platform = 1;
+p.platformScale = 1;
 p.isClose = false;
 
 p.IsGuid = false;  --战斗引导
 p.step = nil;
 p.substep = nil;
+p.NeedQuit = false;
 
 function p.init()
 	p.platform = GetFlatform();
+	if p.platform == W_PLATFORM_WIN32 then
+		p.platformScale = 1;
+	else
+		p.platformScale = 2;
+	end
+	p.NeedQuit = false;
 	p.isClose = false;	
 	--p.heroCamp = nil;			--玩家阵营
 	p.enemyCamp = nil;			--敌对阵营
@@ -184,6 +192,11 @@ end;
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVEAtkID(atkID,IsMonster,targetID)
     WriteCon( "SetPVEAtkID:"..tonumber(atkID));
+	if p.NeedQuit == true then
+		WriteCon( "Quit! SetPVEAtkID");
+		return ;
+    end	
+	
     if p.battleIsStart ~= true then
 		WriteCon( "Warning! Battle not Start");
 		return false;
@@ -285,6 +298,11 @@ end;
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
+	if p.NeedQuit == true then
+		WriteCon( "Quit! SetPVEAtkID");
+		return ;
+    end	
+
 	local atkFighter = nil;
 	if IsMonster == true then
 		atkFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( atkID ) );
@@ -447,26 +465,30 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		end;
 	else --主动恢复 or 加BUFF or 复活,   复活只在物品中使用
 		--主动恢复或加BUFF技能类技能,不论是否群体都 站原地
-		local damage = 0;
+		local addhp = 0;
 		if skillType == 2 then  --恢复类的有加血
-			damage = w_battle_atkDamage.SkillBuffDamage(skillID,atkFighter);
-			for k,v in ipairs(latkCap.fighters) do
+			addhp = w_battle_atkDamage.SkillBuffDamage(skillID,atkFighter);
+			--[[for k,v in ipairs(latkCap.fighters) do
 				targetFighter = v;
 				if targetFighter.Hp > 0 then
 					damageLst[#ltargetLst + 1] = damage
 					ltargetLst[#ltargetLst + 1] = targetFighter
 				end;
 			end;
+			]]--
 		end;
 		
 		if (targetType == W_SKILL_TARGET_TYPE_11) then --自己
 			targetFighter = atkFighter;
+			if skillType == 2 then  --恢复类的有加血
+				damageLst[1] = addhp
+			end;
 			ltargetLst[1] = targetFighter;
 		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --已方群体
 			for k,v in ipairs(latkCap.fighters) do
 				targetFighter = v;
 				if targetFighter.Hp > 0 then
-					--damageLst[#ltargetLst + 1] = damage
+					damageLst[#ltargetLst + 1] = addhp
 					ltargetLst[#ltargetLst + 1] = targetFighter
 				end;
 			end;				
@@ -609,6 +631,10 @@ end;
 --我方BUFF阶断
 function p.HeroBuffStarTurn()
 	WriteCon( "HeroBuffStarTurn");
+	if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
 	p.atkCampType = W_BATTLE_HERO;
 	p.SetCampZorder();
 	calBuff(W_BATTLE_HERO);
@@ -623,6 +649,12 @@ end;
 --我方BUFF结束
 function p.HeroBuffTurnEnd()
 	WriteCon( "HeroBuffTurnEnd");	
+	
+   if p.NeedQuit == true then
+		p.Quit();
+		return ;
+   end	
+	
 	if p.heroCamp:isAllDead() == true then  --我方全死
         p.FightLose();	
 	elseif p.heroCamp:HasTurn() == true then -- 有可以行动的
@@ -646,7 +678,12 @@ end;
 
 --我方行动结束
 function p.HeroTurnEnd()
-	WriteCon( "HeroTurnEnd");	
+	WriteCon( "HeroTurnEnd");
+    if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end		
+		
 	p.PickEndEvent = p.CheckEnemyAllDied;
 	p.IsPickEnd = false;
 	p.dropHpBall = 0;
@@ -656,7 +693,12 @@ end;
 
 --敌方BUFF开始
 function p.EnemyBuffStarTurn()
-	WriteCon( "EnemyBuffStarTurn");	
+   WriteCon( "EnemyBuffStarTurn");	
+   if p.NeedQuit == true then
+		p.Quit();
+		return ;
+   end
+
    p.atkCampType = W_BATTLE_ENEMY;
    p.EnemyBuffDie = false;
    p.SetCampZorder();
@@ -718,6 +760,11 @@ end;
 function p.EnemyBuffTurnEnd()
 	WriteCon( "EnemyBuffTurnEnd");	
 	p.atkCampType = W_BATTLE_ENEMY 
+	if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
+	
 	if p.EnemyBuffDie == true then --有死亡发生
 		p.PickEndEvent = p.CheckEnemyAllDied;
 		p.IsPickEnd = false;
@@ -751,6 +798,11 @@ end;
 function p.EnemyStarTurn()  --怪物回合开始
 	WriteCon( "EnemyStarTurn");	
 	--p.EnemyTurnEnd() --暂时判定敌方回合结束
+    if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
+	
 	lcount = 0;
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
@@ -788,13 +840,22 @@ end;
 --敌方回合结束
 function p.EnemyTurnEnd()
 	WriteCon( "EnemyTurnEnd");	
+	if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
+	
 	p.HeroBuffStarTurn();
 end;
 
 --敌方是否全挂
 function p.CheckEnemyAllDied()
 	if p.enemyCamp:isAllDead() == true then 	--怪物死光了, 波次结束 or 战斗结束
-		p.FightWin();
+		if p.IsGuid == false then
+			p.FightWin();
+		else
+			p.GuidFightWin();
+		end;
 	else	
 		if p.atkCampType == W_BATTLE_HERO then --当前是我方行动刚结束后的拾取
 			p.EnemyBuffStarTurn() 
@@ -821,6 +882,11 @@ function p.FightWin()
 	end
 end;
 
+--引导的战斗胜利
+function p.GuidFightWin()
+	
+end
+
 --战斗失败
 function p.FightLose()  
 	KillTimer(p.buffTimerID);
@@ -831,6 +897,27 @@ end;
 function p.MissionLose()
 	p.QuitBattle()
 	p.SendResult(0);	
+end;
+
+function p.Quit()
+	KillTimer(p.buffTimerID);
+	w_battle_pve.MissionOver(p.MissionQuit);	
+end;
+
+function p.readlyQuit()
+	--KillTimer(p.buffTimerID);
+	--没有续打,只有失败界面
+	p.NeedQuit = true;		
+	p.checkTurnEnd();
+end;
+
+function p.MissionQuit()
+	p.QuitBattle()
+	--p.SendResult(3);	
+	dlg_menu.ShowUI();
+    dlg_userinfo.ShowUI();
+	maininterface.ShowUI()
+	--stageMap_main.OpenWorldMap();
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
@@ -1059,6 +1146,11 @@ end;
 function p.checkTurnEnd()
 	--受击状态机全行动完成了且未在行动中, 攻击状态机没有处于行动中的
 	if (w_battle_machinemgr.checkAllTargetMachineEnd() == true) and (w_battle_machinemgr.checkAllAtkMachineHasTurn() == false) then
+		if p.NeedQuit == true then --中间退出,不论敌人是否死活,都要退出
+			p.Quit();			
+			return ;
+		end
+		
 		if p.atkCampType == W_BATTLE_HERO then	
 			if p.enemyCamp:isAllDead() == false then --还有活着的敌人
 				if w_battle_machinemgr.checkAllAtkMachineHasNotTurn() == false then  --不存在未行动的人
@@ -1352,7 +1444,7 @@ function p.fighterGuid(substep)
 		--移动到一半停下来, 显示遮照 rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 4 then
 		p.SetPVEAtkID(2); 		
-		p.SetPVEAtkID(1);  --只有一个怪,等怪死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+		p.SetPVEAtkID(1);  --只有一个怪,等怪全死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 5 then
 		rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 6 then
