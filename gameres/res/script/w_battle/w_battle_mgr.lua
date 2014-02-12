@@ -65,7 +65,7 @@ p.isClose = false;
 p.IsGuid = false;  --战斗引导
 p.step = nil;
 p.substep = nil;
-
+p.NeedQuit = false;
 
 function p.init()
 	p.platform = GetFlatform();
@@ -74,6 +74,7 @@ function p.init()
 	else
 		p.platformScale = 2;
 	end
+	p.NeedQuit = false;
 	p.isClose = false;	
 	--p.heroCamp = nil;			--玩家阵营
 	p.enemyCamp = nil;			--敌对阵营
@@ -191,6 +192,11 @@ end;
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVEAtkID(atkID,IsMonster,targetID)
     WriteCon( "SetPVEAtkID:"..tonumber(atkID));
+	if p.NeedQuit == true then
+		WriteCon( "Quit! SetPVEAtkID");
+		return ;
+    end	
+	
     if p.battleIsStart ~= true then
 		WriteCon( "Warning! Battle not Start");
 		return false;
@@ -292,6 +298,11 @@ end;
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
    WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
+	if p.NeedQuit == true then
+		WriteCon( "Quit! SetPVEAtkID");
+		return ;
+    end	
+
 	local atkFighter = nil;
 	if IsMonster == true then
 		atkFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( atkID ) );
@@ -620,6 +631,10 @@ end;
 --我方BUFF阶断
 function p.HeroBuffStarTurn()
 	WriteCon( "HeroBuffStarTurn");
+	if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
 	p.atkCampType = W_BATTLE_HERO;
 	p.SetCampZorder();
 	calBuff(W_BATTLE_HERO);
@@ -634,6 +649,12 @@ end;
 --我方BUFF结束
 function p.HeroBuffTurnEnd()
 	WriteCon( "HeroBuffTurnEnd");	
+	
+   if p.NeedQuit == true then
+		p.Quit();
+		return ;
+   end	
+	
 	if p.heroCamp:isAllDead() == true then  --我方全死
         p.FightLose();	
 	elseif p.heroCamp:HasTurn() == true then -- 有可以行动的
@@ -657,7 +678,12 @@ end;
 
 --我方行动结束
 function p.HeroTurnEnd()
-	WriteCon( "HeroTurnEnd");	
+	WriteCon( "HeroTurnEnd");
+    if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end		
+		
 	p.PickEndEvent = p.CheckEnemyAllDied;
 	p.IsPickEnd = false;
 	p.dropHpBall = 0;
@@ -667,7 +693,12 @@ end;
 
 --敌方BUFF开始
 function p.EnemyBuffStarTurn()
-	WriteCon( "EnemyBuffStarTurn");	
+   WriteCon( "EnemyBuffStarTurn");	
+   if p.NeedQuit == true then
+		p.Quit();
+		return ;
+   end
+
    p.atkCampType = W_BATTLE_ENEMY;
    p.EnemyBuffDie = false;
    p.SetCampZorder();
@@ -729,6 +760,11 @@ end;
 function p.EnemyBuffTurnEnd()
 	WriteCon( "EnemyBuffTurnEnd");	
 	p.atkCampType = W_BATTLE_ENEMY 
+	if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
+	
 	if p.EnemyBuffDie == true then --有死亡发生
 		p.PickEndEvent = p.CheckEnemyAllDied;
 		p.IsPickEnd = false;
@@ -762,6 +798,11 @@ end;
 function p.EnemyStarTurn()  --怪物回合开始
 	WriteCon( "EnemyStarTurn");	
 	--p.EnemyTurnEnd() --暂时判定敌方回合结束
+    if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
+	
 	lcount = 0;
 	for k,v in ipairs(p.enemyCamp.fighters) do 
 		local latkFighter = v;
@@ -799,6 +840,11 @@ end;
 --敌方回合结束
 function p.EnemyTurnEnd()
 	WriteCon( "EnemyTurnEnd");	
+	if p.NeedQuit == true then
+		p.Quit();
+		return ;
+    end
+	
 	p.HeroBuffStarTurn();
 end;
 
@@ -855,13 +901,23 @@ end;
 
 function p.Quit()
 	KillTimer(p.buffTimerID);
-	--没有续打,只有失败界面
 	w_battle_pve.MissionOver(p.MissionQuit);	
+end;
+
+function p.readlyQuit()
+	--KillTimer(p.buffTimerID);
+	--没有续打,只有失败界面
+	p.NeedQuit = true;		
+	p.checkTurnEnd();
 end;
 
 function p.MissionQuit()
 	p.QuitBattle()
-	p.SendResult(3);	
+	--p.SendResult(3);	
+	dlg_menu.ShowUI();
+    dlg_userinfo.ShowUI();
+	maininterface.ShowUI()
+	--stageMap_main.OpenWorldMap();
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
@@ -1090,6 +1146,11 @@ end;
 function p.checkTurnEnd()
 	--受击状态机全行动完成了且未在行动中, 攻击状态机没有处于行动中的
 	if (w_battle_machinemgr.checkAllTargetMachineEnd() == true) and (w_battle_machinemgr.checkAllAtkMachineHasTurn() == false) then
+		if p.NeedQuit == true then --中间退出,不论敌人是否死活,都要退出
+			p.Quit();			
+			return ;
+		end
+		
 		if p.atkCampType == W_BATTLE_HERO then	
 			if p.enemyCamp:isAllDead() == false then --还有活着的敌人
 				if w_battle_machinemgr.checkAllAtkMachineHasNotTurn() == false then  --不存在未行动的人
