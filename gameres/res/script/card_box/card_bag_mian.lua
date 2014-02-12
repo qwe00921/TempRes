@@ -28,9 +28,11 @@ p.cardListInfoSell = {}
 p.m_list = nil;
 
 function p.ShowUI()
-	if p.isReplace ~= true then
-		dlg_menu.SetNewUI( p );
-	end
+	dlg_menu.SetNewUI( p );
+	p.show();
+end
+
+function p.show()
 	maininterface.HideUI();
 	if p.layer ~= nil then 
 		p.CloseNotSelfUI();
@@ -65,7 +67,7 @@ function p.ShouReplaceUI(callback, hasRemove)
 	p.isReplace = true;
 	p.callback  = callback;
 	p.hasRemove = hasRemove;
-	p.ShowUI();
+	p.show();
 	if p.cardListInfo then
 		p.ShowCardList(p.cardListInfo);
 	else

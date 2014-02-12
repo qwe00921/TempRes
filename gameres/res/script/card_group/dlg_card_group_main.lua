@@ -930,9 +930,10 @@ function p.CloseUI()
 end
 
 function p.UIDisappear()
-	p.CloseUI();
+	
 	dlg_beast_main.CloseUI();
 	dlg_card_attr_base.CloseUI();
+	p.CloseUI();
 	
 	maininterface.BecomeFirstUI();
 end
