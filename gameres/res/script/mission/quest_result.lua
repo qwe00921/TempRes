@@ -19,6 +19,8 @@ function p.ShowUI(backData)
 		return
 	end
 	p.rewardAllData = rewardData;
+	maininterface.ShowUI();
+	maininterface.HideUI();
 	dlg_userinfo.ShowUI();
 
 	--如果战斗失败

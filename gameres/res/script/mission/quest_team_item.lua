@@ -19,6 +19,7 @@ function p.ShowUI(missionId,stageId,nowTeamId,storyId)
 		return
 	end
 	dlg_menu.SetNewUI( p );
+	maininterface.HideUI();
 
 	p.stageId = stageId;
 	p.missionId = missionId;
