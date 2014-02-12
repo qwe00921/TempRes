@@ -454,26 +454,30 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 		end;
 	else --主动恢复 or 加BUFF or 复活,   复活只在物品中使用
 		--主动恢复或加BUFF技能类技能,不论是否群体都 站原地
-		local damage = 0;
+		local addhp = 0;
 		if skillType == 2 then  --恢复类的有加血
-			damage = w_battle_atkDamage.SkillBuffDamage(skillID,atkFighter);
-			for k,v in ipairs(latkCap.fighters) do
+			addhp = w_battle_atkDamage.SkillBuffDamage(skillID,atkFighter);
+			--[[for k,v in ipairs(latkCap.fighters) do
 				targetFighter = v;
 				if targetFighter.Hp > 0 then
 					damageLst[#ltargetLst + 1] = damage
 					ltargetLst[#ltargetLst + 1] = targetFighter
 				end;
 			end;
+			]]--
 		end;
 		
 		if (targetType == W_SKILL_TARGET_TYPE_11) then --自己
 			targetFighter = atkFighter;
+			if skillType == 2 then  --恢复类的有加血
+				damageLst[1] = addhp
+			end;
 			ltargetLst[1] = targetFighter;
 		elseif (targetType == W_SKILL_TARGET_TYPE_12) then --已方群体
 			for k,v in ipairs(latkCap.fighters) do
 				targetFighter = v;
 				if targetFighter.Hp > 0 then
-					--damageLst[#ltargetLst + 1] = damage
+					damageLst[#ltargetLst + 1] = addhp
 					ltargetLst[#ltargetLst + 1] = targetFighter
 				end;
 			end;				
