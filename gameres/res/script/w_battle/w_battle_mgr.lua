@@ -59,14 +59,21 @@ p.PickEndEvent = nil;
 p.dropHpBall = 0;
 p.dropSpBall = 0;
 p.platform = 1;
+p.platformScale = 1;
 p.isClose = false;
 
 p.IsGuid = false;  --战斗引导
 p.step = nil;
 p.substep = nil;
 
+
 function p.init()
 	p.platform = GetFlatform();
+	if p.platform == W_PLATFORM_WIN32 then
+		p.platformScale = 1;
+	else
+		p.platformScale = 2;
+	end
 	p.isClose = false;	
 	--p.heroCamp = nil;			--玩家阵营
 	p.enemyCamp = nil;			--敌对阵营
@@ -794,7 +801,11 @@ end;
 --敌方是否全挂
 function p.CheckEnemyAllDied()
 	if p.enemyCamp:isAllDead() == true then 	--怪物死光了, 波次结束 or 战斗结束
-		p.FightWin();
+		if p.IsGuid == false then
+			p.FightWin();
+		else
+			p.GuidFightWin();
+		end;
 	else	
 		if p.atkCampType == W_BATTLE_HERO then --当前是我方行动刚结束后的拾取
 			p.EnemyBuffStarTurn() 
@@ -821,6 +832,11 @@ function p.FightWin()
 	end
 end;
 
+--引导的战斗胜利
+function p.GuidFightWin()
+	
+end
+
 --战斗失败
 function p.FightLose()  
 	KillTimer(p.buffTimerID);
@@ -831,6 +847,17 @@ end;
 function p.MissionLose()
 	p.QuitBattle()
 	p.SendResult(0);	
+end;
+
+function p.Quit()
+	KillTimer(p.buffTimerID);
+	--没有续打,只有失败界面
+	w_battle_pve.MissionOver(p.MissionQuit);	
+end;
+
+function p.MissionQuit()
+	p.QuitBattle()
+	p.SendResult(3);	
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
@@ -1352,7 +1379,7 @@ function p.fighterGuid(substep)
 		--移动到一半停下来, 显示遮照 rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 4 then
 		p.SetPVEAtkID(2); 		
-		p.SetPVEAtkID(1);  --只有一个怪,等怪死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+		p.SetPVEAtkID(1);  --只有一个怪,等怪全死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 5 then
 		rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 6 then
