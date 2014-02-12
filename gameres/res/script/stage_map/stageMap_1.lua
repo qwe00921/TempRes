@@ -12,7 +12,7 @@ function p.ShowUI()
 	--maininterface.m_bgImage:SetVisible(false);
 	dlg_userinfo.HideUI();
 	dlg_menu.ShowUI();
-	if p.layer ~= nil then 
+	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
 	end
@@ -26,7 +26,7 @@ function p.ShowUI()
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	
-	local pic = GetPictureByAni("lancer.stage_background", 0); 
+	local pic = GetPictureByAni("lancer.stage_background", 0);
 	maininterface.m_bgImage:SetPicture( pic );
 	maininterface.m_bgImage:SetFrameRectByPictrue(pic);
 	

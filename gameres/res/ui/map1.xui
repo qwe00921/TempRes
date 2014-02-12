@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -78,7 +78,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
-Rect=138 697 145 50
+Rect=139 697 145 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -136,6 +136,7 @@ Rect=147 704 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -148,6 +149,7 @@ Rect=430 578 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -156,10 +158,11 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER3]
 Type=4
 Tag=20
-Rect=110 457 123 34
+Rect=109 457 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -172,6 +175,7 @@ Rect=450 333 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -184,6 +188,7 @@ Rect=119 219 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -196,6 +201,7 @@ Rect=422 74 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0

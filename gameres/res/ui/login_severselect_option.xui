@@ -6,14 +6,14 @@ Height=640
 [CTRL_9SLICES_55]
 Type=22
 Tag=55
-Rect=9 13 315 61
+Rect=-1 2 347 79
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_title2.png
-NormalFileUV=0 0 249 51
+NormalFile=.\res\image\ui\country\levelup_btn.png
+NormalFileUV=0 0 226 66
 
 [CTRL_LOGIN_CTRL_PICTURE_SEVEROPTION]
 Type=1
@@ -40,7 +40,7 @@ NormalFileUV=0 0 62 58
 [CTRL_LOGIN_CTRL_BUTTON_SEVEROPTION]
 Type=2
 Tag=2
-Rect=9 0 327 81
+Rect=0 0 351 86
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -52,7 +52,7 @@ UIClsoeType=0
 [CTRL_LOGIN_CTRL_TEXT_SEVEROPTION]
 Type=4
 Tag=24
-Rect=35 16 262 50
+Rect=42 14 262 50
 AnchorPos=0 0
 Notes=
 Text=xxx区（xxxxxxxx）

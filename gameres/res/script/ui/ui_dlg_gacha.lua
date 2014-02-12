@@ -18,7 +18,6 @@ p.ID_CTRL_VERTICAL_LIST_BAG			= 1068;	--扭蛋list
 p.ID_CTRL_TEXT_77						       = 77;
 p.ID_CTRL_PICTURE_76					     = 76;
 p.ID_CTRL_BUTTON_73					      = 73;	--礼包按钮
-p.ID_CTRL_TEXT_72						       = 72;
 p.ID_CTRL_BUTTON_ITEMUI				   = 2;	--道具按钮
 p.ID_CTRL_BUTTON_GIFT_PACKUI			= 14;	--礼包按钮
 p.ID_CTRL_BUTTON_GACHAUI				  = 1;	--扭蛋按钮
