@@ -493,6 +493,8 @@ function p:AddFighters( uiArray, fighters )
 			elseif self.idCamp == E_CARD_CAMP_ENEMY then
 				pOldPos.x = pOldPos.x - loffset
 			end
+			
+			pOldPos = CCPointMake(200,200);
 			node:SetCenterPos(pOldPos);
 		--end;
 		--’Ω ø Ù–‘
