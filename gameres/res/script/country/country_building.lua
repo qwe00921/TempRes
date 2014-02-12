@@ -25,7 +25,7 @@ function p.ShowUI(countryInfo)
 	WriteCon("p.nowPlayMoney == "..p.nowPlayMoney);
 	WriteCon("p.nowPlaySoul == "..p.nowPlaySoul);
 
-	--dlg_menu.SetNewUI( p );
+	dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
 	maininterface.HideUI();
 	if countryInfo == nil then
@@ -65,6 +65,7 @@ end
 --初始化建筑
 function p.InitScrollList()
 	local posCtrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_BUILD );
+	--local posCtrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_MID_POS );
 	local bList = createNDUIScrollContainerExpand();
 	if nil == bList then
 		WriteConErr("createNDUIScrollContainerExpand() error");
@@ -75,9 +76,9 @@ function p.InitScrollList()
 	local size = posCtrller:GetFrameSize();
 	bList:Init();
 	bList:SetLuaDelegate( p.OnTouchList );
-	bList:SetFramePosXY( posXY.x, posXY.y+33 );
+	bList:SetFramePosXY( posXY.x, posXY.y );
 	bList:SetFrameSize( size.w, size.h );
-	bList:SetSizeView( CCSizeMake(216,100) );
+	bList:SetSizeView( CCSizeMake(200,0) );
 	for i = 1,p.buildNum do
 		local bView = createNDUIScrollViewExpand();
 		if bView == nil then
@@ -93,6 +94,7 @@ function p.InitScrollList()
 				if p.countryInfoT["B"..j] then
 					p.typeIndexT["L"..i] = p.countryInfoT["B"..j].build_type
 					p.nextTyep = j + 1
+					--WriteConErr(i.."=== "..p.typeIndexT["L"..i]);
 					break;
 				end
 			end
@@ -103,8 +105,8 @@ function p.InitScrollList()
 		-- end
 		-- WriteConErr("====================="..(p.typeIndexT["L"..i]));
 		
-		local btn = GetButton( bView, ui_country_levelup_btn.ID_CTRL_BUTTON_21 );
-		btn:SetImage( GetPictureByAni( "common_ui.buildBoxPic", tonumber(p.typeIndexT["L"..i])-1 ) );
+		local pic = GetImage( bView, ui_country_levelup_btn.ID_CTRL_PICTURE_82 );
+		pic:SetPicture( GetPictureByAni( "common_ui.buildBoxPic", tonumber(p.typeIndexT["L"..i])-1 ) );
 		--btn:SetLuaDelegate( p.OnTouchImage );
 		--btn:SetId(tonumber(p.typeIndexT["L"..i])-1);
 		
@@ -134,6 +136,7 @@ end
 --获取当前建筑TYPE
 function p.getNowType()
 	local indexId = p.scrollList:GetCurrentIndex()
+	--WriteCon("indexId ==== "..indexId);
 
 	indexId = indexId + 1;
 	local nowType = tonumber(p.typeIndexT["L"..indexId])
@@ -234,12 +237,6 @@ function p.SetDelegate()
 
 	local upBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_UP );
 	upBtn:SetLuaDelegate(p.OnBtnClick);
-
-	local leftBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
-	leftBtn:SetLuaDelegate(p.OnBtnClick);
-
-	local rightBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
-	rightBtn:SetLuaDelegate(p.OnBtnClick);
 end
 
 function p.OnBtnClick(uiNode,uiEventType,param)
@@ -252,10 +249,6 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		elseif ui.ID_CTRL_BUTTON_UP == tag then
 			WriteCon( "BUTTON_UP" );
 			p.upBuild();
-		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
-			WriteCon( "BUTTON_LEFT" );
-		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
-			WriteCon( "BUTTON_RIGHT" );
 		end
 	end
 end
@@ -352,9 +345,9 @@ function p.ClearData()
 	p.nowProduceLevel = nil;
 end
 
--- function p.UIDisappear()
-	-- p.CloseUI();
--- end
+function p.UIDisappear()
+	p.CloseUI();
+end
 -- "build_type": 2,
 -- "build_level": 1,
 -- "is_upgrade": 0,

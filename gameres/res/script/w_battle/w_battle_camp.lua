@@ -318,7 +318,9 @@ function p.AddHeroFightersJumpEffect()
 	local pOldPos = node:GetCenterPos();
 	
 	local lwinWidth = GetWinSize().w;	
-	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * 2);	
+	--update by csd
+	--w_battle_mgr.platformScale in win32 is 1, in other is 2 
+	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * w_battle_mgr.platformScale);	
 	--local lscale = GetUIScale();
 	local x = pOldPos.x - loffset;
 	local y = pOldPos.y;
@@ -347,8 +349,10 @@ function p.AddEnemyFightersJumpEffect()
 		
 	local pOldPos = node:GetCenterPos();
 	
-	local lwinWidth = GetWinSize().w;	
-	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * 2);		
+	local lwinWidth = GetWinSize().w;
+	--update by csd	
+	--w_battle_mgr.platformScale in win32 is 1, in other is 2
+	local loffset = W_BATTLE_JUMPSTAR * (lwinWidth / 320 * w_battle_mgr.platformScale);		
 	--local lscale = GetUIScale();
 	local x = pOldPos.x + loffset;
 	local y = pOldPos.y;

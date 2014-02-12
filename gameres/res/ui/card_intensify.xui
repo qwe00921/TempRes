@@ -6,26 +6,24 @@ Height=960
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=22
-Rect=0 163 120 80
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
-Text=返回
-TextTradition=返回
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\quest\button_public_select.png
 SelectedFileUV=0 0 100 80
 
 [CTRL_PICTURE_41]
 Type=1
 Tag=41
-Rect=390 209 107 35
+Rect=522 206 107 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -45,55 +43,41 @@ UIClsoeType=0
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=518 164 120 80
+Rect=512 140 122 60
 AnchorPos=0 0
 Notes=
-Text=筛选
-TextTradition=篩選
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\quest\button_public_select.png
-SelectedFileUV=0 0 100 80
-
-[CTRL_9SLICES_29]
-Type=22
-Tag=47
-Rect=0 725 640 133
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg2.png
-NormalFileUV=0 0 640 338
+NormalFile=.\res\image\ui\card_bag\return_1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_9SLICES_24]
 Type=22
 Tag=40
-Rect=2 719 640 120
+Rect=2 719 640 122
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\card_attr_base\bg4.png
+NormalFileUV=0 0 640 177
 
 [CTRL_TEXT_25]
 Type=4
 Tag=32
-Rect=405 210 80 32
+Rect=537 207 80 32
 AnchorPos=0 0
 Notes=
 Text=99/99
 TextTradition=99/99
-TextSize=20
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -195,48 +179,21 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_9SLICES_30]
-Type=22
-Tag=42
-Rect=131 166 235 75
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_TEXT_33]
-Type=4
-Tag=43
-Rect=140 176 207 54
-AnchorPos=0 0
-Notes=
-Text=请选择强化素材
-TextTradition=請選擇強化素材
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_31]
 Type=1
 Tag=48
-Rect=390 167 107 40
+Rect=415 208 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\card2.png
-NormalFileUV=0 0 192 108
+NormalFile=.\res\image\ui\card_bag\27.png
+NormalFileUV=0 0 121 34
 
 [CTRL_TEXT_34]
 Type=4
 Tag=49
-Rect=400 172 89 30
+Rect=430 209 77 29
 AnchorPos=0 0
 Notes=
 Text=星灵数量
@@ -275,3 +232,40 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\money.png
 NormalFileUV=0 0 32 32
+
+[CTRL_PICTURE_153]
+Type=1
+Tag=153
+Rect=171 116 299 91
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
+
+[CTRL_TEXT_33]
+Type=4
+Tag=43
+Rect=217 161 207 37
+AnchorPos=0 0
+Notes=
+Text=请选择强化素材
+TextTradition=請選擇強化素材
+TextSize=25
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_154]
+Type=1
+Tag=154
+Rect=540 148 67 46
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_bag\btn_sort_head_1.png
+NormalFileUV=0 0 67 46

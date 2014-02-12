@@ -64,11 +64,20 @@ end;
 
 --获得受击者状态机
 function p.getTarStateMachine(camp,pos)
+	local ltargetMachine = nil;
 	if tonumber(camp) == W_BATTLE_HERO then
-		return p.targetHeroMachineLst[pos]	
+		ltargetMachine =  p.targetHeroMachineLst[pos]	
 	else
-		return p.targetEnemyMachineLst[pos]
+		ltargetMachine = p.targetEnemyMachineLst[pos]
 	end
+	
+	if ltargetMachine ~= nil then
+		if w_battle_mgr.NeedQuit == true then --中途退出,直接结束
+			ltargetMachine:targerTurnEnd();
+			ltargetMachine = nil;
+		end
+	end	
+	return ltargetMachine;
 end
 
 --获得攻击者状态机
@@ -86,6 +95,14 @@ function p.getAtkStateMachine(pos)
 			latkMachine = v;
 		end;
 	end;
+	
+	if latkMachine ~= nil then
+		if w_battle_mgr.NeedQuit == true then --中途退出,直接结束
+			latkMachine:atkTurnEnd();
+			latkMachine = nil;
+		end
+	end	
+	
 	return latkMachine;
 end;
 
@@ -237,6 +254,13 @@ function p.getBuffStateMachine(id)
 			buffStateMachine = v;
 		end
 	end
+	
+	if buffStateMachine ~= nil then
+		if w_battle_mgr.NeedQuit == true then
+			buffStateMachine:BuffEnd();
+			buffStateMachine = nil;
+		end;
+	end;
 	return buffStateMachine;	
 end
 

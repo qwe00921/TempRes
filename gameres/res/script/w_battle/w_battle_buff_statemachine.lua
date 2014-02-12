@@ -50,6 +50,11 @@ function p:start()
 end;
 
 function p:nextBuff()
+	if w_battle_mgr.NeedQuit == true then
+		self:BuffEnd();
+		return ;
+	end;
+	
 	local fighter = self.fighter;
 	if fighter.Hp <= 0 then  --ËÀÍö
 		if fighter.canRevive == true then --¸´»î
