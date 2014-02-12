@@ -16,3 +16,4 @@ p.ID_CTRL_PICTURE_92					     = 92;
 p.ID_CTRL_TEXT_TITLE					     = 87;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_PICTURE_17					     = 17;
+p.ID_CTRL_BUTTON_211					     = 211;

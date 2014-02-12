@@ -470,6 +470,13 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	end
 end
 
+function p.ShowBuildUP()
+	WriteCon("PRODUCE");
+	--maininterface.ShowUI();
+	country_building.ShowUI(p.countryInfoT)
+	p.CloseUI();
+end
+
 function p.HideUI()
 	WriteCon("country_main.HideUI");
 	if p.layer ~= nil then
