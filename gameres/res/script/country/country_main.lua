@@ -19,6 +19,7 @@ function p.ShowUI()
 	dlg_menu.SetNewUI( p );
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
+	PlayMusic_Country();
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
 		
