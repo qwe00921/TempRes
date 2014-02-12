@@ -9,6 +9,8 @@ Tag=88
 Rect=0 0 620 224
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_48]
 Type=22
@@ -17,6 +19,8 @@ Rect=189 32 400 64
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -26,37 +30,15 @@ Tag=27
 Rect=14 6 594 208
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\shop\bg_shop.png
-NormalFileUV=0 0 594 208
-
-[CTRL_TEXT_GACHANAME]
-Type=4
-Tag=89
-Rect=197 49 282 30
-AnchorPos=0 0
-Notes=
-Text=黑暗魔法师卡包
-TextTradition=黑暗魔法師卡包
-TextSize=28
-TextColor=0xfffbf0
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-Remark=扭蛋名称
-
-[CTRL_PICTURE_PIC]
-Type=1
-Tag=90
-Rect=43 24 124 124
-AnchorPos=0 0
-Notes=
-Remark=扭蛋图片
-NormalFile=.\res\image\ui\gacha_1\gacha_cardgroup.PNG
-NormalFileUV=0 0 126 149
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\bnt_title.png
+NormalFileUV=0 0 587 176
 
 [CTRL_BUTTON_ONE]
 Type=2
 Tag=109
-Rect=181 114 203 80
+Rect=184 123 203 59
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -64,13 +46,15 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=抽取一次按钮
-NormalFile=.\res\image\ui\shop\gacha.png
-NormalFileUV=0 0 202 80
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_long.png
+NormalFileUV=0 0 198 58
 
 [CTRL_BUTTON_TEN]
 Type=2
 Tag=110
-Rect=393 114 203 80
+Rect=396 123 203 59
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -78,13 +62,15 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=抽取5次按钮
-NormalFile=.\res\image\ui\shop\gacha.png
-NormalFileUV=0 0 202 80
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_long.png
+NormalFileUV=0 0 198 58
 
 [CTRL_TEXT_FREE_TIME]
 Type=4
 Tag=112
-Rect=32 157 144 42
+Rect=32 147 144 42
 AnchorPos=0 0
 Notes=
 Text=23:57:33后可免费抽取1次
@@ -94,11 +80,13 @@ TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=免费扭蛋倒计时
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_FREE_MSG]
 Type=4
 Tag=11
-Rect=288 139 94 30
+Rect=277 136 94 30
 AnchorPos=0 0
 Notes=
 Text=免费
@@ -108,29 +96,35 @@ TextColor=0xff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=免费扭蛋文字
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=302 137 30 30
+Rect=291 136 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\main_interface\coin.png
-NormalFileUV=0 0 30 30
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\gem1.png
+NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_13]
 Type=1
 Tag=13
-Rect=517 137 30 30
+Rect=512 136 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\main_interface\coin.png
-NormalFileUV=0 0 30 30
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\gem1.png
+NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_EMONEY_ONCE]
 Type=4
 Tag=14
-Rect=331 137 46 30
+Rect=320 136 46 30
 AnchorPos=0 0
 Notes=
 Text=50
@@ -140,11 +134,13 @@ TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=抽取一次元宝
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_EMONEY_SOMETIMES]
 Type=4
 Tag=15
-Rect=543 137 48 30
+Rect=538 136 48 30
 AnchorPos=0 0
 Notes=
 Text=50
@@ -154,30 +150,61 @@ TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 Remark=抽取5次元宝
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_44]
 Type=1
 Tag=44
-Rect=38 22 130 130
+Rect=48 28 109 111
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\pic_buy.png
+NormalFileUV=0 0 98 99
 
 [CTRL_PICTURE_45]
 Type=1
 Tag=45
-Rect=200 133 107 38
+Rect=189 132 107 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\once.png
 NormalFileUV=0 0 85 30
 
 [CTRL_PICTURE_46]
 Type=1
 Tag=46
-Rect=420 133 107 38
+Rect=415 132 107 38
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\fivetimes.png
 NormalFileUV=0 0 85 30
+
+[CTRL_PICTURE_PIC]
+Type=1
+Tag=90
+Rect=52 31 98 98
+AnchorPos=0 0
+Notes=
+Remark=扭蛋图片
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\gacha_1\gacha_cardgroup.PNG
+NormalFileUV=0 0 126 149
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=179 42 136 39
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\junior.png
+NormalFileUV=0 0 136 39
