@@ -40,8 +40,8 @@ function p.ShowUI( gacharesult )
 	LoadDlg( "gacha_ing.xui", layer, nil );
 	
 	p.InitControllers();
-	
-	SetTimerOnce( p.DoShowCardEffect(), 2 );
+
+	SetTimerOnce( p.DoShowCardEffect, 1.5f );
 end
 
 function p.InitControllers()
@@ -49,7 +49,7 @@ function p.InitControllers()
 	btn:SetLuaDelegate( p.OnBtnClick );
 	
 	p.magic = GetImage( p.layer, ui.ID_CTRL_SPRITE_MAGICCIRCLE);
-	p.magic:AddFgEffect( "ui.gacha_magic_bg" );
+	p.ShowBgEffect();
 	
 	p.scaleImg = GetImage( p.layer, ui.ID_CTRL_PICTURE_SCALE );
 	
@@ -59,11 +59,19 @@ function p.InitControllers()
 	p.continueImg:SetVisible( false );
 end
 
+function p.ShowBgEffect()
+	if p.magic:HasAniEffect( "ui_cmb.gacha_bg_appear" ) then
+		p.magic:DelAniEffect( "ui_cmb.gacha_bg_appear" );
+	end
+	
+	p.magic:AddFgEffect( "ui_cmb.gacha_bg_appear" );	
+end
+
 function p.DoShowCardEffect()
 	if p.layer == nil then
 		return;
 	end
-	
+
 	if p.gacharesult == nil or p.gacharesult.card_ids == nil then
 		return;
 	end
@@ -73,7 +81,7 @@ function p.DoShowCardEffect()
 	if card == nil then
 		return;
 	end
-	
+
 	p.cardImg:SetVisible( false );
 	
 	if p.scaleImg:HasAniEffect( "ui.gacha_card_scale" ) then
@@ -81,7 +89,7 @@ function p.DoShowCardEffect()
 	end
 	p.scaleImg:AddFgEffect( "ui.gacha_card_scale" );
 	
-	SetTimerOnce( p.ShowCard, 0.39f );
+	SetTimerOnce( p.ShowCard, 1.25f );
 end
 
 function p.ShowCard()
@@ -106,14 +114,24 @@ function p.ShowCard()
 	if picData then
 		p.cardImg:SetPicture( picData );
 	end
+	p.cardImg:SetScale( 0 );
 	p.cardImg:SetVisible( true );
 	
-	if cardList[p.index+1] ~= nil then
-		SetTimerOnce( p.ShowNextCard, 0.5f );
-	else
-		p.continueImg:SetVisible(true);
-		p.continueImg:AddActionEffect( "ui_cmb.gacha_effect_scale" );
+	if p.cardImg:FindActionEffect( "lancer.gacha_show_card" ) then
+		p.cardImg:DelActionEffect( "lancer.gacha_show_card" );
 	end
+	p.cardImg:AddActionEffect( "lancer.gacha_show_card" );
+	
+	if cardList[p.index+1] ~= nil then
+		SetTimerOnce( p.ShowNextCard, 1.1f );
+	else
+		SetTimerOnce( p.ShowContinue, 0.6f );
+	end
+end
+
+function p.ShowContinue()
+	p.continueImg:SetVisible(true);
+	p.continueImg:AddActionEffect( "ui_cmb.gacha_effect_scale" );
 end
 
 function p.ShowNextCard()
