@@ -9,9 +9,9 @@ function p.ShowUI()
 	if p.isReplace ~= true then
 		dlg_menu.SetNewUI( p );
 	end
-	--maininterface.m_bgImage:SetVisible(false);
+	maininterface.HideUI();
 	dlg_userinfo.HideUI();
-	dlg_menu.ShowUI();
+	dlg_menu.HideUI();
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
@@ -145,7 +145,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			p.CloseUI();
 			maininterface.ShowUI();
 			dlg_userinfo.ShowUI();
-			--dlg_menu.ShowUI();
+			dlg_menu.ShowUI();
 		elseif (ui.ID_CTRL_BUTTON_CHAPTER1 == tag) then
 			p.openQusetView(uiNode)
 		elseif(ui.ID_CTRL_BUTTON_CHAPTER2 == tag) then

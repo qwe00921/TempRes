@@ -16,8 +16,8 @@ function p.ShowUI()
 	if country_building then
 		country_building.CloseUI()
 	end
-	maininterface.HideUI();
 	dlg_menu.SetNewUI( p );
+	maininterface.HideUI();
 	dlg_userinfo.HideUI();
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
