@@ -65,17 +65,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_EXP]
-Type=1
-Tag=52
-Rect=66 877 281 337
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\exp_full.png
-NormalFileUV=0 0 200 320
-
 [CTRL_BUTTON_UP]
 Type=2
 Tag=33
@@ -97,7 +86,7 @@ DisableFileUV=0 0 226 66
 [CTRL_TEXT_UP1]
 Type=4
 Tag=34
-Rect=87 246 467 34
+Rect=87 244 467 34
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -145,7 +134,7 @@ UIClsoeType=0
 [CTRL_PICTURE_BUILD]
 Type=1
 Tag=83
-Rect=63 490 520 150
+Rect=67 523 482 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -154,41 +143,11 @@ UIClsoeType=0
 [CTRL_PICTURE_MID_POS]
 Type=1
 Tag=17
-Rect=249 492 145 145
+Rect=264 523 110 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_BUTTON_LEFT]
-Type=2
-Tag=50
-Z_Order=1
-Rect=419 896 23 23
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\arrow_left.png
-NormalFileUV=0 0 23 23
-
-[CTRL_BUTTON_RIGHT]
-Type=2
-Tag=51
-Z_Order=1
-Rect=449 895 25 25
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\arrow_right.png
-NormalFileUV=0 0 25 26
 
 [CTRL_TEXT_BUILD_LV]
 Type=4
@@ -206,7 +165,7 @@ UIClsoeType=0
 [CTRL_TEXT_DESCRIPTION]
 Type=4
 Tag=36
-Rect=87 282 467 34
+Rect=87 280 467 34
 AnchorPos=0 0
 Notes=
 TextSize=18

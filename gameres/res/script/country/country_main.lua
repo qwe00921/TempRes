@@ -62,27 +62,27 @@ end
 function p.InitController()
 	--名字
 	uiNodeT.textNameT = {}
-	uiNodeT.textNameT[1] = "生产屋";
-	uiNodeT.textNameT[2] = "装备屋";
-	uiNodeT.textNameT[3] = "融合屋";
-	uiNodeT.textNameT[4] = "住宅";
-	uiNodeT.textNameT[5] = "材料仓库";
-	uiNodeT.textNameT[6] = "河流";
-	uiNodeT.textNameT[7] = "农田";
+	uiNodeT.textNameT[1] = "建筑所";
+	uiNodeT.textNameT[2] = "装备所";
+	uiNodeT.textNameT[3] = "合成所";
+	uiNodeT.textNameT[4] = "本宅";
+	uiNodeT.textNameT[5] = "仓库";
+	uiNodeT.textNameT[6] = "湖泊";
+	uiNodeT.textNameT[7] = "百草田";
 	uiNodeT.textNameT[8] = "矿山";
 	uiNodeT.textNameT[9] = "森林";
 	--名字，等级
-	local produceName = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_LV);
-	local equipName = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_LV);
-	local mergeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_MERGE_LV);
-	local homeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_HOME_LV);
-	local storeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_STORE_LV);
-	uiNodeT.headT = {}
-	uiNodeT.headT[1] = produceName;
-	uiNodeT.headT[2] = equipName;
-	uiNodeT.headT[3] = mergeName;
-	uiNodeT.headT[4] = homeName;
-	uiNodeT.headT[5] = storeName;
+	-- local produceName = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_LV);
+	-- local equipName = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_LV);
+	-- local mergeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_MERGE_LV);
+	-- local homeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_HOME_LV);
+	-- local storeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_STORE_LV);
+	-- uiNodeT.headT = {}
+	-- uiNodeT.headT[1] = produceName;
+	-- uiNodeT.headT[2] = equipName;
+	-- uiNodeT.headT[3] = mergeName;
+	-- uiNodeT.headT[4] = homeName;
+	-- uiNodeT.headT[5] = storeName;
 	--名字框
 	local headBoxBoxProduce = GetImage(p.layer, ui.ID_CTRL_PIC_PRODUCE_HEAD_BG);
 	local headBoxBoxEquit = GetImage(p.layer, ui.ID_CTRL_PIC_EQUIP_HEAD_BG);
@@ -207,12 +207,12 @@ function p.showCountryBuild(buildInfo)
 	for i = 1, 5 do
 		if buildInfo["B"..i] then
 			--显示名字，等级
-			local headText = uiNodeT.textNameT[i].."LV:"..(buildInfo["B"..i].build_level);
-			if uiNodeT.headT[i] then
-				uiNodeT.headT[i]:SetText(headText);
-			end
+			-- local headText = uiNodeT.textNameT[i].."LV:"..(buildInfo["B"..i].build_level);
+			-- if uiNodeT.headT[i] then
+				-- uiNodeT.headT[i]:SetText(headText);
+			-- end
 			--显示名字框
-			uiNodeT.headBoxT[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
+			--uiNodeT.headBoxT[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
 			--是否在升级
 			if tonumber(buildInfo["B"..i].is_upgrade) == 1 then
 				--显示背景图
