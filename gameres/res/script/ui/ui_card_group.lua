@@ -18,3 +18,4 @@ p.ID_CTRL_TEXT_8						        = 9;
 p.ID_CTRL_PICTURE_7					      = 8;
 p.ID_CTRL_TEXT_38_DELETE				  = 38;
 p.ID_CTRL_BUTTON_BACK					    = 5;
+p.ID_CTRL_BUTTON_177					     = 177;

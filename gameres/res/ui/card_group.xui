@@ -3,6 +3,18 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_177]
+Type=2
+Tag=177
+Rect=335 258 126 116
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=5
