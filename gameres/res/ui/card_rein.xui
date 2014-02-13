@@ -1133,8 +1133,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=3
 UIClsoeType=3
-NormalFile=.\res\image\ui\main_interface\money.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\main_interface\money3.png
+NormalFileUV=0 0 46 46
 
 [CTRL_PICTURE_227]
 Type=1
@@ -1144,8 +1144,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=3
 UIClsoeType=3
-NormalFile=.\res\image\ui\main_interface\money.png
-NormalFileUV=0 0 32 32
+NormalFile=.\res\image\ui\main_interface\money3.png
+NormalFileUV=0 0 46 46
 
 [CTRL_TEXT_NAME1]
 Type=4

@@ -189,14 +189,12 @@ NormalFileUV=0 0 85 30
 [CTRL_PICTURE_PIC]
 Type=1
 Tag=90
-Rect=36 24 98 98
+Rect=36 22 98 100
 AnchorPos=0 0
 Notes=
 Remark=扭蛋图片
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\gacha_1\gacha_cardgroup.PNG
-NormalFileUV=0 0 126 149
 
 [CTRL_PICTURE_23]
 Type=1
