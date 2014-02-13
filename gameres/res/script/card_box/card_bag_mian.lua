@@ -190,32 +190,32 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV1;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
-		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG1;
+		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV2;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
-		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG2;
+		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV3;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
-		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG3;
+		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
-		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG4;
+		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG4;
 	elseif cardIndex == 5 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV5;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
-		cardBoxBg = ui_list.ID_CTRL_PICTURE_BG5;
+		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG5;
 	end
 	
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
-	local cardBoxPic = GetImage(view,cardBoxBg );
+	--local cardBoxPic = GetImage(view,cardBoxBg );
 	local cardTeamPic = GetImage(view,cardTeam );
 	local cardLevelText = GetLabel(view,cardLevel );
 	
