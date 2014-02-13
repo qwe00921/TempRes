@@ -138,8 +138,7 @@ function p.DoEffectContent()
 	
 	local strText = GetSubStringUtf8( p.contentStr, p.contentIndex );
 	--WriteCon(strText);
-	WriteCon(string.format("Font Size %d",p.fontSize));
-	p.contentNode:SetFontSize(p.fontSize);
+	--p.contentNode:SetFontSize(p.fontSize);
 	p.contentNode:SetText(strText);
 
 	p.contentIndex = p.contentIndex + 1;

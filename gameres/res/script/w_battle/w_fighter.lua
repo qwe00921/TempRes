@@ -399,14 +399,14 @@ end
 --获取战士前方坐标
 function p:GetFrontPos(targetNode)
 	local frontPos = self:GetPlayerNode():GetCenterPos();
- 		local halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w / 5 + targetNode:GetCurAnimRealSize().w / 5;
-		local lscale = GetUIScale();
+ 	local halfWidthSum = self:GetPlayerNode():GetScreenRect().size.w / 5 + targetNode:GetScreenRect().size.w / 5;
+	local lscale = GetUIScale();
 
-		if self.camp == E_CARD_CAMP_HERO then
-			frontPos.x = frontPos.x - halfWidthSum * 2.0 * lscale;
-		else
-			frontPos.x = frontPos.x + halfWidthSum * 2.0 * lscale;
-		end
+	if self.camp == E_CARD_CAMP_HERO then
+		frontPos.x = frontPos.x - halfWidthSum * 2.0;
+	else
+		frontPos.x = frontPos.x + halfWidthSum * 2.0;
+	end
     return frontPos;
 end
 
