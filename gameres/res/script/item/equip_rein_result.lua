@@ -70,7 +70,7 @@ function p.initView(preItem,nowItem)
 	label:SetVisible(false); 
 	
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_NOW_1);
-	label:SetText(tostring(preItem.attrValue)); 
+	label:SetText(tostring(nowItem.attrValue)); 
 	label:SetVisible(false); 
 	
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_LABEL_2);

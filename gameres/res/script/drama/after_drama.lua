@@ -35,7 +35,7 @@ function p.DoAfterDrama()
 		end
 	elseif viewType == after_drama_data.CHAPTER then
 		dlg_drama.CloseUI()
-		stageMap_main.openChapter();
+		stageMap_main.openChapter(openView);
 		WriteCon("viewType CHAPTER ");
 	elseif viewType == after_drama_data.STAGE then
 		dlg_drama.CloseUI()

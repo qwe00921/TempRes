@@ -123,3 +123,9 @@ image\ui\country\locate_forest.png
 [country_open]
 image\ui\country\LiberationMountain_193x202.png
 image\ui\country\LiberationMountain_202x202.png
+
+;扭蛋名称图片
+[gacha_name]
+image\ui\shop\junior.png
+image\ui\shop\normal.png
+image\ui\shop\senior.png

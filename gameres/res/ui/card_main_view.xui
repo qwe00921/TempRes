@@ -3,15 +3,12 @@
 Width=640
 Height=960
 
-[CTRL_BUTTON_211]
-Type=2
-Tag=211
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
 Rect=18 250 110 110
 AnchorPos=0 0
 Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
@@ -164,7 +161,7 @@ SelectedFileUV=0 0 67 46
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=5 234 628 573
+Rect=5 234 628 529
 AnchorPos=0 0
 Notes=
 UIOpenType=0

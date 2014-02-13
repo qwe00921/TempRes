@@ -42,7 +42,7 @@ function p.ShowUI( gacharesult )
 	
 	p.InitControllers();
 
-	SetTimerOnce( p.DoShowCardEffect, 1.2f );
+	SetTimerOnce( p.DoShowCardEffect, 0.71f );
 end
 
 function p.InitControllers()

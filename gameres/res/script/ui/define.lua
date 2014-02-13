@@ -37,6 +37,7 @@ DoFile("ui/ui_quest_team_item.lua")
 DoFile("ui/ui_cha.lua")
 DoFile("ui/ui_item.lua")
 DoFile("ui/ui_map1.lua")
+DoFile("ui/ui_map2.lua")
 DoFile("ui/ui_quest_reward_view1.lua")
 DoFile("ui/ui_lost.lua")
 

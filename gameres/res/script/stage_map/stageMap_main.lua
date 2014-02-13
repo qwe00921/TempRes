@@ -17,28 +17,37 @@ function p.OpenWorldMap()
 	SendReq("Mission","ChapterList",uid,"");
 end
 
-function p.getChapterListCallBack(self)
+function p.getChapterListCallBack(data)
 
-	if self.result == true then
-		p.chapterId = tonumber(self.chapters.S1)
-		p.startPlayKey = tonumber(self.chapters.StoryId)
+	if data.result == true then
+		if data.chapters.S2 then
+			p.chapterId = tonumber(data.chapters.S2)
+		elseif data.chapters.S1 then
+			p.chapterId = tonumber(data.chapters.S1)
+		end
+		
+		p.startPlayKey = tonumber(data.chapters.StoryId)
 	end
 	
 	if p.startPlayKey == 0 then
-		p.openChapter()
+		p.openChapter(p.chapterId)
 	elseif p.startPlayKey == 1 then
 	--获取storyID
 		local storyId = 1;
-		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,1);
+		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,p.chapterId);
 	end
 
 end
 
 
-function p.openChapter()
-	--打开世界地图
-	WriteCon("to stageMap_main");
-	stageMap_1.ShowUI();
+function p.openChapter(mapId)
+	WriteCon("to mapId == "..mapId);
+	if mapId == 1 then
+		--打开世界地图
+		stageMap_1.ShowUI();
+	elseif mapId == 2 then
+		stageMap_2.ShowUI();
+	end
 end
 
 --关闭UI

@@ -6,34 +6,40 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 612 182
+Rect=0 0 640 213
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_BGINFO]
 Type=22
 Tag=26
-Rect=193 19 400 148
+Rect=155 28 400 148
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
 [CTRL_9SLICES_18]
 Type=22
 Tag=21
-Rect=11 2 594 177
+Rect=0 0 640 203
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\shop\bg_shop.png
-NormalFileUV=0 0 594 208
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\frame_buy.png
+NormalFileUV=0 0 587 176
 
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=5
-Rect=220 112 365 49
+Rect=160 123 436 54
 AnchorPos=0 0
 Notes=
 Text=道具说明道具说明道具说明道具说明道具说明道具说明道具说明
@@ -42,11 +48,13 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=6
-Rect=208 25 166 41
+Rect=161 33 166 41
 AnchorPos=0 0
 Notes=
 Text=小型体力药剂
@@ -55,11 +63,13 @@ TextSize=26
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_BUY_L]
 Type=2
 Tag=10
-Rect=32 116 136 56
+Rect=42 137 93 47
 AnchorPos=0 0
 Notes=
 Text=购买
@@ -68,24 +78,19 @@ TextSize=28
 TextColor=0xfeffaf
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\shop\buy.png
-NormalFileUV=0 0 126 52
-SelectFile=.\res\image\ui\shop\buy_click.png
-SelectedFileUV=0 0 126 52
-DisableFile=.\res\image\ui\common\btn_2_disable.png
-DisableFileUV=0 0 136 60
-
-[CTRL_PICTURE_11]
-Type=1
-Tag=11
-Rect=50 12 100 100
-AnchorPos=0 0
-Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_buy.png
+NormalFileUV=0 0 93 47
+SelectFile=.\res\image\ui\shop\btn_buy.png
+SelectedFileUV=0 0 93 47
+DisableFile=.\res\image\ui\shop\btn_buy.png
+DisableFileUV=0 0 93 47
 
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=12
-Rect=283 79 79 25
+Rect=237 88 79 25
 AnchorPos=0 0
 Notes=
 Text=20000
@@ -94,11 +99,13 @@ TextSize=24
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=35
-Rect=405 35 183 37
+Rect=409 33 183 37
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
@@ -107,11 +114,13 @@ TextSize=20
 TextColor=0xff0000
 TextHorAlign=AlignRight
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=37
-Rect=510 79 73 25
+Rect=517 88 73 25
 AnchorPos=0 0
 Notes=
 Text=50000
@@ -120,20 +129,24 @@ TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=50 12 100 100
+Rect=35 28 111 111
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\pic_buy.png
+NormalFileUV=0 0 98 99
 
 [CTRL_TEXT_28]
 Type=4
 Tag=28
-Rect=207 79 57 25
+Rect=161 88 57 25
 AnchorPos=0 0
 Notes=
 Text=现价
@@ -142,20 +155,24 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_29]
 Type=1
 Tag=29
-Rect=256 76 30 30
+Rect=207 85 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\main_interface\coin.png
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\gem1.png
 NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_30]
 Type=4
 Tag=30
-Rect=431 79 57 25
+Rect=438 88 57 25
 AnchorPos=0 0
 Notes=
 Text=原价
@@ -164,21 +181,36 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_31]
 Type=1
 Tag=31
-Rect=483 76 30 30
+Rect=490 85 30 30
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\main_interface\coin.png
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\gem1.png
 NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_27]
 Type=1
 Tag=27
-Rect=487 87 94 6
+Rect=494 96 94 6
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\deletelilne.png
 NormalFileUV=0 0 68 4
+
+[CTRL_PICTURE_11]
+Type=1
+Tag=11
+Rect=39 29 100 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

@@ -479,7 +479,7 @@ NormalFileUV=0 0 188 32
 [CTRL_EXP_CARDEXP]
 Type=9
 Tag=236
-Rect=502 219 117 22
+Rect=501 219 114 22
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -487,8 +487,8 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp2.png
-NormalFileUV=0 0 188 32
+NormalFile=.\res\image\ui\main_interface\exp_frame.png
+NormalFileUV=0 0 340 13
 
 [CTRL_TEXT_DEFENCE1]
 Type=4
@@ -538,7 +538,7 @@ UIClsoeType=0
 [CTRL_PICTURE_241]
 Type=1
 Tag=241
-Rect=498 216 122 27
+Rect=497 218 122 27
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -633,7 +633,7 @@ NormalFileUV=0 0 110 50
 [CTRL_TEXT_EXP]
 Type=4
 Tag=74
-Rect=522 219 74 19
+Rect=522 220 74 19
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -1251,7 +1251,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=-1 206 640 165
+Rect=0 207 640 165
 AnchorPos=0 0
 Notes=
 TextSize=10

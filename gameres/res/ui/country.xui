@@ -464,73 +464,7 @@ TextVerAlign=AlignTop
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_40]
-Type=1
-Tag=46
-Rect=293 310 107 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\text_lake.png
-NormalFileUV=0 0 200 60
-
-[CTRL_PICTURE_41]
-Type=1
-Tag=47
-Rect=31 535 107 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\text_home.png
-NormalFileUV=0 0 200 60
-
-[CTRL_PICTURE_42]
-Type=1
-Tag=48
-Rect=42 718 107 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\text_store.png
-NormalFileUV=0 0 200 60
-
-[CTRL_PICTURE_43]
-Type=1
-Tag=49
-Rect=25 784 107 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\text_field.png
-NormalFileUV=0 0 200 60
-
-[CTRL_PICTURE_44]
-Type=1
-Tag=50
-Rect=333 449 107 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\text_equip.png
-NormalFileUV=0 0 200 60
-
-[CTRL_PICTURE_45]
-Type=1
-Tag=51
-Rect=460 380 107 32
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\country\text_produce.png
-NormalFileUV=0 0 200 60
-
-[CTRL_PICTURE_46]
+[CTRL_PICTURE_9]
 Type=1
 Tag=52
 Rect=412 198 107 32
@@ -541,7 +475,73 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\country\text_tree.png
 NormalFileUV=0 0 200 60
 
-[CTRL_PICTURE_47]
+[CTRL_PICTURE_7]
+Type=1
+Tag=49
+Rect=25 784 107 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\text_field.png
+NormalFileUV=0 0 200 60
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=46
+Rect=293 310 107 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\text_lake.png
+NormalFileUV=0 0 200 60
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=48
+Rect=42 718 107 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\text_store.png
+NormalFileUV=0 0 200 60
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=47
+Rect=31 535 107 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\text_home.png
+NormalFileUV=0 0 200 60
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=51
+Rect=460 380 107 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\text_produce.png
+NormalFileUV=0 0 200 60
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=50
+Rect=333 449 107 32
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\text_equip.png
+NormalFileUV=0 0 200 60
+
+[CTRL_PICTURE_1]
 Type=1
 Tag=53
 Rect=493 522 107 32

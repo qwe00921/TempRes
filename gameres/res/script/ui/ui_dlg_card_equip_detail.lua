@@ -36,5 +36,4 @@ p.ID_CTRL_TEXT_4						        = 4;
 p.ID_CTRL_9SLICES_21					     = 23;
 p.ID_CTRL_PICTURE_IMAGE				   = 3;
 p.ID_CTRL_9SLICES_19					     = 21;
-p.ID_CTRL_9SLICES_18					     = 20;
-p.ID_CTRL_PICTURE_183					    = 183;
+p.ID_CTRL_9SLICES_73					     = 75;

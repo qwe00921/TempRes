@@ -100,40 +100,47 @@ function p.InitController()
 	
 	local ctrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_112 );	
 	p.itemCtrllers[BGIMAGE_INDEX] = ctrller;
-	ctrller:SetZOrder(9999);
+	--ctrller:SetZOrder(9999);
 
 	ctrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_113 );
 	p.itemCtrllers[ITEMIMAGE_INDEX] = ctrller;
-	ctrller:SetZOrder(9999);
+	--ctrller:SetZOrder(9999);
 
 	ctrller = GetLabel( p.layer, ui.ID_CTRL_TEXT_114 );
 	p.itemCtrllers[NAMETEXT_INDEX] = ctrller;
-	ctrller:SetZOrder(9999);
+	--ctrller:SetZOrder(9999);
 
 	ctrller = GetLabel( p.layer, ui.ID_CTRL_TEXT_115 );
 	p.itemCtrllers[INFOTEXT_INDEX] = ctrller;
-	ctrller:SetZOrder(9999);
+	--ctrller:SetZOrder(9999);
 
 	ctrller = GetButton( p.layer, ui.ID_CTRL_BUTTON_116 );
 	p.itemCtrllers[SELLBTN_INDEX] = ctrller;
 	ctrller:SetLuaDelegate( p.OnBtnClick );
-	ctrller:SetZOrder(9999);
+	--ctrller:SetZOrder(9999);
 
-	ctrller = GetLabel( p.layer, ui.ID_CTRL_TEXT_117 );
-	p.itemCtrllers[SELLTEXT_INDEX] = ctrller;
-	ctrller:SetZOrder(9999);
+	--ctrller = GetLabel( p.layer, ui.ID_CTRL_TEXT_117 );
+	--p.itemCtrllers[SELLTEXT_INDEX] = ctrller;
+	--ctrller:SetZOrder(9999);
 
 	ctrller = GetButton( p.layer, ui.ID_CTRL_BUTTON_118 );
 	p.itemCtrllers[HIDEBTN_INDEX] = ctrller;
 	ctrller:SetLuaDelegate( p.OnBtnClick );
-	ctrller:SetZOrder(9999);
+	--ctrller:SetZOrder(9999);
 	
 	p.SetCtrllersVisible( p.itemCtrllers, false );
+	p.SetCtrllersZOrder( p.itemCtrllers, 0 );
 end
 
 function p.SetCtrllersVisible( ctrllers, bFlag )
 	for i,v in pairs( ctrllers ) do
 		v:SetVisible( bFlag );
+	end
+end
+
+function p.SetCtrllersZOrder( ctrllers, zOrder )
+	for i,v in pairs( ctrllers ) do
+		v:SetZOrder( zOrder );
 	end
 end
 
@@ -303,10 +310,12 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		elseif ui.ID_CTRL_BUTTON_118 == tag then
 			WriteCon( "隐藏物品信息框" );
 			p.SetCtrllersVisible( p.itemCtrllers, false );
+			p.SetCtrllersZOrder( p.itemCtrllers, 0 );
 --			p.selectItem = false;
 		elseif ui.ID_CTRL_BUTTON_116 == tag then
 			WriteCon( "卖出" );
 			p.SetCtrllersVisible( p.itemCtrllers, false );
+			p.SetCtrllersZOrder( p.itemCtrllers, 0 );
 			country_storage_sell.ShowUI( p.curItem );
 			p.HideUI();
 		end
@@ -347,6 +356,7 @@ function p.ShowSelectItem( data )
 	end
 --	p.selectItem = true;
 	p.SetCtrllersVisible( p.itemCtrllers, true );
+	p.SetCtrllersZOrder( p.itemCtrllers, 9999 );	
 	p.curItem = data;
 	
 	local path = SelectCell( T_MATERIAL, data.material_id, "item_pic" );

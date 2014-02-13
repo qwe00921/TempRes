@@ -6,43 +6,28 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 620 218
+Rect=0 0 640 229
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_39]
 Type=22
 Tag=39
-Rect=14 5 594 208
+Rect=7 5 623 217
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\shop\bg_shop.png
-NormalFileUV=0 0 594 208
-
-[CTRL_9SLICES_13]
-Type=22
-Tag=13
-Rect=187 27 393 174
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\frame_item.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_ICON_L]
-Type=1
-Tag=3
-Rect=39 28 100 100
-AnchorPos=0 0
-Notes=
-NormalFile=.\res\image\map_base\box.png
-NormalFileUV=0 0 78 66
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\frame_buy.png
+NormalFileUV=0 0 587 176
 
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=4
-Rect=197 40 209 30
+Rect=168 39 209 30
 AnchorPos=0 0
 Notes=
 Text=小型体力药剂
@@ -51,11 +36,13 @@ TextSize=25
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=5
-Rect=423 48 148 41
+Rect=436 37 148 41
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
@@ -64,11 +51,13 @@ TextSize=18
 TextColor=0xff0000
 TextHorAlign=AlignRight
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=6
-Rect=491 101 79 25
+Rect=505 94 79 25
 AnchorPos=0 0
 Notes=
 Text=50000
@@ -77,11 +66,13 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=7
-Rect=291 101 79 25
+Rect=256 94 79 25
 AnchorPos=0 0
 Notes=
 Text=20000
@@ -90,11 +81,13 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=8
-Rect=203 143 371 51
+Rect=173 143 412 51
 AnchorPos=0 0
 Notes=
 Text=礼包说明礼包说明礼包说明礼包说明礼包说明礼包说明
@@ -103,11 +96,13 @@ TextSize=18
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_BUY_L]
 Type=2
 Tag=9
-Rect=26 139 136 56
+Rect=46 149 93 47
 AnchorPos=0 0
 Notes=
 Text=购买
@@ -116,37 +111,30 @@ TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\shop\buy.png
-NormalFileUV=0 0 126 52
-SelectFile=.\res\image\ui\shop\buy_click.png
-SelectedFileUV=0 0 126 52
-DisableFile=.\res\image\ui\shop\buy_un.png
-DisableFileUV=0 0 126 52
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\btn_buy.png
+NormalFileUV=0 0 93 47
+SelectFile=.\res\image\ui\shop\btn_buy.png
+SelectedFileUV=0 0 93 47
+DisableFile=.\res\image\ui\shop\btn_buy.png
+DisableFileUV=0 0 93 47
 
 [CTRL_PICTURE_11]
 Type=1
 Tag=11
-Rect=36 25 107 107
+Rect=40 33 107 108
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_BUTTON_LOOK_L]
-Type=2
-Tag=10
-Rect=39 27 100 100
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\pic_buy.png
+NormalFileUV=0 0 98 99
 
 [CTRL_TEXT_14]
 Type=4
 Tag=14
-Rect=404 100 55 26
+Rect=422 93 55 26
 AnchorPos=0 0
 Notes=
 Text=原价
@@ -155,29 +143,35 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=261 98 30 30
+Rect=226 91 30 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\coin.png
 NormalFileUV=0 0 32 32
 
 [CTRL_PICTURE_16]
 Type=1
 Tag=16
-Rect=462 98 30 30
+Rect=480 91 30 30
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\coin.png
 NormalFileUV=0 0 32 32
 
 [CTRL_TEXT_17]
 Type=4
 Tag=17
-Rect=205 102 54 23
+Rect=170 95 54 23
 AnchorPos=0 0
 Notes=
 Text=现价
@@ -186,12 +180,38 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_18]
 Type=1
 Tag=18
-Rect=465 110 103 6
+Rect=483 103 103 6
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\shop\deletelilne.png
 NormalFileUV=0 0 68 4
+
+[CTRL_PICTURE_ICON_L]
+Type=1
+Tag=3
+Rect=42 30 100 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_LOOK_L]
+Type=2
+Tag=10
+Rect=43 31 100 100
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

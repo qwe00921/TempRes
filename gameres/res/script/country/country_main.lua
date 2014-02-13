@@ -10,6 +10,8 @@ p.openTypeNum = 1;
 p.openViewT = {};
 p.countryInfoT = {};
 
+p.birdImage = nil;
+
 local uiNodeT = {}
 
 function p.ShowUI()
@@ -26,6 +28,8 @@ function p.ShowUI()
 		--开启拾取队列计时器
 		--country_collect.StartTick();
 		--country_collect.SetLayer( p.layer );
+		
+		p.CreateEffectNode();
 		return;
 	end
 	
@@ -58,6 +62,7 @@ function p.ShowUI()
 	country_collect.StartTick();
 	country_collect.SetLayer( p.layer );
 	
+	p.CreateEffectNode();
 end
 
 function p.InitController()
@@ -72,18 +77,37 @@ function p.InitController()
 	uiNodeT.textNameT[7] = "百草田";
 	uiNodeT.textNameT[8] = "矿山";
 	uiNodeT.textNameT[9] = "森林";
-	--名字，等级
-	-- local produceName = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_LV);
-	-- local equipName = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_LV);
-	-- local mergeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_MERGE_LV);
-	-- local homeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_HOME_LV);
-	-- local storeName = GetLabel(p.layer, ui.ID_CTRL_TEXT_STORE_LV);
-	-- uiNodeT.headT = {}
-	-- uiNodeT.headT[1] = produceName;
-	-- uiNodeT.headT[2] = equipName;
-	-- uiNodeT.headT[3] = mergeName;
-	-- uiNodeT.headT[4] = homeName;
-	-- uiNodeT.headT[5] = storeName;
+	--名字
+	local name_1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_1);
+	local name_2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_2);
+	local name_3 = GetImage(p.layer, ui.ID_CTRL_PICTURE_3);
+	local name_4 = GetImage(p.layer, ui.ID_CTRL_PICTURE_4);
+	local name_5 = GetImage(p.layer, ui.ID_CTRL_PICTURE_5);
+	local name_6 = GetImage(p.layer, ui.ID_CTRL_PICTURE_6);
+	local name_7 = GetImage(p.layer, ui.ID_CTRL_PICTURE_7);
+	--local name_8 = GetImage(p.layer, ui.ID_CTRL_PICTURE_8);
+	local name_9 = GetImage(p.layer, ui.ID_CTRL_PICTURE_9);
+	name_1:SetVisible(false)
+	name_2:SetVisible(false)
+	name_3:SetVisible(false)
+	name_4:SetVisible(false)
+	name_5:SetVisible(false)
+	name_6:SetVisible(false)
+	name_7:SetVisible(false)
+	--name_8:SetVisible(false)
+	name_9:SetVisible(false)
+
+	uiNodeT.headT = {}
+	uiNodeT.headT[1] = name_1;
+	uiNodeT.headT[2] = name_2;
+	uiNodeT.headT[3] = name_3;
+	uiNodeT.headT[4] = name_4;
+	uiNodeT.headT[5] = name_5;
+	uiNodeT.headT[6] = name_6;
+	uiNodeT.headT[7] = name_7;
+	--uiNodeT.headT[8] = name_8;
+	uiNodeT.headT[9] = name_9;
+	
 	--名字框
 	local headBoxBoxProduce = GetImage(p.layer, ui.ID_CTRL_PIC_PRODUCE_HEAD_BG);
 	local headBoxBoxEquit = GetImage(p.layer, ui.ID_CTRL_PIC_EQUIP_HEAD_BG);
@@ -205,7 +229,7 @@ function p.showCountryBuild(buildInfo)
 	-- for k,v in pairs(buildInfo) do 
 		-- buildNum = buildNum + 1;
 	-- end
-	for i = 1, 5 do
+	for i = 1, 9 do
 		if buildInfo["B"..i] then
 			--显示名字，等级
 			-- local headText = uiNodeT.textNameT[i].."LV:"..(buildInfo["B"..i].build_level);
@@ -214,43 +238,47 @@ function p.showCountryBuild(buildInfo)
 			-- end
 			--显示名字框
 			--uiNodeT.headBoxT[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
-			--是否在升级
-			if tonumber(buildInfo["B"..i].is_upgrade) == 1 then
-				--显示背景图
-				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
-				--剩余时间
-				local countDownTime = tonumber(buildInfo["B"..i].upgrade_time);
-				--local nowTime = os.time();
-				--local lastTime = countDownTime - nowTime;
-				--local lastTime = 100;
-				--升级所需时间
-				local nextLV = tonumber(buildInfo["B"..i].upgrade_level)
-				--local nextLV = 3;
-				local upbuildTable =  SelectRowList(T_BUILDING,"type",i);
-				if upbuildTable == nil then
-					WriteConErr("upbuildTable is nil ");
-				end
-				local timeNeed = nil;
-				for k,v in pairs(upbuildTable) do
-					if tonumber(v.level) == nextLV then
-						timeNeed = tonumber(v.upgrade_time)*60
-					end
-				end
-				WriteCon("timeNeed == "..timeNeed);
-				--时间条和文本节点
-				local timeBar = uiNodeT.timeBar[i];
-				timeBar:SetNoText()
-				local timeTextNode = uiNodeT.timeTextT[i]
-				--显示时间条
-				time_bar.ShowTimeBar(0,timeNeed,countDownTime,timeBar,timeTextNode) 
+			uiNodeT.headT[i]:SetVisible(true);
 			
-			--是否刚升级完
-			elseif tonumber(buildInfo["B"..i].update) == 1 then
-				--显示背景图
-				uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
-				uiNodeT.timeTextT[i]:SetText("升级完成！");
-				local uplevel = buildInfo["B"..i].build_level
-				p.showUpBuildView(i,uplevel)
+			if i < 6 then
+				--是否在升级
+				if tonumber(buildInfo["B"..i].is_upgrade) == 1 then
+					--显示背景图
+					uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
+					--剩余时间
+					local countDownTime = tonumber(buildInfo["B"..i].upgrade_time);
+					--local nowTime = os.time();
+					--local lastTime = countDownTime - nowTime;
+					--local lastTime = 100;
+					--升级所需时间
+					local nextLV = tonumber(buildInfo["B"..i].upgrade_level)
+					--local nextLV = 3;
+					local upbuildTable =  SelectRowList(T_BUILDING,"type",i);
+					if upbuildTable == nil then
+						WriteConErr("upbuildTable is nil ");
+					end
+					local timeNeed = nil;
+					for k,v in pairs(upbuildTable) do
+						if tonumber(v.level) == nextLV then
+							timeNeed = tonumber(v.upgrade_time)*60
+						end
+					end
+					WriteCon("timeNeed == "..timeNeed);
+					--时间条和文本节点
+					local timeBar = uiNodeT.timeBar[i];
+					timeBar:SetNoText()
+					local timeTextNode = uiNodeT.timeTextT[i]
+					--显示时间条
+					time_bar.ShowTimeBar(0,timeNeed,countDownTime,timeBar,timeTextNode) 
+				
+				--是否刚升级完
+				elseif tonumber(buildInfo["B"..i].update) == 1 then
+					--显示背景图
+					uiNodeT.timeBgT[i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0));
+					uiNodeT.timeTextT[i]:SetText("升级完成！");
+					local uplevel = buildInfo["B"..i].build_level
+					p.showUpBuildView(i,uplevel)
+				end
 			end
 		end
 	end
@@ -266,24 +294,24 @@ function p.ShowCollectEffect()
 	local mountainBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_MOUNTAIN );	--8
 	local treeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_TREE );	--9
 	
-	if homeBtn:HasAniEffect("ui.collect_effect") then
-		homeBtn:DelAniEffect("ui.collect_effect");
+	if homeBtn:HasAniEffect("ui.collect_effect_home") then
+		homeBtn:DelAniEffect("ui.collect_effect_home");
 	end
 	
-	if riverBtn:HasAniEffect("ui.collect_effect") then
-		riverBtn:DelAniEffect("ui.collect_effect");
+	if riverBtn:HasAniEffect("ui.collect_effect_river") then
+		riverBtn:DelAniEffect("ui.collect_effect_river");
 	end
 	
-	if fieldBtn:HasAniEffect("ui.collect_effect") then
-		fieldBtn:DelAniEffect("ui.collect_effect");
+	if fieldBtn:HasAniEffect("ui.collect_effect_farm") then
+		fieldBtn:DelAniEffect("ui.collect_effect_farm");
 	end
 	
 	if mountainBtn:HasAniEffect("ui.collect_effect") then
 		mountainBtn:DelAniEffect("ui.collect_effect");
 	end
 	
-	if treeBtn:HasAniEffect("ui.collect_effect") then
-		treeBtn:DelAniEffect("ui.collect_effect");
+	if treeBtn:HasAniEffect("ui.collect_effect_forest") then
+		treeBtn:DelAniEffect("ui.collect_effect_forest");
 	end
 	
 	local cache = msg_cache.msg_count_data or {};
@@ -297,8 +325,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.Home.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not homeBtn:HasAniEffect("ui.collect_effect") then
-				homeBtn:AddFgEffect("ui.collect_effect");
+			if not homeBtn:HasAniEffect("ui.collect_effect_home") then
+				homeBtn:AddFgEffect("ui.collect_effect_home");
 			end
 		end
 	end
@@ -310,8 +338,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.River.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not riverBtn:HasAniEffect("ui.collect_effect") then
-				riverBtn:AddFgEffect("ui.collect_effect");
+			if not riverBtn:HasAniEffect("ui.collect_effect_river") then
+				riverBtn:AddFgEffect("ui.collect_effect_river");
 			end
 		end
 	end
@@ -323,8 +351,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.Farm.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not fieldBtn:HasAniEffect("ui.collect_effect") then
-				fieldBtn:AddFgEffect("ui.collect_effect");
+			if not fieldBtn:HasAniEffect("ui.collect_effect_farm") then
+				fieldBtn:AddFgEffect("ui.collect_effect_farm");
 			end
 		end
 	end
@@ -349,8 +377,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.Forest.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not treeBtn:HasAniEffect("ui.collect_effect") then
-				treeBtn:AddFgEffect("ui.collect_effect");
+			if not treeBtn:HasAniEffect("ui.collect_effect_forest") then
+				treeBtn:AddFgEffect("ui.collect_effect_forest");
 			end
 		end
 	end
@@ -493,6 +521,11 @@ function p.CloseUI()
 		dlg_userinfo.ShowUI();
 		--maininterface.ShowUI();
 	end
+	
+	if p.birdImage ~= nil then
+		p.birdImage:RemoveFromParent( true );
+		p.birdImage = nil;
+	end
 end
 function p.ClearData()
 	p.openViewTypeT = {};
@@ -517,3 +550,51 @@ function p.UIDisappear()
 	--注销采集倒计时
 	country_collect.EndTick();
 end
+
+--创建特效节点
+function p.CreateEffectNode()
+	if p.layer == nil or p.birdImage ~= nil then
+		return;
+	end
+	
+	local image = createNDUIImage();
+	image:Init();
+	image:ResizeToFitPicture();
+
+	p.layer:AddChild( image );
+	
+	p.birdImage = image;
+	
+	local size = GetWinSize();
+	
+	image:SetFramePosXY( 640, 100 );	
+	image:AddFgEffect( "ui.country_effect" );
+	
+	p.CreateEffect( image );
+end
+
+function p.CreateEffect( image )
+	--[[
+	local size = GetWinSize();
+	local batch = battle_show.GetNewBatch();
+	local seq = batch:AddSerialSequence();
+	local cmd1 = createCommandEffect():AddActionEffect( 0, image, "lancer.country_effect_move" );
+	seq:AddCommand( cmd1 );
+	
+	local env = cmd1:GetVarEnv();
+	if env then	
+		env:SetFloat( "$1", -(size.w+256.0f) );
+		env:SetFloat( "$2", 0.0f );
+	end
+	
+	local seq1 = batch:AddSerialSequence();
+	local cmd2 = createCommandLua():SetCmd( "country_main_effectMove", 1, 1, "" );
+	if cmd2 ~= nil then
+		seq1:AddCommand( cmd2 );
+		seq1:SetWaitEnd( cmd1 );
+	end	
+	--]]
+	
+	image:AddActionEffect( "lancer_cmb.country_effect_move" );
+end
+
