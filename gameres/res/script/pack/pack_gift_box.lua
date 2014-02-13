@@ -96,6 +96,7 @@ function p.ShowGiftBoxInfo(self)
 		itemNum = tostring(self.gift["Reward_num"..i]);
 		WriteCon("itemNum==="..itemNum);
 		local giftType = tonumber(self.gift["Reward_type"..i]);
+		--[[
 		if giftType == 1 then		--卡片
 			itemInfoTable = SelectRowInner(T_CARD,"id",itemId);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
@@ -124,6 +125,16 @@ function p.ShowGiftBoxInfo(self)
 			itemInfoTable = SelectRowInner(T_EQUIP,"id",itemId);
 			giftTable["giftName_"..i]:SetText(itemInfoTable.name);
 			giftTable["giftPic_"..i]:SetPicture( GetPictureByAni(itemInfoTable.item_pic, 0) );
+		end
+		--]]
+		local itemname = GetItemName( itemId, giftType );
+		local picData = GetItemPic( itemId, giftType );
+		giftTable["giftName_"..i]:SetText( itemname );
+		giftTable["giftPic_"..i]:SetPicture( picData );
+		
+		if tonumber(itemNum) >= 1 then
+			giftTable["giftNum_"..i]:SetText(itemNum);
+			giftTable["giftNumBG_"..i]:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
 		end
 	end
 end
