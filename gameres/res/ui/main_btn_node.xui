@@ -9,6 +9,8 @@ Tag=1
 Rect=0 0 450 124
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_BTN_1]
 Type=2
@@ -20,12 +22,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=预设按钮1
-NormalFile=.\res\image\ui\main_interface\default_btn.PNG
-NormalFileUV=0 0 100 90
-SelectFile=.\res\image\ui\main_interface\default_btn.PNG
-SelectedFileUV=0 0 100 90
-DisableFile=.\res\image\ui\main_interface\default_btn.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_BTN_2]
 Type=2
@@ -37,12 +35,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=预设按钮2
-NormalFile=.\res\image\ui\main_interface\default_btn.PNG
-NormalFileUV=0 0 100 90
-SelectFile=.\res\image\ui\main_interface\default_btn.PNG
-SelectedFileUV=0 0 100 90
-DisableFile=.\res\image\ui\main_interface\default_btn.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_BTN_3]
 Type=2
@@ -54,12 +48,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=预设按钮3
-NormalFile=.\res\image\ui\main_interface\default_btn.PNG
-NormalFileUV=0 0 100 90
-SelectFile=.\res\image\ui\main_interface\default_btn.PNG
-SelectedFileUV=0 0 100 90
-DisableFile=.\res\image\ui\main_interface\default_btn.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_BTN_4]
 Type=2
@@ -71,9 +61,5 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=预设按钮4
-NormalFile=.\res\image\ui\main_interface\default_btn.PNG
-NormalFileUV=0 0 100 90
-SelectFile=.\res\image\ui\main_interface\default_btn.PNG
-SelectedFileUV=0 0 100 90
-DisableFile=.\res\image\ui\main_interface\default_btn.PNG
-DisableFileUV=0 0 100 90
+UIOpenType=0
+UIClsoeType=0

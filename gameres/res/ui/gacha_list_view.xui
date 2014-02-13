@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=88
-Rect=0 0 620 224
+Rect=0 0 638 187
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -27,7 +27,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_27]
 Type=22
 Tag=27
-Rect=14 6 594 208
+Rect=1 0 635 185
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -38,7 +38,7 @@ NormalFileUV=0 0 587 176
 [CTRL_BUTTON_ONE]
 Type=2
 Tag=109
-Rect=184 123 203 59
+Rect=184 110 203 59
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -54,7 +54,7 @@ NormalFileUV=0 0 198 58
 [CTRL_BUTTON_TEN]
 Type=2
 Tag=110
-Rect=396 123 203 59
+Rect=396 110 203 59
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -70,7 +70,7 @@ NormalFileUV=0 0 198 58
 [CTRL_TEXT_FREE_TIME]
 Type=4
 Tag=112
-Rect=32 147 144 42
+Rect=19 127 144 42
 AnchorPos=0 0
 Notes=
 Text=23:57:33后可免费抽取1次
@@ -86,7 +86,7 @@ UIClsoeType=0
 [CTRL_TEXT_FREE_MSG]
 Type=4
 Tag=11
-Rect=277 136 94 30
+Rect=281 121 94 30
 AnchorPos=0 0
 Notes=
 Text=免费
@@ -102,7 +102,7 @@ UIClsoeType=0
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=291 136 30 30
+Rect=295 121 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -113,7 +113,7 @@ NormalFileUV=0 0 32 32
 [CTRL_PICTURE_13]
 Type=1
 Tag=13
-Rect=512 136 30 30
+Rect=514 121 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -124,7 +124,7 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_EMONEY_ONCE]
 Type=4
 Tag=14
-Rect=320 136 46 30
+Rect=324 121 46 30
 AnchorPos=0 0
 Notes=
 Text=50
@@ -140,7 +140,7 @@ UIClsoeType=0
 [CTRL_TEXT_EMONEY_SOMETIMES]
 Type=4
 Tag=15
-Rect=538 136 48 30
+Rect=540 121 48 30
 AnchorPos=0 0
 Notes=
 Text=50
@@ -156,7 +156,7 @@ UIClsoeType=0
 [CTRL_PICTURE_44]
 Type=1
 Tag=44
-Rect=48 28 109 111
+Rect=32 21 109 111
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -167,7 +167,7 @@ NormalFileUV=0 0 98 99
 [CTRL_PICTURE_45]
 Type=1
 Tag=45
-Rect=189 132 107 38
+Rect=199 124 85 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -178,7 +178,7 @@ NormalFileUV=0 0 85 30
 [CTRL_PICTURE_46]
 Type=1
 Tag=46
-Rect=415 132 107 38
+Rect=419 124 85 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -189,22 +189,36 @@ NormalFileUV=0 0 85 30
 [CTRL_PICTURE_PIC]
 Type=1
 Tag=90
-Rect=52 31 98 98
+Rect=36 22 98 100
 AnchorPos=0 0
 Notes=
 Remark=扭蛋图片
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\gacha_1\gacha_cardgroup.PNG
-NormalFileUV=0 0 126 149
 
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=179 42 136 39
+Rect=161 33 136 39
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\shop\junior.png
 NormalFileUV=0 0 136 39
+
+[CTRL_TEXT_GACHANAME]
+Type=4
+Tag=89
+Rect=341 36 282 30
+AnchorPos=0 0
+Notes=
+Text=黑暗魔法师卡包
+TextTradition=黑暗魔法師卡包
+TextSize=28
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+Remark=扭蛋名称
+UIOpenType=0
+UIClsoeType=0

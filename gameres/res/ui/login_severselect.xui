@@ -30,13 +30,13 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_16]
 Type=22
 Tag=16
-Rect=106 371 426 322
+Rect=109 379 407 315
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\bg2.png
+NormalFile=.\res\image\ui\card_attr_base\bg1.png
 NormalFileUV=0 0 640 600
 
 [CTRL_PICTURE_6]

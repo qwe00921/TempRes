@@ -6,28 +6,16 @@ Height=960
 [CTRL_PICTURE_BG]
 Type=1
 Tag=1
-Rect=0 0 640 213
+Rect=0 0 639 187
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_9SLICES_BGINFO]
-Type=22
-Tag=26
-Rect=155 28 400 148
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
 
 [CTRL_9SLICES_18]
 Type=22
 Tag=21
-Rect=0 0 640 203
+Rect=2 0 634 185
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -39,7 +27,7 @@ NormalFileUV=0 0 587 176
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=5
-Rect=160 123 436 54
+Rect=161 117 436 45
 AnchorPos=0 0
 Notes=
 Text=道具说明道具说明道具说明道具说明道具说明道具说明道具说明
@@ -54,7 +42,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=6
-Rect=161 33 166 41
+Rect=163 28 166 41
 AnchorPos=0 0
 Notes=
 Text=小型体力药剂
@@ -69,13 +57,13 @@ UIClsoeType=0
 [CTRL_BUTTON_BUY_L]
 Type=2
 Tag=10
-Rect=42 137 93 47
+Rect=40 130 93 47
 AnchorPos=0 0
 Notes=
 Text=购买
 TextTradition=購買
-TextSize=28
-TextColor=0xfeffaf
+TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -90,7 +78,7 @@ DisableFileUV=0 0 93 47
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=12
-Rect=237 88 79 25
+Rect=239 79 79 25
 AnchorPos=0 0
 Notes=
 Text=20000
@@ -105,7 +93,7 @@ UIClsoeType=0
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=35
-Rect=409 33 183 37
+Rect=411 28 183 37
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
@@ -120,7 +108,7 @@ UIClsoeType=0
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=37
-Rect=517 88 73 25
+Rect=530 79 62 25
 AnchorPos=0 0
 Notes=
 Text=50000
@@ -135,7 +123,7 @@ UIClsoeType=0
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=35 28 111 111
+Rect=33 21 111 111
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -146,7 +134,7 @@ NormalFileUV=0 0 98 99
 [CTRL_TEXT_28]
 Type=4
 Tag=28
-Rect=161 88 57 25
+Rect=163 79 57 25
 AnchorPos=0 0
 Notes=
 Text=现价
@@ -161,7 +149,7 @@ UIClsoeType=0
 [CTRL_PICTURE_29]
 Type=1
 Tag=29
-Rect=207 85 30 30
+Rect=209 76 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -172,7 +160,7 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_30]
 Type=4
 Tag=30
-Rect=438 88 57 25
+Rect=451 79 57 25
 AnchorPos=0 0
 Notes=
 Text=原价
@@ -187,7 +175,7 @@ UIClsoeType=0
 [CTRL_PICTURE_31]
 Type=1
 Tag=31
-Rect=490 85 30 30
+Rect=503 76 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -198,7 +186,7 @@ NormalFileUV=0 0 32 32
 [CTRL_PICTURE_27]
 Type=1
 Tag=27
-Rect=494 96 94 6
+Rect=507 87 77 6
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -209,7 +197,7 @@ NormalFileUV=0 0 68 4
 [CTRL_PICTURE_11]
 Type=1
 Tag=11
-Rect=39 29 100 100
+Rect=37 23 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0

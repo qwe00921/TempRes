@@ -128,10 +128,10 @@ function p:Pick( pTargetNode, pos )
 	local targetPoint = pTargetNode:GetFramePos();
 	local targetSize = pTargetNode:GetFrameSize();
 	local orignPoint = self.imageNode:GetFramePos();
-	local lscale = GetUIScale();
+	--local lscale = GetUIScale();
 	
-	local x = (targetPoint.x - orignPoint.x + targetSize.w/2)*lscale;
-	local y = (targetPoint.y - orignPoint.y + targetSize.h/2)*lscale;
+	local x = targetPoint.x - orignPoint.x + targetSize.w/2;
+	local y = targetPoint.y - orignPoint.y + targetSize.h/2;
 
 	--local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.pick_effect" );
 	local cmd = createCommandEffect():AddActionEffect( 0, self.imageNode, "lancer_cmb.pick_effect" );

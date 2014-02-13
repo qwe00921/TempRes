@@ -3,6 +3,18 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_211]
+Type=2
+Tag=211
+Rect=18 250 110 110
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_17]
 Type=1
 Tag=17
@@ -51,7 +63,7 @@ UIClsoeType=2
 [CTRL_PICTURE_92]
 Type=1
 Tag=92
-Rect=403 203 123 30
+Rect=393 203 123 30
 AnchorPos=0 0
 Notes=
 UIOpenType=3
@@ -62,7 +74,7 @@ NormalFileUV=0 0 121 34
 [CTRL_TEXT_94]
 Type=4
 Tag=94
-Rect=416 206 96 24
+Rect=406 206 96 24
 AnchorPos=0 0
 Notes=
 Text=卡牌数量
@@ -77,7 +89,7 @@ UIClsoeType=3
 [CTRL_PICTURE_91]
 Type=1
 Tag=91
-Rect=526 203 107 30
+Rect=516 203 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -88,7 +100,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_CARD_NUM]
 Type=4
 Tag=38
-Rect=534 206 90 22
+Rect=524 206 90 22
 AnchorPos=0 0
 Notes=
 Text=99/99
@@ -152,7 +164,7 @@ SelectedFileUV=0 0 67 46
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=5 234 628 529
+Rect=5 235 628 574
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -161,10 +173,10 @@ UIClsoeType=0
 [CTRL_PICTURE_21]
 Type=1
 Tag=21
-Rect=180 157 150 45
+Rect=190 160 131 41
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\card_list2.png
-NormalFileUV=0 0 150 45
+NormalFile=.\res\image\ui\card\card.png
+NormalFileUV=0 0 131 41
