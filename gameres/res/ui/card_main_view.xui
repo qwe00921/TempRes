@@ -173,10 +173,10 @@ UIClsoeType=0
 [CTRL_PICTURE_21]
 Type=1
 Tag=21
-Rect=180 157 150 45
+Rect=190 160 131 41
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\card_list2.png
-NormalFileUV=0 0 150 45
+NormalFile=.\res\image\ui\card\card.png
+NormalFileUV=0 0 131 41
