@@ -665,6 +665,7 @@ end
 function p.OnBtnClick( uiNode, uiEventType, param )
 	WriteCon( tostring(uiEventType) );
 	
+	--WriteConErr( uiEventType .. " " .. uiNode:GetId() );
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		local btn = ConverToButton( uiNode );
@@ -686,11 +687,11 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		end
 	elseif IsDragUp( uiEventType ) then
 		WriteCon("IsDragUp");
+		w_battle_mgr.SetPVESkillAtkID( id );
 	elseif IsDragLeft( uiEventType ) then
 		WriteCon("IsDragLeft");
 	elseif IsDragRight( uiEventType ) then
 		WriteCon("IsDragRight");
-		w_battle_mgr.SetPVESkillAtkID( id );
 	elseif IsDragDown( uiEventType ) then
 		WriteCon("IsDragDown");
 	end
