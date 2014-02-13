@@ -200,6 +200,19 @@ image\ui\public\star7.png
 [collect_effect]
 image\ui\country\source_fx.png @cut(1, 8) @time=0.125 @loop
 
+[collect_effect_home]
+image\ui\country\effect_home.png @cut(2, 4) @time=0.125 @loop
+
+[collect_effect_river]
+image\ui\country\effect_river.png @cut(2, 4) @time=0.125 @loop
+
+[collect_effect_farm]
+image\ui\country\effect_farm.png @cut(2, 4) @time=0.125 @loop
+
+[collect_effect_forest]
+image\ui\country\effect_forest.png @cut(2, 4) @time=0.125 @loop
+
+
 ;list节点显示标志
 [list_node_effect]
 image\ui\main_interface\header_arena_light_00.png
@@ -221,4 +234,8 @@ image\ui\quest\Special_reward.png @cut(1, 2) @time=0.2 @loop
 [energy_pic]
 image\ui\main_interface\energy1.png
 image\ui\main_interface\energy2.png
+
+[country_effect]
+image\ui\country\bird.png @cut(2,4) @time=0.2 @loop
+
 

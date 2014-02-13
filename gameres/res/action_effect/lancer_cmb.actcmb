@@ -171,3 +171,11 @@ lancer.fadeout
 @type=0 @loop
 lancer.battle_move
 
+[country_effect_move]
+@type=0 @loop
+lancer.country_effect_move
+lancer.hide
+lancer.country_effect_move_1
+lancer.show
+
+

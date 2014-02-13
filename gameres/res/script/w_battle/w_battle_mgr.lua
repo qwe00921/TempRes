@@ -66,6 +66,7 @@ p.IsGuid = false;  --战斗引导
 p.step = nil;
 p.substep = nil;
 p.NeedQuit = false;
+p.playerNodeLst = {};  --动画节点
 
 function p.init()
 	p.platform = GetFlatform();
@@ -117,9 +118,13 @@ function p.starFighter()
 	p.InitLockAction();
 	GetBattleShow():EnableTick( true );
 	if w_battle_db_mgr.step == 1 then  --只有第一波才需要进场动画
+		p.createPlayerNodeLst(p.heroUIArray);
+		p.createPlayerNodeLst(p.enemyUIArray);
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
 	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
+	
+	
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	local lEnemyFighter = p.enemyCamp:FindFighter(p.PVEEnemyID);
@@ -1130,6 +1135,7 @@ function p.clearDate()
     p.imageMask = nil          
     p.isBattleEnd = false;
 	p.battleIsStart = false;
+	p.playerNodeLst = {};
     --w_battle_show.DestroyAll();
 end
 
@@ -1533,4 +1539,38 @@ function p.fighterSecondGuid(substep)
 		p.IsGuid = false;
 	end	
 	
+end
+
+function p.createPlayerNodeLst(uiArray)
+	for i=1,6 do
+		local uiTag = uiArray[i];
+		if p.GetPlayerNode(uiTag) == nil then
+			local node = GetUiNode( w_battle_mgr.uiLayer, uiTag );
+			local playernode = createNDRole();
+			playernode:Init();
+			
+			local cSize = node:GetFrameSize();	
+			playernode:SetFrameSize(cSize.w, cSize.h);
+			playernode:SetVisible( true );
+			
+			local lzorder = node:GetZOrder();
+			local ltag = node:GetTag();
+			p.uiLayer:AddChildZ( playernode, lzorder);
+			playernode:SetTag(ltag);
+			
+			local lrecord = {node = playernode, tag = uiTag}
+			p.playerNodeLst[#p.playerNodeLst + 1] = lrecord;		
+		end;
+	end
+end
+
+function p.GetPlayerNode(uiTag)
+	local lPlayerNode = nil;
+	for k,v in ipairs(p.playerNodeLst) do
+		if v.tag == uiTag then
+			lPlayerNode = v.node
+			break;
+		end
+	end
+	return lPlayerNode;
 end
