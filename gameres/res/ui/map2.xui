@@ -86,6 +86,18 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_BUTTON_CHAPTER7]
+Type=2
+Tag=26
+Rect=165 11 200 245
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
@@ -135,6 +147,15 @@ UIClsoeType=0
 Type=1
 Tag=17
 Rect=28 356 145 50
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_HEAD7]
+Type=1
+Tag=28
+Rect=182 91 145 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -218,6 +239,19 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_TEXT_CHAPTER7]
+Type=4
+Tag=27
+Rect=194 97 123 34
+AnchorPos=0 0
+Notes=
+TextSize=24
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=23
@@ -233,37 +267,3 @@ NormalFile=.\res\image\ui\quest\back.png
 NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\quest\back_select.png
 SelectedFileUV=0 0 122 60
-
-[CTRL_BUTTON_CHAPTER7]
-Type=2
-Tag=26
-Rect=165 11 200 245
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_HEAD7]
-Type=1
-Tag=28
-Rect=182 91 145 50
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_CHAPTER7]
-Type=4
-Tag=27
-Rect=194 97 123 34
-AnchorPos=0 0
-Notes=
-TextSize=24
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
