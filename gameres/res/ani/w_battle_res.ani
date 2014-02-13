@@ -2,3 +2,9 @@
 [damagebufftype]
 image\ui\n_battle\battle_meter_current.png
 image\ui\n_battle\battle_meter_current2.png
+
+;人物脚底阴影
+[shadow]
+image\ui\n_battle\shadow_01.png
+
+

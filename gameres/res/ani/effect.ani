@@ -116,7 +116,7 @@ image\effect\huoz01.png @cut(1,10) @time=0.1 @offset(-20,10)
 ;(64,0,32,64)	;8
 ;(96,0,32,64)	;9
 ;(320,0,32,64)	;+
-;lj\number\num_1.png (3,0,34,34)	;0
+;image\num\num_1.png (3,0,34,34)	;0
 ;(51,0,24,34)	;1
 ;(90,0,35,34)	;2
 ;(130,0,33,34)	;3
@@ -126,7 +126,7 @@ image\effect\huoz01.png @cut(1,10) @time=0.1 @offset(-20,10)
 ;(302,0,29,34)	;7
 ;(340,0,35,34)	;8
 ;(380,0,31,34)	;9
-lj\number\num_v2.png (295,0,31,39)	;0
+image\num\num_v2.png (295,0,31,39)	;0
 (0,0,17,39)     ;1
 (21,0,31,39)	;2
 (55,0,29,39)	;3
@@ -141,7 +141,7 @@ lj\number\num_v2.png (295,0,31,39)	;0
 ;image\num\num1.png @cut(4,12) @use(25,37)
 
 [num_buff]
-lj\number\num_heal.png (295,0,31,39)	;0
+image\num\num_heal.png (295,0,31,39)	;0
 (0,0,17,39)     ;1
 (21,0,31,39)	;2
 (55,0,29,39)	;3
@@ -155,7 +155,7 @@ lj\number\num_heal.png (295,0,31,39)	;0
 (365,0,30,39)	;-
 
 [num_stike]
-lj\number\num_strike.png (295,0,31,39)	;0
+image\num\num_strike.png (295,0,31,39)	;0
 (0,0,17,39)     ;1
 (21,0,31,39)	;2
 (55,0,29,39)	;3
@@ -169,7 +169,7 @@ lj\number\num_strike.png (295,0,31,39)	;0
 (365,0,30,39)	;-
 
 [num_green]
-;lj\number\small_green.png (0,0,30,38)     ;0
+;image\num\small_green.png (0,0,30,38)     ;0
 ;(35,0,25,38)    ;1
 ;(64,0,30,38)    ;2
 ;(98,0,26,38)    ;3
@@ -182,10 +182,10 @@ lj\number\num_strike.png (295,0,31,39)	;0
 ;(323,0,27,38)   ;/
 ;(352,0,32,38)   ;+
 ;(384,0,32,38)   ;-
-lj\number\num_green.png @cut(1,10)
+image\num\num_green.png @cut(1,10)
 
 [num_level]
-lj\number\num_lev.png (0,0,20,26)     ;0
+image\num\num_lev.png (0,0,20,26)     ;0
 (20,0,20,26)     ;1
 (40,0,20,26)     ;2
 (60,0,20,26)     ;3
@@ -197,10 +197,10 @@ lj\number\num_lev.png (0,0,20,26)     ;0
 (180,0,20,26)     ;9
 
 [num_damage]
-lj\number\num_damage.png @cut(1,10)
+image\num\num_damage.png @cut(1,10)
 
 [num_font]
-lj\number\number.png (207,0,23,36)	;0
+image\num\number.png (207,0,23,36)	;0
 (0,0,23,36)	;1
 (23,0,23,36)	;2
 (46,0,23,36)	;3
@@ -212,7 +212,7 @@ lj\number\number.png (207,0,23,36)	;0
 (184,0,23,36)	;9
 
 [opt_effect]
-lj\number\fuhao.png (0,0,23,36)	;
+image\num\fuhao.png (0,0,23,36)	;
 (23,0,23,36)	;
 (49,0,23,36)	;
 
