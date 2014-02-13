@@ -260,7 +260,7 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	
 	local cardType = tonumber(card.element)
 	--WriteCon("cardType ===== "..cardType);
-	cardBoxPic:SetPicture( GetPictureByAni("common_ui.cardBagTypeBox",cardType));
+	--cardBoxPic:SetPicture( GetPictureByAni("common_ui.cardBagTypeBox",cardType));
 	-- if cardType == 0 then
 		-- levelBgPic:SetPicture( GetPictureByAni("common_ui.levelBg",0));
 	-- elseif cardType == 1 then

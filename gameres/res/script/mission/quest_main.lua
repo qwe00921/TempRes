@@ -277,7 +277,7 @@ function p.setMissionInfo(misId,view)
 	misGhost:SetText(missionTable.soul);
 
 	local rewardId = missionTable.reward_id;
-	WriteConErr("rewardId == "..rewardId);
+	--WriteConErr("rewardId == "..rewardId);
 
 	local rewardTable = SelectRowList(T_MISSION_REWARD,"id",rewardId);
 	if rewardTable == nil then
