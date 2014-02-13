@@ -246,7 +246,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	WriteCon("********    =  "..lCardSprite);	
 	
 	local cardSprite = GetPlayer(p.layer, ui[lCardSprite]);
-	
+	cardSprite:SetVisible(true);
 	cardSprite:UseConfig(tostring(lcardId));
 	cardSprite:SetLookAt(E_LOOKAT_LEFT);
 	cardSprite:Standby("");
@@ -285,6 +285,7 @@ function p.InitAllCardInfo()
 		local tLevel= "ID_CTRL_TEXT_CARDLEVEL"..tostring(i);--按钮
 		local tName = "ID_CTRL_TEXT_NAME"..tostring(i);--装备图背景
 		local lCardPic 	= "ID_CTRL_BUTTON_CHA"..tostring(i);--cardpic
+		local lCardSprite 	= "ID_CTRL_SPRITE_"..tostring(i);--cardpic
 		
 		local cardLevText = GetLabel(p.layer, ui[tLevel]);
 		cardLevText:SetVisible(false);
@@ -294,6 +295,9 @@ function p.InitAllCardInfo()
 		
 		local cardName = GetLabel(p.layer,ui[tName]);
 		cardName:SetText("");
+		
+		local cardSprite = GetPlayer(p.layer, ui[lCardSprite]);
+		cardSprite:SetVisible(false);
 	end
 	
 end;	
