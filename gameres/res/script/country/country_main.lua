@@ -10,6 +10,8 @@ p.openTypeNum = 1;
 p.openViewT = {};
 p.countryInfoT = {};
 
+p.birdImage = nil;
+
 local uiNodeT = {}
 
 function p.ShowUI()
@@ -26,6 +28,8 @@ function p.ShowUI()
 		--开启拾取队列计时器
 		--country_collect.StartTick();
 		--country_collect.SetLayer( p.layer );
+		
+		p.CreateEffectNode();
 		return;
 	end
 	
@@ -58,6 +62,7 @@ function p.ShowUI()
 	country_collect.StartTick();
 	country_collect.SetLayer( p.layer );
 	
+	p.CreateEffectNode();
 end
 
 function p.InitController()
@@ -289,24 +294,24 @@ function p.ShowCollectEffect()
 	local mountainBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_MOUNTAIN );	--8
 	local treeBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_TREE );	--9
 	
-	if homeBtn:HasAniEffect("ui.collect_effect") then
-		homeBtn:DelAniEffect("ui.collect_effect");
+	if homeBtn:HasAniEffect("ui.collect_effect_home") then
+		homeBtn:DelAniEffect("ui.collect_effect_home");
 	end
 	
-	if riverBtn:HasAniEffect("ui.collect_effect") then
-		riverBtn:DelAniEffect("ui.collect_effect");
+	if riverBtn:HasAniEffect("ui.collect_effect_river") then
+		riverBtn:DelAniEffect("ui.collect_effect_river");
 	end
 	
-	if fieldBtn:HasAniEffect("ui.collect_effect") then
-		fieldBtn:DelAniEffect("ui.collect_effect");
+	if fieldBtn:HasAniEffect("ui.collect_effect_farm") then
+		fieldBtn:DelAniEffect("ui.collect_effect_farm");
 	end
 	
 	if mountainBtn:HasAniEffect("ui.collect_effect") then
 		mountainBtn:DelAniEffect("ui.collect_effect");
 	end
 	
-	if treeBtn:HasAniEffect("ui.collect_effect") then
-		treeBtn:DelAniEffect("ui.collect_effect");
+	if treeBtn:HasAniEffect("ui.collect_effect_forest") then
+		treeBtn:DelAniEffect("ui.collect_effect_forest");
 	end
 	
 	local cache = msg_cache.msg_count_data or {};
@@ -320,8 +325,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.Home.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not homeBtn:HasAniEffect("ui.collect_effect") then
-				homeBtn:AddFgEffect("ui.collect_effect");
+			if not homeBtn:HasAniEffect("ui.collect_effect_home") then
+				homeBtn:AddFgEffect("ui.collect_effect_home");
 			end
 		end
 	end
@@ -333,8 +338,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.River.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not riverBtn:HasAniEffect("ui.collect_effect") then
-				riverBtn:AddFgEffect("ui.collect_effect");
+			if not riverBtn:HasAniEffect("ui.collect_effect_river") then
+				riverBtn:AddFgEffect("ui.collect_effect_river");
 			end
 		end
 	end
@@ -346,8 +351,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.Farm.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not fieldBtn:HasAniEffect("ui.collect_effect") then
-				fieldBtn:AddFgEffect("ui.collect_effect");
+			if not fieldBtn:HasAniEffect("ui.collect_effect_farm") then
+				fieldBtn:AddFgEffect("ui.collect_effect_farm");
 			end
 		end
 	end
@@ -372,8 +377,8 @@ function p.ShowCollectEffect()
 			collectTimes = tonumber(country_collect.collectResult.Forest.times);
 		end
 		if nTimes - collectTimes > 0 then
-			if not treeBtn:HasAniEffect("ui.collect_effect") then
-				treeBtn:AddFgEffect("ui.collect_effect");
+			if not treeBtn:HasAniEffect("ui.collect_effect_forest") then
+				treeBtn:AddFgEffect("ui.collect_effect_forest");
 			end
 		end
 	end
@@ -516,6 +521,11 @@ function p.CloseUI()
 		dlg_userinfo.ShowUI();
 		--maininterface.ShowUI();
 	end
+	
+	if p.birdImage ~= nil then
+		p.birdImage:RemoveFromParent( true );
+		p.birdImage = nil;
+	end
 end
 function p.ClearData()
 	p.openViewTypeT = {};
@@ -540,3 +550,51 @@ function p.UIDisappear()
 	--注销采集倒计时
 	country_collect.EndTick();
 end
+
+--创建特效节点
+function p.CreateEffectNode()
+	if p.layer == nil or p.birdImage ~= nil then
+		return;
+	end
+	
+	local image = createNDUIImage();
+	image:Init();
+	image:ResizeToFitPicture();
+
+	p.layer:AddChild( image );
+	
+	p.birdImage = image;
+	
+	local size = GetWinSize();
+	
+	image:SetFramePosXY( 640, 100 );	
+	image:AddFgEffect( "ui.country_effect" );
+	
+	p.CreateEffect( image );
+end
+
+function p.CreateEffect( image )
+	--[[
+	local size = GetWinSize();
+	local batch = battle_show.GetNewBatch();
+	local seq = batch:AddSerialSequence();
+	local cmd1 = createCommandEffect():AddActionEffect( 0, image, "lancer.country_effect_move" );
+	seq:AddCommand( cmd1 );
+	
+	local env = cmd1:GetVarEnv();
+	if env then	
+		env:SetFloat( "$1", -(size.w+256.0f) );
+		env:SetFloat( "$2", 0.0f );
+	end
+	
+	local seq1 = batch:AddSerialSequence();
+	local cmd2 = createCommandLua():SetCmd( "country_main_effectMove", 1, 1, "" );
+	if cmd2 ~= nil then
+		seq1:AddCommand( cmd2 );
+		seq1:SetWaitEnd( cmd1 );
+	end	
+	--]]
+	
+	image:AddActionEffect( "lancer_cmb.country_effect_move" );
+end
+
