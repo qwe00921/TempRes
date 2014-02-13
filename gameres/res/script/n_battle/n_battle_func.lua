@@ -78,15 +78,16 @@ function OnlyMoveTo(atkFighter, fPos, tPos, pSeq, pIsBack)
 	end
     local atkPos = fPos;
     local lscale = GetUIScale();
-	lscale = 1
-    local x = (tPos.x - atkPos.x)*lscale;
-    local y = (tPos.y - atkPos.y)*lscale;
+	lscale = 1;
+    local x = (tPos.x - atkPos.x);
+    local y = (tPos.y - atkPos.y);
     local startOffset = 0;
-	local pCmd =	createCommandEffect():AddActionEffect( 0, atkFighter:GetPlayerNode(), fx );
+	local pCmd = createCommandEffect():AddActionEffect( 0, atkFighter:GetPlayerNode(), fx );
 	pSeq:AddCommand( pCmd );
     local varEnv = pCmd:GetVarEnv();
-    varEnv:SetFloat( "$1", x );
-    varEnv:SetFloat( "$2", y );
+	WriteCon(string.format("X:%d,Y:%d",x,y));
+    varEnv:SetFloat("$1", x);
+    varEnv:SetFloat("$2", y);
     
     
     return pCmd;

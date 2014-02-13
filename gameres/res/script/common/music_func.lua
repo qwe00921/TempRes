@@ -5,8 +5,8 @@
 --------------------------------------------------------------
 
 
-MUSIC_GLOBAL_MUSICE  = 0;
-MUSIC_GLOBAL_SILENT = 0;
+MUSIC_GLOBAL_MUSICE  = 1;
+MUSIC_GLOBAL_SILENT = 1;
 
 --[[
 	1	 battle

@@ -14,13 +14,13 @@ function p.ShowUI(rewardData)
 	dlg_userinfo.ShowUI();
 
 	--如果战斗失败
-	if tonumber(rewardData.victory) == 0 then
-		p.CloseUI();
-		dlg_userinfo.ShowUI();
-		stageMap_main.OpenWorldMap();
-		dlg_menu.ShowUI();
-		return
-	end
+	-- if tonumber(rewardData.victory) == 0 then
+		-- p.CloseUI();
+		-- dlg_userinfo.ShowUI();
+		-- stageMap_main.OpenWorldMap();
+		-- dlg_menu.ShowUI();
+		-- return
+	-- end
 	
 	
 	if p.layer ~= nil then 

@@ -26,13 +26,18 @@ function p.ShowUI(backData)
 	--如果战斗失败
 	if tonumber(rewardData.victory) == 0 then
 		p.CloseUI();
-		quest_lost.ShowUI();
+		-- quest_lost.ShowUI();
 		-- dlg_userinfo.ShowUI();
 		-- stageMap_main.OpenWorldMap();
 		-- dlg_menu.ShowUI();
-		return
+		quest_reward.ShowUI(rewardData)
+	else
+		p.ShowWinView(rewardData)
 	end
 	
+end
+
+function p.ShowWinView(rewardData)
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;

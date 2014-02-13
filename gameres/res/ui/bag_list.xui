@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
@@ -80,7 +80,7 @@ UIClsoeType=0
 [CTRL_PICTURE_95]
 Type=1
 Tag=111
-Rect=494 5 115 115
+Rect=757 135 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -89,7 +89,7 @@ UIClsoeType=0
 [CTRL_PICTURE_94]
 Type=1
 Tag=99
-Rect=372 5 115 115
+Rect=757 135 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -98,7 +98,7 @@ UIClsoeType=0
 [CTRL_PICTURE_93]
 Type=1
 Tag=98
-Rect=252 5 115 115
+Rect=757 135 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -107,7 +107,7 @@ UIClsoeType=0
 [CTRL_PICTURE_92]
 Type=1
 Tag=97
-Rect=131 5 115 115
+Rect=757 135 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -116,7 +116,7 @@ UIClsoeType=0
 [CTRL_PICTURE_91]
 Type=1
 Tag=96
-Rect=11 5 115 115
+Rect=757 135 115 115
 AnchorPos=0 0
 Notes=
 UIOpenType=0

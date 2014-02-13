@@ -86,7 +86,7 @@ DisableFileUV=0 0 104 78
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=0 277 640 495
+Rect=0 277 640 528
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -151,7 +151,7 @@ DisableFileUV=0 0 110 54
 [CTRL_VERTICAL_LIST_GACHA]
 Type=14
 Tag=13
-Rect=10 316 620 439
+Rect=0 282 636 518
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -161,7 +161,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_SHOP_ITEM]
 Type=14
 Tag=15
-Rect=10 318 620 439
+Rect=-1 282 637 518
 AnchorPos=0 0
 Notes=
 Remark=道具list
@@ -171,7 +171,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_GIFT_PACK]
 Type=14
 Tag=35
-Rect=10 316 620 439
+Rect=-1 282 637 518
 AnchorPos=0 0
 Notes=
 Remark=礼包list
@@ -218,7 +218,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_BAG]
 Type=14
 Tag=1068
-Rect=7 286 627 471
+Rect=-1 282 637 518
 AnchorPos=0 0
 Notes=
 Remark=扭蛋list
@@ -228,7 +228,7 @@ UIClsoeType=0
 [CTRL_PICTURE_USE]
 Type=1
 Tag=24
-Rect=51 382 479 197
+Rect=74 391 479 197
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -239,7 +239,7 @@ NormalFileUV=0 0 594 208
 [CTRL_BUTTON_USE]
 Type=2
 Tag=26
-Rect=169 513 107 53
+Rect=260 463 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -255,7 +255,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_PICTURE_LABEL_USE]
 Type=1
 Tag=27
-Rect=192 523 61 32
+Rect=283 473 61 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -266,7 +266,7 @@ NormalFileUV=0 0 52 28
 [CTRL_TEXT_ITEM_INFO]
 Type=4
 Tag=28
-Rect=91 397 398 103
+Rect=114 438 398 103
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -312,7 +312,7 @@ NormalFileUV=0 0 59 30
 [CTRL_BUTTON_69]
 Type=2
 Tag=69
-Rect=310 513 107 53
+Rect=260 463 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -328,7 +328,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_TEXT_71]
 Type=4
 Tag=71
-Rect=324 521 79 37
+Rect=274 471 79 37
 AnchorPos=0 0
 Notes=
 Text=取消

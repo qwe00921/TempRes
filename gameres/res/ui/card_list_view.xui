@@ -7,7 +7,7 @@ Height=960
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 0 636 130
+Rect=0 0 640 130
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -78,55 +78,65 @@ Remark=物品1
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_BG1]
+[CTRL_PICTURE_75]
 Type=1
-Tag=92
-Rect=18 6 115 115
+Tag=75
+Rect=22 6 55 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_BG2]
+[CTRL_PICTURE_76]
 Type=1
-Tag=93
-Rect=141 6 115 115
+Tag=76
+Rect=144 6 55 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_BG3]
+[CTRL_PICTURE_77]
 Type=1
-Tag=94
-Rect=264 6 115 115
+Tag=77
+Rect=266 6 55 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_BG4]
+[CTRL_PICTURE_78]
 Type=1
-Tag=95
-Rect=387 6 115 115
+Tag=78
+Rect=389 6 55 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_BG5]
+[CTRL_PICTURE_79]
 Type=1
-Tag=96
-Rect=510 6 115 115
+Tag=79
+Rect=512 6 55 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
 [CTRL_TEXT_LV1]
 Type=4
 Tag=22
-Rect=44 4 30 25
+Rect=48 3 30 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -139,7 +149,7 @@ UIClsoeType=0
 [CTRL_TEXT_LV2]
 Type=4
 Tag=23
-Rect=167 2 30 25
+Rect=171 3 30 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -152,7 +162,7 @@ UIClsoeType=0
 [CTRL_TEXT_LV3]
 Type=4
 Tag=24
-Rect=290 2 30 25
+Rect=292 3 30 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -165,7 +175,7 @@ UIClsoeType=0
 [CTRL_TEXT_LV4]
 Type=4
 Tag=25
-Rect=413 2 30 25
+Rect=415 3 30 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -178,7 +188,7 @@ UIClsoeType=0
 [CTRL_TEXT_LV5]
 Type=4
 Tag=26
-Rect=536 2 30 25
+Rect=536 3 30 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -191,7 +201,7 @@ UIClsoeType=0
 [CTRL_PICTURE_TEAM1]
 Type=1
 Tag=27
-Rect=55 -2 85 35
+Rect=60 -3 85 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -200,7 +210,7 @@ UIClsoeType=0
 [CTRL_PICTURE_TEAM2]
 Type=1
 Tag=28
-Rect=178 -2 85 35
+Rect=179 -4 85 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -209,7 +219,7 @@ UIClsoeType=0
 [CTRL_PICTURE_TEAM3]
 Type=1
 Tag=29
-Rect=301 -2 85 35
+Rect=303 -3 85 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -218,7 +228,7 @@ UIClsoeType=0
 [CTRL_PICTURE_TEAM4]
 Type=1
 Tag=30
-Rect=424 -2 85 35
+Rect=426 -3 85 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -227,7 +237,7 @@ UIClsoeType=0
 [CTRL_PICTURE_TEAM5]
 Type=1
 Tag=31
-Rect=547 -2 85 35
+Rect=547 -3 85 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
