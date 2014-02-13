@@ -58,13 +58,14 @@ function p.CreateDlg()
 		local layer = createNDUIDialog();
 		if layer == nil then
 			return false;
-		end
-		
+		end			
+
 		layer:NoMask()
 		layer:Init();
+		layer:SetSwallowTouch( true );
 		GetUIRoot():AddDlg(layer);
 		LoadDlg("dlg_msgbox.xui", layer, nil);
-		
+
 		p.layer = layer;
 		p.SetDelegate(p.layer);
 	end
