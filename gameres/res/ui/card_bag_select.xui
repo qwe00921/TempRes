@@ -6,20 +6,24 @@ Height=960
 [CTRL_PICTURE_CARD_SELECT]
 Type=1
 Tag=608
-Rect=70 1 42 42
+Rect=72 4 33 33
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\public\select.png
-NormalFileUV=0 0 42 42
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\sellnum.png
+NormalFileUV=0 0 33 33
 
 [CTRL_TEXT_NUM]
 Type=4
 Tag=10
-Rect=80 11 20 20
+Rect=79 11 20 20
 AnchorPos=0 0
 Notes=
 TextSize=16
-TextColor=0xff0000
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

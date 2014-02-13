@@ -57,25 +57,10 @@ UIClsoeType=2
 NormalFile=.\res\image\ui\quest\4.png
 NormalFileUV=0 0 299 91
 
-[CTRL_TEXT_8]
-Type=4
-Tag=9
-Rect=268 165 105 32
-AnchorPos=0 0
-Notes=
-Text=队伍编辑
-TextTradition=隊伍編輯
-TextSize=24
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=2
-UIClsoeType=2
-
 [CTRL_PICTURE_DRAG_BG]
 Type=1
 Tag=1219
-Rect=14 215 611 477
+Rect=14 203 611 607
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -86,7 +71,7 @@ NormalFileUV=0 0 1 1
 [CTRL_LIST_9]
 Type=8
 Tag=10
-Rect=0 215 640 510
+Rect=-1 215 640 547
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -95,7 +80,8 @@ UIClsoeType=0
 [CTRL_BUTTON_LEFT]
 Type=2
 Tag=11
-Rect=78 739 40 44
+Z_Order=99
+Rect=78 764 40 44
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -109,7 +95,8 @@ NormalFileUV=0 0 40 44
 [CTRL_BUTTON_RIGHT]
 Type=2
 Tag=12
-Rect=523 739 40 44
+Z_Order=99
+Rect=523 764 40 44
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -140,7 +127,7 @@ SelectedFileUV=0 0 149 60
 [CTRL_PICTURE_13]
 Type=1
 Tag=13
-Rect=486 746 28 31
+Rect=486 771 28 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -151,7 +138,7 @@ NormalFileUV=0 0 28 31
 [CTRL_PICTURE_14]
 Type=1
 Tag=14
-Rect=127 746 28 31
+Rect=127 771 28 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -162,7 +149,7 @@ NormalFileUV=0 0 28 31
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=460 752 17 18
+Rect=460 777 17 18
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -173,7 +160,7 @@ NormalFileUV=0 0 17 18
 [CTRL_PICTURE_16]
 Type=1
 Tag=16
-Rect=164 752 17 18
+Rect=164 777 17 18
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -191,3 +178,14 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\1.png
 NormalFileUV=0 0 124 35
+
+[CTRL_PICTURE_18]
+Type=1
+Tag=18
+Rect=255 161 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\team.png
+NormalFileUV=0 0 131 41
