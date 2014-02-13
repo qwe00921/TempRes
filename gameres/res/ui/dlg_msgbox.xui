@@ -72,8 +72,6 @@ NormalFile=.\res\image\ui\public\ok1.png
 NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\public\ok1_select.png
 SelectedFileUV=0 0 122 60
-DisableFile=.\res\image\ui\common\btn_2_disable.png
-DisableFileUV=0 0 136 60
 
 [CTRL_BUTTON_YES]
 Type=2
@@ -90,8 +88,6 @@ NormalFile=.\res\image\ui\public\ok1.png
 NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\public\ok1_select.png
 SelectedFileUV=0 0 122 60
-DisableFile=.\res\image\ui\common\btn_2_disable.png
-DisableFileUV=0 0 136 60
 
 [CTRL_BUTTON_NO]
 Type=2
@@ -108,5 +104,3 @@ NormalFile=.\res\image\ui\quest\back.png
 NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\quest\back_select.png
 SelectedFileUV=0 0 122 60
-DisableFile=.\res\image\ui\common\btn_2_disable.png
-DisableFileUV=0 0 136 60

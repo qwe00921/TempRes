@@ -958,7 +958,8 @@ function p.ShowGachaData( gachadata )
 		local bg = GetUiNode(view,ui_gacha_list_view.ID_CTRL_PICTURE_BG);
 		view:SetViewSize( bg:GetFrameSize());
 
-		local gachaName = GetLabel( view, ui_gacha_list_view.ID_CTRL_TEXT_GACHANAME );
+		--local gachaName = GetLabel( view, ui_gacha_list_view.ID_CTRL_TEXT_GACHANAME );
+		local gachaName = GetImage( view, ui_gacha_list_view.ID_CTRL_PICTURE_23 );
 		local gachaPic = GetImage( view, ui_gacha_list_view.ID_CTRL_PICTURE_PIC );
 		local gachaOneBtn = GetButton( view, ui_gacha_list_view.ID_CTRL_BUTTON_ONE );
 		local gachaFewBtn = GetButton( view, ui_gacha_list_view.ID_CTRL_BUTTON_TEN );
@@ -987,7 +988,8 @@ function p.ShowGachaData( gachadata )
 			gachaFreeTime:SetText( "当前可以进行免费扭蛋！" );
 		end
 		
-		gachaName:SetText( gacha[i].Name );
+		--gachaName:SetText( gacha[i].Name );
+		gachaName:SetPicture( GetPictureByAni( "common_ui.gacha_name", tonumber(gachaid)-1 ) );
 		gachaPic:SetPicture( GetPictureByAni( "gacha_pic." .. gachaid, 0 ) );
 		
 		gachaOneBtn:SetLuaDelegate(p.OnGachaUIEvent);

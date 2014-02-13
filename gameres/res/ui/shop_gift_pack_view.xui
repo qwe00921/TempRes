@@ -197,18 +197,16 @@ NormalFileUV=0 0 68 4
 [CTRL_PICTURE_ICON_L]
 Type=1
 Tag=3
-Rect=42 25 100 100
+Rect=42 30 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\map_base\box.png
-NormalFileUV=0 0 78 66
 
 [CTRL_BUTTON_LOOK_L]
 Type=2
 Tag=10
-Rect=42 33 100 100
+Rect=43 31 100 100
 AnchorPos=0 0
 Notes=
 TextSize=20
