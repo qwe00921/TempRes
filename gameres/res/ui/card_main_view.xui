@@ -3,15 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_14]
-Type=1
-Tag=14
-Rect=18 250 110 110
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_17]
 Type=1
 Tag=17
