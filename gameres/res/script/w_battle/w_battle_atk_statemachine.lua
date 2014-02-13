@@ -184,13 +184,13 @@ function p:atk_start()
 		local cmdMove = nil;
 		local fX = GetWinSize().w / 2.0;
 		local fY = GetWinSize().h / 2.0;
-		self.enemyPos = CCPointMake(fX,fY);
+		--self.enemyPos = CCPointMake(fX,fY);
 		
 		--WriteCon(string.format("X:%d,Y:%d",fX,fY));
 		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-		--	cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
+			cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
 		--else
-			cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
+			--cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
 	--	end
 		
 		

@@ -494,7 +494,6 @@ function p:AddFighters( uiArray, fighters )
 				pOldPos.x = pOldPos.x - loffset
 			end
 			
-			pOldPos = CCPointMake(200,200);
 			node:SetCenterPos(pOldPos);
 		--end;
 		--’Ω ø Ù–‘
