@@ -293,7 +293,7 @@ function p:atk_startAtk()
 		
 		if self.is_bullet == W_BATTLE_BULLET_1 then --ÓÐµ¯µÀ
 			
-			local bulletAni = "w_bullet."..tostring( atkFighter.cardId );
+			local bulletAni = "n_bullet."..tostring( atkFighter.cardId );
 			if self.IsSkill == true then
 				bulletAni = self.bulleteffect;
 			end;
