@@ -96,7 +96,7 @@ function p:CreateFlyNum(nType)
     flynum:Init(nType);
     flynum:SetOffset(0,0);
     
-    self.node:AddChildZ( flynum:GetNode(), 2 );
+    self.node:AddChildZ( flynum:GetNode(), 9999 );
     self.flynum_mgr[#self.flynum_mgr + 1] = flynum;
     
     if #self.flynum_mgr > 3 then
@@ -114,7 +114,7 @@ function p:CreateFlyNumGreen()
     flynum:SetOwnerNode( self.node );
     flynum:Init();
     flynum:SetOffset(30,-20);
-    self.node:AddChildZ( flynum:GetNode(), 3 );
+    self.node:AddChildZ( flynum:GetNode(), 9999 );
     self.flynumGreen = flynum;
 end
 
@@ -124,7 +124,7 @@ function p:CreateLab(fx)
     flyLab:SetOwnerNode( self.node );
     flyLab:Init();
     flyLab:SetOffset(fx,-20);
-    self.node:AddChildZ( flyLab:GetNode(), 3 );
+    self.node:AddChildZ( flyLab:GetNode(), 9999 );
 	return flyLab;
     --self.flynumGreen = flynum;
 end;
@@ -828,7 +828,7 @@ function p:UseHpBall(pVal)
 		if w_battle_mgr.HpBallNum < 0 then
 			WriteCon("Error HpBallNum < 0");
 		else
-			WriteCon("HpBallNum ="..tostring(w_battle_mgr.HpBallNum));
+			WriteCon("HpBallNum ="..tostring(w_battle_mgr.HpBallNum).." pos="..tostring(self:GetId() ) );
 		end
 		w_battle_mgr.checkPickEnd();
 
@@ -848,7 +848,7 @@ function p:UseSpBall(pVal)
 		if w_battle_mgr.SpBallNum < 0 then
 			WriteCon("Error SpBallNum < 0");
 		else
-			WriteCon("SpBallNum ="..tostring(w_battle_mgr.SpBallNum));
+			WriteCon("SpBallNum ="..tostring(w_battle_mgr.SpBallNum).." pos="..tostring(self:GetId() ) );
 		end
 		w_battle_mgr.checkPickEnd();
 end;

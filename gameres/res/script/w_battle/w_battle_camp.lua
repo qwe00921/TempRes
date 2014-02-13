@@ -421,7 +421,9 @@ function p:AddShadows(uiArray, fighters)
 	for i = 1,#self.fighters do
 	    local fighterInfo = self.fighters[i];
         local uiTag = uiArray[tonumber( fighterInfo.Position )];
-		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
+--		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
+--		local nodeUI = GetUiNode( w_battle_mgr.uiLayer, uiTag );
+	    local node = w_battle_mgr.GetPlayerNode(uiTag );		
 		if node == nil then
 			WriteCon( "get player node failed" );
 			return;
@@ -430,6 +432,7 @@ function p:AddShadows(uiArray, fighters)
 		local kShadow = w_shadow:new();
 		local nIndex = #self.shadows + 1;
 		self.shadows[nIndex] = kShadow;
+		--[[
 		local pOldPos = node:GetCenterPos();
 
 		if self.idCamp == E_CARD_CAMP_HERO then
@@ -439,7 +442,7 @@ function p:AddShadows(uiArray, fighters)
 		end
 		
 		node:SetCenterPos(pOldPos);
-		
+		]]--
 		local kShadowNode = kShadow:Init("lancer.shadow",node);
 		self.fighters[nIndex]:SetShadow(kShadow.m_kNode);
 		w_battle_mgr.uiLayer:AddChildZ(kShadowNode,0);
@@ -460,8 +463,10 @@ function p:AddFighters( uiArray, fighters )
 	for i = 1,#fighters do
 	    local fighterInfo = fighters[i];
 		local uiTag = uiArray[tonumber( fighterInfo.Position )];
-		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
-		if node == nil then
+		--local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
+		local nodeUI = GetUiNode( w_battle_mgr.uiLayer, uiTag );
+		local node = w_battle_mgr.GetPlayerNode(uiTag );
+		if (node == nil) or (nodeUI == nil) then
 			WriteCon( "get player node failed" );
 			return;
 		end
@@ -470,7 +475,7 @@ function p:AddFighters( uiArray, fighters )
 		self.fighters[#self.fighters + 1] = f;
 		--self.fighters[tonumber(fighterInfo.Position)] = f;%
 		
-		local pOldPos = node:GetCenterPos();
+		local pOldPos = nodeUI:GetCenterPos();
         
 		
 		local lwinWidth = GetWinSize().w;
@@ -520,12 +525,12 @@ function p:AddFighters( uiArray, fighters )
 		
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				f.Attack = 1;
+				f.Attack = 10000;
 				f.Defence = 1;
 				--
-				if f.Position == 2 then
-					f.Sp = 100;
-				end
+				--if f.Position == 2 then
+				--	f.Sp = 100;
+				--end
 				
 				--f.Defence = f.Defence + 200;
 			--[[	f.Sp = 100;
@@ -542,9 +547,9 @@ function p:AddFighters( uiArray, fighters )
 				f.Attack = 1;
 				f.Defence = 100;
 				f.Skill = 0;
-				if f.Position == 1 then
-					f.Skill = 1001	
-				end
+				--if f.Position == 1 then
+				--	f.Skill = 1001	
+				--end
 			--[[	if f.Position == 1  then
 					f.Skill = 1005;
 				elseif f.Position == 3 then
