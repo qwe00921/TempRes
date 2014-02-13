@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -218,72 +218,6 @@ TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_29]
-Type=1
-Tag=33
-Rect=15 96 102 102
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_0.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_30]
-Type=1
-Tag=41
-Rect=117 96 102 102
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_0.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_31]
-Type=1
-Tag=42
-Rect=219 96 102 102
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_0.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_32]
-Type=1
-Tag=43
-Rect=321 96 102 102
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_0.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_33]
-Type=1
-Tag=44
-Rect=423 96 102 102
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_0.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_34]
-Type=1
-Tag=45
-Rect=525 96 102 102
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_0.png
-NormalFileUV=0 0 119 120
 
 [CTRL_PICTURE_25]
 Type=1
