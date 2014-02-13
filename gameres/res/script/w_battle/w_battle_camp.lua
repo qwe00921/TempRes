@@ -399,7 +399,9 @@ function p:AddShadows(uiArray, fighters)
 	for i = 1,#self.fighters do
 	    local fighterInfo = self.fighters[i];
         local uiTag = uiArray[tonumber( fighterInfo.Position )];
-		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
+--		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
+--		local nodeUI = GetUiNode( w_battle_mgr.uiLayer, uiTag );
+	    local node = w_battle_mgr.GetPlayerNode(uiTag );		
 		if node == nil then
 			WriteCon( "get player node failed" );
 			return;
@@ -408,6 +410,7 @@ function p:AddShadows(uiArray, fighters)
 		local kShadow = w_shadow:new();
 		local nIndex = #self.shadows + 1;
 		self.shadows[nIndex] = kShadow;
+		--[[
 		local pOldPos = node:GetCenterPos();
 
 		if self.idCamp == E_CARD_CAMP_HERO then
@@ -417,7 +420,7 @@ function p:AddShadows(uiArray, fighters)
 		end
 		
 		node:SetCenterPos(pOldPos);
-		
+		]]--
 		local kShadowNode = kShadow:Init("lancer.shadow",node);
 		self.fighters[nIndex]:SetShadow(kShadow.m_kNode);
 		w_battle_mgr.uiLayer:AddChildZ(kShadowNode,0);
@@ -438,8 +441,10 @@ function p:AddFighters( uiArray, fighters )
 	for i = 1,#fighters do
 	    local fighterInfo = fighters[i];
 		local uiTag = uiArray[tonumber( fighterInfo.Position )];
-		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
-		if node == nil then
+		--local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
+		local nodeUI = GetUiNode( w_battle_mgr.uiLayer, uiTag );
+		local node = w_battle_mgr.GetPlayerNode(uiTag );
+		if (node == nil) or (nodeUI == nil) then
 			WriteCon( "get player node failed" );
 			return;
 		end
@@ -448,7 +453,7 @@ function p:AddFighters( uiArray, fighters )
 		self.fighters[#self.fighters + 1] = f;
 		--self.fighters[tonumber(fighterInfo.Position)] = f;%
 		
-		local pOldPos = node:GetCenterPos();
+		local pOldPos = nodeUI:GetCenterPos();
         
 		
 		local lwinWidth = GetWinSize().w;
