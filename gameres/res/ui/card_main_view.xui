@@ -164,7 +164,7 @@ SelectedFileUV=0 0 67 46
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=5 234 628 573
+Rect=5 234 628 529
 AnchorPos=0 0
 Notes=
 UIOpenType=0
