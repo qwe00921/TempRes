@@ -105,9 +105,9 @@ function p.InitControlelr()
 	p.numText = GetLabel( p.layer, ui.ID_CTRL_TEXT_18 );
 	p.numText:SetText( tostring( math.min( 1, tonumber( num ) ) ) );
 	
-	local hideLabel = GetLabel( p.layer, ui.ID_CTRL_TEXT_25 );
-	hideLabel:SetVisible( false );
-	hideLabel = GetLabel( p.layer, ui.ID_CTRL_TEXT_26 );
+	--local hideLabel = GetLabel( p.layer, ui.ID_CTRL_TEXT_25 );
+	--hideLabel:SetVisible( false );
+	local hideLabel = GetLabel( p.layer, ui.ID_CTRL_TEXT_26 );
 	hideLabel:SetVisible( false );
 end
 
