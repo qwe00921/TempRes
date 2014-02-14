@@ -86,8 +86,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_76]
 Type=1
@@ -97,8 +95,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_77]
 Type=1
@@ -108,8 +104,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_78]
 Type=1
@@ -119,8 +113,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_79]
 Type=1
@@ -130,8 +122,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
 [CTRL_TEXT_LV1]
 Type=4
