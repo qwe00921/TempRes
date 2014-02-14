@@ -579,14 +579,19 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );
 			local v = list:GetEnableMove();
 			local bt = ConverToButton(uiNode);
+			local txtV =  GetButton( p.layer, ui.ID_CTRL_PICTURE_17 );
 			if v == false then
 				v = true;
 				bg:SetVisible(false);
-				bt:SetText(GetStr("card_group_drag"));
+				bt:SetChecked(false);
+				txtV:SetChecked(false);
+				--bt:SetText(GetStr("card_group_drag"));
 			else 
 				v = false;
 				bg:SetVisible(true);
-				bt:SetText(GetStr("card_group_drag_cancel"));
+				bt:SetChecked(true);
+				txtV:SetChecked(true);
+				--bt:SetText(GetStr("card_group_drag_cancel"));
 				
 			end
 			list:SetEnableMove(v );
