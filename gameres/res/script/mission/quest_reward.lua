@@ -79,8 +79,10 @@ function p.isShowPlot()
 		stageMap_main.OpenWorldMap();
 		dlg_userinfo.ShowUI();
 	else
+		local missionId = tonumber(p.rewardDataT.mission_id);
+		local viewId = math.floor(missionId/100000);
 		p.CloseUI();
-		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,0)
+		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
 		WriteCon("OK BUTTON");
 	end
 
