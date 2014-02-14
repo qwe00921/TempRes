@@ -1,0 +1,32 @@
+本文档记录战斗中使用的资源及配置（不含战斗结算界面）,战斗中用到的公共资源（例如：详细掉落物品)不在此文档中, 编写时间:2014-2-14
+
+一.需资源变更的动画
+1. ani图片动画索引 
+
+res\ani\effect.ani 数字之类公共资源
+res\ani\mapbg.ani    战斗中地图背景
+res\ani\n_battle.ani  战斗站立/攻击/待机动画
+res\ani\n_battle_buff.ani 战斗BUFF相光特效
+res\ani\n_bullet.ani 战斗中远程弹道
+res\ani\skill_effect.ani 战斗技能特效
+res\ani\w_battle_res.ani 战斗专属的图片动画索引
+res\ani\w_drop.ani 战斗掉落
+
+
+
+
+2. 战斗中站立/攻击/待机动画的使用 ani索引
+res\chara\n_battle_chara
+
+
+二.不用变更资源的动画(移动，淡入淡出等)
+res\action_effect\lancer.act
+res\action_effect\lancer_cmb.actcmb
+
+
+三.使用的资源图片所在文件夹
+res\image\mapbg
+res\image\n_battle
+res\image\num
+res\image\skill
+res.cn\image\battle_buff
