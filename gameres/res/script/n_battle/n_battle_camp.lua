@@ -150,8 +150,6 @@ function p:AddAllRandomTimeJumpEffect(bHero)
 		g_EnemyIndex = 1;
 		for k,v in ipairs(self.fighters) do
 			local fTime = k / 10.0f + 0.3f;
-			local str = string.format("Enemy jump time is %8.6f",fTime);
-			WriteCon(str);
 			SetTimerOnce( p.AddEnemyFightersJumpEffect, fTime );
 		end
 	end

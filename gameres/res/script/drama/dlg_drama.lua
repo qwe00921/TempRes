@@ -72,6 +72,7 @@ function p.Init()
     p.contentNode = GetColorLabel( p.layer, ui.ID_CTRL_COLOR_LABEL_TEXT );
 	p.contentNode:SetHorzAlign( 0 );
 	p.contentNode:SetVertAlign( 1 );
+	p.contentNode:SetIsUseMutiColor(false);
     p.npcNameNode = GetLabel( p.layer, ui.ID_CTRL_TEXT_NPC_NAME );
     p.bgPicNode = GetImage( p.layer,ui.ID_CTRL_PICTURE_BG );
     
@@ -138,8 +139,7 @@ function p.DoEffectContent()
 	
 	local strText = GetSubStringUtf8( p.contentStr, p.contentIndex );
 	--WriteCon(strText);
-	WriteCon(string.format("Font Size %d",p.fontSize));
-	p.contentNode:SetFontSize(p.fontSize);
+	--p.contentNode:SetFontSize(p.fontSize);
 	p.contentNode:SetText(strText);
 
 	p.contentIndex = p.contentIndex + 1;
