@@ -303,9 +303,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		--战斗
 		elseif (ui.ID_CTRL_BUTTON_FIGHT == tag) then
 			WriteCon("p.storyId == "..p.storyId);
+			local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
+			WriteCon("nowTeamId == "..nowTeamId);
 			if tonumber(p.storyId) == 0 then
-				local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
-				WriteCon("nowTeamId == "..nowTeamId);
 				maininterface.m_bgImage:SetVisible(false);
 				if E_DEMO_VER== 4 then
 					 n_battle_mgr.EnterBattle( N_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
