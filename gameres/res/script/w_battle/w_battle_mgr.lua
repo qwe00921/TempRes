@@ -237,7 +237,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	  return false;
    end;
 
-	if (atkFighter.Sp == 100) and (atkFighter.Skill ~= 0) then
+--[[	if (atkFighter.Sp == 100) and (atkFighter.Skill ~= 0) then
 		if IsMonster ~= true then
 			local distanceRes = tonumber( SelectCell( T_SKILL_RES, atkFighter.Skill, "distance" ) );--远程与近战的判断;	
 			local targetType   = tonumber( SelectCell( T_SKILL, atkFighter.Skill, "target_type" ) );
@@ -250,7 +250,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 			
 		end;
 	end;
-
+]]--
 	local targetFighter = nil;
 	if IsMonster == true then
 		targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( targetID ) );	
@@ -314,7 +314,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	else
 		atkFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( atkID ) );
 		if atkFighter.Sp < 100 then
-			WriteConErr( "Sp<100");
+			WriteCon( "Sp<100");
 			return false;
 		end
 	end;

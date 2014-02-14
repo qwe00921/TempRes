@@ -687,7 +687,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		end
 	elseif IsDragUp( uiEventType ) then
 		WriteCon("IsDragUp");
-		w_battle_mgr.SetPVESkillAtkID( id );
+		w_battle_mgr.SetPVESkillAtkID( uiNode:GetId() );
 	elseif IsDragLeft( uiEventType ) then
 		WriteCon("IsDragLeft");
 	elseif IsDragRight( uiEventType ) then
