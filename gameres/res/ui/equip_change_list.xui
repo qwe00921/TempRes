@@ -79,21 +79,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_176]
-Type=4
-Tag=176
-Rect=236 153 168 46
-AnchorPos=0 0
-Notes=
-Text=装备选择
-TextTradition=裝備選擇
-TextSize=30
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_11]
 Type=1
 Tag=12
@@ -104,3 +89,14 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\btn_sort_head_1.png
 NormalFileUV=0 0 67 46
+
+[CTRL_PICTURE_53]
+Type=1
+Tag=53
+Rect=255 160 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\equip.png
+NormalFileUV=0 0 131 41

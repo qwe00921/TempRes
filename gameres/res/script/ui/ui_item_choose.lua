@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_item_choose = {};
 local p =  ui_item_choose;
+p.ID_CTRL_PICTURE_52					     = 52;
 p.ID_CTRL_TEXT_NUM5					      = 37;
 p.ID_CTRL_TEXT_NUM4					      = 36;
 p.ID_CTRL_TEXT_NUM3					      = 35;
@@ -27,6 +28,5 @@ p.ID_CTRL_BUTTON_ITEM1				    = 10;
 p.ID_CTRL_BUTTON_9					       = 9;
 p.ID_CTRL_BUTTON_8					       = 8;
 p.ID_CTRL_PICTURE_7					      = 7;
-p.ID_CTRL_TEXT_6						        = 6;
 p.ID_CTRL_PICTURE_41					     = 42;
 p.ID_CTRL_BUTTON_RETURN				   = 22;

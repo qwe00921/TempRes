@@ -198,21 +198,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\quest\4.png
 NormalFileUV=0 0 299 91
 
-[CTRL_TEXT_77]
-Type=4
-Tag=77
-Rect=267 155 107 42
-AnchorPos=0 0
-Notes=
-Text=商城
-TextTradition=商城
-TextSize=35
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_VERTICAL_LIST_BAG]
 Type=14
 Tag=1068
@@ -310,7 +295,7 @@ NormalFileUV=0 0 59 30
 [CTRL_BUTTON_69]
 Type=2
 Tag=69
-Rect=260 463 107 53
+Rect=373 480 107 53
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -326,7 +311,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_TEXT_71]
 Type=4
 Tag=71
-Rect=274 471 79 37
+Rect=387 488 79 37
 AnchorPos=0 0
 Notes=
 Text=取消
@@ -348,3 +333,14 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\shop\text_have.png
 NormalFileUV=0 0 59 30
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=30
+Rect=255 161 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\shopo.png
+NormalFileUV=0 0 131 41
