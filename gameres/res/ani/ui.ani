@@ -237,5 +237,9 @@ image\ui\main_interface\energy2.png
 
 [country_effect]
 image\ui\country\bird.png @cut(2,4) @time=0.2 @loop
-
-
+;卡牌排序
+[card_order]
+image\ui\card_bag\btn_sort_head_1.png
+image\ui\card_bag\btn_lv_head_1.png
+image\ui\card_bag\btn_star_head_1.png
+image\ui\card_bag\btn_type_head_1.png

@@ -21,7 +21,7 @@ p.cardListInfo = nil;
 p.curBtnNode = nil;
 p.sortByRuleV = nil;
 p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
-
+p.sortByRuleNum = nil;
 p.selectList = {};
 p.teamList = {};
 p.selectNum = 0;
@@ -242,19 +242,19 @@ function p.sortByBtnEvent(sortType)
 	if sortType == nil then
 		return
 	end
-	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SORT_BY);
-	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
+	local sortByImage = GetImage(p.layer, ui.ID_CTRL_PICTURE_154);
+	--sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
-		sortByBtn:SetText(GetStr("equip_level"));
+		sortByImage:SetPicture(GetPictureByAni("ui.card_order",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
-		sortByBtn:SetText(GetStr("equip_rule"));
+		sortByImage:SetPicture(GetPictureByAni("ui.card_order",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
 	elseif(sortType == CARD_BAG_SORT_BY_TIME) then 
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
-		sortByBtn:SetText(GetStr("card_element"));		
+		sortByImage:SetPicture(GetPictureByAni("ui.card_order",3));		
 		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
 	end
 	p.sortByRule(sortType)
@@ -741,31 +741,72 @@ function p.sortByRule(sortType)
 	if sortType == nil or p.cardListByProf == nil then 
 		return
 	end
-	WriteCon("sortByRule sortType = "..sortType);
-	if sortType == CARD_BAG_SORT_BY_LEVEL then
-		WriteCon("========sort by level");
-		table.sort(p.cardListByProf,p.sortByLevel);
-	elseif sortType == CARD_BAG_SORT_BY_STAR then
-		WriteCon("========sort by star");
-		table.sort(p.cardListByProf,p.sortByStar);
-	elseif sortType == CARD_BAG_SORT_BY_TIME then
-		WriteCon("========sort by time/Element");
-		table.sort(p.cardListByProf,p.sortByTime);
+	if p.sortByRuleNum == nil then
+		p.sortByRuleNum = sortType;
+		if sortType == CARD_BAG_SORT_BY_LEVEL then
+			WriteCon("========sort by level");
+			table.sort(p.cardListByProf,p.sortByLevel);
+		elseif sortType == CARD_BAG_SORT_BY_STAR then
+			WriteCon("========sort by star");
+			table.sort(p.cardListByProf,p.sortByStar);
+		elseif sortType == CARD_BAG_SORT_BY_TIME then
+			WriteCon("========sort by Element");
+			table.sort(p.cardListByProf,p.sortByTime);
+		end
+	else
+		if p.sortByRuleNum == sortType then
+			p.sortByRuleNum = nil;
+			if sortType == CARD_BAG_SORT_BY_LEVEL then
+				WriteCon("========sort by levelb");
+				table.sort(p.cardListByProf,p.sortByLevelb);
+			elseif sortType == CARD_BAG_SORT_BY_STAR then
+				WriteCon("========sort by starb");
+				table.sort(p.cardListByProf,p.sortByStarb);
+			elseif sortType == CARD_BAG_SORT_BY_TIME then
+				WriteCon("========sort by Elementb");
+				table.sort(p.cardListByProf,p.sortByTimeb);
+			end
+		else
+			p.sortByRuleNum = sortType;
+			if sortType == CARD_BAG_SORT_BY_LEVEL then
+				WriteCon("========sort by level");
+				table.sort(p.cardListByProf,p.sortByLevel);
+			elseif sortType == CARD_BAG_SORT_BY_STAR then
+				WriteCon("========sort by star");
+				table.sort(p.cardListByProf,p.sortByStar);
+			elseif sortType == CARD_BAG_SORT_BY_TIME then
+				WriteCon("========sort by Element");
+				table.sort(p.cardListByProf,p.sortByTime);
+			end
+		end
 	end
+	
 	p.ShowCardView(p.cardListByProf);
 end
 
---按等级排序
+--按等级排序1
 function p.sortByLevel(a,b)
-	return tonumber(a.Level) > tonumber(b.Level);
+	return tonumber(a.Level) > tonumber(b.Level) or ( tonumber(a.Level) == tonumber(b.Level) and tonumber(a.CardID) < tonumber(b.CardID));
 end
---按星级排序
+--按等级排序2
+function p.sortByLevelb(a,b)
+	return tonumber(a.Level) < tonumber(b.Level) or ( tonumber(a.Level) == tonumber(b.Level) and tonumber(a.CardID) < tonumber(b.CardID));
+end
+--按星级排序1
 function p.sortByStar(a,b)
 	return tonumber(a.Rare) < tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
 end
---按时间排序
+--按星级排序2
+function p.sortByStarb(a,b)
+	return tonumber(a.Rare) > tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
+end
+--按属性排序
 function p.sortByTime(a,b)
-	return tonumber(a.element) < tonumber(b.element);
+	return tonumber(a.element) < tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
+end
+--按属性排序2
+function p.sortByTimeb(a,b)
+	return tonumber(a.element) > tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 
 function p.CloseUI()
@@ -788,6 +829,7 @@ function p.CloseUI()
 		p.userMoney = 0;
 		p.cardListNode={};
 		p.cardNumListNode = {};
+		p.sortByRuleNum = nil;
 		p.cardEnabled = nil;
     end
 end
@@ -798,6 +840,6 @@ function p.ClearData()
 	p.cardListInfo = nil;
 	p.cardListByProf = {};
 	consumeMoney = 0;
-	
+	p.sortByRuleNum = nil;
 	
 end

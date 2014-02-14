@@ -46,7 +46,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_SOTR_LEVEL == tag then
-			WriteCon("**========byLevelBtn========**");
+			--WriteCon("**========byLevelBtn========**");
 			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
 			if p.id == 0 then
 				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
@@ -54,7 +54,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
 			end
 		elseif ui.ID_CTRL_BUTTON_SORT_STAR == tag then
-			WriteCon("**=======byStarBtn=======**");
+			--WriteCon("**=======byStarBtn=======**");
 			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			
 			if p.id == 0 then
@@ -63,7 +63,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			end
 		elseif ui.ID_CTRL_BUTTON_SOTR_ITEM == tag then
-			WriteCon("**========byTypeBtn========**");
+			--WriteCon("**========byTypeBtn========**");
 			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			
 			if p.id == 0 then
