@@ -88,6 +88,9 @@ image\ui\card_bag\type_7.png
 [levelBg]
 image\ui\public\bg_lv.png
 
+[levelPic]
+image\ui\card_attr_base\Lv.png
+
 ;卡牌强化的背景图片
 [cardBg]
 image\ui\public\card_big_choose.png

@@ -669,11 +669,11 @@ end
 --°´Å¥½»»¥
 function p.OnBtnClick( uiNode, uiEventType, param )
 	WriteCon( tostring(uiEventType) );
-	
+	local btn = ConverToButton( uiNode );
 	--WriteConErr( uiEventType .. " " .. uiNode:GetId() );
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
-		local btn = ConverToButton( uiNode );
+		
 		btn:SetEnabled( false );
 		if ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "**²Ëµ¥**" );
@@ -692,7 +692,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		end
 	elseif IsDragUp( uiEventType ) then
 		WriteCon("IsDragUp");
-		w_battle_mgr.SetPVESkillAtkID( uiNode:GetId() );
+		p.SetSkillAtk( btn );
 	elseif IsDragLeft( uiEventType ) then
 		WriteCon("IsDragLeft");
 	elseif IsDragRight( uiEventType ) then
@@ -749,6 +749,27 @@ function p.SetAtk( uiNode )
 	local ctrllers = p.objList[id];
 	
 	local flag = w_battle_mgr.SetPVEAtkID( id );
+	if p.CanUseItem then
+		p.CanUseItem = not flag;
+	end
+	if flag then
+		p.itemMask:SetVisible( true );
+		if ctrllers then
+			ctrllers[MASK_INDEX]:SetVisible( true );
+		end
+	else
+		if ctrllers then
+			ctrllers[MASK_INDEX]:SetVisible( false );
+			uiNode:SetEnabled( true );
+		end
+	end
+end
+
+function p.SetSkillAtk( uiNode )
+	local id = uiNode:GetId();
+	local ctrllers = p.objList[id];
+	
+	local flag = w_battle_mgr.SetPVESkillAtkID( id );
 	if p.CanUseItem then
 		p.CanUseItem = not flag;
 	end

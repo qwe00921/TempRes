@@ -50,10 +50,14 @@ end
 
 function p.InitController()
 	p.chapterName = GetLabel( p.layer, ui.ID_CTRL_TEXT_CHAPTER );
-	p.chapterName:SetText( ToUtf8("≤‚ ‘’¬Ω⁄") );
+	--p.chapterName:SetText( ToUtf8("≤‚ ‘’¬Ω⁄") );
+	local  lStageNameText = w_battle_mgr.getStageName();
+	p.chapterName:SetText(lStageNameText);
 	
 	p.missionName = GetLabel( p.layer, ui.ID_CTRL_TEXT_MISSION );
-	p.missionName:SetText( ToUtf8("≤‚ ‘πÿø®") );
+	--p.missionName:SetText( ToUtf8("≤‚ ‘πÿø®") );
+	local  lmisNameText = w_battle_mgr.getMissionName();
+	p.missionName:SetText( lmisNameText );
 	
 	p.expText = GetLabel( p.layer, ui.ID_CTRL_TEXT_222 );
 	p.expText:SetText( string.format( "%d/%d", math.min( p.fromNum, p.totalNum), p.totalNum ) );

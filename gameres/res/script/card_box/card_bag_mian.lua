@@ -190,38 +190,32 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV1;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
-		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG1;
 		cardLevelPic = ui_list.ID_CTRL_PICTURE_1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV2;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
-		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG2;
 		cardLevelPic = ui_list.ID_CTRL_PICTURE_2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV3;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
-		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG3;
 		cardLevelPic = ui_list.ID_CTRL_PICTURE_3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
 		cardLevelPic = ui_list.ID_CTRL_PICTURE_4;
-		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG4;
 	elseif cardIndex == 5 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV5;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
 		cardLevelPic = ui_list.ID_CTRL_PICTURE_5;
-		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG5;
 	end
 	
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	cardButton:SetVisible(true);
-	--local cardBoxPic = GetImage(view,cardBoxBg );
 	local cardTeamPic = GetImage(view,cardTeam );
 	cardTeamPic:SetVisible(true);
 	local cardLevelText = GetLabel(view,cardLevel );
@@ -268,10 +262,11 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	elseif teamId == 3 then
 		cardTeamPic:SetPicture( GetPictureByAni("common_ui.teamName",2));
 	end
-	
+		
 	--卡牌边框颜色
-	
 	local cardType = tonumber(card.element)
+	
+	
 	--WriteCon("cardType ===== "..cardType);
 	--cardBoxPic:SetPicture( GetPictureByAni("common_ui.cardBagTypeBox",cardType));
 	-- if cardType == 0 then
@@ -340,8 +335,8 @@ function p.InitViewUI(view)
 		local teamPic = GetImage(view,cardTeam);
 		teamPic:SetVisible(false);
 		
-		local teamPic = GetImage(view,cardLevelPic);
-		teamPic:SetVisible(false);
+		local cardLevelPictrue = GetImage(view,cardLevelPic);
+		cardLevelPictrue:SetVisible(false);
 		
 		local levelText = GetLabel(view,cardLevel);
 		levelText:SetVisible( false );

@@ -1167,6 +1167,7 @@ function p.checkTurnEnd()
 				p.IsPickEnd = false;
 				p.dropHpBall = 0;
 				p.dropSpBall = 0;
+				WriteCon("w_battle_pve.PickStep");
 				w_battle_pve.PickStep(p.CanPickEnd); --捡东西
 			end
 		else
@@ -1407,6 +1408,7 @@ function p.AddBall(ltype,num)
 end;
 
 function p.CanPickEnd()
+	WriteCon("CanPickEnd");
 	p.IsPickEnd	= true;
 	p.checkPickEnd()
 end;
@@ -1580,4 +1582,50 @@ function p.OnMsgQuitBoxCallback( result )
 	if result then
 		p.readlyQuit();
 	end
+end
+
+function p.getStageName()
+	local lName = "";
+	--local lstageID = p.missionID;
+	--local len = string.len(p.missionID)
+	local lstageID = string.sub(tostring(p.missionID), 1,3);
+	lName = SelectRowInner(T_STAGE,"stage_id",lstageID,"stage_name");
+	
+	return lName;
+end
+
+function p.getMissionName()
+	local lName = "";
+	lName = SelectCell(T_MISSION,tostring(p.missionID),"name");
+	lName = p.renameMissionName(lName);
+	return lName;
+end
+
+function p.renameMissionName(str)
+	local lName = "";
+	local len = string.len(str);
+	for i=1,len do 
+		local key = string.sub(str,i,i);
+		if key == '-' then
+			for k=i+1,len do
+				local lnum = string.sub(str,k,k);
+				if  (lnum ~= "1")
+					and (lnum ~= "2")
+					and (lnum ~= "3")
+					and (lnum ~= "4")
+					and (lnum ~= "5")
+					and (lnum ~= "6")
+					and (lnum ~= "7")
+					and (lnum ~= "8")
+					and (lnum ~= "9")
+					and (lnum ~= "0") then
+					lName = string.sub(str,k,len);
+					break;
+				end
+			end
+			break;
+		end
+	end
+	
+	return lName;
 end
