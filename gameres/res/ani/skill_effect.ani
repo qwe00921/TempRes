@@ -92,7 +92,7 @@ image\skill\target_1061.png @cut(2,4) @use(3,8) @time=0.1
 [target_1062]
 image\skill\target_1062.png @cut(2,4) @use(3,8) @time=0.1
 [target_1071]
-image\skill\target_1071.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1071.png @cut(2,5) @use(3,10) @time=0.1
 [target_1090]
 image\skill\target_1090.png @cut(2,4) @use(3,8) @time=0.1
 
@@ -131,7 +131,7 @@ image\skill\target_1061.png @cut(2,4) @use(1,2) @time=0.1
 [bullet_1062]
 image\skill\target_1062.png @cut(2,4) @use(1,2) @time=0.1
 [bullet_1071]
-image\skill\target_1071.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1071.png @cut(2,5) @use(1,2) @time=0.1
 [bullet_1090]
 image\skill\target_1090.png @cut(2,4) @use(1,2) @time=0.1
 
