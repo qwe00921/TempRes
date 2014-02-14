@@ -68,9 +68,9 @@ function p:PlayLab( ltype )
     --…Ë÷√Õº∆¨
 	local lPicture = nil;
 	if ltype == 1 then
-		lPicture = GetPictureByAni("effect.crite",0);
+		lPicture = GetPictureByAni("w_battle_res.crite",0);
 	else
-		lPicture = GetPictureByAni("effect.speak",0);
+		lPicture = GetPictureByAni("w_battle_res.speak",0);
 	end
     --self.imageNode:SetScale(1.0f);
     self.imageNode:SetPicture( lPicture );

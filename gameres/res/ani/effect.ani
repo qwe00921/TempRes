@@ -28,14 +28,6 @@ image\effect\mail01.png @cut(1,2) @time=0.25 @loop
 [bulletin]
 image\effect\activity01.png @cut(1,2)
 
-;±©»÷
-[crite]
-image\ui\n_battle\crite.png
-
-;ºÏ»÷
-[speak]
-image\ui\n_battle\speak.png
-
 ;±©»÷1
 [baoj01]
 image\effect\baoj01.png @cut(2,5)

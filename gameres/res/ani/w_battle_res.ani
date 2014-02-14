@@ -7,4 +7,12 @@ image\ui\n_battle\battle_meter_current2.png
 [shadow]
 image\ui\n_battle\shadow_01.png
 
+;暴击
+[crite]
+image\ui\n_battle\crite.png
+
+;合击
+[speak]
+image\ui\n_battle\speak.png
+
 

@@ -1574,3 +1574,10 @@ function p.GetPlayerNode(uiTag)
 	end
 	return lPlayerNode;
 end
+
+--提示框回调处理
+function p.OnMsgQuitBoxCallback( result )
+	if result then
+		p.readlyQuit();
+	end
+end
