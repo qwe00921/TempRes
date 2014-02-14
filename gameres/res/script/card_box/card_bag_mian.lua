@@ -150,9 +150,9 @@ function p.ShowCardList(cardList)
 		local view = createNDUIXView();
 		view:Init();
 		LoadUI("card_list_view.xui",view,nil);
+		p.InitViewUI(view);
 		local bg = GetUiNode( view, ui_list.ID_CTRL_PICTURE_13);
         view:SetViewSize( bg:GetFrameSize());
-		
 		local row_index = i;
 		local start_index = (row_index - 1) * 5 + 1
         local end_index = start_index + 4;
@@ -191,34 +191,43 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 		cardLevel = ui_list.ID_CTRL_TEXT_LV1;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
 		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG1;
+		cardLevelPic = ui_list.ID_CTRL_PICTURE_1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV2;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
 		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG2;
+		cardLevelPic = ui_list.ID_CTRL_PICTURE_2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV3;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
 		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG3;
+		cardLevelPic = ui_list.ID_CTRL_PICTURE_3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
+		cardLevelPic = ui_list.ID_CTRL_PICTURE_4;
 		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG4;
 	elseif cardIndex == 5 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
 		cardLevel = ui_list.ID_CTRL_TEXT_LV5;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
+		cardLevelPic = ui_list.ID_CTRL_PICTURE_5;
 		--cardBoxBg = ui_list.ID_CTRL_PICTURE_BG5;
 	end
 	
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
+	cardButton:SetVisible(true);
 	--local cardBoxPic = GetImage(view,cardBoxBg );
 	local cardTeamPic = GetImage(view,cardTeam );
+	cardTeamPic:SetVisible(true);
 	local cardLevelText = GetLabel(view,cardLevel );
-	
+	cardLevelText:SetVisible(true);
+	local cardLevelPicture = GetImage(view,cardLevelPic );
+	cardLevelPicture:SetVisible(true);
 	--设置卡牌按钮事件
 	cardButton:SetLuaDelegate(p.OnCardClickEvent);
 	cardButton:RemoveAllChildren(true);
@@ -293,6 +302,54 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	-- end	
 
 end
+
+function p.InitViewUI(view)
+   for cardIndex=1,5 do
+		if cardIndex == 1 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
+			cardBtn = ui_list.ID_CTRL_BUTTON_ITEM1;
+			cardLevel = ui_list.ID_CTRL_TEXT_LV1;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
+			cardLevelPic = ui_list.ID_CTRL_PICTURE_1;
+		elseif cardIndex == 2 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
+			cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
+			cardLevel = ui_list.ID_CTRL_TEXT_LV2;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
+			cardLevelPic = ui_list.ID_CTRL_PICTURE_2;
+		elseif cardIndex == 3 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
+			cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
+			cardLevel = ui_list.ID_CTRL_TEXT_LV3;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
+			cardLevelPic = ui_list.ID_CTRL_PICTURE_3;
+		elseif cardIndex == 4 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
+			cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
+			cardLevel = ui_list.ID_CTRL_TEXT_LV4;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
+			cardLevelPic = ui_list.ID_CTRL_PICTURE_4;
+		elseif cardIndex == 5 then
+			--cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
+			cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
+			cardLevel = ui_list.ID_CTRL_TEXT_LV5;
+			cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
+			cardLevelPic = ui_list.ID_CTRL_PICTURE_5;
+		end
+		
+		local teamPic = GetImage(view,cardTeam);
+		teamPic:SetVisible(false);
+		
+		local teamPic = GetImage(view,cardLevelPic);
+		teamPic:SetVisible(false);
+		
+		local levelText = GetLabel(view,cardLevel);
+		levelText:SetVisible( false );
+		
+		local levelText = GetButton(view,cardBtn);
+		levelText:SetVisible( false );
+  end
+end;	
 
 function p.SetEnableAll(bVar)
 	if nil ~= p.layer then
