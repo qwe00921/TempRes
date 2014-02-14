@@ -826,7 +826,7 @@ function p:UseHpBall(pVal)
 		]]--
 		w_battle_mgr.HpBallNum = w_battle_mgr.HpBallNum - 1
 		if w_battle_mgr.HpBallNum < 0 then
-			WriteCon("Error HpBallNum < 0");
+			WriteConErr("Error HpBallNum < 0");
 		else
 			WriteCon("HpBallNum ="..tostring(w_battle_mgr.HpBallNum).." pos="..tostring(self:GetId() ) );
 		end
@@ -846,7 +846,7 @@ function p:UseSpBall(pVal)
 	
 		w_battle_mgr.SpBallNum = w_battle_mgr.SpBallNum - 1
 		if w_battle_mgr.SpBallNum < 0 then
-			WriteCon("Error SpBallNum < 0");
+			WriteConErr("Error SpBallNum < 0");
 		else
 			WriteCon("SpBallNum ="..tostring(w_battle_mgr.SpBallNum).." pos="..tostring(self:GetId() ) );
 		end

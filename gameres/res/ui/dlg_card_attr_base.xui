@@ -59,7 +59,7 @@ NormalFileUV=0 0 100 100
 [CTRL_CARD_GRADE]
 Type=4
 Tag=309
-Rect=478 270 39 30
+Rect=478 271 39 30
 AnchorPos=0 0
 Notes=
 Text=121
@@ -313,13 +313,13 @@ UIClsoeType=0
 [CTRL_PICTURE_CARDNATURE]
 Type=1
 Tag=68
-Rect=405 273 24 24
+Rect=397 268 40 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\nature1.png
-NormalFileUV=0 0 24 24
+NormalFileUV=0 0 50 50
 
 [CTRL_PICTURE_45]
 Type=1
@@ -349,12 +349,12 @@ NormalFileUV=0 0 6 8
 [CTRL_PICTURE_34]
 Type=1
 Tag=34
-Rect=443 275 27 20
+Rect=443 276 27 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFile=.\res\image\ui\card_attr_base\Lv1.png
 NormalFileUV=0 0 27 20
 
 [CTRL_PICTURE_37]

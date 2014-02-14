@@ -225,9 +225,13 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	
 	
 	if row == 1 and cardIndex == 1 and p.hasRemove  == true then
+		local lvImg = GetImage(view,ui_list.ID_CTRL_PICTURE_75 );
 		cardButton:SetImage(GetPictureByAni("ui.card_edit_remove",0))
 		 cardButton:SetId(0);
 		cardTeamPic:SetVisible(false);
+		if lvImg then
+			lvImg:SetVisible(false);
+		end
 		return
 	end
 	

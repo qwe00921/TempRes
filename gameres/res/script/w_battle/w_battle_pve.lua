@@ -61,7 +61,6 @@ p.pickCallBack = nil;
 p.objList = {};
 
 p.dropList = {};
-p.tempList = {};
 
 p.CanUseItem = true;
 
@@ -554,6 +553,8 @@ end
 
 --新回合开始，刷新UI
 function p.RoundStar()
+	p.ClearDropNodeList();
+	
 	p.CanUseItem = true;
 	p.itemMask:SetVisible( false );
 	p.useitemMask:SetVisible( false );
@@ -626,8 +627,12 @@ function p.CloseUI()
 		--卡牌相关控件列表
 		p.objList = {};
 
+		if #p.dropList > 0 then
+			for _,v in ipairs( p.dropList ) do
+								v:Remove();
+			end
+		end
 		p.dropList = {};
-		p.tempList = {};
 		
 		p.CanUseItem = true;
 	end
@@ -784,18 +789,10 @@ function p.MonsterDrop( list )
 
 	for i = 1, #list do
 		for j = 1, list[i][2] do
-			local index = p.tempList[1] or 0;
-			local drop = nil;
-			if index ~= 0 then
-				table.remove( p.tempList, 1 );
-				drop = p.dropList[index];
-			end
-			if drop == nil then
-				drop = w_drop:new();
-				table.insert( p.dropList, drop );
-			end
+			local drop = w_drop:new();
 			drop:Init( p.battleLayer, list[i][1], list[i][4] );
 			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ), list[i][4] );
+			table.insert( p.dropList, drop );
 		end
 	end
 end
@@ -865,12 +862,15 @@ function p.Pick( nTimerId )
 				end
 				local pos = hurtList[rand].Position;
 				
+				WriteConErr( string.format("HP:%d %d %d", #aliveList, rand, pos ));
+				
 				drop:Pick( GetPlayer( p.battleLayer , heroUIArray[pos] ), pos );
 			end
 		elseif drop:GetType() == E_DROP_SPBALL then
 			local rand = #aliveList ~= 0 and math.random(1, #aliveList) or math.random(1, #p.heroList);
 			local pos = #aliveList ~= 0 and aliveList[rand].Position or p.heroList[rand].Position;
 			
+			WriteConErr( string.format("SP:%d %d %d", #aliveList, rand, pos ) );
 			drop:Pick( GetPlayer( p.battleLayer , heroUIArray[pos] ), pos );
 		else
 			drop:Pick( p.boxImage );
@@ -880,22 +880,17 @@ function p.Pick( nTimerId )
 				p.boxImage:AddActionEffect( "lancer.box_scaleup" );
 			end
 		end
-		p.AddIndexToTable();
 	end
 	p.Index = p.Index + 1;
 end
 
-function p.AddIndexToTable()
-	local bFlag = false;
-	for i,v in pairs(p.tempList) do
-		if v == p.Index then
-			bFlag = true;
-			break;
+function p.ClearDropNodeList()
+	if #p.dropList > 0 then
+		for _,v in ipairs( p.dropList ) do
+			v:Remove();
 		end
 	end
-	if not bFlag then
-		table.insert( p.tempList, p.Index );
-	end
+	p.dropList = {};
 end
 
 --包裹缩小

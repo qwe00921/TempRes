@@ -162,4 +162,14 @@ function p:Pick( pTargetNode, pos )
 	return cmd;
 end
 
-
+function p:Remove()
+	if self.imageNode ~= nil and self.imageNode:GetParent() ~= nil then
+		self.imageNode:RemoveFromParent( true );
+	end
+	
+	self.parentNode = nil;
+	self.imageNode = nil;
+	self.nType = 0;
+	self.param = nil;--掉落的为道具、卡片、装备时，具体的类型
+	self.isInited = false;
+end
