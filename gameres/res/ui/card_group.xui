@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -107,7 +107,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\mail\right.png
 NormalFileUV=0 0 40 44
 
-[CTRL_BUTTON_110]
+[CTRL_PICTURE_17]
 Type=2
 Tag=110
 Rect=487 140 149 60
@@ -168,16 +168,18 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\mail\left3.png
 NormalFileUV=0 0 17 18
 
-[CTRL_PICTURE_17]
-Type=1
+[CTRL_BUTTON_110]
+Type=2
 Tag=17
-Rect=499 153 124 35
+Rect=499 153 124 36
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\1.png
-NormalFileUV=0 0 124 35
+NormalFileUV=0 0 120 35
+SelectFile=.\res\image\ui\card\5.png
+SelectedFileUV=0 0 124 35
 
 [CTRL_PICTURE_18]
 Type=1
