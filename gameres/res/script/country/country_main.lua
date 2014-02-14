@@ -10,7 +10,11 @@ p.openTypeNum = 1;
 p.openViewT = {};
 p.countryInfoT = {};
 
-p.birdImage = nil;
+p.birdImage = {};
+p.birdEffectNum = 0;
+p.cloudEffectNum = 0;
+
+p.randompool = {1,2,3,4,5,2,3,4,5};
 
 local uiNodeT = {}
 
@@ -28,8 +32,6 @@ function p.ShowUI()
 		--开启拾取队列计时器
 		--country_collect.StartTick();
 		--country_collect.SetLayer( p.layer );
-		
-		p.CreateEffectNode();
 		return;
 	end
 	
@@ -62,7 +64,31 @@ function p.ShowUI()
 	country_collect.StartTick();
 	country_collect.SetLayer( p.layer );
 	
-	p.CreateEffectNode();
+	p.birdEffectNum = math.random(3,6);
+	p.cloudEffectNum = math.random(4,7);
+	
+	SetTimer( p.AddBirdEffect, 0.5 );
+	SetTimer( p.AddCloudEffect, 0.5 );
+end
+
+function p.AddBirdEffect( nTimerId )
+	if p.birdEffectNum <= 0 then
+		KillTimer( nTimerId );
+		return;
+	end
+	
+	p.birdEffectNum = p.birdEffectNum - 1;
+	p.CreateBirdEffectNode();
+end
+
+function p.AddCloudEffect( nTimerId )
+	if p.cloudEffectNum <= 0 then
+		KillTimer( nTimerId );
+		return;
+	end
+	
+	p.cloudEffectNum = p.cloudEffectNum - 1;
+	p.CreateCloudEffectNode();
 end
 
 function p.InitController()
@@ -520,11 +546,16 @@ function p.CloseUI()
 		p.ClearData()
 		dlg_userinfo.ShowUI();
 		--maininterface.ShowUI();
+		p.birdEffectNum = 0;
+		p.cloudEffectNum = 0;
+		p.randompool = {1,2,3,4,5};
 	end
 	
-	if p.birdImage ~= nil then
-		p.birdImage:RemoveFromParent( true );
-		p.birdImage = nil;
+	if #p.birdImage ~= 0 then
+		for _,v in ipairs(p.birdImage) do
+			v:RemoveFromParent( true );
+		end
+		p.birdImage = {};
 	end
 end
 function p.ClearData()
@@ -552,49 +583,57 @@ function p.UIDisappear()
 end
 
 --创建特效节点
-function p.CreateEffectNode()
-	if p.layer == nil or p.birdImage ~= nil then
+function p.CreateBirdEffectNode()
+	if p.layer == nil then
+		return;
+	end
+	
+	local image = createNDRole();
+	image:Init();
+
+	p.layer:AddChildZ( image, 99 );
+	
+	table.insert( p.birdImage, image );
+	
+	local size = GetWinSize();
+	
+	local random = math.random(1,100);
+	WriteConErr( tostring(random) );
+	
+	image:SetFramePosXY( random%2==0 and 0 or 640 , math.random(10, 100) );
+	image:AddFgEffect( "ui.country_effect_bird_" .. math.random(1, 5) );
+	image:SetLookAt( random%2==0 and E_LOOKAT_RIGHT or E_LOOKAT_LEFT );
+
+	p.CreateBirdEffect( image );
+end
+
+function p.CreateBirdEffect( image )
+	image:AddActionEffect( "lancer_cmb.country_effect_move_"..math.random(1,6) );
+end
+
+function p.CreateCloudEffectNode()
+	if p.layer == nil then
 		return;
 	end
 	
 	local image = createNDUIImage();
 	image:Init();
+	local random = math.random( 1, #p.randompool );
+	local index = p.randompool[random];
+	
+	image:SetPicture( GetPictureByAni( "ui.country_cloud", index - 1 ) );
+	table.remove( p.randompool, random );
+	
 	image:ResizeToFitPicture();
-
+	image:SetScale( math.random(3,7)/10 );
+	
 	p.layer:AddChild( image );
-	
-	p.birdImage = image;
-	
-	local size = GetWinSize();
-	
-	image:SetFramePosXY( 640, 100 );	
-	image:AddFgEffect( "ui.country_effect" );
-	
-	p.CreateEffect( image );
+
+	local dir = math.random(1,100);
+	image:SetFramePosXY( dir%2 == 0 and -30 or 600, -60 );
+	p.CreateCloudEffect( image, dir%2 );
 end
 
-function p.CreateEffect( image )
-	--[[
-	local size = GetWinSize();
-	local batch = battle_show.GetNewBatch();
-	local seq = batch:AddSerialSequence();
-	local cmd1 = createCommandEffect():AddActionEffect( 0, image, "lancer.country_effect_move" );
-	seq:AddCommand( cmd1 );
-	
-	local env = cmd1:GetVarEnv();
-	if env then	
-		env:SetFloat( "$1", -(size.w+256.0f) );
-		env:SetFloat( "$2", 0.0f );
-	end
-	
-	local seq1 = batch:AddSerialSequence();
-	local cmd2 = createCommandLua():SetCmd( "country_main_effectMove", 1, 1, "" );
-	if cmd2 ~= nil then
-		seq1:AddCommand( cmd2 );
-		seq1:SetWaitEnd( cmd1 );
-	end	
-	--]]
-	
-	image:AddActionEffect( "lancer_cmb.country_effect_move" );
+function p.CreateCloudEffect( image, dir )
+	image:AddActionEffect( "lancer_cmb.country_cloud_move".. dir .. "_"..math.random(1,5) );
 end
-

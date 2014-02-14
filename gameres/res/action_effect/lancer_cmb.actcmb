@@ -171,11 +171,96 @@ lancer.fadeout
 @type=0 @loop
 lancer.battle_move
 
-[country_effect_move]
+[country_effect_move_1]
 @type=0 @loop
-lancer.country_effect_move
-lancer.hide
 lancer.country_effect_move_1
+lancer.hide
+lancer.country_effect_move_1_back
 lancer.show
 
+[country_effect_move_2]
+@type=0 @loop
+lancer.country_effect_move_2
+lancer.hide
+lancer.country_effect_move_2_back
+lancer.show
+
+[country_effect_move_3]
+@type=0 @loop
+lancer.country_effect_move_3
+lancer.hide
+lancer.country_effect_move_3_back
+lancer.show
+
+[country_effect_move_4]
+@type=0 @loop
+lancer.country_effect_move_4
+lancer.hide
+lancer.country_effect_move_4_back
+lancer.show
+
+[country_effect_move_5]
+@type=0 @loop
+lancer.country_effect_move_5
+lancer.hide
+lancer.country_effect_move_5_back
+lancer.show
+
+[country_effect_move_6]
+@type=0 @loop
+lancer.country_effect_move_6
+lancer.hide
+lancer.country_effect_move_6_back
+lancer.show
+
+
+[country_cloud_move0_1]
+@type=0 @loop
+lancer.country_cloud_move_1
+lancer.country_cloud_move_1_back
+
+[country_cloud_move0_2]
+@type=0 @loop
+lancer.country_cloud_move_2
+lancer.country_cloud_move_2_back
+
+[country_cloud_move0_3]
+@type=0 @loop
+lancer.country_cloud_move_3
+lancer.country_cloud_move_3_back
+
+[country_cloud_move0_4]
+@type=0 @loop
+lancer.country_cloud_move_4
+lancer.country_cloud_move_4_back
+
+[country_cloud_move0_5]
+@type=0 @loop
+lancer.country_cloud_move_5
+lancer.country_cloud_move_5_back
+
+[country_cloud_move1_1]
+@type=0 @loop
+lancer.country_cloud_move_1_back
+lancer.country_cloud_move_1
+
+[country_cloud_move1_2]
+@type=0 @loop
+lancer.country_cloud_move_2_back
+lancer.country_cloud_move_2
+
+[country_cloud_move1_3]
+@type=0 @loop
+lancer.country_cloud_move_3_back
+lancer.country_cloud_move_3
+
+[country_cloud_move1_4]
+@type=0 @loop
+lancer.country_cloud_move_4_back
+lancer.country_cloud_move_4
+
+[country_cloud_move1_5]
+@type=0 @loop
+lancer.country_cloud_move_5_back
+lancer.country_cloud_move_5
 
