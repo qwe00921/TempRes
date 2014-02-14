@@ -4,14 +4,19 @@
 --------------------------------------------------------------
 ui_equip_rein_select = {};
 local p =  ui_equip_rein_select;
+p.ID_CTRL_TEXT_EQUIP_SEL_NUM			= 1330;
+p.ID_CTRL_TEXT_MONEY					     = 1211;
+p.ID_CTRL_PICTURE_401					    = 401;
+p.ID_CTRL_PICTURE_400					    = 400;
+p.ID_CTRL_TEXT_398					       = 398;
+p.ID_CTRL_TEXT_397					       = 397;
+p.ID_CTRL_TEXT_396					       = 396;
+p.ID_CTRL_PICTURE_394					    = 394;
 p.ID_CTRL_PICTURE_136					    = 136;
 p.ID_CTRL_PICTURE_135					    = 135;
 p.ID_CTRL_PICTURE_134					    = 134;
-p.ID_CTRL_TEXT_EQUIP_SEL_NUM			= 1330;
-p.ID_CTRL_TEXT_MONEY					     = 1211;
 p.ID_CTRL_BUTTON_OK					      = 1208;
 p.ID_CTRL_BUTTON_CLEAN				    = 1207;
-p.ID_CTRL_TEXT_112					       = 112;
 p.ID_CTRL_BUTTON_ARMOR				    = 20;
 p.ID_CTRL_BUTTON_WEAPON				   = 19;
 p.ID_CTRL_BUTTON_ALL					     = 18;

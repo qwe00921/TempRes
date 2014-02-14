@@ -9,28 +9,32 @@ Tag=13
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\creat_role\gacha_bg0003.png
-NormalFileUV=0 0 480 450
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_17]
 Type=22
 Tag=27
-Rect=0 534 639 258
+Rect=0 532 639 420
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card\bg_card.png
-NormalFileUV=0 0 192 279
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\frame2.png
+NormalFileUV=0 0 603 426
 
 [CTRL_9SLICES_20]
 Type=22
 Tag=31
-Rect=0 417 639 98
+Rect=2 379 639 142
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\card\bg_card.png
-NormalFileUV=0 0 192 279
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\frame1.png
+NormalFileUV=0 0 619 165
 
 [CTRL_INPUT_TEXT_USER_NAME]
 Type=18
@@ -45,6 +49,8 @@ TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=玩家姓名
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_RAND_NAME]
 Type=2
@@ -59,6 +65,8 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=随机姓名按钮
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui_honor\create_role\random.png
@@ -79,6 +87,8 @@ TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=开始游戏
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\button_red.png
 NormalFileUV=0 0 232 84
 
@@ -93,3 +103,5 @@ TextTradition=提示性文字
 TextSize=25
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0

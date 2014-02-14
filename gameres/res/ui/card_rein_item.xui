@@ -589,7 +589,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHA4]
 Type=2
 Tag=109
-Rect=399 402 89 89
+Rect=397 402 89 89
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -681,38 +681,125 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\quest\4.png
 NormalFileUV=0 0 299 91
 
-[CTRL_PICTURE_75]
-Type=1
-Tag=82
-Rect=266 495 107 38
+[CTRL_9SLICES_96]
+Type=22
+Tag=150
+Rect=5 475 129 70
 AnchorPos=0 0
 Notes=
+Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_76]
-Type=1
-Tag=83
-Rect=390 495 107 38
+[CTRL_9SLICES_97]
+Type=22
+Tag=151
+Rect=129 475 129 70
 AnchorPos=0 0
 Notes=
+Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
 
-[CTRL_PICTURE_72]
-Type=1
-Tag=72
-Rect=18 490 107 43
+[CTRL_9SLICES_98]
+Type=22
+Tag=152
+Rect=253 475 129 70
 AnchorPos=0 0
 Notes=
+Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_99]
+Type=22
+Tag=153
+Rect=377 475 129 70
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_100]
+Type=22
+Tag=154
+Rect=501 475 129 70
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_101]
+Type=22
+Tag=155
+Rect=5 614 129 69
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_102]
+Type=22
+Tag=156
+Rect=129 615 129 69
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_103]
+Type=22
+Tag=157
+Rect=253 616 129 69
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_104]
+Type=22
+Tag=158
+Rect=377 615 129 69
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_105]
+Type=22
+Tag=159
+Rect=501 617 129 69
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_CARDLEVEL1]
 Type=4
@@ -726,17 +813,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_74]
-Type=1
-Tag=81
-Rect=142 495 107 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_CARDLEVEL2]
 Type=4
@@ -776,17 +852,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_77]
-Type=1
-Tag=84
-Rect=514 495 107 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
 
 [CTRL_TEXT_CARDLEVEL5]
 Type=4
@@ -866,65 +931,10 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_87]
-Type=1
-Tag=85
-Rect=140 632 107 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_86]
-Type=1
-Tag=73
-Rect=16 631 107 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_88]
-Type=1
-Tag=86
-Rect=264 632 107 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_89]
-Type=1
-Tag=87
-Rect=388 632 107 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
-[CTRL_PICTURE_90]
-Type=1
-Tag=88
-Rect=512 632 107 38
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
-
 [CTRL_TEXT_CARDLEVEL6]
 Type=4
 Tag=135
-Rect=21 645 51 19
+Rect=21 650 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -937,7 +947,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL7]
 Type=4
 Tag=136
-Rect=145 645 51 19
+Rect=145 650 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -950,7 +960,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL8]
 Type=4
 Tag=137
-Rect=269 645 51 19
+Rect=269 650 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -963,7 +973,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL9]
 Type=4
 Tag=138
-Rect=393 645 51 19
+Rect=393 650 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -976,7 +986,7 @@ UIClsoeType=0
 [CTRL_TEXT_CARDLEVEL10]
 Type=4
 Tag=139
-Rect=517 646 51 19
+Rect=517 650 51 19
 AnchorPos=0 0
 Notes=
 TextSize=10

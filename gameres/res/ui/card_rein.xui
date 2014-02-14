@@ -462,34 +462,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_EXP_CARDADD]
-Type=9
-Tag=752
-Rect=501 219 114 22
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp1.png
-NormalFileUV=0 0 188 32
-
-[CTRL_EXP_CARDEXP]
-Type=9
-Tag=236
-Rect=501 219 114 22
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_frame.png
-NormalFileUV=0 0 340 13
-
 [CTRL_TEXT_DEFENCE1]
 Type=4
 Tag=237
@@ -538,13 +510,13 @@ UIClsoeType=0
 [CTRL_PICTURE_241]
 Type=1
 Tag=241
-Rect=497 218 122 27
+Rect=495 222 122 16
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
-NormalFileUV=0 0 176 28
+NormalFile=.\res\image\ui\card_attr_base\exp_bg.png
+NormalFileUV=0 0 105 14
 
 [CTRL_TEXT_HP]
 Type=4
@@ -601,7 +573,7 @@ UIClsoeType=0
 [CTRL_TEXT_247]
 Type=4
 Tag=247
-Rect=498 320 113 27
+Rect=497 319 113 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -617,21 +589,6 @@ Tag=250
 Rect=497 261 102 40
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
-
-[CTRL_TEXT_EXP]
-Type=4
-Tag=74
-Rect=522 220 74 19
-AnchorPos=0 0
-Notes=
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
@@ -930,21 +887,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_102]
-Type=4
-Tag=104
-Rect=212 161 216 39
-AnchorPos=0 0
-Notes=
-Text=强化界面
-TextTradition=強化界面
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=2
-UIClsoeType=2
-
 [CTRL_BUTTON_CHA1]
 Type=2
 Tag=106
@@ -1238,18 +1180,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_CARD_CHOOSE]
-Type=2
-Tag=58
-Rect=-1 210 640 165
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_186]
 Type=1
 Tag=999
@@ -1267,13 +1197,13 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\13.png
+NormalFile=.\res\image\ui\card\text_start_intensity.png
 NormalFileUV=0 0 124 35
 
 [CTRL_PICTURE_111]
 Type=1
 Tag=121
-Rect=35 696 124 35
+Rect=47 698 111 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1284,7 +1214,7 @@ NormalFileUV=0 0 124 35
 [CTRL_PICTURE_112]
 Type=1
 Tag=122
-Rect=35 731 124 35
+Rect=47 733 111 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1295,10 +1225,74 @@ NormalFileUV=0 0 124 35
 [CTRL_PICTURE_113]
 Type=1
 Tag=123
-Rect=35 767 124 35
+Rect=47 769 111 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\text_have_money.png
 NormalFileUV=0 0 124 35
+
+[CTRL_EXP_CARDADD]
+Type=9
+Tag=752
+Rect=498 224 117 12
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp1.png
+NormalFileUV=0 0 188 32
+
+[CTRL_EXP_CARDEXP]
+Type=9
+Tag=236
+Rect=498 224 117 12
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_frame.png
+NormalFileUV=0 0 340 13
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=74
+Rect=519 220 74 19
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CARD_CHOOSE]
+Type=2
+Tag=58
+Rect=0 205 639 165
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_105]
+Type=1
+Tag=104
+Rect=255 152 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\intensify.png
+NormalFileUV=0 0 131 41

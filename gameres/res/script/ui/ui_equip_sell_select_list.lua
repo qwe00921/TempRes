@@ -4,6 +4,22 @@
 --------------------------------------------------------------
 ui_equip_sell_select_list = {};
 local p =  ui_equip_sell_select_list;
+p.ID_CTRL_PICTURE_125					    = 129;
+p.ID_CTRL_PICTURE_124					    = 128;
+p.ID_CTRL_PICTURE_123					    = 127;
+p.ID_CTRL_PICTURE_122					    = 126;
+p.ID_CTRL_PICTURE_121					    = 125;
+p.ID_CTRL_TEXT_LV_5					      = 124;
+p.ID_CTRL_TEXT_119					       = 123;
+p.ID_CTRL_TEXT_118					       = 122;
+p.ID_CTRL_TEXT_117					       = 121;
+p.ID_CTRL_TEXT_116					       = 120;
+p.ID_CTRL_TEXT_115					       = 119;
+p.ID_CTRL_TEXT_114					       = 114;
+p.ID_CTRL_PICTURE_BD_5				    = 113;
+p.ID_CTRL_TEXT_112					       = 112;
+p.ID_CTRL_PICTURE_111					    = 111;
+p.ID_CTRL_BUTTON_110					     = 110;	--ŒÔ∆∑1
 p.ID_CTRL_TEXT_NUM_4					     = 118;
 p.ID_CTRL_TEXT_NUM_3					     = 117;
 p.ID_CTRL_TEXT_NUM_2					     = 116;

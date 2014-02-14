@@ -77,8 +77,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_CHA2]
 Type=1
@@ -88,19 +86,15 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_CHA3]
 Type=1
 Tag=29
-Rect=220 97 95 95
+Rect=219 97 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_CHA4]
 Type=1
@@ -110,8 +104,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_CHA5]
 Type=1
@@ -121,8 +113,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_CHA6]
 Type=1
@@ -132,8 +122,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\item_less.png
-NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_ATTACK]
 Type=4
