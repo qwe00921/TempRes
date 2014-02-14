@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_card_rein_item = {};
 local p =  ui_card_rein_item;
+p.ID_CTRL_PICTURE_114					    = 149;
+p.ID_CTRL_PICTURE_113					    = 148;
+p.ID_CTRL_PICTURE_112					    = 104;
 p.ID_CTRL_PICTURE_105					    = 147;
 p.ID_CTRL_PICTURE_104					    = 146;
 p.ID_CTRL_PICTURE_103					    = 145;
@@ -38,7 +41,6 @@ p.ID_CTRL_TEXT_CARDLEVEL1				 = 130;
 p.ID_CTRL_PICTURE_72					     = 72;
 p.ID_CTRL_PICTURE_76					     = 83;
 p.ID_CTRL_PICTURE_75					     = 82;
-p.ID_CTRL_TEXT_102					       = 104;
 p.ID_CTRL_PICTURE_83					     = 89;
 p.ID_CTRL_BUTTON_CHA10				    = 115;
 p.ID_CTRL_BUTTON_CHA9					    = 114;
