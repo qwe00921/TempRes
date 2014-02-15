@@ -241,7 +241,7 @@ function p.ShowUI()
 
     LoadDlg("n_battle_pve.xui", layer, nil);
 
-	layer:SetFramePosXY(0,0);
+	--layer:SetFramePosXY(0,0);
 	p.battleLayer = layer;
 	
 	p.pBgImage = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_82 );
