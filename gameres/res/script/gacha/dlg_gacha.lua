@@ -173,8 +173,8 @@ function p.SetDelegate()
     payBtn:SetLuaDelegate(p.OnGachaUIEvent);
 	payBtn:SetVisible( false );
 	
-	local payImg = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_21 );
-	payImg:SetVisible( false );
+	--local payImg = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_21 );
+	--payImg:SetVisible( false );
 	
 	--持有
 	p.bagBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_73);

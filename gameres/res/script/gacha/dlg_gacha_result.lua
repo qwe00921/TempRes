@@ -180,17 +180,29 @@ function p.ShowOtherCardBtn()
 	if p.cardIndex <= 1 then
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
 		btn:SetVisible( false );
+		
+		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_52 );
+		image:SetVisible( false );
 	else
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
 		btn:SetVisible( true );
+		
+		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_52 );
+		image:SetVisible( true );
 	end
 	
 	if cardList[p.cardIndex+1] == nil then
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
 		btn:SetVisible( false );
+		
+		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_53 );
+		image:SetVisible( false );
 	else
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
 		btn:SetVisible( true );
+		
+		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_53 );
+		image:SetVisible( true );
 	end
 	
 	p.againBtn = p.againBtn or GetButton( p.layer, ui.ID_CTRL_BUTTON_MORE );
@@ -199,15 +211,19 @@ function p.ShowOtherCardBtn()
 		local gacha_id = dlg_gacha.gacha_id or 0;
 		local gacha_type = dlg_gacha.gacha_type or 1;
 		
-		p.againBtn:SetImage( gacha_type == 1 and GetPictureByAni( "common_ui.gacha_again", 0 ) or GetPictureByAni( "common_ui.gacha_again", 1 ) );
+		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_54 );
+		image:SetPicture( gacha_type == 1 and GetPictureByAni( "common_ui.gacha_again", 0 ) or GetPictureByAni( "common_ui.gacha_again", 1 ) );
 		
 		p.againBtn:SetVisible( false );
+		image:SetVisible( false );
+
 		if charge_type ~= 1 then
 			local cache = msg_cache.msg_player or {};
 			local emoney = tonumber( cache.Emoney ) or 0;
 			local needEmoney = tonumber( SelectCell( T_GACHA, gacha_id, gacha_type == 1 and "single_gacha_cost" or "complex_gacha_cost" ) ) or 0;
 			if emoney ~= 0 and emoney >= needEmoney then
 				p.againBtn:SetVisible( true );
+				image:SetVisible( true );
 			end
 		end
 	end
