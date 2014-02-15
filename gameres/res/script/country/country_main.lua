@@ -563,7 +563,7 @@ function p.CloseUI()
 		--maininterface.ShowUI();
 		p.birdEffectNum = 0;
 		p.cloudEffectNum = 0;
-		p.randompool = {1,2,3,4,5};
+		p.randompool = {1,2,3,4,5,2,3,4,5};
 		
 		if p.timer1 ~= nil then
 			KillTimer( p.timer1 );
