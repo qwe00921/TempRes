@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
@@ -10,6 +10,8 @@ Z_Order=-1
 Rect=0 0 635 150
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM4]
 Type=2
@@ -21,6 +23,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品4
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM3]
 Type=2
@@ -32,6 +36,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品3
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM2]
 Type=2
@@ -43,6 +49,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品2
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM1]
 Type=2
@@ -54,6 +62,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SELECT_4]
 Type=4
@@ -66,6 +76,8 @@ TextTradition=已選擇
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SELECT_3]
 Type=4
@@ -78,6 +90,8 @@ TextTradition=已選擇
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SELECT_2]
 Type=4
@@ -90,6 +104,8 @@ TextTradition=已選擇
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_SELECT_1]
 Type=4
@@ -102,6 +118,8 @@ TextTradition=已選擇
 TextSize=20
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_38]
 Type=1
@@ -109,6 +127,8 @@ Tag=38
 Rect=39 112 60 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -122,6 +142,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_39]
 Type=1
@@ -129,6 +151,8 @@ Tag=39
 Rect=161 112 60 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -138,6 +162,8 @@ Tag=40
 Rect=284 113 60 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -147,6 +173,8 @@ Tag=41
 Rect=407 112 60 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -160,6 +188,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LEVEL_3]
 Type=4
@@ -171,6 +201,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_LEVEL_2]
 Type=4
@@ -182,6 +214,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_ITEM5]
 Type=2
@@ -193,6 +227,8 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品4
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_47]
 Type=1
@@ -200,6 +236,8 @@ Tag=47
 Rect=533 112 60 20
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_lv.png
 NormalFileUV=0 0 90 24
 
@@ -213,6 +251,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_S1]
 Type=1
@@ -220,6 +260,8 @@ Tag=48
 Rect=19 11 42 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\select.png
 NormalFileUV=0 0 42 42
 
@@ -229,6 +271,8 @@ Tag=49
 Rect=140 11 42 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\select.png
 NormalFileUV=0 0 42 42
 
@@ -238,6 +282,8 @@ Tag=50
 Rect=260 14 42 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\select.png
 NormalFileUV=0 0 42 42
 
@@ -247,6 +293,8 @@ Tag=51
 Rect=383 12 42 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\select.png
 NormalFileUV=0 0 42 42
 
@@ -256,6 +304,8 @@ Tag=52
 Rect=507 12 42 42
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\select.png
 NormalFileUV=0 0 42 42
 
@@ -265,6 +315,8 @@ Tag=78
 Rect=80 11 48 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team1.png
 NormalFileUV=0 0 110 50
 
@@ -274,6 +326,8 @@ Tag=79
 Rect=202 11 48 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team1.png
 NormalFileUV=0 0 110 50
 
@@ -283,6 +337,8 @@ Tag=80
 Rect=323 11 48 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team1.png
 NormalFileUV=0 0 110 50
 
@@ -292,6 +348,8 @@ Tag=81
 Rect=446 11 48 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team1.png
 NormalFileUV=0 0 110 50
 
@@ -301,6 +359,8 @@ Tag=82
 Rect=569 11 48 21
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\team1.png
 NormalFileUV=0 0 110 50
 
@@ -314,6 +374,8 @@ TextSize=16
 TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM2]
 Type=4
@@ -325,6 +387,8 @@ TextSize=16
 TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM3]
 Type=4
@@ -336,6 +400,8 @@ TextSize=16
 TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM4]
 Type=4
@@ -347,6 +413,8 @@ TextSize=16
 TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_NUM5]
 Type=4
@@ -358,3 +426,5 @@ TextSize=16
 TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

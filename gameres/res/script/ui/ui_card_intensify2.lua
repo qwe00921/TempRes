@@ -5,7 +5,6 @@
 ui_card_intensify2 = {};
 local p =  ui_card_intensify2;
 p.ID_CTRL_PICTURE_66					     = 66;
-p.ID_CTRL_TEXT_65						       = 65;
 p.ID_CTRL_PICTURE_64					     = 64;
 p.ID_CTRL_TEXT_25						       = 32;
 p.ID_CTRL_BUTTON_SORT_BY				  = 30;

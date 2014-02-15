@@ -4,10 +4,12 @@
 --------------------------------------------------------------
 ui_card_intensify = {};
 local p =  ui_card_intensify;
+p.ID_CTRL_PICTURE_25					     = 26;
+p.ID_CTRL_PICTURE_24					     = 25;
+p.ID_CTRL_PICTURE_23					     = 24;
 p.ID_CTRL_PICTURE_22					     = 23;
 p.ID_CTRL_PICTURE_21					     = 21;
 p.ID_CTRL_PICTURE_154					    = 154;
-p.ID_CTRL_TEXT_33						       = 43;
 p.ID_CTRL_PICTURE_153					    = 153;
 p.ID_CTRL_PICTURE_123					    = 123;
 p.ID_CTRL_BUTTON_CLEAR				    = 27;
