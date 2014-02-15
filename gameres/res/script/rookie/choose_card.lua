@@ -82,7 +82,10 @@ end
 
 function p.getNowCardId()
 	local indexId = tonumber(p.scrollList:GetCurrentIndex())
-	indexId = indexId + 1;
+	--indexId = indexId + 1;
+	if indexId == 0 then
+		indexId = 5
+	end
 	WriteCon("indexId ==== "..indexId);
 	local cardId = tonumber(p.cardIdList[indexId])
 	return cardId

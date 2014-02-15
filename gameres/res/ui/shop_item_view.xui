@@ -27,7 +27,7 @@ NormalFileUV=0 0 587 176
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=5
-Rect=161 117 436 45
+Rect=163 116 429 45
 AnchorPos=0 0
 Notes=
 Text=道具说明道具说明道具说明道具说明道具说明道具说明道具说明
@@ -42,7 +42,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=6
-Rect=163 28 166 41
+Rect=163 33 209 30
 AnchorPos=0 0
 Notes=
 Text=小型体力药剂
@@ -78,7 +78,7 @@ DisableFileUV=0 0 93 47
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=12
-Rect=239 79 79 25
+Rect=246 79 79 25
 AnchorPos=0 0
 Notes=
 Text=20000
@@ -93,7 +93,7 @@ UIClsoeType=0
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=35
-Rect=411 28 183 37
+Rect=411 38 183 37
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
@@ -134,7 +134,7 @@ NormalFileUV=0 0 98 99
 [CTRL_TEXT_28]
 Type=4
 Tag=28
-Rect=163 79 57 25
+Rect=156 79 57 25
 AnchorPos=0 0
 Notes=
 Text=现价
@@ -149,7 +149,7 @@ UIClsoeType=0
 [CTRL_PICTURE_29]
 Type=1
 Tag=29
-Rect=209 76 30 30
+Rect=213 76 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0

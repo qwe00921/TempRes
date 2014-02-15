@@ -38,7 +38,7 @@ UIClsoeType=0
 [CTRL_PICTURE_L]
 Type=1
 Tag=2
-Rect=33 71 260 400
+Rect=-80 71 399 400
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -56,7 +56,7 @@ UIClsoeType=0
 [CTRL_PICTURE_R]
 Type=1
 Tag=4
-Rect=347 71 260 400
+Rect=320 71 400 400
 AnchorPos=0 0
 Notes=
 UIOpenType=0

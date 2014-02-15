@@ -17,7 +17,7 @@ NormalFileUV=0 0 299 91
 [CTRL_PICTURE_42]
 Type=1
 Tag=43
-Rect=-9 730 652 137
+Rect=-9 687 652 137
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -43,7 +43,7 @@ NormalFileUV=0 0 122 60
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=7 266 624 470
+Rect=7 265 624 420
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -78,7 +78,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_NUM]
 Type=4
 Tag=15
-Rect=527 224 74 32
+Rect=530 223 74 32
 AnchorPos=0 0
 Notes=
 Text=0/0
@@ -93,7 +93,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ALL]
 Type=2
 Tag=18
-Rect=6 209 99 55
+Rect=6 207 99 55
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -108,7 +108,7 @@ NormalFileUV=0 0 122 60
 [CTRL_BUTTON_WEAPON]
 Type=2
 Tag=19
-Rect=107 209 99 55
+Rect=107 207 99 55
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -123,7 +123,7 @@ NormalFileUV=0 0 122 60
 [CTRL_BUTTON_ARMOR]
 Type=2
 Tag=20
-Rect=208 209 99 55
+Rect=208 207 99 55
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -135,25 +135,10 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\return_1.png
 NormalFileUV=0 0 122 60
 
-[CTRL_TEXT_112]
-Type=4
-Tag=112
-Rect=232 161 176 43
-AnchorPos=0 0
-Notes=
-Text=装备素材选择
-TextTradition=裝備素材選擇
-TextSize=26
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_BUTTON_CLEAN]
 Type=2
 Tag=1207
-Rect=24 768 149 60
+Rect=24 725 149 60
 AnchorPos=0 0
 Notes=
 Text=清除选择
@@ -172,7 +157,7 @@ SelectedFileUV=0 0 149 60
 [CTRL_BUTTON_OK]
 Type=2
 Tag=1208
-Rect=197 768 122 60
+Rect=197 725 122 60
 AnchorPos=0 0
 Notes=
 Text=确定
@@ -188,30 +173,6 @@ NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\card_bag\return_2.png
 SelectedFileUV=0 0 122 60
 
-[CTRL_TEXT_MONEY]
-Type=4
-Tag=1211
-Rect=474 748 107 45
-AnchorPos=0 0
-Notes=
-TextSize=18
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_EQUIP_SEL_NUM]
-Type=4
-Tag=1330
-Rect=474 793 107 45
-AnchorPos=0 0
-Notes=
-TextSize=18
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_134]
 Type=1
 Tag=134
@@ -226,7 +187,7 @@ NormalFileUV=0 0 67 46
 [CTRL_PICTURE_135]
 Type=1
 Tag=135
-Rect=356 753 120 35
+Rect=356 710 120 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -237,10 +198,114 @@ NormalFileUV=0 0 120 35
 [CTRL_PICTURE_136]
 Type=1
 Tag=136
-Rect=365 798 100 35
+Rect=365 755 100 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\text_num.png
 NormalFileUV=0 0 100 35
+
+[CTRL_PICTURE_394]
+Type=1
+Tag=394
+Rect=255 157 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\intensify.png
+NormalFileUV=0 0 131 41
+
+[CTRL_TEXT_396]
+Type=4
+Tag=396
+Rect=15 212 81 45
+AnchorPos=0 0
+Notes=
+Text=全部
+TextTradition=全部
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_397]
+Type=4
+Tag=397
+Rect=116 212 81 45
+AnchorPos=0 0
+Notes=
+Text=武器
+TextTradition=武器
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_398]
+Type=4
+Tag=398
+Rect=217 212 81 45
+AnchorPos=0 0
+Notes=
+Text=防具
+TextTradition=防具
+TextSize=24
+TextColor=0xfefd92
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_400]
+Type=1
+Tag=400
+Rect=476 709 107 40
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_PICTURE_401]
+Type=1
+Tag=401
+Rect=473 752 107 40
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_TEXT_MONEY]
+Type=4
+Tag=1211
+Rect=474 705 107 45
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_EQUIP_SEL_NUM]
+Type=4
+Tag=1330
+Rect=474 750 107 45
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

@@ -4,9 +4,10 @@
 --------------------------------------------------------------
 ui_card_select = {};
 local p =  ui_card_select;
+p.ID_CTRL_PICTURE_17					     = 17;
+p.ID_CTRL_PICTURE_16					     = 16;
 p.ID_CTRL_TEXT_94						       = 94;
 p.ID_CTRL_PICTURE_92					     = 92;
-p.ID_CTRL_TEXT_87						       = 87;
 p.ID_CTRL_PICTURE_86					     = 86;
 p.ID_CTRL_TEXT_CARD_NUM				   = 38;
 p.ID_CTRL_BUTTON_SORT_BY				  = 30;

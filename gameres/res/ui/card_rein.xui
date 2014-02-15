@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_CARD6]
 Type=2
 Tag=53
-Rect=11 595 116 62
+Rect=23 595 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -20,7 +20,7 @@ NormalFileUV=0 0 194 104
 [CTRL_PICTURE_CARD7]
 Type=2
 Tag=54
-Rect=135 595 116 62
+Rect=148 595 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -34,7 +34,7 @@ NormalFileUV=0 0 194 104
 [CTRL_PICTURE_CARD8]
 Type=2
 Tag=55
-Rect=259 595 116 62
+Rect=273 595 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -48,7 +48,7 @@ NormalFileUV=0 0 194 104
 [CTRL_PICTURE_CARD9]
 Type=2
 Tag=56
-Rect=382 595 116 62
+Rect=398 595 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -62,7 +62,7 @@ NormalFileUV=0 0 194 104
 [CTRL_PICTURE_CARD10]
 Type=2
 Tag=57
-Rect=507 595 116 62
+Rect=523 595 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -136,7 +136,7 @@ NormalFileUV=0 0 100 100
 [CTRL_BUTTON_CARD1]
 Type=2
 Tag=48
-Rect=11 433 116 62
+Rect=25 433 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -150,7 +150,7 @@ NormalFileUV=0 0 194 104
 [CTRL_BUTTON_CARD2]
 Type=2
 Tag=49
-Rect=135 433 116 62
+Rect=149 433 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -164,7 +164,7 @@ NormalFileUV=0 0 194 104
 [CTRL_BUTTON_CARD3]
 Type=2
 Tag=50
-Rect=259 433 116 62
+Rect=273 433 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -178,7 +178,7 @@ NormalFileUV=0 0 194 104
 [CTRL_BUTTON_CARD4]
 Type=2
 Tag=51
-Rect=382 433 116 62
+Rect=397 433 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -192,7 +192,7 @@ NormalFileUV=0 0 194 104
 [CTRL_PICTURE_CARD5]
 Type=2
 Tag=52
-Rect=507 433 116 62
+Rect=521 433 90 50
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -420,7 +420,7 @@ NormalFileUV=0 0 100 100
 [CTRL_TEXT_LEVEL1]
 Type=4
 Tag=233
-Rect=281 215 54 27
+Rect=281 219 54 27
 AnchorPos=0 0
 Notes=
 Text=等级
@@ -435,7 +435,7 @@ UIClsoeType=0
 [CTRL_TEXT_HP1]
 Type=4
 Tag=234
-Rect=281 251 54 27
+Rect=281 255 54 27
 AnchorPos=0 0
 Notes=
 Text=生命
@@ -450,7 +450,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK1]
 Type=4
 Tag=235
-Rect=281 286 54 27
+Rect=281 290 54 27
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -462,38 +462,10 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_EXP_CARDADD]
-Type=9
-Tag=752
-Rect=501 219 114 22
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp1.png
-NormalFileUV=0 0 188 32
-
-[CTRL_EXP_CARDEXP]
-Type=9
-Tag=236
-Rect=501 219 114 22
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_frame.png
-NormalFileUV=0 0 340 13
-
 [CTRL_TEXT_DEFENCE1]
 Type=4
 Tag=237
-Rect=281 320 54 27
+Rect=281 324 54 27
 AnchorPos=0 0
 Notes=
 Text=防御
@@ -508,7 +480,7 @@ UIClsoeType=0
 [CTRL_TEXT_TEAM1]
 Type=4
 Tag=238
-Rect=436 268 54 27
+Rect=436 272 54 27
 AnchorPos=0 0
 Notes=
 Text=队伍
@@ -523,7 +495,7 @@ UIClsoeType=0
 [CTRL_TEXT_SPEED1]
 Type=4
 Tag=239
-Rect=436 320 54 27
+Rect=436 324 54 27
 AnchorPos=0 0
 Notes=
 Text=速度
@@ -538,18 +510,18 @@ UIClsoeType=0
 [CTRL_PICTURE_241]
 Type=1
 Tag=241
-Rect=497 218 122 27
+Rect=495 226 122 16
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\progressbar_bg.png
-NormalFileUV=0 0 176 28
+NormalFile=.\res\image\ui\card_attr_base\exp_bg.png
+NormalFileUV=0 0 105 14
 
 [CTRL_TEXT_HP]
 Type=4
 Tag=242
-Rect=337 251 69 27
+Rect=337 255 69 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -562,7 +534,7 @@ UIClsoeType=0
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=243
-Rect=337 215 69 27
+Rect=337 219 69 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -575,7 +547,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK]
 Type=4
 Tag=244
-Rect=337 286 69 27
+Rect=337 290 69 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -588,7 +560,7 @@ UIClsoeType=0
 [CTRL_TEXT_DEFENCE]
 Type=4
 Tag=245
-Rect=337 320 69 27
+Rect=337 324 69 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -601,7 +573,7 @@ UIClsoeType=0
 [CTRL_TEXT_247]
 Type=4
 Tag=247
-Rect=498 320 113 27
+Rect=497 323 113 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -614,24 +586,9 @@ UIClsoeType=0
 [CTRL_PICTURE_TEAM]
 Type=1
 Tag=250
-Rect=497 261 102 40
+Rect=497 265 102 40
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\team1.png
-NormalFileUV=0 0 110 50
-
-[CTRL_TEXT_EXP]
-Type=4
-Tag=74
-Rect=522 220 74 19
-AnchorPos=0 0
-Notes=
-TextSize=18
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
@@ -683,7 +640,7 @@ UIClsoeType=0
 [CTRL_SPRITE_6]
 Type=19
 Tag=67
-Rect=25 522 95 95
+Rect=28 525 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -692,7 +649,7 @@ UIClsoeType=0
 [CTRL_SPRITE_7]
 Type=19
 Tag=68
-Rect=148 522 95 95
+Rect=151 525 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -701,7 +658,7 @@ UIClsoeType=0
 [CTRL_SPRITE_8]
 Type=19
 Tag=69
-Rect=271 522 95 95
+Rect=274 525 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -710,7 +667,7 @@ UIClsoeType=0
 [CTRL_SPRITE_9]
 Type=19
 Tag=70
-Rect=394 522 95 95
+Rect=397 525 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -719,7 +676,7 @@ UIClsoeType=0
 [CTRL_SPRITE_10]
 Type=19
 Tag=71
-Rect=517 522 95 95
+Rect=520 525 95 95
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -930,21 +887,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_102]
-Type=4
-Tag=104
-Rect=212 161 216 39
-AnchorPos=0 0
-Notes=
-Text=强化界面
-TextTradition=強化界面
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=2
-UIClsoeType=2
-
 [CTRL_BUTTON_CHA1]
 Type=2
 Tag=106
@@ -996,7 +938,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHA5]
 Type=2
 Tag=110
-Rect=513 365 107 111
+Rect=516 365 107 111
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -1008,7 +950,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHA6]
 Type=2
 Tag=111
-Rect=15 519 107 111
+Rect=14 524 107 111
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -1020,7 +962,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHA7]
 Type=2
 Tag=112
-Rect=140 519 107 111
+Rect=139 524 107 111
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -1032,7 +974,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHA8]
 Type=2
 Tag=113
-Rect=265 519 107 111
+Rect=264 524 107 111
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -1044,7 +986,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHA9]
 Type=2
 Tag=114
-Rect=390 519 107 111
+Rect=389 524 107 111
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -1056,7 +998,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHA10]
 Type=2
 Tag=115
-Rect=515 519 107 111
+Rect=515 524 107 111
 AnchorPos=0 0
 Notes=
 TextSize=0
@@ -1105,7 +1047,7 @@ UIClsoeType=0
 [CTRL_TEXT_103]
 Type=4
 Tag=116
-Rect=436 216 54 27
+Rect=436 220 54 27
 AnchorPos=0 0
 Notes=
 Text=经验
@@ -1238,22 +1180,10 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_CARD_CHOOSE]
-Type=2
-Tag=58
-Rect=-1 210 640 165
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_186]
 Type=1
 Tag=999
-Rect=0 376 638 308
+Rect=0 378 636 308
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1267,13 +1197,13 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\13.png
+NormalFile=.\res\image\ui\card\text_start_intensity.png
 NormalFileUV=0 0 124 35
 
 [CTRL_PICTURE_111]
 Type=1
 Tag=121
-Rect=35 696 124 35
+Rect=47 698 111 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1284,7 +1214,7 @@ NormalFileUV=0 0 124 35
 [CTRL_PICTURE_112]
 Type=1
 Tag=122
-Rect=35 731 124 35
+Rect=47 733 111 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1295,10 +1225,76 @@ NormalFileUV=0 0 124 35
 [CTRL_PICTURE_113]
 Type=1
 Tag=123
-Rect=35 767 124 35
+Rect=47 769 111 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\text_have_money.png
 NormalFileUV=0 0 124 35
+
+[CTRL_EXP_CARDADD]
+Type=9
+Tag=752
+Rect=498 228 117 12
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp1.png
+NormalFileUV=0 0 188 32
+
+[CTRL_EXP_CARDEXP]
+Type=9
+Tag=236
+Rect=498 228 117 12
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp_frame.png
+NormalFileUV=0 0 340 13
+
+[CTRL_TEXT_EXP]
+Type=4
+Tag=74
+Rect=519 224 74 19
+AnchorPos=0 0
+Notes=
+Text=999/999
+TextTradition=999/999
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CARD_CHOOSE]
+Type=2
+Tag=58
+Rect=0 204 638 165
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_105]
+Type=1
+Tag=104
+Rect=255 152 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\intensify.png
+NormalFileUV=0 0 131 41

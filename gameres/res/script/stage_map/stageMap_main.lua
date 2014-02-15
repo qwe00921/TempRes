@@ -47,6 +47,9 @@ function p.openChapter(mapId)
 		stageMap_1.ShowUI();
 	elseif mapId == 2 then
 		stageMap_2.ShowUI();
+	else
+		stageMap_1.ShowUI();
+		WriteConErr("mapId err == "..mapId);
 	end
 end
 

@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -78,7 +78,7 @@ Remark=物品1
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_75]
+[CTRL_PICTURE_1]
 Type=1
 Tag=75
 Rect=22 6 55 20
@@ -86,8 +86,10 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_76]
+[CTRL_PICTURE_2]
 Type=1
 Tag=76
 Rect=144 6 55 20
@@ -95,8 +97,10 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_77]
+[CTRL_PICTURE_3]
 Type=1
 Tag=77
 Rect=266 6 55 20
@@ -104,8 +108,10 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_78]
+[CTRL_PICTURE_4]
 Type=1
 Tag=78
 Rect=389 6 55 20
@@ -113,8 +119,10 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_79]
+[CTRL_PICTURE_5]
 Type=1
 Tag=79
 Rect=512 6 55 20
@@ -122,6 +130,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
 [CTRL_TEXT_LV1]
 Type=4

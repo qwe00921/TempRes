@@ -138,5 +138,5 @@ function p.ClearData()
 	p.endNum = nil;
 	p.addNum = nil;
 	p.NextLevel = nil;
-
+	p.isUpLevel = false
 end

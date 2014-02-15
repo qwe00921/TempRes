@@ -235,8 +235,28 @@ image\ui\quest\Special_reward.png @cut(1, 2) @time=0.2 @loop
 image\ui\main_interface\energy1.png
 image\ui\main_interface\energy2.png
 
-[country_effect]
-image\ui\country\bird.png @cut(2,4) @time=0.2 @loop
+[country_effect_bird_1]
+image\ui\country\bird.png @cut(4,4) @time=0.1 @loop @scale=0.16
+
+[country_effect_bird_2]
+image\ui\country\bird.png @cut(4,4) @time=0.1 @loop @scale=0.18
+
+[country_effect_bird_3]
+image\ui\country\bird.png @cut(4,4) @time=0.1 @loop @scale=0.14
+
+[country_effect_bird_4]
+image\ui\country\bird.png @cut(4,4) @time=0.1 @loop @scale=0.10
+
+[country_effect_bird_5]
+image\ui\country\bird.png @cut(4,4) @time=0.1 @loop @scale=0.12
+
+[country_cloud]
+image\ui\country\cloud_1.png
+image\ui\country\cloud_2.png
+image\ui\country\cloud_3.png
+image\ui\country\cloud_4.png
+image\ui\country\cloud_5.png
+
 ;卡牌排序
 [card_order]
 image\ui\card_bag\btn_sort_head_1.png

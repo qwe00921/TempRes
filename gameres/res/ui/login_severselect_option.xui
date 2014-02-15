@@ -1,7 +1,7 @@
 ﻿
 [UI_INFO]
-Width=960
-Height=640
+Width=640
+Height=2000
 
 [CTRL_9SLICES_55]
 Type=22
@@ -14,17 +14,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\country\levelup_btn.png
 NormalFileUV=0 0 226 66
-
-[CTRL_LOGIN_CTRL_PICTURE_SEVEROPTION]
-Type=1
-Tag=22
-Rect=145 640 357 66
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui_honor\login\logyin_button.png
-NormalFileUV=0 0 245 87
 
 [CTRL_PICTURE_54]
 Type=1
