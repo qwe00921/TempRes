@@ -11,6 +11,7 @@ p.layer = nil;
 p.cardIndex = 1;
 p.gacharesult = nil;
 p.againBtn = nil;
+p.showboxflag = false;
 
 local ui = ui_gacha_result;
 
@@ -19,6 +20,10 @@ function p.ShowUI( gacharesult )
 	
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
+		if p.showboxflag then
+			dlg_msgbox.ShowOK( "提示", "背包已满，请查看系统邮件", nil, p.layer );
+			p.showboxflag = false;
+		end
 		return;
 	end
 	
@@ -40,6 +45,11 @@ function p.ShowUI( gacharesult )
 	
 	p.cardIndex = 1;
 	p.ShowCardInfo();
+	
+	if p.showboxflag then
+		dlg_msgbox.ShowOK( "提示", "背包已满，请查看系统邮件", nil, p.layer );
+		p.showboxflag = false;
+	end
 end
 
 function p.SetDelegate()
@@ -215,5 +225,15 @@ function p.CloseUI()
 		p.layer = nil;
 		p.cardIndex = 1;
 		p.gacharesult = nil;
+		p.showboxflag = false;
 	end
 end	
+
+function p.ShowMsgBox()
+	if p.layer == nil then
+		p.showboxflag = true;
+		return;
+	end
+	
+	dlg_msgbox.ShowOK( "提示", "背包已满，请查看系统邮件", nil, p.layer );
+end

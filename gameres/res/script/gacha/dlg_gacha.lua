@@ -1252,7 +1252,7 @@ function p.UpdateMailNum()
 		return;
 	end
 	
-	dlg_msgbox.ShowOK( "提示", "背包已满，请查看系统邮件", nil, p.layer );
+	dlg_gacha_result.ShowMsgBox();
 end
 
 function p.DidAddEmoney( flag )
