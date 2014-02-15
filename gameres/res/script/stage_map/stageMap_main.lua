@@ -34,22 +34,21 @@ function p.getChapterListCallBack(data)
 			p.chapterId = tonumber(data.chapters.S4)
 		elseif data.chapters.S3 then
 			p.chapterId = tonumber(data.chapters.S3)
-			
 		elseif data.chapters.S2 then
 			p.chapterId = tonumber(data.chapters.S2)
 		elseif data.chapters.S1 then
 			p.chapterId = tonumber(data.chapters.S1)
 		end
 		
-		p.startPlayKey = tonumber(data.chapters.StoryId)
+		p.storyId = tonumber(data.chapters.StoryId)
 	end
 	
-	if p.startPlayKey == 0 then
+	if p.storyId == 0 then
 		p.openChapter(p.chapterId)
-	elseif p.startPlayKey > 0 then
+	elseif p.storyId > 0 then
 	--获取storyID
-		local storyId = p.startPlayKey;
-		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,p.chapterId);
+		local showStoryId = p.storyId;
+		dlg_drama.ShowUI(showStoryId,after_drama_data.CHAPTER,p.chapterId);
 	end
 
 end
