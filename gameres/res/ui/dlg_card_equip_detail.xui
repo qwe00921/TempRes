@@ -437,7 +437,7 @@ UIClsoeType=0
 [CTRL_PICTURE_STAR]
 Type=1
 Tag=74
-Rect=77 349 102 37
+Rect=123 53 102 37
 AnchorPos=0 0
 Notes=
 UIOpenType=0

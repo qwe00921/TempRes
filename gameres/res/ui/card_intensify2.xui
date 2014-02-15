@@ -148,7 +148,7 @@ NormalFileUV=0 0 122 38
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=8 245 620 609
+Rect=8 245 620 604
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -157,7 +157,7 @@ UIClsoeType=0
 [CTRL_BUTTON_SORT_BY]
 Type=2
 Tag=30
-Rect=514 146 122 49
+Rect=514 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -200,10 +200,47 @@ NormalFileUV=0 0 299 91
 [CTRL_PICTURE_66]
 Type=1
 Tag=66
-Rect=421 205 107 30
+Rect=418 205 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\27.png
 NormalFileUV=0 0 121 34
+
+[CTRL_PICTURE_143]
+Type=1
+Tag=143
+Rect=255 156 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\card.png
+NormalFileUV=0 0 131 41
+
+[CTRL_TEXT_145]
+Type=4
+Tag=145
+Rect=418 208 107 24
+AnchorPos=0 0
+Notes=
+Text=卡牌数量
+TextTradition=卡牌數量
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_176]
+Type=1
+Tag=176
+Rect=542 148 67 46
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_bag\btn_sort_head_1.png
+NormalFileUV=0 0 67 46
