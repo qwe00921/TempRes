@@ -6,6 +6,7 @@ local uiNodeT = {};
 p.layer = nil;
 function p.ShowUI()
 	dlg_menu.SetNewUI( p );
+	maininterface.ShowUI();
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
 	dlg_menu.HideUI();

@@ -62,6 +62,20 @@ function p.openChapter(mapId)
 		stageMap_1.ShowUI();
 	elseif mapId == 2 then
 		stageMap_2.ShowUI();
+	elseif mapId == 3 then
+		stageMap_3.ShowUI();
+	elseif mapId == 4 then
+		stageMap_4.ShowUI();
+	elseif mapId == 5 then
+		stageMap_5.ShowUI();
+	elseif mapId == 6 then
+		stageMap_6.ShowUI();
+	elseif mapId == 7 then
+		stageMap_7.ShowUI();
+	elseif mapId == 8 then
+		stageMap_8.ShowUI();
+	elseif mapId == 9 then
+		stageMap_9.ShowUI();
 	else
 		stageMap_1.ShowUI();
 		WriteConErr("mapId err == "..mapId);

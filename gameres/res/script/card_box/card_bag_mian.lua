@@ -241,7 +241,8 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	local cardId = tonumber(card.CardID);
 	local cardPicTable = SelectRowInner(T_CHAR_RES,"card_id",cardId);
 	if cardPicTable == nil then
-		WriteConErr("cardPicTable error ");
+		WriteConErr("not find card id == "..cardId);
+		return
 	end
 	local aniIndex = cardPicTable.head_pic;
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );

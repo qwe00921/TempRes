@@ -321,7 +321,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
 			WriteCon("nowTeamId == "..nowTeamId);
 			if tonumber(p.storyId) == 0 then
-				maininterface.m_bgImage:SetVisible(false);
+				--maininterface.m_bgImage:SetVisible(false);
 				if E_DEMO_VER== 4 then
 					 n_battle_mgr.EnterBattle( N_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
 				else
