@@ -148,19 +148,20 @@ function p.ShowCardInfo()
 		--rareImg:SetPicture( GetPictureByAni( "ui.card_star", rare - 1 ) );
 		
 		local hpLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_9 );
-		hpLab:SetText( string.format( "血量：%s", tostring( SelectCell( T_CARD, cardId, "hp" ) or "" ) ) );
+		hpLab:SetText( string.format( "%s", tostring( SelectCell( T_CARD, cardId, "hp" ) or "" ) ) );
 		
 		local atkLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_10 );
-		atkLab:SetText( string.format( "攻击：%s", tostring( SelectCell( T_CARD, cardId, "attack" or "" ) ) ) );
+		atkLab:SetText( string.format( "%s", tostring( SelectCell( T_CARD, cardId, "attack" or "" ) ) ) );
 		
 		local defLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_11 );
-		defLab:SetText( string.format( "防御：%s", tostring( SelectCell( T_CARD, cardId, "defence" or "" ) ) ) );
+		defLab:SetText( string.format( "%s", tostring( SelectCell( T_CARD, cardId, "defence" or "" ) ) ) );
 		
 		local speedLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_12 );
-		speedLab:SetText( string.format( "速度：%s", tostring( SelectCell( T_CARD, cardId, "speed" or "" ) ) ) );
+		speedLab:SetText( string.format( "%s", tostring( SelectCell( T_CARD, cardId, "speed" or "" ) ) ) );
 		
 		local critLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
-		critLab:SetText( string.format( "暴击：%s", tostring( SelectCell( T_CARD, cardId, "crit" or "" ) ) ) );
+		--critLab:SetText( string.format( "暴击：%s", tostring( SelectCell( T_CARD, cardId, "crit" or "" ) ) ) );
+		critLab:SetVisible( false );
 		
 		local skillLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_14 );
 		local skillid = SelectCell( T_CARD, cardId, "skill" ) or 0;
