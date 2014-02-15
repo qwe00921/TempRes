@@ -83,8 +83,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		local tag = uiNode:GetTag();
 		if (ui.ID_CTRL_BTN_TETURN == tag) then
 			WriteCon("return");
+			local mapId = math.floor(tonumber(p.stageId)/100)
 			p.CloseUI();
-			stageMap_1.ShowUI();
+			stageMap_main.openChapter(mapId);
 		elseif (ui.ID_CTRL_BTN_HARD == tag) then
 			local missionStartId = nil;
 			if difficultKey == EASY then

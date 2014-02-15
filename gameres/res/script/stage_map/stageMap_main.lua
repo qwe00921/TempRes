@@ -8,7 +8,7 @@ stageMap_main = {}
 local p = stageMap_main;
 
 p.chapterId = nil;
-
+p.openMapId = nil;
 --进入世界地图
 function p.OpenWorldMap()
 	
@@ -20,7 +20,22 @@ end
 function p.getChapterListCallBack(data)
 
 	if data.result == true then
-		if data.chapters.S2 then
+		if data.chapters.S9 then
+			p.chapterId = tonumber(data.chapters.S9)
+		elseif data.chapters.S8 then
+			p.chapterId = tonumber(data.chapters.S8)
+		elseif data.chapters.S7 then
+			p.chapterId = tonumber(data.chapters.S7)
+		elseif data.chapters.S6 then
+			p.chapterId = tonumber(data.chapters.S6)
+		elseif data.chapters.S5 then
+			p.chapterId = tonumber(data.chapters.S5)
+		elseif data.chapters.S4 then
+			p.chapterId = tonumber(data.chapters.S4)
+		elseif data.chapters.S3 then
+			p.chapterId = tonumber(data.chapters.S3)
+			
+		elseif data.chapters.S2 then
 			p.chapterId = tonumber(data.chapters.S2)
 		elseif data.chapters.S1 then
 			p.chapterId = tonumber(data.chapters.S1)
@@ -31,9 +46,9 @@ function p.getChapterListCallBack(data)
 	
 	if p.startPlayKey == 0 then
 		p.openChapter(p.chapterId)
-	elseif p.startPlayKey == 1 then
+	elseif p.startPlayKey > 0 then
 	--获取storyID
-		local storyId = 1;
+		local storyId = p.startPlayKey;
 		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,p.chapterId);
 	end
 
@@ -42,6 +57,7 @@ end
 
 function p.openChapter(mapId)
 	WriteCon("to mapId == "..mapId);
+	p.openMapId = tonumber(mapId);
 	if mapId == 1 then
 		--打开世界地图
 		stageMap_1.ShowUI();

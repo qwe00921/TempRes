@@ -23,5 +23,9 @@ function p:Process()
 	msg_cache.msg_stage_list = self;
 	
 	WriteConWarning( "** msg_stage_list:Process() called" );
-	stageMap_1.addAllStage(self);
+	if stageMap_main.openMapId == 1 then
+		stageMap_1.addAllStage(self);
+	elseif stageMap_main.openMapId == 2 then
+		stageMap_2.addAllStage(self);
+	end
 end
