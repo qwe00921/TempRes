@@ -70,6 +70,9 @@ function p:init(id,atkFighter,atkCampType,tarFighter, tarCampType,damageLst,crit
 		if self.atkSound == nil then
 			self.atkSound = "battle_paw.mp3"
 		end
+		self.target_sound = SelectCell( T_CARD_ATK_SOUND, atkFighter.cardId, "target_sound" );	
+		
+		
 		self.is_bullet = tonumber( SelectCellMatch( T_CHAR_RES, "card_id", atkFighter.cardId, "is_bullet" ) );
 	end
 	

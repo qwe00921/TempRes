@@ -635,6 +635,8 @@ function p.CloseUI()
 		p.dropList = {};
 		
 		p.CanUseItem = true;
+		p.heroList = nil;
+		p.sortList = nil;
 	end
 	GetBattleShow():EnableTick( false );
 end
