@@ -171,6 +171,10 @@ function p.SetDelegate()
     --充值
     local payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_PAY);
     payBtn:SetLuaDelegate(p.OnGachaUIEvent);
+	payBtn:SetVisible( false );
+	
+	local payImg = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_21 );
+	payImg:SetVisible( false );
 	
 	--持有
 	p.bagBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_73);
@@ -907,7 +911,7 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	else
 		--普通可叠加物品，显示数量
 		itemNumText:SetVisible(true);
-		itemNumText:SetText("X "..item.Num);
+		itemNumText:SetText(""..item.Num);
 		--显示数量背景
 		local numBgPic = GetImage(view,numBg);
 		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
