@@ -624,7 +624,8 @@ function p.selectCardList()
 		Gem2 = v.Gem2;
 		Gem3 = v.Gem3;
 		if tonumber(Item_Id1) > 0 or tonumber(Item_Id2) > 0 or tonumber(Item_Id3) > 0 
-				or tonumber(Gem1) > 0 or tonumber(Gem2) > 0 or tonumber(Gem3) > 0 then
+				or tonumber(Gem1) > 0 or tonumber(Gem2) > 0 or tonumber(Gem3) > 0 
+				or tonumber(v.Team_marks) > 0 then
 			WriteCon("selectCardList =="..k);
 		else
 			p.cardListInfoSell[#p.cardListInfoSell+1] = v
