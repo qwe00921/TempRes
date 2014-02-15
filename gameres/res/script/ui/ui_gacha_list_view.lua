@@ -4,8 +4,8 @@
 --------------------------------------------------------------
 ui_gacha_list_view = {};
 local p =  ui_gacha_list_view;
-p.ID_CTRL_TEXT_GACHANAME				  = 89;	--Å¤µ°Ãû³Æ
 p.ID_CTRL_PICTURE_23					     = 23;
+p.ID_CTRL_TEXT_GACHANAME				  = 89;	--Å¤µ°Ãû³Æ
 p.ID_CTRL_PICTURE_PIC					    = 90;	--Å¤µ°Í¼Æ¬
 p.ID_CTRL_PICTURE_46					     = 46;
 p.ID_CTRL_PICTURE_45					     = 45;
