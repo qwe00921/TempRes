@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_main_menu = {};
 local p =  ui_main_menu;
+p.ID_CTRL_TEXT_136					       = 136;
 p.ID_CTRL_PICTURE_24					     = 31;
 p.ID_CTRL_PICTURE_23					     = 30;
 p.ID_CTRL_PICTURE_22					     = 29;

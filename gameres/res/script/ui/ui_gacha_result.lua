@@ -4,7 +4,7 @@
 --------------------------------------------------------------
 ui_gacha_result = {};
 local p =  ui_gacha_result;
-p.ID_CTRL_PICTURE_75					     = 75;
+p.ID_CTRL_BUTTON_MORE					    = 151;
 p.ID_CTRL_TEXT_14						       = 18;
 p.ID_CTRL_TEXT_13						       = 17;
 p.ID_CTRL_TEXT_12						       = 16;

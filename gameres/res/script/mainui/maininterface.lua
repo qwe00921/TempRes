@@ -125,7 +125,8 @@ end
 function p.InitScrollList( layer )
 	--位置基准控件
 	local posCtrller = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_305 );
-	if posCtrller == nil then
+	local widCtrller = GetLabel( layer, ui_main_menu.ID_CTRL_TEXT_136 );
+	if posCtrller == nil or widCtrller == nil then
 		return;
 	end
 	
@@ -146,13 +147,13 @@ function p.InitScrollList( layer )
 	p.scrollList = pList;
 	
 	local posXY = posCtrller:GetFramePos();
-	local size = posCtrller:GetFrameSize();
-	local winSize = GetWinSize();
+	local heightSize = posCtrller:GetFrameSize();
+	local widthSize = widCtrller:GetFrameSize();
 
 	pList:Init();
 	pList:SetFramePosXY( posXY.x, posXY.y + 60 );
-	pList:SetFrameSize( winSize.w, size.h );
-	pList:SetSizeView( CCSizeMake( 280, 100 ) );
+	pList:SetFrameSize( widthSize.w, heightSize.h );
+	pList:SetSizeView( CCSizeMake( 185, 100 ) );
 	pList:SetLuaDelegate( p.OnListScrolled );
 	
 	for i = 1,6 do

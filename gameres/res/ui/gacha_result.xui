@@ -42,7 +42,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=7
-Rect=36 137 384 575
+Rect=64 136 339 565
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -66,7 +66,7 @@ UIClsoeType=0
 [CTRL_BUTTON_START]
 Type=2
 Tag=9
-Rect=216 844 205 74
+Rect=438 843 182 74
 AnchorPos=0 0
 Notes=
 Text=返回
@@ -83,7 +83,7 @@ NormalFileUV=0 0 232 84
 [CTRL_BUTTON_LEFT]
 Type=2
 Tag=10
-Rect=88 845 98 72
+Rect=37 844 98 72
 AnchorPos=0 0
 Notes=
 Text=上一张
@@ -99,7 +99,7 @@ NormalFileUV=0 0 720 1280
 [CTRL_BUTTON_RIGHT]
 Type=2
 Tag=11
-Rect=451 848 102 66
+Rect=154 847 102 66
 AnchorPos=0 0
 Notes=
 Text=下一张
@@ -202,11 +202,16 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_75]
-Type=1
-Tag=75
-Rect=43 659 252 36
+[CTRL_BUTTON_MORE]
+Type=2
+Tag=151
+Rect=270 852 156 57
 AnchorPos=0 0
 Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\shop\oncemore.png
+NormalFileUV=0 0 202 80
