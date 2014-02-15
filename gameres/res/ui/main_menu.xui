@@ -287,7 +287,7 @@ NormalFileUV=0 0 52 28
 [CTRL_PICTURE_305]
 Type=1
 Tag=305
-Rect=0 591 1 192
+Rect=100 591 1 192
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -325,3 +325,15 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\header_arena_light_01.png
 NormalFileUV=0 0 32 32
+
+[CTRL_TEXT_136]
+Type=4
+Tag=136
+Rect=100 591 440 1
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

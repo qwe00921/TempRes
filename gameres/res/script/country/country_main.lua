@@ -14,6 +14,9 @@ p.birdImage = {};
 p.birdEffectNum = 0;
 p.cloudEffectNum = 0;
 
+p.timer1 = nil;
+p.timer2 = nil;
+
 p.randompool = {1,2,3,4,5,2,3,4,5};
 
 local uiNodeT = {}
@@ -67,8 +70,20 @@ function p.ShowUI()
 	p.birdEffectNum = math.random(3,6);
 	p.cloudEffectNum = math.random(4,7);
 	
-	SetTimer( p.AddBirdEffect, 0.5 );
-	SetTimer( p.AddCloudEffect, 0.5 );
+	p.BeginTimer();
+end
+
+function p.BeginTimer()
+	if p.timer1 ~= nil then
+		KillTimer( p.timer1 );
+		p.timer1 = nil;
+	end
+	if p.timer2 ~= nil then
+		KillTimer( p.timer2 );
+		p.timer2 = nil;
+	end
+	p.timer1 = SetTimer( p.AddBirdEffect, 0.5 );
+	p.timer2 = SetTimer( p.AddCloudEffect, 0.5 );
 end
 
 function p.AddBirdEffect( nTimerId )
@@ -549,6 +564,15 @@ function p.CloseUI()
 		p.birdEffectNum = 0;
 		p.cloudEffectNum = 0;
 		p.randompool = {1,2,3,4,5};
+		
+		if p.timer1 ~= nil then
+			KillTimer( p.timer1 );
+			p.timer1 = nil;
+		end
+		if p.timer2 ~= nil then
+			KillTimer( p.timer2 );
+			p.timer2 = nil;
+		end
 	end
 	
 	if #p.birdImage ~= 0 then

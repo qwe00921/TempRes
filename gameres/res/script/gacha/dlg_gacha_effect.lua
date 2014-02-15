@@ -131,8 +131,10 @@ function p.ShowCard()
 end
 
 function p.ShowContinue()
-	p.continueImg:SetVisible(true);
-	p.continueImg:AddActionEffect( "ui_cmb.gacha_effect_scale" );
+	if p.continueImg ~= nil then
+		p.continueImg:SetVisible(true);
+		p.continueImg:AddActionEffect( "ui_cmb.gacha_effect_scale" );
+	end
 end
 
 function p.ShowNextCard()

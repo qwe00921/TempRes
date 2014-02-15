@@ -105,11 +105,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 	if IsClickEvent( uiEventType ) then
 		local tag = uiNode:GetTag();
 		if ui.ID_CTRL_BUTTON_RETURN == tag then
-			if p.sellFlag then
-				country_storage.RequestData();
-			end
-			p.CloseUI();
-			country_storage.ShowUI();
+			p.CloseEvent()
 		elseif ui.ID_CTRL_BUTTON_15 == tag then
 			p.SellItem();
 		elseif ui.ID_CTRL_BUTTON_16 == tag then
@@ -124,6 +120,14 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			p.AddNum( 999999 ); --表示最大
 		end
 	end
+end
+
+function p.CloseEvent()
+	if p.sellFlag then
+		country_storage.RequestData();
+	end
+	p.CloseUI();
+	country_storage.ShowUI();
 end
 
 function p.AddNum( num )
@@ -157,7 +161,7 @@ end
 
 function p.SellCallBack()
 	local num = p.numText:GetText();
-	dlg_msgbox.ShowOK( "提示" , "成功卖出".. num .."个".. tostring( SelectCell( T_MATERIAL, p.item.material_id, "name" ) ), nil, p.layer );
+	dlg_msgbox.ShowOK( "提示" , "成功卖出".. num .."个".. tostring( SelectCell( T_MATERIAL, p.item.material_id, "name" ) ), p.CloseEvent, p.layer );
 end
 
 function p.HideUI()

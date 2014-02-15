@@ -67,6 +67,8 @@ p.step = nil;
 p.substep = nil;
 p.NeedQuit = false;
 p.playerNodeLst = {};  --动画节点
+p.ballTimerID = nil; --球飞入超时的判断
+p.ballFlytime = 0;
 
 function p.init()
 	p.platform = GetFlatform();
@@ -137,6 +139,7 @@ function p.starFighter()
 	w_battle_machinemgr.init();
 	
 	p.buffTimerID = SetTimer(p.UpdateBuff, W_SHOWBUFF_STATE );  --设置显示BUFF的时间
+	WriteConWarning("p.buffTimerID= "..tostring(p.buffTimerID));	
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 	
 end;
@@ -1167,7 +1170,6 @@ function p.checkTurnEnd()
 				p.IsPickEnd = false;
 				p.dropHpBall = 0;
 				p.dropSpBall = 0;
-				WriteCon("w_battle_pve.PickStep");
 				w_battle_pve.PickStep(p.CanPickEnd); --捡东西
 			end
 		else
@@ -1410,6 +1412,9 @@ end;
 function p.CanPickEnd()
 	WriteCon("CanPickEnd");
 	p.IsPickEnd	= true;
+	p.ballFlytime = 0;
+	p.ballTimerID = SetTimer(p.ballTime, 0.1);  --设置球飞入时间超时
+	WriteConWarning("p.ballTimerID = "..tostring(p.ballTimerID));	
 	p.checkPickEnd()
 end;
 
@@ -1417,8 +1422,14 @@ function p.checkPickEnd()
 	local lresult = false;
 	if (p.IsPickEnd == true) and (p.HpBallNum <= 0) and (p.SpBallNum <= 0) then
 		lresult = true
+		WriteCon("checkPickEnd lresult = true");
 	end
     if lresult == true then
+		if p.ballTimerID ~= nil then
+			KillTimer(p.ballTimerID);
+			p.ballTimerID = nil;
+			WriteConWarning("p.ballTimerID = "..tostring(p.ballTimerID));
+		end;
 		if p.PickEndEvent ~= nil then
 			p.PickEndEvent();
 		end;
@@ -1434,8 +1445,6 @@ function p.SetCampZorder()
 		p.heroCamp:SetFightersZOrder(E_BATTLE_Z_ENEMY_FIGHTER)
 		p.enemyCamp:SetFightersZOrder(E_BATTLE_Z_HERO_FIGHTER)
 	end
-
-	
 end
 
 --第一轮的新手引导,点击完的事件
@@ -1628,4 +1637,18 @@ function p.renameMissionName(str)
 	end
 	
 	return lName;
+end
+
+function p.ballTime(nTimerId)
+	p.ballFlytime = p.ballFlytime + 0.1
+	if p.ballFlytime > 5 then
+		WriteConErr("pick error! timeout > 5.0s");
+		p.ballFlytime = 0;
+		KillTimer(nTimerId);
+		if p.ballTimerID ~= nTimerId then
+			WriteConErr("ballTimer error p.ballTimerID="..tostring(p.ballTimerID).. " nTimerId="..tostring(nTimerId));
+		end;
+		p.ballTimerID = nil;
+		WriteConWarning("p.ballTimerID = nil");
+	end
 end
