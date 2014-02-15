@@ -6,9 +6,7 @@ local uiNodeT = {};
 
 p.layer = nil;
 function p.ShowUI()
-	if p.isReplace ~= true then
-		dlg_menu.SetNewUI( p );
-	end
+	dlg_menu.SetNewUI( p );
 	maininterface.ShowUI();
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
@@ -128,17 +126,11 @@ function p.SetDelegate(layer)
 	btnNext:SetVisible(false);
 	
 	local stageBtn1 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER1 );
-	--stageBtn1:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn2 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER2 );
-	--stageBtn2:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn3 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER3 );
-	--stageBtn3:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn4 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER4 );
-	--stageBtn4:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn5 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER5 );
-	--stageBtn5:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn6 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER6 );
-	--stageBtn6:SetLuaDelegate(p.OnBtnClick);
 	
 	uiNodeT.stageBtn = {}
 	uiNodeT.stageBtn[1] = stageBtn1;
