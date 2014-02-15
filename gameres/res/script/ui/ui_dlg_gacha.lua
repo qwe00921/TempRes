@@ -15,7 +15,6 @@ p.ID_CTRL_TEXT_ITEM_INFO				  = 28;
 p.ID_CTRL_PICTURE_USE					    = 24;
 p.ID_CTRL_VERTICAL_LIST_BAG			= 1068;	--Å¤µ°list
 p.ID_CTRL_PICTURE_76					     = 76;
-p.ID_CTRL_PICTURE_21					     = 22;
 p.ID_CTRL_VERTICAL_LIST_GIFT_PACK		= 35;	--Àñ°ülist
 p.ID_CTRL_VERTICAL_LIST_SHOP_ITEM		= 15;	--µÀ¾ßlist
 p.ID_CTRL_VERTICAL_LIST_GACHA			= 13;	--Å¤µ°list
