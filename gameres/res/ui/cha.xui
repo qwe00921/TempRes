@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -18,7 +18,7 @@ UIClsoeType=0
 [CTRL_PICTURE_BG]
 Type=1
 Tag=34
-Rect=1 -1 637 240
+Rect=1 0 637 239
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -34,15 +34,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\card_collect.png
 NormalFileUV=0 0 640 130
-
-[CTRL_PICTURE_EDIT]
-Type=1
-Tag=23
-Rect=156 550 107 40
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_BUTTON_EDIT]
 Type=2
@@ -217,3 +208,75 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\team_choose.png
 NormalFileUV=0 0 110 30
+
+[CTRL_TEXT_LV1]
+Type=4
+Tag=33
+Rect=50 99 60 20
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV2]
+Type=4
+Tag=41
+Rect=151 99 60 20
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV3]
+Type=4
+Tag=42
+Rect=252 99 60 20
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV4]
+Type=4
+Tag=43
+Rect=355 100 60 20
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV5]
+Type=4
+Tag=44
+Rect=457 100 60 20
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV6]
+Type=4
+Tag=45
+Rect=559 101 60 20
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextHorAlign=AlignRight
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

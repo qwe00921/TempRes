@@ -155,6 +155,13 @@ function p.showTeamInfo(view,teamInfo)
 	local defenseText = GetLabel(view, ui_team.ID_CTRL_TEXT_DEFENSE_V);
 	local HPText = GetLabel(view, ui_team.ID_CTRL_TEXT_HP_V);
 	
+	local cardLv1 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV1);
+	local cardLv2 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV2);
+	local cardLv3 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV3);
+	local cardLv4 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV4);
+	local cardLv5 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV5);
+	local cardLv6 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV6);
+	
 	--设置攻击,防御,HP
 	local attackV = 0;
 	local defenseV = 0;
@@ -178,20 +185,28 @@ function p.showTeamInfo(view,teamInfo)
 		end
 		local aniIndex = cardPicTable.head_pic;
 		local cardPic = nil;
+		local cardLvText = nil;
 		if k == "Pos1" then
 			cardPic = cardPic1
+			cardLvText = cardLv1
 		elseif k == "Pos2" then
 			cardPic = cardPic2
+			cardLvText = cardLv2
 		elseif k == "Pos3" then
 			cardPic = cardPic3
+			cardLvText = cardLv3
 		elseif k == "Pos4" then
 			cardPic = cardPic4
+			cardLvText = cardLv4
 		elseif k == "Pos5" then
 			cardPic = cardPic5
+			cardLvText = cardLv5
 		elseif k == "Pos6" then
 			cardPic = cardPic6
+			cardLvText = cardLv6
 		end
 		cardPic:SetPicture( GetPictureByAni(aniIndex, 0) );
+		cardLvText:SetText("Lv:"..teamInfo[k]["Level"]);
 	end
 	
 	attackText:SetText(tostring(attackV));
