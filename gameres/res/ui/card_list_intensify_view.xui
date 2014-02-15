@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
@@ -7,7 +7,7 @@ Height=640
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 0 635 150
+Rect=0 0 635 135
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -124,98 +124,46 @@ UIClsoeType=0
 [CTRL_PICTURE_38]
 Type=1
 Tag=38
-Rect=39 112 60 20
+Rect=16 10 50 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_LEVEL_1]
-Type=4
-Tag=10
-Rect=39 112 60 20
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_39]
 Type=1
 Tag=39
-Rect=161 112 60 20
+Rect=138 10 50 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_40]
 Type=1
 Tag=40
-Rect=284 113 60 20
+Rect=258 10 50 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_41]
 Type=1
 Tag=41
-Rect=407 112 60 20
+Rect=381 10 50 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_LEVEL_4]
-Type=4
-Tag=11
-Rect=408 112 60 20
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_LEVEL_3]
-Type=4
-Tag=12
-Rect=285 113 60 20
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_LEVEL_2]
-Type=4
-Tag=13
-Rect=162 112 60 20
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
 [CTRL_BUTTON_ITEM5]
 Type=2
@@ -233,31 +181,18 @@ UIClsoeType=0
 [CTRL_PICTURE_47]
 Type=1
 Tag=47
-Rect=533 112 60 20
+Rect=505 10 50 20
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_lv.png
-NormalFileUV=0 0 90 24
-
-[CTRL_LEVEL_5]
-Type=4
-Tag=46
-Rect=531 112 60 20
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\Lv.png
+NormalFileUV=0 0 55 23
 
 [CTRL_PICTURE_S1]
 Type=1
 Tag=48
-Rect=19 11 42 42
+Rect=52 52 42 42
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -268,7 +203,7 @@ NormalFileUV=0 0 42 42
 [CTRL_PICTURE_S2]
 Type=1
 Tag=49
-Rect=140 11 42 42
+Rect=173 52 42 42
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -279,7 +214,7 @@ NormalFileUV=0 0 42 42
 [CTRL_PICTURE_S3]
 Type=1
 Tag=50
-Rect=260 14 42 42
+Rect=293 52 42 42
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -290,7 +225,7 @@ NormalFileUV=0 0 42 42
 [CTRL_PICTURE_S4]
 Type=1
 Tag=51
-Rect=383 12 42 42
+Rect=416 52 42 42
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -301,7 +236,7 @@ NormalFileUV=0 0 42 42
 [CTRL_PICTURE_S5]
 Type=1
 Tag=52
-Rect=507 12 42 42
+Rect=540 52 42 42
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -312,7 +247,7 @@ NormalFileUV=0 0 42 42
 [CTRL_PICTURE_TEAM1]
 Type=1
 Tag=78
-Rect=80 11 48 21
+Rect=49 2 86 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -323,7 +258,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_TEAM2]
 Type=1
 Tag=79
-Rect=202 11 48 21
+Rect=172 2 86 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -334,7 +269,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_TEAM3]
 Type=1
 Tag=80
-Rect=323 11 48 21
+Rect=292 2 86 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -345,7 +280,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_TEAM4]
 Type=1
 Tag=81
-Rect=446 11 48 21
+Rect=415 2 86 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -356,7 +291,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_TEAM5]
 Type=1
 Tag=82
-Rect=569 11 48 21
+Rect=539 2 86 34
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -367,7 +302,7 @@ NormalFileUV=0 0 110 50
 [CTRL_TEXT_NUM1]
 Type=4
 Tag=1222
-Rect=27 19 25 25
+Rect=60 61 25 25
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -380,7 +315,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM2]
 Type=4
 Tag=1223
-Rect=148 18 25 25
+Rect=181 61 25 25
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -393,7 +328,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM3]
 Type=4
 Tag=1224
-Rect=268 21 25 25
+Rect=301 61 25 25
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -406,7 +341,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM4]
 Type=4
 Tag=1225
-Rect=391 19 25 25
+Rect=424 61 25 25
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -419,11 +354,78 @@ UIClsoeType=0
 [CTRL_TEXT_NUM5]
 Type=4
 Tag=1226
-Rect=515 19 25 25
+Rect=548 61 25 25
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_LEVEL_1]
+Type=4
+Tag=10
+Rect=39 5 30 30
+AnchorPos=0 0
+Notes=
+Text=99
+TextTradition=99
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_LEVEL_4]
+Type=4
+Tag=11
+Rect=406 5 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_LEVEL_3]
+Type=4
+Tag=12
+Rect=282 5 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_LEVEL_2]
+Type=4
+Tag=13
+Rect=162 5 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_LEVEL_5]
+Type=4
+Tag=46
+Rect=529 5 30 30
+AnchorPos=0 0
+Notes=
+TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
