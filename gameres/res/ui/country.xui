@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_TEAM]
 Type=2
 Tag=61
-Rect=495 766 89 90
+Rect=328 868 89 90
 AnchorPos=0 0
 Notes=
 TextSize=10
