@@ -75,17 +75,37 @@ end
 function p.isShowPlot()
 	local storyId = tonumber(p.rewardDataT.endStory)
 	if tonumber(storyId) == 0 then
+		local missionId = tonumber(p.rewardDataT.mission_id)
+		local stageId = math.floor(missionId/1000)
+		WriteCon("open stage id == "..stageId);
 		p.CloseUI();
-		stageMap_main.OpenWorldMap();
-		dlg_userinfo.ShowUI();
+		quest_main.ShowUI(stageId)
+		--stageMap_main.OpenWorldMap();
+		--dlg_userinfo.ShowUI();
 	else
-		local missionId = tonumber(p.rewardDataT.mission_id);
-		local viewId = math.floor(missionId/100000);
-		p.CloseUI();
-		dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
-		WriteCon("OK BUTTON");
+		if p.rewardDataT.newChapterOrStage.chapter_id then
+			local newChapter = tonumber(p.rewardDataT.newChapterOrStage.chapter_id)
+			local newStage = tonumber(p.rewardDataT.newChapterOrStage.stage_id)
+			if newChapter > 0 then
+				p.CloseUI();
+				dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,newChapter)
+			elseif newStage > 0 then
+				local viewId = math.floor(newStage/100);
+				p.CloseUI();
+				dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
+			else
+				local missionId = tonumber(p.rewardDataT.mission_id);
+				local viewId = math.floor(missionId/1000);
+				p.CloseUI();
+				dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
+			end
+		else
+			local missionId = tonumber(p.rewardDataT.mission_id);
+			local viewId = math.floor(missionId/1000);
+			p.CloseUI();
+			dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
+		end
 	end
-
 end
 
 

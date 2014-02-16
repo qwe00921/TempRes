@@ -228,7 +228,7 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	
 	
 	if row == 1 and cardIndex == 1 and p.hasRemove  == true then
-		local lvImg = GetImage(view,ui_list.ID_CTRL_PICTURE_75 );
+		local lvImg = GetImage(view,ui_list.ID_CTRL_PICTURE_1 );
 		cardButton:SetImage(GetPictureByAni("ui.card_edit_remove",0))
 		 cardButton:SetId(0);
 		cardTeamPic:SetVisible(false);
@@ -241,7 +241,8 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	local cardId = tonumber(card.CardID);
 	local cardPicTable = SelectRowInner(T_CHAR_RES,"card_id",cardId);
 	if cardPicTable == nil then
-		WriteConErr("cardPicTable error ");
+		WriteConErr("not find card id == "..cardId);
+		return
 	end
 	local aniIndex = cardPicTable.head_pic;
 	cardButton:SetImage( GetPictureByAni(aniIndex, 0) );

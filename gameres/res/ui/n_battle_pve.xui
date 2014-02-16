@@ -287,10 +287,10 @@ NormalFileUV=0 0 90 24
 [CTRL_TEXT_ITEM1]
 Type=4
 Tag=333
-Rect=11 930 107 19
+Rect=11 930 107 20
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -300,10 +300,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM2]
 Type=4
 Tag=334
-Rect=139 930 107 19
+Rect=139 930 107 20
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -313,10 +313,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM3]
 Type=4
 Tag=335
-Rect=267 930 107 19
+Rect=267 930 107 20
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -326,10 +326,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM4]
 Type=4
 Tag=336
-Rect=393 930 107 19
+Rect=393 930 107 20
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -339,10 +339,10 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM5]
 Type=4
 Tag=337
-Rect=521 930 107 19
+Rect=521 930 107 20
 AnchorPos=0 0
 Notes=
-TextSize=14
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -357,8 +357,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_339]
 Type=1
@@ -368,8 +366,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_340]
 Type=1
@@ -379,8 +375,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_341]
 Type=1
@@ -390,8 +384,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_PICTURE_209]
 Type=1
@@ -412,8 +404,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
 
 [CTRL_EXP_HP]
 Type=9
@@ -1037,7 +1027,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\rege_bg2.png
 NormalFileUV=0 0 130 21
 
-
 [CTRL_PICTURE_204]
 Type=1
 Tag=204
@@ -1525,7 +1514,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
-
 [CTRL_BUTTON_63]
 Type=2
 Tag=63
@@ -1766,7 +1754,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM1]
 Type=4
 Tag=152
-Rect=94 835 31 25
+Rect=8 836 31 25
 AnchorPos=0 0
 Notes=
 Text=99
@@ -1781,7 +1769,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM2]
 Type=4
 Tag=153
-Rect=221 835 31 25
+Rect=135 836 31 25
 AnchorPos=0 0
 Notes=
 Text=99
@@ -1796,7 +1784,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM3]
 Type=4
 Tag=154
-Rect=348 835 31 25
+Rect=262 836 31 25
 AnchorPos=0 0
 Notes=
 Text=99
@@ -1811,7 +1799,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM4]
 Type=4
 Tag=155
-Rect=475 835 31 25
+Rect=389 836 31 25
 AnchorPos=0 0
 Notes=
 Text=99
@@ -1826,7 +1814,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM5]
 Type=4
 Tag=156
-Rect=602 835 31 25
+Rect=516 836 31 25
 AnchorPos=0 0
 Notes=
 Text=99

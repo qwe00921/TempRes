@@ -3,258 +3,302 @@
 Width=640
 Height=960
 
-[CTRL_9SLICES_29]
-Type=22
-Tag=29
-Rect=45 99 558 513
-AnchorPos=0 0
-Notes=
-Stretch=1
-NormalFile=.\res\image\ui\public\bg2.png
-NormalFileUV=0 0 640 338
-
 [CTRL_9SLICES_22]
 Type=22
 Tag=22
-Rect=45 99 565 530
+Rect=38 236 565 488
 AnchorPos=0 0
 Notes=
 Stretch=1
-NormalFile=.\res\image\ui\public\bg_frame2.png
-NormalFileUV=0 0 640 376
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame13.png
+NormalFileUV=0 0 300 300
 
 [CTRL_TEXT_GIFT_HEAD]
 Type=4
 Tag=8
-Rect=97 116 466 48
+Rect=87 250 466 48
 AnchorPos=0 0
 Notes=
 TextSize=24
 TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_GIFT_1]
 Type=1
 Tag=2
-Rect=97 187 130 130
+Rect=86 342 130 130
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_GIFT_2]
 Type=1
 Tag=3
-Rect=271 188 130 130
+Rect=260 343 130 130
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_GIFT_3]
 Type=1
 Tag=4
-Rect=435 188 130 130
+Rect=424 343 130 130
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_GIFT_4]
 Type=1
 Tag=5
-Rect=97 371 130 130
+Rect=86 487 130 130
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_GIFT_5]
 Type=1
 Tag=6
-Rect=270 371 130 130
+Rect=259 487 130 130
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_GIFT_6]
 Type=1
 Tag=7
-Rect=435 371 130 130
+Rect=424 487 130 130
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_1]
 Type=4
 Tag=9
-Rect=98 318 130 35
+Rect=86 435 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_2]
 Type=4
 Tag=10
-Rect=272 319 130 35
+Rect=260 436 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_3]
 Type=4
 Tag=11
-Rect=435 319 130 35
+Rect=424 436 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_4]
 Type=4
 Tag=12
-Rect=97 502 130 35
+Rect=86 580 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_5]
 Type=4
 Tag=13
-Rect=268 502 130 35
+Rect=259 580 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_6]
 Type=4
 Tag=14
-Rect=436 502 130 35
+Rect=424 580 130 35
 AnchorPos=0 0
 Notes=
 TextSize=16
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_23]
 Type=1
 Tag=23
-Rect=145 288 80 25
+Rect=91 345 80 25
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_24]
 Type=1
 Tag=24
-Rect=319 289 80 25
+Rect=265 346 80 25
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_25]
 Type=1
 Tag=25
-Rect=483 289 80 25
+Rect=429 346 80 25
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_26]
 Type=1
 Tag=26
-Rect=146 472 80 25
+Rect=92 490 80 25
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_27]
 Type=1
 Tag=27
-Rect=318 472 80 25
+Rect=264 490 80 25
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_28]
 Type=1
 Tag=28
-Rect=484 472 80 25
+Rect=430 490 80 25
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_GIFT_NUM_1]
 Type=4
 Tag=16
-Rect=144 287 80 25
+Rect=90 344 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_GIFT_NUM_2]
 Type=4
 Tag=17
-Rect=318 288 80 25
+Rect=264 345 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_GIFT_NUM_3]
 Type=4
 Tag=18
-Rect=482 288 80 25
+Rect=428 345 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_GIFT_NUM_4]
 Type=4
 Tag=19
-Rect=145 471 80 25
+Rect=91 489 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_GIFT_NUM_5]
 Type=4
 Tag=20
-Rect=317 471 80 25
+Rect=263 489 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_GIFT_NUM_6]
 Type=4
 Tag=21
-Rect=483 471 80 25
+Rect=429 489 80 25
 AnchorPos=0 0
 Notes=
 TextSize=18
 TextColor=0xfffbf0
-TextHorAlign=AlignRight
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_BUTTON_OK]
 Type=2
 Tag=15
-Rect=265 543 110 54
+Rect=265 640 110 54
 AnchorPos=0 0
 Notes=
-Text=确定
-TextTradition=確定
 TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\ok1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\public\ok1_select.png
+SelectedFileUV=0 0 122 60
