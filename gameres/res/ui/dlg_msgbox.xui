@@ -3,6 +3,30 @@
 Width=640
 Height=960
 
+[CTRL_9SLICES_9]
+Type=22
+Tag=9
+Rect=73 402 495 300
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_8]
+Type=22
+Tag=8
+Rect=73 402 495 300
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
 [CTRL_9SLICES_49]
 Type=22
 Tag=49
@@ -12,8 +36,8 @@ Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame11.png
-NormalFileUV=0 0 56 46
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
 
 [CTRL_9SLICES_10]
 Type=22
@@ -30,7 +54,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_2]
 Type=4
 Tag=2
-Rect=229 424 184 36
+Rect=229 433 184 36
 AnchorPos=0 0
 Notes=
 Text=标题

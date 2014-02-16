@@ -11,3 +11,5 @@ p.ID_CTRL_TEXT_3						        = 3;
 p.ID_CTRL_TEXT_2						        = 2;
 p.ID_CTRL_9SLICES_10					     = 11;
 p.ID_CTRL_9SLICES_49					     = 49;
+p.ID_CTRL_9SLICES_8					      = 8;
+p.ID_CTRL_9SLICES_9					      = 9;

@@ -31,38 +31,27 @@ UIClsoeType=0
 [CTRL_PICTURE_10]
 Type=1
 Tag=10
-Rect=4 27 633 144
+Rect=4 0 633 185
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title2.png
-NormalFileUV=0 0 640 160
+NormalFile=.\res\image\ui\quest\frame1.png
+NormalFileUV=0 0 619 165
 
 [CTRL_PICTURE_ITEMPIC]
 Type=1
 Tag=11
-Rect=16 35 125 125
+Rect=27 46 125 125
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_12]
-Type=1
-Tag=12
-Rect=15 36 128 128
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_ITEMNAME]
 Type=4
 Tag=13
-Rect=155 52 234 40
+Rect=162 61 234 40
 AnchorPos=0 0
 Notes=
 Text=物品名称
@@ -77,18 +66,18 @@ UIClsoeType=0
 [CTRL_PICTURE_14]
 Type=1
 Tag=14
-Rect=157 98 300 3
+Rect=154 103 327 11
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\line.png
-NormalFileUV=0 0 567 4
+NormalFile=.\res\image\ui\card_attr_base\underline.png
+NormalFileUV=0 0 205 7
 
 [CTRL_TEXT_ITEMINFO]
 Type=4
 Tag=15
-Rect=155 106 234 40
+Rect=162 115 234 40
 AnchorPos=0 0
 Notes=
 Text=物品名称
@@ -103,7 +92,7 @@ UIClsoeType=0
 [CTRL_TEXT_16]
 Type=4
 Tag=16
-Rect=477 42 82 60
+Rect=482 43 82 60
 AnchorPos=0 0
 Notes=
 Text=持有数量
@@ -118,7 +107,7 @@ UIClsoeType=0
 [CTRL_TEXT_17]
 Type=4
 Tag=17
-Rect=566 42 50 60
+Rect=571 43 50 60
 AnchorPos=0 0
 Notes=
 Text=99
@@ -133,11 +122,9 @@ UIClsoeType=0
 [CTRL_BUTTON_18]
 Type=2
 Tag=18
-Rect=16 889 129 63
+Rect=492 192 129 63
 AnchorPos=0 0
 Notes=
-Text=返回
-TextTradition=返回
 TextSize=30
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -288,7 +275,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_48]
 Type=1
 Tag=48
-Rect=48 905 61 33
+Rect=526 207 61 33
 AnchorPos=0 0
 Notes=
 UIOpenType=0

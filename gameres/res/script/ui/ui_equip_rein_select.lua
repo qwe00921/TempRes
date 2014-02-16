@@ -4,13 +4,13 @@
 --------------------------------------------------------------
 ui_equip_rein_select = {};
 local p =  ui_equip_rein_select;
+p.ID_CTRL_PICTURE_49					     = 49;
+p.ID_CTRL_PICTURE_48					     = 48;
+p.ID_CTRL_PICTURE_47					     = 47;
 p.ID_CTRL_TEXT_EQUIP_SEL_NUM			= 1330;
 p.ID_CTRL_TEXT_MONEY					     = 1211;
 p.ID_CTRL_PICTURE_401					    = 401;
 p.ID_CTRL_PICTURE_400					    = 400;
-p.ID_CTRL_TEXT_398					       = 398;
-p.ID_CTRL_TEXT_397					       = 397;
-p.ID_CTRL_TEXT_396					       = 396;
 p.ID_CTRL_PICTURE_394					    = 394;
 p.ID_CTRL_PICTURE_136					    = 136;
 p.ID_CTRL_PICTURE_135					    = 135;

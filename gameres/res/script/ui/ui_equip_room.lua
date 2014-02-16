@@ -4,9 +4,12 @@
 --------------------------------------------------------------
 ui_equip_room = {};
 local p =  ui_equip_room;
+p.ID_CTRL_PICTURE_18					     = 24;
+p.ID_CTRL_PICTURE_17					     = 23;
+p.ID_CTRL_PICTURE_16					     = 21;
+p.ID_CTRL_PICTURE_15					     = 17;
 p.ID_CTRL_PICTURE_351					    = 351;
 p.ID_CTRL_TEXT_CRIT					      = 12;
-p.ID_CTRL_TEXT_112					       = 112;
 p.ID_CTRL_BUTTON_ARMOR				    = 20;
 p.ID_CTRL_BUTTON_WEAPON				   = 19;
 p.ID_CTRL_BUTTON_ALL					     = 18;

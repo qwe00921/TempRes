@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -42,7 +42,7 @@ NormalFileUV=0 0 122 60
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=7 280 624 578
+Rect=7 280 624 530
 AnchorPos=0 0
 Notes=
 UIOpenType=0

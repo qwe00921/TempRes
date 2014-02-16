@@ -4,6 +4,12 @@
 --------------------------------------------------------------
 ui_n_battle_pve = {};
 local p =  ui_n_battle_pve;
+p.ID_CTRL_PICTURE_145					    = 151;
+p.ID_CTRL_PICTURE_144					    = 150;
+p.ID_CTRL_PICTURE_143					    = 149;
+p.ID_CTRL_PICTURE_142					    = 148;
+p.ID_CTRL_PICTURE_141					    = 147;
+p.ID_CTRL_PICTURE_139					    = 146;
 p.ID_CTRL_PICTURE_172					    = 172;
 p.ID_CTRL_TEXT_ITEMNUM5				   = 156;
 p.ID_CTRL_TEXT_ITEMNUM4				   = 155;
@@ -37,12 +43,6 @@ p.ID_CTRL_PICTURE_118					    = 130;
 p.ID_CTRL_PICTURE_117					    = 129;
 p.ID_CTRL_PICTURE_116					    = 128;
 p.ID_CTRL_PICTURE_115					    = 127;
-p.ID_CTRL_PICTURE_145					    = 151;
-p.ID_CTRL_PICTURE_144					    = 150;
-p.ID_CTRL_PICTURE_143					    = 149;
-p.ID_CTRL_PICTURE_142					    = 148;
-p.ID_CTRL_PICTURE_141					    = 147;
-p.ID_CTRL_PICTURE_139					    = 146;
 p.ID_CTRL_PICTURE_162					    = 162;
 p.ID_CTRL_PICTURE_161					    = 161;
 p.ID_CTRL_PICTURE_160					    = 160;
