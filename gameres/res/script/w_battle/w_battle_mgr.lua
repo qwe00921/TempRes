@@ -859,11 +859,7 @@ end;
 --敌方是否全挂
 function p.CheckEnemyAllDied()
 	if p.enemyCamp:isAllDead() == true then 	--怪物死光了, 波次结束 or 战斗结束
-		if p.IsGuid == false then
-			p.FightWin();
-		else
-			p.GuidFightWin();
-		end;
+		p.FightWin();
 	else	
 		if p.atkCampType == W_BATTLE_HERO then --当前是我方行动刚结束后的拾取
 			p.EnemyBuffStarTurn() 
@@ -879,21 +875,24 @@ end;
 
 --战斗胜利
 function p.FightWin()  
-	KillTimer(p.buffTimerID);
-	p.heroCamp:ClearFighterBuff();
-	if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
-		w_battle_db_mgr.nextStep();  --数据进入下一波次
-		--w_battle_mgr.enemyCamp:free();
-		w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
+	if p.IsGuid == false then
+		KillTimer(p.buffTimerID);
+		p.heroCamp:ClearFighterBuff();
+		if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
+			w_battle_db_mgr.nextStep();  --数据进入下一波次
+			--w_battle_mgr.enemyCamp:free();
+			w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
+		else
+			w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
+		end
 	else
-		w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
+		if (p.step == 3) and (p.substep == 4) then
+			rookie_mask.ShowUI(p.step,p.substep + 1);
+		end;
 	end
+	
 end;
 
---引导的战斗胜利
-function p.GuidFightWin()
-	
-end
 
 --战斗失败
 function p.FightLose()  
@@ -1457,11 +1456,14 @@ function p.fighterGuid(substep)
 	elseif substep == 2 then
 		rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 3 then
-	    --2号位移动,目标一半的位置
-		--移动到一半停下来, 显示遮照 rookie_mask.ShowUI(p.step,p.substep + 1)
+		p.SetPVEAtkID(2); --2号位跳到目标的位置 状态机停下再显示遮照 
 	elseif substep == 4 then
-		p.SetPVEAtkID(2); 		
-		p.SetPVEAtkID(1);  --只有一个怪,等怪全死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+		p.SetPVEAtkID(1);  
+		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(2); 		--让2号位的状态机继续行动(攻击)
+		if lstateMachine ~= nil then
+			lstateMachine:atk_startAtk();
+		end; 
+		--等怪全死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 5 then
 		rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 6 then

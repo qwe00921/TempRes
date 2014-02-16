@@ -196,9 +196,18 @@ function p:atk_start()
 			--cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
 	--	end
 		
-		
-		local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", seqTarget);
-		seqTarget:SetWaitEnd( cmdMove );
+		if w_battle_mgr.IsGuid == false then  --正常战斗
+			local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", seqTarget);
+			seqTarget:SetWaitEnd( cmdMove );
+		else  --引导战斗
+			if (w_battle_mgr.step == 3) and (w_battle_mgr.substep == 3) then
+				local cmdAtk = atkFighter:cmdLua("atk_guidstep3_3",  self.id,"", seqTarget);
+				seqTarget:SetWaitEnd( cmdMove );
+			else
+				local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", seqTarget);
+				seqTarget:SetWaitEnd( cmdMove );
+			end
+		end;
 	elseif self.distanceRes == W_BATTLE_DISTANCE_Archer then  --远程攻击
 		self:atk_startAtk();
 	end;
@@ -396,6 +405,10 @@ function p:atk_startAtk()
 end
 
 
+
+function p:atk_guidstep3_3()
+	rookie_mask.ShowUI(p.step,p.substep + 1)
+end;
 
 function p:atk_end()
 	local atkFighter = self.atkFighter;

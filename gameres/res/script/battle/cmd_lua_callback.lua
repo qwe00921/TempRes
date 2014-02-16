@@ -77,6 +77,11 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		if lstateMachine ~= nil then
 			lstateMachine:atk_BuffEnd();
 		end;		
+	elseif cmdtype == "atk_guidstep3_3" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
+		if lstateMachine ~= nil then
+			lstateMachine:atk_guidstep3_3();
+		end;			
 	elseif cmdtype == "tar_hurt" and E_DEMO_VER == 5 then
 		local lstateMachine = w_battle_machinemgr.getTarStateMachine(str,num);
 		if lstateMachine ~= nil then

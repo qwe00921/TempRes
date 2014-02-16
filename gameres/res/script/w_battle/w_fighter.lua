@@ -714,8 +714,20 @@ function p:AddBuff(effect_type, work,param)
 end;
 
 function p:RemoveBuff(val)
+	local lhasTurn = true;
 	for i= #self.SkillBuff,1, -1 do
 		local skillRecord = self.SkillBuff[i];
+		if    (skillRecord.buff_type == W_BUFF_TYPE_1)    --不能行动的BUFF
+			or  (skillRecord.buff_type == W_BUFF_TYPE_2)
+			or  (skillRecord.buff_type == W_BUFF_TYPE_3)
+			or  (skillRecord.buff_type == W_BUFF_TYPE_4) 
+			or  (skillRecord.buff_type == W_BUFF_TYPE_5) then 
+			
+			if skillRecord.buff_type ~= val then --不是当前要解的状态
+				lhasTurn = false;	
+			end;
+	    end;
+	
 		if skillRecord.buff_type == val then
 			table.remove(self.SkillBuff, i);
 			if val == W_BUFF_TYPE_301 then  --死亡只扣一次BUFF
@@ -724,6 +736,9 @@ function p:RemoveBuff(val)
 			self:SetBuffNode(0);
 		end
 	end
+	
+	self.HasTurn = lhasTurn;
+	
 	self:calBuff(); --计算各种BUFF后的攻,防,暴击
 end;
 
