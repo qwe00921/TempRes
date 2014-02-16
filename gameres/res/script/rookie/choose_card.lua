@@ -36,7 +36,7 @@ function p.ShowUI()
 	p.Init()
 end
 
---³õÊ¼»¯¿¨ÅÆ
+--åˆå§‹åŒ–å¡ç‰Œ
 function p.InitScrollList()
 	local posCtrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_CARD );
 	local bList = createNDUIScrollContainerExpand();
@@ -134,14 +134,14 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 end
 
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
