@@ -431,30 +431,35 @@ function p.ShowCardInfo( view, card, cardIndex )
 		cardSelect = ui_list.ID_CTRL_PICTURE_S1;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
 		cardLevel = ui_list.ID_CTRL_LEVEL_1;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_38
 		numText = ui_list.ID_CTRL_TEXT_NUM1;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S2;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
 		cardLevel = ui_list.ID_CTRL_LEVEL_2;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_39
 		numText = ui_list.ID_CTRL_TEXT_NUM2;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S3;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
 		cardLevel = ui_list.ID_CTRL_LEVEL_3;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_40;
 		numText = ui_list.ID_CTRL_TEXT_NUM3;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
 		cardLevel = ui_list.ID_CTRL_LEVEL_4;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_41;
 		numText = ui_list.ID_CTRL_TEXT_NUM4;
 	elseif cardIndex == 5 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S5;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
 		cardLevel = ui_list.ID_CTRL_LEVEL_5;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_47;
 		numText = ui_list.ID_CTRL_TEXT_NUM5;
 	end
 	--œ‘ æø®≈∆Õº∆¨
@@ -491,16 +496,20 @@ function p.ShowCardInfo( view, card, cardIndex )
 	end
 	--ø®≈∆µ»º∂
 	local levelText = GetLabel(view,cardLevel);
-	levelText:SetText("LV "..tostring(card.Level));
+	levelText:SetText(tostring(card.Level));
+	levelText:SetVisible(true);
+
+	local levelImg = GetImage(view,cardLeveImg);
+	levelImg:SetVisible(true);
 	
 	-- «∑Ò—°÷–Õº∆¨
 	local cardSelectText = GetImage(view,cardSelect );
 	cardSelectText:SetVisible( false );
 		
-	local num = GetLabel(view,numText);
+	--local num = GetLabel(view,numText);
 	--num.SetVisible( false );
 	
-	p.cardNumListNode[cardUniqueId] = num;
+	--p.cardNumListNode[cardUniqueId] = cardSelectText;
 	
 	local Team_marks = card.Team_marks;
 	p.teamList[cardUniqueId] = Team_marks;
@@ -523,7 +532,7 @@ end
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
 	local cardSelectText = p.selectList[cardUniqueId] 
-	local numText = p.cardNumListNode[cardUniqueId];
+	--local numText = p.cardNumListNode[cardUniqueId];
 	local pCardLeveInfo = nil;
 	local card = nil;
 	for k,v in pairs(p.cardListInfo) do
@@ -541,7 +550,7 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	if cardSelectText:IsVisible() == true then
 		cardSelectText:SetVisible(false);
 		--numText:SetVisible(false);
-		numText:SetText("");
+		--numText:SetText("");
 		for k,v in pairs(p.selectCardId) do
 			if v == cardUniqueId then
 				table.remove(p.selectCardId,k);
@@ -559,8 +568,9 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		else
 			cardSelectText:SetVisible(true);
 			p.selectNum = p.selectNum+1;
-			numText:SetText(tostring(p.selectNum));
-			--numText:SetVisible(true);
+			--numText:SetText(tostring(p.selectNum));
+			cardSelectText:SetPicture(GetPictureByAni("common_ui.card_num",  p.selectNum) );
+	--		numText:SetVisible(true);
 			p.selectCardId[#p.selectCardId + 1] = cardUniqueId;
 			
 			p.consumeMoney = p.consumeMoney + pCardLeveInfo.feed_money + tonumber(card.Level)*tonumber(card.Level);
@@ -606,8 +616,9 @@ end
 function p.setNumFalse()
 	for k,v in pairs(p.selectCardId) do
 			--WriteCon("k : "..k);
-			local numText = p.cardNumListNode[v];
-			numText:SetText(tostring(k));
+			local cardSelectText = p.selectList[v];
+			cardSelectText:SetPicture(GetPictureByAni("common_ui.card_num",k));
+			--numText:SetText(tostring(k));
 	end
 
 end
@@ -632,8 +643,8 @@ end
 function p.clearDate()
 	for k,v in pairs(p.selectCardId) do
 			--WriteCon("k : "..k);
-			local numText = p.cardNumListNode[v];
-			numText:SetText("");
+			--local numText = p.cardNumListNode[v];
+			--numText:SetT
 			local cardSelectText = p.selectList[v] ;
 			cardSelectText:SetVisible(false);
 	end

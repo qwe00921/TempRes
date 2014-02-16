@@ -233,6 +233,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	local lCardPic 	= "ID_CTRL_BUTTON_CHA"..pIndex;--cardpic
 	local lCardName 	= "ID_CTRL_TEXT_NAME"..pIndex;--cardpic
 	local lCardSprite 	= "ID_CTRL_SPRITE_"..pIndex;--cardpic
+	local lCardStar = "ID_CTRL_PICTURE_"..tostring(127+pIndex);	
 	
 	WriteCon("SetCardInfoWS"..pIndex.."  LEVELE : "..pCardInfo.Level);
 	local cardLevText = GetLabel(p.layer, ui[lLevelStr]);
@@ -242,6 +243,11 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	local cardButton = GetButton(p.layer, ui[lCardPic]);
 	local lcardId = tonumber(pCardInfo.CardID);
 	local lCardRowInfo= SelectRowInner( T_CHAR_RES, "card_id", lcardId); --从表中获取卡牌详细信息	
+
+	local CardStar = GetImage(p.layer, ui[lCardStar]);
+    CardStar:SetVisible(true);
+	local lstarNum = pCardInfo.Rare;
+	CardStar:SetPicture(GetPictureByAni("common_ui.equipStar",lstarNum));
 	
 	WriteCon("********    =  "..lCardSprite);	
 	
@@ -286,6 +292,7 @@ function p.InitAllCardInfo()
 		local tName = "ID_CTRL_TEXT_NAME"..tostring(i);--装备图背景
 		local lCardPic 	= "ID_CTRL_BUTTON_CHA"..tostring(i);--cardpic
 		local lCardSprite 	= "ID_CTRL_SPRITE_"..tostring(i);--cardpic
+        local lCardStar = "ID_CTRL_PICTURE_"..tostring(127+i);
 		
 		local cardLevText = GetLabel(p.layer, ui[tLevel]);
 		cardLevText:SetVisible(false);
@@ -298,6 +305,9 @@ function p.InitAllCardInfo()
 		
 		local cardSprite = GetPlayer(p.layer, ui[lCardSprite]);
 		cardSprite:SetVisible(false);
+		
+		local cardStar = GetImage(p.layer, ui[lCardStar]);
+		cardStar:SetVisible(false);
 	end
 	
 end;	

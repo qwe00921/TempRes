@@ -334,26 +334,31 @@ function p.ShowCardInfo( view, card, cardIndex )
 		cardSelect = ui_list.ID_CTRL_PICTURE_S1;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM1;
 		cardLevel = ui_list.ID_CTRL_LEVEL_1;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_38;
 	elseif cardIndex == 2 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM2;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S2;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM2;
 		cardLevel = ui_list.ID_CTRL_LEVEL_2;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_39;
 	elseif cardIndex == 3 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM3;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S3;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM3;
 		cardLevel = ui_list.ID_CTRL_LEVEL_3;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_40;
 	elseif cardIndex == 4 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM4;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S4;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM4;
 		cardLevel = ui_list.ID_CTRL_LEVEL_4;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_41;
 	elseif cardIndex == 5 then
 		cardBtn = ui_list.ID_CTRL_BUTTON_ITEM5;
 		cardSelect = ui_list.ID_CTRL_PICTURE_S5;
 		cardTeam = ui_list.ID_CTRL_PICTURE_TEAM5;
 		cardLevel = ui_list.ID_CTRL_LEVEL_5;
+		cardLeveImg = ui_list.ID_CTRL_PICTURE_47;
 	end
 	--œ‘ æø®≈∆Õº∆¨
 	local cardButton = GetButton(view, cardBtn);
@@ -380,7 +385,11 @@ function p.ShowCardInfo( view, card, cardIndex )
 	end
 	--ø®≈∆µ»º∂
 	local levelText = GetLabel(view,cardLevel);
-	levelText:SetText("LV"..tostring(card.Level));
+	levelText:SetText(tostring(card.Level));
+	levelText:SetVisible(true);
+
+	local levelImg = GetImage(view,cardLeveImg);
+	levelImg:SetVisible(true);
 	
 	-- «∑Ò—°÷–Õº∆¨
 	if p.baseCardInfo ~= nil then
