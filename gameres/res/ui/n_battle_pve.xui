@@ -1324,8 +1324,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
-NormalFileUV=0 0 41 67
 
 [CTRL_PICTURE_158]
 Type=1
@@ -1335,8 +1333,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
-NormalFileUV=0 0 41 67
 
 [CTRL_PICTURE_159]
 Type=1
@@ -1346,8 +1342,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
-NormalFileUV=0 0 41 67
 
 [CTRL_PICTURE_160]
 Type=1
@@ -1357,8 +1351,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
-NormalFileUV=0 0 41 67
 
 [CTRL_PICTURE_161]
 Type=1
@@ -1368,8 +1360,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
-NormalFileUV=0 0 41 67
 
 [CTRL_PICTURE_162]
 Type=1
@@ -1379,8 +1369,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\battle_meter_current.png
-NormalFileUV=0 0 41 67
 
 [CTRL_PICTURE_139]
 Type=1
