@@ -33,7 +33,7 @@ function p.ShowUI()
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddChild(layer); --测试战斗要关掉 @郭浩
+	--GetUIRoot():AddChild(layer); --测试战斗要关掉 @郭浩
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;

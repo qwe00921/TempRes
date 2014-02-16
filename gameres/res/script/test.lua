@@ -41,7 +41,7 @@ function p.test()
 --	p.TestVector();
 
 	--测试新手引导遮挡
-	--p.testGuideLayer();
+	p.testGuideLayer();
 
     --测试
 --    p.test1();
