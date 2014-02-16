@@ -90,14 +90,20 @@ function p.isShowPlot()
 				p.CloseUI();
 				dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,newChapter)
 			elseif newStage > 0 then
+				local viewId = math.floor(newStage/100);
 				p.CloseUI();
-				dlg_drama.ShowUI(storyId,after_drama_data.STAGE,newStage)
+				dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
+			else
+				local missionId = tonumber(p.rewardDataT.mission_id);
+				local viewId = math.floor(missionId/1000);
+				p.CloseUI();
+				dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
 			end
 		else
 			local missionId = tonumber(p.rewardDataT.mission_id);
 			local viewId = math.floor(missionId/1000);
 			p.CloseUI();
-			dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
+			dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
 		end
 	end
 end

@@ -38,6 +38,8 @@ function p.ShowUI(stageId)
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	
+	p.ShowBgPic(stageId)
+	
 	GetUIRoot():AddDlg(layer);
 	LoadUI("quest_main_view.xui",layer,nil);
 	
@@ -45,6 +47,18 @@ function p.ShowUI(stageId)
 	p.SetDelegate(layer);
 	
 	p.Init()
+end
+--显示背景
+function p.ShowBgPic(stageId)
+	local picId = math.floor(tonumber(stageId)/100)
+	local pic = nil;
+	if picId == 1 then
+		pic = GetPictureByAni("lancer.stage_background", 0);
+	elseif picId == 2 then
+		pic = GetPictureByAni("lancer.stage_background", 1);
+	end
+	maininterface.m_bgImage:SetPicture( pic );
+	maininterface.m_bgImage:SetFrameRectByPictrue(pic);
 end
 
 function p.Init()
