@@ -221,13 +221,13 @@ SelectedFileUV=0 0 122 60
 [CTRL_PICTURE_BOX]
 Type=1
 Tag=84
-Rect=419 6 85 80
+Rect=419 6 70 70
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\gift.png
-NormalFileUV=0 0 85 80
+NormalFile=.\res\image\ui\n_battle\material_thum.png
+NormalFileUV=0 0 102 102
 
 [CTRL_PICTURE_328]
 Type=1
@@ -408,7 +408,7 @@ UIClsoeType=0
 [CTRL_EXP_HP]
 Type=9
 Tag=120
-Rect=70 454 503 18
+Rect=69 453 503 18
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -422,7 +422,7 @@ NormalFileUV=0 0 11 13
 [CTRL_TEXT_365]
 Type=4
 Tag=365
-Rect=48 417 207 26
+Rect=82 417 207 26
 AnchorPos=0 0
 Notes=
 Text=目标名字
@@ -437,7 +437,7 @@ UIClsoeType=0
 [CTRL_PICTURE_140]
 Type=1
 Tag=145
-Rect=20 420 24 24
+Rect=54 420 24 24
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -448,7 +448,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_IMPORTANT]
 Type=1
 Tag=121
-Rect=0 0 639 952
+Rect=0 0 638 960
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1370,71 +1370,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_139]
-Type=1
-Tag=146
-Rect=7 481 107 108
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_3.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_141]
-Type=1
-Tag=147
-Rect=329 481 107 108
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_6.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_142]
-Type=1
-Tag=148
-Rect=327 597 107 108
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_3.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_143]
-Type=1
-Tag=149
-Rect=6 599 107 108
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_3.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_144]
-Type=1
-Tag=150
-Rect=6 714 107 108
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_6.png
-NormalFileUV=0 0 119 120
-
-[CTRL_PICTURE_145]
-Type=1
-Tag=151
-Rect=326 716 107 108
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\type_1.png
-NormalFileUV=0 0 119 120
 
 [CTRL_PICTURE_115]
 Type=1
@@ -1450,7 +1385,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_116]
 Type=1
 Tag=128
-Rect=0 590 319 117
+Rect=0 592 319 117
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1461,7 +1396,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_117]
 Type=1
 Tag=129
-Rect=0 706 319 125
+Rect=0 709 319 121
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1494,7 +1429,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_120]
 Type=1
 Tag=132
-Rect=319 710 320 123
+Rect=319 709 320 121
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1824,3 +1759,56 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
+[CTRL_PICTURE_139]
+Type=1
+Tag=146
+Rect=627 401 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_141]
+Type=1
+Tag=147
+Rect=627 401 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_142]
+Type=1
+Tag=148
+Rect=627 401 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_143]
+Type=1
+Tag=149
+Rect=627 401 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_144]
+Type=1
+Tag=150
+Rect=627 401 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_145]
+Type=1
+Tag=151
+Rect=627 401 107 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

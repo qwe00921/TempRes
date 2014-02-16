@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_map2 = {};
 local p =  ui_map2;
+p.ID_CTRL_PICTURE_27					     = 30;
+p.ID_CTRL_PICTURE_26					     = 29;
 p.ID_CTRL_BUTTON_NEXT					    = 46;
 p.ID_CTRL_BUTTON_UP					      = 45;
 p.ID_CTRL_BUTTON_RETURN				   = 23;

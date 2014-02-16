@@ -1,7 +1,18 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
+
+[CTRL_PICTURE_3]
+Type=1
+Tag=3
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\common\bg_login_back.png
+NormalFileUV=0 0 640 960
 
 [CTRL_BUTTON_4]
 Type=2
