@@ -293,49 +293,53 @@ function p.setMissionInfo(misId,view)
 
 	local rewardId = missionTable.reward_id;
 	--WriteConErr("rewardId == "..rewardId);
-
-	local rewardTable = SelectRowList(T_MISSION_REWARD,"id",rewardId);
-	if rewardTable == nil then
-		WriteCon("rewardTable error");
-		return
-	end
-	--local rewardGroupTable = rewardTable
-	--local rewardGroupTable = {};
-	-- for k,v in pairs(rewardTable) do
-		-- if tonumber(v.group) == 1 then
-			-- rewardGroupTable[#rewardGroupTable + 1] = v;
-		-- end
-	-- end
-	
-	local picIndex = nil;
-	local itemT = nil;
-	local itemType = nil;
-	local itemId = nil;
-	for i = 1,#rewardTable do
-		itemType = tonumber(rewardTable[i].item_type)
-		itemId = tonumber(rewardTable[i].item_id)
-
-		if itemType == QUEST_ITEM_TYPE_MATERIAL then
-			itemT = SelectRowInner(T_MATERIAL,"id",itemId);
-			picIndex = itemT.item_pic;
-		elseif itemType == QUEST_ITEM_TYPE_CARD then
-			itemT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-			picIndex = itemT.head_pic;
-		elseif itemType == QUEST_ITEM_TYPE_EQUIP then
-			itemT = SelectRowInner(T_EQUIP,"id",itemId);
-			picIndex = itemT.item_pic;
-		elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE 
-				or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
-			itemT = SelectRowInner(T_ITEM,"id",itemId);
-			picIndex = itemT.item_pic;
+	if tonumber(rewardId) > 0 then
+		local rewardTable = SelectRowList(T_MISSION_REWARD,"id",rewardId);
+		if rewardTable == nil then
+			WriteCon("rewardTable error");
+			return
 		end
-		misRewardT[i]:SetPicture( GetPictureByAni(picIndex, 0));
-	end
+		--local rewardGroupTable = rewardTable
+		--local rewardGroupTable = {};
+		-- for k,v in pairs(rewardTable) do
+			-- if tonumber(v.group) == 1 then
+				-- rewardGroupTable[#rewardGroupTable + 1] = v;
+			-- end
+		-- end
+	
+		local picIndex = nil;
+		local itemT = nil;
+		local itemType = nil;
+		local itemId = nil;
+		for i = 1,#rewardTable do
+			itemType = tonumber(rewardTable[i].item_type)
+			itemId = tonumber(rewardTable[i].item_id)
+
+			if itemType == QUEST_ITEM_TYPE_MATERIAL then
+				itemT = SelectRowInner(T_MATERIAL,"id",itemId);
+				picIndex = itemT.item_pic;
+			elseif itemType == QUEST_ITEM_TYPE_CARD then
+				itemT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+				picIndex = itemT.head_pic;
+			elseif itemType == QUEST_ITEM_TYPE_EQUIP then
+				itemT = SelectRowInner(T_EQUIP,"id",itemId);
+				picIndex = itemT.item_pic;
+			elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE 
+					or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
+				itemT = SelectRowInner(T_ITEM,"id",itemId);
+				picIndex = itemT.item_pic;
+			end
+			misRewardT[i]:SetPicture( GetPictureByAni(picIndex, 0));
+		end
 --	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
 	
-	local rewardBtn = GetButton(view, uiList.ID_CTRL_BUTTON_REWARD);
-	rewardBtn:SetLuaDelegate(p.OnRewardBtnClick)
-	rewardBtn:SetId(misId);
+		local rewardBtn = GetButton(view, uiList.ID_CTRL_BUTTON_REWARD);
+		rewardBtn:SetLuaDelegate(p.OnRewardBtnClick)
+		rewardBtn:SetId(misId);
+	else
+		local rewardProPic = GetImage(view, uiList.ID_CTRL_PICTURE_32);
+		rewardProPic:SetVisible(false)
+	end
 end
 
 function p.OnRewardBtnClick(uiNode,uiEventType,param)
