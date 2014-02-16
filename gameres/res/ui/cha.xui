@@ -209,7 +209,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\team_choose.png
 NormalFileUV=0 0 110 30
 
-[CTRL_PICTURE_26]
+[CTRL_PICTURE_LV1]
 Type=1
 Tag=28
 Rect=19 98 55 23
@@ -217,10 +217,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_27]
+[CTRL_PICTURE_LV2]
 Type=1
 Tag=46
 Rect=121 98 55 23
@@ -228,10 +226,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_28]
+[CTRL_PICTURE_LV3]
 Type=1
 Tag=47
 Rect=220 98 55 23
@@ -239,10 +235,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_29]
+[CTRL_PICTURE_LV4]
 Type=1
 Tag=48
 Rect=324 98 55 23
@@ -250,10 +244,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_30]
+[CTRL_PICTURE_LV5]
 Type=1
 Tag=49
 Rect=426 98 55 23
@@ -261,10 +253,8 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_31]
+[CTRL_PICTURE_LV6]
 Type=1
 Tag=50
 Rect=527 98 55 23
@@ -272,8 +262,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\Lv.png
-NormalFileUV=0 0 55 23
 
 [CTRL_TEXT_LV1]
 Type=4

@@ -113,8 +113,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_2]
 Type=1
@@ -124,8 +122,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_3]
 Type=1
@@ -135,8 +131,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_4]
 Type=1
@@ -146,8 +140,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_5]
 Type=1
@@ -157,8 +149,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_TEXT_ITEMNAME1]
 Type=4
@@ -233,8 +223,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_33]
 Type=1
@@ -244,8 +232,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_34]
 Type=1
@@ -255,8 +241,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_35]
 Type=1
@@ -266,8 +250,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_36]
 Type=1
@@ -277,8 +259,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_TEXT_NUM1]
 Type=4
