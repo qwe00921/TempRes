@@ -155,6 +155,20 @@ function p.showTeamInfo(view,teamInfo)
 	local defenseText = GetLabel(view, ui_team.ID_CTRL_TEXT_DEFENSE_V);
 	local HPText = GetLabel(view, ui_team.ID_CTRL_TEXT_HP_V);
 	
+	local cardLv1 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV1);
+	local cardLv2 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV2);
+	local cardLv3 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV3);
+	local cardLv4 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV4);
+	local cardLv5 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV5);
+	local cardLv6 = GetLabel(view, ui_team.ID_CTRL_TEXT_LV6);
+	
+	local cardLvPic1 = GetImage(view, ui_team.ID_CTRL_PICTURE_LV1);
+	local cardLvPic2 = GetImage(view, ui_team.ID_CTRL_PICTURE_LV2);
+	local cardLvPic3 = GetImage(view, ui_team.ID_CTRL_PICTURE_LV3);
+	local cardLvPic4 = GetImage(view, ui_team.ID_CTRL_PICTURE_LV4);
+	local cardLvPic5 = GetImage(view, ui_team.ID_CTRL_PICTURE_LV5);
+	local cardLvPic6 = GetImage(view, ui_team.ID_CTRL_PICTURE_LV6);
+	
 	--设置攻击,防御,HP
 	local attackV = 0;
 	local defenseV = 0;
@@ -178,20 +192,37 @@ function p.showTeamInfo(view,teamInfo)
 		end
 		local aniIndex = cardPicTable.head_pic;
 		local cardPic = nil;
+		local cardLvText = nil;
+		local cardLvBgPic = nil;
 		if k == "Pos1" then
 			cardPic = cardPic1
+			cardLvText = cardLv1
+			cardLvBgPic = cardLvPic1
 		elseif k == "Pos2" then
 			cardPic = cardPic2
+			cardLvText = cardLv2
+			cardLvBgPic = cardLvPic2
 		elseif k == "Pos3" then
 			cardPic = cardPic3
+			cardLvText = cardLv3
+			cardLvBgPic = cardLvPic3
 		elseif k == "Pos4" then
 			cardPic = cardPic4
+			cardLvText = cardLv4
+			cardLvBgPic = cardLvPic4
 		elseif k == "Pos5" then
 			cardPic = cardPic5
+			cardLvText = cardLv5
+			cardLvBgPic = cardLvPic5
 		elseif k == "Pos6" then
 			cardPic = cardPic6
+			cardLvText = cardLv6
+			cardLvBgPic = cardLvPic6
 		end
 		cardPic:SetPicture( GetPictureByAni(aniIndex, 0) );
+		cardLvText:SetText(tostring(teamInfo[k]["Level"]));
+		cardLvBgPic:SetPicture( GetPictureByAni("common_ui.levelPic", 0) );
+		
 	end
 	
 	attackText:SetText(tostring(attackV));
@@ -236,38 +267,62 @@ function p.ShowItemList(itemData)
 		local itemNum4 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM4);
 		local itemNum5 = GetLabel(view, ui_item.ID_CTRL_TEXT_NUM5);
 		
+		local itemNumPic1 = GetImage(view, ui_item.ID_CTRL_PICTURE_32);
+		local itemNumPic2 = GetImage(view, ui_item.ID_CTRL_PICTURE_33);
+		local itemNumPic3 = GetImage(view, ui_item.ID_CTRL_PICTURE_34);
+		local itemNumPic4 = GetImage(view, ui_item.ID_CTRL_PICTURE_35);
+		local itemNumPic5 = GetImage(view, ui_item.ID_CTRL_PICTURE_36);
+
+		local itemNamePic1 = GetImage(view, ui_item.ID_CTRL_PICTURE_1);
+		local itemNamePic2 = GetImage(view, ui_item.ID_CTRL_PICTURE_2);
+		local itemNamePic3 = GetImage(view, ui_item.ID_CTRL_PICTURE_3);
+		local itemNamePic4 = GetImage(view, ui_item.ID_CTRL_PICTURE_4);
+		local itemNamePic5 = GetImage(view, ui_item.ID_CTRL_PICTURE_5);
+
 		if itemData ~= nil then
 			local itemNum = #itemData
 			--WriteConErr("itemNum == "..#itemData);
 			local itemPic = nil;
 			local itemName = nil;
 			local itemNUm = nil;
+			local itemNumPic = nil;
+			local itemNamePic = nil;
 			for i = 1,#itemData do
 				if tonumber(itemData[i].location) == 1 then
 					itemPic = itemPic1
 					itemName = itemName1
 					itemNUm = itemNum1
+					itemNumPic = itemNumPic1
+					itemNamePic = itemNamePic1
 				elseif tonumber(itemData[i].location) == 2 then
 					itemPic = itemPic2
 					itemName = itemName2
 					itemNUm = itemNum2
+					itemNumPic = itemNumPic2
+					itemNamePic = itemNamePic2
 				elseif tonumber(itemData[i].location) == 3 then
 					itemPic = itemPic3
 					itemName = itemName3
 					itemNUm = itemNum3
-				elseif tonumber(itemData[i].location) == 4 then
+					itemNumPic = itemNumPic3
+					itemNamePic = itemNamePic3
+					elseif tonumber(itemData[i].location) == 4 then
 					itemPic = itemPic4
 					itemName = itemName4
 					itemNUm = itemNum4
-				elseif tonumber(itemData[i].location) == 5 then
+					itemNumPic = itemNumPic4
+					itemNamePic = itemNamePic4
+					elseif tonumber(itemData[i].location) == 5 then
 					itemPic = itemPic5
 					itemName = itemName5
 					itemNUm = itemNum5
+					itemNumPic = itemNumPic5
+					itemNamePic = itemNamePic5
 				end
 				itemId = tonumber(itemData[i].item_id)
 				if itemId > 0 then
 					itemNUm:SetText(tostring(itemData[i].num));
-					WriteConErr("itemId == "..itemId);
+					WriteCon("itemId == "..itemId);
 					
 					local itemTable = SelectRowInner(T_MATERIAL,"id",itemId);
 					if itemTable == nil then
@@ -275,11 +330,16 @@ function p.ShowItemList(itemData)
 					end
 					itemPic:SetPicture( GetPictureByAni(itemTable.item_pic, 0) );
 					itemName:SetText(itemTable.name);
+					
+					itemNumPic:SetPicture( GetPictureByAni("common_ui.countNameBox", 0) );
+					itemNamePic:SetPicture( GetPictureByAni("common_ui.countNameBox", 0) );
 				end
 			end
 		end
 
 		tiemTable:AddView( view );
+		tiemTable:SetEnableMove(false);
+
 end
 
 function p.SetDelegate(layer)
@@ -306,7 +366,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			local nowTeamId = tonumber(p.teamTableView:GetActiveView() + 1);
 			WriteCon("nowTeamId == "..nowTeamId);
 			if tonumber(p.storyId) == 0 then
-				maininterface.m_bgImage:SetVisible(false);
+				--maininterface.m_bgImage:SetVisible(false);
 				if E_DEMO_VER== 4 then
 					 n_battle_mgr.EnterBattle( N_BATTLE_PVE, p.missionId, nowTeamId );--进入战斗PVE
 				else

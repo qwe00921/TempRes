@@ -86,7 +86,7 @@ function p:GetFirstActiveFighterPos(pFighterID)
 	return lId;
 end;	
 
---传入攻击者,获得属性加成的玩家列表
+--传入攻击者,获得属性加成的玩家列表,给怪物攻击选择
 function p:GetElementFighter(pAtkFighter)
 	local lLst = {}
 	for k,v in ipairs(self.fighters) do
@@ -97,11 +97,11 @@ function p:GetElementFighter(pAtkFighter)
 	return lLst;
 end;
 
---传入受击者,获得哪些攻击有属性加成的位置
+--传入受击者,获得哪些攻击有属性加成的位置,玩家界面显示相克
 function p:GetElementAtkFighter(pTarFighter)
 	local lLst = {}
 	for k,v in ipairs(self.fighters) do
-		if (v.nowlife > 0) and (w_battle_atkDamage.IsElement(v,pTarFighter) == true) then
+		if (v.Hp > 0) and (w_battle_atkDamage.IsElement(v,pTarFighter) == true) then
 			table.insert(lLst,v:GetId());
 		end;
 	end;
@@ -524,11 +524,11 @@ function p:AddFighters( uiArray, fighters )
 		
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				f.Attack = 10000;
-				f.Defence = 1;
+				--f.Attack = 10000;
+				--f.Defence = 1;
 				--
 				--if f.Position == 2 then
-				--	f.Sp = 100;
+					f.Sp = 100;
 				--end
 				
 				--f.Defence = f.Defence + 200;
@@ -546,9 +546,9 @@ function p:AddFighters( uiArray, fighters )
 				f.Attack = 1;
 				f.Defence = 100;
 				f.Skill = 0;
-				--if f.Position == 1 then
-				--	f.Skill = 1001	
-				--end
+				if f.Position == 5 then
+					f.Skill = 1001	
+				end
 			--[[	if f.Position == 1  then
 					f.Skill = 1005;
 				elseif f.Position == 3 then
@@ -567,6 +567,7 @@ function p:AddFighters( uiArray, fighters )
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
 		f.nowlife = f.Hp;
+		WriteCon("cardId="..tostring(f.cardId))
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();
 		

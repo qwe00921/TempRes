@@ -1,5 +1,5 @@
 
---ĞÂÊÖÒıµ¼
+--æ–°æ‰‹å¼•å¯¼
 
 rookie_main = {};
 local p = rookie_main;
@@ -7,7 +7,7 @@ local p = rookie_main;
 p.userData = nil;
 p.stepId = nil;
 
---Ã¿¸ö²½ÖèµÄ·Ö²½ÖèÊıÁ¿ÅäÖÃ
+--æ¯ä¸ªæ­¥éª¤çš„åˆ†æ­¥éª¤æ•°é‡é…ç½®
 local MAX_STEP = 
 	{
 		0,--1
@@ -28,11 +28,11 @@ local MAX_STEP =
 
 function p.getRookieStep(backData)
 	if backData.result == false then
-		dlg_msgbox.ShowOK("´íÎóÌáÊ¾",backData.message,nil,p.layer);
+		dlg_msgbox.ShowOK("é”™è¯¯æç¤º",backData.message,nil,p.layer);
 		return;
 	elseif backData.result == true then
 		local stepId = tonumber(backData.user.Guide_id)
-		--stepId = 2;	--²âÊÔÓÃ
+		--stepId = 2;	--æµ‹è¯•ç”¨
 		p.stepId = stepId;
 		p.userData = backData.user;
 		if stepId == 0 then
@@ -43,7 +43,7 @@ function p.getRookieStep(backData)
 	end
 end
 
---½øÈëĞÂÊÖÒıµ¼
+--è¿›å…¥æ–°æ‰‹å¼•å¯¼
 function p.ShowLearningStep( step, substep )
 	WriteConErr("rookie step = "..step .. " substep = " .. substep);
 
@@ -81,7 +81,7 @@ function p.ShowLearningStep( step, substep )
 				country_mixhouse.ShowUI();
 			elseif substep == 4 then
 				country_mixhouse.HideUI();
-				country_mix.ShowUI( 1 );--´ò¿ª»Ø¸´Ò©ºÏ³É
+				country_mix.ShowUI( 1 );--æ‰“å¼€å›å¤è¯åˆæˆ
 			elseif substep == 5 then
 				country_mixhouse.DidMix( country_mix.drug_mix_id, nil, country_mix.MixCallBack );
 			elseif substep == 6 then
@@ -124,11 +124,11 @@ function p.ShowLearningStep( step, substep )
 	end
 end
 
---µã»÷¸ßÁÁÇøÓò»Øµ÷
+--ç‚¹å‡»é«˜äº®åŒºåŸŸå›è°ƒ
 function p.MaskTouchCallBack( step, substep )
 	rookie_mask.CloseUI();
 
-	--¸üĞÂ²½Öè
+	--æ›´æ–°æ­¥éª¤
 	local maxsubstep = MAX_STEP[step] or 0;
 	local curstep = step;
 	local cursubstep = substep;
@@ -141,7 +141,7 @@ function p.MaskTouchCallBack( step, substep )
 	p.ShowLearningStep( curstep, cursubstep );
 end
 
---»ñÈ¡¸ßÁÁÇøÓò
+--è·å–é«˜äº®åŒºåŸŸ
 function p.GetHighLightRectList( step, substep )
 	local rect = CCRectMake( 0, 0, 0, 0 );
 	if step == 1 then
@@ -217,7 +217,7 @@ function p.GetHighLightRectList( step, substep )
 	return rect;
 end
 
---»ñÈ¡ÏìÓ¦ÇøÓò
+--è·å–å“åº”åŒºåŸŸ
 function p.GetDelegateArea( step, substep )
 	local rect =  CCRectMake( 0, 0, 0, 0 );
 	if step == 1 then

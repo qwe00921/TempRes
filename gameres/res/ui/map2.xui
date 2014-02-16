@@ -17,7 +17,7 @@ NormalFileUV=0 0 720 1136
 [CTRL_BUTTON_CHAPTER1]
 Type=2
 Tag=8
-Rect=337 727 303 208
+Rect=428 727 212 208
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -29,7 +29,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER2]
 Type=2
 Tag=2
-Rect=-11 578 308 311
+Rect=-11 578 244 311
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -267,3 +267,35 @@ NormalFile=.\res\image\ui\quest\back.png
 NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\quest\back_select.png
 SelectedFileUV=0 0 122 60
+
+[CTRL_BUTTON_UP]
+Type=2
+Tag=45
+Rect=193 891 107 53
+AnchorPos=0 0
+Notes=
+Text=上一页
+TextTradition=上一頁
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54
+
+[CTRL_BUTTON_NEXT]
+Type=2
+Tag=46
+Rect=313 890 107 53
+AnchorPos=0 0
+Notes=
+Text=下一页
+TextTradition=下一頁
+TextSize=20
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\button.png
+NormalFileUV=0 0 110 54

@@ -3,38 +3,24 @@
 Width=640
 Height=960
 
-[CTRL_9SLICES_8]
-Type=22
-Tag=8
-Rect=104 164 436 328
-AnchorPos=0 0
-Notes=
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg2.png
-NormalFileUV=0 0 640 338
-
 [CTRL_9SLICES_9]
 Type=22
 Tag=9
-Rect=100 160 440 335
+Rect=100 313 440 335
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_frame2.png
-NormalFileUV=0 0 640 376
+NormalFile=.\res\image\ui\public\frame13.png
+NormalFileUV=0 0 300 300
 
 [CTRL_BUTTON_OK]
 Type=2
 Tag=75
-Rect=273 427 110 54
+Rect=265 556 110 54
 AnchorPos=0 0
 Notes=
-Text=确定
-TextTradition=確定
 TextSize=24
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
@@ -42,13 +28,15 @@ TextVerAlign=AlignVerCenter
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
+NormalFile=.\res\image\ui\public\ok1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\public\ok1_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_TEXT_76]
 Type=4
 Tag=76
-Rect=115 180 410 42
+Rect=126 332 388 42
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -61,7 +49,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM]
 Type=1
 Tag=77
-Rect=260 248 120 120
+Rect=255 403 130 130
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -70,20 +58,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NAME]
 Type=4
 Tag=78
-Rect=220 378 201 35
-AnchorPos=0 0
-Notes=
-TextSize=24
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_ITEM_NUM]
-Type=4
-Tag=79
-Rect=300 336 76 27
+Rect=258 507 127 25
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -93,13 +68,15 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_17]
-Type=1
-Tag=17
-Rect=259 248 122 122
+[CTRL_TEXT_ITEM_NUM]
+Type=4
+Tag=79
+Rect=258 406 76 27
 AnchorPos=0 0
 Notes=
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100

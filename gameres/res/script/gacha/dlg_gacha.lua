@@ -93,11 +93,11 @@ function p.ShowUI( intent ,reload)
 			if intent == SHOP_GACHA then
 				p.ShowGachaData();
 			elseif intent == SHOP_ITEM then
-			   p.ShowShopData();
+			    p.ShowShopData();
 			elseif intent == SHOP_GIFT_PACK then 
-			   p.ShowGiftPackData();
+			    p.ShowGiftPackData();
 			elseif intent == SHOP_BAG then
-			   p.ShowBagData();
+			    p.ShowBagData();
 			end
 		end
 		return;
@@ -171,6 +171,10 @@ function p.SetDelegate()
     --充值
     local payBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_PAY);
     payBtn:SetLuaDelegate(p.OnGachaUIEvent);
+	payBtn:SetVisible( false );
+	
+	--local payImg = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_21 );
+	--payImg:SetVisible( false );
 	
 	--持有
 	p.bagBtn = GetButton(p.layer,ui_dlg_gacha.ID_CTRL_BUTTON_73);
@@ -575,7 +579,9 @@ function p.ShowBagData( bagdata )
 		p.ReqBag();
 		return;
 	end
-
+	
+	p.itemBtnNode = nil;
+	
 	p.shopPackList:SetVisible( false );
 	p.gachaList:SetVisible( false ); 
 	p.shopItemList:SetVisible( false );
@@ -905,7 +911,7 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	else
 		--普通可叠加物品，显示数量
 		itemNumText:SetVisible(true);
-		itemNumText:SetText("X "..item.Num);
+		itemNumText:SetText(""..item.Num);
 		--显示数量背景
 		local numBgPic = GetImage(view,numBg);
 		numBgPic:SetPicture( GetPictureByAni("common_ui.levelBg", 0) );
@@ -1050,8 +1056,8 @@ end
 function p.SetBagUseVisible(visible)
 	local useBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_USE);
 	useBtn:SetVisible(visible);
-	local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
-	useTextPic:SetVisible(visible);
+--	local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
+--	useTextPic:SetVisible(visible);
 	local itemDescribeText = GetLabel(p.layer,ui_dlg_gacha.ID_CTRL_TEXT_ITEM_INFO );
 	itemDescribeText:SetVisible(visible);
 	
@@ -1061,8 +1067,8 @@ function p.SetBagUseVisible(visible)
 	local cancelBtn = GetButton( p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_69 );
 	cancelBtn:SetVisible(visible);
 	
-	local cancelText = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_71 );
-	cancelText:SetVisible(visible);
+--	local cancelText = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_71 );
+--	cancelText:SetVisible(visible);
 end
 
 --点击物品事件
@@ -1075,8 +1081,8 @@ function p.OnBagItemClickEvent(uiNode, uiEventType, param)
 		pack_box_equip.ShowEquip(itemId,itemUniqueId,itemType);
 		local useBtn = GetButton(p.layer, ui_dlg_gacha.ID_CTRL_BUTTON_USE);
 		useBtn:SetVisible(false);
-		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
-		useTextPic:SetVisible(false);
+--		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
+--		useTextPic:SetVisible(false);
 		local itemDescribeText = GetLabel(p.layer,ui_dlg_gacha.ID_CTRL_TEXT_ITEM_INFO );
 		itemDescribeText:SetText(" ");
 		local bg = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_USE);
@@ -1102,12 +1108,12 @@ function p.OnBagItemClickEvent(uiNode, uiEventType, param)
 		cancelBtn:SetZOrder(9999);
 		cancelBtn:SetVisible(true);
 		
-		local cancelText = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_71 );
-		cancelText:SetVisible(true);
-		cancelText:SetZOrder(9999);
+--		local cancelText = GetLabel( p.layer, ui_dlg_gacha.ID_CTRL_TEXT_71 );
+--		cancelText:SetVisible(true);
+--		cancelText:SetZOrder(9999);
 		
-		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
-		useTextPic:SetVisible(true);
+--		local useTextPic = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_LABEL_USE);
+--		useTextPic:SetVisible(true);
 		itemDescribeText:SetVisible(true);
 		local bg = GetImage(p.layer,ui_dlg_gacha.ID_CTRL_PICTURE_USE);
 		bg:SetVisible(true);
@@ -1162,7 +1168,7 @@ function p.OnUseItemClickEvent(uiNode, uiEventType, param)
 			p.SetBagUseVisible(false)
 		elseif ui_dlg_gacha.ID_CTRL_BUTTON_69 == tag then			
 			p.SetBagUseVisible(false);
-			 p.SetItemChechedFX( nil );
+			p.SetItemChechedFX( nil );
 		end
 	end
 end
@@ -1250,7 +1256,7 @@ function p.UpdateMailNum()
 		return;
 	end
 	
-	dlg_msgbox.ShowOK( "提示", "背包已满，请查看系统邮件", nil, p.layer );
+	dlg_gacha_result.ShowMsgBox();
 end
 
 function p.DidAddEmoney( flag )

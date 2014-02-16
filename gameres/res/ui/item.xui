@@ -113,8 +113,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_2]
 Type=1
@@ -124,8 +122,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_3]
 Type=1
@@ -135,8 +131,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_4]
 Type=1
@@ -146,8 +140,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_PICTURE_5]
 Type=1
@@ -157,8 +149,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_TEXT_ITEMNAME1]
 Type=4
@@ -225,10 +215,55 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_32]
+Type=1
+Tag=33
+Rect=17 99 56 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_33]
+Type=1
+Tag=39
+Rect=141 99 56 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_34]
+Type=1
+Tag=41
+Rect=267 99 56 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_35]
+Type=1
+Tag=42
+Rect=389 99 56 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_36]
+Type=1
+Tag=43
+Rect=511 99 56 25
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_TEXT_NUM1]
 Type=4
 Tag=46
-Rect=25 95 31 25
+Rect=30 99 31 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -241,7 +276,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM2]
 Type=4
 Tag=47
-Rect=149 95 31 25
+Rect=154 99 31 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -254,7 +289,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM3]
 Type=4
 Tag=48
-Rect=275 95 31 25
+Rect=280 99 31 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -267,7 +302,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM4]
 Type=4
 Tag=49
-Rect=395 95 35 25
+Rect=400 99 35 25
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -280,7 +315,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM5]
 Type=4
 Tag=50
-Rect=519 95 30 25
+Rect=524 99 30 25
 AnchorPos=0 0
 Notes=
 TextSize=25

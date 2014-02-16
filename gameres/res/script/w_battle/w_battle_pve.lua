@@ -443,14 +443,17 @@ function p.RefreshCardInfo( pIsRoundStar )
 					
 					ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber(data.maxSp), tonumber(data.Sp) );
 					
-					local attrpic = GetPictureByAni( "common_ui.cardBagTypeBox", tonumber(data.element) );
-					if attrpic then
-						ctrllers[ATTR_INDEX]:SetPicture( attrpic );
-					end
+					--local attrpic = GetPictureByAni( "common_ui.cardBagTypeBox", tonumber(data.element) );
+					--if attrpic then
+					ctrllers[ATTR_INDEX]:SetPicture( nil );
+					--end
 					
 					if not (tonumber(data.Hp) > 0 and data.HasTurn) then
 						ctrllers[MASK_INDEX]:SetVisible( true );
 						ctrllers[BTN_INDEX]:SetVisible( false );
+					else
+						ctrllers[MASK_INDEX]:SetVisible( false );
+						ctrllers[BTN_INDEX]:SetVisible( true );
 					end
 				else
 					p.SetVisible( ctrllers, false );
@@ -635,6 +638,8 @@ function p.CloseUI()
 		p.dropList = {};
 		
 		p.CanUseItem = true;
+		p.heroList = nil;
+		p.sortList = nil;
 	end
 	GetBattleShow():EnableTick( false );
 end
@@ -735,12 +740,20 @@ function p.UseItem( uiNode )
 	if tid ~= nil and type(tid) == "table" then
 		p.useitemMask:SetVisible( true );
 		w_battle_useitem.ShowUI( itemid, id );
+		
+		for i = 1, #p.objList do
+			local ctrllers = p.objList[i] or {};
+			if ctrllers[MASK_INDEX] ~= nil then
+				ctrllers[MASK_INDEX]:SetVisible( false );
+			end
+		end
 	end
 	uiNode:SetEnabled( true );
 end
 
 function p.EndUseItem()
 	p.useitemMask:SetVisible( false );	
+	p.RefreshUI( true );
 end
 
 --…Ë÷√π•ª˜

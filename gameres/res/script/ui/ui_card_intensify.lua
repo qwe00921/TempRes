@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_card_intensify = {};
 local p =  ui_card_intensify;
+p.ID_CTRL_PICTURE_178					    = 178;
 p.ID_CTRL_PICTURE_25					     = 26;
 p.ID_CTRL_PICTURE_24					     = 25;
 p.ID_CTRL_PICTURE_23					     = 24;

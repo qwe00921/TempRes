@@ -172,16 +172,29 @@ function p.RefreshUI(userinfo)
 	
 	--行动力、精力恢复
 	--local m_time = 20;
+	local nowTime = tonumber( userinfo.NowTime );
+	local move_recover_time = tonumber( userinfo.Move_recover_time );
 	local m_time = tonumber( userinfo.MoveTime );
 	if m_time ~= nil then
 		p.move_time = m_time;
-		p.move_remain_time = m_time;
+		local subTime = nowTime-move_recover_time;
+		if (m_time-subTime) <=0 or (m_time-subTime) >= m_time then
+			p.move_remain_time = m_time;
+		else
+			p.move_remain_time = m_time-subTime;
+		end
 	end
 	
 	local e_time = tonumber( userinfo.EnergyTime );
+	local energy_recover_time = tonumber( userinfo.Energy_recover_time );
 	if e_time ~= nil then
 		p.energy_time = e_time;
-		p.energy_remain_time = e_time;
+		local subTime = nowTime-energy_recover_time;
+		if (e_time-subTime) <=0 or (e_time-subTime) >= e_time then
+			p.energy_remain_time = e_time;
+		else
+			p.energy_remain_time = e_time-subTime;
+		end
 	end
 	
 	local timeText = GetLabel( p.layer, ui.ID_CTRL_TEXT_46 );

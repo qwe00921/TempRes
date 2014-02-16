@@ -110,7 +110,7 @@ image\ui\public\emoney.png
 
 ;村庄建筑名字框
 [countNameBox]
-image\ui\quest\quest_title.png
+image\ui\card_bag\27.png
 
 [buildBoxPic]
 image\ui\country\facility_building.png
@@ -132,3 +132,10 @@ image\ui\country\LiberationMountain_202x202.png
 image\ui\shop\junior.png
 image\ui\shop\normal.png
 image\ui\shop\senior.png
+
+;再扭一次图片
+[gacha_again]
+image\ui\shop\oncemore.png
+image\ui\shop\fivemore.png
+
+

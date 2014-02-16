@@ -6,9 +6,8 @@ local uiNodeT = {};
 
 p.layer = nil;
 function p.ShowUI()
-	if p.isReplace ~= true then
-		dlg_menu.SetNewUI( p );
-	end
+	dlg_menu.SetNewUI( p );
+	maininterface.ShowUI();
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
 	dlg_menu.HideUI();
@@ -99,6 +98,12 @@ function p.addAllStage(callBackData)
 			uiNodeT.stageBtn[i]:SetLuaDelegate(p.OnBtnClick);
 		end
 	end
+	
+	if stageListInif["S201"] then 
+		local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
+		btnNext:SetLuaDelegate(p.OnBtnClick);
+		btnNext:SetVisible(true);
+	end
 end
 
 function p.openQusetView(uiNode)
@@ -116,18 +121,16 @@ function p.SetDelegate(layer)
 	local btnReturn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
 	btnReturn:SetLuaDelegate(p.OnBtnClick);
 	
+	local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
+	btnNext:SetLuaDelegate(p.OnBtnClick);
+	btnNext:SetVisible(false);
+	
 	local stageBtn1 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER1 );
-	--stageBtn1:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn2 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER2 );
-	--stageBtn2:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn3 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER3 );
-	--stageBtn3:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn4 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER4 );
-	--stageBtn4:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn5 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER5 );
-	--stageBtn5:SetLuaDelegate(p.OnBtnClick);
 	local stageBtn6 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER6 );
-	--stageBtn6:SetLuaDelegate(p.OnBtnClick);
 	
 	uiNodeT.stageBtn = {}
 	uiNodeT.stageBtn[1] = stageBtn1;
@@ -146,6 +149,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			maininterface.ShowUI();
 			dlg_userinfo.ShowUI();
 			dlg_menu.ShowUI();
+		elseif (ui.ID_CTRL_BUTTON_NEXT == tag) then
+			p.CloseUI();
+			stageMap_main.openChapter(2)
 		elseif (ui.ID_CTRL_BUTTON_CHAPTER1 == tag) then
 			p.openQusetView(uiNode)
 		elseif(ui.ID_CTRL_BUTTON_CHAPTER2 == tag) then
