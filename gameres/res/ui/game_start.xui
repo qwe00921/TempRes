@@ -11,8 +11,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\choose.png
-NormalFileUV=0 0 196 100
 
 [CTRL_BUTTON_NEXT]
 Type=2
