@@ -38,6 +38,8 @@ function p.getChapterListCallBack(data)
 			p.chapterId = tonumber(data.chapters.S2)
 		elseif data.chapters.S1 then
 			p.chapterId = tonumber(data.chapters.S1)
+		else
+			WriteConErr("user server mission data error");
 		end
 		
 		p.storyId = tonumber(data.chapters.StoryId)

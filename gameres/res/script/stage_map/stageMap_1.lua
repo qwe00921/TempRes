@@ -102,7 +102,10 @@ function p.addAllStage(callBackData)
 	if stageListInif["S201"] then 
 		local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 		btnNext:SetLuaDelegate(p.OnBtnClick);
+		btnNext:SetText("下一个地图的名字");
 		btnNext:SetVisible(true);
+		--local stageNameTable = SelectRowInner(T_STAGE,"stage_id",p.stageId+1);
+		--uiNodeT.stageName[i]:SetText(stageTable.stage_name);
 	end
 end
 
@@ -177,6 +180,5 @@ function p.CloseUI()
 end
 function p.UIDisappear()
 	p.CloseUI();
-	
 	maininterface.BecomeFirstUI();
 end

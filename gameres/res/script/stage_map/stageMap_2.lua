@@ -88,7 +88,7 @@ function p.addAllStage(callBackData)
 	end
 	local stageListInif = callBackData.stages;
 	if stageListInif == nil then
-		dlg_msgbox.ShowOK("´íÎóÌáÊ¾","Íæ¼ÒÊı¾İ´íÎó£¬ÇëÁªÏµ¿ª·¢ÈËÔ±¡£",nil,p.layer);
+		dlg_msgbox.ShowOK("é”™è¯¯æç¤º","ç©å®¶æ•°æ®é”™è¯¯ï¼Œè¯·è”ç³»å¼€å‘äººå‘˜ã€‚",nil,p.layer);
 		return;
 	end
 
@@ -105,6 +105,7 @@ function p.addAllStage(callBackData)
 	if stageListInif["S301"] then 
 		local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 		btnNext:SetLuaDelegate(p.OnBtnClick);
+		btnNext:SetText("ä¸‹ä¸€ä¸ªåœ°å›¾çš„åå­—");
 		btnNext:SetVisible(true);
 	end
 end
@@ -126,6 +127,7 @@ function p.SetDelegate(layer)
 	
 	local btnUp = GetButton( p.layer, ui.ID_CTRL_BUTTON_UP );
 	btnUp:SetLuaDelegate(p.OnBtnClick);
+	btnUp:SetText("ä¸Šä¸€ä¸ªåœ°å›¾çš„åå­—");
 
 	local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 	btnNext:SetLuaDelegate(p.OnBtnClick);
