@@ -26,7 +26,7 @@ function p.ShowUI( callback )
 	layer:SetFrameRectFull();
 	GetUIRoot():AddDlg(layer);
 
-	LoadDlg( "card_bag_sort_view.xui" , layer, nil );
+	LoadUI( "card_bag_sort_view.xui" , layer, nil );
 	
 	p.layer = layer;
 	
