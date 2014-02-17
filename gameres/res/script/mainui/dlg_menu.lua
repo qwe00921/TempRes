@@ -29,6 +29,11 @@ function p.ShowUI()
 	LoadUI("main_menu.xui", layer, nil);
 	layer:SetZOrder(99);
 	layer:SetLayoutType(1);
+	
+	local pPic = GetImage(layer, ui.ID_CTRL_PICTURE_27 );
+	pPic:RemoveFromParent(false);
+	
+	GetUIRoot():SetGameBgImage(pPic);
     
 	p.layer = layer;
 	p.SetDelegate();

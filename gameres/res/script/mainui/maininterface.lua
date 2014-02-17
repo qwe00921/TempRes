@@ -51,16 +51,12 @@ function p.ShowUI(userinfo)
 	layer:Init();
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
-	if nil == p.m_bgImage then
-		
-	end
 	
 	GetUIRoot():AddChild(layer);
 	LoadUI("main_interface.xui", layer, nil);
     
 	p.layer = layer;
-	
-	
+
 	--p.InitScrollList();
 	--p.OnListScrolled();
 	
