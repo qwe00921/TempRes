@@ -30,4 +30,3 @@ p.ID_CTRL_BUTTON_QUEST				    = 3;	--任务按钮
 p.ID_CTRL_BUTTON_HOME_PAGE			 = 2;	--主页按钮
 p.ID_CTRL_PICTURE_BG					     = 1;	--背景图片
 p.ID_CTRL_PICTURE_8					      = 8;
-p.ID_CTRL_PICTURE_27					     = 27;
