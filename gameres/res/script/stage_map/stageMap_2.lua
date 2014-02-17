@@ -24,10 +24,6 @@ function p.ShowUI()
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	
-	local pic = GetPictureByAni("lancer.stage_background", 1);
-	maininterface.m_bgImage:SetPicture( pic );
-	maininterface.m_bgImage:SetFrameRectByPictrue(pic);
-	
 	GetUIRoot():AddDlg(layer);
 	LoadUI("map2.xui",layer,nil);
 	

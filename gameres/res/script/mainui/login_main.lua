@@ -7,7 +7,6 @@
 login_main = {}
 local p = login_main;
 
-p.m_bgImage = nil;
 p.layer = nil;
 
 local ui = ui_login_back;
@@ -37,15 +36,6 @@ function p.ShowUI()
 	LoadUI("login_back.xui", layer, nil);
 	
 	p.layer = layer;
-	
-	p.m_bgImage = createNDUIImage();
-	p.m_bgImage:Init();
-
-	local pic = GetPictureByAni("lancer.temp_bg", 3); 
-	p.m_bgImage:SetPicture( pic );
-	p.m_bgImage:SetFrameRectByPictrue(pic);	
-	
-	layer:AddChildZ(p.m_bgImage,-99);
 	
 	--除当前外，其他全部隐藏
 	GetUIRoot():VisibleOther( p.layer );

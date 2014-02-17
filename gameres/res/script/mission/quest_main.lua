@@ -52,13 +52,6 @@ end
 function p.ShowBgPic(stageId)
 	local picId = math.floor(tonumber(stageId)/100)
 	local pic = nil;
-	if picId == 1 then
-		pic = GetPictureByAni("lancer.stage_background", 0);
-	elseif picId == 2 then
-		pic = GetPictureByAni("lancer.stage_background", 1);
-	end
-	maininterface.m_bgImage:SetPicture( pic );
-	maininterface.m_bgImage:SetFrameRectByPictrue(pic);
 end
 
 function p.Init()

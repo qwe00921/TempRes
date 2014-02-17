@@ -32,8 +32,6 @@ function p.ShowUI(userinfo)
 		PlayMusic_MainUI();
 		
 		local pic = GetPictureByAni("lancer.temp_bg", 0); 
-		p.m_bgImage:SetPicture( pic );
-		p.m_bgImage:SetVisible(true);
 		p.scrollList:SetVisible(true);
 		
 		p.mailLayer:SetVisible( true );
@@ -53,14 +51,6 @@ function p.ShowUI(userinfo)
 	layer:Init();
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
-
-	p.m_bgImage = createNDUIImage();
-	p.m_bgImage:Init();
-	GetUIRoot():AddChildZ(p.m_bgImage,-99);
-		
-	local pic = GetPictureByAni("lancer.temp_bg", 0); 
-	p.m_bgImage:SetPicture( pic );
-	p.m_bgImage:SetFrameRectByPictrue(pic);
 	
 	GetUIRoot():AddChild(layer);
 	LoadUI("main_interface.xui", layer, nil);

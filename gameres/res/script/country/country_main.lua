@@ -51,10 +51,6 @@ function p.ShowUI()
 
 	LoadUI( "country.xui" , layer, nil );
 	
-	local pic = GetPictureByAni("lancer.temp_bg", 2); 
-	maininterface.m_bgImage:SetPicture( pic );
-	maininterface.m_bgImage:SetFrameRectByPictrue(pic);
-	
 	p.layer = layer;
 	
 	--设置代理
