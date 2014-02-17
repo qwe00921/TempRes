@@ -378,7 +378,8 @@ end
 
 --显示刷新时间
 function p.onFreeTime( )
-	local gachaData = p.gachadata.gachaData or {};
+	local gacha = p.gachadata or {};
+	local gachaData = gacha.gachaData or {};
 	local curTime = os.time();
 	local needTime = false;
 	
