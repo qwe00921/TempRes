@@ -78,7 +78,7 @@ function p.ShowReward(rewardData)
 	local missionTable = SelectRowInner(T_MISSION,"id",missionId);
 	missionName:SetText(missionTable.name);
 		
-	if rewardData.item.item_type then
+	if rewardData.item and rewardData.item.item_type then
 		local itemType = tonumber(rewardData.item.item_type)
 		local itemId = tonumber(rewardData.item.item_id)
 		local itemNum = tonumber(rewardData.item.num)
