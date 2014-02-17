@@ -1,4 +1,4 @@
-
+--the lua not in used, note by csd 2014-2-17
 
 
 card_equip_select_list  = {}

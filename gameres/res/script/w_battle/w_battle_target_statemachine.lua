@@ -89,8 +89,8 @@ function p:tar_hurt()
 			
 			local cmdIshurt = targerFighter:cmdLua( "tar_hurtEnd",   self.id, tostring(self.camp), seqHurt );
 			seqHurt:SetWaitEnd(moveback); 
-		else
-			self:tar_hurtEnd();
+		--else
+		--	self:tar_hurtEnd();
 		end;
 	end
 end;

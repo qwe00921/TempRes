@@ -236,7 +236,7 @@ function p.refreshList(lst)
 	end
 	p.newEquip = lst;
 	local cardNum = #lst;
-	local row = math.ceil(cardNum / 4);
+	local row = math.ceil(cardNum / 5);
 	WriteCon("row ===== "..row);
 	
 	for i = 1, row do
@@ -306,7 +306,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	--显示等级
-	lvV:SetText("LV." .. (tostring(equip.equip_level) or "1"));
+	lvV:SetText("" .. (tostring(equip.equip_level) or "1"));
 	lvV:SetVisible(true);
 	--是否已装备
 	if tonumber(equip.Is_dress) == 1 then
@@ -469,6 +469,13 @@ function p.InitViewUI(view)
 			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_4;
 			nmTagStr  = ui_list.ID_CTRL_TEXT_NUM_4;
 			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_4;
+		elseif cardIndex == 5 then
+			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_5;
+			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_5;
+			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_5;
+			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_5;
+			nmTagStr  = ui_list.ID_CTRL_TEXT_NUM_5;
+			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_5;
 		end
 				
 		local bt = GetButton(view,btTagStr);

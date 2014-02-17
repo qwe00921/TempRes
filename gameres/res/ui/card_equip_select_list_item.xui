@@ -35,21 +35,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_SELECT_1]
-Type=4
-Tag=170
-Rect=37 57 70 28
-AnchorPos=0 0
-Notes=
-Text=已选择
-TextTradition=已選擇
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_BUTTON_ITEM_2]
 Type=2
 Tag=171
@@ -113,51 +98,6 @@ Tag=177
 Rect=390 13 105 105
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_SELECT_2]
-Type=4
-Tag=178
-Rect=161 57 70 28
-AnchorPos=0 0
-Notes=
-Text=已选择
-TextTradition=已選擇
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_SELECT_3]
-Type=4
-Tag=179
-Rect=283 57 70 28
-AnchorPos=0 0
-Notes=
-Text=已选择
-TextTradition=已選擇
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_SELECT_4]
-Type=4
-Tag=180
-Rect=405 57 70 28
-AnchorPos=0 0
-Notes=
-Text=已选择
-TextTradition=已選擇
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
@@ -317,86 +257,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_RANK_1]
-Type=1
-Tag=194
-Rect=605 397 96 23
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_RANK_4]
-Type=1
-Tag=195
-Rect=607 397 92 23
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_RANK_3]
-Type=1
-Tag=196
-Rect=606 397 95 23
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_RANK_2]
-Type=1
-Tag=197
-Rect=607 397 93 23
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_BD_1]
-Type=1
-Tag=31
-Rect=600 355 107 107
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_BD_2]
-Type=1
-Tag=32
-Rect=600 355 107 107
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_BD_3]
-Type=1
-Tag=33
-Rect=600 355 107 107
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
-[CTRL_PICTURE_BD_4]
-Type=1
-Tag=34
-Rect=600 355 107 107
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
 [CTRL_BUTTON_ITEM_5]
 Type=2
 Tag=39
@@ -429,21 +289,6 @@ Text=E
 TextTradition=E
 TextSize=15
 TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_SELECT_5]
-Type=4
-Tag=43
-Rect=527 57 70 28
-AnchorPos=0 0
-Notes=
-Text=已选择
-TextTradition=已選擇
-TextSize=15
-TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0

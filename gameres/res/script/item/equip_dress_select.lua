@@ -1,4 +1,4 @@
-
+--装备选择
 
 CARD_BAG_SORT_BY_LEVEL	= 1001;
 CARD_BAG_SORT_BY_STAR	= 1002;
@@ -97,14 +97,17 @@ function p.sortByBtnEvent(sortType)
 	end
 	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ORDER);
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
+	local sortByImg = GetImage(p.layer, ui.ID_CTRL_PICTURE_11);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
-		sortByBtn:SetText(GetStr("equip_level"));
+		--sortByBtn:SetText(GetStr("equip_level"));
+		sortByImg:SetPicture(GetPictureByAni("common_ui.cardBagSort",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
 		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		sortByBtn:SetText(GetStr("equip_rule"));
+		--sortByBtn:SetText(GetStr("equip_rule"));
+		sortByImg:SetPicture(GetPictureByAni("common_ui.cardBagSort",4));
 	end
 	p.sortByRule(sortType);
 
@@ -178,7 +181,7 @@ function p.refreshList(lst)
 	end
 	WriteCon("cardCount ===== "..#lst);
 	local cardNum = #lst;
-	local row = math.ceil(cardNum / 4);
+	local row = math.ceil(cardNum / 5);
 	WriteCon("row ===== "..row);
 	
 	for i = 1, row do
@@ -189,9 +192,9 @@ function p.refreshList(lst)
         view:SetViewSize( bg:GetFrameSize());
 		
 		local row_index = i;
-		local start_index = (row_index-1)*4+1
-        local end_index = start_index + 3;
-		
+		local start_index = (row_index-1)*5+1
+        local end_index = start_index + 4;
+		p.initListUI(view);
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
 			--if j <= cardNum then
@@ -206,39 +209,57 @@ function p.refreshList(lst)
 		
 end
 
+function p.initListUI(view)
+	for indexStr=1,5 do
+		local lImgLvStr = "ID_CTRL_PICTURE_LV"..tostring(indexStr);
+		local lImgLv = GetImage(view, ui_list[lImgLvStr]);
+		if lImgLv ~= nil then
+			lImgLv:SetVisible(false);
+		end
+		
+		local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备 OK
+		local drsV	= GetLabel(view, ui_list[drsTagStr]);
+		if drsV ~= nil then
+			drsV:SetVisible(false);
+		end
+	end
+end;
 
 
 --显示单张卡牌
 function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
-	
+	--update by csd 2014-2-17
 	local indexStr = tostring(cardIndex);
-	local btTagStr 	= "ID_CTRL_BUTTON_ITEM_"..indexStr;
-	local imgTagStr = "ID_CTRL_PICTURE_IMAGE_"..indexStr;
-	local lvTagStr 	= "ID_CTRL_TEXT_LEVEL_"..indexStr;  --等级
-	local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备
-	local selTagStr = "ID_CTRL_TEXT_SELECT_"..indexStr;  --是否已选择标记
-	local rankTagStr= "ID_CTRL_TEXT_RANK_"..indexStr; --星级
-	local nmTagStr  = "ID_CTRL_TEXT_NAME_"..indexStr; --卡牌名
-	local nmBgTagStr= "ID_CTRL_PICTURE_NM_BG_"..indexStr;--名称背景
-	local imgBdTagStr= "ID_CTRL_PICTURE_BD_"..indexStr;
+	local btTagStr 	= "ID_CTRL_BUTTON_ITEM_"..indexStr;  --OK
+	local imgTagStr = "ID_CTRL_PICTURE_IMAGE_"..indexStr; --OK
+	local lvImgStr = "ID_CTRL_PICTURE_LV"..indexStr;  --等级的图片
+	local lvTagStr 	= "ID_CTRL_TEXT_LEVEL_"..indexStr;  --等级 OK
+	local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备 OK
+	--local selTagStr = "ID_CTRL_TEXT_SELECT_"..indexStr;  --是否已选择标记 OK
+	local selTagStr = "ID_CTRL_PICTURE_SELECT_"..indexStr;  --是否已选择标记 OK
+	--local rankTagStr= "ID_CTRL_TEXT_RANK_"..indexStr; --星级
+	local nmTagStr  = "ID_CTRL_TEXT_NAME_"..indexStr; --卡牌名 OK
+	local nmBgTagStr= "ID_CTRL_PICTURE_NM_BG_"..indexStr;--名称背景 OK
+	--local imgBdTagStr= "ID_CTRL_PICTURE_BD_"..indexStr;  
+    	
 	
 	local bt 	= GetButton(view, ui_list[btTagStr]);
 	local imgV	= GetImage(view, ui_list[imgTagStr]);
 	local lvV 	= GetLabel(view, ui_list[lvTagStr]);
 	local drsV	= GetLabel(view, ui_list[drsTagStr]);
-	local selV	= GetLabel(view, ui_list[selTagStr]);
-	local rankV	= GetImage(view, ui_list[rankTagStr]);
+--	local selV	= GetImage(view, ui_list[selTagStr]);
+	--local rankV	= GetImage(view, ui_list[rankTagStr]); 
 	local nmV	= GetLabel(view, ui_list[nmTagStr]);
-	local imgBdV= GetImage(view, ui_list[imgBdTagStr]);
+	--local imgBdV= GetImage(view, ui_list[imgBdTagStr]);
 	local nmBgV	= GetImage(view, ui_list[nmBgTagStr]);
+	local imgLv = GetImage(view, ui_list[lvImgStr]);
 	
-	
-	selV:SetVisible( false );
+	--selV:SetVisible( false );
 	drsV:SetVisible( false );
 	
 	if itemInfo == nil then
 		imgV:SetVisible( false );
-		imgBdV:SetVisible( false );
+		--imgBdV:SetVisible( false );
 		nmBgV:SetVisible( false );
 		return;
 	end
@@ -253,12 +274,14 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	imgV:SetPicture( p.SelectImage(itemInfo.equip_id) );
 	
 	--显示等级
-	lvV:SetText("LV." .. (itemInfo.equip_level or "1"));
-	--显示星级
-	if itemInfo.rare and itemInfo.rare ~= "0" then
-		rankV:SetPicture( GetPictureByAni("ui.equip_star_"..(itemInfo.rare or 1) ,0));
+	lvV:SetText(""..(itemInfo.equip_level or "1"));
+	imgLv:SetVisible(true);
+	
+	--显示星级 --已经没用了 update by csd
+	--if itemInfo.rare and itemInfo.rare ~= "0" then
+	--	rankV:SetPicture( GetPictureByAni("ui.equip_star_"..(itemInfo.rare or 1) ,0));
 		--rankV:SetText(itemInfo.rare .. GetStr("card_equip_rand_txt"));
-	end
+	--end
 	
 	--是否已装备
 	if itemInfo.Is_dress == 1 or itemInfo.Is_dress == "1" then
@@ -271,7 +294,7 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	
 	--是否已选择
 	if itemInfo.isSelected == true then
-		selV:SetVisible( true );
+		--selV:SetVisible( true );
 	end
 	
 	
