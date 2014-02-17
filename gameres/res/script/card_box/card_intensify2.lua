@@ -20,6 +20,7 @@ p.layer = nil;
 p.cardListInfo = nil;
 p.curBtnNode = nil;
 p.sortByRuleV = nil;
+p.sortBtnMark = MARK_OFF;	--按规则排序是否开启
 p.baseCardInfo = nil;
 
 --p.selectList = {};
@@ -145,7 +146,13 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.SetBtnCheckedFX( uiNode );
 			p.ShowCardByProfession(PROFESSION_TYPE_5);
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
-				card_bag_sort.ShowUI(1);
+			if p.sortBtnMark == MARK_OFF then
+				card_bag_sort.ShowUI(2);
+			else
+				p.sortBtnMark = MARK_OFF;
+				card_bag_sort.HideUI();
+				card_bag_sort.CloseUI();
+			end
 		end
 	end
 end
@@ -166,15 +173,16 @@ function p.sortByBtnEvent(sortType)
 		return
 	end
 	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_SORT_BY);
+	local sortImg = GetImage(p.layer, ui.ID_CTRL_PICTURE_176);
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
+		sortImg:SetPicture(GetPictureByAni("ui.card_order",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
+		sortImg:SetPicture(GetPictureByAni("ui.card_order",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
 	elseif(sortType == CARD_BAG_SORT_BY_TIME) then 
-		sortByBtn:SetImage( GetPictureByAni("button.card_bag",2));
+		sortImg:SetPicture(GetPictureByAni("ui.card_order",3));		
 		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
 	end
 	p.sortByRule(sortType)
@@ -607,6 +615,8 @@ function p.CloseUI()
 		p.baseCardInfo = nil;
         --card_bag_mgr.ClearData();
 		p.cardListByProf = {};
+		card_bag_sort.HideUI();
+		card_bag_sort.CloseUI();
 		--p.userMoney = 0;
 		
     end

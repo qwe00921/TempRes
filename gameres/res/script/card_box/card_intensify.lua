@@ -205,7 +205,15 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			p.SetBtnCheckedFX( uiNode );
 			p.ShowCardByProfession(PROFESSION_TYPE_5);]]-- update 2014-01-03
 		elseif(ui.ID_CTRL_BUTTON_SORT_BY == tag) then --按等级排序
+				--card_bag_sort.ShowUI(1);
+
+			if p.sortBtnMark == MARK_OFF then
 				card_bag_sort.ShowUI(1);
+			else
+				p.sortBtnMark = MARK_OFF;
+				card_bag_sort.HideUI();
+				card_bag_sort.CloseUI();
+			end
 		elseif(ui.ID_CTRL_BUTTON_CLEAR == tag) then 
 			--清除按钮
 			p.clearDate();
@@ -842,6 +850,8 @@ function p.CloseUI()
 		p.cardNumListNode = {};
 		p.sortByRuleNum = nil;
 		p.cardEnabled = nil;
+		card_bag_sort.HideUI();
+		card_bag_sort.CloseUI();
     end
 end
 

@@ -27,6 +27,8 @@ function p.ShowUI(id)
 		card_bag_mian.sortBtnMark = MARK_ON;
 	elseif id == 1 then
 		card_intensify.sortBtnMark = MARK_ON;
+	elseif id == 2 then
+		card_intensify2.sortBtnMark = MARK_ON;
 	end
 	--card_bag_mian.sortBtnMark = MARK_ON;
 end
@@ -52,6 +54,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
 			elseif p.id == 1 then
 				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
+			elseif p.id == 2 then
+				card_intensify2.sortByBtnEvent(CARD_BAG_SORT_BY_LEVEL);
 			end
 		elseif ui.ID_CTRL_BUTTON_SORT_STAR == tag then
 			--WriteCon("**=======byStarBtn=======**");
@@ -61,6 +65,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			elseif p.id == 1 then
 				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
+			elseif p.id == 2 then
+				card_intensify2.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			end
 		elseif ui.ID_CTRL_BUTTON_SOTR_ITEM == tag then
 			--WriteCon("**========byTypeBtn========**");
@@ -70,6 +76,8 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			elseif p.id == 1 then
 				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+			elseif p.id == 2 then
+				card_intensify2.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
 			end
 		end
 		p.HideUI();
@@ -85,6 +93,8 @@ function p.CloseUI()
 			card_bag_mian.sortBtnMark = MARK_OFF;
 		elseif p.id == 1 then
 			card_intensify.sortBtnMark = MARK_OFF;
+		elseif p.id == 2 then
+			card_intensify2.sortBtnMark = MARK_OFF;
 		end
 		p.id = nil;
     end
@@ -97,6 +107,8 @@ function p.HideUI()
 			card_bag_mian.sortBtnMark = MARK_OFF;
 		elseif p.id == 1 then
 			card_intensify.sortBtnMark = MARK_OFF;
+		elseif p.id == 2 then
+			card_intensify2.sortBtnMark = MARK_OFF;
 		end
 	end
 end
