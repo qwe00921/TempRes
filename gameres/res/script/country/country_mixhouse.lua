@@ -75,7 +75,7 @@ function p.SetDelegate()
 	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	--合成
+	--排序
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_14 );
 	btn:SetLuaDelegate( p.OnBtnClick );
 end
@@ -277,7 +277,14 @@ end
 function p.SortCallBack( choose_type )
 	p.showSort = false;
 	p.ChooseType = choose_type;
-	p.RefreshUI();
+	local lImgSort = GetImage(p.layer, ui.ID_CTRL_PICTURE_59); 
+	if p.ChooseType == CHOOSE_TYPE_TREAT  then  --等级
+		lImgSort:SetPicture(GetPictureByAni("ui.card_order",1));
+	elseif p.ChooseType == CHOOSE_TYPE_STATUS then  --星级
+		lImgSort:SetPicture(GetPictureByAni("ui.card_order",2));
+	elseif p.ChooseType == CHOOSE_TYPE_ATTR then  --属性
+		lImgSort:SetPicture(GetPictureByAni("ui.card_order",3));
+	end;
 end
 
 --合成接口

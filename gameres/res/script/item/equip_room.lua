@@ -80,10 +80,7 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
 		
-		if p.sortBtnMark == MARK_ON then
-			p.sortBtnMark = MARK_OFF;
-			equip_bag_sort.CloseUI();
-		end
+
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
 			--dlg_userinfo.ShowUI( );
@@ -93,7 +90,14 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 			p.HideUI();
 			equip_sell.ShowUI(p.msg);
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --排序
-			equip_bag_sort.ShowUI(1);
+			if p.sortBtnMark == MARK_ON then
+				p.sortBtnMark = MARK_OFF;
+				equip_bag_sort.HideUI();
+				equip_bag_sort.CloseUI()
+			else
+				equip_bag_sort.ShowUI(1);
+			end
+			
 		elseif (ui.ID_CTRL_BUTTON_ALL == tag) then --全部
 			p.SetBtnCheckedFX( uiNode );
 			p.refreshList(p.equlip_list);
@@ -278,7 +282,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	--显示等级
-	lvV:SetText("LV." .. (tostring(equip.equip_level) or "1"));
+	lvV:SetText("" .. (tostring(equip.equip_level) or "1"));
 	lvV:SetVisible(true);
 	--是否已装备
 	if tonumber(equip.Is_dress) == 1 then
@@ -434,15 +438,14 @@ function p.sortByBtnEvent(sortType)
 		return;
 	end
 	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ORDER);
+	local sortByImg = GetImage(p.layer, ui.ID_CTRL_PICTURE_351)
 	sortByBtn:SetLuaDelegate(p.OnEquipUIEvent);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
-		sortByBtn:SetText(GetStr("equip_level"));
+		sortByImg:SetPicture(GetPictureByAni("ui.card_order",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
+		sortByImg:SetPicture(GetPictureByAni("ui.card_order",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		sortByBtn:SetText(GetStr("equip_rule"));
 	end
 	p.sortByRule(sortType);
 

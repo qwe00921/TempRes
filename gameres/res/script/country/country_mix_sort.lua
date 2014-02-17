@@ -26,7 +26,7 @@ function p.ShowUI( callback )
 	layer:SetFrameRectFull();
 	GetUIRoot():AddDlg(layer);
 
-	LoadDlg( "card_bag_sort_view.xui" , layer, nil );
+	LoadUI( "card_bag_sort_view.xui" , layer, nil );
 	
 	p.layer = layer;
 	
@@ -37,17 +37,17 @@ function p.SetDelegate()
 	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SOTR_LEVEL );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	btn:SetId( CHOOSE_TYPE_TREAT );
-	btn:SetText( "恢复类" );
+	--btn:SetText( "恢复类" );
 	
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SORT_STAR );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	btn:SetId( CHOOSE_TYPE_STATUS );
-	btn:SetText( "状态类" );
+	--btn:SetText( "状态类" );
 	
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SOTR_ITEM );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	btn:SetId( CHOOSE_TYPE_ATTR );
-	btn:SetText( "属性类" );
+	--btn:SetText( "属性类" );
 end
 
 function p.OnBtnClick( uiNode, uiEventType, param )
@@ -69,7 +69,7 @@ end
 
 function p.CloseUI()
 	if p.layer ~= nil then
-		p.layer:LazyClose( false );
+		p.layer:LazyClose();
 		p.layer = nil;
 		p.callback = nil;
 	end

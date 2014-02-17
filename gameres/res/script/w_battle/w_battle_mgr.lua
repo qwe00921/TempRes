@@ -1035,7 +1035,7 @@ function p.ReceiveStartPVPRes( msg )
 	
     dlg_menu.HideUI();
     dlg_userinfo.HideUI();
-	p.MissionDropTab = SelectRowList(T_MONSTER_DROP,"mission_id",p.missionID);
+--	p.MissionDropTab = SelectRowList(T_MONSTER_DROP,"mission_id",p.missionID);
     w_battle_db_mgr.Init( msg );
 	
 		
