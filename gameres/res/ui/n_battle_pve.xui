@@ -1370,7 +1370,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-
 [CTRL_PICTURE_115]
 Type=1
 Tag=127
@@ -1759,6 +1758,7 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
+
 [CTRL_PICTURE_139]
 Type=1
 Tag=146
