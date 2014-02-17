@@ -28,12 +28,13 @@ p.storyId = nil;
 p.openViewType =nil;
 p.viewId = nil;
 p.teamId = nil;
+p.rewardData = {};
 local act_zoom = "engine_cmb.zoom_in_out"; --呼吸效果
 
 local DIR_LEFT = 1;--图片在左
 local DIR_RIGHT = 2;--图片在右
 --显示UI
-function p.ShowUI( storyId,openViewType,viewId,teamId)
+function p.ShowUI( storyId,openViewType,viewId,teamId,rewardList)
 											--参数 openViewType 详见 after_drama_data.lua
     if storyId == nil or openViewType == nil or viewId == nil then
     	return;
@@ -42,6 +43,7 @@ function p.ShowUI( storyId,openViewType,viewId,teamId)
 	   p.openViewType = tonumber(openViewType);
 	   p.viewId = tonumber(viewId);
 	   p.teamId = tonumber(teamId) or 1;
+	   p.rewardData = rewardList or {}
     end
 
 	p.isActivity = true;

@@ -21,7 +21,6 @@ function p.ShowUI(backData)
 	p.rewardAllData = rewardData;
 	maininterface.ShowUI();
 	maininterface.HideUI();
-	dlg_userinfo.ShowUI();
 
 	--如果战斗失败
 	if tonumber(rewardData.victory) == 0 then
@@ -32,12 +31,30 @@ function p.ShowUI(backData)
 		-- dlg_menu.ShowUI();
 		quest_reward.ShowUI(rewardData)
 	else
-		p.ShowWinView(rewardData)
+		local stotyId = tonumber(rewardData.endStory)
+		if stotyId > 0 then
+			dlg_drama.ShowUI(stotyId,after_drama_data.REWARD,0,0,rewardData)
+		else
+			p.ShowWinView(rewardData)
+		end
 	end
 	
 end
-
+--是否有特殊奖励
 function p.ShowWinView(rewardData)
+	if rewardData == nil then
+		WriteConErr("rewardData error");
+		return
+	end
+	if rewardData.item and rewardData.item.item_type then
+		p.ShowWin(rewardData)
+	else
+		p.CloseUI();
+		quest_reward.ShowUI(rewardData)
+	end
+end
+
+function p.ShowWin(rewardData)
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		return;
@@ -48,6 +65,8 @@ function p.ShowWinView(rewardData)
 		return false;
 	end
 
+	dlg_userinfo.ShowUI();
+		
 	layer:NoMask();
 	layer:Init();
 
@@ -78,42 +97,40 @@ function p.ShowReward(rewardData)
 	local missionTable = SelectRowInner(T_MISSION,"id",missionId);
 	missionName:SetText(missionTable.name);
 		
-	if rewardData.item and rewardData.item.item_type then
-		local itemType = tonumber(rewardData.item.item_type)
-		local itemId = tonumber(rewardData.item.item_id)
-		local itemNum = tonumber(rewardData.item.num)
-		
-		local itemPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_ITEM );
-		--local rewardNumText = GetLabel(view,rewardNumIndex );
-		local itemName = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME);
+	local itemType = tonumber(rewardData.item.item_type)
+	local itemId = tonumber(rewardData.item.item_id)
+	local itemNum = tonumber(rewardData.item.num)
+	
+	local itemPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_ITEM );
+	--local rewardNumText = GetLabel(view,rewardNumIndex );
+	local itemName = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME);
 
-		local picIndex = nil;
-		local nameIndex = nil;
-		local rewardT = nil
-		local cardT = nil;
-		if itemType == QUEST_ITEM_TYPE_MATERIAL then
-			rewardT = SelectRowInner(T_MATERIAL,"id",itemId);
-			picIndex = rewardT.item_pic;
-			--itemNumText:SetText(tostring(itemNum));
-			nameIndex = rewardT.name
-		elseif itemType == QUEST_ITEM_TYPE_CARD then
-			rewardT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-			picIndex = rewardT.head_pic;
-			
-			cardT = SelectRowInner(T_CARD,"id",itemId);
-			nameIndex = cardT.name
-		elseif itemType == QUEST_ITEM_TYPE_EQUIP then
-			rewardT = SelectRowInner(T_EQUIP,"id",itemId);
-			picIndex = rewardT.item_pic;
-			nameIndex = rewardT.name
-		elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
-			rewardT = SelectRowInner(T_ITEM,"id",itemId);
-			picIndex = rewardT.item_pic;
-			nameIndex = rewardT.name
-		end
-		itemPic:SetPicture( GetPictureByAni(picIndex,0));
-		itemName:SetText(tostring(nameIndex));
+	local picIndex = nil;
+	local nameIndex = nil;
+	local rewardT = nil
+	local cardT = nil;
+	if itemType == QUEST_ITEM_TYPE_MATERIAL then
+		rewardT = SelectRowInner(T_MATERIAL,"id",itemId);
+		picIndex = rewardT.item_pic;
+		--itemNumText:SetText(tostring(itemNum));
+		nameIndex = rewardT.name
+	elseif itemType == QUEST_ITEM_TYPE_CARD then
+		rewardT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+		picIndex = rewardT.head_pic;
+		
+		cardT = SelectRowInner(T_CARD,"id",itemId);
+		nameIndex = cardT.name
+	elseif itemType == QUEST_ITEM_TYPE_EQUIP then
+		rewardT = SelectRowInner(T_EQUIP,"id",itemId);
+		picIndex = rewardT.item_pic;
+		nameIndex = rewardT.name
+	elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
+		rewardT = SelectRowInner(T_ITEM,"id",itemId);
+		picIndex = rewardT.item_pic;
+		nameIndex = rewardT.name
 	end
+	itemPic:SetPicture( GetPictureByAni(picIndex,0));
+	itemName:SetText(tostring(nameIndex));
 end
 
 function p.SetDelegate(layer)

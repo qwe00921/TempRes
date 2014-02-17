@@ -22,6 +22,7 @@ function p.DoAfterDrama()
 	WriteCon("nextView = "..nextView);
 	local nowTeam = dlg_drama.teamId
 	WriteCon("nowTeam = "..nowTeam);
+	local rewardT = dlg_drama.rewardData or {};
 	if maininterface.m_bgImage then
 		maininterface.m_bgImage:SetVisible(false);
 	end
@@ -45,6 +46,10 @@ function p.DoAfterDrama()
 		WriteCon("viewType ROOKIE dlg_drama.storyId == "..dlg_drama.storyId);
 		dlg_drama.CloseUI()
 		rookie_main.dramaCallBack(dlg_drama.storyId)
+	elseif viewType == after_drama_data.REWARD then
+		dlg_drama.CloseUI()
+		quest_result.ShowWinView(rewardT)
+	
 	end
 	p.Clear();
 end

@@ -11,6 +11,8 @@ function p.ShowUI(rewardData)
 	if rewardData == nil then
 		WriteConErr("rewardData error");
 	end
+	maininterface.ShowUI();
+	maininterface.HideUI();
 	dlg_userinfo.ShowUI();
 
 	--如果战斗失败
@@ -88,22 +90,26 @@ function p.isShowPlot()
 			local newStage = tonumber(p.rewardDataT.newChapterOrStage.stage_id)
 			if newChapter > 0 then
 				p.CloseUI();
-				dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,newChapter)
+				--dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,newChapter)
+				stageMap_main.openChapter(newChapter);
 			elseif newStage > 0 then
 				local viewId = math.floor(newStage/100);
 				p.CloseUI();
-				dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
+				--dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
+				quest_main.ShowUI(viewId);
 			else
 				local missionId = tonumber(p.rewardDataT.mission_id);
 				local viewId = math.floor(missionId/1000);
 				p.CloseUI();
-				dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
+				--dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
+				quest_main.ShowUI(viewId);
 			end
 		else
 			local missionId = tonumber(p.rewardDataT.mission_id);
 			local viewId = math.floor(missionId/1000);
 			p.CloseUI();
-			dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
+			--dlg_drama.ShowUI(storyId,after_drama_data.STAGE,viewId)
+			quest_main.ShowUI(viewId);
 		end
 	end
 end
