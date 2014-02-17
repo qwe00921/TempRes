@@ -6,13 +6,13 @@ Height=960
 [CTRL_PICTURE_21]
 Type=1
 Tag=21
-Rect=89 160 187 67
+Rect=153 118 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
 
 [CTRL_9SLICES_WRITEBG]
 Type=22
@@ -70,7 +70,7 @@ UIClsoeType=0
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=292
-Rect=1 160 83 66
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -78,10 +78,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\close_click.png
-SelectedFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_CHAT_TEXT_QUESTION]
 Type=18
@@ -112,7 +112,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ASK]
 Type=2
 Tag=296
-Rect=4 228 125 61
+Rect=5 228 149 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -121,15 +121,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
+SelectFile=.\res\image\ui\card\button_4_select.png
+SelectedFileUV=0 0 149 60
 
 [CTRL_BUTTON_ANSWER]
 Type=2
 Tag=35
-Rect=140 228 125 61
+Rect=158 228 149 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -138,15 +138,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
+NormalFile=.\res\image\ui\card\button_4_select.png
+NormalFileUV=0 0 149 60
 SelectFile=.\res\image\ui\public\button_click.png
 SelectedFileUV=0 0 110 54
 
 [CTRL_BUTTON_SEND]
 Type=2
 Tag=36
-Rect=240 764 200 75
+Rect=220 764 200 81
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -154,8 +154,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_blue.png
-NormalFileUV=0 0 232 84
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
+SelectFile=.\res\image\ui\card\button_4_select.png
+SelectedFileUV=0 0 149 60
 
 [CTRL_PICTURE_SEND]
 Type=1
@@ -389,7 +391,7 @@ NormalFileUV=0 0 50 50
 [CTRL_PICTURE_154]
 Type=1
 Tag=154
-Rect=103 169 86 49
+Rect=268 162 66 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -400,7 +402,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_129]
 Type=1
 Tag=129
-Rect=16 240 102 28
+Rect=28 244 102 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -411,25 +413,10 @@ NormalFileUV=0 0 102 28
 [CTRL_PICTURE_130]
 Type=1
 Tag=130
-Rect=154 240 102 28
+Rect=181 244 102 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\mail\answer.png
 NormalFileUV=0 0 102 28
-
-[CTRL_TEXT_257]
-Type=4
-Tag=257
-Rect=16 179 57 26
-AnchorPos=0 0
-Notes=
-Text=返回
-TextTradition=返回
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0

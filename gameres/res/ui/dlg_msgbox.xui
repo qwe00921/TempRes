@@ -6,7 +6,7 @@ Height=960
 [CTRL_9SLICES_9]
 Type=22
 Tag=9
-Rect=73 402 495 300
+Rect=73 330 495 300
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -18,7 +18,7 @@ NormalFileUV=0 0 100 100
 [CTRL_9SLICES_8]
 Type=22
 Tag=8
-Rect=73 402 495 300
+Rect=73 330 495 300
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -30,7 +30,7 @@ NormalFileUV=0 0 100 100
 [CTRL_9SLICES_49]
 Type=22
 Tag=49
-Rect=73 402 495 300
+Rect=73 330 495 300
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -42,7 +42,7 @@ NormalFileUV=0 0 100 100
 [CTRL_9SLICES_10]
 Type=22
 Tag=11
-Rect=111 493 419 108
+Rect=111 421 419 108
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -54,7 +54,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_2]
 Type=4
 Tag=2
-Rect=229 433 184 36
+Rect=229 361 184 36
 AnchorPos=0 0
 Notes=
 Text=标题
@@ -69,7 +69,7 @@ UIClsoeType=0
 [CTRL_TEXT_3]
 Type=4
 Tag=3
-Rect=115 498 413 98
+Rect=115 426 413 98
 AnchorPos=0 0
 Notes=
 Text=提示内容
@@ -84,7 +84,7 @@ UIClsoeType=0
 [CTRL_BUTTON_OK]
 Type=2
 Tag=4
-Rect=260 617 136 67
+Rect=260 545 136 67
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -100,7 +100,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_BUTTON_YES]
 Type=2
 Tag=5
-Rect=119 617 136 67
+Rect=119 545 136 67
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -116,7 +116,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_BUTTON_NO]
 Type=2
 Tag=6
-Rect=401 617 136 67
+Rect=401 545 136 67
 AnchorPos=0 0
 Notes=
 TextSize=15
