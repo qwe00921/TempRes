@@ -3,6 +3,19 @@
 Width=640
 Height=960
 
+[CTRL_TEXT_112]
+Type=4
+Tag=112
+Rect=517 18 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_13]
 Type=1
 Tag=15
@@ -23,15 +36,6 @@ TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 Remark=物品1
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_IMAGE_1]
-Type=1
-Tag=169
-Rect=17 12 105 105
-AnchorPos=0 0
-Notes=
 UIOpenType=0
 UIClsoeType=0
 
@@ -74,6 +78,28 @@ Remark=物品1
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_BUTTON_ITEM_5]
+Type=2
+Tag=110
+Rect=502 6 120 140
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=物品1
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_IMAGE_1]
+Type=1
+Tag=169
+Rect=17 12 105 105
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_IMAGE_2]
 Type=1
 Tag=175
@@ -96,6 +122,15 @@ UIClsoeType=0
 Type=1
 Tag=177
 Rect=382 12 105 105
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_IMAGE_5]
+Type=1
+Tag=113
+Rect=510 12 105 105
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -132,6 +167,15 @@ UIClsoeType=0
 Type=1
 Tag=34
 Rect=382 12 105 105
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_BD_5]
+Type=1
+Tag=111
+Rect=510 11 105 105
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -197,6 +241,21 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_TEXT_DRESSED_5]
+Type=4
+Tag=114
+Rect=582 86 29 23
+AnchorPos=0 0
+Notes=
+Text=E
+TextTradition=E
+TextSize=15
+TextColor=0xff0000
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_TEXT_LV_1]
 Type=4
 Tag=194
@@ -240,6 +299,19 @@ UIClsoeType=0
 Type=4
 Tag=197
 Rect=166 17 46 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffff00
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_LV_5]
+Type=4
+Tag=124
+Rect=538 19 46 23
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -295,65 +367,6 @@ Rect=607 304 30 30
 AnchorPos=0 0
 Notes=
 TextSize=20
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_110]
-Type=2
-Tag=110
-Rect=502 6 120 140
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=物品1
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_111]
-Type=1
-Tag=111
-Rect=510 11 105 105
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_112]
-Type=4
-Tag=112
-Rect=517 18 46 23
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xffff00
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_BD_5]
-Type=1
-Tag=113
-Rect=510 12 105 105
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_114]
-Type=4
-Tag=114
-Rect=582 86 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
 TextColor=0xff0000
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -420,19 +433,6 @@ AnchorPos=0 0
 Notes=
 TextSize=15
 TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_LV_5]
-Type=4
-Tag=124
-Rect=538 19 46 23
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0

@@ -119,7 +119,7 @@ UIClsoeType=0
 [CTRL_TEXT_SELECT_2]
 Type=4
 Tag=178
-Rect=164 49 70 28
+Rect=161 57 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -134,7 +134,7 @@ UIClsoeType=0
 [CTRL_TEXT_SELECT_3]
 Type=4
 Tag=179
-Rect=277 48 70 28
+Rect=283 57 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -149,7 +149,7 @@ UIClsoeType=0
 [CTRL_TEXT_SELECT_4]
 Type=4
 Tag=180
-Rect=403 45 70 28
+Rect=405 57 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -397,7 +397,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
-[CTRL_BUTTON_38]
+[CTRL_BUTTON_ITEM_5]
 Type=2
 Tag=39
 Rect=504 9 120 150
@@ -410,7 +410,7 @@ Remark=物品1
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_39]
+[CTRL_PICTURE_IMAGE_5]
 Type=1
 Tag=40
 Rect=512 13 105 105
@@ -419,7 +419,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_41]
+[CTRL_TEXT_DRESSED_5]
 Type=4
 Tag=42
 Rect=586 91 29 23
@@ -434,10 +434,10 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_42]
+[CTRL_TEXT_SELECT_5]
 Type=4
 Tag=43
-Rect=524 50 70 28
+Rect=527 57 70 28
 AnchorPos=0 0
 Notes=
 Text=已选择
@@ -449,7 +449,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_43]
+[CTRL_PICTURE_NM_BG_5]
 Type=1
 Tag=44
 Rect=503 121 122 30
@@ -460,7 +460,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\27.png
 NormalFileUV=0 0 121 34
 
-[CTRL_TEXT_44]
+[CTRL_TEXT_NAME_5]
 Type=4
 Tag=45
 Rect=516 122 97 28
@@ -473,7 +473,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_45]
+[CTRL_PICTURE_LV1]
 Type=1
 Tag=46
 Rect=26 15 55 23
@@ -497,7 +497,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_46]
+[CTRL_PICTURE_LV2]
 Type=1
 Tag=47
 Rect=147 15 55 23
@@ -508,7 +508,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_47]
+[CTRL_PICTURE_LV3]
 Type=1
 Tag=48
 Rect=270 15 55 23
@@ -519,7 +519,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_48]
+[CTRL_PICTURE_LV4]
 Type=1
 Tag=49
 Rect=392 15 55 23
@@ -530,7 +530,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_49]
+[CTRL_PICTURE_LV5]
 Type=1
 Tag=50
 Rect=514 15 55 23
@@ -580,7 +580,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_40]
+[CTRL_TEXT_LEVEL_5]
 Type=4
 Tag=41
 Rect=543 12 45 28
