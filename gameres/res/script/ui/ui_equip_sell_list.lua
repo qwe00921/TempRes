@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_equip_sell_list = {};
 local p =  ui_equip_sell_list;
+p.ID_CTRL_PICTURE_66					     = 66;
 p.ID_CTRL_PICTURE_172					    = 172;
 p.ID_CTRL_TEXT_NUM					       = 15;
 p.ID_CTRL_PICTURE_14					     = 14;

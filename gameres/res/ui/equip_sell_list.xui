@@ -89,3 +89,14 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\btn_sort_head_1.png
 NormalFileUV=0 0 67 46
+
+[CTRL_PICTURE_66]
+Type=1
+Tag=66
+Rect=255 160 131 41
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card\equip.png
+NormalFileUV=0 0 131 41
