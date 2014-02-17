@@ -80,10 +80,7 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 	local tag = uiNode:GetTag();
 	if IsClickEvent( uiEventType ) then
 		
-		if p.sortBtnMark == MARK_ON then
-			p.sortBtnMark = MARK_OFF;
-			equip_bag_sort.CloseUI();
-		end
+
 		if ( ui.ID_CTRL_BUTTON_RETURN == tag ) then	
 			p.CloseUI();
 			--dlg_userinfo.ShowUI( );
@@ -93,7 +90,14 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 			p.HideUI();
 			equip_sell.ShowUI(p.msg);
 		elseif (ui.ID_CTRL_BUTTON_ORDER == tag) then --ÅÅÐò
-			equip_bag_sort.ShowUI(1);
+			if p.sortBtnMark == MARK_ON then
+				p.sortBtnMark = MARK_OFF;
+				equip_bag_sort.HideUI();
+				equip_bag_sort.CloseUI()
+			else
+				equip_bag_sort.ShowUI(1);
+			end
+			
 		elseif (ui.ID_CTRL_BUTTON_ALL == tag) then --È«²¿
 			p.SetBtnCheckedFX( uiNode );
 			p.refreshList(p.equlip_list);

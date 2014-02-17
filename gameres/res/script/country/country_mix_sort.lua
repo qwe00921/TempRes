@@ -69,7 +69,7 @@ end
 
 function p.CloseUI()
 	if p.layer ~= nil then
-		p.layer:LazyClose( false );
+		p.layer:LazyClose();
 		p.layer = nil;
 		p.callback = nil;
 	end
