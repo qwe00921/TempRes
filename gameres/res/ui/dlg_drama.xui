@@ -65,13 +65,13 @@ UIClsoeType=0
 [CTRL_PICTURE_CONTENT_BG]
 Type=1
 Tag=11
-Rect=5 467 630 494
+Rect=5 467 630 493
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\drama\frame.png
-NormalFileUV=0 0 636 266
+NormalFile=.\res\image\ui\quest\frame2.png
+NormalFileUV=0 0 603 426
 
 [CTRL_COLOR_LABEL_TEXT]
 Type=7
@@ -107,7 +107,7 @@ DisableFileUV=0 0 43 23
 [CTRL_TEXT_NPC_NAME]
 Type=4
 Tag=5
-Rect=56 496 246 51
+Rect=23 486 246 51
 AnchorPos=0 0
 Notes=
 Text=说话者

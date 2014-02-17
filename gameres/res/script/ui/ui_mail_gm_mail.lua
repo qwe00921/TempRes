@@ -35,4 +35,3 @@ p.ID_CTRL_TEXT_TITLE_LABEL			 = 289;
 p.ID_CTRL_TEXT_288					       = 288;
 p.ID_CTRL_9SLICES_WRITEBG				 = 28;	--意见填写底背景，显示状态：提交问题
 p.ID_CTRL_PICTURE_21					     = 21;
-p.ID_CTRL_PICTURE_287					    = 287;
