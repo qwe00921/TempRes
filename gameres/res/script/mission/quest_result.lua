@@ -78,40 +78,42 @@ function p.ShowReward(rewardData)
 	local missionTable = SelectRowInner(T_MISSION,"id",missionId);
 	missionName:SetText(missionTable.name);
 		
-	local itemType = tonumber(rewardData.item.item_type)
-	local itemId = tonumber(rewardData.item.item_id)
-	local itemNum = tonumber(rewardData.item.num)
-	
-	local itemPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_ITEM );
-	--local rewardNumText = GetLabel(view,rewardNumIndex );
-	local itemName = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME);
-
-	local picIndex = nil;
-	local nameIndex = nil;
-	local rewardT = nil
-	local cardT = nil;
-	if itemType == QUEST_ITEM_TYPE_MATERIAL then
-		rewardT = SelectRowInner(T_MATERIAL,"id",itemId);
-		picIndex = rewardT.item_pic;
-		--itemNumText:SetText(tostring(itemNum));
-		nameIndex = rewardT.name
-	elseif itemType == QUEST_ITEM_TYPE_CARD then
-		rewardT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-		picIndex = rewardT.head_pic;
+	if rewardData.item.item_type then
+		local itemType = tonumber(rewardData.item.item_type)
+		local itemId = tonumber(rewardData.item.item_id)
+		local itemNum = tonumber(rewardData.item.num)
 		
-		cardT = SelectRowInner(T_CARD,"id",itemId);
-		nameIndex = cardT.name
-	elseif itemType == QUEST_ITEM_TYPE_EQUIP then
-		rewardT = SelectRowInner(T_EQUIP,"id",itemId);
-		picIndex = rewardT.item_pic;
-		nameIndex = rewardT.name
-	elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
-		rewardT = SelectRowInner(T_ITEM,"id",itemId);
-		picIndex = rewardT.item_pic;
-		nameIndex = rewardT.name
+		local itemPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_ITEM );
+		--local rewardNumText = GetLabel(view,rewardNumIndex );
+		local itemName = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM_NAME);
+
+		local picIndex = nil;
+		local nameIndex = nil;
+		local rewardT = nil
+		local cardT = nil;
+		if itemType == QUEST_ITEM_TYPE_MATERIAL then
+			rewardT = SelectRowInner(T_MATERIAL,"id",itemId);
+			picIndex = rewardT.item_pic;
+			--itemNumText:SetText(tostring(itemNum));
+			nameIndex = rewardT.name
+		elseif itemType == QUEST_ITEM_TYPE_CARD then
+			rewardT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+			picIndex = rewardT.head_pic;
+			
+			cardT = SelectRowInner(T_CARD,"id",itemId);
+			nameIndex = cardT.name
+		elseif itemType == QUEST_ITEM_TYPE_EQUIP then
+			rewardT = SelectRowInner(T_EQUIP,"id",itemId);
+			picIndex = rewardT.item_pic;
+			nameIndex = rewardT.name
+		elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
+			rewardT = SelectRowInner(T_ITEM,"id",itemId);
+			picIndex = rewardT.item_pic;
+			nameIndex = rewardT.name
+		end
+		itemPic:SetPicture( GetPictureByAni(picIndex,0));
+		itemName:SetText(tostring(nameIndex));
 	end
-	itemPic:SetPicture( GetPictureByAni(picIndex,0));
-	itemName:SetText(tostring(nameIndex));
 end
 
 function p.SetDelegate(layer)
