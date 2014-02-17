@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -134,13 +134,11 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD6]
 Type=1
 Tag=17
-Rect=21 29 144 41
+Rect=21 29 145 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\27.png
-NormalFileUV=0 0 121 34
 
 [CTRL_TEXT_CHAPTER1]
 Type=4
@@ -210,7 +208,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER6]
 Type=4
 Tag=24
-Rect=32 32 123 34
+Rect=32 37 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24

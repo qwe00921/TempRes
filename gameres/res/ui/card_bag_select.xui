@@ -6,19 +6,19 @@ Height=960
 [CTRL_PICTURE_CARD_SELECT]
 Type=1
 Tag=608
-Rect=72 4 33 33
+Rect=37 35 36 36
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\sellnum.png
-NormalFileUV=0 0 33 33
+NormalFile=.\res\image\ui\card\num\1.png
+NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_NUM]
 Type=4
 Tag=10
-Rect=79 11 20 20
+Rect=44 43 20 20
 AnchorPos=0 0
 Notes=
 TextSize=16

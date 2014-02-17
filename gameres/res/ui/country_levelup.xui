@@ -123,7 +123,7 @@ UIClsoeType=0
 [CTRL_PICTURE_BUILD]
 Type=1
 Tag=83
-Rect=69 523 482 110
+Rect=66 523 482 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -132,7 +132,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MID_POS]
 Type=1
 Tag=17
-Rect=255 523 110 110
+Rect=252 523 110 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
