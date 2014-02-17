@@ -76,8 +76,9 @@ function p.DelCallBack(self)
 		p.delCardList = nil;
 		--card_bag_mian.sellCardList = {};
 		local btn = GetButton(p.layer, ui_card_main_view.ID_CTRL_BUTTON_SELL);
+		btn:SetImage( GetPictureByAni( "common_ui.cardBagSell", 2 ) );
 		--btn:SetImage( GetPictureByAni("button.sell",0));
-		btn:SetText("卖出")
+		--btn:SetText("卖出")
 		dlg_msgbox.ShowOK("确认提示框","出售卡牌获得 "..tostring(self.money.Add).."金币。",nil,p.layer);
 		card_bag_sell.CloseUI()
 

@@ -150,17 +150,17 @@ function p.InitController()
 	uiNodeT.headT[9] = name_9;
 	
 	--名字框
-	local headBoxBoxProduce = GetImage(p.layer, ui.ID_CTRL_PIC_PRODUCE_HEAD_BG);
-	local headBoxBoxEquit = GetImage(p.layer, ui.ID_CTRL_PIC_EQUIP_HEAD_BG);
-	local headBoxBoxMerge = GetImage(p.layer, ui.ID_CTRL_PIC_MERGE_HEAD_BG);
-	local headBoxBoxHome = GetImage(p.layer, ui.ID_CTRL_PIC_HOME_HEAD_BG);
-	local headBoxBoxStore = GetImage(p.layer, ui.ID_CTRL_PIC_STORE_HEAD_BG);
-	uiNodeT.headBoxT = {}
-	uiNodeT.headBoxT[1] = headBoxBoxProduce;
-	uiNodeT.headBoxT[2] = headBoxBoxEquit;
-	uiNodeT.headBoxT[3] = headBoxBoxMerge;
-	uiNodeT.headBoxT[4] = headBoxBoxHome;
-	uiNodeT.headBoxT[5] = headBoxBoxStore;
+	-- local headBoxBoxProduce = GetImage(p.layer, ui.ID_CTRL_PIC_PRODUCE_HEAD_BG);
+	-- local headBoxBoxEquit = GetImage(p.layer, ui.ID_CTRL_PIC_EQUIP_HEAD_BG);
+	-- local headBoxBoxMerge = GetImage(p.layer, ui.ID_CTRL_PIC_MERGE_HEAD_BG);
+	-- local headBoxBoxHome = GetImage(p.layer, ui.ID_CTRL_PIC_HOME_HEAD_BG);
+	-- local headBoxBoxStore = GetImage(p.layer, ui.ID_CTRL_PIC_STORE_HEAD_BG);
+	-- uiNodeT.headBoxT = {}
+	-- uiNodeT.headBoxT[1] = headBoxBoxProduce;
+	-- uiNodeT.headBoxT[2] = headBoxBoxEquit;
+	-- uiNodeT.headBoxT[3] = headBoxBoxMerge;
+	-- uiNodeT.headBoxT[4] = headBoxBoxHome;
+	-- uiNodeT.headBoxT[5] = headBoxBoxStore;
 	--倒计时背景
 	local timeBgProduce = GetImage(p.layer, ui.ID_CTRL_PIC_PRODUCE_ITEM_BG);
 	local timeBgEquit = GetImage(p.layer, ui.ID_CTRL_PIC_EQUIP_ITEM_BG);

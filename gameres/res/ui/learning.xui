@@ -23,8 +23,6 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\card_icon\m20016_f.png
-NormalFileUV=0 0 64 64
 
 [CTRL_COLOR_LABEL_52]
 Type=7
