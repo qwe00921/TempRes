@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_item_produce = {};
 local p =  ui_item_produce;
+p.ID_CTRL_PICTURE_54					     = 63;
 p.ID_CTRL_TEXT_59						       = 61;
 p.ID_CTRL_TEXT_58						       = 60;
 p.ID_CTRL_TEXT_57						       = 59;
@@ -34,9 +35,8 @@ p.ID_CTRL_TEXT_34						       = 34;
 p.ID_CTRL_PICTURE_33					     = 33;
 p.ID_CTRL_TEXT_ITEMNAME1				  = 28;
 p.ID_CTRL_PICTURE_22					     = 23;
-p.ID_CTRL_PICTURE_17					     = 17;
 p.ID_CTRL_BUTTON_ITEM1				    = 10;
-p.ID_CTRL_TEXT_6						        = 6;
 p.ID_CTRL_PICTURE_41					     = 42;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_9SLICES_32					     = 32;
+p.ID_CTRL_PICTURE_53					     = 62;

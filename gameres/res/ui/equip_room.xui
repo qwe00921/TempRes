@@ -226,5 +226,5 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\equip_room.png
+NormalFile=.\res\image\ui\card\equip.png
 NormalFileUV=0 0 131 41

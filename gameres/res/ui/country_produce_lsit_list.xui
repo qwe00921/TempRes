@@ -35,17 +35,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_9]
-Type=1
-Tag=9
-Rect=30 45 107 107
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\item-list.png
-NormalFileUV=0 0 100 100
-
 [CTRL_TEXT_ITEMNAME]
 Type=4
 Tag=12
