@@ -69,6 +69,7 @@ p.NeedQuit = false;
 p.playerNodeLst = {};  --动画节点
 p.ballTimerID = nil; --球飞入超时的判断
 p.ballFlytime = 0;
+p.isPerfect = true;
 
 function p.init()
 	p.platform = GetFlatform();
@@ -142,6 +143,13 @@ function p.starFighter()
 	WriteConWarning("p.buffTimerID= "..tostring(p.buffTimerID));	
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 	
+	if p.IsGuid == true then
+		if p.step == 3 and p.substep == 5 then
+			if w_battle_db_mgr.step == 2 then
+				rookie_mask.ShowUI(p.step,p.substep + 1)
+			end
+		end
+	end
 end;
 --[[
 --怪物攻击
@@ -609,7 +617,7 @@ function p.UseItem(pItemPos, pHeroPos)
 		effect_skill = "skill_effect.hurt_add_hp";
 		WriteCon( "material_res.ini config failed id="..tostring(lid));
 	end;
-	
+	p.isPerfect = false;
 	local effect_targer = tonumber(SelectCell( T_MATERIAL, lid, "effect_target" ));
 	if effect_targer == W_MATERIAL_TARGET2 then  --群体的
 		for k,v in ipairs(p.heroCamp.fighters) do
@@ -638,6 +646,12 @@ end;
 
 --我方BUFF阶断
 function p.HeroBuffStarTurn()
+	if (p.IsGuid == true) then
+		if (p.step == 3) and (p.substep == 7) then	
+			rookie_mask.ShowUI(p.step,p.substep + 1)
+		end;
+		return;
+    end;	
 	WriteCon( "HeroBuffStarTurn");
 	if p.NeedQuit == true then
 		p.Quit();
@@ -1005,7 +1019,7 @@ end
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
 	p.missionID = missionId;
-
+    p.isPerfect = true;
 	p.SendStartPVEReq( missionId,teamid);
 --[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);
@@ -1074,7 +1088,11 @@ end
 
 function p.MissionWin()
 	p.QuitBattle();
-	p.SendResult(1);		
+	if p.isPerfect == true then
+		p.SendResult(2);		
+	else
+		p.SendResult(1);
+	end;
 end;
 
 
@@ -1316,6 +1334,10 @@ function p.setFighterDie(targerFighter,camp)
 		WriteCon( "*********************Wring! tar_hurtEnd can not in die double  tarid="..tostring(targerFighter:GetId()) );	
 		return ;
 	end;
+	
+	if camp ~= W_BATTLE_ENEMY then  --死亡的不是怪物,是玩家,不能完美通关了
+		p.isPerfect = false;
+	end;
 
 	local batch = w_battle_mgr.GetBattleBatch();
 	local seqTarget = batch:AddSerialSequence();
@@ -1465,33 +1487,33 @@ function p.fighterGuid(substep)
 		end; 
 		--等怪全死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 5 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
+		--等波次切换后调用
+		--rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 6 then
 		p.SetPVETargerID(6);
 		rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 7 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
+		p.SetPVEAtkID(2);  --等下一轮我方回合时调用 rookie_mask.ShowUI(p.step,p.substep + 1)
 	elseif substep == 8 then
-		p.SetPVEAtkID(2);  --等怪进攻后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 9 then
+			 --等战斗胜利,
 			 --怪物死亡必掉 HP水晶
-		     --等战斗胜利,  调用rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 10 then
+		     --调用rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif substep == 9 then
 		p.FightWin()
 	    --怪物进场后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 11 then
+	elseif substep == 10 then
 		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 12 then
+	elseif substep == 11 then
 	   --选择物品
 		w_battle_useitem.UseItem(1);
 		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 13 then
+	elseif substep == 12 then
 		--使用物品
 		p.UseItem(1,2);
 		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 14 then
+	elseif substep == 13 then
 		--等所有战斗结束调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 15 then
+	elseif substep == 14 then
 		p.IsGuid = false;
 	end
 	
