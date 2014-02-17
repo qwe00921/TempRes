@@ -781,7 +781,7 @@ function p.nextStep()
 	p.targetCardList = p.enemyStepList[p.step];
 	--p.StepDrop = {};
 	
-
+--[[
     local StepDropTab = {}  
 	if (w_battle_mgr.MissionDropTab ~= nil) and (#w_battle_mgr.MissionDropTab > 0) then
 		for k,v in ipairs(w_battle_mgr.MissionDropTab) do  --取这一波次可能掉落的物品
@@ -790,7 +790,7 @@ function p.nextStep()
 			end
 		end;	
 	end;
-	
+	]]--
 	
 	
 	if p.Drop ~= nil then

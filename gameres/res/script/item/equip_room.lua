@@ -278,7 +278,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	--显示等级
-	lvV:SetText("LV." .. (tostring(equip.equip_level) or "1"));
+	lvV:SetText("" .. (tostring(equip.equip_level) or "1"));
 	lvV:SetVisible(true);
 	--是否已装备
 	if tonumber(equip.Is_dress) == 1 then
@@ -434,15 +434,14 @@ function p.sortByBtnEvent(sortType)
 		return;
 	end
 	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ORDER);
+	local sortByImg = GetImage(p.layer, ui.ID_CTRL_PICTURE_351)
 	sortByBtn:SetLuaDelegate(p.OnEquipUIEvent);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
-		sortByBtn:SetText(GetStr("equip_level"));
+		sortByImg:SetPicture(GetPictureByAni("ui.card_order",1));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
+		sortByImg:SetPicture(GetPictureByAni("ui.card_order",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		sortByBtn:SetText(GetStr("equip_rule"));
 	end
 	p.sortByRule(sortType);
 
