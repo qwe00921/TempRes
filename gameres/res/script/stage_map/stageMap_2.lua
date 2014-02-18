@@ -103,6 +103,8 @@ function p.addAllStage(callBackData)
 		btnNext:SetLuaDelegate(p.OnBtnClick);
 		btnNext:SetText("下一个地图的名字");
 		btnNext:SetVisible(true);
+		local nextNamePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_NEXT );
+		nextNamePic:SetVisible(true);
 	end
 end
 
@@ -123,12 +125,15 @@ function p.SetDelegate(layer)
 	
 	local btnUp = GetButton( p.layer, ui.ID_CTRL_BUTTON_UP );
 	btnUp:SetLuaDelegate(p.OnBtnClick);
-	btnUp:SetText("上一个地图的名字");
-
+	--btnUp:SetText("上一个地图的名字");
+	local upNamePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_UP );
+		
 	local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 	btnNext:SetLuaDelegate(p.OnBtnClick);
 	btnNext:SetVisible(false);
-
+	local nextNamePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_NEXT );
+	nextNamePic:SetVisible(false);
+	
 	local stageBtn1 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER1 );
 	local stageBtn2 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER2 );
 	local stageBtn3 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER3 );

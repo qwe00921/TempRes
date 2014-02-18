@@ -98,8 +98,10 @@ function p.addAllStage(callBackData)
 	if stageListInif["S201"] then 
 		local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 		btnNext:SetLuaDelegate(p.OnBtnClick);
-		btnNext:SetText("下一个地图的名字");
+		--btnNext:SetText("下一个地图的名字");
 		btnNext:SetVisible(true);
+		local namePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_NEXT );
+		namePic:SetVisible(true);
 		--local stageNameTable = SelectRowInner(T_STAGE,"stage_id",p.stageId+1);
 		--uiNodeT.stageName[i]:SetText(stageTable.stage_name);
 	end
@@ -123,7 +125,8 @@ function p.SetDelegate(layer)
 	local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 	btnNext:SetLuaDelegate(p.OnBtnClick);
 	btnNext:SetVisible(false);
-	
+	local namePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_NEXT );
+	namePic:SetVisible(false);
 	local stageBtn1 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER1 );
 	local stageBtn2 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER2 );
 	local stageBtn3 = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER3 );
