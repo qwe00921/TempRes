@@ -264,3 +264,7 @@ lancer.country_cloud_move_4
 lancer.country_cloud_move_5_back
 lancer.country_cloud_move_5
 
+[card_intensify_move]
+@type=0
+lancer.card_intensify_move
+lancer.hide

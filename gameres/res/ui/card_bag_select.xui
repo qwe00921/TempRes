@@ -12,8 +12,6 @@ Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\num\1.png
-NormalFileUV=0 0 36 36
 
 [CTRL_TEXT_NUM]
 Type=4

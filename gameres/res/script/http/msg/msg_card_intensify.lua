@@ -32,10 +32,11 @@ end
 
 --处理消息
 function p:Process()
-	msg_cache.msg_card_sale_one = self;
+	--msg_cache.msg_card_sale_one = self;
 	WriteConWarning( "** msg_card_intensify:Process() called" );
 	if self.result == true then 
-		card_intensify_succeed.ShowCardLevel(self);
+		--card_intensify_succeed.ShowCardLevel(self);
+		card_rein.OnServerBack( self );
 		
 	else
 		WriteConWarning( "** MSG_CARDBOX_USER_CARDS error" );

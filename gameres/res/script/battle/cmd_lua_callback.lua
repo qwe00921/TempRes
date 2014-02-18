@@ -209,6 +209,12 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		equip_rein_result.equip_rein_effect_finish();
 	elseif cmdtype == "PickEnd" then
 		w_battle_mgr.PickItem( id, num );
+	elseif cmdtype == "card_rein_converged" then
+		card_rein.ConvergedEnd();
+	elseif cmdtype == "card_rein_move_end" then
+		card_rein.EffectMoveEnd();
+	elseif cmdtype == "card_rein_effect_end" then
+		card_rein.HideSelectCard( id, num);
 	else
 		--
 	end

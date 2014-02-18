@@ -336,3 +336,14 @@ image\ui\encounter_money\money_bg.png
 image\ui\encounter_goods\goods101.png
 image\ui\card_get\card_bg.png
 image\ui\player\common_ui_input_bg.png
+
+
+[card_intensify_effect_1]
+image\ui\card\intensify_effect_1.png @cut(4, 4) @time=0.06 @scale=0.6
+
+[card_intensify_effect_2]
+image\ui\card\intensify_effect_2.png @cut(4, 4) @time=0.1 @scale=1.2
+
+[card_intensify_effect_3]
+image\ui\card\intensify_effect_3.png @cut(2, 4) @time=0.08 @loop @scale=0.6
+

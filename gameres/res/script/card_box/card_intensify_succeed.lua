@@ -180,15 +180,15 @@ function p.ShowCardLevel(msg)
 	--end
 	
 	--ÊÇ·ñ±¬»÷³É¹¦msg.is_crit;
-	local pPicIsCrit = GetImage(p.layer, ui.ID_CTRL_PICTURE_SUCCEED);
-	WriteCon("is_crit = " .. tostring(msg.is_crit));
-	if msg.is_crit == true then
-		WriteCon("is_crit = true" );
-		pPicIsCrit:SetPicture(GetPictureByAni("ui.intensify_succeed",0));
-	else
-		WriteCon("is_crit = false" );
-		pPicIsCrit:SetPicture(GetPictureByAni("ui.intensify_succeed",1));
-	end
+--	local pPicIsCrit = GetImage(p.layer, ui.ID_CTRL_PICTURE_SUCCEED);
+--	WriteCon("is_crit = " .. tostring(msg.is_crit));
+--	if msg.is_crit == true then
+--		WriteCon("is_crit = true" );
+--		pPicIsCrit:SetPicture(GetPictureByAni("ui.intensify_succeed",0));
+--	else
+--		WriteCon("is_crit = false" );
+--		pPicIsCrit:SetPicture(GetPictureByAni("ui.intensify_succeed",1));
+--	end
 	
 	
 end
