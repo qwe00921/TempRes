@@ -51,6 +51,10 @@ function p.ShowUI()
 
 	LoadUI( "country.xui" , layer, nil );
 	
+	-- local pic = GetPictureByAni("lancer.temp_bg", 2); 
+	-- maininterface.m_bgImage:SetPicture( pic );
+	-- maininterface.m_bgImage:SetFrameRectByPictrue(pic);
+	
 	p.layer = layer;
 	
 	--设置代理
@@ -122,7 +126,7 @@ function p.InitController()
 	local name_5 = GetImage(p.layer, ui.ID_CTRL_PICTURE_5);
 	local name_6 = GetImage(p.layer, ui.ID_CTRL_PICTURE_6);
 	local name_7 = GetImage(p.layer, ui.ID_CTRL_PICTURE_7);
-	--local name_8 = GetImage(p.layer, ui.ID_CTRL_PICTURE_8);
+	local name_8 = GetImage(p.layer, ui.ID_CTRL_PICTURE_8);
 	local name_9 = GetImage(p.layer, ui.ID_CTRL_PICTURE_9);
 	name_1:SetVisible(false)
 	name_2:SetVisible(false)
@@ -131,7 +135,7 @@ function p.InitController()
 	name_5:SetVisible(false)
 	name_6:SetVisible(false)
 	name_7:SetVisible(false)
-	--name_8:SetVisible(false)
+	name_8:SetVisible(false)
 	name_9:SetVisible(false)
 
 	uiNodeT.headT = {}
@@ -142,57 +146,72 @@ function p.InitController()
 	uiNodeT.headT[5] = name_5;
 	uiNodeT.headT[6] = name_6;
 	uiNodeT.headT[7] = name_7;
-	--uiNodeT.headT[8] = name_8;
+	uiNodeT.headT[8] = name_8;
 	uiNodeT.headT[9] = name_9;
 	
-	--名字框
-	-- local headBoxBoxProduce = GetImage(p.layer, ui.ID_CTRL_PIC_PRODUCE_HEAD_BG);
-	-- local headBoxBoxEquit = GetImage(p.layer, ui.ID_CTRL_PIC_EQUIP_HEAD_BG);
-	-- local headBoxBoxMerge = GetImage(p.layer, ui.ID_CTRL_PIC_MERGE_HEAD_BG);
-	-- local headBoxBoxHome = GetImage(p.layer, ui.ID_CTRL_PIC_HOME_HEAD_BG);
-	-- local headBoxBoxStore = GetImage(p.layer, ui.ID_CTRL_PIC_STORE_HEAD_BG);
-	-- uiNodeT.headBoxT = {}
-	-- uiNodeT.headBoxT[1] = headBoxBoxProduce;
-	-- uiNodeT.headBoxT[2] = headBoxBoxEquit;
-	-- uiNodeT.headBoxT[3] = headBoxBoxMerge;
-	-- uiNodeT.headBoxT[4] = headBoxBoxHome;
-	-- uiNodeT.headBoxT[5] = headBoxBoxStore;
 	--倒计时背景
 	local timeBgProduce = GetImage(p.layer, ui.ID_CTRL_PIC_PRODUCE_ITEM_BG);
 	local timeBgEquit = GetImage(p.layer, ui.ID_CTRL_PIC_EQUIP_ITEM_BG);
 	local timeBgMerge = GetImage(p.layer, ui.ID_CTRL_PIC_MERGE_TIME_BG);
 	local timeBgHome = GetImage(p.layer, ui.ID_CTRL_PIC_HOME_ITEM_BG);
 	local timeBgStore = GetImage(p.layer, ui.ID_CTRL_PIC_STORE_ITEM_BG);
+	local timeBgLake= GetImage(p.layer, ui.ID_CTRL_PIC_LIKE_TIEM_BG);
+	local timeBgField = GetImage(p.layer, ui.ID_CTRL_PIC_FIELD_ITEM_BG);
+	local timeBgMountain = GetImage(p.layer, ui.ID_CTRL_PIC_MOUNT_ITEM_BG);
+	local timeBgTree = GetImage(p.layer, ui.ID_CTRL_PIC_TREE_ITEM_BG);
+
 	uiNodeT.timeBgT = {}
 	uiNodeT.timeBgT[1] = timeBgProduce;
 	uiNodeT.timeBgT[2] = timeBgEquit;
 	uiNodeT.timeBgT[3] = timeBgMerge;
 	uiNodeT.timeBgT[4] = timeBgHome;
 	uiNodeT.timeBgT[5] = timeBgStore;
+	uiNodeT.timeBgT[6] = timeBgLake;
+	uiNodeT.timeBgT[7] = timeBgField;
+	uiNodeT.timeBgT[8] = timeBgMountain;
+	uiNodeT.timeBgT[9] = timeBgTree;
+	
 	--倒计时文本
 	local produceTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_PRODUCE_ITEM);
 	local equipTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_EQUIP_TIME);
 	local mergeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_MERGE_TIME);
 	local homeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_HOME_TIME);
 	local storeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_STORE_TIME);
+	local lakeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_LAKE_TIME);
+	local fieldTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_FIELD_TIME);
+	local mountTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_MOUNT_TIME);
+	local treeTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_TREE_TIME);
 	uiNodeT.timeTextT = {}
 	uiNodeT.timeTextT[1] = produceTime;
 	uiNodeT.timeTextT[2] = equipTime;
 	uiNodeT.timeTextT[3] = mergeTime;
 	uiNodeT.timeTextT[4] = homeTime;
 	uiNodeT.timeTextT[5] = storeTime;
+	uiNodeT.timeTextT[6] = lakeTime;
+	uiNodeT.timeTextT[7] = fieldTime;
+	uiNodeT.timeTextT[8] = mountTime;
+	uiNodeT.timeTextT[9] = treeTime;
+	
 	--倒计时条
 	local produceBar = GetExp( p.layer, ui.ID_CTRL_EXP_PRODUCE );
 	local equipBar = GetExp( p.layer, ui.ID_CTRL_EXP_EQUIP );
 	local mergeBar = GetExp( p.layer, ui.ID_CTRL_EXP_MERGE );
 	local homeBar = GetExp( p.layer, ui.ID_CTRL_EXP_HOME );
 	local storeBar = GetExp( p.layer, ui.ID_CTRL_EXP_STORE );
+	local lakeBar = GetExp( p.layer, ui.ID_CTRL_EXP_LAKE );
+	local fieldBar = GetExp( p.layer, ui.ID_CTRL_EXP_FIELD );
+	local mountBar = GetExp( p.layer, ui.ID_CTRL_EXP_MOUNTAIN );
+	local treeBar = GetExp( p.layer, ui.ID_CTRL_EXP_TREE );
 	uiNodeT.timeBar = {}
 	uiNodeT.timeBar[1] = produceBar;
 	uiNodeT.timeBar[2] = equipBar;
 	uiNodeT.timeBar[3] = mergeBar;
 	uiNodeT.timeBar[4] = homeBar;
 	uiNodeT.timeBar[5] = storeBar;
+	uiNodeT.timeBar[6] = lakeBar;
+	uiNodeT.timeBar[7] = fieldBar;
+	uiNodeT.timeBar[8] = mountBar;
+	uiNodeT.timeBar[9] = treeBar;
 	--隐藏提示界面
 	p.hideUpBuildView()
 	--请求数据
@@ -216,9 +235,7 @@ function p.ShowCountry(backData)
 	end
 	--是否有新开启的建筑
 	p.openViewT = backData.openani;
-	-- p.openViewT["P1"] = 1;
-	-- p.openViewT["P3"] = 3;
-	-- p.openViewT["P7"] = 7;
+
 	local openViewNum = 0;	
 	if p.openViewT ~= nil then
 		for k,v in pairs(p.openViewT) do
@@ -277,7 +294,7 @@ function p.showCountryBuild(buildInfo)
 			--uiNodeT.headBoxT[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
 			uiNodeT.headT[i]:SetVisible(true);
 			
-			if i < 6 then
+			--if i < 6 then
 				--是否在升级
 				if tonumber(buildInfo["B"..i].is_upgrade) == 1 then
 					--显示背景图
@@ -316,7 +333,7 @@ function p.showCountryBuild(buildInfo)
 					local uplevel = buildInfo["B"..i].build_level
 					p.showUpBuildView(i,uplevel)
 				end
-			end
+			--end
 		end
 	end
 	
