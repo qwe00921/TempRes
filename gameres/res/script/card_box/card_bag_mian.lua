@@ -535,8 +535,12 @@ function p.addSellNum(uiNode,num)
 	local bg = GetUiNode( view, ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
 	view:SetViewSize( bg:GetFrameSize());
 	view:SetTag(ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT);
-	local number = GetLabel(view,ui_card_bag_select.ID_CTRL_TEXT_NUM );
-	number:SetText(tostring(num));
+	
+	local pic = GetImage(view,ui_card_bag_select.ID_CTRL_PICTURE_CARD_SELECT );
+	pic:SetPicture( GetPictureByAni("common_ui.card_num",num));
+
+	--local number = GetLabel(view,ui_card_bag_select.ID_CTRL_TEXT_NUM );
+	--number:SetText(tostring(num));
 	uiNode:AddChild( view );
 end
 
