@@ -353,13 +353,15 @@ function p:atk_startAtk()
 			]]--
 			--local seqMusic = batch:AddSerialSequence();
 			if self.IsSkill == false then
+				--[[
 				if self.atkSound ~= nil then
 					local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( self.atkplayerNode, true );
 					seqAtk:AddCommand( cmdAtkBegin );
 
 					local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.atkSound  );
 					seqAtk:AddCommand( cmdAtkMusic );
-				end		
+				end	
+				]]--	
 			else --技能攻击
 				if self.hurt ~= "" then
 					for k,v in pairs(self.targetLst) do
@@ -377,13 +379,13 @@ function p:atk_startAtk()
 			--攻击结束
 			if self.IsSkill == false then
 				local seqMusic = batch:AddSerialSequence();
-				if self.atkSound ~= nil then
+			--[[	if self.atkSound ~= nil then
 					local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( self.atkplayerNode, true );
 					seqMusic:AddCommand( cmdAtkBegin );
 
 					local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.atkSound  );
 					seqMusic:AddCommand( cmdAtkMusic );
-				end							
+				end							]]--
 			end;
 			
 			if self.hurt ~= "" then
@@ -429,6 +431,16 @@ function p:atk_end()
 
 			local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.hurtSound  );
 			seqMusic:AddCommand( cmdAtkMusic );
+		end
+	else
+		if self.target_sound ~= nil then
+			if self.distanceRes ~= W_BATTLE_DISTANCE_NoArcher  then --不是近战
+				local cmdAtkBegin = createCommandInstant_Misc():SetZOrderAtTop( self.atkplayerNode, true );
+				seqMusic:AddCommand( cmdAtkBegin );
+
+				local cmdAtkMusic = createCommandSoundMusicVideo():PlaySoundByName( self.target_sound  );
+				seqMusic:AddCommand( cmdAtkMusic );
+			end;
 		end
 	end;
 		
