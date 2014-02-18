@@ -171,7 +171,16 @@ end
 --传入质数,随机计算
 function p.getRandom(seed,maxnum)
 	local ptab= {2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,49};
-	local lseednum = ptab[seed];
+	local lseednum = 0;
+	local ptabNum = #ptab 
+	if seed > #ptab then
+		seed = math.mod(seed, ptabNum);
+	end;
+	
+	lseednum = ptab[seed];		
+	
+	
+
 	local lallseed = tonumber(tostring(os.time()):reverse():sub(1, 6)) + lseednum * 10000;
 	
 	math.randomseed(lallseed) 

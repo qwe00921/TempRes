@@ -277,7 +277,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	else
 		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", pCardInfo.Level);
 	end		
-	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money or 0+ tonumber(pCardInfo.Level or 1)*tonumber(pCardInfo.Level or 1);	
+	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money or 0; --+ tonumber(pCardInfo.Level or 1)*tonumber(pCardInfo.Level or 1);	
 			
 	p.addExp = p.addExp + lCardInfo.feedbase_exp or 0 + lCardLeveInfo.feed_exp or 0;
 	

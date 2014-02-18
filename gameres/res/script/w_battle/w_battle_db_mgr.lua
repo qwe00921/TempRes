@@ -838,21 +838,26 @@ function p.nextStep()
 		local monsterMax = #p.targetCardList;
 		for k,v in ipairs(EquipDrop) do
 			local itemid = v;
-			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
+			local lrandom = w_battle_atkDamage.getRandom(p.step + k ,monsterMax);
+			WriteCon("dropItem EquipDrop lrandom=="..tostring(lrandom));
 			local lCardInfo = p.targetCardList[lrandom];
 			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_EQUIP, id = itemid};
 		end
-		
+		local lEquipDropNum = #EquipDrop * 10000;
+
 		for k,v in ipairs(ItemDrop) do
 			local itemid = v;
-			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
+			local lrandom = w_battle_atkDamage.getRandom(p.step + k + lEquipDropNum,monsterMax);
+			WriteCon("dropItem ItemDrop lrandom=="..tostring(lrandom));
 			local lCardInfo = p.targetCardList[lrandom];
 			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_MATERIAL, id = itemid};
 		end
-
+		local lItemDropNum = #ItemDrop * 10000;
+		
 		for k,v in ipairs(CardDrop) do
 			local itemid = v;
-			local lrandom = w_battle_atkDamage.getRandom(k,monsterMax);
+			local lrandom = w_battle_atkDamage.getRandom(p.step + k + lEquipDropNum + lItemDropNum, monsterMax);
+			WriteCon("dropItem CardDrop lrandom=="..tostring(lrandom));
 			local lCardInfo = p.targetCardList[lrandom];
 			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_CARD, id = itemid};
 		end
