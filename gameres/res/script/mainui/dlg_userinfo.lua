@@ -47,10 +47,9 @@ function p.ShowUI(userinfo)
 	layer:Init(layer);
 	layer:SetSwallowTouch(false);
     
-	GetUIRoot():AddChild(layer);
+	GetUIRoot():AddChildZ(layer, 1000);
 	LoadUI("main_userinfo.xui", layer, nil);
-	layer:SetZOrder(9);
-    
+
 	p.layer = layer;
 	
 	--dlg_battlearray.ShowUI();

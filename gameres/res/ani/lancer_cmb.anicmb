@@ -132,3 +132,6 @@ lancer.player_bg_aperture @scale=1.02
 lancer.player_bg_aperture @scale=1.01
 lancer.player_bg_aperture @scale=1
 
+[card_intensify_effect_3]
+@type=0 @loop
+lancer.card_intensify_effect_3

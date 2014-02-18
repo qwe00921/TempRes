@@ -509,8 +509,8 @@ function p.ConvergedEnd()
 	local node1 = GetImage( p.layer, ui.ID_CTRL_PICTURE_125 );
 	node:SetFrameRect( node1:GetFrameRect() );
 	node:SetVisible( true );
-	if not node:HasAniEffect( "lancer.card_intensify_effect_3" ) then
-		node:AddFgEffect( "lancer.card_intensify_effect_3" );
+	if not node:HasAniEffect( "lancer_cmb.card_intensify_effect_3" ) then
+		node:AddFgEffect( "lancer_cmb.card_intensify_effect_3" );
 	end
 end
 

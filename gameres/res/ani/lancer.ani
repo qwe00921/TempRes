@@ -339,11 +339,48 @@ image\ui\player\common_ui_input_bg.png
 
 
 [card_intensify_effect_1]
-image\ui\card\intensify_effect_1.png @cut(4, 4) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\0.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\1.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\2.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\3.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\4.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\5.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\6.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\7.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\8.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\9.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\10.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\11.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\12.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\13.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\14.png @cut(1, 1) @time=0.06 @scale=0.6
+image\ui\card\card_rein_effect_1\15.png @cut(1, 1) @time=0.06 @scale=0.6
 
 [card_intensify_effect_2]
-image\ui\card\intensify_effect_2.png @cut(4, 4) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\0.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\1.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\2.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\3.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\4.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\5.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\6.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\7.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\8.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\9.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\10.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\11.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\12.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\13.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\14.png @cut(1, 1) @time=0.1 @scale=1.2
+image\ui\card\card_rein_effect_2\15.png @cut(1, 1) @time=0.1 @scale=1.2
 
 [card_intensify_effect_3]
-image\ui\card\intensify_effect_3.png @cut(2, 4) @time=0.08 @loop @scale=0.6
+image\ui\card\card_rein_effect_3\0.png @cut(1, 1) @time=0.08 @scale=0.6
+image\ui\card\card_rein_effect_3\1.png @cut(1, 1) @time=0.08 @scale=0.6
+image\ui\card\card_rein_effect_3\2.png @cut(1, 1) @time=0.08 @scale=0.6
+image\ui\card\card_rein_effect_3\3.png @cut(1, 1) @time=0.08 @scale=0.6
+image\ui\card\card_rein_effect_3\4.png @cut(1, 1) @time=0.08 @scale=0.6
+image\ui\card\card_rein_effect_3\5.png @cut(1, 1) @time=0.08 @scale=0.6
+image\ui\card\card_rein_effect_3\6.png @cut(1, 1) @time=0.08 @scale=0.6
+image\ui\card\card_rein_effect_3\7.png @cut(1, 1) @time=0.08 @scale=0.6
 
