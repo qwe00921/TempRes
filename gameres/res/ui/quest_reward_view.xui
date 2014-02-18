@@ -97,7 +97,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=29
-Rect=245 312 32 32
+Rect=242 404 32 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -235,7 +235,7 @@ UIClsoeType=0
 [CTRL_PICTURE_105]
 Type=1
 Tag=105
-Rect=243 403 35 35
+Rect=241 311 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0

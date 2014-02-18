@@ -1,7 +1,18 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
 
 [CTRL_BUTTON_RETURN]
 Type=2

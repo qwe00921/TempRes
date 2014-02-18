@@ -12,3 +12,4 @@ p.ID_CTRL_BUTTON_ORDER				    = 11;
 p.ID_CTRL_PICTURE_41					     = 42;
 p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
+p.ID_CTRL_PICTURE_9					      = 9;
