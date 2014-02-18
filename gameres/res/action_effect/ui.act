@@ -26,6 +26,9 @@
 @scaleto(0.3,1.2,1.2)
 @scaleto(0.3,1.0,1.0)
 
+[ccshake]
+@ccshake(50,50)
+
 [common_scale]
 @scaleto(0.3,1.1,1.1)
 @scaleto(0.3,1.0,1.0)

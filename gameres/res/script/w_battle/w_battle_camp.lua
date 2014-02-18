@@ -326,8 +326,8 @@ function p.AddHeroFightersJumpEffect()
 	else
 		fTemp = 640.0;
 	end	
-	
-	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp));
+	local fScale = GetUIScale();
+	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp) * fScale);
 
 	--local lwinWidth = GetWinSize().w;	
 	--update by csd
@@ -370,7 +370,9 @@ function p.AddEnemyFightersJumpEffect()
 		fTemp = 640.0;
 	end
 	
-	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp));		
+	local fScale = GetUIScale();
+	
+	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp) * fScale);		
 	--local lwinWidth = GetWinSize().w;
 	--update by csd	
 	--w_battle_mgr.platformScale in win32 is 1, in other is 2

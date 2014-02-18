@@ -48,6 +48,7 @@ function p:LoadPage( oDrama )
     self.picBg = oDrama.bg_pic;      
     self.picLeft = oDrama.npc_left_id;       
     self.picRight = oDrama.npc_right_id;
+	self.speak_id = oDrama.speak_id;
     
     self.npcIdTalk = oDrama.speak_id;
     

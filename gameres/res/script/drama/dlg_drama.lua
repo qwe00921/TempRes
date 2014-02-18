@@ -141,7 +141,6 @@ function p.DoEffectContent()
 	
 	local strText = GetSubStringUtf8( p.contentStr, p.contentIndex );
 	--WriteCon(strText);
-	--p.contentNode:SetFontSize(p.fontSize);
 	p.contentNode:SetText(strText);
 
 	p.contentIndex = p.contentIndex + 1;
@@ -173,6 +172,15 @@ function p.ResetUI( dramaInfo )
     p.contentStrLn = GetCharCountUtf8 ( p.contentStr );
     p.contentIndex = 1;
     if p.contentStr ~= nil and p.contentStrLn > 1 then
+
+		if tonumber(dramaInfo.speak_id) == 99999 then
+			p.contentNode:SetFontColor(ccc4(0,176,80,255));
+		else
+			p.contentNode:SetFontColor(ccc4(255,255,255,255));
+		end
+		
+		p.contentNode:SetFontSize(p.fontSize);
+		p.contentNode:AddActionEffect("ui.ccshake");
     	p.timerId = SetTimer( p.DoEffectContent, 0.04f );
     end
 
