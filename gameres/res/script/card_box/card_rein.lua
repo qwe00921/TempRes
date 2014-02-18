@@ -10,6 +10,7 @@ p.selectCardId = {};
 p.userMoney = 0;
 p.addExp = 0;
 p.nowExp = 0;
+p.maskLayer = nil;
 
 local ui = ui_card_rein;
 
@@ -267,6 +268,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	
 	local cardName = GetLabel(p.layer, ui[lCardName]);
 	cardName:SetText(tostring(lCardInfo.name));
+	cardName:SetVisible( false );
 	
 	p.selectNum = p.selectNum+1;
 	p.selectCardId[#p.selectCardId + 1] = pCardInfo.UniqueId;
@@ -331,7 +333,13 @@ function p.CloseUI()
 		p.selectNum = 0;
 		p.nowExp = 0;
 		p.addExp = 0;
+		p.result = nil;
     end
+	
+	if p.maskLayer ~= nil then
+		p.maskLayer:LazyClose();
+		p.maskLayer = nil;
+	end
 end
 
 function p.SetDelegate(layer)
@@ -427,10 +435,100 @@ function p.OnSendReqIntensify(msg)
 		--模块  Action idm = 饲料卡牌unique_ID (1000125,10000123) 
 		local param = string.format("&card_id=%d&idm="..msg, tonumber(p.baseCardInfo.UniqueId));
 		SendReq("Card","Feedwould",uid,param);
-		card_intensify_succeed.ShowUI(p.baseCardInfo);
-		p.HideUI();
-		p.ClearData();
+		--card_intensify_succeed.ShowUI(p.baseCardInfo);
+		--p.HideUI();
+		--p.ClearData();
 	end
+end
+
+function p.OnServerBack( data )
+	p.result = data;
+	if p.maskLayer == nil then
+		local layer = createNDUILayer();
+		layer:Init();
+		layer:SetFrameRectFull();
+		layer:SetZOrder( 999999 );
+		p.maskLayer = layer;
+		GetUIRoot():AddChild( layer );
+	end
+	p.maskLayer:SetSwallowTouch( true );
+	
+	local batch1 = battle_show.GetNewBatch();
+
+	local cmd = nil;
+	for i = 1, #p.selectCardId do
+		local seq1 = batch1:AddSerialSequence();
+		local node1 = GetImage( p.layer, ui["ID_CTRL_PICTURE_NODE".. i] );
+		local cmd1 = createCommandEffect():AddFgEffect( 0.8, node1, "lancer.card_intensify_effect_1" );
+		seq1:AddCommand( cmd1 );
+		
+		local cmdLua = createCommandLua():SetCmd( "card_rein_effect_end", i, 1, "" );
+		seq1:AddCommand( cmdLua );
+		
+		cmd = cmd1;
+	end
+	
+	local batch2 = battle_show.GetNewBatch();
+	local seq2 = batch1:AddSerialSequence();
+	local node2 = GetImage( p.layer, ui.ID_CTRL_PICTURE_125 );
+	local cmd2 = createCommandEffect():AddFgEffect( 1.5, node2, "lancer.card_intensify_effect_2" );
+	seq2:AddCommand( cmd2 );
+	seq2:SetWaitEnd( cmd );
+	
+	local luaBatch = battle_show.GetNewBatch();
+	local luaSeq = luaBatch:AddSerialSequence();
+	local cmdLua = createCommandLua():SetCmd( "card_rein_converged", 1, 1, "" );
+	luaSeq:AddCommand( cmdLua );
+	luaSeq:SetWaitEnd( cmd2 );
+	
+	local batch3 = battle_show.GetNewBatch();
+	local seq3 = batch3:AddSerialSequence();
+	local node3 = GetImage( p.layer, ui.ID_CTRL_PICTURE_127 );
+	node3:SetFrameRect( node2:GetFrameRect() );
+	local cmd3 = createCommandEffect():AddActionEffect( 0.35, node3, "lancer_cmb.card_intensify_move" );
+	seq3:AddCommand( cmd3 );
+	seq3:SetWaitEnd( cmd2 );
+	
+	local env = cmd3:GetVarEnv();
+	
+	local center1 = node3:GetCenterPos();
+	local card = GetPlayer( p.layer, ui.ID_CTRL_SPRITE_CARD );	
+	local center2 = card:GetCenterPos();
+	env:SetFloat( "$1", center2.x - center1.x );
+	env:SetFloat( "$2", center2.y - center1.y );
+	
+	local luaBatch1 = battle_show.GetNewBatch();
+	local luaSeq1 = luaBatch1:AddSerialSequence();
+	local cmdLua1 = createCommandLua():SetCmd( "card_rein_move_end", 1, 1, "" );
+	luaSeq1:AddCommand( cmdLua1 );
+	luaSeq1:SetWaitEnd( cmd3 );
+end
+
+function p.ConvergedEnd()
+	local node = GetImage( p.layer, ui.ID_CTRL_PICTURE_127 );
+	local node1 = GetImage( p.layer, ui.ID_CTRL_PICTURE_125 );
+	node:SetFrameRect( node1:GetFrameRect() );
+	node:SetVisible( true );
+	if not node:HasAniEffect( "lancer.card_intensify_effect_3" ) then
+		node:AddFgEffect( "lancer.card_intensify_effect_3" );
+	end
+end
+
+function p.EffectMoveEnd()
+	WriteConWarning( "moveEnd" );
+	if p.maskLayer ~= nil then
+		p.maskLayer:SetSwallowTouch( false );
+	end
+
+	card_intensify_succeed.ShowUI(p.baseCardInfo);
+	card_intensify_succeed.ShowCardLevel( p.result );
+	p.HideUI();
+end
+
+function p.HideSelectCard( id, num )
+	local lCardSprite = "ID_CTRL_SPRITE_"..tostring(id);--cardpic
+	local cardSprite = GetPlayer(p.layer, ui[lCardSprite]);
+	cardSprite:SetVisible(false);
 end
 
 function p.ClearData()
@@ -438,6 +536,7 @@ function p.ClearData()
 	p.selectCardId = {};
 	p.cardListInfo = nil;
 	p.cardListByProf = {};
+	p.result = nil;
 	p.InitAllCardInfo();
 end
 

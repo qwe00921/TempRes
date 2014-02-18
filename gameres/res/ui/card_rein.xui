@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -887,6 +887,96 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_NODE1]
+Type=1
+Tag=155
+Rect=17 365 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE2]
+Type=1
+Tag=156
+Rect=141 365 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE3]
+Type=1
+Tag=157
+Rect=265 365 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE4]
+Type=1
+Tag=158
+Rect=389 365 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE5]
+Type=1
+Tag=159
+Rect=516 365 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE6]
+Type=1
+Tag=160
+Rect=14 524 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE7]
+Type=1
+Tag=161
+Rect=139 524 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE8]
+Type=1
+Tag=162
+Rect=264 524 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE9]
+Type=1
+Tag=163
+Rect=389 524 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE10]
+Type=1
+Tag=164
+Rect=515 524 107 111
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_BUTTON_CHA1]
 Type=2
 Tag=106
@@ -1414,7 +1504,25 @@ NormalFileUV=0 0 196 28
 [CTRL_PICTURE_186]
 Type=1
 Tag=999
-Rect=2 375 636 308
+Rect=0 371 636 308
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_125]
+Type=1
+Tag=165
+Rect=265 467 107 92
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_127]
+Type=1
+Tag=166
+Rect=265 467 107 92
 AnchorPos=0 0
 Notes=
 UIOpenType=0

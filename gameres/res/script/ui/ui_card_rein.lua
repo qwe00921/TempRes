@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_card_rein = {};
 local p =  ui_card_rein;
+p.ID_CTRL_PICTURE_127					    = 166;
+p.ID_CTRL_PICTURE_125					    = 165;
 p.ID_CTRL_PICTURE_186					    = 999;
 p.ID_CTRL_PICTURE_137					    = 154;
 p.ID_CTRL_PICTURE_136					    = 153;
@@ -48,6 +50,16 @@ p.ID_CTRL_BUTTON_CHA4					    = 109;
 p.ID_CTRL_BUTTON_CHA3					    = 108;
 p.ID_CTRL_BUTTON_CHA2					    = 107;
 p.ID_CTRL_BUTTON_CHA1					    = 106;
+p.ID_CTRL_PICTURE_NODE10				  = 164;
+p.ID_CTRL_PICTURE_NODE9				   = 163;
+p.ID_CTRL_PICTURE_NODE8				   = 162;
+p.ID_CTRL_PICTURE_NODE7				   = 161;
+p.ID_CTRL_PICTURE_NODE6				   = 160;
+p.ID_CTRL_PICTURE_NODE5				   = 159;
+p.ID_CTRL_PICTURE_NODE4				   = 158;
+p.ID_CTRL_PICTURE_NODE3				   = 157;
+p.ID_CTRL_PICTURE_NODE2				   = 156;
+p.ID_CTRL_PICTURE_NODE1				   = 155;
 p.ID_CTRL_TEXT_NAME10					    = 102;
 p.ID_CTRL_TEXT_NAME9					     = 101;
 p.ID_CTRL_TEXT_NAME8					     = 100;
