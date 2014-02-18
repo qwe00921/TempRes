@@ -718,6 +718,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		if ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "**菜单**" );
 			btn:SetEnabled( true );
+			w_battle_mgr.SetLockZorder(0);
 			dlg_msgbox.ShowYesNo("",GetStr("battle_quit"), w_battle_mgr.OnMsgQuitBoxCallback, p.battleLayer);
 		elseif p.CheckUseItem( tag ) then
 			WriteCon( "**使用物品**" );
