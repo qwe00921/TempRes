@@ -213,9 +213,9 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\back.png
+NormalFile=.\res\image\ui\n_battle\cut_down.png
 NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\quest\back_select.png
+SelectFile=.\res\image\ui\n_battle\cut_down_select.png
 SelectedFileUV=0 0 122 60
 
 [CTRL_PICTURE_BOX]
@@ -422,7 +422,7 @@ NormalFileUV=0 0 11 13
 [CTRL_TEXT_365]
 Type=4
 Tag=365
-Rect=82 417 207 26
+Rect=107 417 207 26
 AnchorPos=0 0
 Notes=
 Text=目标名字
@@ -437,7 +437,7 @@ UIClsoeType=0
 [CTRL_PICTURE_140]
 Type=1
 Tag=145
-Rect=54 420 24 24
+Rect=79 420 24 24
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -524,7 +524,7 @@ NormalFileUV=0 0 640 460
 [CTRL_PIC_CARDBG6]
 Type=1
 Tag=164
-Rect=319 709 320 117
+Rect=320 708 318 114
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -535,7 +535,7 @@ NormalFileUV=0 0 318 137
 [CTRL_PIC_CARDBG5]
 Type=1
 Tag=601
-Rect=318 592 320 117
+Rect=320 595 317 114
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -546,7 +546,7 @@ NormalFileUV=0 0 318 137
 [CTRL_PIC_CARDBG4]
 Type=1
 Tag=754
-Rect=318 475 320 117
+Rect=320 482 317 114
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -557,7 +557,7 @@ NormalFileUV=0 0 318 137
 [CTRL_PIC_CARDBG3]
 Type=1
 Tag=755
-Rect=1 709 320 117
+Rect=2 708 317 114
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -568,7 +568,7 @@ NormalFileUV=0 0 318 137
 [CTRL_PIC_CARDBG2]
 Type=1
 Tag=756
-Rect=1 593 320 117
+Rect=2 595 318 114
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -579,7 +579,7 @@ NormalFileUV=0 0 318 137
 [CTRL_PIC_CARDBG1]
 Type=1
 Tag=757
-Rect=1 474 320 117
+Rect=2 482 317 114
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -590,7 +590,7 @@ NormalFileUV=0 0 318 137
 [CTRL_PICTURE_CHA1]
 Type=1
 Tag=76
-Rect=8 481 103 103
+Rect=10 488 103 103
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -599,7 +599,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CHA4]
 Type=1
 Tag=77
-Rect=329 481 103 103
+Rect=331 488 103 103
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -617,7 +617,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CHA5]
 Type=1
 Tag=79
-Rect=329 599 103 103
+Rect=329 601 103 103
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -644,7 +644,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME1]
 Type=4
 Tag=83
-Rect=116 482 195 26
+Rect=118 489 195 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七八九十
@@ -659,7 +659,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME4]
 Type=4
 Tag=85
-Rect=438 482 195 26
+Rect=440 489 195 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
@@ -674,7 +674,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME2]
 Type=4
 Tag=86
-Rect=116 600 195 26
+Rect=116 604 195 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
@@ -689,7 +689,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME5]
 Type=4
 Tag=87
-Rect=438 600 195 26
+Rect=438 604 195 26
 AnchorPos=0 0
 Notes=
 Text=一二三四五六七
@@ -1751,7 +1751,7 @@ UIClsoeType=0
 [CTRL_PICTURE_172]
 Type=1
 Tag=172
-Rect=6 832 628 628
+Rect=0 830 640 628
 AnchorPos=0 0
 Notes=
 UIOpenType=0

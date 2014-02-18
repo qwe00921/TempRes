@@ -108,7 +108,7 @@ NormalFileUV=0 0 145 16
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=45 87 84 30
+Rect=51 87 84 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -122,7 +122,7 @@ UIClsoeType=0
 [CTRL_TEXT_SOUL]
 Type=4
 Tag=41
-Rect=331 87 84 30
+Rect=341 87 84 30
 AnchorPos=0 0
 Notes=
 TextSize=20
