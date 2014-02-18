@@ -308,21 +308,23 @@ function p.setMissionInfo(misId,view)
 			itemType = tonumber(rewardTable[i].item_type)
 			itemId = tonumber(rewardTable[i].item_id)
 
-			if itemType == QUEST_ITEM_TYPE_MATERIAL then
-				itemT = SelectRowInner(T_MATERIAL,"id",itemId);
-				picIndex = itemT.item_pic;
-			elseif itemType == QUEST_ITEM_TYPE_CARD then
-				itemT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
-				picIndex = itemT.head_pic;
-			elseif itemType == QUEST_ITEM_TYPE_EQUIP then
-				itemT = SelectRowInner(T_EQUIP,"id",itemId);
-				picIndex = itemT.item_pic;
-			elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE 
-					or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
-				itemT = SelectRowInner(T_ITEM,"id",itemId);
-				picIndex = itemT.item_pic;
+			if itemId > 0 then 
+				if itemType == QUEST_ITEM_TYPE_MATERIAL then
+					itemT = SelectRowInner(T_MATERIAL,"id",itemId);
+					picIndex = itemT.item_pic;
+				elseif itemType == QUEST_ITEM_TYPE_CARD then
+					itemT = SelectRowInner(T_CHAR_RES,"card_id",itemId);
+					picIndex = itemT.head_pic;
+				elseif itemType == QUEST_ITEM_TYPE_EQUIP then
+					itemT = SelectRowInner(T_EQUIP,"id",itemId);
+					picIndex = itemT.item_pic;
+				elseif itemType == QUEST_ITEM_TYPE_GIFT or itemType == QUEST_ITEM_TYPE_TREASURE 
+						or itemType == QUEST_ITEM_TYPE_OTHER or itemType == QUEST_ITEM_TYPE_SHOP then
+					itemT = SelectRowInner(T_ITEM,"id",itemId);
+					picIndex = itemT.item_pic;
+				end
+				misRewardT[i]:SetPicture( GetPictureByAni(picIndex, 0));
 			end
-			misRewardT[i]:SetPicture( GetPictureByAni(picIndex, 0));
 		end
 --	local misDifficultPic = GetImage(view, uiList.ID_CTRL_PICTURE_DIFFICULT);
 	

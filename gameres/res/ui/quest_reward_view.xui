@@ -102,7 +102,7 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp4.png
+NormalFile=.\res\image\ui\main_interface\money3.png
 NormalFileUV=0 0 46 46
 
 [CTRL_TEXT_MONEY_V]
@@ -240,7 +240,7 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\money3.png
+NormalFile=.\res\image\ui\main_interface\exp4.png
 NormalFileUV=0 0 46 46
 
 [CTRL_TEXT_31]
