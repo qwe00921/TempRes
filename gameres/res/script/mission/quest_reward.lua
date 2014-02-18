@@ -96,7 +96,8 @@ function p.isShowPlot()
 				local viewId = math.floor(newStage/100);
 				p.CloseUI();
 				--dlg_drama.ShowUI(storyId,after_drama_data.CHAPTER,viewId)
-				quest_main.ShowUI(viewId);
+				--quest_main.ShowUI(viewId);
+				stageMap_main.openChapter(viewId);
 			else
 				local missionId = tonumber(p.rewardDataT.mission_id);
 				local viewId = math.floor(missionId/1000);
