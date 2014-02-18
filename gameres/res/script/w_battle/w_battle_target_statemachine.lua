@@ -83,7 +83,7 @@ function p:tar_hurt()
 		seqHurt:SetWaitEnd(cmdHurt); 
 	else
 		WriteCon( "targetTurn tar_hurt to end tarid="..tostring(targerFighter:GetId()));
-		if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 			local lPlayerNode = targerFighter:GetPlayerNode();
 			local moveback = OnlyMoveTo(targerFighter, lPlayerNode:GetCenterPos(), targerFighter.oldPos, seqTarget,true);
 			
@@ -91,7 +91,7 @@ function p:tar_hurt()
 			seqHurt:SetWaitEnd(moveback); 
 		--else
 		--	self:tar_hurtEnd();
-		end;
+		--end;
 	end
 end;
 --[[
