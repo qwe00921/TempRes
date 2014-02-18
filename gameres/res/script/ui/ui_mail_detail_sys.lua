@@ -46,4 +46,3 @@ p.ID_CTRL_9SLICES_33					     = 33;
 p.ID_CTRL_BUTTON_GO_BACK				  = 159;
 p.ID_CTRL_9SLICES_32					     = 32;
 p.ID_CTRL_BUTTON_DEL					     = 158;
-p.ID_CTRL_PICTURE_245					    = 245;

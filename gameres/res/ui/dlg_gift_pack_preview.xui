@@ -3,17 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_PICTURE_141]
-Type=1
-Tag=141
-Rect=0 187 640 440
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg2.png
-NormalFileUV=0 0 640 338
-
 [CTRL_9SLICES_1]
 Type=22
 Tag=1
@@ -23,8 +12,8 @@ Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_frame2.png
-NormalFileUV=0 0 640 376
+NormalFile=.\res\image\ui\public\frame14.png
+NormalFileUV=0 0 100 100
 
 [CTRL_TEXT_2]
 Type=4
@@ -44,7 +33,7 @@ UIClsoeType=0
 [CTRL_BUTTON_OK]
 Type=2
 Tag=3
-Rect=256 561 110 54
+Rect=256 558 110 54
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -52,21 +41,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
-
-[CTRL_PICTURE_4]
-Type=1
-Tag=4
-Rect=273 566 76 40
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\ok.png
-NormalFileUV=0 0 76 40
+NormalFile=.\res\image\ui\public\ok1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\public\ok1_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_PICTURE_5]
 Type=1

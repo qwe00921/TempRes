@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_item_list = {};
 local p =  ui_item_list;
+p.ID_CTRL_PICTURE_42					     = 41;
+p.ID_CTRL_PICTURE_40					     = 40;
+p.ID_CTRL_PICTURE_39					     = 39;
 p.ID_CTRL_PICTURE_53					     = 53;
 p.ID_CTRL_BUTTON_116					     = 116;
 p.ID_CTRL_TEXT_115					       = 115;
@@ -11,9 +14,6 @@ p.ID_CTRL_TEXT_114					       = 114;
 p.ID_CTRL_PICTURE_113					    = 113;
 p.ID_CTRL_PICTURE_112					    = 112;
 p.ID_CTRL_BUTTON_118					     = 118;
-p.ID_CTRL_TEXT_19						       = 19;
-p.ID_CTRL_TEXT_18						       = 18;
-p.ID_CTRL_TEXT_17						       = 17;
 p.ID_CTRL_TEXT_16						       = 16;
 p.ID_CTRL_TEXT_15						       = 15;
 p.ID_CTRL_PICTURE_14					     = 14;
@@ -25,4 +25,5 @@ p.ID_CTRL_PICTURE_41					     = 42;
 p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_PICTURE_544					    = 544;
-p.ID_CTRL_PICTURE_22					     = 23;
+p.ID_CTRL_9SLICES_43					     = 43;
+p.ID_CTRL_PICTURE_46					     = 46;

@@ -28,7 +28,6 @@ p.ID_CTRL_PICTURE_8					      = 8;
 p.ID_CTRL_PICTURE_7					      = 7;
 p.ID_CTRL_PICTURE_6					      = 6;
 p.ID_CTRL_PICTURE_5					      = 5;
-p.ID_CTRL_PICTURE_4					      = 4;
 p.ID_CTRL_BUTTON_OK					      = 3;
 p.ID_CTRL_TEXT_2						        = 2;
 p.ID_CTRL_9SLICES_1					      = 1;

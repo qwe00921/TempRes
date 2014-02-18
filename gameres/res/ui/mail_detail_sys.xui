@@ -34,7 +34,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=0 160 100 67
+Rect=0 160 100 66
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -44,8 +44,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\quest\button_public.png
 NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\close_click.png
-SelectedFileUV=0 0 100 98
 
 [CTRL_9SLICES_33]
 Type=22
@@ -524,7 +522,7 @@ NormalFileUV=0 0 86 54
 [CTRL_TEXT_78]
 Type=4
 Tag=78
-Rect=12 173 76 39
+Rect=12 174 76 39
 AnchorPos=0 0
 Notes=
 Text=返回

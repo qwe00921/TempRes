@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_17]
 Type=2
 Tag=17
-Rect=0 31 640 143
+Rect=0 3 640 143
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -18,18 +18,18 @@ UIClsoeType=0
 [CTRL_PICTURE_6]
 Type=1
 Tag=7
-Rect=-2 2 643 171
+Rect=0 4 642 135
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\frame1.png
-NormalFileUV=0 0 619 165
+NormalFile=.\res\image\ui\card_attr_base\bg3.png
+NormalFileUV=0 0 380 80
 
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=34 48 100 100
+Rect=34 20 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -38,7 +38,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNAME]
 Type=4
 Tag=12
-Rect=141 49 135 46
+Rect=141 21 135 46
 AnchorPos=0 0
 Notes=
 Text=道具名称
@@ -53,7 +53,7 @@ UIClsoeType=0
 [CTRL_TEXT_13]
 Type=4
 Tag=13
-Rect=145 113 314 38
+Rect=145 85 314 38
 AnchorPos=0 0
 Notes=
 Text=物品介绍
@@ -68,7 +68,7 @@ UIClsoeType=0
 [CTRL_TEXT_14]
 Type=4
 Tag=14
-Rect=489 42 84 30
+Rect=489 14 84 30
 AnchorPos=0 0
 Notes=
 Text=持有数量
@@ -83,7 +83,7 @@ UIClsoeType=0
 [CTRL_TEXT_15]
 Type=4
 Tag=15
-Rect=577 42 37 30
+Rect=577 14 37 30
 AnchorPos=0 0
 Notes=
 Text=99
@@ -98,7 +98,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MASK]
 Type=1
 Tag=18
-Rect=33 48 100 100
+Rect=33 20 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -109,7 +109,7 @@ NormalFileUV=0 0 1 1
 [CTRL_TEXT_19]
 Type=4
 Tag=19
-Rect=35 124 99 26
+Rect=35 96 99 26
 AnchorPos=0 0
 Notes=
 Text=素材不足
@@ -124,7 +124,7 @@ UIClsoeType=0
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=136 104 494 4
+Rect=136 76 494 4
 AnchorPos=0 0
 Notes=
 UIOpenType=0

@@ -1,0 +1,15 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_2]
+Type=1
+Tag=2
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\common\contry_temp.png
+NormalFileUV=0 0 640 960
