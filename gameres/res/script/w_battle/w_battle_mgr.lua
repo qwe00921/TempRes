@@ -70,6 +70,7 @@ p.playerNodeLst = {};  --动画节点
 p.ballTimerID = nil; --球飞入超时的判断
 p.ballFlytime = 0;
 p.isPerfect = true;
+p.LoakPic = {};
 
 function p.init()
 	p.platform = GetFlatform();
@@ -118,16 +119,17 @@ function p.starFighter()
 	p.init();
 	w_battle_pve.SetBg(p.missionID);
 --	w_battle_PVEStaMachMgr.init();
-	p.InitLockAction();
+
 	GetBattleShow():EnableTick( true );
 	if w_battle_db_mgr.step == 1 then  --只有第一波才需要进场动画
+		p.InitLockFromUI();
 		p.createPlayerNodeLst(p.heroUIArray);
 		p.createPlayerNodeLst(p.enemyUIArray);
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
 	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	
-	
+	p.InitLockAction();	
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
 	local lEnemyFighter = p.enemyCamp:FindFighter(p.PVEEnemyID);
@@ -892,6 +894,7 @@ function p.FightWin()
 	if p.IsGuid == false then
 		KillTimer(p.buffTimerID);
 		p.heroCamp:ClearFighterBuff();
+		p.InitLockAction();
 		if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
 			w_battle_db_mgr.nextStep();  --数据进入下一波次
 			--w_battle_mgr.enemyCamp:free();
@@ -911,6 +914,7 @@ end;
 --战斗失败
 function p.FightLose()  
 	KillTimer(p.buffTimerID);
+	p.InitLockAction();
 	--没有续打,只有失败界面
 	w_battle_pve.MissionOver(p.MissionLose);
 end;
@@ -968,10 +972,41 @@ function p.SetPVETargerID(position)
 end;	
 
 function p.InitLockAction()
-	for i=1, #p.enemyUILockArray do
-    	local ltag = p.enemyUILockArray[i];
-		local lLockPic = GetImage(p.uiLayer, ltag);	    
+	--for i=1, #p.enemyUILockArray do
+    --	local ltag = p.enemyUILockArray[i];
+	--	local lLockPic = p.LoakPic[] --GetImage(p.uiLayer, ltag);	    
+	--	lLockPic:SetVisible(false);
+	--end
+	for pos=1,6 do
+		local lLockPic = p.LoakPic[pos] --GetImage(p.uiLayer, ltag);	    
 		lLockPic:SetVisible(false);
+	end
+end;
+
+function p.InitLockFromUI()
+	for position=1,6 do
+		local ltag = p.enemyUILockArray[position];
+		local lLockPic = GetImage(p.uiLayer, ltag);	    
+		if lLockPic ~= nil then
+			lLockPic:RemoveFromParent(false);
+			GetUIRoot():AddChild(lLockPic);
+			lLockPic:SetTag(ltag);
+			lLockPic:SetZOrder(99);
+			
+			p.LoakPic[#p.LoakPic + 1] = lLockPic; 
+		else
+			lLockPic = GetImage(GetUIRoot(), ltag);	    
+			p.LoakPic[#p.LoakPic + 1] = lLockPic; 
+		end
+	end
+end;
+
+function p.SetLockZorder(zorder)
+	for position=1,6 do
+		local  lLockPic = p.LoakPic[position];
+		if lLockPic ~= nil then
+			lLockPic:SetZOrder(zorder);
+		end
 	end
 end;
 
@@ -981,10 +1016,11 @@ function p.SetLockAction(position)
 		--取消锁定标志
 	   p.InitLockAction()
 	   local ltag = p.enemyUILockArray[position];
-	   local lLockPic = GetImage(p.uiLayer, ltag);	    
-	   --local lLockPic = p.GetLockImage();		
+		
+	   --local lLockPic = GetImage(p.uiLayer, ltag);	    
+	   local lLockPic = p.LoakPic[position];		
 	   lLockPic:SetVisible(true);
-	   lLockPic:SetZOrder(9999);
+	  
 	   local targetFighter = p.enemyCamp:FindFighter(position);
 	   w_battle_pve.SetHp(targetFighter); --更新血量
 	   local lElementLst = p.heroCamp:GetElementAtkFighter(targetFighter);
@@ -1156,6 +1192,9 @@ function p.clearDate()
     p.isBattleEnd = false;
 	p.battleIsStart = false;
 	p.playerNodeLst = {};
+	
+	p.InitLockAction();
+	p.LoakPic = {};
     --w_battle_show.DestroyAll();
 end
 
@@ -1612,6 +1651,7 @@ end
 
 --提示框回调处理
 function p.OnMsgQuitBoxCallback( result )
+	p.SetLockZorder(99);
 	if result then
 		p.readlyQuit();
 	end
