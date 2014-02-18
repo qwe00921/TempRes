@@ -14,78 +14,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\quest\stage_01.png
 NormalFileUV=0 0 640 960
 
-[CTRL_BUTTON_CHAPTER1]
-Type=2
-Tag=8
-Rect=426 689 216 208
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER2]
-Type=2
-Tag=2
-Rect=-1 608 242 311
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER3]
-Type=2
-Tag=3
-Rect=311 394 321 262
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER4]
-Type=2
-Tag=4
-Rect=1 284 281 267
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER5]
-Type=2
-Tag=5
-Rect=309 103 328 282
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER6]
-Type=2
-Tag=6
-Rect=7 18 290 256
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
@@ -134,7 +62,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD6]
 Type=1
 Tag=17
-Rect=21 29 145 50
+Rect=66 192 145 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -208,7 +136,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER6]
 Type=4
 Tag=24
-Rect=32 37 123 34
+Rect=77 200 123 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -221,7 +149,7 @@ UIClsoeType=0
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=23
-Rect=5 140 122 60
+Rect=10 20 122 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -237,7 +165,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_BUTTON_NEXT]
 Type=2
 Tag=26
-Rect=515 896 122 60
+Rect=343 889 122 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -251,10 +179,82 @@ NormalFileUV=0 0 122 60
 [CTRL_PICTURE_49]
 Type=1
 Tag=49
-Rect=524 899 107 53
+Rect=351 893 107 53
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\down.png
+NormalFile=.\res\image\ui\map\chapter2.png
 NormalFileUV=0 0 122 60
+
+[CTRL_BUTTON_CHAPTER1]
+Type=2
+Tag=8
+Rect=370 689 272 198
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER2]
+Type=2
+Tag=2
+Rect=-1 608 242 311
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER3]
+Type=2
+Tag=3
+Rect=311 394 321 262
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER4]
+Type=2
+Tag=4
+Rect=1 284 281 267
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER5]
+Type=2
+Tag=5
+Rect=309 103 328 282
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER6]
+Type=2
+Tag=6
+Rect=7 85 290 189
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

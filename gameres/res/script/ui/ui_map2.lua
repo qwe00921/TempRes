@@ -4,6 +4,13 @@
 --------------------------------------------------------------
 ui_map2 = {};
 local p =  ui_map2;
+p.ID_CTRL_BUTTON_CHAPTER7				 = 26;
+p.ID_CTRL_BUTTON_CHAPTER6				 = 6;
+p.ID_CTRL_BUTTON_CHAPTER5				 = 5;
+p.ID_CTRL_BUTTON_CHAPTER4				 = 4;
+p.ID_CTRL_BUTTON_CHAPTER3				 = 3;
+p.ID_CTRL_BUTTON_CHAPTER2				 = 2;
+p.ID_CTRL_BUTTON_CHAPTER1				 = 8;
 p.ID_CTRL_PICTURE_27					     = 30;
 p.ID_CTRL_PICTURE_26					     = 29;
 p.ID_CTRL_BUTTON_NEXT					    = 46;
@@ -23,11 +30,4 @@ p.ID_CTRL_PICTURE_HEAD4				   = 12;
 p.ID_CTRL_PICTURE_HEAD3				   = 11;
 p.ID_CTRL_PICTURE_HEAD2				   = 10;
 p.ID_CTRL_PICTURE_HEAD1				   = 9;
-p.ID_CTRL_BUTTON_CHAPTER7				 = 26;
-p.ID_CTRL_BUTTON_CHAPTER6				 = 6;
-p.ID_CTRL_BUTTON_CHAPTER5				 = 5;
-p.ID_CTRL_BUTTON_CHAPTER4				 = 4;
-p.ID_CTRL_BUTTON_CHAPTER3				 = 3;
-p.ID_CTRL_BUTTON_CHAPTER2				 = 2;
-p.ID_CTRL_BUTTON_CHAPTER1				 = 8;
 p.ID_CTRL_PICTURE_20					     = 25;

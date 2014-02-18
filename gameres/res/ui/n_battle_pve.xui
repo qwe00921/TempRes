@@ -596,6 +596,17 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_SKILL1]
+Type=1
+Tag=171
+Rect=11 553 46 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\skill_ready.png
+NormalFileUV=0 0 119 100
+
 [CTRL_PICTURE_CHA4]
 Type=1
 Tag=77
@@ -604,6 +615,17 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_SKILL4]
+Type=1
+Tag=177
+Rect=332 552 46 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\skill_ready.png
+NormalFileUV=0 0 119 100
 
 [CTRL_PICTURE_CHA2]
 Type=1
@@ -614,6 +636,17 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_SKILL2]
+Type=1
+Tag=173
+Rect=11 664 46 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\skill_ready.png
+NormalFileUV=0 0 119 100
+
 [CTRL_PICTURE_CHA5]
 Type=1
 Tag=79
@@ -622,6 +655,17 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_SKILL5]
+Type=1
+Tag=176
+Rect=332 665 46 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\skill_ready.png
+NormalFileUV=0 0 119 100
 
 [CTRL_PICTURE_CHA3]
 Type=1
@@ -632,14 +676,36 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_CHA6]
+[CTRL_PICTURE_SKILL3]
 Type=1
-Tag=81
-Rect=329 717 103 103
+Tag=174
+Rect=11 780 46 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\skill_ready.png
+NormalFileUV=0 0 119 100
+
+[CTRL_PICTURE_CHA6]
+Type=1
+Tag=81
+Rect=329 716 103 103
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_SKILL6]
+Type=1
+Tag=175
+Rect=332 780 46 38
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\skill_ready.png
+NormalFileUV=0 0 119 100
 
 [CTRL_TEXT_NAME1]
 Type=4
@@ -1370,6 +1436,17 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_DEAD1]
+Type=1
+Tag=165
+Rect=137 501 149 66
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\battle_dead.png
+NormalFileUV=0 0 149 66
+
 [CTRL_PICTURE_115]
 Type=1
 Tag=127
@@ -1380,6 +1457,17 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_DEAD2]
+Type=1
+Tag=166
+Rect=137 618 149 66
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\battle_dead.png
+NormalFileUV=0 0 149 66
 
 [CTRL_PICTURE_116]
 Type=1
@@ -1392,6 +1480,17 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
+[CTRL_PICTURE_DEAD3]
+Type=1
+Tag=167
+Rect=137 734 149 66
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\battle_dead.png
+NormalFileUV=0 0 149 66
+
 [CTRL_PICTURE_117]
 Type=1
 Tag=129
@@ -1402,6 +1501,17 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_DEAD4]
+Type=1
+Tag=168
+Rect=460 501 149 66
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\battle_dead.png
+NormalFileUV=0 0 149 66
 
 [CTRL_PICTURE_118]
 Type=1
@@ -1414,6 +1524,17 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
 
+[CTRL_PICTURE_DEAD5]
+Type=1
+Tag=169
+Rect=460 618 149 66
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\battle_dead.png
+NormalFileUV=0 0 149 66
+
 [CTRL_PICTURE_119]
 Type=1
 Tag=131
@@ -1424,6 +1545,17 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\shade.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_DEAD6]
+Type=1
+Tag=170
+Rect=460 734 149 66
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\battle_dead.png
+NormalFileUV=0 0 149 66
 
 [CTRL_PICTURE_120]
 Type=1
@@ -1812,3 +1944,14 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_SKILL_DO]
+Type=1
+Tag=178
+Rect=0 0 104 172
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\skill_do.png
+NormalFileUV=0 0 104 172
