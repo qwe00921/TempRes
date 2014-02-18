@@ -256,123 +256,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_NUM_1]
-Type=4
-Tag=115
-Rect=607 304 30 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NUM_2]
-Type=4
-Tag=116
-Rect=607 304 30 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NUM_3]
-Type=4
-Tag=117
-Rect=607 304 30 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NUM_4]
-Type=4
-Tag=118
-Rect=607 304 30 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_115]
-Type=4
-Tag=119
-Rect=24 121 91 23
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_116]
-Type=4
-Tag=120
-Rect=147 121 91 23
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_117]
-Type=4
-Tag=121
-Rect=267 121 91 23
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_118]
-Type=4
-Tag=122
-Rect=389 121 91 23
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_119]
-Type=4
-Tag=123
-Rect=517 121 91 23
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_121]
 Type=1
 Tag=125
@@ -428,7 +311,72 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\27.png
 NormalFileUV=0 0 121 34
 
-[CTRL_PICTURE_42]
+[CTRL_TEXT_NAME1]
+Type=4
+Tag=119
+Rect=24 121 91 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME2]
+Type=4
+Tag=120
+Rect=147 121 91 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME3]
+Type=4
+Tag=121
+Rect=267 121 91 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME4]
+Type=4
+Tag=122
+Rect=389 121 91 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_TEXT_NAME5]
+Type=4
+Tag=123
+Rect=517 121 91 23
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_LV1]
 Type=1
 Tag=42
 Rect=20 14 55 23
@@ -439,7 +387,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_43]
+[CTRL_PICTURE_LV3]
 Type=1
 Tag=43
 Rect=266 14 55 23
@@ -450,7 +398,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_44]
+[CTRL_PICTURE_LV2]
 Type=1
 Tag=44
 Rect=143 14 55 23
@@ -461,7 +409,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_45]
+[CTRL_PICTURE_LV4]
 Type=1
 Tag=45
 Rect=389 14 55 23
@@ -472,7 +420,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\Lv.png
 NormalFileUV=0 0 55 23
 
-[CTRL_PICTURE_46]
+[CTRL_PICTURE_LV5]
 Type=1
 Tag=46
 Rect=512 14 55 23
@@ -548,7 +496,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_47]
+[CTRL_PICTURE_SEL_1]
 Type=1
 Tag=47
 Rect=51 46 36 36
@@ -559,7 +507,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card\num\2.png
 NormalFileUV=0 0 36 36
 
-[CTRL_PICTURE_49]
+[CTRL_PICTURE_SEL_2]
 Type=1
 Tag=49
 Rect=174 46 36 36
@@ -570,7 +518,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card\num\2.png
 NormalFileUV=0 0 36 36
 
-[CTRL_PICTURE_50]
+[CTRL_PICTURE_SEL_3]
 Type=1
 Tag=50
 Rect=297 46 36 36
@@ -581,7 +529,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card\num\2.png
 NormalFileUV=0 0 36 36
 
-[CTRL_PICTURE_51]
+[CTRL_PICTURE_SEL_4]
 Type=1
 Tag=51
 Rect=420 46 36 36
@@ -592,7 +540,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card\num\2.png
 NormalFileUV=0 0 36 36
 
-[CTRL_PICTURE_52]
+[CTRL_PICTURE_SEL_5]
 Type=1
 Tag=52
 Rect=543 46 36 36

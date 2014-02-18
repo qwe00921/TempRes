@@ -110,8 +110,8 @@ function p.refreshList(lst)
 		
 				
 		local row_index = i;
-		local start_index = (row_index-1)*4+1
-        local end_index = start_index + 3;
+		local start_index = (row_index-1)*5+1
+        local end_index = start_index + 4;
 		
 		--设置列表信息，一行4张卡牌
 		for j = start_index,end_index do
@@ -136,15 +136,20 @@ end
 
 --显示单张卡牌
 function p.ShowEquipInfo( view, equip, index ,dataListIndex)
-	
+
 	WriteCon("index = "..index);
 	local indexStr = tostring(index);
 	local btTagStr 	= "ID_CTRL_BUTTON_ITEM_"..indexStr;--按钮
 	local imgBdTagStr= "ID_CTRL_PICTURE_BD_"..indexStr;--装备图
 	local imgTagStr = "ID_CTRL_PICTURE_IMAGE_"..indexStr;--装备图背景
 	local lvTagStr 	= "ID_CTRL_TEXT_LV_"..indexStr;  --等级
+	local lvImgStr = "ID_CTRL_PICTURE_LV"..indexStr; --等级图片
+	
 	local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备
-	local nmTagStr  = "ID_CTRL_TEXT_NUM_"..indexStr; --是否选中
+	--local nmTagStr  = "ID_CTRL_TEXT_NUM_"..indexStr; --是否选中
+    local selTagStr = "ID_CTRL_PICTURE_SEL_"..indexStr; --是否选中
+	local equipNameStr = "ID_CTRL_TEXT_NAME"..indexStr; --装备名字
+	local namePicStr = "ID_CTRL_PICTURE_12"..indexStr;  --装备名字的底图
 
 	WriteCon("btTagStr = "..btTagStr);
 	local bt 	= GetButton(view, ui_list[btTagStr]);
@@ -152,11 +157,15 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	local imgBdV	= GetImage(view, ui_list[imgTagStr]);
 	local lvV 	= GetLabel(view, ui_list[lvTagStr]);
 	local drsV	= GetLabel(view, ui_list[drsTagStr]);
-	local nmV	= GetLabel(view, ui_list[nmTagStr]);
+	--local nmV	= GetLabel(view, ui_list[nmTagStr]);
+	local selImg = GetImage(view, ui_list[selTagStr]);
+	local lvImg = GetImage(view, ui_list[lvImgStr]);
+	local equipName = GetLabel(view, ui_list[equipNameStr]);
+	local namePic = GetImage(view, ui_list[namePicStr]);
 	
-	
+    lvImg:SetVisible(true);
 	drsV:SetVisible( false );
-	
+	namePic:SetVisible(true);
 	
 	--按钮设置事件
 	bt:SetLuaDelegate(p.OnItemClickEvent);
@@ -164,9 +173,13 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:SetVisible(true);
 	bt:SetId(tonumber(equip.id));
 	
-	
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", equip.equip_id); --从表中获取卡牌详细信息	
-	
+
+	--装备名称
+	local str = pEquipInfo.name;
+	equipName:SetText(str or "");
+	equipName:SetVisible(true);
+		
 	--显示卡牌图片 背景图
 	imgV:SetPicture( GetPictureByAni(pEquipInfo.item_pic, 0) );
 	imgV:SetVisible(true);
@@ -174,21 +187,38 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 	--显示等级
-	lvV:SetText("LV." .. (tostring(equip.equip_level) or "1"));
+	lvV:SetText("" .. (tostring(equip.equip_level) or "1"));
 	lvV:SetVisible(true);
 	--是否已装备
 	if tonumber(equip.Is_dress) == 1 then
 		drsV:SetVisible(true);
 	end
+
 	--选中序号
-	p.allNumText[equip.id] = nmV;
+	p.allNumText[equip.id] = selImg;
 	p.allEquipId[equip.id] = equip.equip_id;
 	--图片按钮
 	p.equipListNode[#p.equipListNode + 1] = bt;
 	--装备等级
 	p.equipLevel[equip.id] = equip.equip_level;
 	
-	
+	for k,v in pairs(p.selectList) do
+		if v == equip.id then
+			local levelConfig= SelectRowInner( T_EQUIP_LEVEL, "level", tostring(equip.equip_level));
+			if levelConfig then
+				p.consumeMoney = p.consumeMoney + tonumber(levelConfig.feed_money);
+			end
+			
+			selImg:SetVisible(true);
+			--nmV:SetText(tostring(k));
+			
+			--local equipCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_EQUIP_SEL_NUM);
+			--equipCount:SetText(tostring(k).."/10");
+			
+			--local equipSellMoney = GetLabel(p.layer,ui.ID_CTRL_TEXT_MONEY);
+			--equipSellMoney:SetText(tostring(p.consumeMoney));
+		end
+	end
 end
 --点击卡牌事件
 function p.OnItemClickEvent(uiNode, uiEventType, param)
@@ -199,7 +229,7 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local pEquipLevel = tonumber(p.equipLevel[equipId]);
 	if p.isDress[equipId] ~=1 then
 		if equipSelectText:IsVisible() == true then
-			equipSelectText:SetText("");
+			--equipSelectText:SetText("");
 			equipSelectText:SetVisible(false);
 			
 			for k,v in pairs(p.selectList) do
@@ -219,7 +249,8 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 				equipSelectText:SetVisible(true);
 				p.selectList[#p.selectList + 1] = equipId;
 				p.selectNum = p.selectNum + 1;
-				equipSelectText:SetText(tostring(p.selectNum));
+				--equipSelectText:SetText(tostring(p.selectNum));
+				equipSelectText:SetPicture(GetPictureByAni("common_ui.card_num", p.selectNum));
 				p.consumeMoney = p.consumeMoney + pEquipInfo.sellprice+(pEquipLevel*pEquipLevel);
 			end
 		end
@@ -254,15 +285,14 @@ function p.sortByBtnEvent(sortType)
 		return;
 	end
 	local sortByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_ORDER);
-	--sortByBtn:SetLuaDelegate(p.OnUIEvent);
+	sortByBtn:SetLuaDelegate(p.OnUIEvent);
+	local sortByImg = GetImage(p.layer, ui.ID_CTRL_PICTURE_172);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
-		sortByBtn:SetText(GetStr("equip_level"));
+		sortByImg:SetPicture(GetPictureByAni("common_ui.cardBagSort",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
+		sortByImg:SetPicture(GetPictureByAni("common_ui.cardBagSort",4));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		sortByBtn:SetText(GetStr("equip_rule"));
 	end
 	p.sortByRule(sortType);
 
@@ -350,8 +380,8 @@ function p.setNumFalse()
 	for k,v in pairs(p.selectList) do
 			--WriteCon("k : "..k);
 			local numText = p.allNumText[v];
-			numText:SetText(tostring(k));
-			numText:SetVisible(true);
+			numText:SetPicture(GetPictureByAni("common_ui.card_num",k));
+			--numText:SetText(tostring(k));
 	end
 
 end
@@ -363,36 +393,59 @@ function p.InitViewUI(view)
 	local drsTagStr = nil; --是否已装备
 	local nmTagStr  = nil; --装备名
 	local imgBdTagStr=nil;--装备图
-	
-   for cardIndex=1,4 do
+	local imgSelStr = nil; --已选者的图片
+	local imgLvStr = nil;  --LV的图片
+    for cardIndex=1,5 do
 		if cardIndex == 1 then			
 			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_1;
 			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_1;
 			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_1; 
 			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_1; 
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NUM_1; 
+			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME1; 
 			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_1;
+			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_1;
+			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV1;
+			imgNamePicStr = ui_list.ID_CTRL_PICTURE_121;
 		elseif cardIndex == 2 then
 			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_2;
 			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_2;
 			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_1;  
 			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_2; 
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NUM_2; 
+			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME2; 
 			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_2;
+			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_2;
+			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV2;
+			imgNamePicStr = ui_list.ID_CTRL_PICTURE_122;
 		elseif cardIndex == 3 then
 			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_3;
 			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_3;
 			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_3;  
 			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_3; 
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NUM_3; 
+			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME3; 
 			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_3;
+			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_3;
+			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV3;
+			imgNamePicStr = ui_list.ID_CTRL_PICTURE_123;
 		elseif cardIndex == 4 then
 			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_4;
 			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_4;
 			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_4;
 			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_4;
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NUM_4;
+			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME4;
 			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_4;
+			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_4;
+			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV4;
+			imgNamePicStr = ui_list.ID_CTRL_PICTURE_124;
+		elseif cardIndex == 5 then
+			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_5;
+			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_5;
+			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_5;
+			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_5;
+			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME5;
+			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_5;
+			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_5;
+			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV5;
+			imgNamePicStr = ui_list.ID_CTRL_PICTURE_125;
 		end
 				
 		local bt = GetButton(view,btTagStr);
@@ -410,10 +463,18 @@ function p.InitViewUI(view)
 		local equipName = GetLabel(view,nmTagStr);
 		equipName:SetVisible( false );
 		
+		local picName = GetImage(view,imgNamePicStr);
+		picName:SetVisible(false);
 		
 		local equipPic = GetImage(view,imgBdTagStr );
 		equipPic:SetVisible( false );
-  end
+		
+		local selPic = GetImage(view, imgSelStr);
+		selPic:SetVisible(false);
+		
+		local lvPic = GetImage(view, imgLvStr);
+		lvPic:SetVisible(false);
+	end;
 end;
 
 

@@ -566,7 +566,7 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		end
 		p.setNumFalse();
 		p.selectNum = p.selectNum-1;
-		p.consumeMoney = p.consumeMoney - pCardLeveInfo.feed_money - tonumber(card.Level)*tonumber(card.Level);
+		p.consumeMoney = p.consumeMoney - pCardLeveInfo.feed_money; -- - tonumber(card.Level)*tonumber(card.Level);
 	else
 		if p.selectNum >= 10 then 
 			dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_card_num_10"),p.OnMsgCallback,p.layer);
@@ -581,7 +581,7 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 	--		numText:SetVisible(true);
 			p.selectCardId[#p.selectCardId + 1] = cardUniqueId;
 			
-			p.consumeMoney = p.consumeMoney + pCardLeveInfo.feed_money + tonumber(card.Level)*tonumber(card.Level);
+			p.consumeMoney = p.consumeMoney + pCardLeveInfo.feed_money; -- + tonumber(card.Level)*tonumber(card.Level);
 		end
 	end
 	local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);

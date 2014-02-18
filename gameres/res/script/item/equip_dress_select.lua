@@ -99,15 +99,11 @@ function p.sortByBtnEvent(sortType)
 	sortByBtn:SetLuaDelegate(p.OnUIClickEvent);
 	local sortByImg = GetImage(p.layer, ui.ID_CTRL_PICTURE_11);
 	if(sortType == CARD_BAG_SORT_BY_LEVEL) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",0));
-		--sortByBtn:SetText(GetStr("equip_level"));
 		sortByImg:SetPicture(GetPictureByAni("common_ui.cardBagSort",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_LEVEL;
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
-		--sortByBtn:SetImage( GetPictureByAni("button.card_bag",1));
-		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-		--sortByBtn:SetText(GetStr("equip_rule"));
 		sortByImg:SetPicture(GetPictureByAni("common_ui.cardBagSort",4));
+		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
 	end
 	p.sortByRule(sortType);
 
