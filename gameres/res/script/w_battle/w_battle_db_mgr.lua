@@ -23,6 +23,7 @@ p.rewardData = nil;
 p.step = 0;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
 p.IsDebug = false;
+p.DropRandom = 0;
 
 p.enemyStepList = {
 	{
@@ -836,9 +837,11 @@ function p.nextStep()
 		end;
 ]]--
 		local monsterMax = #p.targetCardList;
+		
 		for k,v in ipairs(EquipDrop) do
 			local itemid = v;
-			local lrandom = w_battle_atkDamage.getRandom(p.step + k ,monsterMax);
+			p.DropRandom = p.DropRandom + 1
+			local lrandom = w_battle_atkDamage.getRandom(p.DropRandom ,monsterMax);
 			WriteCon("dropItem EquipDrop lrandom=="..tostring(lrandom));
 			local lCardInfo = p.targetCardList[lrandom];
 			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_EQUIP, id = itemid};
@@ -847,7 +850,8 @@ function p.nextStep()
 
 		for k,v in ipairs(ItemDrop) do
 			local itemid = v;
-			local lrandom = w_battle_atkDamage.getRandom(p.step + k + lEquipDropNum,monsterMax);
+			p.DropRandom = p.DropRandom + 1
+			local lrandom = w_battle_atkDamage.getRandom(p.DropRandom, monsterMax);
 			WriteCon("dropItem ItemDrop lrandom=="..tostring(lrandom));
 			local lCardInfo = p.targetCardList[lrandom];
 			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_MATERIAL, id = itemid};
@@ -856,7 +860,8 @@ function p.nextStep()
 		
 		for k,v in ipairs(CardDrop) do
 			local itemid = v;
-			local lrandom = w_battle_atkDamage.getRandom(p.step + k + lEquipDropNum + lItemDropNum, monsterMax);
+			p.DropRandom = p.DropRandom + 1
+			local lrandom = w_battle_atkDamage.getRandom(p.DropRandom, monsterMax);
 			WriteCon("dropItem CardDrop lrandom=="..tostring(lrandom));
 			local lCardInfo = p.targetCardList[lrandom];
 			lCardInfo.dropLst[#lCardInfo.dropLst + 1] = {dropType = E_DROP_CARD, id = itemid};
@@ -957,6 +962,7 @@ function p.Init( battleDB )
 	end
 	
 	p.step = 0;
+	p.DropRandom = 0;
 	p.nextStep();
 	--p.targetCardList = enemyStepList[p.step];
    
