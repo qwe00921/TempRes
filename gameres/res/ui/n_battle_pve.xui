@@ -1948,10 +1948,10 @@ UIClsoeType=0
 [CTRL_PICTURE_SKILL_DO]
 Type=1
 Tag=178
-Rect=0 0 104 172
+Rect=113 102 83 137
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\skill_do.png
-NormalFileUV=0 0 104 172
+NormalFileUV=10 10 84 152

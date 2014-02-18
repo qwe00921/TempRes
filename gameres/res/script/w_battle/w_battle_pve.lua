@@ -67,6 +67,7 @@ p.CanUseItem = true;
 p.heroList = nil;
 p.sortList = nil;
 p.firstHp = true;
+p.skillImage = nil;
 
 local BTN_INDEX = 1;
 local ATTR_INDEX = 2;
@@ -81,6 +82,8 @@ local SPEXP_INDEX = 10;
 local FACE_INDEX = 11;
 local MASK_INDEX = 12;
 local DAMAGE_INDEX = 13;
+local DEAD_INDEX = 14;
+local SKILL_INDEX = 15;
 
 local objs = {
 	{ 
@@ -97,6 +100,8 @@ local objs = {
 		ui.ID_CTRL_PICTURE_CHA1,
 		ui.ID_CTRL_PICTURE_115,
 		ui.ID_CTRL_PICTURE_157,
+		ui.ID_CTRL_PICTURE_DEAD1,
+		ui.ID_CTRL_PICTURE_SKILL1,
 	},
 	{
 		ui.ID_CTRL_BUTTON_65,
@@ -112,6 +117,8 @@ local objs = {
 		ui.ID_CTRL_PICTURE_CHA2,
 		ui.ID_CTRL_PICTURE_116,
 		ui.ID_CTRL_PICTURE_158,
+		ui.ID_CTRL_PICTURE_DEAD2,
+		ui.ID_CTRL_PICTURE_SKILL2,
 	},
 	{
 		ui.ID_CTRL_BUTTON_66,
@@ -127,6 +134,8 @@ local objs = {
 		ui.ID_CTRL_PICTURE_CHA3,
 		ui.ID_CTRL_PICTURE_117,
 		ui.ID_CTRL_PICTURE_159,
+		ui.ID_CTRL_PICTURE_DEAD3,
+		ui.ID_CTRL_PICTURE_SKILL3,
 	},
 	{
 		ui.ID_CTRL_BUTTON_64,
@@ -142,6 +151,8 @@ local objs = {
 		ui.ID_CTRL_PICTURE_CHA4,
 		ui.ID_CTRL_PICTURE_118,
 		ui.ID_CTRL_PICTURE_160,
+		ui.ID_CTRL_PICTURE_DEAD4,
+		ui.ID_CTRL_PICTURE_SKILL4,
 	},
 	{
 		ui.ID_CTRL_BUTTON_67,
@@ -157,6 +168,8 @@ local objs = {
 		ui.ID_CTRL_PICTURE_CHA5,
 		ui.ID_CTRL_PICTURE_119,
 		ui.ID_CTRL_PICTURE_161,
+		ui.ID_CTRL_PICTURE_DEAD5,
+		ui.ID_CTRL_PICTURE_SKILL5,
 	},
 	{
 		ui.ID_CTRL_BUTTON_68,
@@ -172,6 +185,8 @@ local objs = {
 		ui.ID_CTRL_PICTURE_CHA6,
 		ui.ID_CTRL_PICTURE_120,
 		ui.ID_CTRL_PICTURE_162,
+		ui.ID_CTRL_PICTURE_DEAD6,
+		ui.ID_CTRL_PICTURE_SKILL6,
 	},
 };
 
@@ -261,6 +276,9 @@ function p.InitController()
 	p.targetAttr = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_140 );
 	p.targetHpText = GetLabel( p.battleLayer, ui.ID_CTRL_TEXT_HP );
 	
+	p.skillImage = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_SKILL_DO );
+	p.skillImage:SetVisible( false );
+	
 	p.targetHp:SetTextStyle( 2 );
 	
 	for i = 1, 6 do
@@ -344,6 +362,14 @@ function p.GetCardTable( index )
 	
 	ctrller = GetImage( p.battleLayer, tag[DAMAGE_INDEX] );
 	temp[DAMAGE_INDEX] = ctrller;
+	ctrller:SetVisible( false );
+	
+	ctrller = GetImage( p.battleLayer, tag[DEAD_INDEX] );
+	temp[DEAD_INDEX] = ctrller;
+	ctrller:SetVisible( false );
+	
+	ctrller = GetImage( p.battleLayer, tag[SKILL_INDEX] );
+	temp[SKILL_INDEX] = ctrller;
 	ctrller:SetVisible( false );
 	
 	return temp;
@@ -448,6 +474,9 @@ function p.RefreshCardInfo( pIsRoundStar )
 					ctrllers[ATTR_INDEX]:SetPicture( nil );
 					--end
 					
+					ctrllers[DEAD_INDEX]:SetVisible( tonumber(data.Hp) <= 0 );
+					ctrllers[SKILL_INDEX]:SetVisible( tonumber(data.Sp) >= 100 );
+					
 					if not (tonumber(data.Hp) > 0 and data.HasTurn) then
 						ctrllers[MASK_INDEX]:SetVisible( true );
 						ctrllers[BTN_INDEX]:SetVisible( false );
@@ -550,6 +579,9 @@ function p.SetHeroCardAttr( pos, fighter )
 			ctrllers[BTN_INDEX]:SetVisible( false );
 		end
 		
+		ctrllers[DEAD_INDEX]:SetVisible( tonumber(fighter.Hp) <= 0 );
+		ctrllers[SKILL_INDEX]:SetVisible( tonumber(fighter.Sp) >= 100 );
+		
 		ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber( fighter.maxSp ), tonumber( fighter.Sp ) );
 	end
 end
@@ -640,6 +672,8 @@ function p.CloseUI()
 		p.CanUseItem = true;
 		p.heroList = nil;
 		p.sortList = nil;
+		
+		p.skillImage = nil;
 	end
 	GetBattleShow():EnableTick( false );
 end
@@ -674,6 +708,7 @@ end
 --°´Å¥½»»¥
 function p.OnBtnClick( uiNode, uiEventType, param )
 	WriteCon( tostring(uiEventType) );
+	
 	local btn = ConverToButton( uiNode );
 	--WriteConErr( uiEventType .. " " .. uiNode:GetId() );
 	if IsClickEvent( uiEventType ) then
@@ -704,6 +739,37 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		WriteCon("IsDragRight");
 	elseif IsDragDown( uiEventType ) then
 		WriteCon("IsDragDown");
+	elseif IsDragBegin( uiEventType ) then
+		WriteCon("IsDragBegin");
+		
+		if p.skillImage == nil then
+			WriteConErr( "no skillimage" );
+			return;
+		end
+		
+		local cardList = w_battle_mgr.heroCamp.fighters;
+		local id = uiNode:GetId();
+		if cardList ~= nil then
+			for _,v in ipairs(cardList) do
+				if v.Position == id then
+					if tonumber(v.Sp) >= 100 then
+						local size = p.skillImage:GetFrameSize();
+						
+						p.skillImage:SetFramePosXY( tonumber(param.x), tonumber(param.y)-size.h );
+						p.skillImage:SetVisible( true );
+						
+						p.skillImage:RemoveFromParent(false);
+						GetUIRoot():AddChildZ( p.skillImage, 10001 );
+					end
+					break;
+				end
+			end
+		end
+	elseif IsDragEnd( uiEventType ) then
+		WriteCon("IsDragEnd");
+		if p.skillImage ~= nil then
+			p.skillImage:SetVisible( false );
+		end
 	end
 end
 
