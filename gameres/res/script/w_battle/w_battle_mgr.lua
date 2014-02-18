@@ -984,7 +984,7 @@ function p.SetLockAction(position)
 	   local lLockPic = GetImage(p.uiLayer, ltag);	    
 	   --local lLockPic = p.GetLockImage();		
 	   lLockPic:SetVisible(true);
-	   lLockPic:SetZOrder(E_BATTLE_Z_HERO_FIGHTER + 10);
+	   lLockPic:SetZOrder(9999);
 	   local targetFighter = p.enemyCamp:FindFighter(position);
 	   w_battle_pve.SetHp(targetFighter); --更新血量
 	   local lElementLst = p.heroCamp:GetElementAtkFighter(targetFighter);
