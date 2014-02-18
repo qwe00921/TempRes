@@ -195,7 +195,7 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 			p.SetTextColour(p.upNeedSoul,tonumber(p.nowPlaySoul),tonumber(soulNeed))
 			
 			if tonumber(homeLvNeed) > 0 then
-				p.upNeedHome:SetText("生产屋:"..homeLvNeed);
+				p.upNeedHome:SetText("建筑所:"..homeLvNeed);
 				p.SetTextColour(p.upNeedHome,tonumber(p.nowProduceLevel),tonumber(homeLvNeed))
 			else
 				p.upNeedHome:SetText(" ");
