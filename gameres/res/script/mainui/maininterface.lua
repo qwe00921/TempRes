@@ -298,7 +298,7 @@ function p.ShowMailNum(userinfo)
 	end
 
 	if num ~= 0 then
-		local scale = 0.5;
+		local scale = 0.5 * GetUIScale();
 		local rect = mailNum:GetFrameRect();
 		local x = rect.size.w/2;
 		local len = string.len(tostring(num));
@@ -429,6 +429,7 @@ function p.CreateEffectNum( index, node, scale, offestX, offestY, num )
 	local rect = node:GetFrameRect();
 	local x = rect.size.w;
 	local len = string.len(tostring(num));
+	scale = scale * GetUIScale();
 	p.effect_num[index]:SetScale( scale );
 	p.effect_num[index]:SetOffset( x+offestX-len*23+(1-scale)/2*len*23 , offestY);
 	p.effect_num[index]:PlayNum( tonumber(num) );

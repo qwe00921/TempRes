@@ -112,7 +112,7 @@ function p.RefreshUI(userinfo)
 	local x = rect.size.w/2;
 	local len = string.len(tostring(userinfo.Level));
 	
-	local scale = 0.5;
+	local scale = 0.5 * GetUIScale();
 	p.effect_num[LEV_INDEX]:SetScale(scale);
 	p.effect_num[LEV_INDEX]:SetOffset( x - len * 23 / 2, -36 * (1 - scale) / 2 - 2 );
 	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
@@ -127,7 +127,8 @@ function p.RefreshUI(userinfo)
 		p.effect_num[MONEY_INDEX] = moneyNum;
 		money:AddChild( moneyNum:GetNode() );
 	end
-	p.effect_num[MONEY_INDEX]:SetScale( 0.5 );
+	
+	p.effect_num[MONEY_INDEX]:SetScale( scale );
 	p.effect_num[MONEY_INDEX]:SetOffset(-23, -6);
 	p.effect_num[MONEY_INDEX]:PlayNum( tonumber(userinfo.Money) );
 	
@@ -140,7 +141,7 @@ function p.RefreshUI(userinfo)
 		p.effect_num[EMONEY_INDEX] = emoneyNum;
 		emoney:AddChild( emoneyNum:GetNode() );
 	end
-	p.effect_num[EMONEY_INDEX]:SetScale( 0.5 );
+	p.effect_num[EMONEY_INDEX]:SetScale( scale );
 	p.effect_num[EMONEY_INDEX]:SetOffset(-23, -6);
 	p.effect_num[EMONEY_INDEX]:PlayNum( tonumber(userinfo.Emoney) );
 	
@@ -158,7 +159,7 @@ function p.RefreshUI(userinfo)
 		p.effect_num[SOUL_INDEX] = soul;
 		bluesoul:AddChild( soul:GetNode() );
 	end
-	p.effect_num[SOUL_INDEX]:SetScale( 0.5 );
+	p.effect_num[SOUL_INDEX]:SetScale( scale );
 	p.effect_num[SOUL_INDEX]:SetOffset(-20, -6);
 	p.effect_num[SOUL_INDEX]:PlayNum( tonumber(userinfo.BlueSoul) );
 
@@ -228,6 +229,7 @@ function p.CreateEffectNum( index, node, scale, offestX, offestY, str )
 	local rect = node:GetFrameRect();
 	local x = rect.size.w/2;
 	local len = string.len(str);
+	scale = scale * GetUIScale();
 	p.effect_num[index]:SetScale( scale );
 	p.effect_num[index]:SetOffset( x+offestX-len*23/2 , offestY);	
 	p.effect_num[index]:PlayNum( str );
