@@ -26,7 +26,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
-[CTRL_BUTTON_SELL]
+[CTRL_BUTTON_CLEAR]
 Type=2
 Tag=26
 Rect=509 724 120 59
@@ -84,7 +84,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_CLEAR]
+[CTRL_BUTTON_SELL]
 Type=2
 Tag=34
 Rect=382 724 122 60

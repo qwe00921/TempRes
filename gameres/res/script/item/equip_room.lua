@@ -383,7 +383,9 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		p.sortBtnMark = MARK_OFF;
 		equip_bag_sort.CloseUI();
 	end
-	local equipOne = p.newEquip[uiNode:GetId()];
+	
+	local lId = uiNode:GetId();
+	local equipOne = p.newEquip[lId];
 	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.onReinCallback,p.HideUI);
 end
 

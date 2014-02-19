@@ -331,7 +331,7 @@ function p.clearDate()
 	for k,v in pairs(p.selectList) do
 			--WriteCon("k : "..k);
 			local numText = p.allNumText[v];
-			numText:SetText("");
+			--numText:SetText("");
 			numText:SetVisible(false);
 			
 	end
