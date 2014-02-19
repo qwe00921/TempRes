@@ -50,6 +50,7 @@ function p:ctor()
 	self.atkBuff = 1;
 	self.defBuff = 1;
 	self.critBuff = 1;
+	self.isIntoScene = nil; --是否进场了
 end
 
 --初始化（重载）
@@ -69,6 +70,7 @@ function p:Init( idFighter, node, camp )
 	--self:InitBuffNode();
 	--self:CreateHpBar();
 	--self:CreateFlyNumGreen();	
+	self.isIntoScene = false;
 end
 
 

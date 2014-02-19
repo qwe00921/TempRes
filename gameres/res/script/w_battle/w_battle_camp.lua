@@ -388,6 +388,9 @@ function p.AddEnemyFightersJumpEffect()
 	--node:AddActionEffect("lancer.fadein0");
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
+	--local cmdSceneEnd = createCommandLua():SetCmd( "intoSceneEnd", pFighter.pos, 0, "");
+	
+	
 	g_EnemyIndex = g_EnemyIndex + 1;
 end
 
@@ -629,4 +632,16 @@ function p:SetFightersZOrder(pZorder)
 	for k,v in ipairs(self.fighters) do
 		v.node:SetZOrder(pZorder + v.Position);
 	end
+end
+
+function p:CheckAllIntoScene()
+	local lres = true;
+	for k,v in ipairs(self.fighters) do
+		if v.isIntoScene == false then
+			lres = false;
+			break;
+		end
+	end
+	
+	return lres;
 end
