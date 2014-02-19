@@ -103,7 +103,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\money3.png
-NormalFileUV=0 0 46 46
+NormalFileUV=0 0 150 150
 
 [CTRL_TEXT_MONEY_V]
 Type=4
@@ -127,7 +127,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\soul.png
-NormalFileUV=0 0 32 32
+NormalFileUV=0 0 150 150
 
 [CTRL_TEXT_SOUL_V]
 Type=4
@@ -241,7 +241,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\exp4.png
-NormalFileUV=0 0 46 46
+NormalFileUV=0 0 148 147
 
 [CTRL_TEXT_31]
 Type=4

@@ -37,7 +37,7 @@ NormalFileUV=0 0 640 110
 [CTRL_LEFT_SPRITE_1]
 Type=19
 Tag=6
-Rect=127 136 71 90
+Rect=127 126 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -46,7 +46,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_2]
 Type=19
 Tag=5
-Rect=105 230 70 90
+Rect=105 220 70 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -55,7 +55,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_3]
 Type=19
 Tag=2
-Rect=130 325 71 90
+Rect=130 315 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -64,7 +64,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_4]
 Type=19
 Tag=3
-Rect=31 136 71 90
+Rect=31 126 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -73,7 +73,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_5]
 Type=19
 Tag=4
-Rect=11 230 71 90
+Rect=11 220 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -91,7 +91,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_6]
 Type=19
 Tag=16
-Rect=34 325 71 90
+Rect=34 315 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -100,7 +100,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM1]
 Type=2
 Tag=122
-Rect=3 832 125 125
+Rect=15 838 110 110
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -112,7 +112,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM2]
 Type=2
 Tag=123
-Rect=130 832 125 125
+Rect=132 833 110 110
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -124,7 +124,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM3]
 Type=2
 Tag=124
-Rect=257 832 125 125
+Rect=259 833 110 110
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -136,7 +136,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM4]
 Type=2
 Tag=125
-Rect=384 832 125 125
+Rect=386 833 110 110
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -148,7 +148,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ITEM5]
 Type=2
 Tag=126
-Rect=511 832 125 125
+Rect=513 833 110 110
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -160,7 +160,7 @@ UIClsoeType=0
 [CTRL_PICTURE_70]
 Type=1
 Tag=70
-Rect=3 832 125 125
+Rect=17 843 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -169,7 +169,7 @@ UIClsoeType=0
 [CTRL_PICTURE_71]
 Type=1
 Tag=71
-Rect=130 832 125 125
+Rect=142 843 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -178,7 +178,7 @@ UIClsoeType=0
 [CTRL_PICTURE_72]
 Type=1
 Tag=72
-Rect=257 832 125 125
+Rect=269 843 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -187,7 +187,7 @@ UIClsoeType=0
 [CTRL_PICTURE_73]
 Type=1
 Tag=73
-Rect=384 832 125 125
+Rect=388 843 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -196,7 +196,7 @@ UIClsoeType=0
 [CTRL_PICTURE_74]
 Type=1
 Tag=74
-Rect=511 832 125 125
+Rect=513 843 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -221,13 +221,13 @@ SelectedFileUV=0 0 122 60
 [CTRL_PICTURE_BOX]
 Type=1
 Tag=84
-Rect=419 6 70 70
+Rect=427 14 70 70
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\material_thum.png
-NormalFileUV=0 0 102 102
+NormalFileUV=0 0 148 147
 
 [CTRL_PICTURE_328]
 Type=1
@@ -352,7 +352,7 @@ UIClsoeType=0
 [CTRL_PICTURE_338]
 Type=1
 Tag=338
-Rect=2 833 126 127
+Rect=16 842 110 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -361,7 +361,7 @@ UIClsoeType=0
 [CTRL_PICTURE_339]
 Type=1
 Tag=339
-Rect=129 833 126 127
+Rect=141 842 110 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -459,7 +459,7 @@ NormalFileUV=0 0 1 1
 [CTRL_RIGHT_SPRITE_4]
 Type=19
 Tag=10
-Rect=540 136 71 90
+Rect=540 126 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -468,7 +468,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_3]
 Type=19
 Tag=7
-Rect=440 325 71 90
+Rect=440 315 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -477,7 +477,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_2]
 Type=19
 Tag=8
-Rect=466 230 71 90
+Rect=466 220 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -486,7 +486,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_5]
 Type=19
 Tag=11
-Rect=559 230 71 90
+Rect=559 220 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -495,7 +495,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_1]
 Type=19
 Tag=9
-Rect=444 136 71 90
+Rect=444 126 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -504,7 +504,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_6]
 Type=19
 Tag=18
-Rect=536 325 71 90
+Rect=536 315 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -590,7 +590,7 @@ NormalFileUV=0 0 318 137
 [CTRL_PICTURE_CHA1]
 Type=1
 Tag=76
-Rect=10 488 103 103
+Rect=9 488 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -610,7 +610,7 @@ NormalFileUV=0 0 119 100
 [CTRL_PICTURE_CHA4]
 Type=1
 Tag=77
-Rect=331 488 103 103
+Rect=331 488 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -630,7 +630,7 @@ NormalFileUV=0 0 119 100
 [CTRL_PICTURE_CHA2]
 Type=1
 Tag=78
-Rect=8 600 103 103
+Rect=9 600 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -650,7 +650,7 @@ NormalFileUV=0 0 119 100
 [CTRL_PICTURE_CHA5]
 Type=1
 Tag=79
-Rect=329 601 103 103
+Rect=331 601 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -670,7 +670,7 @@ NormalFileUV=0 0 119 100
 [CTRL_PICTURE_CHA3]
 Type=1
 Tag=80
-Rect=8 716 103 103
+Rect=9 716 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -690,7 +690,7 @@ NormalFileUV=0 0 119 100
 [CTRL_PICTURE_CHA6]
 Type=1
 Tag=81
-Rect=329 716 103 103
+Rect=331 716 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1643,7 +1643,7 @@ UIClsoeType=0
 [CTRL_BUTTON_TARGET1]
 Type=2
 Tag=133
-Rect=127 136 71 90
+Rect=127 126 71 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1655,7 +1655,7 @@ UIClsoeType=0
 [CTRL_BUTTON_TARGET2]
 Type=2
 Tag=134
-Rect=106 229 71 90
+Rect=106 219 71 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1667,7 +1667,7 @@ UIClsoeType=0
 [CTRL_BUTTON_TARGET3]
 Type=2
 Tag=135
-Rect=131 325 71 90
+Rect=131 315 71 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1679,7 +1679,7 @@ UIClsoeType=0
 [CTRL_BUTTON_TARGET4]
 Type=2
 Tag=136
-Rect=32 136 71 90
+Rect=32 126 71 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1691,7 +1691,7 @@ UIClsoeType=0
 [CTRL_BUTTON_TARGET5]
 Type=2
 Tag=137
-Rect=11 229 71 90
+Rect=11 219 71 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1703,7 +1703,7 @@ UIClsoeType=0
 [CTRL_BUTTON_TARGET6]
 Type=2
 Tag=138
-Rect=34 325 71 90
+Rect=34 315 71 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1715,7 +1715,7 @@ UIClsoeType=0
 [CTRL_PICTURE_TARGET1]
 Type=1
 Tag=139
-Rect=175 170 20 20
+Rect=145 169 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1726,7 +1726,7 @@ NormalFileUV=0 0 66 66
 [CTRL_PICTURE_TARGET2]
 Type=1
 Tag=140
-Rect=155 261 20 20
+Rect=124 264 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1737,7 +1737,7 @@ NormalFileUV=0 0 66 66
 [CTRL_PICTURE_TARGET3]
 Type=1
 Tag=141
-Rect=180 358 20 20
+Rect=149 363 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1748,7 +1748,7 @@ NormalFileUV=0 0 66 66
 [CTRL_PICTURE_TARGET4]
 Type=1
 Tag=142
-Rect=80 171 20 20
+Rect=50 170 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1759,7 +1759,7 @@ NormalFileUV=0 0 66 66
 [CTRL_PICTURE_TARGET5]
 Type=1
 Tag=143
-Rect=60 261 20 20
+Rect=29 264 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1770,7 +1770,7 @@ NormalFileUV=0 0 66 66
 [CTRL_PICTURE_TARGET6]
 Type=1
 Tag=144
-Rect=84 355 20 20
+Rect=52 360 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1948,10 +1948,10 @@ UIClsoeType=0
 [CTRL_PICTURE_SKILL_DO]
 Type=1
 Tag=178
-Rect=113 102 83 137
+Rect=119 60 120 221
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\skill_do.png
-NormalFileUV=10 10 84 152
+NormalFileUV=0 0 92 170

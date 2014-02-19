@@ -1,87 +1,59 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
 
-[CTRL_BUTTON_GACHAUI]
-Type=2
-Tag=1
-Rect=23 209 107 58
+[CTRL_PICTURE_111]
+Type=1
+Tag=111
+Rect=135 210 122 60
 AnchorPos=0 0
 Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=扭蛋按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\btn_tab.png
-NormalFileUV=0 0 91 49
-SelectFile=.\res\image\ui\shop\btn_tab_select.png
-SelectedFileUV=0 0 91 49
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
+NormalFile=.\res\image\ui\shop\btn_item.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\shop\btn_item_select.png
+SelectedFileUV=0 0 122 60
 
-[CTRL_BUTTON_GIFT_PACKUI]
-Type=2
-Tag=14
-Rect=243 209 110 59
+[CTRL_PICTURE_112]
+Type=1
+Tag=112
+Rect=259 210 122 60
 AnchorPos=0 0
 Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=礼包按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\btn_tab.png
-NormalFileUV=0 0 91 49
-SelectFile=.\res\image\ui\shop\btn_tab_select.png
-SelectedFileUV=0 0 91 49
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
+NormalFile=.\res\image\ui\shop\btn_gift.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\shop\btn_gift_select.png
+SelectedFileUV=0 0 122 60
 
-[CTRL_BUTTON_ITEMUI]
-Type=2
-Tag=2
-Rect=133 209 107 58
+[CTRL_PICTURE_113]
+Type=1
+Tag=113
+Rect=11 210 122 60
 AnchorPos=0 0
 Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=道具按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\btn_tab.png
-NormalFileUV=0 0 91 49
-SelectFile=.\res\image\ui\shop\btn_tab_select.png
-SelectedFileUV=0 0 91 49
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
+NormalFile=.\res\image\ui\shop\btn_gacha.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\shop\btn_gacha_select.png
+SelectedFileUV=0 0 122 60
 
-[CTRL_BUTTON_73]
-Type=2
-Tag=73
-Rect=356 209 110 59
+[CTRL_PICTURE_26]
+Type=1
+Tag=29
+Rect=383 210 122 60
 AnchorPos=0 0
 Notes=
-TextSize=28
-TextColor=0xece39d
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Remark=礼包按钮
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\btn_tab.png
-NormalFileUV=0 0 91 49
-SelectFile=.\res\image\ui\shop\btn_tab_select.png
-SelectedFileUV=0 0 91 49
-DisableFile=.\res\image\ui\public\page_select.png
-DisableFileUV=0 0 104 78
+NormalFile=.\res\image\ui\shop\btn_have.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\shop\btn_have_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_PICTURE_25]
 Type=1
@@ -221,39 +193,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_111]
-Type=1
-Tag=111
-Rect=157 223 59 30
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\shop\text_item_select.png
-NormalFileUV=0 0 59 30
-
-[CTRL_PICTURE_112]
-Type=1
-Tag=112
-Rect=269 223 59 30
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\shop\text_gift.png
-NormalFileUV=0 0 59 30
-
-[CTRL_PICTURE_113]
-Type=1
-Tag=113
-Rect=47 223 59 30
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\shop\text_gift_select.png
-NormalFileUV=0 0 59 30
-
 [CTRL_BUTTON_69]
 Type=2
 Tag=69
@@ -269,17 +208,6 @@ NormalFile=.\res\image\ui\card_bag\btn_cancel_1.png
 NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\card_bag\btn_cancel_2.png
 SelectedFileUV=0 0 122 60
-
-[CTRL_PICTURE_26]
-Type=1
-Tag=29
-Rect=382 223 59 30
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\shop\text_have.png
-NormalFileUV=0 0 59 30
 
 [CTRL_PICTURE_27]
 Type=1
@@ -307,3 +235,67 @@ NormalFile=.\res\image\ui\card\use.png
 NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\card\use_select.png
 SelectedFileUV=0 0 122 60
+
+[CTRL_BUTTON_GACHAUI]
+Type=2
+Tag=1
+Rect=10 198 122 70
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=扭蛋按钮
+UIOpenType=0
+UIClsoeType=0
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_BUTTON_GIFT_PACKUI]
+Type=2
+Tag=14
+Rect=259 198 122 70
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼包按钮
+UIOpenType=0
+UIClsoeType=0
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_BUTTON_ITEMUI]
+Type=2
+Tag=2
+Rect=136 198 122 70
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=道具按钮
+UIOpenType=0
+UIClsoeType=0
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78
+
+[CTRL_BUTTON_73]
+Type=2
+Tag=73
+Rect=384 198 122 70
+AnchorPos=0 0
+Notes=
+TextSize=28
+TextColor=0xece39d
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Remark=礼包按钮
+UIOpenType=0
+UIClsoeType=0
+DisableFile=.\res\image\ui\public\page_select.png
+DisableFileUV=0 0 104 78

@@ -18,6 +18,7 @@ p.ID_CTRL_TEXT_FREE_MSG				   = 11;	--免费扭蛋文字
 p.ID_CTRL_TEXT_FREE_TIME				  = 112;	--免费扭蛋倒计时
 p.ID_CTRL_BUTTON_TEN					     = 110;	--抽取5次按钮
 p.ID_CTRL_BUTTON_ONE					     = 109;	--抽取一次按钮
+p.ID_CTRL_PICTURE_52					     = 52;
 p.ID_CTRL_9SLICES_27					     = 27;
 p.ID_CTRL_9SLICES_48					     = 48;
 p.ID_CTRL_PICTURE_BG					     = 88;
