@@ -1,0 +1,49 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 640 832
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 833 126 127
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_71]
+Type=1
+Tag=71
+Rect=35 778 56 80
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83
+
+[CTRL_PICTURE_72]
+Type=1
+Tag=72
+Rect=125 832 514 135
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1

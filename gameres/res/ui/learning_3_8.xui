@@ -1,0 +1,60 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 639 759
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_60]
+Type=1
+Tag=60
+Rect=0 759 113 201
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_61]
+Type=1
+Tag=61
+Rect=318 759 326 210
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_62]
+Type=1
+Tag=62
+Rect=113 789 205 171
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
