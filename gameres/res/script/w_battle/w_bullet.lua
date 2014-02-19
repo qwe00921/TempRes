@@ -36,7 +36,7 @@ function p:cmdShootPos( atkFighter, targetPos, seq, byJump )
 	--local targetPos = targetFighter:GetNode():GetCenterPos();
 	local x = targetPos.x - atkPos.x;
 	local y = targetPos.y - atkPos.y;
-	local distance = (x^2 + y^2)^0.5;
+	local distance = (x ^ 2 + y ^ 2) ^ 0.5;
 	
 	-- calc start offset
 	local startOffset = self:GetStartOffset();
