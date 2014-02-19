@@ -164,11 +164,13 @@ function p.ShowUserMessage()
     local msg = p.SelectTabeMsg(type, rare,level);
 	
 	local name = nil;
-	if rare == 0 then
+	--if rare == 0 then
 		name = SelectCell( T_CARD, tostring(card_id), "name" );
-	elseif rare == 4 then
-		name = SelectCell( T_EQUIP, tostring(card_id), "name" );
-	end
+	--elseif rare == 4 then
+		if (name == nil) then
+			name = SelectCell( T_EQUIP, tostring(card_id), "name" );
+		end
+	--end
 	
 	card_id = name or card_id;
 	

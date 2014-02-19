@@ -1,16 +1,19 @@
-
+﻿
 [UI_INFO]
 Width=960
 Height=640
 
-[CTRL_PICTURE_BG]
-Type=1
-Tag=298
-Rect=0 8 617 283
+[CTRL_9SLICES_76]
+Type=22
+Tag=76
+Rect=0 0 640 288
 AnchorPos=0 0
 Notes=
-NormalFile=.\res\image\ui\mail\bg_mail.png
-NormalFileUV=0 0 588 258
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\bg1.png
+NormalFileUV=0 0 640 600
 
 [CTRL_CHECK_BUTTON_SEL]
 Type=2
@@ -21,6 +24,8 @@ Notes=
 TextSize=0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\mail\choose.png
 NormalFileUV=0 0 80 70
 SelectFile=.\res\image\ui\mail\choose_select.png
@@ -32,6 +37,8 @@ Tag=302
 Rect=15 194 64 64
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_2]
 Type=1
@@ -39,6 +46,8 @@ Tag=303
 Rect=95 194 64 64
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_ITEM_3]
 Type=1
@@ -46,6 +55,8 @@ Tag=304
 Rect=173 194 64 64
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_11]
 Type=22
@@ -54,6 +65,8 @@ Rect=13 22 342 50
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -63,6 +76,8 @@ Tag=305
 Rect=253 194 64 64
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_TITLE]
 Type=4
@@ -74,6 +89,8 @@ TextSize=25
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_9SLICES_16]
 Type=22
@@ -82,6 +99,8 @@ Rect=12 78 591 101
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -92,6 +111,8 @@ Rect=449 209 142 53
 AnchorPos=0 0
 Notes=
 Stretch=1
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
@@ -105,6 +126,8 @@ TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignRight
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CONTENT]
 Type=4
@@ -116,6 +139,8 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_STATE]
 Type=4
@@ -126,6 +151,8 @@ Notes=
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_BG_1]
 Type=1
@@ -133,6 +160,8 @@ Tag=12
 Rect=13 194 66 66
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -142,6 +171,8 @@ Tag=13
 Rect=94 194 66 66
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -151,6 +182,8 @@ Tag=14
 Rect=172 193 66 66
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
 
@@ -160,5 +193,7 @@ Tag=15
 Rect=252 194 66 66
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
