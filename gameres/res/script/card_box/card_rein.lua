@@ -279,10 +279,30 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	else
 		lCardLeveInfo= SelectRowInner( T_CARD_LEVEL, "level", pCardInfo.Level);
 	end		
-	p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money or 0; --+ tonumber(pCardInfo.Level or 1)*tonumber(pCardInfo.Level or 1);	
-			
-	p.addExp = p.addExp + lCardInfo.feedbase_exp or 0 + lCardLeveInfo.feed_exp or 0;
 	
+	--p.consumeMoney = p.consumeMoney + lCardLeveInfo.feed_money or 0 + tonumber(pCardInfo.Level or 1)*tonumber(pCardInfo.Level or 1);	
+	
+	--p.addExp = p.addExp + lCardInfo.feedbase_exp or 0 + lCardLeveInfo.feed_exp or 0;
+
+	local feed_money = 0;
+	if lCardLeveInfo.feed_money ~= nil then
+		feed_money = tonumber(lCardLeveInfo.feed_money);
+	end
+
+	p.consumeMoney = p.consumeMoney + feed_money;
+	
+	local feedbase_exp = 0;
+	if lCardInfo.feedbase_exp ~= nil then
+		feedbase_exp = tonumber(lCardInfo.feedbase_exp);
+	end
+	
+	local feed_exp = 0;
+	if lCardLeveInfo.feed_exp ~= nil then
+		feed_exp = tonumber(lCardLeveInfo.feed_exp);
+	end
+	
+	p.addExp = p.addExp + feedbase_exp + feed_exp;	
+	--WriteCon("addExp="..tostring(p.addExp));
 end;
 
 function p.InitAllCardInfo()
