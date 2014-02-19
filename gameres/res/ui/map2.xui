@@ -17,7 +17,7 @@ NormalFileUV=0 0 720 1136
 [CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
-Rect=475 802 145 50
+Rect=414 802 206 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -26,7 +26,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD2]
 Type=1
 Tag=10
-Rect=40 720 145 50
+Rect=40 720 181 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -35,7 +35,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD3]
 Type=1
 Tag=11
-Rect=463 521 145 50
+Rect=407 521 201 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -44,7 +44,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD4]
 Type=1
 Tag=12
-Rect=464 239 145 50
+Rect=425 254 205 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -53,7 +53,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD5]
 Type=1
 Tag=14
-Rect=228 462 145 49
+Rect=207 462 196 49
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -62,7 +62,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD6]
 Type=1
 Tag=17
-Rect=28 356 145 50
+Rect=-7 391 245 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -71,7 +71,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD7]
 Type=1
 Tag=28
-Rect=182 91 145 50
+Rect=153 101 224 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -80,7 +80,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER1]
 Type=4
 Tag=18
-Rect=483 809 123 34
+Rect=422 809 188 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -93,7 +93,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER2]
 Type=4
 Tag=19
-Rect=50 727 123 34
+Rect=45 727 172 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -106,7 +106,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER3]
 Type=4
 Tag=20
-Rect=472 528 123 34
+Rect=413 528 191 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -119,7 +119,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER4]
 Type=4
 Tag=21
-Rect=474 246 123 34
+Rect=431 261 192 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -132,7 +132,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER5]
 Type=4
 Tag=22
-Rect=236 469 123 34
+Rect=215 469 186 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -145,7 +145,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER6]
 Type=4
 Tag=24
-Rect=37 363 123 34
+Rect=2 399 233 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -158,7 +158,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER7]
 Type=4
 Tag=27
-Rect=194 97 123 34
+Rect=158 109 214 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -237,7 +237,7 @@ NormalFileUV=0 0 122 60
 [CTRL_BUTTON_CHAPTER1]
 Type=2
 Tag=8
-Rect=428 714 212 175
+Rect=354 645 277 219
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -249,7 +249,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER2]
 Type=2
 Tag=2
-Rect=-11 578 244 311
+Rect=16 585 310 266
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -261,7 +261,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER3]
 Type=2
 Tag=3
-Rect=430 422 208 245
+Rect=409 367 227 245
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -273,7 +273,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER4]
 Type=2
 Tag=4
-Rect=418 122 222 267
+Rect=410 87 226 267
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -285,7 +285,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER5]
 Type=2
 Tag=5
-Rect=208 308 208 251
+Rect=196 263 210 294
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -297,7 +297,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER6]
 Type=2
 Tag=6
-Rect=5 259 200 256
+Rect=-5 253 200 272
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -309,7 +309,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER7]
 Type=2
 Tag=26
-Rect=165 11 208 245
+Rect=153 4 254 244
 AnchorPos=0 0
 Notes=
 TextSize=10

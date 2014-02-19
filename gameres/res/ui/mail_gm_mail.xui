@@ -1,7 +1,20 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
+
+[CTRL_9SLICES_TITLE]
+Type=22
+Tag=29
+Rect=33 286 589 36
+AnchorPos=0 0
+Notes=
+Remark=gm回复底背景，显示状态：提交问题
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
 
 [CTRL_PICTURE_21]
 Type=1
@@ -44,7 +57,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE_LABEL]
 Type=4
 Tag=289
-Rect=25 291 107 33
+Rect=25 288 107 33
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -58,7 +71,7 @@ UIClsoeType=0
 [CTRL_INPUT_TEXT_TITLE]
 Type=18
 Tag=290
-Rect=136 291 479 32
+Rect=136 288 479 32
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -98,12 +111,13 @@ UIClsoeType=0
 [CTRL_TEXT_TIP]
 Type=4
 Tag=294
-Rect=20 634 615 125
+Rect=13 634 615 125
 AnchorPos=0 0
 Notes=
 Text=我们会尽快回复您提交的问题
 TextTradition=我們會盡快回復您提交的問題
 TextSize=15
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -112,7 +126,7 @@ UIClsoeType=0
 [CTRL_BUTTON_ASK]
 Type=2
 Tag=296
-Rect=5 228 149 60
+Rect=5 224 149 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -129,7 +143,7 @@ SelectedFileUV=0 0 149 60
 [CTRL_BUTTON_ANSWER]
 Type=2
 Tag=35
-Rect=158 228 149 60
+Rect=158 224 149 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -138,15 +152,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card\button_4_select.png
+NormalFile=.\res\image\ui\card\button_4.png
 NormalFileUV=0 0 149 60
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
+SelectFile=.\res\image\ui\card\button_4_select.png
+SelectedFileUV=0 0 149 60
 
 [CTRL_BUTTON_SEND]
 Type=2
 Tag=36
-Rect=220 764 200 81
+Rect=259 732 122 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -162,7 +176,7 @@ SelectedFileUV=0 0 149 60
 [CTRL_PICTURE_SEND]
 Type=1
 Tag=128
-Rect=289 787 102 28
+Rect=269 748 102 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -195,7 +209,7 @@ UIClsoeType=0
 [CTRL_BUTTON_PAGE_PRE]
 Type=2
 Tag=104
-Rect=200 454 60 48
+Rect=200 458 60 48
 AnchorPos=0 0
 Notes=
 Text=<<
@@ -214,7 +228,7 @@ SelectedFileUV=0 0 110 54
 [CTRL_BUTTON_PAGE_NEXT]
 Type=2
 Tag=105
-Rect=380 454 60 48
+Rect=380 458 60 48
 AnchorPos=0 0
 Notes=
 Text=>>
@@ -301,7 +315,7 @@ UIClsoeType=0
 [CTRL_9SLICES_USERBG]
 Type=22
 Tag=27
-Rect=63 770 536 84
+Rect=52 770 536 84
 AnchorPos=0 0
 Notes=
 Remark=玩家回复底背景，显示状态：提交问题
@@ -354,7 +368,7 @@ UIClsoeType=0
 [CTRL_TEXT_USER_CONTENT]
 Type=4
 Tag=114
-Rect=69 775 524 77
+Rect=57 775 524 77
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -375,19 +389,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_9SLICES_TITLE]
-Type=22
-Tag=29
-Rect=115 331 499 61
-AnchorPos=0 0
-Notes=
-Remark=gm回复底背景，显示状态：提交问题
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
-
 [CTRL_PICTURE_154]
 Type=1
 Tag=154
@@ -402,7 +403,7 @@ NormalFileUV=0 0 66 38
 [CTRL_PICTURE_129]
 Type=1
 Tag=129
-Rect=28 244 102 28
+Rect=28 240 102 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -413,7 +414,7 @@ NormalFileUV=0 0 102 28
 [CTRL_PICTURE_130]
 Type=1
 Tag=130
-Rect=181 244 102 28
+Rect=181 240 102 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
