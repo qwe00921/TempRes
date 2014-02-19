@@ -279,7 +279,7 @@ function p.ShowCardList(cardList,msg)
 	if #cardList <= 0 then
 		return;
 	end
-	card_rein.SetUserMoney(msg.money);
+--	card_rein.SetUserMoney(msg.money);
 	card_rein.setCardListInfo(cardList);
 	
 	local list = GetListBoxVert(p.layer ,ui.ID_CTRL_VERTICAL_LIST_VIEW);

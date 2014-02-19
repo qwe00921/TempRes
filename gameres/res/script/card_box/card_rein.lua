@@ -7,7 +7,7 @@ p.cardListInfo = nil;
 p.selectNum = 0;
 p.consumeMoney = 0;
 p.selectCardId = {};
-p.userMoney = 0;
+--p.userMoney = 0;
 p.addExp = 0;
 p.nowExp = 0;
 p.maskLayer = nil;
@@ -67,8 +67,10 @@ function p.setCardListInfo(cardListInfo)
 	p.cardListInfo = cardListInfo;
 end;	
 
-function p.SetUserMoney(userMoney)
-	p.userMoney	 = userMoney;
+
+function p.UpdateUserMoney()
+	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+	moneyLab:SetText(tostring(msg_cache.msg_player.Money));
 end;	
 
 
@@ -105,6 +107,10 @@ function p.InitUI(card_info)
 	p.baseCardInfo = p.copyTab(card_info);  --表的COPY
 	p.InitAllCardInfo(); --初始化所有卡牌
 	p.ShowCardCost();
+	
+	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
+	moneyLab:SetText(tostring(msg_cache.msg_player.Money));
+	
 	local dontimg = GetImage(p.layer, ui.ID_CTRL_PICTURE_186);
 	local txtlab = GetLabel(p.layer, ui.ID_CTRL_TEXT_416);
 	if card_info == nil then --挡板的设置
@@ -216,9 +222,9 @@ function p.ShowCardCost()
 	cardMoney:SetText(tostring(p.consumeMoney)); 
 	
 	local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
-	moneyLab:SetText(tostring(p.userMoney));	
+	moneyLab:SetText(tostring(msg_cache.msg_player.Money));	
 	
-	if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
+	if tonumber(msg_cache.msg_player.Money) < tonumber(p.consumeMoney) then
 		--local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_31);
 		moneyLab:SetFontColor(ccc4(255,0,0,255));
     else	
@@ -347,7 +353,7 @@ function p.CloseUI()
         p.layer = nil;	
 		p.baseCardInfo = nil;
 		p.cardListInfo = nil;
-		p.userMoney = 0;
+		--p.userMoney = 0;
 		p.selectCardId = nil;
 		p.consumeMoney = 0;
 		p.selectNum = 0;
@@ -420,7 +426,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 			card_intensify2.ShowUI(p.baseCardInfo);
 			p.HideUI();
 		elseif(ui.ID_CTRL_BUTTON_START == tag) then --强化
-			if tonumber(p.userMoney) < tonumber(p.consumeMoney) then
+			if tonumber(msg_cache.msg_player.Money) < tonumber(p.consumeMoney) then
 				dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_money"),p.OnMsgCallback,p.layer);
 			else
 				local param = "";

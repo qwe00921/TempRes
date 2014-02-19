@@ -193,7 +193,7 @@ end
 --返回数据显示 Lab框
 function p.ShowCardList(cardList,msg)
 
-	card_rein.SetUserMoney(msg.money);
+--	card_rein.SetUserMoney(msg.money);
 	--card_rein.setCardListInfo(cardList);	
 	if p.layer == nil then
 		return;
