@@ -6,34 +6,37 @@ Height=960
 [CTRL_PICTURE_16]
 Type=1
 Tag=16
-Rect=104 166 253 63
+Rect=171 117 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title2.png
-NormalFileUV=0 0 640 160
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
 
 [CTRL_BUTTON_SEND]
 Type=2
 Tag=158
-Rect=204 741 232 84
+Rect=259 730 122 60
 AnchorPos=0 0
 Notes=
 Text=发送
 TextTradition=發送
 TextSize=20
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_blue.png
-NormalFileUV=0 0 232 84
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_9SLICES_17]
 Type=22
 Tag=17
-Rect=146 242 464 43
+Rect=146 221 464 43
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -45,7 +48,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=0 165 100 64
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -53,15 +56,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
-SelectFile=.\res\image\ui\public\close_click.png
-SelectedFileUV=0 0 100 98
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_9SLICES_18]
 Type=22
 Tag=18
-Rect=145 294 464 43
+Rect=145 273 464 43
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -73,7 +76,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_LABEL_RECIEVER]
 Type=4
 Tag=209
-Rect=30 236 88 50
+Rect=30 215 88 50
 AnchorPos=0 0
 Notes=
 Text=收件人:
@@ -88,7 +91,7 @@ UIClsoeType=0
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=31 295 89 43
+Rect=31 274 89 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -103,7 +106,7 @@ UIClsoeType=0
 [CTRL_INPUT_TEXT_RECIEVER]
 Type=18
 Tag=270
-Rect=146 241 466 44
+Rect=146 220 466 44
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -115,7 +118,7 @@ UIClsoeType=0
 [CTRL_INPUT_TEXT_TITLE]
 Type=18
 Tag=271
-Rect=144 297 472 41
+Rect=144 276 472 41
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -127,7 +130,7 @@ UIClsoeType=0
 [CTRL_BUTTON_FRIENDS]
 Type=2
 Tag=95
-Rect=567 251 30 26
+Rect=567 230 30 26
 AnchorPos=0 0
 Notes=
 Text=V
@@ -143,7 +146,7 @@ NormalFileUV=0 0 30 26
 [CTRL_9SLICES_19]
 Type=22
 Tag=19
-Rect=32 346 576 388
+Rect=32 325 576 388
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -155,7 +158,7 @@ NormalFileUV=0 0 50 50
 [CTRL_INPUT_CONTENT]
 Type=18
 Tag=296
-Rect=44 357 553 361
+Rect=44 336 553 361
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -167,25 +170,10 @@ UIClsoeType=0
 [CTRL_PICTURE_32]
 Type=1
 Tag=32
-Rect=116 174 89 51
+Rect=287 160 66 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\mail\writemail.png
 NormalFileUV=0 0 66 38
-
-[CTRL_TEXT_43]
-Type=4
-Tag=43
-Rect=10 176 79 40
-AnchorPos=0 0
-Notes=
-Text=返回
-TextTradition=返回
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0

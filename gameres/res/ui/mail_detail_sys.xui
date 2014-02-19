@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -6,23 +6,24 @@ Height=960
 [CTRL_BUTTON_DEL]
 Type=2
 Tag=158
-Rect=372 745 232 84
+Rect=411 720 149 60
 AnchorPos=0 0
 Notes=
 Text=删除邮件
 TextTradition=刪除郵件
 TextSize=20
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_red.png
-NormalFileUV=0 0 232 84
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
 
 [CTRL_9SLICES_32]
 Type=22
 Tag=32
-Rect=163 249 438 48
+Rect=163 224 438 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -34,7 +35,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=0 160 100 66
+Rect=5 140 120 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -42,13 +43,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
+NormalFile=.\res\image\ui\card_bag\btn_cancel_1.png
+NormalFileUV=0 0 122 60
 
 [CTRL_9SLICES_33]
 Type=22
 Tag=33
-Rect=173 304 430 48
+Rect=173 279 430 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -60,7 +61,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_36]
 Type=22
 Tag=36
-Rect=157 353 451 48
+Rect=157 328 451 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -72,7 +73,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_209]
 Type=4
 Tag=209
-Rect=37 249 88 50
+Rect=37 224 88 50
 AnchorPos=0 0
 Notes=
 Text=发件人:
@@ -87,7 +88,7 @@ UIClsoeType=0
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=40 358 89 43
+Rect=40 333 89 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -102,7 +103,7 @@ UIClsoeType=0
 [CTRL_9SLICES_37]
 Type=22
 Tag=37
-Rect=40 409 565 224
+Rect=40 384 565 224
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -114,23 +115,24 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GAIN]
 Type=2
 Tag=454
-Rect=42 745 232 84
+Rect=81 720 149 60
 AnchorPos=0 0
 Notes=
 Text=领取奖励
 TextTradition=領取獎勵
 TextSize=20
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_blue.png
-NormalFileUV=0 0 232 84
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
 
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=167 251 436 48
+Rect=167 226 436 48
 AnchorPos=0 0
 Notes=
 Text=系统消息
@@ -145,7 +147,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=156 355 445 48
+Rect=156 330 445 48
 AnchorPos=0 0
 Notes=
 Text=服务器维护补偿礼包
@@ -160,7 +162,7 @@ UIClsoeType=0
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=40 304 104 50
+Rect=40 279 104 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
@@ -175,7 +177,7 @@ UIClsoeType=0
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=179 304 427 48
+Rect=179 279 427 48
 AnchorPos=0 0
 Notes=
 Text=2014-05-21 19:33:33
@@ -190,7 +192,7 @@ UIClsoeType=0
 [CTRL_TEXT_CONTENT]
 Type=4
 Tag=460
-Rect=44 413 559 217
+Rect=44 388 559 217
 AnchorPos=0 0
 Notes=
 Text=亲爱的玩家,由于昨天服务器
@@ -205,7 +207,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM_1]
 Type=1
 Tag=461
-Rect=49 642 80 80
+Rect=49 617 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -214,7 +216,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM_5]
 Type=1
 Tag=462
-Rect=428 642 80 80
+Rect=428 617 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -223,7 +225,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM_4]
 Type=1
 Tag=463
-Rect=335 642 80 80
+Rect=335 617 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -232,7 +234,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM_3]
 Type=1
 Tag=464
-Rect=237 642 80 80
+Rect=237 617 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -241,7 +243,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM_2]
 Type=1
 Tag=465
-Rect=142 642 80 80
+Rect=142 617 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -250,7 +252,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM_6]
 Type=1
 Tag=466
-Rect=526 642 80 80
+Rect=526 617 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -419,13 +421,13 @@ UIClsoeType=0
 [CTRL_PICTURE_31]
 Type=1
 Tag=31
-Rect=102 158 277 69
+Rect=171 119 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title2.png
-NormalFileUV=0 0 640 160
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
 
 [CTRL_TEXT_164_DELETE]
 Type=4
@@ -445,7 +447,7 @@ UIClsoeType=0
 [CTRL_PICTURE_BG_1]
 Type=1
 Tag=38
-Rect=48 641 82 82
+Rect=48 616 82 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -456,7 +458,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_BG_2]
 Type=1
 Tag=39
-Rect=141 641 82 82
+Rect=141 616 82 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -467,7 +469,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_BG_3]
 Type=1
 Tag=40
-Rect=236 641 82 82
+Rect=236 616 82 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -478,7 +480,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_BG_4]
 Type=1
 Tag=41
-Rect=334 642 82 82
+Rect=334 617 82 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -489,7 +491,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_BG_5]
 Type=1
 Tag=42
-Rect=427 641 82 82
+Rect=427 616 82 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -500,7 +502,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_BG_6]
 Type=1
 Tag=43
-Rect=525 641 82 82
+Rect=525 616 82 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -511,25 +513,10 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_104]
 Type=1
 Tag=104
-Rect=110 169 86 54
+Rect=277 157 86 54
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
-
-[CTRL_TEXT_78]
-Type=4
-Tag=78
-Rect=12 174 76 39
-AnchorPos=0 0
-Notes=
-Text=返回
-TextTradition=返回
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
