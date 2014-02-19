@@ -222,6 +222,8 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		card_rein.EffectMoveEnd();
 	elseif cmdtype == "card_rein_effect_end" then
 		card_rein.HideSelectCard( id, num);
+	elseif cmdtype == "w_battle_passby" then
+		w_battle_pass_bg.CmdLuaCallBack( id, num );
 	else
 		--
 	end

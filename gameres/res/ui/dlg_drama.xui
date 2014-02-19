@@ -117,30 +117,27 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame12.png
 NormalFileUV=0 0 100 100
 
+[CTRL_9SLICES_15]
+Type=22
+Tag=15
+Rect=21 561 598 383
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\13.png
+NormalFileUV=0 0 117 115
+
 [CTRL_COLOR_LABEL_TEXT]
 Type=7
 Tag=6
-Rect=26 565 588 374
+Rect=26 566 588 374
 AnchorPos=0 0
 Notes=
 TextSize=0
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_NPC_NAME]
-Type=4
-Tag=5
-Rect=29 494 546 51
-AnchorPos=0 0
-Notes=
-Text=说话者
-TextTradition=說話者
-TextSize=24
-TextColor=0xfffbf0
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
@@ -158,3 +155,29 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\drama\next.png
 NormalFileUV=0 0 30 26
+
+[CTRL_PICTURE_14]
+Type=1
+Tag=14
+Rect=2 480 325 56
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_bag\27.png
+NormalFileUV=0 0 121 34
+
+[CTRL_TEXT_NPC_NAME]
+Type=4
+Tag=5
+Rect=29 481 271 51
+AnchorPos=0 0
+Notes=
+Text=说话者一二三四五六七
+TextTradition=說話者一二三四五六七
+TextSize=24
+TextColor=0xfffbf0
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

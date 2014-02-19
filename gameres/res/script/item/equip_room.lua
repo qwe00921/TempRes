@@ -281,11 +281,14 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:SetLuaDelegate(p.OnItemClickEvent);
 	bt:RemoveAllChildren(true);
 	bt:SetVisible(true);
-	bt:SetId(tonumber(equip.id));
+	bt:SetId(tonumber(dataListIndex));
 	
 	
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(equip.equip_id)); --从表中获取卡牌详细信息	
-
+	--是否已装备
+	if tonumber(equip.Is_dress) == 1 then
+		drsV:SetVisible(true);
+	end
 	--装备名称
 	local str = pEquipInfo.name;
 	equipName:SetText(str or "");
@@ -357,6 +360,7 @@ function p.PasreCardDetail(itemInfo)
 	--item.cardId 	= cardInfo.CardID;
 	--item.cardUid 	= ;
   --item.cardName	= "xxx"
+	item.cardId		= itemInfo.owner_card_id;
 	item.itemId 	= itemInfo.equip_id;
 	item.itemUid	= itemInfo.id;
 	item.itemType	= itemInfo.equip_type;
@@ -369,6 +373,7 @@ function p.PasreCardDetail(itemInfo)
 	item.exType1 	= itemInfo.attribute_type2;
 	item.exValue1 	= itemInfo.attribute_value2;
 	item.isDress	= itemInfo.Is_dress
+    
 	--item.exType2 	= itemInfo.attribute_type2;
 	--item.exValue2 	= itemInfo.attribute_value2;
 	--item.exType3	= nil --itemInfo.Extra_type3;
@@ -383,7 +388,10 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		p.sortBtnMark = MARK_OFF;
 		equip_bag_sort.CloseUI();
 	end
-	local equipOne = p.newEquip[uiNode:GetId()];
+	
+	local lId = uiNode:GetId();
+	local lEquipLst = p.newEquip;
+	local equipOne = lEquipLst[tonumber(lId)];
 	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.onReinCallback,p.HideUI);
 end
 

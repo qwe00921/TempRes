@@ -4,9 +4,11 @@
 --------------------------------------------------------------
 ui_dlg_drama = {};
 local p =  ui_dlg_drama;
-p.ID_CTRL_BUTTON_CLICK				    = 9;
 p.ID_CTRL_TEXT_NPC_NAME				   = 5;
+p.ID_CTRL_PICTURE_14					     = 14;
+p.ID_CTRL_BUTTON_CLICK				    = 9;
 p.ID_CTRL_COLOR_LABEL_TEXT			 = 6;
+p.ID_CTRL_9SLICES_15					     = 15;
 p.ID_CTRL_9SLICES_19					     = 19;
 p.ID_CTRL_9SLICES_18					     = 18;
 p.ID_CTRL_9SLICES_12					     = 13;

@@ -268,7 +268,7 @@ DisableFileUV=0 0 122 60
 [CTRL_TEXT_28]
 Type=4
 Tag=30
-Rect=148 437 229 31
+Rect=148 450 229 31
 AnchorPos=0 0
 Notes=
 Text=距下一等级还需经验
@@ -283,7 +283,7 @@ UIClsoeType=0
 [CTRL_TEXT_LEVELUPNEED]
 Type=4
 Tag=31
-Rect=388 439 79 27
+Rect=388 452 79 27
 AnchorPos=0 0
 Notes=
 Text=99999

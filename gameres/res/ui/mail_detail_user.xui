@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -6,20 +6,21 @@ Height=960
 [CTRL_BUTTON_REPLY]
 Type=2
 Tag=158
-Rect=61 761 232 84
+Rect=110 755 149 60
 AnchorPos=0 0
 Notes=
 Text=回复邮件
 TextTradition=回復郵件
 TextSize=20
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_blue.png
-NormalFileUV=0 0 232 84
-SelectFile=.\res\image\ui\public\button_blue_click.png
-SelectedFileUV=0 0 232 84
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
+SelectFile=.\res\image\ui\card\button_4_select.png
+SelectedFileUV=0 0 149 60
 
 [CTRL_9SLICES_18]
 Type=22
@@ -48,7 +49,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_GO_BACK]
 Type=2
 Tag=159
-Rect=-1 146 100 60
+Rect=5 140 122 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -56,8 +57,8 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\button_public.png
-NormalFileUV=0 0 100 80
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
 SelectFile=.\res\image\ui\public\close_click.png
 SelectedFileUV=0 0 100 98
 
@@ -118,18 +119,21 @@ UIClsoeType=0
 [CTRL_BUTTON_DEL]
 Type=2
 Tag=454
-Rect=356 764 232 84
+Rect=382 755 149 60
 AnchorPos=0 0
 Notes=
 Text=删除邮件
 TextTradition=刪除郵件
 TextSize=20
+TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_red.png
-NormalFileUV=0 0 232 84
+NormalFile=.\res\image\ui\card\button_4.png
+NormalFileUV=0 0 149 60
+SelectFile=.\res\image\ui\card\button_4_select.png
+SelectedFileUV=0 0 149 60
 
 [CTRL_TEXT_NAME]
 Type=4
@@ -209,13 +213,13 @@ UIClsoeType=0
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=104 145 177 62
+Rect=148 117 299 91
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\quest_title.png
-NormalFileUV=0 0 192 68
+NormalFile=.\res\image\ui\quest\4.png
+NormalFileUV=0 0 299 91
 
 [CTRL_TEXT_164_DELETE]
 Type=4
@@ -254,25 +258,10 @@ UIClsoeType=0
 [CTRL_PICTURE_124]
 Type=1
 Tag=124
-Rect=109 150 86 54
+Rect=254 155 86 54
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
-
-[CTRL_TEXT_149]
-Type=4
-Tag=149
-Rect=19 159 62 32
-AnchorPos=0 0
-Notes=
-Text=返回
-TextTradition=返回
-TextSize=25
-TextColor=0xfefd92
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0

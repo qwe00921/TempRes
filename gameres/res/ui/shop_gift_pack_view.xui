@@ -15,19 +15,30 @@ UIClsoeType=0
 [CTRL_9SLICES_39]
 Type=22
 Tag=39
-Rect=6 0 628 150
+Rect=5 0 628 150
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\frame_buy.png
+NormalFile=.\res\image\ui\shop\frame03.png
 NormalFileUV=0 0 587 176
+
+[CTRL_PICTURE_34]
+Type=1
+Tag=34
+Rect=151 11 448 131
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\bg_text2.png
+NormalFileUV=0 0 403 133
 
 [CTRL_TEXT_NAME_L]
 Type=4
 Tag=4
-Rect=159 29 209 30
+Rect=159 15 209 30
 AnchorPos=0 0
 Notes=
 Text=小型体力药剂
@@ -42,7 +53,7 @@ UIClsoeType=0
 [CTRL_TEXT_LIMIT_L]
 Type=4
 Tag=5
-Rect=407 30 183 29
+Rect=407 16 183 29
 AnchorPos=0 0
 Notes=
 Text=15级以上可以购买
@@ -57,7 +68,7 @@ UIClsoeType=0
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
 Tag=8
-Rect=159 59 324 40
+Rect=159 50 324 52
 AnchorPos=0 0
 Notes=
 Text=礼包说明礼包说明礼包说明礼包说明礼包说明礼包说明
@@ -75,19 +86,17 @@ Tag=9
 Rect=495 72 93 47
 AnchorPos=0 0
 Notes=
-Text=购买
-TextTradition=購買
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\btn_buy.png
+NormalFile=.\res\image\ui\shop\btn_buy1.png
 NormalFileUV=0 0 93 47
-SelectFile=.\res\image\ui\shop\btn_buy.png
+SelectFile=.\res\image\ui\shop\btn_buy_select.png
 SelectedFileUV=0 0 93 47
-DisableFile=.\res\image\ui\shop\btn_buy.png
+DisableFile=.\res\image\ui\shop\btn_buy_un.png
 DisableFileUV=0 0 93 47
 
 [CTRL_PICTURE_11]
@@ -104,7 +113,7 @@ NormalFileUV=0 0 98 99
 [CTRL_TEXT_14]
 Type=4
 Tag=14
-Rect=323 100 55 26
+Rect=323 107 55 26
 AnchorPos=0 0
 Notes=
 Text=原价
@@ -119,29 +128,29 @@ UIClsoeType=0
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
-Rect=262 100 30 30
+Rect=262 107 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\gem1.png
-NormalFileUV=0 0 32 32
+NormalFileUV=0 0 150 150
 
 [CTRL_PICTURE_16]
 Type=1
 Tag=16
-Rect=425 100 30 30
+Rect=425 107 30 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\gem1.png
-NormalFileUV=0 0 32 32
+NormalFileUV=0 0 150 150
 
 [CTRL_TEXT_17]
 Type=4
 Tag=17
-Rect=159 100 54 27
+Rect=159 107 54 27
 AnchorPos=0 0
 Notes=
 Text=现价
@@ -193,7 +202,7 @@ UIClsoeType=0
 [CTRL_TEXT_REBATE_PRICE_L]
 Type=4
 Tag=7
-Rect=202 101 57 25
+Rect=202 108 57 25
 AnchorPos=0 0
 Notes=
 Text=20000
@@ -208,7 +217,7 @@ UIClsoeType=0
 [CTRL_TEXT_PRICE_L]
 Type=4
 Tag=6
-Rect=365 101 57 25
+Rect=365 108 57 25
 AnchorPos=0 0
 Notes=
 Text=50000
@@ -223,7 +232,7 @@ UIClsoeType=0
 [CTRL_PICTURE_18]
 Type=1
 Tag=18
-Rect=316 112 147 2
+Rect=316 119 147 2
 AnchorPos=0 0
 Notes=
 UIOpenType=0

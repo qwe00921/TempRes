@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -32,8 +32,19 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\bnt_title.png
+NormalFile=.\res\image\ui\shop\frame03.png
 NormalFileUV=0 0 587 176
+
+[CTRL_PICTURE_52]
+Type=1
+Tag=52
+Rect=153 22 446 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\bg_text.png
+NormalFileUV=0 0 403 53
 
 [CTRL_BUTTON_ONE]
 Type=2
@@ -108,7 +119,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\gem1.png
-NormalFileUV=0 0 32 32
+NormalFileUV=0 0 150 150
 
 [CTRL_PICTURE_13]
 Type=1
@@ -119,7 +130,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\gem1.png
-NormalFileUV=0 0 32 32
+NormalFileUV=0 0 150 150
 
 [CTRL_TEXT_EMONEY_ONCE]
 Type=4

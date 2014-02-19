@@ -4,7 +4,6 @@
 --------------------------------------------------------------
 ui_mail_detail_sys = {};
 local p =  ui_mail_detail_sys;
-p.ID_CTRL_TEXT_78						       = 78;
 p.ID_CTRL_PICTURE_104					    = 104;
 p.ID_CTRL_PICTURE_BG_6				    = 43;
 p.ID_CTRL_PICTURE_BG_5				    = 42;

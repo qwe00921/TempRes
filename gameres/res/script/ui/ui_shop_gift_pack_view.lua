@@ -19,5 +19,6 @@ p.ID_CTRL_BUTTON_BUY_L				    = 9;
 p.ID_CTRL_TEXT_DESCRIPTION_L			= 8;
 p.ID_CTRL_TEXT_LIMIT_L				    = 5;
 p.ID_CTRL_TEXT_NAME_L					    = 4;
+p.ID_CTRL_PICTURE_34					     = 34;
 p.ID_CTRL_9SLICES_39					     = 39;
 p.ID_CTRL_PICTURE_BG					     = 1;

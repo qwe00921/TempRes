@@ -98,7 +98,7 @@ function p.InitController()
 	p.numText = GetLabel( p.layer, ui.ID_CTRL_TEXT_16 );
 	p.materialList = GetListBoxVert( p.layer, ui.ID_CTRL_VERTICAL_LIST_VIEW );
 	
-	local ctrller = GetImage( p.layer, ui.ID_CTRL_PICTURE_112 );	
+	local ctrller = Get9SlicesImage( p.layer, ui.ID_CTRL_PICTURE_112 );	
 	p.itemCtrllers[BGIMAGE_INDEX] = ctrller;
 	--ctrller:SetZOrder(9999);
 

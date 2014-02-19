@@ -1,0 +1,52 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 0 640 958
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 473 640 490
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_8]
+Type=1
+Tag=8
+Rect=250 323 139 54
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\tuto_arrow_down.png
+NormalFileUV=0 0 250 90
+
+[CTRL_TEXT_1]
+Type=4
+Tag=9
+Rect=269 328 100 21
+AnchorPos=0 0
+Notes=
+Text=敌人体力值
+TextTradition=敵人體力值
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

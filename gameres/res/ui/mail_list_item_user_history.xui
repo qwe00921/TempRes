@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=960
 Height=640
@@ -9,6 +9,8 @@ Tag=298
 Rect=0 0 585 132
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_TITLE]
 Type=4
@@ -20,6 +22,8 @@ TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_TIME]
 Type=4
@@ -31,6 +35,8 @@ TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_TEXT_CONTENT]
 Type=4
@@ -42,6 +48,8 @@ TextSize=15
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
+UIOpenType=0
+UIClsoeType=0
 
 [CTRL_PICTURE_NOTELINE]
 Type=1
@@ -49,5 +57,7 @@ Tag=5
 Rect=0 121 565 5
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
 NormalFile=.\res\image\ui\mail\note_line.png
 NormalFileUV=0 0 567 4
