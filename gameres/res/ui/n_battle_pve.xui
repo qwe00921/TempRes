@@ -15,7 +15,7 @@ UIClsoeType=0
 [CTRL_PICTURE_BG]
 Type=1
 Tag=294
-Rect=1 -350 640 1010
+Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
 UIOpenType=0
