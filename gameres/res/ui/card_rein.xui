@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -435,7 +435,7 @@ UIClsoeType=0
 [CTRL_TEXT_HP1]
 Type=4
 Tag=234
-Rect=281 255 54 27
+Rect=281 254 54 27
 AnchorPos=0 0
 Notes=
 Text=生命
@@ -450,7 +450,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK1]
 Type=4
 Tag=235
-Rect=281 290 54 27
+Rect=281 289 54 27
 AnchorPos=0 0
 Notes=
 Text=攻击
@@ -521,7 +521,7 @@ NormalFileUV=0 0 105 14
 [CTRL_TEXT_HP]
 Type=4
 Tag=242
-Rect=337 255 69 27
+Rect=337 254 69 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -547,7 +547,7 @@ UIClsoeType=0
 [CTRL_TEXT_ATTACK]
 Type=4
 Tag=244
-Rect=337 290 69 27
+Rect=337 289 69 27
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -1123,12 +1123,13 @@ UIClsoeType=0
 [CTRL_TEXT_416]
 Type=4
 Tag=416
-Rect=61 267 139 50
+Rect=26 225 208 58
 AnchorPos=0 0
 Notes=
-Text=请选择强化卡牌
-TextTradition=請選擇強化卡牌
-TextSize=20
+Text=点击选择强化卡牌
+TextTradition=點擊選擇強化卡牌
+TextSize=24
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -1348,8 +1349,8 @@ Tag=74
 Rect=519 224 74 19
 AnchorPos=0 0
 Notes=
-Text=999/999
-TextTradition=999/999
+Text=0/0
+TextTradition=0/0
 TextSize=16
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
@@ -1360,7 +1361,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=0 204 638 165
+Rect=-7 208 638 165
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -1372,7 +1373,7 @@ UIClsoeType=0
 [CTRL_PICTURE_105]
 Type=1
 Tag=104
-Rect=255 152 131 41
+Rect=255 160 131 41
 AnchorPos=0 0
 Notes=
 UIOpenType=0
