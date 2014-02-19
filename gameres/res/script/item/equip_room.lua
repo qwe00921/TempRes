@@ -281,7 +281,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:SetLuaDelegate(p.OnItemClickEvent);
 	bt:RemoveAllChildren(true);
 	bt:SetVisible(true);
-	bt:SetId(tonumber(equip.id));
+	bt:SetId(tonumber(dataListIndex));
 	
 	
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(equip.equip_id)); --从表中获取卡牌详细信息	
@@ -385,7 +385,8 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 	end
 	
 	local lId = uiNode:GetId();
-	local equipOne = p.newEquip[lId];
+	local lEquipLst = p.newEquip;
+	local equipOne = lEquipLst[tonumber(lId)];
 	dlg_card_equip_detail.ShouUI4EquipRoom(p.PasreCardDetail(equipOne),p.onReinCallback,p.HideUI);
 end
 
