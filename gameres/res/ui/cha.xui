@@ -52,7 +52,7 @@ NormalFileUV=0 0 272 49
 [CTRL_PICTURE_TEAM_NUM]
 Type=1
 Tag=24
-Rect=260 36 120 47
+Rect=509 32 120 47
 AnchorPos=0 0
 Notes=
 UIOpenType=0
