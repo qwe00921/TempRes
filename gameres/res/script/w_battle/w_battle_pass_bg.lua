@@ -53,13 +53,27 @@ function p.ShowAnimation()
 		return;
 	end
 	
-	p.layer:SetFramePosXY(740, 0);
+	local pos = p.layer:GetFramePos();
+	local size = p.layer:GetFrameSize();
+	p.layer:SetFramePosXY(740*GetUIScale(), pos.y);
 	p.layer:SetVisible( true );
+
+	local batch = battle_show.GetNewBatch();
+	local seq = batch:AddSerialSequence();
+	local cmd = createCommandEffect():AddActionEffect( 0, p.layer, "ui.w_battle_pass_bg_show" );
+	seq:AddCommand( cmd );
 	
-	p.layer:AddActionEffect( "ui.w_battle_pass_bg_show" );
+	local env = cmd:GetVarEnv();
+	env:SetFloat( "$1", -740*GetUIScale() );
+	
+	local batch1 = battle_show.GetNewBatch();
+	local seq1 = batch1:AddSerialSequence();
+	local cmdLua = createCommandLua():SetCmd( "w_battle_passby", 1, 1, "" );
+	seq1:AddCommand( cmdLua );
+	seq1:SetWaitEnd( cmd );
 
 	--显示过场进度
-	SetTimerOnce( p.ShowProcess, 0.8 );
+	--SetTimerOnce( p.ShowProcess, 0.8 );
 end
 
 function p.ShowProcess()
@@ -72,12 +86,33 @@ function p.HideAnimation()
 		return;
 	end
 	
-	p.layer:SetFramePosXY( 0, 0 );
-
+	local pos = p.layer:GetFramePos();
+	p.layer:SetFramePosXY( 0, pos.y );
 	p.layer:SetVisible( true );
-	p.layer:AddActionEffect( "ui.w_battle_pass_bg_hide" );
+	
+	local batch = battle_show.GetNewBatch();
+	local seq = batch:AddSerialSequence();
+	local cmd = createCommandEffect():AddActionEffect( 0, p.layer, "ui.w_battle_pass_bg_hide" );
+	seq:AddCommand( cmd );
+	
+	local env = cmd:GetVarEnv();
+	env:SetFloat( "$1", 740*GetUIScale() );
+	
+	local batch1 = battle_show.GetNewBatch();
+	local seq1 = batch1:AddSerialSequence();
+	local cmdLua = createCommandLua():SetCmd( "w_battle_passby", 1, 2, "" );
+	seq1:AddCommand( cmdLua );
+	seq1:SetWaitEnd( cmd );
 
-	SetTimerOnce( p.PassOver, 0.7 );
+	--SetTimerOnce( p.PassOver, 0.7 );
+end
+
+function p.CmdLuaCallBack( id, num )
+	if num == 1 then
+		p.ShowProcess();
+	else
+		p.PassOver();
+	end
 end
 
 function p.PassOver()
