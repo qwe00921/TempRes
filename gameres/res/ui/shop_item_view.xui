@@ -21,8 +21,19 @@ Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\frame_buy.png
+NormalFile=.\res\image\ui\shop\frame03.png
 NormalFileUV=0 0 587 176
+
+[CTRL_PICTURE_16]
+Type=1
+Tag=16
+Rect=151 22 449 114
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\bg_text2.png
+NormalFileUV=0 0 403 133
 
 [CTRL_TEXT_DESCRIPTION_L]
 Type=4
@@ -60,19 +71,17 @@ Tag=10
 Rect=495 72 93 47
 AnchorPos=0 0
 Notes=
-Text=购买
-TextTradition=購買
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\shop\btn_buy.png
+NormalFile=.\res\image\ui\shop\btn_buy1.png
 NormalFileUV=0 0 93 47
-SelectFile=.\res\image\ui\shop\btn_buy.png
+SelectFile=.\res\image\ui\shop\btn_buy_select.png
 SelectedFileUV=0 0 93 47
-DisableFile=.\res\image\ui\shop\btn_buy.png
+DisableFile=.\res\image\ui\shop\btn_buy_un.png
 DisableFileUV=0 0 93 47
 
 [CTRL_TEXT_LIMIT_L]
@@ -155,7 +164,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\gem1.png
-NormalFileUV=0 0 32 32
+NormalFileUV=0 0 150 150
 
 [CTRL_PICTURE_27]
 Type=1
@@ -201,4 +210,4 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\gem1.png
-NormalFileUV=0 0 32 32
+NormalFileUV=0 0 150 150
