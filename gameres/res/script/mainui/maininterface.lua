@@ -349,6 +349,7 @@ function p.ShowBattleArray( user_team, pos )
 					nature:SetPicture( attrpic );
 				else
 					btn:SetVisible( false );
+					image:SetPicture( nil );
 					nature:SetVisible( false );
 				end
 			end
