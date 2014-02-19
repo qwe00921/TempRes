@@ -6,19 +6,19 @@ Height=960
 [CTRL_9SLICES_1]
 Type=22
 Tag=1
-Rect=0 184 640 445
+Rect=13 257 614 445
 AnchorPos=0 0
 Notes=
 Stretch=1
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame14.png
-NormalFileUV=0 0 100 100
+NormalFile=.\res\image\ui\public\frame13.png
+NormalFileUV=0 0 300 300
 
 [CTRL_TEXT_2]
 Type=4
 Tag=2
-Rect=150 208 339 40
+Rect=151 276 339 40
 AnchorPos=0 0
 Notes=
 Text=礼包内容预览
@@ -33,7 +33,7 @@ UIClsoeType=0
 [CTRL_BUTTON_OK]
 Type=2
 Tag=3
-Rect=256 558 110 54
+Rect=265 636 110 54
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -49,7 +49,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_PICTURE_5]
 Type=1
 Tag=5
-Rect=64 273 80 80
+Rect=50 348 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -58,7 +58,7 @@ UIClsoeType=0
 [CTRL_PICTURE_6]
 Type=1
 Tag=6
-Rect=355 273 80 80
+Rect=341 348 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -67,7 +67,7 @@ UIClsoeType=0
 [CTRL_PICTURE_7]
 Type=1
 Tag=7
-Rect=64 366 80 80
+Rect=50 441 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -76,7 +76,7 @@ UIClsoeType=0
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=355 366 80 80
+Rect=341 441 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -85,7 +85,7 @@ UIClsoeType=0
 [CTRL_PICTURE_9]
 Type=1
 Tag=9
-Rect=64 458 80 80
+Rect=50 533 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -94,7 +94,7 @@ UIClsoeType=0
 [CTRL_PICTURE_10]
 Type=1
 Tag=10
-Rect=355 458 80 80
+Rect=341 533 80 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -103,7 +103,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME1]
 Type=4
 Tag=11
-Rect=155 278 160 30
+Rect=141 353 160 30
 AnchorPos=0 0
 Notes=
 Text=我是道具名称
@@ -118,7 +118,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME2]
 Type=4
 Tag=16
-Rect=445 278 160 30
+Rect=431 353 160 30
 AnchorPos=0 0
 Notes=
 Text=我是道具名称
@@ -133,7 +133,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME3]
 Type=4
 Tag=17
-Rect=155 373 160 30
+Rect=141 448 160 30
 AnchorPos=0 0
 Notes=
 Text=我是道具名称
@@ -148,7 +148,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME4]
 Type=4
 Tag=18
-Rect=443 372 160 30
+Rect=429 447 160 30
 AnchorPos=0 0
 Notes=
 Text=我是道具名称
@@ -163,7 +163,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME5]
 Type=4
 Tag=19
-Rect=155 463 160 30
+Rect=141 538 160 30
 AnchorPos=0 0
 Notes=
 Text=我是道具名称
@@ -178,7 +178,7 @@ UIClsoeType=0
 [CTRL_TEXT_NAME6]
 Type=4
 Tag=20
-Rect=445 463 160 30
+Rect=431 538 160 30
 AnchorPos=0 0
 Notes=
 Text=我是道具名称
@@ -193,7 +193,7 @@ UIClsoeType=0
 [CTRL_TEXT_21]
 Type=4
 Tag=21
-Rect=155 318 60 30
+Rect=141 393 60 30
 AnchorPos=0 0
 Notes=
 Text=数量:
@@ -208,7 +208,7 @@ UIClsoeType=0
 [CTRL_TEXT_22]
 Type=4
 Tag=22
-Rect=445 318 60 30
+Rect=431 393 60 30
 AnchorPos=0 0
 Notes=
 Text=数量:
@@ -223,7 +223,7 @@ UIClsoeType=0
 [CTRL_TEXT_23]
 Type=4
 Tag=23
-Rect=155 413 60 30
+Rect=141 488 60 30
 AnchorPos=0 0
 Notes=
 Text=数量:
@@ -238,7 +238,7 @@ UIClsoeType=0
 [CTRL_TEXT_24]
 Type=4
 Tag=24
-Rect=445 413 60 30
+Rect=431 488 60 30
 AnchorPos=0 0
 Notes=
 Text=数量:
@@ -253,7 +253,7 @@ UIClsoeType=0
 [CTRL_TEXT_25]
 Type=4
 Tag=25
-Rect=155 503 60 30
+Rect=141 578 60 30
 AnchorPos=0 0
 Notes=
 Text=数量:
@@ -268,7 +268,7 @@ UIClsoeType=0
 [CTRL_TEXT_26]
 Type=4
 Tag=26
-Rect=445 503 60 30
+Rect=431 578 60 30
 AnchorPos=0 0
 Notes=
 Text=数量:
@@ -283,7 +283,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM1]
 Type=4
 Tag=27
-Rect=210 318 50 30
+Rect=196 393 50 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -296,7 +296,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM2]
 Type=4
 Tag=28
-Rect=500 318 50 30
+Rect=486 393 50 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -309,7 +309,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM3]
 Type=4
 Tag=29
-Rect=210 413 50 30
+Rect=196 488 50 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -322,7 +322,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM4]
 Type=4
 Tag=30
-Rect=500 413 50 30
+Rect=486 488 50 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -335,7 +335,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM5]
 Type=4
 Tag=31
-Rect=210 503 50 30
+Rect=196 578 50 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -348,7 +348,7 @@ UIClsoeType=0
 [CTRL_TEXT_NUM6]
 Type=4
 Tag=32
-Rect=500 503 50 30
+Rect=486 578 50 30
 AnchorPos=0 0
 Notes=
 TextSize=20

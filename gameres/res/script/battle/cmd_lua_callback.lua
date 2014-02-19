@@ -81,6 +81,11 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(num);
 		if lstateMachine ~= nil then
 			lstateMachine:atk_guidstep3_3();
+		end;		
+	elseif cmdtype == "tar_guidstep3_8" and E_DEMO_VER == 5 then
+		local lstateMachine = w_battle_machinemgr.getTarStateMachine(str,num);
+		if lstateMachine ~= nil then
+			lstateMachine:tar_guidstep3_8();
 		end;			
 	elseif cmdtype == "tar_hurt" and E_DEMO_VER == 5 then
 		local lstateMachine = w_battle_machinemgr.getTarStateMachine(str,num);
@@ -117,7 +122,9 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		if lstateMachine ~= nil then
 			lstateMachine:buff_ReviveEnd();
 		end;			
-		
+	
+	elseif cmdtype == "intoSceneEnd" then
+		w_battle_mgr.SetMonsterIntoScene(id);
 	elseif cmdtype == "fighter_addHp" then
         fighter:SetLifeAdd( num );	
 	elseif cmdtype == "fighter_strike_damage" then

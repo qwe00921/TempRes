@@ -62,9 +62,9 @@ p.platform = 1;
 p.platformScale = 1;
 p.isClose = false;
 
-p.IsGuid = false;  --战斗引导
-p.step = nil;
-p.substep = nil;
+--p.IsGuid = false;  --战斗引导
+--p.guidstep = nil;
+--p.substep = nil;
 p.NeedQuit = false;
 p.playerNodeLst = {};  --动画节点
 p.ballTimerID = nil; --球飞入超时的判断
@@ -128,7 +128,11 @@ function p.starFighter()
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
 	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
-	
+	--怪物进场动画结束后,调用intoSceneEnd
+	--p.IntoSceneEnd();
+end;
+
+function p.IntoSceneEnd()
 	p.InitLockAction();	
 	--按活着的怪物,给个目标
     p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
@@ -145,68 +149,21 @@ function p.starFighter()
 	WriteConWarning("p.buffTimerID= "..tostring(p.buffTimerID));	
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 	
-	if p.IsGuid == true then
-		if p.step == 3 and p.substep == 5 then
-			if w_battle_db_mgr.step == 2 then
-				rookie_mask.ShowUI(p.step,p.substep + 1)
-			end
+	if w_battle_guid.IsGuid == true then
+		if (w_battle_guid.guidstep == 3) then
+			if w_battle_guid.substep == 5 then
+				if w_battle_db_mgr.step == 2 then
+					w_battle_guid.nextGuidSubStep();
+				end
+			elseif w_battle_guid.substep == 9 then
+				if w_battle_db_mgr.step == 3 then
+					w_battle_guid.nextGuidSubStep();
+				end
+			end;
 		end
-	end
-end;
---[[
---怪物攻击
-function p.SetPVEMonsterAtk(atkID)
-   WriteCon( "SetPVEMonsterAtk ID:"..tonumber(atkID));
-   if p.battleIsStart ~= true then
-		WriteCon( "Warning! Battle not Start");
-		return false;
-   end;
-
-   local atkFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( atkID ) );
-
-   local targerID = w_battle_mgr.PVEHeroID;
-   if targerID == nil then
-      WriteCon( "Error! SetPVEAtkID targerID is nil");
-	  return false;
-   end; 
-
-   if atkFighter == nil then
-      WriteCon( "Error! SetPVEAtkID atkFighter is nil! id:"..tostring(atkID));
-	  return false;
-   end;
-
-   local targetFighter = w_battle_mgr.heroCamp:FindFighter( tonumber( targerID ) );
-   if targetFighter == nil then
-      WriteCon( "Error! SetPVEAtkID targetFighter is nil! id:"..tostring(targerID));
-	  return false;
-   end;
-
-
-   --点选目标后,先计算伤害
-   local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter);
-   targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
-   
-
-   --默认选择的目标,判定怪物将死
-	if targetFighter.nowlife <= 0 then
-		p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(targerID); --选择下个nowHP > 0活的怪物目标
-	end;
-	
-	
-	--成为目标,未攻击
-	targetFighter:BeTarTimesAdd(atkID);
-
-	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
-	local damageLst = {};
-	damageLst[1] = damage;
-	lStateMachine.turnState = W_BATTLE_TURN;  --行动中
-	lStateMachine:init(atkID,atkFighter,W_BATTLE_ENEMY,targetFighter, W_BATTLE_HERO,damageLst,lIsCrit,lIsJoinAtk);
-	
-	--return true;	
-	
+	end	
 end;
 
-]]--
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVEAtkID(atkID,IsMonster,targetID)
     WriteCon( "SetPVEAtkID:"..tonumber(atkID));
@@ -648,9 +605,9 @@ end;
 
 --我方BUFF阶断
 function p.HeroBuffStarTurn()
-	if (p.IsGuid == true) then
-		if (p.step == 3) and (p.substep == 7) then	
-			rookie_mask.ShowUI(p.step,p.substep + 1)
+	if (w_battle_guid.IsGuid == true) then
+		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 7) then	
+			nextGuidSubStep.nextGuidSubStep();
 		end;
 		return;
     end;	
@@ -891,7 +848,7 @@ end;
 
 --战斗胜利
 function p.FightWin()  
-	if p.IsGuid == false then
+	if w_battle_guid.IsGuid == false then
 		KillTimer(p.buffTimerID);
 		p.heroCamp:ClearFighterBuff();
 		p.InitLockAction();
@@ -900,11 +857,20 @@ function p.FightWin()
 			--w_battle_mgr.enemyCamp:free();
 			w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 		else
-			w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
+			
+			if w_battle_guid.IsGuid == false then
+				w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
+			else
+				if w_battle_guid.guidstep == 3 then
+					if w_battle_guid.substep == 13 then
+						w_battle_guid.nextGuidSubStep();
+					end
+				end
+			end;
 		end
 	else
-		if (p.step == 3) and (p.substep == 4) then
-			rookie_mask.ShowUI(p.step,p.substep + 1);
+		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 4) then
+			w_battle_guid.nextGuidSubStep();
 		end;
 	end
 	
@@ -946,7 +912,7 @@ function p.MissionQuit()
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
-function p.SetPVETargerID(position)
+function p.SetPVETargerID(position, hideTag)
 	if position > 6 or position < 0 then
 	    WriteCon("SetPVEEnemyID id error! id = "..tostring(targetId));	
 		return ;
@@ -967,7 +933,9 @@ function p.SetPVETargerID(position)
 		p.PVEShowEnemyID = p.PVEEnemyID;
 		--显示怪物血量
 		p.LockEnemy = true;
-		p.SetLockAction(position);	
+		if hideTag ~= true then  --不需要隐藏锁定攻击标志
+			p.SetLockAction(position);	
+		end;
 	end;
 end;	
 
@@ -992,7 +960,7 @@ function p.InitLockFromUI()
 			GetUIRoot():AddChild(lLockPic);
 			lLockPic:SetTag(ltag);
 			lLockPic:SetZOrder(99);
-			
+			lLockPic:SetVisible(false);
 			p.LoakPic[#p.LoakPic + 1] = lLockPic; 
 		else
 			lLockPic = GetImage(GetUIRoot(), ltag);	    
@@ -1181,6 +1149,7 @@ function p.IsBattleEnd()
 end
 
 function p.clearDate()
+	
 	p.heroCamp = nil;
     p.enemyCamp = nil;          
     p.uiLayer = nil;           
@@ -1193,7 +1162,7 @@ function p.clearDate()
 	p.battleIsStart = false;
 	p.playerNodeLst = {};
 	
-	p.InitLockAction();
+	--p.InitLockAction();	
 	p.LoakPic = {};
     --w_battle_show.DestroyAll();
 end
@@ -1362,6 +1331,15 @@ function p.reward(targerFighter)
 			tmpList[#tmpList + 1] = {v.dropType, 1, targerFighter.Position, v.id};
 		end
 	end;
+	
+	if w_battle_guid.IsGuid == true then
+		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then
+			if (targetFighter.Position == 1) then
+				tmpList[#tmpList + 1] = {E_DROP_HPBALL , 1, targetFighter.Position};
+			end
+		end
+	end;
+	
 	if #tmpList > 0 then
 		w_battle_pve.MonsterDrop(tmpList)	
 	end;
@@ -1393,6 +1371,7 @@ function p.setFighterDie(targerFighter,camp)
 					w_battle_mgr.SetLockAction(w_battle_mgr.PVEEnemyID);
 					--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
 				else  --没有活着的怪物可选
+				   w_battle_mgr.InitLockAction();
 				   w_battle_mgr.isCanSelFighter = false;
 				   w_battle_pve.CancelSel();
 				end
@@ -1402,7 +1381,7 @@ function p.setFighterDie(targerFighter,camp)
 			local lcount = w_battle_mgr.enemyCamp:GetHasHpFighterCount();
 			if lcount == 1 then
 				w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstHasHpFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标,如果都没有就返回此ID
-				w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID);
+				w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID,true);
 			elseif lcount > 1 then						
 				local lFighter = w_battle_mgr.enemyCamp:FindFighter(w_battle_mgr.PVEEnemyID);
 				if lFighter ~= nil then
@@ -1507,114 +1486,6 @@ function p.SetCampZorder()
 	end
 end
 
---第一轮的新手引导,点击完的事件
-function p.fighterGuid(substep)
-	p.IsGuid = true;
-	p.step = 3;
-	p.substep = substep;
-	if substep == 1 then
-		rookie_mask.ShowUI(p.step,p.substep + 1) --开启下一步遮照
-	elseif substep == 2 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 3 then
-		p.SetPVEAtkID(2); --2号位跳到目标的位置 状态机停下再显示遮照 
-	elseif substep == 4 then
-		p.SetPVEAtkID(1);  
-		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(2); 		--让2号位的状态机继续行动(攻击)
-		if lstateMachine ~= nil then
-			lstateMachine:atk_startAtk();
-		end; 
-		--等怪全死后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 5 then
-		--等波次切换后调用
-		--rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 6 then
-		p.SetPVETargerID(6);
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 7 then
-		p.SetPVEAtkID(2);  --等下一轮我方回合时调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 8 then
-			 --等战斗胜利,
-			 --怪物死亡必掉 HP水晶
-		     --调用rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 9 then
-		p.FightWin()
-	    --怪物进场后调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 10 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 11 then
-	   --选择物品
-		w_battle_useitem.UseItem(1);
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 12 then
-		--使用物品
-		p.UseItem(1,2);
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 13 then
-		--等所有战斗结束调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 14 then
-		p.IsGuid = false;
-	end
-	
-end
-
-function p.fighterSecondGuid(substep)
-	p.IsGuid = true;
-	p.step = 3;
-	p.substep = substep;
-	if substep == 1 then
-
-	elseif substep == 2 then
-
-	elseif substep == 3 then
-
-	elseif substep == 4 then
-
-	elseif substep == 5 then
-		--收到战斗发起返回消息后 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 6 then
-		--双方人物进场后 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 7 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 8 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 9 then
-		p.SetPVETargerID(2);
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 10 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 11 then
-		p.SetPVEAtkID(3);
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 12 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 13 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 14 then
-		--战斗胜利并加载下一波敌人后 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 15 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 16 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 17 then
-	    --攻击敌人后 SP球必掉, 需飞向指定目标
-		--rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 18 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 19 then
-		rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 20 then
-		p.SetPVESkillAtkID(2);
-		--技能发动后 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 21 then
-	    --战斗失败后
-		--rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 22 then
-		p.IsGuid = false;
-	end	
-	
-end
-
 function p.createPlayerNodeLst(uiArray)
 	for i=1,6 do
 		local uiTag = uiArray[i];
@@ -1714,5 +1585,26 @@ function p.ballTime(nTimerId)
 		end;
 		p.ballTimerID = nil;
 		WriteConWarning("p.ballTimerID = nil");
+	end
+end
+
+function p.SetMonsterIntoScene(pos)  --设置怪物进场
+	local lFighter = p.enemyCamp:FindFighter(pos);
+	lFighter.isIntoScene = true;
+	
+	p.checkAllIntoSceneEnd();
+end;
+
+function p.checkAllIntoSceneEnd()  --所有人物进场结束,只判断怪物的就行了
+	if p.enemyCamp:CheckAllIntoScene() == true then
+		--if w_battle_guid.IsGuid == false then
+			p.IntoSceneEnd()
+		--else
+		--	if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 9) then
+		--		w_battle_guid.nextGuidSubStep();
+		--	else
+		--		p.IntoSceneEnd();
+		--	end
+		--end;
 	end
 end
