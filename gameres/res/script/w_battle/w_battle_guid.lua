@@ -51,9 +51,12 @@ function p.fighterGuid(substep)
 		w_battle_mgr.UseItem(1,2);
 		p.nextGuidSubStep();
 	elseif substep == 13 then
-		--等所有战斗结束调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+		p.nextGuidSubStep();		
+		--等战斗任务结束调用 进行下一步引导
 	elseif substep == 14 then
+		--引导结束后任务战斗结束
 		p.IsGuid = false;
+		w_battle_pve.MissionOver(w_battle_mgr.MissionWin);  --任务结束,任务奖励界面
 	end
 	
 end

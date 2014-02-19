@@ -122,7 +122,9 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		if lstateMachine ~= nil then
 			lstateMachine:buff_ReviveEnd();
 		end;			
-		
+	
+	elseif cmdtype == "intoSceneEnd" then
+		w_battle_mgr.SetMonsterIntoScene(id);
 	elseif cmdtype == "fighter_addHp" then
         fighter:SetLifeAdd( num );	
 	elseif cmdtype == "fighter_strike_damage" then

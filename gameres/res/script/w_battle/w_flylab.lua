@@ -46,7 +46,7 @@ function p:CreateImageNode()
 		self.imageNode = createNDUIImage();
 		self.imageNode:Init();
 		self.imageNode:SetFramePosXY(0,0);
-		self.imageNode:SetFrameSize(10,10);
+		--self.imageNode:SetFrameSize(50,50);
 		self.imageNode:SetVisible( false );
 	end
 end
@@ -75,7 +75,7 @@ function p:PlayLab( ltype )
     --self.imageNode:SetScale(1.0f);
     self.imageNode:SetPicture( lPicture );
     self.imageNode:ResizeToFitPicture();
-    self.imageNode:SetScale(0.7f);
+    self.imageNode:SetScale(5.0f);
     
     --²¥·Å¶¯»­
     self.imageNode:SetVisible( true );

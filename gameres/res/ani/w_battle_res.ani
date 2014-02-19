@@ -8,11 +8,11 @@ image\ui\n_battle\battle_meter_current2.png
 image\ui\n_battle\shadow_01.png
 
 ;暴击
-[crite]
-image\ui\n_battle\crite.png
+[crite] 
+image\ui\n_battle\crite.png @cut(1,1) @stay @scale=2.0
 
 ;合击
 [speak]
-image\ui\n_battle\speak.png
+image\ui\n_battle\speak.png @cut(1,1) @stay @scale=2.0
 
 

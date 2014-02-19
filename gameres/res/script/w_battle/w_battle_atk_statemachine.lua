@@ -411,7 +411,7 @@ end
 
 
 function p:atk_guidstep3_3()
-	p.nextGuidSubStep();
+	w_battle_guid.nextGuidSubStep();
 end;
 
 function p:atk_end()

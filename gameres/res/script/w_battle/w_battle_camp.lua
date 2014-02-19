@@ -388,8 +388,10 @@ function p.AddEnemyFightersJumpEffect()
 	--node:AddActionEffect("lancer.fadein0");
 	local cmd = pFighter:JumpToPosition(batch,pNewPos,true);
 	
-	--local cmdSceneEnd = createCommandLua():SetCmd( "intoSceneEnd", pFighter.pos, 0, "");
-	
+	local lSceneSeq = batch:AddSerialSequence();
+	local lcmdSceneEnd = createCommandLua():SetCmd( "intoSceneEnd", pFighter.Position, 0, "");
+	lSceneSeq:AddCommand(lcmdSceneEnd);	
+	lSceneSeq:SetWaitEnd(cmd);
 	
 	g_EnemyIndex = g_EnemyIndex + 1;
 end

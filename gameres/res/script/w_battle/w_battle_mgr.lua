@@ -129,7 +129,7 @@ function p.starFighter()
 	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	--怪物进场动画结束后,调用intoSceneEnd
-	p.IntoSceneEnd();
+	--p.IntoSceneEnd();
 end;
 
 function p.IntoSceneEnd()
@@ -150,10 +150,16 @@ function p.IntoSceneEnd()
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 	
 	if w_battle_guid.IsGuid == true then
-		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 5) then
-			if w_battle_db_mgr.step == 2 then
-				p.nextGuidSubStep();
-			end
+		if (w_battle_guid.guidstep == 3) then
+			if w_battle_guid.substep == 5 then
+				if w_battle_db_mgr.step == 2 then
+					w_battle_guid.nextGuidSubStep();
+				end
+			elseif w_battle_guid.substep == 9 then
+				if w_battle_db_mgr.step == 3 then
+					w_battle_guid.nextGuidSubStep();
+				end
+			end;
 		end
 	end	
 end;
@@ -601,7 +607,7 @@ end;
 function p.HeroBuffStarTurn()
 	if (w_battle_guid.IsGuid == true) then
 		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 7) then	
-			p.nextGuidSubStep();
+			nextGuidSubStep.nextGuidSubStep();
 		end;
 		return;
     end;	
@@ -851,11 +857,20 @@ function p.FightWin()
 			--w_battle_mgr.enemyCamp:free();
 			w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 		else
-			w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
+			
+			if w_battle_guid.IsGuid == false then
+				w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
+			else
+				if w_battle_guid.guidstep == 3 then
+					if w_battle_guid.substep == 13 then
+						w_battle_guid.nextGuidSubStep();
+					end
+				end
+			end;
 		end
 	else
 		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 4) then
-			p.nextGuidSubStep();
+			w_battle_guid.nextGuidSubStep();
 		end;
 	end
 	
@@ -897,7 +912,7 @@ function p.MissionQuit()
 end;
 
 --战斗界面选择怪物目标,选择后怪物就被锁定
-function p.SetPVETargerID(position)
+function p.SetPVETargerID(position, hideTag)
 	if position > 6 or position < 0 then
 	    WriteCon("SetPVEEnemyID id error! id = "..tostring(targetId));	
 		return ;
@@ -918,7 +933,9 @@ function p.SetPVETargerID(position)
 		p.PVEShowEnemyID = p.PVEEnemyID;
 		--显示怪物血量
 		p.LockEnemy = true;
-		p.SetLockAction(position);	
+		if hideTag ~= true then  --不需要隐藏锁定攻击标志
+			p.SetLockAction(position);	
+		end;
 	end;
 end;	
 
@@ -943,7 +960,7 @@ function p.InitLockFromUI()
 			GetUIRoot():AddChild(lLockPic);
 			lLockPic:SetTag(ltag);
 			lLockPic:SetZOrder(99);
-			
+			lLockPic:SetVisible(false);
 			p.LoakPic[#p.LoakPic + 1] = lLockPic; 
 		else
 			lLockPic = GetImage(GetUIRoot(), ltag);	    
@@ -1354,6 +1371,7 @@ function p.setFighterDie(targerFighter,camp)
 					w_battle_mgr.SetLockAction(w_battle_mgr.PVEEnemyID);
 					--p.LockEnemy = false  --只要选过怪物一直都是属于锁定的
 				else  --没有活着的怪物可选
+				   w_battle_mgr.InitLockAction();
 				   w_battle_mgr.isCanSelFighter = false;
 				   w_battle_pve.CancelSel();
 				end
@@ -1363,7 +1381,7 @@ function p.setFighterDie(targerFighter,camp)
 			local lcount = w_battle_mgr.enemyCamp:GetHasHpFighterCount();
 			if lcount == 1 then
 				w_battle_mgr.PVEEnemyID = w_battle_mgr.enemyCamp:GetFirstHasHpFighterID(targerFighter:GetId()); --除此ID外的活的怪物目标,如果都没有就返回此ID
-				w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID);
+				w_battle_mgr.SetPVETargerID(w_battle_mgr.PVEEnemyID,true);
 			elseif lcount > 1 then						
 				local lFighter = w_battle_mgr.enemyCamp:FindFighter(w_battle_mgr.PVEEnemyID);
 				if lFighter ~= nil then
@@ -1571,19 +1589,22 @@ function p.ballTime(nTimerId)
 end
 
 function p.SetMonsterIntoScene(pos)  --设置怪物进场
+	local lFighter = p.enemyCamp:FindFighter(pos);
+	lFighter.isIntoScene = true;
 	
+	p.checkAllIntoSceneEnd();
 end;
 
 function p.checkAllIntoSceneEnd()  --所有人物进场结束,只判断怪物的就行了
 	if p.enemyCamp:CheckAllIntoScene() == true then
-		if w_battle_guid.IsGuid == false then
+		--if w_battle_guid.IsGuid == false then
 			p.IntoSceneEnd()
-		else
-			if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 9) then
-				w_battle_guid.nextGuidSubStep();
-			else
-				p.IntoSceneEnd();
-			end
-		end;
+		--else
+		--	if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 9) then
+		--		w_battle_guid.nextGuidSubStep();
+		--	else
+		--		p.IntoSceneEnd();
+		--	end
+		--end;
 	end
 end
