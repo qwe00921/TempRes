@@ -13,7 +13,7 @@ function p.fighterGuid(substep)
 	p.guidstep = 3;
 	p.substep = substep;
 	if substep == 1 then
-		p.nextGuidSubStep(); --开启下一步遮照
+		--p.nextGuidSubStep(); 
 	elseif substep == 2 then
 		p.nextGuidSubStep();
 	elseif substep == 3 then
