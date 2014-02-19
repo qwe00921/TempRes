@@ -19,11 +19,15 @@ p.upNeedHome = nil;
 p.nowPlayMoney = nil;
 p.nowPlaySoul = nil;
 p.nowProduceLevel = nil;
+p.nowPlayLv = nil;
 function p.ShowUI(countryInfo)
 	p.nowPlayMoney = tonumber(msg_cache.msg_player.Money);
 	p.nowPlaySoul = tonumber(msg_cache.msg_player.BlueSoul);
+	p.nowPlayLv = tonumber(msg_cache.msg_player.Level);
+
 	WriteCon("p.nowPlayMoney == "..p.nowPlayMoney);
 	WriteCon("p.nowPlaySoul == "..p.nowPlaySoul);
+	WriteCon("p.nowPlayLv == "..p.nowPlayLv);
 
 	dlg_menu.SetNewUI( p );
 	dlg_userinfo.ShowUI( );
@@ -122,6 +126,8 @@ function p.OnTouchList(uiNode,uiEventType,param)
 end
 
 function p.Init()
+	p.upHead = GetLabel(p.layer, ui.ID_CTRL_TEXT_42);
+	p.upNeedLv = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP5);
 	p.upNeedTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP1);
 	p.upNeedMoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP2);
 	p.upNeedSoul = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP4);
@@ -188,6 +194,9 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		
 		if upIng == 0 then
 			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
+			p.upNeedLv:SetText("需要等级:"..playLvNeed);
+			p.SetTextColour(p.upNeedLv,tonumber(p.nowPlayLv),tonumber(playLvNeed))
+			
 			p.upNeedMoney:SetText("金币:"..moneyNeed);
 			p.SetTextColour(p.upNeedMoney,tonumber(p.nowPlayMoney),tonumber(moneyNeed))
 			
@@ -203,11 +212,15 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 			
 			p.buildLevel:SetText("LV"..nowLevel);
 			p.bulidDescription:SetText(desText);
+			p.upHead:SetText("距离升级还需");
 		elseif upIng == 1 then
 			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
+			p.upNeedLv:SetText("");
 			p.upNeedMoney:SetText(" ");
 			p.upNeedSoul:SetText(" ");
-			p.upNeedHome:SetText("升级中");
+			p.upNeedHome:SetText(" ");
+			p.upHead:SetText("升级中");
+			
 			p.buildLevel:SetText("LV"..nowLevel);
 			p.bulidDescription:SetText(desText);
 		end

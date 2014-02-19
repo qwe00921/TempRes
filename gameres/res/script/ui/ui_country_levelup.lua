@@ -11,6 +11,7 @@ p.ID_CTRL_TEXT_DESCRIPTION			 = 36;
 p.ID_CTRL_TEXT_BUILD_LV				   = 39;
 p.ID_CTRL_PICTURE_MID_POS				 = 17;
 p.ID_CTRL_PICTURE_BUILD				   = 83;
+p.ID_CTRL_TEXT_UP5					       = 21;
 p.ID_CTRL_TEXT_UP4					       = 41;
 p.ID_CTRL_TEXT_UP3					       = 57;
 p.ID_CTRL_TEXT_UP2					       = 35;
