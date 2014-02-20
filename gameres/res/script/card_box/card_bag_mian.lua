@@ -54,7 +54,7 @@ function p.show()
 	layer:SetSwallowTouch(false);
 	p.SetEnableAll(true);
 	
-    GetUIRoot():AddDlg(layer);
+    GetUIRoot():AddChildZ(layer,0);
     LoadDlg("card_main_view.xui", layer, nil);
     p.layer = layer;
     p.SetDelegate(layer);

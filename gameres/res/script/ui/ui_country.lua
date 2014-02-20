@@ -4,7 +4,6 @@
 --------------------------------------------------------------
 ui_country = {};
 local p =  ui_country;
-p.ID_CTRL_BUTTON_RETURN				   = 56;
 p.ID_CTRL_PICTURE_1					      = 53;
 p.ID_CTRL_PICTURE_2					      = 50;
 p.ID_CTRL_PICTURE_3					      = 51;
@@ -53,5 +52,4 @@ p.ID_CTRL_BUTTON_RIVER				    = 10;
 p.ID_CTRL_BUTTON_TREE					    = 9;
 p.ID_CTRL_BUTTON_FIELD				    = 8;
 p.ID_CTRL_BUTTON_MOUNTAIN				 = 2;
-p.ID_CTRL_BUTTON_TEAM					    = 61;
 p.ID_CTRL_PICTURE_51					     = 69;

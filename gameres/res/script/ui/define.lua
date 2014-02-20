@@ -319,6 +319,12 @@ DoFile("ui/ui_learning_4_2.lua");
 DoFile("ui/ui_learning_4_3.lua");
 DoFile("ui/ui_learning_4_4.lua");
 DoFile("ui/ui_learning_4_5.lua");
+DoFile("ui/ui_learning_4_6.lua");
+
+DoFile("ui/ui_learning_6_2.lua");
+DoFile("ui/ui_learning_6_3.lua");
+
+
 
 --测试（以后要删除）
 DoFile("ui/ui_test_fly.lua");
