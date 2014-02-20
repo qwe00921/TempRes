@@ -1165,13 +1165,13 @@ function p.clearDate()
 	p.battleIsStart = false;
 	p.playerNodeLst = {};
 	
-	--[[
-	for pos=1,6 do
-		local lLockPic = p.LoakPic[pos] --GetImage(p.uiLayer, ltag);	    
-		lLockPic:SetVisible(false);
-		lLockPic:RemoveFromParent(true);
-	end
-	]]--
+	if (p.LoakPic ~= nil) and (#p.LoakPic > 0) then
+		for pos=1,6 do
+			local lLockPic = p.LoakPic[pos] --GetImage(p.uiLayer, ltag);	    
+			lLockPic:SetVisible(false);
+			lLockPic:RemoveFromParent(true);
+		end	
+	end;
 	p.LoakPic = {};
     --w_battle_show.DestroyAll();
 end
