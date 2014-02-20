@@ -77,7 +77,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_LEFT]
+[CTRL_BUTTON_LEFT2]
 Type=2
 Tag=11
 Z_Order=99
@@ -92,7 +92,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\mail\left1.png
 NormalFileUV=0 0 40 44
 
-[CTRL_BUTTON_RIGHT]
+[CTRL_BUTTON_RIGHT2]
 Type=2
 Tag=12
 Z_Order=99
@@ -194,3 +194,27 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\team.png
 NormalFileUV=0 0 131 41
+
+[CTRL_BUTTON_LEFT]
+Type=2
+Tag=19
+Rect=81 763 107 46
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_RIGHT]
+Type=2
+Tag=20
+Rect=449 762 105 48
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
