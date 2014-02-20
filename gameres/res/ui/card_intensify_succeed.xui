@@ -298,7 +298,7 @@ UIClsoeType=0
 [CTRL_9SLICES_32]
 Type=22
 Tag=33
-Rect=117 487 406 20
+Rect=117 487 406 21
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -310,7 +310,7 @@ NormalFileUV=0 0 105 14
 [CTRL_BUTTON_INTENSIFY]
 Type=2
 Tag=24
-Rect=259 730 122 60
+Rect=259 728 122 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -393,3 +393,14 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\arrow.png
 NormalFileUV=0 0 71 44
+
+[CTRL_PICTURE_30]
+Type=1
+Tag=34
+Rect=119 503 402 8
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\underline.png
+NormalFileUV=0 0 205 7
