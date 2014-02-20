@@ -23,21 +23,10 @@ UIClsoeType=0
 NormalFile=.\res\image\mapbg\1.png
 NormalFileUV=0 0 720 1136
 
-[CTRL_PICTURE_BG1]
-Type=1
-Tag=217
-Rect=0 828 640 132
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\item_frame.png
-NormalFileUV=0 0 640 110
-
 [CTRL_LEFT_SPRITE_1]
 Type=19
 Tag=6
-Rect=127 126 1 1
+Rect=127 126 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -46,7 +35,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_2]
 Type=19
 Tag=5
-Rect=105 220 1 1
+Rect=105 220 70 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -55,7 +44,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_3]
 Type=19
 Tag=2
-Rect=130 315 1 1
+Rect=130 315 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -64,7 +53,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_4]
 Type=19
 Tag=3
-Rect=31 126 1 1
+Rect=31 126 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -73,7 +62,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_5]
 Type=19
 Tag=4
-Rect=11 220 1 1
+Rect=11 220 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -91,7 +80,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_6]
 Type=19
 Tag=16
-Rect=34 315 1 1
+Rect=34 315 71 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
