@@ -43,7 +43,7 @@ NormalFileUV=0 0 122 60
 [CTRL_VERTICAL_LIST_VIEW]
 Type=14
 Tag=31
-Rect=7 265 624 431
+Rect=7 265 624 428
 AnchorPos=0 0
 Notes=
 UIOpenType=0

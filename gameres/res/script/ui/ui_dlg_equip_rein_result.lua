@@ -4,6 +4,9 @@
 --------------------------------------------------------------
 ui_dlg_equip_rein_result = {};
 local p =  ui_dlg_equip_rein_result;
+p.ID_CTRL_PICTURE_26					     = 26;
+p.ID_CTRL_PICTURE_25					     = 25;
+p.ID_CTRL_PICTURE_24					     = 24;
 p.ID_CTRL_TEXT_EFFECT_2				   = 67;
 p.ID_CTRL_TEXT_EXP					       = 66;
 p.ID_CTRL_PICTURE_BLOOD				   = 65;
@@ -27,4 +30,3 @@ p.ID_CTRL_TEXT_LV_PRE					    = 22;
 p.ID_CTRL_TEXT_LV_LABEL				   = 18;
 p.ID_CTRL_TEXT_NAME					      = 17;
 p.ID_CTRL_9SLICES_19					     = 32;
-p.ID_CTRL_9SLICES_18					     = 33;
