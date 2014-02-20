@@ -13,4 +13,4 @@ p.ID_CTRL_TEXT_TIME					      = 331;
 p.ID_CTRL_TEXT_TITLE					     = 330;
 p.ID_CTRL_9SLICES_8					      = 8;
 p.ID_CTRL_CHECK_BUTTON_SEL			 = 301;
-p.ID_CTRL_9SLICES_42					     = 42;
+p.ID_CTRL_PICTURE_BG					     = 42;
