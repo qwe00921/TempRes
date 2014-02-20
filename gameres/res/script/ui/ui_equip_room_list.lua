@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_equip_room_list = {};
 local p =  ui_equip_room_list;
+p.ID_CTRL_PICTURE_46					     = 46;
+p.ID_CTRL_PICTURE_45					     = 45;
+p.ID_CTRL_PICTURE_44					     = 44;
+p.ID_CTRL_PICTURE_43					     = 43;
+p.ID_CTRL_PICTURE_42					     = 42;
 p.ID_CTRL_TEXT_125					       = 125;
 p.ID_CTRL_PICTURE_132					    = 132;
 p.ID_CTRL_TEXT_126					       = 126;

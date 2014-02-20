@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -217,7 +217,7 @@ UIClsoeType=0
 [CTRL_TEXT_DRESSED_1]
 Type=4
 Tag=190
-Rect=97 92 29 23
+Rect=581 221 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -232,7 +232,7 @@ UIClsoeType=0
 [CTRL_TEXT_DRESSED_4]
 Type=4
 Tag=191
-Rect=462 92 29 23
+Rect=581 221 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -247,7 +247,7 @@ UIClsoeType=0
 [CTRL_TEXT_DRESSED_3]
 Type=4
 Tag=192
-Rect=337 92 29 23
+Rect=581 221 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -262,7 +262,7 @@ UIClsoeType=0
 [CTRL_TEXT_DRESSED_2]
 Type=4
 Tag=193
-Rect=217 92 29 23
+Rect=581 221 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -447,7 +447,7 @@ UIClsoeType=0
 [CTRL_TEXT_126]
 Type=4
 Tag=126
-Rect=584 92 29 23
+Rect=581 222 29 23
 AnchorPos=0 0
 Notes=
 Text=E
@@ -482,3 +482,58 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_42]
+Type=1
+Tag=42
+Rect=86 100 40 15
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\equiped.png
+NormalFileUV=0 0 61 23
+
+[CTRL_PICTURE_43]
+Type=1
+Tag=43
+Rect=206 100 40 15
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\equiped.png
+NormalFileUV=0 0 61 23
+
+[CTRL_PICTURE_44]
+Type=1
+Tag=44
+Rect=326 100 40 15
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\equiped.png
+NormalFileUV=0 0 61 23
+
+[CTRL_PICTURE_45]
+Type=1
+Tag=45
+Rect=451 100 40 15
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\equiped.png
+NormalFileUV=0 0 61 23
+
+[CTRL_PICTURE_46]
+Type=1
+Tag=46
+Rect=573 100 40 15
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\equiped.png
+NormalFileUV=0 0 61 23
