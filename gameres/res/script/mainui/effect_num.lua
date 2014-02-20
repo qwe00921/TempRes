@@ -22,9 +22,12 @@ end
 function p:ctor()
     super.ctor(self);
 	
+	self.m_size = CCSizeMake(10,10);
 	self.m_strNumberPath = "effect.num_level";
 	self.m_scale = 1.0f;
+	self.m_fBestScale = 12.0 / 18.0;
 	self.m_strOptPath = nil;
+	self.m_nNumCount = 0;
 end
 
 function p:Init()
@@ -42,6 +45,10 @@ end
 
 function p:SetScale( nScale )
 	self.m_scale = nScale;
+end
+
+function p:SetSize(kSize)
+	self.m_size = kSize;
 end
 
 --…Ë÷√Õº∆¨¬∑æ∂
@@ -74,9 +81,14 @@ function p:GetPicByNum( num )
 	return self.picNum[tostring(num)];
 end
 
+function p:SetHeight(h)
+	self.m_size = CCSizeMake(self.m_fBestScale * h,h);
+end
+
 function p:PushNum( num )
 	local numStr = tostring(num);
 	local len = string.len(numStr);
+	self.m_nNumCount = len;
 	if len > 0 then
 		self.comboPicture:ClearPicture( false );
 		for i = 1, len do
@@ -97,12 +109,16 @@ function p:PlayNum( num )
 	self:AdjustOffset( num );
 	
 	--…Ë÷√Õº∆¨
+	local pCenter = CCPointMake(self.ownerNode:GetFrameSize().w / 2.0,self.ownerNode:GetFrameSize().h / 2.0);
 	self.imageNode:SetScale(self.m_scale);
+	self.imageNode:SetFrameSize(self.m_size.w * self.m_nNumCount,self.m_size.h);
+	self.imageNode:SetCenterPos(pCenter);
 	self.imageNode:SetPicture( self.comboPicture );
-	self.imageNode:ResizeToFitPicture();
+	
+	--self.imageNode:ResizeToFitPicture();
 	
 	--≤•∑≈∂Øª≠
 	self.imageNode:SetVisible( true );
-	self.imageNode:SetFramePosXY( self.offsetX, self.offsetY);
+	--self.imageNode:SetFramePosXY( self.offsetX, self.offsetY);
 end
 

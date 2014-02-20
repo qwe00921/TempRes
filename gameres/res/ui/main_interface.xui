@@ -673,7 +673,7 @@ UIClsoeType=0
 [CTRL_TEXT_76]
 Type=4
 Tag=84
-Rect=477 357 56 24
+Rect=477 357 56 19
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -686,7 +686,7 @@ UIClsoeType=0
 [CTRL_TEXT_77]
 Type=4
 Tag=85
-Rect=457 400 76 24
+Rect=457 400 76 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -699,7 +699,7 @@ UIClsoeType=0
 [CTRL_TEXT_78]
 Type=4
 Tag=86
-Rect=449 443 85 24
+Rect=449 443 85 19
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -712,7 +712,7 @@ UIClsoeType=0
 [CTRL_TEXT_79]
 Type=4
 Tag=87
-Rect=430 486 104 24
+Rect=430 486 104 18
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -725,7 +725,7 @@ UIClsoeType=0
 [CTRL_TEXT_80]
 Type=4
 Tag=88
-Rect=401 529 133 24
+Rect=401 529 133 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -738,7 +738,7 @@ UIClsoeType=0
 [CTRL_TEXT_81]
 Type=4
 Tag=89
-Rect=379 568 155 24
+Rect=379 568 155 21
 AnchorPos=0 0
 Notes=
 TextSize=20

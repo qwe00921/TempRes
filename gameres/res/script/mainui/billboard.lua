@@ -60,7 +60,7 @@ function p.ShowUI()
 		p.layer:SetEnableDragging(false);
         
    end
-   p.LoadMessage();
+	p.LoadMessage();
     p.StartTimer();
 end
 

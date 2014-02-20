@@ -428,12 +428,27 @@ function p.CreateEffectNum( index, node, scale, offestX, offestY, num )
 		node:AddChild( effect:GetNode() );
 	end
 	local rect = node:GetFrameRect();
-	local x = rect.size.w;
-	local len = string.len(tostring(num));
-	scale = scale * GetUIScale();
-	p.effect_num[index]:SetScale( scale );
-	p.effect_num[index]:SetOffset( x+offestX-len*23+(1-scale)/2*len*23 , offestY);
-	p.effect_num[index]:PlayNum( tonumber(num) );
+	local x = rect.size.w / 2;
+	local h = rect.size.h;
+	local len = string.len(num);
+	--scale = scale * GetUIScale();
+	p.effect_num[index]:SetHeight(h);
+
+	local fTemp = 1.0;
+
+	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		fTemp = 1.0;
+	else
+		fTemp = 2.0;
+	end
+
+	local fX = x + (offestX - (len * 23 / 2) * GetUIScale()) * 1.0f;
+	local fY = offestY * 1.0f * GetUIScale();
+	
+	WriteCon(string.format("Offset is %d,%d",fX,fY));
+	
+	p.effect_num[index]:SetOffset(0,0);	
+	p.effect_num[index]:PlayNum( num );
 end
 
 function p.OnClickCard(uiNode, uiEventType, param)
@@ -487,7 +502,7 @@ function p.ShowBillboardWithInit()
 	
 	local rect = bg:GetFrameRect() or {};
 	local pt = rect.origin or {};
-	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y - 222)); 
+	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y - 130)); 
 end
 
 function p.HideBillboard()

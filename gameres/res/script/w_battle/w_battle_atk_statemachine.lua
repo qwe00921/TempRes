@@ -193,9 +193,9 @@ function p:atk_start()
 		
 		--WriteCon(string.format("X:%d,Y:%d",fX,fY));
 		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-			cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
+			--cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
 		--else
-			--cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
+			cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
 	--	end
 		
 		if w_battle_guid.IsGuid == false then  --正常战斗
@@ -523,7 +523,7 @@ function p:atk_end()
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
         --返回原来的位置
 		local cmd5 = nil;
-		cmd5 = JumpMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);	
+		cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);	
 
 		atkFighter:cmdLua( "atk_moveback",  self.id, "", seqAtk ); 
 	else
