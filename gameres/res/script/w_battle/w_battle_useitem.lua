@@ -82,6 +82,14 @@ function p.RefreshUI( )
 				break;
 			end
 		end
+		
+		--物品数为0，直接关闭界面
+		if item.num-useNum <= 0 then
+			p.HideUI();
+			p.CloseUI();
+			w_battle_pve.EndUseItem();
+			return;
+		end
 		itemnum:SetText( tostring( math.max( item.num-useNum , 0)) );
 	end
 	
