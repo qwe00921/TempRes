@@ -232,6 +232,7 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		p.upNeedHome:SetText(" ");
 		p.buildLevel:SetText("LV MAX");
 		upBtn:SetVisible(false);
+		p.upHead:SetText(" ");
 		p.bulidDescription:SetText(desText);
 	end
 end

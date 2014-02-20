@@ -15,6 +15,8 @@ function p.ShowTimeBar(leastTime,maxTime,upbulidTime,uiNode,timeTextNode)
 	p.maxTime = maxTime;
 	p.upbulidTime = upbulidTime;
 	p.TextNode = timeTextNode;
+	local nowTime = os.time();
+	p.overTime = nowTime + upbulidTime;
 		--WriteCon("rewardTable hour"..hour);
 
 	p.timeMoveInit()
@@ -24,7 +26,7 @@ end
 function p.timeMoveInit()
 	
 	local nowTime = os.time();
-	local lastTime = p.upbulidTime - nowTime;
+	local lastTime = p.overTime - nowTime;
 
 	p.node:SetValue( p.leastTime,p.maxTime,lastTime);
 	p.setTimeText(lastTime)
@@ -36,7 +38,7 @@ function p.showMoveTime()
 		--p.ClearData()
 		return
 	end
-	local lastTime = p.upbulidTime - nowTime;
+	local lastTime = p.overTime - nowTime;
 	p.node:SetValue( p.leastTime,p.maxTime,lastTime);
 	if lastTime <= 0 then
 		p.TextNode:SetText("升级完成！");
