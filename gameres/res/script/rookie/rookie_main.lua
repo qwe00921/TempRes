@@ -12,7 +12,7 @@ local MAX_STEP = {
 		0,--1
 		0,--2
 		0,--3
-		0,--4
+		6,--4
 		0,--5
 		0,--6
 		0,--7
@@ -31,11 +31,12 @@ function p.getRookieStep(backData)
 		return;
 	elseif backData.result == true then
 		local stepId = tonumber(backData.user.Guide_id)
+		--stepId = 7;	--测试用
 		p.stepId = stepId;
 		p.userData = backData.user;
-		
-		maininterface.ShowUI(backData.user);
-		if stepId ~= 0 then
+		if stepId == 0 then
+			maininterface.ShowUI(backData.user);
+		else
 			p.ShowLearningStep( stepId, 1 );
 		end
 	end
