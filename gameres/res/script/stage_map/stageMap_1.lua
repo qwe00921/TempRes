@@ -10,7 +10,7 @@ function p.ShowUI()
 	maininterface.ShowUI();
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
-	dlg_menu.HideUI();
+	dlg_menu.ShowUI();
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
