@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_39]
 Type=1
 Tag=39
-Rect=0 0 640 960
+Rect=0 -95 640 959
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
-Rect=374 835 232 48
+Rect=374 780 232 48
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -26,7 +26,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD2]
 Type=1
 Tag=10
-Rect=33 788 206 50
+Rect=33 733 206 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -35,7 +35,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD3]
 Type=1
 Tag=11
-Rect=390 587 183 50
+Rect=390 532 183 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -44,7 +44,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD4]
 Type=1
 Tag=12
-Rect=35 444 216 48
+Rect=35 389 216 48
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -53,7 +53,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD5]
 Type=1
 Tag=14
-Rect=422 318 203 50
+Rect=399 248 203 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -62,7 +62,7 @@ UIClsoeType=0
 [CTRL_PICTURE_HEAD6]
 Type=1
 Tag=17
-Rect=41 192 203 50
+Rect=35 176 203 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -71,7 +71,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER1]
 Type=4
 Tag=18
-Rect=384 842 212 34
+Rect=384 787 212 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -84,7 +84,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER2]
 Type=4
 Tag=19
-Rect=43 795 189 34
+Rect=43 740 189 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -97,7 +97,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER3]
 Type=4
 Tag=20
-Rect=401 594 159 34
+Rect=401 539 159 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -110,7 +110,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER4]
 Type=4
 Tag=21
-Rect=45 451 197 34
+Rect=45 396 197 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -123,7 +123,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER5]
 Type=4
 Tag=22
-Rect=432 326 188 34
+Rect=409 256 188 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -136,7 +136,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER6]
 Type=4
 Tag=24
-Rect=48 200 188 34
+Rect=42 184 188 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -149,23 +149,22 @@ UIClsoeType=0
 [CTRL_BUTTON_RETURN]
 Type=2
 Tag=23
-Rect=10 20 122 60
+Rect=178 8 122 68
 AnchorPos=0 0
 Notes=
-TextSize=10
+Text=待删除
+TextTradition=待刪除
+TextSize=20
+TextColor=0xffff00
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\back.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\quest\back_select.png
-SelectedFileUV=0 0 122 60
 
 [CTRL_BUTTON_NEXT]
 Type=2
 Tag=26
-Rect=343 889 122 60
+Rect=494 4 122 60
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -179,7 +178,7 @@ NormalFileUV=0 0 122 60
 [CTRL_PICTURE_NEXT]
 Type=1
 Tag=49
-Rect=351 893 107 53
+Rect=502 4 107 53
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -190,7 +189,7 @@ NormalFileUV=0 0 122 60
 [CTRL_BUTTON_CHAPTER1]
 Type=2
 Tag=8
-Rect=322 686 316 198
+Rect=322 631 316 198
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -202,7 +201,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER2]
 Type=2
 Tag=2
-Rect=2 562 276 311
+Rect=2 507 276 311
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -214,7 +213,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER3]
 Type=2
 Tag=3
-Rect=318 398 321 262
+Rect=312 325 321 284
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -226,7 +225,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER4]
 Type=2
 Tag=4
-Rect=5 286 281 267
+Rect=5 299 281 199
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -238,7 +237,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER5]
 Type=2
 Tag=5
-Rect=310 98 328 282
+Rect=309 66 328 250
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -250,7 +249,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER6]
 Type=2
 Tag=6
-Rect=4 88 290 189
+Rect=2 71 290 222
 AnchorPos=0 0
 Notes=
 TextSize=10

@@ -165,11 +165,14 @@ SelectedFileUV=0 0 122 60
 [CTRL_TEXT_CRIT]
 Type=4
 Tag=12
-Rect=10 826 454 43
+Rect=290 228 300 31
 AnchorPos=0 0
 Notes=
-TextSize=20
-TextHorAlign=AlignHorCenter
+Text=一二三四五六七八
+TextTradition=一二三四五六七八
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -228,3 +231,18 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\equip.png
 NormalFileUV=0 0 131 41
+
+[CTRL_TEXT_18]
+Type=4
+Tag=25
+Rect=291 200 300 31
+AnchorPos=0 0
+Notes=
+Text=装备屋等级
+TextTradition=裝備屋等級
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
