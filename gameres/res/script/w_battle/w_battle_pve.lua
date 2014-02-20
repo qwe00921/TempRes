@@ -22,12 +22,20 @@ local heroUIArray = {
 };
 
 local targetBtn = {
+--[[
 	ui.ID_CTRL_BUTTON_TARGET1,
 	ui.ID_CTRL_BUTTON_TARGET2,
 	ui.ID_CTRL_BUTTON_TARGET3,
 	ui.ID_CTRL_BUTTON_TARGET4,
 	ui.ID_CTRL_BUTTON_TARGET5,
 	ui.ID_CTRL_BUTTON_TARGET6,
+--]]
+	ui.ID_CTRL_LEFT_SPRITE_1,
+	ui.ID_CTRL_LEFT_SPRITE_2,
+	ui.ID_CTRL_LEFT_SPRITE_3,
+	ui.ID_CTRL_LEFT_SPRITE_4,
+	ui.ID_CTRL_LEFT_SPRITE_5,
+	ui.ID_CTRL_LEFT_SPRITE_6,
 };
 
 local targetSecImg = {
@@ -292,9 +300,9 @@ function p.InitController()
 	end
 	
 	for i = 1,#targetBtn do
-		local btn = GetButton( p.battleLayer, targetBtn[i] );
-		btn:SetId( i );
-		btn:SetLuaDelegate( p.OnBtnClick );
+		local ctrller = GetPlayer( p.battleLayer, targetBtn[i] );
+		ctrller:SetId( i );
+		ctrller:SetLuaDelegate( p.OnSetTargetId );
 	end
 	
 	--菜单
@@ -312,6 +320,14 @@ function p.InitController()
 	--无法使用物品时的遮罩
 	p.itemMask = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_172 );
 	p.itemMask:SetVisible( false );
+end
+
+function p.OnSetTargetId( uiNode, uiEventType, param )
+	--p.CheckSelectTarget( tag ) then
+	
+	WriteCon( "**选择目标，位置为".. tostring( uiNode:GetId() ) .."**" );
+	w_battle_mgr.SetPVETargerID( uiNode:GetId() );
+	--btn:SetEnabled( true );
 end
 
 --可操作卡牌相关信息
@@ -726,10 +742,10 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		elseif p.CheckAtkTarget( tag ) then
 			WriteCon( "**攻击**" );
 			p.SetAtk( btn );
-		elseif p.CheckSelectTarget( tag ) then
-			WriteCon( "**选择目标，位置为".. tostring( uiNode:GetId() ) .."**" );
-			w_battle_mgr.SetPVETargerID( uiNode:GetId() );
-			btn:SetEnabled( true );
+		--elseif p.CheckSelectTarget( tag ) then
+		--	WriteCon( "**选择目标，位置为".. tostring( uiNode:GetId() ) .."**" );
+		--	w_battle_mgr.SetPVETargerID( uiNode:GetId() );
+		--	btn:SetEnabled( true );
 		end
 	elseif IsDragUp( uiEventType ) then
 		WriteCon("IsDragUp");
