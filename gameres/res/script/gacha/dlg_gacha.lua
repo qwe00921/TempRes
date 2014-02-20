@@ -60,6 +60,11 @@ p.bagData = nil;
 
 p.requestFlag = false;
 
+p.gachaImage = nil;
+p.itemImage = nil;
+p.giftImage = nil;
+p.haveImage = nil;
+
 
 function DateStrToTime( dateStr )
 	local indexName ={"year", "month","day","hour","min","sec"};
@@ -216,6 +221,11 @@ function p.SetDelegate()
 	
 	--商城列表
 	p.bagList	= GetListBoxVert( p.layer, ui_dlg_gacha.ID_CTRL_VERTICAL_LIST_BAG);
+	
+	p.gachaImage = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_113 );
+	p.itemImage = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_111 );
+	p.giftImage = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_112 );
+	p.haveImage = GetImage( p.layer, ui_dlg_gacha.ID_CTRL_PICTURE_26 );
 end
 
 function p.OnGiftUIEvent( uiNode, uiEventType, param )
@@ -478,6 +488,11 @@ function p.ShowShopData( shopdata )
 		p.ReqShopItem();
 		return;
 	end
+	
+	p.gachaImage:SetPicture( GetPictureByAni( "common_ui.shop_gacha", 0 ) );
+	p.itemImage:SetPicture( GetPictureByAni( "common_ui.shop_item", 1 ) );
+	p.giftImage:SetPicture( GetPictureByAni( "common_ui.shop_gift", 0 ) );
+	p.haveImage:SetPicture( GetPictureByAni( "common_ui.shop_have", 0 ) );
 
     p.shopItemList:SetVisible( true );
     p.gachaList:SetVisible( false ); 
@@ -531,6 +546,11 @@ function p.ShowGiftPackData( giftdata )
 		p.ReqGitfPack();
 		return;
 	end
+	
+	p.gachaImage:SetPicture( GetPictureByAni( "common_ui.shop_gacha", 0 ) );
+	p.itemImage:SetPicture( GetPictureByAni( "common_ui.shop_item", 0 ) );
+	p.giftImage:SetPicture( GetPictureByAni( "common_ui.shop_gift", 1 ) );
+	p.haveImage:SetPicture( GetPictureByAni( "common_ui.shop_have", 0 ) );
 
 	p.shopPackList:SetVisible( true );
 	p.gachaList:SetVisible( false ); 
@@ -580,6 +600,11 @@ function p.ShowBagData( bagdata )
 		p.ReqBag();
 		return;
 	end
+	
+	p.gachaImage:SetPicture( GetPictureByAni( "common_ui.shop_gacha", 0 ) );
+	p.itemImage:SetPicture( GetPictureByAni( "common_ui.shop_item", 0 ) );
+	p.giftImage:SetPicture( GetPictureByAni( "common_ui.shop_gift", 0 ) );
+	p.haveImage:SetPicture( GetPictureByAni( "common_ui.shop_have", 1 ) );
 	
 	p.itemBtnNode = nil;
 	
@@ -931,6 +956,11 @@ function p.ShowGachaData( gachadata )
 		p.ReqGachaData();
 		return;
 	end
+	
+	p.gachaImage:SetPicture( GetPictureByAni( "common_ui.shop_gacha", 1 ) );
+	p.itemImage:SetPicture( GetPictureByAni( "common_ui.shop_item", 0 ) );
+	p.giftImage:SetPicture( GetPictureByAni( "common_ui.shop_gift", 0 ) );
+	p.haveImage:SetPicture( GetPictureByAni( "common_ui.shop_have", 0 ) );
 	
     p.gachaList:SetVisible( true );
     p.shopItemList:SetVisible( false ); 
