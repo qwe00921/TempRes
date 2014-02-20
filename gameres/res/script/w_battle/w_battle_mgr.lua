@@ -72,6 +72,8 @@ p.ballFlytime = 0;
 p.isPerfect = true;
 p.isbattlequit = false;
 p.LoakPic = {};
+p.battleMoney = 0;
+p.battleSoul = 0;
 
 function p.init()
 	p.platform = GetFlatform();
@@ -123,6 +125,8 @@ function p.starFighter()
 
 	GetBattleShow():EnableTick( true );
 	if w_battle_db_mgr.step == 1 then  --只有第一波才需要进场动画
+		p.battleMoney = 0;
+		p.battleSoul = 0;
 		p.InitLockFromUI();
 		p.createPlayerNodeLst(p.heroUIArray);
 		p.createPlayerNodeLst(p.enemyUIArray);
@@ -889,7 +893,7 @@ end;
 
 function p.MissionLose()
 	p.QuitBattle()
-	p.SendResult(0);	
+	p.SendResult(0, 0, 0);	
 end;
 
 function p.Quit()
@@ -907,7 +911,7 @@ end;
 function p.MissionQuit()
 	p.QuitBattle()
 	p.isbattlequit = true;
-	p.SendResult(3);	
+	p.SendResult(3,0,0);	
 	dlg_menu.ShowUI();
     dlg_userinfo.ShowUI();
 	maininterface.ShowUI()
@@ -1101,17 +1105,47 @@ function p.FindFighter(id)
 	return f;
 end
 
+function p.GetAddMoney()
+	local lval = p.battleMoney;
+	local lTabLst = SelectRowList(T_DROP_REWARD, "mission",  p.missionID);
+	if lTabLst ~= nil then
+		for k,v in ipairs(lTabLst) do
+			if tonumber(v.drop_type) == 3 then
+				lval = lval * tonumber(v.value)
+			end
+		end
+	end;
+	return lval;
+end
+
+function p.GetAddSoul()
+	local lval = p.battleSoul;
+	local lTabLst = SelectRowList(T_DROP_REWARD, "mission",  p.missionID);
+	if lTabLst ~= nil then
+		for k,v in ipairs(lTabLst) do
+			if tonumber(v.drop_type) == 4 then
+				lval = lval * tonumber(v.value)
+			end
+		end
+	end;
+	return lval;
+end
+
 function p.MissionWin()
+	
+	local lmoney = p.GetAddMoney();
+	local lsoul = p.GetAddSoul();
 	p.QuitBattle();
 	if p.isPerfect == true then
-		p.SendResult(2);		
+		p.SendResult(2,lmoney,lsoul);		
 	else
-		p.SendResult(1);
+		p.SendResult(1,lmoney,lsoul);
 	end;
 end;
 
 
-function p.SendResult(result)
+
+function p.SendResult(result,lmoney,lsoul)
 	local uid = GetUID();
 	--uid = 10002;
 	if uid ~= nil and uid > 0 then
@@ -1119,8 +1153,8 @@ function p.SendResult(result)
 		--local param = string.format("&missionID=%d&result=%d&money=0&soul=0", tonumber(missionID), tonumber(result));
 		local param = {missionID = tonumber(p.missionID),
 		               result = tonumber(result),
-		               money  = 0,
-					   soul   = 0,
+		               money  = lmoney,
+					   soul   = lsoul,
 					   post_data = w_battle_db_mgr.GetBattleEndItem()
 					   }
 		local lstr = FormatTableToJson(param);		
@@ -1595,6 +1629,11 @@ function p.ballTime(nTimerId)
 	p.ballFlytime = p.ballFlytime + 0.1
 	if p.ballFlytime > 5 then
 		WriteConErr("pick error! timeout > 5.0s");
+		local ldd = "true";
+		if p.IsPickEnd == false then
+			ldd = "false"
+		end;
+		WriteConErr("hpball num="..tostring(p.HpBallNum).." spball num="..tostring(p.SpBallNum).." IsPickEnd="..ldd);
 		p.ballFlytime = 0;
 		KillTimer(nTimerId);
 		if p.ballTimerID ~= nTimerId then

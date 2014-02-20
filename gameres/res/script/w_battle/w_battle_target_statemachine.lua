@@ -42,7 +42,7 @@ function p:setInHurt(atkFighter)
 	--self.playNode = targerFighter:GetNode()
 	--self.oldPos = self.playNode:GetCenterPos()
 	--WriteCon( " targetTurn start tarid="..tostring(targerFighter:GetId()));
-	targerFighter:HideBuffNode()
+--	targerFighter:HideBuffNode()
 	--已成为目标,未攻击
 	--targerFighter:BeTarTimesDec(atkFighter:GetId()); 
     if (targerFighter.IsHurt == false) then --进入受击标识
@@ -183,7 +183,7 @@ end;
 function p:targerTurnEnd()
 	self.IsTurnEnd = true;
 	local tarFighter = self.tarFighter;	
-	tarFighter:ShowBuffNode();
+--	tarFighter:ShowBuffNode();
 	WriteCon( "targetTurnEnd id="..tostring(tarFighter:GetId()));
 	w_battle_mgr.checkTurnEnd(); --检查是否回合结束结束
 
