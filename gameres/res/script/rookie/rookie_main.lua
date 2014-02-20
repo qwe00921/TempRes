@@ -60,20 +60,8 @@ function p.ShowLearningStep( step, substep )
 		-- local param = "guide="..(rookie_main.stepId);
 		-- SendReq("User","Complete",uid,param);
 	elseif step == 4 then
-		if substep == 1 then
-			dlg_drama.ShowUI( 3,after_drama_data.ROOKIE,0,0)
-		elseif substep == 2 then
-			maininterface.ShowUI(p.userData);
-			country_main.ShowUI();
-			rookie_mask.ShowUI( step, 2 );
-		elseif substep == 3 then
-			--maininterface.ShowUI();
-			--country_main.CloseUI();
-			country_main.ShowBuildUP()
-			rookie_mask.ShowUI( step, 3 );
-		elseif substep == 4 then
-			country_building.upBuild();
-		end
+		maininterface.ShowUI(p.userData);
+
 	elseif step == 5 then
 		maininterface.ShowUI(p.userData);
 	elseif step == 6 then
