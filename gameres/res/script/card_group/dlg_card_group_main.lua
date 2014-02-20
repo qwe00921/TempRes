@@ -295,6 +295,7 @@ function p.SetTeamInfo( view, user_teamData )
 		local atkLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_ATTACK" .. i] );
 		local defLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_DEFENCE" .. i] );
 		local pic = GetPlayer ( view, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );--GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
+		local picStar = GetImage(view, ui_card_group_node["ID_CTRL_PICTURE_STAR".. tostring(i)]);
 		
 		local pPicCardNature = GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_TYPE_"..i] );
 		
@@ -313,7 +314,7 @@ function p.SetTeamInfo( view, user_teamData )
 			speedLabel:SetVisible( true );
 			atkLabel:SetVisible( true );
 			defLabel:SetVisible( true );
-			
+			picStar:SetVisible(true);
 			--cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			--cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			--cardBtn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
@@ -342,6 +343,7 @@ function p.SetTeamInfo( view, user_teamData )
 				else
 					pPicCardNature:SetPicture(nil);
 				end
+				picStar:SetPicture(GetPictureByAni("ui.card_star",data.Rare - 1));
 			end
 			 
 			
@@ -367,6 +369,7 @@ function p.SetTeamInfo( view, user_teamData )
 			speedLabel:SetVisible( false );
 			atkLabel:SetVisible( false );
 			defLabel:SetVisible( false );
+			picStar:SetVisible(false);
 			pic:SetEnableSwapDrag(true);
 			pic:SetLuaDelegate(p.OnDragEvent);
 		end

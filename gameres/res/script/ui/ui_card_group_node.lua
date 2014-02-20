@@ -4,7 +4,7 @@
 --------------------------------------------------------------
 ui_card_group_node = {};
 local p =  ui_card_group_node;
-p.ID_CTRL_PICTURE_131					    = 134;
+p.ID_CTRL_PICTURE_STAR6				   = 134;
 p.ID_CTRL_PICTURE_STAR5				   = 133;
 p.ID_CTRL_PICTURE_STAR4				   = 132;
 p.ID_CTRL_PICTURE_STAR3				   = 131;
