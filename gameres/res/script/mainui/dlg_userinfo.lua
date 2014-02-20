@@ -109,7 +109,7 @@ function p.RefreshUI(userinfo)
 	end
 	
 	local rect = level:GetFrameRect();
-	local x = rect.size.w/2;
+	local x = rect.size.w / 2;
 	local len = string.len(tostring(userinfo.Level));
 	
 	local scale = 0.5 * GetUIScale();
