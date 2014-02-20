@@ -10,7 +10,7 @@ function p.ShowUI()
 	maininterface.ShowUI();
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
-	dlg_menu.HideUI();
+	dlg_menu.ShowUI();
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
 		return;
@@ -119,8 +119,8 @@ function p.openQusetView(uiNode)
 end
 
 function p.SetDelegate(layer)
-	local btnReturn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
-	btnReturn:SetLuaDelegate(p.OnBtnClick);
+	-- local btnReturn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
+	-- btnReturn:SetLuaDelegate(p.OnBtnClick);
 	
 	local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 	btnNext:SetLuaDelegate(p.OnBtnClick);

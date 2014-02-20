@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_card_equip_select_list_item = {};
 local p =  ui_card_equip_select_list_item;
+p.ID_CTRL_PICTURE_41					     = 54;
+p.ID_CTRL_PICTURE_40					     = 53;
+p.ID_CTRL_PICTURE_39					     = 52;
+p.ID_CTRL_PICTURE_38					     = 51;
+p.ID_CTRL_PICTURE_37					     = 43;
 p.ID_CTRL_TEXT_LEVEL_5				    = 41;
 p.ID_CTRL_TEXT_LEVEL_4				    = 185;
 p.ID_CTRL_TEXT_LEVEL_3				    = 184;

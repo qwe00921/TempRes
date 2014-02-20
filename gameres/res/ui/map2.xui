@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_20]
 Type=1
 Tag=25
-Rect=0 0 640 960
+Rect=0 0 639 865
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 720 1136
 [CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
-Rect=414 802 206 50
+Rect=380 738 206 50
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -80,7 +80,7 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER1]
 Type=4
 Tag=18
-Rect=422 809 188 34
+Rect=388 745 188 34
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -168,26 +168,10 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_RETURN]
-Type=2
-Tag=23
-Rect=10 20 121 60
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\back.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\quest\back_select.png
-SelectedFileUV=0 0 122 60
-
 [CTRL_BUTTON_UP]
 Type=2
 Tag=45
-Rect=183 885 122 60
+Rect=18 -1 153 76
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -195,24 +179,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\return_1.png
-NormalFileUV=0 0 122 60
-
-[CTRL_PICTURE_UP]
-Type=1
-Tag=29
-Rect=191 889 107 53
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\map\chapter1.png
+NormalFile=.\res\image\ui\map\left1.png
 NormalFileUV=0 0 122 60
 
 [CTRL_BUTTON_NEXT]
 Type=2
 Tag=46
-Rect=335 885 122 60
+Rect=477 0 153 75
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -220,24 +193,13 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_bag\return_1.png
-NormalFileUV=0 0 122 60
-
-[CTRL_PICTURE_NEXT]
-Type=1
-Tag=30
-Rect=343 889 107 53
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\map\chapter3.png
+NormalFile=.\res\image\ui\map\right1.png
 NormalFileUV=0 0 122 60
 
 [CTRL_BUTTON_CHAPTER1]
 Type=2
 Tag=8
-Rect=354 645 277 219
+Rect=356 616 277 219
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -285,7 +247,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER5]
 Type=2
 Tag=5
-Rect=196 263 210 294
+Rect=198 263 210 294
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -297,7 +259,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER6]
 Type=2
 Tag=6
-Rect=-5 253 200 272
+Rect=-5 265 200 307
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -309,7 +271,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER7]
 Type=2
 Tag=26
-Rect=153 4 254 244
+Rect=132 74 270 189
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -317,3 +279,25 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_UP]
+Type=1
+Tag=29
+Rect=54 26 107 53
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\map\chapter1.png
+NormalFileUV=0 0 122 60
+
+[CTRL_PICTURE_NEXT]
+Type=1
+Tag=30
+Rect=488 26 107 53
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\map\chapter3.png
+NormalFileUV=0 0 122 60

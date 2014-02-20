@@ -262,11 +262,13 @@ function p.getDropItem(dropList, pos, atktype)
 	
 	if lmoneynum > 0 then
 		dropList[#dropList + 1] = {E_DROP_MONEY , lmoneynum, pos};
+		w_battle_mgr.battleMoney = w_battle_mgr.battleMoney + lmoneynum
 	--	WriteCon("Moneynum ="..tostring(lmoneynum));
 	end
 
 	if lbluesoulnum > 0 then
 		dropList[#dropList + 1] = {E_DROP_BLUESOUL , lbluesoulnum, pos};
+		w_battle_mgr.battleSoul = w_battle_mgr.battleSoul + lbluesoulnum;
 	--	WriteCon("bluesoul ="..tostring(lbluesoulnum));
 	end	
 

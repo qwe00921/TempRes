@@ -4,6 +4,11 @@
 --------------------------------------------------------------
 ui_equip_sell_select_list = {};
 local p =  ui_equip_sell_select_list;
+p.ID_CTRL_PICTURE_107					    = 107;
+p.ID_CTRL_PICTURE_106					    = 106;
+p.ID_CTRL_PICTURE_105					    = 105;
+p.ID_CTRL_PICTURE_104					    = 104;
+p.ID_CTRL_PICTURE_103					    = 103;
 p.ID_CTRL_PICTURE_SEL_5				   = 52;
 p.ID_CTRL_PICTURE_SEL_4				   = 51;
 p.ID_CTRL_PICTURE_SEL_3				   = 50;

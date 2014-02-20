@@ -28,6 +28,7 @@ function p.ShowUI()
 	dlg_menu.SetNewUI( p );
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
+	dlg_menu.ShowUI();
 	PlayMusic_Country();
 	if p.layer ~= nil then
 		p.layer:SetVisible( true );
@@ -492,8 +493,8 @@ function p.SetDelegate()
 	uiNodeT.buildBtnT[9] = treeBtn;
 	
 	--返回
-	local returnBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
-	returnBtn:SetLuaDelegate(p.OnBtnClick);
+	-- local returnBtn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
+	-- returnBtn:SetLuaDelegate(p.OnBtnClick);
 end
 
 function p.OnBtnClick(uiNode,uiEventType,param)

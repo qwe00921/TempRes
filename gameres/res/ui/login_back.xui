@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -29,7 +29,7 @@ UIClsoeType=0
 [CTRL_BUTTON_102]
 Type=2
 Tag=102
-Rect=169 851 302 87
+Rect=169 709 300 50
 AnchorPos=0 0
 Notes=
 TextSize=26
@@ -38,6 +38,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\start.png
-NormalFileUV=0 0 302 87
+NormalFileUV=0 0 300 50
 SelectFile=.\res\image\ui_honor\login\Taptostart.png
 SelectedFileUV=0 324 560 81

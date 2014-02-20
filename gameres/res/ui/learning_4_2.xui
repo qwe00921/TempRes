@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=5
-Rect=487 442 141 148
+Rect=486 444 141 148
 AnchorPos=0 0
 Notes=
 TextSize=10

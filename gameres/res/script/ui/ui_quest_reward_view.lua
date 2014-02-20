@@ -4,7 +4,6 @@
 --------------------------------------------------------------
 ui_quest_reward_view = {};
 local p =  ui_quest_reward_view;
-p.ID_CTRL_BUTTON_BG					      = 21;
 p.ID_CTRL_PICTURE_32					     = 34;
 p.ID_CTRL_TEXT_33						       = 41;
 p.ID_CTRL_TEXT_32						       = 37;
@@ -27,3 +26,4 @@ p.ID_CTRL_TEXT_STAR					      = 4;
 p.ID_CTRL_PICTURE_REWARD_TEXT_BG		= 23;
 p.ID_CTRL_PICTURE_106					    = 106;
 p.ID_CTRL_PICTURE_46					     = 46;
+p.ID_CTRL_BUTTON_BG					      = 21;

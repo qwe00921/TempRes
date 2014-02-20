@@ -27,7 +27,7 @@ p.missionId = nil;
 p.stageId = nil;
 p.missionTeamID = nil;
 p.imageList = {};
-
+--p.viewTag = nil;
 
 local ui = ui_card_group;
 
@@ -237,7 +237,7 @@ function p.ShowTeamList()
 	--	end
 	--	return;
 	--end
-	
+			
 	list:ClearView();
 	p.listViewCach = {};
 	for i = 1, #user_teams do
@@ -252,6 +252,7 @@ function p.ShowTeamList()
 		
 		view:SetId( tonumber(user_teams[i].Team_id or "0") );
 		view:SetTag(i);
+		view:SetLuaDelegate(p.onViewScrolled);
 		list:AddView( view );
 		
 	end
@@ -271,7 +272,7 @@ function p.ShowTeamList()
 		teamid = teamid - 1;
 	end
 	list:SetActiveView(teamid);
-
+	p.showBtn(teamid + 1);
 end
 
 --显示单个节点
@@ -294,6 +295,7 @@ function p.SetTeamInfo( view, user_teamData )
 		local atkLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_ATTACK" .. i] );
 		local defLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_DEFENCE" .. i] );
 		local pic = GetPlayer ( view, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );--GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_"..i] );
+		local picStar = GetImage(view, ui_card_group_node["ID_CTRL_PICTURE_STAR".. tostring(i)]);
 		
 		local pPicCardNature = GetImage( view, ui_card_group_node["ID_CTRL_PICTURE_TYPE_"..i] );
 		
@@ -312,7 +314,7 @@ function p.SetTeamInfo( view, user_teamData )
 			speedLabel:SetVisible( true );
 			atkLabel:SetVisible( true );
 			defLabel:SetVisible( true );
-			
+			picStar:SetVisible(true);
 			--cardBtn:SetImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			--cardBtn:SetTouchDownImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
 			--cardBtn:SetDisabledImage( GetPictureByAni( SelectRowInner( T_CHAR_RES, "card_id", user_teamData["Pos_card"..i] , "head_pic" ), 0 ) );
@@ -341,6 +343,7 @@ function p.SetTeamInfo( view, user_teamData )
 				else
 					pPicCardNature:SetPicture(nil);
 				end
+				picStar:SetPicture(GetPictureByAni("ui.card_star",data.Rare - 1));
 			end
 			 
 			
@@ -366,6 +369,7 @@ function p.SetTeamInfo( view, user_teamData )
 			speedLabel:SetVisible( false );
 			atkLabel:SetVisible( false );
 			defLabel:SetVisible( false );
+			picStar:SetVisible(false);
 			pic:SetEnableSwapDrag(true);
 			pic:SetLuaDelegate(p.OnDragEvent);
 		end
@@ -428,6 +432,72 @@ function p.SetTeamInfo( view, user_teamData )
 	defLabel:SetText( tostring( p.TotalData( user_teamData, "Defence" )) );
 	]]--
 end
+
+function p.showBtn(lTag)
+	if lTag == 1 then
+			--local bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT )
+			local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
+			lbtn3:SetVisible(false);
+			
+			local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
+			lImage2:SetVisible(false);
+			
+			local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
+			lImage1:SetVisible(false);
+			
+			local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
+			rbtn3:SetVisible(true);
+			
+			local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
+			rImage2:SetVisible(true);
+			
+			local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
+			rImage1:SetVisible(true);
+		elseif lTag == 2 then
+			local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
+			lbtn3:SetVisible(true);
+			
+			local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
+			lImage2:SetVisible(true);
+			
+			local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
+			lImage1:SetVisible(true);
+			
+			local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
+			rbtn3:SetVisible(true);
+			
+			local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
+			rImage2:SetVisible(true);
+			
+			local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
+			rImage1:SetVisible(true);
+		elseif lTag == 3 then
+			local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
+			lbtn3:SetVisible(true);
+			
+			local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
+			lImage2:SetVisible(true);
+			
+			local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
+			lImage1:SetVisible(true);
+			
+			local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
+			rbtn3:SetVisible(false);
+			
+			local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
+			rImage2:SetVisible(false);
+			
+			local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
+			rImage1:SetVisible(false);
+		end	
+end
+
+function p.onViewScrolled(uiNode, uiEventType, param)
+	local lTag = uiNode:GetTag();
+	if IsActiveViewEvent(uiEventType) then
+		p.showBtn(lTag);
+	end
+end;
 
 function p.OnListScrolled()
 	local listindex = p.scrollList:GetCurrentIndex();
@@ -571,9 +641,13 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			list:MoveToPrevView();
+			local lTag = p.m_list:GetActiveView() + 1 ;
+			p.showBtn(lTag); --数据已经更新,界面拖动效果后完成
 		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			list:MoveToNextView();
+			local lTag = p.m_list:GetActiveView() + 1 ;
+			p.showBtn(lTag); --数据已经更新,界面拖动效果后完成
 		elseif ui.ID_CTRL_BUTTON_110 == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );

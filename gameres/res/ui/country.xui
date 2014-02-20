@@ -14,18 +14,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\common\contry_temp.png
 NormalFileUV=0 0 640 960
 
-[CTRL_BUTTON_TEAM]
-Type=2
-Tag=61
-Rect=328 868 89 90
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_BUTTON_MOUNTAIN]
 Type=2
 Tag=2
@@ -588,20 +576,3 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\country\text_levelup.png
 NormalFileUV=0 0 200 60
-
-[CTRL_BUTTON_RETURN]
-Type=2
-Tag=56
-Rect=5 140 122 60
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffff00
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\quest\back.png
-NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\quest\back_select.png
-SelectedFileUV=0 0 122 60

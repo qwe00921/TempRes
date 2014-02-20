@@ -3,6 +3,19 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_BG]
+Type=2
+Tag=21
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_46]
 Type=1
 Tag=46
@@ -149,6 +162,7 @@ Rect=187 591 292 16
 AnchorPos=0 0
 Notes=
 TextSize=16
+TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -285,16 +299,3 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\underline.png
 NormalFileUV=0 0 205 7
-
-[CTRL_BUTTON_BG]
-Type=2
-Tag=21
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Stretch=1
-UIOpenType=0
-UIClsoeType=0

@@ -63,7 +63,7 @@ function p.CreateDlg()
 		layer:NoMask()
 		layer:Init();
 		layer:SetSwallowTouch( true );
-		GetUIRoot():AddDlg(layer);
+		GetUIRoot():AddChildZ(layer,0);
 		LoadDlg("dlg_msgbox.xui", layer, nil);
 
 		p.layer = layer;
@@ -122,6 +122,10 @@ function p.OnClick(uiNode, uiEventType, param)
 			end
 		end
 	end
+end
+
+function p.rookieCloseBtn()
+	p.CloseUI();
 end
 
 --Òþ²ØUI

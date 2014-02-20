@@ -4,6 +4,12 @@
 --------------------------------------------------------------
 ui_card_group_node = {};
 local p =  ui_card_group_node;
+p.ID_CTRL_PICTURE_STAR6				   = 134;
+p.ID_CTRL_PICTURE_STAR5				   = 133;
+p.ID_CTRL_PICTURE_STAR4				   = 132;
+p.ID_CTRL_PICTURE_STAR3				   = 131;
+p.ID_CTRL_PICTURE_STAR2				   = 129;
+p.ID_CTRL_PICTURE_STAR1				   = 110;
 p.ID_CTRL_PICTURE_130					    = 130;
 p.ID_CTRL_PICTURE_128					    = 128;
 p.ID_CTRL_PICTURE_127					    = 127;

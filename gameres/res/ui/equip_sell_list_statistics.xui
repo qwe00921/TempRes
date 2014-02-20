@@ -6,7 +6,7 @@ Height=960
 [CTRL_9SLICES_19]
 Type=22
 Tag=25
-Rect=0 691 640 119
+Rect=0 718 640 92
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -18,7 +18,7 @@ NormalFileUV=0 0 640 140
 [CTRL_PICTURE_22]
 Type=1
 Tag=28
-Rect=152 713 220 37
+Rect=152 729 220 37
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -29,7 +29,7 @@ NormalFileUV=0 0 50 50
 [CTRL_BUTTON_CLEAR]
 Type=2
 Tag=26
-Rect=509 724 120 59
+Rect=509 740 120 59
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -46,7 +46,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_TEXT_SELL_GOLD]
 Type=4
 Tag=27
-Rect=155 713 214 36
+Rect=155 729 214 36
 AnchorPos=0 0
 Notes=
 Text=0
@@ -61,7 +61,7 @@ UIClsoeType=0
 [CTRL_PICTURE_23]
 Type=1
 Tag=29
-Rect=152 758 220 37
+Rect=152 769 220 37
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -72,7 +72,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_MATTER_NUM]
 Type=4
 Tag=30
-Rect=155 758 214 36
+Rect=155 769 214 36
 AnchorPos=0 0
 Notes=
 Text=0/0
@@ -87,7 +87,7 @@ UIClsoeType=0
 [CTRL_BUTTON_SELL]
 Type=2
 Tag=34
-Rect=382 724 122 60
+Rect=382 740 122 60
 AnchorPos=0 0
 Notes=
 TextSize=25
@@ -104,7 +104,7 @@ SelectedFileUV=0 0 122 60
 [CTRL_PICTURE_200]
 Type=1
 Tag=200
-Rect=25 711 120 40
+Rect=25 727 120 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -115,7 +115,7 @@ NormalFileUV=0 0 120 40
 [CTRL_PICTURE_201]
 Type=1
 Tag=201
-Rect=32 758 107 37
+Rect=32 769 107 37
 AnchorPos=0 0
 Notes=
 UIOpenType=0

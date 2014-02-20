@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -1137,3 +1137,111 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\intensify.png
 NormalFileUV=0 0 131 41
+
+[CTRL_PICTURE_NODE1]
+Type=1
+Tag=160
+Rect=27 395 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE2]
+Type=1
+Tag=161
+Rect=151 395 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE3]
+Type=1
+Tag=162
+Rect=274 395 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE4]
+Type=1
+Tag=163
+Rect=397 395 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE5]
+Type=1
+Tag=164
+Rect=523 395 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE6]
+Type=1
+Tag=165
+Rect=28 531 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE7]
+Type=1
+Tag=166
+Rect=151 531 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE8]
+Type=1
+Tag=167
+Rect=274 532 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE9]
+Type=1
+Tag=168
+Rect=397 531 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_NODE10]
+Type=1
+Tag=169
+Rect=525 531 89 89
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_162]
+Type=1
+Tag=170
+Rect=268 474 100 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_163]
+Type=1
+Tag=171
+Rect=268 474 100 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

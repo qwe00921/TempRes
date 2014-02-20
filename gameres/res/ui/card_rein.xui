@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -1250,7 +1250,7 @@ UIClsoeType=0
 [CTRL_PICTURE_107]
 Type=1
 Tag=118
-Rect=14 331 232 31
+Rect=16 331 232 31
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1361,7 +1361,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CARD_CHOOSE]
 Type=2
 Tag=58
-Rect=-7 208 638 165
+Rect=-2 207 638 165
 AnchorPos=0 0
 Notes=
 TextSize=10

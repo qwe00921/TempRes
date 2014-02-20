@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_equip_room = {};
 local p =  ui_equip_room;
+p.ID_CTRL_TEXT_18						       = 25;
 p.ID_CTRL_PICTURE_18					     = 24;
 p.ID_CTRL_PICTURE_17					     = 23;
 p.ID_CTRL_PICTURE_16					     = 21;

@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_card_intensify_succeed = {};
 local p =  ui_card_intensify_succeed;
+p.ID_CTRL_PICTURE_30					     = 34;
 p.ID_CTRL_PICTURE_167					    = 167;
 p.ID_CTRL_PICTURE_166					    = 166;
 p.ID_CTRL_PICTURE_165					    = 165;
