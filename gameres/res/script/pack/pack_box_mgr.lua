@@ -110,7 +110,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 		return
 	end
 	local param = "MachineType=Android&item_id="..itemId.."&id="..itemUniqueId;
-	if itemId == 1001 or itemId == 1002 then
+	if itemId == 1001 or itemId == 1002  or itemId = 1003 then
 		SendReq("Item","UseHealItem",uid,param);
 	elseif itemId == 2001 or itemId == 2002 then
 		SendReq("Item","UseQuickItem",uid,param);
