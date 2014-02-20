@@ -71,7 +71,7 @@ UIClsoeType=0
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=28
-Rect=244 562 110 54
+Rect=244 562 110 62
 AnchorPos=0 0
 Notes=
 Text=SKIP
@@ -86,8 +86,6 @@ NormalFile=.\res\image\ui\public\button.png
 NormalFileUV=0 0 110 54
 SelectFile=.\res\image\ui\public\button_click.png
 SelectedFileUV=0 0 110 54
-DisableFile=.\res\image\ui\common\btn_2_disable.png
-DisableFileUV=0 0 136 60
 
 [CTRL_TEXT_29_DELETE]
 Type=4

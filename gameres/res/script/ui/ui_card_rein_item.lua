@@ -4,6 +4,18 @@
 --------------------------------------------------------------
 ui_card_rein_item = {};
 local p =  ui_card_rein_item;
+p.ID_CTRL_PICTURE_163					    = 171;
+p.ID_CTRL_PICTURE_162					    = 170;
+p.ID_CTRL_PICTURE_NODE10				  = 169;
+p.ID_CTRL_PICTURE_NODE9				   = 168;
+p.ID_CTRL_PICTURE_NODE8				   = 167;
+p.ID_CTRL_PICTURE_NODE7				   = 166;
+p.ID_CTRL_PICTURE_NODE6				   = 165;
+p.ID_CTRL_PICTURE_NODE5				   = 164;
+p.ID_CTRL_PICTURE_NODE4				   = 163;
+p.ID_CTRL_PICTURE_NODE3				   = 162;
+p.ID_CTRL_PICTURE_NODE2				   = 161;
+p.ID_CTRL_PICTURE_NODE1				   = 160;
 p.ID_CTRL_PICTURE_114					    = 149;
 p.ID_CTRL_PICTURE_113					    = 148;
 p.ID_CTRL_PICTURE_112					    = 104;
