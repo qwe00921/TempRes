@@ -7,8 +7,8 @@ local p = rookie_main;
 p.userData = nil;
 p.stepId = nil;
 
-local MAX_STEP = {
-		0,--0
+MAX_STEP = {
+		--0,--0
 		0,--1
 		0,--2
 		0,--3
@@ -54,10 +54,26 @@ function p.ShowLearningStep( step, substep )
 		start_game.ShowUI();
 	elseif step == 3 then
 		choose_card.CloseUI()
-		--dlg_drama.ShowUI( 3,after_drama_data.ROOKIE,0,0,maininterface.ShowUI)
+		--第3步为战斗，暂时直接跳过   等思栋接入
 		maininterface.ShowUI(p.userData);
+		-- local uid = GetUID();
+		-- local param = "guide="..(rookie_main.stepId);
+		-- SendReq("User","Complete",uid,param);
 	elseif step == 4 then
-		maininterface.ShowUI(p.userData);
+		if substep == 1 then
+			dlg_drama.ShowUI( 3,after_drama_data.ROOKIE,0,0)
+		elseif substep == 2 then
+			maininterface.ShowUI(p.userData);
+			country_main.ShowUI();
+			rookie_mask.ShowUI( step, 2 );
+		elseif substep == 3 then
+			--maininterface.ShowUI();
+			--country_main.CloseUI();
+			country_main.ShowBuildUP()
+			rookie_mask.ShowUI( step, 3 );
+		elseif substep == 4 then
+			country_building.upBuild();
+		end
 	elseif step == 5 then
 		maininterface.ShowUI(p.userData);
 	elseif step == 6 then
@@ -144,8 +160,7 @@ function p.MaskTouchCallBack( step, substep, index )
 	if flag then
 		local curstep = step;
 		local cursubstep = substep;
-		
-		local maxstep = MAX_STEP[step];
+		local maxstep = MAX_STEP[tonumber(step)];
 		if substep >= maxstep then
 			curstep = curstep + 1;
 			cursubstep = 1;
@@ -165,6 +180,7 @@ function p.dramaCallBack(storyId)
 		p.ShowLearningStep( 9, 2 );
 	elseif storyId == 2 then
 	elseif storyId == 3 then
+		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == 4 then
 	elseif storyId == 5 then
 	elseif storyId == 6 then
