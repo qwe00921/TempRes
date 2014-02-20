@@ -96,8 +96,9 @@ end
 function p.SetDelegate()
     --下一个对话
     local btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CLICK);
+	btn:SetVisible( false );	
     btn:SetLuaDelegate(p.BtnOnclick);
-    
+
     --跳过剧情
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_SKIP);
     btn:SetLuaDelegate(p.BtnOnclick);
@@ -147,6 +148,9 @@ function p.DoEffectContent()
 	if p.contentIndex > p.contentStrLn and p.timerId ~= nil then
 		KillTimer( p.timerId );
 		p.timerId = nil;
+		
+		local btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CLICK);
+		btn:SetVisible( true );
 	end
 end
 
