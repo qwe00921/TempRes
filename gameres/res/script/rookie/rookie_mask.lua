@@ -15,6 +15,10 @@ p.contentIndex = 1;
 p.timerId = nil;
 p.textList = nil;
 
+local uiList = {
+	
+};
+
 local ui = ui_learning;
 
 function p.ShowUI( step, substep )
@@ -24,8 +28,7 @@ function p.ShowUI( step, substep )
 	if p.layer ~= nil and p.maskLayer ~= nil then
 		p.maskLayer:SetVisible( true );
 		p.layer:SetVisible( true );
-		--设置高亮按钮位置
-		p.ShowRookieStep();
+		p.ShowRookieText();
 		return;
 	end
 
@@ -36,11 +39,11 @@ function p.ShowUI( step, substep )
 	maskLayer:NoMask();
 	maskLayer:Init();
 	maskLayer:SetSwallowTouch( true );
-	maskLayer:SetFrameRectFull();	
-	maskLayer:SetLuaDelegate( p.OnTouchLayer );
-	
+	maskLayer:SetFrameRectFull();
+
 	p.maskLayer = maskLayer;
-	GetUIRoot():SetTrainingMode( true, maskLayer );  --设置为新手指导模式，传递新手指导的那个layer
+	LoadUI( "learning_"..step.."_"..substep..".xui", maskLayer, nil );
+	GetUIRoot():AddChild( maskLayer );
 
 	local layer = createNDUIDialog();
 	if layer == nil then
@@ -48,17 +51,16 @@ function p.ShowUI( step, substep )
 	end
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch( true );
+	layer:SetSwallowTouch( false );
 	layer:SetFrameRectFull();
 	
-	LoadDlg( "learning.xui", layer, nil );
-	GetUIRoot():AddChildZ( p.layer, 20000 );
+	LoadUI( "learning.xui", layer, nil );
+	GetUIRoot():AddChildZ( layer, 999999 );
 	p.layer = layer;
 	
 	p.InitControllers();
 	
-	--设置高亮按钮位置
-	p.ShowRookieStep();	
+	p.ShowRookieText();
 end
 
 function p.InitControllers()
@@ -67,17 +69,23 @@ function p.InitControllers()
 	
 	p.colorLabel:SetHorzAlign( 0 );
 	p.colorLabel:SetVertAlign( 1 );
+	
+	local index = 1;
+	local list = uiList[p.step] or {};
+	local maskUI = list[p.substep] or {};
+	while maskUI["ID_CTRL_BUTTON_CALLBACK_"..index] do
+		local btn = GetButton( p.maskLayer, maskUI["ID_CTRL_BUTTON_CALLBACK_"..index] );
+		btn:SetLuaDelegate( p.OnTouchHightLight );
+		btn:SetId( index );
+		
+		index = index + 1;
+	end
 end
 
 --设置高亮按钮位置
-function p.ShowRookieStep()
-	local rect = rookie_main.GetHighLightRectList( p.step, p.substep );
-	rect = CCRectMake( 150,150,150,150 );
-	GetUIRoot():SetHighLightArea( rect );
-	
-	p.textList = p.textList or SelectRowList( T_ROOKIE_GUIDE, "guide_id", p.step );
-	
-	--p.contentStr = "测试文字1测试文字1测试测试测试测试";
+function p.ShowRookieText()
+	p.textList = SelectRowList( T_ROOKIE_GUIDE, "guide_id", p.step );
+
 	p.contentStr = "";
 	local picData = nil;
 	if p.textList ~= nil and #p.textList > 0 then
@@ -104,12 +112,12 @@ function p.ShowRookieStep()
 	p.timerId = SetTimer( p.DoEffectContent, 0.04f );
 end
 
-function p.OnTouchLayer( uiNode, uiEventType, param )
-	local rect = rookie_main.GetDelegateArea( p.step, p.substep );
-	if ContainsPoint( rect, param ) then
-		rookie_main.MaskTouchCallBack( p.step, p.substep );
-	else
+function p.OnTouchHightLight( uiNode, uiEventType, param )
+	if IsClickEvent( uiEventType ) then
+		p.CloseUI();
 		
+		local id = uiNode:GetId();
+		rookie_main.MaskTouchCallBack( p.step, p.substep, id );
 	end
 end
 
@@ -158,7 +166,7 @@ function p.CloseUI()
 	end
 	
 	if p.maskLayer ~= nil then
-		GetUIRoot():SetTrainingMode( false, p.maskLayer );
+		p.maskLayer:LazyClose();
 		p.maskLayer = nil;
 	end
 end
@@ -166,6 +174,10 @@ end
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
+	end
+	
+	if p.maskLayer ~= nil then
+		p.maskLayer:SetVisible( false );
 	end
 end
 
