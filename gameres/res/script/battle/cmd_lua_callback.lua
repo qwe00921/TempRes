@@ -228,6 +228,12 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		dlg_gacha_effect.ShowLoopEffect();
 	elseif cmdtype == "gacha_effect_show_end" then
 		dlg_gacha_effect.DoShowCardEffect();
+	elseif cmdtype == "item_rein_converged" then
+		equip_rein_list.ConvergedEnd();
+	elseif cmdtype == "item_rein_move_end" then
+		equip_rein_list.EffectMoveEnd();
+	elseif cmdtype == "item_rein_effect_end" then
+		equip_rein_list.HideSelectCard( id, num);
 	else
 		--
 	end

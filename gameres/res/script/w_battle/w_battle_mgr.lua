@@ -183,6 +183,17 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 		return false;
     end;
 
+	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+	if lStateMachine == nil then
+		WriteConWarning("Warning! lStateMachine is nil; atkID="..tostring(atkID));
+		return false;
+	end;
+	
+	if lStateMachine.turnState ~= W_BATTLE_NOT_TURN then
+		WriteConWarning("Warning! StateMachine is in turn; atkID="..tostring(atkID));
+		return false;
+	end;
+
 	local atkFighter = nil;
 	if IsMonster == true then
 		atkFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( atkID ) );
@@ -278,12 +289,23 @@ end;
 
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
 function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
-   WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
+	WriteCon( "SetPVESkillAtkID:"..tonumber(atkID));
 	if p.NeedQuit == true then
 		WriteCon( "Quit! SetPVEAtkID");
 		return ;
     end	
 
+	local lStateMachine = w_battle_machinemgr.getAtkStateMachine(atkID);
+	if lStateMachine == nil then
+		WriteConWarning("Warning! lStateMachine is nil; atkID="..tostring(atkID));
+		return false;
+	end;
+	
+	if lStateMachine.turnState ~= W_BATTLE_NOT_TURN then
+		WriteConWarning("Warning! StateMachine is in turn; atkID="..tostring(atkID));
+		return false;
+	end;
+	
 	local atkFighter = nil;
 	if IsMonster == true then
 		atkFighter = w_battle_mgr.enemyCamp:FindFighter( tonumber( atkID ) );

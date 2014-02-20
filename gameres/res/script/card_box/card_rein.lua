@@ -12,6 +12,8 @@ p.addExp = 0;
 p.nowExp = 0;
 p.maskLayer = nil;
 
+p.result = nil;
+
 local ui = ui_card_rein;
 
 function p.ShowUI(card_info)
