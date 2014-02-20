@@ -125,7 +125,7 @@ function p:GetFirstNotDeadFighterID(pFighterID)
 	local lminSelId=7;  --
 	local lId= nil; --真实的ID
 	for k,v in ipairs(self.fighters) do
-		if ((v.isDead == false) and (v:GetId() ~= pFighterID))then			
+		if ((v.isDead == false) and (v:GetId() ~= pFighterID))then
 			if v.selIndex < lminSelId then
 				lminSelId = v.selIndex ;
 				lId = v:GetId();
@@ -142,7 +142,7 @@ function p:GetFirstHasHpFighterID(pFighterID)
 	local lminSelId = 7;  --
 	local lId= pFighterID; --真实的ID
 	for k,v in ipairs(self.fighters) do
-		if ((v.nowlife > 0) and (v:GetId() ~= pFighterID))then			
+		if ((v.nowlife > 0) and (v:GetId() ~= pFighterID))then
 			if v.selIndex < lminSelId then
 				lminSelId = v.selIndex ;
 				lId = v:GetId();
@@ -372,7 +372,7 @@ function p.AddEnemyFightersJumpEffect()
 	
 	local fScale = GetUIScale();
 	
-	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp) * fScale);		
+	local loffset = (W_BATTLE_JUMPSTAR * (lwinWidth / fTemp) * fScale);
 	--local lwinWidth = GetWinSize().w;
 	--update by csd	
 	--w_battle_mgr.platformScale in win32 is 1, in other is 2
@@ -429,7 +429,7 @@ function p:AddShadows(uiArray, fighters)
         local uiTag = uiArray[tonumber( fighterInfo.Position )];
 --		local node = GetPlayer( w_battle_mgr.uiLayer, uiTag );
 --		local nodeUI = GetUiNode( w_battle_mgr.uiLayer, uiTag );
-	    local node = w_battle_mgr.GetPlayerNode(uiTag );		
+	    local node = w_battle_mgr.GetPlayerNode(uiTag );
 		if node == nil then
 			WriteCon( "get player node failed" );
 			return;
@@ -554,7 +554,7 @@ function p:AddFighters( uiArray, fighters )
 				f.Defence = 100;
 				f.Skill = 0;
 				if f.Position == 5 then
-					f.Skill = 1001	
+					f.Skill = 1001;
 				end
 			--[[	if f.Position == 1  then
 					f.Skill = 1005;

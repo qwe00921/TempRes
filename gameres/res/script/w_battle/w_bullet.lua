@@ -40,8 +40,8 @@ function p:cmdShootPos( atkFighter, targetPos, seq, byJump )
 	
 	-- calc start offset
 	local startOffset = self:GetStartOffset();
-	local offsetX = x * startOffset/distance;
-	local offsetY = y * startOffset/distance;
+	local offsetX = x * startOffset / distance;
+	local offsetY = y * startOffset / distance;
 	node:SetFramePosXY( atkPos.x + offsetX, atkPos.y + offsetY );
 	
 	-- sub distance

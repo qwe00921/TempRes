@@ -487,7 +487,7 @@ function p.ShowBillboardWithInit()
 	
 	local rect = bg:GetFrameRect() or {};
 	local pt = rect.origin or {};
-	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y-222)); 
+	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y - 222)); 
 end
 
 function p.HideBillboard()
