@@ -168,21 +168,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_RETURN]
-Type=2
-Tag=23
-Rect=268 -7 121 68
-AnchorPos=0 0
-Notes=
-Text=待删除
-TextTradition=待刪除
-TextSize=20
-TextColor=0xffff00
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_BUTTON_UP]
 Type=2
 Tag=45
