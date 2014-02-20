@@ -3,18 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_BUTTON_CALLBACK_1]
-Type=2
-Tag=5
-Rect=265 523 110 110
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
@@ -59,7 +47,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_BUTTON_CALLBACK_2]
+[CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=20
 Rect=218 722 226 66
@@ -103,3 +91,14 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_HOME]
+Type=1
+Tag=90
+Rect=265 523 110 110
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\country\home.png
+NormalFileUV=0 0 240 240

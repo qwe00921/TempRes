@@ -120,8 +120,8 @@ function p.openQusetView(uiNode)
 end
 
 function p.SetDelegate(layer)
-	local btnReturn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
-	btnReturn:SetLuaDelegate(p.OnBtnClick);
+	-- local btnReturn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RETURN );
+	-- btnReturn:SetLuaDelegate(p.OnBtnClick);
 	
 	local btnUp = GetButton( p.layer, ui.ID_CTRL_BUTTON_UP );
 	btnUp:SetLuaDelegate(p.OnBtnClick);
