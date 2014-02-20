@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_20]
 Type=1
 Tag=25
-Rect=0 -94 639 958
+Rect=0 0 639 865
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -286,7 +286,7 @@ UIClsoeType=0
 [CTRL_BUTTON_CHAPTER7]
 Type=2
 Tag=26
-Rect=132 72 270 189
+Rect=132 74 270 189
 AnchorPos=0 0
 Notes=
 TextSize=10

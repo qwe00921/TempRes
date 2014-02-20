@@ -250,7 +250,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM1]
 Type=4
 Tag=39
-Rect=23 8 60 26
+Rect=25 11 60 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -265,7 +265,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM2]
 Type=4
 Tag=40
-Rect=142 8 60 26
+Rect=144 11 60 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -280,7 +280,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM3]
 Type=4
 Tag=41
-Rect=261 8 60 26
+Rect=263 11 60 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -295,7 +295,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM4]
 Type=4
 Tag=42
-Rect=380 8 60 26
+Rect=382 11 60 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -310,7 +310,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEMNUM5]
 Type=4
 Tag=43
-Rect=499 8 60 26
+Rect=501 11 60 26
 AnchorPos=0 0
 Notes=
 Text=x??
@@ -325,7 +325,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MASK1]
 Type=1
 Tag=187
-Rect=21 8 100 119
+Rect=20 7 100 119
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -336,7 +336,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_MASK2]
 Type=1
 Tag=354
-Rect=138 8 100 119
+Rect=137 7 100 119
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -347,7 +347,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_MASK3]
 Type=1
 Tag=355
-Rect=257 8 100 119
+Rect=256 7 100 119
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -358,7 +358,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_MASK4]
 Type=1
 Tag=356
-Rect=377 8 100 119
+Rect=376 7 100 119
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -369,7 +369,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_MASK5]
 Type=1
 Tag=357
-Rect=496 8 100 119
+Rect=495 7 100 119
 AnchorPos=0 0
 Notes=
 UIOpenType=0

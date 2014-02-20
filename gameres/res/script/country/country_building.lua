@@ -56,7 +56,7 @@ function p.ShowUI(countryInfo)
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddChildZ(layer,0);
 	LoadUI("country_levelup.xui",layer,nil);
 	
 	p.layer = layer;
@@ -295,6 +295,12 @@ function p.upBuild()
 	
 	local uid = GetUID();
 	local param = "build_type="..typeID;
+	SendReq("Build","UpBuild",uid,param);
+end
+
+function p.rookieUpBuild()
+	local uid = GetUID();
+	local param = "build_type=4";
 	SendReq("Build","UpBuild",uid,param);
 end
 
