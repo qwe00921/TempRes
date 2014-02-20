@@ -63,7 +63,7 @@ NormalFileUV=0 0 110 30
 [CTRL_PICTURE_ITEM1]
 Type=1
 Tag=26
-Rect=20 97 109 103
+Rect=21 94 109 109
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -72,7 +72,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM2]
 Type=1
 Tag=27
-Rect=144 97 109 103
+Rect=145 94 109 109
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -81,7 +81,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM3]
 Type=1
 Tag=29
-Rect=270 97 109 103
+Rect=271 94 109 109
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -90,7 +90,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM4]
 Type=1
 Tag=30
-Rect=390 97 109 103
+Rect=391 94 109 109
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -99,7 +99,7 @@ UIClsoeType=0
 [CTRL_PICTURE_ITEM5]
 Type=1
 Tag=31
-Rect=514 97 109 103
+Rect=515 94 109 109
 AnchorPos=0 0
 Notes=
 UIOpenType=0
