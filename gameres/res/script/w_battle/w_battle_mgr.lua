@@ -129,6 +129,9 @@ function p.starFighter()
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
 	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
+	p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
+	local lEnemyFighter = p.enemyCamp:FindFighter(p.PVEEnemyID);
+	w_battle_pve.SetHp(lEnemyFighter);
 	--怪物进场动画结束后,调用intoSceneEnd
 	--p.IntoSceneEnd();
 end;
@@ -136,9 +139,7 @@ end;
 function p.IntoSceneEnd()
 	p.InitLockAction();	
 	--按活着的怪物,给个目标
-    p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
-	local lEnemyFighter = p.enemyCamp:FindFighter(p.PVEEnemyID);
-	w_battle_pve.SetHp(lEnemyFighter);
+
 	--p.PVEHeroID = p.heroCamp:GetFirstActiveFighterPos(nil);
 	p.PVEShowEnemyID = p.PVEEnemyID; 
 	p.LockEnemy = false;
@@ -1164,11 +1165,13 @@ function p.clearDate()
 	p.battleIsStart = false;
 	p.playerNodeLst = {};
 	
+	--[[
 	for pos=1,6 do
 		local lLockPic = p.LoakPic[pos] --GetImage(p.uiLayer, ltag);	    
 		lLockPic:SetVisible(false);
 		lLockPic:RemoveFromParent(true);
 	end
+	]]--
 	p.LoakPic = {};
     --w_battle_show.DestroyAll();
 end
