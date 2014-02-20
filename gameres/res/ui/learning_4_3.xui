@@ -95,10 +95,8 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_HOME]
 Type=1
 Tag=90
-Rect=265 523 110 110
+Rect=265 524 110 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\country\home.png
-NormalFileUV=0 0 240 240
