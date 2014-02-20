@@ -249,7 +249,7 @@ UIClsoeType=0
 [CTRL_BUTTON_BACK]
 Type=2
 Tag=25
-Rect=511 730 122 60
+Rect=259 730 122 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -298,7 +298,7 @@ UIClsoeType=0
 [CTRL_9SLICES_32]
 Type=22
 Tag=33
-Rect=117 487 406 14
+Rect=117 487 406 20
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -310,7 +310,7 @@ NormalFileUV=0 0 105 14
 [CTRL_BUTTON_INTENSIFY]
 Type=2
 Tag=24
-Rect=511 730 122 60
+Rect=259 730 122 60
 AnchorPos=0 0
 Notes=
 TextSize=30
@@ -318,9 +318,9 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\back.png
+NormalFile=.\res\image\ui\public\ok1.png
 NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\quest\back_select.png
+SelectFile=.\res\image\ui\public\ok1_select.png
 SelectedFileUV=0 0 122 60
 DisableFile=.\res\image\ui\quest\back_un.png
 DisableFileUV=0 0 122 60
@@ -328,7 +328,7 @@ DisableFileUV=0 0 122 60
 [CTRL_EXP_EXPNEED]
 Type=9
 Tag=32
-Rect=119 487 402 15
+Rect=120 490 400 15
 AnchorPos=0 0
 Notes=
 TextSize=10

@@ -160,7 +160,7 @@ UIClsoeType=0
 [CTRL_PICTURE_70]
 Type=1
 Tag=70
-Rect=17 843 108 108
+Rect=19 842 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -169,7 +169,7 @@ UIClsoeType=0
 [CTRL_PICTURE_71]
 Type=1
 Tag=71
-Rect=142 843 108 108
+Rect=144 842 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -178,7 +178,7 @@ UIClsoeType=0
 [CTRL_PICTURE_72]
 Type=1
 Tag=72
-Rect=269 843 108 108
+Rect=271 842 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -187,7 +187,7 @@ UIClsoeType=0
 [CTRL_PICTURE_73]
 Type=1
 Tag=73
-Rect=388 843 108 108
+Rect=390 842 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -196,7 +196,7 @@ UIClsoeType=0
 [CTRL_PICTURE_74]
 Type=1
 Tag=74
-Rect=513 843 108 108
+Rect=515 842 108 108
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -205,7 +205,7 @@ UIClsoeType=0
 [CTRL_BUTTON_75]
 Type=2
 Tag=75
-Rect=514 19 112 55
+Rect=491 19 149 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -214,14 +214,14 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\cut_down.png
-NormalFileUV=0 0 122 60
+NormalFileUV=0 0 149 60
 SelectFile=.\res\image\ui\n_battle\cut_down_select.png
-SelectedFileUV=0 0 122 60
+SelectedFileUV=0 0 149 60
 
 [CTRL_PICTURE_BOX]
 Type=1
 Tag=84
-Rect=427 14 70 70
+Rect=411 14 70 70
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -437,7 +437,7 @@ UIClsoeType=0
 [CTRL_PICTURE_140]
 Type=1
 Tag=145
-Rect=79 420 24 24
+Rect=78 420 24 24
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -448,7 +448,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_IMPORTANT]
 Type=1
 Tag=121
-Rect=0 0 638 960
+Rect=0 0 637 960
 AnchorPos=0 0
 Notes=
 UIOpenType=0
