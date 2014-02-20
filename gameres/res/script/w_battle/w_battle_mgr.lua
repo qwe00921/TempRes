@@ -70,6 +70,7 @@ p.playerNodeLst = {};  --动画节点
 p.ballTimerID = nil; --球飞入超时的判断
 p.ballFlytime = 0;
 p.isPerfect = true;
+p.isbattlequit = false;
 p.LoakPic = {};
 
 function p.init()
@@ -904,7 +905,8 @@ end;
 
 function p.MissionQuit()
 	p.QuitBattle()
-	--p.SendResult(3);	
+	p.isbattlequit = true;
+	p.SendResult(3);	
 	dlg_menu.ShowUI();
     dlg_userinfo.ShowUI();
 	maininterface.ShowUI()
@@ -1162,7 +1164,11 @@ function p.clearDate()
 	p.battleIsStart = false;
 	p.playerNodeLst = {};
 	
-	--p.InitLockAction();	
+	for pos=1,6 do
+		local lLockPic = p.LoakPic[pos] --GetImage(p.uiLayer, ltag);	    
+		lLockPic:SetVisible(false);
+		lLockPic:RemoveFromParent(true);
+	end
 	p.LoakPic = {};
     --w_battle_show.DestroyAll();
 end
