@@ -72,7 +72,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\money3.png
-NormalFileUV=0 0 46 46
+NormalFileUV=0 0 150 150
 
 [CTRL_TEXT_SELL_MONEY]
 Type=4

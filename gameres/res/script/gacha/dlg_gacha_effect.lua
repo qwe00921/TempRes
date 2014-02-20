@@ -42,12 +42,13 @@ function p.ShowUI( gacharesult )
 	
 	p.InitControllers();
 
-	SetTimerOnce( p.DoShowCardEffect, 0.71f );
+	--SetTimerOnce( p.DoShowCardEffect, 0.71f );
 end
 
 function p.InitControllers()
 	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_9 );
 	btn:SetLuaDelegate( p.OnBtnClick );
+	--btn:SetVisible( false );
 	
 	p.magic = GetImage( p.layer, ui.ID_CTRL_SPRITE_MAGICCIRCLE);
 	p.ShowBgEffect();
@@ -61,11 +62,31 @@ function p.InitControllers()
 end
 
 function p.ShowBgEffect()
-	if p.magic:HasAniEffect( "ui_cmb.gacha_bg_appear" ) then
-		p.magic:DelAniEffect( "ui_cmb.gacha_bg_appear" );
+	local batch1 = battle_show.GetNewBatch();
+	local seq1 = batch1:AddSerialSequence();
+	local cmd1 = createCommandEffect():AddFgEffect( 0, p.magic, "ui.gacha_magic_bg_appear" );
+	seq1:AddCommand( cmd1 );
+
+	local cmdLua = createCommandLua():SetCmd( "gacha_effect_show", 1, 1, "" );
+	seq1:AddCommand( cmdLua );
+	
+	local batch2 = battle_show.GetNewBatch();
+	local seq2 = batch2:AddSerialSequence();
+	local cmd2 = createCommandLua():SetCmd( "gacha_effect_show_end", 1, 1, "" );
+	seq2:AddCommand( cmd2 );
+	seq2:SetWaitEnd( cmd1 );
+end
+
+function p.ShowLoopEffect()
+	if p.magic == nil then
+		return;
 	end
 	
-	p.magic:AddFgEffect( "ui_cmb.gacha_bg_appear" );	
+	if p.magic:HasAniEffect( "ui_cmb.gacha_bg_loop" ) then
+		p.magic:DelAniEffect( "ui_cmb.gacha_bg_loop" );
+	end
+	
+	p.magic:AddFgEffect( "ui_cmb.gacha_bg_loop" );
 end
 
 function p.DoShowCardEffect()
@@ -135,6 +156,9 @@ function p.ShowContinue()
 		p.continueImg:SetVisible(true);
 		p.continueImg:AddActionEffect( "ui_cmb.gacha_effect_scale" );
 	end
+	
+	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_9 );
+	btn:SetVisible( true );
 end
 
 function p.ShowNextCard()

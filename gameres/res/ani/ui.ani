@@ -220,13 +220,43 @@ image\ui\main_interface\header_arena_light_01.png
 
 ;扭蛋结果特效
 [gacha_magic_bg_appear]
-image\ui\gacha_1\cardbg_scale.png @cut(2, 4) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\01.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\02.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\03.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\04.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\05.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\06.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\07.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\show_bg\08.png @cut(1, 1) @time=0.09 @scale=1
 
 [gacha_magic_bg]
-image\ui\gacha_1\magic.png @cut(4, 4) @time=0.09 @loop @scale=1
+image\ui\gacha_1\loop_bg\01.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\02.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\03.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\04.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\05.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\06.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\07.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\08.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\09.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\10.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\11.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\12.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\13.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\14.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\15.png @cut(1, 1) @time=0.09 @scale=1
+image\ui\gacha_1\loop_bg\16.png @cut(1, 1) @time=0.09 @scale=1
 
 [gacha_card_scale]
-image\ui\gacha_1\card_scale.png @cut(3, 3) @time=0.08 @stay
+image\ui\gacha_1\show_card\01.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\02.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\03.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\04.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\05.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\06.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\07.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\08.png @cut(1, 1) @time=0.08
+image\ui\gacha_1\show_card\09.png @cut(1, 1) @time=0.08
 
 [Special_reward]
 image\ui\quest\Special_reward.png @cut(1, 2) @time=0.2 @loop

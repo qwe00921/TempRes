@@ -1,0 +1,38 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=14
+Rect=0 245 640 143
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_15]
+Type=1
+Tag=15
+Rect=0 0 640 245
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_16]
+Type=1
+Tag=16
+Rect=0 388 640 572
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1

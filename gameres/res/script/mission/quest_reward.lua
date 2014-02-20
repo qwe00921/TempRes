@@ -85,7 +85,7 @@ function p.isShowPlot()
 		--stageMap_main.OpenWorldMap();
 		--dlg_userinfo.ShowUI();
 	else
-		if p.rewardDataT.newChapterOrStage.chapter_id then
+		if p.rewardDataT.newChapterOrStage and p.rewardDataT.newChapterOrStage.chapter_id then
 			local newChapter = tonumber(p.rewardDataT.newChapterOrStage.chapter_id)
 			local newStage = tonumber(p.rewardDataT.newChapterOrStage.stage_id)
 			if newChapter > 0 then

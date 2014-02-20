@@ -14,7 +14,7 @@ ui.star_fx_1 @scale=1.36
 ui.star_fx_1 @scale=1.08
 ui.star_fx_2 @scale=0.5
 
-[gacha_bg_appear]
-@type=0
-ui.gacha_magic_bg_appear
+[gacha_bg_loop]
+@type=0 @loop
 ui.gacha_magic_bg
+

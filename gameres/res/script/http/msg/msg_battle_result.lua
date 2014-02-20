@@ -28,8 +28,11 @@ function p:Process()
 		--w_battle_mgr.QuitBattle();
 		--local lResult = w_battle_mgr.GetReuslt();
 		--if lResult == 1 then
-
+		if w_battle_mgr.isbattlequit ~= true then  --中途退出标识
 			quest_result.ShowUI(self);
+		else
+			w_battle_mgr.isbattlequit = false;
+		end;
 
 		--	dlg_userinfo.ShowUI();
 		--	stageMap_main.OpenWorldMap();

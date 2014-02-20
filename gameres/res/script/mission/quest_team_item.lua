@@ -319,9 +319,10 @@ function p.ShowItemList(itemData)
 					itemNumPic = itemNumPic5
 					itemNamePic = itemNamePic5
 				end
-				itemId = tonumber(itemData[i].item_id)
-				if itemId > 0 then
-					itemNUm:SetText(tostring(itemData[i].num));
+				local itemId = tonumber(itemData[i].item_id)
+				local itemNumber = tonumber(itemData[i].num)
+				if itemId > 0 and itemNumber > 0 then
+					itemNUm:SetText(tostring(itemNumber));
 					WriteCon("itemId == "..itemId);
 					
 					local itemTable = SelectRowInner(T_MATERIAL,"id",itemId);

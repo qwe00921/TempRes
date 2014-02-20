@@ -7,9 +7,8 @@ local p = rookie_main;
 p.userData = nil;
 p.stepId = nil;
 
---每个步骤的分步骤数量配置
-local MAX_STEP = 
-	{
+local MAX_STEP = {
+		0,--0
 		0,--1
 		0,--2
 		0,--3
@@ -32,12 +31,11 @@ function p.getRookieStep(backData)
 		return;
 	elseif backData.result == true then
 		local stepId = tonumber(backData.user.Guide_id)
-		--stepId = 2;	--测试用
 		p.stepId = stepId;
 		p.userData = backData.user;
-		if stepId == 0 then
-			maininterface.ShowUI(backData.user);
-		else
+		
+		maininterface.ShowUI(backData.user);
+		if stepId ~= 0 then
 			p.ShowLearningStep( stepId, 1 );
 		end
 	end
@@ -46,6 +44,8 @@ end
 --进入新手引导
 function p.ShowLearningStep( step, substep )
 	WriteConErr("rookie step = "..step .. " substep = " .. substep);
+	
+	rookie_mask.CloseUI();
 
 	if step == 1 then
 		WriteConErr("step error");
@@ -107,9 +107,15 @@ function p.ShowLearningStep( step, substep )
 			
 		else
 			if substep == 2 then
+				country_main.ShowUI();
 			elseif substep == 3 then
+				dlg_gacha.ShowUI( SHOP_ITEM );
 			elseif substep == 4 then
+				dlg_gacha.ShowGachaData( dlg_gacha.gachadata );
 			elseif substep == 6 then
+				dlg_gacha_result.ShowUI( dlg_gacha_effect.gacharesult );
+				dlg_gacha_effect.HideUI();
+				dlg_gacha_effect.CloseUI();
 			end
 			rookie_mask.ShowUI( step, substep );
 		end
@@ -120,140 +126,42 @@ function p.ShowLearningStep( step, substep )
 	elseif step == 14 then
 		
 		
-		
 	end
+end
+
+--显示下一步前相关操作，返回true为直接显示下一步，false为不直接显示（发消息给服务端，服务端返回后进入下一步）
+function p.DoSomething( step, substep )
+	
+	return true;
 end
 
 --点击高亮区域回调
-function p.MaskTouchCallBack( step, substep )
-	rookie_mask.CloseUI();
-
+--step：步骤 substep：分步骤 index：N个高亮按钮可能值范围为1-N
+function p.MaskTouchCallBack( step, substep, index )
 	--更新步骤
-	local maxsubstep = MAX_STEP[step] or 0;
-	local curstep = step;
-	local cursubstep = substep;
-	if cursubstep >= maxsubstep then
-		curstep = curstep + 1;
-		cursubstep = 1;
-	else
-		cursubstep = cursubstep + 1;
-	end
-	p.ShowLearningStep( curstep, cursubstep );
-end
-
---获取高亮区域
-function p.GetHighLightRectList( step, substep )
-	local rect = CCRectMake( 0, 0, 0, 0 );
-	if step == 1 then
+	local flag = p.DoSomething( step, substep );
+	if flag then
+		local curstep = step;
+		local cursubstep = substep;
 		
-	elseif step == 2 then
-		
-	elseif step == 3 then
-		
-	elseif step == 4 then
-		
-	elseif step == 5 then
-		
-	elseif step == 6 then
-		
-	elseif step == 7 then
-		
-	elseif step == 8 then
-		
-	elseif step == 9 then
-		if substep == 2 then
-			local layer = country_main.layer;
-			local tag = ui_country.ID_CTRL_BUTTON_MERGE;
-			if layer ~= nil then
-				local ctrl = GetButton( layer, tag );
-				rect = ctrl:GetFrameRect();
-			end	
-		elseif substep == 3 then
-			local layer = country_mixhouse.layer;
-			local tag = ui_country_produce_list.ID_CTRL_VERTICAL_LIST_16;
-			if layer ~= nil then
-				local ctrl = GetListBoxVert( layer, tag );
-				local view = ctrl:GetViewAt( 0 );
-				if view then
-					rect = view:GetScreenRect();
-				end
-			end
-		elseif substep == 4 then
-			local layer = country_mix.layer;
-			local tag = ui_item_produce.ID_CTRL_BUTTON_8;
-			if layer ~= nil then
-				local ctrl = GetButton( layer, tag );
-				rect = ctrl:GetFrameRect();
-			end
-		elseif substep == 5 then
-			local layer = country_mix.layer;
-			local tag = ui_item_produce.ID_CTRL_BUTTON_RETURN;
-			if layer ~= nil then
-				local ctrl = GetButton( layer, tag );
-				rect = ctrl:GetFrameRect();
-			end
-		elseif substep == 6 then
-			local layer = country_mixhouse.layer;
-			local tag = ui_country_produce_list.ID_CTRL_BUTTON_RETURN;
-			if layer ~= nil then
-				local ctrl = GetButton( layer, tag );
-				rect = ctrl:GetFrameRect();
-			end
-		elseif substep == 7 then
-			
-		elseif substep == 8 then
+		local maxstep = MAX_STEP[step];
+		if substep >= maxstep then
+			curstep = curstep + 1;
+			cursubstep = 1;
+		else
+			cursubstep = cursubstep + 1;
 		end
-	elseif step == 10 then
-		
-	elseif step == 11 then
-		
-	elseif step == 12 then
-		
-	elseif step == 13 then
-		
-	elseif step == 14 then
-		
+		p.ShowLearningStep( curstep, cursubstep );
 	end
-	return rect;
 end
 
---获取响应区域
-function p.GetDelegateArea( step, substep )
-	local rect =  CCRectMake( 0, 0, 0, 0 );
-	if step == 1 then
-		
-	elseif step == 2 then
-		
-	elseif step == 3 then
-		
-	elseif step == 4 then
-		
-	elseif step == 5 then
-		
-	elseif step == 6 then
-		
-	elseif step == 7 then
-		
-	elseif step == 8 then
-		
-	elseif step == 9 then
-		
-	elseif step == 10 then
-		
-	elseif step == 11 then
-		
-	elseif step == 12 then
-		
-	elseif step == 13 then
-		
-	elseif step == 14 then
-		
-	end
-	return rect;
-end
-
+--剧情回调
 function p.dramaCallBack(storyId)
-	if storyId == 1 then
+	if storyId == 10 then
+		if maininterface.m_bgImage then
+			maininterface.m_bgImage:SetVisible(true);
+		end
+		p.ShowLearningStep( 9, 2 );
 	elseif storyId == 2 then
 	elseif storyId == 3 then
 	elseif storyId == 4 then
