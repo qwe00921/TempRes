@@ -37,7 +37,7 @@ NormalFileUV=0 0 640 110
 [CTRL_LEFT_SPRITE_1]
 Type=19
 Tag=6
-Rect=127 126 71 90
+Rect=127 126 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -46,7 +46,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_2]
 Type=19
 Tag=5
-Rect=105 220 70 90
+Rect=105 220 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -55,7 +55,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_3]
 Type=19
 Tag=2
-Rect=130 315 71 90
+Rect=130 315 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -64,7 +64,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_4]
 Type=19
 Tag=3
-Rect=31 126 71 90
+Rect=31 126 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -73,7 +73,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_5]
 Type=19
 Tag=4
-Rect=11 220 71 90
+Rect=11 220 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -91,7 +91,7 @@ UIClsoeType=0
 [CTRL_LEFT_SPRITE_6]
 Type=19
 Tag=16
-Rect=34 315 71 90
+Rect=34 315 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1709,7 +1709,7 @@ NormalFileUV=0 0 66 66
 [CTRL_SKILL_BG]
 Type=19
 Tag=207
-Rect=11 60 620 326
+Rect=21 60 620 326
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -1876,7 +1876,7 @@ UIClsoeType=0
 [CTRL_PICTURE_SKILL_DO]
 Type=1
 Tag=178
-Rect=119 60 120 221
+Rect=331 -10 120 221
 AnchorPos=0 0
 Notes=
 UIOpenType=0

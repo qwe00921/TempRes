@@ -14,10 +14,10 @@ end
 --构造函数
 function p:ctor()
 	self.IsEnd = false;
-	--self.IsAtkTurnEnd = false;	
+	--self.IsAtkTurnEnd = false;
 	self.turnState = W_BATTLE_NOT_TURN;
 	self.atkId = 0;
-	self.id = 0;	
+	self.id = 0;
 	--self.tarList = 0;
 	self.targetLst = {};
 	self.damageLst = {};
@@ -193,9 +193,9 @@ function p:atk_start()
 		
 		--WriteCon(string.format("X:%d,Y:%d",fX,fY));
 		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
---			cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
+			cmdMove = JumpMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);		
 		--else
-			cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
+			--cmdMove = OnlyMoveTo(atkFighter, self.originPos, self.enemyPos, seqStar);
 	--	end
 		
 		if w_battle_guid.IsGuid == false then  --正常战斗
@@ -226,9 +226,9 @@ function p:atk_startAtk()
 	local batch = w_battle_mgr.GetBattleBatch(); 
 	local seqStar = batch:AddSerialSequence();
 	local seqAtk = batch:AddSerialSequence();
-	local seqTarget = batch:AddSerialSequence(); 	
-    local seqAtkEnd = batch:AddSerialSequence(); 	
-	local seqMusic =  batch:AddSerialSequence(); 	
+	local seqTarget = batch:AddSerialSequence(); 
+    local seqAtkEnd = batch:AddSerialSequence(); 
+	local seqMusic =  batch:AddSerialSequence(); 
 	
 	WriteCon( "atkFighter atkid="..tostring(atkFighter:GetId()).." tarid="..tostring(tarFighter:GetId()) );
 	for k,v in pairs(self.targetLst) do
@@ -523,7 +523,7 @@ function p:atk_end()
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
         --返回原来的位置
 		local cmd5 = nil;
-		cmd5 = OnlyMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);	
+		cmd5 = JumpMoveTo(atkFighter, self.enemyPos, self.originPos, seqAtk);	
 
 		atkFighter:cmdLua( "atk_moveback",  self.id, "", seqAtk ); 
 	else

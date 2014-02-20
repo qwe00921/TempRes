@@ -47,7 +47,7 @@ function p.ShowUI(userinfo)
 	layer:Init(layer);
 	layer:SetSwallowTouch(false);
     
-	GetUIRoot():AddChildZ(layer, 1000);
+	GetUIRoot():AddChildZ(layer, 100000);
 	LoadUI("main_userinfo.xui", layer, nil);
 
 	p.layer = layer;
