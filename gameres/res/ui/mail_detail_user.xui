@@ -59,8 +59,8 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\quest\back.png
 NormalFileUV=0 0 122 60
-SelectFile=.\res\image\ui\public\close_click.png
-SelectedFileUV=0 0 100 98
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_9SLICES_19]
 Type=22

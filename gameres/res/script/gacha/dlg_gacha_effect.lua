@@ -16,8 +16,10 @@ p.continueImg = nil;
 function p.ShowUI( gacharesult )
 	p.gacharesult = gacharesult;
 	
+	dlg_gacha_result.CloseUI();
+	
 	if p.layer ~= nil then
-		p.layer:SetVisible( false );
+		p.layer:SetVisible( true );
 		dlg_menu.HideUI();
 		return;
 	end
@@ -62,6 +64,7 @@ function p.InitControllers()
 end
 
 function p.ShowBgEffect()
+	p.index = 1;
 	local batch1 = battle_show.GetNewBatch();
 	local seq1 = batch1:AddSerialSequence();
 	local cmd1 = createCommandEffect():AddFgEffect( 0, p.magic, "ui.gacha_magic_bg_appear" );
