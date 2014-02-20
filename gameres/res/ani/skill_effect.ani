@@ -1,137 +1,137 @@
 ;;攻击特效
 [attack_1001]
-image\skill\attack_1001.png @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1001.png @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1003]
-image\skill\attack_1003.png @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1003.png @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1005]
-image\skill\attack_1005.png @cut(2,4) @use(1,6) @scale=2 @time=0.1 
+image\skill\attack_1005.png @cut(2,4) @use(0,6) @scale=2 @time=0.07 @alpha=0.3
 [attack_1006]
-image\skill\attack_1006.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1 
+image\skill\attack_1006.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1007]
-image\skill\attack_1007.png  @cut(1,4) @use(1,4) @scale=2 @time=0.1 
+image\skill\attack_1007.png  @cut(1,4) @use(0,4) @scale=2 @time=0.1  @alpha=0.3
 [attack_1008]
-image\skill\attack_1008.png  @cut(2,4) @use(1,7) @scale=2 @time=0.1 
+image\skill\attack_1008.png  @cut(2,4) @use(0,7) @scale=2 @time=0.07  @alpha=0.3
 [attack_1015]
-image\skill\attack_1015.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1015.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1017]
-image\skill\attack_1017.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1017.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1019]
-image\skill\attack_1019.png  @cut(2,4) @use(1,6) @scale=2 @time=0.1
+image\skill\attack_1019.png  @cut(2,4) @use(0,6) @scale=2 @time=0.1 @alpha=0.3
 [attack_1020]
-image\skill\attack_1020.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1020.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1022]
-image\skill\attack_1022.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1022.png  @cut(2,4) @use(0,8) @scale=2 @time=0.1 @alpha=0.3
 [attack_1033]
-image\skill\attack_1033.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1033.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1034]
-image\skill\attack_1034.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1034.png  @cut(2,4) @use(0,8) @scale=2 @time=0.15 @alpha=0.3
 [attack_1035]
-image\skill\attack_1035.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1035.png  @cut(2,4) @use(0,8) @scale=2 @time=0.15 @alpha=0.3
 [attack_1036]
-image\skill\attack_1036.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1036.png  @cut(2,4) @use(0,8) @scale=2 @time=0.15 @alpha=0.3
 [attack_1043]
-image\skill\attack_1043.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1043.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1045]
-image\skill\attack_1045.png  @cut(2,4) @use(1,7) @scale=2 @time=0.1
+image\skill\attack_1045.png  @cut(2,4) @use(0,7) @scale=2 @time=0.15 @alpha=0.3
 [attack_1048]
-image\skill\attack_1048.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1048.png  @cut(2,4) @use(0,8) @scale=2 @time=0.15 @alpha=0.3
 [attack_1057]
-image\skill\attack_1057.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1057.png  @cut(2,4) @use(0,8) @scale=2 @time=0.15 @alpha=0.3
 [attack_1059]
-image\skill\attack_1059.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1059.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1061]
-image\skill\attack_1059.png  @cut(2,2) @use(1,4) @scale=2 @time=0.1
+image\skill\attack_1059.png  @cut(2,2) @use(0,4) @scale=1.5 @time=0.07 @alpha=0.3
 [attack_1062]
-image\skill\attack_1062.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1062.png  @cut(2,4) @use(0,8) @scale=2 @time=0.15 @alpha=0.3
 [attack_1089]
-image\skill\attack_1089.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1089.png  @cut(2,4) @use(0,8) @scale=2 @time=0.07 @alpha=0.3
 [attack_1090]
-image\skill\attack_1090.png  @cut(2,4) @use(1,8) @scale=2 @time=0.1
+image\skill\attack_1090.png  @cut(2,4) @use(0,8) @scale=2 @time=0.15 @alpha=0.3
 
 ;;受击特效
 [target_1002]
-image\skill\target_1002.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1002.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1004]
-image\skill\target_1004.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1004.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1005]
-image\skill\target_1005.png @cut(2,4) @use(1,5) @time=0.1
+image\skill\target_1005.png @cut(2,4) @use(0,4) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1007]
-image\skill\target_1007.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1007.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1016]
-image\skill\target_1016.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1016.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1018]
-image\skill\target_1018.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1018.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1019]
-image\skill\target_1019.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1019.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1022]
-image\skill\target_1022.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1022.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1029]
-image\skill\target_1029.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1029.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1030]
-image\skill\target_1030.png @cut(2,4) @use(1,8) @time=0.1
+image\skill\target_1030.png @cut(2,4) @use(0,8) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1031]
-image\skill\target_1031.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1031.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1032]
-image\skill\target_1032.png @cut(2,4) @use(1,8) @time=0.1
+image\skill\target_1032.png @cut(2,4) @use(0,8) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1034]
-image\skill\target_1034.png @cut(2,4) @use(1,8) @time=0.1
+image\skill\target_1034.png @cut(2,4) @use(0,8) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1036]
-image\skill\target_1036.png @cut(2,4) @use(1,8) @time=0.1
+image\skill\target_1036.png @cut(2,4) @use(0,8) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1044]
-image\skill\target_1044.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1044.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1046]
-image\skill\target_1046.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1046.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1048]
-image\skill\target_1048.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1048.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1058]
-image\skill\target_1058.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1058.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1060]
-image\skill\target_1060.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1060.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1061]
-image\skill\target_1061.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1061.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1062]
-image\skill\target_1062.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1062.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1071]
-image\skill\target_1071.png @cut(2,5) @use(3,10) @time=0.1
+image\skill\target_1071.png @cut(2,5) @use(2,10) @scale=1.5 @time=0.15 @alpha=0.3
 [target_1090]
-image\skill\target_1090.png @cut(2,4) @use(3,8) @time=0.1
+image\skill\target_1090.png @cut(2,4) @use(2,6) @scale=1.5 @time=0.15 @alpha=0.3
 
 
 ;;弹道特效
 [bullet_1002]
-image\skill\target_1002.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1002.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1004]
-image\skill\target_1004.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1004.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1007]
-image\skill\target_1007.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1007.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1016]
-image\skill\target_1016.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1016.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1018]
-image\skill\target_1018.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1018.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1019]
-image\skill\target_1019.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1019.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1022]
-image\skill\target_1022.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1022.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1029]
-image\skill\target_1029.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1029.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1031]
-image\skill\target_1031.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1031.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1044]
-image\skill\target_1044.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1044.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1046]
-image\skill\target_1046.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1046.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1048]
-image\skill\target_1048.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1048.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1058]
-image\skill\target_1058.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1058.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1060]
-image\skill\target_1060.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1060.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1061]
-image\skill\target_1061.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1061.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1062]
-image\skill\target_1062.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1062.png @cut(2,4) @use(0,2) @time=0.1 @loop
 [bullet_1071]
-image\skill\target_1071.png @cut(2,5) @use(1,2) @time=0.1
+image\skill\target_1071.png @cut(2,5) @use(0,2) @time=0.1 @loop
 [bullet_1090]
-image\skill\target_1090.png @cut(2,4) @use(1,2) @time=0.1
+image\skill\target_1090.png @cut(2,4) @use(0,2) @time=0.1 @loop
 
