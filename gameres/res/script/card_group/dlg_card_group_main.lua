@@ -111,24 +111,6 @@ function p.SetDelegate()
 	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_110 );
 	bt:SetLuaDelegate( p.OnBtnClick );
 	
-	local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
-	lbtn3:SetVisible(true);
-	
-	local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
-	lbtn3:SetVisible(true);
-	
-	local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
-	lbtn3:SetVisible(true);
-	
-	local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
-	rbtn3:SetVisible(true);
-	
-	local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
-	rImage2:SetVisible(true);
-	
-	local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
-	rImage1:SetVisible(true);	
-	
 	--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_22 );
 	--table.insert( p.imageList, image );
 	--image = GetImage( p.layer, ui.ID_CTRL_PICTURE_23 );
@@ -290,7 +272,7 @@ function p.ShowTeamList()
 		teamid = teamid - 1;
 	end
 	list:SetActiveView(teamid);
-
+	p.showBtn(teamid + 1);
 end
 
 --显示单个节点
