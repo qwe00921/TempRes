@@ -3,29 +3,16 @@
 Width=640
 Height=960
 
-[CTRL_BUTTON_BG]
-Type=2
-Tag=21
-Rect=0 0 640 870
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-Stretch=1
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_46]
 Type=1
 Tag=46
-Rect=168 450 304 16
+Rect=181 587 304 25
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_frame_bg.png
-NormalFileUV=0 0 351 16
+NormalFile=.\res\image\ui\card_attr_base\exp_bg.png
+NormalFileUV=0 0 105 14
 
 [CTRL_PICTURE_106]
 Type=1
@@ -41,7 +28,7 @@ NormalFileUV=0 0 299 91
 [CTRL_PICTURE_REWARD_TEXT_BG]
 Type=1
 Tag=23
-Rect=-3 257 272 49
+Rect=10 394 272 49
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -52,7 +39,7 @@ NormalFileUV=0 0 272 49
 [CTRL_TEXT_STAR]
 Type=4
 Tag=4
-Rect=68 262 172 33
+Rect=81 399 172 33
 AnchorPos=0 0
 Notes=
 Text=任务奖励
@@ -67,11 +54,11 @@ UIClsoeType=0
 [CTRL_TEXT_CHAPTER]
 Type=4
 Tag=3
-Rect=220 168 201 31
+Rect=160 166 321 31
 AnchorPos=0 0
 Notes=
-Text=章节
-TextTradition=章節
+Text=章节一二三四五六七八九十
+TextTradition=章節一二三四五六七八九十
 TextSize=24
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
@@ -97,7 +84,7 @@ UIClsoeType=0
 [CTRL_PICTURE_MONEY]
 Type=1
 Tag=29
-Rect=242 404 32 32
+Rect=255 540 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -108,7 +95,7 @@ NormalFileUV=0 0 150 150
 [CTRL_TEXT_MONEY_V]
 Type=4
 Tag=18
-Rect=296 312 107 32
+Rect=309 449 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -121,7 +108,7 @@ UIClsoeType=0
 [CTRL_PICTURE_GHO]
 Type=1
 Tag=30
-Rect=243 359 30 30
+Rect=256 494 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -132,7 +119,7 @@ NormalFileUV=0 0 150 150
 [CTRL_TEXT_SOUL_V]
 Type=4
 Tag=32
-Rect=296 358 107 32
+Rect=309 495 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -145,7 +132,7 @@ UIClsoeType=0
 [CTRL_TEXT_EXP_V]
 Type=4
 Tag=17
-Rect=296 404 107 32
+Rect=309 541 107 32
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -158,7 +145,7 @@ UIClsoeType=0
 [CTRL_EXP_EXP]
 Type=9
 Tag=33
-Rect=177 453 291 11
+Rect=187 591 292 16
 AnchorPos=0 0
 Notes=
 TextSize=16
@@ -172,11 +159,11 @@ NormalFileUV=0 0 340 13
 [CTRL_TEXT_EXP_UP]
 Type=4
 Tag=35
-Rect=161 488 194 25
+Rect=159 625 209 25
 AnchorPos=0 0
 Notes=
-Text=距离下一等级经验
-TextTradition=距離下一等級經驗
+Text=距离下一等级还需经验
+TextTradition=距離下一等級還需經驗
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
@@ -187,10 +174,10 @@ UIClsoeType=0
 [CTRL_TEXT_NEED_EXP_V]
 Type=4
 Tag=36
-Rect=373 484 107 32
+Rect=367 622 107 32
 AnchorPos=0 0
 Notes=
-TextSize=24
+TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -200,7 +187,7 @@ UIClsoeType=0
 [CTRL_PICTURE_36]
 Type=1
 Tag=38
-Rect=1 524 272 49
+Rect=14 661 272 49
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -211,7 +198,7 @@ NormalFileUV=0 0 272 49
 [CTRL_TEXT_ITEM]
 Type=4
 Tag=39
-Rect=71 530 155 32
+Rect=84 667 155 32
 AnchorPos=0 0
 Notes=
 Text=获得物品
@@ -226,7 +213,7 @@ UIClsoeType=0
 [CTRL_VERTICAL_LIST_ITEMANDCHA]
 Type=14
 Tag=40
-Rect=18 576 604 279
+Rect=31 713 604 176
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -235,7 +222,7 @@ UIClsoeType=0
 [CTRL_PICTURE_105]
 Type=1
 Tag=105
-Rect=241 311 35 35
+Rect=254 448 35 35
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -246,7 +233,7 @@ NormalFileUV=0 0 148 147
 [CTRL_TEXT_31]
 Type=4
 Tag=31
-Rect=186 312 65 32
+Rect=199 449 65 32
 AnchorPos=0 0
 Notes=
 Text=获得
@@ -261,7 +248,7 @@ UIClsoeType=0
 [CTRL_TEXT_32]
 Type=4
 Tag=37
-Rect=186 358 65 32
+Rect=199 495 65 32
 AnchorPos=0 0
 Notes=
 Text=获得
@@ -276,7 +263,7 @@ UIClsoeType=0
 [CTRL_TEXT_33]
 Type=4
 Tag=41
-Rect=186 404 65 32
+Rect=199 541 65 32
 AnchorPos=0 0
 Notes=
 Text=获得
@@ -291,10 +278,23 @@ UIClsoeType=0
 [CTRL_PICTURE_32]
 Type=1
 Tag=34
-Rect=166 450 310 19
+Rect=145 72 310 11
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\exp_frame1.png
-NormalFileUV=0 0 351 22
+NormalFile=.\res\image\ui\card_attr_base\underline.png
+NormalFileUV=0 0 205 7
+
+[CTRL_BUTTON_BG]
+Type=2
+Tag=21
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+Stretch=1
+UIOpenType=0
+UIClsoeType=0

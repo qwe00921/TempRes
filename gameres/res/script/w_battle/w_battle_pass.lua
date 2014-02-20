@@ -64,7 +64,7 @@ function p.InitController()
 	
 	p.pExp = GetExp( p.layer, ui.ID_CTRL_EXP_218 );
 	p.pExp:SetTextStyle( 2 );--进度条本身不显示文字
-	p.pExp:SetReverseExp( true );
+	--p.pExp:SetReverseExp( true );
 	p.pExp:SetValue( 0, 100, math.min( math.floor( p.fromNum/p.totalNum*100 ), 100 ));
 end
 

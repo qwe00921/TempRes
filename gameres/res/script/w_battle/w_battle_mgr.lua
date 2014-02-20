@@ -959,11 +959,19 @@ function p.InitLockFromUI()
 		local ltag = p.enemyUILockArray[position];
 		local lLockPic = GetImage(p.uiLayer, ltag);	    
 		if lLockPic ~= nil then
+			local lPos = lLockPic:GetCenterPos();
+			--local lscale = GetUIScale();
+		    --lPos.x = lPos.x * lscale;
+			
+			local offsety = GetUIRoot():GetOffsetHeight();
+			lPos.y = lPos.y + offsety;
+			
 			lLockPic:RemoveFromParent(false);
 			GetUIRoot():AddChild(lLockPic);
 			lLockPic:SetTag(ltag);
 			lLockPic:SetZOrder(99);
 			lLockPic:SetVisible(false);
+			lLockPic:SetCenterPos(lPos)
 			p.LoakPic[#p.LoakPic + 1] = lLockPic; 
 		else
 			lLockPic = GetImage(GetUIRoot(), ltag);	    

@@ -85,7 +85,7 @@ NormalFileUV=0 0 46 13
 [CTRL_PICTURE_26]
 Type=1
 Tag=27
-Rect=286 98 89 33
+Rect=271 98 89 33
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -123,30 +123,30 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\exp3.png
-NormalFileUV=0 0 46 46
+NormalFile=.\res\image\ui\main_interface\exp4.png
+NormalFileUV=0 0 30 30
 
 [CTRL_PICTURE_24]
 Type=1
 Tag=25
-Rect=129 90 46 46
+Rect=129 90 46 45
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\money3.png
-NormalFileUV=0 0 46 46
+NormalFile=.\res\image\ui\main_interface\money3.png
+NormalFileUV=0 0 39 38
 
 [CTRL_PICTURE_25]
 Type=1
 Tag=26
-Rect=242 81 46 59
+Rect=242 94 46 45
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\quest\soul.png
-NormalFileUV=0 0 46 59
+NormalFile=.\res\image\ui\main_interface\soul.png
+NormalFileUV=0 0 39 38
 
 [CTRL_PICTURE_29]
 Type=1

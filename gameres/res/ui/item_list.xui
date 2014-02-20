@@ -174,22 +174,10 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_118]
-Type=2
-Tag=118
-Rect=117 334 405 293
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_112]
 Type=22
 Tag=25
-Rect=111 324 421 311
+Rect=109 322 421 311
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -201,7 +189,7 @@ NormalFileUV=0 0 100 100
 [CTRL_PICTURE_113]
 Type=1
 Tag=113
-Rect=151 413 100 100
+Rect=143 391 100 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -210,12 +198,12 @@ UIClsoeType=0
 [CTRL_TEXT_114]
 Type=4
 Tag=114
-Rect=136 356 138 30
+Rect=136 349 210 35
 AnchorPos=0 0
 Notes=
 Text=物品名字物品名称
 TextTradition=物品名字物品名稱
-TextSize=18
+TextSize=26
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -225,7 +213,7 @@ UIClsoeType=0
 [CTRL_TEXT_115]
 Type=4
 Tag=115
-Rect=277 413 234 183
+Rect=271 391 234 183
 AnchorPos=0 0
 Notes=
 Text=物品说明物品说明物品说明物品说明物品说明物品说明
@@ -240,7 +228,7 @@ UIClsoeType=0
 [CTRL_BUTTON_116]
 Type=2
 Tag=116
-Rect=413 349 99 49
+Rect=145 555 99 49
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -296,3 +284,19 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\country\meterial.png
 NormalFileUV=0 0 122 60
+
+[CTRL_BUTTON_118]
+Type=2
+Tag=118
+Rect=465 324 68 68
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\close2.png
+NormalFileUV=0 0 68 68
+SelectFile=.\res\image\ui\public\close2_click.png
+SelectedFileUV=0 0 68 68

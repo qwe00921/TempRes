@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_216]
 Type=1
 Tag=216
-Rect=1 -1 640 478
+Rect=0 0 640 478
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 24 24
 [CTRL_PICTURE_217]
 Type=1
 Tag=217
-Rect=80 311 475 37
+Rect=135 267 392 37
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 475 37
 [CTRL_EXP_218]
 Type=9
 Tag=218
-Rect=104 319 427 21
+Rect=155 275 352 21
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -39,21 +39,10 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\battle_meter_gauge.png
 NormalFileUV=0 0 427 21
 
-[CTRL_PICTURE_219]
-Type=1
-Tag=219
-Rect=287 350 43 40
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\battle_meter_caption.png
-NormalFileUV=0 0 39 37
-
 [CTRL_PICTURE_220]
 Type=1
 Tag=220
-Rect=42 188 157 122
+Rect=504 236 105 81
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -64,7 +53,7 @@ NormalFileUV=0 0 157 122
 [CTRL_PICTURE_221]
 Type=1
 Tag=221
-Rect=439 219 160 91
+Rect=31 247 105 60
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -75,7 +64,7 @@ NormalFileUV=0 0 160 91
 [CTRL_TEXT_222]
 Type=4
 Tag=222
-Rect=340 274 87 27
+Rect=288 319 87 27
 AnchorPos=0 0
 Notes=
 Text=9/9
