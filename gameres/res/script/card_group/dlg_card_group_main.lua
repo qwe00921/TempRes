@@ -27,7 +27,7 @@ p.missionId = nil;
 p.stageId = nil;
 p.missionTeamID = nil;
 p.imageList = {};
-
+--p.viewTag = nil;
 
 local ui = ui_card_group;
 
@@ -110,6 +110,24 @@ function p.SetDelegate()
 	
 	bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_110 );
 	bt:SetLuaDelegate( p.OnBtnClick );
+	
+	local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
+	lbtn3:SetVisible(true);
+	
+	local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
+	lbtn3:SetVisible(true);
+	
+	local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
+	lbtn3:SetVisible(true);
+	
+	local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
+	rbtn3:SetVisible(true);
+	
+	local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
+	rImage2:SetVisible(true);
+	
+	local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
+	rImage1:SetVisible(true);	
 	
 	--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_22 );
 	--table.insert( p.imageList, image );
@@ -237,7 +255,7 @@ function p.ShowTeamList()
 	--	end
 	--	return;
 	--end
-	
+			
 	list:ClearView();
 	p.listViewCach = {};
 	for i = 1, #user_teams do
@@ -252,6 +270,7 @@ function p.ShowTeamList()
 		
 		view:SetId( tonumber(user_teams[i].Team_id or "0") );
 		view:SetTag(i);
+		view:SetLuaDelegate(p.onViewScrolled);
 		list:AddView( view );
 		
 	end
@@ -429,6 +448,72 @@ function p.SetTeamInfo( view, user_teamData )
 	]]--
 end
 
+function p.showBtn(lTag)
+	if lTag == 1 then
+			--local bt = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT )
+			local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
+			lbtn3:SetVisible(false);
+			
+			local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
+			lImage2:SetVisible(false);
+			
+			local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
+			lImage1:SetVisible(false);
+			
+			local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
+			rbtn3:SetVisible(true);
+			
+			local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
+			rImage2:SetVisible(true);
+			
+			local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
+			rImage1:SetVisible(true);
+		elseif lTag == 2 then
+			local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
+			lbtn3:SetVisible(true);
+			
+			local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
+			lImage2:SetVisible(true);
+			
+			local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
+			lImage1:SetVisible(true);
+			
+			local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
+			rbtn3:SetVisible(true);
+			
+			local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
+			rImage2:SetVisible(true);
+			
+			local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
+			rImage1:SetVisible(true);
+		elseif lTag == 3 then
+			local lbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT3);
+			lbtn3:SetVisible(true);
+			
+			local lImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT2);
+			lImage2:SetVisible(true);
+			
+			local lImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_LEFT1);
+			lImage1:SetVisible(true);
+			
+			local rbtn3 = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT3);
+			rbtn3:SetVisible(false);
+			
+			local rImage2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT2);
+			rImage2:SetVisible(false);
+			
+			local rImage1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_RIGHT1);
+			rImage1:SetVisible(false);
+		end	
+end
+
+function p.onViewScrolled(uiNode, uiEventType, param)
+	local lTag = uiNode:GetTag();
+	if IsActiveViewEvent(uiEventType) then
+		p.showBtn(lTag);
+	end
+end;
+
 function p.OnListScrolled()
 	local listindex = p.scrollList:GetCurrentIndex();
 	local index = math.mod(listindex, 3)+1;
@@ -571,9 +656,13 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			list:MoveToPrevView();
+			local lTag = p.m_list:GetActiveView() + 1 ;
+			p.showBtn(lTag); --数据已经更新,界面拖动效果后完成
 		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			list:MoveToNextView();
+			local lTag = p.m_list:GetActiveView() + 1 ;
+			p.showBtn(lTag); --数据已经更新,界面拖动效果后完成
 		elseif ui.ID_CTRL_BUTTON_110 == tag then
 			local list = GetListBoxHorz( p.layer, ui.ID_CTRL_LIST_9 );
 			local bg =  GetImage( p.layer, ui.ID_CTRL_PICTURE_DRAG_BG );

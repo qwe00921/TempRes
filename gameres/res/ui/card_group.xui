@@ -77,7 +77,7 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_LEFT2]
+[CTRL_BUTTON_LEFT3]
 Type=2
 Tag=11
 Z_Order=99
@@ -92,7 +92,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\mail\left1.png
 NormalFileUV=0 0 40 44
 
-[CTRL_BUTTON_RIGHT2]
+[CTRL_BUTTON_RIGHT3]
 Type=2
 Tag=12
 Z_Order=99
@@ -124,7 +124,7 @@ NormalFileUV=0 0 149 60
 SelectFile=.\res\image\ui\card\button_4.png
 SelectedFileUV=0 0 149 60
 
-[CTRL_PICTURE_13]
+[CTRL_PICTURE_RIGHT2]
 Type=1
 Tag=13
 Rect=486 771 28 31
@@ -135,7 +135,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\mail\right2.png
 NormalFileUV=0 0 28 31
 
-[CTRL_PICTURE_14]
+[CTRL_PICTURE_LEFT2]
 Type=1
 Tag=14
 Rect=127 771 28 31
@@ -146,7 +146,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\mail\left2.png
 NormalFileUV=0 0 28 31
 
-[CTRL_PICTURE_15]
+[CTRL_PICTURE_RIGHT1]
 Type=1
 Tag=15
 Rect=460 777 17 18
@@ -157,7 +157,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\mail\right3.png
 NormalFileUV=0 0 17 18
 
-[CTRL_PICTURE_16]
+[CTRL_PICTURE_LEFT1]
 Type=1
 Tag=16
 Rect=164 777 17 18

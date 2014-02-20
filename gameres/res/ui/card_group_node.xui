@@ -1151,3 +1151,57 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card\defence.png
 NormalFileUV=0 0 23 20
+
+[CTRL_PICTURE_STAR1]
+Type=1
+Tag=110
+Rect=185 102 69 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_STAR2]
+Type=1
+Tag=129
+Rect=250 276 69 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_STAR3]
+Type=1
+Tag=131
+Rect=183 453 69 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_STAR4]
+Type=1
+Tag=132
+Rect=475 105 69 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_STAR5]
+Type=1
+Tag=133
+Rect=536 276 69 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_131]
+Type=1
+Tag=134
+Rect=471 453 69 19
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
