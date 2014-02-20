@@ -224,6 +224,10 @@ function p.CmdLuaHandler( cmdtype, id, num, str )
 		card_rein.HideSelectCard( id, num);
 	elseif cmdtype == "w_battle_passby" then
 		w_battle_pass_bg.CmdLuaCallBack( id, num );
+	elseif cmdtype == "gacha_effect_show" then
+		dlg_gacha_effect.ShowLoopEffect();
+	elseif cmdtype == "gacha_effect_show_end" then
+		dlg_gacha_effect.DoShowCardEffect();
 	else
 		--
 	end
