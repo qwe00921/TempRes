@@ -32,6 +32,7 @@ p.cardListByProf = {};
 p.cardListNode = {};		--所有卡牌节点列表
 p.cardNumListNode = {};
 p.cardEnabled = true;
+p.rookieNode = nil;
 function p.ShowUI(baseCardInfo)
 	
 	if baseCardInfo == nil then 
@@ -53,7 +54,7 @@ function p.ShowUI(baseCardInfo)
     layer:Init();   
 	layer:SetSwallowTouch(false);
 	
-    GetUIRoot():AddDlg(layer);
+    GetUIRoot():AddChildZ(layer,0);
     LoadDlg("card_intensify.xui", layer, nil);
 
     p.layer = layer;
@@ -128,6 +129,13 @@ function p.SetDelegate(layer)
 	
 end
 
+function p.rookieClickEvent()
+	local intensifyByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_26);
+	p.OnUIClickEvent(intensifyByBtn, NUIEventType.TE_TOUCH_CLICK)
+end
+function p.rookieClickOnCard()
+	p.OnCardClickEvent(p.rookieNode,NUIEventType.TE_TOUCH_CLICK)
+end
 --事件处理
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	WriteCon("OnUIClickEvent....");
@@ -399,7 +407,7 @@ function p.ShowCardView(cardList)
 				local card = cardList[j];
 				
 				local cardIndex = j - start_index + 1;
-				p.ShowCardInfo( view, card, cardIndex );
+				p.ShowCardInfo( view, card, cardIndex, i );
 				
 			end
 		end
@@ -427,7 +435,7 @@ function p.ShowCardView(cardList)
 	
 end
 --显示单张卡牌
-function p.ShowCardInfo( view, card, cardIndex )
+function p.ShowCardInfo( view, card, cardIndex, row )
 	--WriteCon("************"..cardIndex);
 	local cardBtn = nil;
 	local cardLevel = nil;
@@ -531,8 +539,10 @@ function p.ShowCardInfo( view, card, cardIndex )
 	if tonumber(card.Item_id1) ~= 0 or tonumber(card.Item_id2) ~= 0 then
 		cardButton:SetEnabled(false);
 	end
-	
-	
+	if row == 1 and cardIndex == 1 then
+		p.rookieNode = cardButton;
+		WriteCon("rookie btn");
+	end
 	p.cardListNode[#p.cardListNode + 1] = cardButton;
 end
 

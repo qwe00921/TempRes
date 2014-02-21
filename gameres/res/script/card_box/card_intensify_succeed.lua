@@ -28,7 +28,7 @@ function p.ShowUI(beforCardInfo)
     layer:Init();   
 	layer:SetSwallowTouch(false);
 	
-    GetUIRoot():AddDlg(layer);
+    GetUIRoot():AddChildZ(layer,0);
     LoadDlg("card_intensify_succeed.xui", layer, nil);
 
     p.layer = layer;

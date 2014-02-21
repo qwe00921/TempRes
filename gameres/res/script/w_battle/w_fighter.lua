@@ -857,6 +857,7 @@ function p:UseSpBall(pVal)
 		if self.Sp > self.maxSp then
 			self.Sp = self.maxSp;
 		end
+		w_battle_pve.SetHeroCardAttr(self:GetId(), self);
 	else
 		WriteConErr("Error SpBall fly to die! POS:"..tostring(self:GetId()));
 	end;

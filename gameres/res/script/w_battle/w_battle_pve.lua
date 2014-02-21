@@ -772,7 +772,7 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 					if tonumber(v.Sp) >= 100 then
 						local size = p.skillImage:GetFrameSize();
 						
-						p.skillImage:SetFramePosXY( tonumber(param.x), tonumber(param.y)-size.h );
+						p.skillImage:SetFramePosXY( tonumber(param.x), tonumber(param.y)-size.h+15*GetUIScale() );
 						p.skillImage:SetVisible( true );
 						
 						p.skillImage:RemoveFromParent(false);
