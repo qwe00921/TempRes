@@ -875,7 +875,8 @@ function p.CheckEnemyAllDied()
 end;
 
 --战斗胜利
-function p.FightWin()  
+function p.FightWin() 
+	WriteCon("Fight Win");
 	if w_battle_guid.IsGuid == false then
 		KillTimer(p.buffTimerID);
 		p.heroCamp:ClearFighterBuff();
@@ -907,6 +908,7 @@ end;
 
 --战斗失败
 function p.FightLose()  
+	WriteCon("Fight Lose");
 	KillTimer(p.buffTimerID);
 	p.InitLockAction();
 	--没有续打,只有失败界面
@@ -1154,7 +1156,7 @@ function p.GetAddSoul()
 end
 
 function p.MissionWin()
-	
+	WriteCon("Mission Win");
 	local lmoney = p.GetAddMoney();
 	local lsoul = p.GetAddSoul();
 	p.QuitBattle();
