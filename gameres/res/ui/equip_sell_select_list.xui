@@ -181,81 +181,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_DRESSED_1]
-Type=4
-Tag=190
-Rect=559 240 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_4]
-Type=4
-Tag=191
-Rect=559 240 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_3]
-Type=4
-Tag=192
-Rect=559 240 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_2]
-Type=4
-Tag=193
-Rect=559 240 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_5]
-Type=4
-Tag=114
-Rect=559 240 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_121]
 Type=1
 Tag=125
@@ -551,7 +476,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card\num\2.png
 NormalFileUV=0 0 36 36
 
-[CTRL_PICTURE_103]
+[CTRL_PICTURE_DRESSED_1]
 Type=1
 Tag=103
 Rect=79 97 40 15
@@ -562,7 +487,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_104]
+[CTRL_PICTURE_DRESSED_2]
 Type=1
 Tag=104
 Rect=202 97 40 15
@@ -573,7 +498,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_105]
+[CTRL_PICTURE_DRESSED_3]
 Type=1
 Tag=105
 Rect=325 97 40 15
@@ -584,7 +509,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_106]
+[CTRL_PICTURE_DRESSED_4]
 Type=1
 Tag=106
 Rect=448 97 40 15
@@ -595,7 +520,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_107]
+[CTRL_PICTURE_DRESSED_5]
 Type=1
 Tag=107
 Rect=571 97 40 15

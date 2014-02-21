@@ -213,8 +213,8 @@ function p.initListUI(view)
 			lImgLv:SetVisible(false);
 		end
 		
-		local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备 OK
-		local drsV	= GetLabel(view, ui_list[drsTagStr]);
+		local drsTagStr = "ID_CTRL_PICTURE_DRESSED_"..indexStr; --是否已装备 OK
+		local drsV	= GetImage(view, ui_list[drsTagStr]);
 		if drsV ~= nil then
 			drsV:SetVisible(false);
 		end
@@ -230,7 +230,7 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	local imgTagStr = "ID_CTRL_PICTURE_IMAGE_"..indexStr; --OK
 	local lvImgStr = "ID_CTRL_PICTURE_LV"..indexStr;  --等级的图片
 	local lvTagStr 	= "ID_CTRL_TEXT_LEVEL_"..indexStr;  --等级 OK
-	local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备 OK
+	local drsTagStr = "ID_CTRL_PICTURE_DRESSED_"..indexStr; --是否已装备 OK
 	--local selTagStr = "ID_CTRL_TEXT_SELECT_"..indexStr;  --是否已选择标记 OK
 	local selTagStr = "ID_CTRL_PICTURE_SELECT_"..indexStr;  --是否已选择标记 OK
 	--local rankTagStr= "ID_CTRL_TEXT_RANK_"..indexStr; --星级
@@ -242,7 +242,7 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
 	local bt 	= GetButton(view, ui_list[btTagStr]);
 	local imgV	= GetImage(view, ui_list[imgTagStr]);
 	local lvV 	= GetLabel(view, ui_list[lvTagStr]);
-	local drsV	= GetLabel(view, ui_list[drsTagStr]);
+	local drsV	= GetImage(view, ui_list[drsTagStr]);
 --	local selV	= GetImage(view, ui_list[selTagStr]);
 	--local rankV	= GetImage(view, ui_list[rankTagStr]); 
 	local nmV	= GetLabel(view, ui_list[nmTagStr]);

@@ -137,9 +137,16 @@ function p.SetDelegate()
 	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
 		--local aniIndex = "item."..p.equip1.itemInfo.equip_id;
 		local pEquipInfo= SelectRowInner( T_EQUIP, "id", p.equip1.itemInfo.equip_id); 
-		pEquipPic1:SetPicture( GetPictureByAni(pEquipInfo.item_pic,0) );
-		pEquipPicBg1:SetImage( nil );
-		pLableEquip1:SetText(pEquipInfo.name);
+		if pEquipInfo ~= nil then
+			pEquipPic1:SetPicture( GetPictureByAni(pEquipInfo.item_pic,0) );
+			pEquipPicBg1:SetImage( nil );
+			pLableEquip1:SetText(pEquipInfo.name);	
+		else
+			WriteConErr("equip.ini error id="..tostring(p.equip1.itemInfo.equip_id));
+			pEquipPic1:SetPicture(nil);
+			pEquipPicBg1:SetImage( GetPictureByAni( "ui.card_equip_bg", 0 ) );
+			pLableEquip1:SetText("");
+		end
 	else
 		pEquipPic1:SetPicture(nil);
 		pEquipPicBg1:SetImage( GetPictureByAni( "ui.card_equip_bg", 0 ) );

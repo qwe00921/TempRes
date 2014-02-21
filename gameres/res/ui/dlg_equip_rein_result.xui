@@ -97,19 +97,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_LV_ARROW]
-Type=4
-Tag=52
-Rect=485 9 28 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_LV_NOW]
 Type=4
 Tag=53
@@ -145,19 +132,6 @@ Notes=
 TextSize=20
 TextColor=0xfffbf0
 TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_ATR_ARROW_1]
-Type=4
-Tag=56
-Rect=485 9 28 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -214,31 +188,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_ATR_ARROW_2]
-Type=4
-Tag=61
-Rect=485 9 28 30
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xfffbf0
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_EFFECT]
-Type=4
-Tag=62
-Rect=520 11 107 26
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_ADD]
 Type=9
 Tag=63
@@ -282,18 +231,6 @@ NormalFileUV=0 0 176 28
 Type=4
 Tag=66
 Rect=210 524 177 19
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_EFFECT_2]
-Type=4
-Tag=67
-Rect=520 11 107 26
 AnchorPos=0 0
 Notes=
 TextSize=10
