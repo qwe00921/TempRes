@@ -890,11 +890,11 @@ function p.ShowBagItemInfo( view, item, itemIndex )
 	if rtype == 2 then
 			aniIndex = "card_icon."..item_id;
 	elseif rtype == 4 then
-			aniIndex = "ui.emoney"
+			aniIndex = "common_ui.coin"
 	elseif rtype == 6 then
-			aniIndex = "ui.money"
+			aniIndex = "common_ui.money"
 	elseif rtype == 5 then
-			aniIndex = "ui.soul"
+			aniIndex = "common_ui.soul"
 	end
 
 	--显示物品图片

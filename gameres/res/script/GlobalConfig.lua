@@ -24,7 +24,7 @@ function GetItemName( nID, nType )
 	elseif nType == G_ITEMTYPE_MONEY then
 		return SelectCell( T_MONEY, 2, "name" );
 	elseif nType == G_ITEMTYPE_SOUL then
-		return "蓝魂";
+		return SelectCell( T_MONEY, 3, "name" );
 	elseif nType == G_ITEMTYPE_EMONEY then
 		return SelectCell( T_MONEY, 1, "name" );
 	elseif nType == G_ITEMTYPE_GIFT then
@@ -50,7 +50,7 @@ function GetItemPic( nID, nType )
 	elseif nType == G_ITEMTYPE_MONEY then
 		path = SelectCell( T_MONEY, 2, "item_pic" );
 	elseif nType == G_ITEMTYPE_SOUL then
-		path = "ui.soul";
+		path = SelectCell( T_MONEY, 3, "item_pic" );
 	elseif nType == G_ITEMTYPE_EMONEY then
 		path = SelectCell( T_MONEY, 1, "item_pic" );
 	elseif nType == G_ITEMTYPE_GIFT then

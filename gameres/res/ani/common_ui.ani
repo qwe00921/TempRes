@@ -122,6 +122,10 @@ image\ui\public\money.png
 [coin]
 image\ui\public\emoney.png
 
+;蓝魂图片
+[soul]
+image\ui\public\soul.png
+
 ;村庄建筑名字框
 [countNameBox]
 image\ui\card_bag\27.png
