@@ -44,7 +44,7 @@ function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 	p.cardInfo = cardInfo;
 	--layer:NoMask();
 	layer:Init();	
-	GetUIRoot():AddDlg( layer );
+	GetUIRoot():AddChildZ(layer,0);
     LoadDlg("dlg_card_attr_base.xui", layer, nil);
 	p.layer = layer;
     p.SetDelegate();
@@ -328,6 +328,11 @@ function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	end
 end
 
+function p.rookieIntensify()
+	dlg_menu.ShowUI();
+	card_rein.ShowUI(p.cardInfo);
+	p.HideUI();
+end
 --不能卖出提示框回调方法
 function p.OnMsgCallback(result)
 	
