@@ -24,7 +24,7 @@ function p:ctor()
 end
 
 --·¢Éä     
-function p:cmdShootPos( atkFighter, targetPos, seq, byJump )
+function p:cmdShootPos( atkFighter, targetPos, seq, byMove )
 	-- set bullet start pos
 	local atkPos = atkFighter:GetNode():GetCenterPos();
 	--node:SetVisible( true );
@@ -45,15 +45,17 @@ function p:cmdShootPos( atkFighter, targetPos, seq, byJump )
 	node:SetFramePosXY( atkPos.x + offsetX, atkPos.y + offsetY );
 	
 	-- sub distance
-	local percent = (distance - self:GetSubDistance()) / distance;
-	distance = distance * percent;
-	x = x * percent;
-	y = y * percent;
+	if byMove ~= true then
+		local percent = (distance - self:GetSubDistance()) / distance;
+		distance = distance * percent;
+		x = x * percent;
+		y = y * percent;
+	end;
 	
 	-- choose fx
 	local fx = "";
-	if byJump then
-		fx = "lancer_cmb.bullet_shoot_jump";
+	if byMove then
+		fx = "lancer.bullet_battle_move";
 	else
 		fx = "lancer.bullet_shoot";
 	end
@@ -63,7 +65,9 @@ function p:cmdShootPos( atkFighter, targetPos, seq, byJump )
 	local varEnv = cmd:GetVarEnv();
 	varEnv:SetFloat( "$1", x );
 	varEnv:SetFloat( "$2", y );
-	varEnv:SetFloat( "$3", distance * 0.4 );
+	if byMove ~= true then
+		varEnv:SetFloat( "$3", distance * 0.4 );
+	end;
 	
 	return cmd;
 	
