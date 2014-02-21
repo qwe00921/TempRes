@@ -500,9 +500,9 @@ function p:AddFighters( uiArray, fighters )
 		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
 			--有跳入动作
 			if self.idCamp == E_CARD_CAMP_HERO then
-				pOldPos.x = pOldPos.x + loffset
+			--	pOldPos.x = pOldPos.x + loffset
 			elseif self.idCamp == E_CARD_CAMP_ENEMY then
-				pOldPos.x = pOldPos.x - loffset
+			--	pOldPos.x = pOldPos.x - loffset
 			end
 			
 			node:SetCenterPos(pOldPos);
@@ -527,7 +527,12 @@ function p:AddFighters( uiArray, fighters )
 		f.canRevive = fighterInfo.canRevive;
 		f.dropLst = fighterInfo.dropLst; --掉落的物品列表
         f.buffList = {};
+
+		local x = pOldPos.x;
+		local y = pOldPos.y;
 		
+		local pNewPos = CCPointMake(x,y);
+		f:SaveOldPos(pNewPos);
 		
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then

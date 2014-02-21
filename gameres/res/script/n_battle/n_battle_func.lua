@@ -49,9 +49,9 @@ function JumpMoveTo(atkFighter, fPos, tPos, pJumpSeq)
     local atkPos = fPos;
     local lscale = GetUIScale();
 
-    local x = (tPos.x - atkPos.x)*lscale;
-    local y = (tPos.y - atkPos.y)*lscale;
-    local distance = (x ^ 2 + y ^ 2) ^ 0.75;
+    local x = tPos.x;
+    local y = tPos.y;
+    local distance = (x ^ 2 + y ^ 2) ^ 0.5;
     
     -- calc start offset
     local startOffset = 0;

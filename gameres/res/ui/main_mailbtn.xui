@@ -37,7 +37,7 @@ NormalFileUV=0 0 42 42
 [CTRL_TEXT_MAIL_TIPS_NUM]
 Type=4
 Tag=10
-Rect=554 781 30 30
+Rect=553 780 30 18
 AnchorPos=0 0
 Notes=
 Text=11

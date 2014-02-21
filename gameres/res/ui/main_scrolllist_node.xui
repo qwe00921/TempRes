@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_108]
 Type=2
 Tag=108
-Rect=-15 -25 115 115
+Rect=-15 -25 141 137
 AnchorPos=0 0
 Notes=
 TextSize=10

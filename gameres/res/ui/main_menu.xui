@@ -7,7 +7,7 @@ Height=960
 Type=1
 Tag=27
 Z_Order=-99
-Rect=0 0 640 960
+Rect=-634 -177 640 960
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -299,7 +299,7 @@ NormalFileUV=0 0 52 28
 [CTRL_PICTURE_305]
 Type=1
 Tag=305
-Rect=100 591 1 192
+Rect=85 602 1 192
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -341,7 +341,7 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_136]
 Type=4
 Tag=136
-Rect=100 591 440 1
+Rect=85 602 471 1
 AnchorPos=0 0
 Notes=
 TextSize=10

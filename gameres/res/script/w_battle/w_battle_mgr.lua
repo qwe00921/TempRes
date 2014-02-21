@@ -137,7 +137,7 @@ function p.starFighter()
 	local lEnemyFighter = p.enemyCamp:FindFighter(p.PVEEnemyID);
 	w_battle_pve.SetHp(lEnemyFighter);
 	--怪物进场动画结束后,调用intoSceneEnd
-	--p.IntoSceneEnd();
+	p.IntoSceneEnd();
 end;
 
 function p.IntoSceneEnd()
@@ -875,7 +875,8 @@ function p.CheckEnemyAllDied()
 end;
 
 --战斗胜利
-function p.FightWin()  
+function p.FightWin() 
+	WriteCon("Fight Win");
 	if w_battle_guid.IsGuid == false then
 		KillTimer(p.buffTimerID);
 		p.heroCamp:ClearFighterBuff();
@@ -907,6 +908,7 @@ end;
 
 --战斗失败
 function p.FightLose()  
+	WriteCon("Fight Lose");
 	KillTimer(p.buffTimerID);
 	p.InitLockAction();
 	--没有续打,只有失败界面
@@ -1102,7 +1104,7 @@ function p.createHeroCamp( fighters )
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
 	p.heroCamp:AddShadows( p.heroUIArray, fighters );
 	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-	p.heroCamp:AddAllRandomTimeJumpEffect(true);
+	--p.heroCamp:AddAllRandomTimeJumpEffect(true);
 	--end;
 end
 
@@ -1113,7 +1115,7 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
 	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
 	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
+	--p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 	--end;
 end
 
@@ -1154,7 +1156,7 @@ function p.GetAddSoul()
 end
 
 function p.MissionWin()
-	
+	WriteCon("Mission Win");
 	local lmoney = p.GetAddMoney();
 	local lsoul = p.GetAddSoul();
 	p.QuitBattle();
