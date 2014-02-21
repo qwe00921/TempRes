@@ -31,7 +31,7 @@ local uiList = {
 		[11]= ui_learning_3_11,
 		[12]= ui_learning_3_12,
 		[13]= ui_learning_3_13,
-	}
+	},
 	[9] = {
 		[2] = ui_learning_9_2,
 		[3] = ui_learning_9_3,
