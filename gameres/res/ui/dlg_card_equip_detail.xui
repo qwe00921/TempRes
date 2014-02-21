@@ -15,17 +15,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame14.png
 NormalFileUV=0 0 100 100
 
-[CTRL_9SLICES_19]
-Type=22
-Tag=21
-Rect=195 16 362 151
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg_txt_squ.png
-NormalFileUV=0 0 50 50
-
 [CTRL_PICTURE_IMAGE]
 Type=1
 Tag=3
@@ -45,32 +34,6 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
-
-[CTRL_TEXT_4]
-Type=4
-Tag=4
-Rect=92 20 167 42
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DES]
-Type=4
-Tag=5
-Rect=65 731 434 70
-AnchorPos=0 0
-Notes=
-TextSize=18
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_BUTTON_UPGRADE]
 Type=2
@@ -176,21 +139,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_1331]
-Type=4
-Tag=1331
-Rect=114 94 118 48
-AnchorPos=0 0
-Notes=
-Text=附加属性：
-TextTradition=附加屬性：
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_LEVEL]
 Type=4
 Tag=1335
@@ -200,45 +148,6 @@ Notes=
 TextSize=18
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_ATTR_EX_3]
-Type=4
-Tag=1336
-Rect=354 100 117 37
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_ATTR_EX_2]
-Type=4
-Tag=1337
-Rect=476 100 115 37
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_ATTR_EX_1]
-Type=4
-Tag=1338
-Rect=240 100 110 37
-AnchorPos=0 0
-Notes=
-TextSize=15
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -288,17 +197,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_9SLICES_20]
-Type=22
-Tag=22
-Rect=157 -6 120 120
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\public\frame.png
-NormalFileUV=0 0 100 100
-
 [CTRL_9SLICES_259]
 Type=22
 Tag=259
@@ -310,34 +208,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\bg_txt_squ.png
 NormalFileUV=0 0 50 50
 
-[CTRL_TEXT_260]
-Type=4
-Tag=260
-Rect=195 53 97 42
-AnchorPos=0 0
-Notes=
-Text=装备类型
-TextTradition=裝備類型
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_TYP]
-Type=4
-Tag=1328
-Rect=286 59 81 31
-AnchorPos=0 0
-Notes=
-TextSize=18
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_TEXT_ATTR2]
 Type=4
 Tag=261
@@ -346,21 +216,6 @@ AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_262]
-Type=4
-Tag=262
-Rect=376 30 97 30
-AnchorPos=0 0
-Notes=
-Text=装备经验
-TextTradition=裝備經驗
-TextSize=18
-TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -431,14 +286,5 @@ TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_STAR]
-Type=1
-Tag=74
-Rect=123 53 102 37
-AnchorPos=0 0
-Notes=
 UIOpenType=0
 UIClsoeType=0

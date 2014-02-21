@@ -181,9 +181,9 @@ function p.sortByBtnEvent(sortType)
 	elseif(sortType == CARD_BAG_SORT_BY_STAR) then
 		sortImg:SetPicture(GetPictureByAni("ui.card_order",2));
 		p.sortByRuleV = CARD_BAG_SORT_BY_STAR;
-	elseif(sortType == CARD_BAG_SORT_BY_TIME) then 
+	elseif(sortType == CARD_BAG_SORT_BY_TYPE) then 
 		sortImg:SetPicture(GetPictureByAni("ui.card_order",3));		
-		p.sortByRuleV = CARD_BAG_SORT_BY_TIME;
+		p.sortByRuleV = CARD_BAG_SORT_BY_TYPE;
 	end
 	p.sortByRule(sortType)
 
@@ -574,6 +574,9 @@ function p.sortByRule(sortType)
 	elseif sortType == CARD_BAG_SORT_BY_TIME then
 		WriteCon("========sort by time");
 		table.sort(p.cardListByProf,p.sortByTime);
+	elseif sortType == CARD_BAG_SORT_BY_TYPE then
+		WriteCon("========sort by Elementb");
+		table.sort(p.cardListByProf,p.sortByType);
 	end
 	p.ShowCardView(p.cardListByProf);
 end
@@ -589,6 +592,18 @@ end
 --按时间排序
 function p.sortByTime(a,b)
 	return tonumber(a.Time) < tonumber(b.Time);
+end
+
+--按属性排序
+function p.sortByType(a,b)
+	--return tonumber(a.element) < tonumber(b.element);
+	return tonumber(a.element) > tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
+end
+
+--按属性排序2
+function p.sortByTypeb(a,b)
+	--return tonumber(a.element) < tonumber(b.element);
+	return tonumber(a.element) < tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 
 function p.HideUI()

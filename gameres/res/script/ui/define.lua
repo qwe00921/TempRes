@@ -324,7 +324,19 @@ DoFile("ui/ui_learning_4_6.lua");
 DoFile("ui/ui_learning_6_2.lua");
 DoFile("ui/ui_learning_6_3.lua");
 
+DoFile("ui/ui_learning_9_2.lua");
+DoFile("ui/ui_learning_9_3.lua");
+DoFile("ui/ui_learning_9_4.lua");
+DoFile("ui/ui_learning_9_5.lua");
+DoFile("ui/ui_learning_9_6.lua");
+DoFile("ui/ui_learning_9_7.lua");
+DoFile("ui/ui_learning_9_8.lua");
 
+DoFile("ui/ui_learning_11_2.lua");
+DoFile("ui/ui_learning_11_3.lua");
+DoFile("ui/ui_learning_11_4.lua");
+DoFile("ui/ui_learning_11_5.lua");
+DoFile("ui/ui_learning_11_6.lua");
 
 --测试（以后要删除）
 DoFile("ui/ui_test_fly.lua");

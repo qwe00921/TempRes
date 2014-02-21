@@ -40,7 +40,7 @@ function p.ShowUI(card_info)
     layer:Init();   
 	layer:SetSwallowTouch(false);
 	
-    GetUIRoot():AddDlg(layer);
+    GetUIRoot():AddChildZ(layer,0);
     LoadDlg("card_rein.xui", layer, nil);
 
     p.layer = layer;

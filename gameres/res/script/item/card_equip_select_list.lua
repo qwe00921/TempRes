@@ -3,7 +3,7 @@
 
 card_equip_select_list  = {}
 local p = card_equip_select_list;
-
+--[[
 p.INTENT_ADD = 1; --Ìí¼Ó
 p.INTENT_UPDATE = 2;--¸ü»»
 p.INTENT_UPGRADE = 3; -- Éý¼¶
@@ -914,3 +914,4 @@ function p.OnLoadList(msg)
 		}
 		]]--
 end
+]]--

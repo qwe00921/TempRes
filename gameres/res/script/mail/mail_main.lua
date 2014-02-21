@@ -606,11 +606,11 @@ function p.findPic(rtype, id)
 		local item= SelectRowInner( T_EQUIP, "id", id) or {}; 
 		aniIndex = item.item_pic;
 	elseif rtype == 4 then
-				aniIndex = "ui.emoney"
+				aniIndex = "common_ui.coin"
 	elseif rtype == 6 then
-				aniIndex = "ui.money"
+				aniIndex = "common_ui.money"
 	elseif rtype == 5 then
-		aniIndex = "ui.soul"
+		aniIndex = "common_ui.soul"
 	end		
 	
 	if aniIndex == nil then

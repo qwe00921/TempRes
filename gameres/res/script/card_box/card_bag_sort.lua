@@ -68,16 +68,16 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			elseif p.id == 2 then
 				card_intensify2.sortByBtnEvent(CARD_BAG_SORT_BY_STAR);
 			end
-		elseif ui.ID_CTRL_BUTTON_SOTR_ITEM == tag then
+		elseif ui.ID_CTRL_BUTTON_SOTR_ITEM == tag then --属性排序,不是时间
 			--WriteCon("**========byTypeBtn========**");
 			--card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			
 			if p.id == 0 then
 				card_bag_mian.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			elseif p.id == 1 then
-				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+				card_intensify.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			elseif p.id == 2 then
-				card_intensify2.sortByBtnEvent(CARD_BAG_SORT_BY_TIME);
+				card_intensify2.sortByBtnEvent(CARD_BAG_SORT_BY_TYPE);
 			end
 		end
 		p.HideUI();

@@ -277,7 +277,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	local lvTagStr 	= "ID_CTRL_TEXT_LV_"..indexStr;  --等级
 	local lvImgStr = "ID_CTRL_PICTURE_LV"..indexStr; --等级图片
 	
-	local drsTagStr = "ID_CTRL_TEXT_DRESSED_"..indexStr; --是否已装备
+	local drsTagStr = "ID_CTRL_PICTURE_DRESSED_"..indexStr; --是否已装备
 	--local nmTagStr  = "ID_CTRL_TEXT_NUM_"..indexStr; --是否选中
     local selTagStr = "ID_CTRL_PICTURE_SEL_"..indexStr; --是否选中
 	local equipNameStr = "ID_CTRL_TEXT_NAME"..indexStr; --装备名字
@@ -288,7 +288,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	local imgV= GetImage(view, ui_list[imgBdTagStr]);
 	local imgBdV	= GetImage(view, ui_list[imgTagStr]);
 	local lvV 	= GetLabel(view, ui_list[lvTagStr]);
-	local drsV	= GetLabel(view, ui_list[drsTagStr]);
+	local drsV	= GetImage(view, ui_list[drsTagStr]);
 	--local nmV	= GetLabel(view, ui_list[nmTagStr]);
 	local selImg = GetImage(view, ui_list[selTagStr]);
 	local lvImg = GetImage(view, ui_list[lvImgStr]);
@@ -457,59 +457,17 @@ function p.InitViewUI(view)
 	local imgBdTagStr=nil;--装备图
 	local imgSelStr = nil; --已选者的图片
 	local imgLvStr = nil;  --LV的图片
-    for cardIndex=1,5 do
-		if cardIndex == 1 then			
-			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_1;
-			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_1;
-			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_1; 
-			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_1; 
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME1; 
-			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_1;
-			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_1;
-			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV1;
-			imgNamePicStr = ui_list.ID_CTRL_PICTURE_121;
-		elseif cardIndex == 2 then
-			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_2;
-			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_2;
-			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_1;  
-			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_2; 
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME2; 
-			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_2;
-			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_2;
-			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV2;
-			imgNamePicStr = ui_list.ID_CTRL_PICTURE_122;
-		elseif cardIndex == 3 then
-			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_3;
-			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_3;
-			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_3;  
-			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_3; 
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME3; 
-			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_3;
-			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_3;
-			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV3;
-			imgNamePicStr = ui_list.ID_CTRL_PICTURE_123;
-		elseif cardIndex == 4 then
-			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_4;
-			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_4;
-			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_4;
-			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_4;
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME4;
-			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_4;
-			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_4;
-			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV4;
-			imgNamePicStr = ui_list.ID_CTRL_PICTURE_124;
-		elseif cardIndex == 5 then
-			btTagStr  = ui_list.ID_CTRL_BUTTON_ITEM_5;
-			imgTagStr = ui_list.ID_CTRL_PICTURE_IMAGE_5;
-			lvTagStr  = ui_list.ID_CTRL_TEXT_LV_5;
-			drsTagStr = ui_list.ID_CTRL_TEXT_DRESSED_5;
-			nmTagStr  = ui_list.ID_CTRL_TEXT_NAME5;
-			imgBdTagStr= ui_list.ID_CTRL_PICTURE_BD_5;
-			imgSelStr = ui_list.ID_CTRL_PICTURE_SEL_5;
-			imgLvStr  = ui_list.ID_CTRL_PICTURE_LV5;
-			imgNamePicStr = ui_list.ID_CTRL_PICTURE_125;
-		end
-				
+    for i=1,5 do
+		btTagStr  = ui_list["ID_CTRL_BUTTON_ITEM_"..tostring(i)];
+		imgTagStr = ui_list["ID_CTRL_PICTURE_IMAGE_"..tostring(i)];
+		lvTagStr  = ui_list["ID_CTRL_TEXT_LV_"..tostring(i)]; 
+		drsTagStr = ui_list["ID_CTRL_PICTURE_DRESSED_"..tostring(i)]; 
+		nmTagStr  = ui_list["ID_CTRL_TEXT_NAME"..tostring(i)]; 
+		imgBdTagStr= ui_list["ID_CTRL_PICTURE_BD_"..tostring(i)];
+		imgSelStr = ui_list["ID_CTRL_PICTURE_SEL_"..tostring(i)];
+		imgLvStr  = ui_list["ID_CTRL_PICTURE_LV"..tostring(i)];
+		imgNamePicStr = ui_list["ID_CTRL_PICTURE_12"..tostring(i)];
+						
 		local bt = GetButton(view,btTagStr);
 		bt:SetVisible(false);
 		
@@ -519,7 +477,7 @@ function p.InitViewUI(view)
 		local levelText = GetLabel(view,lvTagStr);
 		levelText:SetVisible( false );
 			
-		local isEquipText = GetLabel(view,drsTagStr);
+		local isEquipText = GetImage(view,drsTagStr);
 		isEquipText:SetVisible( false );
 		
 		local equipName = GetLabel(view,nmTagStr);

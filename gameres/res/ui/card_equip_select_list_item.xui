@@ -197,66 +197,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_DRESSED_1]
-Type=4
-Tag=190
-Rect=560 205 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_4]
-Type=4
-Tag=191
-Rect=560 205 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_3]
-Type=4
-Tag=192
-Rect=560 205 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_2]
-Type=4
-Tag=193
-Rect=560 205 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_BUTTON_ITEM_5]
 Type=2
 Tag=39
@@ -276,21 +216,6 @@ Tag=40
 Rect=512 13 105 105
 AnchorPos=0 0
 Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_DRESSED_5]
-Type=4
-Tag=42
-Rect=560 205 29 23
-AnchorPos=0 0
-Notes=
-Text=E
-TextTradition=E
-TextSize=15
-TextColor=0xff0000
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
@@ -438,7 +363,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_37]
+[CTRL_PICTURE_DRESSED_1]
 Type=1
 Tag=43
 Rect=86 98 40 15
@@ -449,7 +374,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_38]
+[CTRL_PICTURE_DRESSED_2]
 Type=1
 Tag=51
 Rect=208 98 40 15
@@ -460,7 +385,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_39]
+[CTRL_PICTURE_DRESSED_3]
 Type=1
 Tag=52
 Rect=330 98 40 15
@@ -471,7 +396,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_40]
+[CTRL_PICTURE_DRESSED_4]
 Type=1
 Tag=53
 Rect=452 98 40 15
@@ -482,7 +407,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
 
-[CTRL_PICTURE_41]
+[CTRL_PICTURE_DRESSED_5]
 Type=1
 Tag=54
 Rect=574 98 40 15

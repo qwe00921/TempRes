@@ -2,6 +2,7 @@ CARD_BAG_SORT_BY_LEVEL	= 1001;
 CARD_BAG_SORT_BY_STAR	= 1002;
 CARD_BAG_SORT_BY_TYPE = 1003;
 CARD_BAG_SORT_BY_TIME = 1004;
+CARD_BAG_SORT_BY_CARD_ID = 1005;
 
 MARK_ON = 100;
 MARK_OFF = nil;
@@ -26,6 +27,7 @@ p.callback = nil;
 p.hasRemove = false;
 p.cardListInfoSell = {}
 p.m_list = nil;
+p.rookieCardNode = {}
 
 function p.ShowUI()
 	dlg_menu.SetNewUI( p );
@@ -238,6 +240,10 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 		return
 	end
 	
+	if row == 1 and cardIndex == 1 and card ~= nil then
+		p.rookieCardNode = card
+		WriteCon("rookie card id == "..card.CardID);
+	end
 	local cardId = tonumber(card.CardID);
 	local cardPicTable = SelectRowInner(T_CHAR_RES,"card_id",cardId);
 	if cardPicTable == nil then
@@ -435,6 +441,12 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		
 	end
 end
+
+function p.rookieNode()
+	p.HideUI();
+	dlg_card_attr_base.ShowUI(p.rookieCardNode);
+end
+
 
 function p.SelectCardCallback(result)
 	if result == true then

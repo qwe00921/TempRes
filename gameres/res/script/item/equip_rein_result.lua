@@ -33,10 +33,25 @@ function p.ShowUI(preItem, nowItem)
     LoadDlg("dlg_equip_rein_result.xui", layer, nil);
 	
 	p.layer = layer;
-	
+	p.SetDelegate();
 	p.initView(preItem,nowItem);
 	
 end
+
+function p.SetDelegate()
+	local btnOK = GetButton(p.layer, p.ui.ID_CTRL_BUTTON_BACK);
+	btnOK:SetLuaDelegate( p.OnBtnClick );
+	
+end;
+
+function p.OnBtnClick(uiNode, uiEventType, param)
+	if IsClickEvent( uiEventType ) then
+		local tag = uiNode:GetTag();
+		if p.ui.ID_CTRL_BUTTON_BACK == tag then
+			p.CloseUI();
+		end
+	end	
+end;
 
 function p.initView(preItem,nowItem)
 	
@@ -51,8 +66,8 @@ function p.initView(preItem,nowItem)
 	label:SetText(tostring(preItem.itemLevel)); 
 	label:SetVisible(false); 
 	
-	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_LV_ARROW);
-	label:SetVisible(false); 
+	--label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_LV_ARROW);
+	--label:SetVisible(false); 
 	
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_LV_NOW);
 	label:SetText(tostring(nowItem.itemLevel)); 
@@ -66,8 +81,8 @@ function p.initView(preItem,nowItem)
 	label:SetText(tostring(preItem.attrValue)); 
 	label:SetVisible(false); 
 	
-	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_1);
-	label:SetVisible(false); 
+	--label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_1);
+	--label:SetVisible(false); 
 	
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_NOW_1);
 	label:SetText(tostring(nowItem.attrValue)); 
@@ -85,8 +100,8 @@ function p.initView(preItem,nowItem)
 	end
 	label:SetVisible(false); 
 	
-	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_2);
-	label:SetVisible(false); 
+	--label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_2);
+	--label:SetVisible(false); 
 	
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_NOW_2);
 	if preItem.exType1 and tonumber( preItem.exType1) ~= 0  then 
@@ -125,7 +140,9 @@ function p.initView(preItem,nowItem)
 		pEquipPic1:SetVisible(false); 
 	end
 	
+	p.equip_rein_effect_finish();
 	
+	--[[
 	local effectNode = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_EFFECT);
 	local effectNode2 = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_EFFECT_2);
 	
@@ -136,7 +153,7 @@ function p.initView(preItem,nowItem)
 	
 	local batch = battle_show.GetNewBatch();
 	local seqStar = batch:AddSerialSequence()
-	--local seqStar = battle_show.GetDefaultParallelSequence();
+	local seqStar = battle_show.GetDefaultParallelSequence();
 	local cmd1 = createCommandEffect():AddFgEffect( 0.5, effectNode, "skill_effect.sing_aperture_blue" );
 	seqStar:AddCommand( cmd1 );
 		
@@ -151,7 +168,7 @@ function p.initView(preItem,nowItem)
 		seqStar3:AddCommand(cmd);
 		seqStar3:SetWaitEnd(cmd1);
 	end	
-	
+	]]--
 end
 
 
@@ -179,8 +196,8 @@ function p.showFinal()
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_LV_PRE);
 	label:SetVisible(true); 
 	
-	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_LV_ARROW);
-	label:SetVisible(true); 
+	--label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_LV_ARROW);
+	--label:SetVisible(true); 
 	
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_LV_NOW);
 	label:SetVisible(true); 
@@ -191,8 +208,8 @@ function p.showFinal()
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_PRE_1);
 	label:SetVisible(true); 
 	
-	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_1);
-	label:SetVisible(true); 
+	--label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_1);
+	--label:SetVisible(true); 
 	
 	label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_NOW_1);
 	label:SetVisible(true); 
@@ -205,8 +222,8 @@ function p.showFinal()
 		label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_PRE_2);
 		label:SetVisible(true); 
 	
-		label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_2);
-		label:SetVisible(true); 
+		--label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_ARROW_2);
+		--label:SetVisible(true); 
 	
 		label = GetLabel(p.layer,p.ui.ID_CTRL_TEXT_ATR_NOW_2);
 		label:SetVisible(true); 

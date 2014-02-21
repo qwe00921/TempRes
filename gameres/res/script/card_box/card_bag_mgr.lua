@@ -193,6 +193,8 @@ function p.sortByRule(sortType)
 	elseif sortType == CARD_BAG_SORT_BY_TIME then
 		WriteCon("========sort by time");
 		table.sort(p.cardListByProf,p.sortByTime);
+	elseif sortType == CARD_BAG_SORT_BY_CARD_ID then
+		table.sort(p.cardListByProf,p.sortByCardId);
 	end
 	card_bag_mian.ShowCardList(p.cardListByProf);
 end
@@ -214,6 +216,10 @@ end
 function p.sortByType(a,b)
 	--return tonumber(a.element) < tonumber(b.element);
 	return tonumber(a.element) > tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
+end
+--按卡牌ID排序
+function p.sortByCardId(a,b)
+	return tonumber(a.CardID) < tonumber(b.CardID);
 end
 
 --根据unique获取卡信息

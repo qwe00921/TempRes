@@ -188,10 +188,10 @@ function p.ShowItem(  )
 	--labelV:SetText(item.Name or "");
 	
 	--武器类型
-	labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_TYP);
+	--labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_TYP);
 	--WriteConErr("item.Type  "..GetStr("card_equip_type"..item.Type));
-	local str = GetStr("card_equip_type"..item.itemType)
-	labelV:SetText(GetStr("card_equip_type"..item.itemType));
+	--local str = GetStr("card_equip_type"..item.itemType)
+	--labelV:SetText(GetStr("card_equip_type"..item.itemType));
 	
 	--武器主要属性值
 	labelV = GetLabel( p.layer, ui.ID_CTRL_TEXT_ATTR);
@@ -236,8 +236,8 @@ function p.ShowItem(  )
 	itemName:SetText( itemNamestr or "");
 	
 	--说明
-	local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_DES );
-	description:SetText( p.SelectItemDes(item.itemId) or "");
+	--local description = GetLabel( p.layer, ui.ID_CTRL_TEXT_DES );
+	--description:SetText( p.SelectItemDes(item.itemId) or "");
 	
 	--生命
 	--local hp_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_9 );
@@ -251,8 +251,8 @@ function p.ShowItem(  )
 	
 	--星级
 	
-	local itemStar = GetImage( p.layer,ui.ID_CTRL_PICTURE_STAR );
-	itemStar:SetPicture( GetPictureByAni("ui.equip_star_"..(item.itemRank or 1) ,0));
+	--local itemStar = GetImage( p.layer,ui.ID_CTRL_PICTURE_STAR );
+	--itemStar:SetPicture( GetPictureByAni("ui.equip_star_"..(item.itemRank or 1) ,0));
 	
 	--攻击
 	--local atk_label = GetLabel( p.layer, ui.ID_CTRL_TEXT_13 );
@@ -520,6 +520,7 @@ function p.OnDress(msg)
 	end
 	
 	if msg.result == true then
+		p.CloseUI();
 		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_dress_suc"),p.OnOk);
 	else
 		local str = p.GetNetResultError(msg);
@@ -537,6 +538,7 @@ function p.OnUnDress(msg)
 	end
 	
 	if msg.result == true then
+		p.CloseUI();
 		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_undress_suc"),p.OnOk);
 	else
 		local str = p.GetNetResultError(msg);
@@ -550,7 +552,7 @@ function p.OnUnDress(msg)
 end
 
 function p.OnOk()
-	p.CloseUI();
+	--p.CloseUI();
 	
 	if p.callback then
 		p.callback(true);
