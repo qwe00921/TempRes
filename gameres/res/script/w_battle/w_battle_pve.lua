@@ -481,10 +481,11 @@ function p.RefreshCardInfo( pIsRoundStar )
 					end
 					
 					ctrllers[HPNUM_INDEX]:SetText( string.format( "%d/%d", data.Hp, data.maxHp ) );
-					ctrllers[HPEXP_INDEX]:SetValue( 0, tonumber(data.maxHp), tonumber(data.Hp) );
-					
-					ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber(data.maxSp), tonumber(data.Sp) );
-					
+					if not pIsRoundStar then
+						ctrllers[HPEXP_INDEX]:SetValue( 0, tonumber(data.maxHp), tonumber(data.Hp) );
+						ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber(data.maxSp), tonumber(data.Sp) );
+					end
+
 					--local attrpic = GetPictureByAni( "common_ui.cardBagTypeBox", tonumber(data.element) );
 					--if attrpic then
 					ctrllers[ATTR_INDEX]:SetPicture( nil );
