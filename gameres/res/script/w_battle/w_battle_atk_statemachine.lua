@@ -189,7 +189,7 @@ function p:atk_start()
 		local cmdMove = nil;
 		local fX = GetWinSize().w / 1.0;
 		local fY = GetWinSize().h / 1.0;
-		--self.enemyPos = CCPointMake(fX,fY);
+		--self.enemyPos = CCPointMake(0,0);
 		
 		--WriteCon(string.format("X:%d,Y:%d",fX,fY));
 		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then

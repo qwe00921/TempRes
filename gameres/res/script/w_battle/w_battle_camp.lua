@@ -482,7 +482,6 @@ function p:AddFighters( uiArray, fighters )
 		--self.fighters[tonumber(fighterInfo.Position)] = f;%
 		
 		local pOldPos = nodeUI:GetCenterPos();
-        
 		
 		local lwinWidth = GetWinSize().w;
 
@@ -585,9 +584,6 @@ function p:AddFighters( uiArray, fighters )
 		
 		local lscale = GetUIScale();
 		local lframe = node:GetFrameSize();
-		local x = lframe.w * lscale;
-		local y = lframe.h * lscale;
-		node:SetFrameSize(x,y);
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER + f.Position);
