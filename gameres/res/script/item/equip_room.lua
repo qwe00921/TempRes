@@ -23,6 +23,9 @@ p.cardListByProf = {};
 p.curBtnNode = nil;
 p.newEquip = {};
 p.msg = nil;
+
+p.rookie_node = nil;
+
 --显示UI
 function p.ShowUI()
    -- dlg_menu.ShowUI();
@@ -244,6 +247,10 @@ function p.refreshList(lst)
 		
 end
 
+function p.GetRookieNode()
+	return p.rookie_node;
+end
+
 --显示单张卡牌
 function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 
@@ -283,7 +290,11 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:SetVisible(true);
 	bt:SetId(tonumber(dataListIndex));
 	
-	
+	--记录第一个装备按钮，用于新手引导
+	if dataListIndex == 1 then
+		p.rookie_node = bt;
+	end
+
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(equip.equip_id)); --从表中获取卡牌详细信息	
 	--是否已装备
 	if tonumber(equip.Is_dress) == 1 then
@@ -476,7 +487,6 @@ function p.HideUI()
 end
 
 function p.CloseUI()
-	
 	equip_rein_list.CloseUI(); -- 先关子界面
 	
 	if p.layer ~= nil then
@@ -492,9 +502,7 @@ function p.CloseUI()
 			p.sortBtnMark = MARK_OFF;
 			equip_bag_sort.CloseUI();
 		end
+		p.rookie_node = nil;
     end
-	
-	
-
 end
 
