@@ -433,7 +433,10 @@ end
 
 --重新重新卡的信息
 function p.RefreshCardDetail()
-	p.LoadCardDetail(p.cardInfo.UniqueId);
+	local lCardInfo = p.cardInfo;
+	if lCardInfo ~= nil then
+		p.LoadCardDetail(lCardInfo.UniqueId);
+	end;
 end
 
 function p.redirectCallback()

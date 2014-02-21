@@ -520,6 +520,7 @@ function p.OnDress(msg)
 	end
 	
 	if msg.result == true then
+		p.CloseUI();
 		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_dress_suc"),p.OnOk);
 	else
 		local str = p.GetNetResultError(msg);
@@ -537,6 +538,7 @@ function p.OnUnDress(msg)
 	end
 	
 	if msg.result == true then
+		p.CloseUI();
 		dlg_msgbox.ShowOK(GetStr("card_equip_net_suc_titel"),GetStr("card_equip_undress_suc"),p.OnOk);
 	else
 		local str = p.GetNetResultError(msg);
@@ -550,7 +552,7 @@ function p.OnUnDress(msg)
 end
 
 function p.OnOk()
-	p.CloseUI();
+	--p.CloseUI();
 	
 	if p.callback then
 		p.callback(true);
