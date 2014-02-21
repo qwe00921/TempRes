@@ -395,6 +395,10 @@ function p.CloseUI()
 		p.showListType = E_LIST_TYPE_ALL;
 --		p.selectItem = false;
 		p.curItem = nil;
+		
+		p.itemCtrllers = {};
+		p.btnList = {};
+		
 		dlg_userinfo.HideUI();
 	end
 end
