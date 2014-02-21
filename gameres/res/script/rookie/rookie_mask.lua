@@ -18,6 +18,20 @@ p.textList = nil;
 p.onCallFlag = false;
 
 local uiList = {
+	[3]={
+		[2]= ui_learning_3_2,
+		[3]= ui_learning_3_3,
+		[4]= ui_learning_3_4,
+		[5]= ui_learning_3_5,
+		[6]= ui_learning_3_6,
+		[7]= ui_learning_3_7,
+		[8]= ui_learning_3_8,
+		[9]= ui_learning_3_9,
+		[10]= ui_learning_3_10,
+		[11]= ui_learning_3_11,
+		[12]= ui_learning_3_12,
+		[13]= ui_learning_3_13,
+	}
 	[9] = {
 		[2] = ui_learning_9_2,
 		[3] = ui_learning_9_3,
