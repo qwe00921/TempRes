@@ -7,7 +7,7 @@ Height=960
 Type=1
 Tag=27
 Z_Order=-99
-Rect=-634 -177 640 960
+Rect=0 0 638 958
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -18,13 +18,13 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=0 810 640 55
+Rect=0 810 507 55
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\AD_bg.png
-NormalFileUV=0 0 640 56
+NormalFileUV=0 0 632 48
 
 [CTRL_PICTURE_BG]
 Type=1
@@ -155,7 +155,7 @@ DisableFileUV=0 0 84 82
 [CTRL_COLOR_LABEL_140]
 Type=7
 Tag=140
-Rect=25 810 524 46
+Rect=-12 812 468 46
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -299,7 +299,7 @@ NormalFileUV=0 0 52 28
 [CTRL_PICTURE_305]
 Type=1
 Tag=305
-Rect=85 602 1 192
+Rect=85 596 1 158
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -341,7 +341,7 @@ NormalFileUV=0 0 32 32
 [CTRL_TEXT_136]
 Type=4
 Tag=136
-Rect=85 602 471 1
+Rect=85 596 471 1
 AnchorPos=0 0
 Notes=
 TextSize=10
