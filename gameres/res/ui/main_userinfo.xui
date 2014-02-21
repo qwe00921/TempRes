@@ -108,7 +108,7 @@ NormalFileUV=0 0 145 16
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=49 87 84 30
+Rect=58 88 102 20
 AnchorPos=0 0
 Notes=
 TextSize=20

@@ -673,7 +673,7 @@ UIClsoeType=0
 [CTRL_TEXT_76]
 Type=4
 Tag=84
-Rect=477 357 56 19
+Rect=455 357 78 18
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -686,7 +686,7 @@ UIClsoeType=0
 [CTRL_TEXT_77]
 Type=4
 Tag=85
-Rect=457 400 76 20
+Rect=455 400 78 18
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -699,7 +699,7 @@ UIClsoeType=0
 [CTRL_TEXT_78]
 Type=4
 Tag=86
-Rect=449 443 85 19
+Rect=455 443 78 18
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -712,7 +712,7 @@ UIClsoeType=0
 [CTRL_TEXT_79]
 Type=4
 Tag=87
-Rect=430 486 104 18
+Rect=455 486 78 18
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -725,7 +725,7 @@ UIClsoeType=0
 [CTRL_TEXT_80]
 Type=4
 Tag=88
-Rect=401 529 133 20
+Rect=455 529 78 18
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -738,12 +738,12 @@ UIClsoeType=0
 [CTRL_TEXT_81]
 Type=4
 Tag=89
-Rect=379 568 155 21
+Rect=417 568 155 21
 AnchorPos=0 0
 Notes=
 TextSize=20
 TextColor=0xffffff
-TextHorAlign=AlignRight
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignBottom
 UIOpenType=0
 UIClsoeType=0
