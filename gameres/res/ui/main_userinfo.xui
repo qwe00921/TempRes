@@ -82,7 +82,7 @@ NormalFileUV=0 0 250 13
 [CTRL_TEXT_EMONEY_NUM]
 Type=4
 Tag=58
-Rect=192 87 84 30
+Rect=186 87 102 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -108,7 +108,7 @@ NormalFileUV=0 0 145 16
 [CTRL_TEXT_MONEY_NUM]
 Type=4
 Tag=57
-Rect=58 88 102 20
+Rect=45 88 102 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -122,7 +122,7 @@ UIClsoeType=0
 [CTRL_TEXT_SOUL]
 Type=4
 Tag=41
-Rect=333 87 84 30
+Rect=329 87 102 20
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -293,7 +293,7 @@ NormalFileUV=0 0 150 150
 [CTRL_TEXT_LEVEL_NUM]
 Type=4
 Tag=61
-Rect=258 18 54 25
+Rect=261 16 54 20
 AnchorPos=0 0
 Notes=
 Text=350
