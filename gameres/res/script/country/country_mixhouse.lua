@@ -45,7 +45,7 @@ function p.ShowUI()
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddChild(layer);
 
 	LoadDlg( "country_produce_list.xui" , layer, nil );
 	
@@ -107,7 +107,7 @@ function p.RefreshUI( )
 	if buildLevel < 0 then
 		return;
 	end
-	
+
 	local mixList = {};
 	for i = 1, buildLevel do
 		local temp = SelectRowList( T_DRUG_MIX, "level", i );
@@ -279,12 +279,14 @@ function p.SortCallBack( choose_type )
 	p.ChooseType = choose_type;
 	local lImgSort = GetImage(p.layer, ui.ID_CTRL_PICTURE_59); 
 	if p.ChooseType == CHOOSE_TYPE_TREAT  then  --等级
-		lImgSort:SetPicture(GetPictureByAni("ui.card_order",1));
+		lImgSort:SetPicture( GetPictureByAni( "common_ui.country_mixhouse_sort", 1) );
 	elseif p.ChooseType == CHOOSE_TYPE_STATUS then  --星级
-		lImgSort:SetPicture(GetPictureByAni("ui.card_order",2));
+		lImgSort:SetPicture( GetPictureByAni( "common_ui.country_mixhouse_sort", 3) );
 	elseif p.ChooseType == CHOOSE_TYPE_ATTR then  --属性
-		lImgSort:SetPicture(GetPictureByAni("ui.card_order",3));
+		lImgSort:SetPicture( GetPictureByAni( "common_ui.country_mixhouse_sort", 5) );
 	end;
+	
+	p.RefreshUI( );
 end
 
 --合成接口

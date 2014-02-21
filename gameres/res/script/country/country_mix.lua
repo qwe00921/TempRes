@@ -35,7 +35,7 @@ function p.ShowUI( drug_mix_id )
 	layer:Init();
 	layer:SetSwallowTouch( true );
 	layer:SetFrameRectFull();
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddChild(layer);
 
 	LoadDlg( "item_produce.xui" , layer, nil );
 	
