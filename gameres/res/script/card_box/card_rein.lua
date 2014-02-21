@@ -407,6 +407,14 @@ function p.OnButtonEvent(uiNode, uiEventType, param)
 	end
 end
 
+function p.rookieStep()
+	card_intensify.ShowUI(p.baseCardInfo); 
+	p.HideUI();
+end
+function p.rookieStart()
+	local starBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_START);
+	p.OnUIClickEvent(starBtn, NUIEventType.TE_TOUCH_CLICK)
+end
 function p.OnUIClickEvent(uiNode, uiEventType, param)
 	WriteCon("OnUIClickEvent....");	
 	local tag = uiNode:GetTag();

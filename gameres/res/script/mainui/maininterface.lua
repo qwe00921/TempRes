@@ -301,8 +301,10 @@ function p.ShowMailNum(userinfo)
 		local scale = 0.5 * GetUIScale();
 		local rect = mailNum:GetFrameRect();
 		local x = rect.size.w/2;
+		local h = rect.size.h;
 		local len = string.len(tostring(num));
 		
+		p.effect_num[MAILNUM_INDEX]:SetHeight( h );
 		--p.effect_num[MAILNUM_INDEX]:SetScale( scale );
 		--p.effect_num[MAILNUM_INDEX]:SetOffset( x-len*23/2, -36*(1-scale)/2 );
 		p.effect_num[MAILNUM_INDEX]:SetOffset( 0, 0 );

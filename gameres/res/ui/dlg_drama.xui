@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -65,7 +65,7 @@ UIClsoeType=0
 [CTRL_BUTTON_SKIP]
 Type=2
 Tag=10
-Rect=517 22 112 44
+Rect=515 22 112 44
 AnchorPos=0 0
 Notes=
 TextSize=16

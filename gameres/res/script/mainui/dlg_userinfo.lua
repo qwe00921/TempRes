@@ -98,7 +98,7 @@ function p.RefreshUI(userinfo)
 
 	local level = GetLabel(p.layer, ui.ID_CTRL_TEXT_LEVEL_NUM);
 	level:SetText( " " );
-
+	--[[
 	if p.effect_num[LEV_INDEX] == nil then
 		local levNum = effect_num:new();
 		levNum:SetNumFont();
@@ -117,9 +117,11 @@ function p.RefreshUI(userinfo)
 	--p.effect_num[LEV_INDEX]:SetOffset( x - len * 23 / 2, -36 * (1 - scale) / 2 - 2 );
 	p.effect_num[LEV_INDEX]:SetOffset( 0, 0 );
 	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
-	
-	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);
+	--]]
+	p.CreateEffectNum( LEV_INDEX, level, 1, 0, 0, tonumber(userinfo.Level) );
 
+	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);
+	--[[
 	if p.effect_num[MONEY_INDEX] == nil then
 		local moneyNum = effect_num:new();
 		moneyNum:SetNumFont();
@@ -132,8 +134,12 @@ function p.RefreshUI(userinfo)
 	--p.effect_num[MONEY_INDEX]:SetScale( scale );
 	p.effect_num[MONEY_INDEX]:SetOffset(0, 0);
 	p.effect_num[MONEY_INDEX]:PlayNum( tonumber(userinfo.Money) );
+	--]]
 	
-	local emoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_EMONEY_NUM);
+	p.CreateEffectNum( MONEY_INDEX, money, 1, 0, 0, tonumber(userinfo.Money) );
+	
+	local emoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_EMONEY_NUM);	
+	--[[
 	if p.effect_num[EMONEY_INDEX] == nil then
 		local emoneyNum = effect_num:new();
 		emoneyNum:SetNumFont();
@@ -146,6 +152,8 @@ function p.RefreshUI(userinfo)
 	--p.effect_num[EMONEY_INDEX]:SetOffset(-23, -6);
 	p.effect_num[EMONEY_INDEX]:SetOffset(0, 0);
 	p.effect_num[EMONEY_INDEX]:PlayNum( tonumber(userinfo.Emoney) );
+	--]]
+	p.CreateEffectNum( EMONEY_INDEX, emoney, 1, 0, 0, tonumber(userinfo.Emoney) );
 	
 	local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
 	strength:SetValue( 0, tonumber( userinfo.MaxMove ), tonumber( userinfo.Move ) );
@@ -153,6 +161,7 @@ function p.RefreshUI(userinfo)
 	p.CreateEffectNum( STRENGTH_INDEX , GetLabel(p.layer, ui.ID_CTRL_TEXT_181) , 0.5, 0, -10, string.format( "%d/%d", tonumber( userinfo.Move ), tonumber( userinfo.MaxMove ) ) );
 	
 	local bluesoul = GetLabel( p.layer, ui.ID_CTRL_TEXT_SOUL );
+	--[[
 	if p.effect_num[SOUL_INDEX] == nil then
 		local soul = effect_num:new();
 		soul:SetNumFont();
@@ -165,7 +174,9 @@ function p.RefreshUI(userinfo)
 	--p.effect_num[SOUL_INDEX]:SetOffset(-20, -6);
 	p.effect_num[SOUL_INDEX]:SetOffset(0, 0);
 	p.effect_num[SOUL_INDEX]:PlayNum( tonumber(userinfo.BlueSoul) );
-
+	--]]
+	p.CreateEffectNum( SOUL_INDEX, bluesoul, 1, 0, 0, tonumber(userinfo.BlueSoul) );
+	
 	local Exp = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_EXP );
 	Exp:SetValue( 0, tonumber( userinfo.MaxExp ), tonumber( userinfo.Exp ) );
 	Exp:SetTextStyle(2);

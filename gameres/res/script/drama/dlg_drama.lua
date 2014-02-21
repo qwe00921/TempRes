@@ -185,6 +185,10 @@ function p.ResetUI( dramaInfo )
 		
 		p.contentNode:SetFontSize(p.fontSize);
 		p.contentNode:AddActionEffect("ui.ccshake");
+		
+		local btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CLICK);
+		btn:SetVisible( false );
+	
     	p.timerId = SetTimer( p.DoEffectContent, 0.04f );
     end
 
