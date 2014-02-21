@@ -118,7 +118,7 @@ end
 function p.PassOver()
 	p.CloseUI();
 	
-	w_battle_pve.RefreshUI();
+	w_battle_pve.RefreshUI(true);
 	w_battle_mgr.starFighter();
 end
 
