@@ -33,10 +33,25 @@ function p.ShowUI(preItem, nowItem)
     LoadDlg("dlg_equip_rein_result.xui", layer, nil);
 	
 	p.layer = layer;
-	
+	p.SetDelegate();
 	p.initView(preItem,nowItem);
 	
 end
+
+function p.SetDelegate()
+	local btnOK = GetButton(p.layer, p.ui.ID_CTRL_BUTTON_BACK);
+	btnOK:SetLuaDelegate( p.OnBtnClick );
+	
+end;
+
+function p.OnBtnClick(uiNode, uiEventType, param)
+	if IsClickEvent( uiEventType ) then
+		local tag = uiNode:GetTag();
+		if p.ui.ID_CTRL_BUTTON_BACK == tag then
+			p.CloseUI();
+		end
+	end	
+end;
 
 function p.initView(preItem,nowItem)
 	
