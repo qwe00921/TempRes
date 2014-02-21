@@ -172,4 +172,12 @@ image\ui\shop\btn_gift_select.png
 image\ui\shop\btn_have.png
 image\ui\shop\btn_have_select.png
 
+[country_mixhouse_sort]
+image\ui\card_bag\treat_select.png
+image\ui\card_bag\treat.png
+image\ui\card_bag\remove_select.png
+image\ui\card_bag\remove.png
+image\ui\card_bag\btn_type_1.png
+image\ui\card_bag\btn_type_head_1.png
+
 

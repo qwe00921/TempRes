@@ -24,7 +24,7 @@ function p.ShowUI( callback )
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	layer:SetFrameRectFull();
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddChild(layer);
 
 	LoadUI( "card_bag_sort_view.xui" , layer, nil );
 	
@@ -38,15 +38,18 @@ function p.SetDelegate()
 	btn:SetLuaDelegate( p.OnBtnClick );
 	btn:SetId( CHOOSE_TYPE_TREAT );
 	--btn:SetText( "恢复类" );
+	btn:SetImage( GetPictureByAni( "common_ui.country_mixhouse_sort", 0) );
 	
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SORT_STAR );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	btn:SetId( CHOOSE_TYPE_STATUS );
+	btn:SetImage( GetPictureByAni( "common_ui.country_mixhouse_sort", 2) );
 	--btn:SetText( "状态类" );
 	
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_SOTR_ITEM );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	btn:SetId( CHOOSE_TYPE_ATTR );
+	btn:SetImage( GetPictureByAni( "common_ui.country_mixhouse_sort", 4) );
 	--btn:SetText( "属性类" );
 end
 

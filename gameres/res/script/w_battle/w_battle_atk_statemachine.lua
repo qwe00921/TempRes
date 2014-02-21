@@ -343,15 +343,10 @@ function p:atk_startAtk()
 			bullet:GetNode():SetRotationDeg( deg );
 			local bullet1 = bullet:cmdSetVisible( true, seqAtk );
 			
-			bulletend = bullet:cmdShootPos( atkFighter, ltargetPos, seqAtk, false );
+			--bulletend = bullet:cmdShootPos( atkFighter, ltargetPos, seqAtk, false );
+			bulletend = bullet:cmdShootPos( atkFighter, ltargetPos, seqAtk, true );
+			
 			local bullet3 = bullet:cmdSetVisible( false, seqAtk );
-			--seqBullet:SetWaitEnd( cmdAtk );
-			--[[if self.IsSkill == true then  --技能有受击光效
-				local cmd11 = createCommandEffect():AddFgEffect( 1, tarFighter:GetNode(), self.hurt );			
-				seqAtk:AddCommand(cmd11);
-			end;
-			]]--
-			--local seqMusic = batch:AddSerialSequence();
 			if self.IsSkill == false then
 				--[[
 				if self.atkSound ~= nil then

@@ -38,7 +38,7 @@ function p.ShowUI( gacharesult )
 	dlg_userinfo.HideUI();
 	dlg_gacha.HideUI();
 	
-	GetUIRoot():AddDlg( layer );
+	GetUIRoot():AddChild( layer );
 	p.layer = layer;
 	LoadDlg( "gacha_ing.xui", layer, nil );
 	
@@ -159,9 +159,6 @@ function p.ShowContinue()
 		p.continueImg:SetVisible(true);
 		p.continueImg:AddActionEffect( "ui_cmb.gacha_effect_scale" );
 	end
-	
-	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_9 );
-	btn:SetVisible( true );
 end
 
 function p.ShowNextCard()

@@ -3,7 +3,7 @@
 ;----------------------
 
 [bullet_shoot]
-@move+(1, $1, $2, 100)
+@move+(0.4, $1, $2, 100)
 
 [bullet_tornado]
 @move(1, $1, $2)
@@ -16,6 +16,9 @@
 
 [begin_battle_move]
 @move(0.4, $1, $2)
+
+[bullet_battle_move]
+@move(1,$1, $2)
 
 [hurt_end_move]
 @move(0.4, $1, $2)

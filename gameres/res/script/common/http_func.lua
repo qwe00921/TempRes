@@ -28,8 +28,11 @@ function SendReq( cmd, action, uid, param )
 		layer:SetFrameRectFull();
 		layer:SetZOrder( 999999 );
 		pLayer = layer;
-		GetUIRoot():AddChild(layer);
+	else
+		pLayer:RemoveFromParent( false );
 	end
+	
+	GetUIRoot():AddChild(pLayer);
 	
 	pLayer:SetSwallowTouch( true );
 
@@ -37,6 +40,8 @@ function SendReq( cmd, action, uid, param )
 	
 	SetTimerOnce( OnTimerCheckBusy, 0.1f );
 	http_busy = true;
+	
+	rookie_mask.onCallFlag = true;
 end
 
 function SendPost(cmd, action, uid, param,data)
@@ -60,7 +65,8 @@ function OnTimerCheckBusy()
 end
 
 function HttpOK()
-	http_busy = false;	
+	http_busy = false;
+	rookie_mask.onCallFlag = false;
 	--DelHudEffect( busy_fx );
 	if pLayer ~= nil then
 		pLayer:SetSwallowTouch( false );

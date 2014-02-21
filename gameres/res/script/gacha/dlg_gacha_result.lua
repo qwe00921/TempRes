@@ -37,7 +37,7 @@ function p.ShowUI( gacharesult )
 	layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddDlg( layer );
+	GetUIRoot():AddChild( layer );
 	LoadDlg( "gacha_result.xui", layer, nil );
 	p.layer = layer;
 	

@@ -1,7 +1,7 @@
 ;中BUFF时各种特效
 ;晕眩
 [buff_type_act1]
-image\battle_buff\1.png @cut(1,1) @scale=0.6 @time=1.5
+image\battle_buff\1.png @cut(2,4) @use(0,8) @time=1.5
 
 ;冰冻
 [buff_type_act2]
@@ -13,7 +13,7 @@ image\battle_buff\3.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;麻痹
 [buff_type_act4]
-image\battle_buff\4.png @cut(1,1)  @scale=0.6 @time=1.5
+image\battle_buff\4.png @cut(2,4) @use(0,8) @time=0.15 
 
 ;石化
 [buff_type_act5]
@@ -25,7 +25,7 @@ image\battle_buff\6.png @cut(1,1)  @scale=0.6 @time=1.5
 
 ;火烧
 [buff_type_act7]
-image\battle_buff\7.png @cut(1,1)  @scale=0.6 @time=1.5
+image\battle_buff\7.png @cut(2,4) @use(0,8) @time=1.5
 
 ;诅咒
 [buff_type_act8]
@@ -131,7 +131,7 @@ image\battle_buff\buff301.png @cut(1,1) @stay @scale=0.8
 ;BUFF生效动画
 ;晕眩
 [buff_type_body_1]
-image\battle_buff\buff_body1.png @cut(1,1) @stay @scale=0.6
+image\battle_buff\1.png @cut(2,4) @use(0,8) @time=0.15 @loop @scale=0.6
 
 ;冰冻
 [buff_type_body_2]
@@ -143,7 +143,7 @@ image\battle_buff\buff_body3.png @cut(1,1) @stay @scale=0.6
 
 ;麻痹
 [buff_type_body_4]
-image\battle_buff\buff_body4.png @cut(1,1) @stay @scale=0.6
+image\battle_buff\4.png @cut(2,4) @use(0,8) @time=0.15 @loop @scale=0.6
 
 ;石化
 [buff_type_body_5]

@@ -15,8 +15,40 @@ p.contentIndex = 1;
 p.timerId = nil;
 p.textList = nil;
 
+p.onCallFlag = false;
+
 local uiList = {
+	[3]={
+		[2]= ui_learning_3_2,
+		[3]= ui_learning_3_3,
+		[4]= ui_learning_3_4,
+		[5]= ui_learning_3_5,
+		[6]= ui_learning_3_6,
+		[7]= ui_learning_3_7,
+		[8]= ui_learning_3_8,
+		[9]= ui_learning_3_9,
+		[10]= ui_learning_3_10,
+		[11]= ui_learning_3_11,
+		[12]= ui_learning_3_12,
+		[13]= ui_learning_3_13,
+	},
+	[9] = {
+		[2] = ui_learning_9_2,
+		[3] = ui_learning_9_3,
+		[4] = ui_learning_9_4,
+		[5] = ui_learning_9_5,
+		[6] = ui_learning_9_6,
+		[7] = ui_learning_9_7,
+		[8] = ui_learning_9_8,
+	},
 	
+	[11] = {
+		[2] = ui_learning_11_2,
+		[3] = ui_learning_11_3,
+		[4] = ui_learning_11_4,
+		[5] = ui_learning_11_5,
+		[6] = ui_learning_11_6,
+	},
 };
 
 local ui = ui_learning;
@@ -43,13 +75,13 @@ function p.ShowUI( step, substep )
 
 	p.maskLayer = maskLayer;
 	LoadUI( "learning_"..step.."_"..substep..".xui", maskLayer, nil );
-	GetUIRoot():AddChild( maskLayer );
+	GetUIRoot():AddChildZ( maskLayer, 999999 );
 
 	local layer = createNDUIDialog();
 	if layer == nil then
 		return false;
 	end
-	layer:NoMask();
+	layer:NoMask();            
 	layer:Init();
 	layer:SetSwallowTouch( false );
 	layer:SetFrameRectFull();
@@ -69,9 +101,9 @@ function p.InitControllers()
 	
 	p.colorLabel:SetHorzAlign( 0 );
 	p.colorLabel:SetVertAlign( 1 );
-	
+
 	local index = 1;
-	local list = uiList[p.step] or {};
+	local list = uiList[p.step] or {};	
 	local maskUI = list[p.substep] or {};
 	while maskUI["ID_CTRL_BUTTON_CALLBACK_"..index] do
 		local btn = GetButton( p.maskLayer, maskUI["ID_CTRL_BUTTON_CALLBACK_"..index] );
@@ -113,9 +145,14 @@ function p.ShowRookieText()
 end
 
 function p.OnTouchHightLight( uiNode, uiEventType, param )
+	--通信中无法操作
+	if p.onCallFlag then
+		return;
+	end
+	
+	WriteConWarning( "step:"..p.step.."substep:"..p.substep );
+	
 	if IsClickEvent( uiEventType ) then
-		p.CloseUI();
-		
 		local id = uiNode:GetId();
 		rookie_main.MaskTouchCallBack( p.step, p.substep, id );
 	end

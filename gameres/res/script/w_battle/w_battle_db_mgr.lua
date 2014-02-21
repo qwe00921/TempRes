@@ -22,7 +22,7 @@ p.battleResult = nil; --对战结果数据
 p.rewardData = nil;
 p.step = 0;      --回合结束时, 当前波次+1,调用过场动画
 p.maxStep = 2;  --
-p.IsDebug = false;
+p.IsDebug = true;
 p.DropRandom = 0;
 
 p.enemyStepList = {

@@ -578,6 +578,13 @@ function p:AddFighters( uiArray, fighters )
 		--f:Init( uiTag, node, self.idCamp );
 		f:Init( fighterInfo.Position, node, self.idCamp );
 		f.nowlife = f.Hp;
+		
+		if w_battle_db_mgr.IsDebug == true then
+			if self.idCamp == E_CARD_CAMP_HERO then
+				w_battle_pve.SetHeroCardAttr(f.Position, f);
+			end;
+		end
+		
 		WriteCon("cardId="..tostring(f.cardId))
 		self:SetFighterConfig( f, f.cardId ); 
 		f:standby();

@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -7,7 +7,7 @@ Height=960
 Type=1
 Tag=15
 Z_Order=-1
-Rect=0 0 640 130
+Rect=0 0 640 119
 AnchorPos=0 0
 Notes=
 UIOpenType=0
