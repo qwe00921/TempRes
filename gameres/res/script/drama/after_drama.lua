@@ -35,21 +35,24 @@ function p.DoAfterDrama()
 			w_battle_mgr.EnterBattle( W_BATTLE_PVE, nextView, nowTeam );--进入战斗PVE
 		end
 	elseif viewType == after_drama_data.CHAPTER then
-		dlg_drama.CloseUI()
+		dlg_drama.CloseUI();
+		drama_mgr.ClearData();
 		stageMap_main.openChapter(openView);
 		WriteCon("viewType CHAPTER ");
 	elseif viewType == after_drama_data.STAGE then
-		dlg_drama.CloseUI()
+		dlg_drama.CloseUI();
+		drama_mgr.ClearData();
 		quest_main.ShowUI(nextView);
 		WriteCon("viewType STAGE ");
 	elseif viewType == after_drama_data.ROOKIE then
 		WriteCon("viewType ROOKIE dlg_drama.storyId == "..dlg_drama.storyId);
-		dlg_drama.CloseUI()
-		rookie_main.dramaCallBack(dlg_drama.storyId)
+		dlg_drama.CloseUI();
+		drama_mgr.ClearData();
+ 		rookie_main.dramaCallBack(dlg_drama.storyId)
 	elseif viewType == after_drama_data.REWARD then
-		dlg_drama.CloseUI()
-		quest_result.ShowWinView(rewardT)
-	
+		dlg_drama.CloseUI();
+		drama_mgr.ClearData();
+		quest_result.ShowWinView(rewardT)		
 	end
 	p.Clear();
 end
