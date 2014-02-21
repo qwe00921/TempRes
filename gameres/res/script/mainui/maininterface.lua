@@ -303,8 +303,9 @@ function p.ShowMailNum(userinfo)
 		local x = rect.size.w/2;
 		local len = string.len(tostring(num));
 		
-		p.effect_num[MAILNUM_INDEX]:SetScale( scale );
-		p.effect_num[MAILNUM_INDEX]:SetOffset( x-len*23/2, -36*(1-scale)/2 );
+		--p.effect_num[MAILNUM_INDEX]:SetScale( scale );
+		--p.effect_num[MAILNUM_INDEX]:SetOffset( x-len*23/2, -36*(1-scale)/2 );
+		p.effect_num[MAILNUM_INDEX]:SetOffset( 0, 0 );
 		p.effect_num[MAILNUM_INDEX]:PlayNum( num );
 		p.effect_num[MAILNUM_INDEX]:GetNode():SetVisible(true);
 		bg:SetVisible( true );

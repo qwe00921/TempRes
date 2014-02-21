@@ -113,8 +113,9 @@ function p.RefreshUI(userinfo)
 	local len = string.len(tostring(userinfo.Level));
 	
 	local scale = 0.5 * GetUIScale();
-	p.effect_num[LEV_INDEX]:SetScale(scale);
-	p.effect_num[LEV_INDEX]:SetOffset( x - len * 23 / 2, -36 * (1 - scale) / 2 - 2 );
+	--p.effect_num[LEV_INDEX]:SetScale(scale);
+	--p.effect_num[LEV_INDEX]:SetOffset( x - len * 23 / 2, -36 * (1 - scale) / 2 - 2 );
+	p.effect_num[LEV_INDEX]:SetOffset( 0, 0 );
 	p.effect_num[LEV_INDEX]:PlayNum( tonumber(userinfo.Level) );
 	
 	local money = GetLabel(p.layer, ui.ID_CTRL_TEXT_MONEY_NUM);
@@ -128,8 +129,8 @@ function p.RefreshUI(userinfo)
 		money:AddChild( moneyNum:GetNode() );
 	end
 	
-	p.effect_num[MONEY_INDEX]:SetScale( scale );
-	p.effect_num[MONEY_INDEX]:SetOffset(-23, -6);
+	--p.effect_num[MONEY_INDEX]:SetScale( scale );
+	p.effect_num[MONEY_INDEX]:SetOffset(0, 0);
 	p.effect_num[MONEY_INDEX]:PlayNum( tonumber(userinfo.Money) );
 	
 	local emoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_EMONEY_NUM);
@@ -141,8 +142,9 @@ function p.RefreshUI(userinfo)
 		p.effect_num[EMONEY_INDEX] = emoneyNum;
 		emoney:AddChild( emoneyNum:GetNode() );
 	end
-	p.effect_num[EMONEY_INDEX]:SetScale( scale );
-	p.effect_num[EMONEY_INDEX]:SetOffset(-23, -6);
+	--p.effect_num[EMONEY_INDEX]:SetScale( scale );
+	--p.effect_num[EMONEY_INDEX]:SetOffset(-23, -6);
+	p.effect_num[EMONEY_INDEX]:SetOffset(0, 0);
 	p.effect_num[EMONEY_INDEX]:PlayNum( tonumber(userinfo.Emoney) );
 	
 	local strength = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_STRENGTH );
@@ -159,8 +161,9 @@ function p.RefreshUI(userinfo)
 		p.effect_num[SOUL_INDEX] = soul;
 		bluesoul:AddChild( soul:GetNode() );
 	end
-	p.effect_num[SOUL_INDEX]:SetScale( scale );
-	p.effect_num[SOUL_INDEX]:SetOffset(-20, -6);
+	--p.effect_num[SOUL_INDEX]:SetScale( scale );
+	--p.effect_num[SOUL_INDEX]:SetOffset(-20, -6);
+	p.effect_num[SOUL_INDEX]:SetOffset(0, 0);
 	p.effect_num[SOUL_INDEX]:PlayNum( tonumber(userinfo.BlueSoul) );
 
 	local Exp = GetExp( p.layer, ui.ID_CTRL_PROGRESSBAR_EXP );
