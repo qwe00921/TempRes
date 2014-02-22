@@ -363,6 +363,10 @@ function p.ShowBattleArray( user_team, pos )
 end
 
 function p.ShowSelectCard( index )
+	if index == 0 then
+		return;
+	end
+	
 	if p.showCard ~= 0 and p.showCard == index then
 		return;
 	end
@@ -371,6 +375,10 @@ function p.ShowSelectCard( index )
 	local teamIndex = cache.CardTeam or 0;
 	if team["Formation".. teamIndex] then
 		local cardInfo = team["Formation".. teamIndex]["Pos"..index];
+		if cardInfo ~= nil then
+			return;
+		end
+		
 		p.showCard = index;
 		
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_129 );
