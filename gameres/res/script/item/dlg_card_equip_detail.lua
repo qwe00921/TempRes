@@ -68,7 +68,7 @@ function p.ShowUI( equip ,callback, redirectCallback)
 	
 	layer:NoMask();
 	layer:Init();	
-	GetUIRoot():AddDlg( layer );
+	GetUIRoot():AddChild( layer );
     LoadDlg("dlg_card_equip_detail.xui", layer, nil);
 	
 	

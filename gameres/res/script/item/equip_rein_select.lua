@@ -35,6 +35,8 @@ p.equipLevel = {};
 p.callback = nil;
 p.isChanged = nil;
 
+p.rookie_node = nil;
+p.rookie_node1 = nil;
 
 --显示UI
 function p.ShowUI(selectList,callback)
@@ -58,7 +60,7 @@ function p.ShowUI(selectList,callback)
 	layer:NoMask();
 	layer:Init();
 	
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddChild(layer);
     LoadDlg("equip_rein_select.xui", layer, nil);
 	
 	p.layer = layer;
@@ -92,7 +94,7 @@ function p.SetDelegate()
 	bt = GetButton(p.layer, ui.ID_CTRL_BUTTON_OK);
 	bt:SetLuaDelegate(p.OnEquipUIEvent);
 	
-	
+	p.rookie_node1 = bt;
 end
 
 function p.OnEquipUIEvent(uiNode, uiEventType, param)
@@ -305,6 +307,9 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:SetVisible(true);
 	bt:SetId(tonumber(equip.id));
 	
+	if dataListIndex == 2 then
+		p.rookie_node = bt;
+	end
 	
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(equip.equip_id)); --从表中获取卡牌详细信息	
 
@@ -352,6 +357,15 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 	
 end
+
+function p.GetRookieNode()
+	return p.rookie_node;
+end
+
+function p.GetRookieNode1()
+	return p.rookie_node1;
+end
+
 --点击卡牌事件
 function p.OnItemClickEvent(uiNode, uiEventType, param)
 	local equipId = uiNode:GetId();
@@ -592,6 +606,9 @@ function p.CloseUI(isGoBack)
 	p.selectList = {};
 	p.callback = nil;
 	p.isChanged = nil;
+	
+	p.rookie_node = nil;
+	p.rookie_node1 = nil;
 	
 	if p.sortBtnMark == MARK_ON then
 		p.sortBtnMark = MARK_OFF;

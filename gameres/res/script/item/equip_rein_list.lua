@@ -23,6 +23,8 @@ p.maskLayer = nil;
 
 p.result = nil;
 
+p.rookie_node = nil;
+
 function p.ShowUI(item,callback)
 	
 	p.item = item;
@@ -48,7 +50,7 @@ function p.ShowUI(item,callback)
     layer:Init();   
 	layer:SetSwallowTouch(false);
 	
-    GetUIRoot():AddDlg(layer);
+    GetUIRoot():AddChild(layer);
     LoadDlg("card_rein_item.xui", layer, nil);
 
     p.layer = layer;
@@ -279,7 +281,7 @@ function p.CloseUI()
 	end
 	p.callback = nil;
 	p.isReined = nil
-	
+	p.rookie_node = nil;
 	if p.maskLayer ~= nil then
 		p.maskLayer:LazyClose();
 		p.maskLayer = nil;
@@ -290,6 +292,7 @@ function p.SetDelegate(layer)
 
 	local starBtn = GetButton(layer, ui.ID_CTRL_BUTTON_START);
 	starBtn:SetLuaDelegate(p.OnUIClickEvent);
+	p.rookie_node = starBtn;
 
 	local closeBtn = GetButton(layer, ui.ID_CTRL_BUTTON_RETURN);
 	closeBtn:SetLuaDelegate(p.OnUIClickEvent);
@@ -299,6 +302,10 @@ function p.SetDelegate(layer)
 		local lCardBtn = GetButton(layer, ui["ID_CTRL_BUTTON_CHA"..i]);
 		lCardBtn:SetLuaDelegate(p.OnButtonEvent);
 	end
+end
+
+function p.GetRookieNode()
+	return p.rookie_node;
 end
 	
 function p.OnButtonEvent(uiNode, uiEventType, param)

@@ -45,7 +45,7 @@ function p.ShowUI()
 	--layer:SetSwallowTouch(true);
 	layer:SetFrameRectFull();
 	
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddChild(layer);
     LoadDlg("equip_room.xui", layer, nil);
 	
 	p.layer = layer;
