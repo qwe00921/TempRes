@@ -38,7 +38,7 @@ function p.ShowUI( itemid, index )
 	layer:SetSwallowTouch(false);
     
 	layer:SetVisible( false );
-	GetUIRoot():AddDlg( layer );
+	GetUIRoot():AddChild( layer );
 	
 	LoadDlg( "n_battle_itemuse.xui", layer, nil );
 	

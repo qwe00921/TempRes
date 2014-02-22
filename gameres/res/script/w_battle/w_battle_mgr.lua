@@ -74,7 +74,7 @@ p.isbattlequit = false;
 p.LoakPic = {};
 p.battleMoney = 0;
 p.battleSoul = 0;
-p.testGuid = false;
+
 
 function p.init()
 	p.platform = GetFlatform();
@@ -158,9 +158,9 @@ function p.IntoSceneEnd()
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 
 	if w_battle_db_mgr.step == 1 then
-		if p.testGuid == true then
+		if rookie_main.rookieTest == true then
 			if w_battle_guid.IsGuid == false then
-				rookie_mask.ShowUI( 3, 10 )
+				rookie_mask.ShowUI( 3, 2 )
 			end;
 		end;
 	end;
