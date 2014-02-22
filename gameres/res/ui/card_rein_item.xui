@@ -1,7 +1,18 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
+
+[CTRL_PICTURE_116]
+Type=1
+Tag=173
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
 
 [CTRL_PICTURE_96]
 Type=1
@@ -1245,3 +1256,14 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_115]
+Type=1
+Tag=172
+Rect=173 693 30 30
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\exp4.png
+NormalFileUV=0 0 30 30
