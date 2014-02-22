@@ -14,11 +14,11 @@ p.missionId = nil; 	--任务ID
 p.missionList = nil;
 p.missionMax = 9;
 p.missionIdGap = 10;
-local difficultKey = EASY;
+p.difficultKey = EASY;
 
 function p.ShowUI(stageId)
 	dlg_menu.SetNewUI( p );
-	
+
 	p.stageId  = stageId;
 	--获取missionId初始值
 	p.GetMissionId();
@@ -95,17 +95,17 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			stageMap_main.openChapter(mapId);
 		elseif (ui.ID_CTRL_BTN_HARD == tag) then
 			local missionStartId = nil;
-			if difficultKey == EASY then
+			if p.difficultKey == EASY then
 				local misKey = "M"..p.stageId.."012";
 				if p.missionList[misKey] then
-					difficultKey = HARD;
+					p.difficultKey = HARD;
 					missionStartId = p.missionId + 1;
 					p.loadMissionList(missionStartId);
 				else
 					dlg_msgbox.ShowOK( "提示", "当所有任务都获得完美评价时，才能解锁困难难度！" , nil, nil );
 				end
-			elseif difficultKey == HARD then
-				difficultKey = EASY;
+			elseif p.difficultKey == HARD then
+				p.difficultKey = EASY;
 				missionStartId = p.missionId;
 				p.loadMissionList(missionStartId);
 			end
@@ -177,9 +177,9 @@ end
 
 function p.setDifficultBtn()
 	local diffBtn = GetButton(p.layer, ui.ID_CTRL_BTN_HARD);
-	if difficultKey == EASY then
+	if p.difficultKey == EASY then
 		diffBtn:SetImage( GetPictureByAni("common_ui.mission_hard",0));
-	elseif difficultKey == HARD then
+	elseif p.difficultKey == HARD then
 		diffBtn:SetImage( GetPictureByAni("common_ui.mission_hard",1));
 	end
 end
@@ -375,6 +375,7 @@ function p.Clear()
 	p.stageId = nil;	--关卡ID
 	p.missionId = nil; 	--任务ID
 	p.missionList = nil;
+	p.difficultKey = EASY
 end
 function p.UIDisappear()
 	p.CloseUI();
@@ -382,4 +383,5 @@ function p.UIDisappear()
 	maininterface.BecomeFirstUI();
 	maininterface.CloseAllPanel();
 	maininterface.ShowUI();
+	p.difficultKey = EASY
 end

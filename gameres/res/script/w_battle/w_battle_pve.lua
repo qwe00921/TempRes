@@ -77,6 +77,10 @@ p.sortList = nil;
 p.firstHp = true;
 p.skillImage = nil;
 
+p.rooknode = {};
+
+
+
 local BTN_INDEX = 1;
 local ATTR_INDEX = 2;
 local NAME_INDEX = 3;
@@ -340,6 +344,9 @@ function p.GetCardTable( index )
 	ctrller:SetLuaDelegate( p.OnBtnClick );
 	ctrller:SetEnableDrag( true );
 	ctrller:SetId( index );
+	
+	p.rooknode[index] = ctrller;
+	
 	
 	ctrller = GetImage( p.battleLayer, tag[ATTR_INDEX] );
 	temp[ATTR_INDEX] = ctrller;
@@ -691,6 +698,7 @@ function p.CloseUI()
 		p.sortList = nil;
 		
 		p.skillImage = nil;
+		p.rooknode = {};
 	end
 	GetBattleShow():EnableTick( false );
 end
@@ -721,6 +729,21 @@ function p.CheckSelectTarget( tag )
 	end
 	return false;
 end
+
+function p.setBtnClick(id)
+	local uiNode = p.rooknode[id];
+	if uiNode ~= nil then
+		p.OnBtnClick(uiNode, NUIEventType.TE_TOUCH_CLICK, nil);
+	end
+end;
+
+function p.setBtnSkillClick(id)
+	local uiNode = p.rooknode[id];
+	if uiNode ~= nil then
+		p.OnBtnClick(uiNode, NUIEventType.TE_TOUCH_BTN_DRAG_UP, nil);
+	end
+end;
+
 
 --°´Å¥½»»¥
 function p.OnBtnClick( uiNode, uiEventType, param )

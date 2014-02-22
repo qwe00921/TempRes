@@ -36,6 +36,17 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
+[CTRL_PICTURE_57]
+Type=1
+Tag=57
+Rect=22 607 58 83
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\point.png
+NormalFileUV=0 0 58 83
+
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
@@ -47,14 +58,3 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_57]
-Type=1
-Tag=57
-Rect=22 607 58 83
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\point.png
-NormalFileUV=0 0 58 83

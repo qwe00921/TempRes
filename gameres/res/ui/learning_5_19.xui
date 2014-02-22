@@ -1,18 +1,7 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
-
-[CTRL_PICTURE_1]
-Type=1
-Tag=1
-Rect=0 473 640 960
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\bg4.png
-NormalFileUV=0 0 1 1
 
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
@@ -25,3 +14,14 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 473 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1

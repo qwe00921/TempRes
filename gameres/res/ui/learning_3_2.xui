@@ -3,18 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_BUTTON_CALLBACK_1]
-Type=2
-Tag=3
-Rect=0 0 640 958
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
@@ -45,6 +33,18 @@ AnchorPos=0 0
 Notes=
 Text=敌人体力值
 TextTradition=敵人體力值
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 0 640 958
+AnchorPos=0 0
+Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

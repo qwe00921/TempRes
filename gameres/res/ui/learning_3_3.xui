@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 473 640 120
+Rect=4 473 640 120
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -14,31 +14,21 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_BUTTON_CALLBACK_1]
-Type=2
-Tag=3
-Rect=0 592 319 117
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=475 355 107 60
+Rect=445 355 137 52
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\tuto_arrow_up.png
+NormalFileUV=0 0 250 90
 
 [CTRL_TEXT_13]
 Type=4
 Tag=13
-Rect=477 371 103 29
+Rect=469 382 96 22
 AnchorPos=0 0
 Notes=
 Text=对应伙伴
@@ -52,16 +42,18 @@ UIClsoeType=0
 [CTRL_PICTURE_14]
 Type=1
 Tag=14
-Rect=90 527 107 60
+Rect=85 526 130 54
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\tuto_arrow_down.png
+NormalFileUV=0 0 250 90
 
 [CTRL_TEXT_15]
 Type=4
 Tag=15
-Rect=105 543 84 28
+Rect=103 530 92 21
 AnchorPos=0 0
 Notes=
 Text=伙伴头像
@@ -93,3 +85,15 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 592 319 117
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
