@@ -16,13 +16,13 @@ local MAX_STEP = {
 		14,--3
 		7,--4
 		0,--5
-		15,--6
-		0,--7
+		12,--6
+		6,--7
 		2,--8
 		9,--9
 		1,--10
 		7,--11
-		0,--12
+		10,--12
 		1,--13
 		9,--14
 	};
@@ -39,11 +39,9 @@ function p.getRookieStep(backData)
 		p.subStepId = subStepId
 		p.userData = backData.user;
 		
-		maininterface.ShowUI(backData.user);
-		
-		if stepId ~= 0 then
-			--maininterface.ShowUI(backData.user);
-		--else
+		if stepId == 0 then
+			maininterface.ShowUI(backData.user);
+		else
 			p.ShowLearningStep( p.stepId, p.subStepId );
 		end
 	end
@@ -52,7 +50,6 @@ end
 --进入新手引导
 function p.ShowLearningStep( step, substep )
 	WriteConErr("rookie step = "..step .. " substep = " .. substep);
-	
 	rookie_mask.CloseUI();
 
 	if step == 1 then
@@ -99,10 +96,10 @@ function p.ShowLearningStep( step, substep )
 			dlg_userinfo.HideUI( );
 			rookie_mask.ShowUI( step, 6 );
 		elseif substep == 7 then
-			p.SendUpdateStep(p.stepId)
+			p.SendUpdateStep(step)
 		end
 	elseif step == 5 then
-		p.SendUpdateStep(p.stepId)
+		p.SendUpdateStep(step)
 
 	elseif step == 6 then
 		if substep == 1 then
@@ -132,13 +129,37 @@ function p.ShowLearningStep( step, substep )
 			rookie_mask.ShowUI( step, 8 );
 		elseif substep == 9 then
 			card_rein.rookieStart()
-			--p.SendUpdateStep(p.stepId,9)
-			rookie_mask.ShowUI( step, 9 );
+			p.SendUpdateStep( step, 9)
+		elseif substep == 10 then
+			rookie_mask.ShowUI( step, 10 );
+		elseif substep == 11 then
+			card_intensify_succeed.CloseUI();
+			dlg_drama.ShowUI( 7,after_drama_data.ROOKIE,0,0)
+		elseif substep == 12 then
+			p.SendUpdateStep( step )
 		end
 		
-		
 	elseif step == 7 then
-		maininterface.ShowUI(p.userData);
+		if substep == 1 then
+			dlg_drama.ShowUI( 1,after_drama_data.ROOKIE,0,0)
+		elseif substep == 2 then
+			country_main.ShowUI();
+			rookie_mask.ShowUI( step, 2 );
+		elseif substep == 3 then
+			country_main.CloseUI()
+			maininterface.ShowUI(p.userData);
+			dlg_card_group_main.ShowUI();
+			rookie_mask.ShowUI( step, 3 );
+		elseif substep == 4 then
+			dlg_card_group_main.rookieClickNode();
+			rookie_mask.ShowUI( step, 4 );
+		elseif substep == 5 then
+			card_bag_mian.rookieClickTeamCard()
+			rookie_mask.ShowUI( step, 5 );
+		elseif substep == 6 then
+			p.SendUpdateStep( step )
+		end
+		
 	elseif step == 8 then
 		if substep == 1 then
 			maininterface.HideUI();
@@ -212,7 +233,38 @@ function p.ShowLearningStep( step, substep )
 			rookie_mask.ShowUI( step, substep );
 		end
 	elseif step == 12 then
-		maininterface.ShowUI(p.userData);
+		if substep == 1 then
+			dlg_drama.ShowUI( 15,after_drama_data.ROOKIE,0,0)
+		elseif substep == 2 then
+			maininterface.ShowUI(p.userData);
+			country_main.ShowUI();
+			rookie_mask.ShowUI( step, 2 );
+		elseif substep == 3 then
+			country_main.CloseUI();
+			maininterface.ShowUI(p.userData);
+			card_bag_mian.ShowUI();
+			rookie_mask.ShowUI( step, 3 );
+		elseif substep == 4 then
+			card_bag_mian.rookieClick_12_3()
+			rookie_mask.ShowUI( step, 4 );
+		elseif substep == 5 then
+			dlg_card_attr_base.rookie_12_4()
+			rookie_mask.ShowUI( step, 5 );
+		elseif substep == 6 then
+			equip_dress_select.rookieClick_12_5()
+			rookie_mask.ShowUI( step, 6 );
+		elseif substep == 7 then
+			dlg_card_equip_detail.rookieClick_12_7()
+			rookie_mask.ShowUI( step, 7 );
+		elseif substep == 8 then
+			dlg_msgbox.rookieCloseBtn()
+			dlg_card_equip_detail.OnOk()
+			rookie_mask.ShowUI( step, 8 );
+		elseif substep == 9 then
+			dlg_card_attr_base.CloseUI();
+			p.SendUpdateStep( step )
+		end
+
 	elseif step == 13 then
 		maininterface.HideUI();
 		dlg_menu.HideUI();
@@ -299,6 +351,14 @@ function p.DoSomething( step, substep, index )
 		if substep == 6 then
 			
 		end
+	elseif step == 4 then
+		if substep == 2 then
+			if country_main.countryInfoT["B1"] then
+				return true
+			else
+				return false
+			end
+		end
 	end
 	return true;
 end
@@ -330,6 +390,7 @@ end
 --剧情回调
 function p.dramaCallBack(storyId)
 	if storyId == 1 then
+		p.ShowLearningStep( 7, 2 );
 	elseif storyId == 2 then
 	elseif storyId == 3 then
 		p.ShowLearningStep( p.stepId, 2 )
@@ -338,21 +399,30 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 6 then
 		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == 7 then
+		p.ShowLearningStep( 6, 12 );
 	elseif storyId == 8 then
 		p.ShowLearningStep( 8, 2 );
 	elseif storyId == 9 then
-		p.ShowLearningStep( 9, 1 );
+		--p.ShowLearningStep( 9, 1 );
+		p.SendUpdateStep( p.stepId )
 	elseif storyId == 10 then
 		p.ShowLearningStep( 9, 2 );
 	elseif storyId == 11 then
-		p.ShowLearningStep( 10, 1 );
+		--p.ShowLearningStep( 10, 1 );
+		p.SendUpdateStep( p.stepId )
+
 	elseif storyId == 12 then
-		p.ShowLearningStep( 11, 1 );
+		--p.ShowLearningStep( 11, 1 );
+		p.SendUpdateStep( p.stepId )
+
 	elseif storyId == 13 then
 		p.ShowLearningStep( 11, 2 );
 	elseif storyId == 14 then
-		p.ShowLearningStep( 12, 1 );
+		--p.ShowLearningStep( 12, 1 );
+		p.SendUpdateStep( p.stepId )
+
 	elseif storyId == 15 then
+		p.ShowLearningStep( 12, 2 );
 	elseif storyId == 16 then
 		p.ShowLearningStep( 14, 1 );
 	elseif storyId == 17 then
