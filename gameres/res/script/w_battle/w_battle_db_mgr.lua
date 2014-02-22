@@ -689,6 +689,14 @@ p.ItemList = {
 	{item_id = 101019, num = 5, location = 5},
 }
 
+p.GuidItemList = {
+	{item_id = 101001, num = 1, location = 1},
+	{item_id = 101016, num = 0, location = 2},
+	{item_id = 101017, num = 0, location = 3},
+	{item_id = 101018, num = 0, location = 4},
+	{item_id = 101019, num = 0, location = 5},
+}
+
 p.Reward= {
 	item= {
 		item_id= 111001,
@@ -1126,6 +1134,11 @@ end
 function p.GetBattleResult()
     return p.battleResult;
 end
+
+function p.SetGuidItemList()
+   p.ItemList = p.GuidItemList;
+   w_battle_pve.RefreshItemInfo();
+end;
 
 --获取对战结果
 function p.Clear()
