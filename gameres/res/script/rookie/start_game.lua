@@ -92,9 +92,10 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 				p.CloseUI()
 				--rookie_main.ShowLearningStep(2)
 				--暂时去除选择卡牌界面
-				local uid = GetUID();
-				local param = "guide="..(rookie_main.stepId).."&param=10175";
-				SendReq("User","Complete",uid,param);
+				rookie_main.SendUpdateStep(rookie_main.stepId,0,"param=10175")
+				-- local uid = GetUID();
+				-- local param = "guide="..(rookie_main.stepId).."&param=10175";
+				-- SendReq("User","Complete",uid,param);
 				--choose_card.ShowUI();
 			end
 		end

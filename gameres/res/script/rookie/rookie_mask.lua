@@ -32,6 +32,23 @@ local uiList = {
 		[12]= ui_learning_3_12,
 		[13]= ui_learning_3_13,
 	},
+	[4] ={
+		[2] = ui_learning_4_2,
+		[3] = ui_learning_4_3,
+		[4] = ui_learning_4_4,
+		[5] = ui_learning_4_5,
+		[6] = ui_learning_4_6,
+		},
+	[6] ={
+		[2] = ui_learning_6_2,
+		[3] = ui_learning_6_3,
+		[4] = ui_learning_6_4,
+		[5] = ui_learning_6_5,
+		[6] = ui_learning_6_6,
+		[7] = ui_learning_6_7,
+		[8] = ui_learning_6_8,
+		[9] = ui_learning_6_9,
+		},
 	[9] = {
 		[2] = ui_learning_9_2,
 		[3] = ui_learning_9_3,

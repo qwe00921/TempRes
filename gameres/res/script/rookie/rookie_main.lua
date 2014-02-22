@@ -6,14 +6,17 @@ local p = rookie_main;
 
 p.userData = nil;
 p.stepId = nil;
+p.subStepId = nil;
+--是否开启新手测试 true 开启
+p.rookieTest = false
 
 local MAX_STEP = {
 		0,--1
 		0,--2
 		0,--3
-		6,--4
+		7,--4
 		0,--5
-		0,--6
+		15,--6
 		0,--7
 		2,--8
 		9,--9
@@ -30,13 +33,15 @@ function p.getRookieStep(backData)
 		return;
 	elseif backData.result == true then
 		local stepId = tonumber(backData.user.Guide_id)
+		local subStepId = tonumber(backData.user.Sub_Guide_id)
 		--stepId = 7;	--测试用
 		p.stepId = stepId;
+		p.subStepId = subStepId
 		p.userData = backData.user;
 		if stepId == 0 then
 			maininterface.ShowUI(backData.user);
 		else
-			p.ShowLearningStep( p.stepId, 1 );
+			p.ShowLearningStep( p.stepId, p.subStepId );
 		end
 	end
 end
@@ -53,18 +58,75 @@ function p.ShowLearningStep( step, substep )
 		start_game.ShowUI();
 	elseif step == 3 then
 		choose_card.CloseUI()
-		--第3步为战斗，暂时直接跳过   等思栋接入
-		maininterface.ShowUI(p.userData);
-		-- local uid = GetUID();
-		-- local param = "guide="..(rookie_main.stepId);
-		-- SendReq("User","Complete",uid,param);
+		if p.rookieTest then
+			--第3步为战斗，暂时直接跳过   等思栋接入
+			p.SendUpdateStep(3)
+		else
+			maininterface.ShowUI(p.userData);
+			return
+		end
 	elseif step == 4 then
-		maininterface.ShowUI(p.userData);
-
+		if substep == 1 then
+			dlg_drama.ShowUI( 3,after_drama_data.ROOKIE,0,0)
+		elseif substep == 2 then
+			maininterface.ShowUI(p.userData);
+			country_main.ShowUI();
+			rookie_mask.ShowUI( step, 2 );
+		elseif substep == 3 then
+			--maininterface.ShowUI();
+			--country_main.CloseUI();
+			country_main.ShowBuildUP()
+			rookie_mask.ShowUI( step, 3 );
+		elseif substep == 4 then
+			country_building.upBuild();
+			rookie_mask.ShowUI( step, 4 );
+		elseif substep == 5 then
+			dlg_msgbox.rookieCloseBtn()
+			rookie_mask.ShowUI( step, 5 );
+		elseif substep == 6 then
+			country_building.CloseUI()
+			country_main.ShowUI()
+			dlg_userinfo.HideUI( );
+			rookie_mask.ShowUI( step, 6 );
+		elseif substep == 7 then
+			p.SendUpdateStep(p.stepId)
+		end
 	elseif step == 5 then
-		maininterface.ShowUI(p.userData);
+		p.SendUpdateStep(p.stepId)
+
 	elseif step == 6 then
-		maininterface.ShowUI(p.userData);
+		if substep == 1 then
+			dlg_drama.ShowUI( 6,after_drama_data.ROOKIE,0,0)
+		elseif substep == 2 then
+			country_main.ShowUI();
+			rookie_mask.ShowUI( step, 2 );
+		elseif substep == 3 then
+			country_main.CloseUI();
+			maininterface.ShowUI(p.userData);
+			card_bag_mian.ShowUI();
+			rookie_mask.ShowUI( step, 3 );
+		elseif substep == 4 then
+			card_bag_mian.rookieNode()
+			rookie_mask.ShowUI( step, 4 );
+		elseif substep == 5 then
+			dlg_card_attr_base.rookieIntensify()
+			rookie_mask.ShowUI( step, 5 );
+		elseif substep == 6 then
+			card_rein.rookieStep()
+			rookie_mask.ShowUI( step, 6 );
+		elseif substep == 7 then
+			card_intensify.rookieClickOnCard()
+			rookie_mask.ShowUI( step, 7 );
+		elseif substep == 8 then
+			card_intensify.rookieClickEvent();
+			rookie_mask.ShowUI( step, 8 );
+		elseif substep == 9 then
+			card_rein.rookieStart()
+			--p.SendUpdateStep(p.stepId,9)
+			rookie_mask.ShowUI( step, 9 );
+		end
+		
+		
 	elseif step == 7 then
 		maininterface.ShowUI(p.userData);
 	elseif step == 8 then
@@ -153,6 +215,26 @@ function p.ShowLearningStep( step, substep )
 	end
 end
 
+--发送跟新步骤 otherParam 附带的其他参数 传入格式为：param=XXX&XXXX=XXX......
+function p.SendUpdateStep(guide,subguide,otherParam)
+	local uid = GetUID();
+	local param = nil;
+	if otherParam then
+		if subguide ~= nil and tonumber(subguide) > 0 then
+			param = "guide="..guide.."&subguide="..subguide.."&"..otherParam;
+		else
+			param = "guide="..guide.."&"..otherParam;
+		end
+	else
+		if subguide ~= nil and tonumber(subguide) > 0 then
+			param = "guide="..guide.."&subguide="..subguide;
+		else
+			param = "guide="..guide;
+		end
+	end
+	SendReq("User","Complete",uid,param);
+end
+
 --显示下一步前相关操作，返回true为直接显示下一步，false为不直接显示（发消息给服务端，服务端返回后进入下一步）
 function p.DoSomething( step, substep, index )
 	if step == 9 then
@@ -208,6 +290,7 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 4 then
 	elseif storyId == 5 then
 	elseif storyId == 6 then
+		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == 7 then
 	elseif storyId == 8 then
 		p.ShowLearningStep( 8, 2 );
