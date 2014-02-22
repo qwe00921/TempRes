@@ -27,7 +27,7 @@ p.selectType = 0;
 p.exItem = nil;
 
 p.callback = nil;
-
+p.rookieBtn_12_5 = nil;
 function p.ShowUI(cardUid, selectType, callback,exItem)
 	p.cardUid = cardUid;
 	p.selectType = tonumber(selectType);
@@ -46,7 +46,7 @@ function p.ShowUI(cardUid, selectType, callback,exItem)
 	
 	layer:NoMask();
 	layer:Init();	
-	GetUIRoot():AddDlg( layer );
+	GetUIRoot():AddChildZ(layer,0);
     LoadDlg("equip_change_list.xui", layer, nil);
     
 
@@ -240,6 +240,9 @@ function p.setItemInfo( view, itemInfo, cardIndex ,dataListIndex)
     	
 	
 	local bt 	= GetButton(view, ui_list[btTagStr]);
+	if cardIndex == 1 and dataListIndex == 1 then
+		p.rookieBtn_12_5 = bt
+	end
 	local imgV	= GetImage(view, ui_list[imgTagStr]);
 	local lvV 	= GetLabel(view, ui_list[lvTagStr]);
 	local drsV	= GetImage(view, ui_list[drsTagStr]);
@@ -305,6 +308,9 @@ function p.SelectImage(id)
 	
 end
 
+function p.rookieClick_12_5()
+	p.OnItemClickEvent(p.rookieBtn_12_5, NUIEventType.TE_TOUCH_CLICK)
+end
 
 --µã»÷¿¨ÅÆ
 function p.OnItemClickEvent(uiNode, uiEventType, param)

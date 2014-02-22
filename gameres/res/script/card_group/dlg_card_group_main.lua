@@ -37,7 +37,7 @@ p.beginPos = nil;
 p.beginRect = nil;
 p.beginPlayer = nil;
 
-
+p.rookieNode = nil;
 function p.ShowUI(missionId,stageId,missionTeamId)
 	if missionId ~= nil and stageId ~= nil then
 		p.missionId = missionId;
@@ -289,6 +289,9 @@ function p.SetTeamInfo( view, user_teamData )
 	local cardNum = 0;
 	for i = 1, 6 do
 		local cardBtn = GetButton( view, ui_card_group_node["ID_CTRL_BUTTON_CHA" .. i] );
+		if teamid == 1 and i == 4 then
+			p.rookieNode = cardBtn;
+		end
 		local levLabel = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_LV" .. i] );
 		local hpLabel  = GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_HP" .. i] );
 		local speedLabel=GetLabel( view, ui_card_group_node["ID_CTRL_TEXT_SPEED" .. i] );
@@ -694,6 +697,10 @@ function p.OnListBtnClick(uiNode, uiEventType, param)
 			dlg_beast_main.ShowUI( true );
 		end
 	end
+end
+
+function p.rookieClickNode()
+	p.OnListItemClick(p.rookieNode, NUIEventType.TE_TOUCH_CLICK)
 end
 
 --列表节点的按钮

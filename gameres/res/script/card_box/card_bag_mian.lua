@@ -28,7 +28,8 @@ p.hasRemove = false;
 p.cardListInfoSell = {}
 p.m_list = nil;
 p.rookieCardNode = {}
-
+p.rookieEditTeamNode = nil;
+p.rookie_12_3 = nil
 function p.ShowUI()
 	dlg_menu.SetNewUI( p );
 	p.show();
@@ -218,6 +219,11 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	--显示卡牌图片
 	local cardButton = GetButton(view, cardBtn);
 	cardButton:SetVisible(true);
+	if cardIndex == 4 and row == 1 then
+		p.rookieEditTeamNode = cardButton;
+	elseif cardIndex == 1 and row == 1 then
+		p.rookie_12_3 = cardButton;
+	end
 	local cardTeamPic = GetImage(view,cardTeam );
 	cardTeamPic:SetVisible(true);
 	local cardLevelText = GetLabel(view,cardLevel );
@@ -368,6 +374,13 @@ function p.SetEnableAll(bVar)
 
 end
 
+function p.rookieClickTeamCard()
+	p.OnCardClickEvent(p.rookieEditTeamNode, NUIEventType.TE_TOUCH_CLICK)
+end
+
+function p.rookieClick_12_3()
+	p.OnCardClickEvent(p.rookie_12_3, NUIEventType.TE_TOUCH_CLICK)
+end
 --点击卡牌事件
 function p.OnCardClickEvent(uiNode, uiEventType, param)
 	local cardUniqueId = uiNode:GetId();
