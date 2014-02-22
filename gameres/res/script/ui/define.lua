@@ -358,6 +358,15 @@ DoFile("ui/ui_learning_11_4.lua");
 DoFile("ui/ui_learning_11_5.lua");
 DoFile("ui/ui_learning_11_6.lua");
 
+DoFile("ui/ui_learning_14_2.lua");
+DoFile("ui/ui_learning_14_3.lua");
+DoFile("ui/ui_learning_14_4.lua");
+DoFile("ui/ui_learning_14_5.lua");
+DoFile("ui/ui_learning_14_6.lua");
+DoFile("ui/ui_learning_14_7.lua");
+DoFile("ui/ui_learning_14_8.lua");
+DoFile("ui/ui_learning_14_9.lua");
+
 --测试（以后要删除）
 DoFile("ui/ui_test_fly.lua");
 

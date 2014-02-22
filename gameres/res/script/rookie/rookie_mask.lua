@@ -66,6 +66,17 @@ local uiList = {
 		[5] = ui_learning_11_5,
 		[6] = ui_learning_11_6,
 	},
+	
+	[14] = {
+		[2] = ui_learning_14_2,
+		[3] = ui_learning_14_3,
+		[4] = ui_learning_14_4,
+		[5] = ui_learning_14_5,
+		[6] = ui_learning_14_6,
+		[7] = ui_learning_14_7,
+		[8] = ui_learning_14_8,
+		[9] = ui_learning_14_9,	
+	},
 };
 
 local ui = ui_learning;

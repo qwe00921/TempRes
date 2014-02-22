@@ -38,9 +38,12 @@ function p.getRookieStep(backData)
 		p.stepId = stepId;
 		p.subStepId = subStepId
 		p.userData = backData.user;
-		if stepId == 0 then
-			maininterface.ShowUI(backData.user);
-		else
+		
+		maininterface.ShowUI(backData.user);
+		
+		if stepId ~= 0 then
+			--maininterface.ShowUI(backData.user);
+		--else
 			p.ShowLearningStep( p.stepId, p.subStepId );
 		end
 	end
@@ -131,14 +134,18 @@ function p.ShowLearningStep( step, substep )
 		maininterface.ShowUI(p.userData);
 	elseif step == 8 then
 		if substep == 1 then
+			maininterface.HideUI();
 			dlg_drama.ShowUI( 8, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 2 then
+			maininterface.HideUI();
 			dlg_drama.ShowUI( 9, after_drama_data.ROOKIE, 0, 0);
 		end
 	elseif step == 9 then
 		if substep == 1 then
+			maininterface.HideUI();
 			dlg_drama.ShowUI( 10, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 9 then
+			maininterface.HideUI();
 			dlg_drama.ShowUI( 11, after_drama_data.ROOKIE, 0, 0);
 		else
 			if substep == 2 then
@@ -164,11 +171,14 @@ function p.ShowLearningStep( step, substep )
 			rookie_mask.ShowUI( step, substep );
 		end
 	elseif step == 10 then
+		maininterface.HideUI();
 		dlg_drama.ShowUI( 12, after_drama_data.ROOKIE, 0, 0);
 	elseif step == 11 then
 		if substep == 1 then
+			maininterface.HideUI();
 			dlg_drama.ShowUI( 13, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 7 then
+			maininterface.HideUI();
 			dlg_drama.ShowUI( 14, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 5 then
 			dlg_gacha.ReqStartGacha( 3, 2, 1);
@@ -190,9 +200,11 @@ function p.ShowLearningStep( step, substep )
 	elseif step == 12 then
 		maininterface.ShowUI(p.userData);
 	elseif step == 13 then
+		maininterface.HideUI();
 		dlg_drama.ShowUI( 16, after_drama_data.ROOKIE, 0, 0);
 	elseif step == 14 then
 		if substep == 1 then
+			maininterface.HideUI();
 			dlg_drama.ShowUI( 17, after_drama_data.ROOKIE, 0, 0);
 			do return end;
 		elseif substep == 2 then
@@ -205,11 +217,29 @@ function p.ShowLearningStep( step, substep )
 				equip_room.OnItemClickEvent( node, 1, nil );
 			end
 		elseif substep == 5 then
-			
+			equip_rein_list.ShowUI(dlg_card_equip_detail.equip,dlg_card_equip_detail.callback);
+			if (dlg_card_equip_detail.redirectCallback) then
+				dlg_card_equip_detail.redirectCallback();
+			end
+			dlg_card_equip_detail.CloseUI();
 		elseif substep == 6 then
+			equip_rein_list.HideUI();
+			equip_rein_select.ShowUI(equip_rein_list.itemListInfo,equip_rein_list.OnSelectCallback);
 		elseif substep == 7 then
+			local node = equip_rein_select.GetRookieNode();
+			if node then
+				equip_rein_select.OnItemClickEvent( node, 1, nil );
+			end
 		elseif substep == 8 then
+			local node = equip_rein_select.GetRookieNode1();
+			if node then
+				equip_rein_select.OnEquipUIEvent( node, 1, nil );
+			end
 		elseif substep == 9 then
+			local node = equip_rein_list.GetRookieNode();
+			if node then
+				equip_rein_list.OnUIClickEvent( node, 1, nil );
+			end
 		end
 		rookie_mask.ShowUI( step, substep );
 	end
