@@ -398,6 +398,12 @@ function p.GetCardTable( index )
 	return temp;
 end
 
+function p.GuidUseItem1()
+	if p.rookItemNode ~= nil then
+		p.OnBtnClick(p.rookItemNode, NUIEventType.TE_TOUCH_CLICK, nil)
+	end
+end;
+
 --可使用道具列表
 function p.GetItemTable( index )
 	local temp = {};
@@ -407,6 +413,10 @@ function p.GetItemTable( index )
 	temp[ITEM_BTN_INDEX] = ctrller;
 	ctrller:SetLuaDelegate( p.OnBtnClick );
 	ctrller:SetId( index );
+	
+	if index == 1 then
+		p.rookItemNode = ctrller;
+	end;
 	
 	ctrller = GetLabel( p.battleLayer, tag[ITEM_NAME_INDEX] );
 	temp[ITEM_NAME_INDEX] = ctrller;

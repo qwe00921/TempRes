@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_equip_rein_select = {};
 local p =  ui_equip_rein_select;
+p.ID_CTRL_PICTURE_434					    = 434;
+p.ID_CTRL_PICTURE_433					    = 433;
 p.ID_CTRL_PICTURE_49					     = 49;
 p.ID_CTRL_PICTURE_48					     = 48;
 p.ID_CTRL_PICTURE_47					     = 47;
@@ -27,3 +29,4 @@ p.ID_CTRL_VERTICAL_LIST_VIEW			= 31;
 p.ID_CTRL_BUTTON_RETURN				   = 22;
 p.ID_CTRL_PICTURE_42					     = 43;
 p.ID_CTRL_PICTURE_133					    = 133;
+p.ID_CTRL_PICTURE_432					    = 432;

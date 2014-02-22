@@ -46,6 +46,7 @@ function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 		damage = 1;
 	end
 	
+
 	return damage,lIsJoinAtk,lIsCrit;  --返回伤害值,是否合击
 	
 end
@@ -217,6 +218,7 @@ function p.getdropitemNum(pTab,seed)
     end;
 	
 	
+	
 	if (pTab.probility1 ~= "") and (lrandomNum <= lpro1) then
 		return tonumber(pTab.drop_num1);
 	elseif (pTab.probility2 ~= "") and (lrandomNum > lpro1) and (lrandomNum <= lpro2) then
@@ -248,30 +250,37 @@ function p.getDropItem(dropList, pos, atktype)
 		end
 	end
 	
-	if lhpnum > 0 then
-		dropList[#dropList + 1] = {E_DROP_HPBALL , lhpnum, pos};
-		w_battle_mgr.AddBall(E_DROP_HPBALL,lhpnum);
-	--	WriteCon("Hp ="..tostring(lhpnum));
-	end
-	
-	if lspnum > 0 then
-		dropList[#dropList + 1] = {E_DROP_SPBALL , lspnum, pos};
-		w_battle_mgr.AddBall(E_DROP_SPBALL,lspnum);
-	--	WriteCon("Sp ="..tostring(lspnum));
-	end
-	
-	if lmoneynum > 0 then
-		dropList[#dropList + 1] = {E_DROP_MONEY , lmoneynum, pos};
-		w_battle_mgr.battleMoney = w_battle_mgr.battleMoney + lmoneynum
-	--	WriteCon("Moneynum ="..tostring(lmoneynum));
-	end
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+		lspnum = 0;
+		if w_battle_guid.substep <= 7 then
+			lhpnum = 0;
+		else
+			if lhpnum == 0 then
+				lhpnum = 1;
+			end
+		end
+	end;	
+	--if w_battle_guid.IsGuid == false then
+		if lhpnum > 0 then
+			dropList[#dropList + 1] = {E_DROP_HPBALL , lhpnum, pos};
+			w_battle_mgr.AddBall(E_DROP_HPBALL,lhpnum);
+		end
+		
+		if lspnum > 0 then
+			dropList[#dropList + 1] = {E_DROP_SPBALL , lspnum, pos};
+			w_battle_mgr.AddBall(E_DROP_SPBALL,lspnum);
+		end
+		
+		if lmoneynum > 0 then
+			dropList[#dropList + 1] = {E_DROP_MONEY , lmoneynum, pos};
+			w_battle_mgr.battleMoney = w_battle_mgr.battleMoney + lmoneynum
+		end
 
-	if lbluesoulnum > 0 then
-		dropList[#dropList + 1] = {E_DROP_BLUESOUL , lbluesoulnum, pos};
-		w_battle_mgr.battleSoul = w_battle_mgr.battleSoul + lbluesoulnum;
-	--	WriteCon("bluesoul ="..tostring(lbluesoulnum));
-	end	
-
+		if lbluesoulnum > 0 then
+			dropList[#dropList + 1] = {E_DROP_BLUESOUL , lbluesoulnum, pos};
+			w_battle_mgr.battleSoul = w_battle_mgr.battleSoul + lbluesoulnum;
+		end	
+	
 	
 end;
 

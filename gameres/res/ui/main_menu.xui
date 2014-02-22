@@ -18,7 +18,7 @@ NormalFileUV=0 0 640 960
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=0 810 507 55
+Rect=0 811 507 38
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -155,7 +155,7 @@ DisableFileUV=0 0 84 82
 [CTRL_COLOR_LABEL_140]
 Type=7
 Tag=140
-Rect=-12 812 468 46
+Rect=-12 812 468 38
 AnchorPos=0 0
 Notes=
 TextSize=10

@@ -13,7 +13,7 @@ p.rookieTest = false
 local MAX_STEP = {
 		0,--1
 		0,--2
-		0,--3
+		14,--3
 		7,--4
 		0,--5
 		15,--6
@@ -63,7 +63,14 @@ function p.ShowLearningStep( step, substep )
 		choose_card.CloseUI()
 		if p.rookieTest then
 			--第3步为战斗，暂时直接跳过   等思栋接入
-			p.SendUpdateStep(3)
+			--p.SendUpdateStep(3)
+			maininterface.ShowUI(p.userData);
+			if substep == 1 then
+				maininterface.ShowUI(p.userData);
+			else
+				w_battle_guid.fighterGuid(substep);
+			end
+			
 		else
 			maininterface.ShowUI(p.userData);
 			return
@@ -135,17 +142,21 @@ function p.ShowLearningStep( step, substep )
 	elseif step == 8 then
 		if substep == 1 then
 			maininterface.HideUI();
+			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 8, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 2 then
 			maininterface.HideUI();
+			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 9, after_drama_data.ROOKIE, 0, 0);
 		end
 	elseif step == 9 then
 		if substep == 1 then
 			maininterface.HideUI();
+			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 10, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 9 then
 			maininterface.HideUI();
+			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 11, after_drama_data.ROOKIE, 0, 0);
 		else
 			if substep == 2 then
@@ -172,13 +183,16 @@ function p.ShowLearningStep( step, substep )
 		end
 	elseif step == 10 then
 		maininterface.HideUI();
+		dlg_menu.HideUI();
 		dlg_drama.ShowUI( 12, after_drama_data.ROOKIE, 0, 0);
 	elseif step == 11 then
 		if substep == 1 then
 			maininterface.HideUI();
+			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 13, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 7 then
 			maininterface.HideUI();
+			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 14, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 5 then
 			dlg_gacha.ReqStartGacha( 3, 2, 1);
@@ -201,10 +215,12 @@ function p.ShowLearningStep( step, substep )
 		maininterface.ShowUI(p.userData);
 	elseif step == 13 then
 		maininterface.HideUI();
+		dlg_menu.HideUI();
 		dlg_drama.ShowUI( 16, after_drama_data.ROOKIE, 0, 0);
 	elseif step == 14 then
 		if substep == 1 then
 			maininterface.HideUI();
+			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 17, after_drama_data.ROOKIE, 0, 0);
 			do return end;
 		elseif substep == 2 then

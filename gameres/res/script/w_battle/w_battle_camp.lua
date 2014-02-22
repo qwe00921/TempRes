@@ -531,11 +531,11 @@ function p:AddFighters( uiArray, fighters )
 		
 		if w_battle_db_mgr.IsDebug == true then
 			if self.idCamp == E_CARD_CAMP_HERO then
-				--f.Attack = 10000;
+				f.Attack = 1000;
 				--f.Defence = 1;
 				--
 				--if f.Position == 2 then
-					f.Sp = 100;
+				--	f.Sp = 100;
 				--end
 				
 				--f.Defence = f.Defence + 200;

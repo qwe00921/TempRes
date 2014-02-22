@@ -45,7 +45,7 @@ function p:CreateImageNode()
 	if self.imageNode == nil then
 		self.imageNode = createNDUIImage();
 		self.imageNode:Init();
-		self.imageNode:SetFramePosXY(0,0);
+		--self.imageNode:SetFramePosXY(0,0);
 		--self.imageNode:SetFrameSize(50,50);
 		self.imageNode:SetVisible( false );
 	end

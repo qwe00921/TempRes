@@ -11,49 +11,62 @@ p.substep = nil;
 function p.fighterGuid(substep)
 	p.IsGuid = true;
 	p.guidstep = 3;
-	p.substep = substep;
-	if substep == 1 then
-		--p.nextGuidSubStep(); 
-	elseif substep == 2 then
+	p.substep = substep - 1;
+	if p.substep == 1 then
+		--maininterface.ShowUI(p.userData);
+	elseif p.substep == 2 then
 		p.nextGuidSubStep();
-	elseif substep == 3 then
-		w_battle_mgr.SetPVEAtkID(2); --2号位跳到目标的位置 状态机停下再显示遮照 
-	elseif substep == 4 then
-		w_battle_mgr.SetPVEAtkID(1);  
+	elseif p.substep == 3 then
+		w_battle_pve.setBtnClick(2);
+		--w_battle_mgr.SetPVEAtkID(2); --2号位跳到目标的位置 状态机停下再显示遮照 
+	elseif p.substep == 4 then
+		w_battle_pve.setBtnClick(1);
+		--w_battle_mgr.SetPVEAtkID(1);  
 		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(2); 		--让2号位的状态机继续行动(攻击)
 		if lstateMachine ~= nil then
 			lstateMachine:atk_startAtk();
 		end; 
 		--等怪全死后下一引导
-	elseif substep == 5 then
+	elseif p.substep == 5 then
+		w_battle_mgr.FightWin();
 		--等波次切换后进行下一引导		
-	elseif substep == 6 then
-		w_battle_mgr.SetPVETargerID(6);
+	elseif p.substep == 6 then
+		--w_battle_pve.setBtnClick(6);
+		w_battle_mgr.SetPVETargerID(3);
 		p.nextGuidSubStep();
-	elseif substep == 7 then
-		w_battle_mgr.SetPVEAtkID(2);  --等下一轮我方回合时调用 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 8 then
-			 --等战斗胜利,1号位怪死掉时,掉HP球(心之水晶),然后进行下一引导
-	elseif substep == 9 then
-		local lstateMachine = w_battle_machinemgr.getTarStateMachine(W_BATTLE_ENEMY,1); 		--让1号位的状态机继续死亡动画后的流程
+	elseif p.substep == 7 then
+		w_battle_pve.setBtnClick(2);  --等下一轮我方回合时调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif p.substep == 8 then
+		--w_battle_mgr.HeroTurnEnd();
+		--等战斗胜利,1号位怪受击时,掉HP球(心之水晶),然后进行下一引导
+	elseif p.substep == 9 then
+	   w_battle_mgr.checkTurnEnd(); 
+	--[[	local lstateMachine = w_battle_machinemgr.getTarStateMachine(W_BATTLE_ENEMY,1); 		--让1号位的状态机继续死亡动画后的流程
 		if lstateMachine ~= nil then
 			lstateMachine:tar_dieEnd();
 		end;
-	    --怪物进场后调用 进行下一引导
-	elseif substep == 10 then
+		]]--
+	    --BOSS怪物进场后调用 进行下一引导
+	elseif p.substep == 10 then
+		local lfighter = w_battle_mgr.heroCamp:FindFighter(2);
+		lfighter.nowlife = math.modf(lfighter.maxHp * 0.8)
+		lfighter.Hp = lfighter.nowlife;
+		w_battle_pve.SetHeroCardAttr(2, lfighter);
+		w_battle_db_mgr.SetGuidItemList();
 		p.nextGuidSubStep();
-	elseif substep == 11 then
+	elseif p.substep == 11 then
 	   --选择物品
-		w_battle_useitem.UseItem(1);
+		w_battle_pve.GuidUseItem1();
 		p.nextGuidSubStep();
-	elseif substep == 12 then
+	elseif p.substep == 12 then
 		--使用物品
-		w_battle_mgr.UseItem(1,2);
+		w_battle_useitem.UseItem(2);
+		--w_battle_mgr.UseItem(2);
 		p.nextGuidSubStep();
-	elseif substep == 13 then
+	elseif p.substep == 13 then
 		p.nextGuidSubStep();		
 		--等战斗任务结束调用 进行下一步引导
-	elseif substep == 14 then
+	elseif p.substep == 14 then
 		--引导结束后任务战斗结束
 		p.IsGuid = false;
 		w_battle_pve.MissionOver(w_battle_mgr.MissionWin);  --任务结束,任务奖励界面
@@ -119,5 +132,5 @@ function p.fighterSecondGuid(substep)
 end
 
 function p.nextGuidSubStep()
-	rookie_mask.Show(p.guidstep, p.substep + 1);
+	rookie_mask.ShowUI(p.guidstep, p.substep + 1);
 end

@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_card_rein_item = {};
 local p =  ui_card_rein_item;
+p.ID_CTRL_PICTURE_115					    = 172;
 p.ID_CTRL_PICTURE_163					    = 171;
 p.ID_CTRL_PICTURE_162					    = 170;
 p.ID_CTRL_PICTURE_NODE10				  = 169;
@@ -111,3 +112,4 @@ p.ID_CTRL_PICTURE_98					     = 140;
 p.ID_CTRL_PICTURE_97					     = 129;
 p.ID_CTRL_PICTURE_91					     = 90;
 p.ID_CTRL_PICTURE_96					     = 128;
+p.ID_CTRL_PICTURE_116					    = 173;
