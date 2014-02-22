@@ -315,6 +315,19 @@ DoFile("ui/ui_learning.lua");
 DoFile("ui/ui_learning_card.lua");
 DoFile("ui/ui_card.lua");
 
+DoFile("ui/ui_learning_3_2.lua");
+DoFile("ui/ui_learning_3_3.lua");
+DoFile("ui/ui_learning_3_4.lua");
+DoFile("ui/ui_learning_3_5.lua");
+DoFile("ui/ui_learning_3_6.lua");
+DoFile("ui/ui_learning_3_7.lua");
+DoFile("ui/ui_learning_3_8.lua");
+DoFile("ui/ui_learning_3_9.lua");
+DoFile("ui/ui_learning_3_10.lua");
+DoFile("ui/ui_learning_3_11.lua");
+DoFile("ui/ui_learning_3_12.lua");
+DoFile("ui/ui_learning_3_13.lua");
+
 DoFile("ui/ui_learning_4_2.lua");
 DoFile("ui/ui_learning_4_3.lua");
 DoFile("ui/ui_learning_4_4.lua");
