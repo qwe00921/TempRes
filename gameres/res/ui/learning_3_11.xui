@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 0 640 832
+Rect=0 -1 640 832
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_71]
 Type=1
 Tag=71
-Rect=35 778 56 80
+Rect=35 775 56 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 58 83
 [CTRL_PICTURE_72]
 Type=1
 Tag=72
-Rect=125 832 514 135
+Rect=126 831 514 135
 AnchorPos=0 0
 Notes=
 UIOpenType=0

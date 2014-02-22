@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 0 115 115
+Rect=0 0 110 110
 AnchorPos=0 0
 Notes=
 UIOpenType=0
