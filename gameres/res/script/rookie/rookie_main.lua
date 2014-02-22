@@ -13,7 +13,7 @@ p.rookieTest = false
 local MAX_STEP = {
 		0,--1
 		0,--2
-		0,--3
+		14,--3
 		7,--4
 		0,--5
 		15,--6
@@ -63,7 +63,14 @@ function p.ShowLearningStep( step, substep )
 		choose_card.CloseUI()
 		if p.rookieTest then
 			--第3步为战斗，暂时直接跳过   等思栋接入
-			p.SendUpdateStep(3)
+			--p.SendUpdateStep(3)
+			maininterface.ShowUI(p.userData);
+			if substep == 1 then
+				maininterface.ShowUI(p.userData);
+			else
+				w_battle_guid.fighterGuid(substep);
+			end
+			
 		else
 			maininterface.ShowUI(p.userData);
 			return
