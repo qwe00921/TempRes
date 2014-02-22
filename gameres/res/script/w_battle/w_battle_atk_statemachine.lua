@@ -187,9 +187,9 @@ function p:atk_start()
 	if self.distanceRes == W_BATTLE_DISTANCE_NoArcher then  --近战普攻
 		--向攻击目标移动
 		local cmdMove = nil;
-		local fX = GetWinSize().w / 1.0;
-		local fY = GetWinSize().h / 1.0;
-		--self.enemyPos = CCPointMake(0,0);
+		local fX = GetWinSize().w / 2.0;
+		local fY = GetWinSize().h / 2.0;
+		--self.enemyPos = CCPointMake(fX,fY);
 		
 		--WriteCon(string.format("X:%d,Y:%d",fX,fY));
 		--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
