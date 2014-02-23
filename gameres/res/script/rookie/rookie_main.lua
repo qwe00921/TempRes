@@ -8,7 +8,10 @@ p.userData = nil;
 p.stepId = nil;
 p.subStepId = nil;
 --是否开启新手测试 true 开启
-p.rookieTest = false
+p.rookieTest = false;
+
+p.tempStep = 0;
+p.tempSubTemp = 0;
 
 local MAX_STEP = {
 		0,--1
@@ -47,7 +50,13 @@ function p.getRookieStep(backData)
 		if stepId == 0 then
 			maininterface.ShowUI(backData.user);
 		else
-			p.ShowLearningStep( p.stepId, p.subStepId );
+			if p.tempStep ~= 0 and p.tempSubTemp ~= 0 then
+				p.ShowLearningStep( p.tempStep, p.tempSubTemp );
+				p.tempStep = 0;
+				p.tempSubTemp = 0;
+			else
+				p.ShowLearningStep( p.stepId, p.subStepId );
+			end
 		end
 	end
 end
@@ -56,6 +65,9 @@ end
 function p.ShowLearningStep( step, substep )
 	WriteConErr("rookie step = "..step .. " substep = " .. substep);
 	rookie_mask.CloseUI();
+	
+	p.stepId = step;
+	p.subStepId = substep;
 
 	if step == 1 then
 		WriteConErr("step error");
@@ -222,10 +234,11 @@ function p.ShowLearningStep( step, substep )
 			dlg_menu.HideUI();
 			dlg_drama.ShowUI( 14, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 5 then
-			dlg_gacha.ReqStartGacha( 3, 2, 1);
+			--dlg_gacha.ReqStartGacha( 3, 2, 1);
 			rookie_mask.ShowUI( step, substep );
 		else
 			if substep == 2 then
+				maininterface.ShowUI( p.userData );
 				country_main.ShowUI();
 			elseif substep == 3 then
 				dlg_gacha.ShowUI( SHOP_ITEM );
@@ -282,6 +295,7 @@ function p.ShowLearningStep( step, substep )
 			dlg_drama.ShowUI( 17, after_drama_data.ROOKIE, 0, 0);
 			do return end;
 		elseif substep == 2 then
+			maininterface.ShowUI( p.userData );
 			country_main.ShowUI();
 		elseif substep == 3 then
 			equip_room.ShowUI();
@@ -310,10 +324,7 @@ function p.ShowLearningStep( step, substep )
 				equip_rein_select.OnEquipUIEvent( node, 1, nil );
 			end
 		elseif substep == 9 then
-			local node = equip_rein_list.GetRookieNode();
-			if node then
-				equip_rein_list.OnUIClickEvent( node, 1, nil );
-			end
+			
 		end
 		rookie_mask.ShowUI( step, substep );
 	end
@@ -352,10 +363,26 @@ function p.DoSomething( step, substep, index )
 			elseif index == 4 then
 				country_collect.Collect( E_COLLECT_RIVER );
 			end
+			p.SendUpdateStep( step, substep );
+			return false;
+		elseif substep == 5 then
+			p.SendUpdateStep( step, substep );
+			return false;
 		end
 	elseif step == 11 then
-		if substep == 6 then
-			
+		if substep == 4 then
+			dlg_gacha.ReqStartGacha( 3, 2, 1);
+			p.tempStep = step;
+			p.tempSubTemp = substep+1;
+			p.SendUpdateStep( step );
+			return false;
+		elseif substep == 5 then
+			if dlg_gacha_effect.gacharesult == nil then
+				return false;
+			end
+		elseif substep == 6 then
+			dlg_gacha_result.CloseUI();
+			dlg_gacha.CloseUI();
 		end
 	elseif step == 4 then
 		if substep == 2 then
@@ -364,6 +391,21 @@ function p.DoSomething( step, substep, index )
 			else
 				return false
 			end
+		end
+	elseif step == 14 then
+		if substep == 8 then
+			local node = equip_rein_list.GetRookieNode();
+			if node then
+				equip_rein_list.OnUIClickEvent( node, 1, nil );
+			end
+			p.SendUpdateStep( step );
+			return false;
+		elseif substep == 9 then
+			--引导结束，切回主页
+			world_map.CheckToCloseMap();
+			p.SetNewUI( {} );
+			PlayMusic_MainUI();
+			maininterface.ShowUI();
 		end
 	end
 	return true;
@@ -426,13 +468,14 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 13 then
 		p.ShowLearningStep( 11, 2 );
 	elseif storyId == 14 then
-		--p.ShowLearningStep( 12, 1 );
-		p.SendUpdateStep( p.stepId )
+		p.ShowLearningStep( 12, 1 );
+		--p.SendUpdateStep( p.stepId );
 
 	elseif storyId == 15 then
 		p.ShowLearningStep( 12, 2 );
 	elseif storyId == 16 then
-		p.ShowLearningStep( 14, 1 );
+		p.SendUpdateStep( p.stepId );
+		--p.ShowLearningStep( 14, 1 );
 	elseif storyId == 17 then
 		p.ShowLearningStep( 14, 2 );
 	end
