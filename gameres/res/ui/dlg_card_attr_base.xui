@@ -176,10 +176,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\weapon_bg.png
-NormalFileUV=0 0 70 70
-SelectFile=.\res\image\ui\public\item_less_click.png
-SelectedFileUV=0 0 100 100
 
 [CTRL_BUTTON_EQUIP_2]
 Type=2
@@ -192,10 +188,6 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\card_attr_base\clothes.png
-NormalFileUV=0 0 70 70
-SelectFile=.\res\image\ui\public\item_less_click.png
-SelectedFileUV=0 0 100 100
 
 [CTRL_EQUIP_PIC_1]
 Type=1
