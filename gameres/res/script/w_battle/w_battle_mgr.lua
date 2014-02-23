@@ -954,12 +954,9 @@ function p.FightLose()
 	WriteCon("Fight Lose");
 	KillTimer(p.buffTimerID);
 	p.InitLockAction();
-	if ((w_battle_guid.guidstep == 5) and (w_battle_db_mgr.step == 3)) then
-		dlg_drama.ShowUI( STORY_GUID_5_23, after_drama_data.ROOKIE,0,0)
-		w_battle_guid.IsGuid = false;	
-	else
-		w_battle_pve.MissionOver(p.MissionLose);
-	end;
+	
+	w_battle_pve.MissionOver(p.MissionLose);
+
 end;
 
 function p.GuidMissionLose()
@@ -970,6 +967,11 @@ end;
 function p.MissionLose()
 	p.QuitBattle()
 	p.SendResult(0, 0, 0);	
+	
+	if (w_battle_guid.IsGuid == true ) and (w_battle_guid.guidstep == 5)then
+		w_battle_guid.IsGuid = false;	
+		rookie_mask.ShowLearningStep(5, 24); 
+	end;	
 end;
 
 function p.Quit()
@@ -1113,11 +1115,14 @@ end
 --进入战斗
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
-	--if p.testGuid == true then
-	--	p.missionID = 100011
-	--else
-		p.missionID = missionId;	
-	--end
+	p.missionID = missionId;	
+	if w_battle_guid.IsGuid == true then
+		if rookie_main.stepId == 3 then
+			p.missionID = 100011
+		elseif rookie_main.stepId == 5 then
+			p.missionID = 103011
+		end;
+	end
     p.isPerfect = true;
 	p.SendStartPVEReq( p.missionID,teamid);
 --[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
