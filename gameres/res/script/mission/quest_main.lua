@@ -15,6 +15,7 @@ p.missionList = nil;
 p.missionMax = 9;
 p.missionIdGap = 10;
 p.difficultKey = EASY;
+p.rookbtn = nil;
 
 function p.ShowUI(stageId)
 	dlg_menu.SetNewUI( p );
@@ -40,8 +41,8 @@ function p.ShowUI(stageId)
 	
 	p.ShowBgPic(stageId)
 	
-	GetUIRoot():AddDlg(layer);
-	LoadUI("quest_main_view.xui",layer,nil);
+	GetUIRoot():AddChild(layer);
+	LoadDlg("quest_main_view.xui",layer,nil);
 	
 	p.layer = layer;
 	p.SetDelegate(layer);
@@ -116,12 +117,8 @@ end
 
 --战斗任务点击
 function p.FightMissionClick()
-	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIGHTING );
-	if btn == nil then
-		WriteConErr("not find FightMission button");
-		return ;
-	end
-	p.OnBtnClick(btn, NUIEventType.TE_TOUCH_CLICK, nil);
+	
+	p.OnFightBtnClick(p.rookbtn, NUIEventType.TE_TOUCH_CLICK, nil);
 end
 
 --点击战斗按钮
@@ -247,6 +244,7 @@ function p.loadMissionList(missionStartId)
 			local fightBtn = GetButton(view, uiList.ID_CTRL_BUTTON_FIGHTING);
 			fightBtn:SetLuaDelegate(p.OnFightBtnClick);
 			fightBtn:SetId(misId);
+			p.rookbtn = fightBtn;
 			
 			local timesText = GetLabel(view, uiList.ID_CTRL_TEXT_TIEMS_V);
 			local missionTable = SelectRowInner(T_MISSION,"id",misId);

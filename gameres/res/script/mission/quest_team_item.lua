@@ -39,8 +39,8 @@ function p.ShowUI(missionId,stageId,nowTeamId,storyId)
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	
-	GetUIRoot():AddDlg(layer);
-	LoadUI("quest_team_item.xui",layer,nil);
+	GetUIRoot():AddChild(layer);
+	LoadDlg("quest_team_item.xui",layer,nil);
 	
 	p.layer = layer;
 	p.SetDelegate(layer);
