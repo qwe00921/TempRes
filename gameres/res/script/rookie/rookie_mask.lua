@@ -197,6 +197,11 @@ function p.ShowRookieText()
 		end
 	end
 	
+	if string.len(p.contentStr) <= 0 then
+		p.layer:SetVisible( false );
+		return;
+	end
+	
 	p.faceImage:SetPicture( picData );
 	
 	p.contentStrLn = GetCharCountUtf8( p.contentStr );	
@@ -270,7 +275,10 @@ function p.CloseUI()
 		p.step = 0;
 		p.contentStr = "";
 		p.contentStrLn = 0;
-		p.timerId = nil;
+		if p.timerId ~= nil then
+			KillTimer( p.timerId );
+			p.timerId = nil;
+		end
 		p.contentIndex = 1;
 		p.textList = nil;
 	end

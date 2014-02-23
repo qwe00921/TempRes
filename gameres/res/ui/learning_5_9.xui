@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 0 640 464
+Rect=0 0 640 560
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_7]
 Type=1
 Tag=7
-Rect=16 407 165 59
+Rect=14 497 165 59
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 250 90
 [CTRL_TEXT_8]
 Type=4
 Tag=8
-Rect=38 412 126 23
+Rect=36 502 126 23
 AnchorPos=0 0
 Notes=
 Text=伙伴属性
@@ -42,7 +42,7 @@ UIClsoeType=0
 [CTRL_PICTURE_18]
 Type=1
 Tag=18
-Rect=7 464 81 461
+Rect=0 560 77 400
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -53,7 +53,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_19]
 Type=1
 Tag=19
-Rect=88 483 560 442
+Rect=77 596 571 425
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -64,7 +64,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_20]
 Type=1
 Tag=20
-Rect=115 464 525 19
+Rect=114 560 526 36
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -75,7 +75,7 @@ NormalFileUV=0 0 1 1
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=-6 -4 640 960
+Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
 TextSize=10

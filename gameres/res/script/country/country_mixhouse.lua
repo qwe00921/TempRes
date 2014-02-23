@@ -362,6 +362,10 @@ end
 
 --发送合成消息
 function p.SendMixRequest( drug_mix_id )
+	if p.layer == nil then
+		return;
+	end
+	
 	local param = nil;
 	local material_id = tonumber( SelectCell( T_DRUG_MIX, drug_mix_id, "drug_id" ) ) or 0;
 	if material_id ~= 0 then

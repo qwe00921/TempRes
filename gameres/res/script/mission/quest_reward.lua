@@ -67,7 +67,16 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 				elseif E_DEMO_VER == 5 then
 					w_battle_mgr.QuitBattle();
 				end;
-				p.isShowPlot()
+				local playLv = tonumber(msg_cache.msg_player.Level)
+				local rookieStep = tonumber(msg_cache.msg_player.Guide_id)
+				local rookieSubstep = tonumber(msg_cache.msg_player.Sub_Guide_id)
+				WriteConErr("playLv="..playLv.."  rookieStep="..rookieStep.."  rookieSubstep="..rookieSubstep);
+				if playLv >= 5 and rookieStep == 13 and rookieSubstep == 1 then
+					p.CloseUI();
+					rookie_main.ShowLearningStep( rookieStep, rookieSubstep )
+				else
+					p.isShowPlot()
+				end
 			end
 		end
 	end

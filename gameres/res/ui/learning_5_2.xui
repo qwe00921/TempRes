@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 0 640 960
+Rect=0 0 640 860
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_326]
 Type=1
 Tag=326
-Rect=18 838 41 58
+Rect=46 829 41 58
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 58 83
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=2 884 88 76
+Rect=25 866 85 90
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -36,3 +36,25 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=4
+Rect=112 860 528 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=5
+Rect=0 860 22 100
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1

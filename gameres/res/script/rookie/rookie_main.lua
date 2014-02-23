@@ -159,7 +159,7 @@ function p.ShowLearningStep( step, substep )
 		
 	elseif step == 7 then
 		if substep == 1 then
-			dlg_drama.ShowUI( 1,after_drama_data.ROOKIE,0,0)
+			dlg_drama.ShowUI( 90,after_drama_data.ROOKIE,0,0)
 		elseif substep == 2 then
 			country_main.ShowUI();
 			rookie_mask.ShowUI( step, 2 );
@@ -216,7 +216,8 @@ function p.ShowLearningStep( step, substep )
 				country_mixhouse.CloseUI();
 				country_main.ShowUI();
 			elseif substep == 8 then
-				
+				maininterface.ShowUI( p.userData );
+				country_main.ShowUI();
 			end
 			rookie_mask.ShowUI( step, substep );
 		end
@@ -285,9 +286,14 @@ function p.ShowLearningStep( step, substep )
 		end
 
 	elseif step == 13 then
-		maininterface.HideUI();
-		dlg_menu.HideUI();
-		dlg_drama.ShowUI( 16, after_drama_data.ROOKIE, 0, 0);
+		local playLv = tonumber(msg_cache.msg_player.Level)
+		if playLv < 5 then
+			maininterface.ShowUI(p.userData);
+		else
+			maininterface.HideUI();
+			dlg_menu.HideUI();
+			dlg_drama.ShowUI( 16, after_drama_data.ROOKIE, 0, 0);
+		end
 	elseif step == 14 then
 		if substep == 1 then
 			maininterface.HideUI();
@@ -366,7 +372,10 @@ function p.DoSomething( step, substep, index )
 			p.SendUpdateStep( step, substep );
 			return false;
 		elseif substep == 5 then
-			p.SendUpdateStep( step, substep );
+			p.tempStep = step;
+			p.tempSubTemp = substep+1;
+			
+			p.SendUpdateStep( step, substep+1 );
 			return false;
 		end
 	elseif step == 11 then
@@ -437,7 +446,7 @@ end
 
 --剧情回调
 function p.dramaCallBack(storyId)
-	if storyId == 1 then
+	if storyId == 90 then
 		p.ShowLearningStep( 7, 2 );
 	elseif storyId == 2 then
 	elseif storyId == 3 then

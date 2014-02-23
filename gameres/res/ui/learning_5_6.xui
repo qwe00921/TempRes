@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 0 640 775
+Rect=0 0 640 696
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_554]
 Type=1
 Tag=554
-Rect=1 775 208 90
+Rect=0 696 250 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_555]
 Type=1
 Tag=555
-Rect=1 865 640 100
+Rect=1 776 640 189
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -39,7 +39,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_556]
 Type=1
 Tag=556
-Rect=422 775 220 90
+Rect=391 696 251 80
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -50,7 +50,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_557]
 Type=1
 Tag=557
-Rect=287 720 58 82
+Rect=291 637 58 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -61,7 +61,7 @@ NormalFileUV=0 0 58 83
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=205 776 222 90
+Rect=252 700 136 70
 AnchorPos=0 0
 Notes=
 TextSize=10

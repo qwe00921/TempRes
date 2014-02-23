@@ -142,9 +142,13 @@ function p.fighterSecondGuid(substep)
 	elseif substep == 22 then
 		rookie_mask.ShowUI(p.guidstep, substep); 
 	elseif substep == 23 then
-		w_battle_mgr.SetPVESkillAtkID(2);
-	    --放开,自由战斗,等第三波战败,战败后,播放剧情,剧情结束后,不进行战败结算
+		w_battle_pve.setBtnSkillClick(2);
+	    --放开,自由战斗,等第三波战败,战败后,进入下一引导
 		--rookie_mask.ShowUI(p.step,p.substep + 1)
+		--rookie_mask.ShowUI(p.guidstep, substep); 
+	elseif substep == 24 then		
+		quest_reward.CloseUI();
+		p.SendUpdateStep(5);
 	end	
 	
 end
