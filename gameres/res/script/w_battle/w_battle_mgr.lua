@@ -920,8 +920,8 @@ function p.FightWin()
 	else  --引导的战斗结束
 		if (w_battle_guid.guidstep == 3) and (rookie_mask.substep == 4) then
 			rookie_mask.ShowUI(3,5);
-		elseif (w_battle_guid.guidstep == 3) and (rookie_mask.substep == 8) then
-			rookie_mask.ShowUI(3,9);
+		elseif (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then
+			rookie_mask.ShowUI(3,8);
 		else
 			KillTimer(p.buffTimerID);
 			p.heroCamp:ClearFighterBuff();
@@ -930,11 +930,7 @@ function p.FightWin()
 				w_battle_db_mgr.nextStep();  --数据进入下一波次
 				w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 			else
-				if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 13) then
-					w_battle_guid.nextGuidSubStep();
-				else
-					w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
-				end
+				w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
 			end
 		end;
 	end
@@ -1211,10 +1207,6 @@ end
 
 function p.MissionWin()
 	WriteCon("Mission Win");
-	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
-		dlg_drama.ShowUI( 2, after_drama_data.ROOKIE, 0, 0);
-		return ;
-	end; 
 	
 	local lmoney = p.GetAddMoney();
 	local lsoul = p.GetAddSoul();
@@ -1224,6 +1216,10 @@ function p.MissionWin()
 	else
 		p.SendResult(1,lmoney,lsoul);
 	end;
+	
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+		rookie_mask.ShowUI(3, 14)
+	end; 
 end;
 
 

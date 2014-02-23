@@ -45,7 +45,8 @@ function p.fighterGuid(substep)
 	elseif p.substep == 9 then
 		--w_battle_mgr.HeroTurnEnd();
 		--等战斗胜利,1号位怪受击时,掉HP球(心之水晶),然后进行下一引导
-		
+		--暴水晶
+		rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 10 then
 	   w_battle_mgr.FightWin(); 
 	--[[	local lstateMachine = w_battle_machinemgr.getTarStateMachine(W_BATTLE_ENEMY,1); 		--让1号位的状态机继续死亡动画后的流程
@@ -60,24 +61,24 @@ function p.fighterGuid(substep)
 		lfighter.Hp = lfighter.nowlife;
 		w_battle_pve.SetHeroCardAttr(2, lfighter);
 		w_battle_db_mgr.SetGuidItemList();
-		p.nextGuidSubStep();
-	elseif p.substep == 11 then
+		rookie_mask.ShowUI(p.guidstep, p.substep);
+	elseif p.substep == 12 then
 	   --选择物品
 		w_battle_pve.GuidUseItem1();
-		p.nextGuidSubStep();
-	elseif p.substep == 12 then
+		rookie_mask.ShowUI(p.guidstep, p.substep);
+	elseif p.substep == 13 then
 		--使用物品
 		w_battle_useitem.UseItem(2);
-		--w_battle_mgr.UseItem(2);
-		p.nextGuidSubStep();
-	elseif p.substep == 13 then
-		--等战斗任务结束 进行剧情
-		--dlg_drama.ShowUI( 2, after_drama_data.ROOKIE, 0, 0);
-		--rookie_mask.ShowLearningStep(p.guidstep, p.substep + 1);
-		--rookie_mask.CloseUI();
+		rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 14 then
+		--等战斗任务结束 进行结算
+		--quest_reward.CloseUI();
+		--dlg_drama.ShowUI(2, after_drama_data.ROOKIE, 0, 0);
+	elseif p.substep == 15 then
+		quest_reward.CloseUI();
+		dlg_drama.ShowUI(2, after_drama_data.ROOKIE, 0, 0);
 		--引导结束后任务战斗结束
-		w_battle_mgr.MissionWin();  --任务结束,任务奖励界面
+		--w_battle_mgr.MissionWin();  --任务结束,任务奖励界面
 	end
 	
 end
