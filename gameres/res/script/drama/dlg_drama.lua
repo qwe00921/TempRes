@@ -114,7 +114,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
     if IsClickEvent( uiEventType ) then
     
         --下一个剧情对话
-        if ( ui.ID_CTRL_BUTTON_CLICK == tag ) or (ui.ID_CTRL_BUTTON_BG == tag) then
+        if ( ID_CTRL_BUTTON_38 == tag) then
             if p.timerId ~= nil then
             	KillTimer( p.timerId );
             	p.timerId = nil;
@@ -128,6 +128,8 @@ function p.BtnOnclick(uiNode, uiEventType, param)
                 p.timerId = nil;
             end
             p.isActivity = false;
+			p.CloseUI();
+			drama_mgr.ClearData();
 			after_drama.DoAfterDrama();
             --p.CloseUI();
         end

@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -178,6 +178,18 @@ TextTradition=說話者一二三四五六七
 TextSize=24
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_38]
+Type=2
+Tag=38
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
