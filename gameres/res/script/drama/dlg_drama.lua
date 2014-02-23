@@ -101,7 +101,8 @@ function p.SetDelegate()
 
     --跳过剧情
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_SKIP);
-    btn:SetLuaDelegate(p.BtnOnclick);
+	--GetUIRoot():SwapParent(btn,100000);
+    btn:SetLuaDelegate(p.OnPassDrama);
 	
 	btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_38);
     btn:SetLuaDelegate(p.BtnOnclick);
@@ -109,6 +110,21 @@ function p.SetDelegate()
     --下一个对话：全屏
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_BG);
     btn:SetLuaDelegate(p.BtnOnclick);
+end
+
+function p.OnPassDrama(uiNode, uiEventType, param)
+    if IsClickEvent( uiEventType ) then
+		WriteCon("Drama Over!!!");
+		if p.timerId ~= nil then
+			KillTimer( p.timerId );
+			p.timerId = nil;
+		end
+			
+		p.isActivity = false;
+		p.CloseUI();
+		drama_mgr.ClearData();
+		after_drama.DoAfterDrama();
+	end
 end
 
 --事件处理
@@ -126,10 +142,12 @@ function p.BtnOnclick(uiNode, uiEventType, param)
             
         --跳过剧情    
         elseif ( ui.ID_CTRL_BUTTON_SKIP == tag ) then  
-            if p.timerId ~= nil then
+			WriteCon("Drama Over!!!");
+			if p.timerId ~= nil then
                 KillTimer( p.timerId );
                 p.timerId = nil;
             end
+			
             p.isActivity = false;
 			p.CloseUI();
 			drama_mgr.ClearData();

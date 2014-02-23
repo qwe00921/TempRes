@@ -62,25 +62,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_BUTTON_SKIP]
-Type=2
-Tag=10
-Rect=515 22 112 44
-AnchorPos=0 0
-Notes=
-TextSize=16
-TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\drama\skip.png
-NormalFileUV=0 0 112 44
-SelectFile=.\res\image\ui\drama\skip.png
-SelectedFileUV=0 0 112 44
-DisableFile=.\res\image\ui\drama\pass.png
-DisableFileUV=0 0 43 23
-
 [CTRL_9SLICES_12]
 Type=22
 Tag=13
@@ -185,7 +166,7 @@ UIClsoeType=0
 [CTRL_BUTTON_38]
 Type=2
 Tag=38
-Rect=0 0 640 960
+Rect=0 0 639 960
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -193,3 +174,22 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_BUTTON_SKIP]
+Type=2
+Tag=10
+Rect=493 182 112 44
+AnchorPos=0 0
+Notes=
+TextSize=16
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\drama\skip.png
+NormalFileUV=0 0 112 44
+SelectFile=.\res\image\ui\drama\skip.png
+SelectedFileUV=0 0 112 44
+DisableFile=.\res\image\ui\drama\pass.png
+DisableFileUV=0 0 43 23

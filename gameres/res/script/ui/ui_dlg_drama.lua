@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_dlg_drama = {};
 local p =  ui_dlg_drama;
+p.ID_CTRL_BUTTON_SKIP					    = 10;
 p.ID_CTRL_BUTTON_38					      = 38;
 p.ID_CTRL_TEXT_NPC_NAME				   = 5;
 p.ID_CTRL_PICTURE_14					     = 14;
@@ -13,7 +14,6 @@ p.ID_CTRL_9SLICES_15					     = 15;
 p.ID_CTRL_9SLICES_19					     = 19;
 p.ID_CTRL_9SLICES_18					     = 18;
 p.ID_CTRL_9SLICES_12					     = 13;
-p.ID_CTRL_BUTTON_SKIP					    = 10;
 p.ID_CTRL_PICTURE_R					      = 4;
 p.ID_CTRL_PICTURE_M					      = 3;
 p.ID_CTRL_PICTURE_L					      = 2;
