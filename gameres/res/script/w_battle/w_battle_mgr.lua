@@ -268,9 +268,11 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 
    --点选目标后,先计算伤害
     local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter,IsMonster);
-	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
-		if atkCampType == W_BATTLE_ENEMY then
-			damage = 1;
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 5) then
+		if w_battle_db_mgr.step == 3 then
+			if atkCampType == W_BATTLE_ENEMY then
+				damage = damage*10;
+			end;
 		end;
 	end  
 	targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
@@ -1109,7 +1111,7 @@ function p.EnterBattle( battleType, missionId,teamid )
 		if rookie_main.stepId == 3 then
 			p.missionID = 100011
 		elseif rookie_main.stepId == 5 then
-			p.missionID = 103011
+			p.missionID = 100021
 		end;
 	end
     p.isPerfect = true;

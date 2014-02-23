@@ -90,6 +90,8 @@ function p.fighterSecondGuid(substep)
 	if substep == 1 then  --剧情
 		dlg_drama.ShowUI( 4, after_drama_data.ROOKIE,0,0)
 	elseif substep == 2 then 
+		maininterface.ShowUI(rookie_main.userData);
+		country_main.ShowUI();
 		rookie_mask.ShowUI(p.guidstep,substep);
 	elseif substep == 3 then  --转到主页
 		dlg_menu.HomeClick();
@@ -155,7 +157,7 @@ function p.fighterSecondGuid(substep)
 		--rookie_mask.ShowUI(p.guidstep, substep); 
 	elseif substep == 24 then		
 		quest_reward.CloseUI();
-		p.SendUpdateStep(5);
+		rookie_main.SendUpdateStep(5);
 	end	
 	
 end
