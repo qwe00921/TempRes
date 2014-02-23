@@ -14,6 +14,7 @@ function p.fighterGuid(substep)
 	p.substep = substep - 1;
 	if p.substep == 1 then
 		--maininterface.ShowUI(p.userData);
+		dlg_drama.ShowUI( 1, after_drama_data.ROOKIE, 0, 0);
 	elseif p.substep == 2 then
 		p.nextGuidSubStep();
 	elseif p.substep == 3 then
@@ -64,69 +65,86 @@ function p.fighterGuid(substep)
 		--w_battle_mgr.UseItem(2);
 		p.nextGuidSubStep();
 	elseif p.substep == 13 then
-		p.nextGuidSubStep();		
-		--等战斗任务结束调用 进行下一步引导
+		--等战斗任务结束 进行剧情
+		--dlg_drama.ShowUI( 2, after_drama_data.ROOKIE, 0, 0);
+		--rookie_mask.ShowLearningStep(p.guidstep, p.substep + 1);
+		--rookie_mask.CloseUI();
 	elseif p.substep == 14 then
 		--引导结束后任务战斗结束
-		p.IsGuid = false;
-		w_battle_pve.MissionOver(w_battle_mgr.MissionWin);  --任务结束,任务奖励界面
+		w_battle_mgr.MissionWin();  --任务结束,任务奖励界面
 	end
 	
 end
 
 function p.fighterSecondGuid(substep)
 	p.IsGuid = true;
-	p.guidstep = 3;
+	p.guidstep = 5;
 	p.substep = substep;
-	if substep == 1 then
-
-	elseif substep == 2 then
-
-	elseif substep == 3 then
-
-	elseif substep == 4 then
-
-	elseif substep == 5 then
-		--收到战斗发起返回消息后 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 6 then
-		--双方人物进场后 rookie_mask.ShowUI(p.step,p.substep + 1)
-	elseif substep == 7 then
-		p.nextGuidSubStep();
+	if substep == 1 then  --剧情
+		dlg_drama.ShowUI( 4, after_drama_data.ROOKIE,0,0)
+	elseif substep == 2 then 
+		rookie_mask.ShowUI(p.guidstep,substep);
+	elseif substep == 3 then  --转到主页
+		dlg_menu.HomeClick();
+		rookie_mask.ShowUI(p.guidstep, substep);
+	elseif substep == 4 then --开启任务主界面
+		stageMap_main.OpenWorldMap();
+		PlayMusic_Task(1);
+		maininterface.HideUI();
+		
+		rookie_mask.ShowUI(p.guidstep, substep);
+	elseif substep == 5 then --显示第一章
+		stageMap_1.ChapterClick();
+		rookie_mask.ShowUI(p.guidstep, substep);
+	elseif substep == 6 then --选择第一个任务
+		quest_main.FightMissionClick();
+		rookie_mask.ShowUI(p.guidstep, substep);
+	elseif substep == 7 then --剧情结束后发起战斗	
+		dlg_drama.ShowUI( 5, after_drama_data.ROOKIE,0,0)
 	elseif substep == 8 then
-		p.nextGuidSubStep();
+		--此时人物均已进场
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 9 then
-		p.SetPVETargerID(2);
-		p.nextGuidSubStep();
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 10 then
-		p.nextGuidSubStep();
-	elseif substep == 11 then
-		w_battle_mgr.SetPVEAtkID(3);
-		p.nextGuidSubStep();
+		rookie_mask.ShowUI(p.guidstep, substep);
+		--p.nextGuidSubStep();
+	elseif substep == 11 then  --选择了一个敌人
+		w_battle_mgr.SetPVETargerID(3);  
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 12 then
-		p.nextGuidSubStep();
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 13 then
-		p.nextGuidSubStep();
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 14 then
-		--战斗胜利并加载下一波敌人后 rookie_mask.ShowUI(p.step,p.substep + 1)
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 15 then
-		p.nextGuidSubStep();
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 16 then
-		p.nextGuidSubStep();
+		w_battle_pve.setBtnClick(3);--我方三号位点击
+	    --可以放开,至到战斗胜利
+		--第一波战斗胜利并加载下一波敌人进场后 rookie_mask.ShowUI()
 	elseif substep == 17 then
-	    --攻击敌人后 SP球必掉, 需飞向指定目标
-		--rookie_mask.ShowUI(p.step,p.substep + 1)
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 18 then
-		p.nextGuidSubStep();
+		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 19 then
-		p.nextGuidSubStep();
+		--我方2号位的SP直接补满
+		local lfighter = w_battle_mgr.heroCamp:FindFighter(2);
+		lfighter.Sp = 100;
+		w_battle_pve.SetHeroCardAttr(2, lfighter);
+	    rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 20 then
-		w_battle_mgr.SetPVESkillAtkID(2);
-		--技能发动后 rookie_mask.ShowUI(p.step,p.substep + 1)
+		rookie_mask.ShowUI(p.guidstep, substep); --触发条件 增加为滑动
 	elseif substep == 21 then
-	    --战斗失败后
-		--rookie_mask.ShowUI(p.step,p.substep + 1)
+		--发动技能时,先卡住,加载引导
+		rookie_mask.ShowUI(p.guidstep, substep); --触发条件 增加为滑动
 	elseif substep == 22 then
-		p.IsGuid = false;
+		rookie_mask.ShowUI(p.guidstep, substep); 
+	elseif substep == 23 then
+		w_battle_mgr.SetPVESkillAtkID(2);
+	    --放开,自由战斗,等第三波战败,战败后,播放剧情,剧情结束后,不进行战败结算
+		--rookie_mask.ShowUI(p.step,p.substep + 1)
 	end	
 	
 end

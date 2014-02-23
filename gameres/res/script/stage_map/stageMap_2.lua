@@ -24,8 +24,8 @@ function p.ShowUI()
 	layer:Init();
 	layer:SetSwallowTouch(false);
 	
-	GetUIRoot():AddDlg(layer);
-	LoadUI("map2.xui",layer,nil);
+	GetUIRoot():AddChild(layer);
+	LoadDlg("map2.xui",layer,nil);
 	
 	p.layer = layer;
 	p.SetDelegate(layer);

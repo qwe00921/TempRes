@@ -157,12 +157,20 @@ function p.IntoSceneEnd()
 	WriteConWarning("p.buffTimerID= "..tostring(p.buffTimerID));	
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 
-	if w_battle_db_mgr.step == 1 then
-		if rookie_main.rookieTest == true then
-			if w_battle_guid.IsGuid == false then
-				rookie_mask.ShowUI( 3, 2 )
+	if rookie_main.rookieTest == true then
+		if w_battle_guid.guidstep == 3 then
+			if w_battle_db_mgr.step == 1 then --第一波进场
+				rookie_main.ShowLearningStep( 3, 2 )
 			end;
+		elseif w_battle_guid.guidstep == 5 then
+			if w_battle_db_mgr.step == 1 then  --第一波进场
+				rookie_main.ShowLearningStep( 5, 8 )
+			elseif w_battle_db_mgr.step == 2 then
+				--rookie_main.ShowLearningStep( 5, 16 )
+				rookie_mask.ShowUI(5, 16)
+			end
 		end;
+		
 	end;
 	
 	if w_battle_guid.IsGuid == true then
@@ -946,8 +954,17 @@ function p.FightLose()
 	WriteCon("Fight Lose");
 	KillTimer(p.buffTimerID);
 	p.InitLockAction();
-	--没有续打,只有失败界面
-	w_battle_pve.MissionOver(p.MissionLose);
+	if ((w_battle_guid.guidstep == 5) and (w_battle_db_mgr.step == 3)) then
+		dlg_drama.ShowUI( STORY_GUID_5_23, after_drama_data.ROOKIE,0,0)
+		w_battle_guid.IsGuid = false;	
+	else
+		w_battle_pve.MissionOver(p.MissionLose);
+	end;
+end;
+
+function p.GuidMissionLose()
+	p.QuitBattle();
+	--p.ShowLearningStep(6,1);
 end;
 
 function p.MissionLose()
@@ -1196,6 +1213,11 @@ end
 
 function p.MissionWin()
 	WriteCon("Mission Win");
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+		dlg_drama.ShowUI( 2, after_drama_data.ROOKIE, 0, 0);
+		return ;
+	end; 
+	
 	local lmoney = p.GetAddMoney();
 	local lsoul = p.GetAddSoul();
 	p.QuitBattle();
