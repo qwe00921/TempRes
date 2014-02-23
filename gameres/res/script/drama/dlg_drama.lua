@@ -45,6 +45,8 @@ function p.ShowUI( storyId,openViewType,viewId,teamId,rewardList)
 	   p.teamId = tonumber(teamId) or 1;
 	   p.rewardData = rewardList or {}
     end
+	
+	dlg_menu:HideUI();
 
 	p.isActivity = true;
     if p.layer ~= nil then
