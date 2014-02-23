@@ -607,7 +607,7 @@ function p:AddFighters( uiArray, fighters )
 		local btn = GetButton(w_battle_pve.battleLayer,210 + f.Position);
 		if nil ~= btn then
 			btn:SetCenterPos(pRolePos);
-			btn:SetFrameSize(kRealSize.w,kRealSize.h);
+			btn:SetFrameSize(kRealSize.w / 2,kRealSize.h / 2);
 		end
 	end
 end
