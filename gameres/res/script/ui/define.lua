@@ -364,6 +364,7 @@ DoFile("ui/ui_learning_6_5.lua");
 DoFile("ui/ui_learning_6_6.lua");
 DoFile("ui/ui_learning_6_7.lua");
 DoFile("ui/ui_learning_6_8.lua");
+DoFile("ui/ui_learning_6_9.lua");
 DoFile("ui/ui_learning_6_10.lua");
 
 DoFile("ui/ui_learning_7_2.lua");
