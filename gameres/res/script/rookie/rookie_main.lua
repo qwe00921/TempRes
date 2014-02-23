@@ -28,7 +28,7 @@ local MAX_STEP = {
 	};
 STORY_GUID_3_1 = 1;
 STORY_GUID_3_14 = 2;
-STORY_GUID_5_1 = 2; 
+
 	
 	
 function p.getRookieStep(backData)
@@ -398,10 +398,10 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 2 then
 	elseif storyId == 3 then
 		p.ShowLearningStep( p.stepId, 2 )
-	elseif storyId == 4 then -- STORY_GUID_5_7
+	elseif storyId == 4 then -- STORY_GUID_5_1
+		p.ShowLearningStep(5,2);
+	elseif storyId == 5 then --STORY_GUID_5_7
 		quest_team_item.FightClick();
-	elseif storyId == 5 then --STORY_GUID_5_23
-		w_battle_pve.MissionOver(w_battle_mgr.MissionLose);
 	elseif storyId == 6 then
 		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == 7 then
@@ -433,8 +433,6 @@ function p.dramaCallBack(storyId)
 		p.ShowLearningStep( 14, 1 );
 	elseif storyId == 17 then
 		p.ShowLearningStep( 14, 2 );
-	elseif storyId == STORY_GUID_5_1 then	--STORY_GUID_5_1
-		p.ShowLearningStep(5,2);
 	end
 end
 
