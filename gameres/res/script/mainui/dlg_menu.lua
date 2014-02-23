@@ -54,39 +54,39 @@ function p.ShowUI()
 	maininterface.InitScrollList( p.layer );
 	maininterface.OnListScrolled();
 	
-	--´Ë´¦µ÷ÕûbillboardÎ»ÖÃ
+	--æ­¤å¤„è°ƒæ•´billboardä½ç½®
 	--local lb = GetImage( p.layer, ui.ID_CTRL_PICTURE_8 );
 	--local rect = lb:GetScreenRect();
 	--billboard.SetFrameRect(rect);
 end
 
 function p.SetDelegate()
-	--ÉÌµê
+	--å•†åº—
 	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_GASHAPON );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	--²Ëµ¥
+	--èœå•
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_PVP );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	--´åÂä
+	--æ‘è½
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_BAG );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	--»ï°é
+	--ä¼™ä¼´
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_CARD_GROUP );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	--ÈÎÎñ
+	--ä»»åŠ¡
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_QUEST );
 	btn:SetLuaDelegate( p.OnBtnClick );
 	
-	--Ö÷Ò³
+	--ä¸»é¡µ
 	btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_HOME_PAGE );
 	btn:SetLuaDelegate( p.OnBtnClick );
 end
 
---update by csd, Ä£ËÆÖ÷Ò³°´Å¤µÄµã»÷
+--update by csd, æ¨¡ä¼¼ä¸»é¡µæŒ‰æ‰­çš„ç‚¹å‡»
 function p.HomeClick()
 	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_HOME_PAGE );
 	if btn == nil then
@@ -102,29 +102,29 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		p.SetSelectButton( tag );
 		
 		if ui.ID_CTRL_BUTTON_GASHAPON == tag then
-			WriteCon("**========Å¤µ°========**");
+			WriteCon("**========æ‰­è›‹========**");
 			dlg_gacha.ShowUI( SHOP_ITEM );
 			maininterface.BecomeBackground();
 		elseif ui.ID_CTRL_BUTTON_PVP == tag then
-			WriteCon("**=======²Ëµ¥=======**");
+			WriteCon("**=======èœå•=======**");
 			dlg_btn_list.ShowUI();
 			do return end;
 			
 		elseif ui.ID_CTRL_BUTTON_BAG == tag then
-			WriteCon("**========´åÂä========**");
+			WriteCon("**========æ‘è½========**");
 			--[[
-			WriteCon("**========²Ëµ¥========**");
+			WriteCon("**========èœå•========**");
 			pack_box.ShowUI();
 			--]]
 			country_main.ShowUI();
 			--equip_room.ShowUI();
 			
 		elseif ui.ID_CTRL_BUTTON_CARD_GROUP == tag then
-			WriteCon("**========»ï°é========**");
+			WriteCon("**========ä¼™ä¼´========**");
 			dlg_card_group_main.ShowUI();
 			
 		elseif ui.ID_CTRL_BUTTON_QUEST == tag then
-			WriteCon("**========¿¨ÅÆ========**");
+			WriteCon("**========å¡ç‰Œ========**");
 			--[[
 			stageMap_main.OpenWorldMap();
 			PlayMusic_Task(1);
@@ -133,7 +133,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			--]]
 			card_bag_mian.ShowUI();
 		elseif ui.ID_CTRL_BUTTON_HOME_PAGE == tag then
-			WriteCon("**========Ö÷Ò³========**");
+			WriteCon("**========ä¸»é¡µ========**");
 			world_map.CheckToCloseMap();
 			p.SetNewUI( {} );
 			PlayMusic_MainUI();
@@ -176,7 +176,7 @@ function p.SetSelectButton( tag )
 	end
 end
 
---Íâ²¿µ÷ÓÃ½Ó¿Ú
+--å¤–éƒ¨è°ƒç”¨æ¥å£
 function p.SetNewUI( pSingleton )
 	if pSingleton == nil then
 		return;
@@ -186,7 +186,7 @@ function p.SetNewUI( pSingleton )
 	p.CloseLastUI( );
 end
 
---Í¨¹ı²Ëµ¥´ò¿ª½çÃæÊ±£¬ÏÈ¹Ø±ÕÉÏÒ»¸ö½çÃæ
+--é€šè¿‡èœå•æ‰“å¼€ç•Œé¢æ—¶ï¼Œå…ˆå…³é—­ä¸Šä¸€ä¸ªç•Œé¢
 function p.CloseLastUI( )
 	if p.preUI and p.preUI ~= p.curUI then
 		if p.preUI.UIDisappear then

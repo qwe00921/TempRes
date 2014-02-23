@@ -1,35 +1,35 @@
 --------------------------------------------------------------
 -- FileName: 	billboard.lua
--- author:		xyd, 2013Äê8ÔÂ12ÈÕ
--- purpose:		ÅÜÂíµÆ¹ÜÀíÆ÷
+-- author:		xyd, 2013å¹´8æœˆ12æ—¥
+-- purpose:		è·‘é©¬ç¯ç®¡ç†å™¨
 --------------------------------------------------------------
 
 billboard = {}
 local p = billboard;
 
-------------------ÏûÏ¢ÀàĞÍ------------------
-p.EVENT_MESSAGE_TYPE_PET_CARD_INFY                    = 0;        -- ³èÎï¿¨Æ¬Ç¿»¯
-p.EVENT_MESSAGE_TYPE_PET_CARD_EVOLVE                  = 1;        -- ³èÎï¿¨Æ¬½ø»¯
-p.EVENT_MESSAGE_TYPE_PET_CARD_FUSE                    = 2;        -- ³èÎï¿¨ÅÆÈÚºÏ
-p.EVENT_MESSAGE_TYPE_SKILL                            = 3;        -- Íæ¼Ò¼¼ÄÜÇ¿»¯
-p.EVENT_MESSAGE_TYPE_PET_EQUIP                        = 4;        -- ¿¨ÅÆ×°±¸Ç¿»¯
-p.EVENT_MESSAGE_TYPE_GACHA                            = 5;        -- Íæ¼ÒÅ¤µ°ÊÂ¼ş
-p.EVENT_MESSAGE_TYPE_TIPS                             = 6;        -- ÓÎÏ·TIPSĞÅÏ¢
-p.EVENT_MESSAGE_TYPE_SYSTEM                           = 7;        -- ÏµÍ³ÏûÏ¢
-p.EVENT_MESSAGE_TYPE_PET_SKILL                        = 8;        -- ³èÎï¼¼ÄÜÏûÏ¢
+------------------æ¶ˆæ¯ç±»å‹------------------
+p.EVENT_MESSAGE_TYPE_PET_CARD_INFY                    = 0;        -- å® ç‰©å¡ç‰‡å¼ºåŒ–
+p.EVENT_MESSAGE_TYPE_PET_CARD_EVOLVE                  = 1;        -- å® ç‰©å¡ç‰‡è¿›åŒ–
+p.EVENT_MESSAGE_TYPE_PET_CARD_FUSE                    = 2;        -- å® ç‰©å¡ç‰Œèåˆ
+p.EVENT_MESSAGE_TYPE_SKILL                            = 3;        -- ç©å®¶æŠ€èƒ½å¼ºåŒ–
+p.EVENT_MESSAGE_TYPE_PET_EQUIP                        = 4;        -- å¡ç‰Œè£…å¤‡å¼ºåŒ–
+p.EVENT_MESSAGE_TYPE_GACHA                            = 5;        -- ç©å®¶æ‰­è›‹äº‹ä»¶
+p.EVENT_MESSAGE_TYPE_TIPS                             = 6;        -- æ¸¸æˆTIPSä¿¡æ¯
+p.EVENT_MESSAGE_TYPE_SYSTEM                           = 7;        -- ç³»ç»Ÿæ¶ˆæ¯
+p.EVENT_MESSAGE_TYPE_PET_SKILL                        = 8;        -- å® ç‰©æŠ€èƒ½æ¶ˆæ¯
 
 
 p.layer = nil;
 p.title = nil;
-p.message = {};                         -- ÏûÏ¢´æ´¢Æ÷
-p.message_sys = {};                     -- ÏµÍ³ÏûÏ¢
-p.message_user = {};                    -- Íæ¼ÒÏûÏ¢
-p.message_tips = {};                    -- ÌáÊ¾ÏûÏ¢
+p.message = {};                         -- æ¶ˆæ¯å­˜å‚¨å™¨
+p.message_sys = {};                     -- ç³»ç»Ÿæ¶ˆæ¯
+p.message_user = {};                    -- ç©å®¶æ¶ˆæ¯
+p.message_tips = {};                    -- æç¤ºæ¶ˆæ¯
 
 p.timer = nil;
 
-p.billboardHeight = 300;
-p.billboardRatio = 0.7;					-- ÅÜÂíµÆ¿í¶È±ÈÀıÏµÊı
+p.billboardHeight = 50;
+p.billboardRatio = 0.7;					-- è·‘é©¬ç¯å®½åº¦æ¯”ä¾‹ç³»æ•°
 p.billboard_y = nil;
 p.billboard_x = nil;
 
@@ -44,9 +44,9 @@ function p.ShowUI()
         p.title = createNDUIScrollText();
         p.title:Init();
         
-		--ÉèÖÃ¾ØĞÎÇøÓò
+		--è®¾ç½®çŸ©å½¢åŒºåŸŸ
 		local x = p.billboard_x or 0.5f * (1.0f - p.billboardRatio) * GetScreenWidth();
-		local y = p.billboard_y or UIOffsetY(56);
+		local y = p.billboard_y or UIOffsetY(0);
 		local w = GetScreenWidth() * p.billboardRatio;
 		local rect = dlg_menu.GetBillboardRect();
 		if rect == nil then
@@ -64,7 +64,7 @@ function p.ShowUI()
     p.StartTimer();
 end
 
-function p.ShowUIWithInit(parentLayer,posX,posY)
+function p.ShowUIWithInit(parentLayer,posX,posY,height)
 
 	if p.layer == nil then
         p.layer = parentLayer;
@@ -78,13 +78,15 @@ function p.ShowUIWithInit(parentLayer,posX,posY)
 		p.billboard_y = posY;
 	end
 	
+	p.billboardHeight = height;
+	
 	p.ShowUI();
 end
 
--- ¼ÓÔØÏûÏ¢
+-- åŠ è½½æ¶ˆæ¯
 function p.LoadMessage()
 
-    WriteCon("**ÇëÇóÏûÏ¢Êı¾İ**");
+    WriteCon("**è¯·æ±‚æ¶ˆæ¯æ•°æ®**");
     local uid = GetUID();
     if uid == 0 or uid == nil then
         return ;
@@ -92,7 +94,7 @@ function p.LoadMessage()
     SendReq("Message","GetLastMessage",uid,"");
 end
 
--- Ë¢ĞÂÏûÏ¢
+-- åˆ·æ–°æ¶ˆæ¯
 function p.RefreshMessage(msg)
     p.message = msg.message;
     if p.message ~= nil and #p.message > 0 then
@@ -101,16 +103,16 @@ function p.RefreshMessage(msg)
    end  
 end
 
--- ²ğ·ÖÏûÏ¢
+-- æ‹†åˆ†æ¶ˆæ¯
 function p.SplitMessage()
     
     for i = 1,#p.message do
         local type = tonumber(p.message[i].TypeId);
         if p.EVENT_MESSAGE_TYPE_SYSTEM == type then
-            --ÏµÍ³ÏûÏ¢
+            --ç³»ç»Ÿæ¶ˆæ¯
             p.message_sys[#p.message_sys + 1] = p.message[i];
         else
-            -- Íæ¼ÒĞÅÏ¢
+            -- ç©å®¶ä¿¡æ¯
             p.message_user[#p.message_user + 1] = p.message[i];
         end
      end
@@ -118,7 +120,7 @@ function p.SplitMessage()
      local cur_time = tonumber(os.time());
      local temp_tips = SelectRowList( T_EVENT_MESSAGE, "type", "7" );
      if temp_tips and #temp_tips > 0 then
-     	for i=1,#temp_tips do
+     	for i = 1,#temp_tips do
      		local start_time = tonumber(temp_tips[i].start_time);
      		local end_time = tonumber(temp_tips[i].end_time);
      		if start_time and end_time and (cur_time > start_time and cur_time < end_time) then
@@ -129,7 +131,7 @@ function p.SplitMessage()
 	 
 end
 
--- ÏÔÊ¾ÏûÏ¢
+-- æ˜¾ç¤ºæ¶ˆæ¯
 function p.ShowMessage()
     if #p.message_sys > 0 then
         p.ShowSysMessage();
@@ -142,15 +144,16 @@ function p.ShowMessage()
     end
 end
 
--- ÏÔÊ¾ÏµÍ³ÏûÏ¢
+-- æ˜¾ç¤ºç³»ç»Ÿæ¶ˆæ¯
 function p.ShowSysMessage()
 	--p.title:setEnableDragging(false);
    -- p.title:RunText(string.format("%s%s","<#ff0000ff>","my my my msg"));--p.message_sys[1].Message));
+	WriteCon(string.format("è·‘é©¬ç¯æ¶ˆæ¯ï¼š%s%s","<#ff0000ff>",p.message_sys[1].Message));
 	p.title:RunText(string.format("%s%s","<#ff0000ff>",p.message_sys[1].Message));
     table.remove(p.message_sys,1);
 end
 
--- ÏÔÊ¾Íæ¼ÒÏûÏ¢
+-- æ˜¾ç¤ºç©å®¶æ¶ˆæ¯
 function p.ShowUserMessage()
 
     local type = tonumber(p.message_user[1].TypeId);
@@ -176,25 +179,25 @@ function p.ShowUserMessage()
 	
 	if msg == nil then
 		if p.EVENT_MESSAGE_TYPE_PET_CARD_INFY == type then
-			-- ³èÎï¿¨Æ¬Ç¿»¯ÊÂ¼ş
+			-- å® ç‰©å¡ç‰‡å¼ºåŒ–äº‹ä»¶
 			text = string.format(GetStr("bill_board_message_skill"),user_id,card_id,level);
 		elseif p.EVENT_MESSAGE_TYPE_PET_CARD_EVOLVE == type then
-			-- ³èÎï¿¨Æ¬½ø»¯
+			-- å® ç‰©å¡ç‰‡è¿›åŒ–
 			text = string.format(GetStr("bill_board_message_evolve"),user_id,card_id,level);
 		elseif p.EVENT_MESSAGE_TYPE_PET_CARD_FUSE == type then
-			-- ³èÎï¿¨ÅÆÈÚºÏ
+			-- å® ç‰©å¡ç‰Œèåˆ
 			text = string.format(GetStr("bill_board_message_fuse"),user_id,rare,card_id);
 		elseif p.EVENT_MESSAGE_TYPE_SKILL == type then
-			-- Íæ¼Ò¼¼ÄÜÇ¿»¯
+			-- ç©å®¶æŠ€èƒ½å¼ºåŒ–
 			text = string.format(GetStr("bill_board_message_skill"),user_id,card_id,level);
 		elseif p.EVENT_MESSAGE_TYPE_PET_EQUIP == type then
-			-- ¿¨ÅÆ×°±¸Ç¿»¯
+			-- å¡ç‰Œè£…å¤‡å¼ºåŒ–
 			text = string.format(GetStr("bill_board_message_equip"),user_id,card_id,level);
 		elseif p.EVENT_MESSAGE_TYPE_GACHA == type then
-			-- Å¤µ°
+			-- æ‰­è›‹
 			text = string.format(GetStr("bill_board_message_gacha"),user_id,rare,card_id);
 		elseif p.EVENT_MESSAGE_TYPE_PET_SKILL == type then
-			-- ³èÎï¼¼ÄÜÇ¿»¯
+			-- å® ç‰©æŠ€èƒ½å¼ºåŒ–
 			text = string.format(GetStr("bill_board_message_pet_skill"),user_id,card_id,level);
 		end
 	else
@@ -208,9 +211,8 @@ function p.ShowUserMessage()
 	
 end
 
--- ÏÔÊ¾tips
+-- æ˜¾ç¤ºtips
 function p.ShowTipsMessage()
-	
 	if (#p.message_tips > 0) then
     	local index = math.random(1,#p.message_tips);
     	p.title:RunText(string.format("%s%s","<#yellow>",p.message_tips[index].message));
@@ -219,13 +221,13 @@ function p.ShowTipsMessage()
 end
 
 
--- ¿ªÆô¶¨Ê±Æ÷
+-- å¼€å¯å®šæ—¶å™¨
 function p.StartTimer()
     p.clearTimer();
     p.timer = SetTimer( p.ShowMessage, tonumber( GetStr( "message_timer" )));
 end
 
--- Çå³ı¶¨Ê±Æ÷
+-- æ¸…é™¤å®šæ—¶å™¨
 function p.clearTimer()
     if p.timer ~= nil then
         KillTimer(p.timer);
@@ -233,7 +235,7 @@ function p.clearTimer()
     end
 end
 
--- ÔİÍ£ÅÜÂíµÆ
+-- æš‚åœè·‘é©¬ç¯
 function p.pauseBillBoard()
 	p.clearTimer();
 	p.title:SetVisible(false);
@@ -243,10 +245,10 @@ function p.pauseBillBoard()
     p.message_tips = {};
 end
 
--- »Ö¸´ÅÜÂíµÆ
+-- æ¢å¤è·‘é©¬ç¯
 function p.resumeBillBoard()
 	p.title:SetVisible(true);
-	--p.LoadMessage(); -- ²»ÔÚresumeBillBoardÏÂ¶ÁÊı¾İ
+	--p.LoadMessage(); -- ä¸åœ¨resumeBillBoardä¸‹è¯»æ•°æ®
 	p.StartTimer();
 end
 

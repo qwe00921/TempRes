@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	mainui.lua
 -- author:		zhangwq, 2013/09/04
--- purpose:		Ö÷½çÃæ
+-- purpose:		ä¸»ç•Œé¢
 --------------------------------------------------------------
 
 mainui = {}
@@ -10,7 +10,7 @@ local p = mainui;
 p.layer = nil;
 local ui = ui_main_ui;
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI()
     
     if p.layer ~= nil then
@@ -35,12 +35,12 @@ function p.ShowUI()
 	p.InitExp();
 	p.SetDelegate(layer);
 	
-	--p.SendReqUserInfo(); @@¹ù
+	--p.SendReqUserInfo(); @@éƒ­
 end
 
 function p.SendReqUserInfo()
 
-	WriteCon("**ÇëÇóÍæ¼Ò×´Ì¬Êı¾İ**");
+	WriteCon("**è¯·æ±‚ç©å®¶çŠ¶æ€æ•°æ®**");
     local uid = GetUID();
     if uid ~= nil and uid > 0 then
         SendReq("User","GetUserStatus",uid,"");
@@ -81,67 +81,67 @@ function p.RefreshUI(msg)
 	energy:SetValue( 0, tonumber(user_status.arena_point), tonumber(user_status.arena_point_max) );
 end
 
---ÉèÖÃ°´Å¥
+--è®¾ç½®æŒ‰é’®
 function p.SetBtn(btn)
 	btn:SetLuaDelegate(p.OnBtnClick);
 	btn:AddActionEffect( "ui_cmb.mainui_btn_scale" );
 end
 
---ÉèÖÃÊÂ¼ş´¦Àí
+--è®¾ç½®äº‹ä»¶å¤„ç†
 function p.SetDelegate(layer)
-    --»î¶¯
+    --æ´»åŠ¨
 	local activity = GetButton(layer, ui.ID_CTRL_BUTTON_ACTIVITY);
     p.SetBtn(activity);
 	
-	--¹«»á
+	--å…¬ä¼š
 	local syndicate = GetButton(layer, ui.ID_CTRL_BUTTON_SYNDICATE);
     p.SetBtn(syndicate);
 	
-	--ºÃÓÑ
+	--å¥½å‹
 	local friend = GetButton(layer, ui.ID_CTRL_BUTTON_FRIEND);
     p.SetBtn(friend);
 	
-	--²Ëµ¥
+	--èœå•
 	local menu = GetButton(layer, ui.ID_CTRL_BUTTON_MENU);
     p.SetBtn(menu);
 	
-	--Ã°ÏÕ
+	--å†’é™©
 	local adventure = GetButton(layer, ui.ID_CTRL_BUTTON_ADVENTURE);
     p.SetBtn(adventure);
 	
-	--¿¨×é
+	--å¡ç»„
 	local cardGroup = GetButton(layer, ui.ID_CTRL_BUTTON_CARD_GROUP);
     p.SetBtn(cardGroup);
 	
-	--Å¤µ°
+	--æ‰­è›‹
 	local gacha = GetButton(layer, ui.ID_CTRL_BUTTON_GACHA);
     p.SetBtn(gacha);
 	
-	--±³°ü
+	--èƒŒåŒ…
 	local backPack = GetButton(layer, ui.ID_CTRL_BUTTON_BACK_PACK);
     p.SetBtn(backPack);
 	
-	--Í¼¼ø
+	--å›¾é‰´
 	local tuJian = GetButton(layer, ui.ID_CTRL_BUTTON_TUJIAN);
     p.SetBtn(tuJian);
 	
-	--¶ÍÔì
+	--é”»é€ 
 	local forge = GetButton(layer, ui.ID_CTRL_BUTTON_FORGE);
     p.SetBtn(forge);
 	
-	--³É¾Í
+	--æˆå°±
 	local achivement = GetButton(layer, ui.ID_CTRL_BUTTON_ACHIVEMENT);
     p.SetBtn(achivement);
     
-    --³äÖµ
+    --å……å€¼
     local charge = GetButton(layer, ui.ID_CTRL_BUTTON_CHARGE);
     p.SetBtn(charge);
     
-    --ÉÌ³Ç
+    --å•†åŸ
     local shop = GetButton(layer, ui.ID_CTRL_BUTTON_SHOP);
     p.SetBtn(shop);
     
-    --ÓÊÏä
+    --é‚®ç®±
     local mail = GetButton(layer, ui.ID_CTRL_BUTTON_MAIL);
     p.SetBtn(mail);
     
@@ -150,88 +150,88 @@ function p.SetDelegate(layer)
     
 end
 
---°´Å¥µã»÷ÊÂ¼ş
+--æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    p.CloseAllPanel();
 	    local tag = uiNode:GetTag();
         if ( ui.ID_CTRL_BUTTON_ACTIVITY == tag ) then	
-			WriteCon("»î¶¯");
+			WriteCon("æ´»åŠ¨");
 			
 		elseif ( ui.ID_CTRL_BUTTON_SYNDICATE == tag ) then
-			WriteCon("¹«»á");
+			WriteCon("å…¬ä¼š");
 
 		elseif ( ui.ID_CTRL_BUTTON_FRIEND == tag ) then
-			WriteCon("ºÃÓÑ");
+			WriteCon("å¥½å‹");
 			dlg_friend.ShowUI();
 			
 		elseif ( ui.ID_CTRL_BUTTON_MENU == tag ) then
-			WriteCon("²Ëµ¥");
-            --WriteCon("Íæ¼ÒĞÅÏ¢");
+			WriteCon("èœå•");
+            --WriteCon("ç©å®¶ä¿¡æ¯");
             --dlg_watch_player.ShowUI( SELF_INFO );
             			
 		elseif ( ui.ID_CTRL_BUTTON_ADVENTURE == tag ) then
-			WriteCon("Ã°ÏÕ");
+			WriteCon("å†’é™©");
 			p.HideUI();	
 			game_main.EnterWorldMap();
 			
 		elseif ( ui.ID_CTRL_BUTTON_CARD_GROUP == tag ) then
-			WriteCon("¿¨×é");
+			WriteCon("å¡ç»„");
 			dlg_card_panel.ShowUI( uiNode );
 			
 		elseif ( ui.ID_CTRL_BUTTON_GACHA== tag ) then
-			WriteCon("Å¤µ°");
+			WriteCon("æ‰­è›‹");
 			dlg_gacha.ShowUI( SHOP_GACHA );
 			
 		elseif ( ui.ID_CTRL_BUTTON_BACK_PACK== tag ) then
-			WriteCon("±³°ü");
+			WriteCon("èƒŒåŒ…");
 			dlg_back_pack.ShowUI();	
 			
 		elseif ( ui.ID_CTRL_BUTTON_TUJIAN== tag ) then
-			WriteCon("Í¼¼ø");
+			WriteCon("å›¾é‰´");
 			dlg_collect_mainui.ShowUI();
 
 		elseif ( ui.ID_CTRL_BUTTON_FORGE== tag ) then
-			WriteCon("¶ÍÔì");
+			WriteCon("é”»é€ ");
 			dlg_card_forge_panel.ShowUI( uiNode );	
 		
 		elseif ( ui.ID_CTRL_BUTTON_ACHIVEMENT== tag ) then
-			WriteCon("³É¾Í");	
+			WriteCon("æˆå°±");	
 			dlg_achievement.ShowUI();
 			
 		elseif ( ui.ID_CTRL_BUTTON_CHARGE== tag ) then
-			WriteCon("³äÖµ");
+			WriteCon("å……å€¼");
 			
 		elseif ( ui.ID_CTRL_BUTTON_SHOP== tag ) then
-			WriteCon("ÉÌ³Ç");
+			WriteCon("å•†åŸ");
 			dlg_gacha.ShowUI(SHOP_ITEM);
 			
 		elseif ( ui.ID_CTRL_BUTTON_MAIL== tag ) then
-			WriteCon("ÓÊÏä");
+			WriteCon("é‚®ç®±");
 						
 		elseif ( ui.ID_CTRL_BUTTON_MAIL_HINT== tag ) then
-			WriteCon("¿ªÆôÓÊÏä");
+			WriteCon("å¼€å¯é‚®ç®±");
 			
-			--ÔİÊ±ÓÃÓÚÉ¾³ı½ÇÉ«
+			--æš‚æ—¶ç”¨äºåˆ é™¤è§’è‰²
 			p.DelUser();
 		end				
 	end
 end
 
---¹Ø±Õ×Ó»­°æ
+--å…³é—­å­ç”»ç‰ˆ
 function p.CloseAllPanel()
 	dlg_card_panel.CloseUI();
 	dlg_card_forge_panel.CloseUI();
 end
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
@@ -239,19 +239,19 @@ function p.CloseUI()
     end
 end
 
---ÔİÊ±ÓÃÓÚÉ¾³ı½ÇÉ«
+--æš‚æ—¶ç”¨äºåˆ é™¤è§’è‰²
 function p.DelUser()
-    local msg = ToUtf8( "È·¶¨ÒªÉ¾³ı½ÇÉ«Âğ£¿\n£¨½ö¿Í»§¶ËÍü¼Çuserid£¬²»Ó°Ïì·şÎñ¶Ë£©" );
+    local msg = ToUtf8( "ç¡®å®šè¦åˆ é™¤è§’è‰²å—ï¼Ÿ\nï¼ˆä»…å®¢æˆ·ç«¯å¿˜è®°useridï¼Œä¸å½±å“æœåŠ¡ç«¯ï¼‰" );
     local uid = string.format( "\nuser_id=%d", GetUID());
     msg = msg .. uid;
     
 	dlg_msgbox.ShowYesNo( 
-		ToUtf8( "É¾³ı½ÇÉ«" ), 
+		ToUtf8( "åˆ é™¤è§’è‰²" ), 
 		msg,
 		p.OnMsgBoxCallback, p.layer );
 end
 				
---ÌáÊ¾¿ò»Øµ÷´¦Àí
+--æç¤ºæ¡†å›è°ƒå¤„ç†
 function p.OnMsgBoxCallback( result )
 	if result then
 --		SetUID(0);

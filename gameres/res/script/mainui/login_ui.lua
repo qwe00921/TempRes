@@ -5,10 +5,10 @@ local p = login_ui;
 p.layer = nil;
 local ui = ui_login_createid;
 
-p.loginNameEdit = nil; --ÓÃ»§Ãû
-p.loginPWEdit = nil; --ÃÜÂë
+p.loginNameEdit = nil; --ç”¨æˆ·å
+p.loginPWEdit = nil; --å¯†ç 
 
---ÏÔÊ¾UI
+--æ˜¾ç¤ºUI
 function p.ShowUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(true);
@@ -32,30 +32,30 @@ function p.ShowUI()
 	p.SetDelegate(layer);
 end
 
---ÉèÖÃ°´Å¥
+--è®¾ç½®æŒ‰é’®
 function p.SetBtn(btn)
 	btn:SetLuaDelegate(p.OnBtnClick);
 	--btn:AddActionEffect("ui_cmb.mainui_btn_scale");
 end
 
---ÉèÖÃÊÂ¼ş´¦Àí
+--è®¾ç½®äº‹ä»¶å¤„ç†
 function p.SetDelegate(layer)
-	--µÇÂ½ÓÎÏ·
+	--ç™»é™†æ¸¸æˆ
 	local startGame = GetButton(layer, ui.ID_CTRL_LOGIN_CTRL_BUTTON_STARTGAME);
 	p.SetBtn(startGame);
 	
-	--´´½¨ÕËºÅ
+	--åˆ›å»ºè´¦å·
 	local createID = GetButton(layer, ui.ID_CTRL_LOGIN_CTRL_BUTTON_CREATEID);
 	p.SetBtn(createID);
 end
 
---°´Å¥µã»÷ÊÂ¼ş
+--æŒ‰é’®ç‚¹å‡»äº‹ä»¶
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		--p.CloseAllPanel();
 		local tag = uiNode:GetTag();
 		if (ui.ID_CTRL_LOGIN_CTRL_BUTTON_STARTGAME == tag) then
-			WriteCon("µÇÈë");
+			WriteCon("ç™»å…¥");
 			
 			p.loginNameEdit = GetEdit(p.layer, ui_login_createid.ID_CTRL_INPUT_TEXT_ID);
 			WriteCon(p.loginNameEdit:GetText());
@@ -64,7 +64,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			WriteCon(p.loginPWEdit:GetText());
 			
 			local loginName = p.loginNameEdit:GetText();
-			local loginPW = p.loginPWEdit:GetText(); --MD5ÔÙ¼ÓÃÜÏÂ
+			local loginPW = p.loginPWEdit:GetText(); --MD5å†åŠ å¯†ä¸‹
 			
 			local uid = GetUID();
 			
@@ -78,7 +78,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			--game_main.EnterWorldMap();
 			
 		elseif (ui.ID_CTRL_LOGIN_CTRL_BUTTON_CREATEID == tag) then
-			WriteCon("´´½¨ÕËºÅ");
+			WriteCon("åˆ›å»ºè´¦å·");
 			
 			WriteCon(p.loginNameEdit);
 			WriteCon(p.loginPWEdit);
@@ -87,7 +87,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 end
 
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible(false);
@@ -95,7 +95,7 @@ function p.HideUI()
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();

@@ -144,7 +144,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 		--]]
 		if id == ID_STRENGTHEN then
 			card_rein.ShowUI();
-			dlg_menu.SetSelectButton( -1 );--菜单取消高亮
+			dlg_menu.SetSelectButton( -1 );--鑿滃崟鍙栨秷楂樹寒
 		end
 	end
 end

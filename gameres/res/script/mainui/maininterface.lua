@@ -88,7 +88,7 @@ function p.ShowUI(userinfo)
 --	GetTileMapMgr():OpenMapWorld( "main_ui.tmx", true );
 end
 
---ÉèÖÃ°´Å¥
+--è®¾ç½®æŒ‰é’®
 function p.SetBtn(btn)
 	btn:SetLuaDelegate(p.OnBtnClick);
 end
@@ -112,7 +112,7 @@ function p.SetDelegate()
 end
 
 function p.InitScrollList( layer )
-	--Î»ÖÃ»ù×¼¿Ø¼ş
+	--ä½ç½®åŸºå‡†æ§ä»¶
 	local posCtrller = GetImage( layer, ui_main_menu.ID_CTRL_PICTURE_305 );
 	local widCtrller = GetLabel( layer, ui_main_menu.ID_CTRL_TEXT_136 );
 	if posCtrller == nil or widCtrller == nil then
@@ -201,7 +201,7 @@ function p.OnTouchImage(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 		local id = uiNode:GetId();
 		if id == 1 then
-			WriteCon("**========ÈÎÎñ========**");
+			WriteCon("**========ä»»åŠ¡========**");
 			stageMap_main.OpenWorldMap();
 			PlayMusic_Task(1);
 
@@ -214,17 +214,17 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
 		if ui_main_mailbtn.ID_CTRL_BUTTON_MAIL == tag then
-			WriteCon("**========ÓÊ¼ş========**");
+			WriteCon("**========é‚®ä»¶========**");
 			mail_main.ShowUI();
 			
-			--Òş²ØÖ÷UI
+			--éšè—ä¸»UI
 			maininterface.CloseAllPanel();
 			--maininterface.HideUI();
-			--Òş²ØÓÃ»§ĞÅÏ¢
+			--éšè—ç”¨æˆ·ä¿¡æ¯
 			--dlg_userinfo.HideUI();
 --			dlg_battlearray.HideUI();
 --[[		elseif ui.ID_CTRL_BUTTON_ACTIVITY == tag then
-			WriteCon("**========»î¶¯========**");
+			WriteCon("**========æ´»åŠ¨========**");
 			country_main.ShowUI();
 			maininterface.HideUI();
 			p.CloseAllPanel();
@@ -235,12 +235,12 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	end
 end
 
---¹Ø±Õ×ÓÃæ°å
+--å…³é—­å­é¢æ¿
 function p.CloseAllPanel()
 	dlg_btn_list.CloseUI();
 end
 
---Òş²ØUI
+--éšè—UI
 function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
@@ -253,7 +253,7 @@ function p.HideUI()
 	end
 end
 
---¹Ø±ÕUI
+--å…³é—­UI
 function p.CloseUI()
 	if p.layer ~= nil then
 	    p.layer:LazyClose();
@@ -274,7 +274,7 @@ function p.CloseUI()
 	end
 end
 
---ÖØĞÂÏÔÊ¾²Ëµ¥°´Å¥
+--é‡æ–°æ˜¾ç¤ºèœå•æŒ‰é’®
 function p.ShowMenuBtn()
 	local menu = GetButton(p.layer, ui.ID_CTRL_MAIN_BUTTON_MEMU);
 	if menu then
@@ -282,7 +282,7 @@ function p.ShowMenuBtn()
 	end
 end
 
---ÓÊ¼şÊıÁ¿ÏÔÊ¾
+--é‚®ä»¶æ•°é‡æ˜¾ç¤º
 function p.ShowMailNum(userinfo)
 	local bg = GetImage( p.mailLayer , ui_main_mailbtn.ID_CTRL_PICTURE_MAIL_TIPS_BG );
 	local mailNum = GetLabel( p.mailLayer, ui_main_mailbtn.ID_CTRL_TEXT_MAIL_TIPS_NUM );
@@ -318,7 +318,7 @@ function p.ShowMailNum(userinfo)
 	end
 end
 
---ÏÔÊ¾ÕóÈİ½çÃæ
+--æ˜¾ç¤ºé˜µå®¹ç•Œé¢
 function p.ShowBattleArray( user_team, pos )
 	user_team = user_team or {};
 	if user_team["Formation"..pos] ~= nil then
@@ -488,7 +488,7 @@ function p.OnClickCard(uiNode, uiEventType, param)
 	end
 end
 
---ÅÜÂíµÆÏÔÊ¾
+--è·‘é©¬ç¯æ˜¾ç¤º
 function p.ShowBillboardWithInit()
 	--[[
 	if p.billlayer == nil then
@@ -513,7 +513,7 @@ function p.ShowBillboardWithInit()
 	
 	local rect = bg:GetFrameRect() or {};
 	local pt = rect.origin or {};
-	billboard.ShowUIWithInit(p.layer, nil, UIOffsetY(pt.y - 130)); 
+	billboard.ShowUIWithInit(p.layer, nil, pt.y,rect.size.h); 
 end
 
 function p.HideBillboard()
@@ -526,7 +526,7 @@ function p.ShowBillboard()
 	billboard.resumeBillBoard();
 end
 
---´Ó×Ó½çÃæÍË³ö£¬Ë¢ĞÂÖ÷½çÃæ
+--ä»å­ç•Œé¢é€€å‡ºï¼Œåˆ·æ–°ä¸»ç•Œé¢
 function p.BecomeFirstUI()
 	WriteCon("**BecomeFirstUI**");
 	dlg_userinfo.ShowUI();

@@ -135,13 +135,13 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	if IsClickEvent( uiEventType ) then
 	    local tag = uiNode:GetTag();
 		if ui_main_battlearray.ID_CTRL_BUTTON_16 == tag or ui_main_battlearray.ID_CTRL_BUTTON_17 == tag then
-			--ÕÙ»½ÊŞ°´Å¥
+			--å¬å”¤å…½æŒ‰é’®
 			local id = uiNode:GetId();
 			p.pos_no = id;
 			
 			dlg_beast_main.ShowUI( true , true );
 		else
-			--¿¨ÅÆ°´Å¥
+			--å¡ç‰ŒæŒ‰é’®
 			local formation;
 			if msg_cache.msg_player and msg_cache.msg_player.User_Team and msg_cache.msg_player.User_Team.Formation then
 				formation = msg_cache.msg_player.User_Team.Formation;
@@ -155,7 +155,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 					p.mainUIFlag = true;
 					dlg_card_attr_base.ShowUI( cardInfo , true , true );
 				else
-					--Ö±½ÓÏÔÊ¾ĞÇÁéÁĞ±í
+					--ç›´æ¥æ˜¾ç¤ºæ˜Ÿçµåˆ—è¡¨
 					p.mainUIFlag = true;
 					card_bag_mian.ShowUI( true, true );
 				end
@@ -164,7 +164,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 	end	
 end
 
---¿¨ÅÆÑ¡Ôñ»Øµ÷¡¢ÕÙ»½ÊŞÑ¡Ôñ»Øµ÷
+--å¡ç‰Œé€‰æ‹©å›è°ƒã€å¬å”¤å…½é€‰æ‹©å›è°ƒ
 function p.UpdatePosCard( cardId )
 	if cardId == nil or p.modify_team_id == nil or p.pos_no == nil then
 		return;
@@ -178,14 +178,14 @@ function p.UpdatePosCard( cardId )
 	end
 	
 	local param = "&team_id=".. p.modify_team_id .."&flag=1&pos_no=".. p.pos_no .."&uid=".. cardId;
-	--ÇëÇó¿¨×éÊı¾İ
+	--è¯·æ±‚å¡ç»„æ•°æ®
 	SendReq( "Team", "UpdateTeamInfo", uid, param );
 end
 
 function p.UpdateListData( dataSource )
 	if p.mainUIFlag then
 		p.mainUIFlag = false;
-		dlg_msgbox.ShowOK( ToUtf8( "ÌáÊ¾" ), ToUtf8( "³É¹¦Ìæ»»" ), p.OnMsgBoxCallback, maininterface.layer );
+		dlg_msgbox.ShowOK( ToUtf8( "æç¤º" ), ToUtf8( "æˆåŠŸæ›¿æ¢" ), p.OnMsgBoxCallback, maininterface.layer );
 	end
 end
 
