@@ -2,7 +2,7 @@
 -- FileName: 	effect_num.lua
 -- BaseClass:   effect_num
 -- author:		
--- purpose:		ÌØÐ§¾­Ñé×ÖÌå
+-- purpose:		ç‰¹æ•ˆç»éªŒå­—ä½“
 --------------------------------------------------------------
 
 effect_num = fly_num:new();
@@ -10,7 +10,7 @@ local p = effect_num;
 local super = fly_num;
 
 
---´´½¨ÐÂÊµÀý
+--åˆ›å»ºæ–°å®žä¾‹
 function p:new()
 	o = {}
 	setmetatable( o, self );
@@ -18,7 +18,7 @@ function p:new()
 	o:ctor(); return o;
 end
 
---¹¹Ôìº¯Êý
+--æž„é€ å‡½æ•°
 function p:ctor()
     super.ctor(self);
 	
@@ -51,13 +51,13 @@ function p:SetSize(kSize)
 	self.m_size = kSize;
 end
 
---ÉèÖÃÍ¼Æ¬Â·¾¶
+--è®¾ç½®å›¾ç‰‡è·¯å¾„
 function p:SetNumFont()
 	self.m_strNumberPath = "effect.num_font";
 	self.m_strOptPath = "effect.opt_effect";
 end
 
---¸ù¾ÝÊýÖµÎ»ÊýÉèÖÃÆ«ÒÆ
+--æ ¹æ®æ•°å€¼ä½æ•°è®¾ç½®åç§»
 function p:AdjustOffset( num )
 	--[[
 	if num >= 100 then
@@ -104,11 +104,11 @@ function p:PlayNum( num )
 	if not self.isInited then return end
 	if self.ownerNode == nil then return end
 	
-	--pushÊý×ÖÍ¼Æ¬
+	--pushæ•°å­—å›¾ç‰‡
 	self:PushNum( num );
 	self:AdjustOffset( num );
 	
-	--ÉèÖÃÍ¼Æ¬
+	--è®¾ç½®å›¾ç‰‡
 	local pCenter = CCPointMake(self.ownerNode:GetFrameSize().w / 2.0,self.ownerNode:GetFrameSize().h / 2.0);
 	self.imageNode:SetScale(self.m_scale);
 	self.imageNode:SetFrameSize(self.m_size.w * self.m_nNumCount,self.m_size.h);
@@ -117,7 +117,7 @@ function p:PlayNum( num )
 	
 	--self.imageNode:ResizeToFitPicture();
 	
-	--²¥·Å¶¯»­
+	--æ’­æ”¾åŠ¨ç”»
 	self.imageNode:SetVisible( true );
 	--self.imageNode:SetFramePosXY( self.offsetX, self.offsetY);
 end

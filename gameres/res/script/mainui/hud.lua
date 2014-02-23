@@ -1,7 +1,7 @@
 --------------------------------------------------------------
 -- FileName: 	hud.lua
 -- author:		zhangwq, 2013/06/02
--- purpose:		hud辅助功能
+-- purpose:		hud杈呭姪鍔熻兘
 --------------------------------------------------------------
 
 hud = {}
@@ -10,17 +10,17 @@ local p = hud;
 local imageMask = nil;
 local hudNode = nil;
 
---淡入
+--娣″叆
 function p.FadeIn()
 	p.GetImageMask():AddActionEffect( "lancer.fadeout" ); --fadeout
 end
 
---淡出
+--娣″嚭
 function p.FadeOut()
 	p.GetImageMask():AddActionEffect( "lancer.fadein" ); --fadein	
 end
 
---获取hud节点
+--鑾峰彇hud鑺傜偣
 function p.GetNode()
 	if p.hudNode == nil then
 		p.hudNode = GetHudLayer();
@@ -28,7 +28,7 @@ function p.GetNode()
 	return p.hudNode;
 end
 
---添加蒙版图片
+--娣诲姞钂欑増鍥剧墖
 function p.GetImageMask()
 	if p.imageMask == nil then
 		local imageMask = createNDUIImage();

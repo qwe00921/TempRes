@@ -139,7 +139,7 @@ function p.starFighter()
 	local lEnemyFighter = p.enemyCamp:FindFighter(p.PVEEnemyID);
 	w_battle_pve.SetHp(lEnemyFighter);
 	--怪物进场动画结束后,调用intoSceneEnd
-	--p.IntoSceneEnd();
+	p.IntoSceneEnd();
 end;
 
 function p.IntoSceneEnd()
@@ -1160,7 +1160,7 @@ function p.createHeroCamp( fighters )
 	p.heroCamp:AddFighters( p.heroUIArray, fighters );
 	p.heroCamp:AddShadows( p.heroUIArray, fighters );
 	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-	p.heroCamp:AddAllRandomTimeJumpEffect(true);
+	--p.heroCamp:AddAllRandomTimeJumpEffect(true);
 	--end;
 end
 
@@ -1171,7 +1171,7 @@ function p.createEnemyCamp( fighters )
 	p.enemyCamp:AddFighters( p.enemyUIArray, fighters );
 	p.enemyCamp:AddShadows( p.enemyUIArray, fighters );
 	--if w_battle_mgr.platform == W_PLATFORM_WIN32 then
-	p.enemyCamp:AddAllRandomTimeJumpEffect(false);
+	--p.enemyCamp:AddAllRandomTimeJumpEffect(false);
 	--end;
 end
 

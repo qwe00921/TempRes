@@ -1,4 +1,4 @@
-ï»¿*.suo
+*.suo
 *.user
 *.ncb
 *.bak
@@ -7,6 +7,7 @@
 *.suo
 *.lib
 *.ilk
+*.luaprj
 *.log
 .nomedia
 log.txt
@@ -51,4 +52,4 @@ BuildConfig.java
 /publish
 /dev/Bin/win32_assets
 /LuaDebug/libcocos2d.pdb
-/gameres\res\config/¸´¼þ user_config.ini
+/gameres\res\config/Ø´Ý¾ user_config.ini
