@@ -157,10 +157,14 @@ function p.IntoSceneEnd()
 	WriteConWarning("p.buffTimerID= "..tostring(p.buffTimerID));	
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 
-	if rookie_main.rookieTest == true then
+	if (rookie_main.rookieTest == true) and (w_battle_guid.IsGuid == true) then
 		if w_battle_guid.guidstep == 3 then
 			if w_battle_db_mgr.step == 1 then --第一波进场
-				rookie_main.ShowLearningStep( 3, 2 )
+				rookie_mask.ShowUI( 3, 2 )
+			elseif w_battle_db_mgr.step == 2 then
+				rookie_mask.ShowUI( 3, 6 )
+			elseif w_battle_db_mgr.step == 3 then
+				rookie_mask.ShowUI(3,10)
 			end;
 		elseif w_battle_guid.guidstep == 5 then
 			if w_battle_db_mgr.step == 1 then  --第一波进场
@@ -173,19 +177,6 @@ function p.IntoSceneEnd()
 		
 	end;
 	
-	if w_battle_guid.IsGuid == true then
-		if (w_battle_guid.guidstep == 3) then
-			if w_battle_guid.substep == 5 then
-				if w_battle_db_mgr.step == 2 then
-					w_battle_guid.nextGuidSubStep();
-				end
-			elseif w_battle_guid.substep == 9 then
-				if w_battle_db_mgr.step == 3 then
-					w_battle_guid.nextGuidSubStep();
-				end
-			end;
-		end
-	end	
 end;
 
 --攻击方是自己,受击方ID之前已选或自动选择,给战斗主界面调用
@@ -277,9 +268,11 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 
    --点选目标后,先计算伤害
     local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter,IsMonster);
-	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
-		if atkCampType == W_BATTLE_ENEMY then
-			damage = 1;
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 5) then
+		if w_battle_db_mgr.step == 3 then
+			if atkCampType == W_BATTLE_ENEMY then
+				damage = damage*10;
+			end;
 		end;
 	end  
 	targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
@@ -927,8 +920,10 @@ function p.FightWin()
 			w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
 		end
 	else  --引导的战斗结束
-		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 4) then
-			w_battle_guid.nextGuidSubStep();
+		if (w_battle_guid.guidstep == 3) and (rookie_mask.substep == 4) then
+			rookie_mask.ShowUI(3,5);
+		elseif (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then
+			rookie_mask.ShowUI(3,8);
 		else
 			KillTimer(p.buffTimerID);
 			p.heroCamp:ClearFighterBuff();
@@ -937,11 +932,7 @@ function p.FightWin()
 				w_battle_db_mgr.nextStep();  --数据进入下一波次
 				w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 			else
-				if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 13) then
-					w_battle_guid.nextGuidSubStep();
-				else
-					w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
-				end
+				w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
 			end
 		end;
 	end
@@ -1120,7 +1111,7 @@ function p.EnterBattle( battleType, missionId,teamid )
 		if rookie_main.stepId == 3 then
 			p.missionID = 100011
 		elseif rookie_main.stepId == 5 then
-			p.missionID = 103011
+			p.missionID = 100021
 		end;
 	end
     p.isPerfect = true;
@@ -1218,10 +1209,6 @@ end
 
 function p.MissionWin()
 	WriteCon("Mission Win");
-	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
-		dlg_drama.ShowUI( 2, after_drama_data.ROOKIE, 0, 0);
-		return ;
-	end; 
 	
 	local lmoney = p.GetAddMoney();
 	local lsoul = p.GetAddSoul();
@@ -1231,6 +1218,10 @@ function p.MissionWin()
 	else
 		p.SendResult(1,lmoney,lsoul);
 	end;
+	
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+		rookie_mask.ShowUI(3, 14)
+	end; 
 end;
 
 

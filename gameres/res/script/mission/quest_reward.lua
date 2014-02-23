@@ -38,8 +38,8 @@ function p.ShowUI(rewardData)
 	layer:NoMask();
 	layer:Init();
 
-	GetUIRoot():AddDlg(layer);
-	LoadUI("quest_reward_view.xui",layer,nil);
+	GetUIRoot():AddChild(layer);
+	LoadDlg("quest_reward_view.xui",layer,nil);
 	
 	p.layer = layer;
 	p.SetDelegate(layer);

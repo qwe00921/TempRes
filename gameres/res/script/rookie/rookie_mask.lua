@@ -31,6 +31,7 @@ local uiList = {
 		[11]= ui_learning_3_11,
 		[12]= ui_learning_3_12,
 		[13]= ui_learning_3_13,
+		[14]= ui_learning_3_14,
 	},
 	[4] ={
 		[2] = ui_learning_4_2,
@@ -60,6 +61,7 @@ local uiList = {
 		[20]= ui_learning_5_20,
 		[21]= ui_learning_5_21,
 		[22]= ui_learning_5_22,
+		[23]= ui_learning_5_23,
 	},	
 	[6] ={
 		[2] = ui_learning_6_2,
@@ -69,6 +71,7 @@ local uiList = {
 		[6] = ui_learning_6_6,
 		[7] = ui_learning_6_7,
 		[8] = ui_learning_6_8,
+		[9] = ui_learning_6_9,
 		[10] = ui_learning_6_10,
 		},
 	[7] ={
