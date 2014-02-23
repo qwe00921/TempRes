@@ -202,7 +202,7 @@ function p:atk_start()
 			local cmdAtk = atkFighter:cmdLua("atk_startAtk",  self.id,"", seqTarget);
 			seqTarget:SetWaitEnd( cmdMove );
 		else  --Òýµ¼Õ½¶·
-			if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 3) then
+			if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 4) then
 				local cmdAtk = atkFighter:cmdLua("atk_guidstep3_3",  self.id,"", seqTarget);
 				seqTarget:SetWaitEnd( cmdMove );
 			else

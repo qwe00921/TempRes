@@ -16,9 +16,9 @@ p.tempSubTemp = 0;
 local MAX_STEP = {
 		0,--1
 		0,--2
-		14,--3
+		15,--3
 		7,--4
-		23,--5
+		24,--5
 		12,--6
 		6,--7
 		2,--8
@@ -77,15 +77,7 @@ function p.ShowLearningStep( step, substep )
 		choose_card.CloseUI()
 		if p.rookieTest then
 			--第3步为战斗，暂时直接跳过   等思栋接入
-			p.SendUpdateStep(3)
-			--[[
-			maininterface.ShowUI(p.userData);
-			if substep == 1 then
-				maininterface.ShowUI(p.userData);
-			else
-				w_battle_guid.fighterGuid(substep);
-			end
-			]]--
+			w_battle_guid.fighterGuid(substep);
 		else
 			maininterface.ShowUI(p.userData);
 			return
@@ -119,8 +111,8 @@ function p.ShowLearningStep( step, substep )
 			p.SendUpdateStep(step)
 		end
 	elseif step == 5 then
-		p.SendUpdateStep(p.stepId)
-		--w_battle_guid.fighterSecondGuid(substep);
+		--p.SendUpdateStep(p.stepId)
+		w_battle_guid.fighterSecondGuid(substep);
 	elseif step == 6 then
 		if substep == 1 then
 			maininterface.HideUI();
@@ -481,7 +473,11 @@ end
 function p.dramaCallBack(storyId)
 	if storyId == 90 then
 		p.ShowLearningStep( 7, 2 );
+	elseif storyId == 1 then --战斗引导的剧情
+		--p.ShowLearningStep( 7, 2 );
+		p.ShowLearningStep( 3, 2 );
 	elseif storyId == 2 then
+		rookie_main.SendUpdateStep(4);
 	elseif storyId == 3 then
 		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == STORY_GUID_5_1 then -- 4

@@ -192,14 +192,7 @@ function p:targerTurnEnd()
 	local tarFighter = self.tarFighter;	
 --	tarFighter:ShowBuffNode();
 	WriteCon( "targetTurnEnd id="..tostring(tarFighter:GetId()));
-	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then	
-		w_battle_guid.nextGuidSubStep();
-	else		
-		w_battle_mgr.checkTurnEnd(); --检查是否回合结束结束
-	end;
-	
-	
-
+	w_battle_mgr.checkTurnEnd(); --检查是否回合结束结束
 end;
 
 function p:IsEnd()

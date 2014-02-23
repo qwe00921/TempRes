@@ -252,12 +252,8 @@ function p.getDropItem(dropList, pos, atktype)
 	
 	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
 		lspnum = 0;
-		if w_battle_guid.substep <= 7 then
+		if w_battle_guid.substep <= 9 then
 			lhpnum = 0;
-		else
-			if lhpnum == 0 then
-				lhpnum = 1;
-			end
 		end
 	end;	
 	--if w_battle_guid.IsGuid == false then
