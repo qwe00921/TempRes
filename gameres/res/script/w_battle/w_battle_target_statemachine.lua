@@ -151,9 +151,10 @@ function p:tar_hurtEnd()
 			if cmdC ~= nil then	
 				local batch = w_battle_mgr.GetBattleBatch(); 			
 				local seqDie = batch:AddSerialSequence();
-				if w_battle_guid.IsGuid == false then
+				--if w_battle_guid.IsGuid == false then
 					local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);
 					seqDie:SetWaitEnd( cmdC ); 
+				--[[
 				else
 					if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then  --动画做完,先引导,再做别的
 						local cmdDieEnd = targerFighter:cmdLua("tar_guidstep3_8",  self.id, tostring(self.camp), seqDie);
@@ -163,6 +164,7 @@ function p:tar_hurtEnd()
 						seqDie:SetWaitEnd( cmdC ); 
 					end
 				end;
+				]]--
 			end;
 		end;		
 	end;
@@ -171,7 +173,7 @@ function p:tar_hurtEnd()
 end;
 
 function p:tar_guidstep3_8()
-	w_battle_mgr.nextGuidSubStep();
+	w_battle_guid.nextGuidSubStep();
 end;
 
 function p:tar_ReviveEnd() 
@@ -190,7 +192,13 @@ function p:targerTurnEnd()
 	local tarFighter = self.tarFighter;	
 --	tarFighter:ShowBuffNode();
 	WriteCon( "targetTurnEnd id="..tostring(tarFighter:GetId()));
-	w_battle_mgr.checkTurnEnd(); --检查是否回合结束结束
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then	
+		w_battle_guid.nextGuidSubStep();
+	else		
+		w_battle_mgr.checkTurnEnd(); --检查是否回合结束结束
+	end;
+	
+	
 
 end;
 

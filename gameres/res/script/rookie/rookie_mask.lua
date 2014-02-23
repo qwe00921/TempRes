@@ -39,6 +39,28 @@ local uiList = {
 		[5] = ui_learning_4_5,
 		[6] = ui_learning_4_6,
 		},
+	[5]={
+		[2]= ui_learning_5_2,
+		[3]= ui_learning_5_3,
+		[4]= ui_learning_5_4,
+		[5]= ui_learning_5_5,
+		[6]= ui_learning_5_6,
+		[8]= ui_learning_5_8,
+		[9]= ui_learning_5_9,
+		[10]= ui_learning_5_10,
+		[11]= ui_learning_5_11,
+		[12]= ui_learning_5_12,
+		[13]= ui_learning_5_13,
+		[14]= ui_learning_5_14,
+		[15]= ui_learning_5_15,
+		[16]= ui_learning_5_16,
+		[17]= ui_learning_5_17,
+		[18]= ui_learning_5_18,
+		[19]= ui_learning_5_19,
+		[20]= ui_learning_5_20,
+		[21]= ui_learning_5_21,
+		[22]= ui_learning_5_22,
+	},	
 	[6] ={
 		[2] = ui_learning_6_2,
 		[3] = ui_learning_6_3,
@@ -47,7 +69,13 @@ local uiList = {
 		[6] = ui_learning_6_6,
 		[7] = ui_learning_6_7,
 		[8] = ui_learning_6_8,
-		[9] = ui_learning_6_9,
+		[10] = ui_learning_6_10,
+		},
+	[7] ={
+		[2] = ui_learning_7_2,
+		[3] = ui_learning_7_3,
+		[4] = ui_learning_7_4,
+		[5] = ui_learning_7_5,
 		},
 	[9] = {
 		[2] = ui_learning_9_2,
@@ -66,7 +94,15 @@ local uiList = {
 		[5] = ui_learning_11_5,
 		[6] = ui_learning_11_6,
 	},
-	
+	[12] = {
+		[2] = ui_learning_12_2,
+		[3] = ui_learning_12_3,
+		[4] = ui_learning_12_4,
+		[5] = ui_learning_12_5,
+		[6] = ui_learning_12_6,
+		[7] = ui_learning_12_7,
+		[8] = ui_learning_12_8,
+	},
 	[14] = {
 		[2] = ui_learning_14_2,
 		[3] = ui_learning_14_3,
@@ -137,7 +173,9 @@ function p.InitControllers()
 		local btn = GetButton( p.maskLayer, maskUI["ID_CTRL_BUTTON_CALLBACK_"..index] );
 		btn:SetLuaDelegate( p.OnTouchHightLight );
 		btn:SetId( index );
-		
+		if p.step == 5 and p.substep == 20 then
+			btn:SetEnableDrag( true );
+		end
 		index = index + 1;
 	end
 end
@@ -179,10 +217,17 @@ function p.OnTouchHightLight( uiNode, uiEventType, param )
 	end
 	
 	WriteConWarning( "step:"..p.step.."substep:"..p.substep );
-	
-	if IsClickEvent( uiEventType ) then
-		local id = uiNode:GetId();
-		rookie_main.MaskTouchCallBack( p.step, p.substep, id );
+
+	if not ((p.step == 5) and (p.substep == 20)) then	--除了这步其它都通过点击触发
+		if IsClickEvent( uiEventType ) then
+			local id = uiNode:GetId();
+			rookie_main.MaskTouchCallBack( p.step, p.substep, id );
+		end
+	else
+		if IsDragUp(uiEventType) then
+			local id = uiNode:GetId();
+			rookie_main.MaskTouchCallBack( p.step, p.substep, id );
+		end
 	end
 end
 

@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 473 640 500
+Rect=0 473 640 960
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=0 0 640 960
+Rect=0 0 640 473
 AnchorPos=0 0
 Notes=
 TextSize=10

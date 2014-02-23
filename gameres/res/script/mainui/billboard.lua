@@ -144,7 +144,7 @@ end
 
 -- 显示系统消息
 function p.ShowSysMessage()
-	p.title:setEnableDragging(false);
+	--p.title:setEnableDragging(false);
    -- p.title:RunText(string.format("%s%s","<#ff0000ff>","my my my msg"));--p.message_sys[1].Message));
 	p.title:RunText(string.format("%s%s","<#ff0000ff>",p.message_sys[1].Message));
     table.remove(p.message_sys,1);

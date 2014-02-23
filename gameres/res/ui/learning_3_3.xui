@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=445 355 137 52
+Rect=450 397 137 52
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,12 +28,12 @@ NormalFileUV=0 0 250 90
 [CTRL_TEXT_13]
 Type=4
 Tag=13
-Rect=469 382 96 22
+Rect=474 424 96 22
 AnchorPos=0 0
 Notes=
 Text=对应伙伴
 TextTradition=對應伙伴
-TextSize=10
+TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -42,7 +42,7 @@ UIClsoeType=0
 [CTRL_PICTURE_14]
 Type=1
 Tag=14
-Rect=85 526 130 54
+Rect=85 537 130 54
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -53,12 +53,12 @@ NormalFileUV=0 0 250 90
 [CTRL_TEXT_15]
 Type=4
 Tag=15
-Rect=103 530 92 21
+Rect=103 541 92 21
 AnchorPos=0 0
 Notes=
 Text=伙伴头像
 TextTradition=伙伴頭像
-TextSize=10
+TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0

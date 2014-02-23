@@ -3,10 +3,21 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_4]
+Type=1
+Tag=4
+Rect=2 3 635 143
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
 [CTRL_9SLICES_50]
 Type=22
 Tag=50
-Rect=2 0 635 143
+Rect=2 2 635 143
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -18,7 +29,7 @@ NormalFileUV=0 0 176 28
 [CTRL_PICTURE_51]
 Type=1
 Tag=51
-Rect=14 12 121 121
+Rect=14 14 121 121
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -27,7 +38,7 @@ UIClsoeType=0
 [CTRL_COLOR_LABEL_52]
 Type=7
 Tag=52
-Rect=143 12 477 121
+Rect=143 14 477 121
 AnchorPos=0 0
 Notes=
 Text=说明文字

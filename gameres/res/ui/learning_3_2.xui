@@ -3,6 +3,18 @@
 Width=640
 Height=960
 
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 0 639 958
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
@@ -17,7 +29,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_8]
 Type=1
 Tag=8
-Rect=250 323 139 54
+Rect=250 382 139 54
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,24 +40,12 @@ NormalFileUV=0 0 250 90
 [CTRL_TEXT_1]
 Type=4
 Tag=9
-Rect=269 328 100 21
+Rect=268 387 100 21
 AnchorPos=0 0
 Notes=
 Text=敌人体力值
 TextTradition=敵人體力值
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CALLBACK_1]
-Type=2
-Tag=3
-Rect=0 0 640 958
-AnchorPos=0 0
-Notes=
-TextSize=10
+TextSize=18
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0

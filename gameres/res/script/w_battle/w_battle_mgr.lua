@@ -75,6 +75,7 @@ p.LoakPic = {};
 p.battleMoney = 0;
 p.battleSoul = 0;
 
+
 function p.init()
 	p.platform = GetFlatform();
 	if p.platform == W_PLATFORM_WIN32 then
@@ -131,6 +132,7 @@ function p.starFighter()
 		p.createPlayerNodeLst(p.heroUIArray);
 		p.createPlayerNodeLst(p.enemyUIArray);
 		p.createHeroCamp( w_battle_db_mgr.GetPlayerCardList() );
+		
 	end;
     p.createEnemyCamp( w_battle_db_mgr.GetTargetCardList() );
 	p.PVEEnemyID = p.enemyCamp:GetFirstActiveFighterID(nil);
@@ -154,6 +156,14 @@ function p.IntoSceneEnd()
 	p.buffTimerID = SetTimer(p.UpdateBuff, W_SHOWBUFF_STATE );  --设置显示BUFF的时间
 	WriteConWarning("p.buffTimerID= "..tostring(p.buffTimerID));	
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
+
+	if w_battle_db_mgr.step == 1 then
+		if rookie_main.rookieTest == true then
+			if w_battle_guid.IsGuid == false then
+				rookie_mask.ShowUI( 3, 2 )
+			end;
+		end;
+	end;
 	
 	if w_battle_guid.IsGuid == true then
 		if (w_battle_guid.guidstep == 3) then
@@ -258,8 +268,13 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
     end;
 
    --点选目标后,先计算伤害
-   local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter,IsMonster);
-   targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
+    local damage,lIsJoinAtk,lIsCrit = w_battle_atkDamage.SimpleDamage(atkFighter, targetFighter,IsMonster);
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+		if atkCampType == W_BATTLE_ENEMY then
+			damage = 1;
+		end;
+	end  
+	targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 
     if IsMonster ~= true then
 	   --默认选择的目标,判定怪物将死
@@ -418,6 +433,13 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
+
+			if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+				if atkCampType == W_BATTLE_ENEMY then
+					damage = 1;
+				end;
+			end  
+			
 			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
 			local lnum = w_battle_atkDamage.getRandom(1,100);
@@ -438,6 +460,11 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 				targetFighter = v;
 				if targetFighter.Hp > 0 then
 					local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
+					if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+						if atkCampType == W_BATTLE_ENEMY then
+							damage = 1;
+						end;
+					end  					
 					targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 					targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
 
@@ -633,12 +660,6 @@ end;
 
 --我方BUFF阶断
 function p.HeroBuffStarTurn()
-	if (w_battle_guid.IsGuid == true) then
-		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 7) then	
-			nextGuidSubStep.nextGuidSubStep();
-		end;
-		return;
-    end;	
 	WriteCon( "HeroBuffStarTurn");
 	if p.NeedQuit == true then
 		p.Quit();
@@ -669,6 +690,13 @@ function p.HeroBuffTurnEnd()
 	elseif p.heroCamp:HasTurn() == true then -- 有可以行动的
 		 w_battle_pve.RoundStar();  --UI界面全亮起来
 		 w_battle_machinemgr.InitAtkTurnEnd(W_BATTLE_HERO); --标识玩家的回合
+		
+		if (w_battle_guid.IsGuid == true) then
+			if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 7) then	
+				w_battle_guid.nextGuidSubStep();
+				return;
+			end;
+		end;
 		--我方使用物品阶断
 		--   当选中一个物品后,得到这个物品可使用的玩家列表,调用w_battle_useitem.RefreshUI()
         --我方行动阶断,只要出现攻击就等于进入这个阶断
@@ -692,6 +720,8 @@ function p.HeroTurnEnd()
 		p.Quit();
 		return ;
     end		
+	
+	
 		
 	p.PickEndEvent = p.CheckEnemyAllDied;
 	p.IsPickEnd = false;
@@ -886,20 +916,25 @@ function p.FightWin()
 			--w_battle_mgr.enemyCamp:free();
 			w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
 		else
-			
-			if w_battle_guid.IsGuid == false then
-				w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
-			else
-				if w_battle_guid.guidstep == 3 then
-					if w_battle_guid.substep == 13 then
-						w_battle_guid.nextGuidSubStep();
-					end
-				end
-			end;
+			w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
 		end
-	else
+	else  --引导的战斗结束
 		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 4) then
 			w_battle_guid.nextGuidSubStep();
+		else
+			KillTimer(p.buffTimerID);
+			p.heroCamp:ClearFighterBuff();
+			p.InitLockAction();
+			if w_battle_db_mgr.step < w_battle_db_mgr.maxStep then
+				w_battle_db_mgr.nextStep();  --数据进入下一波次
+				w_battle_pve.FighterOver(true); --过场动画之后,UI调用starFighter
+			else
+				if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 13) then
+					w_battle_guid.nextGuidSubStep();
+				else
+					w_battle_pve.MissionOver(p.MissionWin);  --任务结束,任务奖励界面
+				end
+			end
 		end;
 	end
 	
@@ -1048,22 +1083,26 @@ function p.SendStartPVPReq( targetId )
 end
 
 --战斗阶段->加载->请求
-function p.SendStartPVEReq( targetId, teamid )
+function p.SendStartPVEReq( missionID, teamid )
     --local TID = 101011;
     local UID = GetUID();
     if UID == 0 or UID == nil then
         return ;
     end;
-    local param = string.format("&missionID=%d&teamID=%d", targetId,teamid);
+    local param = string.format("&missionID=%d&teamID=%d", missionID,teamid);
     SendReq("Fight","StartPvC",UID,param);
 end
 
 --进入战斗
 function p.EnterBattle( battleType, missionId,teamid )
 	WriteCon( "w_battle_mgr.EnterBattle()" );
-	p.missionID = missionId;
+	--if p.testGuid == true then
+	--	p.missionID = 100011
+	--else
+		p.missionID = missionId;	
+	--end
     p.isPerfect = true;
-	p.SendStartPVEReq( missionId,teamid);
+	p.SendStartPVEReq( p.missionID,teamid);
 --[[	math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
 	p.battle_result = math.random(0,1);
 	p.battle_result = 1;
@@ -1406,7 +1445,7 @@ function p.reward(targerFighter)
 			tmpList[#tmpList + 1] = {v.dropType, 1, targerFighter.Position, v.id};
 		end
 	end;
-	
+--[[	
 	if w_battle_guid.IsGuid == true then
 		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then
 			if (targetFighter.Position == 1) then
@@ -1414,7 +1453,7 @@ function p.reward(targerFighter)
 			end
 		end
 	end;
-	
+	]]--
 	if #tmpList > 0 then
 		w_battle_pve.MonsterDrop(tmpList)	
 	end;
@@ -1609,6 +1648,9 @@ function p.getStageName()
 	--local len = string.len(p.missionID)
 	local lstageID = string.sub(tostring(p.missionID), 1,3);
 	lName = SelectRowInner(T_STAGE,"stage_id",lstageID,"stage_name");
+	if lName == nil then
+		lName = "not find INI"
+	end
 	
 	return lName;
 end
@@ -1617,6 +1659,10 @@ function p.getMissionName()
 	local lName = "";
 	lName = SelectCell(T_MISSION,tostring(p.missionID),"name");
 	lName = p.renameMissionName(lName);
+	if lName == nil then
+		lName = "not find INI"
+	end
+	
 	return lName;
 end
 

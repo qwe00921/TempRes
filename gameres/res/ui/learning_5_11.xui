@@ -3,10 +3,54 @@
 Width=640
 Height=960
 
+[CTRL_PICTURE_1]
+Type=1
+Tag=1
+Rect=0 0 640 719
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_23]
+Type=1
+Tag=23
+Rect=0 719 80 240
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=24
+Rect=106 719 534 534
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_25]
+Type=1
+Tag=25
+Rect=80 761 26 199
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=0 706 317 114
+Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -14,47 +58,3 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-
-[CTRL_PICTURE_1]
-Type=1
-Tag=1
-Rect=0 0 640 706
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\bg4.png
-NormalFileUV=0 0 1 1
-
-[CTRL_PICTURE_28]
-Type=1
-Tag=28
-Rect=0 820 640 145
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\bg4.png
-NormalFileUV=0 0 1 1
-
-[CTRL_PICTURE_29]
-Type=1
-Tag=29
-Rect=317 706 323 114
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\main_interface\bg4.png
-NormalFileUV=0 0 1 1
-
-[CTRL_PICTURE_30]
-Type=1
-Tag=30
-Rect=104 629 67 95
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\point.png
-NormalFileUV=0 0 58 83

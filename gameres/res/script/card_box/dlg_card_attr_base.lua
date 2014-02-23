@@ -247,7 +247,10 @@ function p.SetDelegate()
 			
 end
 
-
+function p.rookie_12_4()
+	local bt = GetButton(p.layer,ui.ID_CTRL_BUTTON_EQUIP_1);
+	p.OnUIEventEvolution(bt,NUIEventType.TE_TOUCH_CLICK)
+end
 
 function p.OnUIEventEvolution(uiNode, uiEventType, param)
 	

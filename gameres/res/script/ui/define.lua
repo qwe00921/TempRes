@@ -334,6 +334,28 @@ DoFile("ui/ui_learning_4_4.lua");
 DoFile("ui/ui_learning_4_5.lua");
 DoFile("ui/ui_learning_4_6.lua");
 
+DoFile("ui/ui_learning_5_2.lua");
+DoFile("ui/ui_learning_5_3.lua");
+DoFile("ui/ui_learning_5_4.lua");
+DoFile("ui/ui_learning_5_5.lua");
+DoFile("ui/ui_learning_5_6.lua");
+
+DoFile("ui/ui_learning_5_8.lua");
+DoFile("ui/ui_learning_5_9.lua");
+DoFile("ui/ui_learning_5_10.lua");
+DoFile("ui/ui_learning_5_11.lua");
+DoFile("ui/ui_learning_5_12.lua");
+DoFile("ui/ui_learning_5_13.lua");
+DoFile("ui/ui_learning_5_14.lua");
+DoFile("ui/ui_learning_5_15.lua");
+DoFile("ui/ui_learning_5_16.lua");
+DoFile("ui/ui_learning_5_17.lua");
+DoFile("ui/ui_learning_5_18.lua");
+DoFile("ui/ui_learning_5_19.lua");
+DoFile("ui/ui_learning_5_20.lua");
+DoFile("ui/ui_learning_5_21.lua");
+DoFile("ui/ui_learning_5_22.lua");
+
 DoFile("ui/ui_learning_6_2.lua");
 DoFile("ui/ui_learning_6_3.lua");
 DoFile("ui/ui_learning_6_4.lua");
@@ -341,8 +363,12 @@ DoFile("ui/ui_learning_6_5.lua");
 DoFile("ui/ui_learning_6_6.lua");
 DoFile("ui/ui_learning_6_7.lua");
 DoFile("ui/ui_learning_6_8.lua");
-DoFile("ui/ui_learning_6_9.lua");
+DoFile("ui/ui_learning_6_10.lua");
 
+DoFile("ui/ui_learning_7_2.lua");
+DoFile("ui/ui_learning_7_3.lua");
+DoFile("ui/ui_learning_7_4.lua");
+DoFile("ui/ui_learning_7_5.lua");
 
 DoFile("ui/ui_learning_9_2.lua");
 DoFile("ui/ui_learning_9_3.lua");
@@ -357,6 +383,14 @@ DoFile("ui/ui_learning_11_3.lua");
 DoFile("ui/ui_learning_11_4.lua");
 DoFile("ui/ui_learning_11_5.lua");
 DoFile("ui/ui_learning_11_6.lua");
+
+DoFile("ui/ui_learning_12_2.lua");
+DoFile("ui/ui_learning_12_3.lua");
+DoFile("ui/ui_learning_12_4.lua");
+DoFile("ui/ui_learning_12_5.lua");
+DoFile("ui/ui_learning_12_6.lua");
+DoFile("ui/ui_learning_12_7.lua");
+DoFile("ui/ui_learning_12_8.lua");
 
 DoFile("ui/ui_learning_14_2.lua");
 DoFile("ui/ui_learning_14_3.lua");

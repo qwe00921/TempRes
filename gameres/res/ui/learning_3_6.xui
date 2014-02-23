@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_52]
 Type=1
 Tag=52
-Rect=88 237 29 41
+Rect=148 285 29 41
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 58 83
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=74 276 66 57
+Rect=129 330 66 57
 AnchorPos=0 0
 Notes=
 TextSize=10

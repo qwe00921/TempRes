@@ -68,7 +68,7 @@ function p.ShowUI( equip ,callback, redirectCallback)
 	
 	layer:NoMask();
 	layer:Init();	
-	GetUIRoot():AddChild( layer );
+	GetUIRoot():AddChildZ(layer,0);
     LoadDlg("dlg_card_equip_detail.xui", layer, nil);
 	
 	
@@ -289,6 +289,11 @@ function p.GetCurrentValue( maxValue, minValue, maxLv, lv)
 	local lv = tonumber( lv );
 	local cur_value = minValue + (maxv - minv)/(maxLv - 1) * ( lv - 1)
 	return math.floor( cur_value );
+end
+
+function p.rookieClick_12_7()
+    local Btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_CHANGE);
+	p.OnUIEvent(Btn, NUIEventType.TE_TOUCH_CLICK)
 end
 
 --事件处理

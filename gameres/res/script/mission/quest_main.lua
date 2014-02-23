@@ -113,6 +113,17 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 		end
 	end
 end
+
+--战斗任务点击
+function p.FightMissionClick()
+	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIGHTING );
+	if btn == nil then
+		WriteConErr("not find FightMission button");
+		return ;
+	end
+	p.OnBtnClick(btn, NUIEventType.TE_TOUCH_CLICK, nil);
+end
+
 --点击战斗按钮
 function p.OnFightBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
@@ -257,6 +268,8 @@ function p.loadMissionList(missionStartId)
 		misId = misId - p.missionIdGap;
 	end
 end
+
+
 
 function p.setMissionInfo(misId,view)
 	local misName = GetLabel(view, uiList.ID_CTRL_TEXT_QUEST_NAME_V);

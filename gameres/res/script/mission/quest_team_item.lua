@@ -353,6 +353,16 @@ function p.SetDelegate(layer)
 	--list:MoveToNextView();
 end
 
+--update by csd 2014-2-23
+function p.FightClick()
+	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIGHT );
+	if btn == nil then
+		WriteConErr("not find fight button");
+		return ;
+	end
+	p.OnBtnClick(btn, NUIEventType.TE_TOUCH_CLICK, nil);
+end
+
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();

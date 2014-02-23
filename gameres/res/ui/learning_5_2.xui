@@ -1,19 +1,7 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
-
-[CTRL_BUTTON_CALLBACK_1]
-Type=2
-Tag=3
-Rect=2 884 88 76
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_1]
 Type=1
@@ -36,3 +24,15 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\point.png
 NormalFileUV=0 0 58 83
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=2 884 88 76
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

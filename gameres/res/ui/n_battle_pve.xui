@@ -218,7 +218,7 @@ UIClsoeType=0
 [CTRL_BUTTON_75]
 Type=2
 Tag=75
-Rect=491 19 149 60
+Rect=492 19 149 60
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -472,7 +472,7 @@ NormalFileUV=0 0 1 1
 [CTRL_RIGHT_SPRITE_4]
 Type=19
 Tag=10
-Rect=540 126 71 90
+Rect=561 169 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -481,7 +481,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_3]
 Type=19
 Tag=7
-Rect=440 315 71 90
+Rect=461 358 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -490,7 +490,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_2]
 Type=19
 Tag=8
-Rect=466 220 71 90
+Rect=487 263 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -499,7 +499,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_5]
 Type=19
 Tag=11
-Rect=559 220 71 90
+Rect=580 263 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -508,7 +508,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_1]
 Type=19
 Tag=9
-Rect=444 126 71 90
+Rect=465 169 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -517,7 +517,7 @@ UIClsoeType=0
 [CTRL_RIGHT_SPRITE_6]
 Type=19
 Tag=18
-Rect=536 315 71 90
+Rect=557 358 1 1
 AnchorPos=0 0
 Notes=
 UIOpenType=0

@@ -143,6 +143,16 @@ function p.SetDelegate(layer)
 	uiNodeT.stageBtn[6] = stageBtn6;
 end
 
+--模似第一章的点击
+function p.ChapterClick()
+	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_CHAPTER1 );
+	if btn == nil then
+		WriteConErr("not find home button");
+		return ;
+	end
+	p.OnBtnClick(btn, NUIEventType.TE_TOUCH_CLICK, nil);
+end
+
 function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
