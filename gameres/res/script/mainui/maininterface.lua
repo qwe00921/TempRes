@@ -40,6 +40,8 @@ function p.ShowUI(userinfo)
 		for _,v in ipairs( p.imageList ) do
 			v:SetVisible( true );
 		end
+		
+		dlg_menu.ShowUI();
 		return;
 	end
 
@@ -375,7 +377,7 @@ function p.ShowSelectCard( index )
 	local teamIndex = cache.CardTeam or 0;
 	if team["Formation".. teamIndex] then
 		local cardInfo = team["Formation".. teamIndex]["Pos"..index];
-		if cardInfo ~= nil then
+		if cardInfo == nil then
 			return;
 		end
 		
