@@ -409,7 +409,7 @@ function p:GetFrontPos(targetNode)
 		frontPos.x = frontPos.x + halfWidthSum;
 	end
 	
-	frontPos.y = frontPos.y + self:GetPlayerNode():GetCurAnimRealSize().h / 2.0;
+	--frontPos.y = frontPos.y + self:GetPlayerNode():GetCurAnimRealSize().h / 4.0;
 	
     return frontPos;
 end

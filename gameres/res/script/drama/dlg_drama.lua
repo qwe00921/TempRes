@@ -102,6 +102,9 @@ function p.SetDelegate()
     --跳过剧情
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_SKIP);
     btn:SetLuaDelegate(p.BtnOnclick);
+	
+	btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_38);
+    btn:SetLuaDelegate(p.BtnOnclick);
     
     --下一个对话：全屏
     btn = GetButton(p.layer,ui.ID_CTRL_BUTTON_BG);
@@ -114,7 +117,7 @@ function p.BtnOnclick(uiNode, uiEventType, param)
     if IsClickEvent( uiEventType ) then
     
         --下一个剧情对话
-        if ( ID_CTRL_BUTTON_38 == tag) then
+        if ( ui.ID_CTRL_BUTTON_38 == tag) then
             if p.timerId ~= nil then
             	KillTimer( p.timerId );
             	p.timerId = nil;
