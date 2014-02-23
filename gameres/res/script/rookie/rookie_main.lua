@@ -216,7 +216,8 @@ function p.ShowLearningStep( step, substep )
 				country_mixhouse.CloseUI();
 				country_main.ShowUI();
 			elseif substep == 8 then
-				
+				maininterface.ShowUI( p.userData );
+				country_main.ShowUI();
 			end
 			rookie_mask.ShowUI( step, substep );
 		end
@@ -371,7 +372,10 @@ function p.DoSomething( step, substep, index )
 			p.SendUpdateStep( step, substep );
 			return false;
 		elseif substep == 5 then
-			p.SendUpdateStep( step, substep );
+			p.tempStep = step;
+			p.tempSubTemp = substep+1;
+			
+			p.SendUpdateStep( step, substep+1 );
 			return false;
 		end
 	elseif step == 11 then
