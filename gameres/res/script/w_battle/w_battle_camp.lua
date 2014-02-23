@@ -590,7 +590,6 @@ function p:AddFighters( uiArray, fighters )
 		f:standby();
 		
 		local lscale = GetUIScale();
-		local lframe = node:GetFrameSize();
 		
 		if self:IsHeroCamp() then
 			node:SetZOrder( E_BATTLE_Z_HERO_FIGHTER + f.Position);
@@ -603,6 +602,13 @@ function p:AddFighters( uiArray, fighters )
 		
 		local batch = battle_show.GetNewBatch();
 		node:AddActionEffect("lancer.fadein0");
+		local pRolePos = node:GetFramePos();
+		local kRealSize = node:GetCurAnimRealSize();
+		local btn = GetButton(w_battle_pve.battleLayer,210 + f.Position);
+		if nil ~= btn then
+			btn:SetCenterPos(pRolePos);
+			btn:SetFrameSize(kRealSize.w,kRealSize.h);
+		end
 	end
 end
 

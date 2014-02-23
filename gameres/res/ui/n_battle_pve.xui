@@ -1883,3 +1883,75 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\skill_do.png
 NormalFileUV=0 0 92 170
+
+[CTRL_BUTTON_E_1]
+Type=2
+Tag=211
+Rect=1 1 1 1
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_E_2]
+Type=2
+Tag=212
+Rect=1 1 1 1
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_E_3]
+Type=2
+Tag=213
+Rect=1 1 1 1
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_E_4]
+Type=2
+Tag=214
+Rect=1 1 1 1
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_E_5]
+Type=2
+Tag=215
+Rect=1 1 1 1
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_E_6]
+Type=2
+Tag=216
+Rect=0 1 1 1
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
