@@ -11,16 +11,21 @@ p.substep = nil;
 function p.fighterGuid(substep)
 	p.IsGuid = true;
 	p.guidstep = 3;
-	p.substep = substep - 1;
+	p.substep = substep;
 	if p.substep == 1 then
-		--maininterface.ShowUI(p.userData);
+		maininterface.ShowUI(rookie_main.userData);
+		maininterface.HideUI();
+		dlg_userinfo.HideUI();
 		dlg_drama.ShowUI( 1, after_drama_data.ROOKIE, 0, 0);
 	elseif p.substep == 2 then
-		p.nextGuidSubStep();
+		w_battle_mgr.EnterBattle(1,100011,1);
+		--rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 3 then
+		rookie_mask.ShowUI(p.guidstep, p.substep);
+	elseif p.substep == 4 then
 		w_battle_pve.setBtnClick(2);
 		--w_battle_mgr.SetPVEAtkID(2); --2号位跳到目标的位置 状态机停下再显示遮照 
-	elseif p.substep == 4 then
+	elseif p.substep == 5 then
 		w_battle_pve.setBtnClick(1);
 		--w_battle_mgr.SetPVEAtkID(1);  
 		local lstateMachine = w_battle_machinemgr.getAtkStateMachine(2); 		--让2号位的状态机继续行动(攻击)
@@ -28,27 +33,28 @@ function p.fighterGuid(substep)
 			lstateMachine:atk_startAtk();
 		end; 
 		--等怪全死后下一引导
-	elseif p.substep == 5 then
+	elseif p.substep == 6 then
 		w_battle_mgr.FightWin();
 		--等波次切换后进行下一引导		
-	elseif p.substep == 6 then
+	elseif p.substep == 7 then
 		--w_battle_pve.setBtnClick(6);
 		w_battle_mgr.SetPVETargerID(3);
-		p.nextGuidSubStep();
-	elseif p.substep == 7 then
-		w_battle_pve.setBtnClick(2);  --等下一轮我方回合时调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+		rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 8 then
+		w_battle_pve.setBtnClick(2);  --等下一轮我方回合时调用 rookie_mask.ShowUI(p.step,p.substep + 1)
+	elseif p.substep == 9 then
 		--w_battle_mgr.HeroTurnEnd();
 		--等战斗胜利,1号位怪受击时,掉HP球(心之水晶),然后进行下一引导
-	elseif p.substep == 9 then
-	   w_battle_mgr.checkTurnEnd(); 
+		
+	elseif p.substep == 10 then
+	   w_battle_mgr.FightWin(); 
 	--[[	local lstateMachine = w_battle_machinemgr.getTarStateMachine(W_BATTLE_ENEMY,1); 		--让1号位的状态机继续死亡动画后的流程
 		if lstateMachine ~= nil then
 			lstateMachine:tar_dieEnd();
 		end;
 		]]--
 	    --BOSS怪物进场后调用 进行下一引导
-	elseif p.substep == 10 then
+	elseif p.substep == 11 then
 		local lfighter = w_battle_mgr.heroCamp:FindFighter(2);
 		lfighter.nowlife = math.modf(lfighter.maxHp * 0.8)
 		lfighter.Hp = lfighter.nowlife;
@@ -154,5 +160,5 @@ function p.fighterSecondGuid(substep)
 end
 
 function p.nextGuidSubStep()
-	rookie_mask.ShowUI(p.guidstep, p.substep + 1);
+	rookie_mask.ShowUI(p.guidstep, p.substep);
 end
