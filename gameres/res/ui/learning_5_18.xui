@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 473 640 393
+Rect=0 473 640 200
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -14,10 +14,68 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
+[CTRL_PICTURE_3]
+Type=1
+Tag=4
+Rect=0 693 639 200
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_4]
+Type=1
+Tag=5
+Rect=0 673 109 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_5]
+Type=1
+Tag=6
+Rect=309 673 330 20
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_6]
+Type=1
+Tag=7
+Rect=140 620 139 51
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\tuto_arrow_down.png
+NormalFileUV=0 0 250 90
+
+[CTRL_TEXT_7]
+Type=4
+Tag=8
+Rect=156 623 107 22
+AnchorPos=0 0
+Notes=
+Text=勇气能量
+TextTradition=勇氣能量
+TextSize=18
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=0 0 640 960
+Rect=0 0 640 958
 AnchorPos=0 0
 Notes=
 TextSize=10

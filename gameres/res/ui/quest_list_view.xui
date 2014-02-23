@@ -52,7 +52,7 @@ NormalFileUV=0 0 46 13
 [CTRL_PICTURE_19]
 Type=1
 Tag=20
-Rect=499 20 53 53
+Rect=502 21 53 53
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -151,18 +151,18 @@ NormalFileUV=0 0 39 38
 [CTRL_PICTURE_29]
 Type=1
 Tag=30
-Rect=385 22 53 53
+Rect=388 21 53 53
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\quest\strength.png
-NormalFileUV=0 0 53 53
+NormalFileUV=0 0 148 147
 
 [CTRL_PICTURE_30]
 Type=1
 Tag=32
-Rect=297 22 53 53
+Rect=302 21 53 53
 AnchorPos=0 0
 Notes=
 UIOpenType=0

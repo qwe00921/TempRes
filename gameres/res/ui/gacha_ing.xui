@@ -1,33 +1,12 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
-
-[CTRL_BUTTON_9]
-Type=2
-Tag=9
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_SPRITE_MAGICCIRCLE]
 Type=19
 Tag=10
 Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_PICTURE_CARD]
-Type=1
-Tag=7
-Rect=161 215 318 530
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -50,5 +29,26 @@ Tag=41
 Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_CARD]
+Type=1
+Tag=7
+Rect=161 215 318 530
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_9]
+Type=2
+Tag=9
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
