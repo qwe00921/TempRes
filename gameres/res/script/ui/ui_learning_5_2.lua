@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_learning_5_2 = {};
 local p =  ui_learning_5_2;
+p.ID_CTRL_PICTURE_5					      = 5;
+p.ID_CTRL_PICTURE_4					      = 4;
 p.ID_CTRL_BUTTON_CALLBACK_1			= 3;
 p.ID_CTRL_PICTURE_326					    = 326;
 p.ID_CTRL_PICTURE_1					      = 1;

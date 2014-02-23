@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -24,15 +24,6 @@ Notes=
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_PICTURE_SCALE]
-Type=1
-Tag=41
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=7
@@ -52,3 +43,12 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\start.png
 NormalFileUV=0 0 300 50
+
+[CTRL_PICTURE_SCALE]
+Type=1
+Tag=41
+Rect=0 0 640 960
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

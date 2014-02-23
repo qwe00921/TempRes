@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_35]
 Type=1
 Tag=35
-Rect=95 63 439 308
+Rect=149 148 342 239
 AnchorPos=0 0
 Notes=
 UIOpenType=0
