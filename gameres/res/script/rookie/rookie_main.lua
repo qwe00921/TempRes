@@ -159,7 +159,7 @@ function p.ShowLearningStep( step, substep )
 		
 	elseif step == 7 then
 		if substep == 1 then
-			dlg_drama.ShowUI( 1,after_drama_data.ROOKIE,0,0)
+			dlg_drama.ShowUI( 90,after_drama_data.ROOKIE,0,0)
 		elseif substep == 2 then
 			country_main.ShowUI();
 			rookie_mask.ShowUI( step, 2 );
@@ -442,7 +442,7 @@ end
 
 --剧情回调
 function p.dramaCallBack(storyId)
-	if storyId == 1 then
+	if storyId == 90 then
 		p.ShowLearningStep( 7, 2 );
 	elseif storyId == 2 then
 	elseif storyId == 3 then
