@@ -3,18 +3,6 @@
 Width=640
 Height=960
 
-[CTRL_BUTTON_CALLBACK_1]
-Type=2
-Tag=3
-Rect=0 0 640 960
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
@@ -26,13 +14,14 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_PICTURE_35]
-Type=1
-Tag=35
-Rect=95 63 439 308
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 0 640 960
 AnchorPos=0 0
 Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\n_battle\help.png
-NormalFileUV=0 0 248 174

@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 0 640 706
+Rect=0 0 640 775
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -14,10 +14,10 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_PICTURE_28]
+[CTRL_PICTURE_554]
 Type=1
-Tag=28
-Rect=0 820 640 145
+Tag=554
+Rect=1 775 208 90
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -25,10 +25,10 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_PICTURE_29]
+[CTRL_PICTURE_555]
 Type=1
-Tag=29
-Rect=317 706 323 114
+Tag=555
+Rect=1 865 640 100
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -36,10 +36,21 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_PICTURE_30]
+[CTRL_PICTURE_556]
 Type=1
-Tag=30
-Rect=104 629 67 95
+Tag=556
+Rect=422 775 220 90
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_557]
+Type=1
+Tag=557
+Rect=287 720 58 82
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -50,7 +61,7 @@ NormalFileUV=0 0 58 83
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
-Rect=0 706 317 114
+Rect=205 776 222 90
 AnchorPos=0 0
 Notes=
 TextSize=10

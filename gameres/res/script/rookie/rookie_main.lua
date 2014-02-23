@@ -15,7 +15,7 @@ local MAX_STEP = {
 		0,--2
 		14,--3
 		7,--4
-		0,--5
+		23,--5
 		12,--6
 		6,--7
 		2,--8
@@ -26,7 +26,11 @@ local MAX_STEP = {
 		1,--13
 		9,--14
 	};
-
+STORY_GUID_3_1 = 1;
+STORY_GUID_3_14 = 2;
+STORY_GUID_5_1 = 2; 
+	
+	
 function p.getRookieStep(backData)
 	if backData.result == false then
 		dlg_msgbox.ShowOK("错误提示",backData.message,nil,p.layer);
@@ -99,8 +103,8 @@ function p.ShowLearningStep( step, substep )
 			p.SendUpdateStep(step)
 		end
 	elseif step == 5 then
-		p.SendUpdateStep(step)
-
+		--p.SendUpdateStep(p.stepId)
+		w_battle_guid.fighterSecondGuid(substep);
 	elseif step == 6 then
 		if substep == 1 then
 			dlg_drama.ShowUI( 6,after_drama_data.ROOKIE,0,0)
@@ -394,8 +398,10 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 2 then
 	elseif storyId == 3 then
 		p.ShowLearningStep( p.stepId, 2 )
-	elseif storyId == 4 then
-	elseif storyId == 5 then
+	elseif storyId == 4 then -- STORY_GUID_5_7
+		quest_team_item.FightClick();
+	elseif storyId == 5 then --STORY_GUID_5_23
+		w_battle_pve.MissionOver(w_battle_mgr.MissionLose);
 	elseif storyId == 6 then
 		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == 7 then
@@ -427,6 +433,8 @@ function p.dramaCallBack(storyId)
 		p.ShowLearningStep( 14, 1 );
 	elseif storyId == 17 then
 		p.ShowLearningStep( 14, 2 );
+	elseif storyId == STORY_GUID_5_1 then	--STORY_GUID_5_1
+		p.ShowLearningStep(5,2);
 	end
 end
 
