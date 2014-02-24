@@ -317,7 +317,7 @@ function p:atk_startAtk()
 			local lbulletnode = nil; 
 			local ltargetPos;
 			if self.isAoe == true then
-				lbulletnode = w_battle_mgr.bulletCenterNode()
+				lbulletnode = w_battle_mgr.bulletCenterNode(atkFighter.camp)
 				ltargetPos = lbulletnode:GetCenterPos();
 				
 				--local halfWidthSum = lbulletnode:GetCurAnimRealSize().w/2
