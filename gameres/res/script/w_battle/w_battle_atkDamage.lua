@@ -88,13 +88,25 @@ function p.SkillDamage(skillID,atkFighter,tarFighter)
     local damage_percent   = tonumber( SelectCell( T_SKILL, skillID, "damage_percent" ) )/100;	
 	local skillType = tonumber( SelectCell( T_SKILL, skillID, "skill_type" ) );	
 	local damage = 0;
+	
+	local latkDamage = atkFighter.damage;
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 5) then
+		if w_battle_db_mgr.step == 3 then
+			if w_battle_mgr.atkCampType == W_BATTLE_ENEMY then
+				latkDamage = latkDamage*10;
+			else
+				latkDamage = latkDamage/5
+			end;
+		end;
+	end 	
+	
 	if skillType == W_SKILL_TYPE_1 then --伤害类
-		 damage= atkFighter.damage * atkFighter.atkBuff * lpropRate * (1+lJoinAtkRate) * (damage_percent)
+		 damage= latkDamage * atkFighter.atkBuff * lpropRate * (1+lJoinAtkRate) * (damage_percent)
 					 - tarFighter.Defence * tarFighter.defBuff;
 	--普通攻击伤害 = （人物攻击力 + 装备攻击力）* BUFF百分比加成*属性克制关系加成*（暴击加成+合击加成）
 	--           –（对方人物防御值+对方装备防御值）* BUFF百分比加成
     elseif skillType == W_SKILL_TYPE_2 then --恢复类
-		damage= atkFighter.damage * (1 + damage_percent)
+		damage= latkDamage * (1 + damage_percent)
 	end;
 
 	if damage < 0 then
