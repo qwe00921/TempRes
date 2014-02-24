@@ -25,4 +25,12 @@ function p:Process()
 	WriteConWarning( "** msg_team_item:Process() called" );
 	--quest_main.ShowUI(self.battles);
 	quest_team_item.showTeamItem(self);
+	
+	if w_battle_guid.IsGuid == true then
+		if w_battle_guid.guidstep == 5 then
+			if w_battle_guid.substep == 6 then	
+				w_battle_guid.CanSubStep6 = true
+			end;
+		end
+	end;
 end

@@ -371,7 +371,15 @@ end
 
 --显示下一步前相关操作，返回true为直接显示下一步，false为不直接显示（发消息给服务端，服务端返回后进入下一步）
 function p.DoSomething( step, substep, index )
-	if step == 9 then
+	if step == 5 then
+		if w_battle_guid.substep == 4 then
+			return w_battle_guid.CanSubStep4;
+		elseif w_battle_guid.substep == 5 then
+			return w_battle_guid.CanSubStep5;
+		elseif w_battle_guid.substep == 6 then
+			return w_battle_guid.CanSubStep6;
+		end;
+	elseif step == 9 then
 		if substep == 7 then
 			if index == 1 then
 				country_collect.Collect( E_COLLECT_HOME );
