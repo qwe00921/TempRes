@@ -447,6 +447,13 @@ function p.DoSomething( step, substep, index )
 			p.tempSubTemp = substep+1;
 			p.SendUpdateStep( step,13 );
 			return false;
+		elseif substep == 3 then
+			if card_bag_mian.rookie_12_3 then
+				return true
+			else
+				WriteConErr("card_bag_mian.rookie_12_3 false");
+				return false
+			end
 		end
 	elseif step == 7 then
 		if substep == 4 then
@@ -454,6 +461,14 @@ function p.DoSomething( step, substep, index )
 			p.tempSubTemp = substep+1;
 			p.SendUpdateStep( step);
 			return false;
+		elseif substep == 3 then
+			if dlg_card_group_main.rookieNode then
+				WriteConErr("dlg_card_group_main.rookieNode true");
+				return true
+			else
+				WriteConErr("dlg_card_group_main.rookieNode false");
+				return false
+			end
 		end
 	elseif step == 12 then
 		if substep == 6 then
@@ -461,6 +476,22 @@ function p.DoSomething( step, substep, index )
 			p.tempSubTemp = substep+1;
 			p.SendUpdateStep( step);
 			return false;
+		elseif substep == 3 then
+			if card_bag_mian.rookie_12_3 then
+				WriteConErr("card_bag_mian.rookie_12_3 true");
+				return true
+			else
+				WriteConErr("card_bag_mian.rookie_12_3 false");
+				return false
+			end
+		elseif substep == 5 then
+			if equip_dress_select.rookieBtn_12_5 then
+				WriteConErr("equip_dress_select.rookieBtn_12_5 true");
+				return true
+			else
+				WriteConErr("equip_dress_select.rookieBtn_12_5 false");
+				return false
+			end
 		end
 	elseif step == 14 then
 		if substep == 8 then

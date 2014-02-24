@@ -27,7 +27,7 @@ p.callback = nil;
 p.hasRemove = false;
 p.cardListInfoSell = {}
 p.m_list = nil;
-p.rookieCardNode = {}
+p.rookie_6_3 = nil;
 p.rookieEditTeamNode = nil;
 p.rookie_12_3 = nil
 function p.ShowUI()
@@ -247,7 +247,7 @@ function p.ShowCardInfo(view, card, cardIndex,row)
 	end
 	
 	if row == 1 and cardIndex == 1 and card ~= nil then
-		p.rookieCardNode = card
+		p.rookie_6_3 = cardButton
 		WriteCon("rookie card id == "..card.CardID);
 	end
 	local cardId = tonumber(card.CardID);
@@ -374,6 +374,10 @@ function p.SetEnableAll(bVar)
 
 end
 
+function p.rookieNode()
+	p.OnCardClickEvent(p.rookie_6_3, NUIEventType.TE_TOUCH_CLICK)
+end
+
 function p.rookieClickTeamCard()
 	p.OnCardClickEvent(p.rookieEditTeamNode, NUIEventType.TE_TOUCH_CLICK)
 end
@@ -454,12 +458,6 @@ function p.OnCardClickEvent(uiNode, uiEventType, param)
 		
 	end
 end
-
-function p.rookieNode()
-	p.HideUI();
-	dlg_card_attr_base.ShowUI(p.rookieCardNode);
-end
-
 
 function p.SelectCardCallback(result)
 	if result == true then
