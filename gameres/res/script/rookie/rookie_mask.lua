@@ -73,9 +73,9 @@ local uiList = {
 		[8] = ui_learning_6_8,
 		[9] = ui_learning_6_9,
 		[10] = ui_learning_6_10,
-		[11] = ui_learning_6_11,
-		[12] = ui_learning_6_12,
-		[13] = ui_learning_6_13,
+		[10] = ui_learning_6_11,
+		[10] = ui_learning_6_12,
+		[10] = ui_learning_6_13,
 		},
 	[7] ={
 		[2] = ui_learning_7_2,
@@ -317,5 +317,4 @@ function p.HideUI()
 		p.maskLayer:SetVisible( false );
 	end
 end
-
 
