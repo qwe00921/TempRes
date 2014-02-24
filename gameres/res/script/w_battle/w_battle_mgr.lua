@@ -696,7 +696,7 @@ function p.HeroBuffTurnEnd()
 			
 				rookie_mask.ShowUI(3,11)
 			elseif 	(w_battle_guid.guidstep == 5) and (w_battle_db_mgr.step == 2) and (p.turnNum == 2) then
-				rookie_mask.ShowUI(3,21)
+				rookie_mask.ShowUI(5,21)
 			end;
 		end;
 		--我方使用物品阶断
