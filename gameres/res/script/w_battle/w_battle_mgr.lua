@@ -429,13 +429,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
-		--[[
-			if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
-				if atkCampType == W_BATTLE_ENEMY then
-					damage = 1;
-				end;
-			end  
-			]]--
+
 			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
 			local lnum = w_battle_atkDamage.getRandom(1,100);
@@ -691,6 +685,8 @@ function p.HeroBuffTurnEnd()
 		if (w_battle_guid.IsGuid == true) then
 			if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 7) then	
 				w_battle_guid.nextGuidSubStep();
+			elseif (w_battle_guid.guidstep == 3) and (w_battle_db_mgr.step == 2) and(p.turnNum == 2) then	
+				rookie_mask.ShowUI(3,8);
 			elseif (w_battle_guid.guidstep == 3) and (w_battle_db_mgr.step == 3) and(p.turnNum == 2) then	
 				local lfighter = w_battle_mgr.heroCamp:FindFighter(2);
 				lfighter.nowlife = math.modf(lfighter.maxHp * 0.8)
@@ -926,8 +922,8 @@ function p.FightWin()
 	else  --引导的战斗结束
 		if (w_battle_guid.guidstep == 3) and (rookie_mask.substep == 4) then
 			rookie_mask.ShowUI(3,5);
-		elseif (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then
-			rookie_mask.ShowUI(3,8);
+		--elseif (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then
+		--	rookie_mask.ShowUI(3,8);
 		else
 			KillTimer(p.buffTimerID);
 			p.heroCamp:ClearFighterBuff();
@@ -1467,15 +1463,7 @@ function p.reward(targerFighter)
 			tmpList[#tmpList + 1] = {v.dropType, 1, targerFighter.Position, v.id};
 		end
 	end;
---[[	
-	if w_battle_guid.IsGuid == true then
-		if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then
-			if (targetFighter.Position == 1) then
-				tmpList[#tmpList + 1] = {E_DROP_HPBALL , 1, targetFighter.Position};
-			end
-		end
-	end;
-	]]--
+
 	if #tmpList > 0 then
 		w_battle_pve.MonsterDrop(tmpList)	
 	end;
