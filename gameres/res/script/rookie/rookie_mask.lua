@@ -62,7 +62,6 @@ local uiList = {
 		[21]= ui_learning_5_21,
 		[22]= ui_learning_5_22,
 		[23]= ui_learning_5_23,
-		[24]= ui_learning_5_24,
 	},	
 	[6] ={
 		[2] = ui_learning_6_2,
@@ -234,16 +233,19 @@ function p.ShowRookieText()
 end
 
 function p.OnTouchHightLight( uiNode, uiEventType, param )
-	--通信中无法操�?	if p.onCallFlag then
+	--通信中无法操作
+	if p.onCallFlag then
 		return;
 	end
 	
 	WriteConWarning( "step:"..p.step.."substep:"..p.substep );
 
-	if not ((p.step == 5) and (p.substep == 20)) then	--除了这步其它都通过点击触发
+	if not ((p.step == 5) and (w_battle_guid.substep == 20)) then	--除了这步其它都通过点击触发
 		if IsClickEvent( uiEventType ) then
 			local id = uiNode:GetId();
-			rookie_main.MaskTouchCallBack( p.step, p.substep, id );
+			if (p.step ~= nil) and (p.substep ~= nil) and (p.step ~= 0) then
+				rookie_main.MaskTouchCallBack( p.step, p.substep, id );
+			end;
 		end
 	else
 		if IsDragUp(uiEventType) then
