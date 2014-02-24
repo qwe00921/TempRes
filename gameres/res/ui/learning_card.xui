@@ -80,7 +80,7 @@ NormalFileUV=0 0 232 84
 [CTRL_BUTTON_LEFT]
 Type=2
 Tag=10
-Rect=25 311 68 177
+Rect=25 311 68 38
 AnchorPos=0 0
 Notes=
 Text=左
@@ -90,13 +90,11 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bgtoguohao.png
-NormalFileUV=0 0 720 1280
 
 [CTRL_BUTTON_RIGHT]
 Type=2
 Tag=11
-Rect=547 311 68 177
+Rect=547 311 68 38
 AnchorPos=0 0
 Notes=
 Text=右
@@ -106,5 +104,3 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\bg.png
-NormalFileUV=0 0 640 960
