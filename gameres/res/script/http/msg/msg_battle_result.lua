@@ -34,6 +34,12 @@ function p:Process()
 			w_battle_mgr.isbattlequit = false;
 		end;
 
+
+		if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+			rookie_mask.ShowUI(3, 14)
+		elseif (rookie_main.stepId == 8) then
+			rookie_main.ShowLearningStep( 8, 2 );
+		end; 
 		--	dlg_userinfo.ShowUI();
 		--	stageMap_main.OpenWorldMap();
 		--end;

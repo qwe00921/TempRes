@@ -1225,9 +1225,6 @@ function p.MissionWin()
 		p.SendResult(1,lmoney,lsoul);
 	end;
 	
-	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
-		rookie_mask.ShowUI(3, 14)
-	end; 
 end;
 
 
