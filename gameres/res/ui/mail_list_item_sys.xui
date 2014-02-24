@@ -15,22 +15,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\bg1.png
 NormalFileUV=0 0 640 600
 
-[CTRL_CHECK_BUTTON_SEL]
-Type=2
-Tag=301
-Rect=539 5 80 70
-AnchorPos=0 0
-Notes=
-TextSize=0
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-NormalFile=.\res\image\ui\mail\choose.png
-NormalFileUV=0 0 80 70
-SelectFile=.\res\image\ui\mail\choose_select.png
-SelectedFileUV=0 0 80 70
-
 [CTRL_PICTURE_ITEM_1]
 Type=1
 Tag=302
@@ -197,3 +181,31 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\frame.png
 NormalFileUV=0 0 100 100
+
+[CTRL_BUTTON_18]
+Type=2
+Tag=18
+Rect=0 15 641 254
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_CHECK_BUTTON_SEL]
+Type=2
+Tag=301
+Rect=539 5 80 70
+AnchorPos=0 0
+Notes=
+TextSize=0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\mail\choose.png
+NormalFileUV=0 0 80 70
+SelectFile=.\res\image\ui\mail\choose_select.png
+SelectedFileUV=0 0 80 70
