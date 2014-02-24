@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -73,7 +73,7 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\gamestart.png
-NormalFileUV=0 0 150 60
+NormalFileUV=0 0 149 60
 SelectFile=.\res\image\ui\public\gamestart_select.png
 SelectedFileUV=0 0 150 60
 
