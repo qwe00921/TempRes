@@ -97,6 +97,17 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_68]
+Type=1
+Tag=68
+Rect=130 268 46 31
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\sp.png
+NormalFileUV=0 0 96 64
+
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
