@@ -54,14 +54,9 @@ function p.fighterGuid(substep)
 			lstateMachine:tar_dieEnd();
 		end;
 		]]--
-	    --BOSS怪物进场后调用 进行下一引导
+	    --BOSS怪物进场后,我方的下一回合调用 进行下一引导
 	elseif p.substep == 11 then
-		local lfighter = w_battle_mgr.heroCamp:FindFighter(2);
-		lfighter.nowlife = math.modf(lfighter.maxHp * 0.8)
-		lfighter.Hp = lfighter.nowlife;
-		w_battle_pve.SetHeroCardAttr(2, lfighter);
-		w_battle_db_mgr.SetGuidItemList();
-		rookie_mask.ShowUI(p.guidstep, p.substep);
+		
 	elseif p.substep == 12 then
 	   --选择物品
 		w_battle_pve.GuidUseItem1();

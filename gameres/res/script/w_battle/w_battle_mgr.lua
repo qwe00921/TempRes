@@ -74,7 +74,7 @@ p.isbattlequit = false;
 p.LoakPic = {};
 p.battleMoney = 0;
 p.battleSoul = 0;
-
+p.turnNum = nil;
 
 function p.init()
 	p.platform = GetFlatform();
@@ -155,6 +155,7 @@ function p.IntoSceneEnd()
 	
 	p.buffTimerID = SetTimer(p.UpdateBuff, W_SHOWBUFF_STATE );  --设置显示BUFF的时间
 	WriteConWarning("p.buffTimerID= "..tostring(p.buffTimerID));	
+	p.turnNum = 0;
 	p.HeroBuffStarTurn();  --我方BUFF开始阶断
 
 	if (rookie_main.rookieTest == true) and (w_battle_guid.IsGuid == true) then
@@ -662,6 +663,7 @@ end;
 --我方BUFF阶断
 function p.HeroBuffStarTurn()
 	WriteCon( "HeroBuffStarTurn");
+	p.turnNum = p.turnNum + 1;
 	if p.NeedQuit == true then
 		p.Quit();
 		return ;
@@ -695,6 +697,14 @@ function p.HeroBuffTurnEnd()
 		if (w_battle_guid.IsGuid == true) then
 			if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 7) then	
 				w_battle_guid.nextGuidSubStep();
+			elseif (w_battle_guid.guidstep == 3) and (w_battle_db_mgr.step == 3) and(p.turnNum == 2) then	
+				local lfighter = w_battle_mgr.heroCamp:FindFighter(2);
+				lfighter.nowlife = math.modf(lfighter.maxHp * 0.8)
+				lfighter.Hp = lfighter.nowlife;
+				w_battle_pve.SetHeroCardAttr(2, lfighter);
+				w_battle_db_mgr.SetGuidItemList();
+			
+				rookie_mask.ShowUI(3,11)
 				return;
 			end;
 		end;

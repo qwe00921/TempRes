@@ -477,7 +477,7 @@ function p.dramaCallBack(storyId)
 		--p.ShowLearningStep( 7, 2 );
 		p.ShowLearningStep( 3, 2 );
 	elseif storyId == 2 then
-		rookie_main.SendUpdateStep(4);
+		rookie_main.SendUpdateStep(3);
 	elseif storyId == 3 then
 		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == STORY_GUID_5_1 then -- 4
