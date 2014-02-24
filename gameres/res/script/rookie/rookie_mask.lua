@@ -187,6 +187,7 @@ function p.InitControllers()
 	while maskUI["ID_CTRL_PICTURE_TOUCH_"..index] do
 		local image = GetImage( p.maskLayer, maskUI["ID_CTRL_PICTURE_TOUCH_"..index] );
 		if image then
+			image:SetPicture( nil );
 			image:AddFgEffect( "common_ui.rookie_touch" );
 		end
 		index = index + 1;
