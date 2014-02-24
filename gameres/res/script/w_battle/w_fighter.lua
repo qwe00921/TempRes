@@ -150,7 +150,7 @@ function p:ShowCrit()
 end;
 
 function p:ShowSpeak()
-	local lab = self:CreateLab(-10)
+	local lab = self:CreateLab(-7)
 	lab:PlayLab(2);
 end;
 
