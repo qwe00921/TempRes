@@ -4,6 +4,12 @@
 --------------------------------------------------------------
 ui_n_battle_pve = {};
 local p =  ui_n_battle_pve;
+p.ID_CTRL_BUTTON_E_6					     = 216;
+p.ID_CTRL_BUTTON_E_5					     = 215;
+p.ID_CTRL_BUTTON_E_4					     = 214;
+p.ID_CTRL_BUTTON_E_3					     = 213;
+p.ID_CTRL_BUTTON_E_2					     = 212;
+p.ID_CTRL_BUTTON_E_1					     = 211;
 p.ID_CTRL_PICTURE_SKILL_DO			 = 178;
 p.ID_CTRL_PICTURE_145					    = 151;
 p.ID_CTRL_PICTURE_144					    = 150;

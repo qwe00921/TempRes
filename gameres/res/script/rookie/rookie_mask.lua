@@ -168,6 +168,7 @@ function p.InitControllers()
 	
 	p.colorLabel:SetHorzAlign( 0 );
 	p.colorLabel:SetVertAlign( 1 );
+	p.colorLabel:SetIsUseMutiColor(false);
 
 	local index = 1;
 	local list = uiList[p.step] or {};	
