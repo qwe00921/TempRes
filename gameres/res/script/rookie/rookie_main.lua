@@ -194,10 +194,16 @@ function p.ShowLearningStep( step, substep )
 		if substep == 1 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			
+			dlg_card_group_main.CloseUI();
 			dlg_drama.ShowUI( 8, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 2 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			
+			quest_reward.CloseUI();
+			--quest_result.CloseUI();
+			
 			dlg_drama.ShowUI( 9, after_drama_data.ROOKIE, 0, 0);
 		end
 	elseif step == 9 then
@@ -371,7 +377,15 @@ end
 
 --显示下一步前相关操作，返回true为直接显示下一步，false为不直接显示（发消息给服务端，服务端返回后进入下一步）
 function p.DoSomething( step, substep, index )
-	if step == 9 then
+	if step == 5 then
+		if w_battle_guid.substep == 4 then
+			return w_battle_guid.CanSubStep4;
+		elseif w_battle_guid.substep == 5 then
+			return w_battle_guid.CanSubStep5;
+		elseif w_battle_guid.substep == 6 then
+			return w_battle_guid.CanSubStep6;
+		end;
+	elseif step == 9 then
 		if substep == 7 then
 			if index == 1 then
 				country_collect.Collect( E_COLLECT_HOME );
@@ -433,6 +447,13 @@ function p.DoSomething( step, substep, index )
 			p.tempSubTemp = substep+1;
 			p.SendUpdateStep( step,13 );
 			return false;
+		elseif substep == 3 then
+			if card_bag_mian.rookie_12_3 then
+				return true
+			else
+				WriteConErr("card_bag_mian.rookie_12_3 false");
+				return false
+			end
 		end
 	elseif step == 7 then
 		if substep == 4 then
@@ -440,6 +461,14 @@ function p.DoSomething( step, substep, index )
 			p.tempSubTemp = substep+1;
 			p.SendUpdateStep( step);
 			return false;
+		elseif substep == 3 then
+			if dlg_card_group_main.rookieNode then
+				WriteConErr("dlg_card_group_main.rookieNode true");
+				return true
+			else
+				WriteConErr("dlg_card_group_main.rookieNode false");
+				return false
+			end
 		end
 	elseif step == 12 then
 		if substep == 6 then
@@ -447,6 +476,22 @@ function p.DoSomething( step, substep, index )
 			p.tempSubTemp = substep+1;
 			p.SendUpdateStep( step);
 			return false;
+		elseif substep == 3 then
+			if card_bag_mian.rookie_12_3 then
+				WriteConErr("card_bag_mian.rookie_12_3 true");
+				return true
+			else
+				WriteConErr("card_bag_mian.rookie_12_3 false");
+				return false
+			end
+		elseif substep == 5 then
+			if equip_dress_select.rookieBtn_12_5 then
+				WriteConErr("equip_dress_select.rookieBtn_12_5 true");
+				return true
+			else
+				WriteConErr("equip_dress_select.rookieBtn_12_5 false");
+				return false
+			end
 		end
 	elseif step == 14 then
 		if substep == 8 then
@@ -537,7 +582,9 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 7 then
 		p.ShowLearningStep( 6, 15);
 	elseif storyId == 8 then
-		p.ShowLearningStep( 8, 2 );
+		w_battle_mgr.EnterBattle(1,100031,1);
+		--p.ShowLearningStep( 8, 2 );
+		
 	elseif storyId == 9 then
 		--p.ShowLearningStep( 9, 1 );
 		p.SendUpdateStep( p.stepId )

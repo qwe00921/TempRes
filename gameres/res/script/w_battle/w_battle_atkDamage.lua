@@ -147,11 +147,15 @@ function p.IsJoinAtk(atkFighter,tarFighter)
 	local lIsResult = false;
 	local lNowTime = os.time();
 	
+	
 	if tarFighter.JoinAtkTime == nil then
 		tarFighter.JoinAtkTime = lNowTime;
 		tarFighter.firstID = atkFighter:GetId();
     elseif lNowTime - tarFighter.JoinAtkTime <= W_BATTLE_JOINATK_TIME then
 	   lIsResult = true; 
+	elseif (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) 
+		and (w_battle_db_mgr.step == 1) and (w_battle_guid.substep == 5 ) then
+		lIsResult = true;  --新手战斗的第一波的第一场无论时间长短都能合击
     elseif lNowTime - tarFighter.JoinAtkTime > W_BATTLE_JOINATK_TIME then	
 	   tarFighter.JoinAtkTime = lNowTime;	
 	   tarFighter.firstID = atkFighter:GetId();

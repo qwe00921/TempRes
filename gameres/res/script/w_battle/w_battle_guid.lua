@@ -6,6 +6,9 @@ local p = w_battle_guid;
 p.IsGuid = false;
 p.guidstep = nil;
 p.substep = nil;
+p.CanSubStep4 = false;
+p.CanSubStep5 = false;
+p.CanSubStep6 = false;
 
 --第一轮的新手引导,点击完的事件
 function p.fighterGuid(substep)
@@ -84,6 +87,9 @@ function p.fighterSecondGuid(substep)
 	p.guidstep = 5;
 	p.substep = substep;
 	if substep == 1 then  --剧情
+		p.CanSubStep4 = false;
+		p.CanSubStep5 = false;
+		p.CanSubStep6 = false;
 		dlg_drama.ShowUI( 4, after_drama_data.ROOKIE,0,0)
 	elseif substep == 2 then 
 		maininterface.ShowUI(rookie_main.userData);

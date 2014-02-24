@@ -42,4 +42,12 @@ function p:Process()
 	elseif stageMap_main.openMapId == 9 then
 		stageMap_9.addAllStage(self);
 	end
+	
+	if w_battle_guid.IsGuid == true then
+		if w_battle_guid.guidstep == 5 then
+			if w_battle_guid.substep == 4 then
+				w_battle_guid.CanSubStep4 = true
+			end
+		end
+	end
 end

@@ -25,4 +25,12 @@ function p:Process()
 	WriteConWarning( "** msg_quest_list:Process() called" );
 	--quest_main.ShowUI(self.battles);
 	quest_main.ShowQuestList(self);
+	
+	if w_battle_guid.IsGuid == true then
+		if w_battle_guid.guidstep == 5 then
+			if w_battle_guid.substep == 5 then
+				w_battle_guid.CanSubStep5 = true
+			end
+		end
+	end
 end
