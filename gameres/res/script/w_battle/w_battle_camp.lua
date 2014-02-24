@@ -539,7 +539,7 @@ function p:AddFighters( uiArray, fighters )
 				--f.Defence = 1;
 				--
 				--if f.Position == 2 then
-				--	f.Sp = 100;
+					f.Sp = 100;
 				--end
 				
 				--f.Defence = f.Defence + 200;
