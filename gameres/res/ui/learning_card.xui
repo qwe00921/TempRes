@@ -39,7 +39,7 @@ UIClsoeType=0
 [CTRL_PICTURE_CARD]
 Type=1
 Tag=7
-Rect=126 136 384 575
+Rect=128 136 384 575
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -104,3 +104,25 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_9]
+Type=1
+Tag=12
+Rect=35 408 40 44
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\mail\left1.png
+NormalFileUV=0 0 40 44
+
+[CTRL_PICTURE_10]
+Type=1
+Tag=13
+Rect=565 408 40 44
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\mail\right.png
+NormalFileUV=0 0 40 44
