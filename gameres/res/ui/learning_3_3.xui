@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_12]
 Type=1
 Tag=12
-Rect=415 307 137 52
+Rect=412 307 137 52
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 250 90
 [CTRL_TEXT_13]
 Type=4
 Tag=13
-Rect=439 333 96 22
+Rect=436 333 96 22
 AnchorPos=0 0
 Notes=
 Text=对应伙伴
