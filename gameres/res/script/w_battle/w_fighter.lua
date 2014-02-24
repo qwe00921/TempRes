@@ -125,7 +125,19 @@ function p:CreateLab(fx)
 	local flyLab = w_flyLab:new();
     flyLab:SetOwnerNode( self.node );
     flyLab:Init();
-    flyLab:SetOffset(fx,-20);
+	
+	if w_battle_mgr.platform == W_PLATFORM_WIN32 then
+		fTemp = 320.0;
+	else
+		fTemp = 640.0;
+	end
+	
+	local lwinWidth = GetWinSize().w;	
+	local lscale = GetUIScale();
+	local fx = (fx * (lwinWidth / fTemp) * lscale);
+	local fy = (-20 * (lwinWidth / fTemp) * lscale);
+	
+    flyLab:SetOffset(fx,fy);
     self.node:AddChildZ( flyLab:GetNode(), 9999 );
 	return flyLab;
     --self.flynumGreen = flynum;

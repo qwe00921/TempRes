@@ -75,12 +75,13 @@ function p:PlayLab( ltype )
     --self.imageNode:SetScale(1.0f);
     self.imageNode:SetPicture( lPicture );
     self.imageNode:ResizeToFitPicture();
-    self.imageNode:SetScale(5.0f);
+    self.imageNode:SetScale(10.0f);
     
     --²¥·Å¶¯»­
     self.imageNode:SetVisible( true );
     self.imageNode:SetOpacity( 0 );
-    self.imageNode:SetFramePosXY( self.offsetX, self.offsetY + UIOffsetY(60));
+	local lpos = CCPointMake(self.offsetX, self.offsetY);
+    self.imageNode:SetCenterPos(lpos);
     self:AddAction();
 end
 
