@@ -321,7 +321,7 @@ function p:atk_startAtk()
 				ltargetPos = lbulletnode:GetCenterPos();
 				
 				--local halfWidthSum = lbulletnode:GetCurAnimRealSize().w/2
-				local halfWidthSum = self.AtkFighter:GetPlayerNode():GetCurAnimRealSize().w / 5 * 2;
+				local halfWidthSum = atkFighter:GetPlayerNode():GetCurAnimRealSize().w / 5 * 2;
 				if atkFighter.camp == E_CARD_CAMP_HERO then
 					ltargetPos.x = ltargetPos.x + halfWidthSum;
 				else
