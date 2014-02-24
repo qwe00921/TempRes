@@ -75,7 +75,7 @@ function p:PlayLab( ltype )
     --self.imageNode:SetScale(1.0f);
     self.imageNode:SetPicture( lPicture );
     self.imageNode:ResizeToFitPicture();
-    self.imageNode:SetScale(10.0f);
+    self.imageNode:SetScale(5.0f);
     
     --²¥·Å¶¯»­
     self.imageNode:SetVisible( true );
@@ -89,6 +89,6 @@ end
 function p:AddAction()
     --self.imageNode:AddActionEffect( "lancer_cmb.flynum" );
     ----self.imageNode:AddActionEffect( "lancer.flynum" );
-    self.imageNode:AddActionEffect( "lancer_cmb.flynum_v2" );
+    self.imageNode:AddActionEffect( "lancer_cmb.flynum_v1" );
 end
 

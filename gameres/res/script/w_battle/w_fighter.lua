@@ -134,8 +134,8 @@ function p:CreateLab(fx)
 	
 	local lwinWidth = GetWinSize().w;	
 	local lscale = GetUIScale();
-	local fx = (fx * (lwinWidth / fTemp) * lscale);
-	local fy = (-20 * (lwinWidth / fTemp) * lscale);
+	local fx = (fx * (lwinWidth / fTemp) * lscale) * 3;
+	local fy = (-20 * (lwinWidth / fTemp) * lscale) ;
 	
     flyLab:SetOffset(fx,fy);
     self.node:AddChildZ( flyLab:GetNode(), 9999 );
