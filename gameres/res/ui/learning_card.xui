@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -55,7 +55,7 @@ Text=文字描述
 TextTradition=文字描述
 TextSize=20
 TextColor=0xfffbf0
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
@@ -63,19 +63,19 @@ UIClsoeType=0
 [CTRL_BUTTON_START]
 Type=2
 Tag=9
-Rect=218 845 205 74
+Rect=246 853 149 60
 AnchorPos=0 0
 Notes=
-Text=开始冒险
-TextTradition=開始冒險
 TextSize=25
 TextColor=0xfefd92
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button_blue_click.png
-NormalFileUV=0 0 232 84
+NormalFile=.\res\image\ui\public\gamestart.png
+NormalFileUV=0 0 150 60
+SelectFile=.\res\image\ui\public\gamestart_select.png
+SelectedFileUV=0 0 150 60
 
 [CTRL_BUTTON_LEFT]
 Type=2
