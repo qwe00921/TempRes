@@ -194,10 +194,16 @@ function p.ShowLearningStep( step, substep )
 		if substep == 1 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			
+			dlg_card_group_main.CloseUI();
 			dlg_drama.ShowUI( 8, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 2 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			
+			quest_reward.CloseUI();
+			--quest_result.CloseUI();
+			
 			dlg_drama.ShowUI( 9, after_drama_data.ROOKIE, 0, 0);
 		end
 	elseif step == 9 then
@@ -545,7 +551,9 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 7 then
 		p.ShowLearningStep( 6, 15);
 	elseif storyId == 8 then
-		p.ShowLearningStep( 8, 2 );
+		w_battle_mgr.EnterBattle(1,100031,1);
+		--p.ShowLearningStep( 8, 2 );
+		
 	elseif storyId == 9 then
 		--p.ShowLearningStep( 9, 1 );
 		p.SendUpdateStep( p.stepId )
