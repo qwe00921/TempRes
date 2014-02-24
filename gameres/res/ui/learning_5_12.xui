@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_28]
 Type=1
 Tag=28
-Rect=0 934 640 31
+Rect=0 820 640 145
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,25 +28,13 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_29]
 Type=1
 Tag=29
-Rect=317 706 323 228
+Rect=317 706 323 114
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
-
-[CTRL_BUTTON_CALLBACK_1]
-Type=2
-Tag=3
-Rect=-5 709 317 224
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
 
 [CTRL_PICTURE_TOUCH_1]
 Type=1
@@ -58,3 +46,15 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\n_battle\point.png
 NormalFileUV=0 0 58 83
+
+[CTRL_BUTTON_CALLBACK_1]
+Type=2
+Tag=3
+Rect=0 706 317 114
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
