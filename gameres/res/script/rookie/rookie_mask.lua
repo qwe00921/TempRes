@@ -186,12 +186,27 @@ function p.InitControllers()
 		index = index + 1;
 	end
 	
+	local configInfo = SelectRowList( T_ROOKIE_GUIDE, "guide_id", p.step );
+	local path = nil;
+	if configInfo ~= nil and #configInfo > 0 then
+		for i = 1, #configInfo do
+			local data = configInfo[i];
+			if tonumber(data.talk_id) == p.substep then
+				path = data.arrow_res;
+				break;
+			end
+		end
+	end
+	
 	index = 1;
 	while maskUI["ID_CTRL_PICTURE_TOUCH_"..index] do
 		local image = GetImage( p.maskLayer, maskUI["ID_CTRL_PICTURE_TOUCH_"..index] );
 		if image then
 			image:SetPicture( nil );
-			image:AddFgEffect( "common_ui.rookie_touch" );
+			if path then
+				--image:AddFgEffect( "common_ui.rookie_touch" );
+				image:AddFgEffect( path );
+			end
 		end
 		index = index + 1;
 	end
