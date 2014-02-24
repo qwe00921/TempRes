@@ -355,12 +355,14 @@ end
 
 --update by csd 2014-2-23
 function p.FightClick()
-	local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIGHT );
-	if btn == nil then
-		WriteConErr("not find fight button");
-		return ;
-	end
-	p.OnBtnClick(btn, NUIEventType.TE_TOUCH_CLICK, nil);
+	--local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_FIGHT );
+	--if btn == nil then
+	--	WriteConErr("not find fight button");
+	--	return ;
+	--end
+	--p.OnBtnClick(btn, NUIEventType.TE_TOUCH_CLICK, nil);
+	p.CloseUI();
+	w_battle_mgr.EnterBattle( W_BATTLE_PVE, 100011, 1 );--进入战斗PVE
 end
 
 function p.OnBtnClick(uiNode,uiEventType,param)

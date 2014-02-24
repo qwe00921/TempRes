@@ -62,6 +62,7 @@ local uiList = {
 		[21]= ui_learning_5_21,
 		[22]= ui_learning_5_22,
 		[23]= ui_learning_5_23,
+		[24]= ui_learning_5_24,
 	},	
 	[6] ={
 		[2] = ui_learning_6_2,

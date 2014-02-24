@@ -152,6 +152,8 @@ function p.fighterSecondGuid(substep)
 		--rookie_mask.ShowUI(p.step,p.substep + 1)
 		--rookie_mask.ShowUI(p.guidstep, substep); 
 	elseif substep == 24 then		
+		rookie_mask.ShowUI(p.guidstep, substep);
+	elseif substep == 25 then
 		p.IsGuid = false;
 		quest_reward.CloseUI();
 		rookie_main.SendUpdateStep(5);
