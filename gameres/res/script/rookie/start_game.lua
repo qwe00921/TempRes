@@ -40,7 +40,7 @@ function p.Init()
 	p.contentNode = GetLabel(p.layer,ui.ID_CTRL_TEXT_TALK)
 	p.fontSize = 20;
 	
-	p.contentStr = "    醒醒......醒醒，年轻的勇者啊，打扰你的睡眠也是迫不得已，来，请告诉我你的名字吧。"
+	p.contentStr = "    醒醒......醒醒，年轻的勇者啊，打扰你的睡眠也是迫不得已，请跟我来吧。"
 	p.showText()
 end
 
@@ -86,7 +86,7 @@ function p.OnBtnClick(uiNode,uiEventType,param)
             end
 			if p.count == 0 then
 				p.count = p.count + 1;
-				p.contentStr = "    恩..那么，先选择下将要跟随着你的星卡伙伴吧。"
+				p.contentStr = "    对了，出发之前，先选择下将要跟随着你的星卡伙伴吧。"
 				p.showText()
 			elseif p.count == 1 then
 				p.CloseUI()
