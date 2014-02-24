@@ -39,6 +39,17 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_PICTURE_9]
+Type=1
+Tag=9
+Rect=138 277 26 26
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\n_battle\battle_heart_icon.png
+NormalFileUV=0 0 32 32
+
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=3
