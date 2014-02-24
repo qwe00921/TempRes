@@ -19,7 +19,7 @@ local MAX_STEP = {
 		15,--3
 		7,--4
 		25,--5
-		12,--6
+		15,--6
 		6,--7
 		2,--8
 		9,--9
@@ -135,21 +135,30 @@ function p.ShowLearningStep( step, substep )
 			card_rein.rookieStep()
 			rookie_mask.ShowUI( step, 6 );
 		elseif substep == 7 then
-			card_intensify.rookieClickOnCard()
+			card_intensify.rookieClickOnCard_1()
 			rookie_mask.ShowUI( step, 7 );
 		elseif substep == 8 then
-			card_intensify.rookieClickEvent();
+			card_intensify.rookieClickOnCard_2()
 			rookie_mask.ShowUI( step, 8 );
 		elseif substep == 9 then
-			card_rein.rookieStart()
-			--p.SendUpdateStep( step, 9)
+			card_intensify.rookieClickOnCard_3()
 			rookie_mask.ShowUI( step, 9 );
 		elseif substep == 10 then
-			p.ShowLearningStep( step, 11 )
+			card_intensify.rookieClickOnCard_4()
+			rookie_mask.ShowUI( step, 10 );
 		elseif substep == 11 then
+			card_intensify.rookieClickOnCard_5()
+			rookie_mask.ShowUI( step, 11 );
+		elseif substep == 12 then
+			card_intensify.rookieClickEvent();
+			rookie_mask.ShowUI( step, 12 );
+		elseif substep == 13 then
+			card_rein.rookieStart()
+			rookie_mask.ShowUI( step, 13 );
+		elseif substep == 14 then
 			card_intensify_succeed.CloseUI();
 			dlg_drama.ShowUI( 7,after_drama_data.ROOKIE,0,0)
-		elseif substep == 12 then
+		elseif substep == 15 then
 			p.SendUpdateStep( step )
 		end
 		
@@ -414,10 +423,10 @@ function p.DoSomething( step, substep, index )
 			return false;
 		end
 	elseif step == 6 then
-		if substep == 8 then
+		if substep == 12 then
 			p.tempStep = step;
 			p.tempSubTemp = substep+1;
-			p.SendUpdateStep( step,10 );
+			p.SendUpdateStep( step,13 );
 			return false;
 		end
 	elseif step == 7 then
@@ -521,7 +530,7 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 6 then
 		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == 7 then
-		p.ShowLearningStep( 6, 12 );
+		p.ShowLearningStep( 6, 15);
 	elseif storyId == 8 then
 		p.ShowLearningStep( 8, 2 );
 	elseif storyId == 9 then
