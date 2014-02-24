@@ -58,3 +58,12 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_TOUCH_1]
+Type=1
+Tag=28
+Rect=34 69 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

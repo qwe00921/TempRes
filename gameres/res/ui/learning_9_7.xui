@@ -193,3 +193,39 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_TOUCH_1]
+Type=1
+Tag=46
+Rect=107 358 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_TOUCH_2]
+Type=1
+Tag=47
+Rect=221 666 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_TOUCH_3]
+Type=1
+Tag=48
+Rect=312 179 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_TOUCH_4]
+Type=1
+Tag=49
+Rect=456 63 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
