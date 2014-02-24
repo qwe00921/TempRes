@@ -1307,8 +1307,13 @@ function p.GetScreenCenterPos()
 	return cNode:GetCenterPos();
 end
 
-function p.bulletCenterNode()
-	local cNode = GetPlayer( p.uiLayer, ui_n_battle_pve.ID_CTRL_LEFT_SPRITE_2 );
+function p.bulletCenterNode(camp)
+	local cNode = nil;
+	if camp == E_CARD_CAMP_HERO then
+		cNode = GetPlayer( p.uiLayer, ui_n_battle_pve.ID_CTRL_LEFT_SPRITE_2 );
+	else
+		cNode = GetPlayer( p.uiLayer, ui_n_battle_pve.ID_CTRL_RIGHT_SPRITE_2 );
+	end;
 	return cNode;
 end;
 
