@@ -25,6 +25,11 @@ function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 	if IsMonster ~= true then
 		lIsJoinAtk = p.IsJoinAtk(atkFighter,tarFighter); 
 	end;
+	
+	if w_battle_mgr.atkCampType == W_BATTLE_ENEMY then
+		lIsJoinAtk = false;
+	end;
+	
 	local lJoinAtkRate = 0;
 	if lIsJoinAtk == true then
 		lJoinAtkRate = 0.5
@@ -48,6 +53,8 @@ function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 			end;
 		end;
 	end 
+	
+
 	
 	
 	local damage = latkDamage * atkFighter.atkBuff * lpropRate * (1+lAddCrit + lJoinAtkRate)
