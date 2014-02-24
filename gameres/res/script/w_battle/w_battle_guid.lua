@@ -66,7 +66,7 @@ function p.fighterGuid(substep)
 		rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 13 then
 		--使用物品
-		w_battle_useitem.UseItem(2);
+		w_battle_useitem.UseItem(3);
 		rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 14 then
 		--等战斗任务结束 进行结算

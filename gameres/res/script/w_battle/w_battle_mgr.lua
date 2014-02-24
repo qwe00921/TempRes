@@ -688,7 +688,7 @@ function p.HeroBuffTurnEnd()
 			elseif (w_battle_guid.guidstep == 3) and (w_battle_db_mgr.step == 2) and(p.turnNum == 2) then	
 				rookie_mask.ShowUI(3,8);
 			elseif (w_battle_guid.guidstep == 3) and (w_battle_db_mgr.step == 3) and(p.turnNum == 2) then	
-				local lfighter = w_battle_mgr.heroCamp:FindFighter(1);
+			--[[	local lfighter = w_battle_mgr.heroCamp:FindFighter(1);
 				lfighter.nowlife = lfighter.maxHp;
 				lfighter.Hp = lfighter.nowlife;
 				w_battle_pve.SetHeroCardAttr(1, lfighter);
@@ -697,6 +697,7 @@ function p.HeroBuffTurnEnd()
 				lfighter.nowlife = math.modf(lfighter.maxHp * 0.8)
 				lfighter.Hp = lfighter.nowlife;
 				w_battle_pve.SetHeroCardAttr(2, lfighter);
+				]]--
 				w_battle_db_mgr.SetGuidItemList();
 			
 				rookie_mask.ShowUI(3,11)
