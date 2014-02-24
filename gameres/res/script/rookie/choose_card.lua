@@ -106,10 +106,10 @@ end
 function p.SetDelegate(uiNode,uiEventType,param)
 	local btnOK = GetButton(p.layer, ui.ID_CTRL_BUTTON_START );
 	btnOK:SetLuaDelegate(p.OnBtnClick);
-	local btnLeft = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT );
-	btnLeft:SetLuaDelegate(p.OnBtnClick);
-	local btnRight = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT );
-	btnRight:SetLuaDelegate(p.OnBtnClick);
+	-- local btnLeft = GetButton(p.layer, ui.ID_CTRL_BUTTON_LEFT );
+	-- btnLeft:SetLuaDelegate(p.OnBtnClick);
+	-- local btnRight = GetButton(p.layer, ui.ID_CTRL_BUTTON_RIGHT );
+	-- btnRight:SetLuaDelegate(p.OnBtnClick);
 end
 
 function p.OnBtnClick(uiNode,uiEventType,param)
@@ -119,16 +119,17 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 			local cardId = p.getNowCardId();
 			WriteCon( "cardId == "..cardId );
 			
-			local uid = GetUID();
-			local param = "guide="..(rookie_main.stepId).."&param="..cardId;
-			SendReq("User","Complete",uid,param);
-
+			--local uid = GetUID();
+			--local param = "guide="..(rookie_main.stepId).."&param="..cardId;
+			--SendReq("User","Complete",uid,param);
+			local param = "param="..cardId;
+			rookie_main.SendUpdateStep(rookie_main.stepId,0,param)
 			
 			--maininterface.ShowUI();
-		elseif ui.ID_CTRL_BUTTON_LEFT == tag then
-			WriteCon( "ID_CTRL_BUTTON_LEFT" );
-		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
-			WriteCon( "ID_CTRL_BUTTON_RIGHT" );
+		-- elseif ui.ID_CTRL_BUTTON_LEFT == tag then
+			-- WriteCon( "ID_CTRL_BUTTON_LEFT" );
+		-- elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
+			-- WriteCon( "ID_CTRL_BUTTON_RIGHT" );
 		end
 	end
 end

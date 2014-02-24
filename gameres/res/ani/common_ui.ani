@@ -183,3 +183,7 @@ image\ui\card_bag\btn_type_head_1.png
 [rookie_head]
 image\ui\rookie\rookie_head.png
 
+[rookie_touch]
+image\ui\common\touch.png @cut(1,2) @time=0.3 @loop
+
+

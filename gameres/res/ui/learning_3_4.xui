@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -14,7 +14,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_PICTURE_18]
+[CTRL_PICTURE_TOUCH_1]
 Type=1
 Tag=18
 Rect=116 427 64 76

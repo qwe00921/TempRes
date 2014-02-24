@@ -73,6 +73,9 @@ local uiList = {
 		[8] = ui_learning_6_8,
 		[9] = ui_learning_6_9,
 		[10] = ui_learning_6_10,
+		[11] = ui_learning_6_11,
+		[12] = ui_learning_6_12,
+		[13] = ui_learning_6_13,
 		},
 	[7] ={
 		[2] = ui_learning_7_2,
@@ -182,6 +185,16 @@ function p.InitControllers()
 		end
 		index = index + 1;
 	end
+	
+	index = 1;
+	while maskUI["ID_CTRL_PICTURE_TOUCH_"..index] do
+		local image = GetImage( p.maskLayer, maskUI["ID_CTRL_PICTURE_TOUCH_"..index] );
+		if image then
+			image:SetPicture( nil );
+			image:AddFgEffect( "common_ui.rookie_touch" );
+		end
+		index = index + 1;
+	end
 end
 
 --设置高亮按钮位置
@@ -227,10 +240,12 @@ function p.OnTouchHightLight( uiNode, uiEventType, param )
 	
 	WriteConWarning( "step:"..p.step.."substep:"..p.substep );
 
-	if not ((p.step == 5) and (p.substep == 20)) then	--除了这步其它都通过点击触发
+	if not ((p.step == 5) and (w_battle_guid.substep == 20)) then	--除了这步其它都通过点击触发
 		if IsClickEvent( uiEventType ) then
 			local id = uiNode:GetId();
-			rookie_main.MaskTouchCallBack( p.step, p.substep, id );
+			if (p.step ~= nil) and (p.substep ~= nil) and (p.step ~= 0) then
+				rookie_main.MaskTouchCallBack( p.step, p.substep, id );
+			end;
 		end
 	else
 		if IsDragUp(uiEventType) then
@@ -302,5 +317,4 @@ function p.HideUI()
 		p.maskLayer:SetVisible( false );
 	end
 end
-
 

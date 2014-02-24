@@ -32,7 +32,11 @@ p.cardListByProf = {};
 p.cardListNode = {};		--所有卡牌节点列表
 p.cardNumListNode = {};
 p.cardEnabled = true;
-p.rookieNode = nil;
+p.rookieNode_1 = nil;
+p.rookieNode_2 = nil;
+p.rookieNode_3 = nil;
+p.rookieNode_4 = nil;
+p.rookieNode_5 = nil;
 function p.ShowUI(baseCardInfo)
 	
 	if baseCardInfo == nil then 
@@ -133,8 +137,20 @@ function p.rookieClickEvent()
 	local intensifyByBtn = GetButton(p.layer, ui.ID_CTRL_BUTTON_26);
 	p.OnUIClickEvent(intensifyByBtn, NUIEventType.TE_TOUCH_CLICK)
 end
-function p.rookieClickOnCard()
-	p.OnCardClickEvent(p.rookieNode,NUIEventType.TE_TOUCH_CLICK)
+function p.rookieClickOnCard_1()
+	p.OnCardClickEvent(p.rookieNode_1,NUIEventType.TE_TOUCH_CLICK)
+end
+function p.rookieClickOnCard_2()
+	p.OnCardClickEvent(p.rookieNode_2,NUIEventType.TE_TOUCH_CLICK)
+end
+function p.rookieClickOnCard_3()
+	p.OnCardClickEvent(p.rookieNode_3,NUIEventType.TE_TOUCH_CLICK)
+end
+function p.rookieClickOnCard_4()
+	p.OnCardClickEvent(p.rookieNode_4,NUIEventType.TE_TOUCH_CLICK)
+end
+function p.rookieClickOnCard_5()
+	p.OnCardClickEvent(p.rookieNode_5,NUIEventType.TE_TOUCH_CLICK)
 end
 --事件处理
 function p.OnUIClickEvent(uiNode, uiEventType, param)
@@ -540,8 +556,15 @@ function p.ShowCardInfo( view, card, cardIndex, row )
 		cardButton:SetEnabled(false);
 	end
 	if row == 1 and cardIndex == 1 then
-		p.rookieNode = cardButton;
-		WriteCon("rookie btn");
+		p.rookieNode_1 = cardButton;
+	elseif row == 1 and cardIndex == 2 then
+		p.rookieNode_2 = cardButton;
+	elseif row == 1 and cardIndex == 3 then
+		p.rookieNode_3 = cardButton;
+	elseif row == 1 and cardIndex == 4 then
+		p.rookieNode_4 = cardButton;
+	elseif row == 1 and cardIndex == 5 then
+		p.rookieNode_5 = cardButton;
 	end
 	p.cardListNode[#p.cardListNode + 1] = cardButton;
 end

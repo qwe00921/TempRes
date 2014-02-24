@@ -9,6 +9,8 @@ p.mixData = {};	--合成临时数据
 p.costMaterial = {};
 p.costMoney = 0;
 
+p.rookie_flag = false;
+
 CHOOSE_TYPE_ALL = 0;	--全部
 CHOOSE_TYPE_TREAT = 1;--回复类
 CHOOSE_TYPE_STATUS = 2;	--解状态
@@ -136,6 +138,8 @@ function p.RefreshUI( )
 
 		list:AddView( view );
 	end
+	
+	p.rookie_flag = true;
 end
 
 function p.SetFormulaNode( view, data, materials )
@@ -271,6 +275,7 @@ function p.CloseUI()
 		p.mixData = {};	--合成临时数据
 		p.costMaterial = {};
 		p.costMoney = 0;
+		p.rookie_flag = false;
 	end
 end
 

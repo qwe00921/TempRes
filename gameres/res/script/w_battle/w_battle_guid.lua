@@ -48,7 +48,7 @@ function p.fighterGuid(substep)
 		--暴水晶
 		rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 10 then
-	   w_battle_mgr.FightWin(); 
+	   --w_battle_mgr.FightWin(); 
 	--[[	local lstateMachine = w_battle_machinemgr.getTarStateMachine(W_BATTLE_ENEMY,1); 		--让1号位的状态机继续死亡动画后的流程
 		if lstateMachine ~= nil then
 			lstateMachine:tar_dieEnd();
@@ -70,6 +70,7 @@ function p.fighterGuid(substep)
 		--quest_reward.CloseUI();
 		--dlg_drama.ShowUI(2, after_drama_data.ROOKIE, 0, 0);
 	elseif p.substep == 15 then
+		p.IsGuid = false;
 		quest_reward.CloseUI();
 		dlg_drama.ShowUI(2, after_drama_data.ROOKIE, 0, 0);
 		--引导结束后任务战斗结束
@@ -141,16 +142,18 @@ function p.fighterSecondGuid(substep)
 	elseif substep == 20 then
 		rookie_mask.ShowUI(p.guidstep, substep); --触发条件 增加为滑动
 	elseif substep == 21 then
-		--发动技能时,先卡住,加载引导
-		rookie_mask.ShowUI(p.guidstep, substep); --触发条件 增加为滑动
+		--发动技能后,自由战斗
+		w_battle_pve.setBtnSkillClick(2);
+		--rookie_mask.ShowUI(p.guidstep, substep); 
 	elseif substep == 22 then
 		rookie_mask.ShowUI(p.guidstep, substep); 
 	elseif substep == 23 then
-		w_battle_pve.setBtnSkillClick(2);
 	    --放开,自由战斗,等第三波战败,战败后,进入下一引导
 		--rookie_mask.ShowUI(p.step,p.substep + 1)
 		--rookie_mask.ShowUI(p.guidstep, substep); 
 	elseif substep == 24 then		
+		--rookie_mask.ShowUI(p.guidstep, substep);
+		p.IsGuid = false;
 		quest_reward.CloseUI();
 		rookie_main.SendUpdateStep(5);
 	end	

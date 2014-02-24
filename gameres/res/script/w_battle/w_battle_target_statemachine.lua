@@ -151,20 +151,10 @@ function p:tar_hurtEnd()
 			if cmdC ~= nil then	
 				local batch = w_battle_mgr.GetBattleBatch(); 			
 				local seqDie = batch:AddSerialSequence();
-				--if w_battle_guid.IsGuid == false then
-					local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);
-					seqDie:SetWaitEnd( cmdC ); 
-				--[[
-				else
-					if (w_battle_guid.guidstep == 3) and (w_battle_guid.substep == 8) then  --动画做完,先引导,再做别的
-						local cmdDieEnd = targerFighter:cmdLua("tar_guidstep3_8",  self.id, tostring(self.camp), seqDie);
-						seqDie:SetWaitEnd( cmdC ); 
-					else	
-						local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);
-						seqDie:SetWaitEnd( cmdC ); 
-					end
-				end;
-				]]--
+				
+				local cmdDieEnd = targerFighter:cmdLua("tar_dieEnd",  self.id, tostring(self.camp), seqDie);
+				seqDie:SetWaitEnd( cmdC ); 
+
 			end;
 		end;		
 	end;

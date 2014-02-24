@@ -760,8 +760,10 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		if ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "**菜单**" );
 			btn:SetEnabled( true );
-			w_battle_mgr.SetLockZorder(0);
-			dlg_msgbox.ShowYesNo("",GetStr("battle_quit"), w_battle_mgr.OnMsgQuitBoxCallback, p.battleLayer);
+			if w_battle_guid.IsGuid == false then
+				w_battle_mgr.SetLockZorder(0);
+				dlg_msgbox.ShowYesNo("",GetStr("battle_quit"), w_battle_mgr.OnMsgQuitBoxCallback, p.battleLayer);
+			end;
 		elseif p.CheckUseItem( tag ) then
 			WriteCon( "**使用物品**" );
 			p.UseItem( btn );
@@ -934,10 +936,23 @@ function p.MonsterDrop( list )
 		for j = 1, list[i][2] do
 			local drop = w_drop:new();
 			drop:Init( p.battleLayer, list[i][1], list[i][4] );
-			drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ), list[i][4] );
+			local fighter = p.GetFighter( false, list[i][3] );
+			drop:Drop( fighter, list[i][4] );
+			--drop:Drop( GetPlayer( p.battleLayer, enemyUIArray[list[i][3]] ), list[i][4] );
 			table.insert( p.dropList, drop );
 		end
 	end
+end
+
+function p.GetFighter( isHero, pos )
+	local list = isHero and w_battle_mgr.heroCamp.fighters or w_battle_mgr.enemyCamp.fighters;
+	
+	for i,v in pairs(list) do
+		if v.Position == pos then
+			return v;
+		end
+	end
+	return nil;
 end
 
 --注册开始拾取物品倒计时

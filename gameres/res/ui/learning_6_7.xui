@@ -6,7 +6,7 @@ Height=960
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=5
-Rect=499 719 141 56
+Rect=144 249 116 116
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -18,7 +18,7 @@ UIClsoeType=0
 [CTRL_PICTURE_1]
 Type=1
 Tag=1
-Rect=0 0 640 719
+Rect=0 0 640 249
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -29,7 +29,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_2]
 Type=1
 Tag=2
-Rect=0 775 640 185
+Rect=0 365 640 595
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -40,10 +40,30 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_3]
 Type=1
 Tag=3
-Rect=0 719 499 56
+Rect=260 249 380 116
 AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_27]
+Type=1
+Tag=27
+Rect=0 249 144 116
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_TOUCH_1]
+Type=1
+Tag=70
+Rect=170 186 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

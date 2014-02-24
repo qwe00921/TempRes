@@ -50,11 +50,20 @@ NormalFileUV=0 0 1 1
 [CTRL_BUTTON_CALLBACK_1]
 Type=2
 Tag=5
-Rect=265 544 110 54
+Rect=265 545 110 54
 AnchorPos=0 0
 Notes=
 TextSize=10
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_TOUCH_1]
+Type=1
+Tag=126
+Rect=288 476 64 86
+AnchorPos=0 0
+Notes=
 UIOpenType=0
 UIClsoeType=0

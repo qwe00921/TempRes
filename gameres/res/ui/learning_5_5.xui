@@ -25,7 +25,7 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\main_interface\bg4.png
 NormalFileUV=0 0 1 1
 
-[CTRL_PICTURE_544]
+[CTRL_PICTURE_TOUCH_1]
 Type=1
 Tag=544
 Rect=288 162 64 91

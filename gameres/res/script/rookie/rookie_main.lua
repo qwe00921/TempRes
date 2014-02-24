@@ -19,7 +19,7 @@ local MAX_STEP = {
 		15,--3
 		7,--4
 		24,--5
-		12,--6
+		15,--6
 		6,--7
 		2,--8
 		9,--9
@@ -47,16 +47,17 @@ function p.getRookieStep(backData)
 		p.subStepId = subStepId
 		p.userData = backData.user;
 		
+		if p.tempStep ~= 0 and p.tempSubTemp ~= 0 then
+			p.ShowLearningStep( p.tempStep, p.tempSubTemp );
+			p.tempStep = 0;
+			p.tempSubTemp = 0;
+			return;
+		end
+		
 		if stepId == 0 then
 			maininterface.ShowUI(backData.user);
 		else
-			if p.tempStep ~= 0 and p.tempSubTemp ~= 0 then
-				p.ShowLearningStep( p.tempStep, p.tempSubTemp );
-				p.tempStep = 0;
-				p.tempSubTemp = 0;
-			else
-				p.ShowLearningStep( p.stepId, p.subStepId );
-			end
+			p.ShowLearningStep( p.stepId, p.subStepId );
 		end
 	end
 end
@@ -76,7 +77,6 @@ function p.ShowLearningStep( step, substep )
 	elseif step == 3 then
 		choose_card.CloseUI()
 		if p.rookieTest then
-			--第3步为战斗，暂时直接跳过   等思栋接入
 			w_battle_guid.fighterGuid(substep);
 		else
 			maininterface.ShowUI(p.userData);
@@ -135,21 +135,30 @@ function p.ShowLearningStep( step, substep )
 			card_rein.rookieStep()
 			rookie_mask.ShowUI( step, 6 );
 		elseif substep == 7 then
-			card_intensify.rookieClickOnCard()
+			card_intensify.rookieClickOnCard_1()
 			rookie_mask.ShowUI( step, 7 );
 		elseif substep == 8 then
-			card_intensify.rookieClickEvent();
+			card_intensify.rookieClickOnCard_2()
 			rookie_mask.ShowUI( step, 8 );
 		elseif substep == 9 then
-			card_rein.rookieStart()
-			--p.SendUpdateStep( step, 9)
+			card_intensify.rookieClickOnCard_3()
 			rookie_mask.ShowUI( step, 9 );
 		elseif substep == 10 then
-			p.ShowLearningStep( step, 11 )
+			card_intensify.rookieClickOnCard_4()
+			rookie_mask.ShowUI( step, 10 );
 		elseif substep == 11 then
+			card_intensify.rookieClickOnCard_5()
+			rookie_mask.ShowUI( step, 11 );
+		elseif substep == 12 then
+			card_intensify.rookieClickEvent();
+			rookie_mask.ShowUI( step, 12 );
+		elseif substep == 13 then
+			card_rein.rookieStart()
+			rookie_mask.ShowUI( step, 13 );
+		elseif substep == 14 then
 			card_intensify_succeed.CloseUI();
 			dlg_drama.ShowUI( 7,after_drama_data.ROOKIE,0,0)
-		elseif substep == 12 then
+		elseif substep == 15 then
 			p.SendUpdateStep( step )
 		end
 		
@@ -376,6 +385,14 @@ function p.DoSomething( step, substep, index )
 			
 			p.SendUpdateStep( step, substep+1 );
 			return false;
+		elseif substep == 2 then
+			if country_main.countryInfoT["B3"] == nil then
+				return false;
+			end
+		elseif substep == 3 then
+			if country_main.rookie_flag == false then
+				return false;
+			end
 		end
 	elseif step == 11 then
 		if substep == 4 then
@@ -406,10 +423,10 @@ function p.DoSomething( step, substep, index )
 			return false;
 		end
 	elseif step == 6 then
-		if substep == 8 then
+		if substep == 12 then
 			p.tempStep = step;
 			p.tempSubTemp = substep+1;
-			p.SendUpdateStep( step,10 );
+			p.SendUpdateStep( step,13 );
 			return false;
 		end
 	elseif step == 7 then
@@ -432,14 +449,40 @@ function p.DoSomething( step, substep, index )
 			if node then
 				equip_rein_list.OnUIClickEvent( node, 1, nil );
 			end
+			
+			p.tempStep = step;
+			p.tempSubTemp = substep+1;
+			
 			p.SendUpdateStep( step );
 			return false;
 		elseif substep == 9 then
+			if equip_rein_result.layer == nil then
+				return false;
+			end
+		
 			--引导结束，切回主页
+			equip_rein_result.CloseUI();
+			equip_rein_list.CloseUI();
+			equip_room.CloseUI();
+			
 			world_map.CheckToCloseMap();
-			p.SetNewUI( {} );
+			dlg_menu.SetNewUI( {} );
 			PlayMusic_MainUI();
 			maininterface.ShowUI();
+		elseif substep == 2 then
+			if country_main.countryInfoT["B2"] == nil then
+				return false;
+			end
+		elseif substep == 3 then
+			local node = equip_room.GetRookieNode();
+			if node == nil then
+				return false;
+			end
+		elseif substep == 6 then
+			local node = equip_rein_select.GetRookieNode();
+			if node == nil then
+				return false;
+			end
 		end
 	end
 	return true;
@@ -487,7 +530,7 @@ function p.dramaCallBack(storyId)
 	elseif storyId == 6 then
 		p.ShowLearningStep( p.stepId, 2 )
 	elseif storyId == 7 then
-		p.ShowLearningStep( 6, 12 );
+		p.ShowLearningStep( 6, 15);
 	elseif storyId == 8 then
 		p.ShowLearningStep( 8, 2 );
 	elseif storyId == 9 then

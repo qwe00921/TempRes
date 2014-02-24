@@ -286,7 +286,7 @@ NormalFileUV=0 0 61 33
 [CTRL_PICTURE_49]
 Type=1
 Tag=49
-Rect=22 492 58 83
+Rect=22 450 58 83
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -297,7 +297,7 @@ NormalFileUV=0 0 58 83
 [CTRL_PICTURE_50]
 Type=1
 Tag=50
-Rect=344 492 58 83
+Rect=344 450 58 83
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -308,7 +308,7 @@ NormalFileUV=0 0 58 83
 [CTRL_PICTURE_51]
 Type=1
 Tag=51
-Rect=344 607 58 83
+Rect=344 565 58 83
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -319,7 +319,7 @@ NormalFileUV=0 0 58 83
 [CTRL_PICTURE_52]
 Type=1
 Tag=52
-Rect=22 607 58 83
+Rect=22 565 58 83
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -330,7 +330,7 @@ NormalFileUV=0 0 58 83
 [CTRL_PICTURE_53]
 Type=1
 Tag=53
-Rect=22 726 58 83
+Rect=22 684 58 83
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -341,7 +341,7 @@ NormalFileUV=0 0 58 83
 [CTRL_PICTURE_54]
 Type=1
 Tag=54
-Rect=344 726 58 83
+Rect=344 684 58 83
 AnchorPos=0 0
 Notes=
 UIOpenType=0

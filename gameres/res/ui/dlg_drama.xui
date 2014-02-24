@@ -154,8 +154,6 @@ Tag=5
 Rect=29 481 271 51
 AnchorPos=0 0
 Notes=
-Text=说话者一二三四五六七
-TextTradition=說話者一二三四五六七
 TextSize=24
 TextColor=0xfffbf0
 TextHorAlign=AlignLeft
@@ -166,7 +164,7 @@ UIClsoeType=0
 [CTRL_BUTTON_38]
 Type=2
 Tag=38
-Rect=0 0 639 960
+Rect=0 0 638 960
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -178,7 +176,7 @@ UIClsoeType=0
 [CTRL_BUTTON_SKIP]
 Type=2
 Tag=10
-Rect=493 182 112 44
+Rect=5 417 111 44
 AnchorPos=0 0
 Notes=
 TextSize=16

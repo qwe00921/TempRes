@@ -100,9 +100,10 @@ function p:Drop(pTargetNode, param)
 		self.imageNode:AddFgEffect( effectName );
 	end
 	
-	local point = pTargetNode:GetFramePos();
-	local size = pTargetNode:GetFrameSize();
-	self.imageNode:SetFramePosXY(point.x+size.w/2, point.y+size.h-W_BATTLE_DROP_H);
+	--local point = pTargetNode:GetFramePos();
+	--local size = pTargetNode:GetFrameSize();
+	local pos = pTargetNode:GetSelfBottomPos()
+	self.imageNode:SetCenterPos(pos);
 	self.imageNode:SetScale( 1.0f );
 	self.imageNode:SetVisible( true );
 	--local zorder = self.imageNode:GetZOrder();
@@ -110,8 +111,8 @@ function p:Drop(pTargetNode, param)
 
 	local cmd = battle_show.AddActionEffect_ToParallelSequence( 0 , self.imageNode , "lancer_cmb.monster_drop" );
 	local varEnv = cmd:GetVarEnv();
-	varEnv:SetFloat( "$1", math.random(-30, 30) );
-	varEnv:SetFloat( "$2", math.random( -5, 5 ) );
+	varEnv:SetFloat( "$1", pos.x+math.random(-30, 30) );
+	varEnv:SetFloat( "$2", pos.y+math.random( -5, 5 ) );
 	varEnv:SetFloat( "$3", math.random( 30, 50) );
 	
 	return cmd;

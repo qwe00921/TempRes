@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_mail_list_item_sys = {};
 local p =  ui_mail_list_item_sys;
+p.ID_CTRL_CHECK_BUTTON_SEL			 = 301;
+p.ID_CTRL_BUTTON_18					      = 18;
 p.ID_CTRL_PICTURE_BG_4				    = 15;
 p.ID_CTRL_PICTURE_BG_3				    = 14;
 p.ID_CTRL_PICTURE_BG_2				    = 13;
@@ -19,6 +21,4 @@ p.ID_CTRL_9SLICES_11					     = 11;
 p.ID_CTRL_PICTURE_ITEM_3				  = 304;
 p.ID_CTRL_PICTURE_ITEM_2				  = 303;
 p.ID_CTRL_PICTURE_ITEM_1				  = 302;
-p.ID_CTRL_CHECK_BUTTON_SEL			 = 301;
-p.ID_CTRL_9SLICES_28					     = 28;
 p.ID_CTRL_PICTURE_BG					     = 76;

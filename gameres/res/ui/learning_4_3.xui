@@ -100,3 +100,12 @@ AnchorPos=0 0
 Notes=
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_TOUCH_1]
+Type=1
+Tag=16
+Rect=299 646 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0

@@ -6,7 +6,7 @@ Height=960
 [CTRL_PICTURE_51]
 Type=1
 Tag=69
-Rect=0 0 640 960
+Rect=0 0 639 960
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -18,102 +18,6 @@ NormalFileUV=0 0 640 960
 Type=2
 Tag=2
 Rect=453 773 172 77
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_FIELD]
-Type=2
-Tag=8
-Rect=182 737 143 77
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_TREE]
-Type=2
-Tag=9
-Rect=338 129 301 114
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_RIVER]
-Type=2
-Tag=10
-Rect=256 248 177 124
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_HOME]
-Type=2
-Tag=7
-Rect=9 426 261 164
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_PRODUCE]
-Type=2
-Tag=5
-Rect=487 446 133 140
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_MERGE]
-Type=2
-Tag=3
-Rect=460 310 134 126
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_EQUIP]
-Type=2
-Tag=4
-Rect=305 403 151 145
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_STORE]
-Type=2
-Tag=28
-Rect=11 596 156 165
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -170,7 +74,7 @@ UIClsoeType=0
 [CTRL_PIC_LIKE_TIEM_BG]
 Type=1
 Tag=54
-Rect=317 277 107 30
+Rect=317 293 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -197,7 +101,7 @@ UIClsoeType=0
 [CTRL_PIC_TREE_ITEM_BG]
 Type=1
 Tag=57
-Rect=447 167 107 30
+Rect=448 192 107 30
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -276,7 +180,7 @@ NormalFileUV=0 0 176 28
 [CTRL_EXP_LAKE]
 Type=9
 Tag=63
-Rect=316 277 107 30
+Rect=316 293 107 30
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -318,7 +222,7 @@ NormalFileUV=0 0 176 28
 [CTRL_EXP_TREE]
 Type=9
 Tag=60
-Rect=448 167 107 30
+Rect=450 191 107 30
 AnchorPos=0 0
 Notes=
 TextSize=10
@@ -397,7 +301,7 @@ UIClsoeType=0
 [CTRL_TEXT_LAKE_TIME]
 Type=4
 Tag=65
-Rect=316 277 107 30
+Rect=316 293 107 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -436,7 +340,7 @@ UIClsoeType=0
 [CTRL_TEXT_TREE_TIME]
 Type=4
 Tag=68
-Rect=448 167 107 30
+Rect=450 191 107 30
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -480,10 +384,106 @@ TextVerAlign=AlignTop
 UIOpenType=0
 UIClsoeType=0
 
+[CTRL_BUTTON_FIELD]
+Type=2
+Tag=8
+Rect=81 669 268 175
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_RIVER]
+Type=2
+Tag=10
+Rect=256 248 194 124
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_TREE]
+Type=2
+Tag=9
+Rect=333 142 301 147
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_HOME]
+Type=2
+Tag=7
+Rect=9 426 261 164
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_PRODUCE]
+Type=2
+Tag=5
+Rect=487 446 133 140
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_MERGE]
+Type=2
+Tag=3
+Rect=460 310 134 126
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_EQUIP]
+Type=2
+Tag=4
+Rect=305 403 151 145
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_STORE]
+Type=2
+Tag=28
+Rect=11 596 156 165
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_9]
 Type=1
 Tag=52
-Rect=446 199 107 32
+Rect=449 225 107 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -514,7 +514,7 @@ NormalFileUV=0 0 200 60
 [CTRL_PICTURE_6]
 Type=1
 Tag=46
-Rect=315 309 107 32
+Rect=315 325 107 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
