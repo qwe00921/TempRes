@@ -398,6 +398,23 @@ function p:JumpToPosition(batch,pTargetPos,bParallelSequence)
     return pCmd;
 end
 
+--获取战士下方坐标
+function p:GetSelfBottomPos()
+	local frontPos = self:GetPlayerNode():GetFramePos();
+ 	local bottomY = frontPos.y + self:GetPlayerNode():GetCurAnimRealSize().h;
+	halfWidthSum = self:GetPlayerNode():GetCurAnimRealSize().w / 2.0;
+
+	if self.camp == E_CARD_CAMP_HERO then
+		frontPos.x = frontPos.x - halfWidthSum;
+	else
+		frontPos.x = frontPos.x + halfWidthSum;
+	end
+	
+	frontPos.y = bottomY;
+	
+    return frontPos;
+end
+
 --获取战士前方坐标
 function p:GetFrontPos(targetNode)
 	local frontPos = self:GetPlayerNode():GetFramePos();
