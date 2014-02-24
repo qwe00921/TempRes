@@ -695,7 +695,8 @@ function p.HeroBuffTurnEnd()
 				w_battle_db_mgr.SetGuidItemList();
 			
 				rookie_mask.ShowUI(3,11)
-				return;
+			elseif 	(w_battle_guid.guidstep == 5) and (w_battle_db_mgr.step == 2) and (p.turnNum == 2) then
+				rookie_mask.ShowUI(3,21)
 			end;
 		end;
 		--我方使用物品阶断
@@ -961,7 +962,7 @@ function p.MissionLose()
 	
 	if (w_battle_guid.IsGuid == true ) and (w_battle_guid.guidstep == 5)then
 		w_battle_guid.IsGuid = false;	
-		rookie_main.ShowLearningStep(5, 24); 
+		rookie_mask.ShowUI(5, 23); 
 	end;	
 end;
 
