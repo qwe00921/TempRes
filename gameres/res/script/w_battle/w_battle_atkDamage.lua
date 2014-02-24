@@ -44,10 +44,18 @@ function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 
 	local latkDamage = atkFighter.damage;
 
+	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+		if w_battle_db_mgr.step == 1 or w_battle_db_mgr.step == 2 then
+			if w_battle_mgr.atkCampType == W_BATTLE_ENEMY then
+				latkDamage = latkDamage/2;
+			end;
+		end;
+	end 
+
 	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 5) then
 		if w_battle_db_mgr.step == 3 then
 			if w_battle_mgr.atkCampType == W_BATTLE_ENEMY then
-				latkDamage = latkDamage*10;
+				latkDamage = latkDamage*4;
 			else
 				latkDamage = latkDamage/5
 			end;

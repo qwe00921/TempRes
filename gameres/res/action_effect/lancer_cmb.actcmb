@@ -68,6 +68,15 @@ lancer.fly_num_fadeout
 lancer.role_fadeout
 
 ;ƮѪ
+[flynum_v1]
+@type=1
+lancer.fly_num_fadein
+lancer.fly_num_up_1
+lancer.fly_num_scale_common1
+lancer.fly_num_up_2
+lancer.fly_num_fadeout
+
+;ƮѪ
 [flynum_v2]
 @type=1
 lancer.fly_num_fadein

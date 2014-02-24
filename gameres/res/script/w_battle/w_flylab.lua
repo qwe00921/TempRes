@@ -80,7 +80,8 @@ function p:PlayLab( ltype )
     --²¥·Å¶¯»­
     self.imageNode:SetVisible( true );
     self.imageNode:SetOpacity( 0 );
-    self.imageNode:SetFramePosXY( self.offsetX, self.offsetY + UIOffsetY(60));
+	local lpos = CCPointMake(self.offsetX, self.offsetY);
+    self.imageNode:SetCenterPos(lpos);
     self:AddAction();
 end
 
@@ -88,6 +89,6 @@ end
 function p:AddAction()
     --self.imageNode:AddActionEffect( "lancer_cmb.flynum" );
     ----self.imageNode:AddActionEffect( "lancer.flynum" );
-    self.imageNode:AddActionEffect( "lancer_cmb.flynum_v2" );
+    self.imageNode:AddActionEffect( "lancer_cmb.flynum_v1" );
 end
 
