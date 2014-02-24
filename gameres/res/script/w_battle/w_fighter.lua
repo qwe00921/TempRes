@@ -121,7 +121,7 @@ function p:CreateFlyNumGreen()
 end
 
 --±©»÷/ºÏ»÷ÎÄ×Ö
-function p:CreateLab(fx)
+function p:CreateLab(fy)
 	local flyLab = w_flyLab:new();
     flyLab:SetOwnerNode( self.node );
     flyLab:Init();
@@ -134,10 +134,10 @@ function p:CreateLab(fx)
 	
 	local lwinWidth = GetWinSize().w;	
 	local lscale = GetUIScale();
-	local fx = (fx * (lwinWidth / fTemp) * lscale) * 3;
-	local fy = (40 * (lwinWidth / fTemp) * lscale) ;
+	local fy = (fy * (lwinWidth / fTemp) * lscale) * 3;
+	--local fy = (0 * (lwinWidth / fTemp) * lscale) ;
 	
-    flyLab:SetOffset(fx,fy);
+    flyLab:SetOffset(0,fy);
     self.node:AddChildZ( flyLab:GetNode(), 9999 );
 	return flyLab;
     --self.flynumGreen = flynum;
@@ -150,7 +150,7 @@ function p:ShowCrit()
 end;
 
 function p:ShowSpeak()
-	local lab = self:CreateLab(30)
+	local lab = self:CreateLab(-10)
 	lab:PlayLab(2);
 end;
 

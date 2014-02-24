@@ -58,8 +58,8 @@ end
 
 --设置位置偏移
 function p:SetOffset( x, y )
-	self.offsetX = UIOffsetX(x);
-	self.offsetY = UIOffsetY(y);
+	self.offsetX = x;
+	self.offsetY = y;
 end
 
 --飘个数值
@@ -80,7 +80,13 @@ function p:PlayLab( ltype )
     --播放动画
     self.imageNode:SetVisible( true );
     self.imageNode:SetOpacity( 0 );
-	local lpos = CCPointMake(self.offsetX, self.offsetY);
+	local lRect = self.imageNode:GetFrameSize();
+	
+	
+	local lpos = CCPointMake(self.offsetX, (lRect.h / 2) * -1 + self.offsetY );
+	
+	
+	
     self.imageNode:SetCenterPos(lpos);
     self:AddAction();
 end
