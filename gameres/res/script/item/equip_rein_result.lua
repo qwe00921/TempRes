@@ -29,7 +29,7 @@ function p.ShowUI(preItem, nowItem)
 	
 	layer:NoMask();
 	layer:Init();	
-	GetUIRoot():AddDlg(layer);
+	GetUIRoot():AddChild(layer);
     LoadDlg("dlg_equip_rein_result.xui", layer, nil);
 	
 	p.layer = layer;

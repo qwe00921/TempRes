@@ -91,6 +91,10 @@ function p.SendReqUserInfo()
 end
 
 function p.RefreshUI(userinfo)
+	if p.layer == nil then
+		return;
+	end
+	
 	p.userinfo = userinfo;
 
 	local username = GetLabel( p.layer, ui.ID_CTRL_TEXT_NAME);

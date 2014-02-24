@@ -47,16 +47,17 @@ function p.getRookieStep(backData)
 		p.subStepId = subStepId
 		p.userData = backData.user;
 		
+		if p.tempStep ~= 0 and p.tempSubTemp ~= 0 then
+			p.ShowLearningStep( p.tempStep, p.tempSubTemp );
+			p.tempStep = 0;
+			p.tempSubTemp = 0;
+			return;
+		end
+		
 		if stepId == 0 then
 			maininterface.ShowUI(backData.user);
 		else
-			if p.tempStep ~= 0 and p.tempSubTemp ~= 0 then
-				p.ShowLearningStep( p.tempStep, p.tempSubTemp );
-				p.tempStep = 0;
-				p.tempSubTemp = 0;
-			else
-				p.ShowLearningStep( p.stepId, p.subStepId );
-			end
+			p.ShowLearningStep( p.stepId, p.subStepId );
 		end
 	end
 end
@@ -375,6 +376,14 @@ function p.DoSomething( step, substep, index )
 			
 			p.SendUpdateStep( step, substep+1 );
 			return false;
+		elseif substep == 2 then
+			if country_main.countryInfoT["B3"] == nil then
+				return false;
+			end
+		elseif substep == 3 then
+			if country_main.rookie_flag == false then
+				return false;
+			end
 		end
 	elseif step == 11 then
 		if substep == 4 then
@@ -431,14 +440,40 @@ function p.DoSomething( step, substep, index )
 			if node then
 				equip_rein_list.OnUIClickEvent( node, 1, nil );
 			end
+			
+			p.tempStep = step;
+			p.tempSubTemp = substep+1;
+			
 			p.SendUpdateStep( step );
 			return false;
 		elseif substep == 9 then
+			if equip_rein_result.layer == nil then
+				return false;
+			end
+		
 			--引导结束，切回主页
+			equip_rein_result.CloseUI();
+			equip_rein_list.CloseUI();
+			equip_room.CloseUI();
+			
 			world_map.CheckToCloseMap();
-			p.SetNewUI( {} );
+			dlg_menu.SetNewUI( {} );
 			PlayMusic_MainUI();
 			maininterface.ShowUI();
+		elseif substep == 2 then
+			if country_main.countryInfoT["B2"] == nil then
+				return false;
+			end
+		elseif substep == 3 then
+			local node = equip_room.GetRookieNode();
+			if node == nil then
+				return false;
+			end
+		elseif substep == 6 then
+			local node = equip_rein_select.GetRookieNode();
+			if node == nil then
+				return false;
+			end
 		end
 	end
 	return true;
