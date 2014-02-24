@@ -70,6 +70,7 @@ function p.fighterGuid(substep)
 		--quest_reward.CloseUI();
 		--dlg_drama.ShowUI(2, after_drama_data.ROOKIE, 0, 0);
 	elseif p.substep == 15 then
+		p.IsGuid = false;
 		quest_reward.CloseUI();
 		dlg_drama.ShowUI(2, after_drama_data.ROOKIE, 0, 0);
 		--引导结束后任务战斗结束
@@ -151,6 +152,7 @@ function p.fighterSecondGuid(substep)
 		--rookie_mask.ShowUI(p.step,p.substep + 1)
 		--rookie_mask.ShowUI(p.guidstep, substep); 
 	elseif substep == 24 then		
+		p.IsGuid = false;
 		quest_reward.CloseUI();
 		rookie_main.SendUpdateStep(5);
 	end	

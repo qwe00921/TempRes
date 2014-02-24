@@ -429,13 +429,13 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	if (skillType == W_SKILL_TYPE_1)  then -- 主动伤害的
 		if (targetType == W_SKILL_TARGET_TYPE_1) then --单体
 			local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
-
+		--[[
 			if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
 				if atkCampType == W_BATTLE_ENEMY then
 					damage = 1;
 				end;
 			end  
-			
+			]]--
 			targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 			targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
 			local lnum = w_battle_atkDamage.getRandom(1,100);
@@ -456,11 +456,11 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 				targetFighter = v;
 				if targetFighter.Hp > 0 then
 					local damage,lIsJoinAtk = w_battle_atkDamage.SkillDamage(skillID,atkFighter, targetFighter);
-					if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
+				--[[	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
 						if atkCampType == W_BATTLE_ENEMY then
 							damage = 1;
 						end;
-					end  					
+					end  					]]--
 					targetFighter:SubLife(damage); --扣掉生命,但表现不要扣
 					targetFighter:BeTarTimesAdd(atkID); --成为目标,未攻击
 
