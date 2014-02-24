@@ -107,8 +107,7 @@ function p.OnBtnClick(uiNode, uiEventType, param)
 			maininterface.BecomeBackground();
 		elseif ui.ID_CTRL_BUTTON_PVP == tag then
 			WriteCon("**=======菜单=======**");
-			--dlg_btn_list.ShowUI();
-			rookie_main.ShowLearningStep(5,1)	
+			dlg_btn_list.ShowUI();
 			do return end;
 			
 		elseif ui.ID_CTRL_BUTTON_BAG == tag then
