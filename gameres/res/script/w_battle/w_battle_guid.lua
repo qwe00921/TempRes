@@ -48,7 +48,7 @@ function p.fighterGuid(substep)
 		--暴水晶
 		rookie_mask.ShowUI(p.guidstep, p.substep);
 	elseif p.substep == 10 then
-	   w_battle_mgr.FightWin(); 
+	   --w_battle_mgr.FightWin(); 
 	--[[	local lstateMachine = w_battle_machinemgr.getTarStateMachine(W_BATTLE_ENEMY,1); 		--让1号位的状态机继续死亡动画后的流程
 		if lstateMachine ~= nil then
 			lstateMachine:tar_dieEnd();
