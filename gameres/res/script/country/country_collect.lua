@@ -64,19 +64,20 @@ function p.AddToTable( sourceTable, addTable )
 	addTable.id = addTable.id or 0;
 	addTable.num = addTable.num or 0;
 	
-	if #sourceTable == 0 then
-		table.insert( sourceTable, addTable );
-	else
-		for i = 1, #sourceTable do
-			local t = sourceTable[i];
-			t.id = tonumber(t.id) or 0;
-			t.num = tonumber(t.num) or 0;
+	local flag = false;
+	for i = 1, #sourceTable do
+		local t = sourceTable[i];
+		t.id = tonumber(t.id) or 0;
+		t.num = tonumber(t.num) or 0;
 
-			if t.id == addTable.id then
-				t.num = t.num + addTable.num;
-				break;
-			end
+		if t.id == addTable.id then
+			t.num = t.num + addTable.num;
+			flag = true;
+			break;
 		end
+	end
+	if not flag then
+		table.insert( sourceTable, addTable );
 	end
 end
 
@@ -157,6 +158,7 @@ function p.RandomCollectItem( collectType )
 				--每次固定随机3次掉落
 				for i = 1, 3 do
 					local rand = math.random( 1, total );
+					WriteConErr( "rand:" .. rand );
 					local index = 0;
 					for j = 1, #dropprobability do
 						if rand <= dropprobability[j] then
@@ -169,12 +171,15 @@ function p.RandomCollectItem( collectType )
 						local drop_type = tonumber(temp[index].drop_type) or 0;
 						if drop_type ~= 0 then
 							if drop_type == DROP_TYPE_MATERIAL then
+								WriteConErr( "rand11111:" );
 								p.AddToTable( resultTable.Material, { id = tonumber(temp[index].material_id) or 0, num = 1 } );
 								table.insert( collectTable, { type = "material", id = tonumber(temp[index].material_id), num = tonumber(temp[index].drop_num) } );
 							elseif drop_type == DROP_TYPE_MONEY then
+								WriteConErr( "rand333333:" );
 								resultTable.Gold = resultTable.Gold + 1;
 								table.insert( collectTable, { type = "gold", id = 0 } );
 							elseif drop_type == DROP_TYPE_SOUL then
+								WriteConErr( "rand122222:" );
 								resultTable.Soul = resultTable.Soul + 1;
 								table.insert( collectTable, { type = "soul", id = 0 } );
 							end
