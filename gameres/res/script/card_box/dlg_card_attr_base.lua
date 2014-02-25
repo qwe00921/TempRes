@@ -236,6 +236,7 @@ function p.SetDelegate()
 	--]]
 	
 	local pLabSkillName = GetLabel(p.layer,ui.ID_CTRL_TEXT_SKILLNAME);
+	local lLabSkillNote = GetLabel(p.layer,ui.ID_CTRL_TEXT_81);
 	--local pLabSkillInfo = GetLabel(p.layer,ui.ID_CTRL_DOWER_INTRO);
 	--¼¼ÄÜ
 	if  tonumber(pCardInfo2.skill) ~= 0 and  pCardInfo2.skill ~= nil then
@@ -243,6 +244,8 @@ function p.SetDelegate()
 		local pCardSkill= SelectRowInner( T_SKILL, "id", pCardInfo2.skill);
 		if pCardSkill ~= nil then
 			pLabSkillName:SetText(pCardSkill.name); 
+			
+			lLabSkillNote:SetText(pCardSkill.description);
 			--pLabSkillInfo:SetText(pCardSkill.description); 
 		end
 

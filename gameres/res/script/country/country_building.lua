@@ -197,17 +197,17 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 			if tonumber(playLvNeed) == 0 then
 				playLvNeed = 1
 			end
-			p.upNeedLv:SetText("需要等级:"..playLvNeed);
+			p.upNeedLv:SetText("玩家等级:"..playLvNeed);
 			p.SetTextColour(p.upNeedLv,tonumber(p.nowPlayLv),tonumber(playLvNeed))
 			
 			p.upNeedMoney:SetText("金币:"..moneyNeed);
 			p.SetTextColour(p.upNeedMoney,tonumber(p.nowPlayMoney),tonumber(moneyNeed))
 			
-			p.upNeedSoul:SetText("蓝魂:"..soulNeed);
+			p.upNeedSoul:SetText("魂晶:"..soulNeed);
 			p.SetTextColour(p.upNeedSoul,tonumber(p.nowPlaySoul),tonumber(soulNeed))
 			
 			if tonumber(homeLvNeed) > 0 then
-				p.upNeedHome:SetText("建筑所:"..homeLvNeed);
+				p.upNeedHome:SetText("建筑所等级:"..homeLvNeed);
 				p.SetTextColour(p.upNeedHome,tonumber(p.nowProduceLevel),tonumber(homeLvNeed))
 			else
 				p.upNeedHome:SetText(" ");
@@ -284,7 +284,7 @@ function p.upBuild()
 		dlg_msgbox.ShowOK("提示","此建筑正在升级。",nil,p.layer);
 		return
 	end
-	local isHaveUPing = nil;
+	local isHaveUPing = 0;
 	for k,v in pairs(p.countryInfoT) do
 		local isupgrade = tonumber(v.is_upgrade)
 		if isupgrade == 1 then

@@ -123,7 +123,7 @@ function p.UseItemEvent(itemId,itemUniqueId,itemType)
 			local level = tonumber(msg_cache.msg_player.Level) or 0;
 			WriteCon( tostring( level_limit) .. "   ".. tostring(level) );
 			if level < level_limit then
-				dlg_msgbox.ShowOK( "提示", "你的等级不足，无法使用！" , nil, pack_box.layer );
+				dlg_msgbox.ShowOK( "提示", string.format( "你的等级未达到%d级，无法打开该礼包！", level_limit ) , nil, pack_box.layer );
 				return;
 			end
 		end

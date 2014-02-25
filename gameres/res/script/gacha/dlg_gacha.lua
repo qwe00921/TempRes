@@ -600,6 +600,7 @@ function p.ShowBagData( bagdata )
 		p.ReqBag();
 		return;
 	end
+	pack_box_mgr.itemList = bagdata.user_items;
 	
 	p.gachaImage:SetPicture( GetPictureByAni( "common_ui.shop_gacha", 0 ) );
 	p.itemImage:SetPicture( GetPictureByAni( "common_ui.shop_item", 0 ) );
