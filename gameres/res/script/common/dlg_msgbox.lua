@@ -63,7 +63,8 @@ function p.CreateDlg()
 		layer:NoMask()
 		layer:Init();
 		layer:SetSwallowTouch( true );
-		GetUIRoot():AddChildZ(layer,9999);
+		layer:SetZOrder( 999999 );
+		GetUIRoot():AddDlg(layer);
 		LoadDlg("dlg_msgbox.xui", layer, nil);
 
 		p.layer = layer;
