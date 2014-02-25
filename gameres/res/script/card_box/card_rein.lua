@@ -265,6 +265,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	cardSprite:UseConfig(tostring(lcardId));
 	cardSprite:SetLookAt(E_LOOKAT_LEFT);
 	cardSprite:Standby("");
+	WriteCon("FWEFWEFWEFWEFWEFWE");
 	cardSprite:SetEnableSwapDrag(true);
 	cardSprite:SetScaleX(GetUIScale());
 		

@@ -353,6 +353,8 @@ function p.SetTeamInfo( view, user_teamData )
 			pic:UseConfig( tostring(user_teamData["Pos_card"..i]) );
 			pic:SetLookAt(E_LOOKAT_LEFT);
 			pic:Standby("");
+			pic:SetTag(cardNum);
+			WriteCon(string.format("ISIS %d",cardNum * 1111));
 			pic:SetEnableSwapDrag(true);
 			pic:SetLuaDelegate(p.OnDragEvent);
 --			pic:SetScale(GetUIScale());
@@ -549,17 +551,26 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 		local cView = p.m_list:GetViewAt(n);
 		local toIndex = 0;
 		local toPlayer = nil;
-		for i =1, 6 do
+		for i = 1, 6 do
 			local player = GetPlayer ( cView, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );
 			local id = player:GetId();
 			local rect = player:GetScreenRect();
-			--WriteCon(string.format("Now Drag End id%d: %d,%d,%d,%d",id,i,rect.origin.x,rect.origin.y,rect.size.w,rect.size.h));
+			rect.origin.x = rect.origin.x - 25;
+			rect.origin.y = rect.origin.y - 25;
+			rect.size.w = rect.size.w + 50;
+			rect.size.h = rect.size.w + 50;
+			WriteCon(string.format("Now Drag End id%d: %d,%d,%d,%d",id,i,rect.origin.x,rect.origin.y,rect.size.w,rect.size.h));
 			if id ~= p.beginDragId
-				 and pPoint.x > rect.origin.x and pPoint.x < (rect.origin.x + rect.size.w) 
+				and pPoint.x > rect.origin.x and pPoint.x < (rect.origin.x + rect.size.w) 
 				and pPoint.y > rect.origin.y and pPoint.y < (rect.origin.y + rect.size.h) then
+				WriteCon("FFFF");
 				toIndex = i;
-				toPlayer = player;
+				if player ~= nil then
+					toPlayer = player; ---为nil;
+				end
 				break;
+			else
+				uiNode:ResumeToBeforeDragPosition();
 			end
 			
 		end
