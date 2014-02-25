@@ -201,7 +201,7 @@ function p.SetPVEAtkID(atkID,IsMonster,targetID)
 	
 	if lStateMachine.turnState ~= W_BATTLE_NOT_TURN then
 		WriteConWarning("Warning! StateMachine is in turn; atkID="..tostring(atkID));
-		return false;
+		return true;
 	end;
 
 	local atkFighter = nil;
@@ -314,7 +314,7 @@ function p.SetPVESkillAtkID(atkID, IsMonster,targetID)
 	
 	if lStateMachine.turnState ~= W_BATTLE_NOT_TURN then
 		WriteConWarning("Warning! StateMachine is in turn; atkID="..tostring(atkID));
-		return false;
+		return true;
 	end;
 	
 	local atkFighter = nil;
