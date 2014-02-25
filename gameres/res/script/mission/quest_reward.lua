@@ -178,15 +178,19 @@ function p.ShowQuestRewardView(rewardData)
 end
 
 function p.getRewardList(rewardData)
+	local getText = GetLabel(p.layer, ui.ID_CTRL_TEXT_ITEM);
 	if p.viewId == 0 then
+		getText:SetText("获得材料");
 		p.rewardListT = rewardData.rewarditems.item
 		p.checkList(p.rewardListT)
 	end
 	if p.viewId == 1 then
+		getText:SetText("获得装备");
 		p.rewardListT = rewardData.rewarditems.equip
 		p.checkList(p.rewardListT)
 	end
 	if p.viewId == 2 then
+		getText:SetText("获得卡牌");
 		p.rewardListT = rewardData.rewarditems.card
 		p.checkList(p.rewardListT)
 	end

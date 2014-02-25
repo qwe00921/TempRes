@@ -36,6 +36,22 @@ end
 
 
 function p.Init()
+	local cleanPic1 = GetImage(p.layer, ui.ID_CTRL_PICTURE_1);
+	local cleanPic2 = GetImage(p.layer, ui.ID_CTRL_PICTURE_2);
+	local cleanPic3 = GetImage(p.layer, ui.ID_CTRL_PICTURE_3);
+	local cleanPic4 = GetImage(p.layer, ui.ID_CTRL_PICTURE_4);
+	local cleanPic5 = GetImage(p.layer, ui.ID_CTRL_PICTURE_5);
+	local cleanPic6 = GetImage(p.layer, ui.ID_CTRL_PICTURE_6);
+	local cleanPic7 = GetImage(p.layer, ui.ID_CTRL_PICTURE_7);
+	uiNodeT.cleanPic = {}
+	uiNodeT.cleanPic[1] = cleanPic1;
+	uiNodeT.cleanPic[2] = cleanPic2;
+	uiNodeT.cleanPic[3] = cleanPic3;
+	uiNodeT.cleanPic[4] = cleanPic4;
+	uiNodeT.cleanPic[5] = cleanPic5;
+	uiNodeT.cleanPic[6] = cleanPic6;
+	uiNodeT.cleanPic[7] = cleanPic7;
+
 	local stageName1 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER1);
 	local stageName2 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER2);
 	local stageName3 = GetLabel(p.layer, ui.ID_CTRL_TEXT_CHAPTER3);
@@ -87,7 +103,7 @@ function p.addAllStage(callBackData)
 		dlg_msgbox.ShowOK("错误提示","玩家数据错误，请联系开发人员。",nil,p.layer);
 		return;
 	end
-
+	local lastStage = nil;
 	for i = 1, 9 do
 		if stageListInif["S20"..i] then
 			uiNodeT.stageNameBg[i]:SetPicture( GetPictureByAni("common_ui.countNameBox", 0));
@@ -96,15 +112,23 @@ function p.addAllStage(callBackData)
 			uiNodeT.stageName[i]:SetText(stageTable.stage_name);
 			uiNodeT.stageBtn[i]:SetId(stageId);
 			uiNodeT.stageBtn[i]:SetLuaDelegate(p.OnBtnClick);
+			
+			if i > 1 then
+				uiNodeT.cleanPic[i-1]:SetPicture( GetPictureByAni("common_ui.evaluate_2", 0));
+			end
+			lastStage = i
 		end
 	end
 	if stageListInif["S301"] then 
 		local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );
 		btnNext:SetLuaDelegate(p.OnBtnClick);
-		btnNext:SetText("下一个地图的名字");
 		btnNext:SetVisible(true);
 		local nextNamePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_NEXT );
 		nextNamePic:SetVisible(true);
+		
+		uiNodeT.cleanPic[lastStage]:SetPicture( GetPictureByAni("common_ui.evaluate_2", 0));
+	else
+		uiNodeT.cleanPic[lastStage]:SetPicture( GetPictureByAni("common_ui.evaluate_0", 0));
 	end
 end
 
@@ -125,7 +149,6 @@ function p.SetDelegate(layer)
 	
 	local btnUp = GetButton( p.layer, ui.ID_CTRL_BUTTON_UP );
 	btnUp:SetLuaDelegate(p.OnBtnClick);
-	--btnUp:SetText("上一个地图的名字");
 	local upNamePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_UP );
 		
 	local btnNext = GetButton( p.layer, ui.ID_CTRL_BUTTON_NEXT );

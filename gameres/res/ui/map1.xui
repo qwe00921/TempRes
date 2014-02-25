@@ -14,6 +14,78 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\quest\stage_01.png
 NormalFileUV=0 0 640 960
 
+[CTRL_BUTTON_CHAPTER1]
+Type=2
+Tag=8
+Rect=320 617 316 198
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER2]
+Type=2
+Tag=2
+Rect=2 507 276 311
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER3]
+Type=2
+Tag=3
+Rect=312 325 321 284
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER4]
+Type=2
+Tag=4
+Rect=5 299 281 199
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER5]
+Type=2
+Tag=5
+Rect=309 79 328 237
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_CHAPTER6]
+Type=2
+Tag=6
+Rect=2 79 290 214
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
 [CTRL_PICTURE_HEAD1]
 Type=1
 Tag=9
@@ -160,78 +232,6 @@ UIClsoeType=0
 NormalFile=.\res\image\ui\map\right1.png
 NormalFileUV=0 0 122 60
 
-[CTRL_BUTTON_CHAPTER1]
-Type=2
-Tag=8
-Rect=320 617 316 198
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER2]
-Type=2
-Tag=2
-Rect=2 507 276 311
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER3]
-Type=2
-Tag=3
-Rect=312 325 321 284
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER4]
-Type=2
-Tag=4
-Rect=5 299 281 199
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER5]
-Type=2
-Tag=5
-Rect=309 79 328 237
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_BUTTON_CHAPTER6]
-Type=2
-Tag=6
-Rect=2 79 290 214
-AnchorPos=0 0
-Notes=
-TextSize=10
-TextHorAlign=AlignHorCenter
-TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_NEXT]
 Type=1
 Tag=49
@@ -242,3 +242,57 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\map\chapter2.png
 NormalFileUV=0 0 122 60
+
+[CTRL_PICTURE_131]
+Type=1
+Tag=131
+Rect=413 712 85 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_132]
+Type=1
+Tag=132
+Rect=40 705 85 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_133]
+Type=1
+Tag=133
+Rect=400 503 85 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_134]
+Type=1
+Tag=134
+Rect=49 361 85 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_135]
+Type=1
+Tag=135
+Rect=412 220 85 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_136]
+Type=1
+Tag=136
+Rect=47 147 85 34
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
