@@ -50,7 +50,7 @@ function SendReq( cmd, action, uid, param )
 		KillTimer( resendTimer );
 		resendTimer = nil;
 	end
-	resendTimer = SetTimerOnce( OnReSendReq, 20.0f );
+	resendTimer = SetTimerOnce( OnClickReSend, 20.0f );
 end
 
 function SendPost(cmd, action, uid, param,data)
@@ -103,8 +103,9 @@ function PostBack()
 	if RequestCallBack ~= nil and RequestCallBack.Cmd ~= nil and RequestCallBack.Action ~= nil and RequestCallBack.Uid ~= nil and RequestCallBack.Param ~= nil then
 		SendReq(RequestCallBack.Cmd, RequestCallBack.Action, RequestCallBack.Uid, RequestCallBack.Param );
 	end
-end	
+end
 
+--[[
 function OnReSendReq()
 	resendTimer = nil;
 	--去除loading图
@@ -117,7 +118,32 @@ function OnReSendReq()
 
 	dlg_msgbox.ShowOK( "错误", "长时间未操作，与服务器断开连接，请重新连接。", OnClickReSend, GetUIRoot() );
 end
+--]]
 
 function OnClickReSend()
 	ResendRequest();
+	
+	if nil == pLayer then
+		local layer = createNDUILayer();
+		layer:Init();
+		layer:SetFrameRectFull();
+		layer:SetZOrder( 999999 );
+		pLayer = layer;
+	else
+		pLayer:RemoveFromParent( false );
+	end
+	
+	GetUIRoot():AddChild(pLayer);
+	
+	pLayer:SetSwallowTouch( true );
+	
+	SetTimerOnce( OnTimerCheckBusy, 0.1f );
+	http_busy = true;
+	
+	--注册重新发送请求定时器
+	if resendTimer ~= nil then
+		KillTimer( resendTimer );
+		resendTimer = nil;
+	end
+	resendTimer = SetTimerOnce( OnClickReSend, 20.0f );
 end
