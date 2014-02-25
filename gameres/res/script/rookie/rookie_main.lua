@@ -54,11 +54,6 @@ function p.getRookieStep(backData)
 			return;
 		end
 		
-		if p.rookieTest == false then
-			maininterface.ShowUI(backData.user);
-			return ;
-		end;
-		
 		if stepId == 0 then
 			maininterface.ShowUI(backData.user);
 		else
