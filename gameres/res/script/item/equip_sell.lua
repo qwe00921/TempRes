@@ -267,9 +267,9 @@ function p.OnItemClickEvent(uiNode, uiEventType, param)
 		]]--
 	equip_sell_statistics.setSellMoney(p.consumeMoney);
 	equip_sell_statistics.setSellCardNum(p.selectNum);
-	if  tonumber(p.selectNum) > 10 then 
+	if  tonumber(p.selectNum) >= 10 then 
 		p.setAllCardDisEnable();
-	elseif tonumber(p.selectNum) <= 10 then
+	elseif tonumber(p.selectNum) < 10 then
 		p.setCardDisEnable();
 	end
 end
