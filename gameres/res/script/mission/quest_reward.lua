@@ -132,6 +132,14 @@ function p.ShowQuestRewardView(rewardData)
 		end
 	end
 	p.rewardDataT = rewardData;
+	
+	local failText = GetLabel(p.layer, ui.ID_CTRL_TEXT_24);
+	if tonumber(rewardData.victory) == 0 then
+		failText:SetVisible(true)
+	else
+		failText:SetVisible(false)
+	end
+	
 	local missionId = tonumber(rewardData.mission_id);
 		WriteConErr("missionId =="..missionId);
 	--章节名
