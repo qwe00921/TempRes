@@ -13,6 +13,8 @@ local pLayer = nil;
 
 local resendTimer = nil;
 
+local resend = false;
+
 --发送Http请求
 function SendReq( cmd, action, uid, param )
 	if WaitForPostCallBack ~= nil then
@@ -51,6 +53,7 @@ function SendReq( cmd, action, uid, param )
 		resendTimer = nil;
 	end
 	resendTimer = SetTimerOnce( OnClickReSend, 20.0f );
+	resend = true;
 end
 
 function SendPost(cmd, action, uid, param,data)
@@ -77,6 +80,7 @@ function HttpOK()
 	http_busy = false;
 	rookie_mask.onCallFlag = false;
 	--DelHudEffect( busy_fx );
+	resend = false;
 	
 	--注销重新发送请求定时器
 	if resendTimer ~= nil then
@@ -121,6 +125,10 @@ end
 --]]
 
 function OnClickReSend()
+	if resend == false then
+		return;
+	end
+	
 	ResendRequest();
 	
 	if nil == pLayer then
@@ -146,4 +154,5 @@ function OnClickReSend()
 		resendTimer = nil;
 	end
 	resendTimer = SetTimerOnce( OnClickReSend, 20.0f );
+	resend = true;
 end
