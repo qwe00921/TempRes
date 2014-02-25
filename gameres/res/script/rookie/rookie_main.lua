@@ -21,7 +21,7 @@ local MAX_STEP = {
 		24,--5
 		15,--6
 		6,--7
-		2,--8
+		3,--8
 		9,--9
 		1,--10
 		7,--11
@@ -194,6 +194,8 @@ function p.ShowLearningStep( step, substep )
 			dlg_card_group_main.CloseUI();
 			dlg_drama.ShowUI( 8, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 2 then
+			rookie_mask.ShowUI( step, substep );
+		elseif substep == 3 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
 			
@@ -227,6 +229,9 @@ function p.ShowLearningStep( step, substep )
 				country_mix.CloseUI();
 				country_mixhouse.ShowUI();
 			elseif substep == 7 then
+				maininterface.ShowUI( p.userData );
+				maininterface.HideUI();
+				
 				country_mixhouse.CloseUI();
 				country_main.ShowUI();
 			elseif substep == 8 then
@@ -527,6 +532,12 @@ function p.DoSomething( step, substep, index )
 		elseif substep == 6 then
 			local node = equip_rein_select.GetRookieNode();
 			if node == nil then
+				return false;
+			end
+		end
+	elseif step == 8 then
+		if substep == 2 then
+			if quest_result.rewardAllData == nil and #quest_reward.rewardData == 0 then
 				return false;
 			end
 		end

@@ -38,7 +38,7 @@ function p:Process()
 		if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
 			rookie_mask.ShowUI(3, 14)
 		elseif (rookie_main.stepId == 8) then
-			quest_result.CloseUI();
+			--quest_result.CloseUI();
 			rookie_main.ShowLearningStep( 8, 2 );
 		end; 
 		--	dlg_userinfo.ShowUI();
