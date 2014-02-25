@@ -184,7 +184,8 @@ function p.InitControllers()
 		btn:SetLuaDelegate( p.OnTouchHightLight );
 		btn:SetId( index );
 		if p.step == 5 and p.substep == 20 then
-			btn:SetEnableDrag( true );
+			btn:SetEnableSwapDrag(true);
+			--btn:SetEnableDrag( true );
 		end
 		index = index + 1;
 	end

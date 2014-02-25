@@ -334,7 +334,7 @@ function p.GetCardTable( index )
 	local ctrller = GetButton( p.battleLayer, tag[BTN_INDEX] );
 	temp[BTN_INDEX] = ctrller;
 	ctrller:SetLuaDelegate( p.OnBtnClick );
-	ctrller:SetEnableDrag( true );
+	ctrller:SetEnableSwapDrag( true );
 	ctrller:SetId( index );
 	
 	p.rooknode[index] = ctrller;
