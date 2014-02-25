@@ -192,6 +192,7 @@ function p.ShowLearningStep( step, substep )
 		
 	elseif step == 8 then
 		if substep == 1 then
+			maininterface.ShowUI( p.userData );
 			maininterface.HideUI();
 			dlg_menu.HideUI();
 			

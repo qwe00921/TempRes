@@ -47,3 +47,12 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_TOUCH_1]
+Type=1
+Tag=20
+Rect=340 797 64 86
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
