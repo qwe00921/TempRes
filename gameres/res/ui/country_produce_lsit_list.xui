@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -68,7 +68,7 @@ UIClsoeType=0
 [CTRL_TEXT_14]
 Type=4
 Tag=14
-Rect=489 14 84 30
+Rect=477 14 84 30
 AnchorPos=0 0
 Notes=
 Text=持有数量
@@ -83,12 +83,12 @@ UIClsoeType=0
 [CTRL_TEXT_15]
 Type=4
 Tag=15
-Rect=577 14 37 30
+Rect=562 14 52 30
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
-TextSize=20
+Text=99999
+TextTradition=99999
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter

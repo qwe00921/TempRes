@@ -133,7 +133,7 @@ UIClsoeType=0
 [CTRL_TEXT_36]
 Type=4
 Tag=36
-Rect=454 254 107 39
+Rect=438 254 107 39
 AnchorPos=0 0
 Notes=
 Text=持有数量
@@ -148,14 +148,14 @@ UIClsoeType=0
 [CTRL_TEXT_37]
 Type=4
 Tag=37
-Rect=570 252 44 43
+Rect=548 252 66 43
 AnchorPos=0 0
 Notes=
-Text=99
-TextTradition=99
+Text=99999
+TextTradition=99999
 TextSize=20
 TextColor=0xffffff
-TextHorAlign=AlignHorCenter
+TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
