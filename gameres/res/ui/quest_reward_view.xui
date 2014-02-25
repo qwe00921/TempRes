@@ -299,3 +299,18 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\underline.png
 NormalFileUV=0 0 205 7
+
+[CTRL_TEXT_24]
+Type=4
+Tag=24
+Rect=157 370 348 29
+AnchorPos=0 0
+Notes=
+Text=任务失败,仅获得30%奖励
+TextTradition=任務失敗,僅獲得30%獎勵
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

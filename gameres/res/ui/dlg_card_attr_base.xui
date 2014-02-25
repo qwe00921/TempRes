@@ -250,7 +250,7 @@ NormalFileUV=0 0 640 177
 [CTRL_LUCK_INTRO]
 Type=4
 Tag=320
-Rect=38 912 166 30
+Rect=27 923 166 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -263,7 +263,7 @@ UIClsoeType=0
 [CTRL_TEXT_SKILLNAME]
 Type=4
 Tag=59
-Rect=191 811 399 30
+Rect=191 802 399 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -435,7 +435,7 @@ NormalFileUV=0 0 112 24
 [CTRL_PICTURE_47]
 Type=1
 Tag=48
-Rect=4 806 174 40
+Rect=4 798 174 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -446,7 +446,7 @@ NormalFileUV=0 0 174 40
 [CTRL_PICTURE_48]
 Type=1
 Tag=49
-Rect=4 863 174 40
+Rect=4 880 174 40
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -457,7 +457,7 @@ NormalFileUV=0 0 174 40
 [CTRL_TEXT_48]
 Type=4
 Tag=50
-Rect=237 912 166 30
+Rect=237 923 166 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -470,7 +470,7 @@ UIClsoeType=0
 [CTRL_TEXT_49]
 Type=4
 Tag=51
-Rect=436 912 166 30
+Rect=447 923 166 30
 AnchorPos=0 0
 Notes=
 TextSize=24
@@ -490,3 +490,16 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_attr_base\underline.png
 NormalFileUV=0 0 205 7
+
+[CTRL_TEXT_81]
+Type=4
+Tag=81
+Rect=27 841 587 30
+AnchorPos=0 0
+Notes=
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignLeft
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
