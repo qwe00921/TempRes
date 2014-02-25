@@ -194,6 +194,9 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		
 		if upIng == 0 then
 			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
+			if tonumber(playLvNeed) == 0 then
+				playLvNeed = 1
+			end
 			p.upNeedLv:SetText("需要等级:"..playLvNeed);
 			p.SetTextColour(p.upNeedLv,tonumber(p.nowPlayLv),tonumber(playLvNeed))
 			
