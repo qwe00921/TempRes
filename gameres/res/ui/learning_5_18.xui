@@ -17,7 +17,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_3]
 Type=1
 Tag=4
-Rect=0 693 639 200
+Rect=0 701 639 280
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -28,7 +28,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_4]
 Type=1
 Tag=5
-Rect=0 673 109 20
+Rect=0 673 109 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -39,7 +39,7 @@ NormalFileUV=0 0 1 1
 [CTRL_PICTURE_5]
 Type=1
 Tag=6
-Rect=309 673 330 20
+Rect=312 673 330 28
 AnchorPos=0 0
 Notes=
 UIOpenType=0
