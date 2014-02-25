@@ -162,5 +162,5 @@ W_PLATFORM_IOS       = 2
 --战斗所用到的像素
 W_BATTLE_JUMPSTAR = 250;     --人物进场动画偏移
 W_BATTLE_DAMAGE_OFFSETY = 60 --掉血数字的起始偏移
-W_BATTLE_DROP_H = 16;  --战斗中掉落物品的图片的宽高是一样的
+W_BATTLE_DROP_H = 16*GetUIScale();  --战斗中掉落物品的图片的宽高是一样的
 W_BATTLE_PASSBG_INIT = 740;  --过场动画的进度条的偏移值

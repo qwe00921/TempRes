@@ -203,7 +203,7 @@ function p.CollectAnimation( node, result )
 	local image = createNDUIImage();
 	image:Init();
 	image:SetFramePosXY(size.w/2, size.h/2);
-	image:SetFrameSize(24 , 24);
+	image:SetFrameSize(24*GetUIScale() , 24*GetUIScale());
 	image:SetVisible( false );
 
 	local picData = nil;
