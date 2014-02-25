@@ -13,6 +13,18 @@ p.cardDetail = nil;
 p.groupFlag = false;
 p.mainUIFlag = false;
 
+p.AtkEffect = 0;
+p.DefEffect = 0;
+p.SpeedEffect = 0;
+p.HpEffect = 0;
+
+--装备加成类型值
+EQUIP_ATTRIBTYPE_ATK = 1 
+EQUIP_ATTRIBTYPE_DEF = 2
+EQUIP_ATTRIBTYPE_LIFE = 3
+EQUIP_ATTRIBTYPE_SPEED = 4
+EQUIP_ATTRIBTYPE_CRIPT = 5
+
 --id是UniqueId
 function p.ShowUI(cardInfo, groupFlag, mainUIFlag)
 	dlg_menu.HideUI();
@@ -173,19 +185,20 @@ function p.SetDelegate()
 	
 	--卡牌HP
 	local pLabCardHP = GetLabel(p.layer,ui.ID_CTRL_CARD_HP);
-	pLabCardHP:SetText(tostring(p.cardInfo.Hp));
+	pLabCardHP:SetText(tostring(tonumber(p.cardInfo.Hp) + p.HpEffect) );
 	
+
 	--卡牌攻击
 	local pLabCardAttack = GetLabel(p.layer,ui.ID_CTRL_CARD_ATTACK);
-	pLabCardAttack:SetText(tostring(p.cardInfo.Attack));
+	pLabCardAttack:SetText(tostring(tonumber(p.cardInfo.Attack) + p.AtkEffect));
 	
 	--卡牌速度
 	local pLabCardSpeed = GetLabel(p.layer,ui.ID_CTRL_CARD_SPEED);
-	pLabCardSpeed:SetText(tostring(p.cardInfo.Speed));
+	pLabCardSpeed:SetText(tostring(tonumber(p.cardInfo.Speed) + p.SpeedEffect));
 	
 	--卡牌防御
 	local pLabCardDefense = GetLabel(p.layer,ui.ID_CTRL_CARD_DEFENSE);
-	pLabCardDefense:SetText(tostring(p.cardInfo.Defence));
+	pLabCardDefense:SetText(tostring(tonumber(p.cardInfo.Defence) + p.DefEffect));
 	
 	--卡牌Type type =1平衡型（各属性均衡成长）type =2耐力型（HP成长+10%，攻击成长-10%）type=3破坏型（攻击成长+10%，防御成长-10%）type=4守护型（防御成长+10%，攻击成长-10%）
 
@@ -481,6 +494,42 @@ function p.LoadCardDetail(cardUniqueId)
 	local param = string.format("&card_unique_id=%s",cardUniqueId)
 	SendReq("Equip","CardDetailShow",uid,param);		
 end
+
+function p.EquipAddEffect(ltype,lval)
+	if ltype == EQUIP_ATTRIBTYPE_ATK	then
+		p.AtkEffect = p.AtkEffect + lval
+	elseif ltype == EQUIP_ATTRIBTYPE_DEF then
+		p.DefEffect = p.DefEffect + lval
+	elseif ltype == EQUIP_ATTRIBTYPE_SPEED then
+		p.SpeedEffect = p.SpeedEffect + lval
+	elseif ltype == EQUIP_ATTRIBTYPE_LIFE then
+		p.HpEffect = p.HpEffect + lval;
+	end	
+end;
+
+--计算装备的加成
+function p.CalEquipEffect()
+	p.AtkEffect = 0;
+	p.DefEffect = 0;
+	p.SpeedEffect = 0;
+	p.HpEffect = 0;
+	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
+		for i=1,2 do
+			local ltype = p.equip1.itemInfo["attribute_type"..tostring(i)];
+			local lval  = p.equip1.itemInfo["attribute_value"..tostring(i)];
+			p.EquipAddEffect(ltype,lval);
+		end
+	end;
+	
+	if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
+		for i=1,2 do
+			local ltype = p.equip2.itemInfo["attribute_type"..tostring(i)];
+			local lval  = p.equip2.itemInfo["attribute_value"..tostring(i)];
+			p.EquipAddEffect(ltype,lval);
+		end		
+	end
+end;
+
 --网络返回卡详细信息
 function p.OnLoadCardDetail(msg)
 	if p.layer == nil then --or p.layer:IsVisible() ~= true then
@@ -496,6 +545,7 @@ function p.OnLoadCardDetail(msg)
 			p.equip1.itemInfo = msg.item1_info;
 			p.equip2.equipId = msg.card_info.Item_id2;
 			p.equip2.itemInfo = msg.item2_info;
+			p.CalEquipEffect(); --计算装备带来的属性加成
 			--p.equip3.equipId = msg.card_info.Item_id3;
 			--p.equip3.itemInfo = msg.item3_info;
 		end
