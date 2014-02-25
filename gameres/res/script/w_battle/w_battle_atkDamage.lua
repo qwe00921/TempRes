@@ -47,7 +47,7 @@ function p.SimpleDamage(atkFighter,tarFighter, IsMonster)
 	if (w_battle_guid.IsGuid == true) and (w_battle_guid.guidstep == 3) then
 		if w_battle_db_mgr.step == 1 or w_battle_db_mgr.step == 2 then
 			if w_battle_mgr.atkCampType == W_BATTLE_ENEMY then
-				latkDamage = latkDamage/2;
+				latkDamage = latkDamage/4;
 			end;
 		end;
 	end 
