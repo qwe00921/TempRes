@@ -506,7 +506,7 @@ function p.OnServerBack( data )
 	end
 	
 	local batch2 = battle_show.GetNewBatch();
-	local seq2 = batch1:AddSerialSequence();
+	local seq2 = batch2:AddSerialSequence();
 	local node2 = GetImage( p.layer, ui.ID_CTRL_PICTURE_125 );
 	local cmd2 = createCommandEffect():AddFgEffect( 1.5, node2, "lancer.card_intensify_effect_2" );
 	seq2:AddCommand( cmd2 );

@@ -306,14 +306,15 @@ function p.ShowLearningStep( step, substep )
 		end
 
 	elseif step == 13 then
-		local playLv = tonumber(msg_cache.msg_player.Level)
-		if playLv < 5 then
-			maininterface.ShowUI(p.userData);
-		else
-			maininterface.HideUI();
-			dlg_menu.HideUI();
-			dlg_drama.ShowUI( 16, after_drama_data.ROOKIE, 0, 0);
-		end
+		--local playLv = tonumber(msg_cache.msg_player.Level)
+		--if playLv < 5 then
+		--	maininterface.ShowUI(p.userData);
+		--else
+		maininterface.ShowUI(p.userData);
+		maininterface.HideUI();
+		dlg_menu.HideUI();
+		dlg_drama.ShowUI( 16, after_drama_data.ROOKIE, 0, 0);
+		--end
 	elseif step == 14 then
 		if substep == 1 then
 			maininterface.HideUI();
