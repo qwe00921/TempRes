@@ -857,39 +857,39 @@ end
 
 --按等级排序1
 function p.sortByLevel(a,b)
-	return tonumber(a.Level) > tonumber(b.Level) or ( tonumber(a.Level) == tonumber(b.Level) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.Level) > tonumber(b.Level);  -- or ( tonumber(a.Level) == tonumber(b.Level) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 --按等级排序2
 function p.sortByLevelb(a,b)
-	return tonumber(a.Level) < tonumber(b.Level) or ( tonumber(a.Level) == tonumber(b.Level) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.Level) < tonumber(b.Level);  -- or ( tonumber(a.Level) == tonumber(b.Level) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 --按星级排序1
 function p.sortByStar(a,b)
-	return tonumber(a.Rare) < tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.Rare) > tonumber(b.Rare); -- or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) > tonumber(b.CardID));
 end
 --按星级排序2
 function p.sortByStarb(a,b)
-	return tonumber(a.Rare) > tonumber(b.Rare) or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.Rare) < tonumber(b.Rare); -- or ( tonumber(a.Rare) == tonumber(b.Rare) and tonumber(a.CardID) < tonumber(b.CardID));
 end
---按时间排序
+--按属性排序
 function p.sortByTime(a,b)
-	return tonumber(a.element) < tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.element) > tonumber(b.element); -- or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
 end
---按时间排序2
+--按属性排序2
 function p.sortByTimeb(a,b)
-	return tonumber(a.element) > tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.element) < tonumber(b.element); -- or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 
 --按属性排序
 function p.sortByType(a,b)
 	--return tonumber(a.element) < tonumber(b.element);
-	return tonumber(a.element) > tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.element) > tonumber(b.element); -- or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 
 --按属性排序2
 function p.sortByTypeb(a,b)
 	--return tonumber(a.element) < tonumber(b.element);
-	return tonumber(a.element) < tonumber(b.element) or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
+	return tonumber(a.element) < tonumber(b.element); -- or ( tonumber(a.element) == tonumber(b.element) and tonumber(a.CardID) < tonumber(b.CardID));
 end
 
 function p.CloseUI()
