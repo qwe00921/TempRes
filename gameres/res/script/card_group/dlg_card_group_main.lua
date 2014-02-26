@@ -388,7 +388,7 @@ function p.SetTeamInfo( view, user_teamData )
 			pic:UseConfig( tostring(user_teamData["Pos_card"..i]) );
 			pic:SetLookAt(E_LOOKAT_LEFT);
 			pic:Standby("");
-			pic:SetTag(cardNum);
+			--pic:SetTag(cardNum);
 			WriteCon(string.format("ISIS %d",cardNum * 1111));
 			pic:SetEnableSwapDrag(true);
 			pic:SetLuaDelegate(p.OnDragEvent);
