@@ -41,7 +41,10 @@ end
 
 --处理消息
 function p:Process()
-	msg_cache.msg_player = self.user;
+	if self.result then
+		msg_cache.msg_player = self.user;
+	end
+	
 	WriteConWarning( "** msg_check_exist_role:Process() called" );
 	--msg_cache.msg_player = msg_cache.msg_player or {};
 

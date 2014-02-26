@@ -75,6 +75,7 @@ function p.fighterGuid(substep)
 	elseif p.substep == 15 then
 		p.IsGuid = false;
 		quest_reward.CloseUI();
+		dlg_userinfo.HideUI();
 		dlg_drama.ShowUI(2, after_drama_data.ROOKIE, 0, 0);
 		--引导结束后任务战斗结束
 		--w_battle_mgr.MissionWin();  --任务结束,任务奖励界面
@@ -111,6 +112,7 @@ function p.fighterSecondGuid(substep)
 		quest_main.FightMissionClick();
 		rookie_mask.ShowUI(p.guidstep, substep);
 	elseif substep == 7 then --剧情结束后发起战斗	
+		dlg_userinfo.HideUI();
 		dlg_drama.ShowUI( 5, after_drama_data.ROOKIE,0,0)
 	elseif substep == 8 then
 		--此时人物均已进场
