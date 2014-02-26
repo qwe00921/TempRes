@@ -209,7 +209,7 @@ SelectedFileUV=0 0 149 60
 [CTRL_PICTURE_52]
 Type=1
 Tag=52
-Rect=449 152 122 68
+Rect=640 149 122 68
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -218,7 +218,7 @@ UIClsoeType=0
 [CTRL_PICTURE_53]
 Type=1
 Tag=53
-Rect=449 152 122 68
+Rect=640 155 122 68
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -227,7 +227,7 @@ UIClsoeType=0
 [CTRL_PICTURE_54]
 Type=1
 Tag=54
-Rect=449 152 122 68
+Rect=640 169 122 68
 AnchorPos=0 0
 Notes=
 UIOpenType=0
