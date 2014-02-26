@@ -638,7 +638,7 @@ function p.RefreshPage4User(pageItems)
 	local listLenght = #pageItems;
 
 	for i = 1,listLenght do
-		local view = p.CreateItem4User(id);
+		local view = p.CreateItem4User(i);
 		p.SetItemInfo4User( view, pageItems[i]);
 		view:SetId(i);
 		list:AddView( view );
