@@ -229,13 +229,16 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 		end
 		upBtn:SetVisible(true);
 	else
-		p.upNeedTime:SetText("已到达最高等级");
+		p.upNeedTime:SetText(" ");
+		p.upNeedLv:SetText(" ");
 		p.upNeedMoney:SetText(" ");
 		p.upNeedSoul:SetText(" ");
-		p.upNeedHome:SetText(" ");
+		p.upNeedHome:SetText("已到达最高等级");
+		p.upNeedHome:SetFontColor(ccc4(255,255,255,255))
 		p.buildLevel:SetText("LV MAX");
 		upBtn:SetVisible(false);
 		p.upHead:SetText(" ");
+		desText = buildTable[#buildTable]["description"]
 		p.bulidDescription:SetText(desText);
 	end
 end
@@ -244,7 +247,7 @@ function p.SetTextColour(uiNode,haveNum,needNum)
 	if haveNum < needNum then
 		uiNode:SetFontColor(ccc4(255,0,0,255))
 	else
-		uiNode:SetFontColor(ccc4(0,0,0,255))
+		uiNode:SetFontColor(ccc4(255,255,255,255))
 	end
 end
 
