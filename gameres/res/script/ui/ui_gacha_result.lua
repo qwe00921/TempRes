@@ -4,6 +4,8 @@
 --------------------------------------------------------------
 ui_gacha_result = {};
 local p =  ui_gacha_result;
+p.ID_CTRL_TEXT_25						       = 25;
+p.ID_CTRL_PICTURE_24					     = 24;
 p.ID_CTRL_TEXT_60						       = 60;
 p.ID_CTRL_TEXT_58						       = 58;
 p.ID_CTRL_TEXT_57						       = 57;

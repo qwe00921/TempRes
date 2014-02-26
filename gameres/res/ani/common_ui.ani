@@ -156,6 +156,10 @@ image\ui\shop\senior.png
 image\ui\shop\oncemore.png
 image\ui\shop\fivemore.png
 
+[gacha_again_select]
+image\ui\shop\oncemore_select.png
+image\ui\shop\fivemore_select.png
+
 [shop_gacha]
 image\ui\shop\btn_gacha.png
 image\ui\shop\btn_gacha_select.png

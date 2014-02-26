@@ -109,6 +109,9 @@ function p.InitControlelr()
 	--hideLabel:SetVisible( false );
 	local hideLabel = GetLabel( p.layer, ui.ID_CTRL_TEXT_26 );
 	hideLabel:SetVisible( false );
+	
+	local hideImage = GetImage( p.layer, ui.ID_CTRL_PICTURE_95 );
+	hideImage:SetVisible( false );
 end
 
 function p.OnBtnClick( uiNode, uiEventType, param )

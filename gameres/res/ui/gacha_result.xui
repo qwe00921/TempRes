@@ -77,6 +77,8 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\quest\back.png
 NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_BUTTON_LEFT]
 Type=2
@@ -301,6 +303,32 @@ AnchorPos=0 0
 Notes=
 Text=技能
 TextTradition=技能
+TextSize=20
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_PICTURE_24]
+Type=1
+Tag=24
+Rect=472 178 93 30
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\card_attr_base\balance.png
+NormalFileUV=0 0 93 30
+
+[CTRL_TEXT_25]
+Type=4
+Tag=25
+Rect=410 179 50 28
+AnchorPos=0 0
+Notes=
+Text=类型
+TextTradition=類型
 TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignHorCenter

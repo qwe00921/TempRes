@@ -80,12 +80,11 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 			WriteCon( "返回" );
 			p.CloseUI();
 			dlg_menu.ShowUI();
-			dlg_gacha.ShowUI();
-			dlg_gacha.ReqGachaData();
-			
 			local user = msg_cache.msg_player;
 			dlg_userinfo.ShowUI( user );
 			
+			dlg_gacha.ShowUI( SHOP_GACHA, true );
+			--dlg_gacha.ReqGachaData();
 		elseif ui.ID_CTRL_BUTTON_RIGHT == tag then
 			p.cardIndex = p.cardIndex + 1;
 			p.ShowCardInfo();
@@ -98,11 +97,11 @@ end
 
 function p.GachaAgain()
 	p.CloseUI();
-	dlg_menu.ShowUI();
-	dlg_gacha.ShowUI();
-	local user = msg_cache.msg_player;
-	dlg_userinfo.ShowUI( user );
-	dlg_gacha.ReqGachaData();
+	--dlg_menu.ShowUI();
+	--dlg_gacha.ShowUI();
+	--local user = msg_cache.msg_player;
+	--dlg_userinfo.ShowUI( user );
+	--dlg_gacha.ReqGachaData();
 	
 	local charge_type = dlg_gacha.charge_type;
 	local gacha_id = dlg_gacha.gacha_id;
@@ -171,6 +170,10 @@ function p.ShowCardInfo()
 		
 		local descLab = GetLabel( p.layer, ui.ID_CTRL_TEXT_WORD );
 		descLab:SetText( string.format( "%s", tostring( SelectCell( T_CARD, cardId, "description" ) or "" ) ) );
+		
+		local typeImage = GetImage( p.layer, ui.ID_CTRL_PICTURE_24 );
+		local nType = tonumber(cardinfo.type) or 1;
+		typeImage:SetPicture( GetPictureByAni( "ui.card_equip_type", nType - 1 ) );
 	end
 	p.ShowOtherCardBtn();
 end
@@ -182,28 +185,28 @@ function p.ShowOtherCardBtn()
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
 		btn:SetVisible( false );
 		
-		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_52 );
-		image:SetVisible( false );
+		--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_52 );
+		--image:SetVisible( false );
 	else
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_LEFT );
 		btn:SetVisible( true );
 		
-		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_52 );
-		image:SetVisible( true );
+		--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_52 );
+		--image:SetVisible( true );
 	end
 	
 	if cardList[p.cardIndex+1] == nil then
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
 		btn:SetVisible( false );
 		
-		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_53 );
-		image:SetVisible( false );
+		--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_53 );
+		--image:SetVisible( false );
 	else
 		local btn = GetButton( p.layer, ui.ID_CTRL_BUTTON_RIGHT );
 		btn:SetVisible( true );
 		
-		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_53 );
-		image:SetVisible( true );
+		--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_53 );
+		--image:SetVisible( true );
 	end
 	
 	p.againBtn = p.againBtn or GetButton( p.layer, ui.ID_CTRL_BUTTON_MORE );
@@ -212,11 +215,12 @@ function p.ShowOtherCardBtn()
 		local gacha_id = dlg_gacha.gacha_id or 0;
 		local gacha_type = dlg_gacha.gacha_type or 1;
 		
-		local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_54 );
-		image:SetPicture( gacha_type == 1 and GetPictureByAni( "common_ui.gacha_again", 0 ) or GetPictureByAni( "common_ui.gacha_again", 1 ) );
-		
+		--local image = GetImage( p.layer, ui.ID_CTRL_PICTURE_54 );
+		--image:SetPicture( gacha_type == 1 and GetPictureByAni( "common_ui.gacha_again", 0 ) or GetPictureByAni( "common_ui.gacha_again", 1 ) );
+		p.againBtn:SetImage( gacha_type == 1 and GetPictureByAni( "common_ui.gacha_again", 0 ) or GetPictureByAni( "common_ui.gacha_again", 1 ) );
+		p.againBtn:SetTouchDownImage( gacha_type == 1 and GetPictureByAni( "common_ui.gacha_again_select", 0 ) or GetPictureByAni( "common_ui.gacha_again_select", 1 ) );
 		p.againBtn:SetVisible( false );
-		image:SetVisible( false );
+		--image:SetVisible( false );
 
 		if charge_type ~= 1 then
 			local cache = msg_cache.msg_player or {};
@@ -224,7 +228,7 @@ function p.ShowOtherCardBtn()
 			local needEmoney = tonumber( SelectCell( T_GACHA, gacha_id, gacha_type == 1 and "single_gacha_cost" or "complex_gacha_cost" ) ) or 0;
 			if emoney ~= 0 and emoney >= needEmoney then
 				p.againBtn:SetVisible( true );
-				image:SetVisible( true );
+				--image:SetVisible( true );
 			end
 		end
 	end
