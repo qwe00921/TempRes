@@ -46,7 +46,7 @@ function p.ShowUI(userinfo)
 	layer:NoMask();
 	layer:Init(layer);
 	layer:SetSwallowTouch(false);
-	layer:SetExlutionForSortDialog(true);
+	--layer:SetExlutionForSortDialog(true);
     
 	GetUIRoot():AddChildZ(layer, 10001);
 	LoadUI("main_userinfo.xui", layer, nil);
