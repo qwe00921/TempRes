@@ -386,6 +386,7 @@ function p.upgrade()
 	local userMoney = tonumber(msg_cache.msg_player.Money or 0);
 	if p.consumeMoney and p.consumeMoney > userMoney then
 		dlg_msgbox.ShowOK("",GetStr("card_equip_up_money_short"),p.OnMsgCallback);
+		return;
 	end
 	
 	local ids = "";
@@ -521,6 +522,11 @@ end
 
 
 function p.OnServerBack( data )
+	if not data.result then
+		--dlg_msgbox.ShowOK( "´íÎó", data.message, nil, p.layer );
+		return;
+	end
+	
 	p.result = data;
 	if p.maskLayer == nil then
 		local layer = createNDUILayer();

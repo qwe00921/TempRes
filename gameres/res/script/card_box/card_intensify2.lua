@@ -399,6 +399,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 	local levelImg = GetImage(view,cardLeveImg);
 	levelImg:SetVisible(true);
 	
+	--[[
 	-- «∑Ò—°÷–Õº∆¨
 	if p.baseCardInfo ~= nil then
 		if tonumber(card.UniqueId) == tonumber(p.baseCardInfo.UniqueID) then
@@ -406,6 +407,7 @@ function p.ShowCardInfo( view, card, cardIndex )
 			cardSelectText:SetVisible( true );
 		end;
 	end;
+	]]--
 	--local Team_marks = card.Team_marks;
 	--p.teamList[cardUniqueId] = Team_marks;
 	

@@ -226,11 +226,14 @@
 
 ;村落采集动画
 [country_collect_1]
-@jump(0.5,-30, 70, 60,2)
+@jump(0.2,$1, $2, $3, 1)
+@jump(0.08,$4, $5, $6, 1)
 [country_collect_2]
-@jump(0.5,30, 70, 60,2)
+@jump(0.2,$1, $2, $3, 1)
+@jump(0.08,$4, $5, $6, 1)
+
 [country_collect_3]
-@jump(0.5,30, 70, 60,2)
+@jump(0.5,30, -70, 60,2)
 [country_collect_4]
 @jump(0.5,-30, 70, 60,2)
 [country_collect_5]

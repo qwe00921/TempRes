@@ -357,7 +357,7 @@ function p.CloseUI()
 		p.baseCardInfo = nil;
 		p.cardListInfo = nil;
 		--p.userMoney = 0;
-		p.selectCardId = nil;
+		p.selectCardId = {};
 		p.consumeMoney = 0;
 		p.selectNum = 0;
 		p.nowExp = 0;

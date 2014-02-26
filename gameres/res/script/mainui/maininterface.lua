@@ -42,6 +42,8 @@ function p.ShowUI(userinfo)
 		end
 		
 		dlg_menu.ShowUI();
+		
+		dlg_userinfo.ShowUI(userinfo);
 		return;
 	end
 

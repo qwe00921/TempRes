@@ -116,6 +116,7 @@ function p.ShowLearningStep( step, substep )
 	elseif step == 6 then
 		if substep == 1 then
 			maininterface.HideUI();
+			dlg_userinfo.HideUI();
 			dlg_drama.ShowUI( 6,after_drama_data.ROOKIE,0,0)
 		elseif substep == 2 then
 			country_main.ShowUI();
@@ -190,6 +191,7 @@ function p.ShowLearningStep( step, substep )
 			maininterface.ShowUI( p.userData );
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			dlg_userinfo.HideUI();
 			
 			dlg_card_group_main.CloseUI();
 			dlg_drama.ShowUI( 8, after_drama_data.ROOKIE, 0, 0);
@@ -201,6 +203,7 @@ function p.ShowLearningStep( step, substep )
 			
 			quest_reward.CloseUI();
 			--quest_result.CloseUI();
+			dlg_userinfo.HideUI();
 			
 			dlg_drama.ShowUI( 9, after_drama_data.ROOKIE, 0, 0);
 		end
@@ -208,10 +211,12 @@ function p.ShowLearningStep( step, substep )
 		if substep == 1 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			dlg_userinfo.HideUI();
 			dlg_drama.ShowUI( 10, after_drama_data.ROOKIE, 0, 0);
 		elseif substep == 9 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			dlg_userinfo.HideUI();
 			dlg_drama.ShowUI( 11, after_drama_data.ROOKIE, 0, 0);
 		else
 			if substep == 2 then
@@ -313,12 +318,14 @@ function p.ShowLearningStep( step, substep )
 		maininterface.ShowUI(p.userData);
 		maininterface.HideUI();
 		dlg_menu.HideUI();
+		dlg_userinfo.HideUI();
 		dlg_drama.ShowUI( 16, after_drama_data.ROOKIE, 0, 0);
 		--end
 	elseif step == 14 then
 		if substep == 1 then
 			maininterface.HideUI();
 			dlg_menu.HideUI();
+			dlg_userinfo.HideUI();
 			dlg_drama.ShowUI( 17, after_drama_data.ROOKIE, 0, 0);
 			do return end;
 		elseif substep == 2 then

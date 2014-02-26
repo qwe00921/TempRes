@@ -495,14 +495,14 @@ function p.RefreshPage4Sys(pageItems)
 	local listLenght = #pageItems;
 
 	for i = 1,listLenght do
-		local view = p.CreateItem4Sys();
+		local view = p.CreateItem4Sys(i);
 		p.SetItemInfo4Sys( view, pageItems[i]);
 		view:SetId(i);
 		list:AddView( view );
 	end
 end
 
-function p.CreateItem4Sys()
+function p.CreateItem4Sys(id)
 	local view = createNDUIXView();
 	view:Init();
 	LoadUI( "mail_list_item_sys.xui", view, nil );
@@ -511,6 +511,10 @@ function p.CreateItem4Sys()
 	
 	local kCheckBox = GetButton(view,ui_item_sys.ID_CTRL_CHECK_BUTTON_SEL);
 	kCheckBox:SetLuaDelegate(p.OnCheckEvent);
+	
+	local lMailBtn = GetButton(view,ui_item_sys.ID_CTRL_BUTTON_18);
+	lMailBtn:SetId(id)
+	lMailBtn:SetLuaDelegate(p.OnItemClick);
 	
 	return view;
 end
@@ -634,20 +638,25 @@ function p.RefreshPage4User(pageItems)
 	local listLenght = #pageItems;
 
 	for i = 1,listLenght do
-		local view = p.CreateItem4User();
+		local view = p.CreateItem4User(i);
 		p.SetItemInfo4User( view, pageItems[i]);
 		view:SetId(i);
 		list:AddView( view );
 	end
 end
 
-function p.CreateItem4User()
+function p.CreateItem4User(id)
 	local view = createNDUIXView();
 	view:Init();
 	LoadUI( "mail_list_item_user.xui", view, nil );
 	view:SetViewSize( GetUiNode( view, ui_item_usr.ID_CTRL_PICTURE_BG ):GetFrameSize());
 	local kCheckBox = GetButton(view,ui_item_usr.ID_CTRL_CHECK_BUTTON_SEL);
 	kCheckBox:SetLuaDelegate(p.OnCheckEvent);
+	
+	local lMailBtn = GetButton(view,ui_item_usr.ID_CTRL_BUTTON_29);
+	lMailBtn:SetId(id)
+	lMailBtn:SetLuaDelegate(p.OnItemClick);
+	
 	return view;
 end
 

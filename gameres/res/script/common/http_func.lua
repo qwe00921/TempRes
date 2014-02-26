@@ -46,7 +46,7 @@ function SendReq( cmd, action, uid, param )
 	http_busy = true;
 	
 	rookie_mask.onCallFlag = true;
-	
+	--[[
 	--注册重新发送请求定时器
 	if resendTimer ~= nil then
 		KillTimer( resendTimer );
@@ -54,6 +54,7 @@ function SendReq( cmd, action, uid, param )
 	end
 	resendTimer = SetTimerOnce( OnClickReSend, 20.0f );
 	resend = true;
+	--]]
 end
 
 function SendPost(cmd, action, uid, param,data)

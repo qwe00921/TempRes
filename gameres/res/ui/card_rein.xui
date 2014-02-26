@@ -311,6 +311,8 @@ UIOpenType=2
 UIClsoeType=2
 NormalFile=.\res\image\ui\quest\back.png
 NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_BUTTON_START]
 Type=2
