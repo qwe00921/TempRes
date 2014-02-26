@@ -58,7 +58,7 @@ function p.ShowUI(baseCardInfo)
 	
 	--加载卡牌列表数据  发请求
     p.OnSendReq();
-	--p.ShowCardListShowCardList( cardList )
+	--p.ShowCardList( cardList )
 end
 
 --可强化卡牌List请求
@@ -201,7 +201,7 @@ function p.ShowCardList(cardList,msg)
 	if #cardList <= 0 then
 		return;
 	end
-	
+	p.cardListInfo = cardList;
 
 	--local cardCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_30);
 	--cardCount:SetText(tostring(p.selectNum).."/10"); 	
@@ -220,18 +220,17 @@ function p.ShowCardList(cardList,msg)
 	--moneyLab:SetText(tostring(msg.money));
 	--p.userMoney = msg.money;
 
-	
+	--[[
 	--列表删除要强化的那条卡牌数据 
-	p.cardListInfo = cardList;
-	for i = 1 , #cardList do
-		if cardList[i].UniqueId ~= p.baseCardInfo.UniqueId then
-			p.cardListInfo[i] = cardList[i];
+	for i = 1 , #p.cardListInfo do
+		if p.cardListInfo[i].UniqueId == p.baseCardInfo.UniqueId then
+			table.remove(p.cardListInfo,i);
+			break;
 		end
 	end	
-
+]]--
 	p.cardListByProf = p.cardListInfo;
-	table.sort(p.cardListByProf,p.sortByTime);
-	p.ShowCardView(p.cardListByProf);
+	p.ShowCardView(p.cardListInfo);
 	
 	
 end
@@ -592,7 +591,7 @@ function p.sortByStar(a,b)
 end
 --按时间排序
 function p.sortByTime(a,b)
-	return tonumber(a.Time) > tonumber(b.Time);
+	return tonumber(a.Time) < tonumber(b.Time);
 end
 
 --按属性排序
