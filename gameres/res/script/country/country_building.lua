@@ -126,14 +126,14 @@ function p.OnTouchList(uiNode,uiEventType,param)
 end
 
 function p.Init()
-	p.upHead = GetLabel(p.layer, ui.ID_CTRL_TEXT_42);
-	p.upNeedLv = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP5);
 	p.upNeedTime = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP1);
+	p.bulidDescription = GetLabel(p.layer,ui.ID_CTRL_TEXT_DESCRIPTION);
+	p.upHead = GetLabel(p.layer, ui.ID_CTRL_TEXT_42);
+	p.upNeedHome = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP3);
+	p.upNeedLv = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP5);
 	p.upNeedMoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP2);
 	p.upNeedSoul = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP4);
-	p.upNeedHome = GetLabel(p.layer, ui.ID_CTRL_TEXT_UP3);
 	p.buildLevel = GetLabel(p.layer, ui.ID_CTRL_TEXT_BUILD_LV);
-	p.bulidDescription = GetLabel(p.layer,ui.ID_CTRL_TEXT_DESCRIPTION);
 	
 	local typeId = p.getNowType()
 	p.getBuildInfo(typeId)
@@ -218,28 +218,27 @@ function p.getBuildNeedTable(typeId,nowLevel,upIng)
 			p.upHead:SetText("距离升级还需");
 		elseif upIng == 1 then
 			p.upNeedTime:SetText("建造需要时间:"..timeNeed.."分钟");
+			p.bulidDescription:SetText(desText);
+			p.upHead:SetText("升级中");
 			p.upNeedLv:SetText("");
 			p.upNeedMoney:SetText(" ");
 			p.upNeedSoul:SetText(" ");
 			p.upNeedHome:SetText(" ");
-			p.upHead:SetText("升级中");
-			
 			p.buildLevel:SetText("LV"..nowLevel);
-			p.bulidDescription:SetText(desText);
 		end
 		upBtn:SetVisible(true);
 	else
-		p.upNeedTime:SetText(" ");
+		p.upNeedTime:SetText("已到达最高等级");
+		desText = buildTable[#buildTable]["description"]
+		p.bulidDescription:SetText(desText);
+		p.upHead:SetText("已到达最高等级");
 		p.upNeedLv:SetText(" ");
 		p.upNeedMoney:SetText(" ");
 		p.upNeedSoul:SetText(" ");
-		p.upNeedHome:SetText("已到达最高等级");
-		p.upNeedHome:SetFontColor(ccc4(255,255,255,255))
+		p.upNeedHome:SetText(" ");
 		p.buildLevel:SetText("LV MAX");
 		upBtn:SetVisible(false);
-		p.upHead:SetText(" ");
-		desText = buildTable[#buildTable]["description"]
-		p.bulidDescription:SetText(desText);
+
 	end
 end
 

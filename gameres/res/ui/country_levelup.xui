@@ -125,7 +125,7 @@ UIClsoeType=0
 [CTRL_TEXT_UP5]
 Type=4
 Tag=21
-Rect=327 370 143 25
+Rect=327 369 143 25
 AnchorPos=0 0
 Notes=
 TextSize=18
@@ -183,7 +183,7 @@ UIClsoeType=0
 [CTRL_TEXT_42]
 Type=4
 Tag=43
-Rect=259 341 123 27
+Rect=240 340 163 27
 AnchorPos=0 0
 Notes=
 Text=距离升级还需
