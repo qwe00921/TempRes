@@ -12,7 +12,7 @@
 @jump(0.4, $1, $2, $3, 1) @sinin
 
 [begin_battle_jump]
-@jump(0.2, $1, $2, $3, 1) @sinin
+@jump(1.2, $1, $2, $3, 1) @sinin
 
 [begin_battle_move]
 @move(0.4, $1, $2)

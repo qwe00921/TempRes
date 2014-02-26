@@ -39,21 +39,18 @@ end
 function p:MoveToEx(targetVector)
 end
 
-function p:Init(strFx,kParentNode)
+function p:Init(strFx)
 	local pic = GetPictureByAni(strFx, 0 );
-	local pNode = createNDUIImage();
-	pNode:Init();
-	pNode:SetPicture(pic);
 	--pNode:ResizeToFitPicture();
-	m_kTargetRoleNode = kParentNode;
+	--m_kTargetRoleNode = kParentNode;
 	
-	local kParentPos = kParentNode:GetFramePos();
-	local kParentSize = kParentNode:GetFrameSize();
-	local kShadowPicSize = pic:GetSize();
+	--local kParentPos = kParentNode:GetFramePos();
+	--local kParentSize = kParentNode:GetFrameSize();
+	--local kShadowPicSize = pic:GetSize();
 
-	pNode:SetIsShadow(true);
+	--pNode:SetIsShadow(true);
 	
-	self.m_kNode = pNode;
+	--self.m_kNode = pNode;
 	self.m_kLocalPicture = pic;
 	
 	return pNode;

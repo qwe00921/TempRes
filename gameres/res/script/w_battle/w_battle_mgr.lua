@@ -1532,9 +1532,9 @@ function p.setFighterDie(targerFighter,camp)
 	
 	
 	if targerFighter.m_kShadow ~= nil then
-		local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter.m_kShadow, "lancer_cmb.die" );
+		local cmdf = createCommandEffect():AddActionEffect( 0.01, targerFighter:GetNode():GetShadowImage(), "lancer_cmb.die" );
 		seqTarget:AddCommand( cmdf );
-	end;
+	end
 	
 	local cmdC = createCommandEffect():AddActionEffect( 1, targerFighter:GetNode(), "lancer_cmb.die" );
 	seqTarget:AddCommand( cmdC );	

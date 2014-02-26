@@ -449,8 +449,8 @@ function p:AddShadows(uiArray, fighters)
 		
 		node:SetCenterPos(pOldPos);
 		]]--
-		local kShadowNode = kShadow:Init("w_battle_res.shadow",node);
-		self.fighters[nIndex]:SetShadow(kShadow.m_kNode);
+		local kShadowNode = kShadow:Init("w_battle_res.shadow");
+		self.fighters[nIndex]:SetShadow(kShadow.m_kLocalPicture);
 		--w_battle_mgr.uiLayer:AddChildZ(kShadowNode,0);
 		--self:SetFighterConfig( kShadow, i );
 		--kShadow:standby();

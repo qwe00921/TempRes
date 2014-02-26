@@ -8,7 +8,7 @@ p.userData = nil;
 p.stepId = nil;
 p.subStepId = nil;
 --是否开启新手测试 true 开启
-p.rookieTest = true;
+p.rookieTest = false;
 
 p.tempStep = 0;
 p.tempSubTemp = 0;
