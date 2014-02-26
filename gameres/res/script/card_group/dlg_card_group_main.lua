@@ -7,6 +7,7 @@ p.source = nil;
 p.user_teams = nil;
 p.cardlist = nil;
 p.petlist = nil;
+p.equip_dress = nil;
 
 p.card_team = nil;
 
@@ -176,10 +177,13 @@ function p.SetData( dataSource )
 		p.user_teams = dataSource.user_teams;
 		p.nowTeam = dataSource.nowteam;
 		p.serverTeam = dataSource.nowteam;
+		p.equip_dress = dataSource.equip_dress;
+		
 	else
 		p.user_teams = p.source.user_teams;
 		p.nowTeam = p.source.nowteam;
 		p.serverTeam = p.source.nowteam;
+		p.equip_dress = p.source.equip_dress;
 	end
 	
 	
@@ -275,6 +279,32 @@ function p.ShowTeamList()
 	p.showBtn(teamid + 1);
 end
 
+function p.getEquipInfo(id)
+	local lEquipInfo = nil;
+	if (p.equip_dress ~= nil) and (id ~=nil) then
+		for k,v in ipairs(p.equip_dress) do
+			if v.id == tonumber(id) then
+				lEquipInfo = v;
+			end
+		end
+	end
+	return lEquipInfo;
+end;
+
+--计算某个卡牌的所有加成
+function p.CalEquipCardAttribute(pCardInfo,pAttribute)
+	
+	if pCardInfo.Item_id1 ~= nil and pCardInfo.Item_id1 ~= 0 then
+		local lItemInfo = p.getEquipInfo(pCardInfo.Item_id1)
+		dlg_card_attr_base.EquipAddEffect(pAttribute, lItemInfo);
+	end;
+	
+	if pCardInfo.Item_id2 ~= nil and pCardInfo.Item_id2 ~= 0 then
+		local lItemInfo = p.getEquipInfo(pCardInfo.Item_id2)
+		dlg_card_attr_base.EquipAddEffect(pAttribute, lItemInfo);
+	end
+end;
+
 --显示单个节点
 function p.SetTeamInfo( view, user_teamData )
 	--local ui_card_group_node = ui_card_group_node2; 
@@ -324,11 +354,16 @@ function p.SetTeamInfo( view, user_teamData )
 			
 			local data = p.cardlist[tonumber(user_teamData["Pos_unique"..i])];
 			if data then
+				local lattribute = {AtkEffect = 0,
+								   DefEffect = 0,
+								   SpeedEffect = 0,
+								   HpEffect = 0,}
+				p.CalEquipCardAttribute(data,lattribute);
 				levLabel:SetText( string.format("%s", tostring(data.Level)) );
-				hpLabel:SetText( string.format("%s", tostring(data.Hp)) );
-				speedLabel:SetText( string.format(GetStr("card_group_prp_speed"), tostring(data.Speed)) );
-				atkLabel:SetText( string.format(GetStr("card_group_prp_atk"), tostring(data.Attack)) );
-				defLabel:SetText( string.format(GetStr("card_group_prp_def"), tostring(data.Defence)) );
+				hpLabel:SetText( string.format("%s", tostring(data.Hp + lattribute.HpEffect)) );
+				speedLabel:SetText( string.format(GetStr("card_group_prp_speed"), tostring(data.Speed + lattribute.SpeedEffect)) );
+				atkLabel:SetText( string.format(GetStr("card_group_prp_atk"), tostring(data.Attack + lattribute.AtkEffect)) );
+				defLabel:SetText( string.format(GetStr("card_group_prp_def"), tostring(data.Defence + lattribute.DefEffect)) );
 				if tonumber(data.element) == 1 then
 					pPicCardNature:SetPicture(GetPictureByAni("ui.card_nature",0));
 				elseif tonumber(data.element) == 2 then
