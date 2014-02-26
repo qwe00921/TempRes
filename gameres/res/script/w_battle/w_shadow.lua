@@ -44,7 +44,7 @@ function p:Init(strFx,kParentNode)
 	local pNode = createNDUIImage();
 	pNode:Init();
 	pNode:SetPicture(pic);
-	
+	--pNode:ResizeToFitPicture();
 	m_kTargetRoleNode = kParentNode;
 	
 	local kParentPos = kParentNode:GetFramePos();
