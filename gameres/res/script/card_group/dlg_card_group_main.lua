@@ -589,11 +589,17 @@ function p.OnDragEvent(uiNode, uiEventType, param)
 		for i = 1, 6 do
 			local player = GetPlayer ( cView, ui_card_group_node["ID_CTRL_SPRITE_CHA" .. i] );
 			local id = player:GetId();
-			local rect = player:GetScreenRect();
+			local lNode =  GetButton(cView, ui_card_group_node["ID_CTRL_BUTTON_CHA".. i]);
+			local rect = lNode:GetScreenRect();
+			rect.origin.x = rect.origin.x;
+			rect.origin.y = rect.origin.y;
+			rect.size.w = rect.size.w;
+			rect.size.h = rect.size.w;
+			--[[local rect = player:GetScreenRect();
 			rect.origin.x = rect.origin.x - 25;
 			rect.origin.y = rect.origin.y - 25;
 			rect.size.w = rect.size.w + 50;
-			rect.size.h = rect.size.w + 50;
+			rect.size.h = rect.size.w + 50;]]--
 			WriteCon(string.format("Now Drag End id%d: %d,%d,%d,%d",id,i,rect.origin.x,rect.origin.y,rect.size.w,rect.size.h));
 			if id ~= p.beginDragId
 				and pPoint.x > rect.origin.x and pPoint.x < (rect.origin.x + rect.size.w) 
