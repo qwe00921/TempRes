@@ -22,6 +22,17 @@ local DROP_TYPE_MATERIAL = 1;	--材料
 local DROP_TYPE_MONEY = 4;	--金币
 local DROP_TYPE_SOUL = 5;	--蓝魂
 
+local tJumpPos = {
+	{ -30, 70, 60 },
+	{ 30, 70, 60 },
+	{ 30, -70, 60 },
+	{ -30, -70, 60 },
+	{ -50, 50, 100 },
+	{ 50, 100, 100 },
+	{ 50, 50, 100 },
+	{ -50, 100, 100 },
+};	
+
 --==================================================================--
 --取table长度，包含哈希部分以及数组部分
 function TableLength( tTable)
@@ -154,6 +165,7 @@ function p.RandomCollectItem( collectType )
 			end
 			
 			if total ~= 0 then
+				local effectIndex = {1,2,3,4,5,6,7,8};
 				resultTable.times = resultTable.times + 1;
 				--每次固定随机3次掉落
 				for i = 1, 3 do
@@ -170,19 +182,21 @@ function p.RandomCollectItem( collectType )
 					if index ~= 0 then
 						local drop_type = tonumber(temp[index].drop_type) or 0;
 						if drop_type ~= 0 then
+							local indexEffect = math.random( 1, #effectIndex );
 							if drop_type == DROP_TYPE_MATERIAL then
 								WriteConErr( "rand11111:" );
 								p.AddToTable( resultTable.Material, { id = tonumber(temp[index].material_id) or 0, num = 1 } );
-								table.insert( collectTable, { type = "material", id = tonumber(temp[index].material_id), num = tonumber(temp[index].drop_num) } );
+								table.insert( collectTable, { type = "material", id = tonumber(temp[index].material_id), num = tonumber(temp[index].drop_num), effect = effectIndex[indexEffect] } );
 							elseif drop_type == DROP_TYPE_MONEY then
 								WriteConErr( "rand333333:" );
 								resultTable.Gold = resultTable.Gold + 1;
-								table.insert( collectTable, { type = "gold", id = 0 } );
+								table.insert( collectTable, { type = "gold", id = 0, effect = effectIndex[indexEffect] } );
 							elseif drop_type == DROP_TYPE_SOUL then
 								WriteConErr( "rand122222:" );
 								resultTable.Soul = resultTable.Soul + 1;
-								table.insert( collectTable, { type = "soul", id = 0 } );
+								table.insert( collectTable, { type = "soul", id = 0, effect = effectIndex[indexEffect] } );
 							end
+							table.remove( effectIndex, indexEffect );
 						end
 					end
 				end
@@ -194,7 +208,7 @@ function p.RandomCollectItem( collectType )
 end
 
 --根据随机的物品，播放采集物品动画
-function p.CollectAnimation( node, result )
+function p.CollectAnimation( node, result, batch )
 	if node == nil or result == nil then
 		return;
 	end
@@ -202,7 +216,7 @@ function p.CollectAnimation( node, result )
 	
 	local image = createNDUIImage();
 	image:Init();
-	image:SetFramePosXY(size.w/2, size.h/2);
+	image:SetCenterPos( CCPointMake( size.w/2, size.h/2 ) );
 	image:SetFrameSize(24*GetUIScale() , 24*GetUIScale());
 	image:SetVisible( false );
 
@@ -213,17 +227,35 @@ function p.CollectAnimation( node, result )
 		picData = GetItemPic( result.id, G_ITEMTYPE_MATERIAL );
 	elseif result.type == "gold" then
 		picData = GetPictureByAni( "w_drop.money", 0 );
+		--picData = GetItemPic( 0, G_ITEMTYPE_MONEY );
 	elseif result.type == "soul" then
 		picData = GetPictureByAni( "w_drop.bluesoul", 0 );
+		--picData = GetItemPic( 0, G_ITEMTYPE_SOUL );
 	end
 	if picData ~= nil then
 		image:SetPicture( picData );
 	end
 	
 	node:AddChild( image );
-	local effectName = "lancer_cmb.country_collect_" .. math.random( 1, 8 );
-	image:AddActionEffect(effectName);
+	--local index = result.effect or math.random( 1, 8 );
+	local index = math.random( 1, 2 );
+	local effectName = "lancer_cmb.country_collect_" .. index;
+	--image:AddActionEffect(effectName);
+
+	local seq1 = batch:AddSerialSequence();
+	local cmd1 = createCommandEffect():AddActionEffect( 0.2, image, effectName );
+	seq1:AddCommand( cmd1 );
+
+	local env = cmd1:GetVarEnv();
+	local random = math.random( 3,5 );
+	env:SetFloat( "$1", size.w/2+tJumpPos[result.effect][1]/random*(random-1) );
+	env:SetFloat( "$2", size.h/2+tJumpPos[result.effect][2]/random*(random-1) );
+	env:SetFloat( "$3", tJumpPos[result.effect][3] );
 	
+	env:SetFloat( "$4", size.w/2+tJumpPos[result.effect][1] );
+	env:SetFloat( "$5", size.h/2+tJumpPos[result.effect][2] );
+	env:SetFloat( "$6", tJumpPos[result.effect][3]/2 );
+
 	country_main.ShowCollectEffect();
 end
 --==================================================================--
@@ -353,16 +385,17 @@ function p.CollectDone( node, collectTable, beginEvent, endEvent )
 	if beginEvent then
 		beginEvent();
 	end
+	local batch = battle_show.GetNewBatch();
 	
 	for i = 1, #collectTable do
 		local result = collectTable[i];
 		if result.type == "material" then
 			for j = 1,tonumber(result.num) do
-				local temp = { type = result.type, id = result.id };
-				p.CollectAnimation( node, temp );
+				local temp = { type = result.type, id = result.id, effect = result.effect };
+				p.CollectAnimation( node, temp, batch );
 			end
 		else
-			p.CollectAnimation( node, result );
+			p.CollectAnimation( node, result, batch );
 		end
 	end
 
