@@ -501,7 +501,7 @@ function p.RefreshCardInfo( pIsRoundStar )
 					--end
 					
 					ctrllers[DEAD_INDEX]:SetVisible( tonumber(data.Hp) <= 0 );
-					ctrllers[SKILL_INDEX]:SetVisible( tonumber(data.Sp) >= 100 );
+					ctrllers[SKILL_INDEX]:SetVisible( tonumber(data.Sp) >= 100 and tonumber(data.Hp) > 0 );
 					
 					if not (tonumber(data.Hp) > 0 and data.HasTurn) then
 						ctrllers[MASK_INDEX]:SetVisible( true );
@@ -606,7 +606,7 @@ function p.SetHeroCardAttr( pos, fighter )
 		end
 		
 		ctrllers[DEAD_INDEX]:SetVisible( tonumber(fighter.Hp) <= 0 );
-		ctrllers[SKILL_INDEX]:SetVisible( tonumber(fighter.Sp) >= 100 );
+		ctrllers[SKILL_INDEX]:SetVisible( tonumber(fighter.Sp) >= 100 and tonumber(fighter.Hp) > 0 );
 		
 		ctrllers[SPEXP_INDEX]:SetValue( 0, tonumber( fighter.maxSp ), tonumber( fighter.Sp ) );
 	end
