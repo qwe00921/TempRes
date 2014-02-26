@@ -23,6 +23,8 @@ image\ui\quest\hard.png
 image\ui\quest\new.png
 [evaluate_2]
 image\ui\quest\perfect.png
+[evaluate_1]
+image\ui\quest\clear_quest.png
 
 ;装备星级	by:xmk
 [equipStar]

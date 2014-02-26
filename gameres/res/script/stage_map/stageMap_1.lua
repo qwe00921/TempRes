@@ -108,7 +108,7 @@ function p.addAllStage(callBackData)
 			uiNodeT.stageBtn[i]:SetLuaDelegate(p.OnBtnClick);
 			
 			if i > 1 then
-				uiNodeT.cleanPic[i-1]:SetPicture( GetPictureByAni("common_ui.evaluate_2", 0));
+				uiNodeT.cleanPic[i-1]:SetPicture( GetPictureByAni("common_ui.evaluate_1", 0));
 			end
 			lastStage = i
 		end
@@ -121,7 +121,7 @@ function p.addAllStage(callBackData)
 		local nextNamePic = GetImage( p.layer, ui.ID_CTRL_PICTURE_NEXT );
 		nextNamePic:SetVisible(true);
 		
-		uiNodeT.cleanPic[lastStage]:SetPicture( GetPictureByAni("common_ui.evaluate_2", 0));
+		uiNodeT.cleanPic[lastStage]:SetPicture( GetPictureByAni("common_ui.evaluate_1", 0));
 	else
 		uiNodeT.cleanPic[lastStage]:SetPicture( GetPictureByAni("common_ui.evaluate_0", 0));
 	end
