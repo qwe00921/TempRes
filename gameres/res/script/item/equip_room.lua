@@ -183,6 +183,16 @@ function p.ShowInfo(msg)
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	
+	
+	local labRoomLv = GetLabel(p.layer, ui.ID_CTRL_TEXT_18);
+	local equipRoomData = msg_cache.msg_count_data.builds.B2;
+	--build_level
+	if equipRoomData ~= nil then
+		labRoomLv:SetText(GetStr("equip_room_level").."  "..tostring(equipRoomData.build_level));
+	else
+		labRoomLv:SetText(GetStr("equip_room_level").."  ".."1");
+	end;
+	
 	if p.equlip_list == nil then
 		labRoomNum:SetText("0/"..tostring(msg.equip_room_limit)); 
 	else
