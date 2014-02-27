@@ -314,3 +314,12 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
+
+[CTRL_PICTURE_LEVELUP]
+Type=1
+Tag=25
+Rect=507 583 74 35
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
