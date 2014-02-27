@@ -209,7 +209,7 @@ UIClsoeType=0
 [CTRL_BUTTON_PAGE_PRE]
 Type=2
 Tag=104
-Rect=200 431 60 48
+Rect=200 431 60 44
 AnchorPos=0 0
 Notes=
 Text=<<
@@ -220,15 +220,15 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
+NormalFile=.\res\image\ui\card_bag\return_1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_BUTTON_PAGE_NEXT]
 Type=2
 Tag=105
-Rect=380 431 60 48
+Rect=380 431 60 44
 AnchorPos=0 0
 Notes=
 Text=>>
@@ -239,10 +239,10 @@ TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
-NormalFile=.\res\image\ui\public\button.png
-NormalFileUV=0 0 110 54
-SelectFile=.\res\image\ui\public\button_click.png
-SelectedFileUV=0 0 110 54
+NormalFile=.\res\image\ui\card_bag\return_1.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_TEXT_PAGE_INFO]
 Type=4

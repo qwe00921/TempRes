@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -49,6 +49,8 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\return_1.png
 NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_BUTTON_UNLOAD]
 Type=2
@@ -64,6 +66,8 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\return_1.png
 NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_TEXT_NAME]
 Type=4
@@ -125,6 +129,8 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\card_bag\return_1.png
 NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\card_bag\return_2.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_TEXT_ATTR]
 Type=4
@@ -155,7 +161,7 @@ UIClsoeType=0
 [CTRL_TEXT_UNLOAD]
 Type=4
 Tag=1539
-Rect=408 547 113 51
+Rect=408 545 113 51
 AnchorPos=0 0
 Notes=
 Text=卸下
@@ -170,7 +176,7 @@ UIClsoeType=0
 [CTRL_TEXT_INSTALL]
 Type=4
 Tag=27
-Rect=259 548 122 47
+Rect=259 547 122 47
 AnchorPos=0 0
 Notes=
 Text=装备
@@ -185,7 +191,7 @@ UIClsoeType=0
 [CTRL_TEXT_UPGRADE]
 Type=4
 Tag=28
-Rect=115 549 122 47
+Rect=115 547 122 47
 AnchorPos=0 0
 Notes=
 Text=强化

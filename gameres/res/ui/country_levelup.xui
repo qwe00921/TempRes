@@ -38,6 +38,8 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\quest\back.png
 NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
 
 [CTRL_PICTURE_HEAD]
 Type=1
