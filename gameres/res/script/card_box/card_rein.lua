@@ -457,6 +457,7 @@ function p.OnUIClickEvent(uiNode, uiEventType, param)
 					end
 				end
 				if param ~= "" then
+					card_bag_mian.allCardNumber = nil;
 					p.OnSendReqIntensify(param);
 				else
 					dlg_msgbox.ShowOK(GetStr("card_caption"),GetStr("card_intensify_no_card"),p.OnMsgCallback,p.layer);

@@ -215,8 +215,17 @@ function p.ShowInfo(msg)
 	if p.layer == nil then --or p.layer:IsVisible() ~= true then
 		return;
 	end
-	p.equlip_list = msg.equipment_info;
-	p.cardListByProf  = msg.equipment_info;
+	
+	p.equlip_list = {}
+	p.cardListByProf = {}
+	for k,v in ipairs(msg.equipment_info) do
+		if v.id ~= equip_rein_list.item.itemUid then
+			p.equlip_list[#p.equlip_list + 1] = v;
+			p.cardListByProf[#p.cardListByProf + 1] = v;
+		end;
+	end;
+--	p.equlip_list = msg.equipment_info;
+--	p.cardListByProf  = msg.equipment_info;
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
@@ -224,7 +233,7 @@ function p.ShowInfo(msg)
 	if p.sortByRuleV then
 		p.sortByBtnEvent(p.sortByRuleV);
 	else
-		p.refreshList(msg.equipment_info);
+		p.refreshList(p.cardListByProf);
 	end
 	
 	
