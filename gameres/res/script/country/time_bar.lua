@@ -43,6 +43,9 @@ function p.showMoveTime()
 	if lastTime <= 0 then
 		p.TextNode:SetText("升级完成！");
 		p.ClearData()
+		local uid = GetUID();
+		local param = "";
+		SendReq("Build","GetUserBuilds",uid,param);
 	else
 		p.setTimeText(lastTime)
 	end
