@@ -183,6 +183,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	--显示卡牌图片 背景图
 	imgV:SetPicture( GetPictureByAni(pEquipInfo.item_pic, 0) );
 	imgV:SetVisible(true);
+	imgV:SetId(tonumber(equip.id));
 	imgBdV:SetVisible(true);
 	
 	
@@ -198,7 +199,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	p.allNumText[equip.id] = selImg;
 	p.allEquipId[equip.id] = equip.equip_id;
 	--图片按钮
-	p.equipListNode[#p.equipListNode + 1] = bt;
+	p.equipListNode[#p.equipListNode + 1] = imgV;
 	--装备等级
 	p.equipLevel[equip.id] = equip.equip_level;
 	
@@ -315,13 +316,13 @@ function p.sortByRule(sortType)
 end
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.equip_level) > tonumber(b.equip_level);
+	return tonumber(a.equip_level) < tonumber(b.equip_level);
 end
 
 --按星级排序
 function p.sortByStar(a,b)
 	--return tonumber(a.rare) < tonumber(b.rare);
-	return tonumber(a.rare) < tonumber(b.rare) or ( tonumber(a.rare) == tonumber(b.rare) and tonumber(a.equip_id) < tonumber(b.equip_id));
+	return tonumber(a.rare) < tonumber(b.rare);
 end
 --清除方法
 function p.clearDate()
@@ -355,12 +356,11 @@ function p.setAllCardDisEnable()
 	for i=1, #p.equipListNode do
 		local id = p.equipListNode[i]:GetId();
 		local uiNode = p.equipListNode[i]
+		uiNode:SetEnabled(false);
 		for i=1,#p.selectList do
 			if tonumber(id) == tonumber(p.selectList[i]) then
 				uiNode:SetEnabled(true);
 				break;
-			else
-				uiNode:SetEnabled(false);
 			end
 		end
 		
