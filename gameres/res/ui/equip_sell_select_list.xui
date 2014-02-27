@@ -530,3 +530,58 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\equiped.png
 NormalFileUV=0 0 61 23
+
+[CTRL_PICTURE_ENABLE1]
+Type=1
+Tag=48
+Rect=16 11 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_ENABLE2]
+Type=1
+Tag=53
+Rect=139 11 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_ENABLE4]
+Type=1
+Tag=54
+Rect=385 11 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_ENABLE3]
+Type=1
+Tag=55
+Rect=262 11 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1
+
+[CTRL_PICTURE_ENABLE5]
+Type=1
+Tag=56
+Rect=508 11 107 107
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\main_interface\bg4.png
+NormalFileUV=0 0 1 1

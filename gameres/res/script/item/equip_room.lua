@@ -395,6 +395,7 @@ function p.InitViewUI(view)
 		imgSelStr = ui_list["ID_CTRL_PICTURE_SEL_"..tostring(i)];
 		imgLvStr  = ui_list["ID_CTRL_PICTURE_LV"..tostring(i)];
 		imgNamePicStr = ui_list["ID_CTRL_PICTURE_12"..tostring(i)];
+		imgEnableStr = ui_list["ID_CTRL_PICTURE_ENABLE"..tostring(i)];
 				
 		local bt = GetButton(view,btTagStr);
 		bt:SetVisible(false);
@@ -423,7 +424,9 @@ function p.InitViewUI(view)
 		local lvPic = GetImage(view, imgLvStr);
 		lvPic:SetVisible(false);
 		
-  end
+		local imgEnable = GetImage(view, imgEnableStr);
+		imgEnable:SetVisible(false);
+	end
 end;
 
 --http://fanta2.sb.dev.91.com/index.php?command=Equip&action=EquipmentList&user_id=112&R=80&V=77&MachineType=WIN32
