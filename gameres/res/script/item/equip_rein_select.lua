@@ -121,6 +121,8 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 			
 			local rtn = {};
 			local sels = {};
+			--原顺序会被改
+			--[[
 			for k, v in pairs(p.selectList) do
 				sels[v] = v;
 			end
@@ -129,6 +131,14 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 					rtn[#rtn+1] = v;
 				end
 			end
+			]]--
+			for k1, v1 in pairs(p.selectList) do
+				for k,v in pairs(p.newEquip) do
+					if v.id == v1 then
+						rtn[#rtn+1] = v;
+					end
+				end
+			end;
 			
 			local cb = p.callback
 			local change = p.isChanged;
@@ -345,6 +355,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 			end
 			
 			selImg:SetVisible(true);
+			selImg:SetPicture(GetPictureByAni("common_ui.card_num",k));
 			--nmV:SetText(tostring(k));
 			
 			local equipCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_EQUIP_SEL_NUM);

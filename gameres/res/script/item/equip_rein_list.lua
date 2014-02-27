@@ -55,7 +55,7 @@ function p.ShowUI(item,callback)
 
     p.layer = layer;
 	p.InitUI(item);
-	 p.SetDelegate(layer);	
+	p.SetDelegate(layer);	
 end
 
 function p.SetCardData(item)
@@ -201,9 +201,14 @@ function p.SetCardInfo(pIndex,item)  --pIndex´Ó1¿ªÊ¼
 	
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", tostring(item.equip_id)) or {};
 	
-	local cardLevText = GetLabel(p.layer, ui["ID_CTRL_TEXT_CARDLEVEL"..pIndex]);
-	cardLevText:SetVisible(true);
-	cardLevText:SetText((tostring(item.equip_level or "")));
+	if item.equip_level ~= nil then
+		local cardLevText = GetLabel(p.layer, ui["ID_CTRL_TEXT_CARDLEVEL"..pIndex]);
+		cardLevText:SetVisible(true);
+		cardLevText:SetText("LV."..(tostring(item.equip_level or "")) );
+	else
+		local cardLevText = GetLabel(p.layer, ui["ID_CTRL_TEXT_CARDLEVEL"..pIndex]);
+		cardLevText:SetVisible(false);
+	end;
 			
 	local cardButton = GetButton(p.layer, ui["ID_CTRL_BUTTON_CHA"..pIndex]);
 		
