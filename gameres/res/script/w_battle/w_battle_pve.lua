@@ -699,6 +699,9 @@ function p.CloseUI()
 		p.heroList = nil;
 		p.sortList = nil;
 		
+		if p.skillImage ~= nil then
+			p.skillImage:RemoveFromParent( true );
+		end
 		p.skillImage = nil;
 		p.rooknode = {};
 	end
@@ -810,11 +813,12 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 				end
 			end
 		end
+		do return end;
 	elseif IsDragEnd( uiEventType ) then
 		WriteCon("IsDragEnd");
-		if p.skillImage ~= nil then
-			p.skillImage:SetVisible( false );
-		end
+	end
+	if p.skillImage ~= nil then
+		p.skillImage:SetVisible( false );
 	end
 end
 
