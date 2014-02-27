@@ -483,7 +483,7 @@ UIClsoeType=0
 [CTRL_PICTURE_9]
 Type=1
 Tag=52
-Rect=449 225 107 32
+Rect=447 251 107 32
 AnchorPos=0 0
 Notes=
 UIOpenType=0
