@@ -22,10 +22,9 @@ p.randompool = {1,2,3,4,5,2,3,4,5};
 local uiNodeT = {}
 
 function p.ShowUI()
-	if country_building then
-		country_building.CloseUI()
-	end
+	p.CloseAllPanel();
 	dlg_menu.SetNewUI( p );
+	
 	maininterface.HideUI();
 	dlg_userinfo.HideUI();
 	dlg_menu.ShowUI();
@@ -38,7 +37,7 @@ function p.ShowUI()
 		--country_collect.SetLayer( p.layer );
 		return;
 	end
-	
+
 	local layer = createNDUILayer();
 	if layer == nil then
 		return false;
@@ -605,11 +604,8 @@ function p.ClearData()
 
 end
 function p.UIDisappear()
+	p.CloseAllPanel();
 	
-	equip_room.CloseUI();
-	country_building.CloseUI();
-	country_storage.UIDisappear();
-	country_mixhouse.UIDisappear();
 	p.CloseUI();
 	
 	maininterface.BecomeFirstUI();
@@ -618,6 +614,13 @@ function p.UIDisappear()
 
 	--注销采集倒计时
 	country_collect.EndTick();
+end
+
+function p.CloseAllPanel()
+	equip_room.UIDisappear();
+	country_building.UIDisappear();
+	country_storage.UIDisappear();
+	country_mixhouse.UIDisappear();
 end
 
 --创建特效节点

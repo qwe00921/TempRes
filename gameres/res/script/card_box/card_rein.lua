@@ -18,6 +18,12 @@ local ui = ui_card_rein;
 
 function p.ShowUI(card_info)
 	maininterface.HideUI();
+	card_intensify.CloseUI();
+	card_intensify_succeed.CloseUI();
+	
+	local cache = msg_cache.msg_player;
+	dlg_userinfo.ShowUI( cache );
+	
 	if p.layer ~= nil then 
 		p.layer:SetVisible(true);
 		if card_info~= nil then
@@ -30,6 +36,8 @@ function p.ShowUI(card_info)
 		WriteCon("card_bag_mian.layer == nil ");
 		dlg_menu.SetNewUI( p );
 	end
+	
+	maininterface.HideUI();
 	
     local layer = createNDUIDialog();
     if layer == nil then

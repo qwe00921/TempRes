@@ -407,7 +407,8 @@ function p.UIDisappear()
 	p.CloseUI();
 	
 	country_mix.CloseUI();
-	--country_mix_sort.CloseUI();
+	country_mix_sort.HideUI();
+	country_mix_sort.CloseUI();
 	--maininterface.BecomeFirstUI();
 end
 
