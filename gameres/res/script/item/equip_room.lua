@@ -516,3 +516,14 @@ function p.CloseUI()
     end
 end
 
+function p.UIDisappear()
+	equip_sell.CloseUI();
+	equip_bag_sort.HideUI();
+	equip_bag_sort.CloseUI();
+	
+	dlg_card_equip_detail.CloseUI(); 
+	equip_rein_list.CloseUI();
+	equip_rein_select.CloseUI( true );
+
+	p.CloseUI();
+end
