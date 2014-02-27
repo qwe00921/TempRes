@@ -144,6 +144,10 @@ function p.RefreshUI(userinfo)
 	p.CreateEffectNum( MONEY_INDEX, money, 1, 0, 0, tonumber(userinfo.Money) );
 	
 	local emoney = GetLabel(p.layer, ui.ID_CTRL_TEXT_EMONEY_NUM);	
+
+	--更新金币,内部有判断是否打开窗体
+	equip_rein_list.UpdateUserMoney();
+	
 	--[[
 	if p.effect_num[EMONEY_INDEX] == nil then
 		local emoneyNum = effect_num:new();

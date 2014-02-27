@@ -66,8 +66,12 @@ function p.SetCardData(item)
 end;	
 
 
-function p.SetUserMoney(userMoney)
-	p.userMoney	 = userMoney;
+function p.UpdateUserMoney()
+	if p.layer ~= nil then
+		p.userMoney = tonumber(msg_cache.msg_player.Money or 0);
+		local moneyLab = GetLabel(p.layer,ui.ID_CTRL_TEXT_USER_MONEY);
+		moneyLab:SetText(tostring(p.userMoney));	
+	end;
 end;	
 
 
