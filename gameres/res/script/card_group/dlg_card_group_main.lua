@@ -178,12 +178,18 @@ function p.SetData( dataSource )
 		p.nowTeam = dataSource.nowteam;
 		p.serverTeam = dataSource.nowteam;
 		p.equip_dress = dataSource.equip_dress;
+		if p.equip_dress == false then
+			p.equip_dress = nil;
+		end
 		
 	else
 		p.user_teams = p.source.user_teams;
 		p.nowTeam = p.source.nowteam;
 		p.serverTeam = p.source.nowteam;
 		p.equip_dress = p.source.equip_dress;
+		if p.equip_dress == false then
+			p.equip_dress = nil;
+		end
 	end
 	
 	
