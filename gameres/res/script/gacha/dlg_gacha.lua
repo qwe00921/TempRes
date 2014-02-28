@@ -298,7 +298,8 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 
 				if p.rmb < needRmb then
 					WriteCon("**扭蛋需求代币不足**");
-					dlg_msgbox.ShowYesNo( "提示", "您身上的宝石不足，是否进行充值？", p.DidAddEmoney, p.layer );
+					--dlg_msgbox.ShowYesNo( "提示", "您身上的宝石不足，是否进行充值？", p.DidAddEmoney, p.layer );
+					dlg_msgbox_add.ShowUI( nil, p.DidAddEmoney );
 				else
 					--付费
 					p.charge_type = 2;
@@ -314,7 +315,8 @@ function p.OnGachaUIEvent(uiNode, uiEventType, param)
 			local needRmb = tonumber(SelectCell( T_GACHA, tostring(gacha_id), "complex_gacha_cost"));
 			if p.rmb < needRmb then
 				WriteCon("**扭蛋需求代币不足**");
-				dlg_msgbox.ShowYesNo( "提示", "您身上的宝石不足，是否进行充值？", p.DidAddEmoney, p.layer );
+				--dlg_msgbox.ShowYesNo( "提示", "您身上的宝石不足，是否进行充值？", p.DidAddEmoney, p.layer );
+				dlg_msgbox_add.ShowUI( nil, p.DidAddEmoney );
 			else
 				--付费
 				p.charge_type = 2;
@@ -1292,6 +1294,7 @@ function p.UpdateMailNum()
 end
 
 function p.DidAddEmoney( flag )
+	WriteConWarning( "进入充值流程" );
 	--充值流程
 	if flag then
 		

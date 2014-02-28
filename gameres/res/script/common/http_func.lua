@@ -46,15 +46,14 @@ function SendReq( cmd, action, uid, param )
 	http_busy = true;
 	
 	rookie_mask.onCallFlag = true;
-	--[[
-	--注册重新发送请求定时器
+	
+	--20s超时，回到登陆界面
 	if resendTimer ~= nil then
 		KillTimer( resendTimer );
 		resendTimer = nil;
 	end
-	resendTimer = SetTimerOnce( OnClickReSend, 20.0f );
+	resendTimer = SetTimerOnce( ReturnLoginUI, 20.0f );
 	resend = true;
-	--]]
 end
 
 function SendPost(cmd, action, uid, param,data)
@@ -124,6 +123,25 @@ function OnReSendReq()
 	dlg_msgbox.ShowOK( "错误", "长时间未操作，与服务器断开连接，请重新连接。", OnClickReSend, GetUIRoot() );
 end
 --]]
+
+function ReturnLoginUI()
+	if resend == false then
+		return;
+	end
+	
+	if pLayer ~= nil then
+		pLayer:SetSwallowTouch( false );
+		if pLayer:HasAniEffect( busy_fx ) then
+			pLayer:DelAniEffect( busy_fx );
+		end
+	end
+	
+	dlg_msgbox.ShowOK( "错误", "长时间未操作，与服务器断开连接，请重新连接。", ReturnLoginUIClick, GetUIRoot() );
+end
+
+function ReturnLoginUIClick()
+	login_main.ShowUI();
+end
 
 function OnClickReSend()
 	if resend == false then

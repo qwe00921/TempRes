@@ -156,6 +156,7 @@ DoFile("ui/ui_dlg_skill_piece_combo_result.lua")
 
 --通用提示对话框
 DoFile("ui/ui_dlg_msgbox.lua")
+DoFile("ui/ui_dlg_msgbox_add.lua")
 
 --装备
 DoFile("ui/ui_dlg_card_equip.lua")
