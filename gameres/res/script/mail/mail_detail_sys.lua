@@ -117,8 +117,10 @@ function p.SetViewInfo()
 	timeV:SetText(item.tm or "");
 	
 	--ÄÚÈÝ
-	local contentV = GetLabel( parentV, idTags.ID_CTRL_TEXT_CONTENT);
+	local contentV = GetColorLabel( parentV, idTags.ID_CTRL_COLOR_LABEL_42);
 	contentV:SetText(item.content or "");
+	contentV:SetIsUseMutiColor(false);
+	
 	
 	local rewards = item.rewards or {};
 	for i = 1, 6 do
