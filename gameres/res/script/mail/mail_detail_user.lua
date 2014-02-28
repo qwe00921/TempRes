@@ -138,6 +138,10 @@ function p.SetViewInfo()
 	local contentV = GetColorLabel( parentV, idTags.ID_CTRL_COLOR_LABEL_62);
 	contentV:SetText(item.content or "");
 	contentV:SetIsUseMutiColor(false);
+	contentV:SetFontColor(ccc4(255,255,255,255));
+	contentV:SetHorzAlign( 0 );
+	contentV:SetVertAlign( 1 );
+	contentV:SetFontSize(20);
 end
 
 function p.ShowHistory(pageItems)
