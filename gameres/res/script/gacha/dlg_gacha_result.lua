@@ -119,7 +119,8 @@ function p.GachaAgain()
 	local emoney = tonumber( cache.Emoney ) or 0;
 	local needEmoney = tonumber( SelectCell( T_GACHA, gacha_id, gacha_type == 1 and "single_gacha_cost" or "complex_gacha_cost" ) ) or 0;
 	if emoney == 0 or emoney < needEmoney then
-		dlg_msgbox.ShowYesNo( "提示", "您身上的宝石不足，是否进行充值？", dlg_gacha.DidAddEmoney, dlg_gacha.layer );
+--		dlg_msgbox.ShowYesNo( "提示", "您身上的宝石不足，是否进行充值？", dlg_gacha.DidAddEmoney, dlg_gacha.layer );
+		dlg_msgbox_add.ShowUI( nil, dlg_gacha.DidAddEmoney );
 		return;
 	end
 	

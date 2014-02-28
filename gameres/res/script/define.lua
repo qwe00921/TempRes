@@ -19,6 +19,7 @@ DoFile("common/vector.lua");
 DoFile("common/map.lua");
 DoFile("common/util.lua");
 DoFile("common/dlg_msgbox.lua");
+DoFile("common/dlg_msgbox_add.lua");
 DoFile("common/db_func.lua");
 DoFile("common/http_func.lua");
 DoFile("common/dlg_loading.lua");

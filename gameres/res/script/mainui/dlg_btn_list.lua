@@ -18,7 +18,8 @@ local ID_FRIEND = 8;
 local ID_PICTORIAL = 9;
 local ID_CARD = 10;
 
-local tShowIndex = { ID_NOTICE, ID_SETTING, ID_RANK, ID_STRENGTHEN, ID_FRIEND, ID_PICTORIAL };
+--local tShowIndex = { ID_NOTICE, ID_SETTING, ID_RANK, ID_STRENGTHEN, ID_FRIEND, ID_PICTORIAL };
+local tShowIndex = { ID_STRENGTHEN };
 local tValidIndex = { ID_STRENGTHEN };
 
 function p.ShowUI()
@@ -34,7 +35,7 @@ function p.ShowUI()
 	
 	layer:NoMask();
 	layer:Init();
-	layer:SetSwallowTouch(false);
+	layer:SetSwallowTouch(true);
 	GetUIRoot():AddDisableAllButNoThisLayer(layer);
 	GetUIRoot():DisableAll();
     

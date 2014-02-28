@@ -221,7 +221,8 @@ end
 
 --购买失败回调
 function p.BuyFailedResult( msg )
-	dlg_msgbox.ShowOK( ToUtf8( "提示" ), msg.message , p.CloseUI, p.layer );
+	--dlg_msgbox.ShowOK( ToUtf8( "提示" ), msg.message , p.CloseUI, p.layer );
+	dlg_msgbox_add.ShowUI( nil, p.AddEmoneyCallBack );
 end
 
 --设置可见
@@ -229,6 +230,12 @@ function p.HideUI()
 	if p.layer ~= nil then
 		p.layer:SetVisible( false );
 	end
+end
+
+function p.AddEmoneyCallBack( flag )
+	p.CloseUI();
+	
+	dlg_gacha.DidAddEmoney( flag );
 end
 
 function p.CloseUI()
