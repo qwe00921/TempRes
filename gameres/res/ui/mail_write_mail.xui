@@ -1,4 +1,4 @@
-﻿
+
 [UI_INFO]
 Width=640
 Height=960
@@ -110,6 +110,7 @@ Rect=146 220 466 44
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -122,6 +123,7 @@ Rect=144 276 472 41
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
@@ -162,6 +164,7 @@ Rect=44 336 553 361
 AnchorPos=0 0
 Notes=
 TextSize=20
+TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignTop
 UIOpenType=0

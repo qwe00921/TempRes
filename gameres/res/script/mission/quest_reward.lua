@@ -309,6 +309,10 @@ function p.setExpBar()
 	return expBar
 end
 
+function p.showLevelUp()
+	local levelUpPic = GetImage(p.layer,ui.ID_CTRL_PICTURE_LEVELUP );
+	levelUpPic:SetPicture( GetPictureByAni("common_ui.level_up",0));
+end
 
 --隐藏UI
 function p.HideUI()

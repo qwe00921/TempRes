@@ -183,6 +183,16 @@ function p.ShowInfo(msg)
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	
+	
+	local labRoomLv = GetLabel(p.layer, ui.ID_CTRL_TEXT_18);
+	local equipRoomData = msg_cache.msg_count_data.builds.B2;
+	--build_level
+	if equipRoomData ~= nil then
+		labRoomLv:SetText(GetStr("equip_room_level").."  "..tostring(equipRoomData.build_level));
+	else
+		labRoomLv:SetText(GetStr("equip_room_level").."  ".."1");
+	end;
+	
 	if p.equlip_list == nil then
 		labRoomNum:SetText("0/"..tostring(msg.equip_room_limit)); 
 	else
@@ -385,6 +395,7 @@ function p.InitViewUI(view)
 		imgSelStr = ui_list["ID_CTRL_PICTURE_SEL_"..tostring(i)];
 		imgLvStr  = ui_list["ID_CTRL_PICTURE_LV"..tostring(i)];
 		imgNamePicStr = ui_list["ID_CTRL_PICTURE_12"..tostring(i)];
+		imgEnableStr = ui_list["ID_CTRL_PICTURE_ENABLE"..tostring(i)];
 				
 		local bt = GetButton(view,btTagStr);
 		bt:SetVisible(false);
@@ -413,7 +424,9 @@ function p.InitViewUI(view)
 		local lvPic = GetImage(view, imgLvStr);
 		lvPic:SetVisible(false);
 		
-  end
+		local imgEnable = GetImage(view, imgEnableStr);
+		imgEnable:SetVisible(false);
+	end
 end;
 
 --http://fanta2.sb.dev.91.com/index.php?command=Equip&action=EquipmentList&user_id=112&R=80&V=77&MachineType=WIN32
@@ -506,3 +519,14 @@ function p.CloseUI()
     end
 end
 
+function p.UIDisappear()
+	equip_sell.CloseUI();
+	equip_bag_sort.HideUI();
+	equip_bag_sort.CloseUI();
+	
+	dlg_card_equip_detail.CloseUI(); 
+	equip_rein_list.CloseUI();
+	equip_rein_select.CloseUI( true );
+
+	p.CloseUI();
+end

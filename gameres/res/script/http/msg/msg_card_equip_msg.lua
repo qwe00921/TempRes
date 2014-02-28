@@ -52,5 +52,6 @@ function p:Process()
 		--card_equip_select_list.OnNetUpgradeCallback(self);
 		--equip_rein_list.OnNetUpgradeCallback(self);
 		equip_rein_list.OnServerBack( self );
+		dlg_userinfo.SendReqUserInfo();
 	end
 end

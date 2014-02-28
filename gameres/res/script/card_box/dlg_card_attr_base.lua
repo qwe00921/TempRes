@@ -13,10 +13,10 @@ p.cardDetail = nil;
 p.groupFlag = false;
 p.mainUIFlag = false;
 
-p.AtkEffect = 0;
-p.DefEffect = 0;
-p.SpeedEffect = 0;
-p.HpEffect = 0;
+p.attribute = {AtkEffect = 0,
+			   DefEffect = 0,
+			   SpeedEffect = 0,
+			   HpEffect = 0,}
 
 --装备加成类型值
 EQUIP_ATTRIBTYPE_ATK = 1 
@@ -185,20 +185,20 @@ function p.SetDelegate()
 	
 	--卡牌HP
 	local pLabCardHP = GetLabel(p.layer,ui.ID_CTRL_CARD_HP);
-	pLabCardHP:SetText(tostring(tonumber(p.cardInfo.Hp) + p.HpEffect) );
+	pLabCardHP:SetText(tostring(tonumber(p.cardInfo.Hp) + p.attribute.HpEffect) );
 	
 
 	--卡牌攻击
 	local pLabCardAttack = GetLabel(p.layer,ui.ID_CTRL_CARD_ATTACK);
-	pLabCardAttack:SetText(tostring(tonumber(p.cardInfo.Attack) + p.AtkEffect));
+	pLabCardAttack:SetText(tostring(tonumber(p.cardInfo.Attack) + p.attribute.AtkEffect));
 	
 	--卡牌速度
 	local pLabCardSpeed = GetLabel(p.layer,ui.ID_CTRL_CARD_SPEED);
-	pLabCardSpeed:SetText(tostring(tonumber(p.cardInfo.Speed) + p.SpeedEffect));
+	pLabCardSpeed:SetText(tostring(tonumber(p.cardInfo.Speed) + p.attribute.SpeedEffect));
 	
 	--卡牌防御
 	local pLabCardDefense = GetLabel(p.layer,ui.ID_CTRL_CARD_DEFENSE);
-	pLabCardDefense:SetText(tostring(tonumber(p.cardInfo.Defence) + p.DefEffect));
+	pLabCardDefense:SetText(tostring(tonumber(p.cardInfo.Defence) + p.attribute.DefEffect));
 	
 	--卡牌Type type =1平衡型（各属性均衡成长）type =2耐力型（HP成长+10%，攻击成长-10%）type=3破坏型（攻击成长+10%，防御成长-10%）type=4守护型（防御成长+10%，攻击成长-10%）
 
@@ -498,38 +498,38 @@ function p.LoadCardDetail(cardUniqueId)
 	SendReq("Equip","CardDetailShow",uid,param);		
 end
 
-function p.EquipAddEffect(ltype,lval)
-	if ltype == EQUIP_ATTRIBTYPE_ATK	then
-		p.AtkEffect = p.AtkEffect + lval
-	elseif ltype == EQUIP_ATTRIBTYPE_DEF then
-		p.DefEffect = p.DefEffect + lval
-	elseif ltype == EQUIP_ATTRIBTYPE_SPEED then
-		p.SpeedEffect = p.SpeedEffect + lval
-	elseif ltype == EQUIP_ATTRIBTYPE_LIFE then
-		p.HpEffect = p.HpEffect + lval;
-	end	
+--计算某个装备的所有属性加成
+function p.EquipAddEffect(lattribute, itemInfo)
+	if itemInfo ~= nil then
+		for i = 1,2 do
+			local ltype = itemInfo["attribute_type"..tostring(i)];
+			local lval  = itemInfo["attribute_value"..tostring(i)];
+			if ltype == EQUIP_ATTRIBTYPE_ATK	then
+				lattribute.AtkEffect = lattribute.AtkEffect + lval
+			elseif ltype == EQUIP_ATTRIBTYPE_DEF then
+				lattribute.DefEffect = lattribute.DefEffect + lval
+			elseif ltype == EQUIP_ATTRIBTYPE_SPEED then
+				lattribute.SpeedEffect = lattribute.SpeedEffect + lval
+			elseif ltype == EQUIP_ATTRIBTYPE_LIFE then
+				lattribute.HpEffect = lattribute.HpEffect + lval;
+			end	
+		end;
+	end;
 end;
 
 --计算装备的加成
 function p.CalEquipEffect()
-	p.AtkEffect = 0;
-	p.DefEffect = 0;
-	p.SpeedEffect = 0;
-	p.HpEffect = 0;
+	p.attribute = {AtkEffect = 0,
+				   DefEffect = 0,
+				   SpeedEffect = 0,
+				   HpEffect = 0,}
 	if p.equip1 and tonumber(p.equip1.equipId) ~= 0 and p.equip1.itemInfo then
-		for i=1,2 do
-			local ltype = p.equip1.itemInfo["attribute_type"..tostring(i)];
-			local lval  = p.equip1.itemInfo["attribute_value"..tostring(i)];
-			p.EquipAddEffect(ltype,lval);
-		end
+		p.EquipAddEffect(p.attribute, p.equip1.itemInfo)
+
 	end;
 	
 	if p.equip2 and tonumber(p.equip2.equipId) ~= 0 and p.equip2.itemInfo then
-		for i=1,2 do
-			local ltype = p.equip2.itemInfo["attribute_type"..tostring(i)];
-			local lval  = p.equip2.itemInfo["attribute_value"..tostring(i)];
-			p.EquipAddEffect(ltype,lval);
-		end		
+		p.EquipAddEffect(p.attribute, p.equip2.itemInfo)
 	end
 end;
 

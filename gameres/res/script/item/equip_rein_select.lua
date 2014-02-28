@@ -121,6 +121,8 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 			
 			local rtn = {};
 			local sels = {};
+			--原顺序会被改
+			--[[
 			for k, v in pairs(p.selectList) do
 				sels[v] = v;
 			end
@@ -129,6 +131,14 @@ function p.OnEquipUIEvent(uiNode, uiEventType, param)
 					rtn[#rtn+1] = v;
 				end
 			end
+			]]--
+			for k1, v1 in pairs(p.selectList) do
+				for k,v in pairs(p.newEquip) do
+					if v.id == v1 then
+						rtn[#rtn+1] = v;
+					end
+				end
+			end;
 			
 			local cb = p.callback
 			local change = p.isChanged;
@@ -205,8 +215,17 @@ function p.ShowInfo(msg)
 	if p.layer == nil then --or p.layer:IsVisible() ~= true then
 		return;
 	end
-	p.equlip_list = msg.equipment_info;
-	p.cardListByProf  = msg.equipment_info;
+	
+	p.equlip_list = {}
+	p.cardListByProf = {}
+	for k,v in ipairs(msg.equipment_info) do
+		if v.id ~= equip_rein_list.item.itemUid then
+			p.equlip_list[#p.equlip_list + 1] = v;
+			p.cardListByProf[#p.cardListByProf + 1] = v;
+		end;
+	end;
+--	p.equlip_list = msg.equipment_info;
+--	p.cardListByProf  = msg.equipment_info;
 	p.msg = msg;
 	local labRoomNum = GetLabel(p.layer, ui.ID_CTRL_TEXT_NUM); 
 	labRoomNum:SetText(tostring(#p.equlip_list).."/"..tostring(msg.equip_room_limit)); 	
@@ -214,7 +233,7 @@ function p.ShowInfo(msg)
 	if p.sortByRuleV then
 		p.sortByBtnEvent(p.sortByRuleV);
 	else
-		p.refreshList(msg.equipment_info);
+		p.refreshList(p.cardListByProf);
 	end
 	
 	
@@ -284,6 +303,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
     local selTagStr = "ID_CTRL_PICTURE_SEL_"..indexStr; --是否选中
 	local equipNameStr = "ID_CTRL_TEXT_NAME"..indexStr; --装备名字
 	local namePicStr = "ID_CTRL_PICTURE_12"..indexStr;  --装备名字的底图
+	local imgEnableStr = "ID_CTRL_PICTURE_ENABLE"..indexStr;
 
 	WriteCon("btTagStr = "..btTagStr);
 	local bt 	= GetButton(view, ui_list[btTagStr]);
@@ -296,6 +316,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	local lvImg = GetImage(view, ui_list[lvImgStr]);
 	local equipName = GetLabel(view, ui_list[equipNameStr]);
 	local namePic = GetImage(view, ui_list[namePicStr]);
+	local imgEnable = GetImage(view, ui_list[imgEnableStr]);
 	
 	lvImg:SetVisible(true);
 	drsV:SetVisible( false );
@@ -306,6 +327,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:RemoveAllChildren(true);
 	bt:SetVisible(true);
 	bt:SetId(tonumber(equip.id));
+	imgEnable:SetId(tonumber(equip.id));
 	
 	if dataListIndex == 2 then
 		p.rookie_node = bt;
@@ -334,7 +356,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	
 
 	p.allNumText[equip.id] = selImg;
-	p.equipListNode[#p.equipListNode + 1] = bt;
+	p.equipListNode[#p.equipListNode + 1] = imgEnable;
 	p.equipLevel[equip.id] = equip.equip_level;
 	
 	for k,v in pairs(p.selectList) do
@@ -345,6 +367,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 			end
 			
 			selImg:SetVisible(true);
+			selImg:SetPicture(GetPictureByAni("common_ui.card_num",k));
 			--nmV:SetText(tostring(k));
 			
 			local equipCount = GetLabel(p.layer,ui.ID_CTRL_TEXT_EQUIP_SEL_NUM);
@@ -432,12 +455,13 @@ function p.setAllCardDisEnable()
 	for i=1, #p.equipListNode do
 		local id = p.equipListNode[i]:GetId();
 		local uiNode = p.equipListNode[i]
+		--uiNode:SetEnabled(false);
+		uiNode:SetVisible(true);
 		for i=1,#p.selectList do
 			if tonumber(id) == tonumber(p.selectList[i]) then
-				uiNode:SetEnabled(true);
+				--uiNode:SetEnabled(true);
+				uiNode:SetVisible(false);
 				break;
-			else
-				uiNode:SetEnabled(false);
 			end
 		end
 		
@@ -448,7 +472,8 @@ end
 function p.setCardDisEnable()
 	for i=1, #p.equipListNode do
 		local uiNode = p.equipListNode[i]
-		uiNode:SetEnabled(true);
+		--uiNode:SetEnabled(true);
+		uiNode:SetVisible(false);
 	end
 end
 --设置序号更新
@@ -481,6 +506,7 @@ function p.InitViewUI(view)
 		imgSelStr = ui_list["ID_CTRL_PICTURE_SEL_"..tostring(i)];
 		imgLvStr  = ui_list["ID_CTRL_PICTURE_LV"..tostring(i)];
 		imgNamePicStr = ui_list["ID_CTRL_PICTURE_12"..tostring(i)];
+		imgEnableStr = ui_list["ID_CTRL_PICTURE_ENABLE"..tostring(i)];
 						
 		local bt = GetButton(view,btTagStr);
 		bt:SetVisible(false);
@@ -509,6 +535,8 @@ function p.InitViewUI(view)
 		local lvPic = GetImage(view, imgLvStr);
 		lvPic:SetVisible(false);
 		
+		local imgEnable = GetImage(view, imgEnableStr);
+		imgEnable:SetVisible(false);
     end
 end;
 

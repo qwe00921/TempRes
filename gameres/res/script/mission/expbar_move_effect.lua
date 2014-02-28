@@ -94,6 +94,7 @@ function p.overEffect()
 	KillTimer( moveEffect );
 	moveEffect = nil;
 	if p.isUpLevel then
+		quest_reward.showLevelUp();		--显示升级效果
 		p.nowNum = 0;
 		p.nowLevel = p.nowLevel + 1;
 		local useExpT = SelectRowInner(T_PLAYER_LEVEL,"level",p.nowLevel);

@@ -150,6 +150,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
     local selTagStr = "ID_CTRL_PICTURE_SEL_"..indexStr; --是否选中
 	local equipNameStr = "ID_CTRL_TEXT_NAME"..indexStr; --装备名字
 	local namePicStr = "ID_CTRL_PICTURE_12"..indexStr;  --装备名字的底图
+	local imgEnableStr = "ID_CTRL_PICTURE_ENABLE"..indexStr;
 
 	WriteCon("btTagStr = "..btTagStr);
 	local bt 	= GetButton(view, ui_list[btTagStr]);
@@ -162,6 +163,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	local lvImg = GetImage(view, ui_list[lvImgStr]);
 	local equipName = GetLabel(view, ui_list[equipNameStr]);
 	local namePic = GetImage(view, ui_list[namePicStr]);
+	local imgEnable = GetImage(view, ui_list[imgEnableStr]);
 	
     lvImg:SetVisible(true);
 	drsV:SetVisible( false );
@@ -172,6 +174,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	bt:RemoveAllChildren(true);
 	bt:SetVisible(true);
 	bt:SetId(tonumber(equip.id));
+	imgEnable:SetId(tonumber(equip.id));
 	
 	local pEquipInfo= SelectRowInner( T_EQUIP, "id", equip.equip_id); --从表中获取卡牌详细信息	
 
@@ -183,6 +186,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	--显示卡牌图片 背景图
 	imgV:SetPicture( GetPictureByAni(pEquipInfo.item_pic, 0) );
 	imgV:SetVisible(true);
+	imgV:SetId(tonumber(equip.id));
 	imgBdV:SetVisible(true);
 	
 	
@@ -198,7 +202,7 @@ function p.ShowEquipInfo( view, equip, index ,dataListIndex)
 	p.allNumText[equip.id] = selImg;
 	p.allEquipId[equip.id] = equip.equip_id;
 	--图片按钮
-	p.equipListNode[#p.equipListNode + 1] = bt;
+	p.equipListNode[#p.equipListNode + 1] = imgEnable;
 	--装备等级
 	p.equipLevel[equip.id] = equip.equip_level;
 	
@@ -315,13 +319,13 @@ function p.sortByRule(sortType)
 end
 --按等级排序
 function p.sortByLevel(a,b)
-	return tonumber(a.equip_level) > tonumber(b.equip_level);
+	return tonumber(a.equip_level) < tonumber(b.equip_level);
 end
 
 --按星级排序
 function p.sortByStar(a,b)
 	--return tonumber(a.rare) < tonumber(b.rare);
-	return tonumber(a.rare) < tonumber(b.rare) or ( tonumber(a.rare) == tonumber(b.rare) and tonumber(a.equip_id) < tonumber(b.equip_id));
+	return tonumber(a.rare) < tonumber(b.rare);
 end
 --清除方法
 function p.clearDate()
@@ -355,12 +359,13 @@ function p.setAllCardDisEnable()
 	for i=1, #p.equipListNode do
 		local id = p.equipListNode[i]:GetId();
 		local uiNode = p.equipListNode[i]
+		--uiNode:SetEnabled(false);
+		uiNode:SetVisible(true);
 		for i=1,#p.selectList do
 			if tonumber(id) == tonumber(p.selectList[i]) then
-				uiNode:SetEnabled(true);
+				--uiNode:SetEnabled(true);
+				uiNode:SetVisible(false);
 				break;
-			else
-				uiNode:SetEnabled(false);
 			end
 		end
 		
@@ -371,7 +376,8 @@ end
 function p.setCardDisEnable()
 	for i=1, #p.equipListNode do
 		local uiNode = p.equipListNode[i]
-		uiNode:SetEnabled(true);
+		--uiNode:SetEnabled(true);
+		uiNode:SetVisible(false);
 	end
 end
 	
@@ -405,6 +411,7 @@ function p.InitViewUI(view)
 		imgSelStr = ui_list["ID_CTRL_PICTURE_SEL_"..tostring(i)];
 		imgLvStr  = ui_list["ID_CTRL_PICTURE_LV"..tostring(i)];
 		imgNamePicStr = ui_list["ID_CTRL_PICTURE_12"..tostring(i)];	
+		imgEnableStr = ui_list["ID_CTRL_PICTURE_ENABLE"..tostring(i)];		
 						
 		local bt = GetButton(view,btTagStr);
 		bt:SetVisible(false);
@@ -432,6 +439,10 @@ function p.InitViewUI(view)
 		
 		local lvPic = GetImage(view, imgLvStr);
 		lvPic:SetVisible(false);
+		
+		local imgEnable = GetImage(view, imgEnableStr);
+		imgEnable:SetVisible(false);
+		
 	end;
 end;
 
