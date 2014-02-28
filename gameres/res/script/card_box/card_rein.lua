@@ -142,7 +142,7 @@ function p.InitUI(card_info)
 		lHeadPic:SetLookAt(E_LOOKAT_LEFT);
 		lHeadPic:Standby("");
 		lHeadPic:SetEnableSwapDrag(true);
-		lHeadPic:SetScaleX(GetUIScale());
+		--lHeadPic:SetScaleX(GetUIScale());
 	
 		--lHeadPic:SetScaleX(2.0);
 		--名字 CTRL_TEXT_252
@@ -275,7 +275,7 @@ function p.SetCardInfo(pIndex,pCardInfo)  --pIndex从1开始
 	cardSprite:Standby("");
 	WriteCon("FWEFWEFWEFWEFWEFWE");
 	cardSprite:SetEnableSwapDrag(true);
-	cardSprite:SetScaleX(GetUIScale());
+	--cardSprite:SetScaleX(GetUIScale());
 		
 	--cardButton:SetImage( GetPictureByAni("n_battle.attack_"..lcardId,0) );
 	--cardButton:SetImage( GetPictureByAni("w_battle.intensify_"..lcardId,0) );
