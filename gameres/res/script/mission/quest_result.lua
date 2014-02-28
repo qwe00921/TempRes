@@ -142,8 +142,9 @@ function p.OnBtnClick(uiNode,uiEventType,param)
 	if IsClickEvent(uiEventType) then
 		local tag = uiNode:GetTag();
 		if(ui.ID_CTRL_BUTTON_BG == tag) then
-			quest_reward.ShowUI(p.rewardAllData)
 			p.CloseUI()
+			quest_reward.ShowUI(p.rewardAllData)
+			p.rewardAllData = nil;
 		end
 	end
 end
@@ -160,6 +161,5 @@ function p.CloseUI()
 	if p.layer ~= nil then
 		p.layer:LazyClose();
 		p.layer = nil;
-		p.rewardAllData = nil;
 	end
 end
