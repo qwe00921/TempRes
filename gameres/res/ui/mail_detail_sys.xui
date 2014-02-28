@@ -511,6 +511,7 @@ Rect=44 332 552 274
 AnchorPos=0 0
 Notes=
 TextSize=10
+TextColor=0xffffff
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
 UIOpenType=0
