@@ -60,6 +60,7 @@ function p.ShowUI( storyId,openViewType,viewId,teamId,rewardList)
         return false;
     end
 	
+	dlg_userinfo.HideUI();
 	layer:Init();	
 	GetUIRoot():AddChild(layer);
     LoadUI("dlg_drama.xui", layer, nil);
