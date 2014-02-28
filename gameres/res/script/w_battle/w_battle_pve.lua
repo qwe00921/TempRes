@@ -316,6 +316,13 @@ function p.InitController()
 	--无法使用物品时的遮罩
 	p.itemMask = GetImage( p.battleLayer, ui.ID_CTRL_PICTURE_172 );
 	p.itemMask:SetVisible( false );
+	
+	local lbtn = GetButton(	p.battleLayer ,ui.ID_CTRL_BUTTON_75);
+	if w_battle_guid.IsGuid == true then
+		lbtn:SetVisible(false)
+	else
+		lbtn:SetVisible(true)
+	end
 end
 
 function p.OnSetTargetId( uiNode, uiEventType, param )
@@ -763,10 +770,10 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 		if ui.ID_CTRL_BUTTON_75 == tag then
 			WriteCon( "**菜单**" );
 			btn:SetEnabled( true );
-			if w_battle_guid.IsGuid == false then
-				w_battle_mgr.SetLockZorder(0);
-				dlg_msgbox.ShowYesNo("",GetStr("battle_quit"), w_battle_mgr.OnMsgQuitBoxCallback, p.battleLayer);
-			end;
+			--if w_battle_guid.IsGuid == false then
+			w_battle_mgr.SetLockZorder(0);
+			dlg_msgbox.ShowYesNo("",GetStr("battle_quit"), w_battle_mgr.OnMsgQuitBoxCallback, p.battleLayer);
+			--end;
 		elseif p.CheckUseItem( tag ) then
 			WriteCon( "**使用物品**" );
 			p.UseItem( btn );
@@ -817,9 +824,12 @@ function p.OnBtnClick( uiNode, uiEventType, param )
 	elseif IsDragEnd( uiEventType ) then
 		WriteCon("IsDragEnd");
 	end
-	if p.skillImage ~= nil then
-		p.skillImage:SetVisible( false );
-	end
+	
+	if not IsDraging(uiEventType) then
+		if p.skillImage ~= nil then
+			p.skillImage:SetVisible( false );
+		end
+	end;
 end
 
 --使用物品
