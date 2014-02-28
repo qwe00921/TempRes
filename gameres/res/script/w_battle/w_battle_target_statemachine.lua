@@ -54,15 +54,15 @@ function p:setInHurt(atkFighter)
 		local seqHurt = batch:AddSerialSequence();
 		
 		--受击动画播放一次
-		--[[
+		
 		local cmdHurt = createCommandPlayer():Hurt( 0, targerFighter:GetNode(), "" );
 		seqTarget:AddCommand( cmdHurt );
 		
         local cmdHurt = createCommandEffect():AddActionEffect( 0.35, targerFighter:GetPlayerNode(), "lancer.ishurt" );
 		seqTarget:AddCommand( cmdHurt );		
-]]--
-		local cmdHurt = createCommandPlayer():Standby( 0.35,  targerFighter:GetNode(), "" );
-		seqTarget:AddCommand( cmdHurt );	
+
+		--local cmdHurt = createCommandPlayer():Standby( 0.35,  targerFighter:GetNode(), "" );
+		--seqTarget:AddCommand( cmdHurt );	
 		
 		local cmdIshurt = targerFighter:cmdLua( "tar_hurt",   self.id, tostring(self.camp), seqHurt );
 		seqHurt:SetWaitEnd(cmdHurt); 
@@ -79,10 +79,10 @@ function p:tar_hurt()
 	local seqTarget = batch:AddSerialSequence();
 	local seqHurt = batch:AddSerialSequence();	
 	if targerFighter.IsHurt == true then
- 		--local cmdHurt = createCommandEffect():AddActionEffect( 0.35, targerFighter:GetPlayerNode(), "lancer.ishurt" );
-		--seqTarget:AddCommand( cmdHurt );
-		local cmdHurt = createCommandPlayer():Standby( 0.35,  targerFighter:GetNode(), "" );
-		seqTarget:AddCommand( cmdHurt );		
+ 		local cmdHurt = createCommandEffect():AddActionEffect( 0.35, targerFighter:GetPlayerNode(), "lancer.ishurt" );
+		seqTarget:AddCommand( cmdHurt );
+		--local cmdHurt = createCommandPlayer():Standby( 0.35,  targerFighter:GetNode(), "" );
+		--seqTarget:AddCommand( cmdHurt );		
 		
 		local cmdIshurt = targerFighter:cmdLua( "tar_hurt",   self.id, tostring(self.camp), seqHurt );
 		seqHurt:SetWaitEnd(cmdHurt); 
