@@ -1,0 +1,125 @@
+﻿
+[UI_INFO]
+Width=640
+Height=960
+
+[CTRL_9SLICES_9]
+Type=22
+Tag=9
+Rect=73 330 495 300
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_8]
+Type=22
+Tag=8
+Rect=73 330 495 300
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_49]
+Type=22
+Tag=49
+Rect=73 330 495 300
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\frame12.png
+NormalFileUV=0 0 100 100
+
+[CTRL_9SLICES_10]
+Type=22
+Tag=11
+Rect=111 423 419 121
+AnchorPos=0 0
+Notes=
+Stretch=1
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\public\bg_txt_squ.png
+NormalFileUV=0 0 50 50
+
+[CTRL_TEXT_3]
+Type=4
+Tag=3
+Rect=113 429 413 111
+AnchorPos=0 0
+Notes=
+Text=广告区域,敬请期待
+TextTradition=廣告區域,敬請期待
+TextSize=26
+TextColor=0xfffbf0
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+
+[CTRL_BUTTON_YES]
+Type=2
+Tag=5
+Rect=151 550 122 60
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\add.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\public\ok1_select.png
+SelectedFileUV=0 0 122 60
+
+[CTRL_BUTTON_NO]
+Type=2
+Tag=6
+Rect=368 550 122 60
+AnchorPos=0 0
+Notes=
+TextSize=15
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\quest\back.png
+NormalFileUV=0 0 122 60
+SelectFile=.\res\image\ui\quest\back_select.png
+SelectedFileUV=0 0 122 60
+
+[CTRL_PICTURE_19]
+Type=1
+Tag=19
+Rect=259 335 122 60
+AnchorPos=0 0
+Notes=
+UIOpenType=0
+UIClsoeType=0
+NormalFile=.\res\image\ui\shop\message_add.png
+NormalFileUV=0 0 122 60
+
+[CTRL_TEXT_20]
+Type=4
+Tag=20
+Rect=112 387 416 30
+AnchorPos=0 0
+Notes=
+Text=您的宝石不足,请充值
+TextTradition=您的寶石不足,請充值
+TextSize=18
+TextColor=0xffffff
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
