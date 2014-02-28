@@ -23,7 +23,7 @@ NormalFileUV=0 0 149 60
 [CTRL_9SLICES_32]
 Type=22
 Tag=32
-Rect=157 224 438 48
+Rect=150 215 124 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -49,7 +49,7 @@ NormalFileUV=0 0 122 60
 [CTRL_9SLICES_33]
 Type=22
 Tag=33
-Rect=157 279 438 48
+Rect=400 215 180 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -61,7 +61,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_36]
 Type=22
 Tag=36
-Rect=157 328 438 48
+Rect=161 270 416 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -73,7 +73,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_209]
 Type=4
 Tag=209
-Rect=58 224 88 50
+Rect=62 214 88 50
 AnchorPos=0 0
 Notes=
 Text=发件人:
@@ -88,7 +88,7 @@ UIClsoeType=0
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=57 333 89 43
+Rect=61 273 89 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -103,7 +103,7 @@ UIClsoeType=0
 [CTRL_9SLICES_37]
 Type=22
 Tag=37
-Rect=40 384 565 224
+Rect=38 327 565 281
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -132,7 +132,7 @@ NormalFileUV=0 0 149 60
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=160 223 436 48
+Rect=155 215 113 48
 AnchorPos=0 0
 Notes=
 Text=系统消息
@@ -147,7 +147,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=160 328 445 48
+Rect=164 270 413 48
 AnchorPos=0 0
 Notes=
 Text=服务器维护补偿礼包
@@ -162,7 +162,7 @@ UIClsoeType=0
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=42 279 104 50
+Rect=290 214 104 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
@@ -177,12 +177,12 @@ UIClsoeType=0
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=160 276 427 48
+Rect=400 215 180 48
 AnchorPos=0 0
 Notes=
 Text=2014-05-21 19:33:33
 TextTradition=2014-05-21 19:33:33
-TextSize=20
+TextSize=18
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
@@ -246,7 +246,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NUM_1]
 Type=4
 Tag=467
-Rect=605 144 80 64
+Rect=640 144 80 64
 AnchorPos=0 0
 Notes=
 Text=X3
@@ -260,11 +260,9 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NUM_5]
 Type=4
 Tag=468
-Rect=586 540 80 64
+Rect=640 540 80 64
 AnchorPos=0 0
 Notes=
-Text=X3
-TextTradition=X3
 TextSize=15
 TextHorAlign=AlignHorCenter
 TextVerAlign=AlignVerCenter
@@ -274,7 +272,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NUM_2]
 Type=4
 Tag=469
-Rect=612 242 80 64
+Rect=640 242 80 64
 AnchorPos=0 0
 Notes=
 Text=X3
@@ -288,7 +286,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NUM_3]
 Type=4
 Tag=470
-Rect=606 340 80 64
+Rect=640 340 80 64
 AnchorPos=0 0
 Notes=
 Text=X3
@@ -302,7 +300,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NUM_4]
 Type=4
 Tag=471
-Rect=608 441 80 64
+Rect=640 441 80 64
 AnchorPos=0 0
 Notes=
 Text=X3
@@ -316,7 +314,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NUM_6]
 Type=4
 Tag=472
-Rect=602 619 80 64
+Rect=640 619 80 64
 AnchorPos=0 0
 Notes=
 Text=X3
@@ -330,7 +328,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NAME_1]
 Type=4
 Tag=473
-Rect=581 164 162 39
+Rect=640 164 162 39
 AnchorPos=0 0
 Notes=
 Text=宝石
@@ -344,7 +342,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NAME_2]
 Type=4
 Tag=474
-Rect=581 250 162 39
+Rect=640 250 162 39
 AnchorPos=0 0
 Notes=
 Text=宝石
@@ -358,7 +356,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NAME_3]
 Type=4
 Tag=475
-Rect=565 358 162 39
+Rect=640 358 162 39
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -370,7 +368,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NAME_4]
 Type=4
 Tag=476
-Rect=555 451 162 39
+Rect=640 451 162 39
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -382,7 +380,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NAME_5]
 Type=4
 Tag=477
-Rect=583 564 162 39
+Rect=640 564 162 39
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -394,7 +392,7 @@ UIClsoeType=0
 [CTRL_TEXT_ITEM_NAME_6]
 Type=4
 Tag=478
-Rect=568 629 162 39
+Rect=640 629 162 39
 AnchorPos=0 0
 Notes=
 TextSize=15
@@ -509,7 +507,7 @@ NormalFileUV=0 0 86 54
 [CTRL_COLOR_LABEL_42]
 Type=7
 Tag=44
-Rect=46 389 552 217
+Rect=44 332 552 274
 AnchorPos=0 0
 Notes=
 TextSize=10
