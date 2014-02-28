@@ -10,6 +10,11 @@ p.curUI = nil;
 
 function p.ShowUI()
 	if p.layer ~= nil then
+		local pBgImage = GetUIRoot():GetGameBgImage();
+		
+		if nil ~= pBgImage then
+			pBgImage:SetVisible(true);
+		end
 		p.layer:SetVisible( true );
 		return;
 	end

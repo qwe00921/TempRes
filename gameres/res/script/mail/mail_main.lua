@@ -104,8 +104,6 @@ function p.ShowUI(isReloadNet)
 	p.bottomLayer = bottomLayer;
 	bottomLayer:SetLayoutType(1);
 	
-	
-	
 	maininterface.HideUI();
 	
 	p.SetDelegate();
