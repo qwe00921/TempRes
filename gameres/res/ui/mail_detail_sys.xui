@@ -49,7 +49,7 @@ NormalFileUV=0 0 122 60
 [CTRL_9SLICES_33]
 Type=22
 Tag=33
-Rect=157 279 430 48
+Rect=157 279 438 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -61,7 +61,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_36]
 Type=22
 Tag=36
-Rect=157 328 451 48
+Rect=157 328 438 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -73,7 +73,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_209]
 Type=4
 Tag=209
-Rect=37 224 88 50
+Rect=58 224 88 50
 AnchorPos=0 0
 Notes=
 Text=发件人:
@@ -88,7 +88,7 @@ UIClsoeType=0
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=40 333 89 43
+Rect=57 333 89 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -132,7 +132,7 @@ NormalFileUV=0 0 149 60
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=159 226 436 48
+Rect=160 223 436 48
 AnchorPos=0 0
 Notes=
 Text=系统消息
@@ -147,7 +147,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=159 331 445 48
+Rect=160 328 445 48
 AnchorPos=0 0
 Notes=
 Text=服务器维护补偿礼包
@@ -162,7 +162,7 @@ UIClsoeType=0
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=40 279 104 50
+Rect=42 279 104 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
@@ -177,7 +177,7 @@ UIClsoeType=0
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=159 279 427 48
+Rect=160 276 427 48
 AnchorPos=0 0
 Notes=
 Text=2014-05-21 19:33:33

@@ -25,7 +25,7 @@ SelectedFileUV=0 0 149 60
 [CTRL_9SLICES_18]
 Type=22
 Tag=18
-Rect=129 317 475 48
+Rect=148 317 426 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -77,7 +77,7 @@ NormalFileUV=0 0 50 50
 [CTRL_9SLICES_17]
 Type=22
 Tag=17
-Rect=159 264 414 48
+Rect=148 264 426 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -89,7 +89,7 @@ NormalFileUV=0 0 50 50
 [CTRL_TEXT_209]
 Type=4
 Tag=209
-Rect=34 213 88 50
+Rect=54 213 88 50
 AnchorPos=0 0
 Notes=
 Text=发件人:
@@ -104,7 +104,7 @@ UIClsoeType=0
 [CTRL_TEXT_212]
 Type=4
 Tag=212
-Rect=36 321 75 43
+Rect=67 321 75 43
 AnchorPos=0 0
 Notes=
 Text=主题:
@@ -138,7 +138,7 @@ SelectedFileUV=0 0 149 60
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=150 214 456 48
+Rect=151 213 456 48
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -151,7 +151,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=126 319 450 48
+Rect=151 318 450 48
 AnchorPos=0 0
 Notes=
 TextSize=20
@@ -164,7 +164,7 @@ UIClsoeType=0
 [CTRL_TEXT_458]
 Type=4
 Tag=458
-Rect=38 265 96 50
+Rect=46 265 96 50
 AnchorPos=0 0
 Notes=
 Text=发件时间:
@@ -179,7 +179,7 @@ UIClsoeType=0
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=161 266 445 48
+Rect=151 265 445 48
 AnchorPos=0 0
 Notes=
 TextSize=20
