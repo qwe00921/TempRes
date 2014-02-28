@@ -143,7 +143,7 @@ UIClsoeType=0
 [CTRL_PICTURE_TEAM1]
 Type=1
 Tag=37
-Rect=518 -3 123 48
+Rect=509 -2 123 48
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -154,7 +154,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_TEAM2]
 Type=1
 Tag=38
-Rect=518 -3 123 48
+Rect=509 -2 123 48
 AnchorPos=0 0
 Notes=
 UIOpenType=0
@@ -165,7 +165,7 @@ NormalFileUV=0 0 110 50
 [CTRL_PICTURE_TEAM3]
 Type=1
 Tag=39
-Rect=518 -3 123 48
+Rect=509 -2 123 48
 AnchorPos=0 0
 Notes=
 UIOpenType=0
