@@ -4,6 +4,7 @@
 --------------------------------------------------------------
 ui_mail_detail_sys = {};
 local p =  ui_mail_detail_sys;
+p.ID_CTRL_COLOR_LABEL_42				  = 44;
 p.ID_CTRL_PICTURE_104					    = 104;
 p.ID_CTRL_PICTURE_BG_6				    = 43;
 p.ID_CTRL_PICTURE_BG_5				    = 42;
@@ -31,7 +32,6 @@ p.ID_CTRL_PICTURE_ITEM_3				  = 464;
 p.ID_CTRL_PICTURE_ITEM_4				  = 463;
 p.ID_CTRL_PICTURE_ITEM_5				  = 462;
 p.ID_CTRL_PICTURE_ITEM_1				  = 461;
-p.ID_CTRL_TEXT_CONTENT				    = 460;
 p.ID_CTRL_TEXT_TIME					      = 459;
 p.ID_CTRL_TEXT_458					       = 458;
 p.ID_CTRL_TEXT_TITLE					     = 456;

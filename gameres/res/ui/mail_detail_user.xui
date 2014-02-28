@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -189,19 +189,6 @@ TextVerAlign=AlignVerCenter
 UIOpenType=0
 UIClsoeType=0
 
-[CTRL_TEXT_CONTENT]
-Type=4
-Tag=460
-Rect=40 380 564 115
-AnchorPos=0 0
-Notes=
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignTop
-UIOpenType=0
-UIClsoeType=0
-
 [CTRL_PICTURE_15]
 Type=1
 Tag=15
@@ -258,3 +245,15 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
+
+[CTRL_COLOR_LABEL_62]
+Type=7
+Tag=62
+Rect=40 379 561 119
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0

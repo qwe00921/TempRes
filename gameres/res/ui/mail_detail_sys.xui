@@ -1,4 +1,4 @@
-
+﻿
 [UI_INFO]
 Width=640
 Height=960
@@ -23,7 +23,7 @@ NormalFileUV=0 0 149 60
 [CTRL_9SLICES_32]
 Type=22
 Tag=32
-Rect=163 224 438 48
+Rect=157 224 438 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -49,7 +49,7 @@ NormalFileUV=0 0 122 60
 [CTRL_9SLICES_33]
 Type=22
 Tag=33
-Rect=173 279 430 48
+Rect=157 279 430 48
 AnchorPos=0 0
 Notes=
 Stretch=1
@@ -132,7 +132,7 @@ NormalFileUV=0 0 149 60
 [CTRL_TEXT_NAME]
 Type=4
 Tag=455
-Rect=167 226 436 48
+Rect=159 226 436 48
 AnchorPos=0 0
 Notes=
 Text=系统消息
@@ -147,7 +147,7 @@ UIClsoeType=0
 [CTRL_TEXT_TITLE]
 Type=4
 Tag=456
-Rect=156 330 445 48
+Rect=159 331 445 48
 AnchorPos=0 0
 Notes=
 Text=服务器维护补偿礼包
@@ -177,7 +177,7 @@ UIClsoeType=0
 [CTRL_TEXT_TIME]
 Type=4
 Tag=459
-Rect=179 279 427 48
+Rect=159 279 427 48
 AnchorPos=0 0
 Notes=
 Text=2014-05-21 19:33:33
@@ -186,21 +186,6 @@ TextSize=20
 TextColor=0xffffff
 TextHorAlign=AlignLeft
 TextVerAlign=AlignVerCenter
-UIOpenType=0
-UIClsoeType=0
-
-[CTRL_TEXT_CONTENT]
-Type=4
-Tag=460
-Rect=44 388 559 217
-AnchorPos=0 0
-Notes=
-Text=亲爱的玩家,由于昨天服务器
-TextTradition=親愛的玩家,由于昨天服務器
-TextSize=20
-TextColor=0xffffff
-TextHorAlign=AlignLeft
-TextVerAlign=AlignTop
 UIOpenType=0
 UIClsoeType=0
 
@@ -520,3 +505,15 @@ UIOpenType=0
 UIClsoeType=0
 NormalFile=.\res\image\ui\public\mail.png
 NormalFileUV=0 0 86 54
+
+[CTRL_COLOR_LABEL_42]
+Type=7
+Tag=44
+Rect=46 389 552 217
+AnchorPos=0 0
+Notes=
+TextSize=10
+TextHorAlign=AlignHorCenter
+TextVerAlign=AlignVerCenter
+UIOpenType=0
+UIClsoeType=0
